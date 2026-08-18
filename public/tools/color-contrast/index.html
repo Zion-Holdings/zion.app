@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Contrast Checker | Zion Tech Group</title>
+  <meta name="description" content="Check WCAG color contrast ratios online — test AA/AAA compliance and get fix suggestions.">
+  <meta property="og:title" content="Color Contrast Checker | Zion Tech Group">
+  <meta property="og:description" content="Free online WCAG color contrast checker.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/color-contrast/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/color-contrast/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input[type="color"] { width: 100%; height: 48px; padding: 2px; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; cursor: pointer; }
+    .field input[type="text"] { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input[type="text"]:focus { outline: none; border-color: #6366f1; }
+    .preview { padding: 2rem; border-radius: 0.75rem; text-align: center; margin-bottom: 1.5rem; border: 1px solid #334155; }
+    .preview-text { font-size: 1.25rem; font-weight: 600; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .ratio { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600; margin: 0.25rem; }
+    .badge.pass { background: #065f46; color: #a7f3d0; }
+    .badge.fail { background: #7f1d1d; color: #fecaca; }
+    .suggestion { background: #0f172a; padding: 0.75rem; border-radius: 0.5rem; margin-top: 0.75rem; font-size: 0.875rem; color: #94a3b8; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Color Contrast Checker</h1>
+    <p class="subtitle">Check WCAG color contrast ratios.</p>
+    <div class="grid">
+      <div class="field">
+        <label>Foreground (Text)</label>
+        <input type="color" id="fgColor" value="#ffffff" oninput="check()">
+        <input type="text" id="fgText" value="#ffffff" oninput="syncColor('fg'); check()">
+      </div>
+      <div class="field">
+        <label>Background</label>
+        <input type="color" id="bgColor" value="#6366f1" oninput="check()">
+        <input type="text" id="bgText" value="#6366f1" oninput="syncColor('bg'); check()">
+      </div>
+    </div>
+    <div class="preview" id="preview">
+      <span class="preview-text" id="previewText">Sample Text Preview</span>
+    </div>
+    <div class="section">
+      <h3>Contrast Ratio</h3>
+      <div class="ratio" id="ratio">—</div>
+      <div id="badges"></div>
+      <div class="suggestion" id="suggestion"></div>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    function hexToRgb(hex) {
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
+    }
+    function luminance(r, g, b) {
+      const [rs, gs, bs] = [r, g, b].map(v => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      });
+      return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+    }
+    function contrastRatio(hex1, hex2) {
+      const rgb1 = hexToRgb(hex1), rgb2 = hexToRgb(hex2);
+      if (!rgb1 || !rgb2) return 0;
+      const l1 = luminance(rgb1.r, rgb1.g, rgb1.b);
+      const l2 = luminance(rgb2.r, rgb2.g, rgb2.b);
+      const lighter = Math.max(l1, l2);
+      const darker = Math.min(l1, l2);
+      return (lighter + 0.05) / (darker + 0.05);
+    }
+    function syncColor(which) {
+      const text = document.getElementById(which + 'Text').value;
+      const color = document.getElementById(which + 'Color');
+      if (/^#[0-9a-fA-F]{6}$/.test(text)) color.value = text;
+    }
+    function check() {
+      const fg = document.getElementById('fgText').value;
+      const bg = document.getElementById('bgText').value;
+      if (!/^#[0-9a-fA-F]{6}$/.test(fg) || !/^#[0-9a-fA-F]{6}$/.test(bg)) return;
+      document.getElementById('fgColor').value = fg;
+      document.getElementById('bgColor').value = bg;
+      const ratio = contrastRatio(fg, bg);
+      document.getElementById('ratio').textContent = ratio.toFixed(2) + ':1';
+      document.getElementById('preview').style.background = bg;
+      document.getElementById('preview').style.color = fg;
+      const aaNormal = ratio >= 4.5;
+      const aaLarge = ratio >= 3;
+      const aaaNormal = ratio >= 7;
+      const aaaLarge = ratio >= 4.5;
+      let badges = '';
+      badges += `<span class="badge ${aaNormal ? 'pass' : 'fail'}">AA Normal: ${aaNormal ? 'PASS' : 'FAIL'}</span>`;
+      badges += `<span class="badge ${aaLarge ? 'pass' : 'fail'}">AA Large: ${aaLarge ? 'PASS' : 'FAIL'}</span>`;
+      badges += `<span class="badge ${aaaNormal ? 'pass' : 'fail'}">AAA Normal: ${aaaNormal ? 'PASS' : 'FAIL'}</span>`;
+      badges += `<span class="badge ${aaaLarge ? 'pass' : 'fail'}">AAA Large: ${aaaLarge ? 'PASS' : 'FAIL'}</span>`;
+      document.getElementById('badges').innerHTML = badges;
+      let suggestion = '';
+      if (!aaNormal) {
+        suggestion = '💡 To improve contrast: darken the background, lighten the text, or increase font weight.';
+      } else if (!aaaNormal) {
+        suggestion = '✓ Passes AA. For AAA compliance, increase contrast further.';
+      } else {
+        suggestion = '✓ Excellent! Passes all WCAG levels.';
+      }
+      document.getElementById('suggestion').textContent = suggestion;
+    }
+    check();
+  </script>
+</body>
+</html>
