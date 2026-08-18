@@ -72,7 +72,7 @@ If this guide matches your data warehouse modernization: deployment patterns ini
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

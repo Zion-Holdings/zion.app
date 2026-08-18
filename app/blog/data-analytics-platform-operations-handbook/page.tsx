@@ -75,7 +75,7 @@ Leading indicators for data analytics platform: operations handbook: workflow co
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -20,7 +20,8 @@ jobs:
     timeout-minutes: 45
     env:
       NEXT_TELEMETRY_DISABLED: "1"
-      NODE_OPTIONS: "--max-old-space-size=4096"
+      NODE_OPTIONS: "--max-old-space-size=8192"
+      NEXT_TURBOPACK_USE_WORKER: "0"
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -42,7 +43,7 @@ jobs:
           echo "npm config set progress false"
       
       - name: Install Next.js globally
-        run: npm install -g next@16.2.0
+        run: npm install -g next@15.5.18
         continue-on-error: false
       - name: Restore Next.js cache
         uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4

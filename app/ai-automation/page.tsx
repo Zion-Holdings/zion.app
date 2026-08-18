@@ -1,7 +1,7 @@
-import { Metadata } from 'next'
+import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'AI Automation | Zion Tech Group',
-  description: 'AI-powered automation for support, operations, and revenue workflows.'
+  description: 'AI-powered automation for support, operations, and revenue workflows.',
   alternates: {
     canonical: 'https://ziontechgroup.com/ai-automation/',
   },

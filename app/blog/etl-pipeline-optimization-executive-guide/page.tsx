@@ -72,7 +72,7 @@ If this guide matches your etl pipeline optimization: executive guide initiative
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

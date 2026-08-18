@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "bash -c 'ulimit -n 131072 2>/dev/null || true; NEXT_TURBOPACK_USE_WORKER=0 exec npx next build'",
-    "build:ci": "bash -c 'ulimit -n 131072 2>/dev/null || true; node scripts/build-wrapper.cjs'",
-    "build:check": "npm run type-check && node scripts/build-wrapper.cjs",
+    "build:ci": "bash -c 'ulimit -n 131072 2>/dev/null || true; NEXT_TURBOPACK_USE_WORKER=0 node scripts/build-wrapper.cjs'",
+    "build:check": "npm run type-check && NEXT_TURBOPACK_USE_WORKER=0 node scripts/build-wrapper.cjs",
     "start": "next start",
     "lint": "bash -c 'ulimit -n 131072 2>/dev/null || true; npx eslint app components --quiet'",
     "lint:check": "bash -c 'ulimit -n 131072 2>/dev/null || true; npx eslint app components --quiet'",
