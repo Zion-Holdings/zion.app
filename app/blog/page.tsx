@@ -26,6 +26,16 @@ const POSTS: Post[] = [
   { slug: 'ai-accessibility-auditor-2026', title: 'AI Accessibility Auditor 2026', category: 'AI', summary: 'Automated accessibility checks and remediation patterns for web and mobile interfaces.' },
   { slug: 'ai-agent-safety-evaluation-2026', title: 'AI Agent Safety Evaluation 2026', category: 'AI', summary: 'Evaluation frameworks for agent reliability, guardrails, and failure recovery.' },
   { slug: 'micro-saas-ai-social-media-manager-2026', title: 'Micro SaaS AI Social Media Manager 2026', category: 'Growth', summary: 'Repeatable content scheduling and performance patterns for managed social programs.' },
+  { slug: 'ai-mlops-platform-2026', title: 'AI MLOps Platform 2026', category: 'AI', summary: 'Production patterns for ML pipelines, model registry, and deployment governance.' },
+  { slug: 'ai-prompt-engineering-2026', title: 'AI Prompt Engineering 2026', category: 'AI', summary: 'Designing, testing, and governing prompts for reliable LLM outputs.' },
+  { slug: 'ai-knowledge-base-2026', title: 'AI Knowledge Base 2026', category: 'AI', summary: 'Enterprise knowledge base patterns with retrieval, governance, and freshness.' },
+  { slug: 'ai-voice-assistant-2026', title: 'AI Voice Assistant 2026', category: 'AI', summary: 'Voice assistant architecture, telephony integration, and compliance patterns.' },
+  { slug: 'ai-image-generation-2026', title: 'AI Image Generation 2026', category: 'AI', summary: 'Governed image generation workflows with brand controls and review loops.' },
+  { slug: 'ai-code-assistant-2026', title: 'AI Code Assistant 2026', category: 'Engineering', summary: 'Code assistant patterns for secure, auditable developer augmentation.' },
+  { slug: 'ai-chatbot-platform-2026', title: 'AI Chatbot Platform 2026', category: 'AI', summary: 'Enterprise chatbot platforms with handoff, context, and governance.' },
+  { slug: 'ai-data-governance-2026', title: 'AI Data Governance 2026', category: 'Data', summary: 'Data governance for AI: lineage, quality, and compliance across pipelines.' },
+  { slug: 'ai-edge-inference-2026', title: 'AI Edge Inference 2026', category: 'Infrastructure', summary: 'Edge AI inference patterns for low latency and offline resilience.' },
+  { slug: 'ai-model-monitoring-2026', title: 'AI Model Monitoring 2026', category: 'AI', summary: 'Model monitoring, drift detection, and retraining triggers for production AI.' },
 ];
 
 const ALL_POSTS: Post[] = [
