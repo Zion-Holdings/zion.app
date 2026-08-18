@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regex Cheat Sheet | Zion Tech Group</title>
+  <meta name="description" content="Common regex patterns and syntax reference — search, filter, and copy patterns.">
+  <meta property="og:title" content="Regex Cheat Sheet | Zion Tech Group">
+  <meta property="og:description" content="Free online regex cheat sheet with common patterns.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/regex-cheat-sheet/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/regex-cheat-sheet/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input:focus { outline: none; border-color: #6366f1; }
+    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .tag { padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; background: #334155; color: #94a3b8; cursor: pointer; }
+    .tag:hover { background: #475569; }
+    .tag.active { background: #6366f1; color: #fff; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .pattern-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; border-bottom: 1px solid #334155; }
+    .pattern-item:last-child { border-bottom: none; }
+    .pattern-name { font-weight: 600; color: #fff; }
+    .pattern-value { font-family: monospace; font-size: 0.875rem; color: #94a3b8; background: #0f172a; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; }
+    .pattern-value:hover { background: #1e293b; color: #fff; }
+    .pattern-desc { font-size: 0.75rem; color: #64748b; margin-top: 0.25rem; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Regex Cheat Sheet</h1>
+    <p class="subtitle">Common regex patterns and syntax reference.</p>
+    <div class="field">
+      <label>Search patterns...</label>
+      <input type="text" id="search" placeholder="Type to filter..." oninput="filter()">
+    </div>
+    <div class="tags" id="categories">
+      <span class="tag active" onclick="filterCat('all')">All</span>
+      <span class="tag" onclick="filterCat('basic')">Basic</span>
+      <span class="tag" onclick="filterCat('validation')">Validation</span>
+      <span class="tag" onclick="filterCat('advanced')">Advanced</span>
+    </div>
+    <div class="section">
+      <h3>Patterns</h3>
+      <div id="patterns"></div>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    const patterns = [
+      { name: 'Any character', value: '.', desc: 'Matches any single character', cat: 'basic' },
+      { name: 'Start of string', value: '^', desc: 'Matches start of string', cat: 'basic' },
+      { name: 'End of string', value: '$', desc: 'Matches end of string', cat: 'basic' },
+      { name: 'Zero or more', value: '*', desc: 'Matches 0 or more of preceding', cat: 'basic' },
+      { name: 'One or more', value: '+', desc: 'Matches 1 or more of preceding', cat: 'basic' },
+      { name: 'Zero or one', value: '?', desc: 'Matches 0 or 1 of preceding', cat: 'basic' },
+      { name: 'Digit', value: '\\d', desc: 'Matches any digit (0-9)', cat: 'basic' },
+      { name: 'Non-digit', value: '\\D', desc: 'Matches any non-digit', cat: 'basic' },
+      { name: 'Word character', value: '\\w', desc: 'Matches any word character (a-z, A-Z, 0-9, _)', cat: 'basic' },
+      { name: 'Whitespace', value: '\\s', desc: 'Matches any whitespace', cat: 'basic' },
+      { name: 'Literal', value: '\\.', desc: 'Escape special characters', cat: 'basic' },
+      { name: 'Email', value: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}', desc: 'Basic email validation', cat: 'validation' },
+      { name: 'URL', value: 'https?:\\/\\/[\\w\\.-]+\\.[a-zA-Z]{2,}', desc: 'Basic URL validation', cat: 'validation' },
+      { name: 'IPv4', value: '\\b(?:[0-9]{1,3}\\.){3}[0-9]{1,3}\\b', desc: 'IPv4 address', cat: 'validation' },
+      { name: 'Date (YYYY-MM-DD)', value: '\\d{4}-\\d{2}-\\d{2}', desc: 'Date format', cat: 'validation' },
+      { name: 'Hex color', value: '#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})', desc: 'Hex color code', cat: 'validation' },
+      { name: 'Character class', value: '[abc]', desc: 'Matches a, b, or c', cat: 'advanced' },
+      { name: 'Negated class', value: '[^abc]', desc: 'Matches anything except a, b, or c', cat: 'advanced' },
+      { name: 'Range', value: '[a-z]', desc: 'Matches any lowercase letter', cat: 'advanced' },
+      { name: 'Quantifier', value: '{2,4}', desc: 'Matches 2 to 4 of preceding', cat: 'advanced' },
+      { name: 'Group', value: '(abc)', desc: 'Captures group', cat: 'advanced' },
+      { name: 'Alternation', value: 'a|b', desc: 'Matches a or b', cat: 'advanced' },
+      { name: 'Lookahead', value: '(?=...)', desc: 'Positive lookahead', cat: 'advanced' },
+      { name: 'Lookbehind', value: '(?<=...)', desc: 'Positive lookbehind', cat: 'advanced' },
+    ];
+    let currentCat = 'all';
+    function render() {
+      const search = document.getElementById('search').value.toLowerCase();
+      const container = document.getElementById('patterns');
+      container.innerHTML = '';
+      const filtered = patterns.filter(p => {
+        const matchCat = currentCat === 'all' || p.cat === currentCat;
+        const matchSearch = p.name.toLowerCase().includes(search) || p.value.includes(search);
+        return matchCat && matchSearch;
+      });
+      filtered.forEach(p => {
+        const item = document.createElement('div');
+        item.className = 'pattern-item';
+        item.innerHTML = `<div><div class="pattern-name">${p.name}</div><div class="pattern-desc">${p.desc}</div></div><div class="pattern-value" onclick="copy('${p.value}')">${p.value}</div>`;
+        container.appendChild(item);
+      });
+    }
+    function filter() { render(); }
+    function filterCat(cat) {
+      currentCat = cat;
+      document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      render();
+    }
+    function copy(text) {
+      navigator.clipboard.writeText(text);
+    }
+    render();
+  </script>
+</body>
+</html>
