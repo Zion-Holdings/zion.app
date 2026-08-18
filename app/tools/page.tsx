@@ -85,6 +85,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Cron Generator</h3>
           <p className="text-slate-400 text-sm">Build cron expressions from a schedule.</p>
         </a>
+        <a href="/tools/cron-next-runs/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Cron Next Runs</h3>
+          <p className="text-slate-400 text-sm">Explain any 5-field cron expression in plain English and preview the next 10 execution...</p>
+        </a>
         <a href="/tools/cron-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Cron Parser</h3>
           <p className="text-slate-400 text-sm">Parse and explain cron expressions.</p>
