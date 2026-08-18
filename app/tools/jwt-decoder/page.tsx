@@ -8,17 +8,19 @@ export const metadata = {
 };
 
 export default function JwtDecoderPage() {
-  const breadcrumbs = [
-    { name: 'Tools', href: '/tools/' },
-    { name: 'JWT Decoder', href: '/tools/jwt-decoder/' },
+  const breadcrumbItems = [
+    { label: 'Tools', href: '/tools/' },
+    { label: 'JWT Decoder' },
   ];
 
   return (
     <StandardPage
       title="JWT Decoder"
-      description="Inspect JWT header, payload, and signature details safely."
-      breadcrumbs={breadcrumbs}
-      cta={{ label: 'Browse all tools', href: '/tools/' }}
+      subtitle="Inspect JWT header, payload, and signature details safely."
+      breadcrumbItems={breadcrumbItems}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+      ]}
     >
       <p>Paste a JWT to decode its claims, expiry, issuer, and scopes without sending secrets to a backend.</p>
     </StandardPage>

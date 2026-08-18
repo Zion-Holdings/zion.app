@@ -8,17 +8,19 @@ export const metadata = {
 };
 
 export default function WordCounterPage() {
-  const breadcrumbs = [
-    { name: 'Tools', href: '/tools/' },
-    { name: 'Word Counter', href: '/tools/word-counter/' },
+  const breadcrumbItems = [
+    { label: 'Tools', href: '/tools/' },
+    { label: 'Word Counter' },
   ];
 
   return (
     <StandardPage
       title="Word Counter"
-      description="Count words, characters, sentences, and paragraphs."
-      breadcrumbs={breadcrumbs}
-      cta={{ label: 'Browse all tools', href: '/tools/' }}
+      subtitle="Count words, characters, sentences, and paragraphs."
+      breadcrumbItems={breadcrumbItems}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+      ]}
     >
       <p>Paste text to get word count, character count, readability estimates, and paragraph structure for content planning.</p>
     </StandardPage>

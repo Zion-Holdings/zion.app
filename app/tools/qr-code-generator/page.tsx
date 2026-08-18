@@ -8,17 +8,19 @@ export const metadata = {
 };
 
 export default function QrCodeGeneratorPage() {
-  const breadcrumbs = [
-    { name: 'Tools', href: '/tools/' },
-    { name: 'QR Code Generator', href: '/tools/qr-code-generator/' },
+  const breadcrumbItems = [
+    { label: 'Tools', href: '/tools/' },
+    { label: 'QR Code Generator' },
   ];
 
   return (
     <StandardPage
       title="QR Code Generator"
-      description="Create QR codes for URLs, text, and contact data."
-      breadcrumbs={breadcrumbs}
-      cta={{ label: 'Browse all tools', href: '/tools/' }}
+      subtitle="Create QR codes for URLs, text, and contact data."
+      breadcrumbItems={breadcrumbItems}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+      ]}
     >
       <p>Generate clean QR codes for campaigns, events, Wi-Fi, and contact sharing with export-ready outputs.</p>
     </StandardPage>

@@ -8,17 +8,19 @@ export const metadata = {
 };
 
 export default function UuidGeneratorPage() {
-  const breadcrumbs = [
-    { name: 'Tools', href: '/tools/' },
-    { name: 'UUID Generator', href: '/tools/uuid-generator/' },
+  const breadcrumbItems = [
+    { label: 'Tools', href: '/tools/' },
+    { label: 'UUID Generator' },
   ];
 
   return (
     <StandardPage
       title="UUID Generator"
-      description="Generate UUIDs and ULIDs for keys, events, and distributed systems."
-      breadcrumbs={breadcrumbs}
-      cta={{ label: 'Browse all tools', href: '/tools/' }}
+      subtitle="Generate UUIDs and ULIDs for keys, events, and distributed systems."
+      breadcrumbItems={breadcrumbItems}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+      ]}
     >
       <p>Create version 4 UUIDs and optional ULIDs, copy them instantly, and use them safely in development and production tooling.</p>
     </StandardPage>

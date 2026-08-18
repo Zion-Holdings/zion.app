@@ -8,17 +8,19 @@ export const metadata = {
 };
 
 export default function JsonFormatterPage() {
-  const breadcrumbs = [
-    { name: 'Tools', href: '/tools/' },
-    { name: 'JSON Formatter', href: '/tools/json-formatter/' },
+  const breadcrumbItems = [
+    { label: 'Tools', href: '/tools/' },
+    { label: 'JSON Formatter' },
   ];
 
   return (
     <StandardPage
       title="JSON Formatter"
-      description="Format, minify, and validate JSON quickly."
-      breadcrumbs={breadcrumbs}
-      cta={{ label: 'Browse all tools', href: '/tools/' }}
+      subtitle="Format, minify, and validate JSON quickly."
+      breadcrumbItems={breadcrumbItems}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+      ]}
     >
       <p>Use this tool to clean up JSON output, catch syntax errors, and prepare payloads for APIs and integrations.</p>
     </StandardPage>

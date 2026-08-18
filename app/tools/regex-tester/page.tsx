@@ -8,17 +8,19 @@ export const metadata = {
 };
 
 export default function RegexTesterPage() {
-  const breadcrumbs = [
-    { name: 'Tools', href: '/tools/' },
-    { name: 'Regex Tester', href: '/tools/regex-tester/' },
+  const breadcrumbItems = [
+    { label: 'Tools', href: '/tools/' },
+    { label: 'Regex Tester' },
   ];
 
   return (
     <StandardPage
       title="Regex Tester"
-      description="Test regular expressions with live matching and highlights."
-      breadcrumbs={breadcrumbs}
-      cta={{ label: 'Browse all tools', href: '/tools/' }}
+      subtitle="Test regular expressions with live matching and highlights."
+      breadcrumbItems={breadcrumbItems}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+      ]}
     >
       <p>Validate patterns against sample text, inspect capture groups, and save reusable regex snippets for development workflows.</p>
     </StandardPage>
