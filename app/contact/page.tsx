@@ -49,6 +49,11 @@ export default function ContactPage() {
           <Link href="tel:+13046440950" className="text-purple-300 text-sm font-semibold hover:text-white">+1 (304) 644-0950</Link>
         </div>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-xl font-bold text-white mb-2">Schedule a call</h2>
+          <p className="text-slate-300 text-sm">Book a 30-minute scoping call directly on the CEO&apos;s calendar.</p>
+          <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener noreferrer" className="text-purple-300 text-sm font-semibold hover:text-white">Open Calendly →</a>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-2">Response time</h2>
           <p className="text-slate-300 text-sm">Most inquiries receive a detailed reply within one business hour.</p>
         </div>
