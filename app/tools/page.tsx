@@ -164,6 +164,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">MD5 Hash</h3>
           <p className="text-slate-400 text-sm">Generate MD5 hashes from text.</p>
         </a>
+        <a href="/tools/yaml-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">YAML Formatter</h3>
+          <p className="text-slate-400 text-sm">Format and validate YAML.</p>
+        </a>
+        <a href="/tools/json-to-csv/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON to CSV</h3>
+          <p className="text-slate-400 text-sm">Convert JSON arrays to CSV.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
