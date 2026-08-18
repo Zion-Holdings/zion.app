@@ -1,0 +1,205 @@
+[
+  {
+    "ts": "2026-08-18T18:28:44.718285+00:00",
+    "queries_run": 14,
+    "contacts_found": 135,
+    "new_leads_added": 135,
+    "elapsed_s": 117.269,
+    "queries_per_second": 0.1194,
+    "avg_query_s": 8.3763,
+    "max_query_s": 9.7035,
+    "status": "ok",
+    "high_signal_leads": 135.0,
+    "lead_quality_ratio": 0.1194,
+    "rolling": {
+      "last_5_queries": [
+        8.652338083000004,
+        8.855426209,
+        7.9193242500000025,
+        8.526442166999999,
+        8.66541525000001
+      ],
+      "last_5_qps": [
+        0.1156,
+        0.1129,
+        0.1263,
+        0.1173,
+        0.1154
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-18T21:06:10.005153+00:00",
+    "queries_run": 13,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 110.478,
+    "queries_per_second": 0.1177,
+    "avg_query_s": 8.498,
+    "max_query_s": 10.4288,
+    "status": "ok",
+    "high_signal_leads": 67.5,
+    "lead_quality_ratio": 0.1186,
+    "rolling": {
+      "last_5_queries": [
+        4.272299582999992,
+        8.802610125000001,
+        8.485621582999997,
+        8.278563707999993,
+        7.960689875
+      ],
+      "last_5_qps": [
+        0.2341,
+        0.1136,
+        0.1178,
+        0.1208,
+        0.1256
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-18T21:08:25.927185+00:00",
+    "queries_run": 17,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 110.192,
+    "queries_per_second": 0.1543,
+    "avg_query_s": 6.854,
+    "max_query_s": 8.7912,
+    "status": "ok",
+    "high_signal_leads": 45.0,
+    "lead_quality_ratio": 0.1305,
+    "rolling": {
+      "last_5_queries": [
+        7.5878063749999995,
+        7.776869375000004,
+        8.126064709000005,
+        0.7499127079999965,
+        0.4650619169999999
+      ],
+      "last_5_qps": [
+        0.1318,
+        0.1286,
+        0.1231,
+        1.3335,
+        2.1503
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-18T21:09:03.521143+00:00",
+    "queries_run": 18,
+    "contacts_found": 13,
+    "new_leads_added": 13,
+    "elapsed_s": 115.397,
+    "queries_per_second": 0.156,
+    "avg_query_s": 6.4109,
+    "max_query_s": 9.0761,
+    "status": "ok",
+    "high_signal_leads": 37.0,
+    "lead_quality_ratio": 0.1368,
+    "rolling": {
+      "last_5_queries": [
+        8.587401624999998,
+        0.44880516599999964,
+        0.41732229100000495,
+        0.4352027080000056,
+        9.076065208000003
+      ],
+      "last_5_qps": [
+        0.1164,
+        2.2281,
+        2.3962,
+        2.2978,
+        0.1102
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-18T21:30:27.683108+00:00",
+    "queries_run": 14,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 117.79,
+    "queries_per_second": 0.1189,
+    "avg_query_s": 8.4134,
+    "max_query_s": 9.5584,
+    "status": "ok",
+    "high_signal_leads": 29.6,
+    "lead_quality_ratio": 0.1333,
+    "rolling": {
+      "last_5_queries": [
+        8.315938959000007,
+        9.558375583,
+        8.407319375,
+        9.290306125,
+        9.334179334000012
+      ],
+      "last_5_qps": [
+        0.1203,
+        0.1046,
+        0.1189,
+        0.1076,
+        0.1071
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-18T22:02:28.914307+00:00",
+    "queries_run": 13,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 113.209,
+    "queries_per_second": 0.1148,
+    "avg_query_s": 8.7079,
+    "max_query_s": 11.6517,
+    "status": "ok",
+    "high_signal_leads": 24.667,
+    "lead_quality_ratio": 0.1302,
+    "rolling": {
+      "last_5_queries": [
+        3.915434332999993,
+        8.395272457999994,
+        8.90033249999999,
+        8.400744790999994,
+        11.651691249999999
+      ],
+      "last_5_qps": [
+        0.2554,
+        0.1191,
+        0.1124,
+        0.119,
+        0.0858
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-18T22:05:27.823367+00:00",
+    "queries_run": 12,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 112.327,
+    "queries_per_second": 0.1068,
+    "avg_query_s": 9.3604,
+    "max_query_s": 13.2574,
+    "status": "ok",
+    "high_signal_leads": 21.143,
+    "lead_quality_ratio": 0.1268,
+    "rolling": {
+      "last_5_queries": [
+        8.799879999999987,
+        3.985228959000011,
+        9.523068166000002,
+        8.833607624999999,
+        7.997038042
+      ],
+      "last_5_qps": [
+        0.1136,
+        0.2509,
+        0.105,
+        0.1132,
+        0.125
+      ]
+    }
+  }
+]

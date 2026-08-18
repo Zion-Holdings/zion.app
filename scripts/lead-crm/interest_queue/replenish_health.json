@@ -1,0 +1,10 @@
+{
+  "ts": "2026-08-18T18:46:02.334675+00:00",
+  "discovered_total": 0,
+  "already_queued": 0,
+  "new_to_queue": 0,
+  "enqueued_this_run": 0,
+  "queue_size": 0,
+  "batch_size": 50,
+  "status": "ok"
+}

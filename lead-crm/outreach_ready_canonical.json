@@ -1,0 +1,18 @@
+{
+  "ready": [
+    {
+      "to": "anjali@quantomtech.com",
+      "name": null,
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready",
+      "source": "historical_email_miner",
+      "source_query": "subject:readiness assessment",
+      "domain": "quantomtech.com",
+      "is_generic_provider": false,
+      "is_invalid_domain": false,
+      "is_placeholder_domain": false,
+      "confidence": 2
+    }
+  ]
+}

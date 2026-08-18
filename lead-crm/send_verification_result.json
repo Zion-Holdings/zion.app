@@ -1,0 +1,11 @@
+{
+  "send_count": 0,
+  "sent_to": null,
+  "subject": null,
+  "httpStatus": null,
+  "message_id": null,
+  "thread_id": null,
+  "liveSentCheck": false,
+  "note": "blocked_by_config_or_env",
+  "error": null
+}
