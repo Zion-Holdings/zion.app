@@ -40,7 +40,7 @@ export default function ServicesPage() {
       <div className="max-w-6xl mx-auto">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((category) => (
-            <Link key={category.key} href={`/services?category=${category.key}`} className="glass-card">
+            <Link key={category.key} href={`/services/?category=${category.key}`} className="glass-card">
               <h3 className="font-semibold text-white mb-2">{category.label}</h3>
               <p className="text-slate-400 text-sm">{category.desc}</p>
               <span className="text-purple-400 text-xs mt-3 inline-block">Browse services →</span>
