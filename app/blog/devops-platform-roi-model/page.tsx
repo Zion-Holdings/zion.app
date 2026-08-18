@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Devops Platform Roi Model | Zion Tech Group',
     description: 'Practical guidance for devops platform roi model.',
-    url: 'https://ziontechgroup.com/blog/devops-platform-roi-model/',
+    url: 'https://ziontechgroup.com/blog/devops-platform-roi-model/',  siteName: 'Zion Tech Group',
+
     type: 'article',
-  },
-  alternates: { canonical: '/blog/devops-platform-roi-model/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Devops Platform Roi Model | Zion Tech Group',
+    description: 'Practical guidance for devops platform roi model.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/devops-platform-roi-model/' },
 };
 
 export default function PostPage() {

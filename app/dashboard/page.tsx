@@ -5,8 +5,12 @@ import StandardPage from '@/components/StandardPage';
 export const metadata: Metadata = {
   title: 'Client Dashboard | Zion Tech Group',
   description: 'Project visibility, service health, and reporting dashboard for Zion clients.',
-  openGraph: { title: 'Client Dashboard | Zion Tech Group', description: 'Operational dashboard and reporting.', url: 'https://ziontechgroup.com/dashboard/', type: 'website' },
-  alternates: { canonical: '/dashboard/' },
+  openGraph: { title: 'Client Dashboard | Zion Tech Group', description: 'Operational dashboard and reporting.', url: 'https://ziontechgroup.com/dashboard/', type: 'website' },  twitter: {
+    card: 'summary_large_image',
+    title: 'Client Dashboard | Zion Tech Group',
+    description: 'Operational dashboard and reporting.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/dashboard/' },
 };
 
 export default function DashboardPage() {

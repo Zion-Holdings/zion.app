@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-agent-safety-evaluation-architecture-overview/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agent Safety Evaluation: architecture overview',
+    description: 'AI Agent Safety Evaluation: architecture overview',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-agent-safety-evaluation-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: architecture overview", "description": "AI Agent Safety Evaluation: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-architecture-overview/"};

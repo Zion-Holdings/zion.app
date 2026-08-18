@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-msp-security-compliance-roi-and-cost-model/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI MSP Security Compliance: ROI and cost model',
+    description: 'AI MSP Security Compliance: ROI and cost model',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-msp-security-compliance-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: ROI and cost model", "description": "AI MSP Security Compliance: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-roi-and-cost-model/"};

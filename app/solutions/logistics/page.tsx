@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Logistics Solutions | Zion Tech Group',
     description: 'Logistics delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/logistics/',
+    url: 'https://ziontechgroup.com/solutions/logistics/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/solutions/logistics/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Logistics Solutions | Zion Tech Group',
+    description: 'Logistics delivery patterns and AI implementation guidance.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/solutions/logistics/' },
 };
 
 export default function LogisticsSolutionsPage() {

@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/microsaas-translation-engine-deployment-patterns/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Translation Engine: deployment patterns',
+    description: 'MicroSaaS Translation Engine: deployment patterns',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/microsaas-translation-engine-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: deployment patterns", "description": "MicroSaaS Translation Engine: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-deployment-patterns/"};

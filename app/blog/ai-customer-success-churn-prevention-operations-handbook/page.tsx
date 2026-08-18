@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-customer-success-churn-prevention-operations-handbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Customer Success Churn Prevention: operations handbook',
+    description: 'AI Customer Success Churn Prevention: operations handbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-customer-success-churn-prevention-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: operations handbook", "description": "AI Customer Success Churn Prevention: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-operations-handbook/"};

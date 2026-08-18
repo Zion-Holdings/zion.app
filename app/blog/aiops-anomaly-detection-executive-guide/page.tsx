@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/aiops-anomaly-detection-executive-guide/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AIOps Anomaly Detection: executive guide',
+    description: 'AIOps Anomaly Detection: executive guide',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/aiops-anomaly-detection-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: executive guide", "description": "AIOps Anomaly Detection: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-executive-guide/"};

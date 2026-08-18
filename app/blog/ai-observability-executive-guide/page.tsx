@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-observability-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-observability-executive-guide/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Observability: executive guide',
+    description: 'AI Observability: executive guide',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-observability-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: executive guide", "description": "AI Observability: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-executive-guide/"};

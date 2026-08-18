@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Providers | Zion Tech Group',
     description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
-    url: 'https://ziontechgroup.com/providers/',
+    url: 'https://ziontechgroup.com/providers/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/providers/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Providers | Zion Tech Group',
+    description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/providers/' },
 };
 
 export default function ProvidersPage() {

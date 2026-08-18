@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Synthetic Monitoring Deployment | Zion Tech Group',
     description: 'Practical guidance for synthetic monitoring deployment.',
-    url: 'https://ziontechgroup.com/blog/synthetic-monitoring-deployment/',
+    url: 'https://ziontechgroup.com/blog/synthetic-monitoring-deployment/',  siteName: 'Zion Tech Group',
+
     type: 'article',
-  },
-  alternates: { canonical: '/blog/synthetic-monitoring-deployment/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Synthetic Monitoring Deployment | Zion Tech Group',
+    description: 'Practical guidance for synthetic monitoring deployment.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/synthetic-monitoring-deployment/' },
 };
 
 export default function PostPage() {

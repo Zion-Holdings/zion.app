@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/cybersecurity-for-msps-implementation-playbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Cybersecurity for MSPs: implementation playbook',
+    description: 'Cybersecurity for MSPs: implementation playbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/cybersecurity-for-msps-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: implementation playbook", "description": "Cybersecurity for MSPs: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-implementation-playbook/"};

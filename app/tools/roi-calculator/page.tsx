@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ROI Calculator',
     description: 'Simple AI/IT ROI estimator.',
-    url: 'https://ziontechgroup.com/tools/roi-calculator/',
+    url: 'https://ziontechgroup.com/tools/roi-calculator/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/roi-calculator/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'ROI Calculator',
+    description: 'Simple AI/IT ROI estimator.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/roi-calculator/' },
 };
 
 const INPUTS = [

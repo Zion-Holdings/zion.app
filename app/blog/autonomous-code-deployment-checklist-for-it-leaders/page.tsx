@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-checklist-for-it-leaders/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/autonomous-code-deployment-checklist-for-it-leaders/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Autonomous Code Deployment: checklist for IT leaders',
+    description: 'Autonomous Code Deployment: checklist for IT leaders',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/autonomous-code-deployment-checklist-for-it-leaders/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: checklist for IT leaders", "description": "Autonomous Code Deployment: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-checklist-for-it-leaders/"};

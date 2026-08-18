@@ -5,8 +5,12 @@ import StandardPage from '@/components/StandardPage';
 export const metadata: Metadata = {
   title: 'Industry Solutions | Zion Tech Group',
   description: 'Industry-specific AI and IT implementation guidance.',
-  openGraph: { title: 'Industry Solutions', description: 'Vertical delivery patterns.', url: 'https://ziontechgroup.com/industries/', type: 'website' },
-  alternates: { canonical: '/industries/' },
+  openGraph: { title: 'Industry Solutions', description: 'Vertical delivery patterns.', url: 'https://ziontechgroup.com/industries/', type: 'website' },  twitter: {
+    card: 'summary_large_image',
+    title: 'Industry Solutions',
+    description: 'Vertical delivery patterns.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/industries/' },
 };
 
 const INDUSTRIES: Record<string, { label: string; intro: string; bullets: string[] }> = {

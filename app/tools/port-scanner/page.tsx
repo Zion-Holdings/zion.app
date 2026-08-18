@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Port Scanner',
     description: 'Network port scan helper.',
-    url: 'https://ziontechgroup.com/tools/port-scanner/',
+    url: 'https://ziontechgroup.com/tools/port-scanner/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/port-scanner/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Port Scanner',
+    description: 'Network port scan helper.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/port-scanner/' },
 };
 
 const PORTS = [

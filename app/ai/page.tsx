@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI | Zion Tech Group',
     description: 'AI-native services: assistants, automation, evaluation, and governed rollout.',
-    url: 'https://ziontechgroup.com/ai/',
+    url: 'https://ziontechgroup.com/ai/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/ai/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI | Zion Tech Group',
+    description: 'AI-native services: assistants, automation, evaluation, and governed rollout.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/ai/' },
 };
 
 export default function AiPage() {

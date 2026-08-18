@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Zion Tech Group | AI & IT Company',
     description: 'AI-native IT services: autonomous operations, managed AI, cloud, security, and data.',
-    url: 'https://ziontechgroup.com/',
+    url: 'https://ziontechgroup.com/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Zion Tech Group | AI & IT Company',
+    description: 'AI-native IT services: autonomous operations, managed AI, cloud, security, and data.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/' },
 };
 
 export default function HomePage() {

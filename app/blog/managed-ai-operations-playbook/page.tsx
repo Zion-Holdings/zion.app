@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Managed Ai Operations Playbook | Zion Tech Group',
     description: 'Practical guidance for managed ai operations playbook.',
-    url: 'https://ziontechgroup.com/blog/managed-ai-operations-playbook/',
+    url: 'https://ziontechgroup.com/blog/managed-ai-operations-playbook/',  siteName: 'Zion Tech Group',
+
     type: 'article',
-  },
-  alternates: { canonical: '/blog/managed-ai-operations-playbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Managed Ai Operations Playbook | Zion Tech Group',
+    description: 'Practical guidance for managed ai operations playbook.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/managed-ai-operations-playbook/' },
 };
 
 export default function PostPage() {

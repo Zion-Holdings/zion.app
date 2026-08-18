@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'SSL Checker',
     description: 'TLS certificate helper.',
-    url: 'https://ziontechgroup.com/tools/ssl-checker/',
+    url: 'https://ziontechgroup.com/tools/ssl-checker/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/ssl-checker/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'SSL Checker',
+    description: 'TLS certificate helper.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/ssl-checker/' },
 };
 
 const CHECKS = [

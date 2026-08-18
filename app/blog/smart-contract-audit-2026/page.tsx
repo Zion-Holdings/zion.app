@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/smart-contract-audit-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Smart Contract Audit',
+    description: 'Smart Contract Audit',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/smart-contract-audit-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit", "description": "Smart Contract Audit", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-2026/"};

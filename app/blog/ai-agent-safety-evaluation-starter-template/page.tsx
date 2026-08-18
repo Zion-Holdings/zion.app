@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-agent-safety-evaluation-starter-template/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agent Safety Evaluation: starter template',
+    description: 'AI Agent Safety Evaluation: starter template',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-agent-safety-evaluation-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: starter template", "description": "AI Agent Safety Evaluation: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-starter-template/"};

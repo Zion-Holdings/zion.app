@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Help Center | Zion Tech Group',
     description: 'Help center for onboarding, support, and engagement questions.',
-    url: 'https://ziontechgroup.com/help/',
+    url: 'https://ziontechgroup.com/help/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/help/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Help Center | Zion Tech Group',
+    description: 'Help center for onboarding, support, and engagement questions.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/help/' },
 };
 
 export default function HelpPage() {

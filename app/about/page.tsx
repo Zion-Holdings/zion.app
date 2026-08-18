@@ -9,10 +9,15 @@ export const metadata = {
   openGraph: {
     title: 'About Zion Tech Group',
     description: 'AI-native IT services company focused on autonomous operations, managed AI, and enterprise-ready delivery.',
-    url: 'https://ziontechgroup.com/about/',
+    url: 'https://ziontechgroup.com/about/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/about/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'About Zion Tech Group',
+    description: 'AI-native IT services company focused on autonomous operations, managed AI, and enterprise-ready delivery.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/about/' },
 };
 
 export default function AboutPage() {

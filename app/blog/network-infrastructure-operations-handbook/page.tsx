@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/network-infrastructure-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/network-infrastructure-operations-handbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Network Infrastructure: operations handbook',
+    description: 'Network Infrastructure: operations handbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/network-infrastructure-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: operations handbook", "description": "Network Infrastructure: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-operations-handbook/"};

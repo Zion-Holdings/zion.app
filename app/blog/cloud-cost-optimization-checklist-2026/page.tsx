@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-checklist-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/cloud-cost-optimization-checklist-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Cost Optimization',
+    description: 'Cloud Cost Optimization',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/cloud-cost-optimization-checklist-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost Optimization", "description": "Cloud Cost Optimization", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-checklist-2026/"};

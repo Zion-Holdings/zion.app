@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-operations-handbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise AI Intelligence Hub: operations handbook',
+    description: 'Enterprise AI Intelligence Hub: operations handbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: operations handbook", "description": "Enterprise AI Intelligence Hub: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/"};

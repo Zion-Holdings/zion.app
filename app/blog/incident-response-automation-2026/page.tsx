@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Incident Response Automation 2026 | Zion Tech Group',
     description: 'Practical guidance for incident response automation 2026.',
-    url: 'https://ziontechgroup.com/blog/incident-response-automation-2026/',
+    url: 'https://ziontechgroup.com/blog/incident-response-automation-2026/',  siteName: 'Zion Tech Group',
+
     type: 'article',
-  },
-  alternates: { canonical: '/blog/incident-response-automation-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Incident Response Automation 2026 | Zion Tech Group',
+    description: 'Practical guidance for incident response automation 2026.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/incident-response-automation-2026/' },
 };
 
 export default function PostPage() {

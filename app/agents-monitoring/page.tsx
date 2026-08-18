@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Agents Monitoring | Zion Tech Group',
     description: 'Operational visibility for AI agents and automated workflows.',
-    url: 'https://ziontechgroup.com/agents-monitoring/',
+    url: 'https://ziontechgroup.com/agents-monitoring/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/agents-monitoring/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agents Monitoring | Zion Tech Group',
+    description: 'Operational visibility for AI agents and automated workflows.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/agents-monitoring/' },
 };
 
 export default function AgentsMonitoringPage() {

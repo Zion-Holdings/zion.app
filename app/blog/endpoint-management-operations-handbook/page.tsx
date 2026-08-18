@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/endpoint-management-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/endpoint-management-operations-handbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Endpoint Management: operations handbook',
+    description: 'Endpoint Management: operations handbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/endpoint-management-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: operations handbook", "description": "Endpoint Management: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-operations-handbook/"};

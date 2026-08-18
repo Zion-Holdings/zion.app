@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-it-operations-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-it-operations-vendor-evaluation/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI IT Operations: vendor evaluation',
+    description: 'AI IT Operations: vendor evaluation',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-it-operations-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: vendor evaluation", "description": "AI IT Operations: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-vendor-evaluation/"};

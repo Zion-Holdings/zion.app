@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/microsaas-expense-tracker-architecture-overview/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Expense Tracker: architecture overview',
+    description: 'MicroSaaS Expense Tracker: architecture overview',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/microsaas-expense-tracker-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: architecture overview", "description": "MicroSaaS Expense Tracker: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-architecture-overview/"};

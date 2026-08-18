@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/event-driven-architecture-evaluation-framework/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Event Driven Architecture: evaluation framework',
+    description: 'Event Driven Architecture: evaluation framework',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/event-driven-architecture-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: evaluation framework", "description": "Event Driven Architecture: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-evaluation-framework/"};

@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Services Index | Zion Tech Group',
     description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',
-    url: 'https://ziontechgroup.com/ai-services/',
+    url: 'https://ziontechgroup.com/ai-services/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/ai-services/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Services Index | Zion Tech Group',
+    description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/ai-services/' },
 };
 
 export default function AiServicesIndexPage() {

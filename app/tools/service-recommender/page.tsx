@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Service Recommender',
     description: 'Quick service recommendation helper.',
-    url: 'https://ziontechgroup.com/tools/service-recommender/',
+    url: 'https://ziontechgroup.com/tools/service-recommender/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/service-recommender/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Service Recommender',
+    description: 'Quick service recommendation helper.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/service-recommender/' },
 };
 
 const QUESTIONS = [

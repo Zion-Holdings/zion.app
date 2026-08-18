@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-security-and-governance/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/devsecops-pipeline-security-and-governance/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'DevSecOps Pipeline: security and governance',
+    description: 'DevSecOps Pipeline: security and governance',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/devsecops-pipeline-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: security and governance", "description": "DevSecOps Pipeline: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-security-and-governance/"};

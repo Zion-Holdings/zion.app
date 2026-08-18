@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-autonomous-agents-deployment-patterns/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Autonomous Agents: deployment patterns',
+    description: 'AI Autonomous Agents: deployment patterns',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-autonomous-agents-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: deployment patterns", "description": "AI Autonomous Agents: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-deployment-patterns/"};

@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/smart-contract-audit-executive-guide/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Smart Contract Audit: executive guide',
+    description: 'Smart Contract Audit: executive guide',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/smart-contract-audit-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: executive guide", "description": "Smart Contract Audit: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-executive-guide/"};

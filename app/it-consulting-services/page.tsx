@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'IT Consulting Services | Zion Tech Group',
     description: 'Hands-on consulting for cloud, security, data, automation, and AI delivery.',
-    url: 'https://ziontechgroup.com/it-consulting-services/',
+    url: 'https://ziontechgroup.com/it-consulting-services/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/it-consulting-services/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Consulting Services | Zion Tech Group',
+    description: 'Hands-on consulting for cloud, security, data, automation, and AI delivery.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/it-consulting-services/' },
 };
 
 export default function ItConsultingServicesPage() {

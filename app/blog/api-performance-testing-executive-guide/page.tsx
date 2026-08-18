@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-performance-testing-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/api-performance-testing-executive-guide/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'API Performance Testing: executive guide',
+    description: 'API Performance Testing: executive guide',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/api-performance-testing-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: executive guide", "description": "API Performance Testing: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-executive-guide/"};

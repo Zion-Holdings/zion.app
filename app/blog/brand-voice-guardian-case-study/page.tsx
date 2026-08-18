@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/brand-voice-guardian-case-study/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Brand Voice Guardian: case study',
+    description: 'Brand Voice Guardian: case study',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/brand-voice-guardian-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: case study", "description": "Brand Voice Guardian: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-case-study/"};

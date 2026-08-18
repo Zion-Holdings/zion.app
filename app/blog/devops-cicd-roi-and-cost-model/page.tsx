@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devops-cicd-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/devops-cicd-roi-and-cost-model/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'DevOps CI/CD: ROI and cost model',
+    description: 'DevOps CI/CD: ROI and cost model',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/devops-cicd-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: ROI and cost model", "description": "DevOps CI/CD: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-roi-and-cost-model/"};

@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/microsaas-expense-tracker-implementation-playbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Expense Tracker: implementation playbook',
+    description: 'MicroSaaS Expense Tracker: implementation playbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/microsaas-expense-tracker-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: implementation playbook", "description": "MicroSaaS Expense Tracker: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-implementation-playbook/"};

@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/aiops-anomaly-detection-architecture-overview/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AIOps Anomaly Detection: architecture overview',
+    description: 'AIOps Anomaly Detection: architecture overview',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/aiops-anomaly-detection-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: architecture overview", "description": "AIOps Anomaly Detection: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-architecture-overview/"};

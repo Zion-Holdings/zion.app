@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Observability Platform Checklist | Zion Tech Group',
     description: 'Practical guidance for observability platform checklist.',
-    url: 'https://ziontechgroup.com/blog/observability-platform-checklist/',
+    url: 'https://ziontechgroup.com/blog/observability-platform-checklist/',  siteName: 'Zion Tech Group',
+
     type: 'article',
-  },
-  alternates: { canonical: '/blog/observability-platform-checklist/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Observability Platform Checklist | Zion Tech Group',
+    description: 'Practical guidance for observability platform checklist.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/observability-platform-checklist/' },
 };
 
 export default function PostPage() {

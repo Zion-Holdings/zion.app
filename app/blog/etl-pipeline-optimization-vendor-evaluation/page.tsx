@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/etl-pipeline-optimization-vendor-evaluation/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'ETL Pipeline Optimization: vendor evaluation',
+    description: 'ETL Pipeline Optimization: vendor evaluation',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/etl-pipeline-optimization-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: vendor evaluation", "description": "ETL Pipeline Optimization: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-vendor-evaluation/"};

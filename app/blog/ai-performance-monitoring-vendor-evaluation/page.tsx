@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-performance-monitoring-vendor-evaluation/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Performance Monitoring: vendor evaluation',
+    description: 'AI Performance Monitoring: vendor evaluation',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-performance-monitoring-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: vendor evaluation", "description": "AI Performance Monitoring: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-vendor-evaluation/"};

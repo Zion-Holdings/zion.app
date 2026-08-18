@@ -9,10 +9,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Testimonials | Zion Tech Group',
     description: 'Real outcomes from Zion Tech Group clients.',
-    url: 'https://ziontechgroup.com/testimonials/',
+    url: 'https://ziontechgroup.com/testimonials/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/testimonials/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Testimonials | Zion Tech Group',
+    description: 'Real outcomes from Zion Tech Group clients.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/testimonials/' },
 };
 
 export default function TestimonialsPage() {

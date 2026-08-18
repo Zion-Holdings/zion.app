@@ -8,26 +8,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hash Generator | Zion Tech Group',
     description: 'Free online hash generator — SHA-1, SHA-256, SHA-384, SHA-512.',
-    url: 'https://ziontechgroup.com/tools/hash-generator/',
-    type: 'website',
-  },
-  alternates: { canonical: '/tools/hash-generator/' },
-};
+    url: 'https://ziontechgroup.com/tools/hash-generator/',  siteName: 'Zion Tech Group',
 
-const SCRIPT = `
-async function generate() {
-  const input = document.getElementById('input').value;
-  const encoder = new TextEncoder();
-  const data = encoder.encode(input);
-  const algorithms = ['SHA-1','SHA-256','SHA-384','SHA-512'];
-  for (const algo of algorithms) {
-    const subtleAlgo = algo.replace('-', '');
-    const hashBuffer = await crypto.subtle.digest(subtleAlgo, data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    document.getElementById(algo.toLowerCase().replace('-','')).value = hashArray.map(b => b.toString(16).padStart(2,'0')).join('');
-  }
-}
-`;
+    type: 'website',
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Hash Generator | Zion Tech Group',
+    description: 'Free online hash generator — SHA-1, SHA-256, SHA-384, SHA-512.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/hash-generator/' },
+};
 
 export default function HashGeneratorPage() {
   return (
@@ -40,47 +30,33 @@ export default function HashGeneratorPage() {
         { label: 'Hash Generator' },
       ]}
       actions={[
-        { label: 'Back to Tools', href: '/tools/', style: 'secondary' },
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
       ]}
     >
-      <div className="max-w-3xl mx-auto">
-        <div className="bg-slate-800/60 rounded-xl p-6 border border-slate-700 mb-6">
-          <label className="block text-sm font-medium text-slate-300 mb-2">Input Text</label>
-          <textarea id="input" rows={4} placeholder="Enter text to hash..."
-            className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-white font-mono text-sm mb-4"
-            onInput="generate()"></textarea>
-
-          <div className="space-y-3">
-            <div>
-              <label className="text-xs font-medium text-slate-400">SHA-1</label>
-              <input id="sha1" readOnly className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-3 py-2 text-slate-300 font-mono text-xs" />
-            </div>
-            <div>
-              <label className="text-xs font-medium text-slate-400">SHA-256</label>
-              <input id="sha256" readOnly className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-3 py-2 text-slate-300 font-mono text-xs" />
-            </div>
-            <div>
-              <label className="text-xs font-medium text-slate-400">SHA-384</label>
-              <input id="sha384" readOnly className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-3 py-2 text-slate-300 font-mono text-xs" />
-            </div>
-            <div>
-              <label className="text-xs font-medium text-slate-400">SHA-512</label>
-              <input id="sha512" readOnly className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-3 py-2 text-slate-300 font-mono text-xs" />
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-slate-800/40 rounded-xl p-6 border border-slate-700">
-          <h2 className="text-xl font-semibold text-white mb-3">About These Algorithms</h2>
-          <ul className="space-y-2 text-slate-300 text-sm">
-            <li><span className="text-indigo-400 font-medium">SHA-1</span> — 160-bit hash. Deprecated for security, still used in Git.</li>
-            <li><span className="text-indigo-400 font-medium">SHA-256</span> — 256-bit hash. Gold standard for integrity verification.</li>
-            <li><span className="text-indigo-400 font-medium">SHA-384 / SHA-512</span> — Higher security margin for sensitive applications.</li>
+      <div className="max-w-5xl mx-auto grid gap-6">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-xl font-bold text-white mb-2">Hashing algorithms</h2>
+          <p className="text-slate-300 text-sm mb-4">Client-side hashing with the Web Crypto API keeps your data local while producing reproducible digests.</p>
+          <ul className="space-y-2 text-slate-400 text-sm list-disc pl-5">
+            <li>SHA-1: legacy, still useful for Git and non-security checksums.</li>
+            <li>SHA-256: modern baseline for integrity verification.</li>
+            <li>SHA-384 / SHA-512: larger digests for sensitive verification workflows.</li>
           </ul>
-          <p className="text-slate-400 text-sm mt-4">All hashing is done locally using the Web Crypto API. Your data never leaves your device.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Link href="/services/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Browse services</h3>
+            <p className="text-slate-400 text-xs">Security, automation, and managed AI services.</p>
+            <span className="text-purple-300 text-xs font-semibold mt-2 inline-block">View services →</span>
+          </Link>
+          <Link href="/contact/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Talk to an engineer</h3>
+            <p className="text-slate-400 text-xs">Need validation pipelines or security automation? Contact us.</p>
+            <span className="text-purple-300 text-xs font-semibold mt-2 inline-block">Contact us →</span>
+          </Link>
         </div>
       </div>
-      <script dangerouslySetInnerHTML={{ __html: SCRIPT }} />
     </StandardPage>
   );
 }

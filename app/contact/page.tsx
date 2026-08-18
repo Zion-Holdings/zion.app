@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact | Zion Tech Group',
     description: 'Get in touch for AI and IT services.',
-    url: 'https://ziontechgroup.com/contact/',
+    url: 'https://ziontechgroup.com/contact/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/contact/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact | Zion Tech Group',
+    description: 'Get in touch for AI and IT services.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/contact/' },
 };
 
 export default function ContactPage() {

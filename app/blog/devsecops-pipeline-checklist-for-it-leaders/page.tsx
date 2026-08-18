@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-checklist-for-it-leaders/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/devsecops-pipeline-checklist-for-it-leaders/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'DevSecOps Pipeline: checklist for IT leaders',
+    description: 'DevSecOps Pipeline: checklist for IT leaders',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/devsecops-pipeline-checklist-for-it-leaders/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: checklist for IT leaders", "description": "DevSecOps Pipeline: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-checklist-for-it-leaders/"};

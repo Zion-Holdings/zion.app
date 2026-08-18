@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog | Zion Tech Group',
     description: 'Insights on AI, IT, automation, and enterprise delivery.',
-    url: 'https://ziontechgroup.com/blog/',
+    url: 'https://ziontechgroup.com/blog/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/blog/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Zion Tech Group',
+    description: 'Insights on AI, IT, automation, and enterprise delivery.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/' },
 };
 
 type Post = {

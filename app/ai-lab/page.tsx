@@ -5,8 +5,12 @@ import StandardPage from '@/components/StandardPage';
 export const metadata: Metadata = {
   title: 'AI Lab | Zion Tech Group',
   description: 'Explore emerging AI capabilities, experimental services, and sandbox engagements from Zion Tech Group.',
-  openGraph: { title: 'AI Lab | Zion Tech Group', description: 'Emerging AI capabilities and experiments.', url: 'https://ziontechgroup.com/ai-lab/', type: 'website' },
-  alternates: { canonical: '/ai-lab/' },
+  openGraph: { title: 'AI Lab | Zion Tech Group', description: 'Emerging AI capabilities and experiments.', url: 'https://ziontechgroup.com/ai-lab/', type: 'website' },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Lab | Zion Tech Group',
+    description: 'Emerging AI capabilities and experiments.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/ai-lab/' },
 };
 
 export default function AiLabPage() {

@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Platform Status',
     description: 'Zion operational status summary.',
-    url: 'https://ziontechgroup.com/tools/health-check/',
+    url: 'https://ziontechgroup.com/tools/health-check/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/health-check/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Platform Status',
+    description: 'Zion operational status summary.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/health-check/' },
 };
 
 const SYSTEMS = [

@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Education Solutions | Zion Tech Group',
     description: 'Education and research delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/education/',
+    url: 'https://ziontechgroup.com/solutions/education/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/solutions/education/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Education Solutions | Zion Tech Group',
+    description: 'Education and research delivery patterns and AI implementation guidance.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/solutions/education/' },
 };
 
 export default function EducationSolutionsPage() {

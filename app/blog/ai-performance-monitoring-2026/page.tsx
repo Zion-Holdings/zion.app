@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-performance-monitoring-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Performance Monitoring',
+    description: 'AI Performance Monitoring',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-performance-monitoring-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring", "description": "AI Performance Monitoring", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-2026/"};

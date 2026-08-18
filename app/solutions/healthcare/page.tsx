@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Healthcare Solutions | Zion Tech Group',
     description: 'Healthcare delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/healthcare/',
+    url: 'https://ziontechgroup.com/solutions/healthcare/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/solutions/healthcare/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Healthcare Solutions | Zion Tech Group',
+    description: 'Healthcare delivery patterns and AI implementation guidance.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/solutions/healthcare/' },
 };
 
 export default function HealthcareSolutionsPage() {

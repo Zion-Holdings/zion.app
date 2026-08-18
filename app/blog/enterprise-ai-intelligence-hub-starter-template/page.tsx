@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-starter-template/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise AI Intelligence Hub: starter template',
+    description: 'Enterprise AI Intelligence Hub: starter template',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: starter template", "description": "Enterprise AI Intelligence Hub: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-starter-template/"};

@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/edge-computing-deployment-evaluation-framework/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Edge Computing Deployment: evaluation framework',
+    description: 'Edge Computing Deployment: evaluation framework',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/edge-computing-deployment-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: evaluation framework", "description": "Edge Computing Deployment: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-evaluation-framework/"};

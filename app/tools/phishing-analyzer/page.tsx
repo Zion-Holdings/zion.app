@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Phishing Analyzer',
     description: 'Lightweight phishing signal checker.',
-    url: 'https://ziontechgroup.com/tools/phishing-analyzer/',
+    url: 'https://ziontechgroup.com/tools/phishing-analyzer/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/phishing-analyzer/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Phishing Analyzer',
+    description: 'Lightweight phishing signal checker.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/phishing-analyzer/' },
 };
 
 const CHECKS = [

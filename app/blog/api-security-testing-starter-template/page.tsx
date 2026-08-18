@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-security-testing-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/api-security-testing-starter-template/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'API Security Testing: starter template',
+    description: 'API Security Testing: starter template',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/api-security-testing-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: starter template", "description": "API Security Testing: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-starter-template/"};

@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/microsaas-hr-recruitment-executive-guide/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS HR Recruitment: executive guide',
+    description: 'MicroSaaS HR Recruitment: executive guide',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/microsaas-hr-recruitment-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: executive guide", "description": "MicroSaaS HR Recruitment: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-executive-guide/"};

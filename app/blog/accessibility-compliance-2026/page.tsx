@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/accessibility-compliance-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Accessibility Compliance',
+    description: 'Accessibility Compliance',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/accessibility-compliance-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance", "description": "Accessibility Compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-2026/"};

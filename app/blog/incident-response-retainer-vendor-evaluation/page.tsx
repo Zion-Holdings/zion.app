@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/incident-response-retainer-vendor-evaluation/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Incident Response Retainer: vendor evaluation',
+    description: 'Incident Response Retainer: vendor evaluation',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/incident-response-retainer-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: vendor evaluation", "description": "Incident Response Retainer: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-vendor-evaluation/"};

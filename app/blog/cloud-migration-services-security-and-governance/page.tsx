@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-security-and-governance/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/cloud-migration-services-security-and-governance/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Migration Services: security and governance',
+    description: 'Cloud Migration Services: security and governance',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/cloud-migration-services-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: security and governance", "description": "Cloud Migration Services: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-security-and-governance/"};

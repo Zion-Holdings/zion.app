@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/data-warehouse-modernization-roi-and-cost-model/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Data Warehouse Modernization: ROI and cost model',
+    description: 'Data Warehouse Modernization: ROI and cost model',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/data-warehouse-modernization-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: ROI and cost model", "description": "Data Warehouse Modernization: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-roi-and-cost-model/"};

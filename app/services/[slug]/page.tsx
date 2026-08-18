@@ -26,8 +26,12 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/services/',
     type: 'website',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/services/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Service | Zion Tech Group',
+    description: 'Service details and delivery guidance.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/services/' },
 };
 
 export default function ServiceSlugPage({ params }: { params: Params }) {

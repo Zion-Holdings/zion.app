@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tools | Zion Tech Group',
     description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
-    url: 'https://ziontechgroup.com/tools/',
+    url: 'https://ziontechgroup.com/tools/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Tools | Zion Tech Group',
+    description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/' },
 };
 
 export default function ToolsPage() {

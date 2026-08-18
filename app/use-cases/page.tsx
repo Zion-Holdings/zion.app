@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Use Cases | Zion Tech Group',
     description: 'High-signal use cases for AI, IT, and automation engagements.',
-    url: 'https://ziontechgroup.com/use-cases/',
+    url: 'https://ziontechgroup.com/use-cases/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/use-cases/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Use Cases | Zion Tech Group',
+    description: 'High-signal use cases for AI, IT, and automation engagements.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/use-cases/' },
 };
 
 const USE_CASES = [

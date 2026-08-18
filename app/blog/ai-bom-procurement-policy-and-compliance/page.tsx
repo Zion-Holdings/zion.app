@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-bom-procurement-policy-and-compliance/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI BOM Procurement: policy and compliance',
+    description: 'AI BOM Procurement: policy and compliance',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-bom-procurement-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: policy and compliance", "description": "AI BOM Procurement: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/"};

@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hybrid Ai Deployment Patterns | Zion Tech Group',
     description: 'Practical guidance for hybrid ai deployment patterns.',
-    url: 'https://ziontechgroup.com/blog/hybrid-ai-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/hybrid-ai-deployment-patterns/',  siteName: 'Zion Tech Group',
+
     type: 'article',
-  },
-  alternates: { canonical: '/blog/hybrid-ai-deployment-patterns/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Hybrid Ai Deployment Patterns | Zion Tech Group',
+    description: 'Practical guidance for hybrid ai deployment patterns.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/hybrid-ai-deployment-patterns/' },
 };
 
 export default function PostPage() {

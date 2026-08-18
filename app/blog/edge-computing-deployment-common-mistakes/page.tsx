@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/edge-computing-deployment-common-mistakes/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Edge Computing Deployment: common mistakes',
+    description: 'Edge Computing Deployment: common mistakes',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/edge-computing-deployment-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: common mistakes", "description": "Edge Computing Deployment: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-common-mistakes/"};

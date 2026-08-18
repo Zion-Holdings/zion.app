@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-finops-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/cloud-finops-executive-guide/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud FinOps: executive guide',
+    description: 'Cloud FinOps: executive guide',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/cloud-finops-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: executive guide", "description": "Cloud FinOps: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-executive-guide/"};

@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ai Contract Review Automation | Zion Tech Group',
     description: 'Practical guidance for ai contract review automation.',
-    url: 'https://ziontechgroup.com/blog/ai-contract-review-automation/',
+    url: 'https://ziontechgroup.com/blog/ai-contract-review-automation/',  siteName: 'Zion Tech Group',
+
     type: 'article',
-  },
-  alternates: { canonical: '/blog/ai-contract-review-automation/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Ai Contract Review Automation | Zion Tech Group',
+    description: 'Practical guidance for ai contract review automation.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-contract-review-automation/' },
 };
 
 export default function PostPage() {

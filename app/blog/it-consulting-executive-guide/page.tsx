@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/it-consulting-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/it-consulting-executive-guide/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Consulting: executive guide',
+    description: 'IT Consulting: executive guide',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/it-consulting-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: executive guide", "description": "IT Consulting: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-executive-guide/"};

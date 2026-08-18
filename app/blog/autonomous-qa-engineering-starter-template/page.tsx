@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/autonomous-qa-engineering-starter-template/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Autonomous QA Engineering: starter template',
+    description: 'Autonomous QA Engineering: starter template',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/autonomous-qa-engineering-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: starter template", "description": "Autonomous QA Engineering: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-starter-template/"};

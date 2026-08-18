@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/autonomous-code-deployment-starter-template/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Autonomous Code Deployment: starter template',
+    description: 'Autonomous Code Deployment: starter template',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/autonomous-code-deployment-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: starter template", "description": "Autonomous Code Deployment: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-starter-template/"};

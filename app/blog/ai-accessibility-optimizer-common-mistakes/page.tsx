@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-accessibility-optimizer-common-mistakes/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Accessibility Optimizer: common mistakes',
+    description: 'AI Accessibility Optimizer: common mistakes',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-accessibility-optimizer-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: common mistakes", "description": "AI Accessibility Optimizer: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-common-mistakes/"};

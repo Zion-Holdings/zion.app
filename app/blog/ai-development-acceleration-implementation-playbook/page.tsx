@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-development-acceleration-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-development-acceleration-implementation-playbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Development Acceleration: implementation playbook',
+    description: 'AI Development Acceleration: implementation playbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-development-acceleration-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Development Acceleration: implementation playbook", "description": "AI Development Acceleration: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-development-acceleration-implementation-playbook/"};

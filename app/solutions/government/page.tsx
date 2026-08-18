@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Government Solutions | Zion Tech Group',
     description: 'Government delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/government/',
+    url: 'https://ziontechgroup.com/solutions/government/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/solutions/government/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Government Solutions | Zion Tech Group',
+    description: 'Government delivery patterns and AI implementation guidance.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/solutions/government/' },
 };
 
 export default function GovernmentSolutionsPage() {

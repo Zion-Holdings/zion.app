@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Service Comparison',
     description: 'Side-by-side service fit comparison.',
-    url: 'https://ziontechgroup.com/tools/service-comparison/',
+    url: 'https://ziontechgroup.com/tools/service-comparison/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/service-comparison/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Service Comparison',
+    description: 'Side-by-side service fit comparison.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/service-comparison/' },
 };
 
 const FACTORS = [

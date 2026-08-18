@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-automation-roadmap/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Data Lakehouse Pipelines: automation roadmap',
+    description: 'AI Data Lakehouse Pipelines: automation roadmap',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-automation-roadmap/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: automation roadmap", "description": "AI Data Lakehouse Pipelines: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-automation-roadmap/"};

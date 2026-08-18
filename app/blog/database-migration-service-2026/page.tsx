@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/database-migration-service-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/database-migration-service-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Database Migration Service',
+    description: 'Database Migration Service',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/database-migration-service-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service", "description": "Database Migration Service", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-2026/"};

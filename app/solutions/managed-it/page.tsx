@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Managed IT Solutions | Zion Tech Group',
     description: 'Managed IT solutions for predictable operations.',
-    url: 'https://ziontechgroup.com/solutions/managed-it/',
+    url: 'https://ziontechgroup.com/solutions/managed-it/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/solutions/managed-it/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Managed IT Solutions | Zion Tech Group',
+    description: 'Managed IT solutions for predictable operations.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/solutions/managed-it/' },
 };
 
 export default function ManagedItSolutionsPage() {

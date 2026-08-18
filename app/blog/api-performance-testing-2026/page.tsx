@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-performance-testing-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/api-performance-testing-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'API Performance Testing',
+    description: 'API Performance Testing',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/api-performance-testing-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing", "description": "API Performance Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-2026/"};

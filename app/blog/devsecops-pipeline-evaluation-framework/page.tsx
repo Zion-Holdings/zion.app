@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/devsecops-pipeline-evaluation-framework/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'DevSecOps Pipeline: evaluation framework',
+    description: 'DevSecOps Pipeline: evaluation framework',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/devsecops-pipeline-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: evaluation framework", "description": "DevSecOps Pipeline: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-evaluation-framework/"};

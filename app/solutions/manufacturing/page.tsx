@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Manufacturing Solutions | Zion Tech Group',
     description: 'Manufacturing delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/manufacturing/',
+    url: 'https://ziontechgroup.com/solutions/manufacturing/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/solutions/manufacturing/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Manufacturing Solutions | Zion Tech Group',
+    description: 'Manufacturing delivery patterns and AI implementation guidance.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/solutions/manufacturing/' },
 };
 
 export default function ManufacturingSolutionsPage() {

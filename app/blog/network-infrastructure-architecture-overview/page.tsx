@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/network-infrastructure-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/network-infrastructure-architecture-overview/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Network Infrastructure: architecture overview',
+    description: 'Network Infrastructure: architecture overview',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/network-infrastructure-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: architecture overview", "description": "Network Infrastructure: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-architecture-overview/"};

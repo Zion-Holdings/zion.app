@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Service Router',
     description: 'Routing helper for AI services.',
-    url: 'https://ziontechgroup.com/tools/ai-service-router/',
+    url: 'https://ziontechgroup.com/tools/ai-service-router/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/tools/ai-service-router/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Service Router',
+    description: 'Routing helper for AI services.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/tools/ai-service-router/' },
 };
 
 const FACTORS = [

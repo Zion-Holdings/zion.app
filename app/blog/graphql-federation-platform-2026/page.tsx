@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/graphql-federation-platform-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'GraphQL Federation Platform',
+    description: 'GraphQL Federation Platform',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/graphql-federation-platform-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform", "description": "GraphQL Federation Platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-2026/"};

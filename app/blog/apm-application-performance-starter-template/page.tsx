@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/apm-application-performance-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/apm-application-performance-starter-template/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'APM Application Performance: starter template',
+    description: 'APM Application Performance: starter template',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/apm-application-performance-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: starter template", "description": "APM Application Performance: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-starter-template/"};

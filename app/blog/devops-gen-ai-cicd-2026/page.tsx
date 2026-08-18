@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/devops-gen-ai-cicd-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'GenAI DevOps CI/CD',
+    description: 'GenAI DevOps CI/CD',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/devops-gen-ai-cicd-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD", "description": "GenAI DevOps CI/CD", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/"};

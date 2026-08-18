@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-security-and-governance/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-3d-asset-generator-security-and-governance/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI 3D Asset Generator: security and governance',
+    description: 'AI 3D Asset Generator: security and governance',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-3d-asset-generator-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: security and governance", "description": "AI 3D Asset Generator: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-security-and-governance/"};

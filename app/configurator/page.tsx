@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Configurator | Zion Tech Group',
     description: 'Tell us your constraints and get a short engagement plan.',
-    url: 'https://ziontechgroup.com/configurator/',
+    url: 'https://ziontechgroup.com/configurator/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/configurator/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Configurator | Zion Tech Group',
+    description: 'Tell us your constraints and get a short engagement plan.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/configurator/' },
 };
 
 export default function ConfiguratorPage() {

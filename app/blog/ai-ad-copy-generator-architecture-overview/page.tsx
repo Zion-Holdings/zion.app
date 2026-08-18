@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-ad-copy-generator-architecture-overview/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Ad Copy Generator: architecture overview',
+    description: 'AI Ad Copy Generator: architecture overview',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-ad-copy-generator-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: architecture overview", "description": "AI Ad Copy Generator: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-architecture-overview/"};

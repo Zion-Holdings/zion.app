@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-email-intelligence-operations-handbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Email Intelligence: operations handbook',
+    description: 'AI Email Intelligence: operations handbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-email-intelligence-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: operations handbook", "description": "AI Email Intelligence: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-operations-handbook/"};

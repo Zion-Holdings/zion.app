@@ -8,10 +8,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cloud & DevOps Solutions | Zion Tech Group',
     description: 'Cloud and DevOps solutions for reliability and speed.',
-    url: 'https://ziontechgroup.com/solutions/cloud-devops/',
+    url: 'https://ziontechgroup.com/solutions/cloud-devops/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/solutions/cloud-devops/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud & DevOps Solutions | Zion Tech Group',
+    description: 'Cloud and DevOps solutions for reliability and speed.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/solutions/cloud-devops/' },
 };
 
 export default function CloudDevOpsSolutionsPage() {

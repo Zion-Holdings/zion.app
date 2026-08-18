@@ -8,10 +8,15 @@ export const metadata = {
   openGraph: {
     title: 'Services | Zion Tech Group',
     description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
-    url: 'https://ziontechgroup.com/services/',
+    url: 'https://ziontechgroup.com/services/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/services/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Services | Zion Tech Group',
+    description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/services/' },
 };
 
 const CATEGORIES = [

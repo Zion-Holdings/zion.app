@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/edge-computing-deployment-case-study/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Edge Computing Deployment: case study',
+    description: 'Edge Computing Deployment: case study',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/edge-computing-deployment-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: case study", "description": "Edge Computing Deployment: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-case-study/"};

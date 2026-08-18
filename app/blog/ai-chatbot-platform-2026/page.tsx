@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Chatbot Platform 2026',
     description: 'Enterprise chatbot platforms with handoff, context, and governance.',
-    url: 'https://ziontechgroup.com/blog/ai-chatbot-platform-2026/',
+    url: 'https://ziontechgroup.com/blog/ai-chatbot-platform-2026/',  siteName: 'Zion Tech Group',
+
     type: 'article',
-  },
-  alternates: { canonical: '/blog/ai-chatbot-platform-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Chatbot Platform 2026',
+    description: 'Enterprise chatbot platforms with handoff, context, and governance.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-chatbot-platform-2026/' },
 };
 
 export default function Page() {

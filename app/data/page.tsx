@@ -7,10 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Data & Analytics | Zion Tech Group',
     description: 'Governed data pipelines, forecasting, and executive dashboards.',
-    url: 'https://ziontechgroup.com/data/',
+    url: 'https://ziontechgroup.com/data/',  siteName: 'Zion Tech Group',
+
     type: 'website',
-  },
-  alternates: { canonical: '/data/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Data & Analytics | Zion Tech Group',
+    description: 'Governed data pipelines, forecasting, and executive dashboards.',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/data/' },
 };
 
 export default function DataPage() {

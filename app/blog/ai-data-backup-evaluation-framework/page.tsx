@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-data-backup-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/ai-data-backup-evaluation-framework/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Data Backup: evaluation framework',
+    description: 'AI Data Backup: evaluation framework',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/ai-data-backup-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: evaluation framework", "description": "AI Data Backup: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-evaluation-framework/"};

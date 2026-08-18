@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/enterprise-backup-dr-implementation-playbook/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Backup DR: implementation playbook',
+    description: 'Enterprise Backup DR: implementation playbook',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/enterprise-backup-dr-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: implementation playbook", "description": "Enterprise Backup DR: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/"};

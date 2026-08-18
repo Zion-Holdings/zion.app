@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/managed-it-services-small-business-2026/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Managed IT Services',
+    description: 'Managed IT Services',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/managed-it-services-small-business-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services", "description": "Managed IT Services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026/"};

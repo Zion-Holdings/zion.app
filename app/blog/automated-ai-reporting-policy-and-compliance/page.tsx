@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/automated-ai-reporting-policy-and-compliance/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'Automated AI Reporting: policy and compliance',
+    description: 'Automated AI Reporting: policy and compliance',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/automated-ai-reporting-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: policy and compliance", "description": "Automated AI Reporting: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-policy-and-compliance/"};

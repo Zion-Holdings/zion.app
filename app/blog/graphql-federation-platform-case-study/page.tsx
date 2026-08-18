@@ -12,8 +12,12 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
-  alternates: { canonical: '/blog/graphql-federation-platform-case-study/' },
+  },  twitter: {
+    card: 'summary_large_image',
+    title: 'GraphQL Federation Platform: case study',
+    description: 'GraphQL Federation Platform: case study',
+    siteName: 'Zion Tech Group',
+  },alternates: { canonical: '/blog/graphql-federation-platform-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: case study", "description": "GraphQL Federation Platform: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-case-study/"};
