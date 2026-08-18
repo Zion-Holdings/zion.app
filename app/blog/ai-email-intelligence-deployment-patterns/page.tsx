@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Email Intelligence: deployment patterns | Zion Tech Group',
-    description: 'AI Email Intelligence: deployment patterns',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Email Intelligence: deployment patterns',
-    description: 'AI Email Intelligence: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/ai-email-intelligence-deployment-patterns/',
-    type: 'article',
+  description: 'AI Email Intelligence: deployment patterns',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Email Intelligence: deployment patterns',
+  description: 'AI Email Intelligence: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/ai-email-intelligence-deployment-patterns/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Email Intelligence: deployment patterns',
-    description: 'AI Email Intelligence: deployment patterns',
+  card: 'summary_large_image',
+  title: 'AI Email Intelligence: deployment patterns',
+  description: 'AI Email Intelligence: deployment patterns',
   },
-    alternates: { canonical: '/blog/ai-email-intelligence-deployment-patterns/' },
+  alternates: { canonical: '/blog/ai-email-intelligence-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: deployment patterns", "description": "AI Email Intelligence: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-deployment-patterns/"};

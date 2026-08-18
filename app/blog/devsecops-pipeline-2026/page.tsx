@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'DevSecOps Pipeline | Zion Tech Group',
-    description: 'DevSecOps Pipeline',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'DevSecOps Pipeline',
-    description: 'DevSecOps Pipeline',
-    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-2026/',
-    type: 'article',
+  description: 'DevSecOps Pipeline',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'DevSecOps Pipeline',
+  description: 'DevSecOps Pipeline',
+  url: 'https://ziontechgroup.com/blog/devsecops-pipeline-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'DevSecOps Pipeline',
-    description: 'DevSecOps Pipeline',
+  card: 'summary_large_image',
+  title: 'DevSecOps Pipeline',
+  description: 'DevSecOps Pipeline',
   },
-    alternates: { canonical: '/blog/devsecops-pipeline-2026/' },
+  alternates: { canonical: '/blog/devsecops-pipeline-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline", "description": "DevSecOps Pipeline", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-2026/"};

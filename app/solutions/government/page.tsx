@@ -4,17 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Government Solutions | Zion Tech Group',
-    description: 'Secure, compliant AI and infrastructure modernization for government and public sector organizations.',
-    openGraph: {
-    title: 'Government Solutions | Zion Tech Group',
-    description: 'Government delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/government/',
-    type: 'website',
+  description: 'Secure, compliant AI and infrastructure modernization for government and public sector organizations.',
+  openGraph: {
+  title: 'Government Solutions | Zion Tech Group',
+  description: 'Government delivery patterns and AI implementation guidance.',
+  url: 'https://ziontechgroup.com/solutions/government/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Government Solutions | Zion Tech Group',
-    description: 'Government delivery patterns and AI implementation guidance.',
+  card: 'summary_large_image',
+  title: 'Government Solutions | Zion Tech Group',
+  description: 'Government delivery patterns and AI implementation guidance.',
   },
   alternates: { canonical: '/solutions/government/' },
 };

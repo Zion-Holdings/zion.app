@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agent Tool Builder | Zion Tech Group',
-    description: 'AI Agent Tool Builder',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Agent Tool Builder',
-    description: 'AI Agent Tool Builder',
-    url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-2026/',
-    type: 'article',
+  description: 'AI Agent Tool Builder',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Agent Tool Builder',
+  description: 'AI Agent Tool Builder',
+  url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Agent Tool Builder',
-    description: 'AI Agent Tool Builder',
+  card: 'summary_large_image',
+  title: 'AI Agent Tool Builder',
+  description: 'AI Agent Tool Builder',
   },
-    alternates: { canonical: '/blog/ai-agent-tool-builder-2026/' },
+  alternates: { canonical: '/blog/ai-agent-tool-builder-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder", "description": "AI Agent Tool Builder", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-2026/"};

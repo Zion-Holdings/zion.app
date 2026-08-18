@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI MSP Security Compliance: checklist for IT leaders | Zion Tech Group',
   description: 'AI MSP Security Compliance: checklist for IT leaders',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI MSP Security Compliance: checklist for IT leaders',
-    description: 'AI MSP Security Compliance: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-checklist-for-it-leaders/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI MSP Security Compliance: checklist for IT leaders',
+  description: 'AI MSP Security Compliance: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-checklist-for-it-leaders/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-msp-security-compliance-checklist-for-it-leaders/' },
 };

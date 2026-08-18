@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Orchestration Layer: policy and compliance | Zion Tech Group',
-    description: 'API Orchestration Layer: policy and compliance',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Orchestration Layer: policy and compliance',
-    description: 'API Orchestration Layer: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/api-orchestration-layer-policy-and-compliance/',
-    type: 'article',
+  description: 'API Orchestration Layer: policy and compliance',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Orchestration Layer: policy and compliance',
+  description: 'API Orchestration Layer: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/api-orchestration-layer-policy-and-compliance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Orchestration Layer: policy and compliance',
-    description: 'API Orchestration Layer: policy and compliance',
+  card: 'summary_large_image',
+  title: 'API Orchestration Layer: policy and compliance',
+  description: 'API Orchestration Layer: policy and compliance',
   },
-    alternates: { canonical: '/blog/api-orchestration-layer-policy-and-compliance/' },
+  alternates: { canonical: '/blog/api-orchestration-layer-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: policy and compliance", "description": "API Orchestration Layer: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-policy-and-compliance/"};

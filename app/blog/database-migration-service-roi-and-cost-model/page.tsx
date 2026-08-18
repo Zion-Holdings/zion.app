@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Database Migration Service: ROI and cost model | Zion Tech Group',
   description: 'Database Migration Service: ROI and cost model',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Database Migration Service: ROI and cost model',
-    description: 'Database Migration Service: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/database-migration-service-roi-and-cost-model/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Database Migration Service: ROI and cost model',
+  description: 'Database Migration Service: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/database-migration-service-roi-and-cost-model/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/database-migration-service-roi-and-cost-model/' },
 };

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Data Warehouse Modernization | Zion Tech Group',
-    description: 'Data Warehouse Modernization',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Data Warehouse Modernization',
-    description: 'Data Warehouse Modernization',
-    url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-2026/',
-    type: 'article',
+  description: 'Data Warehouse Modernization',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Data Warehouse Modernization',
+  description: 'Data Warehouse Modernization',
+  url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Data Warehouse Modernization',
-    description: 'Data Warehouse Modernization',
+  card: 'summary_large_image',
+  title: 'Data Warehouse Modernization',
+  description: 'Data Warehouse Modernization',
   },
-    alternates: { canonical: '/blog/data-warehouse-modernization-2026/' },
+  alternates: { canonical: '/blog/data-warehouse-modernization-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization", "description": "Data Warehouse Modernization", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-2026/"};

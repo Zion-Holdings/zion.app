@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud FinOps: executive guide | Zion Tech Group',
-    description: 'Cloud FinOps: executive guide',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Cloud FinOps: executive guide',
-    description: 'Cloud FinOps: executive guide',
-    url: 'https://ziontechgroup.com/blog/cloud-finops-executive-guide/',
-    type: 'article',
+  description: 'Cloud FinOps: executive guide',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Cloud FinOps: executive guide',
+  description: 'Cloud FinOps: executive guide',
+  url: 'https://ziontechgroup.com/blog/cloud-finops-executive-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Cloud FinOps: executive guide',
-    description: 'Cloud FinOps: executive guide',
+  card: 'summary_large_image',
+  title: 'Cloud FinOps: executive guide',
+  description: 'Cloud FinOps: executive guide',
   },
-    alternates: { canonical: '/blog/cloud-finops-executive-guide/' },
+  alternates: { canonical: '/blog/cloud-finops-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: executive guide", "description": "Cloud FinOps: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-executive-guide/"};

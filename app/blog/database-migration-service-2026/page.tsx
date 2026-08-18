@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Database Migration Service | Zion Tech Group',
-    description: 'Database Migration Service',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Database Migration Service',
-    description: 'Database Migration Service',
-    url: 'https://ziontechgroup.com/blog/database-migration-service-2026/',
-    type: 'article',
+  description: 'Database Migration Service',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Database Migration Service',
+  description: 'Database Migration Service',
+  url: 'https://ziontechgroup.com/blog/database-migration-service-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Database Migration Service',
-    description: 'Database Migration Service',
+  card: 'summary_large_image',
+  title: 'Database Migration Service',
+  description: 'Database Migration Service',
   },
-    alternates: { canonical: '/blog/database-migration-service-2026/' },
+  alternates: { canonical: '/blog/database-migration-service-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service", "description": "Database Migration Service", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-2026/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Data Analytics Platform: operations handbook | Zion Tech Group',
-    description: 'Data Analytics Platform: operations handbook',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Data Analytics Platform: operations handbook',
-    description: 'Data Analytics Platform: operations handbook',
-    url: 'https://ziontechgroup.com/blog/data-analytics-platform-operations-handbook/',
-    type: 'article',
+  description: 'Data Analytics Platform: operations handbook',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Data Analytics Platform: operations handbook',
+  description: 'Data Analytics Platform: operations handbook',
+  url: 'https://ziontechgroup.com/blog/data-analytics-platform-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Data Analytics Platform: operations handbook',
-    description: 'Data Analytics Platform: operations handbook',
+  card: 'summary_large_image',
+  title: 'Data Analytics Platform: operations handbook',
+  description: 'Data Analytics Platform: operations handbook',
   },
-    alternates: { canonical: '/blog/data-analytics-platform-operations-handbook/' },
+  alternates: { canonical: '/blog/data-analytics-platform-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform: operations handbook", "description": "Data Analytics Platform: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-operations-handbook/"};

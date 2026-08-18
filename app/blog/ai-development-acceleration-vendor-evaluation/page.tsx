@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Development Acceleration: vendor evaluation | Zion Tech Group',
   description: 'AI Development Acceleration: vendor evaluation',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Development Acceleration: vendor evaluation',
-    description: 'AI Development Acceleration: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/ai-development-acceleration-vendor-evaluation/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Development Acceleration: vendor evaluation',
+  description: 'AI Development Acceleration: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/ai-development-acceleration-vendor-evaluation/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-development-acceleration-vendor-evaluation/' },
 };

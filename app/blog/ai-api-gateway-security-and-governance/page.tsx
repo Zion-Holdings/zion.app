@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI API Gateway: security and governance | Zion Tech Group',
-    description: 'AI API Gateway: security and governance',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI API Gateway: security and governance',
-    description: 'AI API Gateway: security and governance',
-    url: 'https://ziontechgroup.com/blog/ai-api-gateway-security-and-governance/',
-    type: 'article',
+  description: 'AI API Gateway: security and governance',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI API Gateway: security and governance',
+  description: 'AI API Gateway: security and governance',
+  url: 'https://ziontechgroup.com/blog/ai-api-gateway-security-and-governance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI API Gateway: security and governance',
-    description: 'AI API Gateway: security and governance',
+  card: 'summary_large_image',
+  title: 'AI API Gateway: security and governance',
+  description: 'AI API Gateway: security and governance',
   },
-    alternates: { canonical: '/blog/ai-api-gateway-security-and-governance/' },
+  alternates: { canonical: '/blog/ai-api-gateway-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: security and governance", "description": "AI API Gateway: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-security-and-governance/"};

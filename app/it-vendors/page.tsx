@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'IT Vendors | Zion Tech Group',
-    description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
-    openGraph: {
-    title: 'IT Vendors | Zion Tech Group',
-    description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
-    url: 'https://ziontechgroup.com/it-vendors/',
-    type: 'website',
+  description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
+  openGraph: {
+  title: 'IT Vendors | Zion Tech Group',
+  description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
+  url: 'https://ziontechgroup.com/it-vendors/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'IT Vendors | Zion Tech Group',
-    description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
+  card: 'summary_large_image',
+  title: 'IT Vendors | Zion Tech Group',
+  description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
   },
-    alternates: { canonical: '/it-vendors/' },
+  alternates: { canonical: '/it-vendors/' },
 };
 
 export default function ItVendorsPage() {

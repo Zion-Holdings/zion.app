@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Network Infrastructure: evaluation framework | Zion Tech Group',
-    description: 'Network Infrastructure: evaluation framework',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Network Infrastructure: evaluation framework',
-    description: 'Network Infrastructure: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/network-infrastructure-evaluation-framework/',
-    type: 'article',
+  description: 'Network Infrastructure: evaluation framework',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Network Infrastructure: evaluation framework',
+  description: 'Network Infrastructure: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/network-infrastructure-evaluation-framework/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Network Infrastructure: evaluation framework',
-    description: 'Network Infrastructure: evaluation framework',
+  card: 'summary_large_image',
+  title: 'Network Infrastructure: evaluation framework',
+  description: 'Network Infrastructure: evaluation framework',
   },
-    alternates: { canonical: '/blog/network-infrastructure-evaluation-framework/' },
+  alternates: { canonical: '/blog/network-infrastructure-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: evaluation framework", "description": "Network Infrastructure: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-evaluation-framework/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Event Driven Architecture: starter template | Zion Tech Group',
-    description: 'Event Driven Architecture: starter template',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Event Driven Architecture: starter template',
-    description: 'Event Driven Architecture: starter template',
-    url: 'https://ziontechgroup.com/blog/event-driven-architecture-starter-template/',
-    type: 'article',
+  description: 'Event Driven Architecture: starter template',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Event Driven Architecture: starter template',
+  description: 'Event Driven Architecture: starter template',
+  url: 'https://ziontechgroup.com/blog/event-driven-architecture-starter-template/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Event Driven Architecture: starter template',
-    description: 'Event Driven Architecture: starter template',
+  card: 'summary_large_image',
+  title: 'Event Driven Architecture: starter template',
+  description: 'Event Driven Architecture: starter template',
   },
-    alternates: { canonical: '/blog/event-driven-architecture-starter-template/' },
+  alternates: { canonical: '/blog/event-driven-architecture-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: starter template", "description": "Event Driven Architecture: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-starter-template/"};

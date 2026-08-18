@@ -1,18 +1,18 @@
 import StandardPage from '@/components/StandardPage';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'UUID Generator — Zion Tech Group',
   description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
   keywords: ['UUID generator', 'ULID generator', 'database keys', 'developer tools'],
   openGraph: {
-    title: 'UUID Generator — Zion Tech Group',
+  title: 'UUID Generator — Zion Tech Group',
   description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
-    url: 'https://ziontechgroup.com/tools/uuid-generator/',
-    type: 'website',
+  url: 'https://ziontechgroup.com/tools/uuid-generator/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'UUID Generator — Zion Tech Group',
+  card: 'summary_large_image',
+  title: 'UUID Generator — Zion Tech Group',
   description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
   },
   alternates: { canonical: '/tools/uuid-generator/' },

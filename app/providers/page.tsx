@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Providers | Zion Tech Group',
-    description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
-    openGraph: {
-    title: 'Providers | Zion Tech Group',
-    description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
-    url: 'https://ziontechgroup.com/providers/',
-    type: 'website',
+  description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
+  openGraph: {
+  title: 'Providers | Zion Tech Group',
+  description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
+  url: 'https://ziontechgroup.com/providers/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Providers | Zion Tech Group',
-    description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
+  card: 'summary_large_image',
+  title: 'Providers | Zion Tech Group',
+  description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
   },
-    alternates: { canonical: '/providers/' },
+  alternates: { canonical: '/providers/' },
 };
 
 export default function ProvidersPage() {

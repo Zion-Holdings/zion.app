@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI BDR SDR: vendor evaluation | Zion Tech Group',
   description: 'AI BDR SDR: vendor evaluation',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI BDR SDR: vendor evaluation',
-    description: 'AI BDR SDR: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-vendor-evaluation/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI BDR SDR: vendor evaluation',
+  description: 'AI BDR SDR: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-vendor-evaluation/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-bdr-sdr-vendor-evaluation/' },
 };

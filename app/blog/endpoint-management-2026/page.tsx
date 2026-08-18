@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Endpoint Management | Zion Tech Group',
-    description: 'Endpoint Management',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Endpoint Management',
-    description: 'Endpoint Management',
-    url: 'https://ziontechgroup.com/blog/endpoint-management-2026/',
-    type: 'article',
+  description: 'Endpoint Management',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Endpoint Management',
+  description: 'Endpoint Management',
+  url: 'https://ziontechgroup.com/blog/endpoint-management-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Endpoint Management',
-    description: 'Endpoint Management',
+  card: 'summary_large_image',
+  title: 'Endpoint Management',
+  description: 'Endpoint Management',
   },
-    alternates: { canonical: '/blog/endpoint-management-2026/' },
+  alternates: { canonical: '/blog/endpoint-management-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management", "description": "Endpoint Management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-2026/"};

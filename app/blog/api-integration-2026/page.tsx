@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Integration | Zion Tech Group',
-    description: 'API Integration',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Integration',
-    description: 'API Integration',
-    url: 'https://ziontechgroup.com/blog/api-integration-2026/',
-    type: 'article',
+  description: 'API Integration',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Integration',
+  description: 'API Integration',
+  url: 'https://ziontechgroup.com/blog/api-integration-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Integration',
-    description: 'API Integration',
+  card: 'summary_large_image',
+  title: 'API Integration',
+  description: 'API Integration',
   },
-    alternates: { canonical: '/blog/api-integration-2026/' },
+  alternates: { canonical: '/blog/api-integration-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration", "description": "API Integration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-2026/"};

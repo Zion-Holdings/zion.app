@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agent Safety Evaluation: architecture overview | Zion Tech Group',
-    description: 'AI Agent Safety Evaluation: architecture overview',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Agent Safety Evaluation: architecture overview',
-    description: 'AI Agent Safety Evaluation: architecture overview',
-    url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-architecture-overview/',
-    type: 'article',
+  description: 'AI Agent Safety Evaluation: architecture overview',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Agent Safety Evaluation: architecture overview',
+  description: 'AI Agent Safety Evaluation: architecture overview',
+  url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-architecture-overview/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Agent Safety Evaluation: architecture overview',
-    description: 'AI Agent Safety Evaluation: architecture overview',
+  card: 'summary_large_image',
+  title: 'AI Agent Safety Evaluation: architecture overview',
+  description: 'AI Agent Safety Evaluation: architecture overview',
   },
-    alternates: { canonical: '/blog/ai-agent-safety-evaluation-architecture-overview/' },
+  alternates: { canonical: '/blog/ai-agent-safety-evaluation-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: architecture overview", "description": "AI Agent Safety Evaluation: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-architecture-overview/"};

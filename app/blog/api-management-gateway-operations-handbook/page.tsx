@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Management Gateway: operations handbook | Zion Tech Group',
   description: 'API Management Gateway: operations handbook',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Management Gateway: operations handbook',
-    description: 'API Management Gateway: operations handbook',
-    url: 'https://ziontechgroup.com/blog/api-management-gateway-operations-handbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'API Management Gateway: operations handbook',
+  description: 'API Management Gateway: operations handbook',
+  url: 'https://ziontechgroup.com/blog/api-management-gateway-operations-handbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-management-gateway-operations-handbook/' },
 };

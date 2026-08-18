@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS Translation Engine: architecture overview | Zion Tech Group',
   description: 'MicroSaaS Translation Engine: architecture overview',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS Translation Engine: architecture overview',
-    description: 'MicroSaaS Translation Engine: architecture overview',
-    url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-architecture-overview/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'MicroSaaS Translation Engine: architecture overview',
+  description: 'MicroSaaS Translation Engine: architecture overview',
+  url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-architecture-overview/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/microsaas-translation-engine-architecture-overview/' },
 };

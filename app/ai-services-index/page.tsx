@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI Services Index | Zion Tech Group',
-    description: 'Index of Zion Tech Group AI services and solutions.',
-    openGraph: {
-    title: 'AI Services Index | Zion Tech Group',
-    description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',
-    url: 'https://ziontechgroup.com/ai-services/',
-    type: 'website',
+  description: 'Index of Zion Tech Group AI services and solutions.',
+  openGraph: {
+  title: 'AI Services Index | Zion Tech Group',
+  description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',
+  url: 'https://ziontechgroup.com/ai-services/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Services Index | Zion Tech Group',
-    description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',
+  card: 'summary_large_image',
+  title: 'AI Services Index | Zion Tech Group',
+  description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',
   },
-    alternates: { canonical: '/ai-services/' },
+  alternates: { canonical: '/ai-services/' },
 };
 
 export default function AiServicesIndexPage() {

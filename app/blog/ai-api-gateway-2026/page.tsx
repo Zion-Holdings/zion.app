@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI API Gateway | Zion Tech Group',
-    description: 'AI API Gateway',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI API Gateway',
-    description: 'AI API Gateway',
-    url: 'https://ziontechgroup.com/blog/ai-api-gateway-2026/',
-    type: 'article',
+  description: 'AI API Gateway',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI API Gateway',
+  description: 'AI API Gateway',
+  url: 'https://ziontechgroup.com/blog/ai-api-gateway-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI API Gateway',
-    description: 'AI API Gateway',
+  card: 'summary_large_image',
+  title: 'AI API Gateway',
+  description: 'AI API Gateway',
   },
-    alternates: { canonical: '/blog/ai-api-gateway-2026/' },
+  alternates: { canonical: '/blog/ai-api-gateway-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway", "description": "AI API Gateway", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-2026/"};

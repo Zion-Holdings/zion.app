@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Free AI & IT Tools | Zion Tech Group',
-    description: 'Free developer tools from Zion Tech Group: JSON formatter, JWT decoder, regex tester, QR generator, and more.',
-    openGraph: {
-    title: 'Free AI & IT Tools | Zion Tech Group',
-    description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
-    url: 'https://ziontechgroup.com/free-ai-it-tools/',
-    type: 'website',
+  description: 'Free developer tools from Zion Tech Group: JSON formatter, JWT decoder, regex tester, QR generator, and more.',
+  openGraph: {
+  title: 'Free AI & IT Tools | Zion Tech Group',
+  description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
+  url: 'https://ziontechgroup.com/free-ai-it-tools/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Free AI & IT Tools | Zion Tech Group',
-    description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
+  card: 'summary_large_image',
+  title: 'Free AI & IT Tools | Zion Tech Group',
+  description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
   },
-    alternates: { canonical: '/free-ai-it-tools/' },
+  alternates: { canonical: '/free-ai-it-tools/' },
 };
 
 export default function FreeAiItToolsPage() {

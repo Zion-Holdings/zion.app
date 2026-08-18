@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agent Tool Builder: policy and compliance | Zion Tech Group',
-    description: 'AI Agent Tool Builder: policy and compliance',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Agent Tool Builder: policy and compliance',
-    description: 'AI Agent Tool Builder: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/',
-    type: 'article',
+  description: 'AI Agent Tool Builder: policy and compliance',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Agent Tool Builder: policy and compliance',
+  description: 'AI Agent Tool Builder: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Agent Tool Builder: policy and compliance',
-    description: 'AI Agent Tool Builder: policy and compliance',
+  card: 'summary_large_image',
+  title: 'AI Agent Tool Builder: policy and compliance',
+  description: 'AI Agent Tool Builder: policy and compliance',
   },
-    alternates: { canonical: '/blog/ai-agent-tool-builder-policy-and-compliance/' },
+  alternates: { canonical: '/blog/ai-agent-tool-builder-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: policy and compliance", "description": "AI Agent Tool Builder: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/"};

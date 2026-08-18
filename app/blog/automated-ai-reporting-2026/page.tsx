@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Automated AI Reporting | Zion Tech Group',
-    description: 'Automated AI Reporting',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Automated AI Reporting',
-    description: 'Automated AI Reporting',
-    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-2026/',
-    type: 'article',
+  description: 'Automated AI Reporting',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Automated AI Reporting',
+  description: 'Automated AI Reporting',
+  url: 'https://ziontechgroup.com/blog/automated-ai-reporting-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Automated AI Reporting',
-    description: 'Automated AI Reporting',
+  card: 'summary_large_image',
+  title: 'Automated AI Reporting',
+  description: 'Automated AI Reporting',
   },
-    alternates: { canonical: '/blog/automated-ai-reporting-2026/' },
+  alternates: { canonical: '/blog/automated-ai-reporting-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting", "description": "Automated AI Reporting", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-2026/"};

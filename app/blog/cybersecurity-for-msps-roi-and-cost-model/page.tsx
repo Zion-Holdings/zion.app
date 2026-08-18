@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cybersecurity for MSPs: ROI and cost model | Zion Tech Group',
-    description: 'Cybersecurity for MSPs: ROI and cost model',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Cybersecurity for MSPs: ROI and cost model',
-    description: 'Cybersecurity for MSPs: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-roi-and-cost-model/',
-    type: 'article',
+  description: 'Cybersecurity for MSPs: ROI and cost model',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Cybersecurity for MSPs: ROI and cost model',
+  description: 'Cybersecurity for MSPs: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-roi-and-cost-model/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Cybersecurity for MSPs: ROI and cost model',
-    description: 'Cybersecurity for MSPs: ROI and cost model',
+  card: 'summary_large_image',
+  title: 'Cybersecurity for MSPs: ROI and cost model',
+  description: 'Cybersecurity for MSPs: ROI and cost model',
   },
-    alternates: { canonical: '/blog/cybersecurity-for-msps-roi-and-cost-model/' },
+  alternates: { canonical: '/blog/cybersecurity-for-msps-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: ROI and cost model", "description": "Cybersecurity for MSPs: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-roi-and-cost-model/"};

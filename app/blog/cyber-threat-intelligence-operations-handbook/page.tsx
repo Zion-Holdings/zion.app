@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cyber Threat Intelligence: operations handbook | Zion Tech Group',
-    description: 'Cyber Threat Intelligence: operations handbook',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Cyber Threat Intelligence: operations handbook',
-    description: 'Cyber Threat Intelligence: operations handbook',
-    url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-operations-handbook/',
-    type: 'article',
+  description: 'Cyber Threat Intelligence: operations handbook',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Cyber Threat Intelligence: operations handbook',
+  description: 'Cyber Threat Intelligence: operations handbook',
+  url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Cyber Threat Intelligence: operations handbook',
-    description: 'Cyber Threat Intelligence: operations handbook',
+  card: 'summary_large_image',
+  title: 'Cyber Threat Intelligence: operations handbook',
+  description: 'Cyber Threat Intelligence: operations handbook',
   },
-    alternates: { canonical: '/blog/cyber-threat-intelligence-operations-handbook/' },
+  alternates: { canonical: '/blog/cyber-threat-intelligence-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: operations handbook", "description": "Cyber Threat Intelligence: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-operations-handbook/"};

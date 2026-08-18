@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Data Analytics Platform: evaluation framework | Zion Tech Group',
-    description: 'Data Analytics Platform: evaluation framework',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Data Analytics Platform: evaluation framework',
-    description: 'Data Analytics Platform: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/data-analytics-platform-evaluation-framework/',
-    type: 'article',
+  description: 'Data Analytics Platform: evaluation framework',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Data Analytics Platform: evaluation framework',
+  description: 'Data Analytics Platform: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/data-analytics-platform-evaluation-framework/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Data Analytics Platform: evaluation framework',
-    description: 'Data Analytics Platform: evaluation framework',
+  card: 'summary_large_image',
+  title: 'Data Analytics Platform: evaluation framework',
+  description: 'Data Analytics Platform: evaluation framework',
   },
-    alternates: { canonical: '/blog/data-analytics-platform-evaluation-framework/' },
+  alternates: { canonical: '/blog/data-analytics-platform-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform: evaluation framework", "description": "Data Analytics Platform: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-evaluation-framework/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Chaos Engineering: architecture overview | Zion Tech Group',
-    description: 'Chaos Engineering: architecture overview',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Chaos Engineering: architecture overview',
-    description: 'Chaos Engineering: architecture overview',
-    url: 'https://ziontechgroup.com/blog/chaos-engineering-architecture-overview/',
-    type: 'article',
+  description: 'Chaos Engineering: architecture overview',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Chaos Engineering: architecture overview',
+  description: 'Chaos Engineering: architecture overview',
+  url: 'https://ziontechgroup.com/blog/chaos-engineering-architecture-overview/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Chaos Engineering: architecture overview',
-    description: 'Chaos Engineering: architecture overview',
+  card: 'summary_large_image',
+  title: 'Chaos Engineering: architecture overview',
+  description: 'Chaos Engineering: architecture overview',
   },
-    alternates: { canonical: '/blog/chaos-engineering-architecture-overview/' },
+  alternates: { canonical: '/blog/chaos-engineering-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: architecture overview", "description": "Chaos Engineering: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-architecture-overview/"};

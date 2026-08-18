@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'IT Consulting: common mistakes | Zion Tech Group',
   description: 'IT Consulting: common mistakes',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'IT Consulting: common mistakes',
-    description: 'IT Consulting: common mistakes',
-    url: 'https://ziontechgroup.com/blog/it-consulting-common-mistakes/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'IT Consulting: common mistakes',
+  description: 'IT Consulting: common mistakes',
+  url: 'https://ziontechgroup.com/blog/it-consulting-common-mistakes/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/it-consulting-common-mistakes/' },
 };

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS Translation Engine: evaluation framework | Zion Tech Group',
-    description: 'MicroSaaS Translation Engine: evaluation framework',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'MicroSaaS Translation Engine: evaluation framework',
-    description: 'MicroSaaS Translation Engine: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-evaluation-framework/',
-    type: 'article',
+  description: 'MicroSaaS Translation Engine: evaluation framework',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'MicroSaaS Translation Engine: evaluation framework',
+  description: 'MicroSaaS Translation Engine: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-evaluation-framework/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'MicroSaaS Translation Engine: evaluation framework',
-    description: 'MicroSaaS Translation Engine: evaluation framework',
+  card: 'summary_large_image',
+  title: 'MicroSaaS Translation Engine: evaluation framework',
+  description: 'MicroSaaS Translation Engine: evaluation framework',
   },
-    alternates: { canonical: '/blog/microsaas-translation-engine-evaluation-framework/' },
+  alternates: { canonical: '/blog/microsaas-translation-engine-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: evaluation framework", "description": "MicroSaaS Translation Engine: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-evaluation-framework/"};

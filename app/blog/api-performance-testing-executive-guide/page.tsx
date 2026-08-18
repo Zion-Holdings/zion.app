@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Performance Testing: executive guide | Zion Tech Group',
-    description: 'API Performance Testing: executive guide',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Performance Testing: executive guide',
-    description: 'API Performance Testing: executive guide',
-    url: 'https://ziontechgroup.com/blog/api-performance-testing-executive-guide/',
-    type: 'article',
+  description: 'API Performance Testing: executive guide',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Performance Testing: executive guide',
+  description: 'API Performance Testing: executive guide',
+  url: 'https://ziontechgroup.com/blog/api-performance-testing-executive-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Performance Testing: executive guide',
-    description: 'API Performance Testing: executive guide',
+  card: 'summary_large_image',
+  title: 'API Performance Testing: executive guide',
+  description: 'API Performance Testing: executive guide',
   },
-    alternates: { canonical: '/blog/api-performance-testing-executive-guide/' },
+  alternates: { canonical: '/blog/api-performance-testing-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: executive guide", "description": "API Performance Testing: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-executive-guide/"};

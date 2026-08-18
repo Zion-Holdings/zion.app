@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Endpoint Management: checklist for IT leaders | Zion Tech Group',
   description: 'Endpoint Management: checklist for IT leaders',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Endpoint Management: checklist for IT leaders',
-    description: 'Endpoint Management: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/endpoint-management-checklist-for-it-leaders/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Endpoint Management: checklist for IT leaders',
+  description: 'Endpoint Management: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/endpoint-management-checklist-for-it-leaders/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/endpoint-management-checklist-for-it-leaders/' },
 };

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Edge Computing Deployment: vendor evaluation | Zion Tech Group',
   description: 'Edge Computing Deployment: vendor evaluation',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Edge Computing Deployment: vendor evaluation',
-    description: 'Edge Computing Deployment: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/edge-computing-deployment-vendor-evaluation/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Edge Computing Deployment: vendor evaluation',
+  description: 'Edge Computing Deployment: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/edge-computing-deployment-vendor-evaluation/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/edge-computing-deployment-vendor-evaluation/' },
 };

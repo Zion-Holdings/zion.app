@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cyber Threat Intelligence: common mistakes | Zion Tech Group',
-    description: 'Cyber Threat Intelligence: common mistakes',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Cyber Threat Intelligence: common mistakes',
-    description: 'Cyber Threat Intelligence: common mistakes',
-    url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-common-mistakes/',
-    type: 'article',
+  description: 'Cyber Threat Intelligence: common mistakes',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Cyber Threat Intelligence: common mistakes',
+  description: 'Cyber Threat Intelligence: common mistakes',
+  url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-common-mistakes/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Cyber Threat Intelligence: common mistakes',
-    description: 'Cyber Threat Intelligence: common mistakes',
+  card: 'summary_large_image',
+  title: 'Cyber Threat Intelligence: common mistakes',
+  description: 'Cyber Threat Intelligence: common mistakes',
   },
-    alternates: { canonical: '/blog/cyber-threat-intelligence-common-mistakes/' },
+  alternates: { canonical: '/blog/cyber-threat-intelligence-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: common mistakes", "description": "Cyber Threat Intelligence: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-common-mistakes/"};

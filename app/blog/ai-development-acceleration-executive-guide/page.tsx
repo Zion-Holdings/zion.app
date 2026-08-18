@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Development Acceleration: executive guide | Zion Tech Group',
-    description: 'AI Development Acceleration: executive guide',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Development Acceleration: executive guide',
-    description: 'AI Development Acceleration: executive guide',
-    url: 'https://ziontechgroup.com/blog/ai-development-acceleration-executive-guide/',
-    type: 'article',
+  description: 'AI Development Acceleration: executive guide',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Development Acceleration: executive guide',
+  description: 'AI Development Acceleration: executive guide',
+  url: 'https://ziontechgroup.com/blog/ai-development-acceleration-executive-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Development Acceleration: executive guide',
-    description: 'AI Development Acceleration: executive guide',
+  card: 'summary_large_image',
+  title: 'AI Development Acceleration: executive guide',
+  description: 'AI Development Acceleration: executive guide',
   },
-    alternates: { canonical: '/blog/ai-development-acceleration-executive-guide/' },
+  alternates: { canonical: '/blog/ai-development-acceleration-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Development Acceleration: executive guide", "description": "AI Development Acceleration: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-development-acceleration-executive-guide/"};

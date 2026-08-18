@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Customer Support: implementation playbook | Zion Tech Group',
   description: 'AI Customer Support: implementation playbook',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Customer Support: implementation playbook',
-    description: 'AI Customer Support: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/ai-customer-support-implementation-playbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Customer Support: implementation playbook',
+  description: 'AI Customer Support: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/ai-customer-support-implementation-playbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-customer-support-implementation-playbook/' },
 };

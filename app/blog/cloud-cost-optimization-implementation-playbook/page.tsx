@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Cost Optimization: implementation playbook | Zion Tech Group',
   description: 'Cloud Cost Optimization: implementation playbook',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Cost Optimization: implementation playbook',
-    description: 'Cloud Cost Optimization: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-implementation-playbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Cloud Cost Optimization: implementation playbook',
+  description: 'Cloud Cost Optimization: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-implementation-playbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-cost-optimization-implementation-playbook/' },
 };

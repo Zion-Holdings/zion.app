@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Data Analytics Platform | Zion Tech Group',
-    description: 'Data Analytics Platform',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Data Analytics Platform',
-    description: 'Data Analytics Platform',
-    url: 'https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026/',
-    type: 'article',
+  description: 'Data Analytics Platform',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Data Analytics Platform',
+  description: 'Data Analytics Platform',
+  url: 'https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Data Analytics Platform',
-    description: 'Data Analytics Platform',
+  card: 'summary_large_image',
+  title: 'Data Analytics Platform',
+  description: 'Data Analytics Platform',
   },
-    alternates: { canonical: '/blog/data-analytics-platform-modern-enterprise-2026/' },
+  alternates: { canonical: '/blog/data-analytics-platform-modern-enterprise-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform", "description": "Data Analytics Platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Automated AI Reporting: architecture overview | Zion Tech Group',
-    description: 'Automated AI Reporting: architecture overview',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Automated AI Reporting: architecture overview',
-    description: 'Automated AI Reporting: architecture overview',
-    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-architecture-overview/',
-    type: 'article',
+  description: 'Automated AI Reporting: architecture overview',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Automated AI Reporting: architecture overview',
+  description: 'Automated AI Reporting: architecture overview',
+  url: 'https://ziontechgroup.com/blog/automated-ai-reporting-architecture-overview/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Automated AI Reporting: architecture overview',
-    description: 'Automated AI Reporting: architecture overview',
+  card: 'summary_large_image',
+  title: 'Automated AI Reporting: architecture overview',
+  description: 'Automated AI Reporting: architecture overview',
   },
-    alternates: { canonical: '/blog/automated-ai-reporting-architecture-overview/' },
+  alternates: { canonical: '/blog/automated-ai-reporting-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: architecture overview", "description": "Automated AI Reporting: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-architecture-overview/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Event Driven Architecture | Zion Tech Group',
-    description: 'Event Driven Architecture',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Event Driven Architecture',
-    description: 'Event Driven Architecture',
-    url: 'https://ziontechgroup.com/blog/event-driven-architecture-2026/',
-    type: 'article',
+  description: 'Event Driven Architecture',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Event Driven Architecture',
+  description: 'Event Driven Architecture',
+  url: 'https://ziontechgroup.com/blog/event-driven-architecture-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Event Driven Architecture',
-    description: 'Event Driven Architecture',
+  card: 'summary_large_image',
+  title: 'Event Driven Architecture',
+  description: 'Event Driven Architecture',
   },
-    alternates: { canonical: '/blog/event-driven-architecture-2026/' },
+  alternates: { canonical: '/blog/event-driven-architecture-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture", "description": "Event Driven Architecture", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-2026/"};

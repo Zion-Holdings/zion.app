@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Observability: deployment patterns | Zion Tech Group',
   description: 'AI Observability: deployment patterns',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Observability: deployment patterns',
-    description: 'AI Observability: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/ai-observability-deployment-patterns/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Observability: deployment patterns',
+  description: 'AI Observability: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/ai-observability-deployment-patterns/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-observability-deployment-patterns/' },
 };

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Enterprise AI Intelligence Hub: operations handbook | Zion Tech Group',
-    description: 'Enterprise AI Intelligence Hub: operations handbook',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Enterprise AI Intelligence Hub: operations handbook',
-    description: 'Enterprise AI Intelligence Hub: operations handbook',
-    url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/',
-    type: 'article',
+  description: 'Enterprise AI Intelligence Hub: operations handbook',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Enterprise AI Intelligence Hub: operations handbook',
+  description: 'Enterprise AI Intelligence Hub: operations handbook',
+  url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Enterprise AI Intelligence Hub: operations handbook',
-    description: 'Enterprise AI Intelligence Hub: operations handbook',
+  card: 'summary_large_image',
+  title: 'Enterprise AI Intelligence Hub: operations handbook',
+  description: 'Enterprise AI Intelligence Hub: operations handbook',
   },
-    alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-operations-handbook/' },
+  alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: operations handbook", "description": "Enterprise AI Intelligence Hub: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Customer Support: architecture overview | Zion Tech Group',
-    description: 'AI Customer Support: architecture overview',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Customer Support: architecture overview',
-    description: 'AI Customer Support: architecture overview',
-    url: 'https://ziontechgroup.com/blog/ai-customer-support-architecture-overview/',
-    type: 'article',
+  description: 'AI Customer Support: architecture overview',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Customer Support: architecture overview',
+  description: 'AI Customer Support: architecture overview',
+  url: 'https://ziontechgroup.com/blog/ai-customer-support-architecture-overview/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Customer Support: architecture overview',
-    description: 'AI Customer Support: architecture overview',
+  card: 'summary_large_image',
+  title: 'AI Customer Support: architecture overview',
+  description: 'AI Customer Support: architecture overview',
   },
-    alternates: { canonical: '/blog/ai-customer-support-architecture-overview/' },
+  alternates: { canonical: '/blog/ai-customer-support-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support: architecture overview", "description": "AI Customer Support: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-architecture-overview/"};

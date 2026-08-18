@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'GenAI DevOps CI/CD: security and governance | Zion Tech Group',
   description: 'GenAI DevOps CI/CD: security and governance',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GenAI DevOps CI/CD: security and governance',
-    description: 'GenAI DevOps CI/CD: security and governance',
-    url: 'https://ziontechgroup.com/blog/genai-devops-cicd-security-and-governance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'GenAI DevOps CI/CD: security and governance',
+  description: 'GenAI DevOps CI/CD: security and governance',
+  url: 'https://ziontechgroup.com/blog/genai-devops-cicd-security-and-governance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/genai-devops-cicd-security-and-governance/' },
 };

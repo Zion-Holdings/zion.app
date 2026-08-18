@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Accessibility Compliance: evaluation framework | Zion Tech Group',
-    description: 'Accessibility Compliance: evaluation framework',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Accessibility Compliance: evaluation framework',
-    description: 'Accessibility Compliance: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/accessibility-compliance-evaluation-framework/',
-    type: 'article',
+  description: 'Accessibility Compliance: evaluation framework',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Accessibility Compliance: evaluation framework',
+  description: 'Accessibility Compliance: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/accessibility-compliance-evaluation-framework/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Accessibility Compliance: evaluation framework',
-    description: 'Accessibility Compliance: evaluation framework',
+  card: 'summary_large_image',
+  title: 'Accessibility Compliance: evaluation framework',
+  description: 'Accessibility Compliance: evaluation framework',
   },
-    alternates: { canonical: '/blog/accessibility-compliance-evaluation-framework/' },
+  alternates: { canonical: '/blog/accessibility-compliance-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: evaluation framework", "description": "Accessibility Compliance: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-evaluation-framework/"};

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS Social Media Manager: checklist for IT leaders | Zion Tech Group',
   description: 'MicroSaaS Social Media Manager: checklist for IT leaders',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS Social Media Manager: checklist for IT leaders',
-    description: 'MicroSaaS Social Media Manager: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-checklist-for-it-leaders/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'MicroSaaS Social Media Manager: checklist for IT leaders',
+  description: 'MicroSaaS Social Media Manager: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-checklist-for-it-leaders/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/microsaas-social-media-manager-checklist-for-it-leaders/' },
 };

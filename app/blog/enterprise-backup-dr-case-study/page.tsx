@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Enterprise Backup DR: case study | Zion Tech Group',
   description: 'Enterprise Backup DR: case study',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Enterprise Backup DR: case study',
-    description: 'Enterprise Backup DR: case study',
-    url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-case-study/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Enterprise Backup DR: case study',
+  description: 'Enterprise Backup DR: case study',
+  url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-case-study/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/enterprise-backup-dr-case-study/' },
 };

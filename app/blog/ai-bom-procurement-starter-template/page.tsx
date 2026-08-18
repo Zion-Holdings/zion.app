@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI BOM Procurement: starter template | Zion Tech Group',
-    description: 'AI BOM Procurement: starter template',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI BOM Procurement: starter template',
-    description: 'AI BOM Procurement: starter template',
-    url: 'https://ziontechgroup.com/blog/ai-bom-procurement-starter-template/',
-    type: 'article',
+  description: 'AI BOM Procurement: starter template',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI BOM Procurement: starter template',
+  description: 'AI BOM Procurement: starter template',
+  url: 'https://ziontechgroup.com/blog/ai-bom-procurement-starter-template/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI BOM Procurement: starter template',
-    description: 'AI BOM Procurement: starter template',
+  card: 'summary_large_image',
+  title: 'AI BOM Procurement: starter template',
+  description: 'AI BOM Procurement: starter template',
   },
-    alternates: { canonical: '/blog/ai-bom-procurement-starter-template/' },
+  alternates: { canonical: '/blog/ai-bom-procurement-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: starter template", "description": "AI BOM Procurement: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-starter-template/"};

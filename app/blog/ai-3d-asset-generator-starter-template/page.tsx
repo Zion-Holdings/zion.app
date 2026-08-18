@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI 3D Asset Generator: starter template | Zion Tech Group',
   description: 'AI 3D Asset Generator: starter template',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI 3D Asset Generator: starter template',
-    description: 'AI 3D Asset Generator: starter template',
-    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-starter-template/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI 3D Asset Generator: starter template',
+  description: 'AI 3D Asset Generator: starter template',
+  url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-starter-template/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-3d-asset-generator-starter-template/' },
 };

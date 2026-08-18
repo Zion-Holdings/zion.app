@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI MSP Security Compliance: case study | Zion Tech Group',
   description: 'AI MSP Security Compliance: case study',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI MSP Security Compliance: case study',
-    description: 'AI MSP Security Compliance: case study',
-    url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-case-study/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI MSP Security Compliance: case study',
+  description: 'AI MSP Security Compliance: case study',
+  url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-case-study/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-msp-security-compliance-case-study/' },
 };

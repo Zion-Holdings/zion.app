@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Autonomous Agents: checklist for IT leaders | Zion Tech Group',
   description: 'AI Autonomous Agents: checklist for IT leaders',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Autonomous Agents: checklist for IT leaders',
-    description: 'AI Autonomous Agents: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-checklist-for-it-leaders/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Autonomous Agents: checklist for IT leaders',
+  description: 'AI Autonomous Agents: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-checklist-for-it-leaders/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-autonomous-agents-checklist-for-it-leaders/' },
 };

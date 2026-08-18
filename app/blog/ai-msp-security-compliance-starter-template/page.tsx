@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI MSP Security Compliance: starter template | Zion Tech Group',
-    description: 'AI MSP Security Compliance: starter template',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI MSP Security Compliance: starter template',
-    description: 'AI MSP Security Compliance: starter template',
-    url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-starter-template/',
-    type: 'article',
+  description: 'AI MSP Security Compliance: starter template',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI MSP Security Compliance: starter template',
+  description: 'AI MSP Security Compliance: starter template',
+  url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-starter-template/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI MSP Security Compliance: starter template',
-    description: 'AI MSP Security Compliance: starter template',
+  card: 'summary_large_image',
+  title: 'AI MSP Security Compliance: starter template',
+  description: 'AI MSP Security Compliance: starter template',
   },
-    alternates: { canonical: '/blog/ai-msp-security-compliance-starter-template/' },
+  alternates: { canonical: '/blog/ai-msp-security-compliance-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: starter template", "description": "AI MSP Security Compliance: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-starter-template/"};

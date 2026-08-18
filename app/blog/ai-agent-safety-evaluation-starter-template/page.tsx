@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agent Safety Evaluation: starter template | Zion Tech Group',
-    description: 'AI Agent Safety Evaluation: starter template',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Agent Safety Evaluation: starter template',
-    description: 'AI Agent Safety Evaluation: starter template',
-    url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-starter-template/',
-    type: 'article',
+  description: 'AI Agent Safety Evaluation: starter template',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Agent Safety Evaluation: starter template',
+  description: 'AI Agent Safety Evaluation: starter template',
+  url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-starter-template/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Agent Safety Evaluation: starter template',
-    description: 'AI Agent Safety Evaluation: starter template',
+  card: 'summary_large_image',
+  title: 'AI Agent Safety Evaluation: starter template',
+  description: 'AI Agent Safety Evaluation: starter template',
   },
-    alternates: { canonical: '/blog/ai-agent-safety-evaluation-starter-template/' },
+  alternates: { canonical: '/blog/ai-agent-safety-evaluation-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: starter template", "description": "AI Agent Safety Evaluation: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-starter-template/"};

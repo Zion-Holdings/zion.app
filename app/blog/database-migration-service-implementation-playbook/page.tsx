@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Database Migration Service: implementation playbook | Zion Tech Group',
-    description: 'Database Migration Service: implementation playbook',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Database Migration Service: implementation playbook',
-    description: 'Database Migration Service: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/database-migration-service-implementation-playbook/',
-    type: 'article',
+  description: 'Database Migration Service: implementation playbook',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Database Migration Service: implementation playbook',
+  description: 'Database Migration Service: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/database-migration-service-implementation-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Database Migration Service: implementation playbook',
-    description: 'Database Migration Service: implementation playbook',
+  card: 'summary_large_image',
+  title: 'Database Migration Service: implementation playbook',
+  description: 'Database Migration Service: implementation playbook',
   },
-    alternates: { canonical: '/blog/database-migration-service-implementation-playbook/' },
+  alternates: { canonical: '/blog/database-migration-service-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: implementation playbook", "description": "Database Migration Service: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:16Z", "dateModified": "2026-08-17T23:41:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-implementation-playbook/"};

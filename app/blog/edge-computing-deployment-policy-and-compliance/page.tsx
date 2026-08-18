@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Edge Computing Deployment: policy and compliance | Zion Tech Group',
-    description: 'Edge Computing Deployment: policy and compliance',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Edge Computing Deployment: policy and compliance',
-    description: 'Edge Computing Deployment: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/edge-computing-deployment-policy-and-compliance/',
-    type: 'article',
+  description: 'Edge Computing Deployment: policy and compliance',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Edge Computing Deployment: policy and compliance',
+  description: 'Edge Computing Deployment: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/edge-computing-deployment-policy-and-compliance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Edge Computing Deployment: policy and compliance',
-    description: 'Edge Computing Deployment: policy and compliance',
+  card: 'summary_large_image',
+  title: 'Edge Computing Deployment: policy and compliance',
+  description: 'Edge Computing Deployment: policy and compliance',
   },
-    alternates: { canonical: '/blog/edge-computing-deployment-policy-and-compliance/' },
+  alternates: { canonical: '/blog/edge-computing-deployment-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: policy and compliance", "description": "Edge Computing Deployment: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-policy-and-compliance/"};

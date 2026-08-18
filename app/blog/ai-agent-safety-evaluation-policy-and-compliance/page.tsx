@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agent Safety Evaluation: policy and compliance | Zion Tech Group',
   description: 'AI Agent Safety Evaluation: policy and compliance',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agent Safety Evaluation: policy and compliance',
-    description: 'AI Agent Safety Evaluation: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-policy-and-compliance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Agent Safety Evaluation: policy and compliance',
+  description: 'AI Agent Safety Evaluation: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-policy-and-compliance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-policy-and-compliance/' },
 };

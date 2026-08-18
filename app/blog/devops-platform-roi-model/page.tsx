@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Devops Platform Roi Model | Zion Tech Group',
-    description: 'Implementation patterns, risks, and next steps for devops platform roi model.',
-    openGraph: {
-    title: 'Devops Platform Roi Model | Zion Tech Group',
-    description: 'Practical guidance for devops platform roi model.',
-    url: 'https://ziontechgroup.com/blog/devops-platform-roi-model/',
-    type: 'article',
+  description: 'Implementation patterns, risks, and next steps for devops platform roi model.',
+  openGraph: {
+  title: 'Devops Platform Roi Model | Zion Tech Group',
+  description: 'Practical guidance for devops platform roi model.',
+  url: 'https://ziontechgroup.com/blog/devops-platform-roi-model/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Devops Platform Roi Model | Zion Tech Group',
-    description: 'Practical guidance for devops platform roi model.',
+  card: 'summary_large_image',
+  title: 'Devops Platform Roi Model | Zion Tech Group',
+  description: 'Practical guidance for devops platform roi model.',
   },
-    alternates: { canonical: '/blog/devops-platform-roi-model/' },
+  alternates: { canonical: '/blog/devops-platform-roi-model/' },
 };
 
 export default function PostPage() {

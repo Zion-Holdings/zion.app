@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AIOps Anomaly Detection: policy and compliance | Zion Tech Group',
-    description: 'AIOps Anomaly Detection: policy and compliance',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AIOps Anomaly Detection: policy and compliance',
-    description: 'AIOps Anomaly Detection: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-policy-and-compliance/',
-    type: 'article',
+  description: 'AIOps Anomaly Detection: policy and compliance',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AIOps Anomaly Detection: policy and compliance',
+  description: 'AIOps Anomaly Detection: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-policy-and-compliance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AIOps Anomaly Detection: policy and compliance',
-    description: 'AIOps Anomaly Detection: policy and compliance',
+  card: 'summary_large_image',
+  title: 'AIOps Anomaly Detection: policy and compliance',
+  description: 'AIOps Anomaly Detection: policy and compliance',
   },
-    alternates: { canonical: '/blog/aiops-anomaly-detection-policy-and-compliance/' },
+  alternates: { canonical: '/blog/aiops-anomaly-detection-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: policy and compliance", "description": "AIOps Anomaly Detection: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-policy-and-compliance/"};

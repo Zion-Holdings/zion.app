@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Integration: security and governance | Zion Tech Group',
-    description: 'API Integration: security and governance',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Integration: security and governance',
-    description: 'API Integration: security and governance',
-    url: 'https://ziontechgroup.com/blog/api-integration-security-and-governance/',
-    type: 'article',
+  description: 'API Integration: security and governance',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Integration: security and governance',
+  description: 'API Integration: security and governance',
+  url: 'https://ziontechgroup.com/blog/api-integration-security-and-governance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Integration: security and governance',
-    description: 'API Integration: security and governance',
+  card: 'summary_large_image',
+  title: 'API Integration: security and governance',
+  description: 'API Integration: security and governance',
   },
-    alternates: { canonical: '/blog/api-integration-security-and-governance/' },
+  alternates: { canonical: '/blog/api-integration-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: security and governance", "description": "API Integration: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-security-and-governance/"};

@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Timestamp Converter | Zion Tech Group',
-    description: 'Convert Unix timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.',
-    openGraph: {
-    title: 'Timestamp Converter | Zion Tech Group',
-    description: 'Free online Unix timestamp converter — seconds, milliseconds, ISO 8601.',
-    url: 'https://ziontechgroup.com/tools/timestamp-converter/',
-    type: 'website',
+  description: 'Convert Unix timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.',
+  openGraph: {
+  title: 'Timestamp Converter | Zion Tech Group',
+  description: 'Free online Unix timestamp converter — seconds, milliseconds, ISO 8601.',
+  url: 'https://ziontechgroup.com/tools/timestamp-converter/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Timestamp Converter | Zion Tech Group',
-    description: 'Free online Unix timestamp converter — seconds, milliseconds, ISO 8601.',
+  card: 'summary_large_image',
+  title: 'Timestamp Converter | Zion Tech Group',
+  description: 'Free online Unix timestamp converter — seconds, milliseconds, ISO 8601.',
   },
-    alternates: { canonical: '/tools/timestamp-converter/' },
+  alternates: { canonical: '/tools/timestamp-converter/' },
 };
 
 export default function TimestampConverterPage() {

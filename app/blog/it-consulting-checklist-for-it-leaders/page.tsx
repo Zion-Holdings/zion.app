@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'IT Consulting: checklist for IT leaders | Zion Tech Group',
-    description: 'IT Consulting: checklist for IT leaders',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'IT Consulting: checklist for IT leaders',
-    description: 'IT Consulting: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/it-consulting-checklist-for-it-leaders/',
-    type: 'article',
+  description: 'IT Consulting: checklist for IT leaders',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'IT Consulting: checklist for IT leaders',
+  description: 'IT Consulting: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/it-consulting-checklist-for-it-leaders/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'IT Consulting: checklist for IT leaders',
-    description: 'IT Consulting: checklist for IT leaders',
+  card: 'summary_large_image',
+  title: 'IT Consulting: checklist for IT leaders',
+  description: 'IT Consulting: checklist for IT leaders',
   },
-    alternates: { canonical: '/blog/it-consulting-checklist-for-it-leaders/' },
+  alternates: { canonical: '/blog/it-consulting-checklist-for-it-leaders/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: checklist for IT leaders", "description": "IT Consulting: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-checklist-for-it-leaders/"};

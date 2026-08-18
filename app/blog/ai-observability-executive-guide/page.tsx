@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Observability: executive guide | Zion Tech Group',
-    description: 'AI Observability: executive guide',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Observability: executive guide',
-    description: 'AI Observability: executive guide',
-    url: 'https://ziontechgroup.com/blog/ai-observability-executive-guide/',
-    type: 'article',
+  description: 'AI Observability: executive guide',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Observability: executive guide',
+  description: 'AI Observability: executive guide',
+  url: 'https://ziontechgroup.com/blog/ai-observability-executive-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Observability: executive guide',
-    description: 'AI Observability: executive guide',
+  card: 'summary_large_image',
+  title: 'AI Observability: executive guide',
+  description: 'AI Observability: executive guide',
   },
-    alternates: { canonical: '/blog/ai-observability-executive-guide/' },
+  alternates: { canonical: '/blog/ai-observability-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: executive guide", "description": "AI Observability: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-executive-guide/"};

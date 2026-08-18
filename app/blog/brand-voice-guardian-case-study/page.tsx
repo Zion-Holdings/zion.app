@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Brand Voice Guardian: case study | Zion Tech Group',
-    description: 'Brand Voice Guardian: case study',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Brand Voice Guardian: case study',
-    description: 'Brand Voice Guardian: case study',
-    url: 'https://ziontechgroup.com/blog/brand-voice-guardian-case-study/',
-    type: 'article',
+  description: 'Brand Voice Guardian: case study',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Brand Voice Guardian: case study',
+  description: 'Brand Voice Guardian: case study',
+  url: 'https://ziontechgroup.com/blog/brand-voice-guardian-case-study/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Brand Voice Guardian: case study',
-    description: 'Brand Voice Guardian: case study',
+  card: 'summary_large_image',
+  title: 'Brand Voice Guardian: case study',
+  description: 'Brand Voice Guardian: case study',
   },
-    alternates: { canonical: '/blog/brand-voice-guardian-case-study/' },
+  alternates: { canonical: '/blog/brand-voice-guardian-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: case study", "description": "Brand Voice Guardian: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-case-study/"};

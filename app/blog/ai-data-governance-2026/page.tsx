@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI Data Governance 2026 | Zion Tech Group',
-    description: 'Data governance for AI: lineage, quality, and compliance across pipelines.',
-    openGraph: {
-    title: 'AI Data Governance 2026',
-    description: 'Data governance for AI: lineage, quality, and compliance across pipelines.',
-    url: 'https://ziontechgroup.com/blog/ai-data-governance-2026/',
-    type: 'article',
+  description: 'Data governance for AI: lineage, quality, and compliance across pipelines.',
+  openGraph: {
+  title: 'AI Data Governance 2026',
+  description: 'Data governance for AI: lineage, quality, and compliance across pipelines.',
+  url: 'https://ziontechgroup.com/blog/ai-data-governance-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Data Governance 2026',
-    description: 'Data governance for AI: lineage, quality, and compliance across pipelines.',
+  card: 'summary_large_image',
+  title: 'AI Data Governance 2026',
+  description: 'Data governance for AI: lineage, quality, and compliance across pipelines.',
   },
-    alternates: { canonical: '/blog/ai-data-governance-2026/' },
+  alternates: { canonical: '/blog/ai-data-governance-2026/' },
 };
 
 export default function Page() {

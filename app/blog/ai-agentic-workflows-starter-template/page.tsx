@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agentic Workflows: starter template | Zion Tech Group',
-    description: 'AI Agentic Workflows: starter template',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Agentic Workflows: starter template',
-    description: 'AI Agentic Workflows: starter template',
-    url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-starter-template/',
-    type: 'article',
+  description: 'AI Agentic Workflows: starter template',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Agentic Workflows: starter template',
+  description: 'AI Agentic Workflows: starter template',
+  url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-starter-template/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Agentic Workflows: starter template',
-    description: 'AI Agentic Workflows: starter template',
+  card: 'summary_large_image',
+  title: 'AI Agentic Workflows: starter template',
+  description: 'AI Agentic Workflows: starter template',
   },
-    alternates: { canonical: '/blog/ai-agentic-workflows-starter-template/' },
+  alternates: { canonical: '/blog/ai-agentic-workflows-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: starter template", "description": "AI Agentic Workflows: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-starter-template/"};

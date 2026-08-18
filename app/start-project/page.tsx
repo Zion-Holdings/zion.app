@@ -1,20 +1,20 @@
 import Link from 'next/link';
 import PageTemplate from '@/components/PageTemplate';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Start a Project | Zion Tech Group',
   description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
   keywords: ['start project', 'AI project', 'IT engagement', 'scoped proposal', 'ROI', 'timeline'],
   openGraph: {
-    title: 'Start a Project | Zion Tech Group',
-    description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
-    url: 'https://ziontechgroup.com/start-project/',
-    type: 'website',
+  title: 'Start a Project | Zion Tech Group',
+  description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
+  url: 'https://ziontechgroup.com/start-project/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Start a Project | Zion Tech Group',
-    description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
+  card: 'summary_large_image',
+  title: 'Start a Project | Zion Tech Group',
+  description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
   },
   alternates: { canonical: '/start-project/' },
 };

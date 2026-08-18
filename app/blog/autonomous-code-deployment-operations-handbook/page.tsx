@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Autonomous Code Deployment: operations handbook | Zion Tech Group',
   description: 'Autonomous Code Deployment: operations handbook',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Autonomous Code Deployment: operations handbook',
-    description: 'Autonomous Code Deployment: operations handbook',
-    url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-operations-handbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Autonomous Code Deployment: operations handbook',
+  description: 'Autonomous Code Deployment: operations handbook',
+  url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-operations-handbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/autonomous-code-deployment-operations-handbook/' },
 };

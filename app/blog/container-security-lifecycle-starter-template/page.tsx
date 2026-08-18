@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Container Security Lifecycle: starter template | Zion Tech Group',
   description: 'Container Security Lifecycle: starter template',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Container Security Lifecycle: starter template',
-    description: 'Container Security Lifecycle: starter template',
-    url: 'https://ziontechgroup.com/blog/container-security-lifecycle-starter-template/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Container Security Lifecycle: starter template',
+  description: 'Container Security Lifecycle: starter template',
+  url: 'https://ziontechgroup.com/blog/container-security-lifecycle-starter-template/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/container-security-lifecycle-starter-template/' },
 };

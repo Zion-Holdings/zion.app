@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Data Lakehouse Pipelines: security and governance | Zion Tech Group',
   description: 'AI Data Lakehouse Pipelines: security and governance',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Data Lakehouse Pipelines: security and governance',
-    description: 'AI Data Lakehouse Pipelines: security and governance',
-    url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-security-and-governance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Data Lakehouse Pipelines: security and governance',
+  description: 'AI Data Lakehouse Pipelines: security and governance',
+  url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-security-and-governance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-security-and-governance/' },
 };

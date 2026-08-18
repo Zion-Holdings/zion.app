@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Integration: checklist for IT leaders | Zion Tech Group',
   description: 'API Integration: checklist for IT leaders',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Integration: checklist for IT leaders',
-    description: 'API Integration: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/api-integration-checklist-for-it-leaders/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'API Integration: checklist for IT leaders',
+  description: 'API Integration: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/api-integration-checklist-for-it-leaders/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-integration-checklist-for-it-leaders/' },
 };

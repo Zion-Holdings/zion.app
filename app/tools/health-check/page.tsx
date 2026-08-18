@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Platform Status | Zion Tech Group',
-    description: 'Service health, uptime targets, and incident cadence.',
-    openGraph: {
-    title: 'Platform Status',
-    description: 'Zion operational status summary.',
-    url: 'https://ziontechgroup.com/tools/health-check/',
-    type: 'website',
+  description: 'Service health, uptime targets, and incident cadence.',
+  openGraph: {
+  title: 'Platform Status',
+  description: 'Zion operational status summary.',
+  url: 'https://ziontechgroup.com/tools/health-check/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Platform Status',
-    description: 'Zion operational status summary.',
+  card: 'summary_large_image',
+  title: 'Platform Status',
+  description: 'Zion operational status summary.',
   },
-    alternates: { canonical: '/tools/health-check/' },
+  alternates: { canonical: '/tools/health-check/' },
 };
 
 const SYSTEMS = [

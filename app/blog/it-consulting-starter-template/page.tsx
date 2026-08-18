@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'IT Consulting: starter template | Zion Tech Group',
-    description: 'IT Consulting: starter template',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'IT Consulting: starter template',
-    description: 'IT Consulting: starter template',
-    url: 'https://ziontechgroup.com/blog/it-consulting-starter-template/',
-    type: 'article',
+  description: 'IT Consulting: starter template',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'IT Consulting: starter template',
+  description: 'IT Consulting: starter template',
+  url: 'https://ziontechgroup.com/blog/it-consulting-starter-template/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'IT Consulting: starter template',
-    description: 'IT Consulting: starter template',
+  card: 'summary_large_image',
+  title: 'IT Consulting: starter template',
+  description: 'IT Consulting: starter template',
   },
-    alternates: { canonical: '/blog/it-consulting-starter-template/' },
+  alternates: { canonical: '/blog/it-consulting-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: starter template", "description": "IT Consulting: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-starter-template/"};

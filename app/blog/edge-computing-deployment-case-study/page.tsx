@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Edge Computing Deployment: case study | Zion Tech Group',
-    description: 'Edge Computing Deployment: case study',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Edge Computing Deployment: case study',
-    description: 'Edge Computing Deployment: case study',
-    url: 'https://ziontechgroup.com/blog/edge-computing-deployment-case-study/',
-    type: 'article',
+  description: 'Edge Computing Deployment: case study',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Edge Computing Deployment: case study',
+  description: 'Edge Computing Deployment: case study',
+  url: 'https://ziontechgroup.com/blog/edge-computing-deployment-case-study/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Edge Computing Deployment: case study',
-    description: 'Edge Computing Deployment: case study',
+  card: 'summary_large_image',
+  title: 'Edge Computing Deployment: case study',
+  description: 'Edge Computing Deployment: case study',
   },
-    alternates: { canonical: '/blog/edge-computing-deployment-case-study/' },
+  alternates: { canonical: '/blog/edge-computing-deployment-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: case study", "description": "Edge Computing Deployment: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-case-study/"};

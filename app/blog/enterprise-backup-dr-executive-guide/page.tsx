@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Enterprise Backup DR: executive guide | Zion Tech Group',
-    description: 'Enterprise Backup DR: executive guide',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Enterprise Backup DR: executive guide',
-    description: 'Enterprise Backup DR: executive guide',
-    url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-executive-guide/',
-    type: 'article',
+  description: 'Enterprise Backup DR: executive guide',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Enterprise Backup DR: executive guide',
+  description: 'Enterprise Backup DR: executive guide',
+  url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-executive-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Enterprise Backup DR: executive guide',
-    description: 'Enterprise Backup DR: executive guide',
+  card: 'summary_large_image',
+  title: 'Enterprise Backup DR: executive guide',
+  description: 'Enterprise Backup DR: executive guide',
   },
-    alternates: { canonical: '/blog/enterprise-backup-dr-executive-guide/' },
+  alternates: { canonical: '/blog/enterprise-backup-dr-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: executive guide", "description": "Enterprise Backup DR: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-executive-guide/"};

@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description: 'Contact Zion Tech Group for AI, IT, and automation consultations.',
   keywords: ['contact', 'AI consultation', 'IT support', 'project intake', 'enterprise AI', 'managed services'],
   openGraph: {
-    title: 'Contact | Zion Tech Group',
-    description: 'Get in touch for AI and IT services.',
-    url: 'https://ziontechgroup.com/contact/',
-    type: 'website',
+  title: 'Contact | Zion Tech Group',
+  description: 'Get in touch for AI and IT services.',
+  url: 'https://ziontechgroup.com/contact/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Contact | Zion Tech Group',
-    description: 'Get in touch for AI and IT services.',
+  card: 'summary_large_image',
+  title: 'Contact | Zion Tech Group',
+  description: 'Get in touch for AI and IT services.',
   },
-    alternates: { canonical: '/contact/' },
+  alternates: { canonical: '/contact/' },
 };
 
 export default function ContactPage() {

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI 3D Asset Generator: implementation playbook | Zion Tech Group',
   description: 'AI 3D Asset Generator: implementation playbook',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI 3D Asset Generator: implementation playbook',
-    description: 'AI 3D Asset Generator: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-implementation-playbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI 3D Asset Generator: implementation playbook',
+  description: 'AI 3D Asset Generator: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-implementation-playbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-3d-asset-generator-implementation-playbook/' },
 };

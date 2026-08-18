@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Orchestration Layer: starter template | Zion Tech Group',
   description: 'API Orchestration Layer: starter template',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Orchestration Layer: starter template',
-    description: 'API Orchestration Layer: starter template',
-    url: 'https://ziontechgroup.com/blog/api-orchestration-layer-starter-template/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'API Orchestration Layer: starter template',
+  description: 'API Orchestration Layer: starter template',
+  url: 'https://ziontechgroup.com/blog/api-orchestration-layer-starter-template/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-orchestration-layer-starter-template/' },
 };

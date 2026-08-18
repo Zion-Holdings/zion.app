@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Managed IT Services | Zion Tech Group',
-    description: 'Managed IT Services',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Managed IT Services',
-    description: 'Managed IT Services',
-    url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/',
-    type: 'article',
+  description: 'Managed IT Services',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Managed IT Services',
+  description: 'Managed IT Services',
+  url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Managed IT Services',
-    description: 'Managed IT Services',
+  card: 'summary_large_image',
+  title: 'Managed IT Services',
+  description: 'Managed IT Services',
   },
-    alternates: { canonical: '/blog/managed-it-services-small-business-2026/' },
+  alternates: { canonical: '/blog/managed-it-services-small-business-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services", "description": "Managed IT Services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026/"};

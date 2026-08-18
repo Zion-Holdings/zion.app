@@ -4,17 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Healthcare Solutions | Zion Tech Group',
-    description: 'AI and IT solutions for healthcare operations, diagnostics, and patient engagement.',
-    openGraph: {
-    title: 'Healthcare Solutions | Zion Tech Group',
-    description: 'Healthcare delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/healthcare/',
-    type: 'website',
+  description: 'AI and IT solutions for healthcare operations, diagnostics, and patient engagement.',
+  openGraph: {
+  title: 'Healthcare Solutions | Zion Tech Group',
+  description: 'Healthcare delivery patterns and AI implementation guidance.',
+  url: 'https://ziontechgroup.com/solutions/healthcare/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Healthcare Solutions | Zion Tech Group',
-    description: 'Healthcare delivery patterns and AI implementation guidance.',
+  card: 'summary_large_image',
+  title: 'Healthcare Solutions | Zion Tech Group',
+  description: 'Healthcare delivery patterns and AI implementation guidance.',
   },
   alternates: { canonical: '/solutions/healthcare/' },
 };

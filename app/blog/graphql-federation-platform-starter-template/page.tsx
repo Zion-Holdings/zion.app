@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'GraphQL Federation Platform: starter template | Zion Tech Group',
-    description: 'GraphQL Federation Platform: starter template',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'GraphQL Federation Platform: starter template',
-    description: 'GraphQL Federation Platform: starter template',
-    url: 'https://ziontechgroup.com/blog/graphql-federation-platform-starter-template/',
-    type: 'article',
+  description: 'GraphQL Federation Platform: starter template',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'GraphQL Federation Platform: starter template',
+  description: 'GraphQL Federation Platform: starter template',
+  url: 'https://ziontechgroup.com/blog/graphql-federation-platform-starter-template/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'GraphQL Federation Platform: starter template',
-    description: 'GraphQL Federation Platform: starter template',
+  card: 'summary_large_image',
+  title: 'GraphQL Federation Platform: starter template',
+  description: 'GraphQL Federation Platform: starter template',
   },
-    alternates: { canonical: '/blog/graphql-federation-platform-starter-template/' },
+  alternates: { canonical: '/blog/graphql-federation-platform-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: starter template", "description": "GraphQL Federation Platform: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-starter-template/"};

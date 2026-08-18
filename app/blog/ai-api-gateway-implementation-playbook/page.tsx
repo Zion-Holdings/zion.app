@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI API Gateway: implementation playbook | Zion Tech Group',
-    description: 'AI API Gateway: implementation playbook',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI API Gateway: implementation playbook',
-    description: 'AI API Gateway: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/ai-api-gateway-implementation-playbook/',
-    type: 'article',
+  description: 'AI API Gateway: implementation playbook',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI API Gateway: implementation playbook',
+  description: 'AI API Gateway: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/ai-api-gateway-implementation-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI API Gateway: implementation playbook',
-    description: 'AI API Gateway: implementation playbook',
+  card: 'summary_large_image',
+  title: 'AI API Gateway: implementation playbook',
+  description: 'AI API Gateway: implementation playbook',
   },
-    alternates: { canonical: '/blog/ai-api-gateway-implementation-playbook/' },
+  alternates: { canonical: '/blog/ai-api-gateway-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: implementation playbook", "description": "AI API Gateway: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-implementation-playbook/"};

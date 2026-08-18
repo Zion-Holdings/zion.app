@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'IT Consulting Services | Zion Tech Group',
-    description: 'Hands-on consulting for cloud, security, data, automation, and AI delivery.',
-    openGraph: {
-    title: 'IT Consulting Services | Zion Tech Group',
-    description: 'Hands-on consulting for cloud, security, data, automation, and AI delivery.',
-    url: 'https://ziontechgroup.com/it-consulting-services/',
-    type: 'website',
+  description: 'Hands-on consulting for cloud, security, data, automation, and AI delivery.',
+  openGraph: {
+  title: 'IT Consulting Services | Zion Tech Group',
+  description: 'Hands-on consulting for cloud, security, data, automation, and AI delivery.',
+  url: 'https://ziontechgroup.com/it-consulting-services/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'IT Consulting Services | Zion Tech Group',
-    description: 'Hands-on consulting for cloud, security, data, automation, and AI delivery.',
+  card: 'summary_large_image',
+  title: 'IT Consulting Services | Zion Tech Group',
+  description: 'Hands-on consulting for cloud, security, data, automation, and AI delivery.',
   },
-    alternates: { canonical: '/it-consulting-services/' },
+  alternates: { canonical: '/it-consulting-services/' },
 };
 
 export default function ItConsultingServicesPage() {

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agentic Workflows: implementation playbook | Zion Tech Group',
-    description: 'AI Agentic Workflows: implementation playbook',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Agentic Workflows: implementation playbook',
-    description: 'AI Agentic Workflows: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-implementation-playbook/',
-    type: 'article',
+  description: 'AI Agentic Workflows: implementation playbook',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Agentic Workflows: implementation playbook',
+  description: 'AI Agentic Workflows: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-implementation-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Agentic Workflows: implementation playbook',
-    description: 'AI Agentic Workflows: implementation playbook',
+  card: 'summary_large_image',
+  title: 'AI Agentic Workflows: implementation playbook',
+  description: 'AI Agentic Workflows: implementation playbook',
   },
-    alternates: { canonical: '/blog/ai-agentic-workflows-implementation-playbook/' },
+  alternates: { canonical: '/blog/ai-agentic-workflows-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: implementation playbook", "description": "AI Agentic Workflows: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-implementation-playbook/"};

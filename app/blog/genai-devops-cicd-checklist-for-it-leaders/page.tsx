@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'GenAI DevOps CI/CD: checklist for IT leaders | Zion Tech Group',
   description: 'GenAI DevOps CI/CD: checklist for IT leaders',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GenAI DevOps CI/CD: checklist for IT leaders',
-    description: 'GenAI DevOps CI/CD: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/genai-devops-cicd-checklist-for-it-leaders/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'GenAI DevOps CI/CD: checklist for IT leaders',
+  description: 'GenAI DevOps CI/CD: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/genai-devops-cicd-checklist-for-it-leaders/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/genai-devops-cicd-checklist-for-it-leaders/' },
 };

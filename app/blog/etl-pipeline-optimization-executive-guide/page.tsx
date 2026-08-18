@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'ETL Pipeline Optimization: executive guide | Zion Tech Group',
   description: 'ETL Pipeline Optimization: executive guide',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'ETL Pipeline Optimization: executive guide',
-    description: 'ETL Pipeline Optimization: executive guide',
-    url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-executive-guide/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'ETL Pipeline Optimization: executive guide',
+  description: 'ETL Pipeline Optimization: executive guide',
+  url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-executive-guide/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/etl-pipeline-optimization-executive-guide/' },
 };

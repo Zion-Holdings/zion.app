@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud FinOps | Zion Tech Group',
-    description: 'Cloud FinOps',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Cloud FinOps',
-    description: 'Cloud FinOps',
-    url: 'https://ziontechgroup.com/blog/cloud-finops-2026/',
-    type: 'article',
+  description: 'Cloud FinOps',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Cloud FinOps',
+  description: 'Cloud FinOps',
+  url: 'https://ziontechgroup.com/blog/cloud-finops-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Cloud FinOps',
-    description: 'Cloud FinOps',
+  card: 'summary_large_image',
+  title: 'Cloud FinOps',
+  description: 'Cloud FinOps',
   },
-    alternates: { canonical: '/blog/cloud-finops-2026/' },
+  alternates: { canonical: '/blog/cloud-finops-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps", "description": "Cloud FinOps", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-2026/"};

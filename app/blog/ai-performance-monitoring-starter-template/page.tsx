@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Performance Monitoring: starter template | Zion Tech Group',
   description: 'AI Performance Monitoring: starter template',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Performance Monitoring: starter template',
-    description: 'AI Performance Monitoring: starter template',
-    url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-starter-template/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Performance Monitoring: starter template',
+  description: 'AI Performance Monitoring: starter template',
+  url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-starter-template/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-performance-monitoring-starter-template/' },
 };

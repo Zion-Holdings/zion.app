@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Endpoint Management: policy and compliance | Zion Tech Group',
   description: 'Endpoint Management: policy and compliance',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Endpoint Management: policy and compliance',
-    description: 'Endpoint Management: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/endpoint-management-policy-and-compliance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Endpoint Management: policy and compliance',
+  description: 'Endpoint Management: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/endpoint-management-policy-and-compliance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/endpoint-management-policy-and-compliance/' },
 };

@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Micro-SaaS Solutions | Zion Tech Group',
   description: 'Micro-SaaS product design, validation, and growth support from Zion Tech Group.',
   openGraph: {
-    title: 'Micro-SaaS Solutions | Zion Tech Group',
-    description: 'Micro-SaaS solutions with measurable outcomes.',
-    url: 'https://ziontechgroup.com/solutions/micro-saas/',
-    type: 'website',
+  title: 'Micro-SaaS Solutions | Zion Tech Group',
+  description: 'Micro-SaaS solutions with measurable outcomes.',
+  url: 'https://ziontechgroup.com/solutions/micro-saas/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Micro-SaaS Solutions | Zion Tech Group',
-    description: 'Micro-SaaS solutions with measurable outcomes.',
+  card: 'summary_large_image',
+  title: 'Micro-SaaS Solutions | Zion Tech Group',
+  description: 'Micro-SaaS solutions with measurable outcomes.',
   },
   alternates: { canonical: '/solutions/micro-saas/' },
 };

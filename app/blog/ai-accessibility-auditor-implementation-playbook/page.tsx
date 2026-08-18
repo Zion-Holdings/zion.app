@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Accessibility Auditor: implementation playbook | Zion Tech Group',
   description: 'AI Accessibility Auditor: implementation playbook',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Accessibility Auditor: implementation playbook',
-    description: 'AI Accessibility Auditor: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-implementation-playbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Accessibility Auditor: implementation playbook',
+  description: 'AI Accessibility Auditor: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-implementation-playbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-accessibility-auditor-implementation-playbook/' },
 };

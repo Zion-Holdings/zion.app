@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agentic Workflows: ROI and cost model | Zion Tech Group',
   description: 'AI Agentic Workflows: ROI and cost model',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agentic Workflows: ROI and cost model',
-    description: 'AI Agentic Workflows: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-roi-and-cost-model/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Agentic Workflows: ROI and cost model',
+  description: 'AI Agentic Workflows: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-roi-and-cost-model/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-agentic-workflows-roi-and-cost-model/' },
 };

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Brand Voice Guardian: operations handbook | Zion Tech Group',
   description: 'Brand Voice Guardian: operations handbook',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Brand Voice Guardian: operations handbook',
-    description: 'Brand Voice Guardian: operations handbook',
-    url: 'https://ziontechgroup.com/blog/brand-voice-guardian-operations-handbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Brand Voice Guardian: operations handbook',
+  description: 'Brand Voice Guardian: operations handbook',
+  url: 'https://ziontechgroup.com/blog/brand-voice-guardian-operations-handbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/brand-voice-guardian-operations-handbook/' },
 };

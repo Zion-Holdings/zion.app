@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Enterprise Backup DR: implementation playbook | Zion Tech Group',
-    description: 'Enterprise Backup DR: implementation playbook',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Enterprise Backup DR: implementation playbook',
-    description: 'Enterprise Backup DR: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/',
-    type: 'article',
+  description: 'Enterprise Backup DR: implementation playbook',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Enterprise Backup DR: implementation playbook',
+  description: 'Enterprise Backup DR: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Enterprise Backup DR: implementation playbook',
-    description: 'Enterprise Backup DR: implementation playbook',
+  card: 'summary_large_image',
+  title: 'Enterprise Backup DR: implementation playbook',
+  description: 'Enterprise Backup DR: implementation playbook',
   },
-    alternates: { canonical: '/blog/enterprise-backup-dr-implementation-playbook/' },
+  alternates: { canonical: '/blog/enterprise-backup-dr-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: implementation playbook", "description": "Enterprise Backup DR: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/"};

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS HR Recruitment: policy and compliance | Zion Tech Group',
   description: 'MicroSaaS HR Recruitment: policy and compliance',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS HR Recruitment: policy and compliance',
-    description: 'MicroSaaS HR Recruitment: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-policy-and-compliance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'MicroSaaS HR Recruitment: policy and compliance',
+  description: 'MicroSaaS HR Recruitment: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-policy-and-compliance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-policy-and-compliance/' },
 };

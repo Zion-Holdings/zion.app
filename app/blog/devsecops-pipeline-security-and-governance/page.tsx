@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'DevSecOps Pipeline: security and governance | Zion Tech Group',
-    description: 'DevSecOps Pipeline: security and governance',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'DevSecOps Pipeline: security and governance',
-    description: 'DevSecOps Pipeline: security and governance',
-    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-security-and-governance/',
-    type: 'article',
+  description: 'DevSecOps Pipeline: security and governance',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'DevSecOps Pipeline: security and governance',
+  description: 'DevSecOps Pipeline: security and governance',
+  url: 'https://ziontechgroup.com/blog/devsecops-pipeline-security-and-governance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'DevSecOps Pipeline: security and governance',
-    description: 'DevSecOps Pipeline: security and governance',
+  card: 'summary_large_image',
+  title: 'DevSecOps Pipeline: security and governance',
+  description: 'DevSecOps Pipeline: security and governance',
   },
-    alternates: { canonical: '/blog/devsecops-pipeline-security-and-governance/' },
+  alternates: { canonical: '/blog/devsecops-pipeline-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: security and governance", "description": "DevSecOps Pipeline: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-security-and-governance/"};

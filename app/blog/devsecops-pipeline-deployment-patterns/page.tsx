@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'DevSecOps Pipeline: deployment patterns | Zion Tech Group',
-    description: 'DevSecOps Pipeline: deployment patterns',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'DevSecOps Pipeline: deployment patterns',
-    description: 'DevSecOps Pipeline: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-deployment-patterns/',
-    type: 'article',
+  description: 'DevSecOps Pipeline: deployment patterns',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'DevSecOps Pipeline: deployment patterns',
+  description: 'DevSecOps Pipeline: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/devsecops-pipeline-deployment-patterns/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'DevSecOps Pipeline: deployment patterns',
-    description: 'DevSecOps Pipeline: deployment patterns',
+  card: 'summary_large_image',
+  title: 'DevSecOps Pipeline: deployment patterns',
+  description: 'DevSecOps Pipeline: deployment patterns',
   },
-    alternates: { canonical: '/blog/devsecops-pipeline-deployment-patterns/' },
+  alternates: { canonical: '/blog/devsecops-pipeline-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: deployment patterns", "description": "DevSecOps Pipeline: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-deployment-patterns/"};

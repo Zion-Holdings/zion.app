@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Container Security Lifecycle: checklist for IT leaders | Zion Tech Group',
   description: 'Container Security Lifecycle: checklist for IT leaders',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Container Security Lifecycle: checklist for IT leaders',
-    description: 'Container Security Lifecycle: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/container-security-lifecycle-checklist-for-it-leaders/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Container Security Lifecycle: checklist for IT leaders',
+  description: 'Container Security Lifecycle: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/container-security-lifecycle-checklist-for-it-leaders/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/container-security-lifecycle-checklist-for-it-leaders/' },
 };

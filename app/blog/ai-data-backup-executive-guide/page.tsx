@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Data Backup: executive guide | Zion Tech Group',
-    description: 'AI Data Backup: executive guide',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Data Backup: executive guide',
-    description: 'AI Data Backup: executive guide',
-    url: 'https://ziontechgroup.com/blog/ai-data-backup-executive-guide/',
-    type: 'article',
+  description: 'AI Data Backup: executive guide',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Data Backup: executive guide',
+  description: 'AI Data Backup: executive guide',
+  url: 'https://ziontechgroup.com/blog/ai-data-backup-executive-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Data Backup: executive guide',
-    description: 'AI Data Backup: executive guide',
+  card: 'summary_large_image',
+  title: 'AI Data Backup: executive guide',
+  description: 'AI Data Backup: executive guide',
   },
-    alternates: { canonical: '/blog/ai-data-backup-executive-guide/' },
+  alternates: { canonical: '/blog/ai-data-backup-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: executive guide", "description": "AI Data Backup: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-executive-guide/"};

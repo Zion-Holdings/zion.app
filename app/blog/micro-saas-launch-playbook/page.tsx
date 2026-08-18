@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Micro-SaaS Launch Playbook | Zion Tech Group',
   description: 'A step-by-step playbook for building, validating, and scaling micro-SaaS products from zero to sustainable revenue.',
   openGraph: {
-    title: 'Micro-SaaS Launch Playbook | Zion Tech Group',
-    description: 'Turn your technical expertise into a profitable micro-SaaS business.',
-    url: 'https://ziontechgroup.com/blog/micro-saas-launch-playbook/',
-    type: 'article',
+  title: 'Micro-SaaS Launch Playbook | Zion Tech Group',
+  description: 'Turn your technical expertise into a profitable micro-SaaS business.',
+  url: 'https://ziontechgroup.com/blog/micro-saas-launch-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Micro-SaaS Launch Playbook | Zion Tech Group',
-    description: 'Turn your technical expertise into a profitable micro-SaaS business.',
+  card: 'summary_large_image',
+  title: 'Micro-SaaS Launch Playbook | Zion Tech Group',
+  description: 'Turn your technical expertise into a profitable micro-SaaS business.',
   },
   alternates: { canonical: '/blog/micro-saas-launch-playbook/' },
 };

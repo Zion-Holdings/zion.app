@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: '5G Solutions: implementation playbook | Zion Tech Group',
-    description: '5G Solutions: implementation playbook',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: '5G Solutions: implementation playbook',
-    description: '5G Solutions: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/5g-solutions-implementation-playbook/',
-    type: 'article',
+  description: '5G Solutions: implementation playbook',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: '5G Solutions: implementation playbook',
+  description: '5G Solutions: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/5g-solutions-implementation-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: '5G Solutions: implementation playbook',
-    description: '5G Solutions: implementation playbook',
+  card: 'summary_large_image',
+  title: '5G Solutions: implementation playbook',
+  description: '5G Solutions: implementation playbook',
   },
-    alternates: { canonical: '/blog/5g-solutions-implementation-playbook/' },
+  alternates: { canonical: '/blog/5g-solutions-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: implementation playbook", "description": "5G Solutions: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-implementation-playbook/"};

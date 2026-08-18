@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS HR Recruitment: evaluation framework | Zion Tech Group',
-    description: 'MicroSaaS HR Recruitment: evaluation framework',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'MicroSaaS HR Recruitment: evaluation framework',
-    description: 'MicroSaaS HR Recruitment: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-evaluation-framework/',
-    type: 'article',
+  description: 'MicroSaaS HR Recruitment: evaluation framework',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'MicroSaaS HR Recruitment: evaluation framework',
+  description: 'MicroSaaS HR Recruitment: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-evaluation-framework/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'MicroSaaS HR Recruitment: evaluation framework',
-    description: 'MicroSaaS HR Recruitment: evaluation framework',
+  card: 'summary_large_image',
+  title: 'MicroSaaS HR Recruitment: evaluation framework',
+  description: 'MicroSaaS HR Recruitment: evaluation framework',
   },
-    alternates: { canonical: '/blog/microsaas-hr-recruitment-evaluation-framework/' },
+  alternates: { canonical: '/blog/microsaas-hr-recruitment-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: evaluation framework", "description": "MicroSaaS HR Recruitment: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-evaluation-framework/"};

@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Phishing Analyzer | Zion Tech Group',
-    description: 'Review URL and email signals to spot phishing indicators before clicking or forwarding.',
-    openGraph: {
-    title: 'Phishing Analyzer',
-    description: 'Lightweight phishing signal checker.',
-    url: 'https://ziontechgroup.com/tools/phishing-analyzer/',
-    type: 'website',
+  description: 'Review URL and email signals to spot phishing indicators before clicking or forwarding.',
+  openGraph: {
+  title: 'Phishing Analyzer',
+  description: 'Lightweight phishing signal checker.',
+  url: 'https://ziontechgroup.com/tools/phishing-analyzer/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Phishing Analyzer',
-    description: 'Lightweight phishing signal checker.',
+  card: 'summary_large_image',
+  title: 'Phishing Analyzer',
+  description: 'Lightweight phishing signal checker.',
   },
-    alternates: { canonical: '/tools/phishing-analyzer/' },
+  alternates: { canonical: '/tools/phishing-analyzer/' },
 };
 
 const CHECKS = [

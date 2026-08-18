@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Management Gateway: automation roadmap | Zion Tech Group',
-    description: 'API Management Gateway: automation roadmap',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Management Gateway: automation roadmap',
-    description: 'API Management Gateway: automation roadmap',
-    url: 'https://ziontechgroup.com/blog/api-management-gateway-automation-roadmap/',
-    type: 'article',
+  description: 'API Management Gateway: automation roadmap',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Management Gateway: automation roadmap',
+  description: 'API Management Gateway: automation roadmap',
+  url: 'https://ziontechgroup.com/blog/api-management-gateway-automation-roadmap/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Management Gateway: automation roadmap',
-    description: 'API Management Gateway: automation roadmap',
+  card: 'summary_large_image',
+  title: 'API Management Gateway: automation roadmap',
+  description: 'API Management Gateway: automation roadmap',
   },
-    alternates: { canonical: '/blog/api-management-gateway-automation-roadmap/' },
+  alternates: { canonical: '/blog/api-management-gateway-automation-roadmap/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: automation roadmap", "description": "API Management Gateway: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-automation-roadmap/"};

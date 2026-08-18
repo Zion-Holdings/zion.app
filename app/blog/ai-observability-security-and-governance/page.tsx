@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Observability: security and governance | Zion Tech Group',
   description: 'AI Observability: security and governance',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Observability: security and governance',
-    description: 'AI Observability: security and governance',
-    url: 'https://ziontechgroup.com/blog/ai-observability-security-and-governance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Observability: security and governance',
+  description: 'AI Observability: security and governance',
+  url: 'https://ziontechgroup.com/blog/ai-observability-security-and-governance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-observability-security-and-governance/' },
 };

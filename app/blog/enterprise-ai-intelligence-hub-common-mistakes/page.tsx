@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Enterprise AI Intelligence Hub: common mistakes | Zion Tech Group',
   description: 'Enterprise AI Intelligence Hub: common mistakes',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Enterprise AI Intelligence Hub: common mistakes',
-    description: 'Enterprise AI Intelligence Hub: common mistakes',
-    url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-common-mistakes/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Enterprise AI Intelligence Hub: common mistakes',
+  description: 'Enterprise AI Intelligence Hub: common mistakes',
+  url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-common-mistakes/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-common-mistakes/' },
 };

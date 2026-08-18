@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Event Driven Architecture: vendor evaluation | Zion Tech Group',
-    description: 'Event Driven Architecture: vendor evaluation',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Event Driven Architecture: vendor evaluation',
-    description: 'Event Driven Architecture: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/event-driven-architecture-vendor-evaluation/',
-    type: 'article',
+  description: 'Event Driven Architecture: vendor evaluation',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Event Driven Architecture: vendor evaluation',
+  description: 'Event Driven Architecture: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/event-driven-architecture-vendor-evaluation/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Event Driven Architecture: vendor evaluation',
-    description: 'Event Driven Architecture: vendor evaluation',
+  card: 'summary_large_image',
+  title: 'Event Driven Architecture: vendor evaluation',
+  description: 'Event Driven Architecture: vendor evaluation',
   },
-    alternates: { canonical: '/blog/event-driven-architecture-vendor-evaluation/' },
+  alternates: { canonical: '/blog/event-driven-architecture-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: vendor evaluation", "description": "Event Driven Architecture: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-vendor-evaluation/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Ad Copy Generator | Zion Tech Group',
-    description: 'AI Ad Copy Generator',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Ad Copy Generator',
-    description: 'AI Ad Copy Generator',
-    url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-2026/',
-    type: 'article',
+  description: 'AI Ad Copy Generator',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Ad Copy Generator',
+  description: 'AI Ad Copy Generator',
+  url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Ad Copy Generator',
-    description: 'AI Ad Copy Generator',
+  card: 'summary_large_image',
+  title: 'AI Ad Copy Generator',
+  description: 'AI Ad Copy Generator',
   },
-    alternates: { canonical: '/blog/ai-ad-copy-generator-2026/' },
+  alternates: { canonical: '/blog/ai-ad-copy-generator-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator", "description": "AI Ad Copy Generator", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-2026/"};

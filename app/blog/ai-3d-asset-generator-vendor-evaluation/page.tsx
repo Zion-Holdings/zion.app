@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI 3D Asset Generator: vendor evaluation | Zion Tech Group',
-    description: 'AI 3D Asset Generator: vendor evaluation',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI 3D Asset Generator: vendor evaluation',
-    description: 'AI 3D Asset Generator: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-vendor-evaluation/',
-    type: 'article',
+  description: 'AI 3D Asset Generator: vendor evaluation',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI 3D Asset Generator: vendor evaluation',
+  description: 'AI 3D Asset Generator: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-vendor-evaluation/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI 3D Asset Generator: vendor evaluation',
-    description: 'AI 3D Asset Generator: vendor evaluation',
+  card: 'summary_large_image',
+  title: 'AI 3D Asset Generator: vendor evaluation',
+  description: 'AI 3D Asset Generator: vendor evaluation',
   },
-    alternates: { canonical: '/blog/ai-3d-asset-generator-vendor-evaluation/' },
+  alternates: { canonical: '/blog/ai-3d-asset-generator-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: vendor evaluation", "description": "AI 3D Asset Generator: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-vendor-evaluation/"};

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Native App Development: vendor evaluation | Zion Tech Group',
   description: 'Cloud Native App Development: vendor evaluation',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Native App Development: vendor evaluation',
-    description: 'Cloud Native App Development: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/cloud-native-app-development-vendor-evaluation/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Cloud Native App Development: vendor evaluation',
+  description: 'Cloud Native App Development: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/cloud-native-app-development-vendor-evaluation/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-native-app-development-vendor-evaluation/' },
 };

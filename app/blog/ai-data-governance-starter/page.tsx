@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Ai Data Governance Starter | Zion Tech Group',
-    description: 'Implementation patterns, risks, and next steps for ai data governance starter.',
-    openGraph: {
-    title: 'Ai Data Governance Starter | Zion Tech Group',
-    description: 'Practical guidance for ai data governance starter.',
-    url: 'https://ziontechgroup.com/blog/ai-data-governance-starter/',
-    type: 'article',
+  description: 'Implementation patterns, risks, and next steps for ai data governance starter.',
+  openGraph: {
+  title: 'Ai Data Governance Starter | Zion Tech Group',
+  description: 'Practical guidance for ai data governance starter.',
+  url: 'https://ziontechgroup.com/blog/ai-data-governance-starter/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Ai Data Governance Starter | Zion Tech Group',
-    description: 'Practical guidance for ai data governance starter.',
+  card: 'summary_large_image',
+  title: 'Ai Data Governance Starter | Zion Tech Group',
+  description: 'Practical guidance for ai data governance starter.',
   },
-    alternates: { canonical: '/blog/ai-data-governance-starter/' },
+  alternates: { canonical: '/blog/ai-data-governance-starter/' },
 };
 
 export default function PostPage() {

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'GraphQL Federation Platform: operations handbook | Zion Tech Group',
   description: 'GraphQL Federation Platform: operations handbook',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GraphQL Federation Platform: operations handbook',
-    description: 'GraphQL Federation Platform: operations handbook',
-    url: 'https://ziontechgroup.com/blog/graphql-federation-platform-operations-handbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'GraphQL Federation Platform: operations handbook',
+  description: 'GraphQL Federation Platform: operations handbook',
+  url: 'https://ziontechgroup.com/blog/graphql-federation-platform-operations-handbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/graphql-federation-platform-operations-handbook/' },
 };

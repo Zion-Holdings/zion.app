@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Security Testing: vendor evaluation | Zion Tech Group',
-    description: 'API Security Testing: vendor evaluation',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Security Testing: vendor evaluation',
-    description: 'API Security Testing: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/',
-    type: 'article',
+  description: 'API Security Testing: vendor evaluation',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Security Testing: vendor evaluation',
+  description: 'API Security Testing: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Security Testing: vendor evaluation',
-    description: 'API Security Testing: vendor evaluation',
+  card: 'summary_large_image',
+  title: 'API Security Testing: vendor evaluation',
+  description: 'API Security Testing: vendor evaluation',
   },
-    alternates: { canonical: '/blog/api-security-testing-vendor-evaluation/' },
+  alternates: { canonical: '/blog/api-security-testing-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: vendor evaluation", "description": "API Security Testing: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/"};

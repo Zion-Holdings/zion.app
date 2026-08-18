@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Accessibility Auditor: checklist for IT leaders | Zion Tech Group',
   description: 'AI Accessibility Auditor: checklist for IT leaders',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Accessibility Auditor: checklist for IT leaders',
-    description: 'AI Accessibility Auditor: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-checklist-for-it-leaders/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Accessibility Auditor: checklist for IT leaders',
+  description: 'AI Accessibility Auditor: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-checklist-for-it-leaders/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-accessibility-auditor-checklist-for-it-leaders/' },
 };

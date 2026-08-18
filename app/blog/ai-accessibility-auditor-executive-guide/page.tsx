@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Accessibility Auditor: executive guide | Zion Tech Group',
-    description: 'AI Accessibility Auditor: executive guide',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Accessibility Auditor: executive guide',
-    description: 'AI Accessibility Auditor: executive guide',
-    url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-executive-guide/',
-    type: 'article',
+  description: 'AI Accessibility Auditor: executive guide',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Accessibility Auditor: executive guide',
+  description: 'AI Accessibility Auditor: executive guide',
+  url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-executive-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Accessibility Auditor: executive guide',
-    description: 'AI Accessibility Auditor: executive guide',
+  card: 'summary_large_image',
+  title: 'AI Accessibility Auditor: executive guide',
+  description: 'AI Accessibility Auditor: executive guide',
   },
-    alternates: { canonical: '/blog/ai-accessibility-auditor-executive-guide/' },
+  alternates: { canonical: '/blog/ai-accessibility-auditor-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: executive guide", "description": "AI Accessibility Auditor: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-executive-guide/"};

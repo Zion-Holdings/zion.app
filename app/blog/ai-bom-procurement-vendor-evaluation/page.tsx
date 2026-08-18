@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI BOM Procurement: vendor evaluation | Zion Tech Group',
   description: 'AI BOM Procurement: vendor evaluation',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI BOM Procurement: vendor evaluation',
-    description: 'AI BOM Procurement: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/ai-bom-procurement-vendor-evaluation/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI BOM Procurement: vendor evaluation',
+  description: 'AI BOM Procurement: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/ai-bom-procurement-vendor-evaluation/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-bom-procurement-vendor-evaluation/' },
 };

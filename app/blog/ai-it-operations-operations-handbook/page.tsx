@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI IT Operations: operations handbook | Zion Tech Group',
-    description: 'AI IT Operations: operations handbook',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI IT Operations: operations handbook',
-    description: 'AI IT Operations: operations handbook',
-    url: 'https://ziontechgroup.com/blog/ai-it-operations-operations-handbook/',
-    type: 'article',
+  description: 'AI IT Operations: operations handbook',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI IT Operations: operations handbook',
+  description: 'AI IT Operations: operations handbook',
+  url: 'https://ziontechgroup.com/blog/ai-it-operations-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI IT Operations: operations handbook',
-    description: 'AI IT Operations: operations handbook',
+  card: 'summary_large_image',
+  title: 'AI IT Operations: operations handbook',
+  description: 'AI IT Operations: operations handbook',
   },
-    alternates: { canonical: '/blog/ai-it-operations-operations-handbook/' },
+  alternates: { canonical: '/blog/ai-it-operations-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: operations handbook", "description": "AI IT Operations: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-operations-handbook/"};

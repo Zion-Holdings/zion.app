@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Email Intelligence: vendor evaluation | Zion Tech Group',
-    description: 'AI Email Intelligence: vendor evaluation',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Email Intelligence: vendor evaluation',
-    description: 'AI Email Intelligence: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/ai-email-intelligence-vendor-evaluation/',
-    type: 'article',
+  description: 'AI Email Intelligence: vendor evaluation',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Email Intelligence: vendor evaluation',
+  description: 'AI Email Intelligence: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/ai-email-intelligence-vendor-evaluation/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Email Intelligence: vendor evaluation',
-    description: 'AI Email Intelligence: vendor evaluation',
+  card: 'summary_large_image',
+  title: 'AI Email Intelligence: vendor evaluation',
+  description: 'AI Email Intelligence: vendor evaluation',
   },
-    alternates: { canonical: '/blog/ai-email-intelligence-vendor-evaluation/' },
+  alternates: { canonical: '/blog/ai-email-intelligence-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: vendor evaluation", "description": "AI Email Intelligence: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-vendor-evaluation/"};

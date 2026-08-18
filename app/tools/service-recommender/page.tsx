@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Service Recommender | Zion Tech Group',
-    description: 'Find best-fit services from goals and constraints.',
-    openGraph: {
-    title: 'Service Recommender',
-    description: 'Quick service recommendation helper.',
-    url: 'https://ziontechgroup.com/tools/service-recommender/',
-    type: 'website',
+  description: 'Find best-fit services from goals and constraints.',
+  openGraph: {
+  title: 'Service Recommender',
+  description: 'Quick service recommendation helper.',
+  url: 'https://ziontechgroup.com/tools/service-recommender/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Service Recommender',
-    description: 'Quick service recommendation helper.',
+  card: 'summary_large_image',
+  title: 'Service Recommender',
+  description: 'Quick service recommendation helper.',
   },
-    alternates: { canonical: '/tools/service-recommender/' },
+  alternates: { canonical: '/tools/service-recommender/' },
 };
 
 const QUESTIONS = [

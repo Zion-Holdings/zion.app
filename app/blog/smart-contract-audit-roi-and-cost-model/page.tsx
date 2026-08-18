@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Smart Contract Audit: ROI and cost model | Zion Tech Group',
   description: 'Smart Contract Audit: ROI and cost model',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Smart Contract Audit: ROI and cost model',
-    description: 'Smart Contract Audit: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/smart-contract-audit-roi-and-cost-model/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Smart Contract Audit: ROI and cost model',
+  description: 'Smart Contract Audit: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/smart-contract-audit-roi-and-cost-model/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/smart-contract-audit-roi-and-cost-model/' },
 };

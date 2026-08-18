@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Cost AI Optimizer: deployment patterns | Zion Tech Group',
   description: 'Cloud Cost AI Optimizer: deployment patterns',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Cost AI Optimizer: deployment patterns',
-    description: 'Cloud Cost AI Optimizer: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-deployment-patterns/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Cloud Cost AI Optimizer: deployment patterns',
+  description: 'Cloud Cost AI Optimizer: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-deployment-patterns/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-deployment-patterns/' },
 };

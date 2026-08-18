@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Automation Orchestration: security and governance | Zion Tech Group',
-    description: 'Automation Orchestration: security and governance',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Automation Orchestration: security and governance',
-    description: 'Automation Orchestration: security and governance',
-    url: 'https://ziontechgroup.com/blog/automation-orchestration-security-and-governance/',
-    type: 'article',
+  description: 'Automation Orchestration: security and governance',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Automation Orchestration: security and governance',
+  description: 'Automation Orchestration: security and governance',
+  url: 'https://ziontechgroup.com/blog/automation-orchestration-security-and-governance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Automation Orchestration: security and governance',
-    description: 'Automation Orchestration: security and governance',
+  card: 'summary_large_image',
+  title: 'Automation Orchestration: security and governance',
+  description: 'Automation Orchestration: security and governance',
   },
-    alternates: { canonical: '/blog/automation-orchestration-security-and-governance/' },
+  alternates: { canonical: '/blog/automation-orchestration-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: security and governance", "description": "Automation Orchestration: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-security-and-governance/"};

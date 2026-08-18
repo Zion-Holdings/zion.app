@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'AI Security Best Practices 2026 | Zion Tech Group',
   description: 'Comprehensive AI security best practices for 2026 covering model governance, prompt injection defense, data privacy, and enterprise-grade AI deployment patterns.',
   openGraph: {
-    title: 'AI Security Best Practices 2026 | Zion Tech Group',
-    description: 'Stay ahead of emerging AI threats with our 2026 security playbook.',
-    url: 'https://ziontechgroup.com/blog/ai-security-best-practices-2026/',
-    type: 'article',
+  title: 'AI Security Best Practices 2026 | Zion Tech Group',
+  description: 'Stay ahead of emerging AI threats with our 2026 security playbook.',
+  url: 'https://ziontechgroup.com/blog/ai-security-best-practices-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Security Best Practices 2026 | Zion Tech Group',
-    description: 'Stay ahead of emerging AI threats with our 2026 security playbook.',
+  card: 'summary_large_image',
+  title: 'AI Security Best Practices 2026 | Zion Tech Group',
+  description: 'Stay ahead of emerging AI threats with our 2026 security playbook.',
   },
   alternates: { canonical: '/blog/ai-security-best-practices-2026/' },
 };

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AIOps Anomaly Detection: starter template | Zion Tech Group',
   description: 'AIOps Anomaly Detection: starter template',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AIOps Anomaly Detection: starter template',
-    description: 'AIOps Anomaly Detection: starter template',
-    url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-starter-template/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AIOps Anomaly Detection: starter template',
+  description: 'AIOps Anomaly Detection: starter template',
+  url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-starter-template/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/aiops-anomaly-detection-starter-template/' },
 };

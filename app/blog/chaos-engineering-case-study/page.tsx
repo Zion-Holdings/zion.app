@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Chaos Engineering: case study | Zion Tech Group',
-    description: 'Chaos Engineering: case study',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Chaos Engineering: case study',
-    description: 'Chaos Engineering: case study',
-    url: 'https://ziontechgroup.com/blog/chaos-engineering-case-study/',
-    type: 'article',
+  description: 'Chaos Engineering: case study',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Chaos Engineering: case study',
+  description: 'Chaos Engineering: case study',
+  url: 'https://ziontechgroup.com/blog/chaos-engineering-case-study/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Chaos Engineering: case study',
-    description: 'Chaos Engineering: case study',
+  card: 'summary_large_image',
+  title: 'Chaos Engineering: case study',
+  description: 'Chaos Engineering: case study',
   },
-    alternates: { canonical: '/blog/chaos-engineering-case-study/' },
+  alternates: { canonical: '/blog/chaos-engineering-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: case study", "description": "Chaos Engineering: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-case-study/"};

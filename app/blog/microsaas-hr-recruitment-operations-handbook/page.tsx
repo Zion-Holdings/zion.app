@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS HR Recruitment: operations handbook | Zion Tech Group',
   description: 'MicroSaaS HR Recruitment: operations handbook',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS HR Recruitment: operations handbook',
-    description: 'MicroSaaS HR Recruitment: operations handbook',
-    url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-operations-handbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'MicroSaaS HR Recruitment: operations handbook',
+  description: 'MicroSaaS HR Recruitment: operations handbook',
+  url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-operations-handbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-operations-handbook/' },
 };

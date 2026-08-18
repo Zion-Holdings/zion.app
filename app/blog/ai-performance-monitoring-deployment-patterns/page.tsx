@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Performance Monitoring: deployment patterns | Zion Tech Group',
-    description: 'AI Performance Monitoring: deployment patterns',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Performance Monitoring: deployment patterns',
-    description: 'AI Performance Monitoring: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-deployment-patterns/',
-    type: 'article',
+  description: 'AI Performance Monitoring: deployment patterns',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Performance Monitoring: deployment patterns',
+  description: 'AI Performance Monitoring: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-deployment-patterns/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Performance Monitoring: deployment patterns',
-    description: 'AI Performance Monitoring: deployment patterns',
+  card: 'summary_large_image',
+  title: 'AI Performance Monitoring: deployment patterns',
+  description: 'AI Performance Monitoring: deployment patterns',
   },
-    alternates: { canonical: '/blog/ai-performance-monitoring-deployment-patterns/' },
+  alternates: { canonical: '/blog/ai-performance-monitoring-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: deployment patterns", "description": "AI Performance Monitoring: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-deployment-patterns/"};

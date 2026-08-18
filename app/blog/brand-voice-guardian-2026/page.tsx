@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Brand Voice Guardian | Zion Tech Group',
-    description: 'Brand Voice Guardian',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Brand Voice Guardian',
-    description: 'Brand Voice Guardian',
-    url: 'https://ziontechgroup.com/blog/brand-voice-guardian-2026/',
-    type: 'article',
+  description: 'Brand Voice Guardian',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Brand Voice Guardian',
+  description: 'Brand Voice Guardian',
+  url: 'https://ziontechgroup.com/blog/brand-voice-guardian-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Brand Voice Guardian',
-    description: 'Brand Voice Guardian',
+  card: 'summary_large_image',
+  title: 'Brand Voice Guardian',
+  description: 'Brand Voice Guardian',
   },
-    alternates: { canonical: '/blog/brand-voice-guardian-2026/' },
+  alternates: { canonical: '/blog/brand-voice-guardian-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian", "description": "Brand Voice Guardian", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-2026/"};

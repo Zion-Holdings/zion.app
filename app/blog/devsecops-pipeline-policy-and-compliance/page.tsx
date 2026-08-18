@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'DevSecOps Pipeline: policy and compliance | Zion Tech Group',
   description: 'DevSecOps Pipeline: policy and compliance',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'DevSecOps Pipeline: policy and compliance',
-    description: 'DevSecOps Pipeline: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-policy-and-compliance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'DevSecOps Pipeline: policy and compliance',
+  description: 'DevSecOps Pipeline: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/devsecops-pipeline-policy-and-compliance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/devsecops-pipeline-policy-and-compliance/' },
 };

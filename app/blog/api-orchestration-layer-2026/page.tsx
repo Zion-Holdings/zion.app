@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Orchestration Layer | Zion Tech Group',
-    description: 'API Orchestration Layer',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Orchestration Layer',
-    description: 'API Orchestration Layer',
-    url: 'https://ziontechgroup.com/blog/api-orchestration-layer-2026/',
-    type: 'article',
+  description: 'API Orchestration Layer',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Orchestration Layer',
+  description: 'API Orchestration Layer',
+  url: 'https://ziontechgroup.com/blog/api-orchestration-layer-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Orchestration Layer',
-    description: 'API Orchestration Layer',
+  card: 'summary_large_image',
+  title: 'API Orchestration Layer',
+  description: 'API Orchestration Layer',
   },
-    alternates: { canonical: '/blog/api-orchestration-layer-2026/' },
+  alternates: { canonical: '/blog/api-orchestration-layer-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer", "description": "API Orchestration Layer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-2026/"};

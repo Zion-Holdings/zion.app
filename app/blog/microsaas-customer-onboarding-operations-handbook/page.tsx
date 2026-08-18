@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS Customer Onboarding: operations handbook | Zion Tech Group',
-    description: 'MicroSaaS Customer Onboarding: operations handbook',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'MicroSaaS Customer Onboarding: operations handbook',
-    description: 'MicroSaaS Customer Onboarding: operations handbook',
-    url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-operations-handbook/',
-    type: 'article',
+  description: 'MicroSaaS Customer Onboarding: operations handbook',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'MicroSaaS Customer Onboarding: operations handbook',
+  description: 'MicroSaaS Customer Onboarding: operations handbook',
+  url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'MicroSaaS Customer Onboarding: operations handbook',
-    description: 'MicroSaaS Customer Onboarding: operations handbook',
+  card: 'summary_large_image',
+  title: 'MicroSaaS Customer Onboarding: operations handbook',
+  description: 'MicroSaaS Customer Onboarding: operations handbook',
   },
-    alternates: { canonical: '/blog/microsaas-customer-onboarding-operations-handbook/' },
+  alternates: { canonical: '/blog/microsaas-customer-onboarding-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding: operations handbook", "description": "MicroSaaS Customer Onboarding: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-operations-handbook/"};

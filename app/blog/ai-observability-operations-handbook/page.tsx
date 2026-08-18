@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Observability: operations handbook | Zion Tech Group',
-    description: 'AI Observability: operations handbook',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Observability: operations handbook',
-    description: 'AI Observability: operations handbook',
-    url: 'https://ziontechgroup.com/blog/ai-observability-operations-handbook/',
-    type: 'article',
+  description: 'AI Observability: operations handbook',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Observability: operations handbook',
+  description: 'AI Observability: operations handbook',
+  url: 'https://ziontechgroup.com/blog/ai-observability-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Observability: operations handbook',
-    description: 'AI Observability: operations handbook',
+  card: 'summary_large_image',
+  title: 'AI Observability: operations handbook',
+  description: 'AI Observability: operations handbook',
   },
-    alternates: { canonical: '/blog/ai-observability-operations-handbook/' },
+  alternates: { canonical: '/blog/ai-observability-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: operations handbook", "description": "AI Observability: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-operations-handbook/"};

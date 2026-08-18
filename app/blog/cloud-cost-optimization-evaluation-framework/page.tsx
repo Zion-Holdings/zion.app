@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Cost Optimization: evaluation framework | Zion Tech Group',
   description: 'Cloud Cost Optimization: evaluation framework',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Cost Optimization: evaluation framework',
-    description: 'Cloud Cost Optimization: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-evaluation-framework/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Cloud Cost Optimization: evaluation framework',
+  description: 'Cloud Cost Optimization: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-evaluation-framework/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-cost-optimization-evaluation-framework/' },
 };

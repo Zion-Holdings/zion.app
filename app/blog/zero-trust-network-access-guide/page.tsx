@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Zero Trust Network Access Guide | Zion Tech Group',
-    description: 'Implementation patterns, risks, and next steps for zero trust network access guide.',
-    openGraph: {
-    title: 'Zero Trust Network Access Guide | Zion Tech Group',
-    description: 'Practical guidance for zero trust network access guide.',
-    url: 'https://ziontechgroup.com/blog/zero-trust-network-access-guide/',
-    type: 'article',
+  description: 'Implementation patterns, risks, and next steps for zero trust network access guide.',
+  openGraph: {
+  title: 'Zero Trust Network Access Guide | Zion Tech Group',
+  description: 'Practical guidance for zero trust network access guide.',
+  url: 'https://ziontechgroup.com/blog/zero-trust-network-access-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Zero Trust Network Access Guide | Zion Tech Group',
-    description: 'Practical guidance for zero trust network access guide.',
+  card: 'summary_large_image',
+  title: 'Zero Trust Network Access Guide | Zion Tech Group',
+  description: 'Practical guidance for zero trust network access guide.',
   },
-    alternates: { canonical: '/blog/zero-trust-network-access-guide/' },
+  alternates: { canonical: '/blog/zero-trust-network-access-guide/' },
 };
 
 export default function PostPage() {

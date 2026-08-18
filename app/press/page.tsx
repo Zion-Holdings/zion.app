@@ -4,17 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Press | Zion Tech Group',
-    description: 'Press releases, media mentions, and company announcements from Zion Tech Group.',
-    openGraph: { title: 'Press | Zion Tech Group',
-    description: 'News and announcements.',
-    url: 'https://ziontechgroup.com/press/',
-    type: 'website' },
+  description: 'Press releases, media mentions, and company announcements from Zion Tech Group.',
+  openGraph: { title: 'Press | Zion Tech Group',
+  description: 'News and announcements.',
+  url: 'https://ziontechgroup.com/press/',
+  type: 'website' },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Press | Zion Tech Group',
-    description: 'News and announcements.',
+  card: 'summary_large_image',
+  title: 'Press | Zion Tech Group',
+  description: 'News and announcements.',
   },
-    alternates: { canonical: '/press/' },
+  alternates: { canonical: '/press/' },
 };
 
 export default function PressPage() {

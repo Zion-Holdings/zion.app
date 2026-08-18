@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Use Cases | Zion Tech Group',
-    description: 'Explore Zion Tech Group use cases across industries: AI, cloud, security, automation, data, IoT, and beyond.',
-    openGraph: {
-    title: 'Use Cases | Zion Tech Group',
-    description: 'High-signal use cases for AI, IT, and automation engagements.',
-    url: 'https://ziontechgroup.com/use-cases/',
-    type: 'website',
+  description: 'Explore Zion Tech Group use cases across industries: AI, cloud, security, automation, data, IoT, and beyond.',
+  openGraph: {
+  title: 'Use Cases | Zion Tech Group',
+  description: 'High-signal use cases for AI, IT, and automation engagements.',
+  url: 'https://ziontechgroup.com/use-cases/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Use Cases | Zion Tech Group',
-    description: 'High-signal use cases for AI, IT, and automation engagements.',
+  card: 'summary_large_image',
+  title: 'Use Cases | Zion Tech Group',
+  description: 'High-signal use cases for AI, IT, and automation engagements.',
   },
-    alternates: { canonical: '/use-cases/' },
+  alternates: { canonical: '/use-cases/' },
 };
 
 const USE_CASES = [

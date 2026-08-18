@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Security Testing: security and governance | Zion Tech Group',
   description: 'API Security Testing: security and governance',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Security Testing: security and governance',
-    description: 'API Security Testing: security and governance',
-    url: 'https://ziontechgroup.com/blog/api-security-testing-security-and-governance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'API Security Testing: security and governance',
+  description: 'API Security Testing: security and governance',
+  url: 'https://ziontechgroup.com/blog/api-security-testing-security-and-governance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-security-testing-security-and-governance/' },
 };

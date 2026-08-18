@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'GenAI DevOps CI/CD: implementation playbook | Zion Tech Group',
   description: 'GenAI DevOps CI/CD: implementation playbook',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GenAI DevOps CI/CD: implementation playbook',
-    description: 'GenAI DevOps CI/CD: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/genai-devops-cicd-implementation-playbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'GenAI DevOps CI/CD: implementation playbook',
+  description: 'GenAI DevOps CI/CD: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/genai-devops-cicd-implementation-playbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/genai-devops-cicd-implementation-playbook/' },
 };

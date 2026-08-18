@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS HR Recruitment: common mistakes | Zion Tech Group',
   description: 'MicroSaaS HR Recruitment: common mistakes',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS HR Recruitment: common mistakes',
-    description: 'MicroSaaS HR Recruitment: common mistakes',
-    url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-common-mistakes/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'MicroSaaS HR Recruitment: common mistakes',
+  description: 'MicroSaaS HR Recruitment: common mistakes',
+  url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-common-mistakes/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-common-mistakes/' },
 };

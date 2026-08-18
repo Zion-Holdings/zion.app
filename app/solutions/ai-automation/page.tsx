@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'AI & Automation Solutions | Zion Tech Group',
   description: 'AI strategy, automation, and agentic operations solutions from Zion Tech Group.',
   openGraph: {
-    title: 'AI & Automation Solutions | Zion Tech Group',
-    description: 'AI and automation solutions with measurable outcomes.',
-    url: 'https://ziontechgroup.com/solutions/ai-automation/',
-    type: 'website',
+  title: 'AI & Automation Solutions | Zion Tech Group',
+  description: 'AI and automation solutions with measurable outcomes.',
+  url: 'https://ziontechgroup.com/solutions/ai-automation/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI & Automation Solutions | Zion Tech Group',
-    description: 'AI and automation solutions with measurable outcomes.',
+  card: 'summary_large_image',
+  title: 'AI & Automation Solutions | Zion Tech Group',
+  description: 'AI and automation solutions with measurable outcomes.',
   },
   alternates: { canonical: '/solutions/ai-automation/' },
 };

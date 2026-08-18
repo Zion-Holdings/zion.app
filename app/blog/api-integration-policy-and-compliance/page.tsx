@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Integration: policy and compliance | Zion Tech Group',
   description: 'API Integration: policy and compliance',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Integration: policy and compliance',
-    description: 'API Integration: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/api-integration-policy-and-compliance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'API Integration: policy and compliance',
+  description: 'API Integration: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/api-integration-policy-and-compliance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-integration-policy-and-compliance/' },
 };

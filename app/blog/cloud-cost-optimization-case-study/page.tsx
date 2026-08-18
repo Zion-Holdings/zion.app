@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Cost Optimization: case study | Zion Tech Group',
-    description: 'Cloud Cost Optimization: case study',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Cloud Cost Optimization: case study',
-    description: 'Cloud Cost Optimization: case study',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-case-study/',
-    type: 'article',
+  description: 'Cloud Cost Optimization: case study',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Cloud Cost Optimization: case study',
+  description: 'Cloud Cost Optimization: case study',
+  url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-case-study/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Cloud Cost Optimization: case study',
-    description: 'Cloud Cost Optimization: case study',
+  card: 'summary_large_image',
+  title: 'Cloud Cost Optimization: case study',
+  description: 'Cloud Cost Optimization: case study',
   },
-    alternates: { canonical: '/blog/cloud-cost-optimization-case-study/' },
+  alternates: { canonical: '/blog/cloud-cost-optimization-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost Optimization: case study", "description": "Cloud Cost Optimization: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-case-study/"};

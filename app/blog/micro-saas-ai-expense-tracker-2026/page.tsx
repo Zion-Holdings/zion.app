@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS Expense Tracker | Zion Tech Group',
-    description: 'MicroSaaS Expense Tracker',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'MicroSaaS Expense Tracker',
-    description: 'MicroSaaS Expense Tracker',
-    url: 'https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026/',
-    type: 'article',
+  description: 'MicroSaaS Expense Tracker',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'MicroSaaS Expense Tracker',
+  description: 'MicroSaaS Expense Tracker',
+  url: 'https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'MicroSaaS Expense Tracker',
-    description: 'MicroSaaS Expense Tracker',
+  card: 'summary_large_image',
+  title: 'MicroSaaS Expense Tracker',
+  description: 'MicroSaaS Expense Tracker',
   },
-    alternates: { canonical: '/blog/micro-saas-ai-expense-tracker-2026/' },
+  alternates: { canonical: '/blog/micro-saas-ai-expense-tracker-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker", "description": "MicroSaaS Expense Tracker", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026/"};

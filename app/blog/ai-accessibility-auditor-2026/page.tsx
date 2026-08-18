@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Accessibility Auditor | Zion Tech Group',
-    description: 'AI Accessibility Auditor',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Accessibility Auditor',
-    description: 'AI Accessibility Auditor',
-    url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/',
-    type: 'article',
+  description: 'AI Accessibility Auditor',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Accessibility Auditor',
+  description: 'AI Accessibility Auditor',
+  url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Accessibility Auditor',
-    description: 'AI Accessibility Auditor',
+  card: 'summary_large_image',
+  title: 'AI Accessibility Auditor',
+  description: 'AI Accessibility Auditor',
   },
-    alternates: { canonical: '/blog/ai-accessibility-auditor-2026/' },
+  alternates: { canonical: '/blog/ai-accessibility-auditor-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor", "description": "AI Accessibility Auditor", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/"};

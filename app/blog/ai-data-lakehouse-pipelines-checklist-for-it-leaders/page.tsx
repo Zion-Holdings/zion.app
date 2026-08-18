@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Data Lakehouse Pipelines: checklist for IT leaders | Zion Tech Group',
-    description: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
-    description: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/',
-    type: 'article',
+  description: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
+  description: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
-    description: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
+  card: 'summary_large_image',
+  title: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
+  description: 'AI Data Lakehouse Pipelines: checklist for IT leaders',
   },
-    alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/' },
+  alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: checklist for IT leaders", "description": "AI Data Lakehouse Pipelines: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Autonomous QA Engineering: deployment patterns | Zion Tech Group',
-    description: 'Autonomous QA Engineering: deployment patterns',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Autonomous QA Engineering: deployment patterns',
-    description: 'Autonomous QA Engineering: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-deployment-patterns/',
-    type: 'article',
+  description: 'Autonomous QA Engineering: deployment patterns',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Autonomous QA Engineering: deployment patterns',
+  description: 'Autonomous QA Engineering: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-deployment-patterns/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Autonomous QA Engineering: deployment patterns',
-    description: 'Autonomous QA Engineering: deployment patterns',
+  card: 'summary_large_image',
+  title: 'Autonomous QA Engineering: deployment patterns',
+  description: 'Autonomous QA Engineering: deployment patterns',
   },
-    alternates: { canonical: '/blog/autonomous-qa-engineering-deployment-patterns/' },
+  alternates: { canonical: '/blog/autonomous-qa-engineering-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: deployment patterns", "description": "Autonomous QA Engineering: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-deployment-patterns/"};

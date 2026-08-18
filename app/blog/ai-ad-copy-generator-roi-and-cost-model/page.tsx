@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Ad Copy Generator: ROI and cost model | Zion Tech Group',
   description: 'AI Ad Copy Generator: ROI and cost model',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Ad Copy Generator: ROI and cost model',
-    description: 'AI Ad Copy Generator: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-roi-and-cost-model/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Ad Copy Generator: ROI and cost model',
+  description: 'AI Ad Copy Generator: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-roi-and-cost-model/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-ad-copy-generator-roi-and-cost-model/' },
 };

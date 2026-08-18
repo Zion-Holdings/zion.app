@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Autonomous Agents: starter template | Zion Tech Group',
   description: 'AI Autonomous Agents: starter template',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Autonomous Agents: starter template',
-    description: 'AI Autonomous Agents: starter template',
-    url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-starter-template/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Autonomous Agents: starter template',
+  description: 'AI Autonomous Agents: starter template',
+  url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-starter-template/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-autonomous-agents-starter-template/' },
 };

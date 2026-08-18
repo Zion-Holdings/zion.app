@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Base64 Encoder/Decoder | Zion Tech Group',
-    description: 'Encode and decode Base64 strings online. Supports UTF-8 text and URL-safe variants.',
-    openGraph: {
-    title: 'Base64 Encoder/Decoder | Zion Tech Group',
-    description: 'Free online Base64 encode and decode tool with UTF-8 support.',
-    url: 'https://ziontechgroup.com/tools/base64-encoder/',
-    type: 'website',
+  description: 'Encode and decode Base64 strings online. Supports UTF-8 text and URL-safe variants.',
+  openGraph: {
+  title: 'Base64 Encoder/Decoder | Zion Tech Group',
+  description: 'Free online Base64 encode and decode tool with UTF-8 support.',
+  url: 'https://ziontechgroup.com/tools/base64-encoder/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Base64 Encoder/Decoder | Zion Tech Group',
-    description: 'Free online Base64 encode and decode tool with UTF-8 support.',
+  card: 'summary_large_image',
+  title: 'Base64 Encoder/Decoder | Zion Tech Group',
+  description: 'Free online Base64 encode and decode tool with UTF-8 support.',
   },
-    alternates: { canonical: '/tools/base64-encoder/' },
+  alternates: { canonical: '/tools/base64-encoder/' },
 };
 
 export default function Base64EncoderPage() {

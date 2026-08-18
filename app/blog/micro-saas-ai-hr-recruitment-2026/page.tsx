@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS HR Recruitment | Zion Tech Group',
-    description: 'MicroSaaS HR Recruitment',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'MicroSaaS HR Recruitment',
-    description: 'MicroSaaS HR Recruitment',
-    url: 'https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026/',
-    type: 'article',
+  description: 'MicroSaaS HR Recruitment',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'MicroSaaS HR Recruitment',
+  description: 'MicroSaaS HR Recruitment',
+  url: 'https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'MicroSaaS HR Recruitment',
-    description: 'MicroSaaS HR Recruitment',
+  card: 'summary_large_image',
+  title: 'MicroSaaS HR Recruitment',
+  description: 'MicroSaaS HR Recruitment',
   },
-    alternates: { canonical: '/blog/micro-saas-ai-hr-recruitment-2026/' },
+  alternates: { canonical: '/blog/micro-saas-ai-hr-recruitment-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment", "description": "MicroSaaS HR Recruitment", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026/"};

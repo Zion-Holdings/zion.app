@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Managed IT Services: deployment patterns | Zion Tech Group',
-    description: 'Managed IT Services: deployment patterns',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Managed IT Services: deployment patterns',
-    description: 'Managed IT Services: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/managed-it-services-deployment-patterns/',
-    type: 'article',
+  description: 'Managed IT Services: deployment patterns',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Managed IT Services: deployment patterns',
+  description: 'Managed IT Services: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/managed-it-services-deployment-patterns/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Managed IT Services: deployment patterns',
-    description: 'Managed IT Services: deployment patterns',
+  card: 'summary_large_image',
+  title: 'Managed IT Services: deployment patterns',
+  description: 'Managed IT Services: deployment patterns',
   },
-    alternates: { canonical: '/blog/managed-it-services-deployment-patterns/' },
+  alternates: { canonical: '/blog/managed-it-services-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: deployment patterns", "description": "Managed IT Services: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-deployment-patterns/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI 3D Asset Generator: architecture overview | Zion Tech Group',
-    description: 'AI 3D Asset Generator: architecture overview',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI 3D Asset Generator: architecture overview',
-    description: 'AI 3D Asset Generator: architecture overview',
-    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-architecture-overview/',
-    type: 'article',
+  description: 'AI 3D Asset Generator: architecture overview',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI 3D Asset Generator: architecture overview',
+  description: 'AI 3D Asset Generator: architecture overview',
+  url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-architecture-overview/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI 3D Asset Generator: architecture overview',
-    description: 'AI 3D Asset Generator: architecture overview',
+  card: 'summary_large_image',
+  title: 'AI 3D Asset Generator: architecture overview',
+  description: 'AI 3D Asset Generator: architecture overview',
   },
-    alternates: { canonical: '/blog/ai-3d-asset-generator-architecture-overview/' },
+  alternates: { canonical: '/blog/ai-3d-asset-generator-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: architecture overview", "description": "AI 3D Asset Generator: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-architecture-overview/"};

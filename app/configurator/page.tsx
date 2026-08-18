@@ -4,19 +4,19 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Configurator | Zion Tech Group',
-    description: 'Start a configurator-style intake for Zion Tech Group services.',
-    openGraph: {
-    title: 'Configurator | Zion Tech Group',
-    description: 'Tell us your constraints and get a short engagement plan.',
-    url: 'https://ziontechgroup.com/configurator/',
-    type: 'website',
+  description: 'Start a configurator-style intake for Zion Tech Group services.',
+  openGraph: {
+  title: 'Configurator | Zion Tech Group',
+  description: 'Tell us your constraints and get a short engagement plan.',
+  url: 'https://ziontechgroup.com/configurator/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Configurator | Zion Tech Group',
-    description: 'Tell us your constraints and get a short engagement plan.',
+  card: 'summary_large_image',
+  title: 'Configurator | Zion Tech Group',
+  description: 'Tell us your constraints and get a short engagement plan.',
   },
-    alternates: { canonical: '/configurator/' },
+  alternates: { canonical: '/configurator/' },
 };
 
 export default function ConfiguratorPage() {

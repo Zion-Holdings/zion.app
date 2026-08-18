@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Data Warehouse Modernization: case study | Zion Tech Group',
   description: 'Data Warehouse Modernization: case study',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Data Warehouse Modernization: case study',
-    description: 'Data Warehouse Modernization: case study',
-    url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-case-study/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Data Warehouse Modernization: case study',
+  description: 'Data Warehouse Modernization: case study',
+  url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-case-study/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/data-warehouse-modernization-case-study/' },
 };

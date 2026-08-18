@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Cost AI Optimizer: architecture overview | Zion Tech Group',
-    description: 'Cloud Cost AI Optimizer: architecture overview',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Cloud Cost AI Optimizer: architecture overview',
-    description: 'Cloud Cost AI Optimizer: architecture overview',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-architecture-overview/',
-    type: 'article',
+  description: 'Cloud Cost AI Optimizer: architecture overview',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Cloud Cost AI Optimizer: architecture overview',
+  description: 'Cloud Cost AI Optimizer: architecture overview',
+  url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-architecture-overview/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Cloud Cost AI Optimizer: architecture overview',
-    description: 'Cloud Cost AI Optimizer: architecture overview',
+  card: 'summary_large_image',
+  title: 'Cloud Cost AI Optimizer: architecture overview',
+  description: 'Cloud Cost AI Optimizer: architecture overview',
   },
-    alternates: { canonical: '/blog/cloud-cost-ai-optimizer-architecture-overview/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: architecture overview", "description": "Cloud Cost AI Optimizer: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-architecture-overview/"};

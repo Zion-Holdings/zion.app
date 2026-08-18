@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Public Roadmap | Zion Tech Group',
-    description: 'Zion Tech Group public roadmap, planned releases, and platform direction.',
-    openGraph: {
-    title: 'Public Roadmap | Zion Tech Group',
-    description: 'See what we’re building next and share feedback.',
-    url: 'https://ziontechgroup.com/public-roadmap/',
-    type: 'website',
+  description: 'Zion Tech Group public roadmap, planned releases, and platform direction.',
+  openGraph: {
+  title: 'Public Roadmap | Zion Tech Group',
+  description: 'See what we’re building next and share feedback.',
+  url: 'https://ziontechgroup.com/public-roadmap/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Public Roadmap | Zion Tech Group',
-    description: 'See what we’re building next and share feedback.',
+  card: 'summary_large_image',
+  title: 'Public Roadmap | Zion Tech Group',
+  description: 'See what we’re building next and share feedback.',
   },
-    alternates: { canonical: '/public-roadmap/' },
+  alternates: { canonical: '/public-roadmap/' },
 };
 
 export default function PublicRoadmapPage() {

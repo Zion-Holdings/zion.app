@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Performance Monitoring: automation roadmap | Zion Tech Group',
-    description: 'AI Performance Monitoring: automation roadmap',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Performance Monitoring: automation roadmap',
-    description: 'AI Performance Monitoring: automation roadmap',
-    url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-automation-roadmap/',
-    type: 'article',
+  description: 'AI Performance Monitoring: automation roadmap',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Performance Monitoring: automation roadmap',
+  description: 'AI Performance Monitoring: automation roadmap',
+  url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-automation-roadmap/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Performance Monitoring: automation roadmap',
-    description: 'AI Performance Monitoring: automation roadmap',
+  card: 'summary_large_image',
+  title: 'AI Performance Monitoring: automation roadmap',
+  description: 'AI Performance Monitoring: automation roadmap',
   },
-    alternates: { canonical: '/blog/ai-performance-monitoring-automation-roadmap/' },
+  alternates: { canonical: '/blog/ai-performance-monitoring-automation-roadmap/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: automation roadmap", "description": "AI Performance Monitoring: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-automation-roadmap/"};

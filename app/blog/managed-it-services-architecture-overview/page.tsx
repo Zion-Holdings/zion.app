@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Managed IT Services: architecture overview | Zion Tech Group',
-    description: 'Managed IT Services: architecture overview',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Managed IT Services: architecture overview',
-    description: 'Managed IT Services: architecture overview',
-    url: 'https://ziontechgroup.com/blog/managed-it-services-architecture-overview/',
-    type: 'article',
+  description: 'Managed IT Services: architecture overview',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Managed IT Services: architecture overview',
+  description: 'Managed IT Services: architecture overview',
+  url: 'https://ziontechgroup.com/blog/managed-it-services-architecture-overview/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Managed IT Services: architecture overview',
-    description: 'Managed IT Services: architecture overview',
+  card: 'summary_large_image',
+  title: 'Managed IT Services: architecture overview',
+  description: 'Managed IT Services: architecture overview',
   },
-    alternates: { canonical: '/blog/managed-it-services-architecture-overview/' },
+  alternates: { canonical: '/blog/managed-it-services-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: architecture overview", "description": "Managed IT Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-architecture-overview/"};

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Chaos Engineering: security and governance | Zion Tech Group',
   description: 'Chaos Engineering: security and governance',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Chaos Engineering: security and governance',
-    description: 'Chaos Engineering: security and governance',
-    url: 'https://ziontechgroup.com/blog/chaos-engineering-security-and-governance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Chaos Engineering: security and governance',
+  description: 'Chaos Engineering: security and governance',
+  url: 'https://ziontechgroup.com/blog/chaos-engineering-security-and-governance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/chaos-engineering-security-and-governance/' },
 };

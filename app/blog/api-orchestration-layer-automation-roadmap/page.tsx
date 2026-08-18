@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Orchestration Layer: automation roadmap | Zion Tech Group',
-    description: 'API Orchestration Layer: automation roadmap',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Orchestration Layer: automation roadmap',
-    description: 'API Orchestration Layer: automation roadmap',
-    url: 'https://ziontechgroup.com/blog/api-orchestration-layer-automation-roadmap/',
-    type: 'article',
+  description: 'API Orchestration Layer: automation roadmap',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Orchestration Layer: automation roadmap',
+  description: 'API Orchestration Layer: automation roadmap',
+  url: 'https://ziontechgroup.com/blog/api-orchestration-layer-automation-roadmap/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Orchestration Layer: automation roadmap',
-    description: 'API Orchestration Layer: automation roadmap',
+  card: 'summary_large_image',
+  title: 'API Orchestration Layer: automation roadmap',
+  description: 'API Orchestration Layer: automation roadmap',
   },
-    alternates: { canonical: '/blog/api-orchestration-layer-automation-roadmap/' },
+  alternates: { canonical: '/blog/api-orchestration-layer-automation-roadmap/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: automation roadmap", "description": "API Orchestration Layer: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-automation-roadmap/"};

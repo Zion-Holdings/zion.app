@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Migration Services: ROI and cost model | Zion Tech Group',
-    description: 'Cloud Migration Services: ROI and cost model',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Cloud Migration Services: ROI and cost model',
-    description: 'Cloud Migration Services: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-roi-and-cost-model/',
-    type: 'article',
+  description: 'Cloud Migration Services: ROI and cost model',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Cloud Migration Services: ROI and cost model',
+  description: 'Cloud Migration Services: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/cloud-migration-services-roi-and-cost-model/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Cloud Migration Services: ROI and cost model',
-    description: 'Cloud Migration Services: ROI and cost model',
+  card: 'summary_large_image',
+  title: 'Cloud Migration Services: ROI and cost model',
+  description: 'Cloud Migration Services: ROI and cost model',
   },
-    alternates: { canonical: '/blog/cloud-migration-services-roi-and-cost-model/' },
+  alternates: { canonical: '/blog/cloud-migration-services-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: ROI and cost model", "description": "Cloud Migration Services: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-roi-and-cost-model/"};

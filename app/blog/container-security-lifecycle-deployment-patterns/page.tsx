@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Container Security Lifecycle: deployment patterns | Zion Tech Group',
   description: 'Container Security Lifecycle: deployment patterns',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Container Security Lifecycle: deployment patterns',
-    description: 'Container Security Lifecycle: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/container-security-lifecycle-deployment-patterns/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Container Security Lifecycle: deployment patterns',
+  description: 'Container Security Lifecycle: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/container-security-lifecycle-deployment-patterns/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/container-security-lifecycle-deployment-patterns/' },
 };

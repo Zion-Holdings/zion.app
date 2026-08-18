@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Network Infrastructure: security and governance | Zion Tech Group',
   description: 'Network Infrastructure: security and governance',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Network Infrastructure: security and governance',
-    description: 'Network Infrastructure: security and governance',
-    url: 'https://ziontechgroup.com/blog/network-infrastructure-security-and-governance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Network Infrastructure: security and governance',
+  description: 'Network Infrastructure: security and governance',
+  url: 'https://ziontechgroup.com/blog/network-infrastructure-security-and-governance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/network-infrastructure-security-and-governance/' },
 };

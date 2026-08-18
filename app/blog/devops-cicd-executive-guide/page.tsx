@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'DevOps CI/CD: executive guide | Zion Tech Group',
-    description: 'DevOps CI/CD: executive guide',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'DevOps CI/CD: executive guide',
-    description: 'DevOps CI/CD: executive guide',
-    url: 'https://ziontechgroup.com/blog/devops-cicd-executive-guide/',
-    type: 'article',
+  description: 'DevOps CI/CD: executive guide',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'DevOps CI/CD: executive guide',
+  description: 'DevOps CI/CD: executive guide',
+  url: 'https://ziontechgroup.com/blog/devops-cicd-executive-guide/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'DevOps CI/CD: executive guide',
-    description: 'DevOps CI/CD: executive guide',
+  card: 'summary_large_image',
+  title: 'DevOps CI/CD: executive guide',
+  description: 'DevOps CI/CD: executive guide',
   },
-    alternates: { canonical: '/blog/devops-cicd-executive-guide/' },
+  alternates: { canonical: '/blog/devops-cicd-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: executive guide", "description": "DevOps CI/CD: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-executive-guide/"};

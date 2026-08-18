@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Performance Monitoring | Zion Tech Group',
-    description: 'AI Performance Monitoring',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Performance Monitoring',
-    description: 'AI Performance Monitoring',
-    url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-2026/',
-    type: 'article',
+  description: 'AI Performance Monitoring',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Performance Monitoring',
+  description: 'AI Performance Monitoring',
+  url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Performance Monitoring',
-    description: 'AI Performance Monitoring',
+  card: 'summary_large_image',
+  title: 'AI Performance Monitoring',
+  description: 'AI Performance Monitoring',
   },
-    alternates: { canonical: '/blog/ai-performance-monitoring-2026/' },
+  alternates: { canonical: '/blog/ai-performance-monitoring-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring", "description": "AI Performance Monitoring", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-2026/"};

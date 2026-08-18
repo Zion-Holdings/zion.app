@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Network Infrastructure: ROI and cost model | Zion Tech Group',
   description: 'Network Infrastructure: ROI and cost model',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Network Infrastructure: ROI and cost model',
-    description: 'Network Infrastructure: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/network-infrastructure-roi-and-cost-model/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Network Infrastructure: ROI and cost model',
+  description: 'Network Infrastructure: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/network-infrastructure-roi-and-cost-model/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/network-infrastructure-roi-and-cost-model/' },
 };

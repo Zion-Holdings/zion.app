@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agent Safety Evaluation: implementation playbook | Zion Tech Group',
-    description: 'AI Agent Safety Evaluation: implementation playbook',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Agent Safety Evaluation: implementation playbook',
-    description: 'AI Agent Safety Evaluation: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/',
-    type: 'article',
+  description: 'AI Agent Safety Evaluation: implementation playbook',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Agent Safety Evaluation: implementation playbook',
+  description: 'AI Agent Safety Evaluation: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Agent Safety Evaluation: implementation playbook',
-    description: 'AI Agent Safety Evaluation: implementation playbook',
+  card: 'summary_large_image',
+  title: 'AI Agent Safety Evaluation: implementation playbook',
+  description: 'AI Agent Safety Evaluation: implementation playbook',
   },
-    alternates: { canonical: '/blog/ai-agent-safety-evaluation-implementation-playbook/' },
+  alternates: { canonical: '/blog/ai-agent-safety-evaluation-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: implementation playbook", "description": "AI Agent Safety Evaluation: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/"};

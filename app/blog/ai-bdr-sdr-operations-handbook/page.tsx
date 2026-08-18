@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI BDR SDR: operations handbook | Zion Tech Group',
-    description: 'AI BDR SDR: operations handbook',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI BDR SDR: operations handbook',
-    description: 'AI BDR SDR: operations handbook',
-    url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-operations-handbook/',
-    type: 'article',
+  description: 'AI BDR SDR: operations handbook',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI BDR SDR: operations handbook',
+  description: 'AI BDR SDR: operations handbook',
+  url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI BDR SDR: operations handbook',
-    description: 'AI BDR SDR: operations handbook',
+  card: 'summary_large_image',
+  title: 'AI BDR SDR: operations handbook',
+  description: 'AI BDR SDR: operations handbook',
   },
-    alternates: { canonical: '/blog/ai-bdr-sdr-operations-handbook/' },
+  alternates: { canonical: '/blog/ai-bdr-sdr-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: operations handbook", "description": "AI BDR SDR: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-operations-handbook/"};

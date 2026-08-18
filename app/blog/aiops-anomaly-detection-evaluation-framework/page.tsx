@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AIOps Anomaly Detection: evaluation framework | Zion Tech Group',
-    description: 'AIOps Anomaly Detection: evaluation framework',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AIOps Anomaly Detection: evaluation framework',
-    description: 'AIOps Anomaly Detection: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-evaluation-framework/',
-    type: 'article',
+  description: 'AIOps Anomaly Detection: evaluation framework',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AIOps Anomaly Detection: evaluation framework',
+  description: 'AIOps Anomaly Detection: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-evaluation-framework/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AIOps Anomaly Detection: evaluation framework',
-    description: 'AIOps Anomaly Detection: evaluation framework',
+  card: 'summary_large_image',
+  title: 'AIOps Anomaly Detection: evaluation framework',
+  description: 'AIOps Anomaly Detection: evaluation framework',
   },
-    alternates: { canonical: '/blog/aiops-anomaly-detection-evaluation-framework/' },
+  alternates: { canonical: '/blog/aiops-anomaly-detection-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: evaluation framework", "description": "AIOps Anomaly Detection: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-evaluation-framework/"};

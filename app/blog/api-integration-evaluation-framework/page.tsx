@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Integration: evaluation framework | Zion Tech Group',
   description: 'API Integration: evaluation framework',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Integration: evaluation framework',
-    description: 'API Integration: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/api-integration-evaluation-framework/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'API Integration: evaluation framework',
+  description: 'API Integration: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/api-integration-evaluation-framework/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-integration-evaluation-framework/' },
 };

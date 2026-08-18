@@ -4,17 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Financial Services Solutions | Zion Tech Group',
-    description: 'RegTech, fraud detection, trading bots, and KYC automation for financial services.',
-    openGraph: {
-    title: 'Financial Services Solutions | Zion Tech Group',
-    description: 'Financial services delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/financial-services/',
-    type: 'website',
+  description: 'RegTech, fraud detection, trading bots, and KYC automation for financial services.',
+  openGraph: {
+  title: 'Financial Services Solutions | Zion Tech Group',
+  description: 'Financial services delivery patterns and AI implementation guidance.',
+  url: 'https://ziontechgroup.com/solutions/financial-services/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Financial Services Solutions | Zion Tech Group',
-    description: 'Financial services delivery patterns and AI implementation guidance.',
+  card: 'summary_large_image',
+  title: 'Financial Services Solutions | Zion Tech Group',
+  description: 'Financial services delivery patterns and AI implementation guidance.',
   },
   alternates: { canonical: '/solutions/financial-services/' },
 };

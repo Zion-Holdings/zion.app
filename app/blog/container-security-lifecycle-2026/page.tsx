@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Container Security Lifecycle | Zion Tech Group',
-    description: 'Container Security Lifecycle',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Container Security Lifecycle',
-    description: 'Container Security Lifecycle',
-    url: 'https://ziontechgroup.com/blog/container-security-lifecycle-2026/',
-    type: 'article',
+  description: 'Container Security Lifecycle',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Container Security Lifecycle',
+  description: 'Container Security Lifecycle',
+  url: 'https://ziontechgroup.com/blog/container-security-lifecycle-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Container Security Lifecycle',
-    description: 'Container Security Lifecycle',
+  card: 'summary_large_image',
+  title: 'Container Security Lifecycle',
+  description: 'Container Security Lifecycle',
   },
-    alternates: { canonical: '/blog/container-security-lifecycle-2026/' },
+  alternates: { canonical: '/blog/container-security-lifecycle-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle", "description": "Container Security Lifecycle", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-2026/"};

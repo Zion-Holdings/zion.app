@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Accessibility Compliance | Zion Tech Group',
-    description: 'Accessibility Compliance',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Accessibility Compliance',
-    description: 'Accessibility Compliance',
-    url: 'https://ziontechgroup.com/blog/accessibility-compliance-2026/',
-    type: 'article',
+  description: 'Accessibility Compliance',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Accessibility Compliance',
+  description: 'Accessibility Compliance',
+  url: 'https://ziontechgroup.com/blog/accessibility-compliance-2026/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Accessibility Compliance',
-    description: 'Accessibility Compliance',
+  card: 'summary_large_image',
+  title: 'Accessibility Compliance',
+  description: 'Accessibility Compliance',
   },
-    alternates: { canonical: '/blog/accessibility-compliance-2026/' },
+  alternates: { canonical: '/blog/accessibility-compliance-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance", "description": "Accessibility Compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-2026/"};

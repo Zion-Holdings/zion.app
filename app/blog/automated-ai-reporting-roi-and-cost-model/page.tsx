@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Automated AI Reporting: ROI and cost model | Zion Tech Group',
-    description: 'Automated AI Reporting: ROI and cost model',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Automated AI Reporting: ROI and cost model',
-    description: 'Automated AI Reporting: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-roi-and-cost-model/',
-    type: 'article',
+  description: 'Automated AI Reporting: ROI and cost model',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Automated AI Reporting: ROI and cost model',
+  description: 'Automated AI Reporting: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/automated-ai-reporting-roi-and-cost-model/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Automated AI Reporting: ROI and cost model',
-    description: 'Automated AI Reporting: ROI and cost model',
+  card: 'summary_large_image',
+  title: 'Automated AI Reporting: ROI and cost model',
+  description: 'Automated AI Reporting: ROI and cost model',
   },
-    alternates: { canonical: '/blog/automated-ai-reporting-roi-and-cost-model/' },
+  alternates: { canonical: '/blog/automated-ai-reporting-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: ROI and cost model", "description": "Automated AI Reporting: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-roi-and-cost-model/"};

@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Industries | Zion Tech Group',
   description: 'Industry-specific AI and IT solutions: healthcare, finance, manufacturing, retail, logistics, education, and government.',
   openGraph: {
-    title: 'Industries | Zion Tech Group',
-    description: 'Industry-specific solutions and delivery patterns.',
-    url: 'https://ziontechgroup.com/industries/',
-    type: 'website',
+  title: 'Industries | Zion Tech Group',
+  description: 'Industry-specific solutions and delivery patterns.',
+  url: 'https://ziontechgroup.com/industries/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Industries | Zion Tech Group',
-    description: 'Industry-specific solutions and delivery patterns.',
+  card: 'summary_large_image',
+  title: 'Industries | Zion Tech Group',
+  description: 'Industry-specific solutions and delivery patterns.',
   },
   alternates: { canonical: '/industries/' },
 };

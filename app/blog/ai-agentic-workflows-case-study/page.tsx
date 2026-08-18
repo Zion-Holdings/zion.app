@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agentic Workflows: case study | Zion Tech Group',
   description: 'AI Agentic Workflows: case study',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agentic Workflows: case study',
-    description: 'AI Agentic Workflows: case study',
-    url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-case-study/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Agentic Workflows: case study',
+  description: 'AI Agentic Workflows: case study',
+  url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-case-study/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-agentic-workflows-case-study/' },
 };

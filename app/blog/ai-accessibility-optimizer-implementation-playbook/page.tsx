@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Accessibility Optimizer: implementation playbook | Zion Tech Group',
-    description: 'AI Accessibility Optimizer: implementation playbook',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Accessibility Optimizer: implementation playbook',
-    description: 'AI Accessibility Optimizer: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-implementation-playbook/',
-    type: 'article',
+  description: 'AI Accessibility Optimizer: implementation playbook',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Accessibility Optimizer: implementation playbook',
+  description: 'AI Accessibility Optimizer: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-implementation-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Accessibility Optimizer: implementation playbook',
-    description: 'AI Accessibility Optimizer: implementation playbook',
+  card: 'summary_large_image',
+  title: 'AI Accessibility Optimizer: implementation playbook',
+  description: 'AI Accessibility Optimizer: implementation playbook',
   },
-    alternates: { canonical: '/blog/ai-accessibility-optimizer-implementation-playbook/' },
+  alternates: { canonical: '/blog/ai-accessibility-optimizer-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: implementation playbook", "description": "AI Accessibility Optimizer: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-implementation-playbook/"};

@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Gateway Management: case study | Zion Tech Group',
   description: 'API Gateway Management: case study',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Gateway Management: case study',
-    description: 'API Gateway Management: case study',
-    url: 'https://ziontechgroup.com/blog/api-gateway-management-case-study/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'API Gateway Management: case study',
+  description: 'API Gateway Management: case study',
+  url: 'https://ziontechgroup.com/blog/api-gateway-management-case-study/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-gateway-management-case-study/' },
 };

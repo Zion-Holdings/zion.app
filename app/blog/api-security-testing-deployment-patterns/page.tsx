@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Security Testing: deployment patterns | Zion Tech Group',
-    description: 'API Security Testing: deployment patterns',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Security Testing: deployment patterns',
-    description: 'API Security Testing: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/api-security-testing-deployment-patterns/',
-    type: 'article',
+  description: 'API Security Testing: deployment patterns',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Security Testing: deployment patterns',
+  description: 'API Security Testing: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/api-security-testing-deployment-patterns/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Security Testing: deployment patterns',
-    description: 'API Security Testing: deployment patterns',
+  card: 'summary_large_image',
+  title: 'API Security Testing: deployment patterns',
+  description: 'API Security Testing: deployment patterns',
   },
-    alternates: { canonical: '/blog/api-security-testing-deployment-patterns/' },
+  alternates: { canonical: '/blog/api-security-testing-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: deployment patterns", "description": "API Security Testing: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-deployment-patterns/"};

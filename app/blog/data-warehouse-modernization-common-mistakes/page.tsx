@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Data Warehouse Modernization: common mistakes | Zion Tech Group',
-    description: 'Data Warehouse Modernization: common mistakes',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Data Warehouse Modernization: common mistakes',
-    description: 'Data Warehouse Modernization: common mistakes',
-    url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/',
-    type: 'article',
+  description: 'Data Warehouse Modernization: common mistakes',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Data Warehouse Modernization: common mistakes',
+  description: 'Data Warehouse Modernization: common mistakes',
+  url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Data Warehouse Modernization: common mistakes',
-    description: 'Data Warehouse Modernization: common mistakes',
+  card: 'summary_large_image',
+  title: 'Data Warehouse Modernization: common mistakes',
+  description: 'Data Warehouse Modernization: common mistakes',
   },
-    alternates: { canonical: '/blog/data-warehouse-modernization-common-mistakes/' },
+  alternates: { canonical: '/blog/data-warehouse-modernization-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: common mistakes", "description": "Data Warehouse Modernization: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/"};

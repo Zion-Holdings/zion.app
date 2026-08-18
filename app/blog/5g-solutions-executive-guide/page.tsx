@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: '5G Solutions: executive guide | Zion Tech Group',
   description: '5G Solutions: executive guide',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: '5G Solutions: executive guide',
-    description: '5G Solutions: executive guide',
-    url: 'https://ziontechgroup.com/blog/5g-solutions-executive-guide/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: '5G Solutions: executive guide',
+  description: '5G Solutions: executive guide',
+  url: 'https://ziontechgroup.com/blog/5g-solutions-executive-guide/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/5g-solutions-executive-guide/' },
 };

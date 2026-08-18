@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Cost AI Optimizer: operations handbook | Zion Tech Group',
   description: 'Cloud Cost AI Optimizer: operations handbook',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Cost AI Optimizer: operations handbook',
-    description: 'Cloud Cost AI Optimizer: operations handbook',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-operations-handbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Cloud Cost AI Optimizer: operations handbook',
+  description: 'Cloud Cost AI Optimizer: operations handbook',
+  url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-operations-handbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-operations-handbook/' },
 };

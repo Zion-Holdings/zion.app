@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Products | Zion Tech Group',
   description: 'Zion AI products and platforms built for managed AI, automation, analytics, and enterprise delivery.',
   openGraph: {
-    title: 'Products | Zion Tech Group',
-    description: 'Explore Zion AI products and platforms for enterprise automation, analytics, and managed AI.',
-    url: 'https://ziontechgroup.com/products/',
-    type: 'website',
+  title: 'Products | Zion Tech Group',
+  description: 'Explore Zion AI products and platforms for enterprise automation, analytics, and managed AI.',
+  url: 'https://ziontechgroup.com/products/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Products | Zion Tech Group',
-    description: 'Explore Zion AI products and platforms for enterprise automation, analytics, and managed AI.',
+  card: 'summary_large_image',
+  title: 'Products | Zion Tech Group',
+  description: 'Explore Zion AI products and platforms for enterprise automation, analytics, and managed AI.',
   },
    { canonical: '/products/' },
 };

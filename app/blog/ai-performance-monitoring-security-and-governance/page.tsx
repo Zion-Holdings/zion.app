@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Performance Monitoring: security and governance | Zion Tech Group',
-    description: 'AI Performance Monitoring: security and governance',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Performance Monitoring: security and governance',
-    description: 'AI Performance Monitoring: security and governance',
-    url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-security-and-governance/',
-    type: 'article',
+  description: 'AI Performance Monitoring: security and governance',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Performance Monitoring: security and governance',
+  description: 'AI Performance Monitoring: security and governance',
+  url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-security-and-governance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Performance Monitoring: security and governance',
-    description: 'AI Performance Monitoring: security and governance',
+  card: 'summary_large_image',
+  title: 'AI Performance Monitoring: security and governance',
+  description: 'AI Performance Monitoring: security and governance',
   },
-    alternates: { canonical: '/blog/ai-performance-monitoring-security-and-governance/' },
+  alternates: { canonical: '/blog/ai-performance-monitoring-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: security and governance", "description": "AI Performance Monitoring: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-security-and-governance/"};

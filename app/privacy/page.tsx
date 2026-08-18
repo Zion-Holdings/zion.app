@@ -4,17 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Zion Tech Group',
-    description: 'Privacy policy for Zion Tech Group: data collection, use, retention, security, and your rights.',
-    openGraph: { title: 'Privacy Policy | Zion Tech Group',
-    description: 'Data practices and privacy rights.',
-    url: 'https://ziontechgroup.com/privacy/',
-    type: 'website' },
+  description: 'Privacy policy for Zion Tech Group: data collection, use, retention, security, and your rights.',
+  openGraph: { title: 'Privacy Policy | Zion Tech Group',
+  description: 'Data practices and privacy rights.',
+  url: 'https://ziontechgroup.com/privacy/',
+  type: 'website' },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Privacy Policy | Zion Tech Group',
-    description: 'Data practices and privacy rights.',
+  card: 'summary_large_image',
+  title: 'Privacy Policy | Zion Tech Group',
+  description: 'Data practices and privacy rights.',
   },
-    alternates: { canonical: '/privacy/' },
+  alternates: { canonical: '/privacy/' },
 };
 
 export default function PrivacyPage() {

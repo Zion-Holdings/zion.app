@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Automated AI Reporting: case study | Zion Tech Group',
   description: 'Automated AI Reporting: case study',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Automated AI Reporting: case study',
-    description: 'Automated AI Reporting: case study',
-    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-case-study/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Automated AI Reporting: case study',
+  description: 'Automated AI Reporting: case study',
+  url: 'https://ziontechgroup.com/blog/automated-ai-reporting-case-study/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/automated-ai-reporting-case-study/' },
 };

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Gateway Management: operations handbook | Zion Tech Group',
-    description: 'API Gateway Management: operations handbook',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Gateway Management: operations handbook',
-    description: 'API Gateway Management: operations handbook',
-    url: 'https://ziontechgroup.com/blog/api-gateway-management-operations-handbook/',
-    type: 'article',
+  description: 'API Gateway Management: operations handbook',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Gateway Management: operations handbook',
+  description: 'API Gateway Management: operations handbook',
+  url: 'https://ziontechgroup.com/blog/api-gateway-management-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Gateway Management: operations handbook',
-    description: 'API Gateway Management: operations handbook',
+  card: 'summary_large_image',
+  title: 'API Gateway Management: operations handbook',
+  description: 'API Gateway Management: operations handbook',
   },
-    alternates: { canonical: '/blog/api-gateway-management-operations-handbook/' },
+  alternates: { canonical: '/blog/api-gateway-management-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: operations handbook", "description": "API Gateway Management: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-operations-handbook/"};

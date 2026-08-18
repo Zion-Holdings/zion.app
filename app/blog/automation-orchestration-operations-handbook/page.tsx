@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Automation Orchestration: operations handbook | Zion Tech Group',
-    description: 'Automation Orchestration: operations handbook',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Automation Orchestration: operations handbook',
-    description: 'Automation Orchestration: operations handbook',
-    url: 'https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/',
-    type: 'article',
+  description: 'Automation Orchestration: operations handbook',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Automation Orchestration: operations handbook',
+  description: 'Automation Orchestration: operations handbook',
+  url: 'https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Automation Orchestration: operations handbook',
-    description: 'Automation Orchestration: operations handbook',
+  card: 'summary_large_image',
+  title: 'Automation Orchestration: operations handbook',
+  description: 'Automation Orchestration: operations handbook',
   },
-    alternates: { canonical: '/blog/automation-orchestration-operations-handbook/' },
+  alternates: { canonical: '/blog/automation-orchestration-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: operations handbook", "description": "Automation Orchestration: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/"};

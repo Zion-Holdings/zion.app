@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Blog | Zion Tech Group',
   description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
   alternates: { canonical: '/blog/' },

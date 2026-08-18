@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MicroSaaS Expense Tracker: policy and compliance | Zion Tech Group',
-    description: 'MicroSaaS Expense Tracker: policy and compliance',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'MicroSaaS Expense Tracker: policy and compliance',
-    description: 'MicroSaaS Expense Tracker: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-policy-and-compliance/',
-    type: 'article',
+  description: 'MicroSaaS Expense Tracker: policy and compliance',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'MicroSaaS Expense Tracker: policy and compliance',
+  description: 'MicroSaaS Expense Tracker: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-policy-and-compliance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'MicroSaaS Expense Tracker: policy and compliance',
-    description: 'MicroSaaS Expense Tracker: policy and compliance',
+  card: 'summary_large_image',
+  title: 'MicroSaaS Expense Tracker: policy and compliance',
+  description: 'MicroSaaS Expense Tracker: policy and compliance',
   },
-    alternates: { canonical: '/blog/microsaas-expense-tracker-policy-and-compliance/' },
+  alternates: { canonical: '/blog/microsaas-expense-tracker-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: policy and compliance", "description": "MicroSaaS Expense Tracker: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-policy-and-compliance/"};

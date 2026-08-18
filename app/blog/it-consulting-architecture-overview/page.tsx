@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'IT Consulting: architecture overview | Zion Tech Group',
   description: 'IT Consulting: architecture overview',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'IT Consulting: architecture overview',
-    description: 'IT Consulting: architecture overview',
-    url: 'https://ziontechgroup.com/blog/it-consulting-architecture-overview/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'IT Consulting: architecture overview',
+  description: 'IT Consulting: architecture overview',
+  url: 'https://ziontechgroup.com/blog/it-consulting-architecture-overview/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/it-consulting-architecture-overview/' },
 };

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI 3D Asset Generator: common mistakes | Zion Tech Group',
-    description: 'AI 3D Asset Generator: common mistakes',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI 3D Asset Generator: common mistakes',
-    description: 'AI 3D Asset Generator: common mistakes',
-    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-common-mistakes/',
-    type: 'article',
+  description: 'AI 3D Asset Generator: common mistakes',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI 3D Asset Generator: common mistakes',
+  description: 'AI 3D Asset Generator: common mistakes',
+  url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-common-mistakes/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI 3D Asset Generator: common mistakes',
-    description: 'AI 3D Asset Generator: common mistakes',
+  card: 'summary_large_image',
+  title: 'AI 3D Asset Generator: common mistakes',
+  description: 'AI 3D Asset Generator: common mistakes',
   },
-    alternates: { canonical: '/blog/ai-3d-asset-generator-common-mistakes/' },
+  alternates: { canonical: '/blog/ai-3d-asset-generator-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: common mistakes", "description": "AI 3D Asset Generator: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-common-mistakes/"};

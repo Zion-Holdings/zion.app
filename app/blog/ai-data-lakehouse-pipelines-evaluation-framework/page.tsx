@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Data Lakehouse Pipelines: evaluation framework | Zion Tech Group',
-    description: 'AI Data Lakehouse Pipelines: evaluation framework',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Data Lakehouse Pipelines: evaluation framework',
-    description: 'AI Data Lakehouse Pipelines: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-evaluation-framework/',
-    type: 'article',
+  description: 'AI Data Lakehouse Pipelines: evaluation framework',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Data Lakehouse Pipelines: evaluation framework',
+  description: 'AI Data Lakehouse Pipelines: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-evaluation-framework/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Data Lakehouse Pipelines: evaluation framework',
-    description: 'AI Data Lakehouse Pipelines: evaluation framework',
+  card: 'summary_large_image',
+  title: 'AI Data Lakehouse Pipelines: evaluation framework',
+  description: 'AI Data Lakehouse Pipelines: evaluation framework',
   },
-    alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-evaluation-framework/' },
+  alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: evaluation framework", "description": "AI Data Lakehouse Pipelines: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-evaluation-framework/"};

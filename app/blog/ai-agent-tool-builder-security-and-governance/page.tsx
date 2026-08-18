@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Agent Tool Builder: security and governance | Zion Tech Group',
   description: 'AI Agent Tool Builder: security and governance',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agent Tool Builder: security and governance',
-    description: 'AI Agent Tool Builder: security and governance',
-    url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-security-and-governance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'AI Agent Tool Builder: security and governance',
+  description: 'AI Agent Tool Builder: security and governance',
+  url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-security-and-governance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-agent-tool-builder-security-and-governance/' },
 };

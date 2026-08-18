@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Database Migration Service: vendor evaluation | Zion Tech Group',
-    description: 'Database Migration Service: vendor evaluation',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Database Migration Service: vendor evaluation',
-    description: 'Database Migration Service: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/database-migration-service-vendor-evaluation/',
-    type: 'article',
+  description: 'Database Migration Service: vendor evaluation',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Database Migration Service: vendor evaluation',
+  description: 'Database Migration Service: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/database-migration-service-vendor-evaluation/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Database Migration Service: vendor evaluation',
-    description: 'Database Migration Service: vendor evaluation',
+  card: 'summary_large_image',
+  title: 'Database Migration Service: vendor evaluation',
+  description: 'Database Migration Service: vendor evaluation',
   },
-    alternates: { canonical: '/blog/database-migration-service-vendor-evaluation/' },
+  alternates: { canonical: '/blog/database-migration-service-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: vendor evaluation", "description": "Database Migration Service: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-vendor-evaluation/"};

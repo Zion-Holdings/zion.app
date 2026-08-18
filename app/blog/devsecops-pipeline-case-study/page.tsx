@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'DevSecOps Pipeline: case study | Zion Tech Group',
   description: 'DevSecOps Pipeline: case study',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'DevSecOps Pipeline: case study',
-    description: 'DevSecOps Pipeline: case study',
-    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-case-study/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'DevSecOps Pipeline: case study',
+  description: 'DevSecOps Pipeline: case study',
+  url: 'https://ziontechgroup.com/blog/devsecops-pipeline-case-study/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/devsecops-pipeline-case-study/' },
 };

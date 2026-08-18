@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Incident Response Retainer: policy and compliance | Zion Tech Group',
-    description: 'Incident Response Retainer: policy and compliance',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Incident Response Retainer: policy and compliance',
-    description: 'Incident Response Retainer: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/incident-response-retainer-policy-and-compliance/',
-    type: 'article',
+  description: 'Incident Response Retainer: policy and compliance',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Incident Response Retainer: policy and compliance',
+  description: 'Incident Response Retainer: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/incident-response-retainer-policy-and-compliance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Incident Response Retainer: policy and compliance',
-    description: 'Incident Response Retainer: policy and compliance',
+  card: 'summary_large_image',
+  title: 'Incident Response Retainer: policy and compliance',
+  description: 'Incident Response Retainer: policy and compliance',
   },
-    alternates: { canonical: '/blog/incident-response-retainer-policy-and-compliance/' },
+  alternates: { canonical: '/blog/incident-response-retainer-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: policy and compliance", "description": "Incident Response Retainer: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-policy-and-compliance/"};

@@ -1,18 +1,18 @@
 import StandardPage from '@/components/StandardPage';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Word Counter — Zion Tech Group',
   description: 'Count words, characters, sentences, and paragraphs. Useful for content, UX microcopy, and SEO checks.',
   keywords: ['word counter', 'character count', 'SEO check', 'microcopy'],
   openGraph: {
-    title: 'Word Counter — Zion Tech Group',
+  title: 'Word Counter — Zion Tech Group',
   description: 'Count words, characters, sentences, and paragraphs. Useful for content, UX microcopy, and SEO checks.',
-    url: 'https://ziontechgroup.com/tools/word-counter/',
-    type: 'website',
+  url: 'https://ziontechgroup.com/tools/word-counter/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Word Counter — Zion Tech Group',
+  card: 'summary_large_image',
+  title: 'Word Counter — Zion Tech Group',
   description: 'Count words, characters, sentences, and paragraphs. Useful for content, UX microcopy, and SEO checks.',
   },
   alternates: { canonical: '/tools/word-counter/' },

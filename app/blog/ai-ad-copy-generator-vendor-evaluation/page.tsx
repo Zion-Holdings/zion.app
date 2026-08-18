@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI Ad Copy Generator: vendor evaluation | Zion Tech Group',
-    description: 'AI Ad Copy Generator: vendor evaluation',
-    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI Ad Copy Generator: vendor evaluation',
-    description: 'AI Ad Copy Generator: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-vendor-evaluation/',
-    type: 'article',
+  description: 'AI Ad Copy Generator: vendor evaluation',
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI Ad Copy Generator: vendor evaluation',
+  description: 'AI Ad Copy Generator: vendor evaluation',
+  url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-vendor-evaluation/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI Ad Copy Generator: vendor evaluation',
-    description: 'AI Ad Copy Generator: vendor evaluation',
+  card: 'summary_large_image',
+  title: 'AI Ad Copy Generator: vendor evaluation',
+  description: 'AI Ad Copy Generator: vendor evaluation',
   },
-    alternates: { canonical: '/blog/ai-ad-copy-generator-vendor-evaluation/' },
+  alternates: { canonical: '/blog/ai-ad-copy-generator-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: vendor evaluation", "description": "AI Ad Copy Generator: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-vendor-evaluation/"};

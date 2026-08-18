@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud FinOps: ROI and cost model | Zion Tech Group',
   description: 'Cloud FinOps: ROI and cost model',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud FinOps: ROI and cost model',
-    description: 'Cloud FinOps: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/cloud-finops-roi-and-cost-model/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Cloud FinOps: ROI and cost model',
+  description: 'Cloud FinOps: ROI and cost model',
+  url: 'https://ziontechgroup.com/blog/cloud-finops-roi-and-cost-model/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-finops-roi-and-cost-model/' },
 };

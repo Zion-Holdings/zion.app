@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Chaos Engineering: implementation playbook | Zion Tech Group',
-    description: 'Chaos Engineering: implementation playbook',
-    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Chaos Engineering: implementation playbook',
-    description: 'Chaos Engineering: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/',
-    type: 'article',
+  description: 'Chaos Engineering: implementation playbook',
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Chaos Engineering: implementation playbook',
+  description: 'Chaos Engineering: implementation playbook',
+  url: 'https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Chaos Engineering: implementation playbook',
-    description: 'Chaos Engineering: implementation playbook',
+  card: 'summary_large_image',
+  title: 'Chaos Engineering: implementation playbook',
+  description: 'Chaos Engineering: implementation playbook',
   },
-    alternates: { canonical: '/blog/chaos-engineering-implementation-playbook/' },
+  alternates: { canonical: '/blog/chaos-engineering-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: implementation playbook", "description": "Chaos Engineering: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/"};

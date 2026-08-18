@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Smart Contract Audit: checklist for IT leaders | Zion Tech Group',
-    description: 'Smart Contract Audit: checklist for IT leaders',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'Smart Contract Audit: checklist for IT leaders',
-    description: 'Smart Contract Audit: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/smart-contract-audit-checklist-for-it-leaders/',
-    type: 'article',
+  description: 'Smart Contract Audit: checklist for IT leaders',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'Smart Contract Audit: checklist for IT leaders',
+  description: 'Smart Contract Audit: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/smart-contract-audit-checklist-for-it-leaders/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Smart Contract Audit: checklist for IT leaders',
-    description: 'Smart Contract Audit: checklist for IT leaders',
+  card: 'summary_large_image',
+  title: 'Smart Contract Audit: checklist for IT leaders',
+  description: 'Smart Contract Audit: checklist for IT leaders',
   },
-    alternates: { canonical: '/blog/smart-contract-audit-checklist-for-it-leaders/' },
+  alternates: { canonical: '/blog/smart-contract-audit-checklist-for-it-leaders/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: checklist for IT leaders", "description": "Smart Contract Audit: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-checklist-for-it-leaders/"};

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'ETL Pipeline Optimization: checklist for IT leaders | Zion Tech Group',
-    description: 'ETL Pipeline Optimization: checklist for IT leaders',
-    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'ETL Pipeline Optimization: checklist for IT leaders',
-    description: 'ETL Pipeline Optimization: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-checklist-for-it-leaders/',
-    type: 'article',
+  description: 'ETL Pipeline Optimization: checklist for IT leaders',
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'ETL Pipeline Optimization: checklist for IT leaders',
+  description: 'ETL Pipeline Optimization: checklist for IT leaders',
+  url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-checklist-for-it-leaders/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'ETL Pipeline Optimization: checklist for IT leaders',
-    description: 'ETL Pipeline Optimization: checklist for IT leaders',
+  card: 'summary_large_image',
+  title: 'ETL Pipeline Optimization: checklist for IT leaders',
+  description: 'ETL Pipeline Optimization: checklist for IT leaders',
   },
-    alternates: { canonical: '/blog/etl-pipeline-optimization-checklist-for-it-leaders/' },
+  alternates: { canonical: '/blog/etl-pipeline-optimization-checklist-for-it-leaders/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: checklist for IT leaders", "description": "ETL Pipeline Optimization: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-checklist-for-it-leaders/"};

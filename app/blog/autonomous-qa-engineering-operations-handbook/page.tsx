@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Autonomous QA Engineering: operations handbook | Zion Tech Group',
   description: 'Autonomous QA Engineering: operations handbook',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Autonomous QA Engineering: operations handbook',
-    description: 'Autonomous QA Engineering: operations handbook',
-    url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-operations-handbook/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Autonomous QA Engineering: operations handbook',
+  description: 'Autonomous QA Engineering: operations handbook',
+  url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-operations-handbook/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/autonomous-qa-engineering-operations-handbook/' },
 };

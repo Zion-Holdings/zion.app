@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI | Zion Tech Group',
-    description: 'Production AI services: assistants, automation, evaluation, and governed rollout.',
-    openGraph: {
-    title: 'AI | Zion Tech Group',
-    description: 'AI-native services: assistants, automation, evaluation, and governed rollout.',
-    url: 'https://ziontechgroup.com/ai/',
-    type: 'website',
+  description: 'Production AI services: assistants, automation, evaluation, and governed rollout.',
+  openGraph: {
+  title: 'AI | Zion Tech Group',
+  description: 'AI-native services: assistants, automation, evaluation, and governed rollout.',
+  url: 'https://ziontechgroup.com/ai/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI | Zion Tech Group',
-    description: 'AI-native services: assistants, automation, evaluation, and governed rollout.',
+  card: 'summary_large_image',
+  title: 'AI | Zion Tech Group',
+  description: 'AI-native services: assistants, automation, evaluation, and governed rollout.',
   },
-    alternates: { canonical: '/ai/' },
+  alternates: { canonical: '/ai/' },
 };
 
 export default function AiPage() {

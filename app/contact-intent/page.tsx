@@ -1,19 +1,19 @@
 import Link from 'next/link';
 import PageTemplate from '@/components/PageTemplate';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Contact Intent | Zion Tech Group',
-    description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
-    openGraph: {
-    title: 'Contact Intent | Zion Tech Group',
-    description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
-    url: 'https://ziontechgroup.com/contact-intent/',
-    type: 'website',
+  description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
+  openGraph: {
+  title: 'Contact Intent | Zion Tech Group',
+  description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
+  url: 'https://ziontechgroup.com/contact-intent/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Contact Intent | Zion Tech Group',
-    description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
+  card: 'summary_large_image',
+  title: 'Contact Intent | Zion Tech Group',
+  description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
   },
   alternates: { canonical: '/contact-intent/' },
 };

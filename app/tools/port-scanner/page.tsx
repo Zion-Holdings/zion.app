@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Port Scanner | Zion Tech Group',
-    description: 'Check common service ports and surface open or filtered results.',
-    openGraph: {
-    title: 'Port Scanner',
-    description: 'Network port scan helper.',
-    url: 'https://ziontechgroup.com/tools/port-scanner/',
-    type: 'website',
+  description: 'Check common service ports and surface open or filtered results.',
+  openGraph: {
+  title: 'Port Scanner',
+  description: 'Network port scan helper.',
+  url: 'https://ziontechgroup.com/tools/port-scanner/',
+  type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Port Scanner',
-    description: 'Network port scan helper.',
+  card: 'summary_large_image',
+  title: 'Port Scanner',
+  description: 'Network port scan helper.',
   },
-    alternates: { canonical: '/tools/port-scanner/' },
+  alternates: { canonical: '/tools/port-scanner/' },
 };
 
 const PORTS = [

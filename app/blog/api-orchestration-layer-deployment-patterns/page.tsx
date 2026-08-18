@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Orchestration Layer: deployment patterns | Zion Tech Group',
   description: 'API Orchestration Layer: deployment patterns',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Orchestration Layer: deployment patterns',
-    description: 'API Orchestration Layer: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/api-orchestration-layer-deployment-patterns/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'API Orchestration Layer: deployment patterns',
+  description: 'API Orchestration Layer: deployment patterns',
+  url: 'https://ziontechgroup.com/blog/api-orchestration-layer-deployment-patterns/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-orchestration-layer-deployment-patterns/' },
 };

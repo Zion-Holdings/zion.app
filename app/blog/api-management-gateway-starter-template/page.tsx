@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'API Management Gateway: starter template | Zion Tech Group',
-    description: 'API Management Gateway: starter template',
-    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'API Management Gateway: starter template',
-    description: 'API Management Gateway: starter template',
-    url: 'https://ziontechgroup.com/blog/api-management-gateway-starter-template/',
-    type: 'article',
+  description: 'API Management Gateway: starter template',
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'API Management Gateway: starter template',
+  description: 'API Management Gateway: starter template',
+  url: 'https://ziontechgroup.com/blog/api-management-gateway-starter-template/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'API Management Gateway: starter template',
-    description: 'API Management Gateway: starter template',
+  card: 'summary_large_image',
+  title: 'API Management Gateway: starter template',
+  description: 'API Management Gateway: starter template',
   },
-    alternates: { canonical: '/blog/api-management-gateway-starter-template/' },
+  alternates: { canonical: '/blog/api-management-gateway-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: starter template", "description": "API Management Gateway: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-starter-template/"};

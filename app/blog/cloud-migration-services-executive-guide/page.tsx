@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Cloud Migration Services: executive guide | Zion Tech Group',
   description: 'Cloud Migration Services: executive guide',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Migration Services: executive guide',
-    description: 'Cloud Migration Services: executive guide',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-executive-guide/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Cloud Migration Services: executive guide',
+  description: 'Cloud Migration Services: executive guide',
+  url: 'https://ziontechgroup.com/blog/cloud-migration-services-executive-guide/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-migration-services-executive-guide/' },
 };

@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI MSP Security Compliance: policy and compliance | Zion Tech Group',
-    description: 'AI MSP Security Compliance: policy and compliance',
-    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'AI MSP Security Compliance: policy and compliance',
-    description: 'AI MSP Security Compliance: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-policy-and-compliance/',
-    type: 'article',
+  description: 'AI MSP Security Compliance: policy and compliance',
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'AI MSP Security Compliance: policy and compliance',
+  description: 'AI MSP Security Compliance: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-policy-and-compliance/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'AI MSP Security Compliance: policy and compliance',
-    description: 'AI MSP Security Compliance: policy and compliance',
+  card: 'summary_large_image',
+  title: 'AI MSP Security Compliance: policy and compliance',
+  description: 'AI MSP Security Compliance: policy and compliance',
   },
-    alternates: { canonical: '/blog/ai-msp-security-compliance-policy-and-compliance/' },
+  alternates: { canonical: '/blog/ai-msp-security-compliance-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: policy and compliance", "description": "AI MSP Security Compliance: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-policy-and-compliance/"};

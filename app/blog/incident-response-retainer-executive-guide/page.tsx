@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Incident Response Retainer: executive guide | Zion Tech Group',
   description: 'Incident Response Retainer: executive guide',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Incident Response Retainer: executive guide',
-    description: 'Incident Response Retainer: executive guide',
-    url: 'https://ziontechgroup.com/blog/incident-response-retainer-executive-guide/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Incident Response Retainer: executive guide',
+  description: 'Incident Response Retainer: executive guide',
+  url: 'https://ziontechgroup.com/blog/incident-response-retainer-executive-guide/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/incident-response-retainer-executive-guide/' },
 };

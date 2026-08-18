@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'DevSecOps Pipeline: evaluation framework | Zion Tech Group',
-    description: 'DevSecOps Pipeline: evaluation framework',
-    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-    authors: { name: 'Zion Tech Group' },
-    openGraph: {
-    title: 'DevSecOps Pipeline: evaluation framework',
-    description: 'DevSecOps Pipeline: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-evaluation-framework/',
-    type: 'article',
+  description: 'DevSecOps Pipeline: evaluation framework',
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  authors: { name: 'Zion Tech Group' },
+  openGraph: {
+  title: 'DevSecOps Pipeline: evaluation framework',
+  description: 'DevSecOps Pipeline: evaluation framework',
+  url: 'https://ziontechgroup.com/blog/devsecops-pipeline-evaluation-framework/',
+  type: 'article',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'DevSecOps Pipeline: evaluation framework',
-    description: 'DevSecOps Pipeline: evaluation framework',
+  card: 'summary_large_image',
+  title: 'DevSecOps Pipeline: evaluation framework',
+  description: 'DevSecOps Pipeline: evaluation framework',
   },
-    alternates: { canonical: '/blog/devsecops-pipeline-evaluation-framework/' },
+  alternates: { canonical: '/blog/devsecops-pipeline-evaluation-framework/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: evaluation framework", "description": "DevSecOps Pipeline: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-evaluation-framework/"};

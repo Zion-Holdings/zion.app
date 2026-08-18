@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Event Driven Architecture: policy and compliance | Zion Tech Group',
   description: 'Event Driven Architecture: policy and compliance',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Event Driven Architecture: policy and compliance',
-    description: 'Event Driven Architecture: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/event-driven-architecture-policy-and-compliance/',
-    type: 'article',
-    siteName: 'Zion Tech Group',
+  title: 'Event Driven Architecture: policy and compliance',
+  description: 'Event Driven Architecture: policy and compliance',
+  url: 'https://ziontechgroup.com/blog/event-driven-architecture-policy-and-compliance/',
+  type: 'article',
+  siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/event-driven-architecture-policy-and-compliance/' },
 };
