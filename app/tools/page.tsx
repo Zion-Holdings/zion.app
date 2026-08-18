@@ -58,6 +58,22 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">UUID Generator</h3>
           <p className="text-slate-400 text-sm">Generate UUIDs v4 instantly.</p>
         </a>
+        <a href="/tools/color-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Color Converter</h3>
+          <p className="text-slate-400 text-sm">Convert between HEX, RGB, and HSL with live preview.</p>
+        </a>
+        <a href="/tools/hash-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Hash Generator</h3>
+          <p className="text-slate-400 text-sm">Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes.</p>
+        </a>
+        <a href="/tools/timestamp-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Timestamp Converter</h3>
+          <p className="text-slate-400 text-sm">Convert Unix timestamps to dates and vice versa.</p>
+        </a>
+        <a href="/tools/base64-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Base64 Encoder</h3>
+          <p className="text-slate-400 text-sm">Encode and decode Base64 with UTF-8 support.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
