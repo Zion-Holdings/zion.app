@@ -11,13 +11,12 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/solutions/manufacturing/',
     type: 'website',
   },
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'Manufacturing Solutions | Zion Tech Group',
     description: 'Manufacturing delivery patterns and AI implementation guidance.',
   },
-    alternates: { canonical: '/solutions/manufacturing/' },
+  alternates: { canonical: '/solutions/manufacturing/' },
 };
 
 export default function ManufacturingSolutionsPage() {

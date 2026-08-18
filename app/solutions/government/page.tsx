@@ -11,13 +11,12 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/solutions/government/',
     type: 'website',
   },
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'Government Solutions | Zion Tech Group',
     description: 'Government delivery patterns and AI implementation guidance.',
   },
-    alternates: { canonical: '/solutions/government/' },
+  alternates: { canonical: '/solutions/government/' },
 };
 
 export default function GovernmentSolutionsPage() {

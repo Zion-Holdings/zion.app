@@ -11,13 +11,12 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/solutions/financial-services/',
     type: 'website',
   },
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'Financial Services Solutions | Zion Tech Group',
     description: 'Financial services delivery patterns and AI implementation guidance.',
   },
-    alternates: { canonical: '/solutions/financial-services/' },
+  alternates: { canonical: '/solutions/financial-services/' },
 };
 
 export default function FinancialServicesSolutionsPage() {

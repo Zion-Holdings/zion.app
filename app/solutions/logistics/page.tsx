@@ -11,13 +11,12 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/solutions/logistics/',
     type: 'website',
   },
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'Logistics Solutions | Zion Tech Group',
     description: 'Logistics delivery patterns and AI implementation guidance.',
   },
-    alternates: { canonical: '/solutions/logistics/' },
+  alternates: { canonical: '/solutions/logistics/' },
 };
 
 export default function LogisticsSolutionsPage() {
