@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-vendor-evaluation/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agent Tool Builder: vendor evaluation | Zion Tech Group',
+    description: 'AI Agent Tool Builder: vendor evaluation',
+  },
   alternates: { canonical: '/blog/ai-agent-tool-builder-vendor-evaluation/' },
 };
 

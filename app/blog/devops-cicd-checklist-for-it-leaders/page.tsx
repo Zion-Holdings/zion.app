@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devops-cicd-checklist-for-it-leaders/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DevOps CI/CD: checklist for IT leaders | Zion Tech Group',
+    description: 'DevOps CI/CD: checklist for IT leaders',
+  },
   alternates: { canonical: '/blog/devops-cicd-checklist-for-it-leaders/' },
 };
 

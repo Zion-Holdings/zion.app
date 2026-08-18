@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-common-mistakes/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Automated AI Reporting: common mistakes | Zion Tech Group',
+    description: 'Automated AI Reporting: common mistakes',
+  },
   alternates: { canonical: '/blog/automated-ai-reporting-common-mistakes/' },
 };
 

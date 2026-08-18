@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-executive-guide/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Autonomous Agents: executive guide | Zion Tech Group',
+    description: 'AI Autonomous Agents: executive guide',
+  },
   alternates: { canonical: '/blog/ai-autonomous-agents-executive-guide/' },
 };
 

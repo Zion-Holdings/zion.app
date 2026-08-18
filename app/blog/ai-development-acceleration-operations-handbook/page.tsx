@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-development-acceleration-operations-handbook/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Development Acceleration: operations handbook | Zion Tech Group',
+    description: 'AI Development Acceleration: operations handbook',
+  },
   alternates: { canonical: '/blog/ai-development-acceleration-operations-handbook/' },
 };
 

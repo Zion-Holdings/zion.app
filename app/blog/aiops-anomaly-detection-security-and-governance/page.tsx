@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-security-and-governance/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AIOps Anomaly Detection: security and governance | Zion Tech Group',
+    description: 'AIOps Anomaly Detection: security and governance',
+  },
   alternates: { canonical: '/blog/aiops-anomaly-detection-security-and-governance/' },
 };
 

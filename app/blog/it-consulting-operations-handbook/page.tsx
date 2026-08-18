@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/it-consulting-operations-handbook/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Consulting: operations handbook | Zion Tech Group',
+    description: 'IT Consulting: operations handbook',
+  },
   alternates: { canonical: '/blog/it-consulting-operations-handbook/' },
 };
 

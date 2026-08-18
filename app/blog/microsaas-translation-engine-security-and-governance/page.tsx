@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-security-and-governance/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Translation Engine: security and governance | Zion Tech Group',
+    description: 'MicroSaaS Translation Engine: security and governance',
+  },
   alternates: { canonical: '/blog/microsaas-translation-engine-security-and-governance/' },
 };
 

@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-architecture-overview/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Email Intelligence: architecture overview | Zion Tech Group',
+    description: 'AI Email Intelligence: architecture overview',
+  },
   alternates: { canonical: '/blog/ai-email-intelligence-architecture-overview/' },
 };
 

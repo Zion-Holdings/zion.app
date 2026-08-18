@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-observability-implementation-playbook/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Observability: implementation playbook | Zion Tech Group',
+    description: 'AI Observability: implementation playbook',
+  },
   alternates: { canonical: '/blog/ai-observability-implementation-playbook/' },
 };
 

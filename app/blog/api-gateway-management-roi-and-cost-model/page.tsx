@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-gateway-management-roi-and-cost-model/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Gateway Management: ROI and cost model | Zion Tech Group',
+    description: 'API Gateway Management: ROI and cost model',
+  },
   alternates: { canonical: '/blog/api-gateway-management-roi-and-cost-model/' },
 };
 

@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-starter-template/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Migration Services: starter template | Zion Tech Group',
+    description: 'Cloud Migration Services: starter template',
+  },
   alternates: { canonical: '/blog/cloud-migration-services-starter-template/' },
 };
 

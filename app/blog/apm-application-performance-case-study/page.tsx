@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/apm-application-performance-case-study/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'APM Application Performance: case study | Zion Tech Group',
+    description: 'APM Application Performance: case study',
+  },
   alternates: { canonical: '/blog/apm-application-performance-case-study/' },
 };
 

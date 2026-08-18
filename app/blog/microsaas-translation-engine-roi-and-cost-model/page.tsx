@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-roi-and-cost-model/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Translation Engine: ROI and cost model | Zion Tech Group',
+    description: 'MicroSaaS Translation Engine: ROI and cost model',
+  },
   alternates: { canonical: '/blog/microsaas-translation-engine-roi-and-cost-model/' },
 };
 

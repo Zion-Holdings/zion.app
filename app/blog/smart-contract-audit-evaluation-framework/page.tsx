@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-evaluation-framework/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Smart Contract Audit: evaluation framework | Zion Tech Group',
+    description: 'Smart Contract Audit: evaluation framework',
+  },
   alternates: { canonical: '/blog/smart-contract-audit-evaluation-framework/' },
 };
 

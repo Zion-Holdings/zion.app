@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/chaos-engineering-evaluation-framework/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chaos Engineering: evaluation framework | Zion Tech Group',
+    description: 'Chaos Engineering: evaluation framework',
+  },
   alternates: { canonical: '/blog/chaos-engineering-evaluation-framework/' },
 };
 

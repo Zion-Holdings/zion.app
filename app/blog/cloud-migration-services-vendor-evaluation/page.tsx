@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-vendor-evaluation/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Migration Services: vendor evaluation | Zion Tech Group',
+    description: 'Cloud Migration Services: vendor evaluation',
+  },
   alternates: { canonical: '/blog/cloud-migration-services-vendor-evaluation/' },
 };
 

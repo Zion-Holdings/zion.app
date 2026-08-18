@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-case-study/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Translation Engine: case study | Zion Tech Group',
+    description: 'MicroSaaS Translation Engine: case study',
+  },
   alternates: { canonical: '/blog/microsaas-translation-engine-case-study/' },
 };
 

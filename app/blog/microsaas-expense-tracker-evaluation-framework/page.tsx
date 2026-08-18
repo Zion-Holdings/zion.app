@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-evaluation-framework/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Expense Tracker: evaluation framework | Zion Tech Group',
+    description: 'MicroSaaS Expense Tracker: evaluation framework',
+  },
   alternates: { canonical: '/blog/microsaas-expense-tracker-evaluation-framework/' },
 };
 

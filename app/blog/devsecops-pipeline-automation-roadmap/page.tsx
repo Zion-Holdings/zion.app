@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-automation-roadmap/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DevSecOps Pipeline: automation roadmap | Zion Tech Group',
+    description: 'DevSecOps Pipeline: automation roadmap',
+  },
   alternates: { canonical: '/blog/devsecops-pipeline-automation-roadmap/' },
 };
 

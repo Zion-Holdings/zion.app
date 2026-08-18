@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-evaluation-framework/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Backup DR: evaluation framework | Zion Tech Group',
+    description: 'Enterprise Backup DR: evaluation framework',
+  },
   alternates: { canonical: '/blog/enterprise-backup-dr-evaluation-framework/' },
 };
 

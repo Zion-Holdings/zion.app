@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-development-acceleration-checklist-for-it-leaders/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Development Acceleration: checklist for IT leaders | Zion Tech Group',
+    description: 'AI Development Acceleration: checklist for IT leaders',
+  },
   alternates: { canonical: '/blog/ai-development-acceleration-checklist-for-it-leaders/' },
 };
 

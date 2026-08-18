@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-automation-roadmap/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Accessibility Optimizer: automation roadmap | Zion Tech Group',
+    description: 'AI Accessibility Optimizer: automation roadmap',
+  },
   alternates: { canonical: '/blog/ai-accessibility-optimizer-automation-roadmap/' },
 };
 

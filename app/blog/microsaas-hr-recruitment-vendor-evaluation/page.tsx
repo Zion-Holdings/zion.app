@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-vendor-evaluation/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS HR Recruitment: vendor evaluation | Zion Tech Group',
+    description: 'MicroSaaS HR Recruitment: vendor evaluation',
+  },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-vendor-evaluation/' },
 };
 

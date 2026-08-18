@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-policy-and-compliance/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Cost AI Optimizer: policy and compliance | Zion Tech Group',
+    description: 'Cloud Cost AI Optimizer: policy and compliance',
+  },
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-policy-and-compliance/' },
 };
 

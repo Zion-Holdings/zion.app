@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-automation-roadmap/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AIOps Anomaly Detection: automation roadmap | Zion Tech Group',
+    description: 'AIOps Anomaly Detection: automation roadmap',
+  },
   alternates: { canonical: '/blog/aiops-anomaly-detection-automation-roadmap/' },
 };
 

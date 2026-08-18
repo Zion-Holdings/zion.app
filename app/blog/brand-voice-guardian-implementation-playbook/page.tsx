@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-implementation-playbook/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Brand Voice Guardian: implementation playbook | Zion Tech Group',
+    description: 'Brand Voice Guardian: implementation playbook',
+  },
   alternates: { canonical: '/blog/brand-voice-guardian-implementation-playbook/' },
 };
 

@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-executive-guide/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GenAI DevOps CI/CD: executive guide | Zion Tech Group',
+    description: 'GenAI DevOps CI/CD: executive guide',
+  },
   alternates: { canonical: '/blog/genai-devops-cicd-executive-guide/' },
 };
 

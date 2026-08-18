@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-evaluation-framework/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Autonomous Code Deployment: evaluation framework | Zion Tech Group',
+    description: 'Autonomous Code Deployment: evaluation framework',
+  },
   alternates: { canonical: '/blog/autonomous-code-deployment-evaluation-framework/' },
 };
 

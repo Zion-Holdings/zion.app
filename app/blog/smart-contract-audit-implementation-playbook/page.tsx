@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-implementation-playbook/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Smart Contract Audit: implementation playbook | Zion Tech Group',
+    description: 'Smart Contract Audit: implementation playbook',
+  },
   alternates: { canonical: '/blog/smart-contract-audit-implementation-playbook/' },
 };
 

@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/5g-solutions-automation-roadmap/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: '5G Solutions: automation roadmap | Zion Tech Group',
+    description: '5G Solutions: automation roadmap',
+  },
   alternates: { canonical: '/blog/5g-solutions-automation-roadmap/' },
 };
 

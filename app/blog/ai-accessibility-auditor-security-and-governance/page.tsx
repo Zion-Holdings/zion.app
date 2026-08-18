@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-security-and-governance/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Accessibility Auditor: security and governance | Zion Tech Group',
+    description: 'AI Accessibility Auditor: security and governance',
+  },
   alternates: { canonical: '/blog/ai-accessibility-auditor-security-and-governance/' },
 };
 

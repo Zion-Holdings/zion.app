@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-starter-template/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agent Tool Builder: starter template | Zion Tech Group',
+    description: 'AI Agent Tool Builder: starter template',
+  },
   alternates: { canonical: '/blog/ai-agent-tool-builder-starter-template/' },
 };
 

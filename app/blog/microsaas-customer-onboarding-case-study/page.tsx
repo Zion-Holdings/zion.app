@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-case-study/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Customer Onboarding: case study | Zion Tech Group',
+    description: 'MicroSaaS Customer Onboarding: case study',
+  },
   alternates: { canonical: '/blog/microsaas-customer-onboarding-case-study/' },
 };
 

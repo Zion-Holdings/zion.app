@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-policy-and-compliance/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Performance Monitoring: policy and compliance | Zion Tech Group',
+    description: 'AI Performance Monitoring: policy and compliance',
+  },
   alternates: { canonical: '/blog/ai-performance-monitoring-policy-and-compliance/' },
 };
 

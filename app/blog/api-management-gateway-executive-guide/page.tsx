@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-management-gateway-executive-guide/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Management Gateway: executive guide | Zion Tech Group',
+    description: 'API Management Gateway: executive guide',
+  },
   alternates: { canonical: '/blog/api-management-gateway-executive-guide/' },
 };
 

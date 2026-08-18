@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/5g-solutions-checklist-for-it-leaders/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: '5G Solutions: checklist for IT leaders | Zion Tech Group',
+    description: '5G Solutions: checklist for IT leaders',
+  },
   alternates: { canonical: '/blog/5g-solutions-checklist-for-it-leaders/' },
 };
 

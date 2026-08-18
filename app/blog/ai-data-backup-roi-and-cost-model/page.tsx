@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-data-backup-roi-and-cost-model/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Data Backup: ROI and cost model | Zion Tech Group',
+    description: 'AI Data Backup: ROI and cost model',
+  },
   alternates: { canonical: '/blog/ai-data-backup-roi-and-cost-model/' },
 };
 

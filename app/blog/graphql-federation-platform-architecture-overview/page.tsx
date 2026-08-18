@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-architecture-overview/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GraphQL Federation Platform: architecture overview | Zion Tech Group',
+    description: 'GraphQL Federation Platform: architecture overview',
+  },
   alternates: { canonical: '/blog/graphql-federation-platform-architecture-overview/' },
 };
 

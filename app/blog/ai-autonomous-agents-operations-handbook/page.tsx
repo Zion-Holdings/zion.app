@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-operations-handbook/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Autonomous Agents: operations handbook | Zion Tech Group',
+    description: 'AI Autonomous Agents: operations handbook',
+  },
   alternates: { canonical: '/blog/ai-autonomous-agents-operations-handbook/' },
 };
 

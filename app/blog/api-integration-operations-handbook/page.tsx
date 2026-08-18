@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-integration-operations-handbook/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Integration: operations handbook | Zion Tech Group',
+    description: 'API Integration: operations handbook',
+  },
   alternates: { canonical: '/blog/api-integration-operations-handbook/' },
 };
 

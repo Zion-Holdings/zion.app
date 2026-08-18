@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/5g-solutions-deployment-patterns/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: '5G Solutions: deployment patterns | Zion Tech Group',
+    description: '5G Solutions: deployment patterns',
+  },
   alternates: { canonical: '/blog/5g-solutions-deployment-patterns/' },
 };
 

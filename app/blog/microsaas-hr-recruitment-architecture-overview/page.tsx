@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-architecture-overview/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS HR Recruitment: architecture overview | Zion Tech Group',
+    description: 'MicroSaaS HR Recruitment: architecture overview',
+  },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-architecture-overview/' },
 };
 

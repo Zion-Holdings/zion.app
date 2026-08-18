@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-checklist-for-it-leaders/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Event Driven Architecture: checklist for IT leaders | Zion Tech Group',
+    description: 'Event Driven Architecture: checklist for IT leaders',
+  },
   alternates: { canonical: '/blog/event-driven-architecture-checklist-for-it-leaders/' },
 };
 

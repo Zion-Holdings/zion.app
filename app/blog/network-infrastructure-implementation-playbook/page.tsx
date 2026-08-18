@@ -12,6 +12,11 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/network-infrastructure-implementation-playbook/',
     type: 'article',
 },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Network Infrastructure: implementation playbook | Zion Tech Group',
+    description: 'Network Infrastructure: implementation playbook',
+  },
   alternates: { canonical: '/blog/network-infrastructure-implementation-playbook/' },
 };
 
