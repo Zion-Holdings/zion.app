@@ -1,10 +1,17 @@
 'use client';
+import type { ReactNode } from 'react';
 
-export default function JsonLd({ jsonLd }: { jsonLd: unknown }) {
+type JsonLdProps = {
+  data: unknown;
+  children?: ReactNode;
+};
+
+export default function JsonLd({ data }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      suppressHydrationWarning
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
 }
