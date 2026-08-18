@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Data & Analytics | Zion Tech Group',
-  description: 'Data pipelines, analytics, and decision-ready dashboards from Zion Tech Group.',
-  openGraph: {
+    description: 'Data pipelines, analytics, and decision-ready dashboards from Zion Tech Group.',
+    openGraph: {
     title: 'Data & Analytics | Zion Tech Group',
     description: 'Governed data pipelines, forecasting, and executive dashboards.',
-    url: 'https://ziontechgroup.com/data/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/data/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Data & Analytics | Zion Tech Group',
     description: 'Governed data pipelines, forecasting, and executive dashboards.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/data/' },
+  },
+    alternates: { canonical: '/data/' },
 };
 
 export default function DataPage() {
@@ -49,6 +49,20 @@ export default function DataPage() {
       <div className="flex flex-col sm:flex-row gap-3 mt-10">
         <a href="/contact/" className="btn-primary text-center">Talk to an Engineer</a>
         <a href="/services/" className="btn-secondary text-center">Browse Services</a>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Data delivery principles</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Governed pipelines with lineage, quality checks, and access control.</li>
+          <li>Forecasting models validated on holdout data before production.</li>
+          <li>Dashboards designed for action, not just visualization.</li>
+          <li>Documentation and training so teams own and extend outputs.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Talk to an Engineer</a>
+        </div>
       </div>
     </StandardPage>
   );

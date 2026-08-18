@@ -3,8 +3,21 @@ import PageTemplate from '@/components/PageTemplate';
 
 export const metadata = {
   title: 'Start a Project | Zion Tech Group',
-  description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
-  alternates: { canonical: '/start-project/' },
+    description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
+    openGraph: {
+    title: 'Start a Project | Zion Tech Group',
+    description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
+    url: 'https://ziontechgroup.com/start-project/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+  },
+    twitter: {
+    card: 'summary_large_image',
+    title: 'Start a Project | Zion Tech Group',
+    description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
+    siteName: 'Zion Tech Group',
+  },
+    alternates: { canonical: '/start-project/' },
 };
 
 export default function StartProjectPage() {
@@ -46,6 +59,20 @@ export default function StartProjectPage() {
         <div className="flex flex-col sm:flex-row gap-3">
           <Link href="/contact/" className="btn-primary text-center">Contact us</Link>
           <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
+        </div>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Engagement formats</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Fixed-scope sprints with clear deliverables and acceptance criteria.</li>
+          <li>Retainer-based support for ongoing operations and improvements.</li>
+          <li>Embedded team augmentation for skills gaps and capacity.</li>
+          <li>Advisory engagements for architecture and strategy reviews.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
     </PageTemplate>

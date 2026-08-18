@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Micro SaaS | Zion Tech Group',
-  description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
-  openGraph: {
+    description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
+    openGraph: {
     title: 'Micro SaaS | Zion Tech Group',
     description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/micro-saas/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/micro-saas/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Micro SaaS | Zion Tech Group',
     description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/micro-saas/' },
+  },
+    alternates: { canonical: '/micro-saas/' },
 };
 
 export default function MicroSaaSPage() {
@@ -50,6 +50,20 @@ export default function MicroSaaSPage() {
       <div className="flex flex-col sm:flex-row gap-3 mt-10">
         <a href="/contact/" className="btn-primary text-center">Talk to an Engineer</a>
         <a href="/ai-services/" className="btn-secondary text-center">AI Services</a>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">SaaS delivery pattern</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Shared infrastructure to reduce build and hosting costs.</li>
+          <li>Usage-based pricing with transparent metrics and billing.</li>
+          <li>Self-service onboarding with optional managed support tiers.</li>
+          <li>Continuous deployment with feature flags and rollback readiness.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+        </div>
       </div>
     </StandardPage>
   );

@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Services | Zion Tech Group',
-  description: 'AI, IT, and Micro-SaaS services for enterprise automation, managed AI, cloud, security, data, and DevOps.',
-  openGraph: {
+    description: 'AI, IT, and Micro-SaaS services for enterprise automation, managed AI, cloud, security, data, and DevOps.',
+    openGraph: {
     title: 'Services | Zion Tech Group',
     description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
-    url: 'https://ziontechgroup.com/services/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/services/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Services | Zion Tech Group',
     description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/services/' },
+  },
+    alternates: { canonical: '/services/' },
 };
 
 const CATEGORIES = [

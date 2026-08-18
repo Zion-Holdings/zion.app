@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Contact | Zion Tech Group',
-  description: 'Contact Zion Tech Group for AI, IT, and automation consultations.',
-  openGraph: {
+    description: 'Contact Zion Tech Group for AI, IT, and automation consultations.',
+    openGraph: {
     title: 'Contact | Zion Tech Group',
     description: 'Get in touch for AI and IT services.',
-    url: 'https://ziontechgroup.com/contact/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/contact/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Contact | Zion Tech Group',
     description: 'Get in touch for AI and IT services.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/contact/' },
+  },
+    alternates: { canonical: '/contact/' },
 };
 
 export default function ContactPage() {

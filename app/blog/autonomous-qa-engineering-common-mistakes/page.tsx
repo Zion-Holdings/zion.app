@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Autonomous QA Engineering: common mistakes | Zion Tech Group',
-  description: 'Autonomous QA Engineering: common mistakes',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Autonomous QA Engineering: common mistakes',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Autonomous QA Engineering: common mistakes',
     description: 'Autonomous QA Engineering: common mistakes',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Autonomous QA Engineering: common mistakes',
     description: 'Autonomous QA Engineering: common mistakes',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/autonomous-qa-engineering-common-mistakes/' },
+  },
+    alternates: { canonical: '/blog/autonomous-qa-engineering-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: common mistakes", "description": "Autonomous QA Engineering: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-common-mistakes/"};

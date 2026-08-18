@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'API Gateway Management: security and governance | Zion Tech Group',
-  description: 'API Gateway Management: security and governance',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'API Gateway Management: security and governance',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'API Gateway Management: security and governance',
     description: 'API Gateway Management: security and governance',
     url: 'https://ziontechgroup.com/blog/api-gateway-management-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'API Gateway Management: security and governance',
     description: 'API Gateway Management: security and governance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/api-gateway-management-security-and-governance/' },
+  },
+    alternates: { canonical: '/blog/api-gateway-management-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: security and governance", "description": "API Gateway Management: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-security-and-governance/"};

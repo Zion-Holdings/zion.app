@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'API Security Testing: architecture overview | Zion Tech Group',
-  description: 'API Security Testing: architecture overview',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'API Security Testing: architecture overview',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'API Security Testing: architecture overview',
     description: 'API Security Testing: architecture overview',
     url: 'https://ziontechgroup.com/blog/api-security-testing-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'API Security Testing: architecture overview',
     description: 'API Security Testing: architecture overview',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/api-security-testing-architecture-overview/' },
+  },
+    alternates: { canonical: '/blog/api-security-testing-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: architecture overview", "description": "API Security Testing: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-architecture-overview/"};

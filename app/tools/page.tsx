@@ -1,21 +1,22 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Tools | Zion Tech Group',
-  description: 'Free developer tools and utilities from Zion Tech Group.',
-  openGraph: {
+    description: 'Free developer tools and utilities from Zion Tech Group.',
+    openGraph: {
     title: 'Tools | Zion Tech Group',
     description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
-    url: 'https://ziontechgroup.com/tools/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/tools/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Tools | Zion Tech Group',
     description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/tools/' },
+  },
+    alternates: { canonical: '/tools/' },
 };
 
 export default function ToolsPage() {
@@ -57,6 +58,41 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">UUID Generator</h3>
           <p className="text-slate-400 text-sm">Generate UUIDs v4 instantly.</p>
         </a>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Tooling philosophy</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Built for speed with no sign-up or backend dependency.</li>
+          <li>Privacy-first: inputs stay in your browser and are never stored.</li>
+          <li>Expanded based on real developer workflow needs.</li>
+          <li>Request new utilities through our contact form.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Request a tool</a>
+        </div>
+      </div>
+
+      <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
+        <h2 className="text-xl font-bold text-white mb-4">Explore related offerings</h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Enterprise Services</h3>
+            <p className="text-slate-400 text-xs mb-3">AI, IT, security, and data programs with measurable outcomes.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
+          </Link>
+          <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Industry Solutions</h3>
+            <p className="text-slate-400 text-xs mb-3">Purpose-built AI and IT solutions by industry.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
+          </Link>
+          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Insights & Guides</h3>
+            <p className="text-slate-400 text-xs mb-3">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+          </Link>
+        </div>
       </div>
     </StandardPage>
   );

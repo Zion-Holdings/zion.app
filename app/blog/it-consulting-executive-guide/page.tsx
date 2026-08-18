@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'IT Consulting: executive guide | Zion Tech Group',
-  description: 'IT Consulting: executive guide',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'IT Consulting: executive guide',
+    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'IT Consulting: executive guide',
     description: 'IT Consulting: executive guide',
     url: 'https://ziontechgroup.com/blog/it-consulting-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'IT Consulting: executive guide',
     description: 'IT Consulting: executive guide',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/it-consulting-executive-guide/' },
+  },
+    alternates: { canonical: '/blog/it-consulting-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: executive guide", "description": "IT Consulting: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-executive-guide/"};

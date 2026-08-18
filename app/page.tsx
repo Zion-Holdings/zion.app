@@ -5,21 +5,19 @@ import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Home | Zion Tech Group',
-  description: 'Zion Tech Group is an AI-native IT services company building autonomous operations, managed AI, and enterprise-ready delivery.',
-  openGraph: {
+    description: 'Zion Tech Group is an AI-native IT services company building autonomous operations, managed AI, and enterprise-ready delivery.',
+    openGraph: {
     title: 'Zion Tech Group | AI & IT Company',
     description: 'AI-native IT services: autonomous operations, managed AI, cloud, security, and data.',
     url: 'https://ziontechgroup.com/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
-  twitter: {
+    twitter: {
     card: 'summary_large_image',
     title: 'Zion Tech Group | AI & IT Company',
     description: 'AI-native IT services: autonomous operations, managed AI, cloud, security, and data.',
-    siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/' },
+    alternates: { canonical: '/' },
 };
 
 const organizationLd = {
@@ -27,15 +25,11 @@ const organizationLd = {
   '@type': 'Organization',
   name: 'Zion Tech Group',
   url: 'https://ziontechgroup.com',
-  email: 'mailto:kleber@ziontechgroup.com',
-  telephone: '+13046440950',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Available on request',
-    addressLocality: 'Remote-first',
-    addressCountry: 'US',
-  },
-  sameAs: ['https://ziontechgroup.com'],
+  sameAs: [
+    'https://linkedin.com/company/ziontechgroup',
+    'https://x.com/ziontechgroup',
+    'https://github.com/Zion-support',
+  ],
 };
 
 const websiteLd = {
@@ -53,8 +47,8 @@ const websiteLd = {
 export default function HomePage() {
   return (
     <>
-      <JsonLd jsonLd={organizationLd} />
-      <JsonLd jsonLd={websiteLd} />
+      <JsonLd data={organizationLd} />
+      <JsonLd data={websiteLd} />
       <StandardPage
         title="AI-native IT services"
         subtitle="Autonomous operations, managed AI, and enterprise-ready delivery for teams that want to move fast without breaking trust."

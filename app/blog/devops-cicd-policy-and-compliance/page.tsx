@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'DevOps CI/CD: policy and compliance | Zion Tech Group',
-  description: 'DevOps CI/CD: policy and compliance',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'DevOps CI/CD: policy and compliance',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'DevOps CI/CD: policy and compliance',
     description: 'DevOps CI/CD: policy and compliance',
     url: 'https://ziontechgroup.com/blog/devops-cicd-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'DevOps CI/CD: policy and compliance',
     description: 'DevOps CI/CD: policy and compliance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/devops-cicd-policy-and-compliance/' },
+  },
+    alternates: { canonical: '/blog/devops-cicd-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: policy and compliance", "description": "DevOps CI/CD: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-policy-and-compliance/"};

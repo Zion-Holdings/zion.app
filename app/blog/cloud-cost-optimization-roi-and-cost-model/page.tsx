@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Cloud Cost Optimization: ROI and cost model | Zion Tech Group',
-  description: 'Cloud Cost Optimization: ROI and cost model',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Cloud Cost Optimization: ROI and cost model',
+    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Cloud Cost Optimization: ROI and cost model',
     description: 'Cloud Cost Optimization: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Cloud Cost Optimization: ROI and cost model',
     description: 'Cloud Cost Optimization: ROI and cost model',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/cloud-cost-optimization-roi-and-cost-model/' },
+  },
+    alternates: { canonical: '/blog/cloud-cost-optimization-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost Optimization: ROI and cost model", "description": "Cloud Cost Optimization: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-roi-and-cost-model/"};

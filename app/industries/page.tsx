@@ -4,13 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Industries | Zion Tech Group',
-  description: 'Industry-specific AI and IT solutions: healthcare, finance, manufacturing, retail, logistics, education, and government.',
-  openGraph: { title: 'Industries | Zion Tech Group', description: 'Industry-specific solutions and delivery patterns.', url: 'https://ziontechgroup.com/industries/', type: 'website' },  twitter: {
+    description: 'Industry-specific AI and IT solutions: healthcare, finance, manufacturing, retail, logistics, education, and government.',
+    openGraph: { title: 'Industries | Zion Tech Group',
+    description: 'Industry-specific solutions and delivery patterns.',
+    url: 'https://ziontechgroup.com/industries/',
+    type: 'website' },
+    twitter: {
     card: 'summary_large_image',
     title: 'Industries | Zion Tech Group',
     description: 'Industry-specific solutions and delivery patterns.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/industries/' },
+  },
+    alternates: { canonical: '/industries/' },
 };
 
 const INDUSTRIES = [
@@ -34,6 +38,27 @@ export default function IndustriesPage() {
             <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
           </Link>
         ))}
+      </div>
+
+      <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
+        <h2 className="text-xl font-bold text-white mb-4">Explore related offerings</h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Enterprise Services</h3>
+            <p className="text-slate-400 text-xs mb-3">AI, IT, security, and data programs with measurable outcomes.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
+          </Link>
+          <Link href="/tools/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Developer Tools</h3>
+            <p className="text-slate-400 text-xs mb-3">Free utilities for JSON, JWT, regex, QR, and text processing.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Use tools →</span>
+          </Link>
+          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Insights & Guides</h3>
+            <p className="text-slate-400 text-xs mb-3">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+          </Link>
+        </div>
       </div>
     </StandardPage>
   );

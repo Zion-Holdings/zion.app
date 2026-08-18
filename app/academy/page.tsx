@@ -4,21 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Academy | Zion Tech Group',
-  description: 'Learning paths, workshops, and enablement from Zion Tech Group.',
-  openGraph: {
+    description: 'Learning paths, workshops, and enablement from Zion Tech Group.',
+    openGraph: {
     title: 'Academy | Zion Tech Group',
     description: 'Technical enablement and learning for AI, IT, and automation teams.',
     url: 'https://ziontechgroup.com/academy/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
-  twitter: {
+    twitter: {
     card: 'summary_large_image',
     title: 'Academy | Zion Tech Group',
     description: 'Technical enablement and learning for AI, IT, and automation teams.',
-    siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/academy/' },
+    alternates: { canonical: '/academy/' },
 };
 
 export default function AcademyPage() {

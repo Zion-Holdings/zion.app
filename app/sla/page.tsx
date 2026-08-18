@@ -4,13 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Service Level Agreement | Zion Tech Group',
-  description: 'Service level commitments for support, uptime, and incident response.',
-  openGraph: { title: 'SLA | Zion Tech Group', description: 'Service level commitments.', url: 'https://ziontechgroup.com/sla/', type: 'website' },  twitter: {
+    description: 'Service level commitments for support, uptime, and incident response.',
+    openGraph: { title: 'SLA | Zion Tech Group',
+    description: 'Service level commitments.',
+    url: 'https://ziontechgroup.com/sla/',
+    type: 'website' },
+    twitter: {
     card: 'summary_large_image',
     title: 'SLA | Zion Tech Group',
     description: 'Service level commitments.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/sla/' },
+  },
+    alternates: { canonical: '/sla/' },
 };
 
 export default function SlaPage() {
@@ -32,6 +36,20 @@ export default function SlaPage() {
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-white font-semibold mb-2">Change control</h3>
           <p className="text-slate-400 text-sm">Governed deployments, rollback readiness, and release-risk review.</p>
+        </div>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">SLA highlights</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Response targets by severity with defined escalation paths.</li>
+          <li>Planned maintenance windows communicated in advance.</li>
+          <li>Quarterly reliability and availability reporting.</li>
+          <li>Exclusions, review cycles, and change-control processes documented.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
     </StandardPage>

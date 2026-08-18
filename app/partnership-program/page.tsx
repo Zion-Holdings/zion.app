@@ -3,8 +3,21 @@ import PageTemplate from '@/components/PageTemplate';
 
 export const metadata = {
   title: 'Partnership Program | Zion Tech Group',
-  description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
-  alternates: { canonical: '/partnership-program/' },
+    description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
+    openGraph: {
+    title: 'Partnership Program | Zion Tech Group',
+    description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
+    url: 'https://ziontechgroup.com/partnership-program/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+  },
+    twitter: {
+    card: 'summary_large_image',
+    title: 'Partnership Program | Zion Tech Group',
+    description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
+    siteName: 'Zion Tech Group',
+  },
+    alternates: { canonical: '/partnership-program/' },
 };
 
 export default function PartnershipProgramPage() {
@@ -41,6 +54,20 @@ export default function PartnershipProgramPage() {
       <p className="mt-8">
         Start with <Link href="/partners/" className="text-purple-300 font-semibold hover:text-white">partners overview</Link> or <Link href="/contact/" className="text-purple-300 font-semibold hover:text-white">contact us</Link> to begin the conversation.
       </p>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Program benefits</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Structured onboarding with clear milestones and success criteria.</li>
+          <li>Deal support, technical enablement, and joint marketing funds.</li>
+          <li>Marketplace listing opportunities where applicable.</li>
+          <li>Quarterly business reviews to align roadmaps and incentives.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+        </div>
+      </div>
     </PageTemplate>
   );
 }

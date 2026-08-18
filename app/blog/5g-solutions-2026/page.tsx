@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: '5G Solutions | Zion Tech Group',
-  description: '5G Solutions',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: '5G Solutions',
+    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: '5G Solutions',
     description: '5G Solutions',
     url: 'https://ziontechgroup.com/blog/5g-solutions-2026/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: '5G Solutions',
     description: '5G Solutions',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/5g-solutions-2026/' },
+  },
+    alternates: { canonical: '/blog/5g-solutions-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions", "description": "5G Solutions", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-2026/"};

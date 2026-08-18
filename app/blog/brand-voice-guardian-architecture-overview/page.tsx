@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Brand Voice Guardian: architecture overview | Zion Tech Group',
-  description: 'Brand Voice Guardian: architecture overview',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Brand Voice Guardian: architecture overview',
+    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Brand Voice Guardian: architecture overview',
     description: 'Brand Voice Guardian: architecture overview',
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Brand Voice Guardian: architecture overview',
     description: 'Brand Voice Guardian: architecture overview',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/brand-voice-guardian-architecture-overview/' },
+  },
+    alternates: { canonical: '/blog/brand-voice-guardian-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: architecture overview", "description": "Brand Voice Guardian: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-architecture-overview/"};

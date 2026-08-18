@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Governments | Zion Tech Group',
-  description: 'Secure AI, IT, and automation programs for government organizations.',
-  openGraph: {
+    description: 'Secure AI, IT, and automation programs for government organizations.',
+    openGraph: {
     title: 'Governments | Zion Tech Group',
     description: 'Secure AI, IT, and automation programs for government organizations.',
-    url: 'https://ziontechgroup.com/governments/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/governments/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Governments | Zion Tech Group',
     description: 'Secure AI, IT, and automation programs for government organizations.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/governments/' },
+  },
+    alternates: { canonical: '/governments/' },
 };
 
 export default function GovernmentsPage() {

@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Incident Response Retainer: common mistakes | Zion Tech Group',
-  description: 'Incident Response Retainer: common mistakes',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Incident Response Retainer: common mistakes',
+    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Incident Response Retainer: common mistakes',
     description: 'Incident Response Retainer: common mistakes',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Incident Response Retainer: common mistakes',
     description: 'Incident Response Retainer: common mistakes',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/incident-response-retainer-common-mistakes/' },
+  },
+    alternates: { canonical: '/blog/incident-response-retainer-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: common mistakes", "description": "Incident Response Retainer: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-common-mistakes/"};

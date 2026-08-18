@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Edge Computing Deployment | Zion Tech Group',
-  description: 'Edge Computing Deployment',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Edge Computing Deployment',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Edge Computing Deployment',
     description: 'Edge Computing Deployment',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-2026/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Edge Computing Deployment',
     description: 'Edge Computing Deployment',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/edge-computing-deployment-2026/' },
+  },
+    alternates: { canonical: '/blog/edge-computing-deployment-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment", "description": "Edge Computing Deployment", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-2026/"};

@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Cloud Migration Services: automation roadmap | Zion Tech Group',
-  description: 'Cloud Migration Services: automation roadmap',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Cloud Migration Services: automation roadmap',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Cloud Migration Services: automation roadmap',
     description: 'Cloud Migration Services: automation roadmap',
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Cloud Migration Services: automation roadmap',
     description: 'Cloud Migration Services: automation roadmap',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/cloud-migration-services-automation-roadmap/' },
+  },
+    alternates: { canonical: '/blog/cloud-migration-services-automation-roadmap/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: automation roadmap", "description": "Cloud Migration Services: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-automation-roadmap/"};

@@ -4,21 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI Services | Zion Tech Group',
-  description: 'End-to-end AI services from strategy to production: assistants, RAG, agents, evaluation, and governance.',
-  openGraph: {
+    description: 'End-to-end AI services from strategy to production: assistants, RAG, agents, evaluation, and governance.',
+    openGraph: {
     title: 'AI Services | Zion Tech Group',
     description: 'Production AI services and implementation.',
     url: 'https://ziontechgroup.com/ai-services/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
-  twitter: {
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Services | Zion Tech Group',
     description: 'Production AI services and implementation.',
-    siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/ai-services/' },
+    alternates: { canonical: '/ai-services/' },
 };
 
 export default function AiServicesPage() {

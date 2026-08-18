@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Case Studies | Zion Tech Group',
-  description: 'Case studies from Zion Tech Group engagements in AI, IT, security, automation, and cloud.',
-  openGraph: {
+    description: 'Case studies from Zion Tech Group engagements in AI, IT, security, automation, and cloud.',
+    openGraph: {
     title: 'Case Studies | Zion Tech Group',
     description: 'Real outcomes and ROI from Zion Tech Group engagements.',
-    url: 'https://ziontechgroup.com/case-studies/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/case-studies/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Case Studies | Zion Tech Group',
     description: 'Real outcomes and ROI from Zion Tech Group engagements.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/case-studies/' },
+  },
+    alternates: { canonical: '/case-studies/' },
 };
 
 export default function CaseStudiesPage() {

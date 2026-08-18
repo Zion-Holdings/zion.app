@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Cyber Threat Intelligence: deployment patterns | Zion Tech Group',
-  description: 'Cyber Threat Intelligence: deployment patterns',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Cyber Threat Intelligence: deployment patterns',
+    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Cyber Threat Intelligence: deployment patterns',
     description: 'Cyber Threat Intelligence: deployment patterns',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Cyber Threat Intelligence: deployment patterns',
     description: 'Cyber Threat Intelligence: deployment patterns',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/cyber-threat-intelligence-deployment-patterns/' },
+  },
+    alternates: { canonical: '/blog/cyber-threat-intelligence-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: deployment patterns", "description": "Cyber Threat Intelligence: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-deployment-patterns/"};

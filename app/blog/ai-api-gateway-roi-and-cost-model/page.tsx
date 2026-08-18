@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI API Gateway: ROI and cost model | Zion Tech Group',
-  description: 'AI API Gateway: ROI and cost model',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI API Gateway: ROI and cost model',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI API Gateway: ROI and cost model',
     description: 'AI API Gateway: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/ai-api-gateway-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI API Gateway: ROI and cost model',
     description: 'AI API Gateway: ROI and cost model',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-api-gateway-roi-and-cost-model/' },
+  },
+    alternates: { canonical: '/blog/ai-api-gateway-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: ROI and cost model", "description": "AI API Gateway: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-roi-and-cost-model/"};

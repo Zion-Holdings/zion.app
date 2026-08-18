@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Enterprise AI Intelligence Hub | Zion Tech Group',
-  description: 'Enterprise AI Intelligence Hub',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Enterprise AI Intelligence Hub',
+    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Enterprise AI Intelligence Hub',
     description: 'Enterprise AI Intelligence Hub',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-2026/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Enterprise AI Intelligence Hub',
     description: 'Enterprise AI Intelligence Hub',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-2026/' },
+  },
+    alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub", "description": "Enterprise AI Intelligence Hub", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-2026/"};

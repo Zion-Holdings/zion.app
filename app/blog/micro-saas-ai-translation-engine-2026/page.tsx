@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'MicroSaaS Translation Engine | Zion Tech Group',
-  description: 'MicroSaaS Translation Engine',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'MicroSaaS Translation Engine',
+    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'MicroSaaS Translation Engine',
     description: 'MicroSaaS Translation Engine',
     url: 'https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'MicroSaaS Translation Engine',
     description: 'MicroSaaS Translation Engine',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/micro-saas-ai-translation-engine-2026/' },
+  },
+    alternates: { canonical: '/blog/micro-saas-ai-translation-engine-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine", "description": "MicroSaaS Translation Engine", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026/"};

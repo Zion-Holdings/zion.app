@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI BOM Procurement | Zion Tech Group',
-  description: 'AI BOM Procurement',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI BOM Procurement',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI BOM Procurement',
     description: 'AI BOM Procurement',
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-2026/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI BOM Procurement',
     description: 'AI BOM Procurement',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-bom-procurement-2026/' },
+  },
+    alternates: { canonical: '/blog/ai-bom-procurement-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement", "description": "AI BOM Procurement", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-2026/"};

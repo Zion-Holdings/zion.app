@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'DevSecOps Pipeline: vendor evaluation | Zion Tech Group',
-  description: 'DevSecOps Pipeline: vendor evaluation',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'DevSecOps Pipeline: vendor evaluation',
+    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'DevSecOps Pipeline: vendor evaluation',
     description: 'DevSecOps Pipeline: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'DevSecOps Pipeline: vendor evaluation',
     description: 'DevSecOps Pipeline: vendor evaluation',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/devsecops-pipeline-vendor-evaluation/' },
+  },
+    alternates: { canonical: '/blog/devsecops-pipeline-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: vendor evaluation", "description": "DevSecOps Pipeline: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-vendor-evaluation/"};

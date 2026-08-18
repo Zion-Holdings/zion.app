@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI BDR SDR: executive guide | Zion Tech Group',
-  description: 'AI BDR SDR: executive guide',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI BDR SDR: executive guide',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI BDR SDR: executive guide',
     description: 'AI BDR SDR: executive guide',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI BDR SDR: executive guide',
     description: 'AI BDR SDR: executive guide',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-bdr-sdr-executive-guide/' },
+  },
+    alternates: { canonical: '/blog/ai-bdr-sdr-executive-guide/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: executive guide", "description": "AI BDR SDR: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-executive-guide/"};

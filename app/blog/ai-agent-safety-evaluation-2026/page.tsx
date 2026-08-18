@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI Agent Safety Evaluation | Zion Tech Group',
-  description: 'AI Agent Safety Evaluation',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI Agent Safety Evaluation',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI Agent Safety Evaluation',
     description: 'AI Agent Safety Evaluation',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-2026/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Agent Safety Evaluation',
     description: 'AI Agent Safety Evaluation',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-agent-safety-evaluation-2026/' },
+  },
+    alternates: { canonical: '/blog/ai-agent-safety-evaluation-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation", "description": "AI Agent Safety Evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-2026/"};

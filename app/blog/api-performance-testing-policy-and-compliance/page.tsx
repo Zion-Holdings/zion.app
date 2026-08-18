@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'API Performance Testing: policy and compliance | Zion Tech Group',
-  description: 'API Performance Testing: policy and compliance',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'API Performance Testing: policy and compliance',
+    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'API Performance Testing: policy and compliance',
     description: 'API Performance Testing: policy and compliance',
     url: 'https://ziontechgroup.com/blog/api-performance-testing-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'API Performance Testing: policy and compliance',
     description: 'API Performance Testing: policy and compliance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/api-performance-testing-policy-and-compliance/' },
+  },
+    alternates: { canonical: '/blog/api-performance-testing-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: policy and compliance", "description": "API Performance Testing: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-policy-and-compliance/"};

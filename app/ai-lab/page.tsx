@@ -4,13 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI Lab | Zion Tech Group',
-  description: 'Explore emerging AI capabilities, experimental services, and sandbox engagements from Zion Tech Group.',
-  openGraph: { title: 'AI Lab | Zion Tech Group', description: 'Emerging AI capabilities and experiments.', url: 'https://ziontechgroup.com/ai-lab/', type: 'website' },  twitter: {
+    description: 'Explore emerging AI capabilities, experimental services, and sandbox engagements from Zion Tech Group.',
+    openGraph: { title: 'AI Lab | Zion Tech Group',
+    description: 'Emerging AI capabilities and experiments.',
+    url: 'https://ziontechgroup.com/ai-lab/',
+    type: 'website' },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Lab | Zion Tech Group',
     description: 'Emerging AI capabilities and experiments.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/ai-lab/' },
+  },
+    alternates: { canonical: '/ai-lab/' },
 };
 
 export default function AiLabPage() {
@@ -37,6 +41,20 @@ export default function AiLabPage() {
           <p className="text-slate-400 text-sm">Kick off a scoped engagement with measurable outcomes.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Contact us →</span>
         </Link>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Sandbox engagements</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Time-boxed experiments to validate AI capabilities before commitment.</li>
+          <li>Access to emerging models, tooling, and evaluation frameworks.</li>
+          <li>Risk-mitigated environments with clear success criteria and rollback.</li>
+          <li>Deliverables that transfer knowledge to your internal teams.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Explore services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+        </div>
       </div>
     </StandardPage>
   );

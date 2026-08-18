@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Service Comparison | Zion Tech Group',
-  description: 'Compare AI, IT, and automation service models by scope, fit, and speed.',
-  openGraph: {
+    description: 'Compare AI, IT, and automation service models by scope, fit, and speed.',
+    openGraph: {
     title: 'Service Comparison',
     description: 'Side-by-side service fit comparison.',
-    url: 'https://ziontechgroup.com/tools/service-comparison/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/tools/service-comparison/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Service Comparison',
     description: 'Side-by-side service fit comparison.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/tools/service-comparison/' },
+  },
+    alternates: { canonical: '/tools/service-comparison/' },
 };
 
 const FACTORS = [
@@ -96,6 +96,26 @@ export default function ServiceComparisonPage() {
         <div className="flex flex-col sm:flex-row gap-3">
           <Link href="/contact/" className="btn-primary text-center">Contact us</Link>
           <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
+        </div>
+      </div>
+      <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 className="text-lg font-bold text-white mb-3">Related offerings</h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Enterprise Services</h3>
+            <p className="text-slate-400 text-xs mb-2">AI, IT, security, and data programs with measurable outcomes.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
+          </Link>
+          <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Industry Solutions</h3>
+            <p className="text-slate-400 text-xs mb-2">Purpose-built AI and IT solutions by industry.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
+          </Link>
+          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Insights & Guides</h3>
+            <p className="text-slate-400 text-xs mb-2">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+          </Link>
         </div>
       </div>
     </StandardPage>

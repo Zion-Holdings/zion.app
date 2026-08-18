@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Network Infrastructure: operations handbook | Zion Tech Group',
-  description: 'Network Infrastructure: operations handbook',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Network Infrastructure: operations handbook',
+    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Network Infrastructure: operations handbook',
     description: 'Network Infrastructure: operations handbook',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Network Infrastructure: operations handbook',
     description: 'Network Infrastructure: operations handbook',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/network-infrastructure-operations-handbook/' },
+  },
+    alternates: { canonical: '/blog/network-infrastructure-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: operations handbook", "description": "Network Infrastructure: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-operations-handbook/"};

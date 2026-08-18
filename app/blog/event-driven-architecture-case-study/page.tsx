@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Event Driven Architecture: case study | Zion Tech Group',
-  description: 'Event Driven Architecture: case study',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Event Driven Architecture: case study',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Event Driven Architecture: case study',
     description: 'Event Driven Architecture: case study',
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Event Driven Architecture: case study',
     description: 'Event Driven Architecture: case study',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/event-driven-architecture-case-study/' },
+  },
+    alternates: { canonical: '/blog/event-driven-architecture-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: case study", "description": "Event Driven Architecture: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-case-study/"};

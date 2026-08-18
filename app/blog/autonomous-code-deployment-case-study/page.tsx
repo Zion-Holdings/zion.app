@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Autonomous Code Deployment: case study | Zion Tech Group',
-  description: 'Autonomous Code Deployment: case study',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Autonomous Code Deployment: case study',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Autonomous Code Deployment: case study',
     description: 'Autonomous Code Deployment: case study',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Autonomous Code Deployment: case study',
     description: 'Autonomous Code Deployment: case study',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/autonomous-code-deployment-case-study/' },
+  },
+    alternates: { canonical: '/blog/autonomous-code-deployment-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: case study", "description": "Autonomous Code Deployment: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-case-study/"};

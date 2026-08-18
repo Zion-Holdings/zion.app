@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'MicroSaaS Social Media Manager: case study | Zion Tech Group',
-  description: 'MicroSaaS Social Media Manager: case study',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'MicroSaaS Social Media Manager: case study',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'MicroSaaS Social Media Manager: case study',
     description: 'MicroSaaS Social Media Manager: case study',
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'MicroSaaS Social Media Manager: case study',
     description: 'MicroSaaS Social Media Manager: case study',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/microsaas-social-media-manager-case-study/' },
+  },
+    alternates: { canonical: '/blog/microsaas-social-media-manager-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Social Media Manager: case study", "description": "MicroSaaS Social Media Manager: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-social-media-manager-case-study/"};

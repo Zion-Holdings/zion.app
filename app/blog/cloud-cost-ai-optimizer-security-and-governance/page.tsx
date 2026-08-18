@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Cloud Cost AI Optimizer: security and governance | Zion Tech Group',
-  description: 'Cloud Cost AI Optimizer: security and governance',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Cloud Cost AI Optimizer: security and governance',
+    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Cloud Cost AI Optimizer: security and governance',
     description: 'Cloud Cost AI Optimizer: security and governance',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Cloud Cost AI Optimizer: security and governance',
     description: 'Cloud Cost AI Optimizer: security and governance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/cloud-cost-ai-optimizer-security-and-governance/' },
+  },
+    alternates: { canonical: '/blog/cloud-cost-ai-optimizer-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: security and governance", "description": "Cloud Cost AI Optimizer: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-security-and-governance/"};

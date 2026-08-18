@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Automation Orchestration | Zion Tech Group',
-  description: 'Automation Orchestration',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Automation Orchestration',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Automation Orchestration',
     description: 'Automation Orchestration',
     url: 'https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Automation Orchestration',
     description: 'Automation Orchestration',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/automation-orchestration-enterprise-2026/' },
+  },
+    alternates: { canonical: '/blog/automation-orchestration-enterprise-2026/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration", "description": "Automation Orchestration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026/"};

@@ -1,21 +1,22 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Blog | Zion Tech Group',
-  description: 'Insights on AI, IT, automation, and enterprise delivery from Zion Tech Group.',
-  openGraph: {
+    description: 'Insights on AI, IT, automation, and enterprise delivery from Zion Tech Group.',
+    openGraph: {
     title: 'Blog | Zion Tech Group',
     description: 'Insights on AI, IT, automation, and enterprise delivery.',
-    url: 'https://ziontechgroup.com/blog/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/blog/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Blog | Zion Tech Group',
     description: 'Insights on AI, IT, automation, and enterprise delivery.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/' },
+  },
+    alternates: { canonical: '/blog/' },
 };
 
 type Post = {
@@ -115,6 +116,27 @@ export default function BlogIndexPage() {
             </div>
           </section>
         ))}
+      </div>
+
+      <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
+        <h2 className="text-xl font-bold text-white mb-4">Explore related offerings</h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Enterprise Services</h3>
+            <p className="text-slate-400 text-xs mb-3">AI, IT, security, and data programs with measurable outcomes.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
+          </Link>
+          <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Industry Solutions</h3>
+            <p className="text-slate-400 text-xs mb-3">Purpose-built AI and IT solutions by industry.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
+          </Link>
+          <Link href="/tools/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Developer Tools</h3>
+            <p className="text-slate-400 text-xs mb-3">Free utilities for JSON, JWT, regex, QR, and text processing.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Use tools →</span>
+          </Link>
+        </div>
       </div>
     </StandardPage>
   );

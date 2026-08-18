@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Automation Orchestration: architecture overview | Zion Tech Group',
-  description: 'Automation Orchestration: architecture overview',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Automation Orchestration: architecture overview',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Automation Orchestration: architecture overview',
     description: 'Automation Orchestration: architecture overview',
     url: 'https://ziontechgroup.com/blog/automation-orchestration-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Automation Orchestration: architecture overview',
     description: 'Automation Orchestration: architecture overview',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/automation-orchestration-architecture-overview/' },
+  },
+    alternates: { canonical: '/blog/automation-orchestration-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: architecture overview", "description": "Automation Orchestration: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-architecture-overview/"};

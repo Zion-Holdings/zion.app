@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI Agent Safety Evaluation: automation roadmap | Zion Tech Group',
-  description: 'AI Agent Safety Evaluation: automation roadmap',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI Agent Safety Evaluation: automation roadmap',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI Agent Safety Evaluation: automation roadmap',
     description: 'AI Agent Safety Evaluation: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Agent Safety Evaluation: automation roadmap',
     description: 'AI Agent Safety Evaluation: automation roadmap',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-agent-safety-evaluation-automation-roadmap/' },
+  },
+    alternates: { canonical: '/blog/ai-agent-safety-evaluation-automation-roadmap/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: automation roadmap", "description": "AI Agent Safety Evaluation: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-automation-roadmap/"};

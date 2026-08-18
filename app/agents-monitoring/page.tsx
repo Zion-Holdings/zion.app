@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI Agents Monitoring | Zion Tech Group',
-  description: 'Monitoring, observability, and reliability dashboard for AI agents.',
-  openGraph: {
+    description: 'Monitoring, observability, and reliability dashboard for AI agents.',
+    openGraph: {
     title: 'AI Agents Monitoring | Zion Tech Group',
     description: 'Operational visibility for AI agents and automated workflows.',
-    url: 'https://ziontechgroup.com/agents-monitoring/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/agents-monitoring/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Agents Monitoring | Zion Tech Group',
     description: 'Operational visibility for AI agents and automated workflows.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/agents-monitoring/' },
+  },
+    alternates: { canonical: '/agents-monitoring/' },
 };
 
 export default function AgentsMonitoringPage() {
@@ -49,6 +49,21 @@ export default function AgentsMonitoringPage() {
           <p className="text-slate-400 text-sm">Identity, policy, and incident-response controls.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Monitoring essentials</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Real-time health dashboards for agent throughput, latency, and error rates.</li>
+          <li>Structured logging with trace correlation across tool calls and data sources.</li>
+          <li>Automated alerting routed to the right team with severity-aware escalation.</li>
+          <li>Cost and usage visibility to prevent runaway token or compute spend.</li>
+          <li>Periodic reliability reviews and failure-mode post-mortems.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Explore AI services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+        </div>
       </div>
     </StandardPage>
   );

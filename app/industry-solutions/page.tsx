@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Industry Solutions | Zion Tech Group',
-  description: 'Industry-specific AI and IT solutions from Zion Tech Group.',
-  openGraph: {
+    description: 'Industry-specific AI and IT solutions from Zion Tech Group.',
+    openGraph: {
     title: 'Industry Solutions | Zion Tech Group',
     description: 'Purpose-built AI and IT solutions by industry.',
-    url: 'https://ziontechgroup.com/industry-solutions/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/industry-solutions/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Industry Solutions | Zion Tech Group',
     description: 'Purpose-built AI and IT solutions by industry.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/industry-solutions/' },
+  },
+    alternates: { canonical: '/industry-solutions/' },
 };
 
 export default function IndustrySolutionsPage() {
@@ -48,6 +48,20 @@ export default function IndustrySolutionsPage() {
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-white font-semibold mb-2">Government</h3>
           <p className="text-slate-400 text-sm">Citizen services, compliance automation, and civic AI.</p>
+        </div>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Solution principles</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Compliance-first design for regulated industries.</li>
+          <li>Domain-specific data models, workflows, and validation rules.</li>
+          <li>Pilots scoped to measurable business outcomes before scale.</li>
+          <li>Operational support after launch with continuous improvement.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
     </StandardPage>

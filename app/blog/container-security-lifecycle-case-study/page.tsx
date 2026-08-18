@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Container Security Lifecycle: case study | Zion Tech Group',
-  description: 'Container Security Lifecycle: case study',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Container Security Lifecycle: case study',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Container Security Lifecycle: case study',
     description: 'Container Security Lifecycle: case study',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Container Security Lifecycle: case study',
     description: 'Container Security Lifecycle: case study',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/container-security-lifecycle-case-study/' },
+  },
+    alternates: { canonical: '/blog/container-security-lifecycle-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: case study", "description": "Container Security Lifecycle: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-case-study/"};

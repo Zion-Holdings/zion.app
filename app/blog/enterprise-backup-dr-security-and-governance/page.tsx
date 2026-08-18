@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Enterprise Backup DR: security and governance | Zion Tech Group',
-  description: 'Enterprise Backup DR: security and governance',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Enterprise Backup DR: security and governance',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Enterprise Backup DR: security and governance',
     description: 'Enterprise Backup DR: security and governance',
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Enterprise Backup DR: security and governance',
     description: 'Enterprise Backup DR: security and governance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/enterprise-backup-dr-security-and-governance/' },
+  },
+    alternates: { canonical: '/blog/enterprise-backup-dr-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: security and governance", "description": "Enterprise Backup DR: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-security-and-governance/"};

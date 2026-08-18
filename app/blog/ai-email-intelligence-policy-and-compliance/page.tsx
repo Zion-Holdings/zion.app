@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI Email Intelligence: policy and compliance | Zion Tech Group',
-  description: 'AI Email Intelligence: policy and compliance',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI Email Intelligence: policy and compliance',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI Email Intelligence: policy and compliance',
     description: 'AI Email Intelligence: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Email Intelligence: policy and compliance',
     description: 'AI Email Intelligence: policy and compliance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-email-intelligence-policy-and-compliance/' },
+  },
+    alternates: { canonical: '/blog/ai-email-intelligence-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: policy and compliance", "description": "AI Email Intelligence: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-policy-and-compliance/"};

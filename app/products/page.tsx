@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Products | Zion Tech Group',
-  description: 'Zion AI products and platforms built for managed AI, automation, analytics, and enterprise delivery.',
-  openGraph: {
+    description: 'Zion AI products and platforms built for managed AI, automation, analytics, and enterprise delivery.',
+    openGraph: {
     title: 'Products | Zion Tech Group',
     description: 'Explore Zion AI products and platforms for enterprise automation, analytics, and managed AI.',
-    url: 'https://ziontechgroup.com/products/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/products/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Products | Zion Tech Group',
     description: 'Explore Zion AI products and platforms for enterprise automation, analytics, and managed AI.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/products/' },
+  },
+    alternates: { canonical: '/products/' },
 };
 
 const PRODUCTS = [

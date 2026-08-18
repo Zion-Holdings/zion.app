@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI 3D Asset Generator: checklist for IT leaders | Zion Tech Group',
-  description: 'AI 3D Asset Generator: checklist for IT leaders',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI 3D Asset Generator: checklist for IT leaders',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI 3D Asset Generator: checklist for IT leaders',
     description: 'AI 3D Asset Generator: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI 3D Asset Generator: checklist for IT leaders',
     description: 'AI 3D Asset Generator: checklist for IT leaders',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-3d-asset-generator-checklist-for-it-leaders/' },
+  },
+    alternates: { canonical: '/blog/ai-3d-asset-generator-checklist-for-it-leaders/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: checklist for IT leaders", "description": "AI 3D Asset Generator: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-checklist-for-it-leaders/"};

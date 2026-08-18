@@ -4,21 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Help Center | Zion Tech Group',
-  description: 'Support topics, runbooks, and contact paths for Zion Tech Group.',
-  openGraph: {
+    description: 'Support topics, runbooks, and contact paths for Zion Tech Group.',
+    openGraph: {
     title: 'Help Center | Zion Tech Group',
     description: 'Help center for onboarding, support, and engagement questions.',
     url: 'https://ziontechgroup.com/help/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
-  twitter: {
+    twitter: {
     card: 'summary_large_image',
     title: 'Help Center | Zion Tech Group',
     description: 'Help center for onboarding, support, and engagement questions.',
-    siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/help/' },
+    alternates: { canonical: '/help/' },
 };
 
 export default function HelpPage() {

@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Financial Services Solutions | Zion Tech Group',
-  description: 'RegTech, fraud detection, trading bots, and KYC automation for financial services.',
-  openGraph: {
+    description: 'RegTech, fraud detection, trading bots, and KYC automation for financial services.',
+    openGraph: {
     title: 'Financial Services Solutions | Zion Tech Group',
     description: 'Financial services delivery patterns and AI implementation guidance.',
-    url: 'https://ziontechgroup.com/solutions/financial-services/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/solutions/financial-services/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Financial Services Solutions | Zion Tech Group',
     description: 'Financial services delivery patterns and AI implementation guidance.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/solutions/financial-services/' },
+  },
+    alternates: { canonical: '/solutions/financial-services/' },
 };
 
 export default function FinancialServicesSolutionsPage() {
@@ -50,6 +50,21 @@ export default function FinancialServicesSolutionsPage() {
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-white font-semibold mb-2">Payment intelligence</h3>
           <p className="text-slate-400 text-sm">Routing, risk scoring, and operational insights for payment flows.</p>
+        </div>
+      </div>
+      <div className="max-w-3xl mx-auto mt-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 className="text-lg font-bold text-white mb-3">Related resources</h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link href="/tools/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Developer Tools</h3>
+            <p className="text-slate-400 text-xs">Free utilities for JSON, JWT, regex, QR, and text processing.</p>
+            <span className="text-purple-300 text-xs font-semibold mt-2 inline-block">Use tools →</span>
+          </Link>
+          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Insights & Guides</h3>
+            <p className="text-slate-400 text-xs">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+            <span className="text-purple-300 text-xs font-semibold mt-2 inline-block">Read blog →</span>
+          </Link>
         </div>
       </div>
     </StandardPage>

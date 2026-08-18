@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Cloud Migration Services: architecture overview | Zion Tech Group',
-  description: 'Cloud Migration Services: architecture overview',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Cloud Migration Services: architecture overview',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Cloud Migration Services: architecture overview',
     description: 'Cloud Migration Services: architecture overview',
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Cloud Migration Services: architecture overview',
     description: 'Cloud Migration Services: architecture overview',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/cloud-migration-services-architecture-overview/' },
+  },
+    alternates: { canonical: '/blog/cloud-migration-services-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: architecture overview", "description": "Cloud Migration Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-architecture-overview/"};

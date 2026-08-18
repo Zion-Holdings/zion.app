@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Chaos Engineering: implementation playbook | Zion Tech Group',
-  description: 'Chaos Engineering: implementation playbook',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Chaos Engineering: implementation playbook',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Chaos Engineering: implementation playbook',
     description: 'Chaos Engineering: implementation playbook',
     url: 'https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Chaos Engineering: implementation playbook',
     description: 'Chaos Engineering: implementation playbook',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/chaos-engineering-implementation-playbook/' },
+  },
+    alternates: { canonical: '/blog/chaos-engineering-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: implementation playbook", "description": "Chaos Engineering: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/"};

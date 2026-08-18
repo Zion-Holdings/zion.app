@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'MicroSaaS Customer Onboarding: common mistakes | Zion Tech Group',
-  description: 'MicroSaaS Customer Onboarding: common mistakes',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'MicroSaaS Customer Onboarding: common mistakes',
+    keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'MicroSaaS Customer Onboarding: common mistakes',
     description: 'MicroSaaS Customer Onboarding: common mistakes',
     url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'MicroSaaS Customer Onboarding: common mistakes',
     description: 'MicroSaaS Customer Onboarding: common mistakes',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/microsaas-customer-onboarding-common-mistakes/' },
+  },
+    alternates: { canonical: '/blog/microsaas-customer-onboarding-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding: common mistakes", "description": "MicroSaaS Customer Onboarding: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-common-mistakes/"};

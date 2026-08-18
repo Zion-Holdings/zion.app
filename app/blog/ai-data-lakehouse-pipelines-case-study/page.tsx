@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI Data Lakehouse Pipelines: case study | Zion Tech Group',
-  description: 'AI Data Lakehouse Pipelines: case study',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI Data Lakehouse Pipelines: case study',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI Data Lakehouse Pipelines: case study',
     description: 'AI Data Lakehouse Pipelines: case study',
     url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Data Lakehouse Pipelines: case study',
     description: 'AI Data Lakehouse Pipelines: case study',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-case-study/' },
+  },
+    alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: case study", "description": "AI Data Lakehouse Pipelines: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-case-study/"};

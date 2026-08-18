@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Public Roadmap | Zion Tech Group',
-  description: 'Zion Tech Group public roadmap, planned releases, and platform direction.',
-  openGraph: {
+    description: 'Zion Tech Group public roadmap, planned releases, and platform direction.',
+    openGraph: {
     title: 'Public Roadmap | Zion Tech Group',
     description: 'See what we’re building next and share feedback.',
-    url: 'https://ziontechgroup.com/public-roadmap/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/public-roadmap/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Public Roadmap | Zion Tech Group',
     description: 'See what we’re building next and share feedback.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/public-roadmap/' },
+  },
+    alternates: { canonical: '/public-roadmap/' },
 };
 
 export default function PublicRoadmapPage() {
@@ -49,6 +49,20 @@ export default function PublicRoadmapPage() {
       <div className="flex flex-col sm:flex-row gap-3 mt-10">
         <a href="/contact/" className="btn-primary text-center">Share feedback</a>
         <a href="/services/" className="btn-secondary text-center">Explore services</a>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Roadmap inputs</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Customer feedback from support tickets and business reviews.</li>
+          <li>Internal R&D priorities from engineering and architecture teams.</li>
+          <li>Security, compliance, and reliability investments.</li>
+          <li>Public voting and comments to shape upcoming releases.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Explore services</a>
+          <a href="/contact/" className="btn-secondary text-center">Share feedback</a>
+        </div>
       </div>
     </StandardPage>
   );

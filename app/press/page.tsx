@@ -4,13 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Press | Zion Tech Group',
-  description: 'Press releases, media mentions, and company announcements from Zion Tech Group.',
-  openGraph: { title: 'Press | Zion Tech Group', description: 'News and announcements.', url: 'https://ziontechgroup.com/press/', type: 'website' },  twitter: {
+    description: 'Press releases, media mentions, and company announcements from Zion Tech Group.',
+    openGraph: { title: 'Press | Zion Tech Group',
+    description: 'News and announcements.',
+    url: 'https://ziontechgroup.com/press/',
+    type: 'website' },
+    twitter: {
     card: 'summary_large_image',
     title: 'Press | Zion Tech Group',
     description: 'News and announcements.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/press/' },
+  },
+    alternates: { canonical: '/press/' },
 };
 
 export default function PressPage() {
@@ -27,6 +31,20 @@ export default function PressPage() {
           <p className="text-slate-400 text-sm">New service releases, customer case studies, and industry commentary.</p>
         </div>
         <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact communications →</Link>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Media kit</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Company overview, executive bios, and high-resolution logos.</li>
+          <li>Customer case studies with measurable outcomes and quotes.</li>
+          <li>Product release notes and technical white papers.</li>
+          <li>Direct line to communications for fastest response.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Media contact</a>
+        </div>
       </div>
     </StandardPage>
   );

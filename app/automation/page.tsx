@@ -3,8 +3,19 @@ import PageTemplate from '@/components/PageTemplate';
 
 export const metadata = {
   title: 'AI Automation | Zion Tech Group',
-  description: 'AI automation services and tooling from Zion Tech Group.',
-  alternates: { canonical: '/automation/' },
+    description: 'AI automation services and tooling from Zion Tech Group.',
+    openGraph: {
+    title: 'AI Automation | Zion Tech Group',
+    description: 'AI automation services and tooling from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/automation/',
+    type: 'website',
+  },
+    twitter: {
+    card: 'summary_large_image',
+    title: 'AI Automation | Zion Tech Group',
+    description: 'AI automation services and tooling from Zion Tech Group.',
+  },
+    alternates: { canonical: '/automation/' },
 };
 
 export default function AutomationPage() {
@@ -40,6 +51,20 @@ export default function AutomationPage() {
         <p>
           For tailored options, visit <Link href="/services/" className="text-purple-300 font-semibold hover:text-white">services</Link> or <Link href="/contact/" className="text-purple-300 font-semibold hover:text-white">contact</Link>.
         </p>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Automation outcomes</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Reduced manual effort in support, ops, and reporting workflows.</li>
+          <li>Measurable deflection rates and faster resolution times.</li>
+          <li>Consistent output quality with fewer errors and omissions.</li>
+          <li>Audit trails and human-in-the-loop controls where required.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Explore services</a>
+          <a href="/contact/" className="btn-secondary text-center">Start a project</a>
+        </div>
       </div>
     </PageTemplate>
   );

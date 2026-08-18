@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Port Scanner | Zion Tech Group',
-  description: 'Check common service ports and surface open or filtered results.',
-  openGraph: {
+    description: 'Check common service ports and surface open or filtered results.',
+    openGraph: {
     title: 'Port Scanner',
     description: 'Network port scan helper.',
-    url: 'https://ziontechgroup.com/tools/port-scanner/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/tools/port-scanner/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Port Scanner',
     description: 'Network port scan helper.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/tools/port-scanner/' },
+  },
+    alternates: { canonical: '/tools/port-scanner/' },
 };
 
 const PORTS = [
@@ -73,6 +73,26 @@ export default function PortScannerPage() {
             <Link href="/contact/" className="btn-primary text-center">Contact us</Link>
             <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
           </div>
+        </div>
+      </div>
+      <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 className="text-lg font-bold text-white mb-3">Related offerings</h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Enterprise Services</h3>
+            <p className="text-slate-400 text-xs mb-2">AI, IT, security, and data programs with measurable outcomes.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
+          </Link>
+          <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Industry Solutions</h3>
+            <p className="text-slate-400 text-xs mb-2">Purpose-built AI and IT solutions by industry.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
+          </Link>
+          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Insights & Guides</h3>
+            <p className="text-slate-400 text-xs mb-2">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+          </Link>
         </div>
       </div>
     </StandardPage>

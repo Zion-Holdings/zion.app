@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Incident Response Automation 2026 | Zion Tech Group',
-  description: 'Implementation patterns, risks, and next steps for incident response automation 2026.',
-  openGraph: {
+    description: 'Implementation patterns, risks, and next steps for incident response automation 2026.',
+    openGraph: {
     title: 'Incident Response Automation 2026 | Zion Tech Group',
     description: 'Practical guidance for incident response automation 2026.',
-    url: 'https://ziontechgroup.com/blog/incident-response-automation-2026/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/blog/incident-response-automation-2026/',
     type: 'article',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Incident Response Automation 2026 | Zion Tech Group',
     description: 'Practical guidance for incident response automation 2026.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/incident-response-automation-2026/' },
+  },
+    alternates: { canonical: '/blog/incident-response-automation-2026/' },
 };
 
 export default function PostPage() {

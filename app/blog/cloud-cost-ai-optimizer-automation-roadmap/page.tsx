@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Cloud Cost AI Optimizer: automation roadmap | Zion Tech Group',
-  description: 'Cloud Cost AI Optimizer: automation roadmap',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Cloud Cost AI Optimizer: automation roadmap',
+    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Cloud Cost AI Optimizer: automation roadmap',
     description: 'Cloud Cost AI Optimizer: automation roadmap',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Cloud Cost AI Optimizer: automation roadmap',
     description: 'Cloud Cost AI Optimizer: automation roadmap',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/cloud-cost-ai-optimizer-automation-roadmap/' },
+  },
+    alternates: { canonical: '/blog/cloud-cost-ai-optimizer-automation-roadmap/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: automation roadmap", "description": "Cloud Cost AI Optimizer: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-automation-roadmap/"};

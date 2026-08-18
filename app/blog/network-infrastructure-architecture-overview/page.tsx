@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Network Infrastructure: architecture overview | Zion Tech Group',
-  description: 'Network Infrastructure: architecture overview',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Network Infrastructure: architecture overview',
+    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Network Infrastructure: architecture overview',
     description: 'Network Infrastructure: architecture overview',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Network Infrastructure: architecture overview',
     description: 'Network Infrastructure: architecture overview',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/network-infrastructure-architecture-overview/' },
+  },
+    alternates: { canonical: '/blog/network-infrastructure-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: architecture overview", "description": "Network Infrastructure: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-architecture-overview/"};

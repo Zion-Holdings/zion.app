@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Synthetic Monitoring Deployment | Zion Tech Group',
-  description: 'Implementation patterns, risks, and next steps for synthetic monitoring deployment.',
-  openGraph: {
+    description: 'Implementation patterns, risks, and next steps for synthetic monitoring deployment.',
+    openGraph: {
     title: 'Synthetic Monitoring Deployment | Zion Tech Group',
     description: 'Practical guidance for synthetic monitoring deployment.',
-    url: 'https://ziontechgroup.com/blog/synthetic-monitoring-deployment/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/blog/synthetic-monitoring-deployment/',
     type: 'article',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Synthetic Monitoring Deployment | Zion Tech Group',
     description: 'Practical guidance for synthetic monitoring deployment.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/synthetic-monitoring-deployment/' },
+  },
+    alternates: { canonical: '/blog/synthetic-monitoring-deployment/' },
 };
 
 export default function PostPage() {

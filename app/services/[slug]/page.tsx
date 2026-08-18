@@ -1,4 +1,5 @@
 import { notFound, redirect } from 'next/navigation';
+import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 import type { Metadata } from 'next';
 
@@ -19,19 +20,19 @@ export function generateStaticParams() {
 
 export const metadata: Metadata = {
   title: 'Service | Zion Tech Group',
-  description: 'Service details and delivery guidance.',
-  openGraph: {
+    description: 'Service details and delivery guidance.',
+    openGraph: {
     title: 'Service | Zion Tech Group',
     description: 'Service details and delivery guidance.',
     url: 'https://ziontechgroup.com/services/',
     type: 'website',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Service | Zion Tech Group',
     description: 'Service details and delivery guidance.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/services/' },
+  },
+    alternates: { canonical: '/services/' },
 };
 
 export default function ServiceSlugPage({ params }: { params: Params }) {
@@ -64,6 +65,26 @@ export default function ServiceSlugPage({ params }: { params: Params }) {
           <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
             <h3 className="text-white font-semibold mb-2">Compliance</h3>
             <p className="text-slate-400 text-sm">Governance, controls, and review cycles aligned to common enterprise requirements.</p>
+          </div>
+        </div>
+        <div className="max-w-3xl mx-auto mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-lg font-bold text-white mb-3">Related offerings</h2>
+          <div className="grid gap-3 sm:grid-cols-3">
+            <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">Industry Solutions</h3>
+              <p className="text-slate-400 text-xs mb-2">Purpose-built AI and IT solutions by industry.</p>
+              <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
+            </Link>
+            <Link href="/tools/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">Developer Tools</h3>
+              <p className="text-slate-400 text-xs mb-2">Free utilities for JSON, JWT, regex, QR, and text processing.</p>
+              <span className="text-purple-300 text-xs font-semibold inline-block">Use tools →</span>
+            </Link>
+            <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">Insights & Guides</h3>
+              <p className="text-slate-400 text-xs mb-2">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+              <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+            </Link>
           </div>
         </div>
       </div>

@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI Image Generation 2026 | Zion Tech Group',
-  description: 'Governed image generation workflows with brand controls and review loops.',
-  openGraph: {
+    description: 'Governed image generation workflows with brand controls and review loops.',
+    openGraph: {
     title: 'AI Image Generation 2026',
     description: 'Governed image generation workflows with brand controls and review loops.',
-    url: 'https://ziontechgroup.com/blog/ai-image-generation-2026/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/blog/ai-image-generation-2026/',
     type: 'article',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Image Generation 2026',
     description: 'Governed image generation workflows with brand controls and review loops.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-image-generation-2026/' },
+  },
+    alternates: { canonical: '/blog/ai-image-generation-2026/' },
 };
 
 export default function Page() {

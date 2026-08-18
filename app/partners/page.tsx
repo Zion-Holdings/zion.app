@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Partners | Zion Tech Group',
-  description: 'Technology and delivery partners of Zion Tech Group.',
-  openGraph: {
+    description: 'Technology and delivery partners of Zion Tech Group.',
+    openGraph: {
     title: 'Partners | Zion Tech Group',
     description: 'Partner ecosystem for AI, IT, and automation engagements.',
-    url: 'https://ziontechgroup.com/partners/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/partners/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Partners | Zion Tech Group',
     description: 'Partner ecosystem for AI, IT, and automation engagements.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/partners/' },
+  },
+    alternates: { canonical: '/partners/' },
 };
 
 export default function PartnersPage() {

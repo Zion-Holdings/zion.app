@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Cloud FinOps: policy and compliance | Zion Tech Group',
-  description: 'Cloud FinOps: policy and compliance',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Cloud FinOps: policy and compliance',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Cloud FinOps: policy and compliance',
     description: 'Cloud FinOps: policy and compliance',
     url: 'https://ziontechgroup.com/blog/cloud-finops-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Cloud FinOps: policy and compliance',
     description: 'Cloud FinOps: policy and compliance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/cloud-finops-policy-and-compliance/' },
+  },
+    alternates: { canonical: '/blog/cloud-finops-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: policy and compliance", "description": "Cloud FinOps: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:16Z", "dateModified": "2026-08-17T23:41:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-policy-and-compliance/"};

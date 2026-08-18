@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Industry Solutions | Zion Tech Group',
-  description: 'Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry\'s unique challenges and compliance requirements.',
-  openGraph: {
+    description: 'Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry\'s unique challenges and compliance requirements.',
+    openGraph: {
     title: 'Industry Solutions | Zion Tech Group',
     description: 'Purpose-built AI and IT solutions by industry.',
-    url: 'https://ziontechgroup.com/solutions/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/solutions/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Industry Solutions | Zion Tech Group',
     description: 'Purpose-built AI and IT solutions by industry.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/solutions/' },
+  },
+    alternates: { canonical: '/solutions/' },
 };
 
 const industries = [
@@ -83,6 +83,22 @@ export default function SolutionsPage() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/contact/" className="btn-primary text-center">Contact us</Link>
             <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
+          </div>
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
+          <h2 className="text-xl font-bold text-white mb-4">Resources & tools</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Link href="/tools/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold mb-1">Free Developer Tools</h3>
+              <p className="text-slate-400 text-xs mb-3">JSON, JWT, regex, QR, and text utilities — no sign-up required.</p>
+              <span className="text-purple-300 text-xs font-semibold inline-block">Use tools →</span>
+            </Link>
+            <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold mb-1">Insights & Guides</h3>
+              <p className="text-slate-400 text-xs mb-3">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+              <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+            </Link>
           </div>
         </div>
       </div>

@@ -4,13 +4,17 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Status | Zion Tech Group',
-  description: 'Service status page for Zion Tech Group platforms and client environments.',
-  openGraph: { title: 'Status | Zion Tech Group', description: 'Platform and service status.', url: 'https://ziontechgroup.com/status/', type: 'website' },  twitter: {
+    description: 'Service status page for Zion Tech Group platforms and client environments.',
+    openGraph: { title: 'Status | Zion Tech Group',
+    description: 'Platform and service status.',
+    url: 'https://ziontechgroup.com/status/',
+    type: 'website' },
+    twitter: {
     card: 'summary_large_image',
     title: 'Status | Zion Tech Group',
     description: 'Platform and service status.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/status/' },
+  },
+    alternates: { canonical: '/status/' },
 };
 
 export default function StatusPage() {

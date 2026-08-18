@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'ETL Pipeline Optimization: case study | Zion Tech Group',
-  description: 'ETL Pipeline Optimization: case study',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'ETL Pipeline Optimization: case study',
+    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'ETL Pipeline Optimization: case study',
     description: 'ETL Pipeline Optimization: case study',
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'ETL Pipeline Optimization: case study',
     description: 'ETL Pipeline Optimization: case study',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/etl-pipeline-optimization-case-study/' },
+  },
+    alternates: { canonical: '/blog/etl-pipeline-optimization-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: case study", "description": "ETL Pipeline Optimization: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/"};

@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI Autonomous Agents: ROI and cost model | Zion Tech Group',
-  description: 'AI Autonomous Agents: ROI and cost model',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI Autonomous Agents: ROI and cost model',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI Autonomous Agents: ROI and cost model',
     description: 'AI Autonomous Agents: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Autonomous Agents: ROI and cost model',
     description: 'AI Autonomous Agents: ROI and cost model',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-autonomous-agents-roi-and-cost-model/' },
+  },
+    alternates: { canonical: '/blog/ai-autonomous-agents-roi-and-cost-model/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: ROI and cost model", "description": "AI Autonomous Agents: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-roi-and-cost-model/"};

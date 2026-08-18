@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Autonomous QA Engineering: starter template | Zion Tech Group',
-  description: 'Autonomous QA Engineering: starter template',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Autonomous QA Engineering: starter template',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Autonomous QA Engineering: starter template',
     description: 'Autonomous QA Engineering: starter template',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Autonomous QA Engineering: starter template',
     description: 'Autonomous QA Engineering: starter template',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/autonomous-qa-engineering-starter-template/' },
+  },
+    alternates: { canonical: '/blog/autonomous-qa-engineering-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: starter template", "description": "Autonomous QA Engineering: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-starter-template/"};

@@ -3,19 +3,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI Code Assistant 2026 | Zion Tech Group',
-  description: 'Code assistant patterns for secure, auditable developer augmentation.',
-  openGraph: {
+    description: 'Code assistant patterns for secure, auditable developer augmentation.',
+    openGraph: {
     title: 'AI Code Assistant 2026',
     description: 'Code assistant patterns for secure, auditable developer augmentation.',
-    url: 'https://ziontechgroup.com/blog/ai-code-assistant-2026/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/blog/ai-code-assistant-2026/',
     type: 'article',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Code Assistant 2026',
     description: 'Code assistant patterns for secure, auditable developer augmentation.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-code-assistant-2026/' },
+  },
+    alternates: { canonical: '/blog/ai-code-assistant-2026/' },
 };
 
 export default function Page() {

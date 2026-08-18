@@ -4,19 +4,19 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'SSL Checker | Zion Tech Group',
-  description: 'Inspect certificate basics and expiry window.',
-  openGraph: {
+    description: 'Inspect certificate basics and expiry window.',
+    openGraph: {
     title: 'SSL Checker',
     description: 'TLS certificate helper.',
-    url: 'https://ziontechgroup.com/tools/ssl-checker/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/tools/ssl-checker/',
     type: 'website',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'SSL Checker',
     description: 'TLS certificate helper.',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/tools/ssl-checker/' },
+  },
+    alternates: { canonical: '/tools/ssl-checker/' },
 };
 
 const CHECKS = [
@@ -67,6 +67,26 @@ export default function SslCheckerPage() {
             <Link href="/contact/" className="btn-primary text-center">Contact us</Link>
             <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
           </div>
+        </div>
+      </div>
+      <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <h2 className="text-lg font-bold text-white mb-3">Related offerings</h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Enterprise Services</h3>
+            <p className="text-slate-400 text-xs mb-2">AI, IT, security, and data programs with measurable outcomes.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
+          </Link>
+          <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Industry Solutions</h3>
+            <p className="text-slate-400 text-xs mb-2">Purpose-built AI and IT solutions by industry.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
+          </Link>
+          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Insights & Guides</h3>
+            <p className="text-slate-400 text-xs mb-2">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+          </Link>
         </div>
       </div>
     </StandardPage>

@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Autonomous Code Deployment: starter template | Zion Tech Group',
-  description: 'Autonomous Code Deployment: starter template',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Autonomous Code Deployment: starter template',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Autonomous Code Deployment: starter template',
     description: 'Autonomous Code Deployment: starter template',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Autonomous Code Deployment: starter template',
     description: 'Autonomous Code Deployment: starter template',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/autonomous-code-deployment-starter-template/' },
+  },
+    alternates: { canonical: '/blog/autonomous-code-deployment-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: starter template", "description": "Autonomous Code Deployment: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-starter-template/"};

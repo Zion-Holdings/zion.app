@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Network Infrastructure: common mistakes | Zion Tech Group',
-  description: 'Network Infrastructure: common mistakes',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Network Infrastructure: common mistakes',
+    keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Network Infrastructure: common mistakes',
     description: 'Network Infrastructure: common mistakes',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Network Infrastructure: common mistakes',
     description: 'Network Infrastructure: common mistakes',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/network-infrastructure-common-mistakes/' },
+  },
+    alternates: { canonical: '/blog/network-infrastructure-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: common mistakes", "description": "Network Infrastructure: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-common-mistakes/"};

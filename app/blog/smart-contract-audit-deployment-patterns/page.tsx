@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Smart Contract Audit: deployment patterns | Zion Tech Group',
-  description: 'Smart Contract Audit: deployment patterns',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Smart Contract Audit: deployment patterns',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Smart Contract Audit: deployment patterns',
     description: 'Smart Contract Audit: deployment patterns',
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Smart Contract Audit: deployment patterns',
     description: 'Smart Contract Audit: deployment patterns',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/smart-contract-audit-deployment-patterns/' },
+  },
+    alternates: { canonical: '/blog/smart-contract-audit-deployment-patterns/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: deployment patterns", "description": "Smart Contract Audit: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-deployment-patterns/"};

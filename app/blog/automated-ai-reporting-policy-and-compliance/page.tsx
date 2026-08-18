@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Automated AI Reporting: policy and compliance | Zion Tech Group',
-  description: 'Automated AI Reporting: policy and compliance',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Automated AI Reporting: policy and compliance',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Automated AI Reporting: policy and compliance',
     description: 'Automated AI Reporting: policy and compliance',
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Automated AI Reporting: policy and compliance',
     description: 'Automated AI Reporting: policy and compliance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/automated-ai-reporting-policy-and-compliance/' },
+  },
+    alternates: { canonical: '/blog/automated-ai-reporting-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: policy and compliance", "description": "Automated AI Reporting: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-policy-and-compliance/"};

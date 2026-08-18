@@ -2,9 +2,23 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'UUID Generator — Zion Tech Group',
-  description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
-  alternates: { canonical: '/tools/uuid-generator/' },
-  robots: { index: true, follow: true },
+    description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
+    openGraph: {
+    title: 'UUID Generator — Zion Tech Group',
+    description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
+    url: 'https://ziontechgroup.com/tools/uuid-generator/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+  },
+    twitter: {
+    card: 'summary_large_image',
+    title: 'UUID Generator — Zion Tech Group',
+    description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
+    siteName: 'Zion Tech Group',
+  },
+    alternates: { canonical: '/tools/uuid-generator/' },
+    robots: { index: true,
+    follow: true },
 };
 
 export default function UuidGeneratorPage() {

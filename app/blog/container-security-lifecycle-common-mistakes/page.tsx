@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Container Security Lifecycle: common mistakes | Zion Tech Group',
-  description: 'Container Security Lifecycle: common mistakes',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Container Security Lifecycle: common mistakes',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Container Security Lifecycle: common mistakes',
     description: 'Container Security Lifecycle: common mistakes',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Container Security Lifecycle: common mistakes',
     description: 'Container Security Lifecycle: common mistakes',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/container-security-lifecycle-common-mistakes/' },
+  },
+    alternates: { canonical: '/blog/container-security-lifecycle-common-mistakes/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: common mistakes", "description": "Container Security Lifecycle: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-common-mistakes/"};

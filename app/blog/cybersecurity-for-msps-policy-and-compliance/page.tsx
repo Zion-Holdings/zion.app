@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Cybersecurity for MSPs: policy and compliance | Zion Tech Group',
-  description: 'Cybersecurity for MSPs: policy and compliance',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Cybersecurity for MSPs: policy and compliance',
+    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Cybersecurity for MSPs: policy and compliance',
     description: 'Cybersecurity for MSPs: policy and compliance',
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Cybersecurity for MSPs: policy and compliance',
     description: 'Cybersecurity for MSPs: policy and compliance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/cybersecurity-for-msps-policy-and-compliance/' },
+  },
+    alternates: { canonical: '/blog/cybersecurity-for-msps-policy-and-compliance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: policy and compliance", "description": "Cybersecurity for MSPs: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-policy-and-compliance/"};

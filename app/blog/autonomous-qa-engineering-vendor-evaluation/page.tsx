@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Autonomous QA Engineering: vendor evaluation | Zion Tech Group',
-  description: 'Autonomous QA Engineering: vendor evaluation',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Autonomous QA Engineering: vendor evaluation',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Autonomous QA Engineering: vendor evaluation',
     description: 'Autonomous QA Engineering: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Autonomous QA Engineering: vendor evaluation',
     description: 'Autonomous QA Engineering: vendor evaluation',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/autonomous-qa-engineering-vendor-evaluation/' },
+  },
+    alternates: { canonical: '/blog/autonomous-qa-engineering-vendor-evaluation/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: vendor evaluation", "description": "Autonomous QA Engineering: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-vendor-evaluation/"};

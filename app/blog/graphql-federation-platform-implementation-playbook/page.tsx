@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'GraphQL Federation Platform: implementation playbook | Zion Tech Group',
-  description: 'GraphQL Federation Platform: implementation playbook',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'GraphQL Federation Platform: implementation playbook',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'GraphQL Federation Platform: implementation playbook',
     description: 'GraphQL Federation Platform: implementation playbook',
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'GraphQL Federation Platform: implementation playbook',
     description: 'GraphQL Federation Platform: implementation playbook',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/graphql-federation-platform-implementation-playbook/' },
+  },
+    alternates: { canonical: '/blog/graphql-federation-platform-implementation-playbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: implementation playbook", "description": "GraphQL Federation Platform: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-implementation-playbook/"};

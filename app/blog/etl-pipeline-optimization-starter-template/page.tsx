@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'ETL Pipeline Optimization: starter template | Zion Tech Group',
-  description: 'ETL Pipeline Optimization: starter template',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'ETL Pipeline Optimization: starter template',
+    keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'ETL Pipeline Optimization: starter template',
     description: 'ETL Pipeline Optimization: starter template',
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'ETL Pipeline Optimization: starter template',
     description: 'ETL Pipeline Optimization: starter template',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/etl-pipeline-optimization-starter-template/' },
+  },
+    alternates: { canonical: '/blog/etl-pipeline-optimization-starter-template/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: starter template", "description": "ETL Pipeline Optimization: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-starter-template/"};

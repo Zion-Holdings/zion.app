@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI Agent Safety Evaluation: operations handbook | Zion Tech Group',
-  description: 'AI Agent Safety Evaluation: operations handbook',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI Agent Safety Evaluation: operations handbook',
+    keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI Agent Safety Evaluation: operations handbook',
     description: 'AI Agent Safety Evaluation: operations handbook',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI Agent Safety Evaluation: operations handbook',
     description: 'AI Agent Safety Evaluation: operations handbook',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-agent-safety-evaluation-operations-handbook/' },
+  },
+    alternates: { canonical: '/blog/ai-agent-safety-evaluation-operations-handbook/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: operations handbook", "description": "AI Agent Safety Evaluation: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-operations-handbook/"};

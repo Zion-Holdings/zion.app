@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'AI BOM Procurement: case study | Zion Tech Group',
-  description: 'AI BOM Procurement: case study',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'AI BOM Procurement: case study',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'AI BOM Procurement: case study',
     description: 'AI BOM Procurement: case study',
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'AI BOM Procurement: case study',
     description: 'AI BOM Procurement: case study',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/ai-bom-procurement-case-study/' },
+  },
+    alternates: { canonical: '/blog/ai-bom-procurement-case-study/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: case study", "description": "AI BOM Procurement: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-case-study/"};

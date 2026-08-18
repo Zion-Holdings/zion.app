@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'API Management Gateway: architecture overview | Zion Tech Group',
-  description: 'API Management Gateway: architecture overview',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'API Management Gateway: architecture overview',
+    keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'API Management Gateway: architecture overview',
     description: 'API Management Gateway: architecture overview',
     url: 'https://ziontechgroup.com/blog/api-management-gateway-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'API Management Gateway: architecture overview',
     description: 'API Management Gateway: architecture overview',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/api-management-gateway-architecture-overview/' },
+  },
+    alternates: { canonical: '/blog/api-management-gateway-architecture-overview/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: architecture overview", "description": "API Management Gateway: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-architecture-overview/"};

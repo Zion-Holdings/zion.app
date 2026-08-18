@@ -3,21 +3,21 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
   title: 'Managed IT Services: security and governance | Zion Tech Group',
-  description: 'Managed IT Services: security and governance',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
-  openGraph: {
+    description: 'Managed IT Services: security and governance',
+    keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+    authors: { name: 'Zion Tech Group' },
+    openGraph: {
     title: 'Managed IT Services: security and governance',
     description: 'Managed IT Services: security and governance',
     url: 'https://ziontechgroup.com/blog/managed-it-services-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },  twitter: {
+  },
+    twitter: {
     card: 'summary_large_image',
     title: 'Managed IT Services: security and governance',
     description: 'Managed IT Services: security and governance',
-    siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/blog/managed-it-services-security-and-governance/' },
+  },
+    alternates: { canonical: '/blog/managed-it-services-security-and-governance/' },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: security and governance", "description": "Managed IT Services: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-security-and-governance/"};

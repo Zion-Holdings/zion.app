@@ -3,8 +3,21 @@ import PageTemplate from '@/components/PageTemplate';
 
 export const metadata = {
   title: 'Contact Intent | Zion Tech Group',
-  description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
-  alternates: { canonical: '/contact-intent/' },
+    description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
+    openGraph: {
+    title: 'Contact Intent | Zion Tech Group',
+    description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
+    url: 'https://ziontechgroup.com/contact-intent/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+  },
+    twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Intent | Zion Tech Group',
+    description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
+    siteName: 'Zion Tech Group',
+  },
+    alternates: { canonical: '/contact-intent/' },
 };
 
 export default function ContactIntentPage() {
@@ -44,6 +57,20 @@ export default function ContactIntentPage() {
           <h3 className="text-white font-semibold mb-2">Press or analyst inquiry</h3>
           <p className="text-slate-400 text-sm mb-3">Best for interviews, briefings, and company information.</p>
           <Link href="/press/" className="text-purple-300 text-sm font-semibold hover:text-white">Press page →</Link>
+        </div>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Routing best practices</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>New project inquiries get the fastest response from delivery leads.</li>
+          <li>Partnership requests connect to ecosystem and business development.</li>
+          <li>Support escalations route to on-call engineers immediately.</li>
+          <li>Press inquiries reach our communications team with brand guidance.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
     </PageTemplate>
