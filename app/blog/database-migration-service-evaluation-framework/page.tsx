@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/database-migration-service-evaluation-framework/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Database Migration Service: evaluation framework | Zion Tech Group',
+    description: 'Database Migration Service: evaluation framework',
+  },
   alternates: { canonical: '/blog/database-migration-service-evaluation-framework/' },
 };
 

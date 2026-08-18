@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-case-study/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI MSP Security Compliance: case study | Zion Tech Group',
+    description: 'AI MSP Security Compliance: case study',
+  },
   alternates: { canonical: '/blog/ai-msp-security-compliance-case-study/' },
 };
 

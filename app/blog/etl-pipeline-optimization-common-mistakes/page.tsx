@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-common-mistakes/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ETL Pipeline Optimization: common mistakes | Zion Tech Group',
+    description: 'ETL Pipeline Optimization: common mistakes',
+  },
   alternates: { canonical: '/blog/etl-pipeline-optimization-common-mistakes/' },
 };
 

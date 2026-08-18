@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/it-consulting-architecture-overview/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Consulting: architecture overview | Zion Tech Group',
+    description: 'IT Consulting: architecture overview',
+  },
   alternates: { canonical: '/blog/it-consulting-architecture-overview/' },
 };
 

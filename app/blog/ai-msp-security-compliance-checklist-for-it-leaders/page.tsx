@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-checklist-for-it-leaders/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI MSP Security Compliance: checklist for IT leaders | Zion Tech Group',
+    description: 'AI MSP Security Compliance: checklist for IT leaders',
+  },
   alternates: { canonical: '/blog/ai-msp-security-compliance-checklist-for-it-leaders/' },
 };
 

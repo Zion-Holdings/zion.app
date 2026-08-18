@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-automation-roadmap/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Autonomous QA Engineering: automation roadmap | Zion Tech Group',
+    description: 'Autonomous QA Engineering: automation roadmap',
+  },
   alternates: { canonical: '/blog/autonomous-qa-engineering-automation-roadmap/' },
 };
 

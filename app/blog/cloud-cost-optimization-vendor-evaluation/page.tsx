@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-vendor-evaluation/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Cost Optimization: vendor evaluation | Zion Tech Group',
+    description: 'Cloud Cost Optimization: vendor evaluation',
+  },
   alternates: { canonical: '/blog/cloud-cost-optimization-vendor-evaluation/' },
 };
 

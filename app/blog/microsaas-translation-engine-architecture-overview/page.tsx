@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-architecture-overview/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Translation Engine: architecture overview | Zion Tech Group',
+    description: 'MicroSaaS Translation Engine: architecture overview',
+  },
   alternates: { canonical: '/blog/microsaas-translation-engine-architecture-overview/' },
 };
 

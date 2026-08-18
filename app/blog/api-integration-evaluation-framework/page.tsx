@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/api-integration-evaluation-framework/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Integration: evaluation framework | Zion Tech Group',
+    description: 'API Integration: evaluation framework',
+  },
   alternates: { canonical: '/blog/api-integration-evaluation-framework/' },
 };
 

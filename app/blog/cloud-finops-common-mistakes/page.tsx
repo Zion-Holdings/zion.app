@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-finops-common-mistakes/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud FinOps: common mistakes | Zion Tech Group',
+    description: 'Cloud FinOps: common mistakes',
+  },
   alternates: { canonical: '/blog/cloud-finops-common-mistakes/' },
 };
 

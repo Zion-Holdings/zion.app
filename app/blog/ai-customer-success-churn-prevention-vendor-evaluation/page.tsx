@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-vendor-evaluation/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Customer Success Churn Prevention: vendor evaluation | Zion Tech Group',
+    description: 'AI Customer Success Churn Prevention: vendor evaluation',
+  },
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-vendor-evaluation/' },
 };
 

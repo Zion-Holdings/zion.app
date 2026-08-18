@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-starter-template/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Accessibility Compliance: starter template | Zion Tech Group',
+    description: 'Accessibility Compliance: starter template',
+  },
   alternates: { canonical: '/blog/accessibility-compliance-starter-template/' },
 };
 

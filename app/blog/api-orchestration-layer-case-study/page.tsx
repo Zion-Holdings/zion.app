@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-case-study/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Orchestration Layer: case study | Zion Tech Group',
+    description: 'API Orchestration Layer: case study',
+  },
   alternates: { canonical: '/blog/api-orchestration-layer-case-study/' },
 };
 

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/api-performance-testing-architecture-overview/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Performance Testing: architecture overview | Zion Tech Group',
+    description: 'API Performance Testing: architecture overview',
+  },
   alternates: { canonical: '/blog/api-performance-testing-architecture-overview/' },
 };
 

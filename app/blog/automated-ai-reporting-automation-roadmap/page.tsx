@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-automation-roadmap/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Automated AI Reporting: automation roadmap | Zion Tech Group',
+    description: 'Automated AI Reporting: automation roadmap',
+  },
   alternates: { canonical: '/blog/automated-ai-reporting-automation-roadmap/' },
 };
 

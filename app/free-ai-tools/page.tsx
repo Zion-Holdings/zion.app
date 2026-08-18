@@ -4,6 +4,17 @@ import StandardPage from '@/components/StandardPage';
 export const metadata: Metadata = {
   title: 'Free AI Tools | Zion Tech Group',
   description: 'Free online tools for network diagnostics, SSL checks, service comparison, AI recommendations, and ROI planning.',
+  openGraph: {
+    title: 'Free AI Tools | Zion Tech Group',
+    description: 'Free online tools for network diagnostics, SSL checks, service comparison, AI recommendations, and ROI planning.',
+    url: 'https://ziontechgroup.com/free-ai-tools/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free AI Tools | Zion Tech Group',
+    description: 'Free online tools for network diagnostics, SSL checks, service comparison, AI recommendations, and ROI planning.',
+  },
   alternates: { canonical: '/free-ai-tools/' },
 };
 

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-implementation-playbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS Customer Onboarding: implementation playbook | Zion Tech Group',
+    description: 'MicroSaaS Customer Onboarding: implementation playbook',
+  },
   alternates: { canonical: '/blog/microsaas-customer-onboarding-implementation-playbook/' },
 };
 

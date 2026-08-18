@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-operations-handbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Autonomous QA Engineering: operations handbook | Zion Tech Group',
+    description: 'Autonomous QA Engineering: operations handbook',
+  },
   alternates: { canonical: '/blog/autonomous-qa-engineering-operations-handbook/' },
 };
 

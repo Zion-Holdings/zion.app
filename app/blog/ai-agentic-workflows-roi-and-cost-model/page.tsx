@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-roi-and-cost-model/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agentic Workflows: ROI and cost model | Zion Tech Group',
+    description: 'AI Agentic Workflows: ROI and cost model',
+  },
   alternates: { canonical: '/blog/ai-agentic-workflows-roi-and-cost-model/' },
 };
 

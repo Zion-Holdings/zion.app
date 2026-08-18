@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-operations-handbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Cost AI Optimizer: operations handbook | Zion Tech Group',
+    description: 'Cloud Cost AI Optimizer: operations handbook',
+  },
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-operations-handbook/' },
 };
 

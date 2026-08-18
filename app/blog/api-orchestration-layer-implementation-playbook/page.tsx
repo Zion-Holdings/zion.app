@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-implementation-playbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Orchestration Layer: implementation playbook | Zion Tech Group',
+    description: 'API Orchestration Layer: implementation playbook',
+  },
   alternates: { canonical: '/blog/api-orchestration-layer-implementation-playbook/' },
 };
 

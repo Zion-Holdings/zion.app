@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-checklist-for-it-leaders/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS HR Recruitment: checklist for IT leaders | Zion Tech Group',
+    description: 'MicroSaaS HR Recruitment: checklist for IT leaders',
+  },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-checklist-for-it-leaders/' },
 };
 

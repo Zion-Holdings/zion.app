@@ -3,7 +3,18 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Free Tools & Calculators | Zion Tech Group',
-  description: 'Free online tools for network diagnostics, SSL checks, service comparison, AI recommendations, and ROI planning.',
+  description: 'Free online tools for network diagnostics, security checks, and planning.',
+  openGraph: {
+    title: 'Free Tools & Calculators | Zion Tech Group',
+    description: 'Free online tools for network diagnostics, security checks, and planning.',
+    url: 'https://ziontechgroup.com/free-tools/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Tools & Calculators | Zion Tech Group',
+    description: 'Free online tools for network diagnostics, security checks, and planning.',
+  },
   alternates: { canonical: '/free-tools/' },
 };
 

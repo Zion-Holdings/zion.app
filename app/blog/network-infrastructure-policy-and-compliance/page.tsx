@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/network-infrastructure-policy-and-compliance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Network Infrastructure: policy and compliance | Zion Tech Group',
+    description: 'Network Infrastructure: policy and compliance',
+  },
   alternates: { canonical: '/blog/network-infrastructure-policy-and-compliance/' },
 };
 

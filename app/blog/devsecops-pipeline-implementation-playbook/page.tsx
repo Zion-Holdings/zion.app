@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-implementation-playbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DevSecOps Pipeline: implementation playbook | Zion Tech Group',
+    description: 'DevSecOps Pipeline: implementation playbook',
+  },
   alternates: { canonical: '/blog/devsecops-pipeline-implementation-playbook/' },
 };
 

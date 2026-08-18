@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-data-backup-starter-template/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Data Backup: starter template | Zion Tech Group',
+    description: 'AI Data Backup: starter template',
+  },
   alternates: { canonical: '/blog/ai-data-backup-starter-template/' },
 };
 

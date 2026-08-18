@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-vendor-evaluation/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cyber Threat Intelligence: vendor evaluation | Zion Tech Group',
+    description: 'Cyber Threat Intelligence: vendor evaluation',
+  },
   alternates: { canonical: '/blog/cyber-threat-intelligence-vendor-evaluation/' },
 };
 

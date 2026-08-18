@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/apm-application-performance-implementation-playbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'APM Application Performance: implementation playbook | Zion Tech Group',
+    description: 'APM Application Performance: implementation playbook',
+  },
   alternates: { canonical: '/blog/apm-application-performance-implementation-playbook/' },
 };
 

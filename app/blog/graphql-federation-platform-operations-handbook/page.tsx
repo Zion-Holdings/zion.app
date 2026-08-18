@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-operations-handbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GraphQL Federation Platform: operations handbook | Zion Tech Group',
+    description: 'GraphQL Federation Platform: operations handbook',
+  },
   alternates: { canonical: '/blog/graphql-federation-platform-operations-handbook/' },
 };
 

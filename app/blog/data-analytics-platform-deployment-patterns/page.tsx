@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-deployment-patterns/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Data Analytics Platform: deployment patterns | Zion Tech Group',
+    description: 'Data Analytics Platform: deployment patterns',
+  },
   alternates: { canonical: '/blog/data-analytics-platform-deployment-patterns/' },
 };
 

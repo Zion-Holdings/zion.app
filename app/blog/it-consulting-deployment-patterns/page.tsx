@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/it-consulting-deployment-patterns/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Consulting: deployment patterns | Zion Tech Group',
+    description: 'IT Consulting: deployment patterns',
+  },
   alternates: { canonical: '/blog/it-consulting-deployment-patterns/' },
 };
 

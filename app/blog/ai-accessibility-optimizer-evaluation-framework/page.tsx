@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-evaluation-framework/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Accessibility Optimizer: evaluation framework | Zion Tech Group',
+    description: 'AI Accessibility Optimizer: evaluation framework',
+  },
   alternates: { canonical: '/blog/ai-accessibility-optimizer-evaluation-framework/' },
 };
 

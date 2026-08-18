@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-roi-and-cost-model/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GenAI DevOps CI/CD: ROI and cost model | Zion Tech Group',
+    description: 'GenAI DevOps CI/CD: ROI and cost model',
+  },
   alternates: { canonical: '/blog/genai-devops-cicd-roi-and-cost-model/' },
 };
 

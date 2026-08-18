@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-implementation-playbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Cost Optimization: implementation playbook | Zion Tech Group',
+    description: 'Cloud Cost Optimization: implementation playbook',
+  },
   alternates: { canonical: '/blog/cloud-cost-optimization-implementation-playbook/' },
 };
 

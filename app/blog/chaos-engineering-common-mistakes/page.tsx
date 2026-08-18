@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/chaos-engineering-common-mistakes/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chaos Engineering: common mistakes | Zion Tech Group',
+    description: 'Chaos Engineering: common mistakes',
+  },
   alternates: { canonical: '/blog/chaos-engineering-common-mistakes/' },
 };
 

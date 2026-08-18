@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-checklist-for-it-leaders/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Container Security Lifecycle: checklist for IT leaders | Zion Tech Group',
+    description: 'Container Security Lifecycle: checklist for IT leaders',
+  },
   alternates: { canonical: '/blog/container-security-lifecycle-checklist-for-it-leaders/' },
 };
 

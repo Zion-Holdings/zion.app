@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-native-app-development-policy-and-compliance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Native App Development: policy and compliance | Zion Tech Group',
+    description: 'Cloud Native App Development: policy and compliance',
+  },
   alternates: { canonical: '/blog/cloud-native-app-development-policy-and-compliance/' },
 };
 

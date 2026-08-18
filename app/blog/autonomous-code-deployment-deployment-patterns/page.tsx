@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-deployment-patterns/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Autonomous Code Deployment: deployment patterns | Zion Tech Group',
+    description: 'Autonomous Code Deployment: deployment patterns',
+  },
   alternates: { canonical: '/blog/autonomous-code-deployment-deployment-patterns/' },
 };
 

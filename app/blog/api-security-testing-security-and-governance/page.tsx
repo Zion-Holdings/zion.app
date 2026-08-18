@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/api-security-testing-security-and-governance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Security Testing: security and governance | Zion Tech Group',
+    description: 'API Security Testing: security and governance',
+  },
   alternates: { canonical: '/blog/api-security-testing-security-and-governance/' },
 };
 

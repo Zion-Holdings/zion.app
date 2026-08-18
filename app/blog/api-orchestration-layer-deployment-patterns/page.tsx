@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-deployment-patterns/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Orchestration Layer: deployment patterns | Zion Tech Group',
+    description: 'API Orchestration Layer: deployment patterns',
+  },
   alternates: { canonical: '/blog/api-orchestration-layer-deployment-patterns/' },
 };
 

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-case-study/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DevSecOps Pipeline: case study | Zion Tech Group',
+    description: 'DevSecOps Pipeline: case study',
+  },
   alternates: { canonical: '/blog/devsecops-pipeline-case-study/' },
 };
 

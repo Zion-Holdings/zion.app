@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-operations-handbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GenAI DevOps CI/CD: operations handbook | Zion Tech Group',
+    description: 'GenAI DevOps CI/CD: operations handbook',
+  },
   alternates: { canonical: '/blog/genai-devops-cicd-operations-handbook/' },
 };
 

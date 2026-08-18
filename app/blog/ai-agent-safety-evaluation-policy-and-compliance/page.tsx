@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-policy-and-compliance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Agent Safety Evaluation: policy and compliance | Zion Tech Group',
+    description: 'AI Agent Safety Evaluation: policy and compliance',
+  },
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-policy-and-compliance/' },
 };
 

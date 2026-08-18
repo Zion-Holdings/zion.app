@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-policy-and-compliance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Event Driven Architecture: policy and compliance | Zion Tech Group',
+    description: 'Event Driven Architecture: policy and compliance',
+  },
   alternates: { canonical: '/blog/event-driven-architecture-policy-and-compliance/' },
 };
 

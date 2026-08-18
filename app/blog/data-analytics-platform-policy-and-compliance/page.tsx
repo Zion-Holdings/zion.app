@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-policy-and-compliance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Data Analytics Platform: policy and compliance | Zion Tech Group',
+    description: 'Data Analytics Platform: policy and compliance',
+  },
   alternates: { canonical: '/blog/data-analytics-platform-policy-and-compliance/' },
 };
 

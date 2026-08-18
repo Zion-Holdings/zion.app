@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-deployment-patterns/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Accessibility Compliance: deployment patterns | Zion Tech Group',
+    description: 'Accessibility Compliance: deployment patterns',
+  },
   alternates: { canonical: '/blog/accessibility-compliance-deployment-patterns/' },
 };
 

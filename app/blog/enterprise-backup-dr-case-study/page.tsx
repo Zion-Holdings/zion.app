@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-case-study/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Backup DR: case study | Zion Tech Group',
+    description: 'Enterprise Backup DR: case study',
+  },
   alternates: { canonical: '/blog/enterprise-backup-dr-case-study/' },
 };
 

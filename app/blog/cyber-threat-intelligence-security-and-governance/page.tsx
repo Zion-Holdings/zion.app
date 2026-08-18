@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-security-and-governance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cyber Threat Intelligence: security and governance | Zion Tech Group',
+    description: 'Cyber Threat Intelligence: security and governance',
+  },
   alternates: { canonical: '/blog/cyber-threat-intelligence-security-and-governance/' },
 };
 

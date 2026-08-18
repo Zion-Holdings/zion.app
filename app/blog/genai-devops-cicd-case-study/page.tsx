@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-case-study/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GenAI DevOps CI/CD: case study | Zion Tech Group',
+    description: 'GenAI DevOps CI/CD: case study',
+  },
   alternates: { canonical: '/blog/genai-devops-cicd-case-study/' },
 };
 

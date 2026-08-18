@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-security-and-governance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GenAI DevOps CI/CD: security and governance | Zion Tech Group',
+    description: 'GenAI DevOps CI/CD: security and governance',
+  },
   alternates: { canonical: '/blog/genai-devops-cicd-security-and-governance/' },
 };
 

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-starter-template/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI 3D Asset Generator: starter template | Zion Tech Group',
+    description: 'AI 3D Asset Generator: starter template',
+  },
   alternates: { canonical: '/blog/ai-3d-asset-generator-starter-template/' },
 };
 

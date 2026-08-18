@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-operations-handbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Brand Voice Guardian: operations handbook | Zion Tech Group',
+    description: 'Brand Voice Guardian: operations handbook',
+  },
   alternates: { canonical: '/blog/brand-voice-guardian-operations-handbook/' },
 };
 

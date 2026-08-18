@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-automation-roadmap/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Accessibility Compliance: automation roadmap | Zion Tech Group',
+    description: 'Accessibility Compliance: automation roadmap',
+  },
   alternates: { canonical: '/blog/accessibility-compliance-automation-roadmap/' },
 };
 

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-case-study/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Data Warehouse Modernization: case study | Zion Tech Group',
+    description: 'Data Warehouse Modernization: case study',
+  },
   alternates: { canonical: '/blog/data-warehouse-modernization-case-study/' },
 };
 

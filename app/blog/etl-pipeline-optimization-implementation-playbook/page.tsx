@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-implementation-playbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ETL Pipeline Optimization: implementation playbook | Zion Tech Group',
+    description: 'ETL Pipeline Optimization: implementation playbook',
+  },
   alternates: { canonical: '/blog/etl-pipeline-optimization-implementation-playbook/' },
 };
 

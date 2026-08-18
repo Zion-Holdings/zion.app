@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-architecture-overview/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Enterprise Backup DR: architecture overview | Zion Tech Group',
+    description: 'Enterprise Backup DR: architecture overview',
+  },
   alternates: { canonical: '/blog/enterprise-backup-dr-architecture-overview/' },
 };
 

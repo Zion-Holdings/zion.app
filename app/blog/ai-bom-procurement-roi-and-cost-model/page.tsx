@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-roi-and-cost-model/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI BOM Procurement: ROI and cost model | Zion Tech Group',
+    description: 'AI BOM Procurement: ROI and cost model',
+  },
   alternates: { canonical: '/blog/ai-bom-procurement-roi-and-cost-model/' },
 };
 

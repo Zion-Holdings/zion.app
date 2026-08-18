@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-implementation-playbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI BOM Procurement: implementation playbook | Zion Tech Group',
+    description: 'AI BOM Procurement: implementation playbook',
+  },
   alternates: { canonical: '/blog/ai-bom-procurement-implementation-playbook/' },
 };
 

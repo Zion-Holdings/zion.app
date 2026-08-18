@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-policy-and-compliance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DevSecOps Pipeline: policy and compliance | Zion Tech Group',
+    description: 'DevSecOps Pipeline: policy and compliance',
+  },
   alternates: { canonical: '/blog/devsecops-pipeline-policy-and-compliance/' },
 };
 

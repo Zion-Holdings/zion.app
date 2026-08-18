@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-data-backup-deployment-patterns/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Data Backup: deployment patterns | Zion Tech Group',
+    description: 'AI Data Backup: deployment patterns',
+  },
   alternates: { canonical: '/blog/ai-data-backup-deployment-patterns/' },
 };
 

@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/apm-application-performance-automation-roadmap/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'APM Application Performance: automation roadmap | Zion Tech Group',
+    description: 'APM Application Performance: automation roadmap',
+  },
   alternates: { canonical: '/blog/apm-application-performance-automation-roadmap/' },
 };
 

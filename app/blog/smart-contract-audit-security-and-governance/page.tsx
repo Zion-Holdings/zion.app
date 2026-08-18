@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-security-and-governance/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Smart Contract Audit: security and governance | Zion Tech Group',
+    description: 'Smart Contract Audit: security and governance',
+  },
   alternates: { canonical: '/blog/smart-contract-audit-security-and-governance/' },
 };
 

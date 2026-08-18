@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-finops-roi-and-cost-model/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud FinOps: ROI and cost model | Zion Tech Group',
+    description: 'Cloud FinOps: ROI and cost model',
+  },
   alternates: { canonical: '/blog/cloud-finops-roi-and-cost-model/' },
 };
 

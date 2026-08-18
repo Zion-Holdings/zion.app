@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-operations-handbook/',
     type: 'article',
       },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MicroSaaS HR Recruitment: operations handbook | Zion Tech Group',
+    description: 'MicroSaaS HR Recruitment: operations handbook',
+  },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-operations-handbook/' },
 };
 
