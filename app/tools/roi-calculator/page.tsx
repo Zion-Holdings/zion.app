@@ -42,6 +42,7 @@ const INPUTS = [
 
 export default function RoiCalculatorPage() {
   return (
+<>
     <StandardPage
       title="ROI Calculator"
       subtitle="Use these inputs to build an early ROI estimate before scoping a pilot."
@@ -112,5 +113,6 @@ export default function RoiCalculatorPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

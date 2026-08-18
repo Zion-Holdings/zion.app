@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PublicRoadmapPage() {
   return (
+<>
     <StandardPage
       title="Public Roadmap"
       subtitle="See what we’re building next and share feedback so we can prioritize the right improvements."
@@ -67,5 +68,6 @@ export default function PublicRoadmapPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

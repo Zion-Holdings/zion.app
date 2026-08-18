@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function CloudDevOpsSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Cloud & DevOps"
       subtitle="Migration, CI/CD, and reliability at scale with operational ownership built in."
@@ -84,5 +85,6 @@ export default function CloudDevOpsSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

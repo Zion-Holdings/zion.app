@@ -30,6 +30,7 @@ export default function JsonFormatterPage() {
   ];
 
   return (
+<>
     <StandardPage
       title="JSON Formatter"
       subtitle="Format, minify, and validate JSON quickly."
@@ -71,5 +72,6 @@ export default function JsonFormatterPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

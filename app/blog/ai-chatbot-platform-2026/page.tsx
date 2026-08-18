@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+<>
     <StandardPage
       title="AI Chatbot Platform 2026"
       subtitle="Enterprise chatbot platforms with handoff, context, and governance."
@@ -106,5 +107,6 @@ export default function Page() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

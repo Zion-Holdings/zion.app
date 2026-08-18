@@ -30,6 +30,7 @@ const SYSTEMS = [
 
 export default function HealthCheckPage() {
   return (
+<>
     <StandardPage
       title="Platform Status"
       subtitle="Use this checklist to validate service health before and after changes."
@@ -86,5 +87,6 @@ export default function HealthCheckPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

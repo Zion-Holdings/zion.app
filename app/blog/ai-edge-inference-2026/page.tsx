@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+<>
     <StandardPage
       title="AI Edge Inference 2026"
       subtitle="Edge AI inference patterns for low latency and offline resilience."
@@ -106,5 +107,6 @@ export default function Page() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

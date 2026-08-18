@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function ConfiguratorPage() {
   return (
+<>
     <StandardPage
       title="Configurator"
       subtitle="Pick your priorities and we’ll propose a lightweight engagement plan."
@@ -66,5 +67,6 @@ export default function ConfiguratorPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

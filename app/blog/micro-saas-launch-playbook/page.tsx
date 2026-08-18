@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
+<>
     <StandardPage
       title="Micro-SaaS Launch Playbook"
       subtitle="From idea validation to paid users—build a lean, profitable SaaS product."
@@ -142,5 +143,6 @@ export default function PostPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

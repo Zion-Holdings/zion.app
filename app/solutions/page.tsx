@@ -35,6 +35,7 @@ const industries = [
 
 export default function SolutionsPage() {
   return (
+<>
     <StandardPage
       title="Solutions by Industry"
       subtitle="Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry's unique challenges and compliance requirements."
@@ -107,5 +108,6 @@ export default function SolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

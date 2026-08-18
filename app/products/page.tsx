@@ -32,6 +32,7 @@ const PRODUCTS = [
 
 export default function ProductsPage() {
   return (
+<>
     <StandardPage
       title="Products"
       subtitle="Purpose-built AI platforms and tools designed to run in production, with clear setup paths and measurable outcomes."
@@ -55,5 +56,6 @@ export default function ProductsPage() {
         ))}
       </div>
     </StandardPage>
+  </>
   );
 }

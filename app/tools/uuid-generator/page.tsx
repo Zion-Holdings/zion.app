@@ -30,6 +30,7 @@ export default function UuidGeneratorPage() {
   ];
 
   return (
+<>
     <StandardPage
       title="UUID Generator"
       subtitle="Generate UUIDs and ULIDs for keys, events, and distributed systems."
@@ -71,5 +72,6 @@ export default function UuidGeneratorPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

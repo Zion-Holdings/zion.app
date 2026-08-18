@@ -31,6 +31,7 @@ const CHECKS = [
 
 export default function SslCheckerPage() {
   return (
+<>
     <StandardPage
       title="SSL Checker"
       subtitle="Use this checklist to validate certificate trust, coverage, and configuration before review or incident response."
@@ -92,5 +93,6 @@ export default function SslCheckerPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

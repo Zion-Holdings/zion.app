@@ -30,6 +30,7 @@ export default function WordCounterPage() {
   ];
 
   return (
+<>
     <StandardPage
       title="Word Counter"
       subtitle="Count words, characters, sentences, and paragraphs."
@@ -71,5 +72,6 @@ export default function WordCounterPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

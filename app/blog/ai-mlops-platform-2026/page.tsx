@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+<>
     <StandardPage
       title="AI MLOps Platform 2026"
       subtitle="Production patterns for ML pipelines, model registry, and deployment governance."
@@ -106,5 +107,6 @@ export default function Page() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

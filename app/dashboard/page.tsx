@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
+<>
     <StandardPage title="Dashboard" subtitle="Project visibility, service health, and reporting." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Dashboard' }]} actions={[{ label: 'Contact support', href: '/contact/', style: 'primary' }]}>
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
@@ -55,5 +56,6 @@ export default function DashboardPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

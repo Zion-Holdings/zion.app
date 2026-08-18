@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   return (
+<>
     <StandardPage
       title="Careers"
       subtitle="Build reliable AI systems and client-facing delivery practices with a team that values ownership and craft."
@@ -77,5 +78,6 @@ export default function CareersPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

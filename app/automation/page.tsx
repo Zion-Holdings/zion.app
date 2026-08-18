@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 export default function AutomationPage() {
   return (
+<>
     <StandardPage
       title="AI Automation"
       subtitle="Streamline operations with practical AI automation."
@@ -71,5 +72,6 @@ export default function AutomationPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

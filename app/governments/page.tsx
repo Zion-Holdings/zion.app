@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function GovernmentsPage() {
   return (
+<>
     <StandardPage
       title="Governments"
       subtitle="Secure AI, IT, and automation programs for government organizations."
@@ -65,5 +66,6 @@ export default function GovernmentsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

@@ -33,6 +33,7 @@ const CATEGORIES = [
 
 export default function ServicesPage() {
   return (
+<>
     <StandardPage
       title="Services"
       subtitle="Enterprise-grade services across AI, IT, security, data, and automation. Choose a category to see use cases and delivery patterns."
@@ -99,5 +100,6 @@ export default function ServicesPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

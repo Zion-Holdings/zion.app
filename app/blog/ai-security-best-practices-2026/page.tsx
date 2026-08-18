@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
+<>
     <StandardPage
       title="AI Security Best Practices 2026"
       subtitle="A practical guide to securing AI systems, protecting data, and maintaining governance in production."
@@ -122,5 +123,6 @@ export default function PostPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

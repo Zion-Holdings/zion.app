@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+<>
     <StandardPage
       title="AI Code Assistant 2026"
       subtitle="Code assistant patterns for secure, auditable developer augmentation."
@@ -106,5 +107,6 @@ export default function Page() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

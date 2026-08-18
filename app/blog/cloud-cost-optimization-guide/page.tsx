@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
+<>
     <StandardPage
       title="Cloud Cost Optimization Guide"
       subtitle="A practical framework for reducing spend, improving efficiency, and maintaining engineering velocity."
@@ -112,5 +113,6 @@ export default function PostPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

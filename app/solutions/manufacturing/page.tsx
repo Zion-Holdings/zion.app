@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function ManufacturingSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Manufacturing"
       subtitle="Predictive maintenance, quality assurance, and supply chain operations with measurable outcomes."
@@ -70,5 +71,6 @@ export default function ManufacturingSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

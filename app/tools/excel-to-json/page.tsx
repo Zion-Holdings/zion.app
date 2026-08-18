@@ -29,6 +29,7 @@ const jsonLd = {
 
 export default function ExcelToJsonPage() {
   return (
+<>
     <StandardPage
       title="Excel to JSON"
       subtitle="Convert spreadsheet rows into structured JSON without leaving your browser."
@@ -61,5 +62,6 @@ export default function ExcelToJsonPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

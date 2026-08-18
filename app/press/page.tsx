@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function PressPage() {
   return (
+<>
     <StandardPage title="Press" subtitle="Press releases, media mentions, and announcements." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Press' }]} actions={[{ label: 'Media contact', href: '/contact/', style: 'primary' }]}>
       <div className="max-w-4xl mx-auto space-y-6 text-slate-300">
         <p>For media inquiries, contact our communications team. We share updates on product releases, client outcomes, and industry perspectives.</p>
@@ -57,5 +58,6 @@ export default function PressPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

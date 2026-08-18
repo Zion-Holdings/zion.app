@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function ItVendorsPage() {
   return (
+<>
     <StandardPage
       title="IT Vendors"
       subtitle="Vendor qualification, governance, and lifecycle management for IT environments."
@@ -65,5 +66,6 @@ export default function ItVendorsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

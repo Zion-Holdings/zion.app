@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
+<>
     <StandardPage title="Privacy Policy" subtitle="How we collect, use, and protect your data." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]}>
       <div className="max-w-3xl mx-auto space-y-6 text-slate-300">
         <p>We collect information needed to deliver services, improve site performance, and communicate updates. We do not sell personal data.</p>
@@ -53,5 +54,6 @@ export default function PrivacyPage() {
         <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact privacy team →</Link>
       </div>
     </StandardPage>
+  </>
   );
 }

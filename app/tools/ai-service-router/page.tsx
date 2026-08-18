@@ -46,6 +46,7 @@ const FACTORS = [
 
 export default function AiServiceRouterPage() {
   return (
+<>
     <StandardPage
       title="AI Service Router"
       subtitle="Match intake requirements to the right AI service path."
@@ -108,5 +109,6 @@ export default function AiServiceRouterPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

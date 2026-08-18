@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function FreeToolsPage() {
   return (
+<>
     <StandardPage
       title="Free Tools & Calculators"
       subtitle="Practical self-service tools for network diagnostics, security checks, and planning."
@@ -56,5 +57,6 @@ export default function FreeToolsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

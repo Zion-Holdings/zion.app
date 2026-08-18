@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 
 export default function StartProjectPage() {
   return (
+<>
     <StandardPage
       title="Start a Project"
       subtitle="Tell us about your goals and constraints."
@@ -79,5 +80,6 @@ export default function StartProjectPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

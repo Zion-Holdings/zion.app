@@ -55,6 +55,7 @@ const MODELS = [
 
 export default function ServiceComparisonPage() {
   return (
+<>
     <StandardPage
       title="Service Comparison"
       subtitle="Use this comparison to route a project faster and reduce evaluation overhead."
@@ -121,5 +122,6 @@ export default function ServiceComparisonPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

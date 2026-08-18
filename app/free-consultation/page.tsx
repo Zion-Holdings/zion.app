@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function FreeConsultationPage() {
   return (
+<>
     <StandardPage
       title="Free Consultation"
       subtitle="Tell us your goal and we’ll return a short list of best-fit services with estimated ROI and timeline."
@@ -66,5 +67,6 @@ export default function FreeConsultationPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

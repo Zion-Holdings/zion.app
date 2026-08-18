@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function AiServicesIndexPage() {
   return (
+<>
     <StandardPage
       title="AI Services"
       subtitle="A focused view of AI-native services for automation, assistants, analytics, and infrastructure."
@@ -67,5 +68,6 @@ export default function AiServicesIndexPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

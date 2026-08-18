@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
+<>
     <StandardPage
       title="Enterprise AI Adoption Framework"
       subtitle="How to align AI initiatives with business strategy, manage risk, and scale across the organization."
@@ -113,5 +114,6 @@ export default function PostPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function AcademyPage() {
   return (
+<>
     <StandardPage
       title="Academy"
       subtitle="Workshops, learning paths, and enablement for teams adopting AI and modern IT."
@@ -68,5 +69,6 @@ export default function AcademyPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

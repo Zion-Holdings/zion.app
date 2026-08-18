@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+<>
     <StandardPage
       title="Password Generator"
       subtitle="Generate strong, customizable passwords for accounts, APIs, and admin users."
@@ -76,5 +77,6 @@ export default function Page() {
         </section>
       </div>
     </StandardPage>
+  </>
   );
 }

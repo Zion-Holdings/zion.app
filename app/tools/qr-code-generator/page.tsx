@@ -30,6 +30,7 @@ export default function QrCodeGeneratorPage() {
   ];
 
   return (
+<>
     <StandardPage
       title="QR Code Generator"
       subtitle="Create QR codes for URLs, text, and contact data."
@@ -71,5 +72,6 @@ export default function QrCodeGeneratorPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+<>
     <StandardPage
       title="AI Voice Assistant 2026"
       subtitle="Voice assistant architecture, telephony integration, and compliance patterns."
@@ -106,5 +107,6 @@ export default function Page() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

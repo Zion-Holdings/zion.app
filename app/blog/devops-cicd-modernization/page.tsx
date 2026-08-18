@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
+<>
     <StandardPage
       title="DevOps CI/CD Modernization"
       subtitle="Transform your delivery pipeline with modern practices, tooling, and architecture patterns."
@@ -125,5 +126,6 @@ export default function PostPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function RetailSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Retail & E-Commerce"
       subtitle="Personalization, demand forecasting, checkout optimization, and support automation for modern commerce."
@@ -78,5 +79,6 @@ export default function RetailSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

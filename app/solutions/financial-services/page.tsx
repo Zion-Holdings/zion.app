@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function FinancialServicesSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Financial Services"
       subtitle="Fraud defense, compliance, and payment intelligence with measurable outcomes."
@@ -70,5 +71,6 @@ export default function FinancialServicesSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

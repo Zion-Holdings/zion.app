@@ -31,6 +31,7 @@ const CHECKS = [
 
 export default function PhishingAnalyzerPage() {
   return (
+<>
     <StandardPage
       title="Phishing Analyzer"
       subtitle="Use this checklist to evaluate suspicious URLs and emails before interacting."
@@ -92,5 +93,6 @@ export default function PhishingAnalyzerPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

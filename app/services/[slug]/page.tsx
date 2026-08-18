@@ -55,6 +55,7 @@ export default function ServiceSlugPage({ params }: { params: Params }) {
   }
 
   return (
+<>
     <StandardPage
       title={mapping.label}
       subtitle={`${mapping.label} delivery, patterns, and compliance guidance.`}
@@ -100,5 +101,6 @@ export default function ServiceSlugPage({ params }: { params: Params }) {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

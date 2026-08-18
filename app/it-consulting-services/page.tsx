@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function ItConsultingServicesPage() {
   return (
+<>
     <StandardPage
       title="IT Consulting Services"
       subtitle="Hands-on consulting for cloud, security, data, automation, and AI delivery."
@@ -72,5 +73,6 @@ export default function ItConsultingServicesPage() {
         <Link href="/services/" className="btn-secondary text-center">All Services</Link>
       </div>
     </StandardPage>
+  </>
   );
 }

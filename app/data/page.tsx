@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function DataPage() {
   return (
+<>
     <StandardPage
       title="Data & Analytics"
       subtitle="We turn raw data into reliable decisions with governed pipelines, forecasting models, and executive dashboards."
@@ -67,5 +68,6 @@ export default function DataPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

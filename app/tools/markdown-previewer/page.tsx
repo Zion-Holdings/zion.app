@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function MarkdownPreviewerPage() {
   return (
+<>
     <StandardPage
       title="Markdown Previewer"
       subtitle="Preview formatted markdown output instantly for docs, blogs, and readmes."
@@ -79,5 +80,6 @@ export default function MarkdownPreviewerPage() {
         </section>
       </div>
     </StandardPage>
+  </>
   );
 }

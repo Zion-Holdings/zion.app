@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function SecurityComplianceSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Security & Compliance"
       subtitle="Threat detection, governance, identity, incident response, and compliance automation."
@@ -84,5 +85,6 @@ export default function SecurityComplianceSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

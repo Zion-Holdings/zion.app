@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
+<>
     <StandardPage
       title="About Zion Tech Group"
       subtitle="AI-native delivery across AI services, IT, cloud, security, data, and automation."
@@ -87,5 +88,6 @@ export default function AboutPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

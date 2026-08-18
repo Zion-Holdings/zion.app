@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function BusinessCustomersPage() {
   return (
+<>
     <StandardPage
       title="Enterprise Customers"
       subtitle="AI and IT delivery models for business customers with measurable outcomes."
@@ -65,5 +66,6 @@ export default function BusinessCustomersPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

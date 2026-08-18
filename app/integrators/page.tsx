@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function IntegratorsPage() {
   return (
+<>
     <StandardPage
       title="Integrators"
       subtitle="Implementation and delivery partners for complex AI and IT programs."
@@ -65,5 +66,6 @@ export default function IntegratorsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

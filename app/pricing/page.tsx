@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
+<>
     <StandardPage
       title="Pricing & Engagement Models"
       subtitle="Predictable pricing for AI, cloud, security, and automation work."
@@ -92,5 +93,6 @@ export default function PricingPage() {
         <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
       </div>
     </StandardPage>
+  </>
   );
 }

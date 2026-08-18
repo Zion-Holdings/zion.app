@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function PartnersPage() {
   return (
+<>
     <StandardPage
       title="Partners"
       subtitle="Technology and delivery partners we work with to ship outcomes faster."
@@ -90,5 +91,6 @@ export default function PartnersPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

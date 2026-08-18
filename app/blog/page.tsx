@@ -629,6 +629,7 @@ const posts: BlogPost[] = [
 
 export default function BlogPage() {
   return (
+<>
     <StandardPage
       title="Blog"
       subtitle="Guides, roadmap notes, and implementation playbooks from the Zion platform."
@@ -646,5 +647,6 @@ export default function BlogPage() {
         ))}
       </div>
     </StandardPage>
+  </>
   );
 }

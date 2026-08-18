@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function ToolsPage() {
   return (
+<>
     <StandardPage
       title="Developer Tools"
       subtitle="Free utilities built by Zion. No sign-up required."
@@ -217,5 +218,6 @@ export default function ToolsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

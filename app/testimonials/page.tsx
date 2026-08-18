@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 export default function TestimonialsPage() {
   return (
+<>
     <StandardPage
       title={
         <>
@@ -85,5 +86,6 @@ export default function TestimonialsPage() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

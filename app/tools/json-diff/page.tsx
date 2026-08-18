@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function JsonDiffPage() {
   return (
+<>
     <StandardPage
       title="JSON Diff"
       subtitle="Compare JSON objects side by side and highlight added, removed, and changed fields."
@@ -79,5 +80,6 @@ export default function JsonDiffPage() {
         </section>
       </div>
     </StandardPage>
+  </>
   );
 }

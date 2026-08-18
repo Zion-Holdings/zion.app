@@ -43,6 +43,7 @@ const INDUSTRIES = [
 
 export default function UseCasesPage() {
   return (
+<>
     <StandardPage
       title="Use Cases"
       subtitle="From customer experience to infrastructure reliability, these are the patterns where Zion clients see fast, measurable results."
@@ -96,5 +97,6 @@ export default function UseCasesPage() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

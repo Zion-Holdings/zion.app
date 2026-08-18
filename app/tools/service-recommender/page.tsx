@@ -41,6 +41,7 @@ const QUESTIONS = [
 
 export default function ServiceRecommenderPage() {
   return (
+<>
     <StandardPage
       title="Service Recommender"
       subtitle="Answer a few questions and get a short list of recommended services."
@@ -101,5 +102,6 @@ export default function ServiceRecommenderPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function EducationSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Education & Research"
       subtitle="Learning intelligence, assessment automation, and research ops with measurable outcomes."
@@ -78,5 +79,6 @@ export default function EducationSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

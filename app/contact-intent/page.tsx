@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 export default function ContactIntentPage() {
   return (
+<>
     <StandardPage
       title="Contact Intent"
       subtitle="We route inquiries to the right team quickly."
@@ -76,5 +77,6 @@ export default function ContactIntentPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

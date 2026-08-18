@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function MicroSaaSPage() {
   return (
+<>
     <StandardPage
       title="Micro SaaS"
       subtitle="Repeatable, monetizable tools built on proven infrastructure and real customer feedback."
@@ -68,5 +69,6 @@ export default function MicroSaaSPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

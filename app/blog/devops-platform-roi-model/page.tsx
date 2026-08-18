@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
+<>
     <StandardPage
       title="Devops Platform Roi Model"
       subtitle="Practical guidance for implementation, governance, and delivery."
@@ -77,5 +78,6 @@ export default function PostPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

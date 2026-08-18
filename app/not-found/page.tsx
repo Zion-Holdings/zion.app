@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function NotFoundPage() {
   return (
+<>
     <StandardPage
       title="Page Not Found"
       subtitle="The page you are looking for does not exist or has been moved."
@@ -57,5 +58,6 @@ export default function NotFoundPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com", "description": "AI-native IT services company.", "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "url": "https://ziontechgroup.com/contact/" } }) }}
       />
     </StandardPage>
+  </>
   );
 }

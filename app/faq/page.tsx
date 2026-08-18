@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
+<>
     <StandardPage
       title="Frequently Asked Questions"
       subtitle="Straight answers about AI and IT services, pricing, onboarding, support, and what to expect from a Zion engagement."
@@ -70,5 +71,6 @@ export default function FAQPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

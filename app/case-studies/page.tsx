@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function CaseStudiesPage() {
   return (
+<>
     <StandardPage
       title="Case Studies"
       subtitle="Measurable outcomes from real engagements: support automation, cloud efficiency, AI adoption, and compliance delivery."
@@ -85,5 +86,6 @@ export default function CaseStudiesPage() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

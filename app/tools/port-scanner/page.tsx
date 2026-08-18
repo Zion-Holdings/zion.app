@@ -34,6 +34,7 @@ const PORTS = [
 
 export default function PortScannerPage() {
   return (
+<>
     <StandardPage
       title="Port Scanner"
       subtitle="Use this checklist to review common exposure before hardening or auditing infrastructure."
@@ -98,5 +99,6 @@ export default function PortScannerPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

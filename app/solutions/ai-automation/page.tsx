@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function AiAutomationSolutionsPage() {
   return (
+<>
     <StandardPage
       title="AI & Automation"
       subtitle="End-to-end AI delivery: strategy, assistants, autonomous operations, and evaluation."
@@ -84,5 +85,6 @@ export default function AiAutomationSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

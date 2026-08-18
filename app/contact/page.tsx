@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
+<>
     <StandardPage
       title="Contact Us"
       subtitle="Tell us your goal and we’ll return a short list of best-fit services with estimated ROI and timeline."
@@ -85,5 +86,6 @@ export default function ContactPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

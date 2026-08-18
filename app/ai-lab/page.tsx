@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function AiLabPage() {
   return (
+<>
     <StandardPage
       title="AI Lab"
       subtitle="Emerging capabilities, experimental services, and sandbox engagements."
@@ -63,5 +64,6 @@ export default function AiLabPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

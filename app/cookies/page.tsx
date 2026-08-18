@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
   return (
+<>
     <StandardPage title="Cookie Policy" subtitle="How we use cookies and similar technologies." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Cookie Policy' }]}>
       <div className="max-w-3xl mx-auto space-y-6 text-slate-300">
         <p>We use essential cookies to keep the site secure and operational. Optional cookies are used for analytics and may be controlled in your browser settings.</p>
@@ -48,5 +49,6 @@ export default function CookiesPage() {
         <Link href="/privacy/" className="text-purple-300 hover:text-purple-200">Privacy Policy →</Link>
       </div>
     </StandardPage>
+  </>
   );
 }

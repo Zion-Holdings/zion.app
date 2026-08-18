@@ -33,6 +33,7 @@ const INDUSTRIES = [
 
 export default function IndustriesPage() {
   return (
+<>
     <StandardPage
       title="Industries"
       subtitle="AI and IT delivery patterns tailored to your operating context, compliance requirements, and measurable outcomes."
@@ -98,5 +99,6 @@ export default function IndustriesPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

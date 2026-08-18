@@ -30,6 +30,7 @@ export default function JwtDecoderPage() {
   ];
 
   return (
+<>
     <StandardPage
       title="JWT Decoder"
       subtitle="Inspect JWT header, payload, and signature details safely."
@@ -71,5 +72,6 @@ export default function JwtDecoderPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function ManagedItSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Managed IT"
       subtitle="Support automation, endpoint management, and operational excellence for modern teams."
@@ -84,5 +85,6 @@ export default function ManagedItSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

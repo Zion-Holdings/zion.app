@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function DataAnalyticsSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Data & Analytics"
       subtitle="Pipelines, governance, forecasting, dashboards, and warehouse modernization."
@@ -84,5 +85,6 @@ export default function DataAnalyticsSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

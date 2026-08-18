@@ -29,6 +29,7 @@ const jsonLd = {
 
 export default function YamlToJsonPage() {
   return (
+<>
     <StandardPage
       title="YAML to JSON"
       subtitle="Convert YAML configuration snippets into structured JSON safely in your browser."
@@ -61,5 +62,6 @@ export default function YamlToJsonPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

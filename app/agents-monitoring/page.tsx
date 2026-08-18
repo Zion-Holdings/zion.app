@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function AgentsMonitoringPage() {
   return (
+<>
     <StandardPage
       title="AI Agents Monitoring"
       subtitle="Track agent health, task throughput, latency, and failure modes in one place."
@@ -68,5 +69,6 @@ export default function AgentsMonitoringPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

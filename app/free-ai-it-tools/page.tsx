@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function FreeAiItToolsPage() {
   return (
+<>
     <StandardPage
       title="Free AI & IT Tools"
       subtitle="Developer utilities built by Zion. No sign-up required."
@@ -67,5 +68,6 @@ export default function FreeAiItToolsPage() {
         </a>
       </div>
     </StandardPage>
+  </>
   );
 }

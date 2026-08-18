@@ -30,6 +30,7 @@ export default function RegexTesterPage() {
   ];
 
   return (
+<>
     <StandardPage
       title="Regex Tester"
       subtitle="Test regular expressions with live matching and highlights."
@@ -71,5 +72,6 @@ export default function RegexTesterPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function LogisticsSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Logistics"
       subtitle="Routing, tracking, and warehouse automation with measurable operational improvements."
@@ -78,5 +79,6 @@ export default function LogisticsSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

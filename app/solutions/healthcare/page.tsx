@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function HealthcareSolutionsPage() {
   return (
+<>
     <StandardPage
       title="Healthcare"
       subtitle="Clinical operations, diagnostics, and patient pathway improvements with governed AI and automation."
@@ -70,5 +71,6 @@ export default function HealthcareSolutionsPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

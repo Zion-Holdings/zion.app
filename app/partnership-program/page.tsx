@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 export default function PartnershipProgramPage() {
   return (
+<>
     <StandardPage
       title="Partnership Program"
       subtitle="Collaborate on delivery, co-sell, or integration."
@@ -71,5 +72,6 @@ export default function PartnershipProgramPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }
