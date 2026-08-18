@@ -188,6 +188,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Text to Slug</h3>
           <p className="text-slate-400 text-sm">Convert text to URL-friendly slugs.</p>
         </a>
+        <a href="/tools/css-minifier-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">CSS Minifier Pro</h3>
+          <p className="text-slate-400 text-sm">Minify CSS with advanced options.</p>
+        </a>
+        <a href="/tools/js-obfuscator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JS Obfuscator</h3>
+          <p className="text-slate-400 text-sm">Obfuscate JavaScript code.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
