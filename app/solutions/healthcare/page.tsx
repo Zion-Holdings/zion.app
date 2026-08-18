@@ -1,0 +1,52 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
+
+export const metadata: Metadata = {
+  title: 'Healthcare Solutions | Zion Tech Group',
+  description: 'AI and IT solutions for healthcare operations, diagnostics, and patient engagement.',
+  openGraph: {
+    title: 'Healthcare Solutions | Zion Tech Group',
+    description: 'Healthcare delivery patterns and AI implementation guidance.',
+    url: 'https://ziontechgroup.com/solutions/healthcare/',
+    type: 'website',
+  },
+  alternates: { canonical: '/solutions/healthcare/' },
+};
+
+export default function HealthcareSolutionsPage() {
+  return (
+    <StandardPage
+      title="Healthcare"
+      subtitle="Clinical operations, diagnostics, and patient pathway improvements with governed AI and automation."
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Solutions', href: '/solutions/' },
+        { label: 'Healthcare' },
+      ]}
+      actions={[
+        { label: 'Start a project', href: '/contact/', style: 'primary' },
+        { label: 'Browse services', href: '/services/', style: 'secondary' },
+      ]}
+    >
+      <div className="max-w-5xl mx-auto grid gap-6 md:grid-cols-2">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">AI-assisted scheduling</h3>
+          <p className="text-slate-400 text-sm">Reduce no-shows and improve resource utilization with intake automation.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Record workflow automation</h3>
+          <p className="text-slate-400 text-sm">Structured extraction, routing, and compliance-ready handling of clinical records.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Operational dashboards</h3>
+          <p className="text-slate-400 text-sm">Capacity, throughput, and quality metrics for faster operational decisions.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Patient engagement</h3>
+          <p className="text-slate-400 text-sm">Guided follow-up, triage, and support automation that respects privacy and compliance.</p>
+        </div>
+      </div>
+    </StandardPage>
+  );
+}
