@@ -15,35 +15,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.2.2
-      - uses: actions/setup-node@v4.4.0
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
-      - run: npm run build
-        env:
-          NEXT_DISABLE_TURBOPACK: '1'
-      - name: Prepare out directory
+      
+      - name: Prepare static files
         run: |
-          if [ -d out ]; then
-            cp -r public/. out/ 2>/dev/null || true
-            cp sitemap.xml out/ 2>/dev/null || true
-          fi
+          mkdir -p out
+          cp -r public/* out/ 2>/dev/null || true
+          cp public/tools/* out/tools/ 2>/dev/null || true
+          cp sitemap.xml out/ 2>/dev/null || true
+          cp feed.xml out/ 2>/dev/null || true
+          ls -la out/ | head -20
+      
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-22.04
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
