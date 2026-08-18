@@ -37,7 +37,8 @@
 /services/managed-observability-247 /services/ 301
 /services/sec-soc-as-a-service /services/ 301
 /free-ai-readiness-audit /ai-services/ 301
-/roi-calculator /ai-services/ 301
+/roi-calculator /tools/roi-calculator/ 301
+/roi-calculator/ /tools/roi-calculator/ 301
 /ai/ai-readiness-assessment /ai-services/ 301
 /services/ai-observability-aiops /services/ 301
 /status-page /contact/ 301
@@ -47,8 +48,8 @@
 /cookie-policy /privacy/ 301
 /free-consultation /contact/ 301
 /free-ai-it-tools /tools/ 301
-/ai /tools/ 301
-/ai/ /tools/ 301
+/ai /ai/ 301
+/ai/ /ai/ 200
 /services/cloud-cost-optimization-platform /services/ 301
 /services/saas-appointment-scheduler /services/ 301
 /services/saas-form-builder /services/ 301
@@ -262,6 +263,7 @@
 /proposal/ /services/ 301
 /industries/manufacturing/ /industries/manufacturing 200
 /service-comparison /tools/service-comparison/ 301
+/service-comparison/ /tools/service-comparison/ 301
 
 # Free tools fallbacks
 /free-tools /free-tools.html 200

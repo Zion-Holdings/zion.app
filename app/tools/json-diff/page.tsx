@@ -59,9 +59,9 @@ export default function Page() {
               <h3 className="text-white font-semibold text-sm mb-1">JSON Formatter</h3>
               <p className="text-slate-400 text-xs">Beautify and validate JSON structure.</p>
             </a>
-            <a href="/tools/url-encoder/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">URL Encoder</h3>
-              <p className="text-slate-400 text-xs">Encode and decode query parameters safely.</p>
+            <a href="/tools/qr-code-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">QR Code Generator</h3>
+              <p className="text-slate-400 text-xs">Generate QR codes for URLs and text.</p>
             </a>
           </div>
         </section>
