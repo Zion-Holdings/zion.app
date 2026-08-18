@@ -23,6 +23,10 @@ export default function ItConsultingServicesPage() {
         { label: 'Services', href: '/services' },
         { label: 'IT Consulting Services' },
       ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">

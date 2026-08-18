@@ -32,6 +32,10 @@ export default function ProductsPage() {
         { label: 'Home', href: '/' },
         { label: 'Products' },
       ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {PRODUCTS.map((product) => (

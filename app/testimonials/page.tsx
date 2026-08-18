@@ -31,6 +31,10 @@ export default function TestimonialsPage() {
         { label: 'Home', href: '/' },
         { label: 'Testimonials' },
       ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {(testimonials).map((t) => (

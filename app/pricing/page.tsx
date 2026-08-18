@@ -22,6 +22,10 @@ export default function PricingPage() {
         { label: 'Home', href: '/' },
         { label: 'Pricing' },
       ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">

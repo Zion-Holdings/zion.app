@@ -22,6 +22,10 @@ export default function ItVendorsPage() {
         { label: 'Home', href: '/' },
         { label: 'IT Vendors' },
       ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="max-w-5xl mx-auto px-6 py-16">
         <p className="text-slate-300 text-lg leading-relaxed mb-8">

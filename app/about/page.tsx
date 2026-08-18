@@ -24,6 +24,10 @@ export default function AboutPage() {
         { label: 'Home', href: '/' },
         { label: 'About' },
       ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="max-w-3xl">
         <p className="text-slate-300 text-lg leading-relaxed mb-6">

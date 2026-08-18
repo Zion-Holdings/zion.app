@@ -50,6 +50,10 @@ export default function UseCasesPage() {
         { label: 'Home', href: '/' },
         { label: 'Use Cases' },
       ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {USE_CASES.map((item) => (

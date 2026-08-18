@@ -21,7 +21,7 @@ const INDUSTRIES = [
 
 export default function IndustriesPage() {
   return (
-    <StandardPage title="Industries" subtitle="AI and IT delivery patterns tailored to your operating context." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Industries' }]}>
+    <StandardPage title="Industries" subtitle="AI and IT delivery patterns tailored to your operating context." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Industries' }]} actions={[{ label: 'Browse services', href: '/services/', style: 'primary' }, { label: 'Contact us', href: '/contact/', style: 'secondary' }]}>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {INDUSTRIES.map((item) => (
           <Link key={item.key} href={item.href} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40 transition-all">
