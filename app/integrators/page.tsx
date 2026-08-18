@@ -65,7 +65,6 @@ export default function IntegratorsPage() {
           <Link href="/partners/" className="btn-secondary text-center">Partner ecosystem</Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -113,7 +113,6 @@ export default function RoiCalculatorPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

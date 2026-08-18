@@ -70,7 +70,6 @@ export default function ManufacturingSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -70,7 +70,6 @@ export default function HealthcareSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

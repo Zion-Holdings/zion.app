@@ -67,7 +67,6 @@ export default function PublicRoadmapPage() {
           <a href="/contact/" className="btn-secondary text-center">Share feedback</a>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -62,7 +62,6 @@ export default function HelpPage() {
           <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

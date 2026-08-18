@@ -103,7 +103,6 @@ export default function UseCasesPage() {
           ))}
         </div>
       </section>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

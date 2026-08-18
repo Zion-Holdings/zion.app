@@ -99,7 +99,6 @@ export default function IndustriesPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

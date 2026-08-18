@@ -54,7 +54,6 @@ export default function TermsPage() {
 
         <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact legal/contracts →</Link>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -122,7 +122,6 @@ export default function ServiceComparisonPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

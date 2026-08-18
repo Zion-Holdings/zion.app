@@ -167,7 +167,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-            <JsonLd data={jsonLd} />
     </StandardPage>
     </>
   );

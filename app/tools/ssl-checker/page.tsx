@@ -93,7 +93,6 @@ export default function SslCheckerPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

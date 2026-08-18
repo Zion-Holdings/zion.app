@@ -80,7 +80,6 @@ export default function JsonDiffPage() {
           </div>
         </section>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

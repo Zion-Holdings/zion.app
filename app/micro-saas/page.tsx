@@ -68,7 +68,6 @@ export default function MicroSaaSPage() {
           <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

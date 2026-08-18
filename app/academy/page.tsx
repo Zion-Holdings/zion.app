@@ -68,7 +68,6 @@ export default function AcademyPage() {
           <a href="/contact/" className="btn-secondary text-center">Start learning</a>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

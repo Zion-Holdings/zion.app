@@ -78,7 +78,6 @@ export default function RetailSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

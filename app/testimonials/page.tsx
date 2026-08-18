@@ -85,7 +85,6 @@ export default function TestimonialsPage() {
           <Link href="/contact/" className="hover:text-purple-300 transition-colors">Contact us →</Link>
         </div>
       </section>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

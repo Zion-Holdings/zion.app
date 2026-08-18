@@ -62,7 +62,6 @@ export default function YamlToJsonPage() {
           </ul>
         </div>
       </div>
-      <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

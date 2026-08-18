@@ -91,7 +91,6 @@ export default function PartnersPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

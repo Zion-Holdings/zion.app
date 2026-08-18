@@ -78,7 +78,6 @@ export default function LogisticsSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

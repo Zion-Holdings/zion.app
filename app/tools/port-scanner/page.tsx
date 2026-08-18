@@ -99,7 +99,6 @@ export default function PortScannerPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

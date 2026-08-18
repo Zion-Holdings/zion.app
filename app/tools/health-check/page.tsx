@@ -87,7 +87,6 @@ export default function HealthCheckPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

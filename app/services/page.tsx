@@ -100,7 +100,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

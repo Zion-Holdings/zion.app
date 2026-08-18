@@ -55,7 +55,6 @@ export default function ProductsPage() {
           </Link>
         ))}
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

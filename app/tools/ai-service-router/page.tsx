@@ -109,7 +109,6 @@ export default function AiServiceRouterPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

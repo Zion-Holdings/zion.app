@@ -56,7 +56,6 @@ export default function FreeAiToolsPage() {
           ))}
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

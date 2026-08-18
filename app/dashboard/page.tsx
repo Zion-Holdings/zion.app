@@ -56,7 +56,6 @@ export default function DashboardPage() {
           <Link href="/contact/" className="btn-secondary text-center">Contact support</Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

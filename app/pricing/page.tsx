@@ -93,7 +93,6 @@ export default function PricingPage() {
         <Link href="/start-project/" className="btn-primary text-center">Request quote</Link>
         <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

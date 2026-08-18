@@ -107,7 +107,6 @@ export default function SolutionsPage() {
           </div>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

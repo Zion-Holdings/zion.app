@@ -72,7 +72,6 @@ export default function ItConsultingServicesPage() {
         <Link href="/contact/" className="btn-primary text-center">Talk to an Engineer</Link>
         <Link href="/services/" className="btn-secondary text-center">All Services</Link>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

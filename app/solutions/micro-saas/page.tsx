@@ -84,7 +84,6 @@ export default function MicroSaaSSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -58,7 +58,6 @@ export default function PressPage() {
           <Link href="/contact/" className="btn-secondary text-center">Media contact</Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

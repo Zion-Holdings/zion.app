@@ -84,7 +84,6 @@ export default function DataAnalyticsSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

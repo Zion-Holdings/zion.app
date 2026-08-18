@@ -102,7 +102,6 @@ export default function ServiceRecommenderPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

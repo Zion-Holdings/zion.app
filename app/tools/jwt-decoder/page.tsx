@@ -72,7 +72,6 @@ export default function JwtDecoderPage() {
           <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

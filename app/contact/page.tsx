@@ -86,7 +86,6 @@ export default function ContactPage() {
           <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

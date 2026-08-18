@@ -70,7 +70,6 @@ export default function FinancialServicesSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

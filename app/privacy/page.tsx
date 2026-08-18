@@ -54,7 +54,6 @@ export default function PrivacyPage() {
 
         <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact privacy team →</Link>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

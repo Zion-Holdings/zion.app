@@ -71,7 +71,6 @@ export default function FAQPage() {
           </div>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

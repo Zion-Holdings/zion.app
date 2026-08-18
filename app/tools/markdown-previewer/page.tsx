@@ -80,7 +80,6 @@ export default function MarkdownPreviewerPage() {
           </div>
         </section>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

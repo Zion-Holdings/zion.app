@@ -50,7 +50,6 @@ export default function StatusPage() {
 
         <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact support →</Link>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

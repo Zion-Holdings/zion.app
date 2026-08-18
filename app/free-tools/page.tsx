@@ -56,7 +56,6 @@ export default function FreeToolsPage() {
           ))}
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

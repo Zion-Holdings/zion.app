@@ -84,7 +84,6 @@ export default function AiAutomationSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

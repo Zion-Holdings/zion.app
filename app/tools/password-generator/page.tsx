@@ -77,7 +77,6 @@ export default function Page() {
           </div>
         </section>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

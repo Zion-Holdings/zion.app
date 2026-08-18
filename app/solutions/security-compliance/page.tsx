@@ -84,7 +84,6 @@ export default function SecurityComplianceSolutionsPage() {
           </Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

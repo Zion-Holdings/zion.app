@@ -49,7 +49,6 @@ export default function CookiesPage() {
 
         <Link href="/privacy/" className="text-purple-300 hover:text-purple-200">Privacy Policy →</Link>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

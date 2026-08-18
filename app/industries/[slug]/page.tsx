@@ -121,7 +121,6 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -78,7 +78,6 @@ export default function CareersPage() {
           <Link href="/services/" className="btn-secondary text-center">Explore services</Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

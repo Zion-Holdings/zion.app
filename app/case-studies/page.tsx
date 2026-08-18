@@ -86,7 +86,6 @@ export default function CaseStudiesPage() {
           <Link href="/services/" className="btn-secondary text-lg px-10 py-4">Explore Services</Link>
         </div>
       </section>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

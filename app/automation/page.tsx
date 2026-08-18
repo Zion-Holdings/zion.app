@@ -72,7 +72,6 @@ export default function AutomationPage() {
           <a href="/contact/" className="btn-secondary text-center">Start a project</a>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -65,7 +65,6 @@ export default function GovernmentsPage() {
           <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

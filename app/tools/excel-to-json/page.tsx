@@ -62,7 +62,6 @@ export default function ExcelToJsonPage() {
           </ul>
         </div>
       </div>
-      <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

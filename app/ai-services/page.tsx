@@ -62,7 +62,6 @@ export default function AiServicesPage() {
           <a href="/contact/" className="btn-secondary text-center">Get started</a>
         </div>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

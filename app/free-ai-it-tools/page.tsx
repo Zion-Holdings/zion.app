@@ -67,7 +67,6 @@ export default function FreeAiItToolsPage() {
           <p className="text-slate-400 text-sm">Generate UUIDs v4 instantly.</p>
         </a>
       </div>
-          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }
