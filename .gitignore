@@ -153,3 +153,7 @@ new_runs_mapping.*
 # Temp/scratch artifacts
 updated_heartbeat.json
 test_persist.txt
+.tmp-*/
+tmp-*/
+*.tmp.js
+
