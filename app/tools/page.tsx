@@ -168,6 +168,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">JWT Generator</h3>
           <p className="text-slate-400 text-sm">Build signed JWTs for testing.</p>
         </a>
+        <a href="/tools/list-sorter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">List Sorter</h3>
+          <p className="text-slate-400 text-sm">Sort, deduplicate, shuffle, number, and reformat a list of lines. Natural sort, case op...</p>
+        </a>
         <a href="/tools/loan-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Loan Calculator</h3>
           <p className="text-slate-400 text-sm">Free loan and mortgage payment calculator — compute monthly payment, total interest, to...</p>
@@ -203,6 +207,10 @@ export default function ToolsPage() {
         <a href="/tools/number-base-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Number Base Converter</h3>
           <p className="text-slate-400 text-sm">Convert between binary, octal, decimal, hex.</p>
+        </a>
+        <a href="/tools/og-preview/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Og Preview</h3>
+          <p className="text-slate-400 text-sm">Preview how a page looks when shared on Facebook, LinkedIn, X, and Google — with live c...</p>
         </a>
         <a href="/tools/password-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Password Generator</h3>
@@ -243,6 +251,10 @@ export default function ToolsPage() {
         <a href="/tools/sql-query-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">SQL Query Builder</h3>
           <p className="text-slate-400 text-sm">Build SELECT, INSERT, UPDATE, DELETE queries.</p>
+        </a>
+        <a href="/tools/subnet-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Subnet Calculator</h3>
+          <p className="text-slate-400 text-sm">Free online IPv4 subnet calculator. Enter an address with a CIDR prefix or netmask to g...</p>
         </a>
         <a href="/tools/text-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Text Analyzer</h3>

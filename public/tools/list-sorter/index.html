@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Sorter &amp; Deduplicator | Zion Tech Group</title>
+  <meta name="description" content="Sort, deduplicate, shuffle, number, and reformat a list of lines. Natural sort, case options, prefix/suffix wrapping — all in your browser.">
+  <meta property="og:title" content="List Sorter &amp; Deduplicator | Zion Tech Group">
+  <meta property="og:description" content="Sort, dedupe, shuffle, and reformat newline-separated lists entirely in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/list-sorter/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/list-sorter/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea, select, input[type="text"] { width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.875rem; }
+    textarea { min-height: 190px; resize: vertical; }
+    textarea:focus, select:focus, input[type="text"]:focus { outline: none; border-color: #6366f1; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.6rem 1rem; margin-top: 0.5rem; }
+    .opt { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #cbd5e1; }
+    .opt input[type="checkbox"] { width: 16px; height: 16px; accent-color: #6366f1; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem; }
+    .buttons { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.copy { background: #059669; }
+    .btn.copy:hover { background: #047857; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+    .stat { background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; padding: 0.75rem; }
+    .stat .k { font-size: 0.75rem; color: #94a3b8; }
+    .stat .v { font-size: 1.05rem; color: #818cf8; font-weight: 600; margin-top: 0.15rem; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .note { font-size: 0.8rem; color: #94a3b8; margin-top: 0.75rem; line-height: 1.5; }
+    @media (max-width: 720px) { .grid2, .row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>List Sorter &amp; Deduplicator</h1>
+    <p class="subtitle">Sort, dedupe, shuffle, and reformat any newline-separated list.</p>
+
+    <div class="section">
+      <h3>Operations</h3>
+      <div class="row">
+        <div>
+          <label for="sortMode">Sort</label>
+          <select id="sortMode">
+            <option value="none">No sort (keep order)</option>
+            <option value="asc">A → Z</option>
+            <option value="desc">Z → A</option>
+            <option value="natural">Natural / numeric (item2 before item10)</option>
+            <option value="length">By line length</option>
+            <option value="shuffle">Shuffle (random)</option>
+            <option value="reverse">Reverse current order</option>
+          </select>
+        </div>
+        <div>
+          <label for="caseMode">Case</label>
+          <select id="caseMode">
+            <option value="keep">Keep original</option>
+            <option value="lower">lowercase</option>
+            <option value="upper">UPPERCASE</option>
+          </select>
+        </div>
+      </div>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" id="optTrim" checked> Trim whitespace</label>
+        <label class="opt"><input type="checkbox" id="optEmpty" checked> Remove empty lines</label>
+        <label class="opt"><input type="checkbox" id="optDedupe" checked> Remove duplicates</label>
+        <label class="opt"><input type="checkbox" id="optCaseSensitive" checked> Dedupe is case-sensitive</label>
+        <label class="opt"><input type="checkbox" id="optNumber"> Add line numbers</label>
+      </div>
+      <div class="row">
+        <div>
+          <label for="prefix">Prefix each line</label>
+          <input type="text" id="prefix" placeholder="e.g. &quot;">
+        </div>
+        <div>
+          <label for="suffix">Suffix each line</label>
+          <input type="text" id="suffix" placeholder="e.g. &quot;,">
+        </div>
+      </div>
+      <p class="note">Everything runs locally in your browser — nothing is uploaded. Operations apply in this order: trim → remove empties → dedupe → sort → case → number → prefix/suffix.</p>
+    </div>
+
+    <div class="section">
+      <div class="grid2">
+        <div>
+          <label for="input">Input</label>
+          <textarea id="input" spellcheck="false" placeholder="Paste one item per line..."></textarea>
+        </div>
+        <div>
+          <label for="output">Output</label>
+          <textarea id="output" spellcheck="false" readonly></textarea>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn copy" id="btnCopy">Copy Output</button>
+        <button class="btn" id="btnDownload">Download .txt</button>
+        <button class="btn secondary" id="btnSample">Load Sample</button>
+        <button class="btn secondary" id="btnClear">Clear</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">Input lines</div><div class="v" id="sIn">0</div></div>
+        <div class="stat"><div class="k">Output lines</div><div class="v" id="sOut">0</div></div>
+        <div class="stat"><div class="k">Duplicates removed</div><div class="v" id="sDupes">0</div></div>
+        <div class="stat"><div class="k">Empties removed</div><div class="v" id="sEmpty">0</div></div>
+        <div class="stat"><div class="k">Output size</div><div class="v" id="sSize">0 B</div></div>
+      </div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var SAMPLE = [
+      'item10', 'Item2', 'banana', 'apple', '  cherry  ', 'banana',
+      'item1', '', 'Apple', 'date', 'item2', 'elderberry', ''
+    ].join('\n');
+
+    function naturalCompare(a, b) {
+      var re = /(\d+)|(\D+)/g;
+      var ax = String(a).toLowerCase().match(re) || [];
+      var bx = String(b).toLowerCase().match(re) || [];
+      var i = 0;
+      while (i < ax.length && i < bx.length) {
+        var an = parseInt(ax[i], 10);
+        var bn = parseInt(bx[i], 10);
+        var aIsNum = !isNaN(an);
+        var bIsNum = !isNaN(bn);
+        if (aIsNum && bIsNum) {
+          if (an !== bn) { return an - bn; }
+        } else {
+          if (ax[i] < bx[i]) { return -1; }
+          if (ax[i] > bx[i]) { return 1; }
+        }
+        i++;
+      }
+      return ax.length - bx.length;
+    }
+
+    function shuffle(arr) {
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+      }
+      return arr;
+    }
+
+    // Exposed for testing: pure transform from raw text + options to result.
+    function processList(text, o) {
+      var raw = String(text === undefined || text === null ? '' : text).split(/\r\n|\r|\n/);
+      var inputLines = raw.length;
+      var lines = raw.slice();
+
+      if (o.trim) {
+        lines = lines.map(function (l) { return l.trim(); });
+      }
+
+      var beforeEmpty = lines.length;
+      if (o.removeEmpty) {
+        lines = lines.filter(function (l) { return l.trim() !== ''; });
+      }
+      var emptiesRemoved = beforeEmpty - lines.length;
+
+      var dupesRemoved = 0;
+      if (o.dedupe) {
+        var seen = Object.create(null);
+        var kept = [];
+        for (var i = 0; i < lines.length; i++) {
+          var key = o.caseSensitive ? lines[i] : lines[i].toLowerCase();
+          if (seen[key]) { dupesRemoved++; continue; }
+          seen[key] = true;
+          kept.push(lines[i]);
+        }
+        lines = kept;
+      }
+
+      switch (o.sort) {
+        case 'asc':
+          lines.sort(function (a, b) { return a.localeCompare(b); });
+          break;
+        case 'desc':
+          lines.sort(function (a, b) { return b.localeCompare(a); });
+          break;
+        case 'natural':
+          lines.sort(naturalCompare);
+          break;
+        case 'length':
+          lines.sort(function (a, b) { return a.length - b.length || a.localeCompare(b); });
+          break;
+        case 'shuffle':
+          shuffle(lines);
+          break;
+        case 'reverse':
+          lines.reverse();
+          break;
+        default:
+          break;
+      }
+
+      if (o.caseMode === 'lower') {
+        lines = lines.map(function (l) { return l.toLowerCase(); });
+      } else if (o.caseMode === 'upper') {
+        lines = lines.map(function (l) { return l.toUpperCase(); });
+      }
+
+      var pre = o.prefix || '';
+      var suf = o.suffix || '';
+      var width = String(lines.length).length;
+      lines = lines.map(function (l, idx) {
+        var body = pre + l + suf;
+        if (o.number) {
+          var n = String(idx + 1);
+          while (n.length < width) { n = ' ' + n; }
+          body = n + '. ' + body;
+        }
+        return body;
+      });
+
+      return {
+        text: lines.join('\n'),
+        inputLines: inputLines,
+        outputLines: lines.length,
+        dupesRemoved: dupesRemoved,
+        emptiesRemoved: emptiesRemoved
+      };
+    }
+
+    if (typeof module !== 'undefined' && module.exports) {
+      module.exports = { processList: processList, naturalCompare: naturalCompare };
+      return;
+    }
+
+    var $ = function (id) { return document.getElementById(id); };
+
+    function readOpts() {
+      return {
+        sort: $('sortMode').value,
+        caseMode: $('caseMode').value,
+        trim: $('optTrim').checked,
+        removeEmpty: $('optEmpty').checked,
+        dedupe: $('optDedupe').checked,
+        caseSensitive: $('optCaseSensitive').checked,
+        number: $('optNumber').checked,
+        prefix: $('prefix').value,
+        suffix: $('suffix').value
+      };
+    }
+
+    function fmtBytes(n) {
+      if (n < 1024) { return n + ' B'; }
+      if (n < 1024 * 1024) { return (n / 1024).toFixed(1) + ' KB'; }
+      return (n / (1024 * 1024)).toFixed(2) + ' MB';
+    }
+
+    function run() {
+      var r = processList($('input').value, readOpts());
+      $('output').value = r.text;
+      $('sIn').textContent = r.inputLines;
+      $('sOut').textContent = r.outputLines;
+      $('sDupes').textContent = r.dupesRemoved;
+      $('sEmpty').textContent = r.emptiesRemoved;
+      $('sSize').textContent = fmtBytes(r.text.length);
+    }
+
+    function flash(btn, msg) {
+      var old = btn.textContent;
+      btn.textContent = msg;
+      setTimeout(function () { btn.textContent = old; }, 1600);
+    }
+
+    function copyText(text, btn) {
+      if (!text) { flash(btn, 'Empty'); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          flash(btn, 'Copied!');
+        }, function () { legacyCopy(text, btn); });
+      } else {
+        legacyCopy(text, btn);
+      }
+    }
+
+    function legacyCopy(text, btn) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); flash(btn, 'Copied!'); }
+      catch (e) { flash(btn, 'Failed'); }
+      document.body.removeChild(ta);
+    }
+
+    ['sortMode', 'caseMode', 'optTrim', 'optEmpty', 'optDedupe',
+      'optCaseSensitive', 'optNumber'].forEach(function (id) {
+      $(id).addEventListener('change', run);
+    });
+    ['input', 'prefix', 'suffix'].forEach(function (id) {
+      $(id).addEventListener('input', run);
+    });
+
+    $('btnCopy').addEventListener('click', function () {
+      copyText($('output').value, this);
+    });
+
+    $('btnDownload').addEventListener('click', function () {
+      var text = $('output').value;
+      if (!text) { flash(this, 'Empty'); return; }
+      var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'list.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    });
+
+    $('btnSample').addEventListener('click', function () {
+      $('input').value = SAMPLE;
+      run();
+    });
+
+    $('btnClear').addEventListener('click', function () {
+      $('input').value = '';
+      run();
+    });
+
+    $('input').value = SAMPLE;
+    run();
+  })();
+  </script>
+</body>
+</html>
