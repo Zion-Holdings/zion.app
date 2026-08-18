@@ -34,7 +34,7 @@ export default function StandardPage({
 }: StandardPageProps) {
   return (
     <>
-      <JsonLd jsonLd={organizationLd} />
+      <JsonLd data={organizationLd} />
       <PageShell>
         <PageTemplate
           title={title}
