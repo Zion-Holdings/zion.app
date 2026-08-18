@@ -58,11 +58,6 @@ export default function ContactPage() {
           <p className="text-slate-300 text-sm">Most inquiries receive a detailed reply within one business hour.</p>
         </div>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-2">Schedule</h2>
-          <p className="text-slate-300 text-sm">Book a consultation directly on Calendly.</p>
-          <Link href="https://calendly.com/ziontechgroup" className="text-purple-300 text-sm font-semibold hover:text-white">Open Calendly →</Link>
-        </div>
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-2">Preferred path</h2>
           <p className="text-slate-300 text-sm">Start with /start-project/ for scoped proposals, or email for general questions.</p>
           <Link href="/start-project/" className="text-purple-300 text-sm font-semibold hover:text-white">Start project →</Link>
