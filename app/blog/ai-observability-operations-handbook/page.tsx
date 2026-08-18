@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Observability: operations handbook',
+    title: 'AI Observability: operations handbook | Zion Tech Group',
     description: 'AI Observability: operations handbook',
     url: 'https://ziontechgroup.com/blog/ai-observability-operations-handbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Observability: operations handbook',
+    title: 'AI Observability: operations handbook | Zion Tech Group',
     description: 'AI Observability: operations handbook',
   },
   alternates: { canonical: '/blog/ai-observability-operations-handbook/' },

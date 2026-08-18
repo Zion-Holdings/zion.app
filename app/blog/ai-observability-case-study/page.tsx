@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Observability: case study',
+    title: 'AI Observability: case study | Zion Tech Group',
     description: 'AI Observability: case study',
     url: 'https://ziontechgroup.com/blog/ai-observability-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Observability: case study',
+    title: 'AI Observability: case study | Zion Tech Group',
     description: 'AI Observability: case study',
   },
   alternates: { canonical: '/blog/ai-observability-case-study/' },

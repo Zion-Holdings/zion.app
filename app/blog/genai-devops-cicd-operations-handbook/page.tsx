@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GenAI DevOps CI/CD: operations handbook',
+    title: 'GenAI DevOps CI/CD: operations handbook | Zion Tech Group',
     description: 'GenAI DevOps CI/CD: operations handbook',
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-operations-handbook/',
     type: 'article',

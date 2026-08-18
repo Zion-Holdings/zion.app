@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Network Infrastructure: ROI and cost model',
+    title: 'Network Infrastructure: ROI and cost model | Zion Tech Group',
     description: 'Network Infrastructure: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-roi-and-cost-model/',
     type: 'article',

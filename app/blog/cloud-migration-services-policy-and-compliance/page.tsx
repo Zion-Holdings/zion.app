@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Migration Services: policy and compliance',
+    title: 'Cloud Migration Services: policy and compliance | Zion Tech Group',
     description: 'Cloud Migration Services: policy and compliance',
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-policy-and-compliance/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cloud Migration Services: policy and compliance',
+    title: 'Cloud Migration Services: policy and compliance | Zion Tech Group',
     description: 'Cloud Migration Services: policy and compliance',
   },
   alternates: { canonical: '/blog/cloud-migration-services-policy-and-compliance/' },

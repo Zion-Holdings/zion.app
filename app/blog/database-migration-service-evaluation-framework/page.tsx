@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Database Migration Service: evaluation framework',
+    title: 'Database Migration Service: evaluation framework | Zion Tech Group',
     description: 'Database Migration Service: evaluation framework',
     url: 'https://ziontechgroup.com/blog/database-migration-service-evaluation-framework/',
     type: 'article',

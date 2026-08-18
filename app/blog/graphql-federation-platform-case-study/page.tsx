@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GraphQL Federation Platform: case study',
+    title: 'GraphQL Federation Platform: case study | Zion Tech Group',
     description: 'GraphQL Federation Platform: case study',
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GraphQL Federation Platform: case study',
+    title: 'GraphQL Federation Platform: case study | Zion Tech Group',
     description: 'GraphQL Federation Platform: case study',
   },
   alternates: { canonical: '/blog/graphql-federation-platform-case-study/' },

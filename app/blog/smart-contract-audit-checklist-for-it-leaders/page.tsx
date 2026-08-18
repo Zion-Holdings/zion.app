@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Smart Contract Audit: checklist for IT leaders',
+    title: 'Smart Contract Audit: checklist for IT leaders | Zion Tech Group',
     description: 'Smart Contract Audit: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-checklist-for-it-leaders/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Smart Contract Audit: checklist for IT leaders',
+    title: 'Smart Contract Audit: checklist for IT leaders | Zion Tech Group',
     description: 'Smart Contract Audit: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/smart-contract-audit-checklist-for-it-leaders/' },

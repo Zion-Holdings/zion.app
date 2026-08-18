@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Database Migration Service: ROI and cost model',
+    title: 'Database Migration Service: ROI and cost model | Zion Tech Group',
     description: 'Database Migration Service: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/database-migration-service-roi-and-cost-model/',
     type: 'article',

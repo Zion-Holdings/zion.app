@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agent Safety Evaluation: automation roadmap',
+    title: 'AI Agent Safety Evaluation: automation roadmap | Zion Tech Group',
     description: 'AI Agent Safety Evaluation: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-automation-roadmap/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Agent Safety Evaluation: automation roadmap',
+    title: 'AI Agent Safety Evaluation: automation roadmap | Zion Tech Group',
     description: 'AI Agent Safety Evaluation: automation roadmap',
   },
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-automation-roadmap/' },

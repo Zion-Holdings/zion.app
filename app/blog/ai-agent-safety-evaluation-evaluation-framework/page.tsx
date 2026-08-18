@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agent Safety Evaluation: evaluation framework',
+    title: 'AI Agent Safety Evaluation: evaluation framework | Zion Tech Group',
     description: 'AI Agent Safety Evaluation: evaluation framework',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-evaluation-framework/',
     type: 'article',

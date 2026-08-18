@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Chaos Engineering: case study',
+    title: 'Chaos Engineering: case study | Zion Tech Group',
     description: 'Chaos Engineering: case study',
     url: 'https://ziontechgroup.com/blog/chaos-engineering-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chaos Engineering: case study',
+    title: 'Chaos Engineering: case study | Zion Tech Group',
     description: 'Chaos Engineering: case study',
   },
   alternates: { canonical: '/blog/chaos-engineering-case-study/' },

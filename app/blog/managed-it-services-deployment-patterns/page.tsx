@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Managed IT Services: deployment patterns',
+    title: 'Managed IT Services: deployment patterns | Zion Tech Group',
     description: 'Managed IT Services: deployment patterns',
     url: 'https://ziontechgroup.com/blog/managed-it-services-deployment-patterns/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Managed IT Services: deployment patterns',
+    title: 'Managed IT Services: deployment patterns | Zion Tech Group',
     description: 'Managed IT Services: deployment patterns',
   },
   alternates: { canonical: '/blog/managed-it-services-deployment-patterns/' },

@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'DevOps CI/CD: evaluation framework',
+    title: 'DevOps CI/CD: evaluation framework | Zion Tech Group',
     description: 'DevOps CI/CD: evaluation framework',
     url: 'https://ziontechgroup.com/blog/devops-cicd-evaluation-framework/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DevOps CI/CD: evaluation framework',
+    title: 'DevOps CI/CD: evaluation framework | Zion Tech Group',
     description: 'DevOps CI/CD: evaluation framework',
   },
   alternates: { canonical: '/blog/devops-cicd-evaluation-framework/' },

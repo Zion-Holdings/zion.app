@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Performance Testing: executive guide',
+    title: 'API Performance Testing: executive guide | Zion Tech Group',
     description: 'API Performance Testing: executive guide',
     url: 'https://ziontechgroup.com/blog/api-performance-testing-executive-guide/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Performance Testing: executive guide',
+    title: 'API Performance Testing: executive guide | Zion Tech Group',
     description: 'API Performance Testing: executive guide',
   },
   alternates: { canonical: '/blog/api-performance-testing-executive-guide/' },

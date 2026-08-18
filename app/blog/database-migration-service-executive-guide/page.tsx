@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Database Migration Service: executive guide',
+    title: 'Database Migration Service: executive guide | Zion Tech Group',
     description: 'Database Migration Service: executive guide',
     url: 'https://ziontechgroup.com/blog/database-migration-service-executive-guide/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Database Migration Service: executive guide',
+    title: 'Database Migration Service: executive guide | Zion Tech Group',
     description: 'Database Migration Service: executive guide',
   },
   alternates: { canonical: '/blog/database-migration-service-executive-guide/' },

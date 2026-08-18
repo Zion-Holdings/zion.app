@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GraphQL Federation Platform: policy and compliance',
+    title: 'GraphQL Federation Platform: policy and compliance | Zion Tech Group',
     description: 'GraphQL Federation Platform: policy and compliance',
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-policy-and-compliance/',
     type: 'article',

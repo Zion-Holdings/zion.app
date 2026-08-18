@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cybersecurity for MSPs: case study',
+    title: 'Cybersecurity for MSPs: case study | Zion Tech Group',
     description: 'Cybersecurity for MSPs: case study',
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cybersecurity for MSPs: case study',
+    title: 'Cybersecurity for MSPs: case study | Zion Tech Group',
     description: 'Cybersecurity for MSPs: case study',
   },
   alternates: { canonical: '/blog/cybersecurity-for-msps-case-study/' },

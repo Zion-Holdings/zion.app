@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Cost AI Optimizer: operations handbook',
+    title: 'Cloud Cost AI Optimizer: operations handbook | Zion Tech Group',
     description: 'Cloud Cost AI Optimizer: operations handbook',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-operations-handbook/',
     type: 'article',

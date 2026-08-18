@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Enterprise Backup DR: case study',
+    title: 'Enterprise Backup DR: case study | Zion Tech Group',
     description: 'Enterprise Backup DR: case study',
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-case-study/',
     type: 'article',

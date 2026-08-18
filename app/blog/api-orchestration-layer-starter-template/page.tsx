@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Orchestration Layer: starter template',
+    title: 'API Orchestration Layer: starter template | Zion Tech Group',
     description: 'API Orchestration Layer: starter template',
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-starter-template/',
     type: 'article',

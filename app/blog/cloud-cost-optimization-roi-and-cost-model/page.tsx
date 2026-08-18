@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Cost Optimization: ROI and cost model',
+    title: 'Cloud Cost Optimization: ROI and cost model | Zion Tech Group',
     description: 'Cloud Cost Optimization: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-roi-and-cost-model/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cloud Cost Optimization: ROI and cost model',
+    title: 'Cloud Cost Optimization: ROI and cost model | Zion Tech Group',
     description: 'Cloud Cost Optimization: ROI and cost model',
   },
   alternates: { canonical: '/blog/cloud-cost-optimization-roi-and-cost-model/' },

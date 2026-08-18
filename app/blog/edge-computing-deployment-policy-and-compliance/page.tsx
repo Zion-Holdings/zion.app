@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Edge Computing Deployment: policy and compliance',
+    title: 'Edge Computing Deployment: policy and compliance | Zion Tech Group',
     description: 'Edge Computing Deployment: policy and compliance',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-policy-and-compliance/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edge Computing Deployment: policy and compliance',
+    title: 'Edge Computing Deployment: policy and compliance | Zion Tech Group',
     description: 'Edge Computing Deployment: policy and compliance',
   },
   alternates: { canonical: '/blog/edge-computing-deployment-policy-and-compliance/' },

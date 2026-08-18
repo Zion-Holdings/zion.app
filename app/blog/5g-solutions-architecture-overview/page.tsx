@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: '5G Solutions: architecture overview',
+    title: '5G Solutions: architecture overview | Zion Tech Group',
     description: '5G Solutions: architecture overview',
     url: 'https://ziontechgroup.com/blog/5g-solutions-architecture-overview/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '5G Solutions: architecture overview',
+    title: '5G Solutions: architecture overview | Zion Tech Group',
     description: '5G Solutions: architecture overview',
   },
   alternates: { canonical: '/blog/5g-solutions-architecture-overview/' },

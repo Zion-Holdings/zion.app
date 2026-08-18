@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Automation Orchestration: operations handbook',
+    title: 'Automation Orchestration: operations handbook | Zion Tech Group',
     description: 'Automation Orchestration: operations handbook',
     url: 'https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automation Orchestration: operations handbook',
+    title: 'Automation Orchestration: operations handbook | Zion Tech Group',
     description: 'Automation Orchestration: operations handbook',
   },
   alternates: { canonical: '/blog/automation-orchestration-operations-handbook/' },

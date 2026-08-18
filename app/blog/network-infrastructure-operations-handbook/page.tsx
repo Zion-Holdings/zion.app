@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Network Infrastructure: operations handbook',
+    title: 'Network Infrastructure: operations handbook | Zion Tech Group',
     description: 'Network Infrastructure: operations handbook',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-operations-handbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Network Infrastructure: operations handbook',
+    title: 'Network Infrastructure: operations handbook | Zion Tech Group',
     description: 'Network Infrastructure: operations handbook',
   },
   alternates: { canonical: '/blog/network-infrastructure-operations-handbook/' },

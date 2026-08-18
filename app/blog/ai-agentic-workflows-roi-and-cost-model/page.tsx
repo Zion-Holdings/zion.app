@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agentic Workflows: ROI and cost model',
+    title: 'AI Agentic Workflows: ROI and cost model | Zion Tech Group',
     description: 'AI Agentic Workflows: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-roi-and-cost-model/',
     type: 'article',

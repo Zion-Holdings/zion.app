@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Customer Support: architecture overview',
+    title: 'AI Customer Support: architecture overview | Zion Tech Group',
     description: 'AI Customer Support: architecture overview',
     url: 'https://ziontechgroup.com/blog/ai-customer-support-architecture-overview/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Customer Support: architecture overview',
+    title: 'AI Customer Support: architecture overview | Zion Tech Group',
     description: 'AI Customer Support: architecture overview',
   },
   alternates: { canonical: '/blog/ai-customer-support-architecture-overview/' },

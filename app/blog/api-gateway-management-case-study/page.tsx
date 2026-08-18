@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Gateway Management: case study',
+    title: 'API Gateway Management: case study | Zion Tech Group',
     description: 'API Gateway Management: case study',
     url: 'https://ziontechgroup.com/blog/api-gateway-management-case-study/',
     type: 'article',

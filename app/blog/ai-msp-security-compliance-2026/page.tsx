@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI MSP Security Compliance',
+    title: 'AI MSP Security Compliance | Zion Tech Group',
     description: 'AI MSP Security Compliance',
     url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI MSP Security Compliance',
+    title: 'AI MSP Security Compliance | Zion Tech Group',
     description: 'AI MSP Security Compliance',
   },
   alternates: { canonical: '/blog/ai-msp-security-compliance-2026/' },

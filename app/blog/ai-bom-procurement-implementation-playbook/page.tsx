@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI BOM Procurement: implementation playbook',
+    title: 'AI BOM Procurement: implementation playbook | Zion Tech Group',
     description: 'AI BOM Procurement: implementation playbook',
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-implementation-playbook/',
     type: 'article',

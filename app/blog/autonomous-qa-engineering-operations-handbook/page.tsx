@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Autonomous QA Engineering: operations handbook',
+    title: 'Autonomous QA Engineering: operations handbook | Zion Tech Group',
     description: 'Autonomous QA Engineering: operations handbook',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-operations-handbook/',
     type: 'article',

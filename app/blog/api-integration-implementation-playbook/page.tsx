@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Integration: implementation playbook',
+    title: 'API Integration: implementation playbook | Zion Tech Group',
     description: 'API Integration: implementation playbook',
     url: 'https://ziontechgroup.com/blog/api-integration-implementation-playbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Integration: implementation playbook',
+    title: 'API Integration: implementation playbook | Zion Tech Group',
     description: 'API Integration: implementation playbook',
   },
   alternates: { canonical: '/blog/api-integration-implementation-playbook/' },

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Integration: automation roadmap',
+    title: 'API Integration: automation roadmap | Zion Tech Group',
     description: 'API Integration: automation roadmap',
     url: 'https://ziontechgroup.com/blog/api-integration-automation-roadmap/',
     type: 'article',

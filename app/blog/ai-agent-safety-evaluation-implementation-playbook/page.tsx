@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agent Safety Evaluation: implementation playbook',
+    title: 'AI Agent Safety Evaluation: implementation playbook | Zion Tech Group',
     description: 'AI Agent Safety Evaluation: implementation playbook',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Agent Safety Evaluation: implementation playbook',
+    title: 'AI Agent Safety Evaluation: implementation playbook | Zion Tech Group',
     description: 'AI Agent Safety Evaluation: implementation playbook',
   },
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-implementation-playbook/' },

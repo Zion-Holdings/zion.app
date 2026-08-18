@@ -5,14 +5,14 @@ export const metadata: Metadata = {
   title: 'AI Edge Inference 2026 | Zion Tech Group',
   description: 'Edge AI inference patterns for low latency and offline resilience.',
   openGraph: {
-    title: 'AI Edge Inference 2026',
+    title: 'AI Edge Inference 2026 | Zion Tech Group',
     description: 'Edge AI inference patterns for low latency and offline resilience.',
     url: 'https://ziontechgroup.com/blog/ai-edge-inference-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Edge Inference 2026',
+    title: 'AI Edge Inference 2026 | Zion Tech Group',
     description: 'Edge AI inference patterns for low latency and offline resilience.',
   },
   alternates: { canonical: '/blog/ai-edge-inference-2026/' },

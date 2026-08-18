@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI BOM Procurement: starter template',
+    title: 'AI BOM Procurement: starter template | Zion Tech Group',
     description: 'AI BOM Procurement: starter template',
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-starter-template/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI BOM Procurement: starter template',
+    title: 'AI BOM Procurement: starter template | Zion Tech Group',
     description: 'AI BOM Procurement: starter template',
   },
   alternates: { canonical: '/blog/ai-bom-procurement-starter-template/' },

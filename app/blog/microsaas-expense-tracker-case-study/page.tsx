@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS Expense Tracker: case study',
+    title: 'MicroSaaS Expense Tracker: case study | Zion Tech Group',
     description: 'MicroSaaS Expense Tracker: case study',
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MicroSaaS Expense Tracker: case study',
+    title: 'MicroSaaS Expense Tracker: case study | Zion Tech Group',
     description: 'MicroSaaS Expense Tracker: case study',
   },
   alternates: { canonical: '/blog/microsaas-expense-tracker-case-study/' },

@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AIOps Anomaly Detection: executive guide',
+    title: 'AIOps Anomaly Detection: executive guide | Zion Tech Group',
     description: 'AIOps Anomaly Detection: executive guide',
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-executive-guide/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AIOps Anomaly Detection: executive guide',
+    title: 'AIOps Anomaly Detection: executive guide | Zion Tech Group',
     description: 'AIOps Anomaly Detection: executive guide',
   },
   alternates: { canonical: '/blog/aiops-anomaly-detection-executive-guide/' },

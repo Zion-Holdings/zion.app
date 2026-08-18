@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Incident Response Retainer: architecture overview',
+    title: 'Incident Response Retainer: architecture overview | Zion Tech Group',
     description: 'Incident Response Retainer: architecture overview',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-architecture-overview/',
     type: 'article',

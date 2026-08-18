@@ -5,14 +5,14 @@ export const metadata: Metadata = {
   title: 'AI Prompt Engineering 2026 | Zion Tech Group',
   description: 'Designing, testing, and governing prompts for reliable LLM outputs.',
   openGraph: {
-    title: 'AI Prompt Engineering 2026',
+    title: 'AI Prompt Engineering 2026 | Zion Tech Group',
     description: 'Designing, testing, and governing prompts for reliable LLM outputs.',
     url: 'https://ziontechgroup.com/blog/ai-prompt-engineering-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Prompt Engineering 2026',
+    title: 'AI Prompt Engineering 2026 | Zion Tech Group',
     description: 'Designing, testing, and governing prompts for reliable LLM outputs.',
   },
   alternates: { canonical: '/blog/ai-prompt-engineering-2026/' },

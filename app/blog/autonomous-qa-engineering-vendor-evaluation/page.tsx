@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Autonomous QA Engineering: vendor evaluation',
+    title: 'Autonomous QA Engineering: vendor evaluation | Zion Tech Group',
     description: 'Autonomous QA Engineering: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-vendor-evaluation/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Autonomous QA Engineering: vendor evaluation',
+    title: 'Autonomous QA Engineering: vendor evaluation | Zion Tech Group',
     description: 'Autonomous QA Engineering: vendor evaluation',
   },
   alternates: { canonical: '/blog/autonomous-qa-engineering-vendor-evaluation/' },

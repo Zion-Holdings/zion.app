@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI 3D Asset Generator: architecture overview',
+    title: 'AI 3D Asset Generator: architecture overview | Zion Tech Group',
     description: 'AI 3D Asset Generator: architecture overview',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-architecture-overview/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI 3D Asset Generator: architecture overview',
+    title: 'AI 3D Asset Generator: architecture overview | Zion Tech Group',
     description: 'AI 3D Asset Generator: architecture overview',
   },
   alternates: { canonical: '/blog/ai-3d-asset-generator-architecture-overview/' },

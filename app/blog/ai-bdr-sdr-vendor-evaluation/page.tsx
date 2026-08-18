@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI BDR SDR: vendor evaluation',
+    title: 'AI BDR SDR: vendor evaluation | Zion Tech Group',
     description: 'AI BDR SDR: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-vendor-evaluation/',
     type: 'article',

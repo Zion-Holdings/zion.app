@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS Translation Engine: executive guide',
+    title: 'MicroSaaS Translation Engine: executive guide | Zion Tech Group',
     description: 'MicroSaaS Translation Engine: executive guide',
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-executive-guide/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MicroSaaS Translation Engine: executive guide',
+    title: 'MicroSaaS Translation Engine: executive guide | Zion Tech Group',
     description: 'MicroSaaS Translation Engine: executive guide',
   },
   alternates: { canonical: '/blog/microsaas-translation-engine-executive-guide/' },

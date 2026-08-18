@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Network Infrastructure: evaluation framework',
+    title: 'Network Infrastructure: evaluation framework | Zion Tech Group',
     description: 'Network Infrastructure: evaluation framework',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-evaluation-framework/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Network Infrastructure: evaluation framework',
+    title: 'Network Infrastructure: evaluation framework | Zion Tech Group',
     description: 'Network Infrastructure: evaluation framework',
   },
   alternates: { canonical: '/blog/network-infrastructure-evaluation-framework/' },

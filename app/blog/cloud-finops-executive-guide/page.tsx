@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud FinOps: executive guide',
+    title: 'Cloud FinOps: executive guide | Zion Tech Group',
     description: 'Cloud FinOps: executive guide',
     url: 'https://ziontechgroup.com/blog/cloud-finops-executive-guide/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cloud FinOps: executive guide',
+    title: 'Cloud FinOps: executive guide | Zion Tech Group',
     description: 'Cloud FinOps: executive guide',
   },
   alternates: { canonical: '/blog/cloud-finops-executive-guide/' },

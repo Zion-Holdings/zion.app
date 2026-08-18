@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Development Acceleration: common mistakes',
+    title: 'AI Development Acceleration: common mistakes | Zion Tech Group',
     description: 'AI Development Acceleration: common mistakes',
     url: 'https://ziontechgroup.com/blog/ai-development-acceleration-common-mistakes/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Development Acceleration: common mistakes',
+    title: 'AI Development Acceleration: common mistakes | Zion Tech Group',
     description: 'AI Development Acceleration: common mistakes',
   },
   alternates: { canonical: '/blog/ai-development-acceleration-common-mistakes/' },

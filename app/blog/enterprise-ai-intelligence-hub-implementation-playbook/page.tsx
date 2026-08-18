@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Enterprise AI Intelligence Hub: implementation playbook',
+    title: 'Enterprise AI Intelligence Hub: implementation playbook | Zion Tech Group',
     description: 'Enterprise AI Intelligence Hub: implementation playbook',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-implementation-playbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise AI Intelligence Hub: implementation playbook',
+    title: 'Enterprise AI Intelligence Hub: implementation playbook | Zion Tech Group',
     description: 'Enterprise AI Intelligence Hub: implementation playbook',
   },
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-implementation-playbook/' },

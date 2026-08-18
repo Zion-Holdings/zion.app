@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Brand Voice Guardian: architecture overview',
+    title: 'Brand Voice Guardian: architecture overview | Zion Tech Group',
     description: 'Brand Voice Guardian: architecture overview',
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-architecture-overview/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brand Voice Guardian: architecture overview',
+    title: 'Brand Voice Guardian: architecture overview | Zion Tech Group',
     description: 'Brand Voice Guardian: architecture overview',
   },
   alternates: { canonical: '/blog/brand-voice-guardian-architecture-overview/' },

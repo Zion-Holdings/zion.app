@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AIOps Anomaly Detection: common mistakes',
+    title: 'AIOps Anomaly Detection: common mistakes | Zion Tech Group',
     description: 'AIOps Anomaly Detection: common mistakes',
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-common-mistakes/',
     type: 'article',

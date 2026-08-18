@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Gateway Management: architecture overview',
+    title: 'API Gateway Management: architecture overview | Zion Tech Group',
     description: 'API Gateway Management: architecture overview',
     url: 'https://ziontechgroup.com/blog/api-gateway-management-architecture-overview/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Gateway Management: architecture overview',
+    title: 'API Gateway Management: architecture overview | Zion Tech Group',
     description: 'API Gateway Management: architecture overview',
   },
   alternates: { canonical: '/blog/api-gateway-management-architecture-overview/' },

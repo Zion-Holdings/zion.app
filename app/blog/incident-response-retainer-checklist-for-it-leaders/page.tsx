@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Incident Response Retainer: checklist for IT leaders',
+    title: 'Incident Response Retainer: checklist for IT leaders | Zion Tech Group',
     description: 'Incident Response Retainer: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-checklist-for-it-leaders/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Incident Response Retainer: checklist for IT leaders',
+    title: 'Incident Response Retainer: checklist for IT leaders | Zion Tech Group',
     description: 'Incident Response Retainer: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/incident-response-retainer-checklist-for-it-leaders/' },

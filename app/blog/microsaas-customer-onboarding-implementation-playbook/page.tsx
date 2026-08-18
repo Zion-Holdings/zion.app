@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS Customer Onboarding: implementation playbook',
+    title: 'MicroSaaS Customer Onboarding: implementation playbook | Zion Tech Group',
     description: 'MicroSaaS Customer Onboarding: implementation playbook',
     url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-implementation-playbook/',
     type: 'article',

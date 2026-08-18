@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS HR Recruitment: common mistakes',
+    title: 'MicroSaaS HR Recruitment: common mistakes | Zion Tech Group',
     description: 'MicroSaaS HR Recruitment: common mistakes',
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-common-mistakes/',
     type: 'article',

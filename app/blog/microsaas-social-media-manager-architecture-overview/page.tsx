@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS Social Media Manager: architecture overview',
+    title: 'MicroSaaS Social Media Manager: architecture overview | Zion Tech Group',
     description: 'MicroSaaS Social Media Manager: architecture overview',
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-architecture-overview/',
     type: 'article',

@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Accessibility Compliance: implementation playbook',
+    title: 'Accessibility Compliance: implementation playbook | Zion Tech Group',
     description: 'Accessibility Compliance: implementation playbook',
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-implementation-playbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Accessibility Compliance: implementation playbook',
+    title: 'Accessibility Compliance: implementation playbook | Zion Tech Group',
     description: 'Accessibility Compliance: implementation playbook',
   },
   alternates: { canonical: '/blog/accessibility-compliance-implementation-playbook/' },

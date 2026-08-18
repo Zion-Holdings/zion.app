@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Observability: deployment patterns',
+    title: 'AI Observability: deployment patterns | Zion Tech Group',
     description: 'AI Observability: deployment patterns',
     url: 'https://ziontechgroup.com/blog/ai-observability-deployment-patterns/',
     type: 'article',

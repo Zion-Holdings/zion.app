@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GraphQL Federation Platform',
+    title: 'GraphQL Federation Platform | Zion Tech Group',
     description: 'GraphQL Federation Platform',
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GraphQL Federation Platform',
+    title: 'GraphQL Federation Platform | Zion Tech Group',
     description: 'GraphQL Federation Platform',
   },
   alternates: { canonical: '/blog/graphql-federation-platform-2026/' },

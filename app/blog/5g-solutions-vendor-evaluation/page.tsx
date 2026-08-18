@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: '5G Solutions: vendor evaluation',
+    title: '5G Solutions: vendor evaluation | Zion Tech Group',
     description: '5G Solutions: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/5g-solutions-vendor-evaluation/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '5G Solutions: vendor evaluation',
+    title: '5G Solutions: vendor evaluation | Zion Tech Group',
     description: '5G Solutions: vendor evaluation',
   },
   alternates: { canonical: '/blog/5g-solutions-vendor-evaluation/' },

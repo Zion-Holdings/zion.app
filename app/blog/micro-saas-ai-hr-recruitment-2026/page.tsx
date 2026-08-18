@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS HR Recruitment',
+    title: 'MicroSaaS HR Recruitment | Zion Tech Group',
     description: 'MicroSaaS HR Recruitment',
     url: 'https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MicroSaaS HR Recruitment',
+    title: 'MicroSaaS HR Recruitment | Zion Tech Group',
     description: 'MicroSaaS HR Recruitment',
   },
   alternates: { canonical: '/blog/micro-saas-ai-hr-recruitment-2026/' },

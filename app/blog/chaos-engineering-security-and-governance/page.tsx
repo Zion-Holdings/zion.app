@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Chaos Engineering: security and governance',
+    title: 'Chaos Engineering: security and governance | Zion Tech Group',
     description: 'Chaos Engineering: security and governance',
     url: 'https://ziontechgroup.com/blog/chaos-engineering-security-and-governance/',
     type: 'article',

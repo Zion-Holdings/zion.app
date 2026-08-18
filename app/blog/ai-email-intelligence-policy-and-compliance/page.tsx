@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Email Intelligence: policy and compliance',
+    title: 'AI Email Intelligence: policy and compliance | Zion Tech Group',
     description: 'AI Email Intelligence: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-policy-and-compliance/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Email Intelligence: policy and compliance',
+    title: 'AI Email Intelligence: policy and compliance | Zion Tech Group',
     description: 'AI Email Intelligence: policy and compliance',
   },
   alternates: { canonical: '/blog/ai-email-intelligence-policy-and-compliance/' },

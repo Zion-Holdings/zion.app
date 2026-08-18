@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Migration Services: automation roadmap',
+    title: 'Cloud Migration Services: automation roadmap | Zion Tech Group',
     description: 'Cloud Migration Services: automation roadmap',
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-automation-roadmap/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cloud Migration Services: automation roadmap',
+    title: 'Cloud Migration Services: automation roadmap | Zion Tech Group',
     description: 'Cloud Migration Services: automation roadmap',
   },
   alternates: { canonical: '/blog/cloud-migration-services-automation-roadmap/' },

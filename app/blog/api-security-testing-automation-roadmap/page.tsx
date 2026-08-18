@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Security Testing: automation roadmap',
+    title: 'API Security Testing: automation roadmap | Zion Tech Group',
     description: 'API Security Testing: automation roadmap',
     url: 'https://ziontechgroup.com/blog/api-security-testing-automation-roadmap/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Security Testing: automation roadmap',
+    title: 'API Security Testing: automation roadmap | Zion Tech Group',
     description: 'API Security Testing: automation roadmap',
   },
   alternates: { canonical: '/blog/api-security-testing-automation-roadmap/' },

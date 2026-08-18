@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Chaos Engineering: starter template',
+    title: 'Chaos Engineering: starter template | Zion Tech Group',
     description: 'Chaos Engineering: starter template',
     url: 'https://ziontechgroup.com/blog/chaos-engineering-starter-template/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chaos Engineering: starter template',
+    title: 'Chaos Engineering: starter template | Zion Tech Group',
     description: 'Chaos Engineering: starter template',
   },
   alternates: { canonical: '/blog/chaos-engineering-starter-template/' },

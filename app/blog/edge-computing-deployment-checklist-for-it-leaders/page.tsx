@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Edge Computing Deployment: checklist for IT leaders',
+    title: 'Edge Computing Deployment: checklist for IT leaders | Zion Tech Group',
     description: 'Edge Computing Deployment: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-checklist-for-it-leaders/',
     type: 'article',

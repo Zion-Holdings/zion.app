@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Development Acceleration: starter template',
+    title: 'AI Development Acceleration: starter template | Zion Tech Group',
     description: 'AI Development Acceleration: starter template',
     url: 'https://ziontechgroup.com/blog/ai-development-acceleration-starter-template/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Development Acceleration: starter template',
+    title: 'AI Development Acceleration: starter template | Zion Tech Group',
     description: 'AI Development Acceleration: starter template',
   },
   alternates: { canonical: '/blog/ai-development-acceleration-starter-template/' },

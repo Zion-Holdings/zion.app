@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'GenAI DevOps CI/CD: deployment patterns',
+    title: 'GenAI DevOps CI/CD: deployment patterns | Zion Tech Group',
     description: 'GenAI DevOps CI/CD: deployment patterns',
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-deployment-patterns/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GenAI DevOps CI/CD: deployment patterns',
+    title: 'GenAI DevOps CI/CD: deployment patterns | Zion Tech Group',
     description: 'GenAI DevOps CI/CD: deployment patterns',
   },
   alternates: { canonical: '/blog/genai-devops-cicd-deployment-patterns/' },

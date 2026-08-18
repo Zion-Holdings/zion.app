@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Smart Contract Audit: ROI and cost model',
+    title: 'Smart Contract Audit: ROI and cost model | Zion Tech Group',
     description: 'Smart Contract Audit: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-roi-and-cost-model/',
     type: 'article',

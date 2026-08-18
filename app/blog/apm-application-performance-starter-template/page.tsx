@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'APM Application Performance: starter template',
+    title: 'APM Application Performance: starter template | Zion Tech Group',
     description: 'APM Application Performance: starter template',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-starter-template/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'APM Application Performance: starter template',
+    title: 'APM Application Performance: starter template | Zion Tech Group',
     description: 'APM Application Performance: starter template',
   },
   alternates: { canonical: '/blog/apm-application-performance-starter-template/' },

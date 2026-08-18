@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS Expense Tracker: operations handbook',
+    title: 'MicroSaaS Expense Tracker: operations handbook | Zion Tech Group',
     description: 'MicroSaaS Expense Tracker: operations handbook',
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-operations-handbook/',
     type: 'article',

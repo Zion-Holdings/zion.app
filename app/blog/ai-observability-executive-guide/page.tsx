@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Observability: executive guide',
+    title: 'AI Observability: executive guide | Zion Tech Group',
     description: 'AI Observability: executive guide',
     url: 'https://ziontechgroup.com/blog/ai-observability-executive-guide/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Observability: executive guide',
+    title: 'AI Observability: executive guide | Zion Tech Group',
     description: 'AI Observability: executive guide',
   },
   alternates: { canonical: '/blog/ai-observability-executive-guide/' },

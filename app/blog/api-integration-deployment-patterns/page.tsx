@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Integration: deployment patterns',
+    title: 'API Integration: deployment patterns | Zion Tech Group',
     description: 'API Integration: deployment patterns',
     url: 'https://ziontechgroup.com/blog/api-integration-deployment-patterns/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Integration: deployment patterns',
+    title: 'API Integration: deployment patterns | Zion Tech Group',
     description: 'API Integration: deployment patterns',
   },
   alternates: { canonical: '/blog/api-integration-deployment-patterns/' },

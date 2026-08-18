@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Orchestration Layer: policy and compliance',
+    title: 'API Orchestration Layer: policy and compliance | Zion Tech Group',
     description: 'API Orchestration Layer: policy and compliance',
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-policy-and-compliance/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Orchestration Layer: policy and compliance',
+    title: 'API Orchestration Layer: policy and compliance | Zion Tech Group',
     description: 'API Orchestration Layer: policy and compliance',
   },
   alternates: { canonical: '/blog/api-orchestration-layer-policy-and-compliance/' },

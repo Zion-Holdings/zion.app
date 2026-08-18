@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'ETL Pipeline Optimization: evaluation framework',
+    title: 'ETL Pipeline Optimization: evaluation framework | Zion Tech Group',
     description: 'ETL Pipeline Optimization: evaluation framework',
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-evaluation-framework/',
     type: 'article',

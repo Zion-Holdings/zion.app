@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'ETL Pipeline Optimization: policy and compliance',
+    title: 'ETL Pipeline Optimization: policy and compliance | Zion Tech Group',
     description: 'ETL Pipeline Optimization: policy and compliance',
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-policy-and-compliance/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ETL Pipeline Optimization: policy and compliance',
+    title: 'ETL Pipeline Optimization: policy and compliance | Zion Tech Group',
     description: 'ETL Pipeline Optimization: policy and compliance',
   },
   alternates: { canonical: '/blog/etl-pipeline-optimization-policy-and-compliance/' },

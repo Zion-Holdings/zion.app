@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Migration Services: case study',
+    title: 'Cloud Migration Services: case study | Zion Tech Group',
     description: 'Cloud Migration Services: case study',
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cloud Migration Services: case study',
+    title: 'Cloud Migration Services: case study | Zion Tech Group',
     description: 'Cloud Migration Services: case study',
   },
   alternates: { canonical: '/blog/cloud-migration-services-case-study/' },

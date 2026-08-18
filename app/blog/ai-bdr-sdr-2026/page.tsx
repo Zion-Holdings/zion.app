@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI BDR SDR',
+    title: 'AI BDR SDR | Zion Tech Group',
     description: 'AI BDR SDR',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI BDR SDR',
+    title: 'AI BDR SDR | Zion Tech Group',
     description: 'AI BDR SDR',
   },
   alternates: { canonical: '/blog/ai-bdr-sdr-2026/' },

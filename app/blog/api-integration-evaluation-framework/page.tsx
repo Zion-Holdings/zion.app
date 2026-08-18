@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Integration: evaluation framework',
+    title: 'API Integration: evaluation framework | Zion Tech Group',
     description: 'API Integration: evaluation framework',
     url: 'https://ziontechgroup.com/blog/api-integration-evaluation-framework/',
     type: 'article',

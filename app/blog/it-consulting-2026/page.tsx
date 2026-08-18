@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'IT Consulting',
+    title: 'IT Consulting | Zion Tech Group',
     description: 'IT Consulting',
     url: 'https://ziontechgroup.com/blog/it-consulting-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IT Consulting',
+    title: 'IT Consulting | Zion Tech Group',
     description: 'IT Consulting',
   },
   alternates: { canonical: '/blog/it-consulting-2026/' },

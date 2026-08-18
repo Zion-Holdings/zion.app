@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Data Analytics Platform: implementation playbook',
+    title: 'Data Analytics Platform: implementation playbook | Zion Tech Group',
     description: 'Data Analytics Platform: implementation playbook',
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-implementation-playbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Data Analytics Platform: implementation playbook',
+    title: 'Data Analytics Platform: implementation playbook | Zion Tech Group',
     description: 'Data Analytics Platform: implementation playbook',
   },
   alternates: { canonical: '/blog/data-analytics-platform-implementation-playbook/' },

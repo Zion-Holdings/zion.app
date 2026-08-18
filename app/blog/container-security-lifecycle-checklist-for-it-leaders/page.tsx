@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Container Security Lifecycle: checklist for IT leaders',
+    title: 'Container Security Lifecycle: checklist for IT leaders | Zion Tech Group',
     description: 'Container Security Lifecycle: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-checklist-for-it-leaders/',
     type: 'article',

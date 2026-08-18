@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Brand Voice Guardian: operations handbook',
+    title: 'Brand Voice Guardian: operations handbook | Zion Tech Group',
     description: 'Brand Voice Guardian: operations handbook',
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-operations-handbook/',
     type: 'article',

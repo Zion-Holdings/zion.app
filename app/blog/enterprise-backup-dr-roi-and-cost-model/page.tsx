@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Enterprise Backup DR: ROI and cost model',
+    title: 'Enterprise Backup DR: ROI and cost model | Zion Tech Group',
     description: 'Enterprise Backup DR: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-roi-and-cost-model/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise Backup DR: ROI and cost model',
+    title: 'Enterprise Backup DR: ROI and cost model | Zion Tech Group',
     description: 'Enterprise Backup DR: ROI and cost model',
   },
   alternates: { canonical: '/blog/enterprise-backup-dr-roi-and-cost-model/' },

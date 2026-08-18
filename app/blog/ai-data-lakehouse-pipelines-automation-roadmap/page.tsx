@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Data Lakehouse Pipelines: automation roadmap',
+    title: 'AI Data Lakehouse Pipelines: automation roadmap | Zion Tech Group',
     description: 'AI Data Lakehouse Pipelines: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-automation-roadmap/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Data Lakehouse Pipelines: automation roadmap',
+    title: 'AI Data Lakehouse Pipelines: automation roadmap | Zion Tech Group',
     description: 'AI Data Lakehouse Pipelines: automation roadmap',
   },
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-automation-roadmap/' },

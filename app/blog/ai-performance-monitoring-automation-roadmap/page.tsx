@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Performance Monitoring: automation roadmap',
+    title: 'AI Performance Monitoring: automation roadmap | Zion Tech Group',
     description: 'AI Performance Monitoring: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-automation-roadmap/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Performance Monitoring: automation roadmap',
+    title: 'AI Performance Monitoring: automation roadmap | Zion Tech Group',
     description: 'AI Performance Monitoring: automation roadmap',
   },
   alternates: { canonical: '/blog/ai-performance-monitoring-automation-roadmap/' },

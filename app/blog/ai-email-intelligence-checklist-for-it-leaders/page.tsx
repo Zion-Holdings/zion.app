@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Email Intelligence: checklist for IT leaders',
+    title: 'AI Email Intelligence: checklist for IT leaders | Zion Tech Group',
     description: 'AI Email Intelligence: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-checklist-for-it-leaders/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Email Intelligence: checklist for IT leaders',
+    title: 'AI Email Intelligence: checklist for IT leaders | Zion Tech Group',
     description: 'AI Email Intelligence: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/ai-email-intelligence-checklist-for-it-leaders/' },

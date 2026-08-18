@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Smart Contract Audit',
+    title: 'Smart Contract Audit | Zion Tech Group',
     description: 'Smart Contract Audit',
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Smart Contract Audit',
+    title: 'Smart Contract Audit | Zion Tech Group',
     description: 'Smart Contract Audit',
   },
   alternates: { canonical: '/blog/smart-contract-audit-2026/' },

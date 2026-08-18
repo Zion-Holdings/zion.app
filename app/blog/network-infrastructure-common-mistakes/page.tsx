@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Network Infrastructure: common mistakes',
+    title: 'Network Infrastructure: common mistakes | Zion Tech Group',
     description: 'Network Infrastructure: common mistakes',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-common-mistakes/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Network Infrastructure: common mistakes',
+    title: 'Network Infrastructure: common mistakes | Zion Tech Group',
     description: 'Network Infrastructure: common mistakes',
   },
   alternates: { canonical: '/blog/network-infrastructure-common-mistakes/' },

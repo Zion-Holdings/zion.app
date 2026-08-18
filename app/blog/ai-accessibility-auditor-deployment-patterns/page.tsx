@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Accessibility Auditor: deployment patterns',
+    title: 'AI Accessibility Auditor: deployment patterns | Zion Tech Group',
     description: 'AI Accessibility Auditor: deployment patterns',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-deployment-patterns/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Accessibility Auditor: deployment patterns',
+    title: 'AI Accessibility Auditor: deployment patterns | Zion Tech Group',
     description: 'AI Accessibility Auditor: deployment patterns',
   },
   alternates: { canonical: '/blog/ai-accessibility-auditor-deployment-patterns/' },

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'IT Consulting: common mistakes',
+    title: 'IT Consulting: common mistakes | Zion Tech Group',
     description: 'IT Consulting: common mistakes',
     url: 'https://ziontechgroup.com/blog/it-consulting-common-mistakes/',
     type: 'article',

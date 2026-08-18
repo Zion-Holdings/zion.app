@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Endpoint Management: implementation playbook',
+    title: 'Endpoint Management: implementation playbook | Zion Tech Group',
     description: 'Endpoint Management: implementation playbook',
     url: 'https://ziontechgroup.com/blog/endpoint-management-implementation-playbook/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Endpoint Management: implementation playbook',
+    title: 'Endpoint Management: implementation playbook | Zion Tech Group',
     description: 'Endpoint Management: implementation playbook',
   },
   alternates: { canonical: '/blog/endpoint-management-implementation-playbook/' },

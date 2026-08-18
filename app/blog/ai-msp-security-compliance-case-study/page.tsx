@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI MSP Security Compliance: case study',
+    title: 'AI MSP Security Compliance: case study | Zion Tech Group',
     description: 'AI MSP Security Compliance: case study',
     url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-case-study/',
     type: 'article',

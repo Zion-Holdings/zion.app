@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Agent Tool Builder',
+    title: 'AI Agent Tool Builder | Zion Tech Group',
     description: 'AI Agent Tool Builder',
     url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Agent Tool Builder',
+    title: 'AI Agent Tool Builder | Zion Tech Group',
     description: 'AI Agent Tool Builder',
   },
   alternates: { canonical: '/blog/ai-agent-tool-builder-2026/' },

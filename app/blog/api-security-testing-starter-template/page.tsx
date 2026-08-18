@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Security Testing: starter template',
+    title: 'API Security Testing: starter template | Zion Tech Group',
     description: 'API Security Testing: starter template',
     url: 'https://ziontechgroup.com/blog/api-security-testing-starter-template/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Security Testing: starter template',
+    title: 'API Security Testing: starter template | Zion Tech Group',
     description: 'API Security Testing: starter template',
   },
   alternates: { canonical: '/blog/api-security-testing-starter-template/' },

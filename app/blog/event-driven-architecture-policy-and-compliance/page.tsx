@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Event Driven Architecture: policy and compliance',
+    title: 'Event Driven Architecture: policy and compliance | Zion Tech Group',
     description: 'Event Driven Architecture: policy and compliance',
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-policy-and-compliance/',
     type: 'article',

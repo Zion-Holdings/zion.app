@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Endpoint Management',
+    title: 'Endpoint Management | Zion Tech Group',
     description: 'Endpoint Management',
     url: 'https://ziontechgroup.com/blog/endpoint-management-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Endpoint Management',
+    title: 'Endpoint Management | Zion Tech Group',
     description: 'Endpoint Management',
   },
   alternates: { canonical: '/blog/endpoint-management-2026/' },

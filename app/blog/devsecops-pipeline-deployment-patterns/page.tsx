@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'DevSecOps Pipeline: deployment patterns',
+    title: 'DevSecOps Pipeline: deployment patterns | Zion Tech Group',
     description: 'DevSecOps Pipeline: deployment patterns',
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-deployment-patterns/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DevSecOps Pipeline: deployment patterns',
+    title: 'DevSecOps Pipeline: deployment patterns | Zion Tech Group',
     description: 'DevSecOps Pipeline: deployment patterns',
   },
   alternates: { canonical: '/blog/devsecops-pipeline-deployment-patterns/' },

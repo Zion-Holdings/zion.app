@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Container Security Lifecycle: case study',
+    title: 'Container Security Lifecycle: case study | Zion Tech Group',
     description: 'Container Security Lifecycle: case study',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Container Security Lifecycle: case study',
+    title: 'Container Security Lifecycle: case study | Zion Tech Group',
     description: 'Container Security Lifecycle: case study',
   },
   alternates: { canonical: '/blog/container-security-lifecycle-case-study/' },

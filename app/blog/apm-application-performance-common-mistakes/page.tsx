@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'APM Application Performance: common mistakes',
+    title: 'APM Application Performance: common mistakes | Zion Tech Group',
     description: 'APM Application Performance: common mistakes',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-common-mistakes/',
     type: 'article',

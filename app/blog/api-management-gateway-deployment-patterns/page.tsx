@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Management Gateway: deployment patterns',
+    title: 'API Management Gateway: deployment patterns | Zion Tech Group',
     description: 'API Management Gateway: deployment patterns',
     url: 'https://ziontechgroup.com/blog/api-management-gateway-deployment-patterns/',
     type: 'article',

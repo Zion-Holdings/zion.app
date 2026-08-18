@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'MicroSaaS Customer Onboarding: common mistakes',
+    title: 'MicroSaaS Customer Onboarding: common mistakes | Zion Tech Group',
     description: 'MicroSaaS Customer Onboarding: common mistakes',
     url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-common-mistakes/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MicroSaaS Customer Onboarding: common mistakes',
+    title: 'MicroSaaS Customer Onboarding: common mistakes | Zion Tech Group',
     description: 'MicroSaaS Customer Onboarding: common mistakes',
   },
   alternates: { canonical: '/blog/microsaas-customer-onboarding-common-mistakes/' },

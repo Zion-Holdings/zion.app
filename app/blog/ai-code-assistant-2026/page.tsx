@@ -5,14 +5,14 @@ export const metadata: Metadata = {
   title: 'AI Code Assistant 2026 | Zion Tech Group',
   description: 'Code assistant patterns for secure, auditable developer augmentation.',
   openGraph: {
-    title: 'AI Code Assistant 2026',
+    title: 'AI Code Assistant 2026 | Zion Tech Group',
     description: 'Code assistant patterns for secure, auditable developer augmentation.',
     url: 'https://ziontechgroup.com/blog/ai-code-assistant-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Code Assistant 2026',
+    title: 'AI Code Assistant 2026 | Zion Tech Group',
     description: 'Code assistant patterns for secure, auditable developer augmentation.',
   },
   alternates: { canonical: '/blog/ai-code-assistant-2026/' },

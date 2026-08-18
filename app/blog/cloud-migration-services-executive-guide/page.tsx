@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Migration Services: executive guide',
+    title: 'Cloud Migration Services: executive guide | Zion Tech Group',
     description: 'Cloud Migration Services: executive guide',
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-executive-guide/',
     type: 'article',

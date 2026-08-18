@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Event Driven Architecture: vendor evaluation',
+    title: 'Event Driven Architecture: vendor evaluation | Zion Tech Group',
     description: 'Event Driven Architecture: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-vendor-evaluation/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Event Driven Architecture: vendor evaluation',
+    title: 'Event Driven Architecture: vendor evaluation | Zion Tech Group',
     description: 'Event Driven Architecture: vendor evaluation',
   },
   alternates: { canonical: '/blog/event-driven-architecture-vendor-evaluation/' },

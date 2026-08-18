@@ -5,14 +5,14 @@ export const metadata: Metadata = {
   title: 'AI Chatbot Platform 2026 | Zion Tech Group',
   description: 'Enterprise chatbot platforms with handoff, context, and governance.',
   openGraph: {
-    title: 'AI Chatbot Platform 2026',
+    title: 'AI Chatbot Platform 2026 | Zion Tech Group',
     description: 'Enterprise chatbot platforms with handoff, context, and governance.',
     url: 'https://ziontechgroup.com/blog/ai-chatbot-platform-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Chatbot Platform 2026',
+    title: 'AI Chatbot Platform 2026 | Zion Tech Group',
     description: 'Enterprise chatbot platforms with handoff, context, and governance.',
   },
   alternates: { canonical: '/blog/ai-chatbot-platform-2026/' },

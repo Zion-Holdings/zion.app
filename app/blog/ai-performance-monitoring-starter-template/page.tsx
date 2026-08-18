@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Performance Monitoring: starter template',
+    title: 'AI Performance Monitoring: starter template | Zion Tech Group',
     description: 'AI Performance Monitoring: starter template',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-starter-template/',
     type: 'article',

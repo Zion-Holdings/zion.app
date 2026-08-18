@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Managed IT Services: starter template',
+    title: 'Managed IT Services: starter template | Zion Tech Group',
     description: 'Managed IT Services: starter template',
     url: 'https://ziontechgroup.com/blog/managed-it-services-starter-template/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Managed IT Services: starter template',
+    title: 'Managed IT Services: starter template | Zion Tech Group',
     description: 'Managed IT Services: starter template',
   },
   alternates: { canonical: '/blog/managed-it-services-starter-template/' },

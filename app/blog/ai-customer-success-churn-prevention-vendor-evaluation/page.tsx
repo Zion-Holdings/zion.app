@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Customer Success Churn Prevention: vendor evaluation',
+    title: 'AI Customer Success Churn Prevention: vendor evaluation | Zion Tech Group',
     description: 'AI Customer Success Churn Prevention: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-vendor-evaluation/',
     type: 'article',

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Performance Testing: architecture overview',
+    title: 'API Performance Testing: architecture overview | Zion Tech Group',
     description: 'API Performance Testing: architecture overview',
     url: 'https://ziontechgroup.com/blog/api-performance-testing-architecture-overview/',
     type: 'article',

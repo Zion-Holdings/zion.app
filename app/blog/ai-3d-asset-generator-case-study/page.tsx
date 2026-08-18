@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI 3D Asset Generator: case study',
+    title: 'AI 3D Asset Generator: case study | Zion Tech Group',
     description: 'AI 3D Asset Generator: case study',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-case-study/',
     type: 'article',

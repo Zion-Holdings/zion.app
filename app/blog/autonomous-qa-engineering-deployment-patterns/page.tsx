@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Autonomous QA Engineering: deployment patterns',
+    title: 'Autonomous QA Engineering: deployment patterns | Zion Tech Group',
     description: 'Autonomous QA Engineering: deployment patterns',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-deployment-patterns/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Autonomous QA Engineering: deployment patterns',
+    title: 'Autonomous QA Engineering: deployment patterns | Zion Tech Group',
     description: 'Autonomous QA Engineering: deployment patterns',
   },
   alternates: { canonical: '/blog/autonomous-qa-engineering-deployment-patterns/' },

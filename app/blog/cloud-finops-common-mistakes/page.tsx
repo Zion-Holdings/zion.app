@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud FinOps: common mistakes',
+    title: 'Cloud FinOps: common mistakes | Zion Tech Group',
     description: 'Cloud FinOps: common mistakes',
     url: 'https://ziontechgroup.com/blog/cloud-finops-common-mistakes/',
     type: 'article',

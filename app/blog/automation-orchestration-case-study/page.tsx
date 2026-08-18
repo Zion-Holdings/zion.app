@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Automation Orchestration: case study',
+    title: 'Automation Orchestration: case study | Zion Tech Group',
     description: 'Automation Orchestration: case study',
     url: 'https://ziontechgroup.com/blog/automation-orchestration-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automation Orchestration: case study',
+    title: 'Automation Orchestration: case study | Zion Tech Group',
     description: 'Automation Orchestration: case study',
   },
   alternates: { canonical: '/blog/automation-orchestration-case-study/' },

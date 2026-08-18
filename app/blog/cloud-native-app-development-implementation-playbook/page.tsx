@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Native App Development: implementation playbook',
+    title: 'Cloud Native App Development: implementation playbook | Zion Tech Group',
     description: 'Cloud Native App Development: implementation playbook',
     url: 'https://ziontechgroup.com/blog/cloud-native-app-development-implementation-playbook/',
     type: 'article',

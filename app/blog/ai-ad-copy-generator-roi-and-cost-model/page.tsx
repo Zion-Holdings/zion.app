@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Ad Copy Generator: ROI and cost model',
+    title: 'AI Ad Copy Generator: ROI and cost model | Zion Tech Group',
     description: 'AI Ad Copy Generator: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-roi-and-cost-model/',
     type: 'article',

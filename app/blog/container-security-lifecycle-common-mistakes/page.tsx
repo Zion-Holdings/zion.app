@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Container Security Lifecycle: common mistakes',
+    title: 'Container Security Lifecycle: common mistakes | Zion Tech Group',
     description: 'Container Security Lifecycle: common mistakes',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-common-mistakes/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Container Security Lifecycle: common mistakes',
+    title: 'Container Security Lifecycle: common mistakes | Zion Tech Group',
     description: 'Container Security Lifecycle: common mistakes',
   },
   alternates: { canonical: '/blog/container-security-lifecycle-common-mistakes/' },

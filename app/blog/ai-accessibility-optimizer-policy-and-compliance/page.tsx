@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'AI Accessibility Optimizer: policy and compliance',
+    title: 'AI Accessibility Optimizer: policy and compliance | Zion Tech Group',
     description: 'AI Accessibility Optimizer: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-policy-and-compliance/',
     type: 'article',

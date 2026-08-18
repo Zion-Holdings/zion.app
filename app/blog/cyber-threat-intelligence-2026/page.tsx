@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cyber Threat Intelligence',
+    title: 'Cyber Threat Intelligence | Zion Tech Group',
     description: 'Cyber Threat Intelligence',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-2026/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cyber Threat Intelligence',
+    title: 'Cyber Threat Intelligence | Zion Tech Group',
     description: 'Cyber Threat Intelligence',
   },
   alternates: { canonical: '/blog/cyber-threat-intelligence-2026/' },

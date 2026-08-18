@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Cost Optimization: case study',
+    title: 'Cloud Cost Optimization: case study | Zion Tech Group',
     description: 'Cloud Cost Optimization: case study',
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-case-study/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cloud Cost Optimization: case study',
+    title: 'Cloud Cost Optimization: case study | Zion Tech Group',
     description: 'Cloud Cost Optimization: case study',
   },
   alternates: { canonical: '/blog/cloud-cost-optimization-case-study/' },

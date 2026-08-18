@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'API Security Testing: deployment patterns',
+    title: 'API Security Testing: deployment patterns | Zion Tech Group',
     description: 'API Security Testing: deployment patterns',
     url: 'https://ziontechgroup.com/blog/api-security-testing-deployment-patterns/',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Security Testing: deployment patterns',
+    title: 'API Security Testing: deployment patterns | Zion Tech Group',
     description: 'API Security Testing: deployment patterns',
   },
   alternates: { canonical: '/blog/api-security-testing-deployment-patterns/' },
