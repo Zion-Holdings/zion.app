@@ -5,8 +5,11 @@ on:
     branches: ['main']
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.2.2
@@ -14,51 +17,16 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'package-lock.json'
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-      - name: Build static export
+      - name: Install Dependencies
+        run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+      - name: Build Static Export
         env:
           NEXT_DISABLE_TURBOPACK: '1'
-          NODE_OPTIONS: '--max-old-space-size=8192'
         run: npm run build
-      - name: Verify export artifact
-        run: |
-          if [ ! -d out ]; then
-            echo "::error::Build did not produce out/ directory"
-            exit 1
-          fi
-          if [ -z "$(ls -A out)" ]; then
-            echo "::error::out/ directory is empty"
-            exit 1
-          fi
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./out
-      - name: Prepare Pages support files
-        run: |
-          mkdir -p out/_support
-          if [ -d docs ]; then
-            cp -R docs/. out/_support/
-          fi
-          if [ -d public ]; then
-            cp -R public/. out/
-          fi
-          if [ -f sitemap.xml ]; then
-            cp sitemap.xml out/ && cp sitemap.xml public/ && cp sitemap.xml docs/
-          fi
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-22.04
-    needs: build
-    permissions:
-      id-token: write
-      pages: write
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          cname: ziontechgroup.com
+          exclude_assets: '.github,docs,scripts'
