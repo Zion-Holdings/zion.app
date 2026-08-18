@@ -8,15 +8,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Academy | Zion Tech Group',
     description: 'Technical enablement and learning for AI, IT, and automation teams.',
-    url: 'https://ziontechgroup.com/academy/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/academy/',
+    siteName: 'Zion Tech Group',
     type: 'website',
-  },  twitter: {
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Academy | Zion Tech Group',
     description: 'Technical enablement and learning for AI, IT, and automation teams.',
     siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/academy/' },
+  },
+  alternates: { canonical: '/academy/' },
 };
 
 export default function AcademyPage() {
@@ -49,6 +51,21 @@ export default function AcademyPage() {
           <p className="text-slate-400 text-sm">Production AI, evaluation, and governance.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Why learning with Zion</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Curriculum aligned to production AI and automation stacks, not theory alone.</li>
+          <li>Hands-on labs built on real client environments and compliance constraints.</li>
+          <li>Flexible formats: workshops, async paths, and team coaching.</li>
+          <li>Outcome tracking tied to adoption metrics and business results.</li>
+          <li>Regular content refresh from live project experience.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Start learning</a>
+        </div>
       </div>
     </StandardPage>
   );

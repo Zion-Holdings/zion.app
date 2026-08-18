@@ -7,15 +7,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Services Index | Zion Tech Group',
     description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',
-    url: 'https://ziontechgroup.com/ai-services/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/ai-services/',
+    siteName: 'Zion Tech Group',
     type: 'website',
-  },  twitter: {
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Services Index | Zion Tech Group',
     description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',
     siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/ai-services/' },
+  },
+  alternates: { canonical: '/ai-services/' },
 };
 
 export default function AiServicesIndexPage() {
@@ -49,6 +51,20 @@ export default function AiServicesIndexPage() {
       <div className="flex flex-col sm:flex-row gap-3 mt-10">
         <a href="/contact/" className="btn-primary text-center">Talk to an Engineer</a>
         <a href="/services/" className="btn-secondary text-center">All Services</a>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">How we deliver AI</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Use-case selection tied to revenue, cost, or risk reduction.</li>
+          <li>Automation with guardrails, observability, and review loops.</li>
+          <li>Production support, monitoring, and continuous improvement.</li>
+          <li>Executive-ready reporting on adoption, value, and ROI.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
+        </div>
       </div>
     </StandardPage>
   );
