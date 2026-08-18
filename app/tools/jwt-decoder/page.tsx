@@ -2,8 +2,8 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'JWT Decoder — Zion Tech Group',
-    description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',
-    openGraph: {
+  description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',
+  openGraph: {
     title: 'JWT Decoder — Zion Tech Group',
     description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',
     url: 'https://ziontechgroup.com/tools/jwt-decoder/',
@@ -13,9 +13,9 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'JWT Decoder — Zion Tech Group',
     description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',
-    alternates: { canonical: '/tools/jwt-decoder/' },
-    robots: { index: true,
-    follow: true },
+  },
+  alternates: { canonical: '/tools/jwt-decoder/' },
+  robots: { index: true, follow: true },
 };
 
 export default function JwtDecoderPage() {

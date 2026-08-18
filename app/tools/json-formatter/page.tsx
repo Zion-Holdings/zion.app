@@ -2,8 +2,8 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'JSON Formatter — Zion Tech Group',
-    description: 'Format, minify, and validate JSON quickly. Paste raw JSON and get clean, structured output with error detection.',
-    openGraph: {
+  description: 'Format, minify, and validate JSON quickly. Paste raw JSON and get clean, structured output with error detection.',
+  openGraph: {
     title: 'JSON Formatter — Zion Tech Group',
     description: 'Format, minify, and validate JSON quickly. Paste raw JSON and get clean, structured output with error detection.',
     url: 'https://ziontechgroup.com/tools/json-formatter/',
@@ -13,9 +13,9 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'JSON Formatter — Zion Tech Group',
     description: 'Format, minify, and validate JSON quickly. Paste raw JSON and get clean, structured output with error detection.',
-    alternates: { canonical: '/tools/json-formatter/' },
-    robots: { index: true,
-    follow: true },
+  },
+  alternates: { canonical: '/tools/json-formatter/' },
+  robots: { index: true, follow: true },
 };
 
 export default function JsonFormatterPage() {

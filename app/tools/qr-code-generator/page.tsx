@@ -2,8 +2,8 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'QR Code Generator — Zion Tech Group',
-    description: 'Generate QR codes for URLs, text, and contact data. Download PNGs for print and web use.',
-    openGraph: {
+  description: 'Generate QR codes for URLs, text, and contact data. Download PNGs for print and web use.',
+  openGraph: {
     title: 'QR Code Generator — Zion Tech Group',
     description: 'Generate QR codes for URLs, text, and contact data. Download PNGs for print and web use.',
     url: 'https://ziontechgroup.com/tools/qr-code-generator/',
@@ -13,9 +13,9 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'QR Code Generator — Zion Tech Group',
     description: 'Generate QR codes for URLs, text, and contact data. Download PNGs for print and web use.',
-    alternates: { canonical: '/tools/qr-code-generator/' },
-    robots: { index: true,
-    follow: true },
+  },
+  alternates: { canonical: '/tools/qr-code-generator/' },
+  robots: { index: true, follow: true },
 };
 
 export default function QrCodeGeneratorPage() {
