@@ -180,6 +180,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">HTTP Status Codes</h3>
           <p className="text-slate-400 text-sm">Browse HTTP status codes.</p>
         </a>
+        <a href="/tools/base64-image/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Base64 Image Encoder</h3>
+          <p className="text-slate-400 text-sm">Encode images to Base64 data URIs.</p>
+        </a>
+        <a href="/tools/text-slug/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text to Slug</h3>
+          <p className="text-slate-400 text-sm">Convert text to URL-friendly slugs.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
