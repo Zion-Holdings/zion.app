@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Configurator | Zion Tech Group',
-  description: 'Start a configurator-style intake for Zion Tech Group services.',
+  description: 'Start a configurator-style intake for Zion Tech Group services and get a short engagement plan.',
   openGraph: {
     title: 'Configurator | Zion Tech Group',
     description: 'Tell us your constraints and get a short engagement plan.',
@@ -37,6 +37,7 @@ export default function ConfiguratorPage() {
         <p className="text-slate-300 text-lg leading-relaxed mb-8">
           Use this intake to scope cloud, security, data, automation, or AI work. We’ll return a short plan with recommended services, milestones, and timeline.
         </p>
+
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
             <h3 className="text-white font-semibold mb-2">Goal</h3>
@@ -51,6 +52,12 @@ export default function ConfiguratorPage() {
             <p className="text-slate-400 text-sm">Select advisory, co-development, or fully managed delivery.</p>
           </div>
         </div>
+
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 mt-6">
+          <h3 className="text-white font-semibold mb-2">What happens next</h3>
+          <p className="text-slate-400 text-sm">After submission, we review constraints, propose a short plan, and schedule a follow-up to align on scope and timeline.</p>
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
           <Link href="/contact/" className="btn-primary text-center">Start intake</Link>
           <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
