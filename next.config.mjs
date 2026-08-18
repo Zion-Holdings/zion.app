@@ -6,10 +6,6 @@ const nextConfig = {
     unoptimized: true,
   },
   staticPageGenerationTimeout: 120,
-  async redirects() {
-    const mod = await import('./app/redirects.js');
-    return mod.default?.() || [];
-  },
 };
 
 export default nextConfig;
