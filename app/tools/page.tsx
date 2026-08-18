@@ -168,6 +168,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">JWT Generator</h3>
           <p className="text-slate-400 text-sm">Build signed JWTs for testing.</p>
         </a>
+        <a href="/tools/loan-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Loan Calculator</h3>
+          <p className="text-slate-400 text-sm">Free loan and mortgage payment calculator — compute monthly payment, total interest, to...</p>
+        </a>
         <a href="/tools/lorem-ipsum/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Lorem Ipsum Generator</h3>
           <p className="text-slate-400 text-sm">Generate placeholder text.</p>

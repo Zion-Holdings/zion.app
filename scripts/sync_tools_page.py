@@ -88,6 +88,14 @@ CARD = (
     "        </a>"
 )
 
+SITEMAP = os.path.join(REPO, "public", "sitemap.xml")
+SITE = "https://ziontechgroup.com"
+# Match a tool <url> element and only the whitespace that follows it, so removal
+# never eats the newline belonging to the previous line (which would join entries).
+TOOL_LOC_RE = re.compile(
+    r"[ \t]*<url><loc>" + re.escape(SITE) + r"/tools/[a-z0-9-]+/</loc>.*?</url>[ \t]*\n?"
+)
+
 
 def esc(text):
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -114,6 +122,30 @@ def discover():
     return tools
 
 
+def sync_sitemap(tools):
+    """Ensure public/sitemap.xml has exactly one <url> entry per deployed tool."""
+    if not os.path.isfile(SITEMAP):
+        print("no public/sitemap.xml; skipping sitemap sync")
+        return False
+    src = open(SITEMAP, encoding="utf-8").read()
+
+    # Drop every existing /tools/<slug>/ entry, then re-insert the full set.
+    stripped = TOOL_LOC_RE.sub("", src)
+    block = "".join(
+        f"  <url><loc>{SITE}/tools/{s}/</loc>"
+        f"<changefreq>monthly</changefreq><priority>0.7</priority></url>\n"
+        for s, _, _ in tools
+    )
+    if "</urlset>" not in stripped:
+        print("sitemap.xml missing </urlset>; skipping sitemap sync")
+        return False
+    new = stripped.replace("</urlset>", block + "</urlset>", 1)
+    if new == src:
+        return False
+    open(SITEMAP, "w", encoding="utf-8").write(new)
+    return True
+
+
 def main():
     tools = discover()
     grid = "\n".join(
@@ -131,11 +163,20 @@ def main():
         sys.exit("could not locate tool grid in app/tools/page.tsx")
 
     new = pattern.sub(lambda m: m.group(1) + grid + m.group(3), src, count=1)
-    if new == src:
+    page_changed = new != src
+    if page_changed:
+        open(PAGE, "w", encoding="utf-8").write(new)
+
+    sitemap_changed = sync_sitemap(tools)
+
+    if page_changed:
+        print(f"synced {len(tools)} tool cards into app/tools/page.tsx")
+    else:
         print(f"tools page already in sync ({len(tools)} tools)")
-        return
-    open(PAGE, "w", encoding="utf-8").write(new)
-    print(f"synced {len(tools)} tool cards into app/tools/page.tsx")
+    if sitemap_changed:
+        print(f"synced {len(tools)} tool URLs into public/sitemap.xml")
+    else:
+        print("sitemap already in sync")
 
 
 if __name__ == "__main__":
