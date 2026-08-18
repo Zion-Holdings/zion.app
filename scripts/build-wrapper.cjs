@@ -37,18 +37,14 @@ function safeStat(p) {
 }
 
 function nextCandidates() {
-  // Next.js 15+: Turbopack is default, --webpack flag removed
-  // Next.js 16+: --webpack flag available to force webpack over Turbopack
-  // Binary path: Next.js 15 moved from next/bin/next.js to next/dist/bin/next (no .js)
+  // Next.js 15+: Turbopack is default, --webpack CLI flag removed
+  // next.config.js has a webpack:() callback to force webpack compilation
+  // Binary path: Next.js 15 moved from next/bin/next.js to next/dist/bin/next
   const items = [];
-  items.push({ cmd: 'npm exec -- next build --webpack', method: 'npm-exec-next-webpack' });
-  items.push({ cmd: 'npx --yes next build --webpack', method: 'npx-next-webpack' });
-  items.push({ cmd: `node "${path.join('node_modules', 'next', 'dist', 'bin', 'next')}" build --webpack`, method: 'next-bin-webpack' });
-  items.push({ cmd: `node "${path.join('node_modules', 'next', 'bin', 'next')}" build --webpack`, method: 'next-bin-old-webpack' });
-  items.push({ cmd: 'npm exec -- next build', method: 'npm-exec-next' });
-  items.push({ cmd: 'npx --yes next build', method: 'npx-next' });
   items.push({ cmd: `node "${path.join('node_modules', 'next', 'dist', 'bin', 'next')}" build`, method: 'next-bin' });
+  items.push({ cmd: 'npx --yes next build', method: 'npx-next' });
   items.push({ cmd: `node "${path.join('node_modules', 'next', 'bin', 'next')}" build`, method: 'next-bin-old' });
+  items.push({ cmd: 'npm exec -- next build', method: 'npm-exec-next' });
   return items;
 }
 
