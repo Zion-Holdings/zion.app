@@ -12,8 +12,16 @@ export const metadata: Metadata = {
 export default function PressPage() {
   return (
     <StandardPage title="Press" subtitle="Press releases, media mentions, and announcements." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Press' }]} actions={[{ label: 'Media contact', href: '/contact/', style: 'primary' }]}>
-      <div className="max-w-4xl mx-auto space-y-4 text-slate-300">
+      <div className="max-w-4xl mx-auto space-y-6 text-slate-300">
         <p>For media inquiries, contact our communications team. We share updates on product releases, client outcomes, and industry perspectives.</p>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Topics we cover</h3>
+          <p className="text-slate-400 text-sm">AI delivery, managed services, security operations, cloud modernization, and enterprise automation.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Recent updates</h3>
+          <p className="text-slate-400 text-sm">New service releases, customer case studies, and industry commentary.</p>
+        </div>
         <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact communications →</Link>
       </div>
     </StandardPage>
