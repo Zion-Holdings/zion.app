@@ -13,6 +13,11 @@ export const metadata = {
     type: 'article',
     siteName: 'Zion Tech Group',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: metadata.title,
+    description: metadata.description,
+  },
   alternates: { canonical: '/blog/network-infrastructure-executive-guide/' },
 };
 
