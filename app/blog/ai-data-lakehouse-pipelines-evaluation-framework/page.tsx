@@ -41,7 +41,6 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<div>
 <h2>Current state</h2>
 <p>Most organizations already have data, tools, and manual workflows for ai data lakehouse pipelines: evaluation framework. The missing piece is usually orchestration, clear ownership, and a repeatable operating model that can scale beyond a pilot. Understanding the current state is essential: map workflows, measure cycle times, and identify bottlenecks before proposing automation. A realistic baseline prevents unrealistic promises and helps leadership see the real gap between current state and target outcomes. Spend time in discovery before committing to a roadmap; the best automation plans come from deep operational knowledge.</p>
 

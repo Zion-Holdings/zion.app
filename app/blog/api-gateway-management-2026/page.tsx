@@ -41,7 +41,6 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<div>
 <h2>Problem definition</h2>
 <p>Teams frequently over-index on proofs of concept without production guardrails for api gateway management: monitoring, access control, incident response, and change management. Without these guardrails, promising pilots become operational liabilities that consume more time than they save. A clear problem definition separates experiments from production-ready programs by stating the exact outcome, constraints, and success criteria. Invest time in problem definition before automation; it pays back in faster delivery and fewer rework cycles. Write the problem statement in one paragraph and share it with stakeholders to align expectations before work begins.</p>
 

@@ -41,7 +41,6 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<div>
 <h2>Business context</h2>
 <p>Strong investments in api management gateway: roi and cost model reduce manual work, improve customer experience, and create faster feedback loops between operations and revenue. The best programs tie capability building to business outcomes: faster throughput, fewer preventable incidents, and clearer accountability. Leadership support increases when api management gateway: roi and cost model is framed as strategic capability rather than an experimental cost center. Focus on durable value: scalable processes, reusable integrations, and measurable outcomes that survive turnover and budget cycles. When business context is clear, funding and staffing decisions become easier because stakeholders understand the expected return.</p>
 

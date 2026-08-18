@@ -41,7 +41,6 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<div>
 <h2>Market signal</h2>
 <p>Demand is rising for durable ai observability: operations handbook capabilities rather than one-off automations. Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment. The strongest programs differentiate themselves with operational maturity, not feature breadth. Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing. Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.</p>
 
