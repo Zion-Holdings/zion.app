@@ -194,6 +194,25 @@ def main():
         check("no raw < in generated description", "<c>" not in joined, joined)
         check("ampersand escaped", "&amp;" in joined, joined)
 
+    print("--- live repo: every linked tool exists on disk (no orphan links) ---")
+    live_page = os.path.join(REPO, "app", "tools", "page.tsx")
+    live_tools = os.path.join(REPO, "public", "tools")
+    if os.path.isfile(live_page) and os.path.isdir(live_tools):
+        src = read(REPO, "app", "tools", "page.tsx")
+        linked = sorted(set(re.findall(r'href="/tools/([a-z0-9-]+)/"', src)))
+        on_disk = sorted(
+            d for d in os.listdir(live_tools)
+            if os.path.isfile(os.path.join(live_tools, d, "index.html"))
+        )
+        missing = [s for s in linked if s not in on_disk]
+        unlinked = [s for s in on_disk if s not in linked]
+        check("no card points at a nonexistent tool", not missing, "missing: %s" % missing)
+        check("every tool on disk is linked", not unlinked, "unlinked: %s" % unlinked)
+        check("at least one tool is linked", len(linked) > 0)
+    else:
+        check("live repo layout present", False,
+              "expected app/tools/page.tsx and public/tools/")
+
     total = len(_results)
     failed = [r for r in _results if not r[1]]
     print("\n%d passed, %d failed" % (total - len(failed), len(failed)))
