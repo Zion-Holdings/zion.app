@@ -29,6 +29,7 @@ const jsonLd = {
 
 export default function ExcelToJsonPage() {
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Excel To Json", "url": "https://ziontechgroup.com/tools/excel-to-json/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="Excel to JSON"
       subtitle="Convert spreadsheet rows into structured JSON without leaving your browser."

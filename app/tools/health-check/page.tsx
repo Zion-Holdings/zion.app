@@ -31,6 +31,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function HealthCheckPage() {
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Health Check", "url": "https://ziontechgroup.com/tools/health-check/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="Platform Status"
       subtitle="Use this checklist to validate service health before and after changes."

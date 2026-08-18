@@ -56,6 +56,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function ServiceComparisonPage() {
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Service Comparison", "url": "https://ziontechgroup.com/tools/service-comparison/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="Service Comparison"
       subtitle="Use this comparison to route a project faster and reduce evaluation overhead."

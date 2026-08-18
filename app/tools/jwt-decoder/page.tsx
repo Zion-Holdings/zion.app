@@ -31,6 +31,7 @@ export default function JwtDecoderPage() {
   ];
 
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Jwt Decoder", "url": "https://ziontechgroup.com/tools/jwt-decoder/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="JWT Decoder"
       subtitle="Inspect JWT header, payload, and signature details safely."

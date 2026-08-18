@@ -35,6 +35,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function PortScannerPage() {
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Port Scanner", "url": "https://ziontechgroup.com/tools/port-scanner/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="Port Scanner"
       subtitle="Use this checklist to review common exposure before hardening or auditing infrastructure."

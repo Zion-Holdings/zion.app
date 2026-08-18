@@ -42,6 +42,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function ServiceRecommenderPage() {
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Service Recommender", "url": "https://ziontechgroup.com/tools/service-recommender/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="Service Recommender"
       subtitle="Answer a few questions and get a short list of recommended services."

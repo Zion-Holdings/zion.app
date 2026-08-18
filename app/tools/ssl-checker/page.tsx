@@ -32,6 +32,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function SslCheckerPage() {
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Ssl Checker", "url": "https://ziontechgroup.com/tools/ssl-checker/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="SSL Checker"
       subtitle="Use this checklist to validate certificate trust, coverage, and configuration before review or incident response."

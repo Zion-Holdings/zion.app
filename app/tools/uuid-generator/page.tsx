@@ -31,6 +31,7 @@ export default function UuidGeneratorPage() {
   ];
 
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Uuid Generator", "url": "https://ziontechgroup.com/tools/uuid-generator/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="UUID Generator"
       subtitle="Generate UUIDs and ULIDs for keys, events, and distributed systems."

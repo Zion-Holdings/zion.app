@@ -31,6 +31,7 @@ export default function WordCounterPage() {
   ];
 
   return (
+    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Word Counter", "url": "https://ziontechgroup.com/tools/word-counter/", "applicationCategory": "DeveloperApplication"} />
     <StandardPage
       title="Word Counter"
       subtitle="Count words, characters, sentences, and paragraphs."
