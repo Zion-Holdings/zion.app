@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                 { name: 'Industry Solutions', href: '/industry-solutions/' },
                 { name: 'Pricing', href: '/pricing/' },
                 { name: 'Tools & Resources', href: '/tools/' },
-                { name: 'Service Comparison', href: '/service-comparison/' },
+                { name: 'Service Comparison', href: '/tools/service-comparison/' },
               ].map(l => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-slate-400 hover:text-purple-400 text-sm transition-colors">{l.name}</Link>

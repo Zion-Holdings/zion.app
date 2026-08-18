@@ -3,7 +3,7 @@ export default function redirects() {
     { source: '/services/:slug', destination: '/services/', permanent: true },
     { source: '/industry-solutions', destination: '/industries/', permanent: true },
     { source: '/industry-solutions/', destination: '/industries/', permanent: true },
-    { source: '/service-comparison', destination: '/service-comparison/', permanent: true },
+    { source: '/service-comparison', destination: '/tools/service-comparison/', permanent: true },
     { source: '/tools/roi-calculator', destination: '/tools/roi-calculator/', permanent: true },
     { source: '/tools/service-recommender', destination: '/tools/service-recommender/', permanent: true },
     { source: '/tools/ai-service-router', destination: '/tools/ai-service-router/', permanent: true },

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Service Comparison',
     description: 'Side-by-side service fit comparison.',
-    url: 'https://ziontechgroup.com/service-comparison/',
+    url: 'https://ziontechgroup.com/tools/service-comparison/',
     type: 'website',
   },
   alternates: { canonical: '/tools/service-comparison/' },
