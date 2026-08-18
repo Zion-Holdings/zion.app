@@ -41,6 +41,19 @@ export default function JwtDecoderPage() {
           <p className="text-slate-400 text-sm">Auth debugging, integration QA, and access-policy review.</p>
         </div>
       </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Security reminders</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Always decode tokens locally; never paste secrets into untrusted sites.</li>
+          <li>Check expiry, issuer, and audience claims before trusting tokens.</li>
+          <li>Inspect scopes and roles to catch over-permissioned access.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/tools/" className="btn-primary text-center">All tools</a>
+          <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
+        </div>
+      </div>
     </StandardPage>
   );
 }

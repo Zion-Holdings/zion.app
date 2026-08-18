@@ -51,6 +51,20 @@ export default function PartnersPage() {
           <p className="text-slate-400 text-sm">Implementation and change-management partners.</p>
         </div>
       </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Partner benefits</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Co-selling support with qualified leads and joint proposal resources.</li>
+          <li>Shared documentation and integration tooling.</li>
+          <li>Access to Zion's delivery methodology and client base.</li>
+          <li>Clear revenue and margin structures with transparent reporting.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Become a partner</a>
+        </div>
+      </div>
     </StandardPage>
   );
 }

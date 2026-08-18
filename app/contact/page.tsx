@@ -67,6 +67,20 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">What happens next</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>We review your goal and return best-fit service options.</li>
+          <li>Estimated timeline, resource needs, and upfront risks included.</li>
+          <li>Clear milestones and success criteria from day one.</li>
+          <li>Ongoing visibility through dashboards and regular check-ins.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+        </div>
+      </div>
     </StandardPage>
   );
 }

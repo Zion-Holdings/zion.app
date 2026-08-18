@@ -41,6 +41,19 @@ export default function RegexTesterPage() {
           <p className="text-slate-400 text-sm">Form validation, log parsing, and extraction automation.</p>
         </div>
       </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Regex tips</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Start with simple patterns and add complexity only when needed.</li>
+          <li>Test against edge cases: empty strings, whitespace, and special characters.</li>
+          <li>Document reusable patterns in a shared library for consistency.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/tools/" className="btn-primary text-center">All tools</a>
+          <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
+        </div>
+      </div>
     </StandardPage>
   );
 }

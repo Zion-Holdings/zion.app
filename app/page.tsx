@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Home | Zion Tech Group',
@@ -8,20 +9,53 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Zion Tech Group | AI & IT Company',
     description: 'AI-native IT services: autonomous operations, managed AI, cloud, security, and data.',
-    url: 'https://ziontechgroup.com/',  siteName: 'Zion Tech Group',
-
+    url: 'https://ziontechgroup.com/',
+    siteName: 'Zion Tech Group',
     type: 'website',
-  },  twitter: {
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Zion Tech Group | AI & IT Company',
     description: 'AI-native IT services: autonomous operations, managed AI, cloud, security, and data.',
     siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/' },
+  },
+  alternates: { canonical: '/' },
+};
+
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Zion Tech Group',
+  url: 'https://ziontechgroup.com',
+  email: 'mailto:kleber@ziontechgroup.com',
+  telephone: '+13046440950',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Available on request',
+    addressLocality: 'Remote-first',
+    addressCountry: 'US',
+  },
+  sameAs: ['https://ziontechgroup.com'],
+};
+
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Zion Tech Group',
+  url: 'https://ziontechgroup.com',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://ziontechgroup.com/search/?q={query}',
+    'query-input': 'required name=query',
+  },
 };
 
 export default function HomePage() {
   return (
-    <StandardPage
+    <>
+      <JsonLd jsonLd={organizationLd} />
+      <JsonLd jsonLd={websiteLd} />
+      <StandardPage
         title="AI-native IT services"
         subtitle="Autonomous operations, managed AI, and enterprise-ready delivery for teams that want to move fast without breaking trust."
         breadcrumbItems={[
@@ -49,6 +83,21 @@ export default function HomePage() {
             <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
           </Link>
         </div>
+    
+        <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+          <h2 className="text-xl font-bold text-white mb-4">Why Zion</h2>
+          <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+            <li>AI-native delivery with measurable outcomes and clear rollback plans.</li>
+            <li>Enterprise-grade security, compliance, and reliability built in.</li>
+            <li>Collaborative teams that transfer knowledge, not just dependencies.</li>
+            <li>Track record across regulated industries and fast-moving startups.</li>
+          </ul>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <Link href="/services/" className="btn-primary text-center">Explore services</Link>
+            <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
+          </div>
+        </div>
       </StandardPage>
-    );
+    </>
+  );
 }

@@ -41,6 +41,19 @@ export default function WordCounterPage() {
           <p className="text-slate-400 text-sm">Content planning, UX writing, and publishing QA.</p>
         </div>
       </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Content QA</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Validate meta descriptions and title tags before publishing.</li>
+          <li>Estimate reading time to set user expectations.</li>
+          <li>Check paragraph length for readability and accessibility.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/tools/" className="btn-primary text-center">All tools</a>
+          <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
+        </div>
+      </div>
     </StandardPage>
   );
 }

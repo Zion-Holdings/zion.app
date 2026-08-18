@@ -41,6 +41,19 @@ export default function QrCodeGeneratorPage() {
           <p className="text-slate-400 text-sm">Marketing, venue entry, and contact sharing.</p>
         </div>
       </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Best practices</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Keep QR payloads short to improve scan reliability on low-resolution cameras.</li>
+          <li>Use error correction when printing for outdoor or damaged-surface use.</li>
+          <li>Combine with analytics redirects to measure campaign performance.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/tools/" className="btn-primary text-center">All tools</a>
+          <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
+        </div>
+      </div>
     </StandardPage>
   );
 }

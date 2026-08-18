@@ -41,6 +41,19 @@ export default function UuidGeneratorPage() {
           <p className="text-slate-400 text-sm">Database setup, event pipelines, and integration testing.</p>
         </div>
       </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">ID generation guidance</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Use UUID v4 for opaque keys where ordering is not required.</li>
+          <li>Use ULIDs when you need sortable IDs without a central sequence.</li>
+          <li>Avoid exposing raw database IDs in public APIs.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/tools/" className="btn-primary text-center">All tools</a>
+          <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
+        </div>
+      </div>
     </StandardPage>
   );
 }

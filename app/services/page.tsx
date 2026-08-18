@@ -73,6 +73,27 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
+
+        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
+          <h2 className="text-xl font-bold text-white mb-4">Explore related offerings</h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold mb-1">Industry Solutions</h3>
+              <p className="text-slate-400 text-xs mb-3">Purpose-built AI and IT solutions by industry, from healthcare to logistics.</p>
+              <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
+            </Link>
+            <Link href="/tools/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold mb-1">Developer Tools</h3>
+              <p className="text-slate-400 text-xs mb-3">Free utilities for JSON, JWT, regex, QR, and text processing.</p>
+              <span className="text-purple-300 text-xs font-semibold inline-block">Use tools →</span>
+            </Link>
+            <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold mb-1">Insights & Guides</h3>
+              <p className="text-slate-400 text-xs mb-3">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
+              <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </StandardPage>
   );
