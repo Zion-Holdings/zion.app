@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UUID Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate UUID v4 identifiers instantly. Create single or multiple UUIDs and copy them to your clipboard.">
+  <meta property="og:title" content="UUID Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online UUID v4 generator. Generate one or multiple UUIDs instantly.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/uuid-generator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/uuid-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input[type="number"] { width: 100%; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input[type="number"]:focus { outline: none; border-color: #6366f1; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.copy { background: #059669; }
+    .btn.copy:hover { background: #047857; }
+    .result-box { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .result-box input { flex: 1; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; }
+    .uuid-list { background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; max-height: 400px; overflow-y: auto; margin-bottom: 1rem; }
+    .uuid-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid #334155; }
+    .uuid-item:last-child { border-bottom: none; }
+    .uuid-item span { flex: 1; font-family: monospace; font-size: 0.875rem; color: #e5e7eb; word-break: break-all; }
+    .uuid-item .btn { flex-shrink: 0; padding: 0.25rem 0.5rem; font-size: 0.75rem; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: #059669; color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-size: 0.875rem; }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>UUID Generator</h1>
+    <p class="subtitle">Generate universally unique identifiers (UUID v4) instantly.</p>
+    
+    <div class="field">
+      <label>Number of UUIDs: <span id="countValue">5</span></label>
+      <input type="number" id="count" value="5" min="1" max="100">
+    </div>
+    
+    <div class="actions">
+      <button class="btn" onclick="generate()">Generate UUIDs</button>
+      <button class="btn secondary" onclick="generateOne()">Single UUID</button>
+      <button class="btn copy" onclick="copyAll()">Copy All</button>
+    </div>
+    
+    <div class="uuid-list" id="uuidList"></div>
+    
+    <div class="info">
+      <h2>About UUID v4</h2>
+      <ul>
+        <li><span class="label">Version 4</span> — Randomly generated UUIDs using cryptographic randomness.</li>
+        <li><span class="label">Uniqueness</span> — 2^122 possible values make collisions practically impossible.</li>
+        <li><span class="label">Format</span> — 36 characters: 8-4-4-4-12 hexadecimal digits (e.g., xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx).</li>
+        <li><span class="label">Privacy</span> — Generated locally in your browser using crypto.getRandomValues(). Never stored or transmitted.</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">Use UUIDs for database keys, session tokens, API identifiers, and distributed systems.</p>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script>
+    function generateUUID() {
+      const array = new Uint8Array(16);
+      crypto.getRandomValues(array);
+      
+      // Set version 4
+      array[6] = (array[6] & 0x0f) | 0x40;
+      // Set variant 10xx
+      array[8] = (array[8] & 0x3f) | 0x80;
+      
+      const hex = Array.from(array, b => b.toString(16).padStart(2, '0')).join('');
+      
+      return [
+        hex.slice(0, 8),
+        hex.slice(8, 12),
+        hex.slice(12, 16),
+        hex.slice(16, 20),
+        hex.slice(20, 32)
+      ].join('-');
+    }
+
+    function renderUUIDs(count) {
+      const list = document.getElementById('uuidList');
+      list.innerHTML = '';
+      
+      for (let i = 0; i < count; i++) {
+        const uuid = generateUUID();
+        const item = document.createElement('div');
+        item.className = 'uuid-item';
+        item.innerHTML = `
+          <span>${uuid}</span>
+          <button class="btn copy" onclick="copyUUID('${uuid}', this)">Copy</button>
+        `;
+        list.appendChild(item);
+      }
+    }
+
+    function generate() {
+      const count = Math.min(100, Math.max(1, parseInt(document.getElementById('count').value) || 5));
+      document.getElementById('count').value = count;
+      document.getElementById('countValue').textContent = count;
+      renderUUIDs(count);
+    }
+
+    function generateOne() {
+      document.getElementById('count').value = 1;
+      document.getElementById('countValue').textContent = 1;
+      renderUUIDs(1);
+    }
+
+    function copyUUID(uuid, btn) {
+      navigator.clipboard.writeText(uuid).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 1500);
+      });
+    }
+
+    function copyAll() {
+      const spans = document.querySelectorAll('#uuidList .uuid-item span');
+      if (spans.length === 0) return;
+      
+      const uuids = Array.from(spans).map(s => s.textContent).join('\n');
+      navigator.clipboard.writeText(uuids).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => { toast.classList.remove('show'); }, 2000);
+      });
+    }
+
+    document.getElementById('count').addEventListener('input', function() {
+      document.getElementById('countValue').textContent = this.value;
+    });
+
+    // Generate on load
+    generate();
+  </script>
+</body>
+</html>

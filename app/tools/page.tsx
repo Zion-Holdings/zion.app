@@ -114,6 +114,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Cron Parser</h3>
           <p className="text-slate-400 text-sm">Parse and explain cron expressions.</p>
         </a>
+        <a href="/tools/uuid-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">UUID Generator</h3>
+          <p className="text-slate-400 text-sm">Generate UUID v4 identifiers instantly.</p>
+        </a>
+        <a href="/tools/word-counter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Word Counter</h3>
+          <p className="text-slate-400 text-sm">Count words, characters, and reading time.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
