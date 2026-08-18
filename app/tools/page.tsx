@@ -140,6 +140,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Timestamp Generator</h3>
           <p className="text-slate-400 text-sm">Generate Unix timestamps for any date.</p>
         </a>
+        <a href="/tools/color-picker/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Color Picker</h3>
+          <p className="text-slate-400 text-sm">Pick colors with HEX/RGB/HSL values.</p>
+        </a>
+        <a href="/tools/markdown-to-html/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Markdown to HTML</h3>
+          <p className="text-slate-400 text-sm">Convert Markdown to HTML instantly.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
