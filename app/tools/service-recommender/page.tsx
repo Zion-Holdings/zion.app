@@ -42,6 +42,10 @@ export default function ServiceRecommenderPage() {
         { label: 'Tools' },
         { label: 'Service Recommender' },
       ]}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Start a project', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="max-w-5xl mx-auto grid gap-4">
         {QUESTIONS.map((q) => (

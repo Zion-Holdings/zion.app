@@ -56,6 +56,10 @@ export default function ServiceComparisonPage() {
         { label: 'Tools' },
         { label: 'Service Comparison' },
       ]}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Start a project', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="max-w-6xl mx-auto grid gap-6 md:grid-cols-2">
         {MODELS.map((item) => (

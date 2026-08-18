@@ -31,6 +31,10 @@ export default function HealthCheckPage() {
         { label: 'Tools' },
         { label: 'Platform Status' },
       ]}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Start a project', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="max-w-5xl mx-auto grid gap-6 md:grid-cols-2">
         {SYSTEMS.map((item) => (

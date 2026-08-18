@@ -47,6 +47,10 @@ export default function AiServiceRouterPage() {
         { label: 'Tools' },
         { label: 'AI Service Router' },
       ]}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Start a project', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="max-w-5xl mx-auto grid gap-6 md:grid-cols-2">
         <div className="md:col-span-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">

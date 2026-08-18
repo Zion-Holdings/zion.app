@@ -1,8 +1,7 @@
-
 /managed-it /managed-it/index.html 301
 /managed-it/ /managed-it/index.html 200
 
-/pricing /solutions/ 301
+/pricing /pricing/ 301
 /help /faq/ 301
 /cookies /privacy/ 301
 /providers /partners/ 301
@@ -144,7 +143,7 @@
 /services/adaptive-advisor-for-legal-a83cf70d /services/ 301
 /services/adaptive-advisor-for-logistics-54500873 /services/ 301
 /services/adaptive-advisor-for-manufacturing-796c9729 /services/ 301
-/services/adaptive-advisor-for-real-estate-e488f51f /services/ 301
+/services/adaptive-advisor-for-real-estate-e488f51b /services/ 301
 /services/adaptive-advisor-for-retail-3c8e7581 /services/ 301
 /services/adaptive-advisor-for-telecom-1-68697ba6 /services/ 301
 /services/adaptive-advisor-for-telecom-2f2247f2 /services/ 301
@@ -176,7 +175,7 @@
 /services/adaptive-analytics-energy-59f57e17 /services/ 301
 /services/adaptive-analytics-for-agriculture-050376a6 /services/ 301
 /services/adaptive-analytics-for-agritech-7eea4578 /services/ 301
-/services/adaptive-analytics-for-automotive-22e2874a /services/ 301
+/services/adaptive-analytics-for-automotive-22e2874b /services/ 301
 /services/adaptive-analytics-for-construction-3fa74f3e /services/ 301
 /services/adaptive-analytics-for-construction-c402e4cd /services/ 301
 /services/adaptive-analytics-for-education-1-249b0e64 /services/ 301
@@ -230,7 +229,7 @@
 /services/adaptive-analyzer-healthcare-432a665c /services/ 301
 /services/adaptive-analyzer-hospitality-1-4472cdcf /services/ 301
 /services/adaptive-analyzer-hospitality-b19840a1 /services/ 301
-/services/adaptive-analyzer-legal-9283ad7a /services/ 301
+/services/adaptive-analyzer-legal-9283ad7f /services/ 301
 /services/adaptive-analyzer-module-740b2b /services/ 301
 /services/adaptive-analyzer-module-8126cb /services/ 301
 /services/adaptive-analyzer-module-8a1244 /services/ 301
@@ -261,3 +260,4 @@
 /proposal /services/ 301
 /proposal/ /services/ 301
 /industries/manufacturing/ /industries/manufacturing 200
+/service-comparison /tools/service-comparison/ 301

@@ -43,6 +43,10 @@ export default function RoiCalculatorPage() {
         { label: 'Tools' },
         { label: 'ROI Calculator' },
       ]}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Start a project', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="max-w-5xl mx-auto grid gap-4">
         <div className="grid gap-4 md:grid-cols-2">

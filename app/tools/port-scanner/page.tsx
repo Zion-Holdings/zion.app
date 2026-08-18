@@ -35,6 +35,10 @@ export default function PortScannerPage() {
         { label: 'Tools' },
         { label: 'Port Scanner' },
       ]}
+      actions={[
+        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Start a project', href: '/contact/', style: 'secondary' },
+      ]}
     >
       <div className="max-w-5xl mx-auto grid gap-4">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
