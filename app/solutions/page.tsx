@@ -4,10 +4,10 @@ import type { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
-  title: 'Industry Solutions | Zion Tech Group',
+  title: 'Solutions by Industry | Zion Tech Group',
   description: 'Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry\'s unique challenges and compliance requirements.',
   openGraph: {
-    title: 'Industry Solutions | Zion Tech Group',
+    title: 'Solutions by Industry | Zion Tech Group',
     description: 'Purpose-built AI and IT solutions by industry.',
     url: 'https://ziontechgroup.com/solutions/',
     type: 'website',
@@ -34,7 +34,7 @@ const industries = [
 export default function SolutionsPage() {
   return (
     <StandardPage
-      title="Industry Solutions"
+      title="Solutions by Industry"
       subtitle="Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry's unique challenges and compliance requirements."
       breadcrumbItems={[
         { label: 'Home', href: '/' },

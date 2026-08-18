@@ -5,7 +5,7 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Industry Solutions | Zion Tech Group',
-  description: 'Industry-specific AI and IT implementation guidance.',
+  description: 'Industry-specific AI and IT implementation for',
   openGraph: {
     title: 'Industry Solutions | Zion Tech Group',
     description: 'Vertical delivery patterns with measurable outcomes.',
