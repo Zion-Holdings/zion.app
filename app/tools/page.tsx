@@ -196,6 +196,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">JS Obfuscator</h3>
           <p className="text-slate-400 text-sm">Obfuscate JavaScript code.</p>
         </a>
+        <a href="/tools/qr-scanner/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">QR Scanner</h3>
+          <p className="text-slate-400 text-sm">Decode QR code images.</p>
+        </a>
+        <a href="/tools/color-palette-gen/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Color Palette Gen</h3>
+          <p className="text-slate-400 text-sm">Generate beautiful color palettes.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
