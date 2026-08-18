@@ -20,9 +20,27 @@ export default function RegexTesterPage() {
       breadcrumbItems={breadcrumbItems}
       actions={[
         { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Talk to us', href: '/contact/', style: 'secondary' },
       ]}
     >
-      <p>Validate patterns against sample text, inspect capture groups, and save reusable regex snippets for development workflows.</p>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Live matching</h3>
+          <p className="text-slate-400 text-sm">Test patterns against sample text with immediate match feedback.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Capture groups</h3>
+          <p className="text-slate-400 text-sm">Inspect groups and reuse extracted values in development workflows.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Common patterns</h3>
+          <p className="text-slate-400 text-sm">Use quick templates for emails, URLs, dates, and identifiers.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Use cases</h3>
+          <p className="text-slate-400 text-sm">Form validation, log parsing, and extraction automation.</p>
+        </div>
+      </div>
     </StandardPage>
   );
 }

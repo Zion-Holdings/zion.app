@@ -20,9 +20,27 @@ export default function JwtDecoderPage() {
       breadcrumbItems={breadcrumbItems}
       actions={[
         { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Talk to us', href: '/contact/', style: 'secondary' },
       ]}
     >
-      <p>Paste a JWT to decode its claims, expiry, issuer, and scopes without sending secrets to a backend.</p>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Inspect claims</h3>
+          <p className="text-slate-400 text-sm">View issuer, audience, expiry, and custom claims without backend access.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Debug auth flows</h3>
+          <p className="text-slate-400 text-sm">Spot scope, role, and token lifecycle issues quickly during development.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Stay private</h3>
+          <p className="text-slate-400 text-sm">Decode locally and avoid pasting sensitive tokens into unknown sites.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Use cases</h3>
+          <p className="text-slate-400 text-sm">Auth debugging, integration QA, and access-policy review.</p>
+        </div>
+      </div>
     </StandardPage>
   );
 }

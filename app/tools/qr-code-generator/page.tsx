@@ -20,9 +20,27 @@ export default function QrCodeGeneratorPage() {
       breadcrumbItems={breadcrumbItems}
       actions={[
         { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Talk to us', href: '/contact/', style: 'secondary' },
       ]}
     >
-      <p>Generate clean QR codes for campaigns, events, Wi-Fi, and contact sharing with export-ready outputs.</p>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Fast generation</h3>
+          <p className="text-slate-400 text-sm">Create QR codes instantly from URLs, text, and contact data.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Export ready</h3>
+          <p className="text-slate-400 text-sm">Download clean PNG outputs for web, print, and events.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Event friendly</h3>
+          <p className="text-slate-400 text-sm">Use for campaigns, tickets, Wi-Fi sharing, and business cards.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Use cases</h3>
+          <p className="text-slate-400 text-sm">Marketing, venue entry, and contact sharing.</p>
+        </div>
+      </div>
     </StandardPage>
   );
 }

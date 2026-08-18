@@ -20,9 +20,27 @@ export default function WordCounterPage() {
       breadcrumbItems={breadcrumbItems}
       actions={[
         { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Talk to us', href: '/contact/', style: 'secondary' },
       ]}
     >
-      <p>Paste text to get word count, character count, readability estimates, and paragraph structure for content planning.</p>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Word counts</h3>
+          <p className="text-slate-400 text-sm">Get exact counts for documents, pages, and content blocks.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Readability</h3>
+          <p className="text-slate-400 text-sm">Estimate sentence length and paragraph complexity quickly.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">SEO checks</h3>
+          <p className="text-slate-400 text-sm">Validate title, meta, and body copy length before publishing.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Use cases</h3>
+          <p className="text-slate-400 text-sm">Content planning, UX writing, and publishing QA.</p>
+        </div>
+      </div>
     </StandardPage>
   );
 }

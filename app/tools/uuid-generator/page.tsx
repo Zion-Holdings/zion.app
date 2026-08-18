@@ -20,9 +20,27 @@ export default function UuidGeneratorPage() {
       breadcrumbItems={breadcrumbItems}
       actions={[
         { label: 'Browse all tools', href: '/tools/', style: 'primary' },
+        { label: 'Talk to us', href: '/contact/', style: 'secondary' },
       ]}
     >
-      <p>Create version 4 UUIDs and optional ULIDs, copy them instantly, and use them safely in development and production tooling.</p>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">UUIDs</h3>
+          <p className="text-slate-400 text-sm">Generate v4 UUIDs for database keys and API identifiers.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">ULIDs</h3>
+          <p className="text-slate-400 text-sm">Create sortable IDs for event sourcing and distributed systems.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Bulk output</h3>
+          <p className="text-slate-400 text-sm">Batch-generate identifiers for migrations, seeds, and tests.</p>
+        </div>
+        <div className="glass-card">
+          <h3 className="text-white font-semibold mb-2">Use cases</h3>
+          <p className="text-slate-400 text-sm">Database setup, event pipelines, and integration testing.</p>
+        </div>
+      </div>
     </StandardPage>
   );
 }
