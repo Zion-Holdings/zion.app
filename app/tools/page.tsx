@@ -133,6 +133,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Hash Generator</h3>
           <p className="text-slate-400 text-sm">Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes.</p>
         </a>
+        <a href="/tools/header-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Header Analyzer</h3>
+          <p className="text-slate-400 text-sm">Paste HTTP response headers and get a security grade with per-check findings and copy-p...</p>
+        </a>
         <a href="/tools/html-entities/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">HTML Entities</h3>
           <p className="text-slate-400 text-sm">Encode and decode HTML entities.</p>
