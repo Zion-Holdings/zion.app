@@ -96,6 +96,13 @@ TOOL_LOC_RE = re.compile(
     r"[ \t]*<url><loc>" + re.escape(SITE) + r"/tools/[a-z0-9-]+/</loc>.*?</url>[ \t]*\n?"
 )
 
+SERVICE_PAGE = os.path.join(REPO, "app", "services", "[slug]", "page.tsx")
+# Same shape as TOOL_LOC_RE, but the trailing slug is required: this must not
+# match the /services/ index entry, which has to survive the strip-and-reinsert.
+SERVICE_LOC_RE = re.compile(
+    r"[ \t]*<url><loc>" + re.escape(SITE) + r"/services/[a-z0-9-]+/</loc>.*?</url>[ \t]*\n?"
+)
+
 
 def esc(text):
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -120,6 +127,49 @@ def discover():
                 desc = desc[:87].rstrip() + "..."
         tools.append((slug, title, desc))
     return tools
+
+
+def discover_services():
+    """Read the service slugs that app/services/[slug]/ actually builds.
+
+    SERVICE_CATEGORY_MAP is the single source of truth: generateStaticParams
+    enumerates its keys, so a slug in that map is a page that exists and a
+    slug missing from it is a 404. Parsing the map here means the sitemap
+    cannot drift from what the route builds -- which is exactly how all ten
+    service pages ended up live but absent from the sitemap.
+    """
+    if not os.path.isfile(SERVICE_PAGE):
+        return []
+    src = open(SERVICE_PAGE, encoding="utf-8").read()
+    m = re.search(
+        r"const SERVICE_CATEGORY_MAP[^=]*=\s*\{(.*?)\n\};", src, re.S
+    )
+    if not m:
+        return []
+    return re.findall(r"^\s*'([a-z0-9-]+)'\s*:", m.group(1), re.M)
+
+
+def sync_service_sitemap(services):
+    """Ensure public/sitemap.xml carries one <url> entry per service page."""
+    if not os.path.isfile(SITEMAP) or not services:
+        return False
+    src = open(SITEMAP, encoding="utf-8").read()
+
+    # Drop existing /services/<slug>/ entries, keeping the /services/ index,
+    # then re-insert the full set.
+    stripped = SERVICE_LOC_RE.sub("", src)
+    block = "".join(
+        f"  <url><loc>{SITE}/services/{s}/</loc>"
+        f"<changefreq>monthly</changefreq><priority>0.8</priority></url>\n"
+        for s in services
+    )
+    if "</urlset>" not in stripped:
+        return False
+    new = stripped.replace("</urlset>", block + "</urlset>", 1)
+    if new == src:
+        return False
+    open(SITEMAP, "w", encoding="utf-8").write(new)
+    return True
 
 
 def sync_sitemap(tools):
@@ -168,6 +218,8 @@ def main():
         open(PAGE, "w", encoding="utf-8").write(new)
 
     sitemap_changed = sync_sitemap(tools)
+    services = discover_services()
+    services_changed = sync_service_sitemap(services)
 
     if page_changed:
         print(f"synced {len(tools)} tool cards into app/tools/page.tsx")
@@ -177,6 +229,10 @@ def main():
         print(f"synced {len(tools)} tool URLs into public/sitemap.xml")
     else:
         print("sitemap already in sync")
+    if services_changed:
+        print(f"synced {len(services)} service URLs into public/sitemap.xml")
+    else:
+        print(f"service sitemap already in sync ({len(services)} services)")
 
 
 if __name__ == "__main__":
