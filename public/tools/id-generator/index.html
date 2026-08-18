@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID Generator — UUID, ULID &amp; Nano ID | Zion Tech Group</title>
+  <meta name="description" content="Generate UUID v4, time-ordered UUID v7, ULID, Nano ID, and short alphanumeric IDs in bulk — up to 500 at once. Cryptographically secure, runs entirely in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ID Generator — UUID, ULID &amp; Nano ID | Zion Tech Group">
+  <meta property="og:description" content="Free bulk ID generator — UUID v4, UUID v7 (time-ordered), ULID, Nano ID, and short alphanumeric IDs with uppercase and quote/brace wrapping.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/id-generator/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ID Generator — UUID, ULID &amp; Nano ID | Zion Tech Group">
+  <meta name="twitter:description" content="Free bulk ID generator — UUID v4, UUID v7, ULID, Nano ID, and short alphanumeric IDs.">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/id-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .panel { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .panel h3 { font-size: 1rem; margin-bottom: 1rem; color: #818cf8; }
+    .field { margin-bottom: 1rem; }
+    .field:last-child { margin-bottom: 0; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .grid { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .grid .field { flex: 1 1 220px; }
+    select, input[type="number"] { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-size: 0.875rem; }
+    select:focus, input[type="number"]:focus { outline: none; border-color: #6366f1; }
+    .checks { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .check { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #e5e7eb; }
+    .check input[type="checkbox"] { width: 1rem; height: 1rem; accent-color: #6366f1; cursor: pointer; }
+    .hint { font-size: 0.8125rem; color: #64748b; margin-top: 0.5rem; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    textarea { width: 100%; min-height: 300px; padding: 0.75rem; background: #0b0f1a; border: 1px solid #334155; border-radius: 0.5rem; color: #e5e7eb; font-family: monospace; font-size: 0.875rem; resize: vertical; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .meta { font-size: 0.8125rem; color: #94a3b8; margin-top: 0.75rem; }
+    .info-item { display: flex; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info-item:last-child { border-bottom: none; }
+    .info-label { flex: 0 0 160px; font-size: 0.875rem; color: #94a3b8; font-weight: 600; }
+    .info-value { flex: 1; font-size: 0.875rem; color: #e5e7eb; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ID Generator</h1>
+    <p class="subtitle">Bulk-generate UUID v4, time-ordered UUID v7, ULID, Nano ID, and short alphanumeric IDs.</p>
+
+    <div class="panel">
+      <h3>Options</h3>
+      <div class="grid">
+        <div class="field">
+          <label for="format">Format</label>
+          <select id="format">
+            <option value="uuidv4">UUID v4 (random)</option>
+            <option value="uuidv7">UUID v7 (time-ordered)</option>
+            <option value="ulid">ULID (26 chars, sortable)</option>
+            <option value="nanoid">Nano ID (21 chars)</option>
+            <option value="short">Short alphanumeric (8 chars)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="count">How many (1–500)</label>
+          <input type="number" id="count" value="10" min="1" max="500" step="1">
+        </div>
+        <div class="field">
+          <label for="wrap">Wrap each ID</label>
+          <select id="wrap">
+            <option value="none">Plain (no wrapping)</option>
+            <option value="double">"Double quotes"</option>
+            <option value="single">'Single quotes'</option>
+            <option value="braces">{Braces}</option>
+            <option value="brackets">[Brackets]</option>
+            <option value="csv">"Quoted, comma-separated"</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="uppercase"> Uppercase output</label>
+          <label class="check"><input type="checkbox" id="autoGen" checked> Regenerate on option change</label>
+        </div>
+        <p class="hint">Randomness comes from <code>crypto.getRandomValues()</code>. Nothing is sent to a server.</p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="btn" onclick="generate()">Generate</button>
+      <button class="btn success" onclick="copyOutput()">Copy</button>
+      <button class="btn secondary" onclick="downloadOutput()">Download .txt</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+
+    <div class="error" id="error"></div>
+
+    <div class="panel">
+      <h3>Generated IDs</h3>
+      <textarea id="output" spellcheck="false" placeholder="Click Generate to create IDs..."></textarea>
+      <div class="meta" id="meta"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Format Reference</h3>
+      <div class="info-item"><div class="info-label">UUID v4</div><div class="info-value">128-bit random identifier, RFC 4122 layout — version nibble <code>4</code>, variant bits <code>10xx</code>. 36 chars with hyphens.</div></div>
+      <div class="info-item"><div class="info-label">UUID v7</div><div class="info-value">48-bit Unix millisecond timestamp followed by randomness, so IDs sort chronologically as text. Great for database primary keys.</div></div>
+      <div class="info-item"><div class="info-label">ULID</div><div class="info-value">26 characters of Crockford base32 (no I, L, O, U): 10 chars of timestamp + 16 chars of randomness. Lexicographically sortable.</div></div>
+      <div class="info-item"><div class="info-label">Nano ID</div><div class="info-value">21 URL-safe characters from <code>A–Za–z0–9_-</code>. Compact, collision-resistant alternative to UUIDs.</div></div>
+      <div class="info-item"><div class="info-label">Short alphanumeric</div><div class="info-value">8 characters of unbiased <code>A–Za–z0–9</code>. Useful for share codes and slugs — not for high-volume unique keys.</div></div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    /* ==== CORE:START ==== */
+    var CROCKFORD = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+    var NANO_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+    var ALNUM = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    function randomBytes(n) {
+      var buf = new Uint8Array(n);
+      (globalThis.crypto || crypto).getRandomValues(buf);
+      return buf;
+    }
+
+    function hex(byte) {
+      return (byte + 0x100).toString(16).slice(1);
+    }
+
+    function uuidV4() {
+      var b = randomBytes(16);
+      b[6] = (b[6] & 0x0f) | 0x40;
+      b[8] = (b[8] & 0x3f) | 0x80;
+      var s = '';
+      for (var i = 0; i < 16; i++) s += hex(b[i]);
+      return s.slice(0, 8) + '-' + s.slice(8, 12) + '-' + s.slice(12, 16) + '-' + s.slice(16, 20) + '-' + s.slice(20);
+    }
+
+    /* Monotonic state so IDs made inside the same millisecond still sort in
+       creation order (UUID v7 rand_a is used as a 12-bit sub-ms counter). */
+    var v7LastMs = -1;
+    var v7Seq = 0;
+
+    function uuidV7(now) {
+      var ms = typeof now === 'number' ? now : Date.now();
+      if (ms > v7LastMs) {
+        v7LastMs = ms;
+        v7Seq = 0;
+      } else {
+        ms = v7LastMs;
+        v7Seq = v7Seq + 1;
+        if (v7Seq > 0xfff) {
+          v7LastMs = ms = v7LastMs + 1;
+          v7Seq = 0;
+        }
+      }
+      var b = randomBytes(16);
+      b[0] = Math.floor(ms / 0x10000000000) & 0xff;
+      b[1] = Math.floor(ms / 0x100000000) & 0xff;
+      b[2] = Math.floor(ms / 0x1000000) & 0xff;
+      b[3] = Math.floor(ms / 0x10000) & 0xff;
+      b[4] = Math.floor(ms / 0x100) & 0xff;
+      b[5] = ms & 0xff;
+      b[6] = 0x70 | ((v7Seq >>> 8) & 0x0f);
+      b[7] = v7Seq & 0xff;
+      b[8] = (b[8] & 0x3f) | 0x80;
+      var s = '';
+      for (var i = 0; i < 16; i++) s += hex(b[i]);
+      return s.slice(0, 8) + '-' + s.slice(8, 12) + '-' + s.slice(12, 16) + '-' + s.slice(16, 20) + '-' + s.slice(20);
+    }
+
+    var ulidLastMs = -1;
+    var ulidLastRandom = null;
+
+    function encodeUlidTime(ms) {
+      var out = '';
+      var t = ms;
+      for (var i = 0; i < 10; i++) {
+        out = CROCKFORD.charAt(t % 32) + out;
+        t = Math.floor(t / 32);
+      }
+      return out;
+    }
+
+    function ulid(now) {
+      var ms = typeof now === 'number' ? now : Date.now();
+      var chars;
+      if (ms === ulidLastMs && ulidLastRandom) {
+        /* Same millisecond: increment the random part so ordering holds. */
+        chars = ulidLastRandom.slice();
+        for (var i = 15; i >= 0; i--) {
+          if (chars[i] < 31) { chars[i] = chars[i] + 1; break; }
+          chars[i] = 0;
+        }
+      } else {
+        if (ms < ulidLastMs) ms = ulidLastMs;
+        chars = [];
+        var b = randomBytes(16);
+        for (var j = 0; j < 16; j++) chars.push(b[j] & 31);
+      }
+      ulidLastMs = ms;
+      ulidLastRandom = chars;
+      var rand = '';
+      for (var k = 0; k < 16; k++) rand += CROCKFORD.charAt(chars[k]);
+      return encodeUlidTime(ms) + rand;
+    }
+
+    function nanoId(size) {
+      var n = size || 21;
+      var b = randomBytes(n);
+      var out = '';
+      for (var i = 0; i < n; i++) out += NANO_ALPHABET.charAt(b[i] & 63);
+      return out;
+    }
+
+    function shortId(size) {
+      var n = size || 8;
+      var out = '';
+      /* Rejection sampling keeps the 62-char alphabet unbiased. */
+      while (out.length < n) {
+        var b = randomBytes(n);
+        for (var i = 0; i < b.length && out.length < n; i++) {
+          if (b[i] < 248) out += ALNUM.charAt(b[i] % 62);
+        }
+      }
+      return out;
+    }
+
+    function generateOne(format) {
+      switch (format) {
+        case 'uuidv7': return uuidV7();
+        case 'ulid': return ulid();
+        case 'nanoid': return nanoId(21);
+        case 'short': return shortId(8);
+        case 'uuidv4':
+        default: return uuidV4();
+      }
+    }
+
+    function normalizeCount(value) {
+      var n = parseInt(value, 10);
+      if (isNaN(n)) return null;
+      if (n < 1 || n > 500) return null;
+      return n;
+    }
+
+    function wrapId(id, mode, isLast) {
+      switch (mode) {
+        case 'double': return '"' + id + '"';
+        case 'single': return "'" + id + "'";
+        case 'braces': return '{' + id + '}';
+        case 'brackets': return '[' + id + ']';
+        case 'csv': return '"' + id + '"' + (isLast ? '' : ',');
+        default: return id;
+      }
+    }
+
+    function generateIds(opts) {
+      var options = opts || {};
+      var count = normalizeCount(options.count === undefined ? 1 : options.count);
+      if (count === null) throw new Error('Count must be a whole number between 1 and 500.');
+      var format = options.format || 'uuidv4';
+      var ids = [];
+      for (var i = 0; i < count; i++) {
+        var id = generateOne(format);
+        if (options.uppercase) id = id.toUpperCase();
+        ids.push(id);
+      }
+      return ids;
+    }
+
+    function formatIds(ids, wrapMode) {
+      return ids.map(function (id, i) {
+        return wrapId(id, wrapMode || 'none', i === ids.length - 1);
+      }).join('\n');
+    }
+    /* ==== CORE:END ==== */
+
+    function showError(msg) {
+      var el = document.getElementById('error');
+      if (!msg) { el.style.display = 'none'; el.textContent = ''; return; }
+      el.textContent = '✗ ' + msg;
+      el.style.display = 'block';
+    }
+
+    function currentFormatLabel() {
+      var sel = document.getElementById('format');
+      return sel.options[sel.selectedIndex].text;
+    }
+
+    function generate() {
+      var format = document.getElementById('format').value;
+      var wrap = document.getElementById('wrap').value;
+      var uppercase = document.getElementById('uppercase').checked;
+      var rawCount = document.getElementById('count').value;
+
+      var ids;
+      try {
+        ids = generateIds({ format: format, count: rawCount, uppercase: uppercase });
+      } catch (e) {
+        showError(e.message);
+        return;
+      }
+      showError(null);
+
+      var text = formatIds(ids, wrap);
+      document.getElementById('output').value = text;
+      var unique = Object.keys(ids.reduce(function (acc, id) { acc[id] = 1; return acc; }, {})).length;
+      document.getElementById('meta').textContent =
+        ids.length + ' × ' + currentFormatLabel() + ' • ' + unique + ' unique • ' +
+        ids[0].length + ' chars each • ' + text.length + ' characters total';
+    }
+
+    function copyOutput() {
+      var text = document.getElementById('output').value;
+      if (!text) return;
+      var btn = document.querySelector('.btn.success');
+      var original = btn.textContent;
+      var done = function () {
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = original; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          showError('Clipboard blocked by the browser — select the text and copy manually.');
+        });
+      } else {
+        var ta = document.getElementById('output');
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {
+          showError('Clipboard unavailable in this browser.');
+        }
+      }
+    }
+
+    function downloadOutput() {
+      var text = document.getElementById('output').value;
+      if (!text) return;
+      var format = document.getElementById('format').value;
+      var blob = new Blob([text + '\n'], { type: 'text/plain;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = format + '-ids.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    }
+
+    function clearAll() {
+      document.getElementById('output').value = '';
+      document.getElementById('meta').textContent = '';
+      showError(null);
+    }
+
+    ['format', 'wrap', 'uppercase', 'count'].forEach(function (id) {
+      document.getElementById(id).addEventListener('change', function () {
+        if (document.getElementById('autoGen').checked) generate();
+      });
+    });
+
+    generate();
+  </script>
+</body>
+</html>
