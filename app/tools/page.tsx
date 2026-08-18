@@ -133,6 +133,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">YAML to JSON</h3>
           <p className="text-slate-400 text-sm">Convert YAML to JSON instantly.</p>
         </a>
+        <a href="/tools/password-strength/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Password Strength</h3>
+          <p className="text-slate-400 text-sm">Analyze password strength and crack time.</p>
+        </a>
+        <a href="/tools/json-to-yaml/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON to YAML</h3>
+          <p className="text-slate-400 text-sm">Convert JSON to YAML instantly.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
