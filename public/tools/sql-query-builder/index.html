@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Query Builder | Zion Tech Group</title>
+  <meta name="description" content="Build SQL queries online — SELECT, INSERT, UPDATE, DELETE with visual builder.">
+  <meta property="og:title" content="SQL Query Builder | Zion Tech Group">
+  <meta property="og:description" content="Free online SQL query builder.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/sql-query-builder/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/sql-query-builder/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input, .field select { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; }
+    .field input:focus, .field select:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; }
+    .columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.5rem; margin-bottom: 1rem; }
+    .columns input { padding: 0.5rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SQL Query Builder</h1>
+    <p class="subtitle">Build SQL queries online.</p>
+    <div class="field">
+      <label>Query Type</label>
+      <select id="queryType" onchange="generate()">
+        <option value="SELECT">SELECT</option>
+        <option value="INSERT">INSERT</option>
+        <option value="UPDATE">UPDATE</option>
+        <option value="DELETE">DELETE</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Table Name</label>
+      <input type="text" id="tableName" value="users" oninput="generate()">
+    </div>
+    <div class="field">
+      <label>Columns (comma-separated)</label>
+      <input type="text" id="columns" value="id, name, email" oninput="generate()">
+    </div>
+    <div class="field">
+      <label>WHERE Condition</label>
+      <input type="text" id="where" value="id = 1" oninput="generate()">
+    </div>
+    <div class="field" id="valuesField" style="display:none;">
+      <label>Values (for INSERT - comma-separated)</label>
+      <input type="text" id="values" value="'John', 'john@example.com'" oninput="generate()">
+    </div>
+    <div class="buttons">
+      <button class="btn success" onclick="copy()">Copy Query</button>
+      <button class="btn" onclick="clearAll()">Clear</button>
+    </div>
+    <div class="section">
+      <h3>Generated Query</h3>
+      <pre id="output">—</pre>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    function generate() {
+      const type = document.getElementById('queryType').value;
+      const table = document.getElementById('tableName').value;
+      const cols = document.getElementById('columns').value;
+      const where = document.getElementById('where').value;
+      const values = document.getElementById('values').value;
+      let query = '';
+      
+      switch(type) {
+        case 'SELECT':
+          query = `SELECT ${cols || '*'} FROM ${table}`;
+          if (where) query += ` WHERE ${where}`;
+          query += ';';
+          break;
+        case 'INSERT':
+          query = `INSERT INTO ${table} (${cols}) VALUES (${values});`;
+          break;
+        case 'UPDATE':
+          const setClause = cols.split(',').map(c => `${c.trim()} = ?`).join(', ');
+          query = `UPDATE ${table} SET ${setClause}`;
+          if (where) query += ` WHERE ${where}`;
+          query += ';';
+          break;
+        case 'DELETE':
+          query = `DELETE FROM ${table}`;
+          if (where) query += ` WHERE ${where}`;
+          query += ';';
+          break;
+      }
+      document.getElementById('output').textContent = query;
+    }
+    function copy() {
+      const query = document.getElementById('output').textContent;
+      if (query !== '—') navigator.clipboard.writeText(query);
+    }
+    function clearAll() {
+      document.getElementById('tableName').value = '';
+      document.getElementById('columns').value = '';
+      document.getElementById('where').value = '';
+      document.getElementById('values').value = '';
+      generate();
+    }
+    document.getElementById('queryType').addEventListener('change', function() {
+      document.getElementById('valuesField').style.display = this.value === 'INSERT' ? 'block' : 'none';
+    });
+    generate();
+  </script>
+</body>
+</html>

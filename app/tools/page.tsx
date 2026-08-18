@@ -148,6 +148,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Markdown to HTML</h3>
           <p className="text-slate-400 text-sm">Convert Markdown to HTML instantly.</p>
         </a>
+        <a href="/tools/sql-query-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">SQL Query Builder</h3>
+          <p className="text-slate-400 text-sm">Build SQL queries visually.</p>
+        </a>
+        <a href="/tools/cron-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Cron Generator</h3>
+          <p className="text-slate-400 text-sm">Generate cron expressions.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
