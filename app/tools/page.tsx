@@ -156,6 +156,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Cron Generator</h3>
           <p className="text-slate-400 text-sm">Generate cron expressions.</p>
         </a>
+        <a href="/tools/text-compare/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text Compare</h3>
+          <p className="text-slate-400 text-sm">Compare two texts side-by-side.</p>
+        </a>
+        <a href="/tools/md5-hash/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">MD5 Hash</h3>
+          <p className="text-slate-400 text-sm">Generate MD5 hashes from text.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
