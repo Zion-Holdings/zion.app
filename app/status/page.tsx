@@ -1,8 +1,6 @@
-'use client';
-
 import PageWrapper from '@/components/PageWrapper';
-import { Metadata } from 'next';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Platform Status — Uptime & Service Status | Zion Tech Group',
@@ -11,22 +9,24 @@ export const metadata: Metadata = {
 };
 
 export default function StatusPage() {
-  const [up, setUp] = useState<boolean | null>(null);
-  useEffect(() => {
-    fetch('https://ziontechgroup.com')
-      .then((r) => setUp(r.ok))
-      .catch(() => setUp(false));
-  }, []);
   return (
     <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Site Status</h1>
-        <p className="text-slate-300 mb-6">
-          {up === null ? 'Checking...' : up ? 'All systems operational.' : 'Service interruption detected.'}
-        </p>
-        <p className="text-slate-400 text-sm">
-          For immediate assistance contact <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300">kleber@ziontechgroup.com</a> or call <a href="tel:+13046440950" className="text-purple-400 hover:text-purple-300">+1 302 464 0950</a>.
-        </p>
+        <p className="text-slate-300 mb-6">Operational status for public services and major client environments.</p>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Public services</h3>
+          <p className="text-slate-400 text-sm">Website, API, support intake, and deploy pipeline health targets.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 mt-4">
+          <h3 className="text-white font-semibold mb-2">Incident cadence</h3>
+          <p className="text-slate-400 text-sm">Severity-based response targets, escalation paths, and post-incident review cadence.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 mt-4">
+          <h3 className="text-white font-semibold mb-2">Maintenance windows</h3>
+          <p className="text-slate-400 text-sm">Planned maintenance is scheduled in low-traffic windows with advance notice when possible.</p>
+        </div>
+        <Link href="/contact/" className="text-purple-300 hover:text-purple-200 mt-6 inline-block">Contact support →</Link>
       </div>
     </PageWrapper>
   );
