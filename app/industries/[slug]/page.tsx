@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -16,7 +17,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Industry Solutions | Zion Tech Group',
     description: 'Vertical delivery patterns with measurable outcomes.',
-    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/industries/' },
 };
