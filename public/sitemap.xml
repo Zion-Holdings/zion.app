@@ -690,6 +690,7 @@
   <url><loc>https://ziontechgroup.com/tools/js-obfuscator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/json-diff/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/json-formatter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/json-query/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/json-schema-generator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/json-to-csv/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/json-to-yaml/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

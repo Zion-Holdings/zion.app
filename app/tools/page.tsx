@@ -148,6 +148,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">JSON Formatter</h3>
           <p className="text-slate-400 text-sm">Format, minify, and validate JSON quickly.</p>
         </a>
+        <a href="/tools/json-query/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Json Query</h3>
+          <p className="text-slate-400 text-sm">Query JSON with dot and bracket path expressions like users[0].name or items[*].id. Bro...</p>
+        </a>
         <a href="/tools/json-schema-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">JSON Schema Generator</h3>
           <p className="text-slate-400 text-sm">Infer a JSON Schema from sample JSON.</p>
