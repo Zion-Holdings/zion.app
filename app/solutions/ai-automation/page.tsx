@@ -9,14 +9,12 @@ export const metadata: Metadata = {
     title: 'AI & Automation Solutions | Zion Tech Group',
     description: 'AI and automation solutions with measurable outcomes.',
     url: 'https://ziontechgroup.com/solutions/ai-automation/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI & Automation Solutions | Zion Tech Group',
     description: 'AI and automation solutions with measurable outcomes.',
-    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/solutions/ai-automation/' },
 };

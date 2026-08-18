@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/solutions/financial-services/',
     type: 'website',
   },
-    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',
