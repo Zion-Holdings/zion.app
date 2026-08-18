@@ -64,6 +64,16 @@ export const FEATURED_AI_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Zion Security Shield', href: '/services/ai-security-responsible-ai/' },
 ];
 
+export const TOOLS_LINKS: readonly NavigationLink[] = [
+  { name: 'ROI Calculator', href: '/tools/roi-calculator/' },
+  { name: 'Service Comparison', href: '/tools/service-comparison/' },
+  { name: 'Service Recommender', href: '/tools/service-recommender/' },
+  { name: 'AI Service Router', href: '/tools/ai-service-router/' },
+  { name: 'Port Scanner', href: '/tools/port-scanner/' },
+  { name: 'SSL Checker', href: '/tools/ssl-checker/' },
+  { name: 'Platform Status', href: '/tools/health-check/' },
+];
+
 export const AI_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'Advanced AI & Enterprise Intelligence Hub', href: '/services/advanced-ai-enterprise-intelligence-hub/' },
   { name: 'Ai 3D Asset Generator', href: '/services/ai-3d-asset-generator/' },
