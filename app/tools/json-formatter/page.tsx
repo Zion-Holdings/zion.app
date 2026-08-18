@@ -14,8 +14,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'JSON Formatter — Zion Tech Group',
     description: 'Format, minify, and validate JSON quickly. Paste raw JSON and get clean, structured output with error detection.',
-    siteName: 'Zion Tech Group',
-  },
     alternates: { canonical: '/tools/json-formatter/' },
     robots: { index: true,
     follow: true },

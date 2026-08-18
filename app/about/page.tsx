@@ -12,8 +12,6 @@ export const metadata = {
     url: 'https://ziontechgroup.com/about/',
     type: 'website',
   },
-    siteName: 'Zion Tech Group',
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'About Zion Tech Group',

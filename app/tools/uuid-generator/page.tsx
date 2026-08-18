@@ -14,8 +14,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'UUID Generator — Zion Tech Group',
     description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
-    siteName: 'Zion Tech Group',
-  },
     alternates: { canonical: '/tools/uuid-generator/' },
     robots: { index: true,
     follow: true },

@@ -16,8 +16,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Managed IT Solutions | Zion Tech Group',
     description: 'Managed IT solutions with measurable outcomes.',
-    siteName: 'Zion Tech Group',
-  },
   alternates: { canonical: '/solutions/managed-it/' },
 };
 

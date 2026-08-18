@@ -15,8 +15,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Partnership Program | Zion Tech Group',
     description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
-    siteName: 'Zion Tech Group',
-  },
     alternates: { canonical: '/partnership-program/' },
 };
 

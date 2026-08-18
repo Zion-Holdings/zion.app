@@ -14,8 +14,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Word Counter — Zion Tech Group',
     description: 'Count words, characters, sentences, and paragraphs. Useful for content, UX microcopy, and SEO checks.',
-    siteName: 'Zion Tech Group',
-  },
     alternates: { canonical: '/tools/word-counter/' },
     robots: { index: true,
     follow: true },

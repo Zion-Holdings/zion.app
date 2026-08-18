@@ -10,8 +10,6 @@ export const metadata = {
     url: 'https://ziontechgroup.com/404',
     type: 'website',
   },
-    siteName: 'Zion Tech Group',
-  },
   alternates: { canonical: '/404' },
   twitter: {
     card: 'summary_large_image',

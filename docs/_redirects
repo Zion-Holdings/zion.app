@@ -261,3 +261,11 @@
 /proposal/ /services/ 301
 /industries/manufacturing/ /industries/manufacturing 200
 /service-comparison /tools/service-comparison/ 301
+
+# Free tools fallbacks
+/free-tools /free-tools.html 200
+/free-tools/ /free-tools.html 200
+
+# Free AI tools fallback
+/free-ai-tools /free-tools.html 200
+/free-ai-tools/ /free-tools.html 200

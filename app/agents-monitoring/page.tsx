@@ -11,8 +11,6 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/agents-monitoring/',
     type: 'website',
   },
-    siteName: 'Zion Tech Group',
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Agents Monitoring | Zion Tech Group',

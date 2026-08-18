@@ -15,8 +15,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Contact Intent | Zion Tech Group',
     description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
-    siteName: 'Zion Tech Group',
-  },
     alternates: { canonical: '/contact-intent/' },
 };
 

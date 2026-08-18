@@ -11,8 +11,6 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/academy/',
     type: 'website',
   },
-    siteName: 'Zion Tech Group',
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'Academy | Zion Tech Group',

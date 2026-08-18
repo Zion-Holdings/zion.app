@@ -15,8 +15,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Start a Project | Zion Tech Group',
     description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
-    siteName: 'Zion Tech Group',
-  },
     alternates: { canonical: '/start-project/' },
 };
 

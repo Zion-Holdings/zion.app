@@ -16,8 +16,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Security & Compliance Solutions | Zion Tech Group',
     description: 'Security and compliance solutions with measurable outcomes.',
-    siteName: 'Zion Tech Group',
-  },
   alternates: { canonical: '/solutions/security-compliance/' },
 };
 

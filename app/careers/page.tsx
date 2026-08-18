@@ -16,8 +16,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Careers | Zion Tech Group',
     description: 'Open roles and culture at Zion Tech Group.',
-    siteName: 'Zion Tech Group',
-  },
   alternates: { canonical: '/careers/' },
 };
 

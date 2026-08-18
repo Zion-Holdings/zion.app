@@ -16,8 +16,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Data & Analytics Solutions | Zion Tech Group',
     description: 'Data and analytics solutions with measurable outcomes.',
-    siteName: 'Zion Tech Group',
-  },
   alternates: { canonical: '/solutions/data-analytics/' },
 };
 

@@ -14,8 +14,6 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Regex Tester — Zion Tech Group',
     description: 'Test regular expressions with live matching, highlighting, and quick reference for common patterns.',
-    siteName: 'Zion Tech Group',
-  },
     alternates: { canonical: '/tools/regex-tester/' },
     robots: { index: true,
     follow: true },

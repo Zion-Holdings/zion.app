@@ -10,8 +10,6 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/it-consulting-services/',
     type: 'website',
   },
-    siteName: 'Zion Tech Group',
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'IT Consulting Services | Zion Tech Group',
