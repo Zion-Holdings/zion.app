@@ -1,8 +1,21 @@
 'use client';
 
 import React from 'react';
+import JsonLd from '@/components/JsonLd';
 import PageShell from '@/components/PageShell';
 import PageTemplate from '@/components/PageTemplate';
+
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Zion Tech Group',
+  url: 'https://ziontechgroup.com',
+  sameAs: [
+    'https://linkedin.com/company/ziontechgroup',
+    'https://x.com/ziontechgroup',
+    'https://github.com/Zion-support',
+  ],
+};
 
 export interface StandardPageProps {
   title: React.ReactNode;
@@ -20,17 +33,20 @@ export default function StandardPage({
   children,
 }: StandardPageProps) {
   return (
-    <PageShell>
-      <PageTemplate
-        title={title}
-        subtitle={subtitle}
-        breadcrumbItems={breadcrumbItems}
-        actions={actions}
-      >
-        <div className="max-w-6xl mx-auto w-full">
-          {children}
-        </div>
-      </PageTemplate>
-    </PageShell>
+    <>
+      <JsonLd jsonLd={organizationLd} />
+      <PageShell>
+        <PageTemplate
+          title={title}
+          subtitle={subtitle}
+          breadcrumbItems={breadcrumbItems}
+          actions={actions}
+        >
+          <div className="max-w-6xl mx-auto w-full">
+            {children}
+          </div>
+        </PageTemplate>
+      </PageShell>
+    </>
   );
 }

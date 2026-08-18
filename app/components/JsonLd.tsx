@@ -1,3 +1,5 @@
+'use client';
+
 export default function JsonLd({ jsonLd }: { jsonLd: unknown }) {
   return (
     <script
