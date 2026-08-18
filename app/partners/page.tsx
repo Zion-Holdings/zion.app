@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: 'Partner ecosystem for AI, IT, and automation engagements.',
     url: 'https://ziontechgroup.com/partners/',
     type: 'website',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Partners | Zion Tech Group',

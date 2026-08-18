@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Micro-SaaS Solutions | Zion Tech Group',
     description: 'Micro-SaaS solutions with measurable outcomes.',
+  },
   alternates: { canonical: '/solutions/micro-saas/' },
 };
 
