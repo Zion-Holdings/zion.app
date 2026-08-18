@@ -416,11 +416,83 @@
   <url><loc>https://ziontechgroup.com/blog/synthetic-monitoring-deployment/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ziontechgroup.com/blog/zero-trust-network-access-guide/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ziontechgroup.com/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ziontechgroup.com/services/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ziontechgroup.com/about/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ziontechgroup.com/contact/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/academy/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/agents-monitoring/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/ai-lab/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/ai-services-index/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/ai-services/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/ai/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/automation/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/business-customers/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/careers/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ziontechgroup.com/case-studies/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ziontechgroup.com/products/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/configurator/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/contact-intent/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/contact/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/cookies/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/dashboard/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/data/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ziontechgroup.com/faq/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/free-ai-it-tools/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/free-ai-tools/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/free-consultation/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/free-tools/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/governments/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/help/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/industries/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/industry-solutions/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/integrators/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/it-consulting-services/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/it-vendors/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/micro-saas/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/partners/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/partnership-program/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/press/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/pricing/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/privacy/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/products/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/providers/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/public-roadmap/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/search/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/services/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/sla/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/ai-automation/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/cloud-devops/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/data-analytics/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/education/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/financial-services/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/government/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/healthcare/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/logistics/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/managed-it/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/manufacturing/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/micro-saas/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/retail/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/security-compliance/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/start-project/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/status/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/terms/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ziontechgroup.com/testimonials/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/ai-service-router/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/base64-encoder/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/color-converter/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/hash-generator/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/health-check/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/json-formatter/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/jwt-decoder/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/phishing-analyzer/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/port-scanner/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/qr-code-generator/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/regex-tester/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/roi-calculator/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/service-comparison/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/service-recommender/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/ssl-checker/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/timestamp-converter/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/uuid-generator/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/word-counter/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/use-cases/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
 </urlset>

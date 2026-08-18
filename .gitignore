@@ -144,3 +144,12 @@ content-loop/scripts/__pycache__/
 # Hermes workflow scratch data
 gh_runs.tsv
 recent_runs.tsv
+
+# Hermes workflow scratch data
+*_gh_runs.*
+recent_gh_runs.*
+new_runs_mapping.*
+
+# Temp/scratch artifacts
+updated_heartbeat.json
+test_persist.txt
