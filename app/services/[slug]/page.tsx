@@ -8,6 +8,14 @@ type Params = { slug: string[] };
 const SERVICE_CATEGORY_MAP: Record<string, { category: string; label: string }> = {
   'ai-agents-autonomous': { category: 'ai', label: 'AI Agents' },
   'cloud-cost-optimization-service': { category: 'cloud', label: 'Cloud Cost Optimization' },
+  'managed-ai-operations': { category: 'ai', label: 'Managed AI' },
+  'ai-strategy-roadmap': { category: 'ai', label: 'AI Strategy' },
+  'cloud-migration': { category: 'cloud', label: 'Cloud Migration' },
+  'security-compliance-audit': { category: 'security', label: 'Security & Compliance' },
+  'data-analytics-platform': { category: 'data', label: 'Data Analytics' },
+  'automation-orchestration': { category: 'automation', label: 'Automation' },
+  'micro-saas-launch': { category: 'micro-saas', label: 'Micro-SaaS Launch' },
+  'incident-response-retainer': { category: 'it', label: 'Incident Response' },
 };
 
 function normalizeSlug(slug: string[]): string {
