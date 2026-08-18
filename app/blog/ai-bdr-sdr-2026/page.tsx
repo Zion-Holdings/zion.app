@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'AI BDR SDR | Zion Tech Group',
-  description: 'AI BDR SDR',
+  description: 'AI-powered BDR and SDR automation: lead qualification, outreach workflows, and revenue pipeline acceleration.',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {

@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'AI Data Backup | Zion Tech Group',
-  description: 'AI Data Backup',
+  description: 'AI-driven data backup, recovery automation, and resilience planning for mission-critical IT environments.',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {

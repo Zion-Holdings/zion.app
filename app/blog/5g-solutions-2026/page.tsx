@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: '5G Solutions | Zion Tech Group',
-  description: '5G Solutions',
+  description: '5G solutions architecture, deployment patterns, and enterprise use cases for next-gen connectivity.',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {

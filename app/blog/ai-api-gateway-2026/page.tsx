@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'AI API Gateway | Zion Tech Group',
-  description: 'AI API Gateway',
+  description: 'AI API Gateway architecture, routing, rate limiting, and observability for scalable AI service delivery.',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {

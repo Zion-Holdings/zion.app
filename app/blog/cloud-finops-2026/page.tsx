@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Cloud FinOps | Zion Tech Group',
-  description: 'Cloud FinOps',
+  description: 'Cloud FinOps strategies, cost optimization patterns, and governance frameworks for modern cloud environments.',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {

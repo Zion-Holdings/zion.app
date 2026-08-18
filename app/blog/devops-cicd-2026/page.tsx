@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'DevOps CI/CD | Zion Tech Group',
-  description: 'DevOps CI/CD',
+  description: 'DevOps CI/CD pipelines, automation patterns, and deployment strategies for AI and IT services.',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {

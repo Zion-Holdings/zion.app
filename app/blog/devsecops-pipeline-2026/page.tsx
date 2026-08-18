@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'DevSecOps Pipeline | Zion Tech Group',
-  description: 'DevSecOps Pipeline',
+  description: 'DevSecOps pipeline hardening: security scanning, policy gates, and compliance automation in CI/CD.',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {

@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'AI BOM Procurement | Zion Tech Group',
-  description: 'AI BOM Procurement',
+  description: 'AI-enhanced BOM and procurement workflows: demand forecasting, vendor management, and cost control.',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
