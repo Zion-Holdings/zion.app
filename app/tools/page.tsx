@@ -90,6 +90,22 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Markdown Previewer</h3>
           <p className="text-slate-400 text-sm">Preview markdown rendering in real-time.</p>
         </a>
+        <a href="/tools/jwt-decoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JWT Decoder Pro</h3>
+          <p className="text-slate-400 text-sm">Decode JWT tokens with signature verification.</p>
+        </a>
+        <a href="/tools/regex-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Regex Tester Pro</h3>
+          <p className="text-slate-400 text-sm">Test regex patterns with match highlighting.</p>
+        </a>
+        <a href="/tools/json-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON Formatter Pro</h3>
+          <p className="text-slate-400 text-sm">Format, minify, and validate JSON with syntax highlighting.</p>
+        </a>
+        <a href="/tools/qr-code-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">QR Code Generator Pro</h3>
+          <p className="text-slate-400 text-sm">Generate and download QR codes instantly.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
