@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Data Backup: deployment patterns | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Data Backup: deployment patterns',
-  description: 'AI Data Backup: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/ai-data-backup-deployment-patterns/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'AI Data Backup: deployment patterns',
+    description: 'AI Data Backup: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/ai-data-backup-deployment-patterns/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-data-backup-deployment-patterns/' },
 };

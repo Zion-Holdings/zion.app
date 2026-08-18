@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Autonomous Agents: evaluation framework | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Autonomous Agents: evaluation framework',
-  description: 'AI Autonomous Agents: evaluation framework',
-  url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-evaluation-framework/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'AI Autonomous Agents: evaluation framework',
+    description: 'AI Autonomous Agents: evaluation framework',
+    url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-evaluation-framework/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-autonomous-agents-evaluation-framework/' },
 };

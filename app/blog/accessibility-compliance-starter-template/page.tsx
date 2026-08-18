@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Accessibility Compliance: starter template | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Accessibility Compliance: starter template',
-  description: 'Accessibility Compliance: starter template',
-  url: 'https://ziontechgroup.com/blog/accessibility-compliance-starter-template/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Accessibility Compliance: starter template',
+    description: 'Accessibility Compliance: starter template',
+    url: 'https://ziontechgroup.com/blog/accessibility-compliance-starter-template/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/accessibility-compliance-starter-template/' },
 };

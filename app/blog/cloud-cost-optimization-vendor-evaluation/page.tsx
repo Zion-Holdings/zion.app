@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud Cost Optimization: vendor evaluation | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud Cost Optimization: vendor evaluation',
-  description: 'Cloud Cost Optimization: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-vendor-evaluation/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Cloud Cost Optimization: vendor evaluation',
+    description: 'Cloud Cost Optimization: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-vendor-evaluation/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-cost-optimization-vendor-evaluation/' },
 };

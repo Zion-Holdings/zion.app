@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'GraphQL Federation Platform: evaluation framework | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'GraphQL Federation Platform: evaluation framework',
-  description: 'GraphQL Federation Platform: evaluation framework',
-  url: 'https://ziontechgroup.com/blog/graphql-federation-platform-evaluation-framework/',
-  type: 'article',
+    title: 'GraphQL Federation Platform: evaluation framework',
+    description: 'GraphQL Federation Platform: evaluation framework',
+    url: 'https://ziontechgroup.com/blog/graphql-federation-platform-evaluation-framework/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'GraphQL Federation Platform: evaluation framework',
-  description: 'GraphQL Federation Platform: evaluation framework',
+    card: 'summary_large_image',
+    title: 'GraphQL Federation Platform: evaluation framework',
+    description: 'GraphQL Federation Platform: evaluation framework',
   },
   alternates: { canonical: '/blog/graphql-federation-platform-evaluation-framework/' },
 };

@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Enterprise AI Adoption Framework | Zion Tech Group',
   description: 'A structured framework for enterprises to adopt AI responsibly, align with business goals, and deliver measurable outcomes.',
   openGraph: {
-  title: 'Enterprise AI Adoption Framework | Zion Tech Group',
-  description: 'Navigate enterprise AI adoption with our proven framework.',
-  url: 'https://ziontechgroup.com/blog/enterprise-ai-adoption-framework/',
-  type: 'article',
+    title: 'Enterprise AI Adoption Framework | Zion Tech Group',
+    description: 'Navigate enterprise AI adoption with our proven framework.',
+    url: 'https://ziontechgroup.com/blog/enterprise-ai-adoption-framework/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Enterprise AI Adoption Framework | Zion Tech Group',
-  description: 'Navigate enterprise AI adoption with our proven framework.',
+    card: 'summary_large_image',
+    title: 'Enterprise AI Adoption Framework | Zion Tech Group',
+    description: 'Navigate enterprise AI adoption with our proven framework.',
   },
   alternates: { canonical: '/blog/enterprise-ai-adoption-framework/' },
 };

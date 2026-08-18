@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud Native App Development: operations handbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud Native App Development: operations handbook',
-  description: 'Cloud Native App Development: operations handbook',
-  url: 'https://ziontechgroup.com/blog/cloud-native-app-development-operations-handbook/',
-  type: 'article',
+    title: 'Cloud Native App Development: operations handbook',
+    description: 'Cloud Native App Development: operations handbook',
+    url: 'https://ziontechgroup.com/blog/cloud-native-app-development-operations-handbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cloud Native App Development: operations handbook',
-  description: 'Cloud Native App Development: operations handbook',
+    card: 'summary_large_image',
+    title: 'Cloud Native App Development: operations handbook',
+    description: 'Cloud Native App Development: operations handbook',
   },
   alternates: { canonical: '/blog/cloud-native-app-development-operations-handbook/' },
 };

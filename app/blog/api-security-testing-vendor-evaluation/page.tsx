@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Security Testing: vendor evaluation | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Security Testing: vendor evaluation',
-  description: 'API Security Testing: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/',
-  type: 'article',
+    title: 'API Security Testing: vendor evaluation',
+    description: 'API Security Testing: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'API Security Testing: vendor evaluation',
-  description: 'API Security Testing: vendor evaluation',
+    card: 'summary_large_image',
+    title: 'API Security Testing: vendor evaluation',
+    description: 'API Security Testing: vendor evaluation',
   },
   alternates: { canonical: '/blog/api-security-testing-vendor-evaluation/' },
 };

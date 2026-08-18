@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'AI Service Router | Zion Tech Group',
   description: 'Route requests by intent, data sensitivity, and latency target.',
   openGraph: {
-  title: 'AI Service Router',
-  description: 'Routing helper for AI services.',
-  url: 'https://ziontechgroup.com/tools/ai-service-router/',
-  type: 'website',
+    title: 'AI Service Router',
+    description: 'Routing helper for AI services.',
+    url: 'https://ziontechgroup.com/tools/ai-service-router/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Service Router',
-  description: 'Routing helper for AI services.',
+    card: 'summary_large_image',
+    title: 'AI Service Router',
+    description: 'Routing helper for AI services.',
   },
   alternates: { canonical: '/tools/ai-service-router/' },
 };

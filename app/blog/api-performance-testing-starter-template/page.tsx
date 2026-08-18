@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Performance Testing: starter template | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Performance Testing: starter template',
-  description: 'API Performance Testing: starter template',
-  url: 'https://ziontechgroup.com/blog/api-performance-testing-starter-template/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'API Performance Testing: starter template',
+    description: 'API Performance Testing: starter template',
+    url: 'https://ziontechgroup.com/blog/api-performance-testing-starter-template/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-performance-testing-starter-template/' },
 };

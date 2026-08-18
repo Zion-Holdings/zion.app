@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Autonomous Code Deployment: deployment patterns | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Autonomous Code Deployment: deployment patterns',
-  description: 'Autonomous Code Deployment: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-deployment-patterns/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Autonomous Code Deployment: deployment patterns',
+    description: 'Autonomous Code Deployment: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-deployment-patterns/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/autonomous-code-deployment-deployment-patterns/' },
 };

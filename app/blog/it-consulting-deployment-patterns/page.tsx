@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'IT Consulting: deployment patterns | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'IT Consulting: deployment patterns',
-  description: 'IT Consulting: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/it-consulting-deployment-patterns/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'IT Consulting: deployment patterns',
+    description: 'IT Consulting: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/it-consulting-deployment-patterns/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/it-consulting-deployment-patterns/' },
 };

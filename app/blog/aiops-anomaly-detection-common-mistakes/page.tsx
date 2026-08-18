@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AIOps Anomaly Detection: common mistakes | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AIOps Anomaly Detection: common mistakes',
-  description: 'AIOps Anomaly Detection: common mistakes',
-  url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-common-mistakes/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'AIOps Anomaly Detection: common mistakes',
+    description: 'AIOps Anomaly Detection: common mistakes',
+    url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-common-mistakes/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/aiops-anomaly-detection-common-mistakes/' },
 };

@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Education Solutions | Zion Tech Group',
   description: 'Learning intelligence, assessment automation, and research ops for education and research institutions.',
   openGraph: {
-  title: 'Education Solutions | Zion Tech Group',
-  description: 'Education and research delivery patterns and AI implementation guidance.',
-  url: 'https://ziontechgroup.com/solutions/education/',
-  type: 'website',
+    title: 'Education Solutions | Zion Tech Group',
+    description: 'Education and research delivery patterns and AI implementation guidance.',
+    url: 'https://ziontechgroup.com/solutions/education/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Education Solutions | Zion Tech Group',
-  description: 'Education and research delivery patterns and AI implementation guidance.',
+    card: 'summary_large_image',
+    title: 'Education Solutions | Zion Tech Group',
+    description: 'Education and research delivery patterns and AI implementation guidance.',
   },
   alternates: { canonical: '/solutions/education/' },
 };

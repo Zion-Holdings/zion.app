@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Data Analytics Platform: evaluation framework | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Data Analytics Platform: evaluation framework',
-  description: 'Data Analytics Platform: evaluation framework',
-  url: 'https://ziontechgroup.com/blog/data-analytics-platform-evaluation-framework/',
-  type: 'article',
+    title: 'Data Analytics Platform: evaluation framework',
+    description: 'Data Analytics Platform: evaluation framework',
+    url: 'https://ziontechgroup.com/blog/data-analytics-platform-evaluation-framework/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Data Analytics Platform: evaluation framework',
-  description: 'Data Analytics Platform: evaluation framework',
+    card: 'summary_large_image',
+    title: 'Data Analytics Platform: evaluation framework',
+    description: 'Data Analytics Platform: evaluation framework',
   },
   alternates: { canonical: '/blog/data-analytics-platform-evaluation-framework/' },
 };

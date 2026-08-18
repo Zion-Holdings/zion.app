@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'SSL Checker | Zion Tech Group',
   description: 'Inspect certificate basics and expiry window.',
   openGraph: {
-  title: 'SSL Checker',
-  description: 'TLS certificate helper.',
-  url: 'https://ziontechgroup.com/tools/ssl-checker/',
-  type: 'website',
+    title: 'SSL Checker',
+    description: 'TLS certificate helper.',
+    url: 'https://ziontechgroup.com/tools/ssl-checker/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'SSL Checker',
-  description: 'TLS certificate helper.',
+    card: 'summary_large_image',
+    title: 'SSL Checker',
+    description: 'TLS certificate helper.',
   },
   alternates: { canonical: '/tools/ssl-checker/' },
 };

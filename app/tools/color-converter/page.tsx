@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Color Converter | Zion Tech Group',
   description: 'Convert colors between HEX, RGB, and HSL formats with real-time previews and accessibility checks.',
   openGraph: {
-  title: 'Color Converter | Zion Tech Group',
-  description: 'Free online color converter — HEX, RGB, HSL with live preview.',
-  url: 'https://ziontechgroup.com/tools/color-converter/',
-  type: 'website',
+    title: 'Color Converter | Zion Tech Group',
+    description: 'Free online color converter — HEX, RGB, HSL with live preview.',
+    url: 'https://ziontechgroup.com/tools/color-converter/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Color Converter | Zion Tech Group',
-  description: 'Free online color converter — HEX, RGB, HSL with live preview.',
+    card: 'summary_large_image',
+    title: 'Color Converter | Zion Tech Group',
+    description: 'Free online color converter — HEX, RGB, HSL with live preview.',
   },
   alternates: { canonical: '/tools/color-converter/' },
 };

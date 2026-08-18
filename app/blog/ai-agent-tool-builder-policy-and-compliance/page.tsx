@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Agent Tool Builder: policy and compliance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Agent Tool Builder: policy and compliance',
-  description: 'AI Agent Tool Builder: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/',
-  type: 'article',
+    title: 'AI Agent Tool Builder: policy and compliance',
+    description: 'AI Agent Tool Builder: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Agent Tool Builder: policy and compliance',
-  description: 'AI Agent Tool Builder: policy and compliance',
+    card: 'summary_large_image',
+    title: 'AI Agent Tool Builder: policy and compliance',
+    description: 'AI Agent Tool Builder: policy and compliance',
   },
   alternates: { canonical: '/blog/ai-agent-tool-builder-policy-and-compliance/' },
 };

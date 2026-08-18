@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Data Backup: executive guide | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Data Backup: executive guide',
-  description: 'AI Data Backup: executive guide',
-  url: 'https://ziontechgroup.com/blog/ai-data-backup-executive-guide/',
-  type: 'article',
+    title: 'AI Data Backup: executive guide',
+    description: 'AI Data Backup: executive guide',
+    url: 'https://ziontechgroup.com/blog/ai-data-backup-executive-guide/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Data Backup: executive guide',
-  description: 'AI Data Backup: executive guide',
+    card: 'summary_large_image',
+    title: 'AI Data Backup: executive guide',
+    description: 'AI Data Backup: executive guide',
   },
   alternates: { canonical: '/blog/ai-data-backup-executive-guide/' },
 };

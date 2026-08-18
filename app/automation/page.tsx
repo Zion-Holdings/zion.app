@@ -1,19 +1,21 @@
 import Link from 'next/link';
 import PageTemplate from '@/components/PageTemplate';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Automation | Zion Tech Group',
   description: 'AI automation services and tooling from Zion Tech Group.',
   openGraph: {
-  title: 'AI Automation | Zion Tech Group',
-  description: 'AI automation services and tooling from Zion Tech Group.',
-  url: 'https://ziontechgroup.com/automation/',
-  type: 'website',
+    title: 'AI Automation | Zion Tech Group',
+    description: 'AI automation services and tooling from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/automation/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Automation | Zion Tech Group',
-  description: 'AI automation services and tooling from Zion Tech Group.',
+    card: 'summary_large_image',
+    title: 'AI Automation | Zion Tech Group',
+    description: 'AI automation services and tooling from Zion Tech Group.',
   },
   alternates: { canonical: '/automation/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Container Security Lifecycle: security and governance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Container Security Lifecycle: security and governance',
-  description: 'Container Security Lifecycle: security and governance',
-  url: 'https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/',
-  type: 'article',
+    title: 'Container Security Lifecycle: security and governance',
+    description: 'Container Security Lifecycle: security and governance',
+    url: 'https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Container Security Lifecycle: security and governance',
-  description: 'Container Security Lifecycle: security and governance',
+    card: 'summary_large_image',
+    title: 'Container Security Lifecycle: security and governance',
+    description: 'Container Security Lifecycle: security and governance',
   },
   alternates: { canonical: '/blog/container-security-lifecycle-security-and-governance/' },
 };

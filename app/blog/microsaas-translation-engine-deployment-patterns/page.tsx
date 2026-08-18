@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'MicroSaaS Translation Engine: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'MicroSaaS Translation Engine: deployment patterns',
-  description: 'MicroSaaS Translation Engine: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-deployment-patterns/',
-  type: 'article',
+    title: 'MicroSaaS Translation Engine: deployment patterns',
+    description: 'MicroSaaS Translation Engine: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'MicroSaaS Translation Engine: deployment patterns',
-  description: 'MicroSaaS Translation Engine: deployment patterns',
+    card: 'summary_large_image',
+    title: 'MicroSaaS Translation Engine: deployment patterns',
+    description: 'MicroSaaS Translation Engine: deployment patterns',
   },
   alternates: { canonical: '/blog/microsaas-translation-engine-deployment-patterns/' },
 };

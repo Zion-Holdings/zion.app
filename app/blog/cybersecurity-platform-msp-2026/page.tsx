@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cybersecurity for MSPs | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cybersecurity for MSPs',
-  description: 'Cybersecurity for MSPs',
-  url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/',
-  type: 'article',
+    title: 'Cybersecurity for MSPs',
+    description: 'Cybersecurity for MSPs',
+    url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cybersecurity for MSPs',
-  description: 'Cybersecurity for MSPs',
+    card: 'summary_large_image',
+    title: 'Cybersecurity for MSPs',
+    description: 'Cybersecurity for MSPs',
   },
   alternates: { canonical: '/blog/cybersecurity-platform-msp-2026/' },
 };

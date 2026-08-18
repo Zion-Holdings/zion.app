@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Partners | Zion Tech Group',
   description: 'Technology and delivery partners of Zion Tech Group.',
   openGraph: {
-  title: 'Partners | Zion Tech Group',
-  description: 'Partner ecosystem for AI, IT, and automation engagements.',
-  url: 'https://ziontechgroup.com/partners/',
-  type: 'website',
+    title: 'Partners | Zion Tech Group',
+    description: 'Partner ecosystem for AI, IT, and automation engagements.',
+    url: 'https://ziontechgroup.com/partners/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Partners | Zion Tech Group',
-  description: 'Partner ecosystem for AI, IT, and automation engagements.',
+    card: 'summary_large_image',
+    title: 'Partners | Zion Tech Group',
+    description: 'Partner ecosystem for AI, IT, and automation engagements.',
   },
   alternates: { canonical: '/partners/' },
 };

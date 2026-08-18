@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Automation Orchestration: architecture overview | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Automation Orchestration: architecture overview',
-  description: 'Automation Orchestration: architecture overview',
-  url: 'https://ziontechgroup.com/blog/automation-orchestration-architecture-overview/',
-  type: 'article',
+    title: 'Automation Orchestration: architecture overview',
+    description: 'Automation Orchestration: architecture overview',
+    url: 'https://ziontechgroup.com/blog/automation-orchestration-architecture-overview/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Automation Orchestration: architecture overview',
-  description: 'Automation Orchestration: architecture overview',
+    card: 'summary_large_image',
+    title: 'Automation Orchestration: architecture overview',
+    description: 'Automation Orchestration: architecture overview',
   },
   alternates: { canonical: '/blog/automation-orchestration-architecture-overview/' },
 };

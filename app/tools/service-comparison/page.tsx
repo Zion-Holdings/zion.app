@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Service Comparison | Zion Tech Group',
   description: 'Compare AI, IT, and automation service models by scope, fit, and speed.',
   openGraph: {
-  title: 'Service Comparison',
-  description: 'Side-by-side service fit comparison.',
-  url: 'https://ziontechgroup.com/tools/service-comparison/',
-  type: 'website',
+    title: 'Service Comparison',
+    description: 'Side-by-side service fit comparison.',
+    url: 'https://ziontechgroup.com/tools/service-comparison/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Service Comparison',
-  description: 'Side-by-side service fit comparison.',
+    card: 'summary_large_image',
+    title: 'Service Comparison',
+    description: 'Side-by-side service fit comparison.',
   },
   alternates: { canonical: '/tools/service-comparison/' },
 };

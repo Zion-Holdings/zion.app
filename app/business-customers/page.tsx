@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Enterprise Customers | Zion Tech Group',
   description: 'AI and IT delivery models for business customers with measurable outcomes.',
   openGraph: {
-  title: 'Enterprise Customers | Zion Tech Group',
-  description: 'AI and IT delivery models for business customers with measurable outcomes.',
-  url: 'https://ziontechgroup.com/business-customers/',
-  type: 'website',
+    title: 'Enterprise Customers | Zion Tech Group',
+    description: 'AI and IT delivery models for business customers with measurable outcomes.',
+    url: 'https://ziontechgroup.com/business-customers/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Enterprise Customers | Zion Tech Group',
-  description: 'AI and IT delivery models for business customers with measurable outcomes.',
+    card: 'summary_large_image',
+    title: 'Enterprise Customers | Zion Tech Group',
+    description: 'AI and IT delivery models for business customers with measurable outcomes.',
   },
   alternates: { canonical: '/business-customers/' },
 };

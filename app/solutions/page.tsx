@@ -1,19 +1,21 @@
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Industry Solutions | Zion Tech Group',
   description: 'Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry\'s unique challenges and compliance requirements.',
   openGraph: {
-  title: 'Industry Solutions | Zion Tech Group',
-  description: 'Purpose-built AI and IT solutions by industry.',
-  url: 'https://ziontechgroup.com/solutions/',
-  type: 'website',
+    title: 'Industry Solutions | Zion Tech Group',
+    description: 'Purpose-built AI and IT solutions by industry.',
+    url: 'https://ziontechgroup.com/solutions/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Industry Solutions | Zion Tech Group',
-  description: 'Purpose-built AI and IT solutions by industry.',
+    card: 'summary_large_image',
+    title: 'Industry Solutions | Zion Tech Group',
+    description: 'Purpose-built AI and IT solutions by industry.',
   },
   alternates: { canonical: '/solutions/' },
 };

@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Incident Response Automation 2026 | Zion Tech Group',
   description: 'Implementation patterns, risks, and next steps for incident response automation 2026.',
   openGraph: {
-  title: 'Incident Response Automation 2026 | Zion Tech Group',
-  description: 'Practical guidance for incident response automation 2026.',
-  url: 'https://ziontechgroup.com/blog/incident-response-automation-2026/',
-  type: 'article',
+    title: 'Incident Response Automation 2026 | Zion Tech Group',
+    description: 'Practical guidance for incident response automation 2026.',
+    url: 'https://ziontechgroup.com/blog/incident-response-automation-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Incident Response Automation 2026 | Zion Tech Group',
-  description: 'Practical guidance for incident response automation 2026.',
+    card: 'summary_large_image',
+    title: 'Incident Response Automation 2026 | Zion Tech Group',
+    description: 'Practical guidance for incident response automation 2026.',
   },
   alternates: { canonical: '/blog/incident-response-automation-2026/' },
 };

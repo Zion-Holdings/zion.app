@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Ai Contract Review Automation | Zion Tech Group',
   description: 'Implementation patterns, risks, and next steps for ai contract review automation.',
   openGraph: {
-  title: 'Ai Contract Review Automation | Zion Tech Group',
-  description: 'Practical guidance for ai contract review automation.',
-  url: 'https://ziontechgroup.com/blog/ai-contract-review-automation/',
-  type: 'article',
+    title: 'Ai Contract Review Automation | Zion Tech Group',
+    description: 'Practical guidance for ai contract review automation.',
+    url: 'https://ziontechgroup.com/blog/ai-contract-review-automation/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Ai Contract Review Automation | Zion Tech Group',
-  description: 'Practical guidance for ai contract review automation.',
+    card: 'summary_large_image',
+    title: 'Ai Contract Review Automation | Zion Tech Group',
+    description: 'Practical guidance for ai contract review automation.',
   },
   alternates: { canonical: '/blog/ai-contract-review-automation/' },
 };

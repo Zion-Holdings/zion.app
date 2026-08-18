@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'MicroSaaS Customer Onboarding: executive guide | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'MicroSaaS Customer Onboarding: executive guide',
-  description: 'MicroSaaS Customer Onboarding: executive guide',
-  url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-executive-guide/',
-  type: 'article',
+    title: 'MicroSaaS Customer Onboarding: executive guide',
+    description: 'MicroSaaS Customer Onboarding: executive guide',
+    url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-executive-guide/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'MicroSaaS Customer Onboarding: executive guide',
-  description: 'MicroSaaS Customer Onboarding: executive guide',
+    card: 'summary_large_image',
+    title: 'MicroSaaS Customer Onboarding: executive guide',
+    description: 'MicroSaaS Customer Onboarding: executive guide',
   },
   alternates: { canonical: '/blog/microsaas-customer-onboarding-executive-guide/' },
 };

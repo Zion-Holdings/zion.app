@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud Native App Development: policy and compliance | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud Native App Development: policy and compliance',
-  description: 'Cloud Native App Development: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/cloud-native-app-development-policy-and-compliance/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Cloud Native App Development: policy and compliance',
+    description: 'Cloud Native App Development: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/cloud-native-app-development-policy-and-compliance/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-native-app-development-policy-and-compliance/' },
 };

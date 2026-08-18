@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'DevOps CI/CD: vendor evaluation | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'DevOps CI/CD: vendor evaluation',
-  description: 'DevOps CI/CD: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/devops-cicd-vendor-evaluation/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'DevOps CI/CD: vendor evaluation',
+    description: 'DevOps CI/CD: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/devops-cicd-vendor-evaluation/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/devops-cicd-vendor-evaluation/' },
 };

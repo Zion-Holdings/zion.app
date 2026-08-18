@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'DevOps CI/CD Modernization | Zion Tech Group',
   description: 'Modernize your CI/CD pipelines for speed, reliability, and security with our comprehensive guide.',
   openGraph: {
-  title: 'DevOps CI/CD Modernization | Zion Tech Group',
-  description: 'Accelerate delivery while reducing risk with modern CI/CD practices.',
-  url: 'https://ziontechgroup.com/blog/devops-cicd-modernization/',
-  type: 'article',
+    title: 'DevOps CI/CD Modernization | Zion Tech Group',
+    description: 'Accelerate delivery while reducing risk with modern CI/CD practices.',
+    url: 'https://ziontechgroup.com/blog/devops-cicd-modernization/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'DevOps CI/CD Modernization | Zion Tech Group',
-  description: 'Accelerate delivery while reducing risk with modern CI/CD practices.',
+    card: 'summary_large_image',
+    title: 'DevOps CI/CD Modernization | Zion Tech Group',
+    description: 'Accelerate delivery while reducing risk with modern CI/CD practices.',
   },
   alternates: { canonical: '/blog/devops-cicd-modernization/' },
 };

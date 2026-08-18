@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'ETL Pipeline Optimization: case study | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'ETL Pipeline Optimization: case study',
-  description: 'ETL Pipeline Optimization: case study',
-  url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/',
-  type: 'article',
+    title: 'ETL Pipeline Optimization: case study',
+    description: 'ETL Pipeline Optimization: case study',
+    url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'ETL Pipeline Optimization: case study',
-  description: 'ETL Pipeline Optimization: case study',
+    card: 'summary_large_image',
+    title: 'ETL Pipeline Optimization: case study',
+    description: 'ETL Pipeline Optimization: case study',
   },
   alternates: { canonical: '/blog/etl-pipeline-optimization-case-study/' },
 };

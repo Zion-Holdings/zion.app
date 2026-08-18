@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Data Backup: policy and compliance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Data Backup: policy and compliance',
-  description: 'AI Data Backup: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/ai-data-backup-policy-and-compliance/',
-  type: 'article',
+    title: 'AI Data Backup: policy and compliance',
+    description: 'AI Data Backup: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/ai-data-backup-policy-and-compliance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Data Backup: policy and compliance',
-  description: 'AI Data Backup: policy and compliance',
+    card: 'summary_large_image',
+    title: 'AI Data Backup: policy and compliance',
+    description: 'AI Data Backup: policy and compliance',
   },
   alternates: { canonical: '/blog/ai-data-backup-policy-and-compliance/' },
 };

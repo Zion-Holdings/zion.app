@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Integration: vendor evaluation | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Integration: vendor evaluation',
-  description: 'API Integration: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/api-integration-vendor-evaluation/',
-  type: 'article',
+    title: 'API Integration: vendor evaluation',
+    description: 'API Integration: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/api-integration-vendor-evaluation/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'API Integration: vendor evaluation',
-  description: 'API Integration: vendor evaluation',
+    card: 'summary_large_image',
+    title: 'API Integration: vendor evaluation',
+    description: 'API Integration: vendor evaluation',
   },
   alternates: { canonical: '/blog/api-integration-vendor-evaluation/' },
 };

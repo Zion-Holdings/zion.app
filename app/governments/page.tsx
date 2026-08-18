@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'Governments | Zion Tech Group',
   description: 'Secure AI, IT, and automation programs for government organizations.',
   openGraph: {
-  title: 'Governments | Zion Tech Group',
-  description: 'Secure AI, IT, and automation programs for government organizations.',
-  url: 'https://ziontechgroup.com/governments/',
-  type: 'website',
+    title: 'Governments | Zion Tech Group',
+    description: 'Secure AI, IT, and automation programs for government organizations.',
+    url: 'https://ziontechgroup.com/governments/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Governments | Zion Tech Group',
-  description: 'Secure AI, IT, and automation programs for government organizations.',
+    card: 'summary_large_image',
+    title: 'Governments | Zion Tech Group',
+    description: 'Secure AI, IT, and automation programs for government organizations.',
   },
   alternates: { canonical: '/governments/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Enterprise Backup DR: implementation playbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Enterprise Backup DR: implementation playbook',
-  description: 'Enterprise Backup DR: implementation playbook',
-  url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/',
-  type: 'article',
+    title: 'Enterprise Backup DR: implementation playbook',
+    description: 'Enterprise Backup DR: implementation playbook',
+    url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Enterprise Backup DR: implementation playbook',
-  description: 'Enterprise Backup DR: implementation playbook',
+    card: 'summary_large_image',
+    title: 'Enterprise Backup DR: implementation playbook',
+    description: 'Enterprise Backup DR: implementation playbook',
   },
   alternates: { canonical: '/blog/enterprise-backup-dr-implementation-playbook/' },
 };

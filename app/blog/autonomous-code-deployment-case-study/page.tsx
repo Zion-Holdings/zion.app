@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Autonomous Code Deployment: case study | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Autonomous Code Deployment: case study',
-  description: 'Autonomous Code Deployment: case study',
-  url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-case-study/',
-  type: 'article',
+    title: 'Autonomous Code Deployment: case study',
+    description: 'Autonomous Code Deployment: case study',
+    url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-case-study/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Autonomous Code Deployment: case study',
-  description: 'Autonomous Code Deployment: case study',
+    card: 'summary_large_image',
+    title: 'Autonomous Code Deployment: case study',
+    description: 'Autonomous Code Deployment: case study',
   },
   alternates: { canonical: '/blog/autonomous-code-deployment-case-study/' },
 };

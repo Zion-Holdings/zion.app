@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'IT Vendors | Zion Tech Group',
   description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
   openGraph: {
-  title: 'IT Vendors | Zion Tech Group',
-  description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
-  url: 'https://ziontechgroup.com/it-vendors/',
-  type: 'website',
+    title: 'IT Vendors | Zion Tech Group',
+    description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
+    url: 'https://ziontechgroup.com/it-vendors/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'IT Vendors | Zion Tech Group',
-  description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
+    card: 'summary_large_image',
+    title: 'IT Vendors | Zion Tech Group',
+    description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
   },
   alternates: { canonical: '/it-vendors/' },
 };

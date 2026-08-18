@@ -1,19 +1,21 @@
 import Link from 'next/link';
 import PageTemplate from '@/components/PageTemplate';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Partnership Program | Zion Tech Group',
   description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
   openGraph: {
-  title: 'Partnership Program | Zion Tech Group',
-  description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
-  url: 'https://ziontechgroup.com/partnership-program/',
-  type: 'website',
+    title: 'Partnership Program | Zion Tech Group',
+    description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
+    url: 'https://ziontechgroup.com/partnership-program/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Partnership Program | Zion Tech Group',
-  description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
+    card: 'summary_large_image',
+    title: 'Partnership Program | Zion Tech Group',
+    description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
   },
   alternates: { canonical: '/partnership-program/' },
 };

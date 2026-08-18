@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Data Lakehouse Pipelines: case study | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Data Lakehouse Pipelines: case study',
-  description: 'AI Data Lakehouse Pipelines: case study',
-  url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-case-study/',
-  type: 'article',
+    title: 'AI Data Lakehouse Pipelines: case study',
+    description: 'AI Data Lakehouse Pipelines: case study',
+    url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-case-study/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Data Lakehouse Pipelines: case study',
-  description: 'AI Data Lakehouse Pipelines: case study',
+    card: 'summary_large_image',
+    title: 'AI Data Lakehouse Pipelines: case study',
+    description: 'AI Data Lakehouse Pipelines: case study',
   },
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-case-study/' },
 };

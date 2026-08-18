@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Event Driven Architecture: evaluation framework | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Event Driven Architecture: evaluation framework',
-  description: 'Event Driven Architecture: evaluation framework',
-  url: 'https://ziontechgroup.com/blog/event-driven-architecture-evaluation-framework/',
-  type: 'article',
+    title: 'Event Driven Architecture: evaluation framework',
+    description: 'Event Driven Architecture: evaluation framework',
+    url: 'https://ziontechgroup.com/blog/event-driven-architecture-evaluation-framework/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Event Driven Architecture: evaluation framework',
-  description: 'Event Driven Architecture: evaluation framework',
+    card: 'summary_large_image',
+    title: 'Event Driven Architecture: evaluation framework',
+    description: 'Event Driven Architecture: evaluation framework',
   },
   alternates: { canonical: '/blog/event-driven-architecture-evaluation-framework/' },
 };

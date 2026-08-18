@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Managed IT Services: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Managed IT Services: deployment patterns',
-  description: 'Managed IT Services: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/managed-it-services-deployment-patterns/',
-  type: 'article',
+    title: 'Managed IT Services: deployment patterns',
+    description: 'Managed IT Services: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/managed-it-services-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Managed IT Services: deployment patterns',
-  description: 'Managed IT Services: deployment patterns',
+    card: 'summary_large_image',
+    title: 'Managed IT Services: deployment patterns',
+    description: 'Managed IT Services: deployment patterns',
   },
   alternates: { canonical: '/blog/managed-it-services-deployment-patterns/' },
 };

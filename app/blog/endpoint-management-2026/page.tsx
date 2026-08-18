@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Endpoint Management | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Endpoint Management',
-  description: 'Endpoint Management',
-  url: 'https://ziontechgroup.com/blog/endpoint-management-2026/',
-  type: 'article',
+    title: 'Endpoint Management',
+    description: 'Endpoint Management',
+    url: 'https://ziontechgroup.com/blog/endpoint-management-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Endpoint Management',
-  description: 'Endpoint Management',
+    card: 'summary_large_image',
+    title: 'Endpoint Management',
+    description: 'Endpoint Management',
   },
   alternates: { canonical: '/blog/endpoint-management-2026/' },
 };

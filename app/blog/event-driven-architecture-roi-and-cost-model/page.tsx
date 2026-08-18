@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Event Driven Architecture: ROI and cost model | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Event Driven Architecture: ROI and cost model',
-  description: 'Event Driven Architecture: ROI and cost model',
-  url: 'https://ziontechgroup.com/blog/event-driven-architecture-roi-and-cost-model/',
-  type: 'article',
+    title: 'Event Driven Architecture: ROI and cost model',
+    description: 'Event Driven Architecture: ROI and cost model',
+    url: 'https://ziontechgroup.com/blog/event-driven-architecture-roi-and-cost-model/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Event Driven Architecture: ROI and cost model',
-  description: 'Event Driven Architecture: ROI and cost model',
+    card: 'summary_large_image',
+    title: 'Event Driven Architecture: ROI and cost model',
+    description: 'Event Driven Architecture: ROI and cost model',
   },
   alternates: { canonical: '/blog/event-driven-architecture-roi-and-cost-model/' },
 };

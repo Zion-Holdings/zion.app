@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Automated AI Reporting: policy and compliance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Automated AI Reporting: policy and compliance',
-  description: 'Automated AI Reporting: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/automated-ai-reporting-policy-and-compliance/',
-  type: 'article',
+    title: 'Automated AI Reporting: policy and compliance',
+    description: 'Automated AI Reporting: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-policy-and-compliance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Automated AI Reporting: policy and compliance',
-  description: 'Automated AI Reporting: policy and compliance',
+    card: 'summary_large_image',
+    title: 'Automated AI Reporting: policy and compliance',
+    description: 'Automated AI Reporting: policy and compliance',
   },
   alternates: { canonical: '/blog/automated-ai-reporting-policy-and-compliance/' },
 };

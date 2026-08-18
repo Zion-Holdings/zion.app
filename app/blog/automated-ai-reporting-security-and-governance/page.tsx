@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Automated AI Reporting: security and governance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Automated AI Reporting: security and governance',
-  description: 'Automated AI Reporting: security and governance',
-  url: 'https://ziontechgroup.com/blog/automated-ai-reporting-security-and-governance/',
-  type: 'article',
+    title: 'Automated AI Reporting: security and governance',
+    description: 'Automated AI Reporting: security and governance',
+    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-security-and-governance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Automated AI Reporting: security and governance',
-  description: 'Automated AI Reporting: security and governance',
+    card: 'summary_large_image',
+    title: 'Automated AI Reporting: security and governance',
+    description: 'Automated AI Reporting: security and governance',
   },
   alternates: { canonical: '/blog/automated-ai-reporting-security-and-governance/' },
 };

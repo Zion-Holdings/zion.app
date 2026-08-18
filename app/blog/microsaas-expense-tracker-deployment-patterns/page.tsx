@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'MicroSaaS Expense Tracker: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'MicroSaaS Expense Tracker: deployment patterns',
-  description: 'MicroSaaS Expense Tracker: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-deployment-patterns/',
-  type: 'article',
+    title: 'MicroSaaS Expense Tracker: deployment patterns',
+    description: 'MicroSaaS Expense Tracker: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'MicroSaaS Expense Tracker: deployment patterns',
-  description: 'MicroSaaS Expense Tracker: deployment patterns',
+    card: 'summary_large_image',
+    title: 'MicroSaaS Expense Tracker: deployment patterns',
+    description: 'MicroSaaS Expense Tracker: deployment patterns',
   },
   alternates: { canonical: '/blog/microsaas-expense-tracker-deployment-patterns/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Agent Safety Evaluation | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Agent Safety Evaluation',
-  description: 'AI Agent Safety Evaluation',
-  url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-2026/',
-  type: 'article',
+    title: 'AI Agent Safety Evaluation',
+    description: 'AI Agent Safety Evaluation',
+    url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Agent Safety Evaluation',
-  description: 'AI Agent Safety Evaluation',
+    card: 'summary_large_image',
+    title: 'AI Agent Safety Evaluation',
+    description: 'AI Agent Safety Evaluation',
   },
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-2026/' },
 };

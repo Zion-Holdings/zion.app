@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI IT Operations: ROI and cost model | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI IT Operations: ROI and cost model',
-  description: 'AI IT Operations: ROI and cost model',
-  url: 'https://ziontechgroup.com/blog/ai-it-operations-roi-and-cost-model/',
-  type: 'article',
+    title: 'AI IT Operations: ROI and cost model',
+    description: 'AI IT Operations: ROI and cost model',
+    url: 'https://ziontechgroup.com/blog/ai-it-operations-roi-and-cost-model/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI IT Operations: ROI and cost model',
-  description: 'AI IT Operations: ROI and cost model',
+    card: 'summary_large_image',
+    title: 'AI IT Operations: ROI and cost model',
+    description: 'AI IT Operations: ROI and cost model',
   },
   alternates: { canonical: '/blog/ai-it-operations-roi-and-cost-model/' },
 };

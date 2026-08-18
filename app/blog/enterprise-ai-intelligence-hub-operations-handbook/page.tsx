@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Enterprise AI Intelligence Hub: operations handbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Enterprise AI Intelligence Hub: operations handbook',
-  description: 'Enterprise AI Intelligence Hub: operations handbook',
-  url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/',
-  type: 'article',
+    title: 'Enterprise AI Intelligence Hub: operations handbook',
+    description: 'Enterprise AI Intelligence Hub: operations handbook',
+    url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Enterprise AI Intelligence Hub: operations handbook',
-  description: 'Enterprise AI Intelligence Hub: operations handbook',
+    card: 'summary_large_image',
+    title: 'Enterprise AI Intelligence Hub: operations handbook',
+    description: 'Enterprise AI Intelligence Hub: operations handbook',
   },
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-operations-handbook/' },
 };

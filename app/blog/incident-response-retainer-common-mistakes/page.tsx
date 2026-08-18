@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Incident Response Retainer: common mistakes | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Incident Response Retainer: common mistakes',
-  description: 'Incident Response Retainer: common mistakes',
-  url: 'https://ziontechgroup.com/blog/incident-response-retainer-common-mistakes/',
-  type: 'article',
+    title: 'Incident Response Retainer: common mistakes',
+    description: 'Incident Response Retainer: common mistakes',
+    url: 'https://ziontechgroup.com/blog/incident-response-retainer-common-mistakes/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Incident Response Retainer: common mistakes',
-  description: 'Incident Response Retainer: common mistakes',
+    card: 'summary_large_image',
+    title: 'Incident Response Retainer: common mistakes',
+    description: 'Incident Response Retainer: common mistakes',
   },
   alternates: { canonical: '/blog/incident-response-retainer-common-mistakes/' },
 };

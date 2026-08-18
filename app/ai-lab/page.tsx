@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'AI Lab | Zion Tech Group',
   description: 'Explore emerging AI capabilities, experimental services, and sandbox engagements from Zion Tech Group.',
   openGraph: { title: 'AI Lab | Zion Tech Group',
-  description: 'Emerging AI capabilities and experiments.',
-  url: 'https://ziontechgroup.com/ai-lab/',
+    description: 'Emerging AI capabilities and experiments.',
+    url: 'https://ziontechgroup.com/ai-lab/',
   type: 'website' },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Lab | Zion Tech Group',
-  description: 'Emerging AI capabilities and experiments.',
+    card: 'summary_large_image',
+    title: 'AI Lab | Zion Tech Group',
+    description: 'Emerging AI capabilities and experiments.',
   },
   alternates: { canonical: '/ai-lab/' },
 };

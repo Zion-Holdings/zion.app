@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Security Testing | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Security Testing',
-  description: 'API Security Testing',
-  url: 'https://ziontechgroup.com/blog/api-security-testing-2026/',
-  type: 'article',
+    title: 'API Security Testing',
+    description: 'API Security Testing',
+    url: 'https://ziontechgroup.com/blog/api-security-testing-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'API Security Testing',
-  description: 'API Security Testing',
+    card: 'summary_large_image',
+    title: 'API Security Testing',
+    description: 'API Security Testing',
   },
   alternates: { canonical: '/blog/api-security-testing-2026/' },
 };

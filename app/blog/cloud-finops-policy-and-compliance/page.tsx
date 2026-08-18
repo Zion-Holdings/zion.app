@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud FinOps: policy and compliance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud FinOps: policy and compliance',
-  description: 'Cloud FinOps: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/cloud-finops-policy-and-compliance/',
-  type: 'article',
+    title: 'Cloud FinOps: policy and compliance',
+    description: 'Cloud FinOps: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/cloud-finops-policy-and-compliance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cloud FinOps: policy and compliance',
-  description: 'Cloud FinOps: policy and compliance',
+    card: 'summary_large_image',
+    title: 'Cloud FinOps: policy and compliance',
+    description: 'Cloud FinOps: policy and compliance',
   },
   alternates: { canonical: '/blog/cloud-finops-policy-and-compliance/' },
 };

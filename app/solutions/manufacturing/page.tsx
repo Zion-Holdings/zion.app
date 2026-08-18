@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Manufacturing Solutions | Zion Tech Group',
   description: 'Predictive maintenance, quality assurance, and supply chain operations for manufacturing.',
   openGraph: {
-  title: 'Manufacturing Solutions | Zion Tech Group',
-  description: 'Manufacturing delivery patterns and AI implementation guidance.',
-  url: 'https://ziontechgroup.com/solutions/manufacturing/',
-  type: 'website',
+    title: 'Manufacturing Solutions | Zion Tech Group',
+    description: 'Manufacturing delivery patterns and AI implementation guidance.',
+    url: 'https://ziontechgroup.com/solutions/manufacturing/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Manufacturing Solutions | Zion Tech Group',
-  description: 'Manufacturing delivery patterns and AI implementation guidance.',
+    card: 'summary_large_image',
+    title: 'Manufacturing Solutions | Zion Tech Group',
+    description: 'Manufacturing delivery patterns and AI implementation guidance.',
   },
   alternates: { canonical: '/solutions/manufacturing/' },
 };

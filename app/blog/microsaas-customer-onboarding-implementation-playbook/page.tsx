@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'MicroSaaS Customer Onboarding: implementation playbook | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'MicroSaaS Customer Onboarding: implementation playbook',
-  description: 'MicroSaaS Customer Onboarding: implementation playbook',
-  url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-implementation-playbook/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'MicroSaaS Customer Onboarding: implementation playbook',
+    description: 'MicroSaaS Customer Onboarding: implementation playbook',
+    url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-implementation-playbook/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/microsaas-customer-onboarding-implementation-playbook/' },
 };

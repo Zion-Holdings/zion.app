@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud FinOps: deployment patterns | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud FinOps: deployment patterns',
-  description: 'Cloud FinOps: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/cloud-finops-deployment-patterns/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Cloud FinOps: deployment patterns',
+    description: 'Cloud FinOps: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/cloud-finops-deployment-patterns/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-finops-deployment-patterns/' },
 };

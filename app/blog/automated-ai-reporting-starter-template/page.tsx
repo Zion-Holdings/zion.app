@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Automated AI Reporting: starter template | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Automated AI Reporting: starter template',
-  description: 'Automated AI Reporting: starter template',
-  url: 'https://ziontechgroup.com/blog/automated-ai-reporting-starter-template/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Automated AI Reporting: starter template',
+    description: 'Automated AI Reporting: starter template',
+    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-starter-template/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/automated-ai-reporting-starter-template/' },
 };

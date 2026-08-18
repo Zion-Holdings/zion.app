@@ -1,20 +1,22 @@
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Page Not Found | Zion Tech Group',
   description: 'The page you are looking for does not exist or has been moved.',
   openGraph: {
-  title: 'Page Not Found | Zion Tech Group',
-  description: 'The page you are looking for does not exist or has been moved.',
-  url: 'https://ziontechgroup.com/404',
-  type: 'website',
+    title: 'Page Not Found | Zion Tech Group',
+    description: 'The page you are looking for does not exist or has been moved.',
+    url: 'https://ziontechgroup.com/404',
+    type: 'website',
   },
   alternates: { canonical: '/404' },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Page Not Found | Zion Tech Group',
-  description: 'The page you are looking for does not exist or has been moved.',
+    card: 'summary_large_image',
+    title: 'Page Not Found | Zion Tech Group',
+    description: 'The page you are looking for does not exist or has been moved.',
   },
 };
 

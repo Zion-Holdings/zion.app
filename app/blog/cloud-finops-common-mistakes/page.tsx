@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud FinOps: common mistakes | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud FinOps: common mistakes',
-  description: 'Cloud FinOps: common mistakes',
-  url: 'https://ziontechgroup.com/blog/cloud-finops-common-mistakes/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Cloud FinOps: common mistakes',
+    description: 'Cloud FinOps: common mistakes',
+    url: 'https://ziontechgroup.com/blog/cloud-finops-common-mistakes/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cloud-finops-common-mistakes/' },
 };

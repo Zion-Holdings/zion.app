@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Management Gateway | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Management Gateway',
-  description: 'API Management Gateway',
-  url: 'https://ziontechgroup.com/blog/api-management-gateway-2026/',
-  type: 'article',
+    title: 'API Management Gateway',
+    description: 'API Management Gateway',
+    url: 'https://ziontechgroup.com/blog/api-management-gateway-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'API Management Gateway',
-  description: 'API Management Gateway',
+    card: 'summary_large_image',
+    title: 'API Management Gateway',
+    description: 'API Management Gateway',
   },
   alternates: { canonical: '/blog/api-management-gateway-2026/' },
 };

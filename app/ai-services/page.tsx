@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'AI Services | Zion Tech Group',
   description: 'End-to-end AI services from strategy to production: assistants, RAG, agents, evaluation, and governance.',
   openGraph: {
-  title: 'AI Services | Zion Tech Group',
-  description: 'Production AI services and implementation.',
-  url: 'https://ziontechgroup.com/ai-services/',
-  type: 'website',
+    title: 'AI Services | Zion Tech Group',
+    description: 'Production AI services and implementation.',
+    url: 'https://ziontechgroup.com/ai-services/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Services | Zion Tech Group',
-  description: 'Production AI services and implementation.',
+    card: 'summary_large_image',
+    title: 'AI Services | Zion Tech Group',
+    description: 'Production AI services and implementation.',
   },
   alternates: { canonical: '/ai-services/' },
 };

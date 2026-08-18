@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Performance Testing: policy and compliance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Performance Testing: policy and compliance',
-  description: 'API Performance Testing: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/api-performance-testing-policy-and-compliance/',
-  type: 'article',
+    title: 'API Performance Testing: policy and compliance',
+    description: 'API Performance Testing: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/api-performance-testing-policy-and-compliance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'API Performance Testing: policy and compliance',
-  description: 'API Performance Testing: policy and compliance',
+    card: 'summary_large_image',
+    title: 'API Performance Testing: policy and compliance',
+    description: 'API Performance Testing: policy and compliance',
   },
   alternates: { canonical: '/blog/api-performance-testing-policy-and-compliance/' },
 };

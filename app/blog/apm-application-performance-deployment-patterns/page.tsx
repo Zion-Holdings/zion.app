@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'APM Application Performance: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'APM Application Performance: deployment patterns',
-  description: 'APM Application Performance: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/apm-application-performance-deployment-patterns/',
-  type: 'article',
+    title: 'APM Application Performance: deployment patterns',
+    description: 'APM Application Performance: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/apm-application-performance-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'APM Application Performance: deployment patterns',
-  description: 'APM Application Performance: deployment patterns',
+    card: 'summary_large_image',
+    title: 'APM Application Performance: deployment patterns',
+    description: 'APM Application Performance: deployment patterns',
   },
   alternates: { canonical: '/blog/apm-application-performance-deployment-patterns/' },
 };

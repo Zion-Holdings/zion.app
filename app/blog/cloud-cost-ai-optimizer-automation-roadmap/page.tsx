@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud Cost AI Optimizer: automation roadmap | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud Cost AI Optimizer: automation roadmap',
-  description: 'Cloud Cost AI Optimizer: automation roadmap',
-  url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-automation-roadmap/',
-  type: 'article',
+    title: 'Cloud Cost AI Optimizer: automation roadmap',
+    description: 'Cloud Cost AI Optimizer: automation roadmap',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-automation-roadmap/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cloud Cost AI Optimizer: automation roadmap',
-  description: 'Cloud Cost AI Optimizer: automation roadmap',
+    card: 'summary_large_image',
+    title: 'Cloud Cost AI Optimizer: automation roadmap',
+    description: 'Cloud Cost AI Optimizer: automation roadmap',
   },
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-automation-roadmap/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: '5G Solutions: operations handbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: '5G Solutions: operations handbook',
-  description: '5G Solutions: operations handbook',
-  url: 'https://ziontechgroup.com/blog/5g-solutions-operations-handbook/',
-  type: 'article',
+    title: '5G Solutions: operations handbook',
+    description: '5G Solutions: operations handbook',
+    url: 'https://ziontechgroup.com/blog/5g-solutions-operations-handbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: '5G Solutions: operations handbook',
-  description: '5G Solutions: operations handbook',
+    card: 'summary_large_image',
+    title: '5G Solutions: operations handbook',
+    description: '5G Solutions: operations handbook',
   },
   alternates: { canonical: '/blog/5g-solutions-operations-handbook/' },
 };

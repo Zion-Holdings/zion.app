@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Performance Testing: checklist for IT leaders | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Performance Testing: checklist for IT leaders',
-  description: 'API Performance Testing: checklist for IT leaders',
-  url: 'https://ziontechgroup.com/blog/api-performance-testing-checklist-for-it-leaders/',
-  type: 'article',
+    title: 'API Performance Testing: checklist for IT leaders',
+    description: 'API Performance Testing: checklist for IT leaders',
+    url: 'https://ziontechgroup.com/blog/api-performance-testing-checklist-for-it-leaders/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'API Performance Testing: checklist for IT leaders',
-  description: 'API Performance Testing: checklist for IT leaders',
+    card: 'summary_large_image',
+    title: 'API Performance Testing: checklist for IT leaders',
+    description: 'API Performance Testing: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/api-performance-testing-checklist-for-it-leaders/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cybersecurity for MSPs: ROI and cost model | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cybersecurity for MSPs: ROI and cost model',
-  description: 'Cybersecurity for MSPs: ROI and cost model',
-  url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-roi-and-cost-model/',
-  type: 'article',
+    title: 'Cybersecurity for MSPs: ROI and cost model',
+    description: 'Cybersecurity for MSPs: ROI and cost model',
+    url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-roi-and-cost-model/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cybersecurity for MSPs: ROI and cost model',
-  description: 'Cybersecurity for MSPs: ROI and cost model',
+    card: 'summary_large_image',
+    title: 'Cybersecurity for MSPs: ROI and cost model',
+    description: 'Cybersecurity for MSPs: ROI and cost model',
   },
   alternates: { canonical: '/blog/cybersecurity-for-msps-roi-and-cost-model/' },
 };

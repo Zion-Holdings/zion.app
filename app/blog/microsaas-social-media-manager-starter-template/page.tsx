@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'MicroSaaS Social Media Manager: starter template | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'MicroSaaS Social Media Manager: starter template',
-  description: 'MicroSaaS Social Media Manager: starter template',
-  url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-starter-template/',
-  type: 'article',
+    title: 'MicroSaaS Social Media Manager: starter template',
+    description: 'MicroSaaS Social Media Manager: starter template',
+    url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-starter-template/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'MicroSaaS Social Media Manager: starter template',
-  description: 'MicroSaaS Social Media Manager: starter template',
+    card: 'summary_large_image',
+    title: 'MicroSaaS Social Media Manager: starter template',
+    description: 'MicroSaaS Social Media Manager: starter template',
   },
   alternates: { canonical: '/blog/microsaas-social-media-manager-starter-template/' },
 };

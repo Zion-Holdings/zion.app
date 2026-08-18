@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Accessibility Optimizer: implementation playbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Accessibility Optimizer: implementation playbook',
-  description: 'AI Accessibility Optimizer: implementation playbook',
-  url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-implementation-playbook/',
-  type: 'article',
+    title: 'AI Accessibility Optimizer: implementation playbook',
+    description: 'AI Accessibility Optimizer: implementation playbook',
+    url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-implementation-playbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Accessibility Optimizer: implementation playbook',
-  description: 'AI Accessibility Optimizer: implementation playbook',
+    card: 'summary_large_image',
+    title: 'AI Accessibility Optimizer: implementation playbook',
+    description: 'AI Accessibility Optimizer: implementation playbook',
   },
   alternates: { canonical: '/blog/ai-accessibility-optimizer-implementation-playbook/' },
 };

@@ -30,15 +30,15 @@ export const metadata: Metadata = {
   title: 'Service | Zion Tech Group',
   description: 'Service details and delivery guidance.',
   openGraph: {
-  title: 'Service | Zion Tech Group',
-  description: 'Service details and delivery guidance.',
-  url: 'https://ziontechgroup.com/services/',
-  type: 'website',
+    title: 'Service | Zion Tech Group',
+    description: 'Service details and delivery guidance.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Service | Zion Tech Group',
-  description: 'Service details and delivery guidance.',
+    card: 'summary_large_image',
+    title: 'Service | Zion Tech Group',
+    description: 'Service details and delivery guidance.',
   },
   alternates: { canonical: '/services/' },
 };

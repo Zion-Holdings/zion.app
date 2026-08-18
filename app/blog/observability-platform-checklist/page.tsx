@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Observability Platform Checklist | Zion Tech Group',
   description: 'Implementation patterns, risks, and next steps for observability platform checklist.',
   openGraph: {
-  title: 'Observability Platform Checklist | Zion Tech Group',
-  description: 'Practical guidance for observability platform checklist.',
-  url: 'https://ziontechgroup.com/blog/observability-platform-checklist/',
-  type: 'article',
+    title: 'Observability Platform Checklist | Zion Tech Group',
+    description: 'Practical guidance for observability platform checklist.',
+    url: 'https://ziontechgroup.com/blog/observability-platform-checklist/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Observability Platform Checklist | Zion Tech Group',
-  description: 'Practical guidance for observability platform checklist.',
+    card: 'summary_large_image',
+    title: 'Observability Platform Checklist | Zion Tech Group',
+    description: 'Practical guidance for observability platform checklist.',
   },
   alternates: { canonical: '/blog/observability-platform-checklist/' },
 };

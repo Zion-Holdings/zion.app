@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'Data & Analytics | Zion Tech Group',
   description: 'Data pipelines, analytics, and decision-ready dashboards from Zion Tech Group.',
   openGraph: {
-  title: 'Data & Analytics | Zion Tech Group',
-  description: 'Governed data pipelines, forecasting, and executive dashboards.',
-  url: 'https://ziontechgroup.com/data/',
-  type: 'website',
+    title: 'Data & Analytics | Zion Tech Group',
+    description: 'Governed data pipelines, forecasting, and executive dashboards.',
+    url: 'https://ziontechgroup.com/data/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Data & Analytics | Zion Tech Group',
-  description: 'Governed data pipelines, forecasting, and executive dashboards.',
+    card: 'summary_large_image',
+    title: 'Data & Analytics | Zion Tech Group',
+    description: 'Governed data pipelines, forecasting, and executive dashboards.',
   },
   alternates: { canonical: '/data/' },
 };

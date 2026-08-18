@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Accessibility Auditor | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Accessibility Auditor',
-  description: 'AI Accessibility Auditor',
-  url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/',
-  type: 'article',
+    title: 'AI Accessibility Auditor',
+    description: 'AI Accessibility Auditor',
+    url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Accessibility Auditor',
-  description: 'AI Accessibility Auditor',
+    card: 'summary_large_image',
+    title: 'AI Accessibility Auditor',
+    description: 'AI Accessibility Auditor',
   },
   alternates: { canonical: '/blog/ai-accessibility-auditor-2026/' },
 };

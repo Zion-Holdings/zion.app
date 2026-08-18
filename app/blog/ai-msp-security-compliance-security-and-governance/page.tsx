@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI MSP Security Compliance: security and governance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI MSP Security Compliance: security and governance',
-  description: 'AI MSP Security Compliance: security and governance',
-  url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-security-and-governance/',
-  type: 'article',
+    title: 'AI MSP Security Compliance: security and governance',
+    description: 'AI MSP Security Compliance: security and governance',
+    url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-security-and-governance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI MSP Security Compliance: security and governance',
-  description: 'AI MSP Security Compliance: security and governance',
+    card: 'summary_large_image',
+    title: 'AI MSP Security Compliance: security and governance',
+    description: 'AI MSP Security Compliance: security and governance',
   },
   alternates: { canonical: '/blog/ai-msp-security-compliance-security-and-governance/' },
 };

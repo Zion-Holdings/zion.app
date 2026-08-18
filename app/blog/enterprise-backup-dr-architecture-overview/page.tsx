@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Enterprise Backup DR: architecture overview | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Enterprise Backup DR: architecture overview',
-  description: 'Enterprise Backup DR: architecture overview',
-  url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-architecture-overview/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Enterprise Backup DR: architecture overview',
+    description: 'Enterprise Backup DR: architecture overview',
+    url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-architecture-overview/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/enterprise-backup-dr-architecture-overview/' },
 };

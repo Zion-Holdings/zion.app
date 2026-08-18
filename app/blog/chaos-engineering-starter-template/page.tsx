@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Chaos Engineering: starter template | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Chaos Engineering: starter template',
-  description: 'Chaos Engineering: starter template',
-  url: 'https://ziontechgroup.com/blog/chaos-engineering-starter-template/',
-  type: 'article',
+    title: 'Chaos Engineering: starter template',
+    description: 'Chaos Engineering: starter template',
+    url: 'https://ziontechgroup.com/blog/chaos-engineering-starter-template/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Chaos Engineering: starter template',
-  description: 'Chaos Engineering: starter template',
+    card: 'summary_large_image',
+    title: 'Chaos Engineering: starter template',
+    description: 'Chaos Engineering: starter template',
   },
   alternates: { canonical: '/blog/chaos-engineering-starter-template/' },
 };

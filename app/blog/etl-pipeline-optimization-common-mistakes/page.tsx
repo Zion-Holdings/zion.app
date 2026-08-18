@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'ETL Pipeline Optimization: common mistakes | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'ETL Pipeline Optimization: common mistakes',
-  description: 'ETL Pipeline Optimization: common mistakes',
-  url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-common-mistakes/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'ETL Pipeline Optimization: common mistakes',
+    description: 'ETL Pipeline Optimization: common mistakes',
+    url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-common-mistakes/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/etl-pipeline-optimization-common-mistakes/' },
 };

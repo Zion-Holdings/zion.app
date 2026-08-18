@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Accessibility Compliance: deployment patterns | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Accessibility Compliance: deployment patterns',
-  description: 'Accessibility Compliance: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/accessibility-compliance-deployment-patterns/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Accessibility Compliance: deployment patterns',
+    description: 'Accessibility Compliance: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/accessibility-compliance-deployment-patterns/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/accessibility-compliance-deployment-patterns/' },
 };

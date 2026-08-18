@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Cloud & DevOps Solutions | Zion Tech Group',
   description: 'Cloud migration, CI/CD, infrastructure automation, and reliability engineering from Zion Tech Group.',
   openGraph: {
-  title: 'Cloud & DevOps Solutions | Zion Tech Group',
-  description: 'Cloud and DevOps solutions with measurable outcomes.',
-  url: 'https://ziontechgroup.com/solutions/cloud-devops/',
-  type: 'website',
+    title: 'Cloud & DevOps Solutions | Zion Tech Group',
+    description: 'Cloud and DevOps solutions with measurable outcomes.',
+    url: 'https://ziontechgroup.com/solutions/cloud-devops/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cloud & DevOps Solutions | Zion Tech Group',
-  description: 'Cloud and DevOps solutions with measurable outcomes.',
+    card: 'summary_large_image',
+    title: 'Cloud & DevOps Solutions | Zion Tech Group',
+    description: 'Cloud and DevOps solutions with measurable outcomes.',
   },
   alternates: { canonical: '/solutions/cloud-devops/' },
 };

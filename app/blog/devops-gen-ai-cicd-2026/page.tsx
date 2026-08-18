@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'GenAI DevOps CI/CD | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'GenAI DevOps CI/CD',
-  description: 'GenAI DevOps CI/CD',
-  url: 'https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/',
-  type: 'article',
+    title: 'GenAI DevOps CI/CD',
+    description: 'GenAI DevOps CI/CD',
+    url: 'https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'GenAI DevOps CI/CD',
-  description: 'GenAI DevOps CI/CD',
+    card: 'summary_large_image',
+    title: 'GenAI DevOps CI/CD',
+    description: 'GenAI DevOps CI/CD',
   },
   alternates: { canonical: '/blog/devops-gen-ai-cicd-2026/' },
 };

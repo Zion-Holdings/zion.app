@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Integration: automation roadmap | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Integration: automation roadmap',
-  description: 'API Integration: automation roadmap',
-  url: 'https://ziontechgroup.com/blog/api-integration-automation-roadmap/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'API Integration: automation roadmap',
+    description: 'API Integration: automation roadmap',
+    url: 'https://ziontechgroup.com/blog/api-integration-automation-roadmap/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-integration-automation-roadmap/' },
 };

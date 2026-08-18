@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Agentic Workflows | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Agentic Workflows',
-  description: 'AI Agentic Workflows',
-  url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-2026/',
-  type: 'article',
+    title: 'AI Agentic Workflows',
+    description: 'AI Agentic Workflows',
+    url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Agentic Workflows',
-  description: 'AI Agentic Workflows',
+    card: 'summary_large_image',
+    title: 'AI Agentic Workflows',
+    description: 'AI Agentic Workflows',
   },
   alternates: { canonical: '/blog/ai-agentic-workflows-2026/' },
 };

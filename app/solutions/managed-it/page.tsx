@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Managed IT Solutions | Zion Tech Group',
   description: 'Managed IT, endpoint management, support automation, and operations from Zion Tech Group.',
   openGraph: {
-  title: 'Managed IT Solutions | Zion Tech Group',
-  description: 'Managed IT solutions with measurable outcomes.',
-  url: 'https://ziontechgroup.com/solutions/managed-it/',
-  type: 'website',
+    title: 'Managed IT Solutions | Zion Tech Group',
+    description: 'Managed IT solutions with measurable outcomes.',
+    url: 'https://ziontechgroup.com/solutions/managed-it/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Managed IT Solutions | Zion Tech Group',
-  description: 'Managed IT solutions with measurable outcomes.',
+    card: 'summary_large_image',
+    title: 'Managed IT Solutions | Zion Tech Group',
+    description: 'Managed IT solutions with measurable outcomes.',
   },
   alternates: { canonical: '/solutions/managed-it/' },
 };

@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Academy | Zion Tech Group',
   description: 'Learning paths, workshops, and enablement from Zion Tech Group.',
   openGraph: {
-  title: 'Academy | Zion Tech Group',
-  description: 'Technical enablement and learning for AI, IT, and automation teams.',
-  url: 'https://ziontechgroup.com/academy/',
-  type: 'website',
+    title: 'Academy | Zion Tech Group',
+    description: 'Technical enablement and learning for AI, IT, and automation teams.',
+    url: 'https://ziontechgroup.com/academy/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Academy | Zion Tech Group',
-  description: 'Technical enablement and learning for AI, IT, and automation teams.',
+    card: 'summary_large_image',
+    title: 'Academy | Zion Tech Group',
+    description: 'Technical enablement and learning for AI, IT, and automation teams.',
   },
   alternates: { canonical: '/academy/' },
 };

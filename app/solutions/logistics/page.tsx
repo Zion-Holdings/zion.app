@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Logistics Solutions | Zion Tech Group',
   description: 'Routing, tracking, and warehouse automation for logistics and supply chain operations.',
   openGraph: {
-  title: 'Logistics Solutions | Zion Tech Group',
-  description: 'Logistics delivery patterns and AI implementation guidance.',
-  url: 'https://ziontechgroup.com/solutions/logistics/',
-  type: 'website',
+    title: 'Logistics Solutions | Zion Tech Group',
+    description: 'Logistics delivery patterns and AI implementation guidance.',
+    url: 'https://ziontechgroup.com/solutions/logistics/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Logistics Solutions | Zion Tech Group',
-  description: 'Logistics delivery patterns and AI implementation guidance.',
+    card: 'summary_large_image',
+    title: 'Logistics Solutions | Zion Tech Group',
+    description: 'Logistics delivery patterns and AI implementation guidance.',
   },
   alternates: { canonical: '/solutions/logistics/' },
 };

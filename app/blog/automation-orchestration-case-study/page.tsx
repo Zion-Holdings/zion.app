@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Automation Orchestration: case study | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Automation Orchestration: case study',
-  description: 'Automation Orchestration: case study',
-  url: 'https://ziontechgroup.com/blog/automation-orchestration-case-study/',
-  type: 'article',
+    title: 'Automation Orchestration: case study',
+    description: 'Automation Orchestration: case study',
+    url: 'https://ziontechgroup.com/blog/automation-orchestration-case-study/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Automation Orchestration: case study',
-  description: 'Automation Orchestration: case study',
+    card: 'summary_large_image',
+    title: 'Automation Orchestration: case study',
+    description: 'Automation Orchestration: case study',
   },
   alternates: { canonical: '/blog/automation-orchestration-case-study/' },
 };

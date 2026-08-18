@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Customer Success Churn Prevention: vendor evaluation | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Customer Success Churn Prevention: vendor evaluation',
-  description: 'AI Customer Success Churn Prevention: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-vendor-evaluation/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'AI Customer Success Churn Prevention: vendor evaluation',
+    description: 'AI Customer Success Churn Prevention: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-vendor-evaluation/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-vendor-evaluation/' },
 };

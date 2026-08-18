@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Database Migration Service: vendor evaluation | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Database Migration Service: vendor evaluation',
-  description: 'Database Migration Service: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/database-migration-service-vendor-evaluation/',
-  type: 'article',
+    title: 'Database Migration Service: vendor evaluation',
+    description: 'Database Migration Service: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/database-migration-service-vendor-evaluation/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Database Migration Service: vendor evaluation',
-  description: 'Database Migration Service: vendor evaluation',
+    card: 'summary_large_image',
+    title: 'Database Migration Service: vendor evaluation',
+    description: 'Database Migration Service: vendor evaluation',
   },
   alternates: { canonical: '/blog/database-migration-service-vendor-evaluation/' },
 };

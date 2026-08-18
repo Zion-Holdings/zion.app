@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Autonomous QA Engineering | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Autonomous QA Engineering',
-  description: 'Autonomous QA Engineering',
-  url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-2026/',
-  type: 'article',
+    title: 'Autonomous QA Engineering',
+    description: 'Autonomous QA Engineering',
+    url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Autonomous QA Engineering',
-  description: 'Autonomous QA Engineering',
+    card: 'summary_large_image',
+    title: 'Autonomous QA Engineering',
+    description: 'Autonomous QA Engineering',
   },
   alternates: { canonical: '/blog/autonomous-qa-engineering-2026/' },
 };

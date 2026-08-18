@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'MicroSaaS HR Recruitment: case study | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'MicroSaaS HR Recruitment: case study',
-  description: 'MicroSaaS HR Recruitment: case study',
-  url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-case-study/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'MicroSaaS HR Recruitment: case study',
+    description: 'MicroSaaS HR Recruitment: case study',
+    url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-case-study/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-case-study/' },
 };

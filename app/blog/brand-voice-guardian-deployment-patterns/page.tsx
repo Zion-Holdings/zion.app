@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Brand Voice Guardian: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Brand Voice Guardian: deployment patterns',
-  description: 'Brand Voice Guardian: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/brand-voice-guardian-deployment-patterns/',
-  type: 'article',
+    title: 'Brand Voice Guardian: deployment patterns',
+    description: 'Brand Voice Guardian: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/brand-voice-guardian-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Brand Voice Guardian: deployment patterns',
-  description: 'Brand Voice Guardian: deployment patterns',
+    card: 'summary_large_image',
+    title: 'Brand Voice Guardian: deployment patterns',
+    description: 'Brand Voice Guardian: deployment patterns',
   },
   alternates: { canonical: '/blog/brand-voice-guardian-deployment-patterns/' },
 };

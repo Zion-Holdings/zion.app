@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Hash Generator | Zion Tech Group',
   description: 'Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes from any text input. Client-side only.',
   openGraph: {
-  title: 'Hash Generator | Zion Tech Group',
-  description: 'Free online hash generator — SHA-1, SHA-256, SHA-384, SHA-512.',
-  url: 'https://ziontechgroup.com/tools/hash-generator/',
-  type: 'website',
+    title: 'Hash Generator | Zion Tech Group',
+    description: 'Free online hash generator — SHA-1, SHA-256, SHA-384, SHA-512.',
+    url: 'https://ziontechgroup.com/tools/hash-generator/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Hash Generator | Zion Tech Group',
-  description: 'Free online hash generator — SHA-1, SHA-256, SHA-384, SHA-512.',
+    card: 'summary_large_image',
+    title: 'Hash Generator | Zion Tech Group',
+    description: 'Free online hash generator — SHA-1, SHA-256, SHA-384, SHA-512.',
   },
   alternates: { canonical: '/tools/hash-generator/' },
 };

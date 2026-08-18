@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud Cost Optimization: security and governance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud Cost Optimization: security and governance',
-  description: 'Cloud Cost Optimization: security and governance',
-  url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-security-and-governance/',
-  type: 'article',
+    title: 'Cloud Cost Optimization: security and governance',
+    description: 'Cloud Cost Optimization: security and governance',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-security-and-governance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cloud Cost Optimization: security and governance',
-  description: 'Cloud Cost Optimization: security and governance',
+    card: 'summary_large_image',
+    title: 'Cloud Cost Optimization: security and governance',
+    description: 'Cloud Cost Optimization: security and governance',
   },
   alternates: { canonical: '/blog/cloud-cost-optimization-security-and-governance/' },
 };

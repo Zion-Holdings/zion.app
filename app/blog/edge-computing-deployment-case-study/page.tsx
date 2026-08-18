@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Edge Computing Deployment: case study | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Edge Computing Deployment: case study',
-  description: 'Edge Computing Deployment: case study',
-  url: 'https://ziontechgroup.com/blog/edge-computing-deployment-case-study/',
-  type: 'article',
+    title: 'Edge Computing Deployment: case study',
+    description: 'Edge Computing Deployment: case study',
+    url: 'https://ziontechgroup.com/blog/edge-computing-deployment-case-study/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Edge Computing Deployment: case study',
-  description: 'Edge Computing Deployment: case study',
+    card: 'summary_large_image',
+    title: 'Edge Computing Deployment: case study',
+    description: 'Edge Computing Deployment: case study',
   },
   alternates: { canonical: '/blog/edge-computing-deployment-case-study/' },
 };

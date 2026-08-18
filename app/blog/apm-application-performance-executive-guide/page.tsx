@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'APM Application Performance: executive guide | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'APM Application Performance: executive guide',
-  description: 'APM Application Performance: executive guide',
-  url: 'https://ziontechgroup.com/blog/apm-application-performance-executive-guide/',
-  type: 'article',
+    title: 'APM Application Performance: executive guide',
+    description: 'APM Application Performance: executive guide',
+    url: 'https://ziontechgroup.com/blog/apm-application-performance-executive-guide/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'APM Application Performance: executive guide',
-  description: 'APM Application Performance: executive guide',
+    card: 'summary_large_image',
+    title: 'APM Application Performance: executive guide',
+    description: 'APM Application Performance: executive guide',
   },
   alternates: { canonical: '/blog/apm-application-performance-executive-guide/' },
 };

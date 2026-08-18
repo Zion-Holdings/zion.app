@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'IT Consulting | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'IT Consulting',
-  description: 'IT Consulting',
-  url: 'https://ziontechgroup.com/blog/it-consulting-2026/',
-  type: 'article',
+    title: 'IT Consulting',
+    description: 'IT Consulting',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'IT Consulting',
-  description: 'IT Consulting',
+    card: 'summary_large_image',
+    title: 'IT Consulting',
+    description: 'IT Consulting',
   },
   alternates: { canonical: '/blog/it-consulting-2026/' },
 };

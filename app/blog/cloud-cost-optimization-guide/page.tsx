@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Cloud Cost Optimization Guide | Zion Tech Group',
   description: 'Proven strategies for reducing cloud spending without sacrificing performance, reliability, or growth velocity.',
   openGraph: {
-  title: 'Cloud Cost Optimization Guide | Zion Tech Group',
-  description: 'Cut cloud waste and maximize ROI with our comprehensive optimization guide.',
-  url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-guide/',
-  type: 'article',
+    title: 'Cloud Cost Optimization Guide | Zion Tech Group',
+    description: 'Cut cloud waste and maximize ROI with our comprehensive optimization guide.',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-guide/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cloud Cost Optimization Guide | Zion Tech Group',
-  description: 'Cut cloud waste and maximize ROI with our comprehensive optimization guide.',
+    card: 'summary_large_image',
+    title: 'Cloud Cost Optimization Guide | Zion Tech Group',
+    description: 'Cut cloud waste and maximize ROI with our comprehensive optimization guide.',
   },
   alternates: { canonical: '/blog/cloud-cost-optimization-guide/' },
 };

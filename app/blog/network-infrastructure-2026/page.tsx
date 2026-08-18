@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Network Infrastructure | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Network Infrastructure',
-  description: 'Network Infrastructure',
-  url: 'https://ziontechgroup.com/blog/network-infrastructure-2026/',
-  type: 'article',
+    title: 'Network Infrastructure',
+    description: 'Network Infrastructure',
+    url: 'https://ziontechgroup.com/blog/network-infrastructure-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Network Infrastructure',
-  description: 'Network Infrastructure',
+    card: 'summary_large_image',
+    title: 'Network Infrastructure',
+    description: 'Network Infrastructure',
   },
   alternates: { canonical: '/blog/network-infrastructure-2026/' },
 };

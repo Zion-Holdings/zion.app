@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Endpoint Management: vendor evaluation | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Endpoint Management: vendor evaluation',
-  description: 'Endpoint Management: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/endpoint-management-vendor-evaluation/',
-  type: 'article',
+    title: 'Endpoint Management: vendor evaluation',
+    description: 'Endpoint Management: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/endpoint-management-vendor-evaluation/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Endpoint Management: vendor evaluation',
-  description: 'Endpoint Management: vendor evaluation',
+    card: 'summary_large_image',
+    title: 'Endpoint Management: vendor evaluation',
+    description: 'Endpoint Management: vendor evaluation',
   },
   alternates: { canonical: '/blog/endpoint-management-vendor-evaluation/' },
 };

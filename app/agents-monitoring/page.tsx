@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'AI Agents Monitoring | Zion Tech Group',
   description: 'Monitoring, observability, and reliability dashboard for AI agents.',
   openGraph: {
-  title: 'AI Agents Monitoring | Zion Tech Group',
-  description: 'Operational visibility for AI agents and automated workflows.',
-  url: 'https://ziontechgroup.com/agents-monitoring/',
-  type: 'website',
+    title: 'AI Agents Monitoring | Zion Tech Group',
+    description: 'Operational visibility for AI agents and automated workflows.',
+    url: 'https://ziontechgroup.com/agents-monitoring/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Agents Monitoring | Zion Tech Group',
-  description: 'Operational visibility for AI agents and automated workflows.',
+    card: 'summary_large_image',
+    title: 'AI Agents Monitoring | Zion Tech Group',
+    description: 'Operational visibility for AI agents and automated workflows.',
   },
   alternates: { canonical: '/agents-monitoring/' },
 };

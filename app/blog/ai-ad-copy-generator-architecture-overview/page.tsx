@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Ad Copy Generator: architecture overview | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Ad Copy Generator: architecture overview',
-  description: 'AI Ad Copy Generator: architecture overview',
-  url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-architecture-overview/',
-  type: 'article',
+    title: 'AI Ad Copy Generator: architecture overview',
+    description: 'AI Ad Copy Generator: architecture overview',
+    url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-architecture-overview/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Ad Copy Generator: architecture overview',
-  description: 'AI Ad Copy Generator: architecture overview',
+    card: 'summary_large_image',
+    title: 'AI Ad Copy Generator: architecture overview',
+    description: 'AI Ad Copy Generator: architecture overview',
   },
   alternates: { canonical: '/blog/ai-ad-copy-generator-architecture-overview/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Data Analytics Platform: operations handbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Data Analytics Platform: operations handbook',
-  description: 'Data Analytics Platform: operations handbook',
-  url: 'https://ziontechgroup.com/blog/data-analytics-platform-operations-handbook/',
-  type: 'article',
+    title: 'Data Analytics Platform: operations handbook',
+    description: 'Data Analytics Platform: operations handbook',
+    url: 'https://ziontechgroup.com/blog/data-analytics-platform-operations-handbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Data Analytics Platform: operations handbook',
-  description: 'Data Analytics Platform: operations handbook',
+    card: 'summary_large_image',
+    title: 'Data Analytics Platform: operations handbook',
+    description: 'Data Analytics Platform: operations handbook',
   },
   alternates: { canonical: '/blog/data-analytics-platform-operations-handbook/' },
 };

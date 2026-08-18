@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Performance Monitoring: operations handbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Performance Monitoring: operations handbook',
-  description: 'AI Performance Monitoring: operations handbook',
-  url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-operations-handbook/',
-  type: 'article',
+    title: 'AI Performance Monitoring: operations handbook',
+    description: 'AI Performance Monitoring: operations handbook',
+    url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-operations-handbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Performance Monitoring: operations handbook',
-  description: 'AI Performance Monitoring: operations handbook',
+    card: 'summary_large_image',
+    title: 'AI Performance Monitoring: operations handbook',
+    description: 'AI Performance Monitoring: operations handbook',
   },
   alternates: { canonical: '/blog/ai-performance-monitoring-operations-handbook/' },
 };

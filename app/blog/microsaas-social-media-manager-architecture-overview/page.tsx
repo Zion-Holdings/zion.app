@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'MicroSaaS Social Media Manager: architecture overview | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'MicroSaaS Social Media Manager: architecture overview',
-  description: 'MicroSaaS Social Media Manager: architecture overview',
-  url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-architecture-overview/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'MicroSaaS Social Media Manager: architecture overview',
+    description: 'MicroSaaS Social Media Manager: architecture overview',
+    url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-architecture-overview/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/microsaas-social-media-manager-architecture-overview/' },
 };

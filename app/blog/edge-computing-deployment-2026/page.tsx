@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Edge Computing Deployment | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Edge Computing Deployment',
-  description: 'Edge Computing Deployment',
-  url: 'https://ziontechgroup.com/blog/edge-computing-deployment-2026/',
-  type: 'article',
+    title: 'Edge Computing Deployment',
+    description: 'Edge Computing Deployment',
+    url: 'https://ziontechgroup.com/blog/edge-computing-deployment-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Edge Computing Deployment',
-  description: 'Edge Computing Deployment',
+    card: 'summary_large_image',
+    title: 'Edge Computing Deployment',
+    description: 'Edge Computing Deployment',
   },
   alternates: { canonical: '/blog/edge-computing-deployment-2026/' },
 };

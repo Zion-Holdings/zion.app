@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Data Analytics Platform: implementation playbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Data Analytics Platform: implementation playbook',
-  description: 'Data Analytics Platform: implementation playbook',
-  url: 'https://ziontechgroup.com/blog/data-analytics-platform-implementation-playbook/',
-  type: 'article',
+    title: 'Data Analytics Platform: implementation playbook',
+    description: 'Data Analytics Platform: implementation playbook',
+    url: 'https://ziontechgroup.com/blog/data-analytics-platform-implementation-playbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Data Analytics Platform: implementation playbook',
-  description: 'Data Analytics Platform: implementation playbook',
+    card: 'summary_large_image',
+    title: 'Data Analytics Platform: implementation playbook',
+    description: 'Data Analytics Platform: implementation playbook',
   },
   alternates: { canonical: '/blog/data-analytics-platform-implementation-playbook/' },
 };

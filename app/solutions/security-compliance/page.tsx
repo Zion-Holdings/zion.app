@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Security & Compliance Solutions | Zion Tech Group',
   description: 'Security operations, compliance automation, and governance solutions from Zion Tech Group.',
   openGraph: {
-  title: 'Security & Compliance Solutions | Zion Tech Group',
-  description: 'Security and compliance solutions with measurable outcomes.',
-  url: 'https://ziontechgroup.com/solutions/security-compliance/',
-  type: 'website',
+    title: 'Security & Compliance Solutions | Zion Tech Group',
+    description: 'Security and compliance solutions with measurable outcomes.',
+    url: 'https://ziontechgroup.com/solutions/security-compliance/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Security & Compliance Solutions | Zion Tech Group',
-  description: 'Security and compliance solutions with measurable outcomes.',
+    card: 'summary_large_image',
+    title: 'Security & Compliance Solutions | Zion Tech Group',
+    description: 'Security and compliance solutions with measurable outcomes.',
   },
   alternates: { canonical: '/solutions/security-compliance/' },
 };

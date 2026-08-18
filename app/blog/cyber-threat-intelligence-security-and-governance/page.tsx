@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cyber Threat Intelligence: security and governance | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cyber Threat Intelligence: security and governance',
-  description: 'Cyber Threat Intelligence: security and governance',
-  url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-security-and-governance/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Cyber Threat Intelligence: security and governance',
+    description: 'Cyber Threat Intelligence: security and governance',
+    url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-security-and-governance/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/cyber-threat-intelligence-security-and-governance/' },
 };

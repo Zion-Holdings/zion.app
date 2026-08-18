@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Service Level Agreement | Zion Tech Group',
   description: 'Service level commitments for support, uptime, and incident response.',
   openGraph: { title: 'SLA | Zion Tech Group',
-  description: 'Service level commitments.',
-  url: 'https://ziontechgroup.com/sla/',
+    description: 'Service level commitments.',
+    url: 'https://ziontechgroup.com/sla/',
   type: 'website' },
   twitter: {
-  card: 'summary_large_image',
-  title: 'SLA | Zion Tech Group',
-  description: 'Service level commitments.',
+    card: 'summary_large_image',
+    title: 'SLA | Zion Tech Group',
+    description: 'Service level commitments.',
   },
   alternates: { canonical: '/sla/' },
 };

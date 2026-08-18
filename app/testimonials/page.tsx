@@ -7,15 +7,15 @@ export const metadata: Metadata = {
   title: 'Testimonials | Zion Tech Group',
   description: 'Client outcomes from Zion Tech Group engagements: AI, IT, security, automation, and cloud.',
   openGraph: {
-  title: 'Testimonials | Zion Tech Group',
-  description: 'Real outcomes from Zion Tech Group clients.',
-  url: 'https://ziontechgroup.com/testimonials/',
-  type: 'website',
+    title: 'Testimonials | Zion Tech Group',
+    description: 'Real outcomes from Zion Tech Group clients.',
+    url: 'https://ziontechgroup.com/testimonials/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Testimonials | Zion Tech Group',
-  description: 'Real outcomes from Zion Tech Group clients.',
+    card: 'summary_large_image',
+    title: 'Testimonials | Zion Tech Group',
+    description: 'Real outcomes from Zion Tech Group clients.',
   },
   alternates: { canonical: '/testimonials/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Enterprise AI Intelligence Hub: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Enterprise AI Intelligence Hub: deployment patterns',
-  description: 'Enterprise AI Intelligence Hub: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-deployment-patterns/',
-  type: 'article',
+    title: 'Enterprise AI Intelligence Hub: deployment patterns',
+    description: 'Enterprise AI Intelligence Hub: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Enterprise AI Intelligence Hub: deployment patterns',
-  description: 'Enterprise AI Intelligence Hub: deployment patterns',
+    card: 'summary_large_image',
+    title: 'Enterprise AI Intelligence Hub: deployment patterns',
+    description: 'Enterprise AI Intelligence Hub: deployment patterns',
   },
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-deployment-patterns/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'GenAI DevOps CI/CD: automation roadmap | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'GenAI DevOps CI/CD: automation roadmap',
-  description: 'GenAI DevOps CI/CD: automation roadmap',
-  url: 'https://ziontechgroup.com/blog/genai-devops-cicd-automation-roadmap/',
-  type: 'article',
+    title: 'GenAI DevOps CI/CD: automation roadmap',
+    description: 'GenAI DevOps CI/CD: automation roadmap',
+    url: 'https://ziontechgroup.com/blog/genai-devops-cicd-automation-roadmap/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'GenAI DevOps CI/CD: automation roadmap',
-  description: 'GenAI DevOps CI/CD: automation roadmap',
+    card: 'summary_large_image',
+    title: 'GenAI DevOps CI/CD: automation roadmap',
+    description: 'GenAI DevOps CI/CD: automation roadmap',
   },
   alternates: { canonical: '/blog/genai-devops-cicd-automation-roadmap/' },
 };

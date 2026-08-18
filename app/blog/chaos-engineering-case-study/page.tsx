@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Chaos Engineering: case study | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Chaos Engineering: case study',
-  description: 'Chaos Engineering: case study',
-  url: 'https://ziontechgroup.com/blog/chaos-engineering-case-study/',
-  type: 'article',
+    title: 'Chaos Engineering: case study',
+    description: 'Chaos Engineering: case study',
+    url: 'https://ziontechgroup.com/blog/chaos-engineering-case-study/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Chaos Engineering: case study',
-  description: 'Chaos Engineering: case study',
+    card: 'summary_large_image',
+    title: 'Chaos Engineering: case study',
+    description: 'Chaos Engineering: case study',
   },
   alternates: { canonical: '/blog/chaos-engineering-case-study/' },
 };

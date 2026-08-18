@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI API Gateway: implementation playbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI API Gateway: implementation playbook',
-  description: 'AI API Gateway: implementation playbook',
-  url: 'https://ziontechgroup.com/blog/ai-api-gateway-implementation-playbook/',
-  type: 'article',
+    title: 'AI API Gateway: implementation playbook',
+    description: 'AI API Gateway: implementation playbook',
+    url: 'https://ziontechgroup.com/blog/ai-api-gateway-implementation-playbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI API Gateway: implementation playbook',
-  description: 'AI API Gateway: implementation playbook',
+    card: 'summary_large_image',
+    title: 'AI API Gateway: implementation playbook',
+    description: 'AI API Gateway: implementation playbook',
   },
   alternates: { canonical: '/blog/ai-api-gateway-implementation-playbook/' },
 };

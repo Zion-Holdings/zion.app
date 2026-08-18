@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI API Gateway: architecture overview | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI API Gateway: architecture overview',
-  description: 'AI API Gateway: architecture overview',
-  url: 'https://ziontechgroup.com/blog/ai-api-gateway-architecture-overview/',
-  type: 'article',
+    title: 'AI API Gateway: architecture overview',
+    description: 'AI API Gateway: architecture overview',
+    url: 'https://ziontechgroup.com/blog/ai-api-gateway-architecture-overview/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI API Gateway: architecture overview',
-  description: 'AI API Gateway: architecture overview',
+    card: 'summary_large_image',
+    title: 'AI API Gateway: architecture overview',
+    description: 'AI API Gateway: architecture overview',
   },
   alternates: { canonical: '/blog/ai-api-gateway-architecture-overview/' },
 };

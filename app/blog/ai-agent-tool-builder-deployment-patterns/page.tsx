@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Agent Tool Builder: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Agent Tool Builder: deployment patterns',
-  description: 'AI Agent Tool Builder: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-deployment-patterns/',
-  type: 'article',
+    title: 'AI Agent Tool Builder: deployment patterns',
+    description: 'AI Agent Tool Builder: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Agent Tool Builder: deployment patterns',
-  description: 'AI Agent Tool Builder: deployment patterns',
+    card: 'summary_large_image',
+    title: 'AI Agent Tool Builder: deployment patterns',
+    description: 'AI Agent Tool Builder: deployment patterns',
   },
   alternates: { canonical: '/blog/ai-agent-tool-builder-deployment-patterns/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Data Warehouse Modernization: evaluation framework | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Data Warehouse Modernization: evaluation framework',
-  description: 'Data Warehouse Modernization: evaluation framework',
-  url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-evaluation-framework/',
-  type: 'article',
+    title: 'Data Warehouse Modernization: evaluation framework',
+    description: 'Data Warehouse Modernization: evaluation framework',
+    url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-evaluation-framework/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Data Warehouse Modernization: evaluation framework',
-  description: 'Data Warehouse Modernization: evaluation framework',
+    card: 'summary_large_image',
+    title: 'Data Warehouse Modernization: evaluation framework',
+    description: 'Data Warehouse Modernization: evaluation framework',
   },
   alternates: { canonical: '/blog/data-warehouse-modernization-evaluation-framework/' },
 };

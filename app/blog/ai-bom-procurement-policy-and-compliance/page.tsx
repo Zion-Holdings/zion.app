@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI BOM Procurement: policy and compliance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI BOM Procurement: policy and compliance',
-  description: 'AI BOM Procurement: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/',
-  type: 'article',
+    title: 'AI BOM Procurement: policy and compliance',
+    description: 'AI BOM Procurement: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI BOM Procurement: policy and compliance',
-  description: 'AI BOM Procurement: policy and compliance',
+    card: 'summary_large_image',
+    title: 'AI BOM Procurement: policy and compliance',
+    description: 'AI BOM Procurement: policy and compliance',
   },
   alternates: { canonical: '/blog/ai-bom-procurement-policy-and-compliance/' },
 };

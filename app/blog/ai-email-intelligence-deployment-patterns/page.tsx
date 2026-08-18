@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Email Intelligence: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Email Intelligence: deployment patterns',
-  description: 'AI Email Intelligence: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/ai-email-intelligence-deployment-patterns/',
-  type: 'article',
+    title: 'AI Email Intelligence: deployment patterns',
+    description: 'AI Email Intelligence: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/ai-email-intelligence-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Email Intelligence: deployment patterns',
-  description: 'AI Email Intelligence: deployment patterns',
+    card: 'summary_large_image',
+    title: 'AI Email Intelligence: deployment patterns',
+    description: 'AI Email Intelligence: deployment patterns',
   },
   alternates: { canonical: '/blog/ai-email-intelligence-deployment-patterns/' },
 };

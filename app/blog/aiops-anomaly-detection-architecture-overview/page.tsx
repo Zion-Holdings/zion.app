@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AIOps Anomaly Detection: architecture overview | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AIOps Anomaly Detection: architecture overview',
-  description: 'AIOps Anomaly Detection: architecture overview',
-  url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-architecture-overview/',
-  type: 'article',
+    title: 'AIOps Anomaly Detection: architecture overview',
+    description: 'AIOps Anomaly Detection: architecture overview',
+    url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-architecture-overview/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AIOps Anomaly Detection: architecture overview',
-  description: 'AIOps Anomaly Detection: architecture overview',
+    card: 'summary_large_image',
+    title: 'AIOps Anomaly Detection: architecture overview',
+    description: 'AIOps Anomaly Detection: architecture overview',
   },
   alternates: { canonical: '/blog/aiops-anomaly-detection-architecture-overview/' },
 };

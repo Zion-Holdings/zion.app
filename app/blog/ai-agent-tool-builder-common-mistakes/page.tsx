@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Agent Tool Builder: common mistakes | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Agent Tool Builder: common mistakes',
-  description: 'AI Agent Tool Builder: common mistakes',
-  url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-common-mistakes/',
-  type: 'article',
+    title: 'AI Agent Tool Builder: common mistakes',
+    description: 'AI Agent Tool Builder: common mistakes',
+    url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-common-mistakes/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Agent Tool Builder: common mistakes',
-  description: 'AI Agent Tool Builder: common mistakes',
+    card: 'summary_large_image',
+    title: 'AI Agent Tool Builder: common mistakes',
+    description: 'AI Agent Tool Builder: common mistakes',
   },
   alternates: { canonical: '/blog/ai-agent-tool-builder-common-mistakes/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'DevSecOps Pipeline: vendor evaluation | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'DevSecOps Pipeline: vendor evaluation',
-  description: 'DevSecOps Pipeline: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/devsecops-pipeline-vendor-evaluation/',
-  type: 'article',
+    title: 'DevSecOps Pipeline: vendor evaluation',
+    description: 'DevSecOps Pipeline: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-vendor-evaluation/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'DevSecOps Pipeline: vendor evaluation',
-  description: 'DevSecOps Pipeline: vendor evaluation',
+    card: 'summary_large_image',
+    title: 'DevSecOps Pipeline: vendor evaluation',
+    description: 'DevSecOps Pipeline: vendor evaluation',
   },
   alternates: { canonical: '/blog/devsecops-pipeline-vendor-evaluation/' },
 };

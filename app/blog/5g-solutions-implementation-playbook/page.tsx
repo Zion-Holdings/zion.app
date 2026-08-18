@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: '5G Solutions: implementation playbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: '5G Solutions: implementation playbook',
-  description: '5G Solutions: implementation playbook',
-  url: 'https://ziontechgroup.com/blog/5g-solutions-implementation-playbook/',
-  type: 'article',
+    title: '5G Solutions: implementation playbook',
+    description: '5G Solutions: implementation playbook',
+    url: 'https://ziontechgroup.com/blog/5g-solutions-implementation-playbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: '5G Solutions: implementation playbook',
-  description: '5G Solutions: implementation playbook',
+    card: 'summary_large_image',
+    title: '5G Solutions: implementation playbook',
+    description: '5G Solutions: implementation playbook',
   },
   alternates: { canonical: '/blog/5g-solutions-implementation-playbook/' },
 };

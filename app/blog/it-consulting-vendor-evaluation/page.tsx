@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'IT Consulting: vendor evaluation | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'IT Consulting: vendor evaluation',
-  description: 'IT Consulting: vendor evaluation',
-  url: 'https://ziontechgroup.com/blog/it-consulting-vendor-evaluation/',
-  type: 'article',
+    title: 'IT Consulting: vendor evaluation',
+    description: 'IT Consulting: vendor evaluation',
+    url: 'https://ziontechgroup.com/blog/it-consulting-vendor-evaluation/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'IT Consulting: vendor evaluation',
-  description: 'IT Consulting: vendor evaluation',
+    card: 'summary_large_image',
+    title: 'IT Consulting: vendor evaluation',
+    description: 'IT Consulting: vendor evaluation',
   },
   alternates: { canonical: '/blog/it-consulting-vendor-evaluation/' },
 };

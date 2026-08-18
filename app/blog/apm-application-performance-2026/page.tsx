@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'APM Application Performance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'APM Application Performance',
-  description: 'APM Application Performance',
-  url: 'https://ziontechgroup.com/blog/apm-application-performance-2026/',
-  type: 'article',
+    title: 'APM Application Performance',
+    description: 'APM Application Performance',
+    url: 'https://ziontechgroup.com/blog/apm-application-performance-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'APM Application Performance',
-  description: 'APM Application Performance',
+    card: 'summary_large_image',
+    title: 'APM Application Performance',
+    description: 'APM Application Performance',
   },
   alternates: { canonical: '/blog/apm-application-performance-2026/' },
 };

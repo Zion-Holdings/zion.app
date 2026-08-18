@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cloud FinOps: operations handbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cloud FinOps: operations handbook',
-  description: 'Cloud FinOps: operations handbook',
-  url: 'https://ziontechgroup.com/blog/cloud-finops-operations-handbook/',
-  type: 'article',
+    title: 'Cloud FinOps: operations handbook',
+    description: 'Cloud FinOps: operations handbook',
+    url: 'https://ziontechgroup.com/blog/cloud-finops-operations-handbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cloud FinOps: operations handbook',
-  description: 'Cloud FinOps: operations handbook',
+    card: 'summary_large_image',
+    title: 'Cloud FinOps: operations handbook',
+    description: 'Cloud FinOps: operations handbook',
   },
   alternates: { canonical: '/blog/cloud-finops-operations-handbook/' },
 };

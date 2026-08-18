@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Incident Response Retainer: ROI and cost model | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Incident Response Retainer: ROI and cost model',
-  description: 'Incident Response Retainer: ROI and cost model',
-  url: 'https://ziontechgroup.com/blog/incident-response-retainer-roi-and-cost-model/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Incident Response Retainer: ROI and cost model',
+    description: 'Incident Response Retainer: ROI and cost model',
+    url: 'https://ziontechgroup.com/blog/incident-response-retainer-roi-and-cost-model/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/incident-response-retainer-roi-and-cost-model/' },
 };

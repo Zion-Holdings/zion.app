@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Security Testing: starter template | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Security Testing: starter template',
-  description: 'API Security Testing: starter template',
-  url: 'https://ziontechgroup.com/blog/api-security-testing-starter-template/',
-  type: 'article',
+    title: 'API Security Testing: starter template',
+    description: 'API Security Testing: starter template',
+    url: 'https://ziontechgroup.com/blog/api-security-testing-starter-template/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'API Security Testing: starter template',
-  description: 'API Security Testing: starter template',
+    card: 'summary_large_image',
+    title: 'API Security Testing: starter template',
+    description: 'API Security Testing: starter template',
   },
   alternates: { canonical: '/blog/api-security-testing-starter-template/' },
 };

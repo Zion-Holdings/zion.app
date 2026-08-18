@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'DevOps CI/CD: policy and compliance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'DevOps CI/CD: policy and compliance',
-  description: 'DevOps CI/CD: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/devops-cicd-policy-and-compliance/',
-  type: 'article',
+    title: 'DevOps CI/CD: policy and compliance',
+    description: 'DevOps CI/CD: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/devops-cicd-policy-and-compliance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'DevOps CI/CD: policy and compliance',
-  description: 'DevOps CI/CD: policy and compliance',
+    card: 'summary_large_image',
+    title: 'DevOps CI/CD: policy and compliance',
+    description: 'DevOps CI/CD: policy and compliance',
   },
   alternates: { canonical: '/blog/devops-cicd-policy-and-compliance/' },
 };

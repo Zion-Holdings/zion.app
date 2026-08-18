@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Agent Safety Evaluation: implementation playbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Agent Safety Evaluation: implementation playbook',
-  description: 'AI Agent Safety Evaluation: implementation playbook',
-  url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/',
-  type: 'article',
+    title: 'AI Agent Safety Evaluation: implementation playbook',
+    description: 'AI Agent Safety Evaluation: implementation playbook',
+    url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Agent Safety Evaluation: implementation playbook',
-  description: 'AI Agent Safety Evaluation: implementation playbook',
+    card: 'summary_large_image',
+    title: 'AI Agent Safety Evaluation: implementation playbook',
+    description: 'AI Agent Safety Evaluation: implementation playbook',
   },
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-implementation-playbook/' },
 };

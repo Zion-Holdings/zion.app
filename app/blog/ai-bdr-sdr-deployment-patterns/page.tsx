@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI BDR SDR: deployment patterns | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI BDR SDR: deployment patterns',
-  description: 'AI BDR SDR: deployment patterns',
-  url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-deployment-patterns/',
-  type: 'article',
+    title: 'AI BDR SDR: deployment patterns',
+    description: 'AI BDR SDR: deployment patterns',
+    url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-deployment-patterns/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI BDR SDR: deployment patterns',
-  description: 'AI BDR SDR: deployment patterns',
+    card: 'summary_large_image',
+    title: 'AI BDR SDR: deployment patterns',
+    description: 'AI BDR SDR: deployment patterns',
   },
   alternates: { canonical: '/blog/ai-bdr-sdr-deployment-patterns/' },
 };

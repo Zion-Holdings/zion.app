@@ -8,16 +8,16 @@ export const metadata: Metadata = {
   description:
   'Search AI and IT services, solutions, blog posts, and resources from Zion Tech Group.',
   openGraph: {
-  title: 'Search | Zion Tech Group',
-  description: 'Search AI and IT services, solutions, blog posts, and resources.',
-  url: 'https://ziontechgroup.com/search/',
-  type: 'website',
-  locale: 'en_US',
+    title: 'Search | Zion Tech Group',
+    description: 'Search AI and IT services, solutions, blog posts, and resources.',
+    url: 'https://ziontechgroup.com/search/',
+    type: 'website',
+    locale: 'en_US',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Search | Zion Tech Group',
-  description: 'Search AI and IT services, solutions, blog posts, and resources.',
+    card: 'summary_large_image',
+    title: 'Search | Zion Tech Group',
+    description: 'Search AI and IT services, solutions, blog posts, and resources.',
   },
   alternates: { canonical: '/search/' },
 };

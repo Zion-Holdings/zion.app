@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI 3D Asset Generator: automation roadmap | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI 3D Asset Generator: automation roadmap',
-  description: 'AI 3D Asset Generator: automation roadmap',
-  url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-automation-roadmap/',
-  type: 'article',
+    title: 'AI 3D Asset Generator: automation roadmap',
+    description: 'AI 3D Asset Generator: automation roadmap',
+    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-automation-roadmap/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI 3D Asset Generator: automation roadmap',
-  description: 'AI 3D Asset Generator: automation roadmap',
+    card: 'summary_large_image',
+    title: 'AI 3D Asset Generator: automation roadmap',
+    description: 'AI 3D Asset Generator: automation roadmap',
   },
   alternates: { canonical: '/blog/ai-3d-asset-generator-automation-roadmap/' },
 };

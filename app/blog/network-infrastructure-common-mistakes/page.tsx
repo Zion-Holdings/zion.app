@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Network Infrastructure: common mistakes | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Network Infrastructure: common mistakes',
-  description: 'Network Infrastructure: common mistakes',
-  url: 'https://ziontechgroup.com/blog/network-infrastructure-common-mistakes/',
-  type: 'article',
+    title: 'Network Infrastructure: common mistakes',
+    description: 'Network Infrastructure: common mistakes',
+    url: 'https://ziontechgroup.com/blog/network-infrastructure-common-mistakes/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Network Infrastructure: common mistakes',
-  description: 'Network Infrastructure: common mistakes',
+    card: 'summary_large_image',
+    title: 'Network Infrastructure: common mistakes',
+    description: 'Network Infrastructure: common mistakes',
   },
   alternates: { canonical: '/blog/network-infrastructure-common-mistakes/' },
 };

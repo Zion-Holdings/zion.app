@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI BDR SDR: policy and compliance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI BDR SDR: policy and compliance',
-  description: 'AI BDR SDR: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-policy-and-compliance/',
-  type: 'article',
+    title: 'AI BDR SDR: policy and compliance',
+    description: 'AI BDR SDR: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-policy-and-compliance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI BDR SDR: policy and compliance',
-  description: 'AI BDR SDR: policy and compliance',
+    card: 'summary_large_image',
+    title: 'AI BDR SDR: policy and compliance',
+    description: 'AI BDR SDR: policy and compliance',
   },
   alternates: { canonical: '/blog/ai-bdr-sdr-policy-and-compliance/' },
 };

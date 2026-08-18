@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'AI Model Monitoring 2026 | Zion Tech Group',
   description: 'Model monitoring, drift detection, and retraining triggers for production AI.',
   openGraph: {
-  title: 'AI Model Monitoring 2026',
-  description: 'Model monitoring, drift detection, and retraining triggers for production AI.',
-  url: 'https://ziontechgroup.com/blog/ai-model-monitoring-2026/',
-  type: 'article',
+    title: 'AI Model Monitoring 2026',
+    description: 'Model monitoring, drift detection, and retraining triggers for production AI.',
+    url: 'https://ziontechgroup.com/blog/ai-model-monitoring-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Model Monitoring 2026',
-  description: 'Model monitoring, drift detection, and retraining triggers for production AI.',
+    card: 'summary_large_image',
+    title: 'AI Model Monitoring 2026',
+    description: 'Model monitoring, drift detection, and retraining triggers for production AI.',
   },
   alternates: { canonical: '/blog/ai-model-monitoring-2026/' },
 };

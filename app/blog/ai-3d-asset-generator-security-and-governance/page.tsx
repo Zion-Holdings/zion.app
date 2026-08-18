@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI 3D Asset Generator: security and governance | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI 3D Asset Generator: security and governance',
-  description: 'AI 3D Asset Generator: security and governance',
-  url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-security-and-governance/',
-  type: 'article',
+    title: 'AI 3D Asset Generator: security and governance',
+    description: 'AI 3D Asset Generator: security and governance',
+    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-security-and-governance/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI 3D Asset Generator: security and governance',
-  description: 'AI 3D Asset Generator: security and governance',
+    card: 'summary_large_image',
+    title: 'AI 3D Asset Generator: security and governance',
+    description: 'AI 3D Asset Generator: security and governance',
   },
   alternates: { canonical: '/blog/ai-3d-asset-generator-security-and-governance/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'MicroSaaS Expense Tracker | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'MicroSaaS Expense Tracker',
-  description: 'MicroSaaS Expense Tracker',
-  url: 'https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026/',
-  type: 'article',
+    title: 'MicroSaaS Expense Tracker',
+    description: 'MicroSaaS Expense Tracker',
+    url: 'https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'MicroSaaS Expense Tracker',
-  description: 'MicroSaaS Expense Tracker',
+    card: 'summary_large_image',
+    title: 'MicroSaaS Expense Tracker',
+    description: 'MicroSaaS Expense Tracker',
   },
   alternates: { canonical: '/blog/micro-saas-ai-expense-tracker-2026/' },
 };

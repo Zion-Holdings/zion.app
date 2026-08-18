@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Customer Success Churn Prevention: operations handbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Customer Success Churn Prevention: operations handbook',
-  description: 'AI Customer Success Churn Prevention: operations handbook',
-  url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-operations-handbook/',
-  type: 'article',
+    title: 'AI Customer Success Churn Prevention: operations handbook',
+    description: 'AI Customer Success Churn Prevention: operations handbook',
+    url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-operations-handbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Customer Success Churn Prevention: operations handbook',
-  description: 'AI Customer Success Churn Prevention: operations handbook',
+    card: 'summary_large_image',
+    title: 'AI Customer Success Churn Prevention: operations handbook',
+    description: 'AI Customer Success Churn Prevention: operations handbook',
   },
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-operations-handbook/' },
 };

@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: 'Integrators | Zion Tech Group',
   description: 'Implementation and delivery partners for complex AI and IT programs.',
   openGraph: {
-  title: 'Integrators | Zion Tech Group',
-  description: 'Implementation and delivery partners for complex AI and IT programs.',
-  url: 'https://ziontechgroup.com/integrators/',
-  type: 'website',
+    title: 'Integrators | Zion Tech Group',
+    description: 'Implementation and delivery partners for complex AI and IT programs.',
+    url: 'https://ziontechgroup.com/integrators/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Integrators | Zion Tech Group',
-  description: 'Implementation and delivery partners for complex AI and IT programs.',
+    card: 'summary_large_image',
+    title: 'Integrators | Zion Tech Group',
+    description: 'Implementation and delivery partners for complex AI and IT programs.',
   },
   alternates: { canonical: '/integrators/' },
 };

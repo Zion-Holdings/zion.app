@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: 'Terms of Service | Zion Tech Group',
   description: 'Terms of service governing the use of ziontechgroup.com and Zion Tech Group services.',
   openGraph: { title: 'Terms of Service | Zion Tech Group',
-  description: 'Service terms and usage rules.',
-  url: 'https://ziontechgroup.com/terms/',
+    description: 'Service terms and usage rules.',
+    url: 'https://ziontechgroup.com/terms/',
   type: 'website' },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Terms of Service | Zion Tech Group',
-  description: 'Service terms and usage rules.',
+    card: 'summary_large_image',
+    title: 'Terms of Service | Zion Tech Group',
+    description: 'Service terms and usage rules.',
   },
   alternates: { canonical: '/terms/' },
 };

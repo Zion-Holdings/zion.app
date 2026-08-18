@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Chaos Engineering: common mistakes | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Chaos Engineering: common mistakes',
-  description: 'Chaos Engineering: common mistakes',
-  url: 'https://ziontechgroup.com/blog/chaos-engineering-common-mistakes/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Chaos Engineering: common mistakes',
+    description: 'Chaos Engineering: common mistakes',
+    url: 'https://ziontechgroup.com/blog/chaos-engineering-common-mistakes/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/chaos-engineering-common-mistakes/' },
 };

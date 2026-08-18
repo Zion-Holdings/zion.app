@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'DevSecOps Pipeline: policy and compliance | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'DevSecOps Pipeline: policy and compliance',
-  description: 'DevSecOps Pipeline: policy and compliance',
-  url: 'https://ziontechgroup.com/blog/devsecops-pipeline-policy-and-compliance/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'DevSecOps Pipeline: policy and compliance',
+    description: 'DevSecOps Pipeline: policy and compliance',
+    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-policy-and-compliance/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/devsecops-pipeline-policy-and-compliance/' },
 };

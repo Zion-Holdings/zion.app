@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Smart Contract Audit: security and governance | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Smart Contract Audit: security and governance',
-  description: 'Smart Contract Audit: security and governance',
-  url: 'https://ziontechgroup.com/blog/smart-contract-audit-security-and-governance/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'Smart Contract Audit: security and governance',
+    description: 'Smart Contract Audit: security and governance',
+    url: 'https://ziontechgroup.com/blog/smart-contract-audit-security-and-governance/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/smart-contract-audit-security-and-governance/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'API Orchestration Layer: case study | Zion Tech Group',
@@ -7,11 +9,11 @@ export const metadata: Metadata = {
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'API Orchestration Layer: case study',
-  description: 'API Orchestration Layer: case study',
-  url: 'https://ziontechgroup.com/blog/api-orchestration-layer-case-study/',
-  type: 'article',
-  siteName: 'Zion Tech Group',
+    title: 'API Orchestration Layer: case study',
+    description: 'API Orchestration Layer: case study',
+    url: 'https://ziontechgroup.com/blog/api-orchestration-layer-case-study/',
+    type: 'article',
+    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/blog/api-orchestration-layer-case-study/' },
 };

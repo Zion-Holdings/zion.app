@@ -7,15 +7,15 @@ export const metadata: Metadata = {
   description: 'AI, IT, and Micro-SaaS services for enterprise automation, managed AI, cloud, security, data, and DevOps.',
   keywords: ['AI services', 'IT services', 'managed AI', 'cloud migration', 'security compliance', 'data analytics', 'automation', 'Micro-SaaS'],
   openGraph: {
-  title: 'Services | Zion Tech Group',
-  description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
-  url: 'https://ziontechgroup.com/services/',
-  type: 'website',
+    title: 'Services | Zion Tech Group',
+    description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Services | Zion Tech Group',
-  description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
+    card: 'summary_large_image',
+    title: 'Services | Zion Tech Group',
+    description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
   },
   alternates: { canonical: '/services/' },
 };

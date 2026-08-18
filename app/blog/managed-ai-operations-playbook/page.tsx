@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Managed Ai Operations Playbook | Zion Tech Group',
   description: 'Implementation patterns, risks, and next steps for managed ai operations playbook.',
   openGraph: {
-  title: 'Managed Ai Operations Playbook | Zion Tech Group',
-  description: 'Practical guidance for managed ai operations playbook.',
-  url: 'https://ziontechgroup.com/blog/managed-ai-operations-playbook/',
-  type: 'article',
+    title: 'Managed Ai Operations Playbook | Zion Tech Group',
+    description: 'Practical guidance for managed ai operations playbook.',
+    url: 'https://ziontechgroup.com/blog/managed-ai-operations-playbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Managed Ai Operations Playbook | Zion Tech Group',
-  description: 'Practical guidance for managed ai operations playbook.',
+    card: 'summary_large_image',
+    title: 'Managed Ai Operations Playbook | Zion Tech Group',
+    description: 'Practical guidance for managed ai operations playbook.',
   },
   alternates: { canonical: '/blog/managed-ai-operations-playbook/' },
 };

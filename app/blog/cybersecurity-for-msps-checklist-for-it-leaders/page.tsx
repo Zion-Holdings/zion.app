@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Cybersecurity for MSPs: checklist for IT leaders | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Cybersecurity for MSPs: checklist for IT leaders',
-  description: 'Cybersecurity for MSPs: checklist for IT leaders',
-  url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-checklist-for-it-leaders/',
-  type: 'article',
+    title: 'Cybersecurity for MSPs: checklist for IT leaders',
+    description: 'Cybersecurity for MSPs: checklist for IT leaders',
+    url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-checklist-for-it-leaders/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Cybersecurity for MSPs: checklist for IT leaders',
-  description: 'Cybersecurity for MSPs: checklist for IT leaders',
+    card: 'summary_large_image',
+    title: 'Cybersecurity for MSPs: checklist for IT leaders',
+    description: 'Cybersecurity for MSPs: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/cybersecurity-for-msps-checklist-for-it-leaders/' },
 };

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Blog | Zion Tech Group',

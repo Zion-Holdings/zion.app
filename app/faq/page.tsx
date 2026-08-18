@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description:
   'Common questions about AI and IT services, engagement models, pricing, onboarding, support, security, and deployment timelines.',
   openGraph: {
-  title: 'FAQ | Zion Tech Group',
-  description:
+    title: 'FAQ | Zion Tech Group',
+    description:
       'Common questions about AI and IT services, timing, security, pricing, and onboarding.',
-  url: 'https://ziontechgroup.com/faq/',
-  type: 'website',
-  locale: 'en_US',
+    url: 'https://ziontechgroup.com/faq/',
+    type: 'website',
+    locale: 'en_US',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'FAQ | Zion Tech Group',
-  description: 'Common questions about AI and IT services, timing, security, pricing, and onboarding.',
+    card: 'summary_large_image',
+    title: 'FAQ | Zion Tech Group',
+    description: 'Common questions about AI and IT services, timing, security, pricing, and onboarding.',
   },
   alternates: { canonical: '/faq/' },
 };

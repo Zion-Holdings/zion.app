@@ -7,15 +7,15 @@ export const metadata: Metadata = {
   description: 'Zion Tech Group is an AI-native IT services company building autonomous operations, managed AI, and enterprise-ready delivery.',
   keywords: ['AI company', 'IT services', 'managed AI', 'enterprise automation', 'Zion Tech Group'],
   openGraph: {
-  title: 'About Zion Tech Group',
-  description: 'AI-native IT services company focused on autonomous operations, managed AI, and enterprise-ready delivery.',
-  url: 'https://ziontechgroup.com/about/',
-  type: 'website',
+    title: 'About Zion Tech Group',
+    description: 'AI-native IT services company focused on autonomous operations, managed AI, and enterprise-ready delivery.',
+    url: 'https://ziontechgroup.com/about/',
+    type: 'website',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'About Zion Tech Group',
-  description: 'AI-native IT services company focused on autonomous operations, managed AI, and enterprise-ready delivery.',
+    card: 'summary_large_image',
+    title: 'About Zion Tech Group',
+    description: 'AI-native IT services company focused on autonomous operations, managed AI, and enterprise-ready delivery.',
   },
   alternates: { canonical: '/about/' },
 };

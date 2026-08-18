@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'AI Observability: operations handbook | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'AI Observability: operations handbook',
-  description: 'AI Observability: operations handbook',
-  url: 'https://ziontechgroup.com/blog/ai-observability-operations-handbook/',
-  type: 'article',
+    title: 'AI Observability: operations handbook',
+    description: 'AI Observability: operations handbook',
+    url: 'https://ziontechgroup.com/blog/ai-observability-operations-handbook/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'AI Observability: operations handbook',
-  description: 'AI Observability: operations handbook',
+    card: 'summary_large_image',
+    title: 'AI Observability: operations handbook',
+    description: 'AI Observability: operations handbook',
   },
   alternates: { canonical: '/blog/ai-observability-operations-handbook/' },
 };

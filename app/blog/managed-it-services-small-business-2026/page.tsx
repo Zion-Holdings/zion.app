@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
+
 
 export const metadata: Metadata = {
   title: 'Managed IT Services | Zion Tech Group',
@@ -7,15 +9,15 @@ export const metadata: Metadata = {
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-  title: 'Managed IT Services',
-  description: 'Managed IT Services',
-  url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/',
-  type: 'article',
+    title: 'Managed IT Services',
+    description: 'Managed IT Services',
+    url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/',
+    type: 'article',
   },
   twitter: {
-  card: 'summary_large_image',
-  title: 'Managed IT Services',
-  description: 'Managed IT Services',
+    card: 'summary_large_image',
+    title: 'Managed IT Services',
+    description: 'Managed IT Services',
   },
   alternates: { canonical: '/blog/managed-it-services-small-business-2026/' },
 };
