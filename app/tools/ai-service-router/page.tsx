@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -41,6 +42,8 @@ const FACTORS = [
     hint: 'Use small specialized models, caching, and guardrails when users expect sub-second responses.',
   },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/ai-service-router/"};
 
 export default function AiServiceRouterPage() {
   return (
@@ -105,6 +108,7 @@ export default function AiServiceRouterPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -29,6 +30,8 @@ const PORTS = [
   { port: 6379, service: 'Redis', note: 'Require auth and network isolation.' },
   { port: 27017, service: 'MongoDB', note: 'Bind private IPs and enable auth.' },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/port-scanner/"};
 
 export default function PortScannerPage() {
   return (
@@ -95,6 +98,7 @@ export default function PortScannerPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

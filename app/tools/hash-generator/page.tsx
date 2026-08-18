@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import StandardPage from '@/components/StandardPage';
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Hash Generator | Zion Tech Group',
@@ -19,60 +20,51 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/hash-generator/' },
 };
 
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/hash-generator/"};
+
 export default function HashGeneratorPage() {
   return (
-    <StandardPage
-      title="Hash Generator"
-      subtitle="Generate and compare SHA-256, SHA-512, MD5, and other hash digests for verification and checksums."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools', href: '/tools/' },
-        { label: 'Hash Generator' },
-      ]}
-      actions={[
-        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
-        { label: 'Contact us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6">
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">When to use</h2>
           <p className="text-slate-300">
-            Use this tool when verifying file integrity, comparing payloads, or generating checksums for downloads and artifacts. It is also useful for debugging token formats and data consistency.
+            Use Hash Generator when you need reliable encoding, validation, or conversion in developer workflows, automation scripts, and QA checks. It reduces manual errors and keeps formatting consistent across environments.
           </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-3">Algorithms</h2>
+          <h2 className="text-xl font-bold text-white mb-3">How to use</h2>
+          <ol className="list-decimal list-inside text-slate-300 space-y-2">
+            <li>Open the tool and paste or select your input.</li>
+            <li>Choose the target format or operation.</li>
+            <li>Review the generated result.</li>
+            <li>Copy the output for downstream use.</li>
+          </ol>
+        </section>
+        <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-xl font-bold text-white mb-3">Tips</h2>
           <ul className="list-disc list-inside text-slate-300 space-y-2">
-            <li>MD5 for non-cryptographic checksums</li>
-            <li>SHA-1 for legacy compatibility checks</li>
-            <li>SHA-256 and SHA-512 for security-sensitive verification</li>
+            <li>Validate inputs before converting large payloads.</li>
+            <li>Keep a repeatable format across systems to avoid drift.</li>
+            <li>Use this alongside related tools for end-to-end workflows.</li>
           </ul>
-        </section>
-        <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-3">Security notes</h2>
-          <p className="text-slate-300">
-            Do not use MD5 or SHA-1 for password storage or tamper protection. Prefer SHA-256 or stronger for new designs.
-          </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Related tools</h2>
           <div className="grid gap-3 sm:grid-cols-3">
-            <a href="/tools/base64-encoder/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">Base64 Encoder</h3>
-              <p className="text-slate-400 text-xs">Encode and decode Base64 safely.</p>
-            </a>
-            <a href="/tools/uuid-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <Link href="/tools/word-counter/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">Word Counter</h3>
+              <p className="text-slate-400 text-xs">Count words and characters.</p>
+            </Link>
+            <Link href="/tools/uuid-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
               <h3 className="text-white font-semibold text-sm mb-1">UUID Generator</h3>
-              <p className="text-slate-400 text-xs">Generate UUIDs v4 instantly.</p>
-            </a>
-            <a href="/tools/json-formatter/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">JSON Formatter</h3>
-              <p className="text-slate-400 text-xs">Beautify and validate JSON structure.</p>
-            </a>
+              <p className="text-slate-400 text-xs">Generate UUIDs for identifiers.</p>
+            </Link>
+            <Link href="/tools/qr-code-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">QR Code Generator</h3>
+              <p className="text-slate-400 text-xs">Generate QR codes for URLs and text.</p>
+            </Link>
           </div>
         </section>
       </div>
-    </StandardPage>
   );
 }

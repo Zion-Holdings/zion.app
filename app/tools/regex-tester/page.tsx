@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 import type { Metadata } from 'next';
 
@@ -20,6 +21,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/regex-tester/' },
   robots: { index: true, follow: true },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/regex-tester/"};
 
 export default function RegexTesterPage() {
   const breadcrumbItems = [
@@ -68,6 +71,7 @@ export default function RegexTesterPage() {
           <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/micro-saas/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/micro-saas/"};
 
 export default function MicroSaaSPage() {
   return (
@@ -65,6 +68,7 @@ export default function MicroSaaSPage() {
           <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

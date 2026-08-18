@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 import type { Metadata } from 'next';
 
@@ -30,6 +31,8 @@ const industries = [
   { name: 'Government & Public Sector', desc: 'Citizen services, compliance automation, civic AI.', path: '/services/?category=security' },
   { name: 'Insurance', desc: 'Claims automation, underwriting AI, fraud prevention.', path: '/services/?category=ai' },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/solutions/"};
 
 export default function SolutionsPage() {
   return (
@@ -104,6 +107,7 @@ export default function SolutionsPage() {
           </div>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

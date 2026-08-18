@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -28,6 +29,8 @@ const PRODUCTS = [
   { name: 'Zion AI Data Governance', category: 'Data' },
 ];
 
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/products/"};
+
 export default function ProductsPage() {
   return (
     <StandardPage
@@ -52,6 +55,7 @@ export default function ProductsPage() {
           </Link>
         ))}
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -25,6 +26,8 @@ const SYSTEMS = [
   { name: 'Support intake', target: 'Business hours + on-call escalation', focus: 'Routing accuracy, queue depth, and response-time SLA.' },
   { name: 'Deploy pipeline', target: 'High availability', focus: 'Workflow success rate, artifact freshness, and rollback readiness.' },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/health-check/"};
 
 export default function HealthCheckPage() {
   return (
@@ -83,6 +86,7 @@ export default function HealthCheckPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

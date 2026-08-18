@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -36,6 +37,8 @@ const QUESTIONS = [
     note: 'This affects staffing, knowledge transfer, and success metrics.',
   },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/service-recommender/"};
 
 export default function ServiceRecommenderPage() {
   return (
@@ -98,6 +101,7 @@ export default function ServiceRecommenderPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

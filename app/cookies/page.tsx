@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/cookies/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/cookies/"};
 
 export default function CookiesPage() {
   return (
@@ -45,6 +48,7 @@ export default function CookiesPage() {
 
         <Link href="/privacy/" className="text-purple-300 hover:text-purple-200">Privacy Policy →</Link>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

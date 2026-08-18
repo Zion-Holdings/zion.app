@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import StandardPage from '@/components/StandardPage';
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Color Converter | Zion Tech Group',
@@ -19,60 +20,51 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/color-converter/' },
 };
 
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/color-converter/"};
+
 export default function ColorConverterPage() {
   return (
-    <StandardPage
-      title="Color Converter"
-      subtitle="Convert between HEX, RGB, HSL, and other color formats for UI and design workflows."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools', href: '/tools/' },
-        { label: 'Color Converter' },
-      ]}
-      actions={[
-        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
-        { label: 'Contact us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6">
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">When to use</h2>
           <p className="text-slate-300">
-            Use this tool when converting brand colors for web, mobile, or design tokens. It helps align teams on exact values and reduces copy-paste mistakes across stylesheets.
+            Use Color Converter when you need reliable encoding, validation, or conversion in developer workflows, automation scripts, and QA checks. It reduces manual errors and keeps formatting consistent across environments.
           </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-3">Formats</h2>
-          <ul className="list-disc list-inside text-slate-300 space-y-2">
-            <li>HEX for CSS and design files</li>
-            <li>RGB for canvas, image pipelines, and native UI</li>
-            <li>HSL for theme adjustments and accessibility tuning</li>
-          </ul>
+          <h2 className="text-xl font-bold text-white mb-3">How to use</h2>
+          <ol className="list-decimal list-inside text-slate-300 space-y-2">
+            <li>Open the tool and paste or select your input.</li>
+            <li>Choose the target format or operation.</li>
+            <li>Review the generated result.</li>
+            <li>Copy the output for downstream use.</li>
+          </ol>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Tips</h2>
-          <p className="text-slate-300">
-            Check contrast against text colors before finalizing UI palettes. Keep a small set of canonical values in design tokens to avoid drift across components.
-          </p>
+          <ul className="list-disc list-inside text-slate-300 space-y-2">
+            <li>Validate inputs before converting large payloads.</li>
+            <li>Keep a repeatable format across systems to avoid drift.</li>
+            <li>Use this alongside related tools for end-to-end workflows.</li>
+          </ul>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Related tools</h2>
           <div className="grid gap-3 sm:grid-cols-3">
-            <a href="/tools/json-formatter/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">JSON Formatter</h3>
-              <p className="text-slate-400 text-xs">Beautify and validate JSON structure.</p>
-            </a>
-            <a href="/tools/qr-code-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <Link href="/tools/word-counter/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">Word Counter</h3>
+              <p className="text-slate-400 text-xs">Count words and characters.</p>
+            </Link>
+            <Link href="/tools/uuid-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">UUID Generator</h3>
+              <p className="text-slate-400 text-xs">Generate UUIDs for identifiers.</p>
+            </Link>
+            <Link href="/tools/qr-code-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
               <h3 className="text-white font-semibold text-sm mb-1">QR Code Generator</h3>
               <p className="text-slate-400 text-xs">Generate QR codes for URLs and text.</p>
-            </a>
-            <a href="/tools/uuid-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">UUID Generator</h3>
-              <p className="text-slate-400 text-xs">Generate UUIDs v4 instantly.</p>
-            </a>
+            </Link>
           </div>
         </section>
       </div>
-    </StandardPage>
   );
 }

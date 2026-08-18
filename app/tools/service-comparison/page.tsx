@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -50,6 +51,8 @@ const MODELS = [
     strengths: 'Architecture review, vendor evaluation, compliance alignment, and roadmap clarity.',
   },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/service-comparison/"};
 
 export default function ServiceComparisonPage() {
   return (
@@ -118,6 +121,7 @@ export default function ServiceComparisonPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

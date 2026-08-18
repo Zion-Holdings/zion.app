@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import StandardPage from '@/components/StandardPage';
 import JsonLd from '@/components/JsonLd';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Search | Zion Tech Group',
@@ -119,6 +119,8 @@ function SearchContent() {
   );
 }
 
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/search/"};
+
 export default function SearchPage() {
   return (
     <>
@@ -135,7 +137,8 @@ export default function SearchPage() {
         ]}
       >
         <SearchContent />
-      </StandardPage>
+            <JsonLd data={jsonLd} />
+    </StandardPage>
     </>
   );
 }

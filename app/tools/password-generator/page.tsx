@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/tools/password-generator/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/password-generator/"};
 
 export default function Page() {
   return (
@@ -73,6 +76,7 @@ export default function Page() {
           </div>
         </section>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

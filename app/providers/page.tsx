@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
 
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/providers/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/providers/"};
 
 export default function ProvidersPage() {
   return (
@@ -62,6 +65,7 @@ export default function ProvidersPage() {
           <Link href="/partners/" className="btn-secondary text-center">Partner ecosystem</Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

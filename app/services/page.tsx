@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -28,6 +29,8 @@ const CATEGORIES = [
   { key: 'automation', label: 'Automation', desc: 'Workflow automation, RPA, support automation, and integration orchestration.' },
   { key: 'micro-saas', label: 'Micro-SaaS', desc: 'Repeatable monetizable tools built on proven infrastructure and delivery patterns.' },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "", "description": "", "url": "https://ziontechgroup.com/services/"};
 
 export default function ServicesPage() {
   return (
@@ -96,6 +99,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

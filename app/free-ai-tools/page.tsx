@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/free-ai-tools/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/free-ai-tools/"};
 
 export default function FreeAiToolsPage() {
   return (
@@ -53,6 +56,7 @@ export default function FreeAiToolsPage() {
           ))}
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

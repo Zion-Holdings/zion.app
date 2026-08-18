@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -62,6 +63,8 @@ export function generateStaticParams() {
   return Object.keys(INDUSTRIES).map((slug) => ({ slug }));
 }
 
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/industries/[slug]/"};
+
 export default function IndustryPage({ params }: { params: { slug: string } }) {
   const data = INDUSTRIES[params.slug];
   if (!data) return notFound();
@@ -118,6 +121,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

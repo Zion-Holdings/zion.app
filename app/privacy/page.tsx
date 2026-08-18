@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/privacy/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/privacy/"};
 
 export default function PrivacyPage() {
   return (
@@ -50,6 +53,7 @@ export default function PrivacyPage() {
 
         <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact privacy team →</Link>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

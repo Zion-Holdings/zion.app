@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import StandardPage from '@/components/StandardPage';
 import JsonLd from '@/components/JsonLd';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Home | Zion Tech Group',
@@ -44,6 +44,8 @@ const websiteLd = {
     'query-input': 'required name=query',
   },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "Organization", "description": "", "url": "https://ziontechgroup.com", "legalName": "Zion Tech Group", "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "url": "https://ziontechgroup.com/contact/"}};
 
 export default function HomePage() {
   return (
@@ -164,7 +166,8 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </StandardPage>
+            <JsonLd data={jsonLd} />
+    </StandardPage>
     </>
   );
 }

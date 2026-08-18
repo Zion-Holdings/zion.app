@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/ai/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/ai/"};
 
 export default function AiPage() {
   return (
@@ -64,6 +67,7 @@ export default function AiPage() {
           <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

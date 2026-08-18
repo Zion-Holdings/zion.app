@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -28,6 +29,8 @@ const INDUSTRIES = [
   { key: 'education', label: 'Education & Research', href: '/industries/education/', desc: 'Learning intelligence, assessment automation, and research ops.', outcome: 'Faster feedback loops and better learner outcomes.' },
   { key: 'government', label: 'Government', href: '/industries/government/', desc: 'Secure, compliant AI and infrastructure modernization.', outcome: 'Safer citizen services and faster compliance review cycles.' },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/industries/"};
 
 export default function IndustriesPage() {
   return (
@@ -95,6 +98,7 @@ export default function IndustriesPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

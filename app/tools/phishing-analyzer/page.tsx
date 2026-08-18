@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -26,6 +27,8 @@ const CHECKS = [
   { label: 'Attachment risk', note: 'Unexpected executables, macros, and password-protected archives deserve extra scrutiny.' },
   { label: 'Urgency and coercion cues', note: 'Phishing relies on fear and time pressure. Treat urgent payment or access requests as suspicious until verified.' },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/phishing-analyzer/"};
 
 export default function PhishingAnalyzerPage() {
   return (
@@ -89,6 +92,7 @@ export default function PhishingAnalyzerPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

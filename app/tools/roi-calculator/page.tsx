@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -37,6 +38,8 @@ const INPUTS = [
     hint: 'Buffer for change management, fallback handling, and exceptions.',
   },
 ];
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/roi-calculator/"};
 
 export default function RoiCalculatorPage() {
   return (
@@ -109,6 +112,7 @@ export default function RoiCalculatorPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

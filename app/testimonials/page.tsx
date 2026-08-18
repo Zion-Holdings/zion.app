@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 import { testimonials } from '@/data/testimonials';
 
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/testimonials/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/testimonials/"};
 
 export default function TestimonialsPage() {
   return (
@@ -82,6 +85,7 @@ export default function TestimonialsPage() {
           <Link href="/contact/" className="hover:text-purple-300 transition-colors">Contact us →</Link>
         </div>
       </section>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

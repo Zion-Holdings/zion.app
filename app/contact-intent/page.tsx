@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 import type { Metadata } from 'next';
 
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/contact-intent/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/contact-intent/"};
 
 export default function ContactIntentPage() {
   return (
@@ -73,6 +76,7 @@ export default function ContactIntentPage() {
           <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

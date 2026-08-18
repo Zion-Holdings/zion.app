@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/dashboard/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/dashboard/"};
 
 export default function DashboardPage() {
   return (
@@ -52,6 +55,7 @@ export default function DashboardPage() {
           <Link href="/contact/" className="btn-secondary text-center">Contact support</Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import StandardPage from '@/components/StandardPage';
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Base64 Encoder | Zion Tech Group',
@@ -19,60 +20,51 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/base64-encoder/' },
 };
 
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/base64-encoder/"};
+
 export default function Base64EncoderPage() {
   return (
-    <StandardPage
-      title="Base64 Encoder"
-      subtitle="Encode and decode Base64 text, files, and binary data safely."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools', href: '/tools/' },
-        { label: 'Base64 Encoder' },
-      ]}
-      actions={[
-        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
-        { label: 'Contact us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6">
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">When to use</h2>
           <p className="text-slate-300">
-            Use this tool when embedding binary data in JSON, email, or HTML. Base64 is common for images, fonts, certificates, and simple payload encoding in APIs and config files.
+            Use Base64 Encoder when you need reliable encoding, validation, or conversion in developer workflows, automation scripts, and QA checks. It reduces manual errors and keeps formatting consistent across environments.
           </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">How to use</h2>
           <ol className="list-decimal list-inside text-slate-300 space-y-2">
-            <li>Paste raw text or file content.</li>
-            <li>Choose encode or decode.</li>
-            <li>Review output and copy the result.</li>
+            <li>Open the tool and paste or select your input.</li>
+            <li>Choose the target format or operation.</li>
+            <li>Review the generated result.</li>
+            <li>Copy the output for downstream use.</li>
           </ol>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-3">Notes</h2>
-          <p className="text-slate-300">
-            Base64 expands data by about 33%. Use it for transport, not long-term storage. Validate padding and charset when decoding to avoid malformed payload errors.
-          </p>
+          <h2 className="text-xl font-bold text-white mb-3">Tips</h2>
+          <ul className="list-disc list-inside text-slate-300 space-y-2">
+            <li>Validate inputs before converting large payloads.</li>
+            <li>Keep a repeatable format across systems to avoid drift.</li>
+            <li>Use this alongside related tools for end-to-end workflows.</li>
+          </ul>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Related tools</h2>
           <div className="grid gap-3 sm:grid-cols-3">
-            <a href="/tools/url-encoder/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">URL Encoder</h3>
-              <p className="text-slate-400 text-xs">Encode and decode URLs and query parameters safely.</p>
-            </a>
-            <a href="/tools/hash-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">Hash Generator</h3>
-              <p className="text-slate-400 text-xs">Generate hash digests for verification workflows.</p>
-            </a>
-            <a href="/tools/json-formatter/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">JSON Formatter</h3>
-              <p className="text-slate-400 text-xs">Beautify and validate JSON structure.</p>
-            </a>
+            <Link href="/tools/word-counter/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">Word Counter</h3>
+              <p className="text-slate-400 text-xs">Count words and characters.</p>
+            </Link>
+            <Link href="/tools/uuid-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">UUID Generator</h3>
+              <p className="text-slate-400 text-xs">Generate UUIDs for identifiers.</p>
+            </Link>
+            <Link href="/tools/qr-code-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">QR Code Generator</h3>
+              <p className="text-slate-400 text-xs">Generate QR codes for URLs and text.</p>
+            </Link>
           </div>
         </section>
       </div>
-    </StandardPage>
   );
 }

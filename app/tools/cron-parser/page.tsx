@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import StandardPage from '@/components/StandardPage';
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Cron Parser | Zion Tech Group',
@@ -19,60 +20,51 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/cron-parser/' },
 };
 
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/cron-parser/"};
+
 export default function CronParserPage() {
   return (
-    <StandardPage
-      title="Cron Parser"
-      subtitle="Translate cron schedules into human-readable plain English."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools', href: '/tools/' },
-        { label: 'Cron Parser' },
-      ]}
-      actions={[
-        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
-        { label: 'Contact us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6">
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">When to use</h2>
           <p className="text-slate-300">
-            Use this tool when reviewing deployment schedules, batch jobs, or automation timers. Paste a cron expression and get a readable description of when it runs, including weekends and month boundaries.
+            Use Cron Parser when you need reliable encoding, validation, or conversion in developer workflows, automation scripts, and QA checks. It reduces manual errors and keeps formatting consistent across environments.
           </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">How to use</h2>
           <ol className="list-decimal list-inside text-slate-300 space-y-2">
-            <li>Paste a cron expression.</li>
-            <li>Review the human-readable schedule.</li>
-            <li>Validate correctness before applying it.</li>
+            <li>Open the tool and paste or select your input.</li>
+            <li>Choose the target format or operation.</li>
+            <li>Review the generated result.</li>
+            <li>Copy the output for downstream use.</li>
           </ol>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Tips</h2>
-          <p className="text-slate-300">
-            Verify timezone assumptions when moving jobs between regions. Watch for <code className="text-purple-300">@reboot</code> and nonstandard schedules that behave differently across schedulers.
-          </p>
+          <ul className="list-disc list-inside text-slate-300 space-y-2">
+            <li>Validate inputs before converting large payloads.</li>
+            <li>Keep a repeatable format across systems to avoid drift.</li>
+            <li>Use this alongside related tools for end-to-end workflows.</li>
+          </ul>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Related tools</h2>
           <div className="grid gap-3 sm:grid-cols-3">
-            <a href="/tools/word-counter/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+            <Link href="/tools/word-counter/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
               <h3 className="text-white font-semibold text-sm mb-1">Word Counter</h3>
-              <p className="text-slate-400 text-xs">Count words and characters quickly.</p>
-            </a>
-            <a href="/tools/uuid-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <p className="text-slate-400 text-xs">Count words and characters.</p>
+            </Link>
+            <Link href="/tools/uuid-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
               <h3 className="text-white font-semibold text-sm mb-1">UUID Generator</h3>
-              <p className="text-slate-400 text-xs">Create UUIDs for identifiers and tokens.</p>
-            </a>
-            <a href="/tools/base64-encoder/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold text-sm mb-1">Base64 Encoder</h3>
-              <p className="text-slate-400 text-xs">Encode and decode Base64 safely.</p>
-            </a>
+              <p className="text-slate-400 text-xs">Generate UUIDs for identifiers.</p>
+            </Link>
+            <Link href="/tools/qr-code-generator/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold text-sm mb-1">QR Code Generator</h3>
+              <p className="text-slate-400 text-xs">Generate QR codes for URLs and text.</p>
+            </Link>
           </div>
         </section>
       </div>
-    </StandardPage>
   );
 }

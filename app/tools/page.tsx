@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/tools/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/"};
 
 export default function ToolsPage() {
   return (
@@ -166,6 +169,7 @@ export default function ToolsPage() {
           </Link>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }

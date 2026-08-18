@@ -1,5 +1,6 @@
 import { notFound, redirect } from 'next/navigation';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 import type { Metadata } from 'next';
 
@@ -42,6 +43,8 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/services/' },
 };
+
+const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/services/[slug]/"};
 
 export default function ServiceSlugPage({ params }: { params: Params }) {
   const slug = normalizeSlug(params.slug);
@@ -96,6 +99,7 @@ export default function ServiceSlugPage({ params }: { params: Params }) {
           </div>
         </div>
       </div>
+          <JsonLd data={jsonLd} />
     </StandardPage>
   );
 }
