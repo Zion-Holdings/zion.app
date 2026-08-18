@@ -4,19 +4,21 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Case Studies | Zion Tech Group',
-    description: 'Case studies from Zion Tech Group engagements in AI, IT, security, automation, and cloud.',
-    openGraph: {
+  description: 'Case studies from Zion Tech Group engagements in AI, IT, security, automation, and cloud.',
+  openGraph: {
     title: 'Case Studies | Zion Tech Group',
     description: 'Real outcomes and ROI from Zion Tech Group engagements.',
     url: 'https://ziontechgroup.com/case-studies/',
+    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Case Studies | Zion Tech Group',
     description: 'Real outcomes and ROI from Zion Tech Group engagements.',
+    siteName: 'Zion Tech Group',
   },
-    alternates: { canonical: '/case-studies/' },
+  alternates: { canonical: '/case-studies/' },
 };
 
 export default function CaseStudiesPage() {
@@ -36,32 +38,38 @@ export default function CaseStudiesPage() {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-lg font-semibold text-white mb-2">Support automation</h3>
-          <p className="text-slate-400 text-sm">Ticket deflection and knowledge-base assistants at scale.</p>
+          <p className="text-slate-400 text-sm mb-2">Ticket deflection and knowledge-base assistants at scale.</p>
+          <p className="text-purple-300 text-xs font-semibold">Outcome: 35% ticket deflection in 8 weeks.</p>
           <Link href="/services/" className="text-purple-300 text-xs font-semibold mt-3 inline-block">View services →</Link>
         </div>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-lg font-semibold text-white mb-2">Cloud efficiency</h3>
-          <p className="text-slate-400 text-sm">Observability and cost optimization without reliability risk.</p>
+          <p className="text-slate-400 text-sm mb-2">Observability and cost optimization without reliability risk.</p>
+          <p className="text-purple-300 text-xs font-semibold">Outcome: 28% infra cost reduction in 12 weeks.</p>
           <Link href="/services/" className="text-purple-300 text-xs font-semibold mt-3 inline-block">View services →</Link>
         </div>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-lg font-semibold text-white mb-2">AI adoption</h3>
-          <p className="text-slate-400 text-sm">Production AI roadmaps with measurable ROI and governance.</p>
+          <p className="text-slate-400 text-sm mb-2">Production AI roadmaps with measurable ROI and governance.</p>
+          <p className="text-purple-300 text-xs font-semibold">Outcome: 3 production assistants deployed in 10 weeks.</p>
           <Link href="/services/" className="text-purple-300 text-xs font-semibold mt-3 inline-block">View services →</Link>
         </div>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-lg font-semibold text-white mb-2">Compliance automation</h3>
-          <p className="text-slate-400 text-sm">Policy, evidence, and controls for regulated environments.</p>
+          <p className="text-slate-400 text-sm mb-2">Policy, evidence, and controls for regulated environments.</p>
+          <p className="text-purple-300 text-xs font-semibold">Outcome: Audit evidence package ready in 6 weeks.</p>
           <Link href="/services/" className="text-purple-300 text-xs font-semibold mt-3 inline-block">View services →</Link>
         </div>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-lg font-semibold text-white mb-2">Incident response</h3>
-          <p className="text-slate-400 text-sm">Retainer-based readiness and faster MTTR.</p>
+          <p className="text-slate-400 text-sm mb-2">Retainer-based readiness and faster MTTR.</p>
+          <p className="text-purple-300 text-xs font-semibold">Outcome: MTTR improved by 40% within 1 quarter.</p>
           <Link href="/services/" className="text-purple-300 text-xs font-semibold mt-3 inline-block">View services →</Link>
         </div>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-lg font-semibold text-white mb-2">Data & analytics</h3>
-          <p className="text-slate-400 text-sm">Pipelines, forecasting, and decision-ready dashboards.</p>
+          <p className="text-slate-400 text-sm mb-2">Pipelines, forecasting, and decision-ready dashboards.</p>
+          <p className="text-purple-300 text-xs font-semibold">Outcome: Weekly executive reporting automated in 8 weeks.</p>
           <Link href="/services/" className="text-purple-300 text-xs font-semibold mt-3 inline-block">View services →</Link>
         </div>
       </div>

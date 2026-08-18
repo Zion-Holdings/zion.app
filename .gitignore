@@ -140,3 +140,7 @@ scripts/checks/
 __pycache__/
 content-loop/scripts/__pycache__/
 *.tsbuildinfo
+
+# Hermes workflow scratch data
+gh_runs.tsv
+recent_runs.tsv
