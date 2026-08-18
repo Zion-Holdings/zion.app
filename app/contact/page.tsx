@@ -24,18 +24,29 @@ export default function ContactPage() {
         { label: 'Contact' },
       ]}
       actions={[
-        { label: 'Browse services', href: '/services/', style: 'secondary' },
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Start project', href: '/start-project/', style: 'secondary' },
       ]}
     >
       <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-2">Email</h2>
-          <p className="text-slate-300 text-sm">General inquiries and scoping calls.</p>
+          <p className="text-slate-300 text-sm">General inquiries, scoping calls, and solution reviews.</p>
           <Link href="mailto:kleber@ziontechgroup.com" className="text-purple-300 text-sm font-semibold hover:text-white">kleber@ziontechgroup.com</Link>
         </div>
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-xl font-bold text-white mb-2">Phone</h2>
+          <p className="text-slate-300 text-sm">Call or text for urgent intake and scheduling.</p>
+          <Link href="tel:+13046440950" className="text-purple-300 text-sm font-semibold hover:text-white">+1 (304) 644-0950</Link>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-2">Response time</h2>
-          <p className="text-slate-300 text-sm">Most questions get a detailed reply within one business hour.</p>
+          <p className="text-slate-300 text-sm">Most inquiries receive a detailed reply within one business hour.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-xl font-bold text-white mb-2">Preferred path</h2>
+          <p className="text-slate-300 text-sm">Start with /start-project/ for scoped proposals, or email for general questions.</p>
+          <Link href="/start-project/" className="text-purple-300 text-sm font-semibold hover:text-white">Start project →</Link>
         </div>
       </div>
 
@@ -46,8 +57,8 @@ export default function ContactPage() {
             Contact us to move from assessment to execution with a timeline and success criteria already in place.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/services/" className="btn-primary text-lg px-10 py-4">Explore services</Link>
-            <Link href="/contact/" className="btn-secondary text-lg px-10 py-4">Contact us</Link>
+            <Link href="/start-project/" className="btn-primary text-lg px-10 py-4">Start project</Link>
+            <Link href="/services/" className="btn-secondary text-lg px-10 py-4">Browse services</Link>
           </div>
         </div>
       </div>
