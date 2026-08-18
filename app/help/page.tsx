@@ -55,8 +55,8 @@ export default function HelpPage() {
           <li>Escalation paths with guaranteed response SLAs by plan.</li>
         </ul>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/services/" className="btn-primary text-center">Browse services</a>
-          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+          <Link href="/services/" className="btn-primary text-center">Browse services</Link>
+          <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
         </div>
       </div>
     </StandardPage>

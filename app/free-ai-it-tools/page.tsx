@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Free AI & IT Tools | Zion Tech Group',
@@ -33,6 +34,10 @@ export default function FreeAiItToolsPage() {
         { label: 'Contact us', href: '/contact/', style: 'secondary' },
       ]}
     >
+      <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-5xl mx-auto">
+        Use these utilities to inspect, transform, and validate common formats without installing extra software.
+      </p>
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
         <a href="/tools/json-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">JSON Formatter</h3>

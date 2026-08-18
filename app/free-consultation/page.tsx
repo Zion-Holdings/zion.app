@@ -37,6 +37,7 @@ export default function FreeConsultationPage() {
         <p className="text-slate-300 text-lg leading-relaxed mb-8">
           This is a no-obligation discovery call. We’ll review your current environment, identify quick wins, and outline a practical first engagement.
         </p>
+
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
             <h3 className="text-white font-semibold mb-2">Outcome</h3>
@@ -51,6 +52,12 @@ export default function FreeConsultationPage() {
             <p className="text-slate-400 text-sm">Stakeholders, timeline, and success criteria.</p>
           </div>
         </div>
+
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 mt-6">
+          <h3 className="text-white font-semibold mb-2">What you’ll receive</h3>
+          <p className="text-slate-400 text-sm">A short recommendation with estimated ROI, timeline, and suggested starting services.</p>
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
           <Link href="/contact/" className="btn-primary text-center">Book a call</Link>
           <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
