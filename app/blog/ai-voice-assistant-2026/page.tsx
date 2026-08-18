@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'AI Voice Assistant 2026 | Zion Tech Group',
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="AI Voice Assistant 2026"
       subtitle="Voice assistant architecture, telephony integration, and compliance patterns."

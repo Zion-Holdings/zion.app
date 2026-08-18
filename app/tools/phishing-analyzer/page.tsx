@@ -33,6 +33,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 export default function PhishingAnalyzerPage() {
   return (
     <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Phishing Analyzer", "url": "https://ziontechgroup.com/tools/phishing-analyzer/", "applicationCategory": "DeveloperApplication"} />
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Phishing Analyzer"
       subtitle="Use this checklist to evaluate suspicious URLs and emails before interacting."

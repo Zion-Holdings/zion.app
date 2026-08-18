@@ -70,6 +70,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
   if (!data) return notFound();
 
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title={data.label}
       subtitle={data.intro}

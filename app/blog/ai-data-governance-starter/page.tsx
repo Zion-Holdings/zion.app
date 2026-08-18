@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Ai Data Governance Starter | Zion Tech Group',
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Ai Data Governance Starter"
       subtitle="Practical guidance for implementation, governance, and delivery."

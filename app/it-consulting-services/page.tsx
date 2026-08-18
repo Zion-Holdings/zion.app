@@ -24,6 +24,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function ItConsultingServicesPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="IT Consulting Services"
       subtitle="Hands-on consulting for cloud, security, data, automation, and AI delivery."

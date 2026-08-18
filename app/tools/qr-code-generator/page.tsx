@@ -32,6 +32,7 @@ export default function QrCodeGeneratorPage() {
 
   return (
     <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Qr Code Generator", "url": "https://ziontechgroup.com/tools/qr-code-generator/", "applicationCategory": "DeveloperApplication"} />
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="QR Code Generator"
       subtitle="Create QR codes for URLs, text, and contact data."

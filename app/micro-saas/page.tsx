@@ -23,6 +23,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function MicroSaaSPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Micro SaaS"
       subtitle="Repeatable, monetizable tools built on proven infrastructure and real customer feedback."

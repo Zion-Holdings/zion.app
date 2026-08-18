@@ -24,6 +24,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function RetailSolutionsPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Retail & E-Commerce"
       subtitle="Personalization, demand forecasting, checkout optimization, and support automation for modern commerce."

@@ -25,6 +25,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 export default function JsonDiffPage() {
   return (
     <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Json Diff", "url": "https://ziontechgroup.com/tools/json-diff/", "applicationCategory": "DeveloperApplication"} />
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="JSON Diff"
       subtitle="Compare JSON objects side by side and highlight added, removed, and changed fields."

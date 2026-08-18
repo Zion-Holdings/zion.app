@@ -23,6 +23,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 export default function PrivacyPage() {
   return (
       <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage title="Privacy Policy" subtitle="How we collect, use, and protect your data." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]}>
       <div className="max-w-3xl mx-auto space-y-6 text-slate-300">
         <p>We collect information needed to deliver services, improve site performance, and communicate updates. We do not sell personal data.</p>

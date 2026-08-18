@@ -25,6 +25,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 export default function PartnersPage() {
   return (
       <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Partners"
       subtitle="Technology and delivery partners we work with to ship outcomes faster."
