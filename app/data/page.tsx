@@ -23,6 +23,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function DataPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Data & Analytics"
       subtitle="We turn raw data into reliable decisions with governed pipelines, forecasting models, and executive dashboards."

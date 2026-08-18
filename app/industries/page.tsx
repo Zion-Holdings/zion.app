@@ -34,6 +34,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function IndustriesPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Industries"
       subtitle="AI and IT delivery patterns tailored to your operating context, compliance requirements, and measurable outcomes."

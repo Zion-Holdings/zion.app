@@ -24,6 +24,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function CaseStudiesPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Case Studies"
       subtitle="Measurable outcomes from real engagements: support automation, cloud efficiency, AI adoption, and compliance delivery."

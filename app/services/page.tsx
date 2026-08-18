@@ -34,6 +34,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "CollectionPage", "na
 
 export default function ServicesPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Services"
       subtitle="Enterprise-grade services across AI, IT, security, data, and automation. Choose a category to see use cases and delivery patterns."

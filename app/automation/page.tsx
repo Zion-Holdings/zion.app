@@ -25,6 +25,7 @@ const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": ""
 
 export default function AutomationPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="AI Automation"
       subtitle="Streamline operations with practical AI automation."
