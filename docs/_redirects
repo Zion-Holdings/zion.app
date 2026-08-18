@@ -254,8 +254,8 @@
 /start-project /contact/ 301
 /contact-intent /contact/ 301
 /partnership-program /partners/ 301
-/ai /ai/ 301
-/ai/ /ai/ 301
+/ai /tools/ 301
+/ai/ /tools/ 301
 
 /proposal /services/ 301
 /proposal/ /services/ 301
