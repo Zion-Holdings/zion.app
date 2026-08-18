@@ -1,0 +1,18 @@
+{
+  "ready": [
+    {
+      "to": "notification@service.tiktok.com",
+      "name": null,
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready",
+      "source": "historical_email_miner",
+      "source_query": "\"ziontechgroup.com\"",
+      "domain": "service.tiktok.com",
+      "is_generic_provider": false,
+      "is_invalid_domain": false,
+      "is_placeholder_domain": false,
+      "confidence": 2
+    }
+  ]
+}
