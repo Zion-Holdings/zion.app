@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/apm-application-performance-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: common mistakes", "description": "APM Application Performance: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:59Z", "dateModified": "2026-08-18T02:47:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-common-mistakes/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: common mistakes", "description": "API Performance Testing: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:23Z", "dateModified": "2026-08-18T05:50:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-common-mistakes/"};
 
 export default function Page() {
   return (

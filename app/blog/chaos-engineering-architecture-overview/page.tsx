@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/chaos-engineering-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: architecture overview", "description": "Chaos Engineering: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-architecture-overview/"};
 
 export default function Page() {
   return (

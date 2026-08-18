@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: implementation playbook", "description": "API Orchestration Layer: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:52Z", "dateModified": "2026-08-18T02:47:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-implementation-playbook/"};
 
 export default function Page() {
   return (

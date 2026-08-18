@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-migration-services-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: starter template", "description": "Cloud Migration Services: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:29Z", "dateModified": "2026-08-18T05:50:29Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-starter-template/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/smart-contract-audit-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: policy and compliance", "description": "Smart Contract Audit: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-policy-and-compliance/"};
 
 export default function Page() {
   return (

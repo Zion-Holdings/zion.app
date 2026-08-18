@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/url-encoder/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/url-encoder/"};
 
 export default function Page() {
   return (

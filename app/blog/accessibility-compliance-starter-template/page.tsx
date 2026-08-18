@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: starter template", "description": "Accessibility Compliance: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:49Z", "dateModified": "2026-08-18T02:47:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-starter-template/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/autonomous-code-deployment-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: operations handbook", "description": "Autonomous Code Deployment: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:57Z", "dateModified": "2026-08-18T02:47:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-operations-handbook/"};
 
 export default function Page() {
   return (

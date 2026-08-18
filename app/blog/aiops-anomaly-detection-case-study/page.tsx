@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: case study", "description": "AIOps Anomaly Detection: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:58Z", "dateModified": "2026-08-18T02:47:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-case-study/"};
 
 export default function Page() {
   return (

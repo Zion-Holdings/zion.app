@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/event-driven-architecture-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: ROI and cost model", "description": "Event Driven Architecture: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-roi-and-cost-model/"};
 
 export default function Page() {
   return (

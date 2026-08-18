@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/graphql-federation-platform-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: policy and compliance", "description": "GraphQL Federation Platform: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:49Z", "dateModified": "2026-08-18T02:47:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-policy-and-compliance/"};
 
 export default function Page() {
   return (

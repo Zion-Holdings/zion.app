@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cyber-threat-intelligence-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: common mistakes", "description": "Cyber Threat Intelligence: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-common-mistakes/"};
 
 export default function Page() {
   return (

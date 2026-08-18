@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: evaluation framework", "description": "AI BOM Procurement: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:24Z", "dateModified": "2026-08-18T05:50:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-evaluation-framework/"};
 
 export default function Page() {
   return (

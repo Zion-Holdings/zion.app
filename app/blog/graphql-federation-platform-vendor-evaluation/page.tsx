@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/graphql-federation-platform-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: vendor evaluation", "description": "GraphQL Federation Platform: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:23Z", "dateModified": "2026-08-18T05:50:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-vendor-evaluation/"};
 
 export default function Page() {
   return (

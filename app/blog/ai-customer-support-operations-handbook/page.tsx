@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-customer-support-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support: operations handbook", "description": "AI Customer Support: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-operations-handbook/"};
 
 export default function Page() {
   return (

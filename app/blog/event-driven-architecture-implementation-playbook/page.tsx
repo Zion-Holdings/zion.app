@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/event-driven-architecture-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: implementation playbook", "description": "Event Driven Architecture: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-implementation-playbook/"};
 
 export default function Page() {
   return (

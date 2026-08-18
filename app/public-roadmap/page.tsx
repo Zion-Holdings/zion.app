@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/public-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/public-roadmap/"};
 
 export default function PublicRoadmapPage() {
   return (

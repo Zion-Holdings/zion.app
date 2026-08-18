@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/database-migration-service-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: ROI and cost model", "description": "Database Migration Service: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:03Z", "dateModified": "2026-08-18T02:48:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-roi-and-cost-model/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-performance-monitoring-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: ROI and cost model", "description": "AI Performance Monitoring: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:01Z", "dateModified": "2026-08-18T02:48:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-roi-and-cost-model/"};
 
 export default function Page() {
   return (

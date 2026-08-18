@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-autonomous-agents-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: operations handbook", "description": "AI Autonomous Agents: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:23Z", "dateModified": "2026-08-18T05:50:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-operations-handbook/"};
 
 export default function Page() {
   return (

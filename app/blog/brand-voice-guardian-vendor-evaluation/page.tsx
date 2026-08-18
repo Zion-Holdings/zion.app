@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/brand-voice-guardian-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: vendor evaluation", "description": "Brand Voice Guardian: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-vendor-evaluation/"};
 
 export default function Page() {
   return (

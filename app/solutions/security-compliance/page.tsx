@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/solutions/security-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/solutions/security-compliance/"};
 
 export default function SecurityComplianceSolutionsPage() {
   return (

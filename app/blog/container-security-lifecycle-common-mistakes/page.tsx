@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/container-security-lifecycle-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: common mistakes", "description": "Container Security Lifecycle: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-common-mistakes/"};
 
 export default function Page() {
   return (

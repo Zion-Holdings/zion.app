@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/cron-parser/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/cron-parser/"};
 
 export default function CronParserPage() {
   return (

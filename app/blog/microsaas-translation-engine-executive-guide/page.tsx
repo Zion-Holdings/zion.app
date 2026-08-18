@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-translation-engine-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: executive guide", "description": "MicroSaaS Translation Engine: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-executive-guide/"};
 
 export default function Page() {
   return (

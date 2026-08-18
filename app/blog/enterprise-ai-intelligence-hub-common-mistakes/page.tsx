@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: common mistakes", "description": "Enterprise AI Intelligence Hub: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:53Z", "dateModified": "2026-08-18T02:47:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-common-mistakes/"};
 
 export default function Page() {
   return (

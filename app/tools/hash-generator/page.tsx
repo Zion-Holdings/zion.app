@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/hash-generator/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/hash-generator/"};
 
 export default function HashGeneratorPage() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: starter template", "description": "AI Accessibility Optimizer: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-starter-template/"};
 
 export default function Page() {
   return (

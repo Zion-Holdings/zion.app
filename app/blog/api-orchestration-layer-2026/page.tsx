@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer", "description": "API Orchestration Layer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-2026/"};
 
 export default function Page() {
   return (

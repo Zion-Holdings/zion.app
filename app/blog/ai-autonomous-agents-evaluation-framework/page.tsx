@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-autonomous-agents-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: evaluation framework", "description": "AI Autonomous Agents: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:55Z", "dateModified": "2026-08-18T02:47:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-evaluation-framework/"};
 
 export default function Page() {
   return (

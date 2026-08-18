@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/network-infrastructure-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: automation roadmap", "description": "Network Infrastructure: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:54Z", "dateModified": "2026-08-18T02:47:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-automation-roadmap/"};
 
 export default function Page() {
   return (

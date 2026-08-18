@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: checklist for IT leaders", "description": "AIOps Anomaly Detection: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

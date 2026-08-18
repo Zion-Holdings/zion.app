@@ -39,7 +39,6 @@ const INPUTS = [
   },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/roi-calculator/"};
 
 export default function RoiCalculatorPage() {
   return (

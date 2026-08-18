@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/incident-response-retainer-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer", "description": "Incident Response Retainer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-2026/"};
 
 export default function Page() {
   return (

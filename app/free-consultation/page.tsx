@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/free-consultation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/free-consultation/"};
 
 export default function FreeConsultationPage() {
   return (

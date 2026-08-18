@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/managed-it-services-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: starter template", "description": "Managed IT Services: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-starter-template/"};
 
 export default function Page() {
   return (

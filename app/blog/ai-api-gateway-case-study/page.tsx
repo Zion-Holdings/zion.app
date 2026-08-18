@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: case study", "description": "AI API Gateway: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:56Z", "dateModified": "2026-08-18T02:47:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-case-study/"};
 
 export default function Page() {
   return (

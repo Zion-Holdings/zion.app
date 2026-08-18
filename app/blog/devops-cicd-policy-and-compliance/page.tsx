@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/devops-cicd-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: policy and compliance", "description": "DevOps CI/CD: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-policy-and-compliance/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: deployment patterns", "description": "Cloud Cost AI Optimizer: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:51Z", "dateModified": "2026-08-18T02:47:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-deployment-patterns/"};
 
 export default function Page() {
   return (

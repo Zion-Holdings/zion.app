@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-integration-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: security and governance", "description": "API Integration: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-security-and-governance/"};
 
 export default function Page() {
   return (

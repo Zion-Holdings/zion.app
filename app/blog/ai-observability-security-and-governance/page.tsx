@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-observability-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: security and governance", "description": "AI Observability: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:54Z", "dateModified": "2026-08-18T02:47:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-security-and-governance/"};
 
 export default function Page() {
   return (

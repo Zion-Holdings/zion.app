@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/data-analytics-platform-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform: deployment patterns", "description": "Data Analytics Platform: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:02Z", "dateModified": "2026-08-18T02:48:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-deployment-patterns/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR", "description": "AI BDR SDR", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-2026/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-translation-engine-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: case study", "description": "MicroSaaS Translation Engine: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:26Z", "dateModified": "2026-08-18T05:50:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-case-study/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: case study", "description": "DevSecOps Pipeline: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:55Z", "dateModified": "2026-08-18T02:47:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-case-study/"};
 
 export default function Page() {
   return (

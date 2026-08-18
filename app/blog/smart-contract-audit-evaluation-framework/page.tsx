@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/smart-contract-audit-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: evaluation framework", "description": "Smart Contract Audit: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:30Z", "dateModified": "2026-08-18T05:50:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-evaluation-framework/"};
 
 export default function Page() {
   return (

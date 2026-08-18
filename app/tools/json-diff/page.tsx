@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/json-diff/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/json-diff/"};
 
 export default function JsonDiffPage() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/5g-solutions-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: architecture overview", "description": "5G Solutions: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-architecture-overview/"};
 
 export default function Page() {
   return (

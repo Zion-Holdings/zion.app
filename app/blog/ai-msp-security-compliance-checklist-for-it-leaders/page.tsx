@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-msp-security-compliance-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: checklist for IT leaders", "description": "AI MSP Security Compliance: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:59Z", "dateModified": "2026-08-18T02:47:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

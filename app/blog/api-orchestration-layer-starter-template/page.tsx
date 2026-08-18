@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: starter template", "description": "API Orchestration Layer: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:59Z", "dateModified": "2026-08-18T02:47:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-starter-template/"};
 
 export default function Page() {
   return (

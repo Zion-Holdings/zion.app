@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-security-testing-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: automation roadmap", "description": "API Security Testing: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-automation-roadmap/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cloud-migration-services-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: case study", "description": "Cloud Migration Services: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-case-study/"};
 
 export default function Page() {
   return (

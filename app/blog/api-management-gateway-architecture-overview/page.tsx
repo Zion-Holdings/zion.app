@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-management-gateway-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: architecture overview", "description": "API Management Gateway: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-architecture-overview/"};
 
 export default function Page() {
   return (

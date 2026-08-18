@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: ROI and cost model", "description": "AI API Gateway: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-roi-and-cost-model/"};
 
 export default function Page() {
   return (

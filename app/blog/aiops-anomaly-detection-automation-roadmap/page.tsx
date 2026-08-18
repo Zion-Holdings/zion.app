@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: automation roadmap", "description": "AIOps Anomaly Detection: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:26Z", "dateModified": "2026-08-18T05:50:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-automation-roadmap/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/chaos-engineering-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: implementation playbook", "description": "Chaos Engineering: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/solutions/managed-it/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/solutions/managed-it/"};
 
 export default function ManagedItSolutionsPage() {
   return (

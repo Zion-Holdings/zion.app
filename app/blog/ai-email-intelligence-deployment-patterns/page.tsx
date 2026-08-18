@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-email-intelligence-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: deployment patterns", "description": "AI Email Intelligence: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-deployment-patterns/"};
 
 export default function Page() {
   return (

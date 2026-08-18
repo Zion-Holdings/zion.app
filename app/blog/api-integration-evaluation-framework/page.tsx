@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-integration-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: evaluation framework", "description": "API Integration: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:49Z", "dateModified": "2026-08-18T02:47:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-evaluation-framework/"};
 
 export default function Page() {
   return (

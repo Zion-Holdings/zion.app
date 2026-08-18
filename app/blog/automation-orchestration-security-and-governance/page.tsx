@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/automation-orchestration-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: security and governance", "description": "Automation Orchestration: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-security-and-governance/"};
 
 export default function Page() {
   return (

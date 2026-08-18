@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/network-infrastructure-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: case study", "description": "Network Infrastructure: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:29Z", "dateModified": "2026-08-18T05:50:29Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-case-study/"};
 
 export default function Page() {
   return (

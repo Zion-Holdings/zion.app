@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-email-intelligence-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: vendor evaluation", "description": "AI Email Intelligence: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-vendor-evaluation/"};
 
 export default function Page() {
   return (

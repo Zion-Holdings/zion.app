@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-observability-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: deployment patterns", "description": "AI Observability: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:02Z", "dateModified": "2026-08-18T02:48:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-deployment-patterns/"};
 
 export default function Page() {
   return (

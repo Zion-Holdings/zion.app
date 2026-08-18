@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-integration-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: automation roadmap", "description": "API Integration: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:00Z", "dateModified": "2026-08-18T02:48:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-automation-roadmap/"};
 
 export default function Page() {
   return (

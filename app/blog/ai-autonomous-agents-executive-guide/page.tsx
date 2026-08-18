@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-autonomous-agents-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: executive guide", "description": "AI Autonomous Agents: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:29Z", "dateModified": "2026-08-18T05:50:29Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-executive-guide/"};
 
 export default function Page() {
   return (

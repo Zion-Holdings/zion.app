@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-customer-onboarding-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding: starter template", "description": "MicroSaaS Customer Onboarding: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:00Z", "dateModified": "2026-08-18T02:48:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-starter-template/"};
 
 export default function Page() {
   return (

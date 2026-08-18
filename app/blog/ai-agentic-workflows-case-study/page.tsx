@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-agentic-workflows-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: case study", "description": "AI Agentic Workflows: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:56Z", "dateModified": "2026-08-18T02:47:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-case-study/"};
 
 export default function Page() {
   return (

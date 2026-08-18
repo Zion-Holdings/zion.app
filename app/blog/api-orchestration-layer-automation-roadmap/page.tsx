@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: automation roadmap", "description": "API Orchestration Layer: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-automation-roadmap/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: evaluation framework", "description": "ETL Pipeline Optimization: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:57Z", "dateModified": "2026-08-18T02:47:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-evaluation-framework/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-hr-recruitment-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: checklist for IT leaders", "description": "MicroSaaS HR Recruitment: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:58Z", "dateModified": "2026-08-18T02:47:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

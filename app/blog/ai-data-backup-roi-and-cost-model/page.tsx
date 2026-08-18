@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-backup-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: ROI and cost model", "description": "AI Data Backup: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:31Z", "dateModified": "2026-08-18T05:50:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-roi-and-cost-model/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-expense-tracker-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: policy and compliance", "description": "MicroSaaS Expense Tracker: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-policy-and-compliance/"};
 
 export default function Page() {
   return (

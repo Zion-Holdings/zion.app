@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-observability-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: policy and compliance", "description": "AI Observability: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:55Z", "dateModified": "2026-08-18T02:47:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-policy-and-compliance/"};
 
 export default function Page() {
   return (

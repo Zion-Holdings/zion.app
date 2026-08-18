@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-hr-recruitment-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: deployment patterns", "description": "MicroSaaS HR Recruitment: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:32Z", "dateModified": "2026-08-18T05:50:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-deployment-patterns/"};
 
 export default function Page() {
   return (

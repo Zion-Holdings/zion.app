@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/apm-application-performance-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance", "description": "APM Application Performance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-2026/"};
 
 export default function Page() {
   return (

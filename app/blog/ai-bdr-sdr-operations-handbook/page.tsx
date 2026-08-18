@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: operations handbook", "description": "AI BDR SDR: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-operations-handbook/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-translation-engine-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: ROI and cost model", "description": "MicroSaaS Translation Engine: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:27Z", "dateModified": "2026-08-18T05:50:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-roi-and-cost-model/"};
 
 export default function Page() {
   return (

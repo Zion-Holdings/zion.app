@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/event-driven-architecture-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: case study", "description": "Event Driven Architecture: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-case-study/"};
 
 export default function Page() {
   return (

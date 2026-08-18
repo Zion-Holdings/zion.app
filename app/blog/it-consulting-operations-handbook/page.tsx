@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: operations handbook", "description": "IT Consulting: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:27Z", "dateModified": "2026-08-18T05:50:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-operations-handbook/"};
 
 export default function Page() {
   return (

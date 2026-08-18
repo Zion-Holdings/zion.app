@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: operations handbook", "description": "Enterprise AI Intelligence Hub: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/"};
 
 export default function Page() {
   return (

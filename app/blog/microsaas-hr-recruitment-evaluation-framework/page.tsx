@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-hr-recruitment-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: evaluation framework", "description": "MicroSaaS HR Recruitment: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-evaluation-framework/"};
 
 export default function Page() {
   return (

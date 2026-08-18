@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/micro-saas/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/micro-saas/"};
 
 export default function MicroSaaSPage() {
   return (

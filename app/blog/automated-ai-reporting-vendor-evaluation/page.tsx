@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: vendor evaluation", "description": "Automated AI Reporting: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:58Z", "dateModified": "2026-08-18T02:47:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-vendor-evaluation/"};
 
 export default function Page() {
   return (

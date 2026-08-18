@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: starter template", "description": "AI Accessibility Auditor: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:25Z", "dateModified": "2026-08-18T05:50:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-starter-template/"};
 
 export default function Page() {
   return (

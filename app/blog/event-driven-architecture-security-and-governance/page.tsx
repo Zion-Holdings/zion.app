@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/event-driven-architecture-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: security and governance", "description": "Event Driven Architecture: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:55Z", "dateModified": "2026-08-18T02:47:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-security-and-governance/"};
 
 export default function Page() {
   return (

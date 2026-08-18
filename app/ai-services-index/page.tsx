@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/ai-services/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/ai-services-index/"};
 
 export default function AiServicesIndexPage() {
   return (

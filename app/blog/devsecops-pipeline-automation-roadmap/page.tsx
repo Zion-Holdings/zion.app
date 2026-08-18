@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: automation roadmap", "description": "DevSecOps Pipeline: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:30Z", "dateModified": "2026-08-18T05:50:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-automation-roadmap/"};
 
 export default function Page() {
   return (

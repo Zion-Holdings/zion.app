@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: checklist for IT leaders", "description": "AI Customer Success Churn Prevention: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:24Z", "dateModified": "2026-08-18T05:50:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

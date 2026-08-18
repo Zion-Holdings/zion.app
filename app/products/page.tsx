@@ -29,7 +29,6 @@ const PRODUCTS = [
   { name: 'Zion AI Data Governance', category: 'Data' },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/products/"};
 
 export default function ProductsPage() {
   return (

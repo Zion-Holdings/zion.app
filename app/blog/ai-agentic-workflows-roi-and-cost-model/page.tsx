@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-agentic-workflows-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: ROI and cost model", "description": "AI Agentic Workflows: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:52Z", "dateModified": "2026-08-18T02:47:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-roi-and-cost-model/"};
 
 export default function Page() {
   return (

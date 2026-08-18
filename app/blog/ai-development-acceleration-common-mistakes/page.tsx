@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-development-acceleration-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Development Acceleration: common mistakes", "description": "AI Development Acceleration: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-development-acceleration-common-mistakes/"};
 
 export default function Page() {
   return (

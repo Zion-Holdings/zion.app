@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-expense-tracker-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: automation roadmap", "description": "MicroSaaS Expense Tracker: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:02Z", "dateModified": "2026-08-18T02:48:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-automation-roadmap/"};
 
 export default function Page() {
   return (

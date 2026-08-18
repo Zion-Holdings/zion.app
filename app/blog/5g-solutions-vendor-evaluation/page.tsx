@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/5g-solutions-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: vendor evaluation", "description": "5G Solutions: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-vendor-evaluation/"};
 
 export default function Page() {
   return (

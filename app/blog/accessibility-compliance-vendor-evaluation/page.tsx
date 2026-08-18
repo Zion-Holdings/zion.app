@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: vendor evaluation", "description": "Accessibility Compliance: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:34Z", "dateModified": "2026-08-18T05:50:34Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-vendor-evaluation/"};
 
 export default function Page() {
   return (

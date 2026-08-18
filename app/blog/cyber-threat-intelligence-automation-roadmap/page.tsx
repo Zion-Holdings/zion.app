@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/cyber-threat-intelligence-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: automation roadmap", "description": "Cyber Threat Intelligence: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:31Z", "dateModified": "2026-08-18T05:50:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-automation-roadmap/"};
 
 export default function Page() {
   return (

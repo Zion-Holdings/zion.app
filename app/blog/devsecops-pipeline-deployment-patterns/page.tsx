@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: deployment patterns", "description": "DevSecOps Pipeline: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-deployment-patterns/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/api-gateway-management-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: ROI and cost model", "description": "API Gateway Management: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:23Z", "dateModified": "2026-08-18T05:50:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-roi-and-cost-model/"};
 
 export default function Page() {
   return (

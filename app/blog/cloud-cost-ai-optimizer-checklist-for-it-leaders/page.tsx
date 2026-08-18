@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: checklist for IT leaders", "description": "Cloud Cost AI Optimizer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

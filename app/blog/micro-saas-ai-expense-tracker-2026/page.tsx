@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/micro-saas-ai-expense-tracker-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker", "description": "MicroSaaS Expense Tracker", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026/"};
 
 export default function Page() {
   return (

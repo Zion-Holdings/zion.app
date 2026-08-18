@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cloud-native-app-development-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: ROI and cost model", "description": "Cloud Native App Development: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-roi-and-cost-model/"};
 
 export default function Page() {
   return (

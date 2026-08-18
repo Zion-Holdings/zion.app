@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/network-infrastructure-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: vendor evaluation", "description": "Network Infrastructure: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-vendor-evaluation/"};
 
 export default function Page() {
   return (

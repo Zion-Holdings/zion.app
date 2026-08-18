@@ -30,7 +30,6 @@ const INDUSTRIES = [
   { key: 'government', label: 'Government', href: '/industries/government/', desc: 'Secure, compliant AI and infrastructure modernization.', outcome: 'Safer citizen services and faster compliance review cycles.' },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/industries/"};
 
 export default function IndustriesPage() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cloud-native-app-development-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: executive guide", "description": "Cloud Native App Development: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:01Z", "dateModified": "2026-08-18T02:48:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-executive-guide/"};
 
 export default function Page() {
   return (

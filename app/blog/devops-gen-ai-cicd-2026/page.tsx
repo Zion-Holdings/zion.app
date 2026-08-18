@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/devops-gen-ai-cicd-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD", "description": "GenAI DevOps CI/CD", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/"};
 
 export default function Page() {
   return (

@@ -1,6 +1,5 @@
 'use client';
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/_global-error/"};
 
 export default function GlobalError({ error, reset }: { error: Error; reset: () => void }) {
   return (

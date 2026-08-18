@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: vendor evaluation", "description": "AI BDR SDR: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:51Z", "dateModified": "2026-08-18T02:47:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-vendor-evaluation/"};
 
 export default function Page() {
   return (

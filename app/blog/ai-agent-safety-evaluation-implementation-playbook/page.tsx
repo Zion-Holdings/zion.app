@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: implementation playbook", "description": "AI Agent Safety Evaluation: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/"};
 
 export default function Page() {
   return (

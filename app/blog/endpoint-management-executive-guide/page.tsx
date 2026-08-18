@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/endpoint-management-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: executive guide", "description": "Endpoint Management: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:50Z", "dateModified": "2026-08-18T02:47:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-executive-guide/"};
 
 export default function Page() {
   return (

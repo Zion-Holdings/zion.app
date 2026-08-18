@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/it-consulting-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: deployment patterns", "description": "IT Consulting: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:51Z", "dateModified": "2026-08-18T02:47:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-deployment-patterns/"};
 
 export default function Page() {
   return (

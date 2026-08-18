@@ -52,7 +52,6 @@ const MODELS = [
   },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/service-comparison/"};
 
 export default function ServiceComparisonPage() {
   return (

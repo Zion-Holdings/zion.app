@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: common mistakes", "description": "ETL Pipeline Optimization: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:50Z", "dateModified": "2026-08-18T02:47:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-common-mistakes/"};
 
 export default function Page() {
   return (

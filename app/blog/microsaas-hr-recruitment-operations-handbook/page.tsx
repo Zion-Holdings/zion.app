@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-hr-recruitment-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: operations handbook", "description": "MicroSaaS HR Recruitment: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:01Z", "dateModified": "2026-08-18T02:48:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-operations-handbook/"};
 
 export default function Page() {
   return (

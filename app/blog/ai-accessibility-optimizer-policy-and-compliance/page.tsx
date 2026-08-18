@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: policy and compliance", "description": "AI Accessibility Optimizer: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:52Z", "dateModified": "2026-08-18T02:47:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-policy-and-compliance/"};
 
 export default function Page() {
   return (

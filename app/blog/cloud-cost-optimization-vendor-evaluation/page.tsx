@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cloud-cost-optimization-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost Optimization: vendor evaluation", "description": "Cloud Cost Optimization: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:03Z", "dateModified": "2026-08-18T02:48:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-vendor-evaluation/"};
 
 export default function Page() {
   return (

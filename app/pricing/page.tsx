@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/pricing/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/pricing/"};
 
 export default function PricingPage() {
   return (

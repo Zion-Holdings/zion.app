@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: policy and compliance", "description": "Cloud Cost AI Optimizer: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:31Z", "dateModified": "2026-08-18T05:50:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-policy-and-compliance/"};
 
 export default function Page() {
   return (

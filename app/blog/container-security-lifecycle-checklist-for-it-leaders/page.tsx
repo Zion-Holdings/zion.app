@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/container-security-lifecycle-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: checklist for IT leaders", "description": "Container Security Lifecycle: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:51Z", "dateModified": "2026-08-18T02:47:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

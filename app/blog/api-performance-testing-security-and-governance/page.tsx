@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: security and governance", "description": "API Performance Testing: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:32Z", "dateModified": "2026-08-18T05:50:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-security-and-governance/"};
 
 export default function Page() {
   return (

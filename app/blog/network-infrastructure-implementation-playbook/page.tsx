@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/network-infrastructure-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: implementation playbook", "description": "Network Infrastructure: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:27Z", "dateModified": "2026-08-18T05:50:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-implementation-playbook/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/network-infrastructure-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: policy and compliance", "description": "Network Infrastructure: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:02Z", "dateModified": "2026-08-18T02:48:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-policy-and-compliance/"};
 
 export default function Page() {
   return (

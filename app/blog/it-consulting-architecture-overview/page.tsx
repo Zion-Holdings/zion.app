@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/it-consulting-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: architecture overview", "description": "IT Consulting: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:53Z", "dateModified": "2026-08-18T02:47:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-architecture-overview/"};
 
 export default function Page() {
   return (

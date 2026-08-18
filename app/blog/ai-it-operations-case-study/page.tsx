@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-it-operations-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: case study", "description": "AI IT Operations: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-case-study/"};
 
 export default function Page() {
   return (

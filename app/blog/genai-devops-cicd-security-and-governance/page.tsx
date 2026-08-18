@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/genai-devops-cicd-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD: security and governance", "description": "GenAI DevOps CI/CD: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:49Z", "dateModified": "2026-08-18T02:47:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/genai-devops-cicd-security-and-governance/"};
 
 export default function Page() {
   return (

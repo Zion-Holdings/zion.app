@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: security and governance", "description": "AIOps Anomaly Detection: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:34Z", "dateModified": "2026-08-18T05:50:34Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-security-and-governance/"};
 
 export default function Page() {
   return (

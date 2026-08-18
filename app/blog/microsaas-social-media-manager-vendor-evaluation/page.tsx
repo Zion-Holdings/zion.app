@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-social-media-manager-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Social Media Manager: vendor evaluation", "description": "MicroSaaS Social Media Manager: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:49Z", "dateModified": "2026-08-18T02:47:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-social-media-manager-vendor-evaluation/"};
 
 export default function Page() {
   return (

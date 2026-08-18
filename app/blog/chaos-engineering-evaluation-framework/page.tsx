@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/chaos-engineering-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: evaluation framework", "description": "Chaos Engineering: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:24Z", "dateModified": "2026-08-18T05:50:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-evaluation-framework/"};
 
 export default function Page() {
   return (

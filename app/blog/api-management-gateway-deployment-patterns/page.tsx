@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-management-gateway-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: deployment patterns", "description": "API Management Gateway: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:57Z", "dateModified": "2026-08-18T02:47:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-deployment-patterns/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-development-acceleration-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Development Acceleration: operations handbook", "description": "AI Development Acceleration: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:28Z", "dateModified": "2026-08-18T05:50:28Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-development-acceleration-operations-handbook/"};
 
 export default function Page() {
   return (

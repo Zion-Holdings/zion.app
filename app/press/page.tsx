@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/press/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/press/"};
 
 export default function PressPage() {
   return (

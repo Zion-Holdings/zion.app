@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-backup-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: checklist for IT leaders", "description": "AI Data Backup: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:32Z", "dateModified": "2026-08-18T05:50:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

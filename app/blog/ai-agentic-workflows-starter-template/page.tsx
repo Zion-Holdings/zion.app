@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-agentic-workflows-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: starter template", "description": "AI Agentic Workflows: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-starter-template/"};
 
 export default function Page() {
   return (

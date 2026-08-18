@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cloud-cost-optimization-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost Optimization: implementation playbook", "description": "Cloud Cost Optimization: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:01Z", "dateModified": "2026-08-18T02:48:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-implementation-playbook/"};
 
 export default function Page() {
   return (

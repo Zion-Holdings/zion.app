@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: executive guide", "description": "AI Accessibility Optimizer: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:31Z", "dateModified": "2026-08-18T05:50:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-executive-guide/"};
 
 export default function Page() {
   return (

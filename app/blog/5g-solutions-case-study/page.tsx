@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/5g-solutions-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: case study", "description": "5G Solutions: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:30Z", "dateModified": "2026-08-18T05:50:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-case-study/"};
 
 export default function Page() {
   return (

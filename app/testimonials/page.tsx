@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/testimonials/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/testimonials/"};
 
 export default function TestimonialsPage() {
   return (

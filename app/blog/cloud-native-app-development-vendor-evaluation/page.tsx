@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cloud-native-app-development-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: vendor evaluation", "description": "Cloud Native App Development: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:53Z", "dateModified": "2026-08-18T02:47:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-vendor-evaluation/"};
 
 export default function Page() {
   return (

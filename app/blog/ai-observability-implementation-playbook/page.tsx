@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-observability-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: implementation playbook", "description": "AI Observability: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:33Z", "dateModified": "2026-08-18T05:50:33Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-implementation-playbook/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-support-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support: common mistakes", "description": "AI Customer Support: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:26Z", "dateModified": "2026-08-18T05:50:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-common-mistakes/"};
 
 export default function Page() {
   return (

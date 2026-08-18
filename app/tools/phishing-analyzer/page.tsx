@@ -28,7 +28,6 @@ const CHECKS = [
   { label: 'Urgency and coercion cues', note: 'Phishing relies on fear and time pressure. Treat urgent payment or access requests as suspicious until verified.' },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/phishing-analyzer/"};
 
 export default function PhishingAnalyzerPage() {
   return (

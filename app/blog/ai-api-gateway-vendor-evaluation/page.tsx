@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: vendor evaluation", "description": "AI API Gateway: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-vendor-evaluation/"};
 
 export default function Page() {
   return (

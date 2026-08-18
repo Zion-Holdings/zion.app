@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: case study", "description": "Enterprise AI Intelligence Hub: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:27Z", "dateModified": "2026-08-18T05:50:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-case-study/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: common mistakes", "description": "AIOps Anomaly Detection: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:57Z", "dateModified": "2026-08-18T02:47:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-common-mistakes/"};
 
 export default function Page() {
   return (

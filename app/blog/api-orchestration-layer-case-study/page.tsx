@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: case study", "description": "API Orchestration Layer: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:01Z", "dateModified": "2026-08-18T02:48:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-case-study/"};
 
 export default function Page() {
   return (

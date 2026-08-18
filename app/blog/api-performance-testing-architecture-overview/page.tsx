@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-performance-testing-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: architecture overview", "description": "API Performance Testing: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:02Z", "dateModified": "2026-08-18T02:48:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-architecture-overview/"};
 
 export default function Page() {
   return (

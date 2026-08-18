@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: implementation playbook", "description": "AI API Gateway: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-implementation-playbook/"};
 
 export default function Page() {
   return (

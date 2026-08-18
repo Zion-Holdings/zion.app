@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: policy and compliance", "description": "AI Agent Safety Evaluation: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:03Z", "dateModified": "2026-08-18T02:48:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-policy-and-compliance/"};
 
 export default function Page() {
   return (

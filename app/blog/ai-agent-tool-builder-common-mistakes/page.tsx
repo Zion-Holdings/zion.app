@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-agent-tool-builder-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: common mistakes", "description": "AI Agent Tool Builder: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-common-mistakes/"};
 
 export default function Page() {
   return (

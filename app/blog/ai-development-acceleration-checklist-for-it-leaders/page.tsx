@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-development-acceleration-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Development Acceleration: checklist for IT leaders", "description": "AI Development Acceleration: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:27Z", "dateModified": "2026-08-18T05:50:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-development-acceleration-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/automation-orchestration-enterprise-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration", "description": "Automation Orchestration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026/"};
 
 export default function Page() {
   return (

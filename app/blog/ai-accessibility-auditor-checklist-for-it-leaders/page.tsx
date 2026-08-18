@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: checklist for IT leaders", "description": "AI Accessibility Auditor: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:57Z", "dateModified": "2026-08-18T02:47:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

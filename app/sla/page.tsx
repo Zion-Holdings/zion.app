@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/sla/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/sla/"};
 
 export default function SlaPage() {
   return (

@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact-intent/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/contact-intent/"};
 
 export default function ContactIntentPage() {
   return (

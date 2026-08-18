@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: policy and compliance", "description": "AI Customer Success Churn Prevention: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-policy-and-compliance/"};
 
 export default function Page() {
   return (

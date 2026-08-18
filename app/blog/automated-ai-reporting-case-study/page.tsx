@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: case study", "description": "Automated AI Reporting: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:00Z", "dateModified": "2026-08-18T02:48:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-case-study/"};
 
 export default function Page() {
   return (

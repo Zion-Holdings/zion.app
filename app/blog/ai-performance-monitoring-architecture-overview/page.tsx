@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-performance-monitoring-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: architecture overview", "description": "AI Performance Monitoring: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:32Z", "dateModified": "2026-08-18T05:50:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-architecture-overview/"};
 
 export default function Page() {
   return (

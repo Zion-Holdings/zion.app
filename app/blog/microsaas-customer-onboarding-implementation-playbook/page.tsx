@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/microsaas-customer-onboarding-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding: implementation playbook", "description": "MicroSaaS Customer Onboarding: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:51Z", "dateModified": "2026-08-18T02:47:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-implementation-playbook/"};
 
 export default function Page() {
   return (

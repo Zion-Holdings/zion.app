@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-code-deployment-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: vendor evaluation", "description": "Autonomous Code Deployment: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:32Z", "dateModified": "2026-08-18T05:50:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-vendor-evaluation/"};
 
 export default function Page() {
   return (

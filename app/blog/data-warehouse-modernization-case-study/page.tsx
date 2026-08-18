@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/data-warehouse-modernization-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: case study", "description": "Data Warehouse Modernization: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:54Z", "dateModified": "2026-08-18T02:47:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-case-study/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/api-gateway-management-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: case study", "description": "API Gateway Management: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:53Z", "dateModified": "2026-08-18T02:47:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-case-study/"};
 
 export default function Page() {
   return (

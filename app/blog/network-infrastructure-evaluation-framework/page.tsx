@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/network-infrastructure-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: evaluation framework", "description": "Network Infrastructure: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-evaluation-framework/"};
 
 export default function Page() {
   return (

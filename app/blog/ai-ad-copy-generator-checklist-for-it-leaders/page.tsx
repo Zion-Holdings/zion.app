@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-ad-copy-generator-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: checklist for IT leaders", "description": "AI Ad Copy Generator: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:22Z", "dateModified": "2026-08-18T05:50:22Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

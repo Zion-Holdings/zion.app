@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/cybersecurity-for-msps-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: checklist for IT leaders", "description": "Cybersecurity for MSPs: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

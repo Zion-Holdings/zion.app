@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/start-project/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/start-project/"};
 
 export default function StartProjectPage() {
   return (

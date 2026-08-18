@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/graphql-federation-platform-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: checklist for IT leaders", "description": "GraphQL Federation Platform: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:26Z", "dateModified": "2026-08-18T05:50:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

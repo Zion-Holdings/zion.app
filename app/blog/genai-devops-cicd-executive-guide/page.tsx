@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/genai-devops-cicd-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD: executive guide", "description": "GenAI DevOps CI/CD: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:29Z", "dateModified": "2026-08-18T05:50:29Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/genai-devops-cicd-executive-guide/"};
 
 export default function Page() {
   return (

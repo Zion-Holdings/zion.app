@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/automation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/automation/"};
 
 export default function AutomationPage() {
   return (

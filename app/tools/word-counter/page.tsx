@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/word-counter/"};
 
 export default function WordCounterPage() {
   const breadcrumbItems = [

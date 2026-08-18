@@ -45,7 +45,6 @@ const websiteLd = {
   },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "Organization", "description": "", "url": "https://ziontechgroup.com", "legalName": "Zion Tech Group", "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "url": "https://ziontechgroup.com/contact/"}};
 
 export default function HomePage() {
   return (

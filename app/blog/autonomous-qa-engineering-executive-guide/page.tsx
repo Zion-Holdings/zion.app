@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: executive guide", "description": "Autonomous QA Engineering: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:33Z", "dateModified": "2026-08-18T05:50:33Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-executive-guide/"};
 
 export default function Page() {
   return (

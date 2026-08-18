@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/genai-devops-cicd-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD: automation roadmap", "description": "GenAI DevOps CI/CD: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/genai-devops-cicd-automation-roadmap/"};
 
 export default function Page() {
   return (

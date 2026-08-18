@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Safety Evaluation: executive guide", "description": "AI Agent Safety Evaluation: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:59Z", "dateModified": "2026-08-18T02:47:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-executive-guide/"};
 
 export default function Page() {
   return (

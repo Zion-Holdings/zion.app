@@ -63,7 +63,6 @@ export function generateStaticParams() {
   return Object.keys(INDUSTRIES).map((slug) => ({ slug }));
 }
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/industries/[slug]/"};
 
 export default function IndustryPage({ params }: { params: { slug: string } }) {
   const data = INDUSTRIES[params.slug];

@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/api-management-gateway-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: executive guide", "description": "API Management Gateway: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:25Z", "dateModified": "2026-08-18T05:50:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-executive-guide/"};
 
 export default function Page() {
   return (

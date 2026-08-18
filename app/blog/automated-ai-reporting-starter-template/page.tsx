@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: starter template", "description": "Automated AI Reporting: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:53Z", "dateModified": "2026-08-18T02:47:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-starter-template/"};
 
 export default function Page() {
   return (

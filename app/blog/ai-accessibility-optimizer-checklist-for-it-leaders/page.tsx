@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: checklist for IT leaders", "description": "AI Accessibility Optimizer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:03Z", "dateModified": "2026-08-18T02:48:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/autonomous-code-deployment-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: deployment patterns", "description": "Autonomous Code Deployment: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:54Z", "dateModified": "2026-08-18T02:47:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-deployment-patterns/"};
 
 export default function Page() {
   return (

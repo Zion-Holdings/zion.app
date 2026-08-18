@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/apm-application-performance-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: ROI and cost model", "description": "APM Application Performance: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:00Z", "dateModified": "2026-08-18T02:48:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-roi-and-cost-model/"};
 
 export default function Page() {
   return (

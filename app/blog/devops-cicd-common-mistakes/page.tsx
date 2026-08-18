@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/devops-cicd-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: common mistakes", "description": "DevOps CI/CD: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:30Z", "dateModified": "2026-08-18T05:50:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-common-mistakes/"};
 
 export default function Page() {
   return (

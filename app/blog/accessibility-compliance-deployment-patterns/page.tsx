@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: deployment patterns", "description": "Accessibility Compliance: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:00Z", "dateModified": "2026-08-18T02:48:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-deployment-patterns/"};
 
 export default function Page() {
   return (

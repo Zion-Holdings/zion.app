@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/devops-cicd-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: architecture overview", "description": "DevOps CI/CD: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:32Z", "dateModified": "2026-08-18T05:50:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-architecture-overview/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/api-integration-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: architecture overview", "description": "API Integration: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:24Z", "dateModified": "2026-08-18T05:50:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-architecture-overview/"};
 
 export default function Page() {
   return (

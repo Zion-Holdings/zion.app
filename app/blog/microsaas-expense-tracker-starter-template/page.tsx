@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-expense-tracker-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: starter template", "description": "MicroSaaS Expense Tracker: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:28Z", "dateModified": "2026-08-18T05:50:28Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-starter-template/"};
 
 export default function Page() {
   return (

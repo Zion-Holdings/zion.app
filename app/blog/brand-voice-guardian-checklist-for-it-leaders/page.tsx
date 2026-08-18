@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/brand-voice-guardian-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: checklist for IT leaders", "description": "Brand Voice Guardian: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:25Z", "dateModified": "2026-08-18T05:50:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

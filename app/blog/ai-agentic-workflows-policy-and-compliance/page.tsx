@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agentic-workflows-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: policy and compliance", "description": "AI Agentic Workflows: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:32Z", "dateModified": "2026-08-18T05:50:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-policy-and-compliance/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/governments/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/governments/"};
 
 export default function GovernmentsPage() {
   return (

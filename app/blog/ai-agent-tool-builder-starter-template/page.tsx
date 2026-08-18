@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agent-tool-builder-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: starter template", "description": "AI Agent Tool Builder: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:33Z", "dateModified": "2026-08-18T05:50:33Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-starter-template/"};
 
 export default function Page() {
   return (

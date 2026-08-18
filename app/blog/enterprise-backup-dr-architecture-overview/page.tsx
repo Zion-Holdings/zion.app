@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: architecture overview", "description": "Enterprise Backup DR: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:56Z", "dateModified": "2026-08-18T02:47:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-architecture-overview/"};
 
 export default function Page() {
   return (

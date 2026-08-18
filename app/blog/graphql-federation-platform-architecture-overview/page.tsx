@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/graphql-federation-platform-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: architecture overview", "description": "GraphQL Federation Platform: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:24Z", "dateModified": "2026-08-18T05:50:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-architecture-overview/"};
 
 export default function Page() {
   return (

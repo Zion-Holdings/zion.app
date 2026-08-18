@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/partnership-program/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/partnership-program/"};
 
 export default function PartnershipProgramPage() {
   return (

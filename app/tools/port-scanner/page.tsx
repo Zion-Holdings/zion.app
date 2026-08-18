@@ -31,7 +31,6 @@ const PORTS = [
   { port: 27017, service: 'MongoDB', note: 'Bind private IPs and enable auth.' },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/port-scanner/"};
 
 export default function PortScannerPage() {
   return (

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/5g-solutions-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: executive guide", "description": "5G Solutions: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:56Z", "dateModified": "2026-08-18T02:47:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-executive-guide/"};
 
 export default function Page() {
   return (

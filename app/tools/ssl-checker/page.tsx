@@ -28,7 +28,6 @@ const CHECKS = [
   { label: 'OCSP and stapling', note: 'Check revocation behavior and stapling when available to reduce latency and trust checks.' },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/ssl-checker/"};
 
 export default function SslCheckerPage() {
   return (

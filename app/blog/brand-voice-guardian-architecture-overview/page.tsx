@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/brand-voice-guardian-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: architecture overview", "description": "Brand Voice Guardian: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-architecture-overview/"};
 
 export default function Page() {
   return (

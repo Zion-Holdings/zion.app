@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-data-backup-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: policy and compliance", "description": "AI Data Backup: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:16Z", "dateModified": "2026-08-17T23:41:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-policy-and-compliance/"};
 
 export default function Page() {
   return (

@@ -43,7 +43,6 @@ const FACTORS = [
   },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/ai-service-router/"};
 
 export default function AiServiceRouterPage() {
   return (

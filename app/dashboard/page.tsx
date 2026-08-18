@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/dashboard/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/dashboard/"};
 
 export default function DashboardPage() {
   return (

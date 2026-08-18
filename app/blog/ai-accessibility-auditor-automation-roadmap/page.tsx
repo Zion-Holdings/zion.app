@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: automation roadmap", "description": "AI Accessibility Auditor: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-automation-roadmap/"};
 
 export default function Page() {
   return (

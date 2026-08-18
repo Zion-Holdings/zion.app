@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: common mistakes", "description": "Autonomous QA Engineering: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-common-mistakes/"};
 
 export default function Page() {
   return (

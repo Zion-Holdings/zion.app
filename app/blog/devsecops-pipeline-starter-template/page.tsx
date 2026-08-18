@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: starter template", "description": "DevSecOps Pipeline: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:47:50Z", "dateModified": "2026-08-18T02:47:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-starter-template/"};
 
 export default function Page() {
   return (

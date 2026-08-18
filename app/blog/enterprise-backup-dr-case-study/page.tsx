@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: case study", "description": "Enterprise Backup DR: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T02:48:03Z", "dateModified": "2026-08-18T02:48:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-case-study/"};
 
 export default function Page() {
   return (

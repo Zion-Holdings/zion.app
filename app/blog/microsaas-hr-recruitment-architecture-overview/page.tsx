@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-hr-recruitment-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: architecture overview", "description": "MicroSaaS HR Recruitment: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:33Z", "dateModified": "2026-08-18T05:50:33Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-architecture-overview/"};
 
 export default function Page() {
   return (

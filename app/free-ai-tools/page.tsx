@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/free-ai-tools/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/free-ai-tools/"};
 
 export default function FreeAiToolsPage() {
   return (

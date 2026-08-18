@@ -38,7 +38,6 @@ const QUESTIONS = [
   },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/service-recommender/"};
 
 export default function ServiceRecommenderPage() {
   return (

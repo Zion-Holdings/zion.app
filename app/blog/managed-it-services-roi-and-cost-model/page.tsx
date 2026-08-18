@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: ROI and cost model", "description": "Managed IT Services: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:28Z", "dateModified": "2026-08-18T05:50:28Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-roi-and-cost-model/"};
 
 export default function Page() {
   return (

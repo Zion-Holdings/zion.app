@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/apm-application-performance-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: case study", "description": "APM Application Performance: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:25Z", "dateModified": "2026-08-18T05:50:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-case-study/"};
 
 export default function Page() {
   return (

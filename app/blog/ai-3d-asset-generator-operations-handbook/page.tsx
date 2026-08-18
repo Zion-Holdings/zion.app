@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: operations handbook", "description": "AI 3D Asset Generator: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:29Z", "dateModified": "2026-08-18T05:50:29Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-operations-handbook/"};
 
 export default function Page() {
   return (

@@ -32,7 +32,6 @@ const industries = [
   { name: 'Insurance', desc: 'Claims automation, underwriting AI, fraud prevention.', path: '/services/?category=ai' },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/solutions/"};
 
 export default function SolutionsPage() {
   return (

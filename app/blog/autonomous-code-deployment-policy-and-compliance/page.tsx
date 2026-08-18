@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-code-deployment-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: policy and compliance", "description": "Autonomous Code Deployment: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:27Z", "dateModified": "2026-08-18T05:50:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-policy-and-compliance/"};
 
 export default function Page() {
   return (

@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/agents-monitoring/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/agents-monitoring/"};
 
 export default function AgentsMonitoringPage() {
   return (

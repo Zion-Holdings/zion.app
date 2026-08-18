@@ -20,7 +20,6 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: automation roadmap", "description": "AI Accessibility Optimizer: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T05:50:30Z", "dateModified": "2026-08-18T05:50:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-automation-roadmap/"};
 
 export default function Page() {
   return (

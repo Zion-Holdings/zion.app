@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/cookies/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/cookies/"};
 
 export default function CookiesPage() {
   return (

@@ -30,7 +30,6 @@ const CATEGORIES = [
   { key: 'micro-saas', label: 'Micro-SaaS', desc: 'Repeatable monetizable tools built on proven infrastructure and delivery patterns.' },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "", "description": "", "url": "https://ziontechgroup.com/services/"};
 
 export default function ServicesPage() {
   return (

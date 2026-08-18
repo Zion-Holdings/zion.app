@@ -27,7 +27,6 @@ const SYSTEMS = [
   { name: 'Deploy pipeline', target: 'High availability', focus: 'Workflow success rate, artifact freshness, and rollback readiness.' },
 ];
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/tools/health-check/"};
 
 export default function HealthCheckPage() {
   return (
