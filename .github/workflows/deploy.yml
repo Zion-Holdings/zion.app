@@ -10,20 +10,48 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
-      - run: npm run build
+          cache-dependency-path: 'package-lock.json'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build static export
         env:
           NEXT_DISABLE_TURBOPACK: '1'
-      - uses: actions/upload-pages-artifact@v3
+          NODE_OPTIONS: '--max-old-space-size=8192'
+        run: npm run build
+      - name: Verify export artifact
+        run: |
+          if [ ! -d out ]; then
+            echo "::error::Build did not produce out/ directory"
+            exit 1
+          fi
+          if [ -z "$(ls -A out)" ]; then
+            echo "::error::out/ directory is empty"
+            exit 1
+          fi
+      - name: Prepare Pages support files
+        run: |
+          mkdir -p out/_support
+          if [ -d docs ]; then
+            cp -R docs/. out/_support/
+          fi
+          if [ -d public ]; then
+            cp -R public/. out/
+          fi
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
@@ -31,9 +59,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
