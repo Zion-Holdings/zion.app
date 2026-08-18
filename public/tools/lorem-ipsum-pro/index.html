@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lorem Ipsum Pro Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate lorem ipsum placeholder text instantly. Create paragraphs, sentences, or individual words with our free online tool.">
+  <meta property="og:title" content="Lorem Ipsum Pro Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online lorem ipsum generator. Create paragraphs, sentences, or words instantly.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/lorem-ipsum-pro/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/lorem-ipsum-pro/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input[type="number"] { width: 100%; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input[type="number"]:focus { outline: none; border-color: #6366f1; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; transition: background 0.2s; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.copy { background: #059669; }
+    .btn.copy:hover { background: #047857; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .output-box { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.6; white-space: pre-wrap; min-height: 120px; max-height: 500px; overflow-y: auto; }
+    .output-box.empty { color: #64748b; display: flex; align-items: center; justify-content: center; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: #059669; color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-size: 0.875rem; }
+    .toast.show { opacity: 1; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .stats { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .stat { background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; padding: 0.5rem 1rem; font-size: 0.875rem; }
+    .stat .value { color: #818cf8; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lorem Ipsum Pro Generator</h1>
+    <p class="subtitle">Generate placeholder text instantly — paragraphs, sentences, or words.</p>
+    
+    <div class="field">
+      <label>Amount: <span id="countValue">5</span></label>
+      <input type="number" id="count" value="5" min="1" max="100">
+    </div>
+    
+    <div class="actions">
+      <button class="btn" onclick="generateParagraphs()">Paragraphs</button>
+      <button class="btn secondary" onclick="generateSentences()">Sentences</button>
+      <button class="btn secondary" onclick="generateWords()">Words</button>
+      <button class="btn copy" onclick="copyAll()">Copy All</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="stats" id="stats" style="display: none;">
+      <div class="stat">Words: <span class="value" id="wordCount">0</span></div>
+      <div class="stat">Characters: <span class="value" id="charCount">0</span></div>
+      <div class="stat">Paragraphs: <span class="value" id="paraCount">0</span></div>
+    </div>
+    
+    <div class="section">
+      <h3>Output</h3>
+      <div class="output-box empty" id="output">Click a button above to generate lorem ipsum text.</div>
+    </div>
+    
+    <div class="info">
+      <h2>About Lorem Ipsum</h2>
+      <ul>
+        <li><span class="label">Origin</span> — Derived from a 1st-century BC Latin text by Cicero, used since the 1500s as standard dummy text.</li>
+        <li><span class="label">Purpose</span> — Provides placeholder content that doesn't distract from visual design and layout.</li>
+        <li><span class="label">Privacy</span> — All text is generated locally in your browser. Nothing is stored or transmitted.</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">Use lorem ipsum for mockups, wireframes, typography samples, and content placeholders.</p>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script>
+    const loremWords = "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit".split(' ');
+
+    function generateSentence() {
+      const length = 8 + Math.floor(Math.random() * 12);
+      let sentence = '';
+      for (let i = 0; i < length; i++) {
+        sentence += loremWords[Math.floor(Math.random() * loremWords.length)] + ' ';
+      }
+      sentence = sentence.trim();
+      return sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.';
+    }
+
+    function generateParagraph() {
+      const sentenceCount = 4 + Math.floor(Math.random() * 5);
+      let paragraph = '';
+      for (let i = 0; i < sentenceCount; i++) {
+        paragraph += generateSentence() + ' ';
+      }
+      return paragraph.trim();
+    }
+
+    function generateParagraphs() {
+      const count = Math.min(100, Math.max(1, parseInt(document.getElementById('count').value) || 5));
+      document.getElementById('count').value = count;
+      let result = '';
+      for (let i = 0; i < count; i++) {
+        result += generateParagraph() + '\n\n';
+      }
+      setOutput(result.trim());
+    }
+
+    function generateSentences() {
+      const count = Math.min(100, Math.max(1, parseInt(document.getElementById('count').value) || 5));
+      document.getElementById('count').value = count;
+      let result = '';
+      for (let i = 0; i < count; i++) {
+        result += generateSentence() + ' ';
+      }
+      setOutput(result.trim());
+    }
+
+    function generateWords() {
+      const count = Math.min(500, Math.max(1, parseInt(document.getElementById('count').value) || 5));
+      document.getElementById('count').value = count;
+      let result = '';
+      for (let i = 0; i < count; i++) {
+        result += loremWords[Math.floor(Math.random() * loremWords.length)] + ' ';
+      }
+      setOutput(result.trim());
+    }
+
+    function setOutput(text) {
+      const output = document.getElementById('output');
+      output.textContent = text;
+      output.classList.remove('empty');
+      updateStats(text);
+    }
+
+    function updateStats(text) {
+      const stats = document.getElementById('stats');
+      stats.style.display = 'flex';
+      
+      const words = text.trim().split(/\s+/).filter(w => w.length > 0);
+      const chars = text.length;
+      const paras = text.split(/\n\n+/).filter(p => p.trim().length > 0).length;
+      
+      document.getElementById('wordCount').textContent = words.length;
+      document.getElementById('charCount').textContent = chars;
+      document.getElementById('paraCount').textContent = paras || 1;
+    }
+
+    function copyAll() {
+      const output = document.getElementById('output');
+      if (output.classList.contains('empty')) return;
+      
+      navigator.clipboard.writeText(output.textContent).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => { toast.classList.remove('show'); }, 2000);
+      });
+    }
+
+    function clearAll() {
+      const output = document.getElementById('output');
+      output.textContent = 'Click a button above to generate lorem ipsum text.';
+      output.classList.add('empty');
+      document.getElementById('stats').style.display = 'none';
+    }
+
+    document.getElementById('count').addEventListener('input', function() {
+      document.getElementById('countValue').textContent = this.value;
+    });
+  </script>
+</body>
+</html>

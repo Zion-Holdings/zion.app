@@ -204,6 +204,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Color Palette Gen</h3>
           <p className="text-slate-400 text-sm">Generate beautiful color palettes.</p>
         </a>
+        <a href="/tools/password-generator-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Password Generator Pro</h3>
+          <p className="text-slate-400 text-sm">Advanced password generator with strength meter.</p>
+        </a>
+        <a href="/tools/lorem-ipsum-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Lorem Ipsum Pro</h3>
+          <p className="text-slate-400 text-sm">Generate placeholder text instantly.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
