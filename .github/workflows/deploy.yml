@@ -27,6 +27,20 @@ jobs:
 
       - run: npm ci
 
+      - name: Verify tools page links every deployed tool
+        run: |
+          python3 scripts/sync_tools_page.py
+          if ! git diff --quiet -- app/tools/page.tsx; then
+            echo "::error::app/tools/page.tsx is out of sync with public/tools/."
+            echo "Run 'python3 scripts/sync_tools_page.py' and commit the result."
+            git --no-pager diff --stat -- app/tools/page.tsx
+            exit 1
+          fi
+          echo "Tools page in sync."
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
       - run: npm run build
 
       - run: ls -la out/ | head -20
