@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-customer-support-operations-handbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Customer Support: operations handbook',
     description: 'AI Customer Support: operations handbook',

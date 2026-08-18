@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-vendor-evaluation/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI 3D Asset Generator: vendor evaluation',
     description: 'AI 3D Asset Generator: vendor evaluation',

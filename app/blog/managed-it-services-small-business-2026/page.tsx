@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Managed IT Services',
     description: 'Managed IT Services',

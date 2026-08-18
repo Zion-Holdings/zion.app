@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-image-generation-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Image Generation 2026',
     description: 'Governed image generation workflows with brand controls and review loops.',

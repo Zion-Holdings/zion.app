@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/apm-application-performance-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'APM Application Performance',
     description: 'APM Application Performance',

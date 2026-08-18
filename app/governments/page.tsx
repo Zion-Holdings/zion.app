@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/governments/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Governments | Zion Tech Group',
     description: 'Secure AI, IT, and automation programs for government organizations.',

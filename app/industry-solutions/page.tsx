@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/industry-solutions/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Industry Solutions | Zion Tech Group',
     description: 'Purpose-built AI and IT solutions by industry.',

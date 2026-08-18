@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-policy-and-compliance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Autonomous Agents: policy and compliance',
     description: 'AI Autonomous Agents: policy and compliance',

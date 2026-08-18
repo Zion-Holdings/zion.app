@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-roi-and-cost-model/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Event Driven Architecture: ROI and cost model',
     description: 'Event Driven Architecture: ROI and cost model',

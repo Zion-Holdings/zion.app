@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Start a Project | Zion Tech Group',
     description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',

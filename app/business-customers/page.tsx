@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/business-customers/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Enterprise Customers | Zion Tech Group',
     description: 'AI and IT delivery models for business customers with measurable outcomes.',

@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/tools/color-converter/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Color Converter | Zion Tech Group',
     description: 'Free online color converter — HEX, RGB, HSL with live preview.',

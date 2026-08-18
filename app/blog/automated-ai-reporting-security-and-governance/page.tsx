@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-security-and-governance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Automated AI Reporting: security and governance',
     description: 'Automated AI Reporting: security and governance',

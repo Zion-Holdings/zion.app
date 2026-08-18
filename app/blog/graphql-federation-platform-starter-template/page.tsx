@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-starter-template/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'GraphQL Federation Platform: starter template',
     description: 'GraphQL Federation Platform: starter template',

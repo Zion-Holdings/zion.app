@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/it-consulting-vendor-evaluation/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'IT Consulting: vendor evaluation',
     description: 'IT Consulting: vendor evaluation',

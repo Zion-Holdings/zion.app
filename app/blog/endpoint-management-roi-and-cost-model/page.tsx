@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/endpoint-management-roi-and-cost-model/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Endpoint Management: ROI and cost model',
     description: 'Endpoint Management: ROI and cost model',

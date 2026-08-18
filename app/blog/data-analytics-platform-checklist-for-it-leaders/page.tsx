@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-checklist-for-it-leaders/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Data Analytics Platform: checklist for IT leaders',
     description: 'Data Analytics Platform: checklist for IT leaders',

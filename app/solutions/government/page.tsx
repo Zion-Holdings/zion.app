@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/solutions/government/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Government Solutions | Zion Tech Group',
     description: 'Government delivery patterns and AI implementation guidance.',

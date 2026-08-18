@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/tools/ai-service-router/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Service Router',
     description: 'Routing helper for AI services.',

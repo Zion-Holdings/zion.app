@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-starter-template/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Agentic Workflows: starter template',
     description: 'AI Agentic Workflows: starter template',

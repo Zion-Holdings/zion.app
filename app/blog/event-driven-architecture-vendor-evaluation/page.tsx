@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-vendor-evaluation/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Event Driven Architecture: vendor evaluation',
     description: 'Event Driven Architecture: vendor evaluation',

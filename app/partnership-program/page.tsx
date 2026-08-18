@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Partnership Program | Zion Tech Group',
     description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',

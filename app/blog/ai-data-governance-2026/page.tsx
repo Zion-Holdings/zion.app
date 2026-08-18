@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-data-governance-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Data Governance 2026',
     description: 'Data governance for AI: lineage, quality, and compliance across pipelines.',

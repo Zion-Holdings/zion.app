@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-checklist-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cloud Cost Optimization',
     description: 'Cloud Cost Optimization',

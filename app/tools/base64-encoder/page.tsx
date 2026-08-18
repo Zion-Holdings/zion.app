@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/tools/base64-encoder/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Base64 Encoder/Decoder | Zion Tech Group',
     description: 'Free online Base64 encode and decode tool with UTF-8 support.',

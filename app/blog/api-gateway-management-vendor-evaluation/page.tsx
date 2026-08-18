@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-gateway-management-vendor-evaluation/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'API Gateway Management: vendor evaluation',
     description: 'API Gateway Management: vendor evaluation',

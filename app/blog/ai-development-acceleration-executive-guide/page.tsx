@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-development-acceleration-executive-guide/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Development Acceleration: executive guide',
     description: 'AI Development Acceleration: executive guide',

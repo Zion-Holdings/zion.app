@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-security-and-governance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Enterprise Backup DR: security and governance',
     description: 'Enterprise Backup DR: security and governance',

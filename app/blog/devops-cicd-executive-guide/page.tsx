@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devops-cicd-executive-guide/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'DevOps CI/CD: executive guide',
     description: 'DevOps CI/CD: executive guide',

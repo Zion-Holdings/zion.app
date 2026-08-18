@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-starter-template/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI BOM Procurement: starter template',
     description: 'AI BOM Procurement: starter template',

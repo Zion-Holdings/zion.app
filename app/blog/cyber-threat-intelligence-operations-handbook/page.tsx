@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-operations-handbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cyber Threat Intelligence: operations handbook',
     description: 'Cyber Threat Intelligence: operations handbook',

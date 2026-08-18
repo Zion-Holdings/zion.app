@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/managed-it-services-automation-roadmap/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Managed IT Services: automation roadmap',
     description: 'Managed IT Services: automation roadmap',

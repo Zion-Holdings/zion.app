@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-architecture-overview/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cloud Migration Services: architecture overview',
     description: 'Cloud Migration Services: architecture overview',

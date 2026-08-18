@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devops-cicd-policy-and-compliance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'DevOps CI/CD: policy and compliance',
     description: 'DevOps CI/CD: policy and compliance',

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/observability-platform-checklist/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Observability Platform Checklist | Zion Tech Group',
     description: 'Practical guidance for observability platform checklist.',

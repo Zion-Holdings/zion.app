@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-deployment-patterns/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Smart Contract Audit: deployment patterns',
     description: 'Smart Contract Audit: deployment patterns',

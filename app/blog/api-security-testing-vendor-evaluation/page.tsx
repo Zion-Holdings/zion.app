@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'API Security Testing: vendor evaluation',
     description: 'API Security Testing: vendor evaluation',

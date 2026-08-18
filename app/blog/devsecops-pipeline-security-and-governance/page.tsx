@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-security-and-governance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'DevSecOps Pipeline: security and governance',
     description: 'DevSecOps Pipeline: security and governance',

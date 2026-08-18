@@ -11,7 +11,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/services/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Services | Zion Tech Group',
     description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',

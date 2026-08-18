@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-management-gateway-automation-roadmap/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'API Management Gateway: automation roadmap',
     description: 'API Management Gateway: automation roadmap',

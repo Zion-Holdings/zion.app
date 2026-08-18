@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-roi-and-cost-model/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Container Security Lifecycle: ROI and cost model',
     description: 'Container Security Lifecycle: ROI and cost model',

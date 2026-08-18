@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-common-mistakes/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cyber Threat Intelligence: common mistakes',
     description: 'Cyber Threat Intelligence: common mistakes',

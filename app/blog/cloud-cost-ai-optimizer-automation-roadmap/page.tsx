@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-automation-roadmap/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cloud Cost AI Optimizer: automation roadmap',
     description: 'Cloud Cost AI Optimizer: automation roadmap',

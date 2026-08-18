@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-api-gateway-implementation-playbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI API Gateway: implementation playbook',
     description: 'AI API Gateway: implementation playbook',

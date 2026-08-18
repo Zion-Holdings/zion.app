@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-evaluation-framework/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'DevSecOps Pipeline: evaluation framework',
     description: 'DevSecOps Pipeline: evaluation framework',

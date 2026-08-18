@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-policy-and-compliance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cybersecurity for MSPs: policy and compliance',
     description: 'Cybersecurity for MSPs: policy and compliance',

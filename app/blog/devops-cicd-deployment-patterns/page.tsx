@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devops-cicd-deployment-patterns/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'DevOps CI/CD: deployment patterns',
     description: 'DevOps CI/CD: deployment patterns',

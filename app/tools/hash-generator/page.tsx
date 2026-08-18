@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/tools/hash-generator/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Hash Generator | Zion Tech Group',
     description: 'Free online hash generator — SHA-1, SHA-256, SHA-384, SHA-512.',

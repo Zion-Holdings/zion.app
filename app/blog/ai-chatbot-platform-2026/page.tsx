@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-chatbot-platform-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Chatbot Platform 2026',
     description: 'Enterprise chatbot platforms with handoff, context, and governance.',

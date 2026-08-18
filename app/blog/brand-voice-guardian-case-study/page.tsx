@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-case-study/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Brand Voice Guardian: case study',
     description: 'Brand Voice Guardian: case study',

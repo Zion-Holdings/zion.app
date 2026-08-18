@@ -10,7 +10,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/automation/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Automation | Zion Tech Group',
     description: 'AI automation services and tooling from Zion Tech Group.',

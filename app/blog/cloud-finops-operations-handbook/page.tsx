@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-finops-operations-handbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cloud FinOps: operations handbook',
     description: 'Cloud FinOps: operations handbook',

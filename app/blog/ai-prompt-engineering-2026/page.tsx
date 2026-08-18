@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-prompt-engineering-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Prompt Engineering 2026',
     description: 'Designing, testing, and governing prompts for reliable LLM outputs.',

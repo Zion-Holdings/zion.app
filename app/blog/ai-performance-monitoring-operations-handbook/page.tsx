@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-operations-handbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Performance Monitoring: operations handbook',
     description: 'AI Performance Monitoring: operations handbook',

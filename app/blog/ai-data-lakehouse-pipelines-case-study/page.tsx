@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-case-study/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Data Lakehouse Pipelines: case study',
     description: 'AI Data Lakehouse Pipelines: case study',

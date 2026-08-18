@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'QR Code Generator — Zion Tech Group',
     description: 'Generate QR codes for URLs, text, and contact data. Download PNGs for print and web use.',

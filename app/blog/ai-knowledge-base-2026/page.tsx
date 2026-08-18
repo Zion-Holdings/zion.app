@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-knowledge-base-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Knowledge Base 2026',
     description: 'Enterprise knowledge base patterns with retrieval, governance, and freshness.',

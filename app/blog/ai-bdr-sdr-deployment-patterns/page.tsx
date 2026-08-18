@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-deployment-patterns/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI BDR SDR: deployment patterns',
     description: 'AI BDR SDR: deployment patterns',

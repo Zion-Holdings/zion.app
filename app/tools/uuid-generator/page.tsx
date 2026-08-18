@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'UUID Generator — Zion Tech Group',
     description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',

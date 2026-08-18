@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-policy-and-compliance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Edge Computing Deployment: policy and compliance',
     description: 'Edge Computing Deployment: policy and compliance',

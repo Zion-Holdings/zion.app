@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/free-ai-it-tools/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Free AI & IT Tools | Zion Tech Group',
     description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',

@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/chaos-engineering-starter-template/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Chaos Engineering: starter template',
     description: 'Chaos Engineering: starter template',

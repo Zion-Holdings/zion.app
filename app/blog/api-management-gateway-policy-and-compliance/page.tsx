@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-management-gateway-policy-and-compliance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'API Management Gateway: policy and compliance',
     description: 'API Management Gateway: policy and compliance',

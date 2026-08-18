@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-deployment-patterns/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Agentic Workflows: deployment patterns',
     description: 'AI Agentic Workflows: deployment patterns',

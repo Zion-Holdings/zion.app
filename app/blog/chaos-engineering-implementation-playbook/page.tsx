@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Chaos Engineering: implementation playbook',
     description: 'Chaos Engineering: implementation playbook',

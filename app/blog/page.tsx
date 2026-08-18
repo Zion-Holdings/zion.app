@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Blog | Zion Tech Group',
     description: 'Insights on AI, IT, automation, and enterprise delivery.',
@@ -74,6 +76,11 @@ const ALL_POSTS: Post[] = [
   { slug: 'ai-bom-procurement-architecture-overview', title: 'AI BOM Procurement: Architecture Overview', category: 'Procurement', summary: 'Architecture for AI BOM intake, vendor evaluation, and contract tracking.' },
   { slug: 'ai-customer-support-pro-2026', title: 'AI Customer Support Pro 2026', category: 'Support', summary: 'Enterprise support assistant patterns with escalation and compliance.' },
   { slug: 'ai-development-acceleration-2026', title: 'AI Development Acceleration 2026', category: 'Engineering', summary: 'Development acceleration patterns with coding assistants and review automation.' },
+  { slug: 'ai-security-best-practices-2026', title: 'AI Security Best Practices 2026', category: 'Security', summary: 'Comprehensive AI security playbook for 2026 covering governance, prompt injection defense, and production hardening.' },
+  { slug: 'cloud-cost-optimization-guide', title: 'Cloud Cost Optimization Guide', category: 'Cloud', summary: 'Proven strategies for reducing cloud spend through right-sizing, automation, and FinOps governance.' },
+  { slug: 'micro-saas-launch-playbook', title: 'Micro-SaaS Launch Playbook', category: 'Micro-SaaS', summary: 'Step-by-step guide to validating, building, and scaling profitable micro-SaaS products.' },
+  { slug: 'enterprise-ai-adoption-framework', title: 'Enterprise AI Adoption Framework', category: 'AI', summary: 'Structured framework for aligning AI initiatives with business goals and scaling across the enterprise.' },
+  { slug: 'devops-cicd-modernization', title: 'DevOps CI/CD Modernization', category: 'DevOps', summary: 'Modernize delivery pipelines with trunk-based development, progressive delivery, and shift-left security.' },
 ];
 
 function groupByCategory(items: Post[]) {

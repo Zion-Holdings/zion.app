@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-case-study/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Autonomous Code Deployment: case study',
     description: 'Autonomous Code Deployment: case study',

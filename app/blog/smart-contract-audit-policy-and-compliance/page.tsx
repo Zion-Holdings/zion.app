@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-policy-and-compliance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Smart Contract Audit: policy and compliance',
     description: 'Smart Contract Audit: policy and compliance',

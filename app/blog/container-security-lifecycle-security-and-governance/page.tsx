@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Container Security Lifecycle: security and governance',
     description: 'Container Security Lifecycle: security and governance',

@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-evaluation-framework/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'MicroSaaS HR Recruitment: evaluation framework',
     description: 'MicroSaaS HR Recruitment: evaluation framework',

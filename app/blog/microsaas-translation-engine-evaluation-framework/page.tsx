@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-evaluation-framework/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'MicroSaaS Translation Engine: evaluation framework',
     description: 'MicroSaaS Translation Engine: evaluation framework',

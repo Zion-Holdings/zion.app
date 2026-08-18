@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-operations-handbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Agent Safety Evaluation: operations handbook',
     description: 'AI Agent Safety Evaluation: operations handbook',

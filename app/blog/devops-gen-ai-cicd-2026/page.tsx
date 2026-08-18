@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'GenAI DevOps CI/CD',
     description: 'GenAI DevOps CI/CD',

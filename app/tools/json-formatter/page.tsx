@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'JSON Formatter — Zion Tech Group',
     description: 'Format, minify, and validate JSON quickly. Paste raw JSON and get clean, structured output with error detection.',

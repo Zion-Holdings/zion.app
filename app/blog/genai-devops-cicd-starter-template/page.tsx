@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-starter-template/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'GenAI DevOps CI/CD: starter template',
     description: 'GenAI DevOps CI/CD: starter template',

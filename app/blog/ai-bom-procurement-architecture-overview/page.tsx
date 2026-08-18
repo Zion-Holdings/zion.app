@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-architecture-overview/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI BOM Procurement: architecture overview',
     description: 'AI BOM Procurement: architecture overview',

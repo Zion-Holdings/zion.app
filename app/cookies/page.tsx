@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Cookie usage and preferences.',
     url: 'https://ziontechgroup.com/cookies/',
     type: 'website' },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cookie Policy | Zion Tech Group',
     description: 'Cookie usage and preferences.',

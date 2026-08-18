@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/data/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Data & Analytics | Zion Tech Group',
     description: 'Governed data pipelines, forecasting, and executive dashboards.',

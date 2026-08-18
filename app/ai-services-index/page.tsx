@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/ai-services/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Services Index | Zion Tech Group',
     description: 'A focused view of AI-native services for automation, assistants, analytics, and infrastructure.',

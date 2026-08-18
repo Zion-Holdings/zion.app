@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Agent Safety Evaluation: implementation playbook',
     description: 'AI Agent Safety Evaluation: implementation playbook',

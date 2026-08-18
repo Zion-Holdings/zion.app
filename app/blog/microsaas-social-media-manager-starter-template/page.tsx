@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-starter-template/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'MicroSaaS Social Media Manager: starter template',
     description: 'MicroSaaS Social Media Manager: starter template',

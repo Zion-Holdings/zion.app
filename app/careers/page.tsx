@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Open roles and culture at Zion Tech Group.',
     url: 'https://ziontechgroup.com/careers/',
     type: 'website' },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Careers | Zion Tech Group',
     description: 'Open roles and culture at Zion Tech Group.',

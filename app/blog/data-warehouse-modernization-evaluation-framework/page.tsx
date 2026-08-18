@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-evaluation-framework/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Data Warehouse Modernization: evaluation framework',
     description: 'Data Warehouse Modernization: evaluation framework',

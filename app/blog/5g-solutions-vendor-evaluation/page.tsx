@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/5g-solutions-vendor-evaluation/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: '5G Solutions: vendor evaluation',
     description: '5G Solutions: vendor evaluation',

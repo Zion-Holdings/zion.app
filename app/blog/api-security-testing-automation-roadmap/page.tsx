@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-security-testing-automation-roadmap/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'API Security Testing: automation roadmap',
     description: 'API Security Testing: automation roadmap',

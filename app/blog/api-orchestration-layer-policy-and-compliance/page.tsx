@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-policy-and-compliance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'API Orchestration Layer: policy and compliance',
     description: 'API Orchestration Layer: policy and compliance',

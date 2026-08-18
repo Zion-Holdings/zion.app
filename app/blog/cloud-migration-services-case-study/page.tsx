@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-case-study/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cloud Migration Services: case study',
     description: 'Cloud Migration Services: case study',

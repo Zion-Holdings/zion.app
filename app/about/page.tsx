@@ -12,7 +12,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/about/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'About Zion Tech Group',
     description: 'AI-native IT services company focused on autonomous operations, managed AI, and enterprise-ready delivery.',

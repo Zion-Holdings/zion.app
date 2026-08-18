@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-security-and-governance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Customer Success Churn Prevention: security and governance',
     description: 'AI Customer Success Churn Prevention: security and governance',

@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Enterprise Backup DR: implementation playbook',
     description: 'Enterprise Backup DR: implementation playbook',

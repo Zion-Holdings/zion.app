@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Pricing & Engagement Models | Zion Tech Group',
     description: 'Flexible engagement models designed for predictable delivery.',

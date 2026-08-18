@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-architecture-overview/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Smart Contract Audit: architecture overview',
     description: 'Smart Contract Audit: architecture overview',

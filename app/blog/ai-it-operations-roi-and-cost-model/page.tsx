@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-it-operations-roi-and-cost-model/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI IT Operations: ROI and cost model',
     description: 'AI IT Operations: ROI and cost model',

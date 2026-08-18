@@ -14,7 +14,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'FAQ | Zion Tech Group',
     description: 'Common questions about AI and IT services, timing, security, pricing, and onboarding.',

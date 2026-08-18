@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-architecture-overview/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AIOps Anomaly Detection: architecture overview',
     description: 'AIOps Anomaly Detection: architecture overview',

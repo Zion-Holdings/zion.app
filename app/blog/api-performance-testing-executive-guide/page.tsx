@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-performance-testing-executive-guide/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'API Performance Testing: executive guide',
     description: 'API Performance Testing: executive guide',

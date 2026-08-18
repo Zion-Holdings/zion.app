@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Vertical delivery patterns.',
     url: 'https://ziontechgroup.com/industries/',
     type: 'website' },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Industry Solutions',
     description: 'Vertical delivery patterns.',

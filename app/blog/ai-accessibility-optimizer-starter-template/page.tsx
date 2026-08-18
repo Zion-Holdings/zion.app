@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-starter-template/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Accessibility Optimizer: starter template',
     description: 'AI Accessibility Optimizer: starter template',

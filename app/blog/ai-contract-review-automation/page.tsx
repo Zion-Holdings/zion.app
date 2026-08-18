@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-contract-review-automation/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Ai Contract Review Automation | Zion Tech Group',
     description: 'Practical guidance for ai contract review automation.',

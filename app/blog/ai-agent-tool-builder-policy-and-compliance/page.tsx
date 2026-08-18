@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Agent Tool Builder: policy and compliance',
     description: 'AI Agent Tool Builder: policy and compliance',

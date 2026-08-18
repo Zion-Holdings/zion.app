@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-implementation-playbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Data Analytics Platform: implementation playbook',
     description: 'Data Analytics Platform: implementation playbook',

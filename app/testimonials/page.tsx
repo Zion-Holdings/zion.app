@@ -12,7 +12,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/testimonials/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Testimonials | Zion Tech Group',
     description: 'Real outcomes from Zion Tech Group clients.',

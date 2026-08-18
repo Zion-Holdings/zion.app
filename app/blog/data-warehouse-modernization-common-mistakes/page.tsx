@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Data Warehouse Modernization: common mistakes',
     description: 'Data Warehouse Modernization: common mistakes',

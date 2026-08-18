@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/chaos-engineering-roi-and-cost-model/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Chaos Engineering: ROI and cost model',
     description: 'Chaos Engineering: ROI and cost model',

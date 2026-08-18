@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-deployment-patterns/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI BOM Procurement: deployment patterns',
     description: 'AI BOM Procurement: deployment patterns',

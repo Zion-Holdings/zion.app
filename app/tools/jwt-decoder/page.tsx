@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'JWT Decoder — Zion Tech Group',
     description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',

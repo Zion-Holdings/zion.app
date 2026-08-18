@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-vendor-evaluation/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Ad Copy Generator: vendor evaluation',
     description: 'AI Ad Copy Generator: vendor evaluation',

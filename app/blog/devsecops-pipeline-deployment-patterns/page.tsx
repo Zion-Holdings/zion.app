@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-deployment-patterns/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'DevSecOps Pipeline: deployment patterns',
     description: 'DevSecOps Pipeline: deployment patterns',

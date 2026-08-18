@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Platform and service status.',
     url: 'https://ziontechgroup.com/status/',
     type: 'website' },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Status | Zion Tech Group',
     description: 'Platform and service status.',

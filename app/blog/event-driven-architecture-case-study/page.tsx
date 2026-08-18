@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-case-study/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Event Driven Architecture: case study',
     description: 'Event Driven Architecture: case study',

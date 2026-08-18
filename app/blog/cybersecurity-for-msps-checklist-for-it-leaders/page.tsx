@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-checklist-for-it-leaders/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cybersecurity for MSPs: checklist for IT leaders',
     description: 'Cybersecurity for MSPs: checklist for IT leaders',

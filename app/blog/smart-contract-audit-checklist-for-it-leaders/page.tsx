@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-checklist-for-it-leaders/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Smart Contract Audit: checklist for IT leaders',
     description: 'Smart Contract Audit: checklist for IT leaders',

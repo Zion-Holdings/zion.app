@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-implementation-playbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Event Driven Architecture: implementation playbook',
     description: 'Event Driven Architecture: implementation playbook',

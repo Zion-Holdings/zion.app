@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-starter-template/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'ETL Pipeline Optimization: starter template',
     description: 'ETL Pipeline Optimization: starter template',

@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-executive-guide/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Enterprise AI Intelligence Hub: executive guide',
     description: 'Enterprise AI Intelligence Hub: executive guide',

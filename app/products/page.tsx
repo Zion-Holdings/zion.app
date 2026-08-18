@@ -11,7 +11,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/products/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Products | Zion Tech Group',
     description: 'Explore Zion AI products and platforms for enterprise automation, analytics, and managed AI.',

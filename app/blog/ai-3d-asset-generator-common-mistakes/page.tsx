@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-common-mistakes/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI 3D Asset Generator: common mistakes',
     description: 'AI 3D Asset Generator: common mistakes',

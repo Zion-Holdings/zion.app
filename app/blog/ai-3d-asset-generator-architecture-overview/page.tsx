@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-architecture-overview/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI 3D Asset Generator: architecture overview',
     description: 'AI 3D Asset Generator: architecture overview',

@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-case-study/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'GraphQL Federation Platform: case study',
     description: 'GraphQL Federation Platform: case study',

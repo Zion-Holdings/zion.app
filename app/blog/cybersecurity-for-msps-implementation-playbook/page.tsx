@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-implementation-playbook/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Cybersecurity for MSPs: implementation playbook',
     description: 'Cybersecurity for MSPs: implementation playbook',

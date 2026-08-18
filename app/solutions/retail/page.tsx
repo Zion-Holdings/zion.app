@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/solutions/retail/',
     type: 'website',
   },
-    twitter: {
+    siteName: 'Zion Tech Group',
+  },
+  twitter: {
     card: 'summary_large_image',
     title: 'Retail & E-Commerce Solutions | Zion Tech Group',
     description: 'Retail and e-commerce delivery patterns and AI implementation guidance.',

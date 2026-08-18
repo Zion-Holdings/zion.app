@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/ai-model-monitoring-2026/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Model Monitoring 2026',
     description: 'Model monitoring, drift detection, and retraining triggers for production AI.',

@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-evaluation-framework/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'GraphQL Federation Platform: evaluation framework',
     description: 'GraphQL Federation Platform: evaluation framework',

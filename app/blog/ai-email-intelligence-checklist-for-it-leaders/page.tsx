@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-checklist-for-it-leaders/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'AI Email Intelligence: checklist for IT leaders',
     description: 'AI Email Intelligence: checklist for IT leaders',

@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-evaluation-framework/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Edge Computing Deployment: evaluation framework',
     description: 'Edge Computing Deployment: evaluation framework',

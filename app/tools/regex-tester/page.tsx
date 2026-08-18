@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Regex Tester — Zion Tech Group',
     description: 'Test regular expressions with live matching, highlighting, and quick reference for common patterns.',

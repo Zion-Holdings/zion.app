@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-executive-guide/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Enterprise Backup DR: executive guide',
     description: 'Enterprise Backup DR: executive guide',

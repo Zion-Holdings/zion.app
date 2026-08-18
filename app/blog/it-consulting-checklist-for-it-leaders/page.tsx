@@ -12,7 +12,7 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/it-consulting-checklist-for-it-leaders/',
     type: 'article',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'IT Consulting: checklist for IT leaders',
     description: 'IT Consulting: checklist for IT leaders',

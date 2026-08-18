@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'Zion Tech Group',
     type: 'website',
   },
-    twitter: {
+  twitter: {
     card: 'summary_large_image',
     title: 'Contact Intent | Zion Tech Group',
     description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
