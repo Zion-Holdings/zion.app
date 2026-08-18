@@ -4,19 +4,18 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Partners | Zion Tech Group',
-    description: 'Technology and delivery partners of Zion Tech Group.',
-    openGraph: {
+  description: 'Technology and delivery partners of Zion Tech Group.',
+  openGraph: {
     title: 'Partners | Zion Tech Group',
     description: 'Partner ecosystem for AI, IT, and automation engagements.',
     url: 'https://ziontechgroup.com/partners/',
     type: 'website',
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'Partners | Zion Tech Group',
     description: 'Partner ecosystem for AI, IT, and automation engagements.',
   },
-    alternates: { canonical: '/partners/' },
+  alternates: { canonical: '/partners/' },
 };
 
 export default function PartnersPage() {
@@ -33,7 +32,13 @@ export default function PartnersPage() {
         { label: 'Browse services', href: '/services/', style: 'secondary' },
       ]}
     >
-      <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+      <div className="max-w-3xl mx-auto mb-10">
+        <p className="text-slate-300 text-sm leading-relaxed">
+          We partner with best-in-class platforms and integrators to reduce risk, shorten implementation, and expand coverage for clients.
+        </p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-white font-semibold mb-2">Cloud Platforms</h3>
           <p className="text-slate-400 text-sm">Infrastructure, migration, and managed cloud partners.</p>
@@ -61,8 +66,24 @@ export default function PartnersPage() {
           <li>Clear revenue and margin structures with transparent reporting.</li>
         </ul>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/services/" className="btn-primary text-center">Browse services</a>
-          <a href="/contact/" className="btn-secondary text-center">Become a partner</a>
+          <Link href="/contact/" className="btn-primary text-center">Become a partner</Link>
+          <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
+        </div>
+      </div>
+
+      <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
+        <h2 className="text-xl font-bold text-white mb-4">Related pages</h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link href="/partnership-program/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Partnership Program</h3>
+            <p className="text-slate-400 text-xs mb-3">Program structure, requirements, and onboarding.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View program →</span>
+          </Link>
+          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-1">Insights & Guides</h3>
+            <p className="text-slate-400 text-xs mb-3">Integration, co-sell, and ecosystem guidance.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+          </Link>
         </div>
       </div>
     </StandardPage>
