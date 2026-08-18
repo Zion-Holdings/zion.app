@@ -175,6 +175,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Regex Cheat Sheet</h3>
           <p className="text-slate-400 text-sm">Common regex patterns and syntax.</p>
         </a>
+        <a href="/tools/js-minifier/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JS Minifier</h3>
+          <p className="text-slate-400 text-sm">Minify and compress JavaScript code.</p>
+        </a>
+        <a href="/tools/text-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text Analyzer</h3>
+          <p className="text-slate-400 text-sm">Analyze text with keyword density and stats.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
