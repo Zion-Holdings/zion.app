@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Gradient Generator | Zion Tech Group</title>
+  <meta name="description" content="Create beautiful CSS gradients with our free online gradient generator. Linear and radial options with live preview.">
+  <meta property="og:title" content="CSS Gradient Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online CSS gradient generator with live preview, linear and radial options.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/gradient-generator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/gradient-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .preview { height: 12rem; border-radius: 0.75rem; margin-bottom: 1.5rem; border: 1px solid #334155; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.5); transition: background 0.2s; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .color-row { display: flex; align-items: center; gap: 0.75rem; }
+    .color-row input[type="color"] { width: 48px; height: 40px; padding: 0; border: 1px solid #334155; border-radius: 0.5rem; background: #1e293b; cursor: pointer; }
+    .color-row input[type="text"] { flex: 1; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .color-row input:focus { outline: none; border-color: #6366f1; }
+    .field select, .field input[type="number"] { width: 100%; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field select:focus, .field input[type="number"]:focus { outline: none; border-color: #6366f1; }
+    .field select { cursor: pointer; }
+    .field select option { background: #1e293b; color: #fff; }
+    .css-output { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .css-output h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .css-output pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; font-family: monospace; color: #e5e7eb; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .success-msg { background: #064e3b; border: 1px solid #065f46; border-radius: 0.5rem; padding: 0.75rem; color: #a7f3d0; margin-bottom: 1rem; display: none; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .random-btn { margin-bottom: 1.5rem; }
+    .angle-row { display: flex; align-items: center; gap: 0.75rem; }
+    .angle-row input[type="range"] { flex: 1; accent-color: #6366f1; }
+    .angle-row .angle-value { min-width: 3rem; text-align: right; font-family: monospace; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Gradient Generator</h1>
+    <p class="subtitle">Create beautiful CSS gradients with live preview.</p>
+    
+    <div class="preview" id="preview">
+      <span>Gradient Preview</span>
+    </div>
+    
+    <div class="grid">
+      <div class="field">
+        <label>Color 1</label>
+        <div class="color-row">
+          <input type="color" id="color1" value="#6366f1">
+          <input type="text" id="color1Text" value="#6366f1" placeholder="#6366f1">
+        </div>
+      </div>
+      <div class="field">
+        <label>Color 2</label>
+        <div class="color-row">
+          <input type="color" id="color2" value="#ec4899">
+          <input type="text" id="color2Text" value="#ec4899" placeholder="#ec4899">
+        </div>
+      </div>
+    </div>
+    
+    <div class="grid">
+      <div class="field">
+        <label>Gradient Type</label>
+        <select id="gradientType">
+          <option value="linear">Linear</option>
+          <option value="radial">Radial</option>
+        </select>
+      </div>
+      <div class="field" id="angleField">
+        <label>Angle</label>
+        <div class="angle-row">
+          <input type="range" id="angle" min="0" max="360" value="135">
+          <span class="angle-value" id="angleValue">135°</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="generate()">Generate</button>
+      <button class="btn success" onclick="copyCSS()">Copy CSS</button>
+      <button class="btn secondary" onclick="randomGradient()">Random</button>
+    </div>
+    
+    <div class="success-msg" id="successMsg">✓ CSS copied to clipboard!</div>
+    
+    <div class="css-output">
+      <h3>CSS Output</h3>
+      <pre id="cssOutput">background: linear-gradient(135deg, #6366f1, #ec4899);</pre>
+    </div>
+    
+    <div class="info">
+      <h2>How It Works</h2>
+      <ul>
+        <li><span class="label">Linear Gradient</span> — Creates a gradient along a straight line at the specified angle.</li>
+        <li><span class="label">Radial Gradient</span> — Creates a gradient that radiates outward from a central point.</li>
+        <li><span class="label">Angle Control</span> — Adjust the direction of the gradient (0° = bottom to top, 90° = left to right, 135° = top-left to bottom-right).</li>
+        <li><span class="label">CSS Output</span> — Copy the generated CSS and use it directly in your stylesheets.</li>
+      </ul>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function generate() {
+      const color1 = document.getElementById('color1').value;
+      const color2 = document.getElementById('color2').value;
+      const type = document.getElementById('gradientType').value;
+      const angle = document.getElementById('angle').value;
+      
+      let gradient;
+      if (type === 'linear') {
+        gradient = `linear-gradient(${angle}deg, ${color1}, ${color2})`;
+      } else {
+        gradient = `radial-gradient(circle, ${color1}, ${color2})`;
+      }
+      
+      const css = `background: ${gradient};`;
+      
+      document.getElementById('preview').style.background = gradient;
+      document.getElementById('cssOutput').textContent = css;
+      
+      // Update text inputs to match color pickers
+      document.getElementById('color1Text').value = color1;
+      document.getElementById('color2Text').value = color2;
+    }
+    
+    function copyCSS() {
+      const css = document.getElementById('cssOutput').textContent;
+      navigator.clipboard.writeText(css).then(() => {
+        const msg = document.getElementById('successMsg');
+        msg.style.display = 'block';
+        setTimeout(() => { msg.style.display = 'none'; }, 2000);
+      });
+    }
+    
+    function randomGradient() {
+      const randomColor = () => '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+      const color1 = randomColor();
+      const color2 = randomColor();
+      const angle = Math.floor(Math.random() * 360);
+      
+      document.getElementById('color1').value = color1;
+      document.getElementById('color2').value = color2;
+      document.getElementById('angle').value = angle;
+      document.getElementById('angleValue').textContent = angle + '°';
+      
+      generate();
+    }
+    
+    // Event listeners
+    document.getElementById('color1').addEventListener('input', () => {
+      document.getElementById('color1Text').value = document.getElementById('color1').value;
+      generate();
+    });
+    
+    document.getElementById('color2').addEventListener('input', () => {
+      document.getElementById('color2Text').value = document.getElementById('color2').value;
+      generate();
+    });
+    
+    document.getElementById('color1Text').addEventListener('input', () => {
+      const val = document.getElementById('color1Text').value;
+      if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+        document.getElementById('color1').value = val;
+        generate();
+      }
+    });
+    
+    document.getElementById('color2Text').addEventListener('input', () => {
+      const val = document.getElementById('color2Text').value;
+      if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+        document.getElementById('color2').value = val;
+        generate();
+      }
+    });
+    
+    document.getElementById('gradientType').addEventListener('change', () => {
+      const type = document.getElementById('gradientType').value;
+      const angleField = document.getElementById('angleField');
+      if (type === 'radial') {
+        angleField.style.opacity = '0.4';
+        angleField.style.pointerEvents = 'none';
+      } else {
+        angleField.style.opacity = '1';
+        angleField.style.pointerEvents = 'auto';
+      }
+      generate();
+    });
+    
+    document.getElementById('angle').addEventListener('input', () => {
+      document.getElementById('angleValue').textContent = document.getElementById('angle').value + '°';
+      generate();
+    });
+    
+    // Generate on load
+    generate();
+  </script>
+</body>
+</html>
