@@ -21,6 +21,14 @@ export default function SlaPage() {
           <h3 className="text-white font-semibold mb-2">Incident response</h3>
           <p className="text-slate-400 text-sm">Severity-based response targets and escalation paths.</p>
         </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Uptime target</h3>
+          <p className="text-slate-400 text-sm">High availability target with monitoring and alerting for critical paths.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Change control</h3>
+          <p className="text-slate-400 text-sm">Governed deployments, rollback readiness, and release-risk review.</p>
+        </div>
       </div>
     </StandardPage>
   );

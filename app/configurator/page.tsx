@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Configurator | Zion Tech Group',
@@ -27,9 +28,23 @@ export default function ConfiguratorPage() {
         <p className="text-slate-300 text-lg leading-relaxed mb-8">
           Use this intake to scope cloud, security, data, automation, or AI work. We’ll return a short plan with recommended services, milestones, and timeline.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/contact/" className="btn-primary text-center">Start intake</a>
-          <a href="/services/" className="btn-secondary text-center">Browse services</a>
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 className="text-white font-semibold mb-2">Goal</h3>
+            <p className="text-slate-400 text-sm">Pick the primary outcome you want in the next 30 to 90 days.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 className="text-white font-semibold mb-2">Timeline</h3>
+            <p className="text-slate-400 text-sm">Choose a pilot, program, or managed-service cadence.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 className="text-white font-semibold mb-2">Model</h3>
+            <p className="text-slate-400 text-sm">Select advisory, co-development, or fully managed delivery.</p>
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
+          <Link href="/contact/" className="btn-primary text-center">Start intake</Link>
+          <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
         </div>
       </div>
     </StandardPage>
