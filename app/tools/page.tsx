@@ -113,6 +113,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Date Diff</h3>
           <p className="text-slate-400 text-sm">Calculate the difference between two dates in years, months, days, total days, weeks, h...</p>
         </a>
+        <a href="/tools/duration-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Duration Calculator</h3>
+          <p className="text-slate-400 text-sm">Parse, format, add and convert time durations. Supports '1h 30m', ISO-8601 PT1H30M, HH:...</p>
+        </a>
         <a href="/tools/excel-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Excel to JSON</h3>
           <p className="text-slate-400 text-sm">Convert CSV/TSV data to JSON.</p>
