@@ -41,12 +41,19 @@ export default function Page() {
           </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-3">How to use</h2>
-          <ol className="list-decimal list-inside text-slate-300 space-y-2">
-            <li>Paste a URL or query string.</li>
-            <li>Choose encode or decode.</li>
-            <li>Copy the result for use in code or links.</li>
-          </ol>
+          <h2 className="text-xl font-bold text-white mb-3">Common use cases</h2>
+          <ul className="list-disc list-inside text-slate-300 space-y-2">
+            <li>Encoding search query parameters</li>
+            <li>Preparing URLs for emails or social posts</li>
+            <li>Debugging malformed query strings</li>
+            <li>Encoding path segments with spaces or special characters</li>
+          </ul>
+        </section>
+        <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-xl font-bold text-white mb-3">Examples</h2>
+          <p className="text-slate-300">
+            Spaces become <code className="text-purple-300">%20</code>. Ampersands in values become <code className="text-purple-300">%26</code>. Non-ASCII characters are converted to percent-encoded UTF-8 bytes.
+          </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Related tools</h2>

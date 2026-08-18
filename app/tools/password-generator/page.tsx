@@ -41,12 +41,19 @@ export default function Page() {
           </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-3">How to use</h2>
-          <ol className="list-decimal list-inside text-slate-300 space-y-2">
-            <li>Choose length and character rules.</li>
-            <li>Generate one or more passwords.</li>
-            <li>Copy and store them in a password manager.</li>
-          </ol>
+          <h2 className="text-xl font-bold text-white mb-3">Common use cases</h2>
+          <ul className="list-disc list-inside text-slate-300 space-y-2">
+            <li>Creating passwords for new user accounts</li>
+            <li>Rotating service and database credentials</li>
+            <li>Generating API keys and integration tokens</li>
+            <li>Setting temporary admin passwords</li>
+          </ul>
+        </section>
+        <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-xl font-bold text-white mb-3">Security notes</h2>
+          <p className="text-slate-300">
+            Use at least 16 characters for admin and service accounts. Store generated passwords in a password manager. Avoid reusing passwords across systems.
+          </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Related tools</h2>
