@@ -5,18 +5,18 @@ import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Industry Solutions | Zion Tech Group',
-  description: 'Industry-specific AI and IT implementation for',
+  title: 'Industries Overview | Zion Tech Group',
+  description: 'Industry-specific AI and IT implementation patterns and outcomes.',
   openGraph: {
-    title: 'Industry Solutions | Zion Tech Group',
-    description: 'Vertical delivery patterns with measurable outcomes.',
+    title: 'Industries Overview | Zion Tech Group',
+    description: 'Vertical delivery patterns with measurable outcomes by industry.',
     url: 'https://ziontechgroup.com/industries/',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Industry Solutions | Zion Tech Group',
-    description: 'Vertical delivery patterns with measurable outcomes.',
+    title: 'Industries Overview | Zion Tech Group',
+    description: 'Vertical delivery patterns with measurable outcomes by industry.',
   },
   alternates: { canonical: '/industries/' },
 };
@@ -69,6 +69,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
   if (!data) return notFound();
 
   return (
+<>
     <StandardPage
       title={data.label}
       subtitle={data.intro}
@@ -121,5 +122,6 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }
