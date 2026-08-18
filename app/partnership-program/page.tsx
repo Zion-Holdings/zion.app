@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 import type { Metadata } from 'next';
 
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function PartnershipProgramPage() {
   return (
-    <PageTemplate
+    <StandardPage
       title="Partnership Program"
       subtitle="Collaborate on delivery, co-sell, or integration."
       breadcrumbItems={[
@@ -68,6 +68,6 @@ export default function PartnershipProgramPage() {
           <a href="/contact/" className="btn-secondary text-center">Contact us</a>
         </div>
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 import type { Metadata } from 'next';
 
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function AutomationPage() {
   return (
-    <PageTemplate
+    <StandardPage
       title="AI Automation"
       subtitle="Streamline operations with practical AI automation."
       breadcrumbItems={[
@@ -34,7 +34,7 @@ export default function AutomationPage() {
         { label: 'Contact us', href: '/contact/', style: 'secondary' },
       ]}
     >
-      <div className="max-w-5xl mx-auto space-y-6 text-slate-300">
+      <div className="space-y-6 text-slate-300">
         <p>Explore automation opportunities across your workflows.</p>
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
@@ -68,6 +68,6 @@ export default function AutomationPage() {
           <a href="/contact/" className="btn-secondary text-center">Start a project</a>
         </div>
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }
