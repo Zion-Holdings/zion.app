@@ -4,17 +4,21 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Careers | Zion Tech Group',
-    description: 'Join Zion Tech Group: AI, IT, and engineering careers with remote-friendly roles and measurable impact.',
-    openGraph: { title: 'Careers | Zion Tech Group',
+  description: 'Join Zion Tech Group: AI, IT, and engineering careers with remote-friendly roles and measurable impact.',
+  openGraph: {
+    title: 'Careers | Zion Tech Group',
     description: 'Open roles and culture at Zion Tech Group.',
     url: 'https://ziontechgroup.com/careers/',
-    type: 'website' },
+    siteName: 'Zion Tech Group',
+    type: 'website',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Careers | Zion Tech Group',
     description: 'Open roles and culture at Zion Tech Group.',
+    siteName: 'Zion Tech Group',
   },
-    alternates: { canonical: '/careers/' },
+  alternates: { canonical: '/careers/' },
 };
 
 export default function CareersPage() {
