@@ -4,210 +4,203 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password Generator | Zion Tech Group</title>
-  <meta name="description" content="Generate secure, random passwords with customizable length and character sets.">
+  <meta name="description" content="Generate secure random passwords with customizable options.">
   <meta property="og:title" content="Password Generator | Zion Tech Group">
-  <meta property="og:description" content="Free online password generator — customizable length and character sets.">
+  <meta property="og:description" content="Free online password generator with customizable options.">
   <meta property="og:url" content="https://ziontechgroup.com/tools/password-generator/">
   <link rel="canonical" href="https://ziontechgroup.com/tools/password-generator/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            dark: { 900: '#0b0f1a', 800: '#1e293b', 700: '#334155' },
-            accent: { 400: '#818cf8', 500: '#6366f1' }
-          }
-        }
-      }
-    }
-  </script>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input[type="number"] { width: 100%; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input[type="number"]:focus { outline: none; border-color: #6366f1; }
+    .result-box { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .result-box input { flex: 1; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.copy { background: #059669; }
+    .btn.copy:hover { background: #047857; }
+    .checkboxes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+    .checkbox-item { display: flex; align-items: center; gap: 0.5rem; }
+    .checkbox-item input { width: 1rem; height: 1rem; accent-color: #6366f1; }
+    .checkbox-item label { font-size: 0.875rem; color: #e5e7eb; }
+    .strength { margin-bottom: 1rem; }
+    .strength-bar { height: 0.5rem; background: #334155; border-radius: 0.25rem; overflow: hidden; }
+    .strength-fill { height: 100%; transition: width 0.3s, background-color 0.3s; }
+    .strength-label { font-size: 0.875rem; margin-top: 0.25rem; }
+    .strength-weak { background: #ef4444; }
+    .strength-medium { background: #f59e0b; }
+    .strength-strong { background: #10b981; }
+    .strength-text-weak { color: #ef4444; }
+    .strength-text-medium { color: #f59e0b; }
+    .strength-text-strong { color: #10b981; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
   </style>
 </head>
-<body class="bg-dark-900 text-gray-200 min-h-screen">
-  <div class="max-w-3xl mx-auto px-4 py-8">
-    <h1 class="text-2xl font-bold mb-2">Password Generator</h1>
-    <p class="text-slate-400 mb-8">Generate secure, random passwords with customizable length and character sets.</p>
-
-    <div class="space-y-6">
-      <div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
-        <div class="flex items-center justify-between mb-4">
-          <label class="text-sm text-slate-400">Generated Password</label>
-          <span id="strengthBadge" class="px-2 py-1 text-xs font-medium rounded bg-dark-700 text-slate-300">—</span>
-        </div>
-        <div class="flex gap-2">
-          <input type="text" id="password" class="flex-1 p-3 bg-dark-900 border border-dark-700 rounded-lg text-white mono text-lg focus:outline-none focus:border-accent-500" readonly>
-          <button id="copyBtn" class="px-4 py-2 bg-dark-700 hover:bg-dark-800 text-white rounded-lg text-sm transition border border-dark-700 whitespace-nowrap">Copy</button>
-        </div>
+<body>
+  <div class="container">
+    <h1>Password Generator</h1>
+    <p class="subtitle">Generate secure random passwords with customizable options.</p>
+    
+    <div class="field">
+      <label>Password Length: <span id="lengthValue">16</span></label>
+      <input type="number" id="length" value="16" min="8" max="128">
+    </div>
+    
+    <div class="checkboxes">
+      <div class="checkbox-item">
+        <input type="checkbox" id="uppercase" checked>
+        <label for="uppercase">Uppercase (A-Z)</label>
       </div>
-
-      <div class="bg-dark-800 border border-dark-700 rounded-xl p-6 space-y-5">
-        <div>
-          <div class="flex items-center justify-between mb-2">
-            <label class="text-sm text-slate-400">Password Length</label>
-            <span id="lengthValue" class="text-sm text-accent-400 font-medium">16</span>
-          </div>
-          <input type="range" id="length" min="6" max="64" value="16" class="w-full accent-accent-500">
-          <div class="flex justify-between text-xs text-slate-500 mt-1">
-            <span>6</span>
-            <span>64</span>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4">
-          <label class="flex items-center gap-3 cursor-pointer">
-            <input type="checkbox" id="uppercase" checked class="w-4 h-4 accent-accent-500 rounded">
-            <span class="text-sm">Uppercase (A-Z)</span>
-          </label>
-          <label class="flex items-center gap-3 cursor-pointer">
-            <input type="checkbox" id="lowercase" checked class="w-4 h-4 accent-accent-500 rounded">
-            <span class="text-sm">Lowercase (a-z)</span>
-          </label>
-          <label class="flex items-center gap-3 cursor-pointer">
-            <input type="checkbox" id="numbers" checked class="w-4 h-4 accent-accent-500 rounded">
-            <span class="text-sm">Numbers (0-9)</span>
-          </label>
-          <label class="flex items-center gap-3 cursor-pointer">
-            <input type="checkbox" id="symbols" checked class="w-4 h-4 accent-accent-500 rounded">
-            <span class="text-sm">Symbols (!@#$...)</span>
-          </label>
-        </div>
-
-        <button id="generateBtn" class="w-full py-3 bg-accent-500 hover:bg-accent-400 text-white rounded-lg font-medium transition">Generate Password</button>
+      <div class="checkbox-item">
+        <input type="checkbox" id="lowercase" checked>
+        <label for="lowercase">Lowercase (a-z)</label>
       </div>
-
-      <div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
-        <h2 class="text-lg font-semibold mb-4">Password History</h2>
-        <div id="history" class="space-y-2">
-          <p class="text-slate-500 text-sm">No passwords generated yet.</p>
-        </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="numbers" checked>
+        <label for="numbers">Numbers (0-9)</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="symbols">
+        <label for="symbols">Symbols (!@#$)</label>
       </div>
     </div>
-
-    <div class="mt-8 bg-dark-800 border border-dark-700 rounded-xl p-6">
-      <h2 class="text-lg font-semibold mb-4">Security Notes</h2>
-      <ul class="space-y-3">
-        <li class="pb-3 border-b border-dark-700">
-          <span class="text-accent-400 font-semibold">Crypto-Secure RNG</span> — Uses <code class="text-accent-400">crypto.getRandomValues()</code> for unpredictable randomness
-        </li>
-        <li class="pb-3 border-b border-dark-700">
-          <span class="text-accent-400 font-semibold">Client-Side Only</span> — Passwords are generated locally and never transmitted
-        </li>
-        <li>
-          <span class="text-accent-400 font-semibold">Entropy</span> — Longer passwords with mixed character sets provide exponentially more security
-        </li>
+    
+    <button class="btn" onclick="generate()">Generate Password</button>
+    
+    <div class="result-box" style="margin-top: 1rem;">
+      <input type="text" id="passwordResult" readonly>
+      <button class="btn copy" onclick="copy()">Copy</button>
+    </div>
+    
+    <div class="strength">
+      <div class="strength-bar">
+        <div class="strength-fill" id="strengthFill"></div>
+      </div>
+      <div class="strength-label" id="strengthLabel"></div>
+    </div>
+    
+    <div class="info">
+      <h2>About Password Security</h2>
+      <ul>
+        <li><span class="label">Entropy</span> — Each character added exponentially increases cracking time.</li>
+        <li><span class="label">Length vs Complexity</span> — A 20-char lowercase password can be stronger than a 10-char mixed one.</li>
+        <li><span class="label">Generation</span> — Uses crypto.getRandomValues() for cryptographically secure randomness.</li>
+        <li><span class="label">Privacy</span> — Passwords are generated locally and never transmitted or stored.</li>
       </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">Use a password manager to store generated passwords securely.</p>
     </div>
-
-    <a href="/tools/" class="inline-block mt-6 text-accent-400 hover:underline">← Back to Tools</a>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
   </div>
 
   <script>
-    const passwordEl = document.getElementById('password');
-    const lengthEl = document.getElementById('length');
-    const lengthValue = document.getElementById('lengthValue');
-    const uppercaseEl = document.getElementById('uppercase');
-    const lowercaseEl = document.getElementById('lowercase');
-    const numbersEl = document.getElementById('numbers');
-    const symbolsEl = document.getElementById('symbols');
-    const generateBtn = document.getElementById('generateBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const historyEl = document.getElementById('history');
-    const strengthBadge = document.getElementById('strengthBadge');
-
-    const CHAR_SETS = {
-      uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-      lowercase: 'abcdefghijklmnopqrstuvwxyz',
-      numbers: '0123456789',
-      symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?'
-    };
-
-    let passwordHistory = [];
-
-    function getCharset() {
-      let charset = '';
-      if (uppercaseEl.checked) charset += CHAR_SETS.uppercase;
-      if (lowercaseEl.checked) charset += CHAR_SETS.lowercase;
-      if (numbersEl.checked) charset += CHAR_SETS.numbers;
-      if (symbolsEl.checked) charset += CHAR_SETS.symbols;
-      return charset || CHAR_SETS.lowercase;
-    }
-
-    function generatePassword() {
-      const length = parseInt(lengthEl.value);
-      const charset = getCharset();
+    const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
+    const NUMBERS = '0123456789';
+    const SYMBOLS = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+    
+    document.getElementById('length').addEventListener('input', function() {
+      document.getElementById('lengthValue').textContent = this.value;
+    });
+    
+    function generate() {
+      const length = parseInt(document.getElementById('length').value) || 16;
+      const useUpper = document.getElementById('uppercase').checked;
+      const useLower = document.getElementById('lowercase').checked;
+      const useNumbers = document.getElementById('numbers').checked;
+      const useSymbols = document.getElementById('symbols').checked;
+      
+      let chars = '';
+      if (useUpper) chars += UPPERCASE;
+      if (useLower) chars += LOWERCASE;
+      if (useNumbers) chars += NUMBERS;
+      if (useSymbols) chars += SYMBOLS;
+      
+      if (!chars) {
+        document.getElementById('passwordResult').value = '';
+        document.getElementById('strengthFill').style.width = '0%';
+        document.getElementById('strengthLabel').textContent = 'Select at least one option';
+        return;
+      }
+      
       const array = new Uint32Array(length);
       crypto.getRandomValues(array);
+      
       let password = '';
       for (let i = 0; i < length; i++) {
-        password += charset[array[i] % charset.length];
+        password += chars[array[i] % chars.length];
       }
-      passwordEl.value = password;
+      
+      document.getElementById('passwordResult').value = password;
       updateStrength(password);
-      addToHistory(password);
     }
-
+    
     function updateStrength(password) {
+      const fill = document.getElementById('strengthFill');
+      const label = document.getElementById('strengthLabel');
+      
       let score = 0;
       if (password.length >= 8) score++;
       if (password.length >= 12) score++;
       if (password.length >= 16) score++;
-      if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++;
-      if (/\d/.test(password)) score++;
+      if (/[a-z]/.test(password)) score++;
+      if (/[A-Z]/.test(password)) score++;
+      if (/[0-9]/.test(password)) score++;
       if (/[^a-zA-Z0-9]/.test(password)) score++;
-
-      const levels = [
-        { label: 'Very Weak', color: 'bg-red-600' },
-        { label: 'Weak', color: 'bg-orange-500' },
-        { label: 'Fair', color: 'bg-yellow-500' },
-        { label: 'Good', color: 'bg-lime-500' },
-        { label: 'Strong', color: 'bg-green-500' },
-        { label: 'Very Strong', color: 'bg-emerald-400' },
-        { label: 'Excellent', color: 'bg-cyan-400' }
-      ];
-      const level = levels[Math.min(score, levels.length - 1)];
-      strengthBadge.textContent = level.label;
-      strengthBadge.className = `px-2 py-1 text-xs font-medium rounded text-white ${level.color}`;
-    }
-
-    function addToHistory(password) {
-      passwordHistory.unshift(password);
-      if (passwordHistory.length > 5) passwordHistory.pop();
-      renderHistory();
-    }
-
-    function renderHistory() {
-      if (passwordHistory.length === 0) {
-        historyEl.innerHTML = '<p class="text-slate-500 text-sm">No passwords generated yet.</p>';
-        return;
+      
+      let width, text, className;
+      if (score <= 3) {
+        width = '33%';
+        text = 'Weak';
+        className = 'strength-weak';
+        labelClassName = 'strength-text-weak';
+      } else if (score <= 5) {
+        width = '66%';
+        text = 'Medium';
+        className = 'strength-medium';
+        labelClassName = 'strength-text-medium';
+      } else {
+        width = '100%';
+        text = 'Strong';
+        className = 'strength-strong';
+        labelClassName = 'strength-text-strong';
       }
-      historyEl.innerHTML = passwordHistory.map((pw, i) => `
-        <div class="flex items-center gap-2 p-2 bg-dark-900 rounded border border-dark-700">
-          <input type="text" value="${pw}" readonly class="flex-1 bg-transparent border-none text-white mono text-sm focus:outline-none">
-          <button onclick="navigator.clipboard.writeText('${pw}')" class="px-2 py-1 text-xs bg-dark-700 hover:bg-dark-800 rounded transition">Copy</button>
-        </div>
-      `).join('');
+      
+      fill.style.width = width;
+      fill.className = 'strength-fill ' + className;
+      label.textContent = text;
+      label.className = 'strength-label ' + labelClassName;
     }
-
-    lengthEl.addEventListener('input', () => {
-      lengthValue.textContent = lengthEl.value;
-    });
-
-    generateBtn.addEventListener('click', generatePassword);
-
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(passwordEl.value).then(() => {
-        const original = copyBtn.textContent;
-        copyBtn.textContent = 'Copied!';
-        setTimeout(() => copyBtn.textContent = original, 1500);
+    
+    function copy() {
+      const result = document.getElementById('passwordResult');
+      if (!result.value) return;
+      
+      navigator.clipboard.writeText(result.value).then(() => {
+        const btn = document.querySelector('.btn.copy');
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
       });
-    });
-
-    // Generate initial password
-    generatePassword();
+    }
+    
+    // Generate on load
+    generate();
   </script>
 </body>
 </html>
