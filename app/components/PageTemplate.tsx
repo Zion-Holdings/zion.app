@@ -2,21 +2,64 @@ import React from 'react';
 import Link from 'next/link';
 import Breadcrumb from './Breadcrumb';
 
+export type PageAction = {
+  label: string;
+  href: string;
+  style?: 'primary' | 'secondary';
+  external?: boolean;
+};
+
+export type FeatureItem = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+export type BenefitItem = {
+  icon?: string;
+  title: string;
+  description: string;
+};
+
+export type PricingTier = {
+  name: string;
+  price: string;
+  description?: string;
+  features?: string[];
+  popular?: boolean;
+};
+
 interface PageTemplateProps {
   title: React.ReactNode;
   subtitle?: React.ReactNode;
+  description?: string;
+  category?: string;
+  heroIcon?: string;
+  canonical?: string;
   breadcrumbItems?: Array<{ label: string; href?: string }>;
-  layout?: 'hero' | 'centered' | 'product' | 'tool';
-  actions?: Array<{ label: string; href: string; style?: 'primary' | 'secondary' }>;
+  layout?: 'hero' | 'centered' | 'product' | 'tool' | 'serviceDetail';
+  actions?: PageAction[];
+  features?: FeatureItem[];
+  benefits?: BenefitItem[];
+  pricing?: PricingTier[];
+  showBottomCta?: boolean;
   children: React.ReactNode;
 }
 
 export default function PageTemplate({
   title,
   subtitle,
+  description,
+  category,
+  heroIcon,
+  canonical,
   breadcrumbItems = [],
   layout = 'hero',
   actions = [],
+  features = [],
+  benefits = [],
+  pricing = [],
+  showBottomCta = false,
   children,
 }: PageTemplateProps) {
   const ActionComponent = Link;

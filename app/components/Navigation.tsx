@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
-import { CATEGORIES, PRIMARY_NAV_LINKS, SOLUTION_LINKS, AI_LAB_LINKS, RESOURCE_LINKS, FEATURED_AI_SERVICE_LINKS } from '@/constants/navigation';
+import { CATEGORIES, PRIMARY_NAV_LINKS, SOLUTION_LINKS, AI_LAB_LINKS, RESOURCE_LINKS, FEATURED_AI_SERVICE_LINKS, type NavigationLink } from '@/constants/navigation';
 
 const SITE_TITLE = 'Zion Tech Group';
 

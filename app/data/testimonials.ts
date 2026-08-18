@@ -8,6 +8,8 @@ export interface Testimonial {
   role?: string;
   rating?: number;
   review_text?: string;
+  service_id?: string;
+  featured?: boolean;
 }
 
 export const testimonials: Testimonial[] = [
