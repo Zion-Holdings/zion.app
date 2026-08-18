@@ -56,8 +56,7 @@ export default function Page() {
 <h2>Recommended next step</h2>
 <p>Start with one workflow, one owner, and one success metric. Expansion should follow evidence, not enthusiasm. A focused pilot beats a scattered roadmap because it produces proof points that stakeholders can verify. If this matches your current initiative, the next step is a short scoping call and a concrete pilot plan.</p>
 
-        </div>
-      </section>
+        </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

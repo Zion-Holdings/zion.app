@@ -105,7 +105,7 @@ export default function Page() {
             <a href="/contact/" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</a>
           </div>
         </div>
-      </section>
+        </section>
     </StandardPage>
   </>
   );

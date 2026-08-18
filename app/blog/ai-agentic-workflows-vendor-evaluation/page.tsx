@@ -56,8 +56,7 @@ export default function Page() {
 <h2>Action checklist</h2>
 <p>For ai agentic workflows: vendor evaluation: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.</p>
 
-        </div>
-      </section>
+        </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

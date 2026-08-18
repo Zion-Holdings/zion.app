@@ -56,8 +56,7 @@ export default function Page() {
 <h2>Next actions</h2>
 <p>Review your highest-friction workflow, contact Zion Tech Group for a scoped pilot, and start with one measurable outcome. Set a 30-day review date, define success metrics, assign an owner, and document rollback criteria before expanding. If this matches your current initiative, the next step is a short scoping call and a concrete pilot plan. The organizations that move fastest in 2026 are the ones that combine clear intent with disciplined execution.</p>
 
-        </div>
-      </section>
+        </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

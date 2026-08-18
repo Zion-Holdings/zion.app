@@ -53,8 +53,7 @@ export default function Page() {
 <h2>Conversion path</h2>
 <p>If this guide matches your devsecops pipeline: checklist for it leaders initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.</p>
 
-        </div>
-      </section>
+        </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -56,8 +56,7 @@ export default function Page() {
 <h2>Outcomes to measure</h2>
 <p>Leading indicators for ai agent safety evaluation: operations handbook: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction. Lagging indicators: revenue trend, cost trend, customer retention, and operational efficiency. Track both leading and lagging indicators so you can explain progress to leadership before financial results appear. Use a rolling 90-day window and re-baseline monthly; this keeps the program accountable without demanding perfection on day one. Publish metrics in a shared dashboard so the whole team sees progress, not just the program sponsor.</p>
 
-        </div>
-      </section>
+        </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
