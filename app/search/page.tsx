@@ -119,8 +119,6 @@ function SearchContent() {
   );
 }
 
-const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/search/"};
-
 export default function SearchPage() {
   return (
     <>
