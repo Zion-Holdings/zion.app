@@ -82,6 +82,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Password Generator</h3>
           <p className="text-slate-400 text-sm">Generate secure, customizable passwords.</p>
         </a>
+        <a href="/tools/json-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON Diff</h3>
+          <p className="text-slate-400 text-sm">Compare two JSON objects and highlight differences.</p>
+        </a>
+        <a href="/tools/markdown-previewer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Markdown Previewer</h3>
+          <p className="text-slate-400 text-sm">Preview markdown rendering in real-time.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
