@@ -4,6 +4,7 @@ import PageTemplate from '@/components/PageTemplate';
 export const metadata = {
   title: 'Start a Project | Zion Tech Group',
   description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
+  keywords: ['start project', 'AI project', 'IT engagement', 'scoped proposal', 'ROI', 'timeline'],
   openGraph: {
     title: 'Start a Project | Zion Tech Group',
     description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',

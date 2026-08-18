@@ -4,8 +4,9 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Services | Zion Tech Group',
-    description: 'AI, IT, and Micro-SaaS services for enterprise automation, managed AI, cloud, security, data, and DevOps.',
-    openGraph: {
+  description: 'AI, IT, and Micro-SaaS services for enterprise automation, managed AI, cloud, security, data, and DevOps.',
+  keywords: ['AI services', 'IT services', 'managed AI', 'cloud migration', 'security compliance', 'data analytics', 'automation', 'Micro-SaaS'],
+  openGraph: {
     title: 'Services | Zion Tech Group',
     description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
     url: 'https://ziontechgroup.com/services/',
@@ -16,7 +17,7 @@ export const metadata = {
     title: 'Services | Zion Tech Group',
     description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
   },
-    alternates: { canonical: '/services/' },
+  alternates: { canonical: '/services/' },
 };
 
 const CATEGORIES = [

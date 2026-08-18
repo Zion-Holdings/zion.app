@@ -4,8 +4,9 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Contact | Zion Tech Group',
-    description: 'Contact Zion Tech Group for AI, IT, and automation consultations.',
-    openGraph: {
+  description: 'Contact Zion Tech Group for AI, IT, and automation consultations.',
+  keywords: ['contact', 'AI consultation', 'IT support', 'project intake', 'enterprise AI', 'managed services'],
+  openGraph: {
     title: 'Contact | Zion Tech Group',
     description: 'Get in touch for AI and IT services.',
     url: 'https://ziontechgroup.com/contact/',

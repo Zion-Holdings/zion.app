@@ -5,8 +5,9 @@ import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Home | Zion Tech Group',
-    description: 'Zion Tech Group is an AI-native IT services company building autonomous operations, managed AI, and enterprise-ready delivery.',
-    openGraph: {
+  description: 'Zion Tech Group is an AI-native IT services company building autonomous operations, managed AI, and enterprise-ready delivery.',
+  keywords: ['AI services', 'IT services', 'managed AI', 'cloud migration', 'security compliance', 'automation', 'data analytics', 'Micro-SaaS'],
+  openGraph: {
     title: 'Zion Tech Group | AI & IT Company',
     description: 'AI-native IT services: autonomous operations, managed AI, cloud, security, and data.',
     url: 'https://ziontechgroup.com/',

@@ -4,8 +4,9 @@ import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Pricing & Engagement Models | Zion Tech Group',
-    description: 'Flexible engagement models: project-based, retainer, and managed services. Predictable pricing for AI and infrastructure projects.',
-    openGraph: {
+  description: 'Flexible engagement models: project-based, retainer, and managed services. Predictable pricing for AI and infrastructure projects.',
+  keywords: ['pricing', 'engagement models', 'managed services', 'retainer', 'project-based', 'AI pricing', 'IT services cost'],
+  openGraph: {
     title: 'Pricing & Engagement Models | Zion Tech Group',
     description: 'Flexible engagement models designed for predictable delivery.',
     url: 'https://ziontechgroup.com/pricing/',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: 'Pricing & Engagement Models | Zion Tech Group',
     description: 'Flexible engagement models designed for predictable delivery.',
   },
-    alternates: { canonical: '/pricing/' },
+  alternates: { canonical: '/pricing/' },
 };
 
 export default function PricingPage() {
