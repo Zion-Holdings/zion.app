@@ -3,8 +3,14 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy',
+  title: 'Cookie Policy | Zion Tech Group',
   description: 'How Zion Tech Group uses cookies and similar technologies on our website.',
+  openGraph: {
+    title: 'Cookie Policy | Zion Tech Group',
+    description: 'Cookie usage and preferences.',
+    url: 'https://ziontechgroup.com/cookies/',
+    type: 'website',
+  },
   alternates: { canonical: '/cookies/' },
 };
 
@@ -29,7 +35,12 @@ export default function CookiesPage() {
           <h2 className="text-xl font-semibold text-white mb-3">Managing Cookies</h2>
           <p className="text-slate-400 text-sm">You can manage cookies through your browser settings.</p>
         </section>
+
+        <div className="mt-10 flex flex-col sm:flex-row gap-3">
+          <Link href="/privacy/" className="btn-primary text-center">Privacy Policy</Link>
+          <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
+        </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

@@ -25,6 +25,6 @@ export default function Test123Page() {
           ← Back to Home
         </Link>
       </div>
-      </PageWrapper>
+    </PageWrapper>
   );
 }
