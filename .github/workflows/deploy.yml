@@ -6,21 +6,40 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - name: Copy public assets to out
-        run: |
-          mkdir -p out
-          cp -r public/* out/ 2>/dev/null || true
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-node@v4.4.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          cname: ziontechgroup.com
-          keep_files: true
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+      - run: npm run build
+        env:
+          NEXT_DISABLE_TURBOPACK: '1'
+      - name: Prepare out directory
+        run: |
+          if [ -d out ]; then
+            cp -r public/. out/ 2>/dev/null || true
+            cp sitemap.xml out/ 2>/dev/null || true
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
