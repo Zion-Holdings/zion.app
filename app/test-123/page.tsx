@@ -26,5 +26,5 @@ export default function Test123Page() {
         </Link>
       </div>
       </PageWrapper>
-      );
-      }
+  );
+}
