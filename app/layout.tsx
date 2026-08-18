@@ -2,6 +2,7 @@ import './globals.css';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import AccessibilityEnhancer from './components/AccessibilityEnhancer';
+import FloatingAgentStatus from './components/FloatingAgentStatus';
 
 export const metadata = {
   title: 'Zion Tech Group',
@@ -63,6 +64,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </AccessibilityEnhancer>
+        <FloatingAgentStatus />
       </body>
     </html>
   );
