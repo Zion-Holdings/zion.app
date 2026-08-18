@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/404',
     type: 'website',
   },
-  alternates: { canonical: '/404' },
+  alternates: { canonical: '/404/' },
   twitter: {
     card: 'summary_large_image',
     title: 'Page Not Found | Zion Tech Group',
