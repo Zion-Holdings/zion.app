@@ -127,7 +127,7 @@ export default function SearchPage() {
       <JsonLd data={websiteLd} />
     <StandardPage
         title="Search"
-        subtitle="Find AI and IT services, solutions, and resources from Zion Tech Group."
+        subtitle="Find AI and IT services, solutions, blog posts, and resources from Zion Tech Group."
         breadcrumbItems={[
           { label: 'Home', href: '/' },
           { label: 'Search' },
@@ -137,7 +137,6 @@ export default function SearchPage() {
         ]}
       >
         <SearchContent />
-            <JsonLd data={jsonLd} />
     </StandardPage>
     </>
   );
