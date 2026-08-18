@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Encoder | Zion Tech Group</title>
+  <meta name="description" content="Encode and decode URLs with real-time conversion — handles special characters, spaces, and Unicode.">
+  <meta property="og:title" content="URL Encoder | Zion Tech Group">
+  <meta property="og:description" content="Free online URL encoder/decoder — handles special characters, spaces, and Unicode.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/url-encoder/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/url-encoder/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#0b0f1a', 800: '#1e293b', 700: '#334155' },
+            accent: { 400: '#818cf8', 500: '#6366f1' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body class="bg-dark-900 text-gray-200 min-h-screen">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold mb-2">URL Encoder / Decoder</h1>
+    <p class="text-slate-400 mb-8">Encode and decode URLs in real time — handles special characters, spaces, and Unicode.</p>
+
+    <div class="space-y-6">
+      <div>
+        <label class="block text-sm text-slate-400 mb-2">Plain Text</label>
+        <textarea id="plain" class="w-full p-3 bg-dark-800 border border-dark-700 rounded-lg text-white mono resize-y min-h-[120px] focus:outline-none focus:border-accent-500" placeholder="Enter text to encode...">Hello World! @#$%^&*() 日本語</textarea>
+      </div>
+
+      <div class="flex items-center justify-center gap-4">
+        <button id="encodeBtn" class="px-4 py-2 bg-accent-500 hover:bg-accent-400 text-white rounded-lg font-medium transition">Encode ↓</button>
+        <button id="decodeBtn" class="px-4 py-2 bg-dark-700 hover:bg-dark-800 text-white rounded-lg font-medium transition border border-dark-700">Decode ↑</button>
+      </div>
+
+      <div>
+        <label class="block text-sm text-slate-400 mb-2">Encoded Result</label>
+        <textarea id="encoded" class="w-full p-3 bg-dark-800 border border-dark-700 rounded-lg text-white mono resize-y min-h-[120px] focus:outline-none focus:border-accent-500" placeholder="Encoded URL will appear here..." readonly></textarea>
+      </div>
+
+      <div class="flex gap-3">
+        <button id="copyBtn" class="px-4 py-2 bg-dark-700 hover:bg-dark-800 text-white rounded-lg text-sm transition border border-dark-700">Copy Result</button>
+        <button id="clearBtn" class="px-4 py-2 bg-dark-700 hover:bg-dark-800 text-white rounded-lg text-sm transition border border-dark-700">Clear</button>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-dark-800 border border-dark-700 rounded-xl p-6">
+      <h2 class="text-lg font-semibold mb-4">How It Works</h2>
+      <ul class="space-y-3">
+        <li class="pb-3 border-b border-dark-700">
+          <span class="text-accent-400 font-semibold">encodeURIComponent</span> — Encodes all characters except A-Z a-z 0-9 - _ . ! ~ * ' ( )
+        </li>
+        <li class="pb-3 border-b border-dark-700">
+          <span class="text-accent-400 font-semibold">encodeURI</span> — Encodes only characters that are not valid in a URI (preserves : / ? # etc.)
+        </li>
+        <li>
+          <span class="text-accent-400 font-semibold">decodeURIComponent</span> — Reverses encodeURIComponent, restoring the original string
+        </li>
+      </ul>
+      <p class="mt-4 text-slate-400 text-sm">All encoding/decoding runs locally in your browser. No data is sent to any server.</p>
+    </div>
+
+    <a href="/tools/" class="inline-block mt-6 text-accent-400 hover:underline">← Back to Tools</a>
+  </div>
+
+  <script>
+    const plain = document.getElementById('plain');
+    const encoded = document.getElementById('encoded');
+    const encodeBtn = document.getElementById('encodeBtn');
+    const decodeBtn = document.getElementById('decodeBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function encode() {
+      const text = plain.value;
+      encoded.value = encodeURIComponent(text);
+    }
+
+    function decode() {
+      try {
+        const text = encoded.value || plain.value;
+        plain.value = decodeURIComponent(text);
+        encoded.value = '';
+      } catch (e) {
+        encoded.value = 'Error: Invalid encoded URI component';
+      }
+    }
+
+    encodeBtn.addEventListener('click', encode);
+    decodeBtn.addEventListener('click', decode);
+
+    plain.addEventListener('input', () => {
+      if (plain.value) encode();
+      else encoded.value = '';
+    });
+
+    copyBtn.addEventListener('click', () => {
+      const text = encoded.value || plain.value;
+      navigator.clipboard.writeText(text).then(() => {
+        const original = copyBtn.textContent;
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => copyBtn.textContent = original, 1500);
+      });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      plain.value = '';
+      encoded.value = '';
+      plain.focus();
+    });
+
+    // Initial encode
+    encode();
+  </script>
+</body>
+</html>

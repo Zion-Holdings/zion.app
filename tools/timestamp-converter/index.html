@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timestamp Converter | Zion Tech Group</title>
+  <meta name="description" content="Convert Unix timestamps to human-readable dates and vice versa.">
+  <meta property="og:title" content="Timestamp Converter | Zion Tech Group">
+  <meta property="og:description" content="Free online Unix timestamp converter — seconds, milliseconds, ISO 8601.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/timestamp-converter/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/timestamp-converter/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .section h2 { font-size: 1rem; margin-bottom: 1rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input { width: 100%; padding: 0.5rem 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input:focus { outline: none; border-color: #6366f1; }
+    .results { margin-top: 1rem; }
+    .result-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #334155; font-size: 0.875rem; }
+    .result-item:last-child { border-bottom: none; }
+    .result-item .label { color: #94a3b8; }
+    .result-item .value { font-family: monospace; color: #e5e7eb; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Timestamp Converter</h1>
+    <p class="subtitle">Convert between Unix timestamps, ISO 8601, and human-readable dates.</p>
+    
+    <div class="section">
+      <h2>Timestamp → Date</h2>
+      <div class="field">
+        <input type="text" id="ts" placeholder="Unix timestamp (e.g. 1700000000)">
+      </div>
+      <button class="btn" onclick="tsToDate()">Convert</button>
+      <button class="btn" onclick="now()" style="margin-left: 0.5rem;">Now</button>
+      <div class="results" id="dateResults"></div>
+    </div>
+    
+    <div class="section">
+      <h2>Date → Timestamp</h2>
+      <div class="field">
+        <input type="datetime-local" id="dateInput">
+      </div>
+      <div class="results" id="tsResults"></div>
+    </div>
+    
+    <div class="info">
+      <h2>Quick Reference</h2>
+      <ul>
+        <li><span class="label">Unix timestamp</span> — Seconds since Jan 1, 1970 00:00:00 UTC.</li>
+        <li><span class="label">10 digits</span> = seconds, <span class="label">13 digits</span> = milliseconds.</li>
+        <li><span class="label">ISO 8601</span> — YYYY-MM-DDTHH:mm:ss.sssZ (universal sortable format).</li>
+      </ul>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function tsToDate() {
+      const ts = document.getElementById('ts').value;
+      if (!ts) return;
+      let num = parseInt(ts);
+      if (ts.length === 10) num *= 1000;
+      const d = new Date(num);
+      if (isNaN(d.getTime())) {
+        document.getElementById('dateResults').innerHTML = '<p style="color: #f87171;">Invalid timestamp</p>';
+        return;
+      }
+      document.getElementById('dateResults').innerHTML = `
+        <div class="result-item"><span class="label">ISO 8601:</span><span class="value">${d.toISOString()}</span></div>
+        <div class="result-item"><span class="label">Local:</span><span class="value">${d.toLocaleString()}</span></div>
+        <div class="result-item"><span class="label">UTC:</span><span class="value">${d.toUTCString()}</span></div>
+        <div class="result-item"><span class="label">Relative:</span><span class="value" style="color: #818cf8;">${getRelative(d)}</span></div>
+      `;
+    }
+    function dateToTs() {
+      const dateStr = document.getElementById('dateInput').value;
+      if (!dateStr) return;
+      const d = new Date(dateStr);
+      if (isNaN(d.getTime())) {
+        document.getElementById('tsResults').innerHTML = '<p style="color: #f87171;">Invalid date</p>';
+        return;
+      }
+      document.getElementById('tsResults').innerHTML = `
+        <div class="result-item"><span class="label">Unix (seconds):</span><span class="value">${Math.floor(d.getTime() / 1000)}</span></div>
+        <div class="result-item"><span class="label">Unix (ms):</span><span class="value">${d.getTime()}</span></div>
+      `;
+    }
+    function now() {
+      const d = new Date();
+      document.getElementById('ts').value = Math.floor(d.getTime() / 1000);
+      tsToDate();
+    }
+    function getRelative(d) {
+      const diff = Date.now() - d.getTime();
+      const abs = Math.abs(diff);
+      const mins = Math.floor(abs / 60000);
+      const hrs = Math.floor(abs / 3600000);
+      const days = Math.floor(abs / 86400000);
+      if (mins < 1) return 'just now';
+      if (mins < 60) return diff > 0 ? mins + ' min ago' : 'in ' + mins + ' min';
+      if (hrs < 24) return diff > 0 ? hrs + ' hr ago' : 'in ' + hrs + ' hr';
+      return diff > 0 ? days + ' days ago' : 'in ' + days + ' days';
+    }
+    document.getElementById('dateInput').addEventListener('input', dateToTs);
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 Encoder/Decoder | Zion Tech Group</title>
+  <meta name="description" content="Encode and decode Base64 strings online. Supports UTF-8 text and URL-safe variants.">
+  <meta property="og:title" content="Base64 Encoder/Decoder | Zion Tech Group">
+  <meta property="og:description" content="Free online Base64 encode and decode tool with UTF-8 support.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/base64-encoder/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/base64-encoder/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.danger { background: #dc2626; }
+    .btn.danger:hover { background: #b91c1c; }
+    .error { background: #7f1d1d; border: solid 1px #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 150px; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Base64 Encoder/Decoder</h1>
+    <p class="subtitle">Encode and decode Base64 strings with full UTF-8 support.</p>
+    
+    <div class="buttons">
+      <button class="btn" onclick="encode()">Encode →</button>
+      <button class="btn secondary" onclick="decode()">← Decode</button>
+      <button class="btn secondary" onclick="swap()">⇄ Swap</button>
+      <button class="btn danger" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="error" id="error"></div>
+    
+    <div class="grid">
+      <div class="field">
+        <label>Plain Text</label>
+        <textarea id="input" placeholder="Type or paste text here...">Hello, World!</textarea>
+      </div>
+      <div class="field">
+        <label>Base64</label>
+        <textarea id="output" placeholder="Base64 output...">SGVsbG8sIFdvcmxkIQ==</textarea>
+      </div>
+    </div>
+    
+    <div class="info">
+      <h2>About Base64</h2>
+      <ul>
+        <li><span class="label">What it does</span> — Encodes binary data as ASCII text using 64 characters (A-Z, a-z, 0-9, +, /).</li>
+        <li><span class="label">Common uses</span> — Data URIs in CSS/HTML, email attachments (MIME), API tokens, basic obfuscation.</li>
+        <li><span class="label">Padding</span> — Base64 strings end with '=' to make length a multiple of 4.</li>
+        <li><span class="label">URL-safe</span> — Replace + with - and / with _ for use in URLs.</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">All encoding/decoding happens locally in your browser. No data is transmitted.</p>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function encode() {
+      const input = document.getElementById('input').value;
+      try {
+        const encoded = btoa(unescape(encodeURIComponent(input)));
+        document.getElementById('output').value = encoded;
+        hideError();
+      } catch(e) {
+        showError('Error: ' + e.message);
+      }
+    }
+    function decode() {
+      const input = document.getElementById('output').value;
+      try {
+        const decoded = decodeURIComponent(escape(atob(input)));
+        document.getElementById('input').value = decoded;
+        hideError();
+      } catch(e) {
+        showError('Error: Invalid Base64 — ' + e.message);
+      }
+    }
+    function swap() {
+      const tmp = document.getElementById('input').value;
+      document.getElementById('input').value = document.getElementById('output').value;
+      document.getElementById('output').value = tmp;
+    }
+    function clearAll() {
+      document.getElementById('input').value = '';
+      document.getElementById('output').value = '';
+      hideError();
+    }
+    function showError(msg) {
+      const el = document.getElementById('error');
+      el.textContent = msg;
+      el.style.display = 'block';
+    }
+    function hideError() {
+      document.getElementById('error').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
