@@ -73,7 +73,12 @@ final-optimization-summary.json
 main-commit.json
 website/
 portal/
-lead-crm/
+lead-crm/outreach_sent_history.jsonl
+lead-crm/all-leads.json
+lead-crm/exclusion-list.json
+lead-crm/outreach_drafts/
+!lead-crm/*.py
+!lead-crm/**/*.py
 outreach/
 outreach_monitor/
 email_drafts/
