@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     title: 'Industry Solutions | Zion Tech Group',
     description: 'Vertical delivery patterns with measurable outcomes.',
     url: 'https://ziontechgroup.com/industries/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {
