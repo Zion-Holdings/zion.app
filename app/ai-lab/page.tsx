@@ -25,7 +25,11 @@ export default function AiLabPage() {
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'AI Lab' }]}
       actions={[{ label: 'Talk to us', href: '/contact/', style: 'primary' }]}
     >
-      <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+      <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-5xl mx-auto">
+        The AI Lab is where we test new models, evaluation methods, and deployment patterns before moving them into production. Engagement outcomes are validated with clear success criteria and rollback plans.
+      </p>
+
+      <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto mb-12">
         <Link href="/services?category=ai" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">AI Services</h3>
           <p className="text-slate-400 text-sm">Production assistants, RAG, and agentic workflows.</p>
@@ -43,7 +47,7 @@ export default function AiLabPage() {
         </Link>
       </div>
 
-      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+      <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
         <h2 className="text-xl font-bold text-white mb-4">Sandbox engagements</h2>
         <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
           <li>Time-boxed experiments to validate AI capabilities before commitment.</li>
@@ -52,8 +56,8 @@ export default function AiLabPage() {
           <li>Deliverables that transfer knowledge to your internal teams.</li>
         </ul>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/services/" className="btn-primary text-center">Explore services</a>
-          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+          <Link href="/services/" className="btn-primary text-center">Explore services</Link>
+          <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
         </div>
       </div>
     </StandardPage>

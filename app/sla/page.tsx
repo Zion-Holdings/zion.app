@@ -40,16 +40,21 @@ export default function SlaPage() {
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
-        <h2 className="text-xl font-bold text-white mb-4">SLA highlights</h2>
-        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
-          <li>Response targets by severity with defined escalation paths.</li>
-          <li>Planned maintenance windows communicated in advance.</li>
-          <li>Quarterly reliability and availability reporting.</li>
+        <h2 className="text-xl font-bold text-white mb-4">SLA details</h2>
+        <p className="text-slate-300 text-sm mb-4">
+          Commitments are defined per service tier. Baseline tiers include standard business-hours support with next-business-day response for non-critical issues. Enhanced tiers include after-hours coverage and tighter response targets.
+        </p>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm mb-6">
+          <li>Critical incidents: 1-hour response with continuous updates until resolved.</li>
+          <li>High-severity issues: 4-hour response during covered hours.</li>
+          <li>Medium and low severity: documented response windows by plan.</li>
+          <li>Planned maintenance windows communicated at least 48 hours in advance.</li>
+          <li>Quarterly reliability and availability reporting included.</li>
           <li>Exclusions, review cycles, and change-control processes documented.</li>
         </ul>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/services/" className="btn-primary text-center">Browse services</a>
-          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+          <Link href="/services/" className="btn-primary text-center">Browse services</Link>
+          <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
         </div>
       </div>
     </StandardPage>
