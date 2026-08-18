@@ -638,7 +638,7 @@ export default function BlogPage() {
     >
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition-all">
+          <Link key={post.slug} href={`\/blog/${post.slug}`} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition-all">
             <h3 className="text-white font-semibold mb-2">{post.title}</h3>
             <span className="text-purple-300 text-xs">Read post →</span>
           </Link>

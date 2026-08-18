@@ -9,6 +9,8 @@ DOCS_ROOT = REPO / 'docs' / 'blog'
 SITEMAP = REPO / 'sitemap.xml'
 FEED = REPO / 'feed.xml'
 BLOG_PAGE = REPO / 'app' / 'blog' / 'page.tsx'
+PUBLIC_SITEMAP = REPO / 'public' / 'sitemap.xml'
+DOCS_SITEMAP = REPO / 'docs' / 'sitemap.xml'
 
 # Build valid slugs
 valid_slugs = set()
@@ -32,10 +34,22 @@ for slug in sorted(valid_slugs):
 posts_block = '\n'.join(posts)
 blog_page_text = """import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Blog | Zion Tech Group',
   description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
+  openGraph: {
+    title: 'Blog | Zion Tech Group',
+    description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Zion Tech Group',
+    description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
+  },
   alternates: { canonical: '/blog/' },
 };
 
@@ -74,13 +88,15 @@ BLOG_PAGE.write_text(blog_page_text, encoding='utf-8')
 print('Rewrote app/blog/page.tsx')
 
 # Rewrite sitemap.xml
+def write_sitemap(path: Path, entries):
+    text = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(entries) + '\n</urlset>\n'
+    path.write_text(text, encoding='utf-8')
+
 sitemap_entries = []
 for slug in sorted(valid_slugs):
     sitemap_entries.append(f'  <url><loc>https://ziontechgroup.com/blog/{slug}/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>')
 
-# Auto-discover static routes from app/**/page.tsx (excluding blog sub-pages,
-# dynamic [slug] routes, and internal error pages).
-static_routes = set()
+raw_routes = set()
 for p in (REPO / 'app').glob('**/page.tsx'):
     rel = p.relative_to(REPO / 'app')
     parts = rel.parts
@@ -92,16 +108,29 @@ for p in (REPO / 'app').glob('**/page.tsx'):
         route = '/'
     else:
         route = '/' + '/'.join(parts[:-1]) + '/'
-    # Exclude internal/error pages
     if any(seg in ('_global-error', 'not-found') for seg in parts):
         continue
-    static_routes.add(route)
-for route in sorted(static_routes):
+    raw_routes.add(route)
+
+canonical_aliases = [
+    ('/proposal/', '/services/'),
+    ('/ai/', '/tools/'),
+    ('/free-ai-it-tools/', '/tools/'),
+    ('/industry-solutions/', '/industries/'),
+    ('/governments/', '/industries/'),
+]
+
+for route in sorted(raw_routes):
     sitemap_entries.append(f'  <url><loc>https://ziontechgroup.com{route}</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>')
 
-sitemap_text = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(sitemap_entries) + '\n</urlset>\n'
-SITEMAP.write_text(sitemap_text, encoding='utf-8')
-print('Rewrote sitemap.xml')
+for alias, target in canonical_aliases:
+    if alias not in raw_routes:
+        sitemap_entries.append(f'  <url><loc>https://ziontechgroup.com{alias}</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>')
+
+write_sitemap(SITEMAP, sitemap_entries)
+write_sitemap(REPO / 'public' / 'sitemap.xml', sitemap_entries)
+write_sitemap(REPO / 'docs' / 'sitemap.xml', sitemap_entries)
+print('Rewrote sitemap.xml, public/sitemap.xml, docs/sitemap.xml')
 
 # Rewrite feed.xml
 feed_entries = []
