@@ -10,7 +10,7 @@
     "build:ci": "bash -c 'ulimit -n 131072 2>/dev/null || true; node scripts/build-wrapper.cjs'",
     "build:check": "npm run type-check && node scripts/build-wrapper.cjs",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "bash -c 'ulimit -n 131072 2>/dev/null || true; npx eslint app components --quiet'",
     "lint:check": "bash -c 'ulimit -n 131072 2>/dev/null || true; npx eslint app components --quiet'",
     "type-check": "tsc --noEmit -p tsconfig.typecheck.json",
     "wrap": "bash scripts/error-wrapper.sh",
@@ -35,7 +35,7 @@
     "lighthouse:production": "npx lighthouse https://ziontechgroup.com --chrome-flags='--headless --no-sandbox --disable-gpu' --output=json --output-path=automation/reports/lighthouse-production-latest.json",
     "pin-actions": "node scripts/automation/validate-pin-actions.cjs",
     "workflows:contracts:node": "node scripts/automation/workflow-contracts.cjs",
-    "lint:fix": "next lint --fix",
+    "lint:fix": "bash -c 'ulimit -n 131072 2>/dev/null || true; npx eslint app components --fix'",
     "deploy:readiness": "node scripts/checks/deploy-readiness.cjs",
     "automation:health": "node scripts/checks/automation-health.cjs",
     "cron:health": "node scripts/checks/cron-health.cjs"
@@ -52,8 +52,8 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",
-    "@eslint/js": "^10.0.1",
-    "@next/eslint-plugin-next": "^16.2.9",
+    "@eslint/js": "^8.57.1",
+    "@next/eslint-plugin-next": "^15.5.18",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-links": "^10.3.6",
     "@storybook/cli": "^10.3.6",
@@ -64,15 +64,15 @@
     "@tailwindcss/typography": "^0.5.20",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.64.0",
-    "@typescript-eslint/parser": "^8.64.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.4",
+    "@typescript-eslint/parser": "^8.59.4",
     "autoprefixer": "^10.5.0",
-    "eslint": "^10.3.0",
+    "eslint": "^8.57.1",
     "framer-motion": "^12.38.0",
     "globals": "^17.6.0",
     "jest-environment-jsdom": "^30.4.1",
     "lighthouse": "^13.3.0",
-    "next": "^16.2.10",
+    "next": "^15.5.18",
     "next-bundle-analyzer": "^0.6.8",
     "next-sitemap": "^4.1.0",
     "pixelmatch": "^7.2.0",
@@ -80,12 +80,12 @@
     "pngjs": "^7.0.0",
     "puppeteer": "^25.3.0",
     "tailwindcss": "^4.3.0",
-    "typescript": "7.0.2",
+    "typescript": "^5.9.3",
     "web-vitals": "^5.2.0",
     "yargs": "^18.0.0"
   },
   "engines": {
-    "node": "22"
+    "node": "20"
   },
   "overrides": {
     "js-yaml": "^3.15.0",

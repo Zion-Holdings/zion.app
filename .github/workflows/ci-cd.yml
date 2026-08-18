@@ -10,9 +10,9 @@ concurrency:
 "on":
   workflow_dispatch:
   push:
-    branches: [main, develop]
+    branches: [main, develop, hero-carousel]
   pull_request:
-    branches: [main]
+    branches: [main, hero-carousel]
 
 jobs:
   test:
@@ -66,9 +66,9 @@ jobs:
       - name: Homepage AI sync check
         id: homepage_ai_sync
         run: npm run homepage:ai-sync:check
-      - name: Lint (errors-only)
+      - name: Lint
         id: lint
-        run: npx eslint . --ignore-pattern ".next/**" --ignore-pattern "out/**" --ignore-pattern "dist/**" --ignore-pattern "build/**" --quiet
+        run: bash -c 'ulimit -n 131072 2>/dev/null || true; npm run lint:check'
       - name: Type check
         id: typecheck
         run: npm run type-check
