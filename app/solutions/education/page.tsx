@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function EducationSolutionsPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Education & Research"
       subtitle="Learning intelligence, assessment automation, and research ops with measurable outcomes."

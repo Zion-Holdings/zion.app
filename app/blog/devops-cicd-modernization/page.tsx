@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="DevOps CI/CD Modernization"
       subtitle="Transform your delivery pipeline with modern practices, tooling, and architecture patterns."

@@ -55,7 +55,6 @@ export default function ServiceSlugPage({ params }: { params: Params }) {
   }
 
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title={mapping.label}
       subtitle={`${mapping.label} delivery, patterns, and compliance guidance.`}

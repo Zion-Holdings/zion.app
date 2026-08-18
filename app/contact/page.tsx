@@ -24,8 +24,6 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Contact Us"
       subtitle="Tell us your goal and we’ll return a short list of best-fit services with estimated ROI and timeline."

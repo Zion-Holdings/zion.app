@@ -42,8 +42,6 @@ const INPUTS = [
 
 export default function RoiCalculatorPage() {
   return (
-    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Roi Calculator", "url": "https://ziontechgroup.com/tools/roi-calculator/", "applicationCategory": "DeveloperApplication"} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="ROI Calculator"
       subtitle="Use these inputs to build an early ROI estimate before scoping a pilot."

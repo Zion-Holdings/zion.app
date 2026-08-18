@@ -46,8 +46,6 @@ const FACTORS = [
 
 export default function AiServiceRouterPage() {
   return (
-    <JsonLd data={"@context": "https://schema.org", "@type": "WebApplication", "name": "Ai Service Router", "url": "https://ziontechgroup.com/tools/ai-service-router/", "applicationCategory": "DeveloperApplication"} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="AI Service Router"
       subtitle="Match intake requirements to the right AI service path."

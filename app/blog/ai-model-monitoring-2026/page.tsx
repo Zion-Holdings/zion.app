@@ -21,7 +21,6 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="AI Model Monitoring 2026"
       subtitle="Model monitoring, drift detection, and retraining triggers for production AI."

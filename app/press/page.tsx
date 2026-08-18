@@ -21,8 +21,6 @@ export const metadata: Metadata = {
 
 export default function PressPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage title="Press" subtitle="Press releases, media mentions, and announcements." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Press' }]} actions={[{ label: 'Media contact', href: '/contact/', style: 'primary' }]}>
       <div className="max-w-4xl mx-auto space-y-6 text-slate-300">
         <p>For media inquiries, contact our communications team. We share updates on product releases, client outcomes, and industry perspectives.</p>

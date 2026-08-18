@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function CloudDevOpsSolutionsPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Cloud & DevOps"
       subtitle="Migration, CI/CD, and reliability at scale with operational ownership built in."

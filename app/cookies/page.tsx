@@ -21,8 +21,6 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage title="Cookie Policy" subtitle="How we use cookies and similar technologies." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Cookie Policy' }]}>
       <div className="max-w-3xl mx-auto space-y-6 text-slate-300">
         <p>We use essential cookies to keep the site secure and operational. Optional cookies are used for analytics and may be controlled in your browser settings.</p>

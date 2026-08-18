@@ -26,8 +26,6 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Frequently Asked Questions"
       subtitle="Straight answers about AI and IT services, pricing, onboarding, support, and what to expect from a Zion engagement."

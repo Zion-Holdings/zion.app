@@ -23,8 +23,6 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Careers"
       subtitle="Build reliable AI systems and client-facing delivery practices with a team that values ownership and craft."

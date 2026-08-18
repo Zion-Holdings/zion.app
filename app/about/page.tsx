@@ -24,8 +24,6 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="About Zion Tech Group"
       subtitle="AI-native delivery across AI services, IT, cloud, security, data, and automation."

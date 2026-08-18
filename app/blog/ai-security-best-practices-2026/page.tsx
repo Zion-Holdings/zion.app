@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 
 export default function PostPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="AI Security Best Practices 2026"
       subtitle="A practical guide to securing AI systems, protecting data, and maintaining governance in production."

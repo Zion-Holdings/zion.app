@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function StatusPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage title="Status" subtitle="Operational health for public services and major client environments." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Status' }]} actions={[{ label: 'Contact support', href: '/contact/', style: 'primary' }]}>
       <div className="max-w-3xl mx-auto space-y-6 text-slate-300">
         <p>This status page shows operational health for public services and major client environments.</p>

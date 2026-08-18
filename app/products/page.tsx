@@ -32,7 +32,6 @@ const PRODUCTS = [
 
 export default function ProductsPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Products"
       subtitle="Purpose-built AI platforms and tools designed to run in production, with clear setup paths and measurable outcomes."
