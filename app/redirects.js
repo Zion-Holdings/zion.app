@@ -11,5 +11,7 @@ export default function redirects() {
     { source: '/tools/ssl-checker', destination: '/tools/ssl-checker/', permanent: true },
     { source: '/tools/health-check', destination: '/tools/health-check/', permanent: true },
     { source: '/blog', destination: '/blog/', permanent: true },
+    { source: '/new-ai-services', destination: '/services/', permanent: true },
+    { source: '/new-ai-services/', destination: '/services/', permanent: true },
   ];
 }
