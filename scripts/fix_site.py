@@ -77,8 +77,26 @@ print('Rewrote app/blog/page.tsx')
 sitemap_entries = []
 for slug in sorted(valid_slugs):
     sitemap_entries.append(f'  <url><loc>https://ziontechgroup.com/blog/{slug}/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>')
-core_routes = ['/', '/services/', '/about/', '/contact/', '/case-studies/', '/products/', '/faq/', '/testimonials/']
-for route in core_routes:
+
+# Auto-discover static routes from app/**/page.tsx (excluding blog sub-pages,
+# dynamic [slug] routes, and internal error pages).
+static_routes = set()
+for p in (REPO / 'app').glob('**/page.tsx'):
+    rel = p.relative_to(REPO / 'app')
+    parts = rel.parts
+    if 'blog' in parts:
+        continue
+    if '[slug]' in parts:
+        continue
+    if 'page.tsx' in parts and len(parts) == 1:
+        route = '/'
+    else:
+        route = '/' + '/'.join(parts[:-1]) + '/'
+    # Exclude internal/error pages
+    if any(seg in ('_global-error', 'not-found') for seg in parts):
+        continue
+    static_routes.add(route)
+for route in sorted(static_routes):
     sitemap_entries.append(f'  <url><loc>https://ziontechgroup.com{route}</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>')
 
 sitemap_text = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(sitemap_entries) + '\n</urlset>\n'

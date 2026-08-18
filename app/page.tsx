@@ -56,10 +56,39 @@ export default function HomePage() {
           { label: 'Home' },
         ]}
         actions={[
-          { label: 'Explore services', href: '/services/', style: 'primary' },
-          { label: 'Contact us', href: '/contact/', style: 'secondary' },
+          { label: 'Start a project', href: '/start-project/', style: 'primary' },
+          { label: 'Explore services', href: '/services/', style: 'secondary' },
         ]}
       >
+        {/* Quick links */}
+        <nav className="flex flex-wrap justify-center gap-4 mb-8">
+          <Link href="/services/" className="text-sm text-slate-300 hover:text-white">Services</Link>
+          <Link href="/partners/" className="text-sm text-slate-300 hover:text-white">Partners</Link>
+          <Link href="/case-studies/" className="text-sm text-slate-300 hover:text-white">Case Studies</Link>
+          <Link href="/pricing/" className="text-sm text-slate-300 hover:text-white">Pricing</Link>
+          <Link href="/contact/" className="text-sm text-slate-300 hover:text-white">Contact</Link>
+        </nav>
+
+        {/* Trust signals */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-5xl mx-auto">
+          <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-center">
+            <div className="text-white font-bold text-lg">50+</div>
+            <div className="text-slate-400 text-xs">Projects delivered</div>
+          </div>
+          <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-center">
+            <div className="text-white font-bold text-lg">24/7</div>
+            <div className="text-slate-400 text-xs">Support coverage</div>
+          </div>
+          <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-center">
+            <div className="text-white font-bold text-lg">Enterprise-grade</div>
+            <div className="text-slate-400 text-xs">Security & compliance</div>
+          </div>
+          <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-center">
+            <div className="text-white font-bold text-lg">Regulated</div>
+            <div className="text-slate-400 text-xs">Industry ready</div>
+          </div>
+        </div>
+
         <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
           <Link href="/services/?category=ai" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
             <h3 className="text-white font-semibold mb-2">AI & Automation</h3>
@@ -92,6 +121,16 @@ export default function HomePage() {
             <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
           </Link>
         </div>
+
+        {/* CTA */}
+        <div className="mt-12 rounded-2xl border border-purple-500/30 bg-purple-500/10 p-8 max-w-5xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-white mb-3">Ready to move fast without breaking trust?</h2>
+          <p className="text-slate-300 mb-6 max-w-2xl mx-auto">Start a project with an AI-native partner. We’ll align on outcomes, timeline, and success metrics before we write a single line of code.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/start-project/" className="btn-primary text-center">Start a project</Link>
+            <Link href="/contact/" className="btn-secondary text-center">Talk to us</Link>
+          </div>
+        </div>
     
         <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
           <h2 className="text-xl font-bold text-white mb-4">Why Zion</h2>
@@ -104,6 +143,24 @@ export default function HomePage() {
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <Link href="/services/" className="btn-primary text-center">Explore services</Link>
             <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
+          </div>
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8 max-w-5xl mx-auto">
+          <h2 className="text-xl font-bold text-white mb-4">Recent outcomes</h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div>
+              <h3 className="text-white font-semibold mb-1">Faster time-to-value</h3>
+              <p className="text-slate-400 text-xs">Most engagements show measurable progress in the first 30 days.</p>
+            </div>
+            <div>
+              <h3 className="text-white font-semibold mb-1">Lower operational risk</h3>
+              <p className="text-slate-400 text-xs">Rollback-ready plans and observable checkpoints keep work predictable.</p>
+            </div>
+            <div>
+              <h3 className="text-white font-semibold mb-1">Knowledge transfer</h3>
+              <p className="text-slate-400 text-xs">Clear ownership, runbooks, and training included with delivery.</p>
+            </div>
           </div>
         </div>
       </StandardPage>

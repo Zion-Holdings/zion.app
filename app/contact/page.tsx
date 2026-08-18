@@ -77,8 +77,8 @@ export default function ContactPage() {
           <li>Ongoing visibility through dashboards and regular check-ins.</li>
         </ul>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/services/" className="btn-primary text-center">Browse services</a>
-          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+          <Link href="/start-project/" className="btn-primary text-center">Start a project</Link>
+          <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
         </div>
       </div>
     </StandardPage>

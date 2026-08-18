@@ -3,8 +3,8 @@ import PageTemplate from '@/components/PageTemplate';
 
 export const metadata = {
   title: 'Start a Project | Zion Tech Group',
-    description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
-    openGraph: {
+  description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
+  openGraph: {
     title: 'Start a Project | Zion Tech Group',
     description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
     url: 'https://ziontechgroup.com/start-project/',
@@ -14,7 +14,8 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Start a Project | Zion Tech Group',
     description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
-    alternates: { canonical: '/start-project/' },
+  },
+  alternates: { canonical: '/start-project/' },
 };
 
 export default function StartProjectPage() {
@@ -68,8 +69,8 @@ export default function StartProjectPage() {
           <li>Advisory engagements for architecture and strategy reviews.</li>
         </ul>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/services/" className="btn-primary text-center">Browse services</a>
-          <a href="/contact/" className="btn-secondary text-center">Contact us</a>
+          <Link href="/services/" className="btn-primary text-center">Browse services</Link>
+          <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
         </div>
       </div>
     </PageTemplate>
