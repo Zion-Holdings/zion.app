@@ -3,16 +3,17 @@ import StandardPage from '@/components/StandardPage';
 export const metadata = {
   title: 'Regex Tester — Zion Tech Group',
   description: 'Test regular expressions with live matching, highlighting, and quick reference for common patterns.',
+  keywords: ['regex tester', 'regular expression', 'regex debug', 'developer tools'],
   openGraph: {
     title: 'Regex Tester — Zion Tech Group',
-    description: 'Test regular expressions with live matching, highlighting, and quick reference for common patterns.',
+  description: 'Test regular expressions with live matching, highlighting, and quick reference for common patterns.',
     url: 'https://ziontechgroup.com/tools/regex-tester/',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Regex Tester — Zion Tech Group',
-    description: 'Test regular expressions with live matching, highlighting, and quick reference for common patterns.',
+  description: 'Test regular expressions with live matching, highlighting, and quick reference for common patterns.',
   },
   alternates: { canonical: '/tools/regex-tester/' },
   robots: { index: true, follow: true },
