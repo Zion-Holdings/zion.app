@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Autonomous Agents: starter template',
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-autonomous-agents-starter-template/' },
 };
 

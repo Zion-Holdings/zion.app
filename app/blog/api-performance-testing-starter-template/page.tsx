@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Performance Testing: starter template',
     url: 'https://ziontechgroup.com/blog/api-performance-testing-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-performance-testing-starter-template/' },
 };
 

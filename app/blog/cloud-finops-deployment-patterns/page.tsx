@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud FinOps: deployment patterns',
     url: 'https://ziontechgroup.com/blog/cloud-finops-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cloud-finops-deployment-patterns/' },
 };
 

@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Automated AI Reporting: case study',
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/automated-ai-reporting-case-study/' },
 };
 

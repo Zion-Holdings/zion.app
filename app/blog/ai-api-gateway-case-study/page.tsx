@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI API Gateway: case study',
     url: 'https://ziontechgroup.com/blog/ai-api-gateway-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-api-gateway-case-study/' },
 };
 

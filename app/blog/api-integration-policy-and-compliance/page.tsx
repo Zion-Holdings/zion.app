@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Integration: policy and compliance',
     url: 'https://ziontechgroup.com/blog/api-integration-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-integration-policy-and-compliance/' },
 };
 

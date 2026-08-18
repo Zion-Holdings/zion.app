@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Endpoint Management: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/endpoint-management-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/endpoint-management-checklist-for-it-leaders/' },
 };
 

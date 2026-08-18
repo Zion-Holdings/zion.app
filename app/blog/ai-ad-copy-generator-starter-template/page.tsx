@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Ad Copy Generator: starter template',
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-ad-copy-generator-starter-template/' },
 };
 

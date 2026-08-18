@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Automated AI Reporting: starter template',
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/automated-ai-reporting-starter-template/' },
 };
 

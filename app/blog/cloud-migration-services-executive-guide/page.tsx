@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Migration Services: executive guide',
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cloud-migration-services-executive-guide/' },
 };
 

@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Cost Optimization: evaluation framework',
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cloud-cost-optimization-evaluation-framework/' },
 };
 

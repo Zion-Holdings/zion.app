@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Automated AI Reporting: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/automated-ai-reporting-vendor-evaluation/' },
 };
 

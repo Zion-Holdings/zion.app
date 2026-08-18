@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Customer Support: case study',
     url: 'https://ziontechgroup.com/blog/ai-customer-support-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-customer-support-case-study/' },
 };
 

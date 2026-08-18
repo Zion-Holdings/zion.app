@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Enterprise AI Intelligence Hub: evaluation framework',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-evaluation-framework/' },
 };
 

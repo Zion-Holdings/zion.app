@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'GenAI DevOps CI/CD: implementation playbook',
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/genai-devops-cicd-implementation-playbook/' },
 };
 

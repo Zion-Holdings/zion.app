@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Autonomous Code Deployment: implementation playbook',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/autonomous-code-deployment-implementation-playbook/' },
 };
 

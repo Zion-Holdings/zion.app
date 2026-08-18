@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Integration: automation roadmap',
     url: 'https://ziontechgroup.com/blog/api-integration-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-integration-automation-roadmap/' },
 };
 

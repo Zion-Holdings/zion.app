@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Autonomous Agents: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-autonomous-agents-checklist-for-it-leaders/' },
 };
 

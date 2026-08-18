@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI BDR SDR: security and governance',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-bdr-sdr-security-and-governance/' },
 };
 

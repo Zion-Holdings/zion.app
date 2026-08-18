@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Container Security Lifecycle: starter template',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/container-security-lifecycle-starter-template/' },
 };
 

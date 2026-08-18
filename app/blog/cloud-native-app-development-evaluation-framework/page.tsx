@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Native App Development: evaluation framework',
     url: 'https://ziontechgroup.com/blog/cloud-native-app-development-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cloud-native-app-development-evaluation-framework/' },
 };
 

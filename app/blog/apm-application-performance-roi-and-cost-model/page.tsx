@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'APM Application Performance: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/apm-application-performance-roi-and-cost-model/' },
 };
 

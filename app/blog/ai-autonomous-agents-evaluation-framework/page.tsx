@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Autonomous Agents: evaluation framework',
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-autonomous-agents-evaluation-framework/' },
 };
 

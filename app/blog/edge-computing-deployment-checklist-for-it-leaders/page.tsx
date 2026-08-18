@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Edge Computing Deployment: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/edge-computing-deployment-checklist-for-it-leaders/' },
 };
 

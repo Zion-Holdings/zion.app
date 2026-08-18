@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI BOM Procurement: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-bom-procurement-vendor-evaluation/' },
 };
 

@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS Social Media Manager: common mistakes',
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-social-media-manager-common-mistakes/' },
 };
 

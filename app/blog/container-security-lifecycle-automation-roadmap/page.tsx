@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Container Security Lifecycle: automation roadmap',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/container-security-lifecycle-automation-roadmap/' },
 };
 

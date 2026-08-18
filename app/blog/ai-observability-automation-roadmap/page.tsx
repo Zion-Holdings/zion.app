@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Observability: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-observability-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-observability-automation-roadmap/' },
 };
 

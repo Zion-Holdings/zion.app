@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Accessibility Auditor: implementation playbook',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-accessibility-auditor-implementation-playbook/' },
 };
 

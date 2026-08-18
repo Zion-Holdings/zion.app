@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'IT Consulting: common mistakes',
     url: 'https://ziontechgroup.com/blog/it-consulting-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/it-consulting-common-mistakes/' },
 };
 

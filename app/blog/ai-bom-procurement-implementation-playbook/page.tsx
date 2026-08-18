@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI BOM Procurement: implementation playbook',
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-bom-procurement-implementation-playbook/' },
 };
 

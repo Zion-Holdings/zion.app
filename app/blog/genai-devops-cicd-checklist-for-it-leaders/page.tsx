@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'GenAI DevOps CI/CD: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/genai-devops-cicd-checklist-for-it-leaders/' },
 };
 

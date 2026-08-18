@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI API Gateway: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-api-gateway-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-api-gateway-automation-roadmap/' },
 };
 

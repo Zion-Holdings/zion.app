@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Incident Response Retainer: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/incident-response-retainer-roi-and-cost-model/' },
 };
 

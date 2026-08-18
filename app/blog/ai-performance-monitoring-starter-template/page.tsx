@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Performance Monitoring: starter template',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-performance-monitoring-starter-template/' },
 };
 

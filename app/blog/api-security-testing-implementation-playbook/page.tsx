@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Security Testing: implementation playbook',
     url: 'https://ziontechgroup.com/blog/api-security-testing-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-security-testing-implementation-playbook/' },
 };
 

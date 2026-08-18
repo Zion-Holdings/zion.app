@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Edge Computing Deployment: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/edge-computing-deployment-vendor-evaluation/' },
 };
 

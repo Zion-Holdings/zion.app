@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Endpoint Management: policy and compliance',
     url: 'https://ziontechgroup.com/blog/endpoint-management-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/endpoint-management-policy-and-compliance/' },
 };
 

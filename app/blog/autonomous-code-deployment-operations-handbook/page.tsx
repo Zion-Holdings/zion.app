@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Autonomous Code Deployment: operations handbook',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/autonomous-code-deployment-operations-handbook/' },
 };
 

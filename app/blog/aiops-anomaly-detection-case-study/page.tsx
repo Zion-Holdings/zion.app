@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AIOps Anomaly Detection: case study',
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/aiops-anomaly-detection-case-study/' },
 };
 

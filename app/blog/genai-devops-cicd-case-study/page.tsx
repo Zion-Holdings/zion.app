@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'GenAI DevOps CI/CD: case study',
     url: 'https://ziontechgroup.com/blog/genai-devops-cicd-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/genai-devops-cicd-case-study/' },
 };
 

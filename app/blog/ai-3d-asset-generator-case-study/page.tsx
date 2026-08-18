@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI 3D Asset Generator: case study',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-3d-asset-generator-case-study/' },
 };
 

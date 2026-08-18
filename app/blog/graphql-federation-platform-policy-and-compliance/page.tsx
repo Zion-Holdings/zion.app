@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'GraphQL Federation Platform: policy and compliance',
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/graphql-federation-platform-policy-and-compliance/' },
 };
 

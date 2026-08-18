@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI 3D Asset Generator: implementation playbook',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-3d-asset-generator-implementation-playbook/' },
 };
 

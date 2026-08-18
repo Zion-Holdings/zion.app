@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Agentic Workflows: case study',
     url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-agentic-workflows-case-study/' },
 };
 

@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Gateway Management: implementation playbook',
     url: 'https://ziontechgroup.com/blog/api-gateway-management-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-gateway-management-implementation-playbook/' },
 };
 

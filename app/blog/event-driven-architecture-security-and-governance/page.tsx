@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Event Driven Architecture: security and governance',
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/event-driven-architecture-security-and-governance/' },
 };
 

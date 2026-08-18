@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS Expense Tracker: operations handbook',
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-expense-tracker-operations-handbook/' },
 };
 

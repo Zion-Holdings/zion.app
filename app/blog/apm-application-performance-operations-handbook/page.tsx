@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'APM Application Performance: operations handbook',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/apm-application-performance-operations-handbook/' },
 };
 

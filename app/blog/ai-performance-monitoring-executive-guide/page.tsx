@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Performance Monitoring: executive guide',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-performance-monitoring-executive-guide/' },
 };
 

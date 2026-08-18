@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Agent Tool Builder: executive guide',
     url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-agent-tool-builder-executive-guide/' },
 };
 

@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Performance Monitoring: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-performance-monitoring-roi-and-cost-model/' },
 };
 

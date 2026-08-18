@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS HR Recruitment: common mistakes',
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-common-mistakes/' },
 };
 

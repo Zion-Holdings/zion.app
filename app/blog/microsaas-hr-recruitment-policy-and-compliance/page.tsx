@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS HR Recruitment: policy and compliance',
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-policy-and-compliance/' },
 };
 

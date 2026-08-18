@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Native App Development: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/cloud-native-app-development-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cloud-native-app-development-vendor-evaluation/' },
 };
 

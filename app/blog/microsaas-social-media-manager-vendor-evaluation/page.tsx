@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS Social Media Manager: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-social-media-manager-vendor-evaluation/' },
 };
 

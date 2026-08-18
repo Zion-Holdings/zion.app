@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Data Backup: common mistakes',
     url: 'https://ziontechgroup.com/blog/ai-data-backup-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-data-backup-common-mistakes/' },
 };
 

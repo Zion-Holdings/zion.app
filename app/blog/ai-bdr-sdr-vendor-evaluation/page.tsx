@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI BDR SDR: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-bdr-sdr-vendor-evaluation/' },
 };
 

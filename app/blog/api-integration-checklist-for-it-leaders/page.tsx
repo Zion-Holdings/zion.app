@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Integration: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/api-integration-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-integration-checklist-for-it-leaders/' },
 };
 

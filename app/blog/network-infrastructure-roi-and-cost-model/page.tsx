@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Network Infrastructure: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/network-infrastructure-roi-and-cost-model/' },
 };
 

@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Container Security Lifecycle: deployment patterns',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/container-security-lifecycle-deployment-patterns/' },
 };
 

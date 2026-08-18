@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS Social Media Manager: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-social-media-manager-checklist-for-it-leaders/' },
 };
 

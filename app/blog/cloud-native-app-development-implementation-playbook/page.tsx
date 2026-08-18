@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Native App Development: implementation playbook',
     url: 'https://ziontechgroup.com/blog/cloud-native-app-development-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cloud-native-app-development-implementation-playbook/' },
 };
 

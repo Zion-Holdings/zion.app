@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Enterprise AI Intelligence Hub: common mistakes',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-common-mistakes/' },
 };
 

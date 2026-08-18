@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS Customer Onboarding: starter template',
     url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-customer-onboarding-starter-template/' },
 };
 

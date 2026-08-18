@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Security Testing: policy and compliance',
     url: 'https://ziontechgroup.com/blog/api-security-testing-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-security-testing-policy-and-compliance/' },
 };
 

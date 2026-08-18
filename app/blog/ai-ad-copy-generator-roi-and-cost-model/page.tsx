@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Ad Copy Generator: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-ad-copy-generator-roi-and-cost-model/' },
 };
 

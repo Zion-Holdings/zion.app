@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Data Lakehouse Pipelines: security and governance',
     url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-security-and-governance/' },
 };
 

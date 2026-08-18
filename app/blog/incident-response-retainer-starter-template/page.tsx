@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Incident Response Retainer: starter template',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/incident-response-retainer-starter-template/' },
 };
 

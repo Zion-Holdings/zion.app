@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Observability: deployment patterns',
     url: 'https://ziontechgroup.com/blog/ai-observability-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-observability-deployment-patterns/' },
 };
 

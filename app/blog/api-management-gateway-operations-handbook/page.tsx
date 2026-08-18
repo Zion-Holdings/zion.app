@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Management Gateway: operations handbook',
     url: 'https://ziontechgroup.com/blog/api-management-gateway-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-management-gateway-operations-handbook/' },
 };
 

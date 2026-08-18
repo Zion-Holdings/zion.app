@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AIOps Anomaly Detection: starter template',
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/aiops-anomaly-detection-starter-template/' },
 };
 

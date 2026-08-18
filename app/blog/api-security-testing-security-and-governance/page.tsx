@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Security Testing: security and governance',
     url: 'https://ziontechgroup.com/blog/api-security-testing-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-security-testing-security-and-governance/' },
 };
 

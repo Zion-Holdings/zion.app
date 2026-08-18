@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Incident Response Retainer: architecture overview',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/incident-response-retainer-architecture-overview/' },
 };
 

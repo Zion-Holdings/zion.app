@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Endpoint Management: executive guide',
     url: 'https://ziontechgroup.com/blog/endpoint-management-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/endpoint-management-executive-guide/' },
 };
 

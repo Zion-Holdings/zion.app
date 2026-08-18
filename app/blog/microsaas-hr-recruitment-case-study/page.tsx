@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS HR Recruitment: case study',
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-case-study/' },
 };
 

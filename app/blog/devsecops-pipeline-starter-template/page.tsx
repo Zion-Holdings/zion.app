@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'DevSecOps Pipeline: starter template',
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/devsecops-pipeline-starter-template/' },
 };
 

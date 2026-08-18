@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'DevOps CI/CD: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/devops-cicd-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/devops-cicd-vendor-evaluation/' },
 };
 

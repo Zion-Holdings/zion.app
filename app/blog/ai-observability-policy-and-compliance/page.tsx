@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Observability: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-observability-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-observability-policy-and-compliance/' },
 };
 

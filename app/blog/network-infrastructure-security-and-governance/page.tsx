@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Network Infrastructure: security and governance',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/network-infrastructure-security-and-governance/' },
 };
 

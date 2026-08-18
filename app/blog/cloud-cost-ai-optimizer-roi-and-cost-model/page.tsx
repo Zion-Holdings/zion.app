@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Cost AI Optimizer: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-roi-and-cost-model/' },
 };
 

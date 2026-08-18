@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Accessibility Auditor: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-accessibility-auditor-vendor-evaluation/' },
 };
 

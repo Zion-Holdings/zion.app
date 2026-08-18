@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Container Security Lifecycle: executive guide',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/container-security-lifecycle-executive-guide/' },
 };
 

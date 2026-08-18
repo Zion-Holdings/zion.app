@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'API Gateway Management: case study',
     url: 'https://ziontechgroup.com/blog/api-gateway-management-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/api-gateway-management-case-study/' },
 };
 

@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'IT Consulting: architecture overview',
     url: 'https://ziontechgroup.com/blog/it-consulting-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/it-consulting-architecture-overview/' },
 };
 

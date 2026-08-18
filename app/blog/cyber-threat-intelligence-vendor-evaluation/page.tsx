@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cyber Threat Intelligence: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cyber-threat-intelligence-vendor-evaluation/' },
 };
 

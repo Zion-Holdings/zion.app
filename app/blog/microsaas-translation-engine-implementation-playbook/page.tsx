@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS Translation Engine: implementation playbook',
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-translation-engine-implementation-playbook/' },
 };
 

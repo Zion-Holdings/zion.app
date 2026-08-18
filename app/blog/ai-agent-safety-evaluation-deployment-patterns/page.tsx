@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Agent Safety Evaluation: deployment patterns',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-deployment-patterns/' },
 };
 

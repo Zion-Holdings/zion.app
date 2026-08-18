@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Observability: security and governance',
     url: 'https://ziontechgroup.com/blog/ai-observability-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-observability-security-and-governance/' },
 };
 

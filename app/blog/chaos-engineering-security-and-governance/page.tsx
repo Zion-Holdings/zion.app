@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Chaos Engineering: security and governance',
     url: 'https://ziontechgroup.com/blog/chaos-engineering-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/chaos-engineering-security-and-governance/' },
 };
 

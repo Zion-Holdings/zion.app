@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Development Acceleration: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/ai-development-acceleration-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-development-acceleration-vendor-evaluation/' },
 };
 

@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: '5G Solutions: executive guide',
     url: 'https://ziontechgroup.com/blog/5g-solutions-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/5g-solutions-executive-guide/' },
 };
 

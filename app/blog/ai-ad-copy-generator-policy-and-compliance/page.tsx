@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Ad Copy Generator: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-ad-copy-generator-policy-and-compliance/' },
 };
 

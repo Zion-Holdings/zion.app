@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Data Analytics Platform: policy and compliance',
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/data-analytics-platform-policy-and-compliance/' },
 };
 

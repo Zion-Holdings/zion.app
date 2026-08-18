@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'APM Application Performance: common mistakes',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/apm-application-performance-common-mistakes/' },
 };
 

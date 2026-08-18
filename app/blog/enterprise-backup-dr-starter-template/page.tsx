@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Enterprise Backup DR: starter template',
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/enterprise-backup-dr-starter-template/' },
 };
 

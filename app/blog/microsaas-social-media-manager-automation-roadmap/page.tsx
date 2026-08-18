@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS Social Media Manager: automation roadmap',
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/microsaas-social-media-manager-automation-roadmap/' },
 };
 

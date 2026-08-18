@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Cost AI Optimizer: deployment patterns',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-deployment-patterns/' },
 };
 

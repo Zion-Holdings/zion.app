@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Accessibility Optimizer: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-accessibility-optimizer-policy-and-compliance/' },
 };
 

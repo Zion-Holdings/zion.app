@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Network Infrastructure: automation roadmap',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/network-infrastructure-automation-roadmap/' },
 };
 

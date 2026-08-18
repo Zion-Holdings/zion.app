@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Accessibility Auditor: architecture overview',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-accessibility-auditor-architecture-overview/' },
 };
 

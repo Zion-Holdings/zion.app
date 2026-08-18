@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Customer Support: implementation playbook',
     url: 'https://ziontechgroup.com/blog/ai-customer-support-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-customer-support-implementation-playbook/' },
 };
 

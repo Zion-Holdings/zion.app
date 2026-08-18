@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AIOps Anomaly Detection: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/aiops-anomaly-detection-vendor-evaluation/' },
 };
 

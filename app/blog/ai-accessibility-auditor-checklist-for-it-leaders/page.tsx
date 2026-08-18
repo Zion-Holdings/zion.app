@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Accessibility Auditor: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/ai-accessibility-auditor-checklist-for-it-leaders/' },
 };
 

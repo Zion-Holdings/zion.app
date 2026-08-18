@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'AIOps Anomaly Detection: common mistakes',
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/aiops-anomaly-detection-common-mistakes/' },
 };
 

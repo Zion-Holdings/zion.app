@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     description: 'Cyber Threat Intelligence: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+      },
   alternates: { canonical: '/blog/cyber-threat-intelligence-checklist-for-it-leaders/' },
 };
 
