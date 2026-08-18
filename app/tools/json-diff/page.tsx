@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function JsonDiffPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="JSON Diff"
       subtitle="Compare JSON objects side by side and highlight added, removed, and changed fields."

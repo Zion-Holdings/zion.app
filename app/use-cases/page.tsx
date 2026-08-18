@@ -43,16 +43,8 @@ const INDUSTRIES = [
 
 export default function UseCasesPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
-      title={
-        <>
-          Use Cases That{' '}
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">
-            Move the Needle
-          </span>
-        </>
-      }
+      title="Use Cases"
       subtitle="From customer experience to infrastructure reliability, these are the patterns where Zion clients see fast, measurable results."
       breadcrumbItems={[
         { label: 'Home', href: '/' },

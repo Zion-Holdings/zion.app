@@ -122,8 +122,6 @@ function SearchContent() {
 export default function SearchPage() {
   return (
     <>
-      <JsonLd data={websiteLd} />
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
         title="Search"
         subtitle="Find AI and IT services, solutions, blog posts, and resources from Zion Tech Group."

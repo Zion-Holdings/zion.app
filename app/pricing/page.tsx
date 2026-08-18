@@ -24,7 +24,6 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Pricing & Engagement Models"
       subtitle="Predictable pricing for AI, cloud, security, and automation work."

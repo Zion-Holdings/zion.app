@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function AgentsMonitoringPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="AI Agents Monitoring"
       subtitle="Track agent health, task throughput, latency, and failure modes in one place."

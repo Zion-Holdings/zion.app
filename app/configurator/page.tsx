@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function ConfiguratorPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Configurator"
       subtitle="Pick your priorities and we’ll propose a lightweight engagement plan."

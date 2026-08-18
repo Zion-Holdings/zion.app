@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function BusinessCustomersPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Enterprise Customers"
       subtitle="AI and IT delivery models for business customers with measurable outcomes."

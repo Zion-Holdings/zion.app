@@ -31,7 +31,6 @@ const CHECKS = [
 
 export default function SslCheckerPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="SSL Checker"
       subtitle="Use this checklist to validate certificate trust, coverage, and configuration before review or incident response."

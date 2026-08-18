@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function HealthcareSolutionsPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Healthcare"
       subtitle="Clinical operations, diagnostics, and patient pathway improvements with governed AI and automation."

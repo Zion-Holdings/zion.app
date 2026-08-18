@@ -31,7 +31,6 @@ const CHECKS = [
 
 export default function PhishingAnalyzerPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Phishing Analyzer"
       subtitle="Use this checklist to evaluate suspicious URLs and emails before interacting."

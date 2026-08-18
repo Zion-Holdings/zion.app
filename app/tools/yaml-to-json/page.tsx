@@ -29,7 +29,6 @@ const jsonLd = {
 
 export default function YamlToJsonPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="YAML to JSON"
       subtitle="Convert YAML configuration snippets into structured JSON safely in your browser."

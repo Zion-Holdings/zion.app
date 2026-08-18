@@ -30,7 +30,6 @@ const SYSTEMS = [
 
 export default function HealthCheckPage() {
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Platform Status"
       subtitle="Use this checklist to validate service health before and after changes."

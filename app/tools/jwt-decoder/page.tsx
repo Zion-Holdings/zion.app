@@ -30,7 +30,6 @@ export default function JwtDecoderPage() {
   ];
 
   return (
-      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="JWT Decoder"
       subtitle="Inspect JWT header, payload, and signature details safely."
