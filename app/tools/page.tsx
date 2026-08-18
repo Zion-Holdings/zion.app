@@ -74,6 +74,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Base64 Encoder</h3>
           <p className="text-slate-400 text-sm">Encode and decode Base64 with UTF-8 support.</p>
         </a>
+        <a href="/tools/url-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">URL Encoder</h3>
+          <p className="text-slate-400 text-sm">Encode and decode URLs with UTF-8 support.</p>
+        </a>
+        <a href="/tools/password-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Password Generator</h3>
+          <p className="text-slate-400 text-sm">Generate secure, customizable passwords.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
