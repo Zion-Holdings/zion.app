@@ -76,6 +76,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Cron Parser</h3>
           <p className="text-slate-400 text-sm">Parse and explain cron expressions.</p>
         </a>
+        <a href="/tools/css-box-shadow/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Css Box Shadow</h3>
+          <p className="text-slate-400 text-sm">Visual CSS box-shadow and border-radius generator. Stack multiple shadows, control offs...</p>
+        </a>
         <a href="/tools/css-minifier/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">CSS Minifier</h3>
           <p className="text-slate-400 text-sm">Minify CSS and see size savings.</p>
@@ -83,6 +87,14 @@ export default function ToolsPage() {
         <a href="/tools/css-minifier-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">CSS Minifier Pro</h3>
           <p className="text-slate-400 text-sm">Minify CSS with advanced options.</p>
+        </a>
+        <a href="/tools/csv-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Csv To Json</h3>
+          <p className="text-slate-400 text-sm">Convert CSV to JSON online with RFC 4180 quoted-field support. Choose comma, semicolon,...</p>
+        </a>
+        <a href="/tools/date-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Date Diff</h3>
+          <p className="text-slate-400 text-sm">Calculate the difference between two dates in years, months, days, total days, weeks, h...</p>
         </a>
         <a href="/tools/excel-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Excel to JSON</h3>
@@ -219,6 +231,10 @@ export default function ToolsPage() {
         <a href="/tools/regex-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Regex Tester</h3>
           <p className="text-slate-400 text-sm">Test patterns and matches in real time.</p>
+        </a>
+        <a href="/tools/robots-sitemap/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Robots Sitemap</h3>
+          <p className="text-slate-400 text-sm">Build a robots.txt file with user-agent, allow/disallow rules, crawl-delay and sitemap...</p>
         </a>
         <a href="/tools/sql-query-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">SQL Query Builder</h3>

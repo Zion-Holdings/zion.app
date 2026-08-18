@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Difference Calculator | Zion Tech Group</title>
+  <meta name="description" content="Calculate the difference between two dates in years, months, days, total days, weeks, hours, and business days excluding weekends. Also add or subtract days from any date. Free online date calculator.">
+  <meta property="og:title" content="Date Difference Calculator | Zion Tech Group">
+  <meta property="og:description" content="Free online date difference calculator — years, months, days, total days, weeks, hours, and business days between two dates.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/date-diff/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/date-diff/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    h2 { font-size: 1.125rem; font-weight: 700; margin: 2rem 0 1rem; color: #e5e7eb; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .row .field { flex: 1 1 200px; }
+    input[type="date"], input[type="number"], select { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; }
+    input[type="date"]:focus, input[type="number"]:focus, select:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .results { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .results h3 { font-size: 1rem; margin-bottom: 1rem; color: #818cf8; }
+    .result-item { display: flex; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .result-item:last-child { border-bottom: none; }
+    .result-label { flex: 0 0 180px; font-size: 0.875rem; color: #94a3b8; font-weight: 600; }
+    .result-value { flex: 1; font-family: monospace; font-size: 0.875rem; color: #e5e7eb; word-break: break-word; }
+    .result-value.empty { color: #64748b; font-style: italic; }
+    .hint { font-size: 0.8125rem; color: #64748b; margin-top: -0.25rem; margin-bottom: 1rem; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Date Difference Calculator</h1>
+    <p class="subtitle">Measure the span between two dates, then add or subtract days from any date.</p>
+
+    <h2>Difference Between Two Dates</h2>
+    <div class="row">
+      <div class="field">
+        <label for="startDate">Start date</label>
+        <input type="date" id="startDate">
+      </div>
+      <div class="field">
+        <label for="endDate">End date</label>
+        <input type="date" id="endDate">
+      </div>
+    </div>
+
+    <p class="hint">Results update as you type. Business days count Monday–Friday, start date inclusive and end date exclusive; month lengths are respected (Jan 31 + 1 month = Feb 28).</p>
+
+    <div class="buttons">
+      <button class="btn success" onclick="copyDiff(this)">Copy Results</button>
+      <button class="btn secondary" onclick="setToday()">Today → Today</button>
+      <button class="btn secondary" onclick="swapDates()">Swap Dates</button>
+      <button class="btn secondary" onclick="clearDiff()">Clear</button>
+    </div>
+
+    <div class="error" id="diffError"></div>
+
+    <div class="results" id="diffResults" style="display: none;">
+      <h3>Difference</h3>
+      <div id="diffContent"></div>
+    </div>
+
+    <h2>Add or Subtract Days</h2>
+    <div class="row">
+      <div class="field">
+        <label for="baseDate">Base date</label>
+        <input type="date" id="baseDate">
+      </div>
+      <div class="field">
+        <label for="opMode">Operation</label>
+        <select id="opMode">
+          <option value="add">Add days</option>
+          <option value="sub">Subtract days</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="dayCount">Number of days</label>
+        <input type="number" id="dayCount" value="30" step="1">
+      </div>
+    </div>
+    <p class="hint">Calendar days are applied directly; the business-day result skips Saturdays and Sundays.</p>
+
+    <div class="buttons">
+      <button class="btn success" onclick="copyOffset(this)">Copy Results</button>
+      <button class="btn secondary" onclick="baseToday()">Use Today</button>
+      <button class="btn secondary" onclick="clearOffset()">Clear</button>
+    </div>
+
+    <div class="error" id="offsetError"></div>
+
+    <div class="results" id="offsetResults" style="display: none;">
+      <h3>Resulting Date</h3>
+      <div id="offsetContent"></div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    var MS_DAY = 86400000;
+    var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    function parseDate(str) {
+      if (!str) return null;
+      var parts = str.split('-');
+      if (parts.length !== 3) return null;
+      var y = parseInt(parts[0], 10), m = parseInt(parts[1], 10), d = parseInt(parts[2], 10);
+      if (isNaN(y) || isNaN(m) || isNaN(d)) return null;
+      var dt = new Date(y, m - 1, d);
+      if (dt.getFullYear() !== y || dt.getMonth() !== m - 1 || dt.getDate() !== d) return null;
+      return dt;
+    }
+
+    function toISO(dt) {
+      var m = String(dt.getMonth() + 1).padStart(2, '0');
+      var d = String(dt.getDate()).padStart(2, '0');
+      return dt.getFullYear() + '-' + m + '-' + d;
+    }
+
+    function formatLong(dt) {
+      try {
+        return dt.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      } catch (e) {
+        return WEEKDAYS[dt.getDay()] + ', ' + toISO(dt);
+      }
+    }
+
+    function daysBetween(a, b) {
+      return Math.round((Date.UTC(b.getFullYear(), b.getMonth(), b.getDate()) -
+                         Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())) / MS_DAY);
+    }
+
+    // Advance by whole months, clamping to the last valid day of the target month
+    // (Jan 31 + 1 month = Feb 28/29, not Mar 2/3).
+    function addMonthsClamped(dt, m) {
+      var target = new Date(dt.getFullYear(), dt.getMonth() + m, 1);
+      var lastDay = new Date(target.getFullYear(), target.getMonth() + 1, 0).getDate();
+      return new Date(target.getFullYear(), target.getMonth(), Math.min(dt.getDate(), lastDay));
+    }
+
+    // Calendar breakdown for a <= b: the largest whole number of months that still
+    // fits inside the span, then the leftover days. Always non-negative.
+    function ymdBreakdown(a, b) {
+      var months = (b.getFullYear() - a.getFullYear()) * 12 + (b.getMonth() - a.getMonth());
+      if (months < 0) months = 0;
+      // Shrink while the anchor overshoots the end date.
+      while (months > 0 && addMonthsClamped(a, months).getTime() > b.getTime()) months--;
+      // Grow while another whole month still fits.
+      while (addMonthsClamped(a, months + 1).getTime() <= b.getTime()) months++;
+      var anchor = addMonthsClamped(a, months);
+      return {
+        years: Math.floor(months / 12),
+        months: months % 12,
+        days: daysBetween(anchor, b)
+      };
+    }
+
+    // Business days between a and b, counting the start date and excluding the end date
+    // (i.e. the number of weekday-days spanned). Weekends = Sat/Sun.
+    function businessDays(a, b) {
+      var total = daysBetween(a, b);
+      if (total === 0) return 0;
+      var start = total > 0 ? a : b;
+      var count = Math.abs(total);
+      var fullWeeks = Math.floor(count / 7);
+      var remainder = count % 7;
+      var business = fullWeeks * 5;
+      var day = start.getDay();
+      for (var i = 0; i < remainder; i++) {
+        var d = (day + i) % 7;
+        if (d !== 0 && d !== 6) business++;
+      }
+      return total > 0 ? business : -business;
+    }
+
+    function addBusinessDays(dt, n) {
+      var result = new Date(dt.getTime());
+      var step = n >= 0 ? 1 : -1;
+      var remaining = Math.abs(n);
+      while (remaining > 0) {
+        result.setDate(result.getDate() + step);
+        var d = result.getDay();
+        if (d !== 0 && d !== 6) remaining--;
+      }
+      return result;
+    }
+
+    function plural(n, word) {
+      return n + ' ' + word + (Math.abs(n) === 1 ? '' : 's');
+    }
+
+    function row(label, value) {
+      return '<div class="result-item"><div class="result-label">' + label +
+             '</div><div class="result-value">' + value + '</div></div>';
+    }
+
+    var lastDiffText = '';
+    var lastOffsetText = '';
+
+    function calcDiff() {
+      var startStr = document.getElementById('startDate').value;
+      var endStr = document.getElementById('endDate').value;
+      var errorEl = document.getElementById('diffError');
+      var resultsEl = document.getElementById('diffResults');
+      var contentEl = document.getElementById('diffContent');
+
+      lastDiffText = '';
+
+      if (!startStr || !endStr) {
+        errorEl.style.display = 'none';
+        resultsEl.style.display = 'none';
+        return;
+      }
+
+      var start = parseDate(startStr);
+      var end = parseDate(endStr);
+      if (!start || !end) {
+        errorEl.textContent = '✗ Please enter valid dates.';
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        return;
+      }
+
+      errorEl.style.display = 'none';
+
+      var reversed = end.getTime() < start.getTime();
+      var a = reversed ? end : start;
+      var b = reversed ? start : end;
+
+      var totalDays = daysBetween(a, b);
+      var parts = ymdBreakdown(a, b);
+      var weeks = Math.floor(totalDays / 7);
+      var extraDays = totalDays % 7;
+      var hours = totalDays * 24;
+      var bDays = businessDays(a, b);
+      var weekendDays = totalDays - bDays;
+      var sign = reversed ? '-' : '';
+
+      var breakdown = plural(parts.years, 'year') + ', ' + plural(parts.months, 'month') + ', ' + plural(parts.days, 'day');
+      var weeksText = plural(weeks, 'week') + (extraDays ? ' and ' + plural(extraDays, 'day') : '');
+
+      var html = '';
+      html += row('Years / Months / Days', sign ? '-(' + breakdown + ')' : breakdown);
+      html += row('Total days', sign + totalDays.toLocaleString());
+      html += row('Total weeks', sign + weeks.toLocaleString() + '  (' + weeksText + ')');
+      html += row('Total hours', sign + hours.toLocaleString());
+      html += row('Business days', sign + bDays.toLocaleString() + '  (Mon–Fri, weekends excluded)');
+      html += row('Weekend days', sign + weekendDays.toLocaleString());
+      html += row('Start', formatLong(start));
+      html += row('End', formatLong(end));
+      if (reversed) {
+        html += row('Note', 'End date is before start date — values shown as negative.');
+      }
+
+      contentEl.innerHTML = html;
+      resultsEl.style.display = 'block';
+
+      lastDiffText = [
+        'Date difference: ' + toISO(start) + ' → ' + toISO(end),
+        'Years/Months/Days: ' + (sign ? '-(' + breakdown + ')' : breakdown),
+        'Total days: ' + sign + totalDays,
+        'Total weeks: ' + sign + weeks + ' (' + weeksText + ')',
+        'Total hours: ' + sign + hours,
+        'Business days (Mon-Fri): ' + sign + bDays,
+        'Weekend days: ' + sign + weekendDays
+      ].join('\n');
+    }
+
+    function calcOffset() {
+      var baseStr = document.getElementById('baseDate').value;
+      var mode = document.getElementById('opMode').value;
+      var countRaw = document.getElementById('dayCount').value;
+      var errorEl = document.getElementById('offsetError');
+      var resultsEl = document.getElementById('offsetResults');
+      var contentEl = document.getElementById('offsetContent');
+
+      lastOffsetText = '';
+
+      if (!baseStr || countRaw === '') {
+        errorEl.style.display = 'none';
+        resultsEl.style.display = 'none';
+        return;
+      }
+
+      var base = parseDate(baseStr);
+      var n = parseInt(countRaw, 10);
+      if (!base) {
+        errorEl.textContent = '✗ Please enter a valid base date.';
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        return;
+      }
+      if (isNaN(n)) {
+        errorEl.textContent = '✗ Please enter a whole number of days.';
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        return;
+      }
+      if (Math.abs(n) > 3650000) {
+        errorEl.textContent = '✗ Day count is too large. Use 3,650,000 or fewer.';
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        return;
+      }
+
+      errorEl.style.display = 'none';
+
+      var offset = mode === 'sub' ? -n : n;
+      var result = new Date(base.getFullYear(), base.getMonth(), base.getDate() + offset);
+      if (isNaN(result.getTime())) {
+        errorEl.textContent = '✗ Resulting date is out of range.';
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        return;
+      }
+
+      var bizResult = null;
+      if (Math.abs(offset) <= 20000) {
+        bizResult = addBusinessDays(base, offset);
+      }
+
+      var opLabel = (offset >= 0 ? 'Add ' : 'Subtract ') + Math.abs(offset).toLocaleString() +
+                    (Math.abs(offset) === 1 ? ' day' : ' days');
+
+      var html = '';
+      html += row('Operation', opLabel);
+      html += row('Base date', formatLong(base));
+      html += row('Result (calendar)', '<strong>' + toISO(result) + '</strong>');
+      html += row('Result (long form)', formatLong(result));
+      html += row('Day of week', WEEKDAYS[result.getDay()] +
+                  (result.getDay() === 0 || result.getDay() === 6 ? ' (weekend)' : ' (weekday)'));
+      if (bizResult) {
+        html += row('Result (business days)', toISO(bizResult) + '  —  ' + formatLong(bizResult));
+      } else {
+        html += row('Result (business days)', '<span class="result-value empty">Skipped: use 20,000 days or fewer</span>');
+      }
+
+      contentEl.innerHTML = html;
+      resultsEl.style.display = 'block';
+
+      var lines = [
+        'Base date: ' + toISO(base),
+        'Operation: ' + opLabel,
+        'Result (calendar days): ' + toISO(result) + ' (' + WEEKDAYS[result.getDay()] + ')'
+      ];
+      if (bizResult) {
+        lines.push('Result (business days): ' + toISO(bizResult) + ' (' + WEEKDAYS[bizResult.getDay()] + ')');
+      }
+      lastOffsetText = lines.join('\n');
+    }
+
+    function flashCopied(btn) {
+      var original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function () { btn.textContent = original; }, 2000);
+    }
+
+    function copyText(text, btn) {
+      if (!text) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { flashCopied(btn); }, function () { fallbackCopy(text, btn); });
+      } else {
+        fallbackCopy(text, btn);
+      }
+    }
+
+    function fallbackCopy(text, btn) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); flashCopied(btn); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    function copyDiff(btn) { copyText(lastDiffText, btn); }
+    function copyOffset(btn) { copyText(lastOffsetText, btn); }
+
+    function setToday() {
+      var t = toISO(new Date());
+      document.getElementById('startDate').value = t;
+      document.getElementById('endDate').value = t;
+      calcDiff();
+    }
+
+    function swapDates() {
+      var s = document.getElementById('startDate');
+      var e = document.getElementById('endDate');
+      var tmp = s.value;
+      s.value = e.value;
+      e.value = tmp;
+      calcDiff();
+    }
+
+    function clearDiff() {
+      document.getElementById('startDate').value = '';
+      document.getElementById('endDate').value = '';
+      document.getElementById('diffError').style.display = 'none';
+      document.getElementById('diffResults').style.display = 'none';
+      lastDiffText = '';
+    }
+
+    function baseToday() {
+      document.getElementById('baseDate').value = toISO(new Date());
+      calcOffset();
+    }
+
+    function clearOffset() {
+      document.getElementById('baseDate').value = '';
+      document.getElementById('dayCount').value = '';
+      document.getElementById('offsetError').style.display = 'none';
+      document.getElementById('offsetResults').style.display = 'none';
+      lastOffsetText = '';
+    }
+
+    ['startDate', 'endDate'].forEach(function (id) {
+      var el = document.getElementById(id);
+      el.addEventListener('input', calcDiff);
+      el.addEventListener('change', calcDiff);
+    });
+
+    ['baseDate', 'dayCount', 'opMode'].forEach(function (id) {
+      var el = document.getElementById(id);
+      el.addEventListener('input', calcOffset);
+      el.addEventListener('change', calcOffset);
+    });
+
+    // Sensible defaults: today → one month out, and today as the offset base.
+    (function init() {
+      var today = new Date();
+      var later = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+      document.getElementById('startDate').value = toISO(today);
+      document.getElementById('endDate').value = toISO(later);
+      document.getElementById('baseDate').value = toISO(today);
+      calcDiff();
+      calcOffset();
+    })();
+  </script>
+</body>
+</html>
