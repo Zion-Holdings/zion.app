@@ -273,6 +273,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">QR Scanner</h3>
           <p className="text-slate-400 text-sm">Decode QR codes from an uploaded image.</p>
         </a>
+        <a href="/tools/readability-score/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Readability Score</h3>
+          <p className="text-slate-400 text-sm">Score article text for Flesch Reading Ease, grade level, Gunning Fog, passive voice, lo...</p>
+        </a>
         <a href="/tools/regex-cheat-sheet/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Regex Cheat Sheet</h3>
           <p className="text-slate-400 text-sm">Searchable regex syntax reference.</p>
