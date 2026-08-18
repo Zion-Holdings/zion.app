@@ -9,19 +9,16 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2
-      - uses: actions/setup-node@v4.4.0
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
-      - run: npm run build
-        env:
-          NEXT_DISABLE_TURBOPACK: '1'
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v4
+      - name: Copy public assets to out
+        run: |
+          mkdir -p out
+          cp -r public/* out/ 2>/dev/null || true
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
