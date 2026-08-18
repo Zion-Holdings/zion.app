@@ -43,6 +43,19 @@ if [ "$#" -gt 0 ]; then
   ROUTES=("$@")
 else
   ROUTES=("${DEFAULT_ROUTES[@]}")
+
+  # Also cover every deployed tool page. Tools are the most-changed part of the
+  # site, so a shell-only check that skips them would miss the likeliest break.
+  # Enabled by default; set CHECK_TOOLS=0 to check core navigation only.
+  if [ "${CHECK_TOOLS:-1}" = "1" ]; then
+    tools_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/public/tools"
+    if [ -d "$tools_dir" ]; then
+      while IFS= read -r tool_index; do
+        slug="$(basename "$(dirname "$tool_index")")"
+        ROUTES+=("/tools/${slug}/")
+      done < <(find "$tools_dir" -mindepth 2 -maxdepth 2 -name index.html | sort)
+    fi
+  fi
 fi
 
 if ! command -v curl >/dev/null 2>&1; then
