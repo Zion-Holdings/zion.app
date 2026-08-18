@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Database Migration Service: deployment patterns | Zion Tech Group',
+    description: 'Database Migration Service: deployment patterns',
   },
   alternates: { canonical: '/blog/database-migration-service-deployment-patterns/' },
 };

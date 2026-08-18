@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'API Security Testing: common mistakes | Zion Tech Group',
+    description: 'API Security Testing: common mistakes',
   },
   alternates: { canonical: '/blog/api-security-testing-common-mistakes/' },
 };

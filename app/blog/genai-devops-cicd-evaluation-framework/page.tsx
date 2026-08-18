@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'GenAI DevOps CI/CD: evaluation framework | Zion Tech Group',
+    description: 'GenAI DevOps CI/CD: evaluation framework',
   },
   alternates: { canonical: '/blog/genai-devops-cicd-evaluation-framework/' },
 };

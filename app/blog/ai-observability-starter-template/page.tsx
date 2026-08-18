@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Observability: starter template | Zion Tech Group',
+    description: 'AI Observability: starter template',
   },
   alternates: { canonical: '/blog/ai-observability-starter-template/' },
 };

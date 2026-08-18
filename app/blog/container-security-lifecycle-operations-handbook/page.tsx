@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Container Security Lifecycle: operations handbook | Zion Tech Group',
+    description: 'Container Security Lifecycle: operations handbook',
   },
   alternates: { canonical: '/blog/container-security-lifecycle-operations-handbook/' },
 };

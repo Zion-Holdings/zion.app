@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Autonomous Code Deployment: architecture overview | Zion Tech Group',
+    description: 'Autonomous Code Deployment: architecture overview',
   },
   alternates: { canonical: '/blog/autonomous-code-deployment-architecture-overview/' },
 };

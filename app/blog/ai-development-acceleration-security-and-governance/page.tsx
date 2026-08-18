@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Development Acceleration: security and governance | Zion Tech Group',
+    description: 'AI Development Acceleration: security and governance',
   },
   alternates: { canonical: '/blog/ai-development-acceleration-security-and-governance/' },
 };

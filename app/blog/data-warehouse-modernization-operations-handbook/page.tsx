@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Data Warehouse Modernization: operations handbook | Zion Tech Group',
+    description: 'Data Warehouse Modernization: operations handbook',
   },
   alternates: { canonical: '/blog/data-warehouse-modernization-operations-handbook/' },
 };

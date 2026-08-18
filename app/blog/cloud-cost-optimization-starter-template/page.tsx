@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Cloud Cost Optimization: starter template | Zion Tech Group',
+    description: 'Cloud Cost Optimization: starter template',
   },
   alternates: { canonical: '/blog/cloud-cost-optimization-starter-template/' },
 };

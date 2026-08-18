@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Enterprise AI Intelligence Hub: checklist for IT leaders | Zion Tech Group',
+    description: 'Enterprise AI Intelligence Hub: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/' },
 };

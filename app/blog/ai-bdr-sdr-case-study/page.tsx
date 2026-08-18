@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI BDR SDR: case study | Zion Tech Group',
+    description: 'AI BDR SDR: case study',
   },
   alternates: { canonical: '/blog/ai-bdr-sdr-case-study/' },
 };

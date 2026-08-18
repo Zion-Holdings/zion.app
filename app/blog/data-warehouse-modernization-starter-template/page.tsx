@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Data Warehouse Modernization: starter template | Zion Tech Group',
+    description: 'Data Warehouse Modernization: starter template',
   },
   alternates: { canonical: '/blog/data-warehouse-modernization-starter-template/' },
 };

@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI BDR SDR: common mistakes | Zion Tech Group',
+    description: 'AI BDR SDR: common mistakes',
   },
   alternates: { canonical: '/blog/ai-bdr-sdr-common-mistakes/' },
 };

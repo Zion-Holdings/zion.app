@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Agent Safety Evaluation: vendor evaluation | Zion Tech Group',
+    description: 'AI Agent Safety Evaluation: vendor evaluation',
   },
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-vendor-evaluation/' },
 };

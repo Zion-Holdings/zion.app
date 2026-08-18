@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Managed IT Services: checklist for IT leaders | Zion Tech Group',
+    description: 'Managed IT Services: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/managed-it-services-checklist-for-it-leaders/' },
 };

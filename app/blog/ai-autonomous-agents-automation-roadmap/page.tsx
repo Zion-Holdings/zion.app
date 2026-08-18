@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Autonomous Agents: automation roadmap | Zion Tech Group',
+    description: 'AI Autonomous Agents: automation roadmap',
   },
   alternates: { canonical: '/blog/ai-autonomous-agents-automation-roadmap/' },
 };

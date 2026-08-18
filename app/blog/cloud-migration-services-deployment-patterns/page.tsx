@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Cloud Migration Services: deployment patterns | Zion Tech Group',
+    description: 'Cloud Migration Services: deployment patterns',
   },
   alternates: { canonical: '/blog/cloud-migration-services-deployment-patterns/' },
 };

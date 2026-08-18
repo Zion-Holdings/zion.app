@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI BDR SDR: starter template | Zion Tech Group',
+    description: 'AI BDR SDR: starter template',
   },
   alternates: { canonical: '/blog/ai-bdr-sdr-starter-template/' },
 };

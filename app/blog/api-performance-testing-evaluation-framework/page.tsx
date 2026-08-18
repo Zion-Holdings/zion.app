@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'API Performance Testing: evaluation framework | Zion Tech Group',
+    description: 'API Performance Testing: evaluation framework',
   },
   alternates: { canonical: '/blog/api-performance-testing-evaluation-framework/' },
 };

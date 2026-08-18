@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Customer Success Churn Prevention: automation roadmap | Zion Tech Group',
+    description: 'AI Customer Success Churn Prevention: automation roadmap',
   },
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-automation-roadmap/' },
 };

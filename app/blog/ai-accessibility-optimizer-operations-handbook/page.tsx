@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Accessibility Optimizer: operations handbook | Zion Tech Group',
+    description: 'AI Accessibility Optimizer: operations handbook',
   },
   alternates: { canonical: '/blog/ai-accessibility-optimizer-operations-handbook/' },
 };

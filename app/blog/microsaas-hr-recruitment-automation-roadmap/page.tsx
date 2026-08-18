@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'MicroSaaS HR Recruitment: automation roadmap | Zion Tech Group',
+    description: 'MicroSaaS HR Recruitment: automation roadmap',
   },
   alternates: { canonical: '/blog/microsaas-hr-recruitment-automation-roadmap/' },
 };

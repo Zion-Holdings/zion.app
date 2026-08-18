@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'DevOps CI/CD: security and governance | Zion Tech Group',
+    description: 'DevOps CI/CD: security and governance',
   },
   alternates: { canonical: '/blog/devops-cicd-security-and-governance/' },
 };

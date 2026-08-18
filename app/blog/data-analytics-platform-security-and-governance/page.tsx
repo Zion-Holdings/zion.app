@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Data Analytics Platform: security and governance | Zion Tech Group',
+    description: 'Data Analytics Platform: security and governance',
   },
   alternates: { canonical: '/blog/data-analytics-platform-security-and-governance/' },
 };

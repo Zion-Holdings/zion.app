@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'IT Consulting: implementation playbook | Zion Tech Group',
+    description: 'IT Consulting: implementation playbook',
   },
   alternates: { canonical: '/blog/it-consulting-implementation-playbook/' },
 };

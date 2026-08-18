@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'APM Application Performance: policy and compliance | Zion Tech Group',
+    description: 'APM Application Performance: policy and compliance',
   },
   alternates: { canonical: '/blog/apm-application-performance-policy-and-compliance/' },
 };

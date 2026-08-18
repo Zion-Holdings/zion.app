@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Cyber Threat Intelligence: case study | Zion Tech Group',
+    description: 'Cyber Threat Intelligence: case study',
   },
   alternates: { canonical: '/blog/cyber-threat-intelligence-case-study/' },
 };

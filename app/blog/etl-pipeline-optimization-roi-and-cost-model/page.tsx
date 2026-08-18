@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'ETL Pipeline Optimization: ROI and cost model | Zion Tech Group',
+    description: 'ETL Pipeline Optimization: ROI and cost model',
   },
   alternates: { canonical: '/blog/etl-pipeline-optimization-roi-and-cost-model/' },
 };

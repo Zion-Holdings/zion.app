@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Customer Support: checklist for IT leaders | Zion Tech Group',
+    description: 'AI Customer Support: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/ai-customer-support-checklist-for-it-leaders/' },
 };

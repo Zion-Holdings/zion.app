@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Data Lakehouse Pipelines: executive guide | Zion Tech Group',
+    description: 'AI Data Lakehouse Pipelines: executive guide',
   },
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-executive-guide/' },
 };

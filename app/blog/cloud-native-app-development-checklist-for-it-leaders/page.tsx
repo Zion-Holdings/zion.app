@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Cloud Native App Development: checklist for IT leaders | Zion Tech Group',
+    description: 'Cloud Native App Development: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/cloud-native-app-development-checklist-for-it-leaders/' },
 };

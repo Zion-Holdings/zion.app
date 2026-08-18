@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Ad Copy Generator: security and governance | Zion Tech Group',
+    description: 'AI Ad Copy Generator: security and governance',
   },
   alternates: { canonical: '/blog/ai-ad-copy-generator-security-and-governance/' },
 };

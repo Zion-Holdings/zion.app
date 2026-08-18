@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'MicroSaaS Expense Tracker: vendor evaluation | Zion Tech Group',
+    description: 'MicroSaaS Expense Tracker: vendor evaluation',
   },
   alternates: { canonical: '/blog/microsaas-expense-tracker-vendor-evaluation/' },
 };

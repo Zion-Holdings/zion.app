@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Accessibility Compliance: architecture overview | Zion Tech Group',
+    description: 'Accessibility Compliance: architecture overview',
   },
   alternates: { canonical: '/blog/accessibility-compliance-architecture-overview/' },
 };

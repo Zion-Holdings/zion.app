@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Cloud Migration Services: common mistakes | Zion Tech Group',
+    description: 'Cloud Migration Services: common mistakes',
   },
   alternates: { canonical: '/blog/cloud-migration-services-common-mistakes/' },
 };

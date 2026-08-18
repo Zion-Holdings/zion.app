@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Managed IT Services: case study | Zion Tech Group',
+    description: 'Managed IT Services: case study',
   },
   alternates: { canonical: '/blog/managed-it-services-case-study/' },
 };

@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Cybersecurity for MSPs: vendor evaluation | Zion Tech Group',
+    description: 'Cybersecurity for MSPs: vendor evaluation',
   },
   alternates: { canonical: '/blog/cybersecurity-for-msps-vendor-evaluation/' },
 };

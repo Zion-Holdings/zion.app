@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'ETL Pipeline Optimization: deployment patterns | Zion Tech Group',
+    description: 'ETL Pipeline Optimization: deployment patterns',
   },
   alternates: { canonical: '/blog/etl-pipeline-optimization-deployment-patterns/' },
 };

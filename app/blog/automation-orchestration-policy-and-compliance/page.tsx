@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Automation Orchestration: policy and compliance | Zion Tech Group',
+    description: 'Automation Orchestration: policy and compliance',
   },
   alternates: { canonical: '/blog/automation-orchestration-policy-and-compliance/' },
 };

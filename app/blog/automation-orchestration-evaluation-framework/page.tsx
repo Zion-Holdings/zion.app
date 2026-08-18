@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Automation Orchestration: evaluation framework | Zion Tech Group',
+    description: 'Automation Orchestration: evaluation framework',
   },
   alternates: { canonical: '/blog/automation-orchestration-evaluation-framework/' },
 };

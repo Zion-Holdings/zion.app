@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Autonomous QA Engineering: checklist for IT leaders | Zion Tech Group',
+    description: 'Autonomous QA Engineering: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/autonomous-qa-engineering-checklist-for-it-leaders/' },
 };

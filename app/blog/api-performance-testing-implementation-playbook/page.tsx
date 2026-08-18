@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'API Performance Testing: implementation playbook | Zion Tech Group',
+    description: 'API Performance Testing: implementation playbook',
   },
   alternates: { canonical: '/blog/api-performance-testing-implementation-playbook/' },
 };

@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Network Infrastructure: checklist for IT leaders | Zion Tech Group',
+    description: 'Network Infrastructure: checklist for IT leaders',
   },
   alternates: { canonical: '/blog/network-infrastructure-checklist-for-it-leaders/' },
 };

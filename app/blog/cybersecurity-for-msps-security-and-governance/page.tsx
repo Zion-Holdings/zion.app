@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Cybersecurity for MSPs: security and governance | Zion Tech Group',
+    description: 'Cybersecurity for MSPs: security and governance',
   },
   alternates: { canonical: '/blog/cybersecurity-for-msps-security-and-governance/' },
 };

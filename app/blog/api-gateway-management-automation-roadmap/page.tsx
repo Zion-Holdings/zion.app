@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'API Gateway Management: automation roadmap | Zion Tech Group',
+    description: 'API Gateway Management: automation roadmap',
   },
   alternates: { canonical: '/blog/api-gateway-management-automation-roadmap/' },
 };

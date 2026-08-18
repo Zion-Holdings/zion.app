@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: '5G Solutions: policy and compliance | Zion Tech Group',
+    description: '5G Solutions: policy and compliance',
   },
   alternates: { canonical: '/blog/5g-solutions-policy-and-compliance/' },
 };

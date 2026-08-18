@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'API Security Testing: executive guide | Zion Tech Group',
+    description: 'API Security Testing: executive guide',
   },
   alternates: { canonical: '/blog/api-security-testing-executive-guide/' },
 };

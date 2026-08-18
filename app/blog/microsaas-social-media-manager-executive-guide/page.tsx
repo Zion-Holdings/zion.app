@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'MicroSaaS Social Media Manager: executive guide | Zion Tech Group',
+    description: 'MicroSaaS Social Media Manager: executive guide',
   },
   alternates: { canonical: '/blog/microsaas-social-media-manager-executive-guide/' },
 };

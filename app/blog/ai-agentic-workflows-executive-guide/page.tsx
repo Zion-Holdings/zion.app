@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Agentic Workflows: executive guide | Zion Tech Group',
+    description: 'AI Agentic Workflows: executive guide',
   },
   alternates: { canonical: '/blog/ai-agentic-workflows-executive-guide/' },
 };

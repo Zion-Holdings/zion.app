@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Network Infrastructure: deployment patterns | Zion Tech Group',
+    description: 'Network Infrastructure: deployment patterns',
   },
   alternates: { canonical: '/blog/network-infrastructure-deployment-patterns/' },
 };

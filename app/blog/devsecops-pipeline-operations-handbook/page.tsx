@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'DevSecOps Pipeline: operations handbook | Zion Tech Group',
+    description: 'DevSecOps Pipeline: operations handbook',
   },
   alternates: { canonical: '/blog/devsecops-pipeline-operations-handbook/' },
 };

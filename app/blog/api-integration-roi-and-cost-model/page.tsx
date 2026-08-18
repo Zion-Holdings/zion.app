@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'API Integration: ROI and cost model | Zion Tech Group',
+    description: 'API Integration: ROI and cost model',
   },
   alternates: { canonical: '/blog/api-integration-roi-and-cost-model/' },
 };

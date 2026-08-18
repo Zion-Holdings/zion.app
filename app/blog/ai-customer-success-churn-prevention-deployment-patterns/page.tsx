@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Customer Success Churn Prevention: deployment patterns | Zion Tech Group',
+    description: 'AI Customer Success Churn Prevention: deployment patterns',
   },
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-deployment-patterns/' },
 };

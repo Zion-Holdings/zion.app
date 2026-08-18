@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Enterprise Backup DR: operations handbook | Zion Tech Group',
+    description: 'Enterprise Backup DR: operations handbook',
   },
   alternates: { canonical: '/blog/enterprise-backup-dr-operations-handbook/' },
 };

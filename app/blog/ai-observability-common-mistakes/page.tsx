@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Observability: common mistakes | Zion Tech Group',
+    description: 'AI Observability: common mistakes',
   },
   alternates: { canonical: '/blog/ai-observability-common-mistakes/' },
 };

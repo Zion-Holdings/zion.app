@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Email Intelligence: case study | Zion Tech Group',
+    description: 'AI Email Intelligence: case study',
   },
   alternates: { canonical: '/blog/ai-email-intelligence-case-study/' },
 };

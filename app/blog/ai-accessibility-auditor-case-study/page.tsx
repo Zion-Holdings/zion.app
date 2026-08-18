@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Accessibility Auditor: case study | Zion Tech Group',
+    description: 'AI Accessibility Auditor: case study',
   },
   alternates: { canonical: '/blog/ai-accessibility-auditor-case-study/' },
 };

@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Edge Computing Deployment: security and governance | Zion Tech Group',
+    description: 'Edge Computing Deployment: security and governance',
   },
   alternates: { canonical: '/blog/edge-computing-deployment-security-and-governance/' },
 };

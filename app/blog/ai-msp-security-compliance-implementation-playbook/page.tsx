@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI MSP Security Compliance: implementation playbook | Zion Tech Group',
+    description: 'AI MSP Security Compliance: implementation playbook',
   },
   alternates: { canonical: '/blog/ai-msp-security-compliance-implementation-playbook/' },
 };

@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'MicroSaaS Customer Onboarding: evaluation framework | Zion Tech Group',
+    description: 'MicroSaaS Customer Onboarding: evaluation framework',
   },
   alternates: { canonical: '/blog/microsaas-customer-onboarding-evaluation-framework/' },
 };

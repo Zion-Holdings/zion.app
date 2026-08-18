@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Database Migration Service: common mistakes | Zion Tech Group',
+    description: 'Database Migration Service: common mistakes',
   },
   alternates: { canonical: '/blog/database-migration-service-common-mistakes/' },
 };

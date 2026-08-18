@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Agent Tool Builder: architecture overview | Zion Tech Group',
+    description: 'AI Agent Tool Builder: architecture overview',
   },
   alternates: { canonical: '/blog/ai-agent-tool-builder-architecture-overview/' },
 };

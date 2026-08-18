@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Edge Computing Deployment: starter template | Zion Tech Group',
+    description: 'Edge Computing Deployment: starter template',
   },
   alternates: { canonical: '/blog/edge-computing-deployment-starter-template/' },
 };

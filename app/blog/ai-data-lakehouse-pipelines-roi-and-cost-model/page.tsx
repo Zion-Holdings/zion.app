@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI Data Lakehouse Pipelines: ROI and cost model | Zion Tech Group',
+    description: 'AI Data Lakehouse Pipelines: ROI and cost model',
   },
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-roi-and-cost-model/' },
 };

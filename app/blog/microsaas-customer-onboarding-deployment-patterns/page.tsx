@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'MicroSaaS Customer Onboarding: deployment patterns | Zion Tech Group',
+    description: 'MicroSaaS Customer Onboarding: deployment patterns',
   },
   alternates: { canonical: '/blog/microsaas-customer-onboarding-deployment-patterns/' },
 };

@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Endpoint Management: security and governance | Zion Tech Group',
+    description: 'Endpoint Management: security and governance',
   },
   alternates: { canonical: '/blog/endpoint-management-security-and-governance/' },
 };

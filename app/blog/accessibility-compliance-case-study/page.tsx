@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Accessibility Compliance: case study | Zion Tech Group',
+    description: 'Accessibility Compliance: case study',
   },
   alternates: { canonical: '/blog/accessibility-compliance-case-study/' },
 };

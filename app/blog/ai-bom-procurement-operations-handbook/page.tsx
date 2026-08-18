@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'AI BOM Procurement: operations handbook | Zion Tech Group',
+    description: 'AI BOM Procurement: operations handbook',
   },
   alternates: { canonical: '/blog/ai-bom-procurement-operations-handbook/' },
 };

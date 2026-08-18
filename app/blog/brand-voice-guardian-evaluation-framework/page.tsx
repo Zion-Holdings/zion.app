@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Brand Voice Guardian: evaluation framework | Zion Tech Group',
+    description: 'Brand Voice Guardian: evaluation framework',
   },
   alternates: { canonical: '/blog/brand-voice-guardian-evaluation-framework/' },
 };

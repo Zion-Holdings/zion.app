@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'API Performance Testing: case study | Zion Tech Group',
+    description: 'API Performance Testing: case study',
   },
   alternates: { canonical: '/blog/api-performance-testing-case-study/' },
 };

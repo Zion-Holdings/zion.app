@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'Incident Response Retainer: deployment patterns | Zion Tech Group',
+    description: 'Incident Response Retainer: deployment patterns',
   },
   alternates: { canonical: '/blog/incident-response-retainer-deployment-patterns/' },
 };

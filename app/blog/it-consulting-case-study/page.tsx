@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'IT Consulting: case study | Zion Tech Group',
+    description: 'IT Consulting: case study',
   },
   alternates: { canonical: '/blog/it-consulting-case-study/' },
 };

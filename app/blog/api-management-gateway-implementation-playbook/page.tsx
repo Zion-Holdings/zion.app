@@ -15,8 +15,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: metadata.title,
-    description: metadata.description,
+    title: 'API Management Gateway: implementation playbook | Zion Tech Group',
+    description: 'API Management Gateway: implementation playbook',
   },
   alternates: { canonical: '/blog/api-management-gateway-implementation-playbook/' },
 };
