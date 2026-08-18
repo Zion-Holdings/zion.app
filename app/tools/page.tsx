@@ -140,6 +140,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">JSON to YAML</h3>
           <p className="text-slate-400 text-sm">Convert JSON to YAML instantly.</p>
         </a>
+        <a href="/tools/blog-post-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Blog Post Generator</h3>
+          <p className="text-slate-400 text-sm">Generate blog outlines and introductions.</p>
+        </a>
+        <a href="/tools/color-contrast/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Color Contrast Checker</h3>
+          <p className="text-slate-400 text-sm">Check WCAG color contrast ratios.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
