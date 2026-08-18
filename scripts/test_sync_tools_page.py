@@ -213,6 +213,30 @@ def main():
         check("live repo layout present", False,
               "expected app/tools/page.tsx and public/tools/")
 
+    print("--- no app route shadows a static tool page with a dead stub ---")
+    live_app_tools = os.path.join(REPO, "app", "tools")
+    live_tools = os.path.join(REPO, "public", "tools")
+    if os.path.isdir(live_app_tools) and os.path.isdir(live_tools):
+        shadowed = []
+        for slug in sorted(os.listdir(live_app_tools)):
+            route = os.path.join(live_app_tools, slug, "page.tsx")
+            static = os.path.join(live_tools, slug, "index.html")
+            if not (os.path.isfile(route) and os.path.isfile(static)):
+                continue
+            src = open(route, encoding="utf-8", errors="replace").read()
+            interactive = any(
+                marker in src
+                for marker in ("use client", "useState", "onClick", "addEventListener")
+            )
+            if not interactive:
+                shadowed.append(slug)
+        # A Next.js app route wins over public/, so a non-interactive route on the
+        # same slug as a working static tool serves users a dead page.
+        check("no dead-stub route shadows a working tool", not shadowed,
+              "shadowed: %s" % shadowed)
+    else:
+        check("app/tools and public/tools present", False, "missing one of the directories")
+
     total = len(_results)
     failed = [r for r in _results if not r[1]]
     print("\n%d passed, %d failed" % (total - len(failed), len(failed)))
