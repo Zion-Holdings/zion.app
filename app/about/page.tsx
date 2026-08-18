@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About Zion Tech Group | AI & IT Company',
-  description: 'Zion Tech Group is an AI-native IT services company building autonomous operations, managed AI, and enterprise-ready delivery.',
+  description: 'Who we are: an AI-native team delivering autonomous operations, managed AI, cloud, security, and data programs for enterprise clients.',
   keywords: ['AI company', 'IT services', 'managed AI', 'enterprise automation', 'Zion Tech Group'],
   openGraph: {
     title: 'About Zion Tech Group',

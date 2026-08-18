@@ -14,12 +14,20 @@ APP = os.path.join(REPO, "app")
 SKIP_DIRS = {"node_modules", ".next", ".git"}
 
 def body_text(src):
-    """Rough visible-text extraction: strip tags/JSX expressions."""
+    """Rough visible-text extraction.
+
+    Strips tags, but keeps the contents of JSX expressions so pages that render
+    from a data array (`{items.map(...)}`) are not misreported as thin. Only
+    drops short expressions, which are almost always variable interpolations.
+    """
     m = re.search(r"return\s*\(([\s\S]*)\);?\s*}\s*$", src)
     chunk = m.group(1) if m else src
+    # Keep string literals from data arrays: they are real rendered copy.
+    literals = " ".join(re.findall(r"['\"]([^'\"]{12,})['\"]", chunk))
     chunk = re.sub(r"<[^>]+>", " ", chunk)
-    chunk = re.sub(r"\{[^{}]*\}", " ", chunk)
-    return re.sub(r"\s+", " ", chunk).strip()
+    chunk = re.sub(r"\{[^{}]{0,40}\}", " ", chunk)
+    text = re.sub(r"\s+", " ", chunk + " " + literals).strip()
+    return text
 
 def main():
     pages = []
