@@ -19,7 +19,8 @@ export const metadata = {
     title: 'FAQ | Zion Tech Group',
     description: 'Common questions about AI and IT services, timing, security, pricing, and onboarding.',
     siteName: 'Zion Tech Group',
-  },alternates: { canonical: '/faq/' },
+  },
+  alternates: { canonical: '/faq/' },
 };
 
 export default function FAQPage() {
