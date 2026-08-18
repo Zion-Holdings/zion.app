@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: 'Zion Tech Group | AI & IT Company',
     description: 'AI-native IT services: autonomous operations, managed AI, cloud, security, and data.',
   },
-    alternates: { canonical: '/' },
+   { canonical: '/' },
 };
 
 const organizationLd = {
