@@ -266,6 +266,10 @@
 /free-tools /free-tools.html 200
 /free-tools/ /free-tools.html 200
 
+# Search fallback
+/search /search/index.html 200
+/search/ /search/index.html 200
+
 # Free AI tools fallback
-/free-ai-tools /free-tools.html 200
-/free-ai-tools/ /free-tools.html 200
+/free-ai-tools /free-ai-tools/index.html 200
+/free-ai-tools/ /free-ai-tools/index.html 200
