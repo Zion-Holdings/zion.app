@@ -120,6 +120,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">HTTP Status Codes</h3>
           <p className="text-slate-400 text-sm">Browse and search HTTP status codes.</p>
         </a>
+        <a href="/tools/id-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Id Generator</h3>
+          <p className="text-slate-400 text-sm">Generate UUID v4, time-ordered UUID v7, ULID, Nano ID, and short alphanumeric IDs in bu...</p>
+        </a>
         <a href="/tools/image-resize/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Image Resize</h3>
           <p className="text-slate-400 text-sm">Resize images with aspect ratio lock.</p>
@@ -267,6 +271,10 @@ export default function ToolsPage() {
         <a href="/tools/text-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Text Diff</h3>
           <p className="text-slate-400 text-sm">Highlight differences between two texts.</p>
+        </a>
+        <a href="/tools/text-encrypt/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text Encrypt</h3>
+          <p className="text-slate-400 text-sm">Encrypt and decrypt text in your browser with AES-GCM 256 and a passphrase (PBKDF2 SHA-...</p>
         </a>
         <a href="/tools/text-slug/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Text to Slug</h3>

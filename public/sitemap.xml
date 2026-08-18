@@ -683,6 +683,7 @@
   <url><loc>https://ziontechgroup.com/tools/hash-generator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/html-entities/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/http-status/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/id-generator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/image-resize/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/image-to-base64/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/js-minifier/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -720,6 +721,7 @@
   <url><loc>https://ziontechgroup.com/tools/text-analyzer/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/text-compare/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/text-diff/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/text-encrypt/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/text-slug/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/text-to-speech/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/timestamp-converter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
