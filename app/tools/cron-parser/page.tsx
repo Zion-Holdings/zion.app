@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Cron Parser | Zion Tech Group',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/tools/cron-parser/' },
 };
 
-export default function Page() {
+export default function CronParserPage() {
   return (
     <StandardPage
       title="Cron Parser"
@@ -37,7 +38,7 @@ export default function Page() {
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">When to use</h2>
           <p className="text-slate-300">
-            Use this tool when reviewing deployment schedules, batch jobs, or automation timers. Paste a cron expression and get a readable description of when it runs.
+            Use this tool when reviewing deployment schedules, batch jobs, or automation timers. Paste a cron expression and get a readable description of when it runs, including weekends and month boundaries.
           </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
@@ -47,6 +48,12 @@ export default function Page() {
             <li>Review the human-readable schedule.</li>
             <li>Validate correctness before applying it.</li>
           </ol>
+        </section>
+        <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h2 className="text-xl font-bold text-white mb-3">Tips</h2>
+          <p className="text-slate-300">
+            Verify timezone assumptions when moving jobs between regions. Watch for <code className="text-purple-300">@reboot</code> and nonstandard schedules that behave differently across schedulers.
+          </p>
         </section>
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">Related tools</h2>
