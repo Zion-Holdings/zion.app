@@ -51,8 +51,8 @@ export default function ContactPage() {
             Contact us to move from assessment to execution with a timeline and success criteria already in place.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/services" className="btn-primary text-lg px-10 py-4">Explore services</Link>
-            <Link href="/contact" className="btn-secondary text-lg px-10 py-4">Contact us</Link>
+            <Link href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener noreferrer" className="btn-primary text-lg px-10 py-4">Schedule a Call</Link>
+            <Link href="/services" className="btn-secondary text-lg px-10 py-4">Explore services</Link>
           </div>
         </div>
       </div>

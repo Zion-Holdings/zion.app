@@ -20,9 +20,10 @@ export async function generateStaticParams() {
   return slugs;
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const blogDir = path.join(process.cwd(), 'app', 'blog');
-  const postDir = path.join(blogDir, params.slug);
+  const postDir = path.join(blogDir, slug);
 
   if (!fs.existsSync(postDir)) {
     notFound();
@@ -35,11 +36,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   return (
     <StandardPage
-      title={params.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+      title={slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Blog', href: '/blog/' },
-        { label: params.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) },
+        { label: slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) },
       ]}
     >
       <div className="text-center max-w-4xl mx-auto">

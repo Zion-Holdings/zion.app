@@ -5,13 +5,7 @@ import Link from 'next/link';
 import ServiceCard from '@/components/SmartServiceCard';
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: '💰 Pricing Calculator & Service Matcher | Zion Tech Group',
-  description: 'Tell us your context and we\'ll recommend priced services from the catalog',
-  alternates: { canonical: '/pricing-calculator/' },
-};
 
 const CATEGORY_MAP: Record<string, string> = {
   'manual email': 'automation',

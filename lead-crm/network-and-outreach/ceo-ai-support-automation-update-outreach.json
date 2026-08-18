@@ -1,0 +1,7 @@
+{
+  "subject": "Zion Tech Group — AI support automation and free IT tools update",
+  "body": "<p>Hi,</p><p>Quick update: we’ve expanded our AI support automation and managed IT offerings for 2026, including practical playbooks, free readiness audits, and operational tooling at <a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a>.</p><p>If your team is evaluating support automation, observability, or field service readiness, we can align on a lightweight first engagement.</p><p>Schedule here if useful: <a href=\"https://calendly.com/kleber-ziontechgroup\">https://calendly.com/kleber-ziontechgroup</a></p><p>Best,<br>Kleber Garcia Alcatrao<br>CEO — Zion Tech Group</p>",
+  "llm_instruction": "Localize to the recipient’s language and conversational tone; keep the free-tools and business-advancement angle.",
+  "lead_signals": ["support automation", "observability", "managed IT", "free tools", "readiness audit"],
+  "service_pages": ["/services", "/free-tools-hub", "/blog"]
+}
