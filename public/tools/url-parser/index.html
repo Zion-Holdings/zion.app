@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Parser | Zion Tech Group</title>
+  <meta name="description" content="Parse URLs into components — protocol, hostname, port, path, query parameters, and hash. Free online URL parser tool.">
+  <meta property="og:title" content="URL Parser | Zion Tech Group">
+  <meta property="og:description" content="Free online URL parser — break down any URL into its components.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/url-parser/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/url-parser/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    input[type="text"] { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; }
+    input[type="text"]:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .results { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .results h3 { font-size: 1rem; margin-bottom: 1rem; color: #818cf8; }
+    .result-item { display: flex; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .result-item:last-child { border-bottom: none; }
+    .result-label { flex: 0 0 140px; font-size: 0.875rem; color: #94a3b8; font-weight: 600; }
+    .result-value { flex: 1; font-family: monospace; font-size: 0.875rem; color: #e5e7eb; word-break: break-all; }
+    .result-value.empty { color: #64748b; font-style: italic; }
+    .query-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    .query-table th, .query-table td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #334155; font-size: 0.875rem; }
+    .query-table th { color: #94a3b8; font-weight: 600; }
+    .query-table td { font-family: monospace; word-break: break-all; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>URL Parser</h1>
+    <p class="subtitle">Break down any URL into its components.</p>
+    
+    <div class="field">
+      <label>Enter URL</label>
+      <input type="text" id="urlInput" placeholder="https://example.com:8080/path?key=value#section">
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="parseUrl()">Parse</button>
+      <button class="btn success" onclick="copyJson()">Copy as JSON</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="error" id="error"></div>
+    
+    <div class="results" id="results" style="display: none;">
+      <h3>Parsed Components</h3>
+      <div id="resultsContent"></div>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function parseUrl() {
+      const input = document.getElementById('urlInput').value.trim();
+      const errorEl = document.getElementById('error');
+      const resultsEl = document.getElementById('results');
+      const contentEl = document.getElementById('resultsContent');
+      
+      if (!input) {
+        errorEl.textContent = '✗ Please enter a URL';
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        return;
+      }
+      
+      let url;
+      try {
+        url = new URL(input);
+      } catch(e) {
+        errorEl.textContent = '✗ Invalid URL: ' + e.message;
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        return;
+      }
+      
+      errorEl.style.display = 'none';
+      
+      const params = [];
+      url.searchParams.forEach((value, key) => {
+        params.push({ key, value });
+      });
+      
+      let paramsHtml = '';
+      if (params.length > 0) {
+        paramsHtml = '<table class="query-table"><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>' +
+          params.map(p => '<tr><td>' + escapeHtml(p.key) + '</td><td>' + escapeHtml(p.value) + '</td></tr>').join('') +
+          '</tbody></table>';
+      } else {
+        paramsHtml = '<span class="result-value empty">None</span>';
+      }
+      
+      const hashValue = url.hash ? url.hash : 'None';
+      const portValue = url.port ? url.port : 'Default';
+      
+      contentEl.innerHTML = 
+        '<div class="result-item"><div class="result-label">Protocol</div><div class="result-value">' + escapeHtml(url.protocol) + '</div></div>' +
+        '<div class="result-item"><div class="result-label">Hostname</div><div class="result-value">' + escapeHtml(url.hostname) + '</div></div>' +
+        '<div class="result-item"><div class="result-label">Port</div><div class="result-value">' + escapeHtml(portValue) + '</div></div>' +
+        '<div class="result-item"><div class="result-label">Path</div><div class="result-value">' + escapeHtml(url.pathname) + '</div></div>' +
+        '<div class="result-item"><div class="result-label">Query String</div><div class="result-value">' + escapeHtml(url.search || 'None') + '</div></div>' +
+        '<div class="result-item"><div class="result-label">Query Params</div>' + paramsHtml + '</div>' +
+        '<div class="result-item"><div class="result-label">Hash</div><div class="result-value">' + escapeHtml(hashValue) + '</div></div>' +
+        '<div class="result-item"><div class="result-label">Origin</div><div class="result-value">' + escapeHtml(url.origin) + '</div></div>';
+      
+      resultsEl.style.display = 'block';
+    }
+    
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+    
+    function copyJson() {
+      const input = document.getElementById('urlInput').value.trim();
+      if (!input) return;
+      
+      try {
+        const url = new URL(input);
+        const params = {};
+        url.searchParams.forEach((value, key) => {
+          params[key] = value;
+        });
+        
+        const json = JSON.stringify({
+          protocol: url.protocol,
+          hostname: url.hostname,
+          port: url.port || null,
+          path: url.pathname,
+          queryString: url.search || null,
+          queryParams: params,
+          hash: url.hash || null,
+          origin: url.origin
+        }, null, 2);
+        
+        navigator.clipboard.writeText(json).then(() => {
+          const btn = document.querySelector('.btn.success');
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = original; }, 2000);
+        });
+      } catch(e) {
+        // Do nothing if invalid
+      }
+    }
+    
+    function clearAll() {
+      document.getElementById('urlInput').value = '';
+      document.getElementById('error').style.display = 'none';
+      document.getElementById('results').style.display = 'none';
+    }
+    
+    // Allow Enter key to parse
+    document.getElementById('urlInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        parseUrl();
+      }
+    });
+  </script>
+</body>
+</html>

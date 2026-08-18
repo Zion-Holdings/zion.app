@@ -172,6 +172,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">JSON to CSV</h3>
           <p className="text-slate-400 text-sm">Convert JSON arrays to CSV.</p>
         </a>
+        <a href="/tools/url-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">URL Parser</h3>
+          <p className="text-slate-400 text-sm">Parse URLs into components.</p>
+        </a>
+        <a href="/tools/http-status/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">HTTP Status Codes</h3>
+          <p className="text-slate-400 text-sm">Browse HTTP status codes.</p>
+        </a>
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
