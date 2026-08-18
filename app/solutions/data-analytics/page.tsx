@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function DataAnalyticsSolutionsPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Data & Analytics"
       subtitle="Pipelines, governance, forecasting, dashboards, and warehouse modernization."

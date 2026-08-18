@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="AI MLOps Platform 2026"
       subtitle="Production patterns for ML pipelines, model registry, and deployment governance."

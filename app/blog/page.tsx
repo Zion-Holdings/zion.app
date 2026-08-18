@@ -629,6 +629,7 @@ const posts: BlogPost[] = [
 
 export default function BlogPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Blog"
       subtitle="Guides, roadmap notes, and implementation playbooks from the Zion platform."

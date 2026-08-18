@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 
 export default function ContactIntentPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Contact Intent"
       subtitle="We route inquiries to the right team quickly."

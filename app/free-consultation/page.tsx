@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function FreeConsultationPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Free Consultation"
       subtitle="Tell us your goal and we’ll return a short list of best-fit services with estimated ROI and timeline."

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function HelpPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Help Center"
       subtitle="Find answers about onboarding, support, pricing, and what to expect from a Zion engagement."

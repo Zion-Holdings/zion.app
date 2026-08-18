@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function AcademyPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Academy"
       subtitle="Workshops, learning paths, and enablement for teams adopting AI and modern IT."

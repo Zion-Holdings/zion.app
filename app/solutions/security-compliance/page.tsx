@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function SecurityComplianceSolutionsPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Security & Compliance"
       subtitle="Threat detection, governance, identity, incident response, and compliance automation."

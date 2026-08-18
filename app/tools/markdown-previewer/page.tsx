@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function MarkdownPreviewerPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Markdown Previewer"
       subtitle="Preview formatted markdown output instantly for docs, blogs, and readmes."

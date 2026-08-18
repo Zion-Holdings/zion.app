@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function PublicRoadmapPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Public Roadmap"
       subtitle="See what we’re building next and share feedback so we can prioritize the right improvements."

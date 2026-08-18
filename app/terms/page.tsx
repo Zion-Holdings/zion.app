@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage title="Terms of Service" subtitle="Rules and terms for using Zion Tech Group services and website." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Terms of Service' }]}>
       <div className="max-w-3xl mx-auto space-y-6 text-slate-300">
         <p>By using this site or engaging Zion Tech Group, you agree to these terms. Services are provided subject to scope, timeline, and payment terms agreed in writing.</p>

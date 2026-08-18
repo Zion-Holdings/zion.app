@@ -30,6 +30,7 @@ export default function RegexTesterPage() {
   ];
 
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Regex Tester"
       subtitle="Test regular expressions with live matching and highlights."

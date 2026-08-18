@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function ManagedItSolutionsPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Managed IT"
       subtitle="Support automation, endpoint management, and operational excellence for modern teams."

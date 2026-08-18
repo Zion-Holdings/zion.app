@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function IndustrySolutionsPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Industry Solutions"
       subtitle="Purpose-built AI and IT solutions by industry."

@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Password Generator"
       subtitle="Generate strong, customizable passwords for accounts, APIs, and admin users."

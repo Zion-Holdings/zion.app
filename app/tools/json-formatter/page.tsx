@@ -30,6 +30,7 @@ export default function JsonFormatterPage() {
   ];
 
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="JSON Formatter"
       subtitle="Format, minify, and validate JSON quickly."

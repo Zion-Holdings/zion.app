@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function GovernmentsPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Governments"
       subtitle="Secure AI, IT, and automation programs for government organizations."

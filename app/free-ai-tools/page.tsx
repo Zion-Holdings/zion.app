@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function FreeAiToolsPage() {
   return (
+      <JsonLd data={"@context": "https://schema.org", "@type": "WebSite", "name": "Zion Tech Group", "url": "https://ziontechgroup.com/"} />
     <StandardPage
       title="Free AI Tools"
       subtitle="Self-service utilities to evaluate AI capabilities and IT service fit."
