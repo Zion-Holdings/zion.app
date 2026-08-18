@@ -80,6 +80,21 @@ export default function Page() {
 
         <script
           type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "Smart Contract Audit: policy and compliance",
+              url: "https://ziontechgroup.com/blog/smart-contract-audit-policy-and-compliance/",
+              description:
+                "Smart Contract Audit: policy and compliance",
+              publisher: {
+                "@type": "Organization",
+                name: "Zion Tech Group",
+                url: "https://ziontechgroup.com",
+              },
+            }),
+          }}
         />
       </article>
     </div>
