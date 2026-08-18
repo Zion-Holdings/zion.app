@@ -8,11 +8,14 @@ const FOOTER_LINKS = [
   { label: 'Services', href: '/services/' },
   { label: 'Products', href: '/products/' },
   { label: 'Solutions', href: '/solutions/' },
+  { label: 'AI Agent Dashboard', href: '/dashboard/' },
+  { label: 'Agents Monitoring', href: '/agents-monitoring/' },
   { label: 'Use Cases', href: '/use-cases/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'FAQ', href: '/faq/' },
-  { label: 'About', href: '/about/' },
   { label: 'Testimonials', href: '/testimonials/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
 ];
 
 export default function Footer() {
