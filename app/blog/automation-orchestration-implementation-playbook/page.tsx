@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Automation Orchestration: implementation playbook',
     url: 'https://ziontechgroup.com/blog/automation-orchestration-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

@@ -11,7 +11,7 @@ export const metadata = {
     description: 'DevSecOps Pipeline: operations handbook',
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

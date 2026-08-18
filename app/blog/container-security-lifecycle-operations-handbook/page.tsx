@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Container Security Lifecycle: operations handbook',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

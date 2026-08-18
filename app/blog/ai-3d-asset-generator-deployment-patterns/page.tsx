@@ -11,7 +11,7 @@ export const metadata = {
     description: 'AI 3D Asset Generator: deployment patterns',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Managed IT Services: implementation playbook',
     url: 'https://ziontechgroup.com/blog/managed-it-services-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

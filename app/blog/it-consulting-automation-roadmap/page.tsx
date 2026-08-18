@@ -11,7 +11,7 @@ export const metadata = {
     description: 'IT Consulting: automation roadmap',
     url: 'https://ziontechgroup.com/blog/it-consulting-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

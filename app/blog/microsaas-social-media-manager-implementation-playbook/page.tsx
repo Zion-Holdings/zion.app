@@ -11,7 +11,7 @@ export const metadata = {
     description: 'MicroSaaS Social Media Manager: implementation playbook',
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

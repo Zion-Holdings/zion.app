@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Enterprise Backup DR: operations handbook',
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

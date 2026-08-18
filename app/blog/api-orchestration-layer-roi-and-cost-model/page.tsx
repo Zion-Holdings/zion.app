@@ -11,7 +11,7 @@ export const metadata = {
     description: 'API Orchestration Layer: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

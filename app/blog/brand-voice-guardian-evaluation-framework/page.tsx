@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Brand Voice Guardian: evaluation framework',
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

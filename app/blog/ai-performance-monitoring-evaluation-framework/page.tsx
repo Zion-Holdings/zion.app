@@ -11,7 +11,7 @@ export const metadata = {
     description: 'AI Performance Monitoring: evaluation framework',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

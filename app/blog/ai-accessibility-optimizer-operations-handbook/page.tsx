@@ -11,7 +11,7 @@ export const metadata = {
     description: 'AI Accessibility Optimizer: operations handbook',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

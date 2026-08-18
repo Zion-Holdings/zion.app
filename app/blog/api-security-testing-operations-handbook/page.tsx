@@ -11,7 +11,7 @@ export const metadata = {
     description: 'API Security Testing: operations handbook',
     url: 'https://ziontechgroup.com/blog/api-security-testing-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

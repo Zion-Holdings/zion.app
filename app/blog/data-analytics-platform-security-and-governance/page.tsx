@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Data Analytics Platform: security and governance',
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

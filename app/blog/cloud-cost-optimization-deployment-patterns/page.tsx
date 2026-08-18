@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Cloud Cost Optimization: deployment patterns',
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

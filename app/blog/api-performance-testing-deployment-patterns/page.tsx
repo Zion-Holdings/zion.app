@@ -11,7 +11,7 @@ export const metadata = {
     description: 'API Performance Testing: deployment patterns',
     url: 'https://ziontechgroup.com/blog/api-performance-testing-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Autonomous Code Deployment: architecture overview',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

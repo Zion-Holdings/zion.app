@@ -11,7 +11,7 @@ export const metadata = {
     description: 'APM Application Performance: evaluation framework',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',

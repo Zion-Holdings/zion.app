@@ -11,7 +11,7 @@ export const metadata = {
     description: 'Edge Computing Deployment: security and governance',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
+
   },
   twitter: {
     card: 'summary_large_image',
