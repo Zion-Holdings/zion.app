@@ -175,7 +175,6 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Regex Cheat Sheet</h3>
           <p className="text-slate-400 text-sm">Common regex patterns and syntax.</p>
         </a>
->>>>>>> 5fefdb22af0 (fix(tools): remove stale tool links from ToolsPage)
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
