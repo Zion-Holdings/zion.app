@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage &amp; Discount Calculator | Zion Tech Group</title>
+  <meta name="description" content="Free percentage and discount calculator — find X% of Y, what percent X is of Y, percent change between two numbers, and sale price with amount saved. Live results, no signup.">
+  <meta property="og:title" content="Percentage &amp; Discount Calculator | Zion Tech Group">
+  <meta property="og:description" content="Free online percentage calculator — percent of a number, percent change, and discount price with savings.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/percentage-calculator/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/percentage-calculator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .card h2 { font-size: 1rem; margin-bottom: 0.25rem; color: #818cf8; }
+    .card p.hint { font-size: 0.8125rem; color: #94a3b8; margin-bottom: 1rem; }
+    .row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .field { flex: 1 1 160px; margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    input[type="text"], input[type="number"] { width: 100%; padding: 0.75rem; background: #0b0f1a; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type="number"] { -moz-appearance: textfield; }
+    input:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .out { background: #0b0f1a; border: 1px solid #334155; border-radius: 0.5rem; padding: 1rem; margin-bottom: 1rem; }
+    .out-main { font-family: monospace; font-size: 1.25rem; font-weight: 700; color: #e5e7eb; word-break: break-all; }
+    .out-main.empty { color: #64748b; font-size: 0.9375rem; font-weight: 400; font-style: italic; }
+    .out-note { font-size: 0.8125rem; color: #94a3b8; margin-top: 0.5rem; }
+    .out-note.up { color: #34d399; }
+    .out-note.down { color: #fca5a5; }
+    .result-item { display: flex; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .result-item:last-child { border-bottom: none; }
+    .result-label { flex: 0 0 140px; font-size: 0.875rem; color: #94a3b8; font-weight: 600; }
+    .result-value { flex: 1; font-family: monospace; font-size: 0.875rem; color: #e5e7eb; word-break: break-all; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    @media (max-width: 520px) { .result-label { flex: 0 0 110px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Percentage &amp; Discount Calculator</h1>
+    <p class="subtitle">Percent of a number, percent change, and sale prices — calculated live as you type.</p>
+
+    <!-- 1. X% of Y -->
+    <div class="card">
+      <h2>What is X% of Y?</h2>
+      <p class="hint">Example: 15% of 200 = 30</p>
+      <div class="row">
+        <div class="field">
+          <label>Percent (X)</label>
+          <input type="number" id="p1x" step="any" placeholder="15" value="15">
+        </div>
+        <div class="field">
+          <label>Of number (Y)</label>
+          <input type="number" id="p1y" step="any" placeholder="200" value="200">
+        </div>
+      </div>
+      <div class="out">
+        <div class="out-main" id="p1out">—</div>
+        <div class="out-note" id="p1note"></div>
+      </div>
+      <div class="buttons">
+        <button class="btn success" data-copy="p1out">Copy result</button>
+        <button class="btn secondary" data-clear="p1x,p1y">Clear</button>
+      </div>
+    </div>
+
+    <!-- 2. X is what % of Y -->
+    <div class="card">
+      <h2>X is what percent of Y?</h2>
+      <p class="hint">Example: 30 is 15% of 200</p>
+      <div class="row">
+        <div class="field">
+          <label>Number (X)</label>
+          <input type="number" id="p2x" step="any" placeholder="30" value="30">
+        </div>
+        <div class="field">
+          <label>Of total (Y)</label>
+          <input type="number" id="p2y" step="any" placeholder="200" value="200">
+        </div>
+      </div>
+      <div class="out">
+        <div class="out-main" id="p2out">—</div>
+        <div class="out-note" id="p2note"></div>
+      </div>
+      <div class="buttons">
+        <button class="btn success" data-copy="p2out">Copy result</button>
+        <button class="btn secondary" data-clear="p2x,p2y">Clear</button>
+      </div>
+    </div>
+
+    <!-- 3. Percent change -->
+    <div class="card">
+      <h2>Percent change from X to Y</h2>
+      <p class="hint">Increase or decrease between an old and a new value.</p>
+      <div class="row">
+        <div class="field">
+          <label>Original value (X)</label>
+          <input type="number" id="p3x" step="any" placeholder="80" value="80">
+        </div>
+        <div class="field">
+          <label>New value (Y)</label>
+          <input type="number" id="p3y" step="any" placeholder="100" value="100">
+        </div>
+      </div>
+      <div class="out">
+        <div class="out-main" id="p3out">—</div>
+        <div class="out-note" id="p3note"></div>
+      </div>
+      <div class="buttons">
+        <button class="btn success" data-copy="p3out">Copy result</button>
+        <button class="btn secondary" data-clear="p3x,p3y">Clear</button>
+      </div>
+    </div>
+
+    <!-- 4. Discount price -->
+    <div class="card">
+      <h2>Discount price</h2>
+      <p class="hint">Enter the original price and the discount percent to get the final price and how much you save.</p>
+      <div class="row">
+        <div class="field">
+          <label>Original price</label>
+          <input type="number" id="p4price" step="any" placeholder="249.99" value="249.99">
+        </div>
+        <div class="field">
+          <label>Discount (%)</label>
+          <input type="number" id="p4disc" step="any" placeholder="25" value="25">
+        </div>
+      </div>
+      <div class="out">
+        <div class="result-item">
+          <div class="result-label">Final price</div>
+          <div class="result-value" id="p4final">—</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">You save</div>
+          <div class="result-value" id="p4saved">—</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">You pay</div>
+          <div class="result-value" id="p4pct">—</div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn success" data-copy="p4final">Copy final price</button>
+        <button class="btn success" data-copy="p4saved">Copy savings</button>
+        <button class="btn secondary" data-clear="p4price,p4disc">Clear</button>
+      </div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    var EMPTY = '—';
+
+    function num(id) {
+      var raw = document.getElementById(id).value.trim();
+      if (raw === '') return null;
+      var v = parseFloat(raw);
+      return isFinite(v) ? v : null;
+    }
+
+    // Trim floating point noise, keep up to 6 decimals, add thousands separators.
+    function fmt(n, maxDec) {
+      if (!isFinite(n)) return EMPTY;
+      var d = (maxDec === undefined) ? 6 : maxDec;
+      var rounded = parseFloat(n.toFixed(d));
+      return rounded.toLocaleString('en-US', { maximumFractionDigits: d });
+    }
+
+    function money(n) {
+      if (!isFinite(n)) return EMPTY;
+      return (Math.round(n * 100) / 100).toLocaleString('en-US', {
+        minimumFractionDigits: 2, maximumFractionDigits: 2
+      });
+    }
+
+    function setOut(id, text, isEmpty) {
+      var el = document.getElementById(id);
+      el.textContent = text;
+      if (el.classList.contains('out-main')) {
+        el.className = isEmpty ? 'out-main empty' : 'out-main';
+      }
+    }
+
+    function setNote(id, text, cls) {
+      var el = document.getElementById(id);
+      el.textContent = text || '';
+      el.className = 'out-note' + (cls ? ' ' + cls : '');
+    }
+
+    function calc1() {
+      var x = num('p1x'), y = num('p1y');
+      if (x === null || y === null) {
+        setOut('p1out', 'Enter both values', true);
+        setNote('p1note', '');
+        return;
+      }
+      var r = (x / 100) * y;
+      setOut('p1out', fmt(r), false);
+      setNote('p1note', fmt(x) + '% of ' + fmt(y) + ' = ' + fmt(r));
+    }
+
+    function calc2() {
+      var x = num('p2x'), y = num('p2y');
+      if (x === null || y === null) {
+        setOut('p2out', 'Enter both values', true);
+        setNote('p2note', '');
+        return;
+      }
+      if (y === 0) {
+        setOut('p2out', 'Undefined (total is 0)', true);
+        setNote('p2note', 'Cannot divide by zero.');
+        return;
+      }
+      var r = (x / y) * 100;
+      setOut('p2out', fmt(r) + '%', false);
+      setNote('p2note', fmt(x) + ' is ' + fmt(r) + '% of ' + fmt(y));
+    }
+
+    function calc3() {
+      var x = num('p3x'), y = num('p3y');
+      if (x === null || y === null) {
+        setOut('p3out', 'Enter both values', true);
+        setNote('p3note', '');
+        return;
+      }
+      if (x === 0) {
+        setOut('p3out', 'Undefined (original is 0)', true);
+        setNote('p3note', 'Percent change from zero is undefined.');
+        return;
+      }
+      var change = ((y - x) / Math.abs(x)) * 100;
+      var sign = change > 0 ? '+' : (change < 0 ? '' : '');
+      setOut('p3out', sign + fmt(change) + '%', false);
+      var word = change > 0 ? 'increase' : (change < 0 ? 'decrease' : 'no change');
+      var cls = change > 0 ? 'up' : (change < 0 ? 'down' : '');
+      var diff = y - x;
+      setNote('p3note', word === 'no change'
+        ? 'No change between ' + fmt(x) + ' and ' + fmt(y)
+        : fmt(Math.abs(change)) + '% ' + word + ' (difference of ' + fmt(diff) + ')', cls);
+    }
+
+    function calc4() {
+      var price = num('p4price'), disc = num('p4disc');
+      if (price === null || disc === null) {
+        setOut('p4final', EMPTY);
+        setOut('p4saved', EMPTY);
+        setOut('p4pct', EMPTY);
+        return;
+      }
+      var saved = price * (disc / 100);
+      var finalPrice = price - saved;
+      setOut('p4final', money(finalPrice));
+      setOut('p4saved', money(saved) + ' (' + fmt(disc, 4) + '% off)');
+      setOut('p4pct', fmt(100 - disc, 4) + '% of the original ' + money(price));
+    }
+
+    function calcAll() { calc1(); calc2(); calc3(); calc4(); }
+
+    // Live recalculation
+    var ids = ['p1x','p1y','p2x','p2y','p3x','p3y','p4price','p4disc'];
+    ids.forEach(function(id) {
+      var el = document.getElementById(id);
+      el.addEventListener('input', calcAll);
+      el.addEventListener('change', calcAll);
+    });
+
+    // Copy buttons
+    document.querySelectorAll('[data-copy]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var target = document.getElementById(btn.getAttribute('data-copy'));
+        var text = target ? target.textContent.trim() : '';
+        if (!text || text === EMPTY || target.classList.contains('empty')) return;
+        var original = btn.textContent;
+        function done() {
+          btn.textContent = 'Copied!';
+          setTimeout(function() { btn.textContent = original; }, 2000);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function() { fallbackCopy(text, done); });
+        } else {
+          fallbackCopy(text, done);
+        }
+      });
+    });
+
+    function fallbackCopy(text, cb) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); cb(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    // Clear buttons
+    document.querySelectorAll('[data-clear]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btn.getAttribute('data-clear').split(',').forEach(function(id) {
+          document.getElementById(id.trim()).value = '';
+        });
+        calcAll();
+      });
+    });
+
+    calcAll();
+  </script>
+</body>
+</html>

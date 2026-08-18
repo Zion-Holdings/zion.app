@@ -36,85 +36,237 @@ export default function ToolsPage() {
       ]}
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-        <a href="/tools/json-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON Formatter</h3>
-          <p className="text-slate-400 text-sm">Format, minify, and validate JSON quickly.</p>
+        <a href="/tools/base64-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Base64 Encoder</h3>
+          <p className="text-slate-400 text-sm">Encode and decode Base64 with UTF-8 support.</p>
         </a>
-        <a href="/tools/jwt-decoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JWT Decoder</h3>
-          <p className="text-slate-400 text-sm">Inspect header and payload without sending data anywhere.</p>
+        <a href="/tools/base64-image/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Base64 Image Encoder</h3>
+          <p className="text-slate-400 text-sm">Encode images to Base64 data URIs.</p>
         </a>
-        <a href="/tools/regex-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Regex Tester</h3>
-          <p className="text-slate-400 text-sm">Test patterns and matches in real time.</p>
+        <a href="/tools/blog-post-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Blog Post Generator</h3>
+          <p className="text-slate-400 text-sm">Draft blog outlines and introductions.</p>
         </a>
-        <a href="/tools/qr-code-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">QR Code Generator</h3>
-          <p className="text-slate-400 text-sm">Generate QR codes for URLs and text.</p>
+        <a href="/tools/case-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Case Converter</h3>
+          <p className="text-slate-400 text-sm">Convert between 9 text cases instantly.</p>
         </a>
-        <a href="/tools/word-counter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Word Counter</h3>
-          <p className="text-slate-400 text-sm">Count words, characters, and sentences.</p>
-        </a>
-        <a href="/tools/uuid-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">UUID Generator</h3>
-          <p className="text-slate-400 text-sm">Generate UUIDs v4 instantly.</p>
+        <a href="/tools/color-contrast/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Color Contrast Checker</h3>
+          <p className="text-slate-400 text-sm">Check WCAG AA/AAA contrast ratios.</p>
         </a>
         <a href="/tools/color-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Color Converter</h3>
           <p className="text-slate-400 text-sm">Convert between HEX, RGB, and HSL with live preview.</p>
         </a>
+        <a href="/tools/color-palette-gen/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Color Palette Generator</h3>
+          <p className="text-slate-400 text-sm">Generate palettes and export as CSS or JSON.</p>
+        </a>
+        <a href="/tools/color-picker/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Color Picker</h3>
+          <p className="text-slate-400 text-sm">Pick colors with HEX/RGB/HSL values.</p>
+        </a>
+        <a href="/tools/cron-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Cron Generator</h3>
+          <p className="text-slate-400 text-sm">Build cron expressions from a schedule.</p>
+        </a>
+        <a href="/tools/cron-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Cron Parser</h3>
+          <p className="text-slate-400 text-sm">Parse and explain cron expressions.</p>
+        </a>
+        <a href="/tools/css-minifier/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">CSS Minifier</h3>
+          <p className="text-slate-400 text-sm">Minify CSS and see size savings.</p>
+        </a>
+        <a href="/tools/css-minifier-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">CSS Minifier Pro</h3>
+          <p className="text-slate-400 text-sm">Minify CSS with advanced options.</p>
+        </a>
+        <a href="/tools/excel-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Excel to JSON</h3>
+          <p className="text-slate-400 text-sm">Convert CSV/TSV data to JSON.</p>
+        </a>
+        <a href="/tools/gradient-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">CSS Gradient Generator</h3>
+          <p className="text-slate-400 text-sm">Design CSS gradients visually.</p>
+        </a>
+        <a href="/tools/hash-checker/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Hash Checker</h3>
+          <p className="text-slate-400 text-sm">Compare hashes to verify integrity.</p>
+        </a>
         <a href="/tools/hash-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Hash Generator</h3>
           <p className="text-slate-400 text-sm">Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes.</p>
         </a>
-        <a href="/tools/timestamp-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Timestamp Converter</h3>
-          <p className="text-slate-400 text-sm">Convert Unix timestamps to dates and vice versa.</p>
+        <a href="/tools/html-entities/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">HTML Entities</h3>
+          <p className="text-slate-400 text-sm">Encode and decode HTML entities.</p>
         </a>
-        <a href="/tools/base64-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Base64 Encoder</h3>
-          <p className="text-slate-400 text-sm">Encode and decode Base64 with UTF-8 support.</p>
+        <a href="/tools/http-status/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">HTTP Status Codes</h3>
+          <p className="text-slate-400 text-sm">Browse and search HTTP status codes.</p>
         </a>
-        <a href="/tools/url-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">URL Encoder</h3>
-          <p className="text-slate-400 text-sm">Encode and decode URLs with UTF-8 support.</p>
-        </a>
-        <a href="/tools/password-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Password Generator</h3>
-          <p className="text-slate-400 text-sm">Generate secure, customizable passwords.</p>
-        </a>
-        <a href="/tools/json-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON Diff</h3>
-          <p className="text-slate-400 text-sm">Compare two JSON objects and highlight differences.</p>
-        </a>
-        <a href="/tools/markdown-previewer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Markdown Previewer</h3>
-          <p className="text-slate-400 text-sm">Preview markdown rendering in real-time.</p>
-        </a>
-        <a href="/tools/jwt-decoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JWT Decoder Pro</h3>
-          <p className="text-slate-400 text-sm">Decode JWT tokens with signature verification.</p>
-        </a>
-        <a href="/tools/regex-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Regex Tester Pro</h3>
-          <p className="text-slate-400 text-sm">Test regex patterns with match highlighting.</p>
-        </a>
-        <a href="/tools/json-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON Formatter Pro</h3>
-          <p className="text-slate-400 text-sm">Format, minify, and validate JSON with syntax highlighting.</p>
-        </a>
-        <a href="/tools/qr-code-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">QR Code Generator Pro</h3>
-          <p className="text-slate-400 text-sm">Generate and download QR codes instantly.</p>
+        <a href="/tools/image-resize/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Image Resize</h3>
+          <p className="text-slate-400 text-sm">Resize images with aspect ratio lock.</p>
         </a>
         <a href="/tools/image-to-base64/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Image to Base64</h3>
           <p className="text-slate-400 text-sm">Convert images to base64 strings.</p>
         </a>
-        <a href="/tools/cron-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Cron Parser</h3>
-          <p className="text-slate-400 text-sm">Parse and explain cron expressions.</p>
+        <a href="/tools/js-minifier/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JS Minifier</h3>
+          <p className="text-slate-400 text-sm">Minify JavaScript and see size savings.</p>
+        </a>
+        <a href="/tools/js-obfuscator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JS Obfuscator</h3>
+          <p className="text-slate-400 text-sm">Obfuscate JavaScript code.</p>
+        </a>
+        <a href="/tools/json-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON Diff</h3>
+          <p className="text-slate-400 text-sm">Compare two JSON objects and highlight differences.</p>
+        </a>
+        <a href="/tools/json-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON Formatter</h3>
+          <p className="text-slate-400 text-sm">Format, minify, and validate JSON quickly.</p>
+        </a>
+        <a href="/tools/json-schema-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON Schema Generator</h3>
+          <p className="text-slate-400 text-sm">Infer a JSON Schema from sample JSON.</p>
+        </a>
+        <a href="/tools/json-to-csv/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON to CSV</h3>
+          <p className="text-slate-400 text-sm">Convert JSON arrays to CSV.</p>
+        </a>
+        <a href="/tools/json-to-yaml/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JSON to YAML</h3>
+          <p className="text-slate-400 text-sm">Convert JSON to YAML instantly.</p>
+        </a>
+        <a href="/tools/jwt-decoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JWT Decoder</h3>
+          <p className="text-slate-400 text-sm">Inspect header and payload without sending data anywhere.</p>
+        </a>
+        <a href="/tools/jwt-decoder-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JWT Decoder Pro</h3>
+          <p className="text-slate-400 text-sm">Decode JWTs and inspect algorithm details.</p>
+        </a>
+        <a href="/tools/jwt-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">JWT Generator</h3>
+          <p className="text-slate-400 text-sm">Build signed JWTs for testing.</p>
+        </a>
+        <a href="/tools/lorem-ipsum/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Lorem Ipsum Generator</h3>
+          <p className="text-slate-400 text-sm">Generate placeholder text.</p>
+        </a>
+        <a href="/tools/lorem-ipsum-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Lorem Ipsum Pro</h3>
+          <p className="text-slate-400 text-sm">Paragraphs, sentences, or words on demand.</p>
+        </a>
+        <a href="/tools/markdown-previewer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Markdown Previewer</h3>
+          <p className="text-slate-400 text-sm">Preview markdown rendering in real-time.</p>
+        </a>
+        <a href="/tools/markdown-to-html/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Markdown to HTML</h3>
+          <p className="text-slate-400 text-sm">Convert Markdown to HTML instantly.</p>
+        </a>
+        <a href="/tools/md5-hash/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">MD5 Hash</h3>
+          <p className="text-slate-400 text-sm">Generate MD5 hashes from text or files.</p>
+        </a>
+        <a href="/tools/meta-tag-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Meta Tag Generator</h3>
+          <p className="text-slate-400 text-sm">Generate SEO and Open Graph meta tags.</p>
+        </a>
+        <a href="/tools/mime-lookup/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">MIME Type Lookup</h3>
+          <p className="text-slate-400 text-sm">Find MIME types by extension or category.</p>
+        </a>
+        <a href="/tools/number-base-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Number Base Converter</h3>
+          <p className="text-slate-400 text-sm">Convert between binary, octal, decimal, hex.</p>
+        </a>
+        <a href="/tools/password-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Password Generator</h3>
+          <p className="text-slate-400 text-sm">Generate secure, customizable passwords.</p>
+        </a>
+        <a href="/tools/password-generator-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Password Generator Pro</h3>
+          <p className="text-slate-400 text-sm">Advanced generator with strength meter.</p>
+        </a>
+        <a href="/tools/password-strength/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Password Strength</h3>
+          <p className="text-slate-400 text-sm">Analyze entropy and estimated crack time.</p>
+        </a>
+        <a href="/tools/percentage-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Percentage Calculator</h3>
+          <p className="text-slate-400 text-sm">Percentages, percent change, and discounts.</p>
+        </a>
+        <a href="/tools/qr-code-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">QR Code Generator</h3>
+          <p className="text-slate-400 text-sm">Generate and download QR codes instantly.</p>
+        </a>
+        <a href="/tools/qr-scanner/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">QR Scanner</h3>
+          <p className="text-slate-400 text-sm">Decode QR codes from an uploaded image.</p>
+        </a>
+        <a href="/tools/regex-cheat-sheet/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Regex Cheat Sheet</h3>
+          <p className="text-slate-400 text-sm">Searchable regex syntax reference.</p>
+        </a>
+        <a href="/tools/regex-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Regex Tester</h3>
+          <p className="text-slate-400 text-sm">Test patterns and matches in real time.</p>
+        </a>
+        <a href="/tools/sql-query-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">SQL Query Builder</h3>
+          <p className="text-slate-400 text-sm">Build SELECT, INSERT, UPDATE, DELETE queries.</p>
+        </a>
+        <a href="/tools/text-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text Analyzer</h3>
+          <p className="text-slate-400 text-sm">Counts, reading time, and keyword density.</p>
+        </a>
+        <a href="/tools/text-compare/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text Compare</h3>
+          <p className="text-slate-400 text-sm">Compare two texts side-by-side.</p>
+        </a>
+        <a href="/tools/text-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text Diff</h3>
+          <p className="text-slate-400 text-sm">Highlight differences between two texts.</p>
+        </a>
+        <a href="/tools/text-slug/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text to Slug</h3>
+          <p className="text-slate-400 text-sm">Convert text to URL-friendly slugs.</p>
+        </a>
+        <a href="/tools/text-to-speech/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Text to Speech</h3>
+          <p className="text-slate-400 text-sm">Read text aloud with browser voices.</p>
+        </a>
+        <a href="/tools/timestamp-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Timestamp Converter</h3>
+          <p className="text-slate-400 text-sm">Convert Unix timestamps to dates and vice versa.</p>
+        </a>
+        <a href="/tools/timestamp-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Timestamp Generator</h3>
+          <p className="text-slate-400 text-sm">Generate Unix timestamps for any date.</p>
+        </a>
+        <a href="/tools/timestamp-to-cron/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Timestamp to Cron</h3>
+          <p className="text-slate-400 text-sm">Turn a specific time into a cron expression.</p>
+        </a>
+        <a href="/tools/unit-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Unit Converter</h3>
+          <p className="text-slate-400 text-sm">Length, weight, temperature, data, speed, area.</p>
+        </a>
+        <a href="/tools/url-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">URL Encoder</h3>
+          <p className="text-slate-400 text-sm">Encode and decode URLs with UTF-8 support.</p>
+        </a>
+        <a href="/tools/url-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">URL Parser</h3>
+          <p className="text-slate-400 text-sm">Break a URL into its components.</p>
         </a>
         <a href="/tools/uuid-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">UUID Generator</h3>
@@ -124,9 +276,9 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Word Counter</h3>
           <p className="text-slate-400 text-sm">Count words, characters, and reading time.</p>
         </a>
-        <a href="/tools/excel-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Excel to JSON</h3>
-          <p className="text-slate-400 text-sm">Convert CSV/TSV data to JSON.</p>
+        <a href="/tools/yaml-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">YAML Formatter</h3>
+          <p className="text-slate-400 text-sm">Format and validate YAML.</p>
         </a>
         <a href="/tools/yaml-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">YAML to JSON</h3>

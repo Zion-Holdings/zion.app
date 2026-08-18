@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter | Zion Tech Group</title>
+  <meta name="description" content="Free online unit converter — convert length, weight, temperature, data storage, speed, and area units instantly with live results.">
+  <meta property="og:title" content="Unit Converter | Zion Tech Group">
+  <meta property="og:description" content="Free online unit converter — length, weight, temperature, data storage, speed, and area conversions with instant results.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/unit-converter/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/unit-converter/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    input[type="text"], select { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; }
+    input[type="text"]:focus, select:focus { outline: none; border-color: #6366f1; }
+    select { cursor: pointer; }
+    .row { display: flex; gap: 0.75rem; align-items: flex-end; flex-wrap: wrap; }
+    .row .field { flex: 1 1 220px; margin-bottom: 1rem; }
+    .swap-wrap { flex: 0 0 auto; margin-bottom: 1rem; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .results { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .results h3 { font-size: 1rem; margin-bottom: 1rem; color: #818cf8; }
+    .big-result { font-family: monospace; font-size: 1.5rem; color: #fff; word-break: break-all; margin-bottom: 1rem; }
+    .result-item { display: flex; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .result-item:last-child { border-bottom: none; }
+    .result-label { flex: 0 0 140px; font-size: 0.875rem; color: #94a3b8; font-weight: 600; }
+    .result-value { flex: 1; font-family: monospace; font-size: 0.875rem; color: #e5e7eb; word-break: break-all; }
+    .result-value.empty { color: #64748b; font-style: italic; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Unit Converter</h1>
+    <p class="subtitle">Convert length, weight, temperature, data storage, speed, and area units instantly.</p>
+
+    <div class="field">
+      <label for="category">Category</label>
+      <select id="category"></select>
+    </div>
+
+    <div class="field">
+      <label for="valueInput">Value</label>
+      <input type="text" id="valueInput" value="1" placeholder="Enter a number" inputmode="decimal">
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label for="fromUnit">From</label>
+        <select id="fromUnit"></select>
+      </div>
+      <div class="swap-wrap">
+        <button class="btn secondary" id="swapBtn" title="Swap units">⇄ Swap</button>
+      </div>
+      <div class="field">
+        <label for="toUnit">To</label>
+        <select id="toUnit"></select>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="btn success" id="copyBtn">Copy Result</button>
+      <button class="btn secondary" id="resetBtn">Reset</button>
+    </div>
+
+    <div class="error" id="error"></div>
+
+    <div class="results" id="results">
+      <h3>Result</h3>
+      <div class="big-result" id="bigResult">—</div>
+      <div class="result-item">
+        <div class="result-label">Expression</div>
+        <div class="result-value" id="expression">—</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Exact</div>
+        <div class="result-value" id="exactValue">—</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Reverse</div>
+        <div class="result-value" id="reverseValue">—</div>
+      </div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    // Linear categories: value in base unit = value * factor
+    var CATEGORIES = {
+      'Length': {
+        units: [
+          { name: 'Millimeter (mm)', factor: 0.001 },
+          { name: 'Centimeter (cm)', factor: 0.01 },
+          { name: 'Meter (m)', factor: 1 },
+          { name: 'Kilometer (km)', factor: 1000 },
+          { name: 'Inch (in)', factor: 0.0254 },
+          { name: 'Foot (ft)', factor: 0.3048 },
+          { name: 'Yard (yd)', factor: 0.9144 },
+          { name: 'Mile (mi)', factor: 1609.344 },
+          { name: 'Nautical mile (nmi)', factor: 1852 }
+        ],
+        defaultFrom: 2, defaultTo: 5
+      },
+      'Weight': {
+        units: [
+          { name: 'Milligram (mg)', factor: 0.000001 },
+          { name: 'Gram (g)', factor: 0.001 },
+          { name: 'Kilogram (kg)', factor: 1 },
+          { name: 'Metric ton (t)', factor: 1000 },
+          { name: 'Ounce (oz)', factor: 0.028349523125 },
+          { name: 'Pound (lb)', factor: 0.45359237 },
+          { name: 'Stone (st)', factor: 6.35029318 },
+          { name: 'US ton (short)', factor: 907.18474 }
+        ],
+        defaultFrom: 2, defaultTo: 5
+      },
+      'Temperature': {
+        units: [
+          { name: 'Celsius (°C)' },
+          { name: 'Fahrenheit (°F)' },
+          { name: 'Kelvin (K)' },
+          { name: 'Rankine (°R)' }
+        ],
+        temperature: true,
+        defaultFrom: 0, defaultTo: 1
+      },
+      'Data Storage': {
+        units: [
+          { name: 'Bit (b)', factor: 0.125 },
+          { name: 'Byte (B)', factor: 1 },
+          { name: 'Kilobyte (KB, 1000)', factor: 1000 },
+          { name: 'Megabyte (MB, 1000²)', factor: 1e6 },
+          { name: 'Gigabyte (GB, 1000³)', factor: 1e9 },
+          { name: 'Terabyte (TB, 1000⁴)', factor: 1e12 },
+          { name: 'Petabyte (PB, 1000⁵)', factor: 1e15 },
+          { name: 'Kibibyte (KiB, 1024)', factor: 1024 },
+          { name: 'Mebibyte (MiB, 1024²)', factor: 1048576 },
+          { name: 'Gibibyte (GiB, 1024³)', factor: 1073741824 },
+          { name: 'Tebibyte (TiB, 1024⁴)', factor: 1099511627776 }
+        ],
+        defaultFrom: 4, defaultTo: 8
+      },
+      'Speed': {
+        units: [
+          { name: 'Meter/second (m/s)', factor: 1 },
+          { name: 'Kilometer/hour (km/h)', factor: 0.2777777777777778 },
+          { name: 'Mile/hour (mph)', factor: 0.44704 },
+          { name: 'Foot/second (ft/s)', factor: 0.3048 },
+          { name: 'Knot (kn)', factor: 0.5144444444444445 },
+          { name: 'Mach (at sea level)', factor: 340.29 }
+        ],
+        defaultFrom: 1, defaultTo: 2
+      },
+      'Area': {
+        units: [
+          { name: 'Square millimeter (mm²)', factor: 0.000001 },
+          { name: 'Square centimeter (cm²)', factor: 0.0001 },
+          { name: 'Square meter (m²)', factor: 1 },
+          { name: 'Square kilometer (km²)', factor: 1e6 },
+          { name: 'Hectare (ha)', factor: 10000 },
+          { name: 'Square inch (in²)', factor: 0.00064516 },
+          { name: 'Square foot (ft²)', factor: 0.09290304 },
+          { name: 'Square yard (yd²)', factor: 0.83612736 },
+          { name: 'Acre (ac)', factor: 4046.8564224 },
+          { name: 'Square mile (mi²)', factor: 2589988.110336 }
+        ],
+        defaultFrom: 2, defaultTo: 6
+      }
+    };
+
+    var categoryEl = document.getElementById('category');
+    var fromEl = document.getElementById('fromUnit');
+    var toEl = document.getElementById('toUnit');
+    var valueEl = document.getElementById('valueInput');
+    var errorEl = document.getElementById('error');
+    var bigResultEl = document.getElementById('bigResult');
+    var expressionEl = document.getElementById('expression');
+    var exactEl = document.getElementById('exactValue');
+    var reverseEl = document.getElementById('reverseValue');
+    var copyBtn = document.getElementById('copyBtn');
+
+    var lastResultText = '';
+
+    function initCategories() {
+      Object.keys(CATEGORIES).forEach(function(name) {
+        var opt = document.createElement('option');
+        opt.value = name;
+        opt.textContent = name;
+        categoryEl.appendChild(opt);
+      });
+      categoryEl.value = 'Length';
+    }
+
+    function populateUnits() {
+      var cat = CATEGORIES[categoryEl.value];
+      fromEl.innerHTML = '';
+      toEl.innerHTML = '';
+      cat.units.forEach(function(u, i) {
+        var a = document.createElement('option');
+        a.value = String(i);
+        a.textContent = u.name;
+        fromEl.appendChild(a);
+        var b = document.createElement('option');
+        b.value = String(i);
+        b.textContent = u.name;
+        toEl.appendChild(b);
+      });
+      var df = Math.min(cat.defaultFrom || 0, cat.units.length - 1);
+      var dt = Math.min(cat.defaultTo != null ? cat.defaultTo : 1, cat.units.length - 1);
+      fromEl.value = String(df);
+      toEl.value = String(dt);
+    }
+
+    // Temperature: convert to Kelvin, then out of Kelvin
+    function tempToKelvin(v, unit) {
+      if (unit.indexOf('Celsius') === 0) return v + 273.15;
+      if (unit.indexOf('Fahrenheit') === 0) return (v - 32) * 5 / 9 + 273.15;
+      if (unit.indexOf('Kelvin') === 0) return v;
+      return v * 5 / 9; // Rankine
+    }
+
+    function kelvinTo(k, unit) {
+      if (unit.indexOf('Celsius') === 0) return k - 273.15;
+      if (unit.indexOf('Fahrenheit') === 0) return (k - 273.15) * 9 / 5 + 32;
+      if (unit.indexOf('Kelvin') === 0) return k;
+      return k * 9 / 5; // Rankine
+    }
+
+    function convert(value, cat, fromIdx, toIdx) {
+      var from = cat.units[fromIdx];
+      var to = cat.units[toIdx];
+      if (cat.temperature) {
+        return kelvinTo(tempToKelvin(value, from.name), to.name);
+      }
+      return value * from.factor / to.factor;
+    }
+
+    function formatNumber(n) {
+      if (!isFinite(n)) return String(n);
+      if (n === 0) return '0';
+      var abs = Math.abs(n);
+      if (abs >= 1e15 || abs < 1e-9) return n.toExponential(8).replace(/e/, ' × 10^');
+      var out = Number(n.toPrecision(12));
+      var s = String(out);
+      if (s.indexOf('e') !== -1 || s.indexOf('E') !== -1) return out.toExponential(8);
+      return s;
+    }
+
+    function showError(msg) {
+      errorEl.textContent = '✗ ' + msg;
+      errorEl.style.display = 'block';
+      bigResultEl.textContent = '—';
+      expressionEl.textContent = '—';
+      exactEl.textContent = '—';
+      reverseEl.textContent = '—';
+      lastResultText = '';
+    }
+
+    function update() {
+      var cat = CATEGORIES[categoryEl.value];
+      var raw = valueEl.value.trim();
+
+      if (raw === '') {
+        errorEl.style.display = 'none';
+        bigResultEl.textContent = '—';
+        expressionEl.textContent = '—';
+        exactEl.textContent = '—';
+        reverseEl.textContent = '—';
+        lastResultText = '';
+        return;
+      }
+
+      var value = Number(raw.replace(/,/g, ''));
+      if (isNaN(value) || !isFinite(value)) {
+        showError('Please enter a valid number');
+        return;
+      }
+
+      var fromIdx = parseInt(fromEl.value, 10);
+      var toIdx = parseInt(toEl.value, 10);
+      if (isNaN(fromIdx) || isNaN(toIdx)) return;
+
+      errorEl.style.display = 'none';
+
+      var result = convert(value, cat, fromIdx, toIdx);
+      var back = convert(result, cat, toIdx, fromIdx);
+      var fromName = cat.units[fromIdx].name;
+      var toName = cat.units[toIdx].name;
+
+      lastResultText = formatNumber(result);
+      bigResultEl.textContent = lastResultText + ' ' + shortName(toName);
+      expressionEl.textContent = formatNumber(value) + ' ' + fromName + '  =  ' + lastResultText + ' ' + toName;
+      exactEl.textContent = String(result);
+      reverseEl.textContent = formatNumber(result) + ' ' + shortName(toName) + '  =  ' + formatNumber(back) + ' ' + shortName(fromName);
+    }
+
+    function shortName(name) {
+      var m = name.match(/\(([^)]+)\)/);
+      return m ? m[1].split(',')[0].trim() : name;
+    }
+
+    categoryEl.addEventListener('change', function() {
+      populateUnits();
+      update();
+    });
+    fromEl.addEventListener('change', update);
+    toEl.addEventListener('change', update);
+    valueEl.addEventListener('input', update);
+
+    document.getElementById('swapBtn').addEventListener('click', function() {
+      var f = fromEl.value;
+      fromEl.value = toEl.value;
+      toEl.value = f;
+      update();
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', function() {
+      categoryEl.value = 'Length';
+      populateUnits();
+      valueEl.value = '1';
+      errorEl.style.display = 'none';
+      update();
+    });
+
+    copyBtn.addEventListener('click', function() {
+      if (!lastResultText) return;
+      var text = lastResultText;
+      function flash() {
+        var original = copyBtn.textContent;
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function() { copyBtn.textContent = original; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(flash, function() { fallbackCopy(text, flash); });
+      } else {
+        fallbackCopy(text, flash);
+      }
+    });
+
+    function fallbackCopy(text, done) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    initCategories();
+    populateUnits();
+    update();
+  </script>
+</body>
+</html>

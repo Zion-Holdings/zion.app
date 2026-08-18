@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Converter | Zion Tech Group</title>
+  <meta name="description" content="Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case, and CONSTANT_CASE. Free online case converter with live output and one-click copy.">
+  <meta property="og:title" content="Case Converter | Zion Tech Group">
+  <meta property="og:description" content="Free online case converter — instantly transform text into UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case and more.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/case-converter/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/case-converter/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; min-height: 120px; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; resize: vertical; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .btn.small { padding: 0.35rem 0.75rem; font-size: 0.75rem; }
+    .stats { color: #94a3b8; font-size: 0.875rem; margin-bottom: 1.5rem; }
+    .results { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .results h3 { font-size: 1rem; margin-bottom: 1rem; color: #818cf8; }
+    .case-item { padding: 0.75rem 0; border-bottom: 1px solid #334155; }
+    .case-item:last-child { border-bottom: none; }
+    .case-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.4rem; }
+    .case-label { font-size: 0.875rem; color: #94a3b8; font-weight: 600; }
+    .case-value { font-family: monospace; font-size: 0.875rem; color: #e5e7eb; word-break: break-word; white-space: pre-wrap; }
+    .case-value.empty { color: #64748b; font-style: italic; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Case Converter</h1>
+    <p class="subtitle">Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case and more — live.</p>
+
+    <div class="field">
+      <label for="input">Enter text</label>
+      <textarea id="input" placeholder="The quick brown fox jumps over the lazy dog. Hello world!"></textarea>
+    </div>
+
+    <div class="buttons">
+      <button class="btn success" onclick="copyAll()">Copy All</button>
+      <button class="btn secondary" onclick="loadSample()">Load Sample</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+
+    <div class="stats" id="stats">0 characters · 0 words</div>
+
+    <div class="results">
+      <h3>Converted Output</h3>
+      <div id="results"></div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    var CASES = [
+      { key: 'upper',    label: 'UPPERCASE' },
+      { key: 'lower',    label: 'lowercase' },
+      { key: 'title',    label: 'Title Case' },
+      { key: 'sentence', label: 'Sentence case' },
+      { key: 'camel',    label: 'camelCase' },
+      { key: 'pascal',   label: 'PascalCase' },
+      { key: 'snake',    label: 'snake_case' },
+      { key: 'kebab',    label: 'kebab-case' },
+      { key: 'constant', label: 'CONSTANT_CASE' }
+    ];
+
+    var SMALL_WORDS = ['a','an','and','as','at','but','by','for','from','in','nor','of','on','or','per','so','the','to','v','via','vs','yet'];
+
+    // Split arbitrary text into word tokens, handling camelCase/PascalCase boundaries,
+    // separators (space, _, -, ., /, etc.) and digit groups.
+    function words(str) {
+      if (!str) return [];
+      return String(str)
+        .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+        .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2')
+        .replace(/([a-zA-Z])([0-9])/g, '$1 $2')
+        .replace(/([0-9])([a-zA-Z])/g, '$1 $2')
+        .split(/[^a-zA-Z0-9]+/)
+        .filter(function(w) { return w.length > 0; });
+    }
+
+    function cap(w) {
+      return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+    }
+
+    function toUpper(s)  { return s.toUpperCase(); }
+    function toLower(s)  { return s.toLowerCase(); }
+
+    function toTitle(s) {
+      // Preserve original whitespace/punctuation layout, only re-case words.
+      return s.replace(/[A-Za-z0-9']+/g, function(word, offset, full) {
+        var lower = word.toLowerCase();
+        var isFirst = /^\s*$/.test(full.slice(0, offset)) || /[.!?]\s*["'(\[]?\s*$/.test(full.slice(0, offset));
+        var rest = full.slice(offset + word.length);
+        var isLast = /^[^A-Za-z0-9]*$/.test(rest);
+        if (!isFirst && !isLast && SMALL_WORDS.indexOf(lower) !== -1) return lower;
+        return lower.charAt(0).toUpperCase() + lower.slice(1);
+      });
+    }
+
+    function toSentence(s) {
+      var lower = s.toLowerCase();
+      var out = '';
+      var startOfSentence = true;
+      for (var i = 0; i < lower.length; i++) {
+        var ch = lower[i];
+        if (startOfSentence && /[a-z0-9]/.test(ch)) {
+          out += ch.toUpperCase();
+          startOfSentence = false;
+        } else {
+          out += ch;
+          if (/[.!?]/.test(ch)) startOfSentence = true;
+          if (ch === '\n') startOfSentence = true;
+        }
+      }
+      // Standalone pronoun "i" -> "I"
+      return out.replace(/\bi\b/g, 'I');
+    }
+
+    function toCamel(s) {
+      var w = words(s);
+      if (!w.length) return '';
+      return w.map(function(x, i) {
+        return i === 0 ? x.toLowerCase() : cap(x);
+      }).join('');
+    }
+
+    function toPascal(s) {
+      return words(s).map(cap).join('');
+    }
+
+    function toSnake(s) {
+      return words(s).map(function(x) { return x.toLowerCase(); }).join('_');
+    }
+
+    function toKebab(s) {
+      return words(s).map(function(x) { return x.toLowerCase(); }).join('-');
+    }
+
+    function toConstant(s) {
+      return words(s).map(function(x) { return x.toUpperCase(); }).join('_');
+    }
+
+    var CONVERTERS = {
+      upper: toUpper,
+      lower: toLower,
+      title: toTitle,
+      sentence: toSentence,
+      camel: toCamel,
+      pascal: toPascal,
+      snake: toSnake,
+      kebab: toKebab,
+      constant: toConstant
+    };
+
+    function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    var inputEl = document.getElementById('input');
+    var resultsEl = document.getElementById('results');
+    var statsEl = document.getElementById('stats');
+
+    function buildRows() {
+      resultsEl.innerHTML = CASES.map(function(c) {
+        return '<div class="case-item">' +
+          '<div class="case-head">' +
+            '<span class="case-label">' + escapeHtml(c.label) + '</span>' +
+            '<button class="btn success small" data-copy="' + c.key + '">Copy</button>' +
+          '</div>' +
+          '<div class="case-value empty" id="out-' + c.key + '">—</div>' +
+        '</div>';
+      }).join('');
+
+      resultsEl.querySelectorAll('button[data-copy]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          copyOne(btn.getAttribute('data-copy'), btn);
+        });
+      });
+    }
+
+    function currentValues() {
+      var src = inputEl.value;
+      var out = {};
+      CASES.forEach(function(c) {
+        out[c.key] = src ? CONVERTERS[c.key](src) : '';
+      });
+      return out;
+    }
+
+    function render() {
+      var src = inputEl.value;
+      var values = currentValues();
+
+      CASES.forEach(function(c) {
+        var el = document.getElementById('out-' + c.key);
+        var val = values[c.key];
+        if (val) {
+          el.textContent = val;
+          el.classList.remove('empty');
+        } else {
+          el.textContent = '—';
+          el.classList.add('empty');
+        }
+      });
+
+      var chars = src.length;
+      var wordCount = src.trim() ? src.trim().split(/\s+/).length : 0;
+      statsEl.textContent = chars + (chars === 1 ? ' character' : ' characters') + ' · ' +
+                            wordCount + (wordCount === 1 ? ' word' : ' words');
+    }
+
+    function flash(btn, text) {
+      var original = btn.textContent;
+      btn.textContent = text;
+      setTimeout(function() { btn.textContent = original; }, 1500);
+    }
+
+    function copyText(text, btn) {
+      if (!text) { flash(btn, 'Empty'); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          flash(btn, 'Copied!');
+        }).catch(function() {
+          legacyCopy(text, btn);
+        });
+      } else {
+        legacyCopy(text, btn);
+      }
+    }
+
+    function legacyCopy(text, btn) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); flash(btn, 'Copied!'); }
+      catch (e) { flash(btn, 'Failed'); }
+      document.body.removeChild(ta);
+    }
+
+    function copyOne(key, btn) {
+      copyText(currentValues()[key], btn);
+    }
+
+    function copyAll() {
+      var values = currentValues();
+      var btn = document.querySelector('.buttons .btn.success');
+      var text = CASES.map(function(c) {
+        return c.label + ':\n' + (values[c.key] || '');
+      }).join('\n\n');
+      copyText(inputEl.value ? text : '', btn);
+    }
+
+    function loadSample() {
+      inputEl.value = 'The quick brown fox jumps over the lazy dog. Hello world!';
+      render();
+      inputEl.focus();
+    }
+
+    function clearAll() {
+      inputEl.value = '';
+      render();
+      inputEl.focus();
+    }
+
+    inputEl.addEventListener('input', render);
+
+    buildRows();
+    render();
+  </script>
+</body>
+</html>
