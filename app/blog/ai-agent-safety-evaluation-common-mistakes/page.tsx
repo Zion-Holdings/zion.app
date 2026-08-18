@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Agent Safety Evaluation: common mistakes',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-common-mistakes/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Chaos Engineering: evaluation framework',
     url: 'https://ziontechgroup.com/blog/chaos-engineering-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/chaos-engineering-evaluation-framework/' },
 };
 

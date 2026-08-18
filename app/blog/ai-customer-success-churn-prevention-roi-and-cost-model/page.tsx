@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Customer Success Churn Prevention: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-roi-and-cost-model/' },
 };
 

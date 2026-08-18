@@ -11,8 +11,7 @@ export const metadata = {
     description: 'IT Consulting: security and governance',
     url: 'https://ziontechgroup.com/blog/it-consulting-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/it-consulting-security-and-governance/' },
 };
 

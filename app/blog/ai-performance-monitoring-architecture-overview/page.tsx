@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Performance Monitoring: architecture overview',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-performance-monitoring-architecture-overview/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Data Lakehouse Pipelines: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-policy-and-compliance/' },
 };
 

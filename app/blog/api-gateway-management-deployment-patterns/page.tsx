@@ -11,8 +11,7 @@ export const metadata = {
     description: 'API Gateway Management: deployment patterns',
     url: 'https://ziontechgroup.com/blog/api-gateway-management-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/api-gateway-management-deployment-patterns/' },
 };
 

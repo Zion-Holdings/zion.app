@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Smart Contract Audit: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/smart-contract-audit-vendor-evaluation/' },
 };
 

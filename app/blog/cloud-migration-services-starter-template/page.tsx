@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Cloud Migration Services: starter template',
     url: 'https://ziontechgroup.com/blog/cloud-migration-services-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/cloud-migration-services-starter-template/' },
 };
 

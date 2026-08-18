@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Ad Copy Generator: implementation playbook',
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-ad-copy-generator-implementation-playbook/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Incident Response Retainer: implementation playbook',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/incident-response-retainer-implementation-playbook/' },
 };
 

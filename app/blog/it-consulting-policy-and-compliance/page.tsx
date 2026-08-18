@@ -11,8 +11,7 @@ export const metadata = {
     description: 'IT Consulting: policy and compliance',
     url: 'https://ziontechgroup.com/blog/it-consulting-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/it-consulting-policy-and-compliance/' },
 };
 

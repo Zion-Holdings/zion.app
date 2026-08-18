@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Agent Tool Builder: starter template',
     url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-agent-tool-builder-starter-template/' },
 };
 

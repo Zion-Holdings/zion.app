@@ -11,8 +11,7 @@ export const metadata = {
     description: 'API Integration: architecture overview',
     url: 'https://ziontechgroup.com/blog/api-integration-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/api-integration-architecture-overview/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Email Intelligence: architecture overview',
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-email-intelligence-architecture-overview/' },
 };
 

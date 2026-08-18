@@ -11,8 +11,7 @@ export const metadata = {
     description: 'API Performance Testing: security and governance',
     url: 'https://ziontechgroup.com/blog/api-performance-testing-security-and-governance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/api-performance-testing-security-and-governance/' },
 };
 

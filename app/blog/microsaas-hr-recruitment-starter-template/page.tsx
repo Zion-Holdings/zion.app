@@ -11,8 +11,7 @@ export const metadata = {
     description: 'MicroSaaS HR Recruitment: starter template',
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/microsaas-hr-recruitment-starter-template/' },
 };
 

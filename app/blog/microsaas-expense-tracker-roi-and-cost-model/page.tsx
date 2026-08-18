@@ -11,8 +11,7 @@ export const metadata = {
     description: 'MicroSaaS Expense Tracker: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/microsaas-expense-tracker-roi-and-cost-model/' },
 };
 

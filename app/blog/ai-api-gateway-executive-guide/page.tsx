@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI API Gateway: executive guide',
     url: 'https://ziontechgroup.com/blog/ai-api-gateway-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-api-gateway-executive-guide/' },
 };
 

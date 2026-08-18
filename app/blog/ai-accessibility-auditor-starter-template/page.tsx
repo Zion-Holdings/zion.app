@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Accessibility Auditor: starter template',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-accessibility-auditor-starter-template/' },
 };
 

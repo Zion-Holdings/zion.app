@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Accessibility Compliance: operations handbook',
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/accessibility-compliance-operations-handbook/' },
 };
 

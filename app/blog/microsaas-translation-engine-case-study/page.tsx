@@ -11,8 +11,7 @@ export const metadata = {
     description: 'MicroSaaS Translation Engine: case study',
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/microsaas-translation-engine-case-study/' },
 };
 

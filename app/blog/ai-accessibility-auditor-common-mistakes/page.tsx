@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Accessibility Auditor: common mistakes',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-accessibility-auditor-common-mistakes/' },
 };
 

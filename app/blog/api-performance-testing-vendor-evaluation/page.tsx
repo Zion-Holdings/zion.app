@@ -11,8 +11,7 @@ export const metadata = {
     description: 'API Performance Testing: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/api-performance-testing-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/api-performance-testing-vendor-evaluation/' },
 };
 

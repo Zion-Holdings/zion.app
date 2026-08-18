@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Managed IT Services: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/managed-it-services-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/managed-it-services-roi-and-cost-model/' },
 };
 

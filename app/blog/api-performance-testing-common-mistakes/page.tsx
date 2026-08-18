@@ -11,8 +11,7 @@ export const metadata = {
     description: 'API Performance Testing: common mistakes',
     url: 'https://ziontechgroup.com/blog/api-performance-testing-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/api-performance-testing-common-mistakes/' },
 };
 

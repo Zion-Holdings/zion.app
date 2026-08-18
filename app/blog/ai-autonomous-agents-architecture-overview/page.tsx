@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Autonomous Agents: architecture overview',
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-autonomous-agents-architecture-overview/' },
 };
 

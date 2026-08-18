@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Cloud Cost AI Optimizer: evaluation framework',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-evaluation-framework/' },
 };
 

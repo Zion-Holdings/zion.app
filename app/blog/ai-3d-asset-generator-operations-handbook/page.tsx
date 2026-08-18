@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI 3D Asset Generator: operations handbook',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-3d-asset-generator-operations-handbook/' },
 };
 

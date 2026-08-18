@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Autonomous Code Deployment: policy and compliance',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/autonomous-code-deployment-policy-and-compliance/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI BDR SDR: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-bdr-sdr-automation-roadmap/' },
 };
 

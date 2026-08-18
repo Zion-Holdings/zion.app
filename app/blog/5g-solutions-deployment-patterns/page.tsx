@@ -11,8 +11,7 @@ export const metadata = {
     description: '5G Solutions: deployment patterns',
     url: 'https://ziontechgroup.com/blog/5g-solutions-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/5g-solutions-deployment-patterns/' },
 };
 

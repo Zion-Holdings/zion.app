@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Autonomous QA Engineering: evaluation framework',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/autonomous-qa-engineering-evaluation-framework/' },
 };
 

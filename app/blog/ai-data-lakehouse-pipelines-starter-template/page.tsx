@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Data Lakehouse Pipelines: starter template',
     url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-starter-template/' },
 };
 

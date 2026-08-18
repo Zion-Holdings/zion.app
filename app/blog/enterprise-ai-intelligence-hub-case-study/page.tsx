@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Enterprise AI Intelligence Hub: case study',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-case-study/' },
 };
 

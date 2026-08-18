@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Autonomous QA Engineering: executive guide',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/autonomous-qa-engineering-executive-guide/' },
 };
 

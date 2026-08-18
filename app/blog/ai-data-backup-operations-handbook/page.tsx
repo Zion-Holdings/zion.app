@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Data Backup: operations handbook',
     url: 'https://ziontechgroup.com/blog/ai-data-backup-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-data-backup-operations-handbook/' },
 };
 

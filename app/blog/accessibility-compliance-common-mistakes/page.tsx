@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Accessibility Compliance: common mistakes',
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/accessibility-compliance-common-mistakes/' },
 };
 

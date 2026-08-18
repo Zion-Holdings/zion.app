@@ -11,8 +11,7 @@ export const metadata = {
     description: 'MicroSaaS Social Media Manager: operations handbook',
     url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/microsaas-social-media-manager-operations-handbook/' },
 };
 

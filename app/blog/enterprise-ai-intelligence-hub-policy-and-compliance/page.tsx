@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Enterprise AI Intelligence Hub: policy and compliance',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-policy-and-compliance/' },
 };
 

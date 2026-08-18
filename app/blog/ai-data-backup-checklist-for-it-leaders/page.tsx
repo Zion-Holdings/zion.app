@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Data Backup: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/ai-data-backup-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-data-backup-checklist-for-it-leaders/' },
 };
 

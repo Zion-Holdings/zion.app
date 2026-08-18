@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Automation Orchestration: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/automation-orchestration-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/automation-orchestration-checklist-for-it-leaders/' },
 };
 

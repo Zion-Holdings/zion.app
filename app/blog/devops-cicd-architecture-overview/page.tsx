@@ -11,8 +11,7 @@ export const metadata = {
     description: 'DevOps CI/CD: architecture overview',
     url: 'https://ziontechgroup.com/blog/devops-cicd-architecture-overview/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/devops-cicd-architecture-overview/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Email Intelligence: evaluation framework',
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-email-intelligence-evaluation-framework/' },
 };
 

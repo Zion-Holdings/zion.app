@@ -11,8 +11,7 @@ export const metadata = {
     description: 'IT Consulting: operations handbook',
     url: 'https://ziontechgroup.com/blog/it-consulting-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/it-consulting-operations-handbook/' },
 };
 

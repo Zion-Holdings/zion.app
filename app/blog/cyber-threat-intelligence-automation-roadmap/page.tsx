@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Cyber Threat Intelligence: automation roadmap',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/cyber-threat-intelligence-automation-roadmap/' },
 };
 

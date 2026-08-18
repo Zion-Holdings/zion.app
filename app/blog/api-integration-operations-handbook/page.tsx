@@ -11,8 +11,7 @@ export const metadata = {
     description: 'API Integration: operations handbook',
     url: 'https://ziontechgroup.com/blog/api-integration-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/api-integration-operations-handbook/' },
 };
 

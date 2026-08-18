@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Agentic Workflows: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-agentic-workflows-policy-and-compliance/' },
 };
 

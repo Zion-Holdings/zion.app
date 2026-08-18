@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI MSP Security Compliance: operations handbook',
     url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-operations-handbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-msp-security-compliance-operations-handbook/' },
 };
 

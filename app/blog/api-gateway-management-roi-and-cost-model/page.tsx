@@ -11,8 +11,7 @@ export const metadata = {
     description: 'API Gateway Management: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/api-gateway-management-roi-and-cost-model/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/api-gateway-management-roi-and-cost-model/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Automation Orchestration: deployment patterns',
     url: 'https://ziontechgroup.com/blog/automation-orchestration-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/automation-orchestration-deployment-patterns/' },
 };
 

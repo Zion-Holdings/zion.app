@@ -11,8 +11,7 @@ export const metadata = {
     description: 'DevOps CI/CD: common mistakes',
     url: 'https://ziontechgroup.com/blog/devops-cicd-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/devops-cicd-common-mistakes/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Network Infrastructure: case study',
     url: 'https://ziontechgroup.com/blog/network-infrastructure-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/network-infrastructure-case-study/' },
 };
 

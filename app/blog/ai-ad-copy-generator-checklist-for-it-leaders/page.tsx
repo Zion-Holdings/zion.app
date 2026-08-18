@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Ad Copy Generator: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-ad-copy-generator-checklist-for-it-leaders/' },
 };
 

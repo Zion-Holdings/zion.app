@@ -11,8 +11,7 @@ export const metadata = {
     description: 'MicroSaaS HR Recruitment: deployment patterns',
     url: 'https://ziontechgroup.com/blog/microsaas-hr-recruitment-deployment-patterns/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/microsaas-hr-recruitment-deployment-patterns/' },
 };
 

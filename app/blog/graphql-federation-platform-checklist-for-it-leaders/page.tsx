@@ -11,8 +11,7 @@ export const metadata = {
     description: 'GraphQL Federation Platform: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/graphql-federation-platform-checklist-for-it-leaders/' },
 };
 

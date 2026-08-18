@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Ad Copy Generator: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-automation-roadmap/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-ad-copy-generator-automation-roadmap/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Customer Support: common mistakes',
     url: 'https://ziontechgroup.com/blog/ai-customer-support-common-mistakes/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-customer-support-common-mistakes/' },
 };
 

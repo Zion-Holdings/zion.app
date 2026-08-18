@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Accessibility Optimizer: executive guide',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-executive-guide/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-accessibility-optimizer-executive-guide/' },
 };
 

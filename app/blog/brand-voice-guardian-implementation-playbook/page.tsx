@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Brand Voice Guardian: implementation playbook',
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/brand-voice-guardian-implementation-playbook/' },
 };
 

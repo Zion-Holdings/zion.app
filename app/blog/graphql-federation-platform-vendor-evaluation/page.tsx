@@ -11,8 +11,7 @@ export const metadata = {
     description: 'GraphQL Federation Platform: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/graphql-federation-platform-vendor-evaluation/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'API Orchestration Layer: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/api-orchestration-layer-checklist-for-it-leaders/' },
 };
 

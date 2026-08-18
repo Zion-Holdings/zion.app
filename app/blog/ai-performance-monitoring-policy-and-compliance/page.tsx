@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI Performance Monitoring: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-policy-and-compliance/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-performance-monitoring-policy-and-compliance/' },
 };
 

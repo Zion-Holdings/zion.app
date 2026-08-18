@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Brand Voice Guardian: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-checklist-for-it-leaders/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/brand-voice-guardian-checklist-for-it-leaders/' },
 };
 

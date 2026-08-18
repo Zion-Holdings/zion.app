@@ -11,8 +11,7 @@ export const metadata = {
     description: 'AI BOM Procurement: evaluation framework',
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/ai-bom-procurement-evaluation-framework/' },
 };
 

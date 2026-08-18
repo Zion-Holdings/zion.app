@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Smart Contract Audit: case study',
     url: 'https://ziontechgroup.com/blog/smart-contract-audit-case-study/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/smart-contract-audit-case-study/' },
 };
 

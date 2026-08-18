@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Accessibility Compliance: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-vendor-evaluation/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/accessibility-compliance-vendor-evaluation/' },
 };
 

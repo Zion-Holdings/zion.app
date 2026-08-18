@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Autonomous QA Engineering: implementation playbook',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-implementation-playbook/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/autonomous-qa-engineering-implementation-playbook/' },
 };
 

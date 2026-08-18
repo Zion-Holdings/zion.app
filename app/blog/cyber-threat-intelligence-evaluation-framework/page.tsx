@@ -11,8 +11,7 @@ export const metadata = {
     description: 'Cyber Threat Intelligence: evaluation framework',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-evaluation-framework/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/cyber-threat-intelligence-evaluation-framework/' },
 };
 

@@ -11,8 +11,7 @@ export const metadata = {
     description: 'MicroSaaS Expense Tracker: starter template',
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-starter-template/',
     type: 'article',
-    siteName: 'Zion Tech Group',
-  },
+},
   alternates: { canonical: '/blog/microsaas-expense-tracker-starter-template/' },
 };
 
