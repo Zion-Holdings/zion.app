@@ -141,6 +141,49 @@ def _load_excluded() -> set:
         return set()
 
 
+# Local parts that are never a human prospect. Cataloguing these one address at
+# a time never keeps up -- wave2/wave3 on 2026-08-16 mailed no_reply@,
+# business-noreply@ and no_responder@ before anyone noticed -- so match the
+# shape instead of the address.
+_UNMAILABLE_LOCAL_PARTS = (
+    'no-reply', 'noreply', 'no_reply',
+    'no-responder', 'noresponder', 'no_responder',
+    'donotreply', 'do-not-reply', 'do_not_reply',
+    'bounce', 'bounces', 'mailer-daemon', 'postmaster',
+    'notification', 'notifications', 'notify',
+    'automated', 'auto-confirm', 'unsubscribe',
+)
+
+# Machine-only sending domains: the local part looks human (team@, hello@) but
+# the domain itself is a transactional/notification subdomain, so nobody reads
+# replies. Matched on dot-delimited labels to avoid clipping real companies --
+# "notifications.resend.com" is blocked, "mynotifyapp.com" is not.
+_UNMAILABLE_DOMAIN_LABELS = (
+    'notification', 'notifications', 'notify',
+    'noreply', 'no-reply', 'bounce', 'bounces',
+    'mailer', 'email', 'mail', 'smtp',
+    'transactional', 'automated', 'alerts',
+)
+
+
+def _unmailable_reason(addr: str) -> str:
+    """Return a reason string when an address must never receive cold outreach."""
+    addr = (addr or '').strip().lower()
+    if not addr or '@' not in addr:
+        return 'malformed_address'
+    local, _, domain = addr.partition('@')
+    for token in _UNMAILABLE_LOCAL_PARTS:
+        if token in local:
+            return f'unmailable_local_part:{token}'
+    # Only subdomain labels count: the registrable domain of a real company can
+    # legitimately be "email.com", but "email.acme.com" is a sending subdomain.
+    labels = domain.split('.')
+    for label in labels[:-2]:
+        if label in _UNMAILABLE_DOMAIN_LABELS:
+            return f'unmailable_sending_domain:{label}'
+    return ''
+
+
 _SENT_LOCK = REPO / 'lead-crm' / '.ceo_outreach_sent.lock'
 
 # in-memory fast path for same-run dedup
@@ -174,6 +217,9 @@ for _legacy_path in [REPO / 'lead-crm' / 'outreach_sent_history.jsonl', REPO / '
 
 def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None):
     to_key = (to_addr or '').lower()
+    _unmailable = _unmailable_reason(to_key)
+    if _unmailable:
+        return None, _unmailable
     if to_key in _load_excluded():
         return None, 'excluded'
     key = (to_key, (subject or '').strip(), thread_id or '', message_id or '')
@@ -539,6 +585,10 @@ def main():
             outputs.append({'to': None, 'success': False, 'error': 'missing email'})
             continue
         to = to.lower()
+        _unmailable = _unmailable_reason(to)
+        if _unmailable:
+            outputs.append({'to': to, 'success': False, 'reason': _unmailable, 'error': 'unmailable-address'})
+            continue
         if to in excluded:
             outputs.append({'to': to, 'success': False, 'reason': 'excluded', 'error': 'excluded-by-list'})
             continue
