@@ -1,10 +1,10 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Predictive Logistics Churn Prevention - Zion Tech Group",
-  description: "Machine learning system that identifies advanced churn signals in telecom customer behavior, enabling proactive retention strategies and personalized interventi",
+  title: "AI-Driven Autonomous Supply Chain Optimization - Zion Tech Group",
+  description: "End-to-end supply chain platform that uses autonomous optimization algorithms for demand planning, inventory management, and logistics coordination.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/predictive-logistics-churn-prevention-676f3635`
+    canonical: `https://ziontechgroup.com/services/ai-driven-autonomous-supply-chain-optimization-2a352893`
   }
 };
 
@@ -12,26 +12,26 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Predictive Logistics Churn Prevention</h1>
-        <p className="text-lg text-gray-300 mb-8">Machine learning system that identifies advanced churn signals in telecom customer behavior, enabling proactive retention strategies and personalized intervention campaigns.</p>
+        <h1 className="text-4xl font-bold mb-6">AI-Driven Autonomous Supply Chain Optimization</h1>
+        <p className="text-lg text-gray-300 mb-8">End-to-end supply chain platform that uses autonomous optimization algorithms for demand planning, inventory management, and logistics coordination.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Behavioral analysis</li>
-            <li>Risk scoring</li>
-            <li>Automated interventions</li>
-            <li>Campaign optimization</li>
+            <li>Demand forecasting</li>
+            <li>Inventory optimization</li>
+            <li>Supplier risk</li>
+            <li>Logistics planning</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn rate</li>
-            <li>Increased ARPU</li>
-            <li>Higher customer lifetime value</li>
-            <li>Proactive retention</li>
+            <li>Reduced inventory costs</li>
+            <li>Improved service levels</li>
+            <li>Resilient supply chain</li>
+            <li>Faster response</li>
           </ul>
         </div>
         
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$238/month</p>
+              <p className="text-2xl font-bold mb-2">$258/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$598/month</p>
+              <p className="text-2xl font-bold mb-2">$648/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1798/month</p>
+              <p className="text-2xl font-bold mb-2">$1948/month</p>
             </div>
           </div>
         </div>

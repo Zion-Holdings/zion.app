@@ -17531,5 +17531,335 @@
     "icon": "\ud83d\udca1",
     "href": "/services/ai-powered-enterprise-grade-education-analytics-598bf104",
     "popular": false
+  },
+  {
+    "id": "smart-telecommunications-quality-control-f7a98443",
+    "name": "Smart Telecommunications Quality Control",
+    "description": "Computer vision system that provides insightful automated inspection, defect detection, and quality assurance for manufacturing production lines.",
+    "category": "automation",
+    "industry": "manufacturing",
+    "features": [
+      "Visual inspection",
+      "Defect classification",
+      "Root cause analysis",
+      "Real-time alerts"
+    ],
+    "benefits": [
+      "Zero defects",
+      "Faster throughput",
+      "Reduced waste",
+      "Consistent quality"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:09:49.979093+00:00",
+    "contactInfo": {
+      "website": "/services/smart-telecommunications-quality-control-f7a98443",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-telecommunications-quality-control-f7a98443",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-intelligent-customer-analytics-7e6185da",
+    "name": "AI-Driven Intelligent Customer Analytics",
+    "description": "Customer intelligence platform that delivers intelligent insights into shopper behavior, lifetime value, and churn prediction for retail and e-commerce businesses.",
+    "category": "analytics",
+    "industry": "retail",
+    "features": [
+      "Behavioral analysis",
+      "LTV prediction",
+      "Churn prevention",
+      "Segment activation"
+    ],
+    "benefits": [
+      "Higher retention",
+      "Increased LTV",
+      "Targeted marketing",
+      "Better ROI"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T15:09:49.979139+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-intelligent-customer-analytics-7e6185da",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-intelligent-customer-analytics-7e6185da",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-intelligent-operational-analytics-f7427366",
+    "name": "AI-Powered Intelligent Operational Analytics",
+    "description": "AI-driven analytics platform that delivers intelligent insights into operational operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time data visualization",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T15:09:49.979166+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-intelligent-operational-analytics-f7427366",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-intelligent-operational-analytics-f7427366",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-5g-cloud-native-planning-5fd62e5a",
+    "name": "AI-Powered 5G Cloud-Native Planning",
+    "description": "Advanced 5G network planning platform that uses cloud-native AI to optimize site placement, spectrum allocation, and capacity planning for next-generation networks.",
+    "category": "forecasting",
+    "industry": "telecommunications",
+    "features": [
+      "Site optimization",
+      "Spectrum planning",
+      "Capacity forecasting",
+      "Interference management"
+    ],
+    "benefits": [
+      "Faster deployment",
+      "Optimal coverage",
+      "Cost reduction",
+      "Future-proof architecture"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-19T15:09:49.979235+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-5g-cloud-native-planning-5fd62e5a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-5g-cloud-native-planning-5fd62e5a",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-autonomous-supply-chain-optimization-2a352893",
+    "name": "AI-Driven Autonomous Supply Chain Optimization",
+    "description": "End-to-end supply chain platform that uses autonomous optimization algorithms for demand planning, inventory management, and logistics coordination.",
+    "category": "analytics",
+    "industry": "manufacturing",
+    "features": [
+      "Demand forecasting",
+      "Inventory optimization",
+      "Supplier risk",
+      "Logistics planning"
+    ],
+    "benefits": [
+      "Reduced inventory costs",
+      "Improved service levels",
+      "Resilient supply chain",
+      "Faster response"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:09:49.979250+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-autonomous-supply-chain-optimization-2a352893",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-autonomous-supply-chain-optimization-2a352893",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-scalable-property-valuation-1a95921b",
+    "name": "AI-Powered Scalable Property Valuation",
+    "description": "Machine learning platform that provides scalable property valuations using computer vision, market analytics, and predictive modeling. Delivers accurate appraisals in seconds.",
+    "category": "analytics",
+    "industry": "real estate",
+    "features": [
+      "Automated valuation models",
+      "Computer vision analysis",
+      "Market trend prediction",
+      "Comparable property matching"
+    ],
+    "benefits": [
+      "Instant valuations",
+      "95%+ accuracy",
+      "Reduced appraisal costs",
+      "Faster transactions"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:09:49.979280+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-scalable-property-valuation-1a95921b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-scalable-property-valuation-1a95921b",
+    "popular": false
+  },
+  {
+    "id": "predictive-logistics-churn-prevention-676f3635",
+    "name": "Predictive Logistics Churn Prevention",
+    "description": "Machine learning system that identifies advanced churn signals in telecom customer behavior, enabling proactive retention strategies and personalized intervention campaigns.",
+    "category": "analytics",
+    "industry": "telecommunications",
+    "features": [
+      "Behavioral analysis",
+      "Risk scoring",
+      "Automated interventions",
+      "Campaign optimization"
+    ],
+    "benefits": [
+      "Reduced churn rate",
+      "Increased ARPU",
+      "Higher customer lifetime value",
+      "Proactive retention"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T15:09:49.979294+00:00",
+    "contactInfo": {
+      "website": "/services/predictive-logistics-churn-prevention-676f3635",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-logistics-churn-prevention-676f3635",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-predictive-real-estate-analytics-ee97ddbb",
+    "name": "AI-Powered Predictive Real Estate Analytics",
+    "description": "AI-driven analytics platform that delivers predictive insights into real estate operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time data visualization",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T15:09:49.979308+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-predictive-real-estate-analytics-ee97ddbb",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-predictive-real-estate-analytics-ee97ddbb",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-intelligent-risk-assessment-5eb7b304",
+    "name": "AI-Powered Intelligent Risk Assessment",
+    "description": "Advanced risk analytics platform that provides intelligent credit scoring, fraud detection, and portfolio risk analysis using machine learning and alternative data.",
+    "category": "analytics",
+    "industry": "finance",
+    "features": [
+      "Credit scoring",
+      "Fraud detection",
+      "Portfolio risk",
+      "Regulatory reporting"
+    ],
+    "benefits": [
+      "Reduced defaults",
+      "Faster decisions",
+      "Lower fraud losses",
+      "Compliance automation"
+    ],
+    "pricing": {
+      "basic": "298",
+      "pro": "748",
+      "enterprise": "2248"
+    },
+    "timestamp": "2026-08-19T15:09:49.979346+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-intelligent-risk-assessment-5eb7b304",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-intelligent-risk-assessment-5eb7b304",
+    "popular": false
+  },
+  {
+    "id": "predictive-proactive-freight-analytics-427ec81d",
+    "name": "Predictive Proactive Freight Analytics",
+    "description": "Freight intelligence platform that provides proactive rate forecasting, capacity planning, and carrier performance analytics for logistics optimization.",
+    "category": "forecasting",
+    "industry": "logistics",
+    "features": [
+      "Rate forecasting",
+      "Capacity planning",
+      "Carrier scorecards",
+      "Lane optimization"
+    ],
+    "benefits": [
+      "Cost reduction",
+      "Better capacity",
+      "Improved reliability",
+      "Strategic sourcing"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T15:09:49.979448+00:00",
+    "contactInfo": {
+      "website": "/services/predictive-proactive-freight-analytics-427ec81d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-proactive-freight-analytics-427ec81d",
+    "popular": false
   }
 ]
