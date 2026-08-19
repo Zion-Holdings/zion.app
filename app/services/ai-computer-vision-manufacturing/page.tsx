@@ -5,7 +5,6 @@ export const metadata = {
   title: "Computer Vision for Manufacturing - Zion Tech Group",
   description: "Automated visual inspection, defect detection, quality control, and process monitoring using AI computer vision. Works with existing cameras and IoT sensors.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-computer-vision-manufacturing`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive insights-sports - Zion Tech Group",
   description: "Next-generation sports solution: Adaptive insights-sports. Combines quality control with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-sports-f35d470c`
   }
 };
 

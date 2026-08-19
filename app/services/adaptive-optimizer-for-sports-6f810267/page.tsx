@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimizer for Sports - Zion Tech Group",
   description: "Transform your sports operations with our Adaptive Optimizer for Sports. This AI-driven solution automates risk assessment with unprecedented accuracy and effic",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimizer-for-sports-6f810267`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Digital Human & Avatar Platform - Zion Tech Group",
   description: "Create photorealistic AI digital humans for customer service, training, and entertainment. Real-time animation, lip sync, and natural conversation.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-digital-human`
   }
 };
 

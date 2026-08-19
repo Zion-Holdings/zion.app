@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Education #1 - Zion Tech Group",
   description: "Next-generation education solution: Advisor Self-Optimizing - Education #1. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-self-optimizing---education-1-857c0fa0`
   }
 };
 

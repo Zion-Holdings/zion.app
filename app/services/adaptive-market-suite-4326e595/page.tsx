@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Market Suite - Zion Tech Group",
   description: "Next-generation insurance solution: Adaptive Market Suite. Combines code optimization with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-market-suite-4326e595`
   }
 };
 

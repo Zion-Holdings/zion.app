@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Processor for Manufacturing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Processor for Manufacturing. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-for-manufacturing-f974e9fc`
   }
 };
 

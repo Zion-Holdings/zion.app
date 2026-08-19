@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Insurance Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Director - Insurance Edition #2. This autonomous system provides market intelligence with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---insurance-edition-2-29e19750`
   }
 };
 

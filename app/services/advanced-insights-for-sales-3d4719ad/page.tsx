@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Insights for Sales - Zion Tech Group",
   description: "Optimize your sales workflows with Advanced Insights for Sales. This intelligent platform delivers deliverability management through advanced automation and AI.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-insights-for-sales-3d4719ad`
   }
 };
 

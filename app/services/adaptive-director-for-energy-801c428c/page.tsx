@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Director for Energy - Zion Tech Group",
   description: "The future of energy is here with Adaptive Director for Energy. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-for-energy-801c428c`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Telecom Edition #4 - Zion Tech Group",
   description: "The future of telecom is here with AI Engine - Telecom Edition #4. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---telecom-edition-4-87c12792`
   }
 };
 

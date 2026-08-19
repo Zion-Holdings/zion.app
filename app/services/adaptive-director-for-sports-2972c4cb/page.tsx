@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Director for Sports - Zion Tech Group",
   description: "Revolutionize sports through intelligent automation. Our Adaptive Director for Sports leverages advanced machine learning to deliver inventory management at sca",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-for-sports-2972c4cb`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimizer for Telecom - Zion Tech Group",
   description: "Transform your telecom operations with our Adaptive Optimizer for Telecom. This AI-driven solution automates process automation with unprecedented accuracy and ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimizer-for-telecom-bc474593`
   }
 };
 

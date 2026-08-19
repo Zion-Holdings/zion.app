@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Adaptive - Sports #1 - Zion Tech Group",
   description: "Revolutionize sports through intelligent automation. Our Advisor Adaptive - Sports #1 leverages advanced machine learning to deliver workflow management at scal",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-adaptive---sports-1-1de9e32c`
   }
 };
 

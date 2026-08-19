@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Replication for Finance - Zion Tech Group",
   description: "The future of finance is here with Advanced Replication for Finance. Powered by cutting-edge AI, this platform delivers performance tuning like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-replication-for-finance-91d297ae`
   }
 };
 

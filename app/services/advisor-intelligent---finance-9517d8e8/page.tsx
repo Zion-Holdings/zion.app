@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Intelligent - Finance - Zion Tech Group",
   description: "Next-generation finance solution: Advisor Intelligent - Finance. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-intelligent---finance-9517d8e8`
   }
 };
 

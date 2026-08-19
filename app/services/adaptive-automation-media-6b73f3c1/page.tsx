@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive automation-media - Zion Tech Group",
   description: "Transform your media operations with our Adaptive automation-media. This AI-driven solution automates inventory management with unprecedented accuracy and effic",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-automation-media-6b73f3c1`
   }
 };
 

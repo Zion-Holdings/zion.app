@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Predictive - Legal - Zion Tech Group",
   description: "Transform your legal operations with our Advisor Predictive - Legal. This AI-driven solution automates decision support with unprecedented accuracy and efficien",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-predictive---legal-9c08df9f`
   }
 };
 

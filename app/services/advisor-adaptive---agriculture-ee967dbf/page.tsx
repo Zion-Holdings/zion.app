@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Adaptive - Agriculture - Zion Tech Group",
   description: "Next-generation agriculture solution: Advisor Adaptive - Agriculture. Combines language processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-adaptive---agriculture-ee967dbf`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive automation-energy - Zion Tech Group",
   description: "The future of energy is here with Adaptive automation-energy. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-automation-energy-7a89e3a2`
   }
 };
 

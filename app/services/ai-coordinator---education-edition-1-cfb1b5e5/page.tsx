@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Education Edition #1 - Zion Tech Group",
   description: "Next-generation education solution: AI Coordinator - Education Edition #1. Combines compliance monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---education-edition-1-cfb1b5e5`
   }
 };
 

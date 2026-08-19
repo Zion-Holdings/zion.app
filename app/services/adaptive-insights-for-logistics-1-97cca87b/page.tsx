@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Insights for Logistics #1 - Zion Tech Group",
   description: "Revolutionize Logistics through intelligent automation. Our Adaptive Insights for Logistics #1 leverages advanced machine learning to deliver inventory manageme",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-for-logistics-1-97cca87b`
   }
 };
 

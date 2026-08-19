@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analytics for Construction #1 - Zion Tech Group",
   description: "Next-generation construction solution: Adaptive Analytics for Construction #1. Combines image recognition with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-for-construction-1-00b3740c`
   }
 };
 

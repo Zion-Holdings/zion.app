@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Gaming - Zion Tech Group",
   description: "Transform your gaming operations with our Adaptive Platform for Gaming. This AI-driven solution automates inventory management with unprecedented accuracy and e",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-gaming-f9548afb`
   }
 };
 

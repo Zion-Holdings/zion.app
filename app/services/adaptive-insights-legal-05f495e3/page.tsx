@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive insights-legal - Zion Tech Group",
   description: "Next-generation legal solution: Adaptive insights-legal. Combines threat detection with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-legal-05f495e3`
   }
 };
 

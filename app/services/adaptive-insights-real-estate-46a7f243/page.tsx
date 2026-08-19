@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive insights-real estate - Zion Tech Group",
   description: "Transform your Real Estate operations with our Adaptive insights-real estate. This AI-driven solution automates fraud prevention with unprecedented accuracy and",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-real-estate-46a7f243`
   }
 };
 

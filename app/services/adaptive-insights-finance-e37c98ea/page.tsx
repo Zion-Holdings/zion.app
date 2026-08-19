@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive insights-finance - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive insights-finance. This autonomous system provides security monitoring with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-finance-e37c98ea`
   }
 };
 

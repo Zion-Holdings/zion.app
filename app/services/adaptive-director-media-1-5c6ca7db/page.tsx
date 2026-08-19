@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive director-media #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive director-media #1. This autonomous system provides fraud prevention with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-media-1-5c6ca7db`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Education Edition #4 - Zion Tech Group",
   description: "Transform your education operations with our AI Analytics - Education Edition #4. This AI-driven solution automates network optimization with unprecedented accu",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---education-edition-4-889a89ae`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Market Analytics - Zion Tech Group",
   description: "Transform your logistics operations with our Adaptive Market Analytics. This AI-driven solution automates predictive analytics with unprecedented accuracy and e",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-market-analytics-672d41e3`
   }
 };
 

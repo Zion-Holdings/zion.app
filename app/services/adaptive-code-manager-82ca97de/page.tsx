@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Code Manager - Zion Tech Group",
   description: "Next-generation agriculture solution: Adaptive Code Manager. Combines image recognition with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-code-manager-82ca97de`
   }
 };
 

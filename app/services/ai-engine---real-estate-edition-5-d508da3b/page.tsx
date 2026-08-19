@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Real-Estate Edition #5 - Zion Tech Group",
   description: "The future of real-estate is here with AI Engine - Real-Estate Edition #5. Powered by cutting-edge AI, this platform delivers quality control like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---real-estate-edition-5-d508da3b`
   }
 };
 

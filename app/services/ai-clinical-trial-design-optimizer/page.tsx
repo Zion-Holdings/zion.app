@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Clinical Trial Design & Protocol Optimizer - Zion Tech Group",
   description: "Optimize clinical trial protocols: patient recruitment prediction, site selection, endpoint analysis, and regulatory submission preparation. Reduces trial timel",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-clinical-trial-design-optimizer`
   }
 };
 

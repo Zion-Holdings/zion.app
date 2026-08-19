@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Supply Analytics - Zion Tech Group",
   description: "Next-generation legal solution: Adaptive Supply Analytics. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-supply-analytics-3d17a28a`
   }
 };
 

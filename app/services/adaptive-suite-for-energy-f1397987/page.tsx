@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Energy - Zion Tech Group",
   description: "Transform your energy operations with our Adaptive Suite for Energy. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficie",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-energy-f1397987`
   }
 };
 

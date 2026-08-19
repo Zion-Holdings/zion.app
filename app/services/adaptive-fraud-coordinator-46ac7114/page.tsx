@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Fraud Coordinator - Zion Tech Group",
   description: "The future of finance is here with Adaptive Fraud Coordinator. Powered by cutting-edge AI, this platform delivers document processing like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-fraud-coordinator-46ac7114`
   }
 };
 

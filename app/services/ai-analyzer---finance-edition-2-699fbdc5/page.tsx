@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Finance Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analyzer - Finance Edition #2. This autonomous system provides code optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---finance-edition-2-699fbdc5`
   }
 };
 

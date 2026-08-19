@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Automated - Sports - Zion Tech Group",
   description: "The future of sports is here with Advisor Automated - Sports. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-automated---sports-51f161c0`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Agent Orchestration Platform - Zion Tech Group",
   description: "Build, deploy, and manage autonomous AI agents. Multi-agent workflows, tool integration, memory management, and human-in-the-loop controls.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-agent-orchestration-platform`
   }
 };
 

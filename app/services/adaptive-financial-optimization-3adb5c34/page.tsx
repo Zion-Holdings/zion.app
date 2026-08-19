@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Financial Optimization - Zion Tech Group",
   description: "The future of healthcare is here with Adaptive Financial Optimization. Powered by cutting-edge AI, this platform delivers threat detection like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-financial-optimization-3adb5c34`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Devices for Logistics - Zion Tech Group",
   description: "The future of logistics is here with Advanced Devices for Logistics. Powered by cutting-edge AI, this platform delivers automation control like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-devices-for-logistics-e6e1e275`
   }
 };
 

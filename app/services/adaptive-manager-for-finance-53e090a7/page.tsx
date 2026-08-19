@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Manager for Finance - Zion Tech Group",
   description: "Revolutionize finance through intelligent automation. Our Adaptive Manager for Finance leverages advanced machine learning to deliver resource optimization at s",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manager-for-finance-53e090a7`
   }
 };
 

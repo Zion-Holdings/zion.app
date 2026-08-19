@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Document Q&A Engine - Zion Tech Group",
   description: "Upload PDFs, Word docs, and spreadsheets; ask natural language questions and get instant cited answers with multi-document cross-referencing and role-based acce",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-document-qa`
   }
 };
 

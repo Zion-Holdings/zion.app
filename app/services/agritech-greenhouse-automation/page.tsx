@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Greenhouse Climate Control - Zion Tech Group",
   description: "AI-powered greenhouse automation. Climate optimization, lighting control, CO2 management, and yield prediction for controlled environment agriculture.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/agritech-greenhouse-automation`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analytics for Automotive - Zion Tech Group",
   description: "The future of automotive is here with Adaptive Analytics for Automotive. Powered by cutting-edge AI, this platform delivers language processing like never befor",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-for-automotive-80fd7ed0`
   }
 };
 

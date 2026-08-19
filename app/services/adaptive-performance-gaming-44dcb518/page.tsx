@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive performance-gaming - Zion Tech Group",
   description: "Transform your Gaming operations with our Adaptive performance-gaming. This AI-driven solution automates resource optimization with unprecedented accuracy and e",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-performance-gaming-44dcb518`
   }
 };
 

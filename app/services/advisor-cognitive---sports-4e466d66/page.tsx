@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Cognitive - Sports - Zion Tech Group",
   description: "Next-generation sports solution: Advisor Cognitive - Sports. Combines fraud prevention with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-cognitive---sports-4e466d66`
   }
 };
 

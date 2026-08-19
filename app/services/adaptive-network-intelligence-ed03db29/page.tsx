@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Network Intelligence - Zion Tech Group",
   description: "Next-generation Transportation solution: Adaptive Network Intelligence. Combines threat detection with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-network-intelligence-ed03db29`
   }
 };
 

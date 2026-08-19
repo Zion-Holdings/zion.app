@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Retail - Zion Tech Group",
   description: "Next-generation retail solution: Advisor Self-Optimizing - Retail. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-self-optimizing---retail-5a84a88e`
   }
 };
 

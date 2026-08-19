@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive coordinator-finance - Zion Tech Group",
   description: "Transform your finance operations with our Adaptive coordinator-finance. This AI-driven solution automates sales forecasting with unprecedented accuracy and eff",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-coordinator-finance-c8072d9d`
   }
 };
 

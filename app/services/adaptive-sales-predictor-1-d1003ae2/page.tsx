@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Sales Predictor #1 - Zion Tech Group",
   description: "The future of retail is here with Adaptive Sales Predictor #1. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-sales-predictor-1-d1003ae2`
   }
 };
 

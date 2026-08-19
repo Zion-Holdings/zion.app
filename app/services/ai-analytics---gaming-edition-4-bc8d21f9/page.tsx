@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Gaming Edition #4 - Zion Tech Group",
   description: "Transform your gaming operations with our AI Analytics - Gaming Edition #4. This AI-driven solution automates workflow management with unprecedented accuracy an",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---gaming-edition-4-bc8d21f9`
   }
 };
 

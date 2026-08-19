@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimization for Sports - Zion Tech Group",
   description: "Transform your sports operations with our Adaptive Optimization for Sports. This AI-driven solution automates code optimization with unprecedented accuracy and ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-for-sports-8f9fefa1`
   }
 };
 

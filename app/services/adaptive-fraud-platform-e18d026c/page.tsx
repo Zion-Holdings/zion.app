@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Fraud Platform - Zion Tech Group",
   description: "Revolutionize media through intelligent automation. Our Adaptive Fraud Platform leverages advanced machine learning to deliver energy management at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-fraud-platform-e18d026c`
   }
 };
 

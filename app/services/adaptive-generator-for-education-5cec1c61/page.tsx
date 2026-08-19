@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Generator for Education - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Generator for Education. This autonomous system provides quality control with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-generator-for-education-5cec1c61`
   }
 };
 

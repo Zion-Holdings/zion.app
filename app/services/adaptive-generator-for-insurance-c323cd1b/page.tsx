@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Generator for Insurance - Zion Tech Group",
   description: "Next-generation insurance solution: Adaptive Generator for Insurance. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-generator-for-insurance-c323cd1b`
   }
 };
 

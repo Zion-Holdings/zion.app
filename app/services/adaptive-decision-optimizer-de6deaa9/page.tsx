@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Decision Optimizer - Zion Tech Group",
   description: "Next-generation technology solution: Adaptive Decision Optimizer. Combines language processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-decision-optimizer-de6deaa9`
   }
 };
 

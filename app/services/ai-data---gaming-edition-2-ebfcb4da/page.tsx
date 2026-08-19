@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Data - Gaming Edition #2 - Zion Tech Group",
   description: "The future of Gaming is here with AI Data - Gaming Edition #2. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-data---gaming-edition-2-ebfcb4da`
   }
 };
 

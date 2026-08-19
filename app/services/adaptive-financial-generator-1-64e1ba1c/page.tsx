@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Financial Generator #1 - Zion Tech Group",
   description: "Next-generation real-estate solution: Adaptive Financial Generator #1. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-financial-generator-1-64e1ba1c`
   }
 };
 

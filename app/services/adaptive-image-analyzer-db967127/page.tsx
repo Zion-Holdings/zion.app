@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Image Analyzer - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Image Analyzer. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-image-analyzer-db967127`
   }
 };
 

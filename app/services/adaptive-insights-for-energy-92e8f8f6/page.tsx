@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Insights for Energy - Zion Tech Group",
   description: "Next-generation energy solution: Adaptive Insights for Energy. Combines user experience with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-for-energy-92e8f8f6`
   }
 };
 

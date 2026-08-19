@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive automation-automotive #1 - Zion Tech Group",
   description: "Next-generation automotive solution: Adaptive automation-automotive #1. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-automation-automotive-1-dbe422aa`
   }
 };
 

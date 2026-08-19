@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Accessibility Content Optimizer - Zion Tech Group",
   description: "Suggests alt-text for images, transcript generation for videos, and semantic HTML improvements to boost accessibility and SEO simultaneously.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-accessibility-optimizer`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Logistics #1 - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Adaptive Suite for Logistics #1 leverages advanced machine learning to deliver quality control at sc",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-logistics-1-cc1e8810`
   }
 };
 

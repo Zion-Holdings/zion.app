@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Support for Manufacturing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Support for Manufacturing. This autonomous system provides resource optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-support-for-manufacturing-2b1291aa`
   }
 };
 

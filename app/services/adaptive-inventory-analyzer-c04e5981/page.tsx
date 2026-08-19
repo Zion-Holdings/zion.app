@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Inventory Analyzer - Zion Tech Group",
   description: "The future of gaming is here with Adaptive Inventory Analyzer. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-inventory-analyzer-c04e5981`
   }
 };
 

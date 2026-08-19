@@ -5,7 +5,8 @@ export const metadata = {
   title: "AI Crop Disease Detection Platform - Zion Tech Group",
   description: "Detect crop diseases, pest infestations, and nutrient deficiencies from drone and smartphone imagery. Early detection saves 20-40% of crop yield.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/agritech-crop-disease-detection`
+  },
+  },
   openGraph: {
     title: 'Service | Zion Tech Group',
     description: 'AI/IT service by Zion Tech Group.',

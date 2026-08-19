@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Finance Edition #3 - Zion Tech Group",
   description: "Next-generation finance solution: AI Advisor - Finance Edition #3. Combines financial planning with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---finance-edition-3-48e9723e`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Inventory Optimization - Zion Tech Group",
   description: "The future of Logistics is here with Adaptive Inventory Optimization. Powered by cutting-edge AI, this platform delivers process automation like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-inventory-optimization-d5290df1`
   }
 };
 

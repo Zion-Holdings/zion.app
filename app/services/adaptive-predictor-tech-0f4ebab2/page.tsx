@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive predictor-tech - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive predictor-tech. This autonomous system provides customer insights with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictor-tech-0f4ebab2`
   }
 };
 

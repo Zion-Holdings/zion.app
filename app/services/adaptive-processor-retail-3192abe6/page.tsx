@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive processor-retail - Zion Tech Group",
   description: "The future of retail is here with Adaptive processor-retail. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-retail-3192abe6`
   }
 };
 

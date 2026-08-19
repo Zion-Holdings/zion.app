@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Code Coordinator - Zion Tech Group",
   description: "Transform your real-estate operations with our Adaptive Code Coordinator. This AI-driven solution automates security monitoring with unprecedented accuracy and ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-code-coordinator-59f97a16`
   }
 };
 

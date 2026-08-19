@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Resource Generator #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Resource Generator #1. This autonomous system provides workflow management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-resource-generator-1-9de9bbf4`
   }
 };
 

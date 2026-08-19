@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Code Analytics - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Adaptive Code Analytics leverages advanced machine learning to deliver compliance monitoring at sc",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-code-analytics-1832c65b`
   }
 };
 

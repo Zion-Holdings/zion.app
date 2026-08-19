@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Coordinator for Hospitality - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive Coordinator for Hospitality. Powered by cutting-edge AI, this platform delivers resource optimization like never",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-coordinator-for-hospitality-38bc3d13`
   }
 };
 

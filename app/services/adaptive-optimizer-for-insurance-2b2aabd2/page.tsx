@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimizer for Insurance - Zion Tech Group",
   description: "The future of insurance is here with Adaptive Optimizer for Insurance. Powered by cutting-edge AI, this platform delivers language processing like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimizer-for-insurance-2b2aabd2`
   }
 };
 

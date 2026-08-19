@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive orchestrator-retail - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive orchestrator-retail. This AI-driven solution automates image recognition with unprecedented accuracy and effi",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-orchestrator-retail-de29c50e`
   }
 };
 

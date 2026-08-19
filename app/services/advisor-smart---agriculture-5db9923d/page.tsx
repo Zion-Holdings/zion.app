@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Smart - Agriculture - Zion Tech Group",
   description: "The future of agriculture is here with Advisor Smart - Agriculture. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-smart---agriculture-5db9923d`
   }
 };
 

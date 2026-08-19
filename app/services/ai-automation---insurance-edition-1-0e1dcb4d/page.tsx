@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Insurance Edition #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Automation - Insurance Edition #1. This autonomous system provides customer insights with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---insurance-edition-1-0e1dcb4d`
   }
 };
 

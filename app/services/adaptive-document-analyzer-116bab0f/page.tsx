@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Document Analyzer - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Adaptive Document Analyzer leverages advanced machine learning to deliver code optimization at sca",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-document-analyzer-116bab0f`
   }
 };
 

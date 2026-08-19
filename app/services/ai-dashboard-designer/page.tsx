@@ -5,7 +5,6 @@ export const metadata = {
   title: "Ai Dashboard Designer - Zion Tech Group",
   description: "AI Dashboard Designer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-dashboard-designer`
   }
 };
 

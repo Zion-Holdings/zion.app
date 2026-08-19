@@ -5,7 +5,6 @@ export const metadata = {
   title: "Accessibility & WCAG Compliance - Zion Tech Group",
   description: "Automated WCAG 2.2 auditing, AI-powered remediation suggestions, screen reader simulation, and continuous accessibility compliance monitoring.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/accessibility-compliance`
   }
 };
 

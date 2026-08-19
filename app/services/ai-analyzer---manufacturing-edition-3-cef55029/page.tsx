@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Manufacturing Edition #3 - Zion Tech Group",
   description: "Revolutionize manufacturing through intelligent automation. Our AI Analyzer - Manufacturing Edition #3 leverages advanced machine learning to deliver financial ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---manufacturing-edition-3-cef55029`
   }
 };
 

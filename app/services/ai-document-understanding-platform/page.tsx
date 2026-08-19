@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Document Understanding Platform - Zion Tech Group",
   description: "Enterprise document AI platform that extracts, classifies, and processes unstructured documents at scale. Handles contracts, invoices, forms, IDs, and custom do",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-document-understanding-platform`
   }
 };
 

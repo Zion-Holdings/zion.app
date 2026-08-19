@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive orchestrator-gaming #1 - Zion Tech Group",
   description: "The future of gaming is here with Adaptive orchestrator-gaming #1. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-orchestrator-gaming-1-f882f860`
   }
 };
 

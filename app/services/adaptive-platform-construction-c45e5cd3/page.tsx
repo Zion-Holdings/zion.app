@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive platform-construction - Zion Tech Group",
   description: "The future of construction is here with Adaptive platform-construction. Powered by cutting-edge AI, this platform delivers content generation like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-construction-c45e5cd3`
   }
 };
 

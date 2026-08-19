@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Education - Zion Tech Group",
   description: "Revolutionize education through intelligent automation. Our Adaptive Platform for Education leverages advanced machine learning to deliver workflow management a",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-education-05831b2f`
   }
 };
 

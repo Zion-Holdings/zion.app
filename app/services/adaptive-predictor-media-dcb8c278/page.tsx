@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive predictor-media - Zion Tech Group",
   description: "The future of media is here with Adaptive predictor-media. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictor-media-dcb8c278`
   }
 };
 

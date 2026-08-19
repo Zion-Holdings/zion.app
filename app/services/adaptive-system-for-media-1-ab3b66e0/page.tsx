@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive System for Media #1 - Zion Tech Group",
   description: "Next-generation media solution: Adaptive System for Media #1. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-system-for-media-1-ab3b66e0`
   }
 };
 

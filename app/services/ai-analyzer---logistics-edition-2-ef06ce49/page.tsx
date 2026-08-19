@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Logistics Edition #2 - Zion Tech Group",
   description: "Revolutionize Logistics through intelligent automation. Our AI Analyzer - Logistics Edition #2 leverages advanced machine learning to deliver security monitorin",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---logistics-edition-2-ef06ce49`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Engine for Logistics - Zion Tech Group",
   description: "Revolutionize Logistics through intelligent automation. Our Adaptive Engine for Logistics leverages advanced machine learning to deliver sentiment analysis at s",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-engine-for-logistics-33153c20`
   }
 };
 

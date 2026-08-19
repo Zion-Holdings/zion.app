@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Real-Estate Edition #2 - Zion Tech Group",
   description: "Next-generation real-estate solution: AI Automation - Real-Estate Edition #2. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---real-estate-edition-2-7571a04e`
   }
 };
 

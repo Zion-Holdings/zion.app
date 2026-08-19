@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Warehouse for Healthcare - Zion Tech Group",
   description: "Optimize your healthcare workflows with Advanced Warehouse for Healthcare. This intelligent platform delivers schema design through advanced automation and AI.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-warehouse-for-healthcare-3bf31088`
   }
 };
 

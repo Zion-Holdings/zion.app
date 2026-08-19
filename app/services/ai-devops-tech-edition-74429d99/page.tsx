@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI DevOps - Tech Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI DevOps - Tech Edition. This autonomous system provides capacity management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-devops-tech-edition-74429d99`
   }
 };
 

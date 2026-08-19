@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Compliance - Sports Edition - Zion Tech Group",
   description: "Next-generation Sports solution: AI Compliance - Sports Edition. Combines automation opportunity with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-compliance---sports-edition-1b1bfe30`
   }
 };
 

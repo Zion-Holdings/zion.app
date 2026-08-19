@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-tech - Zion Tech Group",
   description: "Next-generation technology solution: Adaptive optimization-tech. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-tech-6eafc54c`
   }
 };
 

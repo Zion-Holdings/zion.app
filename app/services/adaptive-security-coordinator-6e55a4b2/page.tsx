@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Security Coordinator - Zion Tech Group",
   description: "Revolutionize manufacturing through intelligent automation. Our Adaptive Security Coordinator leverages advanced machine learning to deliver customer insights a",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-security-coordinator-6e55a4b2`
   }
 };
 

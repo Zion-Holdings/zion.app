@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Cloud for Healthcare - Zion Tech Group",
   description: "Next-generation Healthcare solution: Adaptive Cloud for Healthcare. Combines sales process optimization with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-cloud-for-healthcare-9ec2635a`
   }
 };
 

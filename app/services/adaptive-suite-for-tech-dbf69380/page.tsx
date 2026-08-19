@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Tech - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Suite for Tech. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-tech-dbf69380`
   }
 };
 

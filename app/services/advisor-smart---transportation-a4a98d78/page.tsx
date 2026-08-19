@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Smart - Transportation - Zion Tech Group",
   description: "The future of transportation is here with Advisor Smart - Transportation. Powered by cutting-edge AI, this platform delivers document processing like never befo",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-smart---transportation-a4a98d78`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Automotive Edition #3 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Advisor - Automotive Edition #3. This autonomous system provides energy management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---automotive-edition-3-e0988809`
   }
 };
 

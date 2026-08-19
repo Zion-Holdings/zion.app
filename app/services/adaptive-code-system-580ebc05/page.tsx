@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Code System - Zion Tech Group",
   description: "Revolutionize finance through intelligent automation. Our Adaptive Code System leverages advanced machine learning to deliver resource optimization at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-code-system-580ebc05`
   }
 };
 

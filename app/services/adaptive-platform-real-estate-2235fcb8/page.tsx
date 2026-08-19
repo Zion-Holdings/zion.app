@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive platform-real-estate - Zion Tech Group",
   description: "Next-generation real-estate solution: Adaptive platform-real-estate. Combines risk assessment with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-real-estate-2235fcb8`
   }
 };
 

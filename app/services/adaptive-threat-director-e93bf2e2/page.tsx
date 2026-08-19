@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Threat Director - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Threat Director. This autonomous system provides performance monitoring with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-threat-director-e93bf2e2`
   }
 };
 

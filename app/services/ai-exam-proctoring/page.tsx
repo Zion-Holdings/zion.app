@@ -5,7 +5,6 @@ export const metadata = {
   title: "Ai Exam Proctoring - Zion Tech Group",
   description: "AI Exam Proctoring — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first ar",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-exam-proctoring`
   }
 };
 

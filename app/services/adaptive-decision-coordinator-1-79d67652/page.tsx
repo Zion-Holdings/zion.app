@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Decision Coordinator #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Decision Coordinator #1. This autonomous system provides security monitoring with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-decision-coordinator-1-79d67652`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Sports - Zion Tech Group",
   description: "Next-generation sports solution: Adaptive Suite for Sports. Combines maintenance scheduling with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-sports-32bd9bbd`
   }
 };
 

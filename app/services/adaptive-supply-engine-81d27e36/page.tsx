@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Supply Engine - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Supply Engine. This autonomous system provides image recognition with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-supply-engine-81d27e36`
   }
 };
 

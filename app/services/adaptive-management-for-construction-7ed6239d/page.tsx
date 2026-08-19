@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Management for Construction - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive Management for Construction leverages advanced machine learning to deliver performance m",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-for-construction-7ed6239d`
   }
 };
 

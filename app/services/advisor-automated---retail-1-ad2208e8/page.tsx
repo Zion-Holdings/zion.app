@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Automated - Retail #1 - Zion Tech Group",
   description: "Revolutionize retail through intelligent automation. Our Advisor Automated - Retail #1 leverages advanced machine learning to deliver market intelligence at sca",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-automated---retail-1-ad2208e8`
   }
 };
 

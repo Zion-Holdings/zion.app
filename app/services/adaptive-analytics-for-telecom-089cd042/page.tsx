@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analytics for Telecom - Zion Tech Group",
   description: "Transform your Telecom operations with our Adaptive Analytics for Telecom. This AI-driven solution automates market analysis with unprecedented accuracy and eff",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-for-telecom-089cd042`
   }
 };
 

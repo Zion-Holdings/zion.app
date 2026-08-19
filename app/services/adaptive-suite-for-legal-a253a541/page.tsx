@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Legal - Zion Tech Group",
   description: "The future of legal is here with Adaptive Suite for Legal. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-legal-a253a541`
   }
 };
 

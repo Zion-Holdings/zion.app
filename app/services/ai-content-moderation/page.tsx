@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Content Moderation Platform - Zion Tech Group",
   description: "Automated content review for user-generated platforms — detect spam, harassment, and policy violations across text, image, and video.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-content-moderation`
   }
 };
 

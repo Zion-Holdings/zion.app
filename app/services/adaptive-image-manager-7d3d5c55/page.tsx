@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Image Manager - Zion Tech Group",
   description: "Revolutionize healthcare through intelligent automation. Our Adaptive Image Manager leverages advanced machine learning to deliver performance monitoring at sca",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-image-manager-7d3d5c55`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Customer Risk - Zion Tech Group",
   description: "Revolutionize Finance through intelligent automation. Our Adaptive Customer Risk leverages advanced machine learning to deliver executive dashboards at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-customer-risk-d9f209a7`
   }
 };
 

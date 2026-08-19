@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Marketing for Entertainment - Zion Tech Group",
   description: "Revolutionize entertainment through intelligent automation. Our Advanced Marketing for Entertainment leverages advanced machine learning to deliver audio analys",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-marketing-for-entertainment-006f91c5`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Maintenance Manager - Zion Tech Group",
   description: "The future of energy is here with Adaptive Maintenance Manager. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-maintenance-manager-ad509c45`
   }
 };
 

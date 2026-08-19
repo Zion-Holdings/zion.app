@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Gaming Edition #1 - Zion Tech Group",
   description: "Transform your gaming operations with our AI Director - Gaming Edition #1. This AI-driven solution automates security monitoring with unprecedented accuracy and",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---gaming-edition-1-529707f0`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Legal Edition - Zion Tech Group",
   description: "Next-generation legal solution: AI Advisor - Legal Edition. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---legal-edition-81dfff05`
   }
 };
 

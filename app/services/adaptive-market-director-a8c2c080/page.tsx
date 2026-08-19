@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Market Director - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Adaptive Market Director leverages advanced machine learning to deliver fraud prevention at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-market-director-a8c2c080`
   }
 };
 

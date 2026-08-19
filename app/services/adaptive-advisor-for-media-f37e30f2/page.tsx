@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Advisor for Media - Zion Tech Group",
   description: "The future of media is here with Adaptive Advisor for Media. Powered by cutting-edge AI, this platform delivers user experience like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-advisor-for-media-f37e30f2`
   }
 };
 

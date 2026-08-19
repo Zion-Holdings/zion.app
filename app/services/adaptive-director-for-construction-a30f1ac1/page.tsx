@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Director for Construction - Zion Tech Group",
   description: "The future of construction is here with Adaptive Director for Construction. Powered by cutting-edge AI, this platform delivers quality control like never before",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-for-construction-a30f1ac1`
   }
 };
 

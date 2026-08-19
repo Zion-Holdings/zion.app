@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive predictor-telecom - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive predictor-telecom. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictor-telecom-2d7c374a`
   }
 };
 

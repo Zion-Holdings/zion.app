@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Real-Time Supply Chain Optimization - Zion Tech Group",
   description: "End-to-end supply chain platform that uses real-time optimization algorithms for demand planning, inventory management, and logistics coordination.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-real-time-supply-chain-optimization-c49208e4`
   }
 };
 

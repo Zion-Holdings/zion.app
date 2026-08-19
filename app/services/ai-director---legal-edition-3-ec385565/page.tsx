@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Legal Edition #3 - Zion Tech Group",
   description: "The future of legal is here with AI Director - Legal Edition #3. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---legal-edition-3-ec385565`
   }
 };
 

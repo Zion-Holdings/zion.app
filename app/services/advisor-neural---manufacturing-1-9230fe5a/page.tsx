@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Neural - Manufacturing #1 - Zion Tech Group",
   description: "The future of manufacturing is here with Advisor Neural - Manufacturing #1. Powered by cutting-edge AI, this platform delivers image recognition like never befo",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-neural---manufacturing-1-9230fe5a`
   }
 };
 

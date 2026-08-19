@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Orchestrator for Manufacturing - Zion Tech Group",
   description: "Revolutionize Manufacturing through intelligent automation. Our Adaptive Orchestrator for Manufacturing leverages advanced machine learning to deliver predictiv",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-orchestrator-for-manufacturing-5b2e3846`
   }
 };
 

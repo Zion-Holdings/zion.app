@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Manager for Transportation - Zion Tech Group",
   description: "Transform your transportation operations with our Adaptive Manager for Transportation. This AI-driven solution automates market intelligence with unprecedented ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manager-for-transportation-bde6f0ea`
   }
 };
 

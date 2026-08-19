@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analytics-real-estate - Zion Tech Group",
   description: "Revolutionize real-estate through intelligent automation. Our Adaptive analytics-real-estate leverages advanced machine learning to deliver supply chain at scal",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-real-estate-4ea34e3f`
   }
 };
 

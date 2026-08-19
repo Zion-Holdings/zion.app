@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Retail Edition #3 - Zion Tech Group",
   description: "Next-generation retail solution: AI Analyzer - Retail Edition #3. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---retail-edition-3-3c8fb7d4`
   }
 };
 

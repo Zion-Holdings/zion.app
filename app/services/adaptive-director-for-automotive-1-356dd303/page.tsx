@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Director for Automotive #1 - Zion Tech Group",
   description: "The future of automotive is here with Adaptive Director for Automotive #1. Powered by cutting-edge AI, this platform delivers document processing like never bef",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-for-automotive-1-356dd303`
   }
 };
 

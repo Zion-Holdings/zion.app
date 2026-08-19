@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Compliance & Regulatory - Zion Tech Group",
   description: "Automated compliance monitoring, risk assessment, and audit trail management for GDPR, HIPAA, SOC 2, and more.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-compliance`
   }
 };
 

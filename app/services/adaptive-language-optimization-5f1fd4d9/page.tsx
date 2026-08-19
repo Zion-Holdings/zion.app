@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Language Optimization - Zion Tech Group",
   description: "Next-generation agriculture solution: Adaptive Language Optimization. Combines threat detection with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-language-optimization-5f1fd4d9`
   }
 };
 

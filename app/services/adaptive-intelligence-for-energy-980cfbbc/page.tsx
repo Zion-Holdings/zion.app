@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Intelligence for Energy - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Intelligence for Energy. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-for-energy-980cfbbc`
   }
 };
 

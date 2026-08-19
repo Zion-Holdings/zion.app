@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Code Generation & Optimization - Zion Tech Group",
   description: "Development assistant that generates production-ready code from natural language descriptions, optimizes existing code for performance, and suggests security im",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-code-generation--optimization-45feb663`
   }
 };
 

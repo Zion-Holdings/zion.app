@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Retail Edition #5 - Zion Tech Group",
   description: "The future of retail is here with AI Coordinator - Retail Edition #5. Powered by cutting-edge AI, this platform delivers process automation like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---retail-edition-5-a9ddaf44`
   }
 };
 

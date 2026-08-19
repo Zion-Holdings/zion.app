@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Network Coordinator - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive Network Coordinator. Powered by cutting-edge AI, this platform delivers compliance monitoring like never befor",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-network-coordinator-17cd6505`
   }
 };
 

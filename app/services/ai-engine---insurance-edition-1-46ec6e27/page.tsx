@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Insurance Edition #1 - Zion Tech Group",
   description: "The future of insurance is here with AI Engine - Insurance Edition #1. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---insurance-edition-1-46ec6e27`
   }
 };
 

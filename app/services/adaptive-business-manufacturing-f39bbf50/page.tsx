@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Business Manufacturing - Zion Tech Group",
   description: "The future of Retail is here with Adaptive Business Manufacturing. Powered by cutting-edge AI, this platform delivers predictive modeling like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-business-manufacturing-f39bbf50`
   }
 };
 

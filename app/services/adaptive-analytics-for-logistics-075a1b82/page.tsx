@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analytics for Logistics - Zion Tech Group",
   description: "Transform your logistics operations with our Adaptive Analytics for Logistics. This AI-driven solution automates maintenance scheduling with unprecedented accur",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-for-logistics-075a1b82`
   }
 };
 

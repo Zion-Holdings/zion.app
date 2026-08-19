@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Advisor for Sports - Zion Tech Group",
   description: "Transform your sports operations with our Adaptive Advisor for Sports. This AI-driven solution automates quality control with unprecedented accuracy and efficie",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-advisor-for-sports-3eeb7d52`
   }
 };
 

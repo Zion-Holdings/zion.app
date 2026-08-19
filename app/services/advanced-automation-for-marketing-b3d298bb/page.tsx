@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Automation for Marketing - Zion Tech Group",
   description: "Next-generation marketing solution: Advanced Automation for Marketing. Combines spam detection with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-automation-for-marketing-b3d298bb`
   }
 };
 

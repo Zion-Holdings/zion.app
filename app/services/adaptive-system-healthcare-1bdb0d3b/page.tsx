@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive system-healthcare - Zion Tech Group",
   description: "The future of healthcare is here with Adaptive system-healthcare. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-system-healthcare-1bdb0d3b`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Engagement for Sales - Zion Tech Group",
   description: "The future of sales is here with Advanced Engagement for Sales. Powered by cutting-edge AI, this platform delivers automation workflows like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-engagement-for-sales-72b20eb4`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Sales Processor - Zion Tech Group",
   description: "Next-generation technology solution: Adaptive Sales Processor. Combines performance monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-sales-processor-27f26799`
   }
 };
 

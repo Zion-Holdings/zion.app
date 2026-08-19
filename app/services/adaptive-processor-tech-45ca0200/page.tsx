@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive processor-tech - Zion Tech Group",
   description: "Revolutionize technology through intelligent automation. Our Adaptive processor-tech leverages advanced machine learning to deliver code optimization at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-tech-45ca0200`
   }
 };
 

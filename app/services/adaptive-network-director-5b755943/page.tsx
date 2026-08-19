@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Network Director - Zion Tech Group",
   description: "Revolutionize legal through intelligent automation. Our Adaptive Network Director leverages advanced machine learning to deliver document processing at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-network-director-5b755943`
   }
 };
 

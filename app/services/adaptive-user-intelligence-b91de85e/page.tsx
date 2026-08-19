@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive User Intelligence - Zion Tech Group",
   description: "Transform your technology operations with our Adaptive User Intelligence. This AI-driven solution automates content generation with unprecedented accuracy and e",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-user-intelligence-b91de85e`
   }
 };
 

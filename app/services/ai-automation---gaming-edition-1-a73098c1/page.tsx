@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Gaming Edition #1 - Zion Tech Group",
   description: "Next-generation gaming solution: AI Automation - Gaming Edition #1. Combines predictive analytics with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---gaming-edition-1-a73098c1`
   }
 };
 

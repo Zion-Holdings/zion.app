@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Intelligence for Retail #1 - Zion Tech Group",
   description: "The future of Retail is here with Adaptive Intelligence for Retail #1. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-for-retail-1-b6447d33`
   }
 };
 

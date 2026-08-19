@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Hospitality #1 - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive Platform for Hospitality #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like neve",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-hospitality-1-4eec471d`
   }
 };
 

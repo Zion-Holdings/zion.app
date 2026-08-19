@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Manufacturing - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive Suite for Manufacturing. Powered by cutting-edge AI, this platform delivers data processing like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-manufacturing-30607267`
   }
 };
 

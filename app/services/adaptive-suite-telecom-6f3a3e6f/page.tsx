@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive suite-telecom - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive suite-telecom. This autonomous system provides image recognition with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-telecom-6f3a3e6f`
   }
 };
 

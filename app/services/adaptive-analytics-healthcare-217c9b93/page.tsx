@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analytics-healthcare - Zion Tech Group",
   description: "Revolutionize healthcare through intelligent automation. Our Adaptive analytics-healthcare leverages advanced machine learning to deliver financial planning at ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-healthcare-217c9b93`
   }
 };
 

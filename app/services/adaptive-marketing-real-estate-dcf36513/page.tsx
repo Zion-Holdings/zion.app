@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive marketing-real estate - Zion Tech Group",
   description: "Revolutionize Real Estate through intelligent automation. Our Adaptive marketing-real estate leverages advanced machine learning to deliver process discovery at",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-marketing-real-estate-dcf36513`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analyzer for Real-Estate - Zion Tech Group",
   description: "Revolutionize real-estate through intelligent automation. Our Adaptive Analyzer for Real-Estate leverages advanced machine learning to deliver code optimization",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-for-real-estate-8a3bbb8c`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Intelligent - Media - Zion Tech Group",
   description: "Transform your media operations with our Advisor Intelligent - Media. This AI-driven solution automates predictive analytics with unprecedented accuracy and eff",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-intelligent---media-163ca655`
   }
 };
 

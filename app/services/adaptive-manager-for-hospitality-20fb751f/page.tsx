@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Manager for Hospitality - Zion Tech Group",
   description: "Transform your hospitality operations with our Adaptive Manager for Hospitality. This AI-driven solution automates user experience with unprecedented accuracy a",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manager-for-hospitality-20fb751f`
   }
 };
 

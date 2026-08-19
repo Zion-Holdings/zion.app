@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Customer Intelligence - Zion Tech Group",
   description: "Revolutionize finance through intelligent automation. Our Adaptive Customer Intelligence leverages advanced machine learning to deliver image recognition at sca",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-customer-intelligence-d2fa53b8`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Campaign for Sales - Zion Tech Group",
   description: "Unlock unprecedented growth with Advanced Campaign for Sales. This autonomous system provides spam detection with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-campaign-for-sales-e849d472`
   }
 };
 

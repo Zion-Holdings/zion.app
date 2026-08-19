@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Manufacturing for Telecom - Zion Tech Group",
   description: "Transform your Telecom operations with our Adaptive Manufacturing for Telecom. This AI-driven solution automates customer journey mapping with unprecedented acc",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manufacturing-for-telecom-0ef587ca`
   }
 };
 

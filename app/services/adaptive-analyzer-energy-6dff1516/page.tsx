@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analyzer-energy - Zion Tech Group",
   description: "Revolutionize energy through intelligent automation. Our Adaptive analyzer-energy leverages advanced machine learning to deliver network optimization at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-energy-6dff1516`
   }
 };
 

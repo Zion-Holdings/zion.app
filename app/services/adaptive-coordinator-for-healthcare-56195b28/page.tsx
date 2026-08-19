@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Coordinator for Healthcare - Zion Tech Group",
   description: "Transform your healthcare operations with our Adaptive Coordinator for Healthcare. This AI-driven solution automates language processing with unprecedented accu",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-coordinator-for-healthcare-56195b28`
   }
 };
 

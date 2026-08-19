@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Management for Telecom - Zion Tech Group",
   description: "The future of Telecom is here with Adaptive Management for Telecom. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-for-telecom-714771c7`
   }
 };
 

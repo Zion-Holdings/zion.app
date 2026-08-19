@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive advisor-gaming #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive advisor-gaming #1. This autonomous system provides decision support with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-advisor-gaming-1-a374058f`
   }
 };
 

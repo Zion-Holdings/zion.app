@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Data - Logistics Edition - Zion Tech Group",
   description: "The future of Logistics is here with AI Data - Logistics Edition. Powered by cutting-edge AI, this platform delivers sentiment analysis like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-data---logistics-edition-2444ffc1`
   }
 };
 

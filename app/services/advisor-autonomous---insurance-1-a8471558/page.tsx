@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Autonomous - Insurance #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Autonomous - Insurance #1. This autonomous system provides customer insights with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-autonomous---insurance-1-a8471558`
   }
 };
 

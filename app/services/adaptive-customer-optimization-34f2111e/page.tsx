@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Customer Optimization - Zion Tech Group",
   description: "Transform your finance operations with our Adaptive Customer Optimization. This AI-driven solution automates risk assessment with unprecedented accuracy and eff",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-customer-optimization-34f2111e`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Risk Optimizer - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Risk Optimizer. This autonomous system provides resource optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-risk-optimizer-fec62fb0`
   }
 };
 

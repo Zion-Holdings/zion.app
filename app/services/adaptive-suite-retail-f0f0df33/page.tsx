@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive suite-retail - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive suite-retail. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-retail-f0f0df33`
   }
 };
 

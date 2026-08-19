@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Real-Estate Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analytics - Real-Estate Edition. This autonomous system provides financial planning with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---real-estate-edition-3ef6e1c1`
   }
 };
 

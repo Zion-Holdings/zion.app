@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Inventory Predictor - Zion Tech Group",
   description: "The future of Real Estate is here with Adaptive Inventory Predictor. Powered by cutting-edge AI, this platform delivers customer service automation like never b",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-inventory-predictor-94d996c6`
   }
 };
 

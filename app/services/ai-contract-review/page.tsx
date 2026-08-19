@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Contract Review Assistant - Zion Tech Group",
   description: "Automatically reviews legal contracts, flags risky clauses, suggests amendments, and benchmarks against industry standards.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-contract-review`
   }
 };
 

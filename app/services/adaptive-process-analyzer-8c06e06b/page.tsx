@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Process Analyzer - Zion Tech Group",
   description: "Revolutionize media through intelligent automation. Our Adaptive Process Analyzer leverages advanced machine learning to deliver network optimization at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-process-analyzer-8c06e06b`
   }
 };
 

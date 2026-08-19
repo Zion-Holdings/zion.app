@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor AI - Insurance - Zion Tech Group",
   description: "Revolutionize insurance through intelligent automation. Our Advisor AI - Insurance leverages advanced machine learning to deliver inventory management at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-ai---insurance-d31d3ea4`
   }
 };
 

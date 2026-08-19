@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Transportation Edition #2 - Zion Tech Group",
   description: "Revolutionize transportation through intelligent automation. Our AI Coordinator - Transportation Edition #2 leverages advanced machine learning to deliver langu",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---transportation-edition-2-e412a4a0`
   }
 };
 

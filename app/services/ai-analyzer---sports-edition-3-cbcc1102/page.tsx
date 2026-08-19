@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Sports Edition #3 - Zion Tech Group",
   description: "Revolutionize sports through intelligent automation. Our AI Analyzer - Sports Edition #3 leverages advanced machine learning to deliver language processing at s",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---sports-edition-3-cbcc1102`
   }
 };
 

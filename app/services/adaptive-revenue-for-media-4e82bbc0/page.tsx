@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Revenue for Media - Zion Tech Group",
   description: "Next-generation Media solution: Adaptive Revenue for Media. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-revenue-for-media-4e82bbc0`
   }
 };
 

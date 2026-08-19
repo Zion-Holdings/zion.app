@@ -5,7 +5,6 @@ export const metadata = {
   title: "Autonomous QA Engineering Platform - Zion Tech Group",
   description: "Auto-generate comprehensive E2E tests from user session replay; auto-fix flaky selectors; run tests on every PR; auto-open bug ticket on fail.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-autonomous-qa-engineering`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive director-hospitality - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive director-hospitality. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-hospitality-8ff57c69`
   }
 };
 

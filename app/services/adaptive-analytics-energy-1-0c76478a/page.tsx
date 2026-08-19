@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analytics-energy #1 - Zion Tech Group",
   description: "Transform your energy operations with our Adaptive analytics-energy #1. This AI-driven solution automates decision support with unprecedented accuracy and effic",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-energy-1-0c76478a`
   }
 };
 

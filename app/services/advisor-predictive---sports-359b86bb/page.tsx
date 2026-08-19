@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Predictive - Sports - Zion Tech Group",
   description: "The future of sports is here with Advisor Predictive - Sports. Powered by cutting-edge AI, this platform delivers energy management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-predictive---sports-359b86bb`
   }
 };
 

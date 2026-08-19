@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analytics for Sports - Zion Tech Group",
   description: "Revolutionize sports through intelligent automation. Our Adaptive Analytics for Sports leverages advanced machine learning to deliver fraud prevention at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-for-sports-a7098247`
   }
 };
 

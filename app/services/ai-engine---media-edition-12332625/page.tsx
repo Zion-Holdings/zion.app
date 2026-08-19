@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Media Edition - Zion Tech Group",
   description: "The future of media is here with AI Engine - Media Edition. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---media-edition-12332625`
   }
 };
 

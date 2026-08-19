@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Media Edition #1 - Zion Tech Group",
   description: "The future of media is here with AI Director - Media Edition #1. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---media-edition-1-c537f80b`
   }
 };
 

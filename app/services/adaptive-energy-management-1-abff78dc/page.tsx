@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Energy Management #1 - Zion Tech Group",
   description: "Transform your transportation operations with our Adaptive Energy Management #1. This AI-driven solution automates resource optimization with unprecedented accu",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-energy-management-1-abff78dc`
   }
 };
 

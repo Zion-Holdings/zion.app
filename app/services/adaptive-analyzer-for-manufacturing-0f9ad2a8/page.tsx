@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analyzer for Manufacturing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Analyzer for Manufacturing. This autonomous system provides language processing with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-for-manufacturing-0f9ad2a8`
   }
 };
 

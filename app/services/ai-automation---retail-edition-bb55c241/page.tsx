@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Retail Edition - Zion Tech Group",
   description: "Revolutionize retail through intelligent automation. Our AI Automation - Retail Edition leverages advanced machine learning to deliver performance monitoring at",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---retail-edition-bb55c241`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Energy Automation - Zion Tech Group",
   description: "Next-generation automotive solution: Adaptive Energy Automation. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-energy-automation-fcc2ab9c`
   }
 };
 

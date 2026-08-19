@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive processor-retail #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive processor-retail #1. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-retail-1-c765ec1a`
   }
 };
 

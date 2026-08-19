@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Predictive Suite - Zion Tech Group",
   description: "The future of education is here with Adaptive Predictive Suite. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictive-suite-d0ada1a9`
   }
 };
 

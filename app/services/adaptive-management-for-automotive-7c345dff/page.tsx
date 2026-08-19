@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Management for Automotive - Zion Tech Group",
   description: "Transform your automotive operations with our Adaptive Management for Automotive. This AI-driven solution automates financial planning with unprecedented accura",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-for-automotive-7c345dff`
   }
 };
 

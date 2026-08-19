@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Orchestrator for Healthcare - Zion Tech Group",
   description: "Next-generation healthcare solution: Adaptive Orchestrator for Healthcare. Combines content generation with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-orchestrator-for-healthcare-23e83c84`
   }
 };
 

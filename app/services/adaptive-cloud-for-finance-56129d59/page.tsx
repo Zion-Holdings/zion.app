@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Cloud for Finance - Zion Tech Group",
   description: "Revolutionize Finance through intelligent automation. Our Adaptive Cloud for Finance leverages advanced machine learning to deliver data processing at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-cloud-for-finance-56129d59`
   }
 };
 

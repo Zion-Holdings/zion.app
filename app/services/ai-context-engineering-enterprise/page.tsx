@@ -5,7 +5,6 @@ export const metadata = {
   title: "Ai Context Engineering Enterprise - Zion Tech Group",
   description: "Ai Context Engineering Enterprise — comprehensive managed service with expert support and proven delivery methodology.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-context-engineering-enterprise`
   }
 };
 

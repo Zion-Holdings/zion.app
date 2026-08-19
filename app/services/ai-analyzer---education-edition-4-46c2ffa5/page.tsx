@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Education Edition #4 - Zion Tech Group",
   description: "The future of education is here with AI Analyzer - Education Edition #4. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---education-edition-4-46c2ffa5`
   }
 };
 

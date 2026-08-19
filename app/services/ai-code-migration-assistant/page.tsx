@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Code Migration Assistant - Zion Tech Group",
   description: "Automated major-version migration: React 18→19, Python 3.9→3.12, Rails 6→7, with AST-wrapped diff PR and regression test suit.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-code-migration-assistant`
   }
 };
 

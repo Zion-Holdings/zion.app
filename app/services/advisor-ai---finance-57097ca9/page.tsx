@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor AI - Finance - Zion Tech Group",
   description: "Next-generation finance solution: Advisor AI - Finance. Combines content generation with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-ai---finance-57097ca9`
   }
 };
 

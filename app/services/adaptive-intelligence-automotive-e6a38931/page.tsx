@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive intelligence-automotive - Zion Tech Group",
   description: "Transform your automotive operations with our Adaptive intelligence-automotive. This AI-driven solution automates inventory management with unprecedented accura",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-automotive-e6a38931`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Predictive Manager #1 - Zion Tech Group",
   description: "Next-generation energy solution: Adaptive Predictive Manager #1. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictive-manager-1-c9ca6155`
   }
 };
 

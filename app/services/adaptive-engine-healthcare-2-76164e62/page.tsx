@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive engine-healthcare #2 - Zion Tech Group",
   description: "Next-generation healthcare solution: Adaptive engine-healthcare #2. Combines financial planning with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-engine-healthcare-2-76164e62`
   }
 };
 

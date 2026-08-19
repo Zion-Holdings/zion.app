@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Real-Estate Edition - Zion Tech Group",
   description: "Next-generation real-estate solution: AI Advisor - Real-Estate Edition. Combines energy management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---real-estate-edition-0e671b9d`
   }
 };
 

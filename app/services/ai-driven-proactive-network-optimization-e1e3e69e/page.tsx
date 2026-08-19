@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Proactive Network Optimization - Zion Tech Group",
   description: "Intelligent network management platform that uses proactive algorithms to optimize traffic routing, capacity planning, and quality of service across telecom inf",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-proactive-network-optimization-e1e3e69e`
   }
 };
 

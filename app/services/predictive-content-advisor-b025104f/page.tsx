@@ -5,7 +5,6 @@ export const metadata = {
   title: "Predictive Content Advisor - Zion Tech Group",
   description: "The future of construction is here with Predictive Content Advisor. Powered by cutting-edge AI, this platform delivers quality control like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/predictive-content-advisor-b025104f`
   }
 };
 

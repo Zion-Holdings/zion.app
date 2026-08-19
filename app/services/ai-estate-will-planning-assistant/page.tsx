@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Will, Estate & Legacy Planning Assistant - Zion Tech Group",
   description: "Guided AI assistant for creating legally sound wills, trusts, and estate plans. Analyzes assets, family structure, and state laws.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-estate-will-planning-assistant`
   }
 };
 

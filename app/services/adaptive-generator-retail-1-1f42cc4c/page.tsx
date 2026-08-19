@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive generator-retail #1 - Zion Tech Group",
   description: "Next-generation retail solution: Adaptive generator-retail #1. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-generator-retail-1-1f42cc4c`
   }
 };
 

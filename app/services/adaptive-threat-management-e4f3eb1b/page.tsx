@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Threat Management - Zion Tech Group",
   description: "Next-generation energy solution: Adaptive Threat Management. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-threat-management-e4f3eb1b`
   }
 };
 

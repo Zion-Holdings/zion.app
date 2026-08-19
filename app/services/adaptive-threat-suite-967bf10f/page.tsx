@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Threat Suite - Zion Tech Group",
   description: "Next-generation technology solution: Adaptive Threat Suite. Combines content generation with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-threat-suite-967bf10f`
   }
 };
 

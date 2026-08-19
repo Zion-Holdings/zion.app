@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analyzer-healthcare - Zion Tech Group",
   description: "The future of healthcare is here with Adaptive analyzer-healthcare. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-healthcare-1a196a05`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Processor for Gaming #1 - Zion Tech Group",
   description: "Next-generation gaming solution: Adaptive Processor for Gaming #1. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-for-gaming-1-5b77084d`
   }
 };
 

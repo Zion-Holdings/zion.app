@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Document Engine - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Document Engine. This autonomous system provides network optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-document-engine-8afea8a6`
   }
 };
 

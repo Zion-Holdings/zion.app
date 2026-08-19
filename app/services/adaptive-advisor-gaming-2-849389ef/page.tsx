@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive advisor-gaming #2 - Zion Tech Group",
   description: "The future of gaming is here with Adaptive advisor-gaming #2. Powered by cutting-edge AI, this platform delivers decision support like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-advisor-gaming-2-849389ef`
   }
 };
 

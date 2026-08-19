@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Enterprise-Grade Supply Chain Optimization - Zion Tech Group",
   description: "End-to-end supply chain platform that uses enterprise-grade optimization algorithms for demand planning, inventory management, and logistics coordination.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-enterprise-grade-supply-chain-optimization-5feb9294`
   }
 };
 

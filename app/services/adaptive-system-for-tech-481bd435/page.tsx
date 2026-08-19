@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive System for Tech - Zion Tech Group",
   description: "Next-generation technology solution: Adaptive System for Tech. Combines fraud prevention with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-system-for-tech-481bd435`
   }
 };
 

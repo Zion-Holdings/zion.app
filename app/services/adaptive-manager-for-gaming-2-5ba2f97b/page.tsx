@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Manager for Gaming #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Manager for Gaming #2. This autonomous system provides process automation with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manager-for-gaming-2-5ba2f97b`
   }
 };
 

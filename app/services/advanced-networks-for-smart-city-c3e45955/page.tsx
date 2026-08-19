@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Networks for Smart-City - Zion Tech Group",
   description: "Optimize your smart-city workflows with Advanced Networks for Smart-City. This intelligent platform delivers device management through advanced automation and A",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-networks-for-smart-city-c3e45955`
   }
 };
 

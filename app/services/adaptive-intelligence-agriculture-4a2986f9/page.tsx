@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive intelligence-agriculture - Zion Tech Group",
   description: "The future of agriculture is here with Adaptive intelligence-agriculture. Powered by cutting-edge AI, this platform delivers data processing like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-agriculture-4a2986f9`
   }
 };
 

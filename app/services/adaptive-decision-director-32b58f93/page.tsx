@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Decision Director - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive Decision Director. Powered by cutting-edge AI, this platform delivers threat detection like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-decision-director-32b58f93`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Automation for Logistics - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Automation for Logistics. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-automation-for-logistics-118a4b0a`
   }
 };
 

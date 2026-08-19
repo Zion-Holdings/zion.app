@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Cognitive - Insurance #1 - Zion Tech Group",
   description: "Transform your insurance operations with our Advisor Cognitive - Insurance #1. This AI-driven solution automates decision support with unprecedented accuracy an",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-cognitive---insurance-1-8dcb9700`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Telecom Edition #5 - Zion Tech Group",
   description: "Next-generation telecom solution: AI Engine - Telecom Edition #5. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---telecom-edition-5-d1429423`
   }
 };
 

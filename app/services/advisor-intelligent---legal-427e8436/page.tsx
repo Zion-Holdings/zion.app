@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Intelligent - Legal - Zion Tech Group",
   description: "Next-generation legal solution: Advisor Intelligent - Legal. Combines risk assessment with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-intelligent---legal-427e8436`
   }
 };
 

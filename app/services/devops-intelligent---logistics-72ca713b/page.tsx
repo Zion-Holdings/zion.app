@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path={`/services/devops-intelligent---logistics-72ca713b` title="DevOps Intelligent - Logistics" />
+        <BreadcrumbSchema path={`/services/devops-intelligent---logistics-72ca713b`} title="DevOps Intelligent - Logistics" />
         <h1 className="text-4xl font-bold mb-6">DevOps Intelligent - Logistics</h1>
         <p className="text-lg text-gray-300 mb-8">Revolutionize Logistics through intelligent automation. Our DevOps Intelligent - Logistics leverages advanced machine learning to deliver risk assessment at sca</p>
 

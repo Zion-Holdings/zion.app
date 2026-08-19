@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Supply Analyzer - Zion Tech Group",
   description: "The future of energy is here with Adaptive Supply Analyzer. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-supply-analyzer-22b84c9c`
   }
 };
 

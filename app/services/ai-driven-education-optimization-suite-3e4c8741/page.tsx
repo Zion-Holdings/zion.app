@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Education Optimization Suite - Zion Tech Group",
   description: "Industry-specific AI solution that optimizes education operations, supply chains, and decision-making processes. Delivers measurable improvements in efficiency ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-education-optimization-suite-3e4c8741`
   }
 };
 

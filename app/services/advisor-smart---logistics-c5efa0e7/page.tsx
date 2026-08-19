@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Smart - Logistics - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Smart - Logistics. This autonomous system provides network optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-smart---logistics-c5efa0e7`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Manufacturing Edition #11 - Zion Tech Group",
   description: "Transform your manufacturing operations with our AI Coordinator - Manufacturing Edition #11. This AI-driven solution automates workflow management with unpreced",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---manufacturing-edition-11-16c56357`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Market System #1 - Zion Tech Group",
   description: "Transform your legal operations with our Adaptive Market System #1. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and eff",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-market-system-1-1aea5085`
   }
 };
 

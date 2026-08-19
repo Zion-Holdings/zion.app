@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Code Migration & Modernization - Zion Tech Group",
   description: "Automatically migrate legacy codebases to modern frameworks (COBOL → Java, jQuery → React, Python 2 → Python 3) with AI-assisted refactoring.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-code-migration-modernization`
   }
 };
 

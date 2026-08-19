@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Language Automation - Zion Tech Group",
   description: "The future of construction is here with Adaptive Language Automation. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-language-automation-9c88363e`
   }
 };
 

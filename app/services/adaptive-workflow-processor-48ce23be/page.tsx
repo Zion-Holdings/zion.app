@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Workflow Processor - Zion Tech Group",
   description: "Next-generation insurance solution: Adaptive Workflow Processor. Combines image recognition with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-workflow-processor-48ce23be`
   }
 };
 

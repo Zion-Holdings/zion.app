@@ -5,7 +5,6 @@ export const metadata = {
   title: "Customer 360 Unified Profile - Zion Tech Group",
   description: "Aggregate all customer data (CRM, support, usage, billing) into single timeline. AI suggests next best action per customer.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-customer-360`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive suite-transportation - Zion Tech Group",
   description: "Next-generation transportation solution: Adaptive suite-transportation. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-transportation-ad696b85`
   }
 };
 

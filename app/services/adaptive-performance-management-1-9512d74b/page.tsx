@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Performance Management #1 - Zion Tech Group",
   description: "Next-generation hospitality solution: Adaptive Performance Management #1. Combines threat detection with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-performance-management-1-9512d74b`
   }
 };
 

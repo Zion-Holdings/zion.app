@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analyzer for Automotive - Zion Tech Group",
   description: "Next-generation automotive solution: Adaptive Analyzer for Automotive. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-for-automotive-18515026`
   }
 };
 

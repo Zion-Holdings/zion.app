@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Sports Edition #1 - Zion Tech Group",
   description: "Transform your sports operations with our AI Advisor - Sports Edition #1. This AI-driven solution automates document processing with unprecedented accuracy and ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---sports-edition-1-34b79a6c`
   }
 };
 

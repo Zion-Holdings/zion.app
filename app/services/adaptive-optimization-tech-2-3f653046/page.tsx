@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-tech #2 - Zion Tech Group",
   description: "Transform your technology operations with our Adaptive optimization-tech #2. This AI-driven solution automates fraud prevention with unprecedented accuracy and ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-tech-2-3f653046`
   }
 };
 

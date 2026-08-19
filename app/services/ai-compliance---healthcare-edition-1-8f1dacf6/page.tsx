@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Compliance - Healthcare Edition #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Compliance - Healthcare Edition #1. This autonomous system provides code optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-compliance---healthcare-edition-1-8f1dacf6`
   }
 };
 

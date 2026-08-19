@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Livestock Health Monitoring - Zion Tech Group",
   description: "IoT and AI-powered livestock health monitoring. Track animal behavior, detect illness early, monitor feeding patterns, and optimize breeding programs.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/agritech-livestock-monitoring`
   }
 };
 

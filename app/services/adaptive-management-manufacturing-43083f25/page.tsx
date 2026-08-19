@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive management-manufacturing - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive management-manufacturing. Powered by cutting-edge AI, this platform delivers risk assessment like never before",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-manufacturing-43083f25`
   }
 };
 

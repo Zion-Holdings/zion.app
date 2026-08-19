@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Finance Edition #6 - Zion Tech Group",
   description: "Transform your finance operations with our AI Director - Finance Edition #6. This AI-driven solution automates energy management with unprecedented accuracy and",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---finance-edition-6-6d33a80e`
   }
 };
 

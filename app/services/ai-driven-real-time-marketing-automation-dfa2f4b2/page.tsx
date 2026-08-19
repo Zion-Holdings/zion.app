@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Real-Time Marketing Automation - Zion Tech Group",
   description: "Intelligent marketing platform that creates real-time campaigns across channels, optimizing content and targeting.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-real-time-marketing-automation-dfa2f4b2`
   }
 };
 

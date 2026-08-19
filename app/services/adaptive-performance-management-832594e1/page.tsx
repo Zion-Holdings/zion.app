@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Performance Management - Zion Tech Group",
   description: "Revolutionize gaming through intelligent automation. Our Adaptive Performance Management leverages advanced machine learning to deliver user experience at scale",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-performance-management-832594e1`
   }
 };
 

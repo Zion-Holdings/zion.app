@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Real Estate Edition #2 - Zion Tech Group",
   description: "Transform your Real Estate operations with our AI Automation - Real Estate Edition #2. This AI-driven solution automates user experience with unprecedented accu",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---real-estate-edition-2-d0f55e66`
   }
 };
 

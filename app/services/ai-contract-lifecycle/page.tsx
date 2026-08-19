@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Contract Lifecycle Management - Zion Tech Group",
   description: "End-to-end contract management with AI drafting, review, approval workflows, and risk analysis.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-contract-lifecycle`
   }
 };
 

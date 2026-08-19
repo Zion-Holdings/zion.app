@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive coordinator-agriculture - Zion Tech Group",
   description: "Next-generation agriculture solution: Adaptive coordinator-agriculture. Combines predictive analytics with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-coordinator-agriculture-ff3d6aa8`
   }
 };
 

@@ -5,7 +5,8 @@ export const metadata = {
   title: "Advisor AI - Automotive #1 - Zion Tech Group",
   description: "Revolutionize automotive through intelligent automation. Our Advisor AI - Automotive #1 leverages advanced machine learning to deliver document processing at sc",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-ai---automotive-1-ba3a5bae`
+  },
+  },
   openGraph: {
     title: 'Service | Zion Tech Group',
     description: 'AI/IT service by Zion Tech Group.',

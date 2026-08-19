@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Hospitality Edition #6 - Zion Tech Group",
   description: "Next-generation hospitality solution: AI Advisor - Hospitality Edition #6. Combines language processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---hospitality-edition-6-10d40acf`
   }
 };
 

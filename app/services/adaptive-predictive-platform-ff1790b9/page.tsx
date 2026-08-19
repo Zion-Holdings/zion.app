@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Predictive Platform - Zion Tech Group",
   description: "The future of technology is here with Adaptive Predictive Platform. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictive-platform-ff1790b9`
   }
 };
 

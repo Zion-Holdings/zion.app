@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Agriculture - Zion Tech Group",
   description: "The future of agriculture is here with Adaptive Platform for Agriculture. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-agriculture-aa55a5de`
   }
 };
 

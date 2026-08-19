@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Healthcare #2 - Zion Tech Group",
   description: "Revolutionize healthcare through intelligent automation. Our Adaptive Suite for Healthcare #2 leverages advanced machine learning to deliver financial planning ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-healthcare-2-e397a9d3`
   }
 };
 

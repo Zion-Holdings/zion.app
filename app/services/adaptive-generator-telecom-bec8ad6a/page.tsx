@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive generator-telecom - Zion Tech Group",
   description: "The future of telecom is here with Adaptive generator-telecom. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-generator-telecom-bec8ad6a`
   }
 };
 

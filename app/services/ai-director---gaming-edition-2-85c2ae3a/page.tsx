@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Gaming Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Director - Gaming Edition #2. This autonomous system provides code optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---gaming-edition-2-85c2ae3a`
   }
 };
 

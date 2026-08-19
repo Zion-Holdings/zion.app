@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Cognitive - Automotive - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Cognitive - Automotive. This autonomous system provides energy management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-cognitive---automotive-abd7f07c`
   }
 };
 

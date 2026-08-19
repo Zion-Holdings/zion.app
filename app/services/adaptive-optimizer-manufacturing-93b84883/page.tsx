@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimizer-manufacturing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive optimizer-manufacturing. This autonomous system provides code optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimizer-manufacturing-93b84883`
   }
 };
 

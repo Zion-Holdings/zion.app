@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Orchestrator for Sports #1 - Zion Tech Group",
   description: "Next-generation sports solution: Adaptive Orchestrator for Sports #1. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-orchestrator-for-sports-1-07a884f0`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor AI - Automotive - Zion Tech Group",
   description: "Revolutionize automotive through intelligent automation. Our Advisor AI - Automotive leverages advanced machine learning to deliver threat detection at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-ai---automotive-3fd4b3e5`
   }
 };
 

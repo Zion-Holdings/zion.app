@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-insurance - Zion Tech Group",
   description: "Next-generation insurance solution: Adaptive optimization-insurance. Combines predictive analytics with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-insurance-d0277e46`
   }
 };
 

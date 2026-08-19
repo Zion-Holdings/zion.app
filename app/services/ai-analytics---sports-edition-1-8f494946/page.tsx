@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Sports Edition #1 - Zion Tech Group",
   description: "The future of sports is here with AI Analytics - Sports Edition #1. Powered by cutting-edge AI, this platform delivers data processing like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---sports-edition-1-8f494946`
   }
 };
 

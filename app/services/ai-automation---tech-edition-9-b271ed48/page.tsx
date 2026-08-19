@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Tech Edition #9 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Automation - Tech Edition #9. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---tech-edition-9-b271ed48`
   }
 };
 

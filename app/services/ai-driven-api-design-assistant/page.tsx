@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven API Design Assistant - Zion Tech Group",
   description: "Design, document, and validate APIs using natural language specs; auto-generate OpenAPI/Swagger definitions, SDKs, and mock servers.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-api-design-assistant`
   }
 };
 

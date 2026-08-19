@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Revenue for Telecom - Zion Tech Group",
   description: "Next-generation Telecom solution: Adaptive Revenue for Telecom. Combines energy management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-revenue-for-telecom-47e7c77b`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Construction Site Safety & Compliance - Zion Tech Group",
   description: "Computer vision-based construction site safety monitoring with PPE detection, hazard identification, and automated compliance reporting.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-construction-site-safety`
   }
 };
 

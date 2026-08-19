@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Automotive Edition #3 - Zion Tech Group",
   description: "Revolutionize automotive through intelligent automation. Our AI Analytics - Automotive Edition #3 leverages advanced machine learning to deliver network optimiz",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---automotive-edition-3-089eed1c`
   }
 };
 

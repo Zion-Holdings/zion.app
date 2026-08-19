@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Decision Predictor - Zion Tech Group",
   description: "Next-generation energy solution: Adaptive Decision Predictor. Combines risk assessment with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-decision-predictor-a0b270b2`
   }
 };
 

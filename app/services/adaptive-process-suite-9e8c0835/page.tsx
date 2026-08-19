@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Process Suite - Zion Tech Group",
   description: "Next-generation automotive solution: Adaptive Process Suite. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-process-suite-9e8c0835`
   }
 };
 

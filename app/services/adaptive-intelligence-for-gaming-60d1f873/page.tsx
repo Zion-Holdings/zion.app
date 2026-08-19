@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Intelligence for Gaming - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Intelligence for Gaming. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-for-gaming-60d1f873`
   }
 };
 

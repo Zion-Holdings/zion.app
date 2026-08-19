@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Process Optimization - Zion Tech Group",
   description: "Next-generation energy solution: Adaptive Process Optimization. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-process-optimization-ba4b22ab`
   }
 };
 

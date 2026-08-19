@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Resource Platform - Zion Tech Group",
   description: "Revolutionize technology through intelligent automation. Our Adaptive Resource Platform leverages advanced machine learning to deliver compliance monitoring at ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-resource-platform-9233e3eb`
   }
 };
 

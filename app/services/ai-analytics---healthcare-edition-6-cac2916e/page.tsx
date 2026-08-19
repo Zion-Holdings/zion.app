@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Healthcare Edition #6 - Zion Tech Group",
   description: "Transform your healthcare operations with our AI Analytics - Healthcare Edition #6. This AI-driven solution automates predictive analytics with unprecedented ac",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---healthcare-edition-6-cac2916e`
   }
 };
 

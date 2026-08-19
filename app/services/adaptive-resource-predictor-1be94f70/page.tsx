@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Resource Predictor - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive Resource Predictor. Powered by cutting-edge AI, this platform delivers language processing like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-resource-predictor-1be94f70`
   }
 };
 

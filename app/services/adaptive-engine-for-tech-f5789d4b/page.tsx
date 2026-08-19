@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Engine for Tech - Zion Tech Group",
   description: "The future of technology is here with Adaptive Engine for Tech. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-engine-for-tech-f5789d4b`
   }
 };
 

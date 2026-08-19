@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Sports #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Platform for Sports #1. This autonomous system provides energy management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-sports-1-1e19fc3c`
   }
 };
 

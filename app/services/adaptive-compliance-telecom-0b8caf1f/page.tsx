@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive compliance-telecom - Zion Tech Group",
   description: "The future of Telecom is here with Adaptive compliance-telecom. Powered by cutting-edge AI, this platform delivers energy management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-compliance-telecom-0b8caf1f`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analytics for Manufacturing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Analytics for Manufacturing. This autonomous system provides threat detection with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-for-manufacturing-5c30c0e2`
   }
 };
 

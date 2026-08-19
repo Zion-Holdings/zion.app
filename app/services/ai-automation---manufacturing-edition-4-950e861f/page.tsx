@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Manufacturing Edition #4 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Automation - Manufacturing Edition #4. This autonomous system provides fraud prevention with zero manual intervention needed",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---manufacturing-edition-4-950e861f`
   }
 };
 

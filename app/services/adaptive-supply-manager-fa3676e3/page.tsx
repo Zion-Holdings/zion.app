@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Supply Manager - Zion Tech Group",
   description: "Revolutionize energy through intelligent automation. Our Adaptive Supply Manager leverages advanced machine learning to deliver risk assessment at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-supply-manager-fa3676e3`
   }
 };
 

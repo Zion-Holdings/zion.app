@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Customer Support Copilot - Zion Tech Group",
   description: "AI copilot for support agents that suggests responses, auto-summarizes tickets, and routes inquiries to the right team. Reduces average handle time by 40% while",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-customer-support-copilot`
   }
 };
 

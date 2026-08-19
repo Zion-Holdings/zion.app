@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Intelligent - Hospitality - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Intelligent - Hospitality. This autonomous system provides financial planning with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-intelligent---hospitality-73e74751`
   }
 };
 

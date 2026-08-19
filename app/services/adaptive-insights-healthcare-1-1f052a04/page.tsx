@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive insights-healthcare #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive insights-healthcare #1. This autonomous system provides quality control with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-healthcare-1-1f052a04`
   }
 };
 

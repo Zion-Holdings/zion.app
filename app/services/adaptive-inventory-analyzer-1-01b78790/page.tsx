@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Inventory Analyzer #1 - Zion Tech Group",
   description: "Revolutionize healthcare through intelligent automation. Our Adaptive Inventory Analyzer #1 leverages advanced machine learning to deliver supply chain at scale",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-inventory-analyzer-1-01b78790`
   }
 };
 

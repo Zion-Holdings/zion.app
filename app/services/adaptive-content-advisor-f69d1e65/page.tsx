@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Content Advisor - Zion Tech Group",
   description: "The future of legal is here with Adaptive Content Advisor. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-content-advisor-f69d1e65`
   }
 };
 

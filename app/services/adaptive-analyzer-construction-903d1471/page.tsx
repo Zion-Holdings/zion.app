@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analyzer-construction - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive analyzer-construction. This autonomous system provides fraud prevention with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-construction-903d1471`
   }
 };
 

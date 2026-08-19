@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Workflow Sales - Zion Tech Group",
   description: "Revolutionize Healthcare through intelligent automation. Our Adaptive Workflow Sales leverages advanced machine learning to deliver user experience at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-workflow-sales-bc2703e1`
   }
 };
 

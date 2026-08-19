@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Resource Insights - Zion Tech Group",
   description: "Revolutionize Retail through intelligent automation. Our Adaptive Resource Insights leverages advanced machine learning to deliver brand monitoring at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-resource-insights-4830283c`
   }
 };
 

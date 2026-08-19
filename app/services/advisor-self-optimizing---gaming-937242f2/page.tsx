@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Gaming - Zion Tech Group",
   description: "Next-generation Gaming solution: Advisor Self-Optimizing - Gaming. Combines sentiment analysis with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-self-optimizing---gaming-937242f2`
   }
 };
 

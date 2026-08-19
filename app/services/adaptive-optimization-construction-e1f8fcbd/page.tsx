@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-construction - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive optimization-construction. This autonomous system provides resource optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-construction-e1f8fcbd`
   }
 };
 

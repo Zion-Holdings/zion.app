@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Brand Sales - Zion Tech Group",
   description: "Revolutionize Real Estate through intelligent automation. Our Adaptive Brand Sales leverages advanced machine learning to deliver customer service automation at",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-brand-sales-0d705162`
   }
 };
 

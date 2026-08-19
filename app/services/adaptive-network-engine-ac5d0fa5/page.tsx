@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Network Engine - Zion Tech Group",
   description: "Next-generation Manufacturing solution: Adaptive Network Engine. Combines process automation with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-network-engine-ac5d0fa5`
   }
 };
 

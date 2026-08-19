@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Tech - Zion Tech Group",
   description: "Revolutionize technology through intelligent automation. Our Advisor Self-Optimizing - Tech leverages advanced machine learning to deliver network optimization ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-self-optimizing---tech-1354da35`
   }
 };
 

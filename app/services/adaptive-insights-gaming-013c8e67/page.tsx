@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive insights-gaming - Zion Tech Group",
   description: "The future of gaming is here with Adaptive insights-gaming. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-gaming-013c8e67`
   }
 };
 

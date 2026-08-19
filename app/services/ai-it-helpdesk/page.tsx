@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI IT Helpdesk & Support - Zion Tech Group",
   description: "Automated Tier-1 IT support for employees: password resets, software installs, device troubleshooting, and knowledge base search.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-it-helpdesk`
   }
 };
 

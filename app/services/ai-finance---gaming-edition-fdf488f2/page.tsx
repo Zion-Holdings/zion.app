@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Finance - Gaming Edition - Zion Tech Group",
   description: "Transform your Gaming operations with our AI Finance - Gaming Edition. This AI-driven solution automates financial risk management with unprecedented accuracy a",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-finance---gaming-edition-fdf488f2`
   }
 };
 

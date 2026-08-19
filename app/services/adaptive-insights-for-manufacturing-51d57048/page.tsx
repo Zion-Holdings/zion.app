@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Insights for Manufacturing - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive Insights for Manufacturing. Powered by cutting-edge AI, this platform delivers maintenance scheduling like nev",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-for-manufacturing-51d57048`
   }
 };
 

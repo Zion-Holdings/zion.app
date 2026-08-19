@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Document Optimization - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Adaptive Document Optimization leverages advanced machine learning to deliver quality control at s",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-document-optimization-38f28c86`
   }
 };
 

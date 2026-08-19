@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analytics-insurance - Zion Tech Group",
   description: "The future of insurance is here with Adaptive analytics-insurance. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-insurance-535020e8`
   }
 };
 

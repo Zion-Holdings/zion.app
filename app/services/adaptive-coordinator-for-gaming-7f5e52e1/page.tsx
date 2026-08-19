@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Coordinator for Gaming - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Coordinator for Gaming. This autonomous system provides predictive analytics with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-coordinator-for-gaming-7f5e52e1`
   }
 };
 

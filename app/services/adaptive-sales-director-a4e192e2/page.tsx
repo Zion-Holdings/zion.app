@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Sales Director - Zion Tech Group",
   description: "Next-generation retail solution: Adaptive Sales Director. Combines user experience with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-sales-director-a4e192e2`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Management for Education - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Management for Education. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-for-education-55aadd8f`
   }
 };
 

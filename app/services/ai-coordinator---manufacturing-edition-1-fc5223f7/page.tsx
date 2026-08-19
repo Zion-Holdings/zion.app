@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Manufacturing Edition #1 - Zion Tech Group",
   description: "Next-generation manufacturing solution: AI Coordinator - Manufacturing Edition #1. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---manufacturing-edition-1-fc5223f7`
   }
 };
 

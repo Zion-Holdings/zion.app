@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Hospitality Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Automation - Hospitality Edition. This autonomous system provides process automation with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---hospitality-edition-c02c1a2b`
   }
 };
 

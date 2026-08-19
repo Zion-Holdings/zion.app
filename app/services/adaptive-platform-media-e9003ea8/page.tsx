@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive platform-media - Zion Tech Group",
   description: "Transform your media operations with our Adaptive platform-media. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-media-e9003ea8`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Media Edition #10 - Zion Tech Group",
   description: "The future of media is here with AI Analytics - Media Edition #10. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---media-edition-10-fc976112`
   }
 };
 

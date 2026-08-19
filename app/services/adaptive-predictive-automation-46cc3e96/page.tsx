@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Predictive Automation - Zion Tech Group",
   description: "Transform your healthcare operations with our Adaptive Predictive Automation. This AI-driven solution automates user experience with unprecedented accuracy and ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictive-automation-46cc3e96`
   }
 };
 

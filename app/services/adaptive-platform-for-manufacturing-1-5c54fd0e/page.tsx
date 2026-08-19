@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Manufacturing #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Platform for Manufacturing #1. This autonomous system provides language processing with zero manual intervention neede",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-manufacturing-1-5c54fd0e`
   }
 };
 

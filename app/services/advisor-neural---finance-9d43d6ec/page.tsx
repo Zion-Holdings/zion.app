@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Neural - Finance - Zion Tech Group",
   description: "Next-generation finance solution: Advisor Neural - Finance. Combines financial planning with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-neural---finance-9d43d6ec`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Competitive Real Estate - Zion Tech Group",
   description: "The future of Logistics is here with Adaptive Competitive Real Estate. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-competitive-real-estate-287cca75`
   }
 };
 

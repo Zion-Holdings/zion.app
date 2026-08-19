@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Real-Estate Edition #4 - Zion Tech Group",
   description: "The future of real-estate is here with AI Analyzer - Real-Estate Edition #4. Powered by cutting-edge AI, this platform delivers decision support like never befo",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---real-estate-edition-4-19037f4f`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Automation Analytics - Zion Tech Group",
   description: "Revolutionize Gaming through intelligent automation. Our Adaptive Automation Analytics leverages advanced machine learning to deliver financial risk management ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-automation-analytics-c200f784`
   }
 };
 

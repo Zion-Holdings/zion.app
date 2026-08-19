@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Powered Customer Feedback Analyzer - Zion Tech Group",
   description: "Transform customer feedback into actionable business intelligence with our AI-powered feedback analyzer. Process reviews, surveys, social media comments, and su",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-feedback-analyzer`
   }
 };
 

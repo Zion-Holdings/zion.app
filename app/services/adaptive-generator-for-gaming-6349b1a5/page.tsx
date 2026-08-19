@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Generator for Gaming - Zion Tech Group",
   description: "Next-generation gaming solution: Adaptive Generator for Gaming. Combines user experience with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-generator-for-gaming-6349b1a5`
   }
 };
 

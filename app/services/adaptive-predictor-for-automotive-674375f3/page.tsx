@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Predictor for Automotive - Zion Tech Group",
   description: "Revolutionize automotive through intelligent automation. Our Adaptive Predictor for Automotive leverages advanced machine learning to deliver network optimizati",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictor-for-automotive-674375f3`
   }
 };
 

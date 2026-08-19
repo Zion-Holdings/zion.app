@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Neural - Legal - Zion Tech Group",
   description: "Transform your legal operations with our Advisor Neural - Legal. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-neural---legal-e18bb3fe`
   }
 };
 

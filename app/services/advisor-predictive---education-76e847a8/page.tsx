@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Predictive - Education - Zion Tech Group",
   description: "Transform your education operations with our Advisor Predictive - Education. This AI-driven solution automates process automation with unprecedented accuracy an",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-predictive---education-76e847a8`
   }
 };
 

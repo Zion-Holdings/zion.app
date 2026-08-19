@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Tech Edition - Zion Tech Group",
   description: "The future of technology is here with AI Analyzer - Tech Edition. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---tech-edition-231476d0`
   }
 };
 

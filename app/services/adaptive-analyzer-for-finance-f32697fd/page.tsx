@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analyzer for Finance - Zion Tech Group",
   description: "Transform your finance operations with our Adaptive Analyzer for Finance. This AI-driven solution automates supply chain with unprecedented accuracy and efficie",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-for-finance-f32697fd`
   }
 };
 

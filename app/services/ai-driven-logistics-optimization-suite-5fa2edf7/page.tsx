@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Logistics Optimization Suite - Zion Tech Group",
   description: "Industry-specific AI solution that optimizes logistics operations and decision-making processes.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-logistics-optimization-suite-5fa2edf7`
   }
 };
 

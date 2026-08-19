@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Healthcare #1 - Zion Tech Group",
   description: "Next-generation healthcare solution: Advisor Self-Optimizing - Healthcare #1. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-self-optimizing---healthcare-1-a5c78eb7`
   }
 };
 

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path={`/services/personalized-recommendation-engine-e327e790` title="Personalized Recommendation Engine" />
+        <BreadcrumbSchema path={`/services/personalized-recommendation-engine-e327e790`} title="Personalized Recommendation Engine" />
         <h1 className="text-4xl font-bold mb-6">Personalized Recommendation Engine</h1>
         <p className="text-lg text-gray-300 mb-8">AI-powered personalization across web, mobile, email, and in-store. Real-time recommendations using collaborative filtering, content-based, and session-aware mo</p>
 

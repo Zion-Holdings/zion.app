@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Gaming Edition - Zion Tech Group",
   description: "Next-generation gaming solution: AI Advisor - Gaming Edition. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---gaming-edition-3787d82d`
   }
 };
 

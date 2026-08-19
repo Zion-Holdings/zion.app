@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Copilot & Enterprise Assistants - Zion Tech Group",
   description: "Deploy AI copilots and enterprise assistants that augment human work. Context-aware, role-specific AI embedded in your tools and workflows.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-copilot-enterprise`
   }
 };
 

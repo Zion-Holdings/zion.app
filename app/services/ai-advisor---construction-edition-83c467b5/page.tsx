@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Construction Edition - Zion Tech Group",
   description: "Next-generation construction solution: AI Advisor - Construction Edition. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---construction-edition-83c467b5`
   }
 };
 

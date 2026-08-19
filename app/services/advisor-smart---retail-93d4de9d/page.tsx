@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Smart - Retail - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Smart - Retail. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-smart---retail-93d4de9d`
   }
 };
 

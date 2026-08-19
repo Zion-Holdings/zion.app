@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive director-transportation - Zion Tech Group",
   description: "Next-generation transportation solution: Adaptive director-transportation. Combines content generation with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-transportation-f78672b9`
   }
 };
 

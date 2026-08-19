@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Data Intelligence #1 - Zion Tech Group",
   description: "Next-generation legal solution: Adaptive Data Intelligence #1. Combines maintenance scheduling with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-data-intelligence-1-a0df02f5`
   }
 };
 

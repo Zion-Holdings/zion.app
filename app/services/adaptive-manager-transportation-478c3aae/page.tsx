@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive manager-transportation - Zion Tech Group",
   description: "The future of transportation is here with Adaptive manager-transportation. Powered by cutting-edge AI, this platform delivers security monitoring like never bef",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manager-transportation-478c3aae`
   }
 };
 

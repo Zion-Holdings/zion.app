@@ -5,7 +5,6 @@ export const metadata = {
   title: "Data Engineering & ETL Pipelines - Zion Tech Group",
   description: "Build robust data pipelines, ETL/ELT workflows, and data lake architectures for real-time and batch processing.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/data-engineering`
   }
 };
 

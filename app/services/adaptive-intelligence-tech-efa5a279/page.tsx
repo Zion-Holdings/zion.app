@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive intelligence-tech - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive intelligence-tech. This autonomous system provides network optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-tech-efa5a279`
   }
 };
 

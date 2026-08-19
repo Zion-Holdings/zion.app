@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Cognitive - Logistics - Zion Tech Group",
   description: "Next-generation logistics solution: Advisor Cognitive - Logistics. Combines code optimization with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-cognitive---logistics-bba8ff21`
   }
 };
 

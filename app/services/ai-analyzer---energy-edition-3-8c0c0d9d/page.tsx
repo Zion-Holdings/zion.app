@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Energy Edition #3 - Zion Tech Group",
   description: "Transform your energy operations with our AI Analyzer - Energy Edition #3. This AI-driven solution automates process automation with unprecedented accuracy and ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---energy-edition-3-8c0c0d9d`
   }
 };
 

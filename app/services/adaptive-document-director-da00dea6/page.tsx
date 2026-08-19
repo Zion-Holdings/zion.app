@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Document Director - Zion Tech Group",
   description: "Transform your healthcare operations with our Adaptive Document Director. This AI-driven solution automates code optimization with unprecedented accuracy and ef",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-document-director-da00dea6`
   }
 };
 

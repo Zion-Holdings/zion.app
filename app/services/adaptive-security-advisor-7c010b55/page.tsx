@@ -5,7 +5,8 @@ export const metadata = {
   title: "Adaptive Security Advisor - Zion Tech Group",
   description: "The future of transportation is here with Adaptive Security Advisor. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-security-advisor-7c010b55`
+  },
+  },
   openGraph: {
     title: 'Service | Zion Tech Group',
     description: 'AI/IT service by Zion Tech Group.',

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Healthcare Edition #1 - Zion Tech Group",
   description: "Next-generation healthcare solution: AI Coordinator - Healthcare Edition #1. Combines fraud prevention with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---healthcare-edition-1-f942eb24`
   }
 };
 

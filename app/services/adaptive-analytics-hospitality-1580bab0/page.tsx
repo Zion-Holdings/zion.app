@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analytics-hospitality - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive analytics-hospitality. Powered by cutting-edge AI, this platform delivers document processing like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analytics-hospitality-1580bab0`
   }
 };
 

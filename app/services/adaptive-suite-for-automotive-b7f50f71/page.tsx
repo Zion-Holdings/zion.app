@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Automotive - Zion Tech Group",
   description: "Transform your automotive operations with our Adaptive Suite for Automotive. This AI-driven solution automates code optimization with unprecedented accuracy and",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-automotive-b7f50f71`
   }
 };
 

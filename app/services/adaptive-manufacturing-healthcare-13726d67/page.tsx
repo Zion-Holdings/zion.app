@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive manufacturing-healthcare - Zion Tech Group",
   description: "Revolutionize Healthcare through intelligent automation. Our Adaptive manufacturing-healthcare leverages advanced machine learning to deliver revenue forecastin",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manufacturing-healthcare-13726d67`
   }
 };
 

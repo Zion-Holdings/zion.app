@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive DevOps for Gaming - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive DevOps for Gaming. This autonomous system provides logistics route optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-devops-for-gaming-91b3c1bc`
   }
 };
 

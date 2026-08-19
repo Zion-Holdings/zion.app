@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Content Analytics - Zion Tech Group",
   description: "Next-generation transportation solution: Adaptive Content Analytics. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-content-analytics-0813a80d`
   }
 };
 

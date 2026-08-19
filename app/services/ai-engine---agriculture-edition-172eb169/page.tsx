@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Agriculture Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Engine - Agriculture Edition. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---agriculture-edition-172eb169`
   }
 };
 

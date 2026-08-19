@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Autonomous Network Optimization - Zion Tech Group",
   description: "Intelligent network management platform that uses autonomous algorithms to optimize traffic routing, capacity planning, and quality of service across telecom in",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-autonomous-network-optimization-68d876b4`
   }
 };
 

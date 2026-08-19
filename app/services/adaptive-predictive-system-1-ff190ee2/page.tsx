@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Predictive System #1 - Zion Tech Group",
   description: "Next-generation retail solution: Adaptive Predictive System #1. Combines sales forecasting with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictive-system-1-ff190ee2`
   }
 };
 

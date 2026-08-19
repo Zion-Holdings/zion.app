@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Campaign Performance Predictor - Zion Tech Group",
   description: "Predict campaign outcomes before launch. Forecast CTR, conversion rate, and ROAS using historical targeting data and creative asset features.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-campaign-predictor`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Sports Edition #8 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Coordinator - Sports Edition #8. This autonomous system provides threat detection with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---sports-edition-8-fb3d3d92`
   }
 };
 

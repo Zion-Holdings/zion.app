@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Legal Optimization Suite - Zion Tech Group",
   description: "Industry-specific AI solution that optimizes legal operations and decision-making processes.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-legal-optimization-suite-359a5ae4`
   }
 };
 

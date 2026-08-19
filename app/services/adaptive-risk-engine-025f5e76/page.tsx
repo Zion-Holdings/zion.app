@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Risk Engine - Zion Tech Group",
   description: "Revolutionize agriculture through intelligent automation. Our Adaptive Risk Engine leverages advanced machine learning to deliver language processing at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-risk-engine-025f5e76`
   }
 };
 

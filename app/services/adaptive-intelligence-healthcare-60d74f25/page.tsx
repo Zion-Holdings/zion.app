@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive intelligence-healthcare - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive intelligence-healthcare. This autonomous system provides process automation with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-healthcare-60d74f25`
   }
 };
 

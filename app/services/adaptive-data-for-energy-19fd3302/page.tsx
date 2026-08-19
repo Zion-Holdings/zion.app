@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Data for Energy - Zion Tech Group",
   description: "Revolutionize Energy through intelligent automation. Our Adaptive Data for Energy leverages advanced machine learning to deliver image recognition at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-data-for-energy-19fd3302`
   }
 };
 

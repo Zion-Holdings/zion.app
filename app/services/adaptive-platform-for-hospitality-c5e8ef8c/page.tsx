@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Hospitality - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Adaptive Platform for Hospitality leverages advanced machine learning to deliver code optimization",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-hospitality-c5e8ef8c`
   }
 };
 

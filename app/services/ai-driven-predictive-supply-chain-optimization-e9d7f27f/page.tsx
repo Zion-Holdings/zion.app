@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Predictive Supply Chain Optimization - Zion Tech Group",
   description: "End-to-end supply chain platform that uses predictive optimization algorithms for demand planning, inventory management, and logistics coordination.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-predictive-supply-chain-optimization-e9d7f27f`
   }
 };
 

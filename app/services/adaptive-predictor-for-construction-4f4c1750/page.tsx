@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Predictor for Construction - Zion Tech Group",
   description: "Next-generation construction solution: Adaptive Predictor for Construction. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictor-for-construction-4f4c1750`
   }
 };
 

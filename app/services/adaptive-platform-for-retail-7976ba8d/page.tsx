@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Retail - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive Platform for Retail. This AI-driven solution automates language processing with unprecedented accuracy and ef",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-retail-7976ba8d`
   }
 };
 

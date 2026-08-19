@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Code Optimization - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Code Optimization. This autonomous system provides fraud prevention with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-code-optimization-98f8c665`
   }
 };
 

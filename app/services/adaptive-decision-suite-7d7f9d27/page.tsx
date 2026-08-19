@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Decision Suite - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Decision Suite. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-decision-suite-7d7f9d27`
   }
 };
 

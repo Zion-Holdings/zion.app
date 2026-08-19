@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Deepfake Detection Enterprise - Zion Tech Group",
   description: "Enterprise-grade deepfake detection for images, video, and audio. Real-time API for content moderation, identity verification, and fraud prevention.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-deepfake-detection-enterprise`
   }
 };
 

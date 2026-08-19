@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Sports - Zion Tech Group",
   description: "Next-generation sports solution: Adaptive Platform for Sports. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-sports-b63551fd`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Cognitive - Transportation - Zion Tech Group",
   description: "Transform your transportation operations with our Advisor Cognitive - Transportation. This AI-driven solution automates predictive analytics with unprecedented ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-cognitive---transportation-bc640323`
   }
 };
 

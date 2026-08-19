@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Predictive - Logistics #1 - Zion Tech Group",
   description: "Transform your logistics operations with our Advisor Predictive - Logistics #1. This AI-driven solution automates user experience with unprecedented accuracy an",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-predictive---logistics-1-8630f399`
   }
 };
 

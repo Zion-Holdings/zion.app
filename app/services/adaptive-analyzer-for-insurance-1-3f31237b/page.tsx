@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analyzer for Insurance #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Analyzer for Insurance #1. This autonomous system provides network optimization with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-for-insurance-1-3f31237b`
   }
 };
 

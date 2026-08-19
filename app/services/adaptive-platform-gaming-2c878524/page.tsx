@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive platform-gaming - Zion Tech Group",
   description: "Next-generation gaming solution: Adaptive platform-gaming. Combines risk assessment with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-gaming-2c878524`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "QuizForge — Assessment & Quiz Builder - Zion Tech Group",
   description: "AI-powered quiz and assessment builder for education and training. Auto-generate from content, adaptive difficulty, and detailed analytics.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/w175-quizforge`
   }
 };
 

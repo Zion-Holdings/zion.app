@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive management-logistics - Zion Tech Group",
   description: "Next-generation logistics solution: Adaptive management-logistics. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-logistics-3abcd785`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Sales Management - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our Adaptive Sales Management leverages advanced machine learning to deliver sales forecasting at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-sales-management-821a4bab`
   }
 };
 

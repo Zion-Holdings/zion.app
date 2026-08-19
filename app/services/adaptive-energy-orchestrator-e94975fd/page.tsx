@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Energy Orchestrator - Zion Tech Group",
   description: "Revolutionize media through intelligent automation. Our Adaptive Energy Orchestrator leverages advanced machine learning to deliver sales forecasting at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-energy-orchestrator-e94975fd`
   }
 };
 

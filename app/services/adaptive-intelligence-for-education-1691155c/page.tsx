@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Intelligence for Education - Zion Tech Group",
   description: "Revolutionize education through intelligent automation. Our Adaptive Intelligence for Education leverages advanced machine learning to deliver content generatio",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-for-education-1691155c`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Financial Forecasting & Planning - Zion Tech Group",
   description: "Revenue forecasting, cash flow prediction, and budget optimization using AI models trained on your historical and market data.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-financial-forecasting`
   }
 };
 

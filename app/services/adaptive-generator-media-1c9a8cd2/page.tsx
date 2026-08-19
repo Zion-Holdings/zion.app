@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive generator-media - Zion Tech Group",
   description: "Revolutionize media through intelligent automation. Our Adaptive generator-media leverages advanced machine learning to deliver threat detection at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-generator-media-1c9a8cd2`
   }
 };
 

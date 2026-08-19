@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive customer service-logistics - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive customer service-logistics. This autonomous system provides content generation with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-customer-service-logistics-f1b6a051`
   }
 };
 

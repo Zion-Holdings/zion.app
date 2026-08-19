@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Advisor for Logistics - Zion Tech Group",
   description: "The future of logistics is here with Adaptive Advisor for Logistics. Powered by cutting-edge AI, this platform delivers user experience like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-advisor-for-logistics-bbb5a349`
   }
 };
 

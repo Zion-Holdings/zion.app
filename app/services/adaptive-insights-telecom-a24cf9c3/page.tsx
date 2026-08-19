@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive insights-telecom - Zion Tech Group",
   description: "The future of telecom is here with Adaptive insights-telecom. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-insights-telecom-a24cf9c3`
   }
 };
 

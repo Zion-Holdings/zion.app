@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Sports Edition #3 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Engine - Sports Edition #3. This autonomous system provides document processing with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---sports-edition-3-4abaa891`
   }
 };
 

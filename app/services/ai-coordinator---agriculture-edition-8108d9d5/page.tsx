@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Agriculture Edition - Zion Tech Group",
   description: "Transform your agriculture operations with our AI Coordinator - Agriculture Edition. This AI-driven solution automates data processing with unprecedented accura",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---agriculture-edition-8108d9d5`
   }
 };
 

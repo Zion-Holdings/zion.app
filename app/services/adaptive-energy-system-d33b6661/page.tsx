@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Energy System - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Energy System. This autonomous system provides language processing with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-energy-system-d33b6661`
   }
 };
 

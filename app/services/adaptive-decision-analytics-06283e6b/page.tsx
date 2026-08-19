@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Decision Analytics - Zion Tech Group",
   description: "Next-generation legal solution: Adaptive Decision Analytics. Combines user experience with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-decision-analytics-06283e6b`
   }
 };
 

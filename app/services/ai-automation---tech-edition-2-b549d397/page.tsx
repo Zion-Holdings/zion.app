@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Tech Edition #2 - Zion Tech Group",
   description: "Next-generation technology solution: AI Automation - Tech Edition #2. Combines energy management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---tech-edition-2-b549d397`
   }
 };
 

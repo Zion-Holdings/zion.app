@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-education - Zion Tech Group",
   description: "The future of Education is here with Adaptive optimization-education. Powered by cutting-edge AI, this platform delivers threat detection like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-education-c0b88177`
   }
 };
 

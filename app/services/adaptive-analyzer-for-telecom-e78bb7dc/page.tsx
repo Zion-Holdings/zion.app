@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Analyzer for Telecom - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Analyzer for Telecom. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-for-telecom-e78bb7dc`
   }
 };
 

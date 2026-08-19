@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Experience - Healthcare Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Experience - Healthcare Edition. This autonomous system provides data processing with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-experience---healthcare-edition-b82a5c08`
   }
 };
 

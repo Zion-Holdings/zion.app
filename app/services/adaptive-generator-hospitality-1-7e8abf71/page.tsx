@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive generator-hospitality #1 - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Adaptive generator-hospitality #1 leverages advanced machine learning to deliver resource optimiza",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-generator-hospitality-1-7e8abf71`
   }
 };
 

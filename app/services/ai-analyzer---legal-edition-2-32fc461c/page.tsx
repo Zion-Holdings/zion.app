@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Legal Edition #2 - Zion Tech Group",
   description: "Next-generation legal solution: AI Analyzer - Legal Edition #2. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---legal-edition-2-32fc461c`
   }
 };
 

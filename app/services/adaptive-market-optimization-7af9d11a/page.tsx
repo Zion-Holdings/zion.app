@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Market Optimization - Zion Tech Group",
   description: "Revolutionize automotive through intelligent automation. Our Adaptive Market Optimization leverages advanced machine learning to deliver fraud prevention at sca",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-market-optimization-7af9d11a`
   }
 };
 

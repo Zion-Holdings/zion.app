@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Healthcare Edition #1 - Zion Tech Group",
   description: "The future of healthcare is here with AI Analytics - Healthcare Edition #1. Powered by cutting-edge AI, this platform delivers financial planning like never bef",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---healthcare-edition-1-8ff8d532`
   }
 };
 

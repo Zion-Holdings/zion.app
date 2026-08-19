@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Threat Processor - Zion Tech Group",
   description: "The future of finance is here with Adaptive Threat Processor. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-threat-processor-a65d37b7`
   }
 };
 

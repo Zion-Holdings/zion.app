@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive director-education - Zion Tech Group",
   description: "The future of education is here with Adaptive director-education. Powered by cutting-edge AI, this platform delivers process automation like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-education-57251642`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Document Processor #1 - Zion Tech Group",
   description: "The future of automotive is here with Adaptive Document Processor #1. Powered by cutting-edge AI, this platform delivers resource optimization like never before",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-document-processor-1-b744efb5`
   }
 };
 

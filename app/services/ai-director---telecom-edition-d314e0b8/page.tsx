@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Telecom Edition - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our AI Director - Telecom Edition leverages advanced machine learning to deliver fraud prevention at scale",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---telecom-edition-d314e0b8`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Fraud Advisor - Zion Tech Group",
   description: "Transform your insurance operations with our Adaptive Fraud Advisor. This AI-driven solution automates quality control with unprecedented accuracy and efficienc",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-fraud-advisor-0b04c59a`
   }
 };
 

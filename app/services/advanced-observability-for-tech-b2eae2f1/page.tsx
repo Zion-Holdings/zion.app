@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Observability for Tech - Zion Tech Group",
   description: "Next-generation technology solution: Advanced Observability for Tech. Combines configuration management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-observability-for-tech-b2eae2f1`
   }
 };
 

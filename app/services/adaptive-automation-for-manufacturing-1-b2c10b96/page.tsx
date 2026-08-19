@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Automation for Manufacturing #1 - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive Automation for Manufacturing #1. Powered by cutting-edge AI, this platform delivers user experience like never",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-automation-for-manufacturing-1-b2c10b96`
   }
 };
 

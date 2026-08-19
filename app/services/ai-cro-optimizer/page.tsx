@@ -5,7 +5,6 @@ export const metadata = {
   title: "Ai Cro Optimizer - Zion Tech Group",
   description: "AI Cro Optimizer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first arch",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-cro-optimizer`
   }
 };
 

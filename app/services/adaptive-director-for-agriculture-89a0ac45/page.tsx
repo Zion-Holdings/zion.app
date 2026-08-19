@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Director for Agriculture - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Director for Agriculture. This autonomous system provides sales forecasting with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-for-agriculture-89a0ac45`
   }
 };
 

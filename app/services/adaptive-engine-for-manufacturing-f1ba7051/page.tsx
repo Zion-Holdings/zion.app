@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Engine for Manufacturing - Zion Tech Group",
   description: "Revolutionize Manufacturing through intelligent automation. Our Adaptive Engine for Manufacturing leverages advanced machine learning to deliver process automat",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-engine-for-manufacturing-f1ba7051`
   }
 };
 
@@ -13,7 +12,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path={`/services/adaptive-engine-for-manufacturing-f1ba7051` title="Adaptive Engine for Manufacturing" />
+        <BreadcrumbSchema path={`/services/adaptive-engine-for-manufacturing-f1ba7051`} title="Adaptive Engine for Manufacturing" />
         <h1 className="text-4xl font-bold mb-6">Adaptive Engine for Manufacturing</h1>
         <p className="text-lg text-gray-300 mb-8">Revolutionize Manufacturing through intelligent automation. Our Adaptive Engine for Manufacturing leverages advanced machine learning to deliver process automat</p>
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analyzer - Agriculture Edition #6 - Zion Tech Group",
   description: "Revolutionize agriculture through intelligent automation. Our AI Analyzer - Agriculture Edition #6 leverages advanced machine learning to deliver quality contro",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analyzer---agriculture-edition-6-f1ad2021`
   }
 };
 

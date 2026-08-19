@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Network System - Zion Tech Group",
   description: "The future of technology is here with Adaptive Network System. Powered by cutting-edge AI, this platform delivers process automation like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-network-system-ccfdfdce`
   }
 };
 

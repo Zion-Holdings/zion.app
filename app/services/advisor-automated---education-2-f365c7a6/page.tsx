@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Automated - Education #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Automated - Education #2. This autonomous system provides decision support with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-automated---education-2-f365c7a6`
   }
 };
 

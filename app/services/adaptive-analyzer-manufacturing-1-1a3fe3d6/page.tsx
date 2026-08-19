@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analyzer-manufacturing #1 - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive analyzer-manufacturing #1. Powered by cutting-edge AI, this platform delivers predictive analytics like never ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-manufacturing-1-1a3fe3d6`
   }
 };
 

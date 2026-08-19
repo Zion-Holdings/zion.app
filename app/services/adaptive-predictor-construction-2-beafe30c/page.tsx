@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive predictor-construction #2 - Zion Tech Group",
   description: "Transform your construction operations with our Adaptive predictor-construction #2. This AI-driven solution automates document processing with unprecedented acc",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictor-construction-2-beafe30c`
   }
 };
 

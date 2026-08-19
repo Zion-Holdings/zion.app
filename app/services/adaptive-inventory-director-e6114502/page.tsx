@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Inventory Director - Zion Tech Group",
   description: "Next-generation hospitality solution: Adaptive Inventory Director. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-inventory-director-e6114502`
   }
 };
 

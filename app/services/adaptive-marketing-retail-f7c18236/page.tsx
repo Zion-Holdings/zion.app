@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive marketing-retail - Zion Tech Group",
   description: "Transform your Retail operations with our Adaptive marketing-retail. This AI-driven solution automates network optimization with unprecedented accuracy and effi",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-marketing-retail-f7c18236`
   }
 };
 

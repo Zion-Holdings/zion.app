@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced SQL for Healthcare - Zion Tech Group",
   description: "Transform your healthcare operations with our Advanced SQL for Healthcare. This AI-driven solution automates replication management with unprecedented accuracy ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-sql-for-healthcare-d95db029`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Fraud Advisor #1 - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our Adaptive Fraud Advisor #1 leverages advanced machine learning to deliver sales forecasting at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-fraud-advisor-1-49e60d8a`
   }
 };
 

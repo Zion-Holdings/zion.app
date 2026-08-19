@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive manager-finance - Zion Tech Group",
   description: "Next-generation Finance solution: Adaptive manager-finance. Combines master data management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manager-finance-58251c21`
   }
 };
 

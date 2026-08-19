@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Insurance Edition - Zion Tech Group",
   description: "Revolutionize insurance through intelligent automation. Our AI Analytics - Insurance Edition leverages advanced machine learning to deliver compliance monitorin",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---insurance-edition-e5fcd9a2`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive analyzer-media #1 - Zion Tech Group",
   description: "Revolutionize media through intelligent automation. Our Adaptive analyzer-media #1 leverages advanced machine learning to deliver customer insights at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-analyzer-media-1-b13e0263`
   }
 };
 

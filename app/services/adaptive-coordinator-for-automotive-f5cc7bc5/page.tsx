@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Coordinator for Automotive - Zion Tech Group",
   description: "Revolutionize automotive through intelligent automation. Our Adaptive Coordinator for Automotive leverages advanced machine learning to deliver decision support",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-coordinator-for-automotive-f5cc7bc5`
   }
 };
 

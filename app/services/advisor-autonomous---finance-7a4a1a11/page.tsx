@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Autonomous - Finance - Zion Tech Group",
   description: "Revolutionize finance through intelligent automation. Our Advisor Autonomous - Finance leverages advanced machine learning to deliver compliance monitoring at s",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-autonomous---finance-7a4a1a11`
   }
 };
 

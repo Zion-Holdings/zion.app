@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Customer Churn Prediction & Retention Platform - Zion Tech Group",
   description: "ML platform that predicts customer churn risk, identifies retention opportunities, and automates personalized win-back campaigns.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-customer-churn-predictor`
   }
 };
 

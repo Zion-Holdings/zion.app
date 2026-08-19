@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimization for Finance - Zion Tech Group",
   description: "Next-generation Finance solution: Adaptive Optimization for Finance. Combines revenue forecasting with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-for-finance-2cb64356`
   }
 };
 

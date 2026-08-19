@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Sports Edition #3 - Zion Tech Group",
   description: "The future of sports is here with AI Advisor - Sports Edition #3. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---sports-edition-3-172a703e`
   }
 };
 

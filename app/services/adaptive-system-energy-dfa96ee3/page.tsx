@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive system-energy - Zion Tech Group",
   description: "The future of energy is here with Adaptive system-energy. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-system-energy-dfa96ee3`
   }
 };
 

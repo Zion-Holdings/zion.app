@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimization for Legal - Zion Tech Group",
   description: "The future of legal is here with Adaptive Optimization for Legal. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-for-legal-38c6bc4c`
   }
 };
 

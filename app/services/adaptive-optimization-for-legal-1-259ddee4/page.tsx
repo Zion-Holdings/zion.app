@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimization for Legal #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Optimization for Legal #1. This autonomous system provides security monitoring with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-for-legal-1-259ddee4`
   }
 };
 

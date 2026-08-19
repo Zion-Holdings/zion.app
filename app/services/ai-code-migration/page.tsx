@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Code Migration & Legacy Modernization - Zion Tech Group",
   description: "AI-powered legacy code analysis, automated migration planning, and assisted code transformation from COBOL, mainframe, and legacy frameworks to modern cloud-nat",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-code-migration`
   }
 };
 

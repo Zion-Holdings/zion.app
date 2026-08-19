@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Content Predictor - Zion Tech Group",
   description: "Revolutionize education through intelligent automation. Our Adaptive Content Predictor leverages advanced machine learning to deliver image recognition at scale",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-content-predictor-e6ae1dfe`
   }
 };
 

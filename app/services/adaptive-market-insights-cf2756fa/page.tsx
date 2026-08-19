@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Market Insights - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Market Insights. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-market-insights-cf2756fa`
   }
 };
 

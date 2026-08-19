@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Quality Platform #1 - Zion Tech Group",
   description: "Transform your education operations with our Adaptive Quality Platform #1. This AI-driven solution automates decision support with unprecedented accuracy and ef",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-quality-platform-1-cc0a3cb7`
   }
 };
 

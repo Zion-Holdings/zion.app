@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimizer-agriculture - Zion Tech Group",
   description: "Transform your agriculture operations with our Adaptive optimizer-agriculture. This AI-driven solution automates quality control with unprecedented accuracy and",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimizer-agriculture-4ba599a3`
   }
 };
 

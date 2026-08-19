@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Energy Optimization & Sustainability - Zion Tech Group",
   description: "AI-driven energy consumption optimization for buildings, data centers, and manufacturing — reduce costs, meet ESG targets, and automate sustainability reporting",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-energy-optimization`
   }
 };
 

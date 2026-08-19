@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive processor-manufacturing - Zion Tech Group",
   description: "Transform your manufacturing operations with our Adaptive processor-manufacturing. This AI-driven solution automates document processing with unprecedented accu",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-manufacturing-e8d86f73`
   }
 };
 

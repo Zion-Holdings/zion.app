@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Market System - Zion Tech Group",
   description: "Next-generation finance solution: Adaptive Market System. Combines performance monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-market-system-67618ea0`
   }
 };
 

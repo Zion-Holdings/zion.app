@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Quality Supply - Zion Tech Group",
   description: "Transform your Finance operations with our Adaptive Quality Supply. This AI-driven solution automates inventory management with unprecedented accuracy and effic",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-quality-supply-06bbe4cd`
   }
 };
 

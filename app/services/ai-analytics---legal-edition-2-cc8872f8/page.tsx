@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Legal Edition #2 - Zion Tech Group",
   description: "Revolutionize legal through intelligent automation. Our AI Analytics - Legal Edition #2 leverages advanced machine learning to deliver fraud prevention at scale",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---legal-edition-2-cc8872f8`
   }
 };
 

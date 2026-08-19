@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Adaptive - Healthcare - Zion Tech Group",
   description: "Next-generation healthcare solution: Advisor Adaptive - Healthcare. Combines workflow management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-adaptive---healthcare-42ff6b72`
   }
 };
 

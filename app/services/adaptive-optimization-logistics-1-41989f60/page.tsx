@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-logistics #1 - Zion Tech Group",
   description: "Transform your logistics operations with our Adaptive optimization-logistics #1. This AI-driven solution automates content generation with unprecedented accurac",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-logistics-1-41989f60`
   }
 };
 

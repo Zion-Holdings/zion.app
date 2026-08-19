@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Analytics - Media Edition #3 - Zion Tech Group",
   description: "Next-generation media solution: AI Analytics - Media Edition #3. Combines energy management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-analytics---media-edition-3-c2dd9de2`
   }
 };
 

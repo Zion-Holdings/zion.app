@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Language Predictor - Zion Tech Group",
   description: "Revolutionize insurance through intelligent automation. Our Adaptive Language Predictor leverages advanced machine learning to deliver content generation at sca",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-language-predictor-d3a929ef`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Adaptive - Energy - Zion Tech Group",
   description: "Next-generation energy solution: Advisor Adaptive - Energy. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-adaptive---energy-28679db5`
   }
 };
 

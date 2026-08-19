@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Data Advisor - Zion Tech Group",
   description: "The future of retail is here with Adaptive Data Advisor. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-data-advisor-37d91145`
   }
 };
 

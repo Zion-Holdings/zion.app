@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive processor-energy - Zion Tech Group",
   description: "The future of energy is here with Adaptive processor-energy. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-energy-60e81af2`
   }
 };
 

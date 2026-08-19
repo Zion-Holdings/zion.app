@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Education Edition #5 - Zion Tech Group",
   description: "Revolutionize education through intelligent automation. Our AI Automation - Education Edition #5 leverages advanced machine learning to deliver security monitor",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---education-edition-5-092a22bc`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-gaming - Zion Tech Group",
   description: "The future of gaming is here with Adaptive optimization-gaming. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-gaming-9ba73315`
   }
 };
 

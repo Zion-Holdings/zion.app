@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Image System #1 - Zion Tech Group",
   description: "Next-generation legal solution: Adaptive Image System #1. Combines risk assessment with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-image-system-1-68974657`
   }
 };
 

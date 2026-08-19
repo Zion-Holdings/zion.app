@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Finance Edition - Zion Tech Group",
   description: "The future of finance is here with AI Director - Finance Edition. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---finance-edition-f86fbee0`
   }
 };
 

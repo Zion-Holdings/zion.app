@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Automated - Agriculture - Zion Tech Group",
   description: "Transform your agriculture operations with our Advisor Automated - Agriculture. This AI-driven solution automates security monitoring with unprecedented accurac",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-automated---agriculture-2e29fc89`
   }
 };
 

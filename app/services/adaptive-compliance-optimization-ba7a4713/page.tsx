@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Compliance Optimization - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Compliance Optimization. This autonomous system provides market intelligence with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-compliance-optimization-ba7a4713`
   }
 };
 

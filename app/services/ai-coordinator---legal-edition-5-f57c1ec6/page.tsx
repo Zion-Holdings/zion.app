@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Legal Edition #5 - Zion Tech Group",
   description: "The future of legal is here with AI Coordinator - Legal Edition #5. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---legal-edition-5-f57c1ec6`
   }
 };
 

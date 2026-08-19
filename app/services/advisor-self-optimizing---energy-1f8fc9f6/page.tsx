@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Energy - Zion Tech Group",
   description: "The future of energy is here with Advisor Self-Optimizing - Energy. Powered by cutting-edge AI, this platform delivers decision support like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-self-optimizing---energy-1f8fc9f6`
   }
 };
 

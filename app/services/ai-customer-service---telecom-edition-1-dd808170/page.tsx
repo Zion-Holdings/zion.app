@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Customer Service - Telecom Edition #1 - Zion Tech Group",
   description: "Transform your Telecom operations with our AI Customer Service - Telecom Edition #1. This AI-driven solution automates logistics route optimization with unprece",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-customer-service---telecom-edition-1-dd808170`
   }
 };
 

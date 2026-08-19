@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Code Reviewer Pro - Zion Tech Group",
   description: "Automated code review that catches bugs, security issues, performance problems, and style violations before production.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-code-reviewer-pro`
   }
 };
 

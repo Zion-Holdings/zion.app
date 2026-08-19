@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Adaptive - Gaming - Zion Tech Group",
   description: "Transform your Gaming operations with our Advisor Adaptive - Gaming. This AI-driven solution automates scenario planning with unprecedented accuracy and efficie",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-adaptive---gaming-5aa8ab6a`
   }
 };
 

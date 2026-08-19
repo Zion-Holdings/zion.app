@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive management-education - Zion Tech Group",
   description: "Next-generation education solution: Adaptive management-education. Combines energy management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-education-1b16f426`
   }
 };
 

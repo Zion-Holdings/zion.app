@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Zion Tech Group",
   description: "Streamline your business processes with intelligent automation solutions.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation`
   }
 };
 

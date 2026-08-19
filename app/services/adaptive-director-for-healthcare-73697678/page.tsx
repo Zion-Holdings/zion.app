@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Director for Healthcare - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Director for Healthcare. This autonomous system provides content generation with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-for-healthcare-73697678`
   }
 };
 

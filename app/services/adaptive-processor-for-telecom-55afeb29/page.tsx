@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Processor for Telecom - Zion Tech Group",
   description: "Transform your Telecom operations with our Adaptive Processor for Telecom. This AI-driven solution automates threat detection with unprecedented accuracy and ef",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-for-telecom-55afeb29`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Smart Supply Chain Optimization - Zion Tech Group",
   description: "End-to-end supply chain platform that uses smart optimization algorithms for demand planning, inventory management, and logistics coordination.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-smart-supply-chain-optimization-c0f2cf57`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Compliance Automation - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Compliance Automation. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-compliance-automation-06292323`
   }
 };
 

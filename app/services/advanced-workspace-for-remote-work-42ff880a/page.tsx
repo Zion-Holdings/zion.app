@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Workspace for Remote-Work - Zion Tech Group",
   description: "Transform your remote-work operations with our Advanced Workspace for Remote-Work. This AI-driven solution automates meeting intelligence with unprecedented acc",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-workspace-for-remote-work-42ff880a`
   }
 };
 

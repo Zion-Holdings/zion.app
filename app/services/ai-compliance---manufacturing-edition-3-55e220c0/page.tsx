@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Compliance - Manufacturing Edition #3 - Zion Tech Group",
   description: "Revolutionize Manufacturing through intelligent automation. Our AI Compliance - Manufacturing Edition #3 leverages advanced machine learning to deliver sentimen",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-compliance---manufacturing-edition-3-55e220c0`
   }
 };
 

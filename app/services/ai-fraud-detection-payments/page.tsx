@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Payment Fraud Detection & Prevention - Zion Tech Group",
   description: "Real-time AI fraud detection for payment processors, banks, and e-commerce platforms with sub-second decisioning and adaptive ML models.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-fraud-detection-payments`
   }
 };
 

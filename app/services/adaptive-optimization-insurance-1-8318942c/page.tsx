@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-insurance #1 - Zion Tech Group",
   description: "Transform your insurance operations with our Adaptive optimization-insurance #1. This AI-driven solution automates network optimization with unprecedented accur",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-insurance-1-8318942c`
   }
 };
 

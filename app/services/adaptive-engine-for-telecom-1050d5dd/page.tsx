@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Engine for Telecom - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our Adaptive Engine for Telecom leverages advanced machine learning to deliver compliance monitoring at sc",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-engine-for-telecom-1050d5dd`
   }
 };
 

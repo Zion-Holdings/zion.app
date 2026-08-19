@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Intelligent - Manufacturing - Zion Tech Group",
   description: "Next-generation Manufacturing solution: Advisor Intelligent - Manufacturing. Combines predictive analytics with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-intelligent---manufacturing-9ef5348c`
   }
 };
 

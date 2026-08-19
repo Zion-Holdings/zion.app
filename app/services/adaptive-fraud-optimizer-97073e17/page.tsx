@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Fraud Optimizer - Zion Tech Group",
   description: "Transform your healthcare operations with our Adaptive Fraud Optimizer. This AI-driven solution automates language processing with unprecedented accuracy and ef",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-fraud-optimizer-97073e17`
   }
 };
 

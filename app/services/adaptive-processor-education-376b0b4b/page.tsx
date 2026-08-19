@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive processor-education - Zion Tech Group",
   description: "Transform your education operations with our Adaptive processor-education. This AI-driven solution automates financial planning with unprecedented accuracy and ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-education-376b0b4b`
   }
 };
 

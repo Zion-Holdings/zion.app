@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Suite for Telecom - Zion Tech Group",
   description: "Next-generation telecom solution: Adaptive Suite for Telecom. Combines network optimization with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-suite-for-telecom-5b6e42b0`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Neural - Media - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Neural - Media. This autonomous system provides security monitoring with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-neural---media-3ac1bb6c`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Energy Edition #3 - Zion Tech Group",
   description: "Next-generation energy solution: AI Engine - Energy Edition #3. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---energy-edition-3-0c9de174`
   }
 };
 

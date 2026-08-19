@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Fraud Management - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Fraud Management. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-fraud-management-daa6a09a`
   }
 };
 

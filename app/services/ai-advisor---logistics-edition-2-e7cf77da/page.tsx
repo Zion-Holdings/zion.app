@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Logistics Edition #2 - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our AI Advisor - Logistics Edition #2 leverages advanced machine learning to deliver financial planning ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---logistics-edition-2-e7cf77da`
   }
 };
 

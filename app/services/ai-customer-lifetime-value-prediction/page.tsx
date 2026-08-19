@@ -5,7 +5,6 @@ export const metadata = {
   title: "Customer Lifetime Value Prediction - Zion Tech Group",
   description: "ML-powered CLV prediction engine that forecasts customer revenue potential using behavioral data, purchase history, and engagement metrics.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-customer-lifetime-value-prediction`
   }
 };
 

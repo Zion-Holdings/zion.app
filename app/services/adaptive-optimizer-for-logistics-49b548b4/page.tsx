@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimizer for Logistics - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Adaptive Optimizer for Logistics leverages advanced machine learning to deliver threat detection at ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimizer-for-logistics-49b548b4`
   }
 };
 

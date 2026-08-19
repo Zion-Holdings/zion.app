@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI-Driven Predictive Marketing Automation - Zion Tech Group",
   description: "Intelligent marketing platform that creates predictive campaigns across channels, optimizing content and targeting.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-driven-predictive-marketing-automation-d30afd30`
   }
 };
 

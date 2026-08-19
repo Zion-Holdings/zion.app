@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Construction Edition - Zion Tech Group",
   description: "Transform your construction operations with our AI Engine - Construction Edition. This AI-driven solution automates risk assessment with unprecedented accuracy ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---construction-edition-f7f01993`
   }
 };
 

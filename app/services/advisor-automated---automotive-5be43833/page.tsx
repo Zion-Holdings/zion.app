@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Automated - Automotive - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Automated - Automotive. This autonomous system provides predictive analytics with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-automated---automotive-5be43833`
   }
 };
 

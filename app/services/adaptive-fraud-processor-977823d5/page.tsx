@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Fraud Processor - Zion Tech Group",
   description: "Revolutionize retail through intelligent automation. Our Adaptive Fraud Processor leverages advanced machine learning to deliver predictive analytics at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-fraud-processor-977823d5`
   }
 };
 

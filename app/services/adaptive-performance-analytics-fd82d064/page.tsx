@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Performance Analytics - Zion Tech Group",
   description: "The future of retail is here with Adaptive Performance Analytics. Powered by cutting-edge AI, this platform delivers decision support like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-performance-analytics-fd82d064`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive User Generator - Zion Tech Group",
   description: "Next-generation manufacturing solution: Adaptive User Generator. Combines workflow management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-user-generator-d3d271c0`
   }
 };
 

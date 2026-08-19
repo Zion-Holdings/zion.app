@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive processor-insurance - Zion Tech Group",
   description: "The future of insurance is here with Adaptive processor-insurance. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-processor-insurance-ec30220b`
   }
 };
 

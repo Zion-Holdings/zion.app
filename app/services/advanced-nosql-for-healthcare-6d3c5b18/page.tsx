@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced NoSQL for Healthcare - Zion Tech Group",
   description: "Drive innovation in healthcare with Advanced NoSQL for Healthcare. This AI-powered platform transforms backup automation into a competitive advantage.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-nosql-for-healthcare-6d3c5b18`
   }
 };
 

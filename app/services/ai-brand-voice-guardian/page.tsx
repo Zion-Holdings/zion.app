@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Brand Voice Guardian - Zion Tech Group",
   description: "Maintain consistent brand voice. AI audits existing content, generates tone guidelines, and rewrites copy in real time to match your brand persona across every ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-brand-voice-guardian`
   }
 };
 

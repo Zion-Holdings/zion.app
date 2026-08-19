@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Code Optimizer - Zion Tech Group",
   description: "Revolutionize transportation through intelligent automation. Our Adaptive Code Optimizer leverages advanced machine learning to deliver workflow management at s",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-code-optimizer-2a5381fe`
   }
 };
 

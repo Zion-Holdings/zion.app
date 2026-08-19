@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Education Edition #2 - Zion Tech Group",
   description: "Next-generation education solution: AI Automation - Education Edition #2. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---education-edition-2-7d2881f1`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive engine-insurance - Zion Tech Group",
   description: "The future of insurance is here with Adaptive engine-insurance. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-engine-insurance-5fa12751`
   }
 };
 

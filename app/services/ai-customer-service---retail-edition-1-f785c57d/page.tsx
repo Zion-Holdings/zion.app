@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Customer Service - Retail Edition #1 - Zion Tech Group",
   description: "The future of Retail is here with AI Customer Service - Retail Edition #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-customer-service---retail-edition-1-f785c57d`
   }
 };
 

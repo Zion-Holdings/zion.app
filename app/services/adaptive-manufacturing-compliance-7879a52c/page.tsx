@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Manufacturing Compliance - Zion Tech Group",
   description: "Revolutionize Manufacturing through intelligent automation. Our Adaptive Manufacturing Compliance leverages advanced machine learning to deliver financial risk ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manufacturing-compliance-7879a52c`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Market Coordinator - Zion Tech Group",
   description: "Next-generation insurance solution: Adaptive Market Coordinator. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-market-coordinator-6d4df152`
   }
 };
 

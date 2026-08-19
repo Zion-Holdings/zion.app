@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Director - Transportation Edition - Zion Tech Group",
   description: "Next-generation transportation solution: AI Director - Transportation Edition. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---transportation-edition-895e6f22`
   }
 };
 

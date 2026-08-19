@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive automation-agriculture - Zion Tech Group",
   description: "Next-generation agriculture solution: Adaptive automation-agriculture. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-automation-agriculture-189a6032`
   }
 };
 

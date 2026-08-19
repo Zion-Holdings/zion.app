@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive optimization-construction #1 - Zion Tech Group",
   description: "Transform your construction operations with our Adaptive optimization-construction #1. This AI-driven solution automates predictive analytics with unprecedented",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimization-construction-1-8c0576ae`
   }
 };
 

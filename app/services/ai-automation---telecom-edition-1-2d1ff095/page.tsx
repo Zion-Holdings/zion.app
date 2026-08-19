@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Telecom Edition #1 - Zion Tech Group",
   description: "The future of telecom is here with AI Automation - Telecom Edition #1. Powered by cutting-edge AI, this platform delivers decision support like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---telecom-edition-1-2d1ff095`
   }
 };
 

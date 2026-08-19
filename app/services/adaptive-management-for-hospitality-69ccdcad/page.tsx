@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Management for Hospitality - Zion Tech Group",
   description: "Next-generation hospitality solution: Adaptive Management for Hospitality. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-for-hospitality-69ccdcad`
   }
 };
 

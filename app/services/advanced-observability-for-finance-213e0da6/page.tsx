@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Observability for Finance - Zion Tech Group",
   description: "Enhance your finance business with Advanced Observability for Finance. Our solution provides infrastructure as code with enterprise-grade reliability and securi",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-observability-for-finance-213e0da6`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Insights - Healthcare Edition #7 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Insights - Healthcare Edition #7. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-insights---healthcare-edition-7-0769785c`
   }
 };
 

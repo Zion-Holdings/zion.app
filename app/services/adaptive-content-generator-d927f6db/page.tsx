@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Content Generator - Zion Tech Group",
   description: "Transform your logistics operations with our Adaptive Content Generator. This AI-driven solution automates user experience with unprecedented accuracy and effic",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-content-generator-d927f6db`
   }
 };
 

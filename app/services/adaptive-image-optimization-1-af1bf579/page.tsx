@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Image Optimization #1 - Zion Tech Group",
   description: "Next-generation gaming solution: Adaptive Image Optimization #1. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-image-optimization-1-af1bf579`
   }
 };
 

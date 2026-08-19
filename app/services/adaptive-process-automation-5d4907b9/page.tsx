@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Process Automation - Zion Tech Group",
   description: "The future of transportation is here with Adaptive Process Automation. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-process-automation-5d4907b9`
   }
 };
 

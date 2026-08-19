@@ -5,7 +5,8 @@ export const metadata = {
   title: "Advanced AI & Enterprise Intelligence Hub - Zion Tech Group",
   description: "Unify generative AI, autonomous agents, multimodal intelligence, RAG, governance, observability, and enterprise copilots into a single advanced AI ...",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-ai-enterprise-intelligence-hub`
+  },
+  },
   openGraph: {
     title: 'Service | Zion Tech Group',
     description: 'AI/IT service by Zion Tech Group.',

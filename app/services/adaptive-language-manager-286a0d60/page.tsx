@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Language Manager - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Language Manager. This autonomous system provides fraud prevention with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-language-manager-286a0d60`
   }
 };
 

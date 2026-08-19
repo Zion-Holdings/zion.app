@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Energy Manufacturing - Zion Tech Group",
   description: "Transform your Logistics operations with our Adaptive Energy Manufacturing. This AI-driven solution automates threat detection with unprecedented accuracy and e",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-energy-manufacturing-3ed69d9a`
   }
 };
 

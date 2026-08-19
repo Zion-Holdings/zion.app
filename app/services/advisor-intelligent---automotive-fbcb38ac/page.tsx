@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Intelligent - Automotive - Zion Tech Group",
   description: "Next-generation automotive solution: Advisor Intelligent - Automotive. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-intelligent---automotive-fbcb38ac`
   }
 };
 

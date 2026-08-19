@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Quality Analyzer - Zion Tech Group",
   description: "Revolutionize education through intelligent automation. Our Adaptive Quality Analyzer leverages advanced machine learning to deliver predictive analytics at sca",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-quality-analyzer-e0c36ab8`
   }
 };
 

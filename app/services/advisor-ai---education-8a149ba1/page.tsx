@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor AI - Education - Zion Tech Group",
   description: "Next-generation education solution: Advisor AI - Education. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-ai---education-8a149ba1`
   }
 };
 

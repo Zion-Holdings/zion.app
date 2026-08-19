@@ -5,7 +5,6 @@ export const metadata = {
   title: "Conversational Enterprise Search - Zion Tech Group",
   description: "AI-powered search that understands natural language questions. Searches across documents, databases, emails, and apps to find and synthesize answers.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-conversational-search`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive system-automotive - Zion Tech Group",
   description: "Transform your automotive operations with our Adaptive system-automotive. This AI-driven solution automates process automation with unprecedented accuracy and e",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-system-automotive-59755525`
   }
 };
 

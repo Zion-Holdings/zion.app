@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Logistics Edition #2 - Zion Tech Group",
   description: "Next-generation Logistics solution: AI Automation - Logistics Edition #2. Combines quality control with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---logistics-edition-2-ec2e9bf2`
   }
 };
 

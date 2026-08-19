@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Adaptive - Retail - Zion Tech Group",
   description: "Next-generation retail solution: Advisor Adaptive - Retail. Combines compliance monitoring with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-adaptive---retail-6301b6cf`
   }
 };
 

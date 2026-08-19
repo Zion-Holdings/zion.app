@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive User Advisor #1 - Zion Tech Group",
   description: "The future of healthcare is here with Adaptive User Advisor #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-user-advisor-1-e7307980`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive engine-retail - Zion Tech Group",
   description: "The future of retail is here with Adaptive engine-retail. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-engine-retail-086b2466`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive intelligence-gaming - Zion Tech Group",
   description: "Next-generation gaming solution: Adaptive intelligence-gaming. Combines process automation with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-intelligence-gaming-dadb2b08`
   }
 };
 

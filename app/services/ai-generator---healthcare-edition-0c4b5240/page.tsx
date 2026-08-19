@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Generator - Healthcare Edition - Zion Tech Group",
   description: "Revolutionize healthcare through intelligent automation. Our AI Generator - Healthcare Edition leverages advanced machine learning to deliver resource optimizat",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-generator---healthcare-edition-0c4b5240`
   }
 };
 

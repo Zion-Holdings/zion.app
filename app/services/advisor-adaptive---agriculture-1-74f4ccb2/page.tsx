@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Adaptive - Agriculture #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Adaptive - Agriculture #1. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-adaptive---agriculture-1-74f4ccb2`
   }
 };
 

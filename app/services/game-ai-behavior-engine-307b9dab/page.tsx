@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path={`/services/game-ai-behavior-engine-307b9dab` title="Game AI Behavior Engine" />
+        <BreadcrumbSchema path={`/services/game-ai-behavior-engine-307b9dab`} title="Game AI Behavior Engine" />
         <h1 className="text-4xl font-bold mb-6">Game AI Behavior Engine</h1>
         <p className="text-lg text-gray-300 mb-8">Create intelligent NPCs with realistic behaviors using advanced AI. Supports dynamic dialogue, adaptive difficulty, and emergent gameplay without scripted decis</p>
 

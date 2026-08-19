@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Platform for Finance - Zion Tech Group",
   description: "Transform your finance operations with our Adaptive Platform for Finance. This AI-driven solution automates financial planning with unprecedented accuracy and e",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-platform-for-finance-8d28ef43`
   }
 };
 

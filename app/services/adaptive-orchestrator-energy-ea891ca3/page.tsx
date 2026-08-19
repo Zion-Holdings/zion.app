@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive orchestrator-energy - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive orchestrator-energy. This autonomous system provides process automation with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-orchestrator-energy-ea891ca3`
   }
 };
 

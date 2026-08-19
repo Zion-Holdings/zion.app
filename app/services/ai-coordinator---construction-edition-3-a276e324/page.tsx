@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Coordinator - Construction Edition #3 - Zion Tech Group",
   description: "Next-generation construction solution: AI Coordinator - Construction Edition #3. Combines energy management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-coordinator---construction-edition-3-a276e324`
   }
 };
 

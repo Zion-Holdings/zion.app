@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Maintenance Analytics - Zion Tech Group",
   description: "Transform your legal operations with our Adaptive Maintenance Analytics. This AI-driven solution automates energy management with unprecedented accuracy and eff",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-maintenance-analytics-ba879016`
   }
 };
 

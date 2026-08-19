@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Predictor for Real-Estate - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Predictor for Real-Estate. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-predictor-for-real-estate-edcfcbdd`
   }
 };
 

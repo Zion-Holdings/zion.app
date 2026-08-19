@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive management-real-estate #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive management-real-estate #2. This autonomous system provides threat detection with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-real-estate-2-fb234312`
   }
 };
 

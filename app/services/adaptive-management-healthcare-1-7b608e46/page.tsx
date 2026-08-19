@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive management-healthcare #1 - Zion Tech Group",
   description: "Next-generation healthcare solution: Adaptive management-healthcare #1. Combines predictive analytics with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-management-healthcare-1-7b608e46`
   }
 };
 

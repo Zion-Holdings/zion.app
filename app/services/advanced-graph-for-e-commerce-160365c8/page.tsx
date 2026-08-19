@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advanced Graph for E-Commerce - Zion Tech Group",
   description: "Optimize your e-commerce workflows with Advanced Graph for E-Commerce. This intelligent platform delivers performance tuning through advanced automation and AI.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advanced-graph-for-e-commerce-160365c8`
   }
 };
 

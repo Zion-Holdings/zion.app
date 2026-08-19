@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Executive Analytics - Zion Tech Group",
   description: "Transform your Real Estate operations with our Adaptive Executive Analytics. This AI-driven solution automates network optimization with unprecedented accuracy ",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-executive-analytics-9f25a7ab`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Director for Logistics - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Director for Logistics. This autonomous system provides manufacturing quality control with zero manual intervention ne",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-director-for-logistics-f2778c05`
   }
 };
 

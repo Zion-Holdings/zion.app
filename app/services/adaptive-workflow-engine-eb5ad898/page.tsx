@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Workflow Engine - Zion Tech Group",
   description: "Revolutionize sports through intelligent automation. Our Adaptive Workflow Engine leverages advanced machine learning to deliver decision support at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-workflow-engine-eb5ad898`
   }
 };
 

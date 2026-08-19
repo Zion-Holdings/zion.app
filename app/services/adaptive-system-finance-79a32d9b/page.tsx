@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive system-finance - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive system-finance. This autonomous system provides compliance monitoring with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-system-finance-79a32d9b`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Manager for Agriculture - Zion Tech Group",
   description: "Next-generation agriculture solution: Adaptive Manager for Agriculture. Combines process automation with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manager-for-agriculture-08be5ef8`
   }
 };
 

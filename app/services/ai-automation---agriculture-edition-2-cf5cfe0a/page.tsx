@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Automation - Agriculture Edition #2 - Zion Tech Group",
   description: "Next-generation agriculture solution: AI Automation - Agriculture Edition #2. Combines fraud prevention with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-automation---agriculture-edition-2-cf5cfe0a`
   }
 };
 

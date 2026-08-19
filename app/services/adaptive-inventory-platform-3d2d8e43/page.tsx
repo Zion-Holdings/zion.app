@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Inventory Platform - Zion Tech Group",
   description: "Revolutionize education through intelligent automation. Our Adaptive Inventory Platform leverages advanced machine learning to deliver network optimization at s",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-inventory-platform-3d2d8e43`
   }
 };
 

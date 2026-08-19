@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Autonomous - Hospitality - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Advisor Autonomous - Hospitality leverages advanced machine learning to deliver security monitorin",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-autonomous---hospitality-2ff49980`
   }
 };
 

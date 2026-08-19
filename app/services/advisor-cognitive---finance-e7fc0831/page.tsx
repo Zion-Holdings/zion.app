@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Cognitive - Finance - Zion Tech Group",
   description: "Transform your finance operations with our Advisor Cognitive - Finance. This AI-driven solution automates risk assessment with unprecedented accuracy and effici",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-cognitive---finance-e7fc0831`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Maintenance Advisor #1 - Zion Tech Group",
   description: "The future of real-estate is here with Adaptive Maintenance Advisor #1. Powered by cutting-edge AI, this platform delivers resource optimization like never befo",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-maintenance-advisor-1-586ed102`
   }
 };
 

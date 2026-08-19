@@ -5,7 +5,6 @@ export const metadata = {
   title: "Advisor Predictive - Retail #1 - Zion Tech Group",
   description: "Transform your retail operations with our Advisor Predictive - Retail #1. This AI-driven solution automates compliance monitoring with unprecedented accuracy an",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/advisor-predictive---retail-1-6c7fc993`
   }
 };
 

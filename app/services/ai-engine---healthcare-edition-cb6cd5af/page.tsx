@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Engine - Healthcare Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Engine - Healthcare Edition. This autonomous system provides threat detection with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-engine---healthcare-edition-cb6cd5af`
   }
 };
 

@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Data Manager - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive Data Manager leverages advanced machine learning to deliver data processing at scale.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-data-manager-14d93efa`
   }
 };
 

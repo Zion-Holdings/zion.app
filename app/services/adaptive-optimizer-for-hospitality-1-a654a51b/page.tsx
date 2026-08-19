@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Optimizer for Hospitality #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Optimizer for Hospitality #1. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-optimizer-for-hospitality-1-a654a51b`
   }
 };
 

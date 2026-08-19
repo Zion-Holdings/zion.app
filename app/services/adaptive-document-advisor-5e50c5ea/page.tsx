@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Document Advisor - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Document Advisor. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-document-advisor-5e50c5ea`
   }
 };
 

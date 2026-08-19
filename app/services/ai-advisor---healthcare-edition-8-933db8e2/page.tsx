@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Advisor - Healthcare Edition #8 - Zion Tech Group",
   description: "Next-generation healthcare solution: AI Advisor - Healthcare Edition #8. Combines user experience with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-advisor---healthcare-edition-8-933db8e2`
   }
 };
 

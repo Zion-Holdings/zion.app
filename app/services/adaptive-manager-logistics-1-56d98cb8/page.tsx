@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive manager-logistics #1 - Zion Tech Group",
   description: "Transform your logistics operations with our Adaptive manager-logistics #1. This AI-driven solution automates content generation with unprecedented accuracy and",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-manager-logistics-1-56d98cb8`
   }
 };
 

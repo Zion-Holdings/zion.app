@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive devops-gaming - Zion Tech Group",
   description: "The future of Gaming is here with Adaptive devops-gaming. Powered by cutting-edge AI, this platform delivers sentiment analysis like never before.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-devops-gaming-c1ff782e`
   }
 };
 

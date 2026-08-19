@@ -5,7 +5,6 @@ export const metadata = {
   title: "AI Energy Grid Optimization Platform - Zion Tech Group",
   description: "Grid-scale energy management: demand forecasting, renewable integration, battery dispatch optimization, real-time load balancing. Reduces energy waste by 22%.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-energy-grid-optimizer`
   }
 };
 

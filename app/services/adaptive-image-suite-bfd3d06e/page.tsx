@@ -5,7 +5,6 @@ export const metadata = {
   title: "Adaptive Image Suite - Zion Tech Group",
   description: "Transform your education operations with our Adaptive Image Suite. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-image-suite-bfd3d06e`
   }
 };
 
