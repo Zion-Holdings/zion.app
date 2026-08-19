@@ -1,56 +1,42 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Predictive Orchestration Engine - Tech | Zion Tech Group',
-  description: 'Drive innovation in technology with Predictive Orchestration Engine - Tech. This AI-powered platform transforms release management into a competitive advantage.',
+export const metadata = {
+  title: "Predictive Orchestration Engine - Tech - Zion Tech Group",
+  description: "Drive innovation in technology with Predictive Orchestration Engine - Tech. This AI-powered platform transforms release management into a competitive advantage.",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/predictive-orchestration-engine-tech-40bce9b3',
-  },
+    canonical: `https://ziontechgroup.com/services/predictive-orchestration-engine-tech-40bce9b3`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Predictive Orchestration Engine - Tech</h1>
-          <p className="text-lg text-gray-300 mb-8">Drive innovation in technology with Predictive Orchestration Engine - Tech. This AI-powered platform transforms release management into a competitive advantage.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>devops</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">Predictive Orchestration Engine - Tech</h1>
+        <p className="text-lg text-gray-300 mb-8">Drive innovation in technology with Predictive Orchestration Engine - Tech. This AI-powered platform transforms release management into a competitive advantage.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Custom integrations with webhook support</li>
             <li>SOC 2 certified with security controls</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -68,10 +54,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

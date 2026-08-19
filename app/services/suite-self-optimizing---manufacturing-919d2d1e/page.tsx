@@ -1,47 +1,40 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Suite Self-Optimizing - Manufacturing | Zion Tech Group',
-  description: 'The future of manufacturing is here with Suite Self-Optimizing - Manufacturing. Powered by cutting-edge AI, this platform delivers inventory management like nev',
+export const metadata = {
+  title: "Suite Self-Optimizing - Manufacturing - Zion Tech Group",
+  description: "The future of manufacturing is here with Suite Self-Optimizing - Manufacturing. Powered by cutting-edge AI, this platform delivers inventory management like nev",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/suite-self-optimizing---manufacturing-919d2d1e',
-  },
+    canonical: `https://ziontechgroup.com/services/suite-self-optimizing---manufacturing-919d2d1e`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Suite Self-Optimizing - Manufacturing</h1>
-          <p className="text-lg text-gray-300 mb-8">The future of manufacturing is here with Suite Self-Optimizing - Manufacturing. Powered by cutting-edge AI, this platform delivers inventory management like never before.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>manager</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">Suite Self-Optimizing - Manufacturing</h1>
+        <p className="text-lg text-gray-300 mb-8">The future of manufacturing is here with Suite Self-Optimizing - Manufacturing. Powered by cutting-edge AI, this platform delivers inventory management like never before.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>HIPAA ready</li>
             <li>SOC 2 certified</li>
             <li>Audit trails</li>
             <li>Multi-region deployment</li>
             <li>Performance dashboards</li>
-            <li>Rollback mechanisms</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>ROI in under 90 days</li>
             <li>Cost optimization recommendations</li>
             <li>Intelligent load balancing</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -59,10 +52,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

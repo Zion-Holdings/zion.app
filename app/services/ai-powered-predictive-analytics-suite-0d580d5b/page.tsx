@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Predictive Analytics Suite - Zion Tech Group",
-  description: "End-to-end predictive analytics platform that forecasts market trends, customer behavior, and operational metrics with 95% accuracy.",
+  description: "AI-driven analytics platform that predicts market trends, customer behavior, and operational outcomes with 95% accuracy. Uses machine learning models trained on",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-predictive-analytics-suite-0d580d5b`
   }
@@ -13,22 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Predictive Analytics Suite</h1>
-        <p className="text-lg text-gray-300 mb-8">End-to-end predictive analytics platform that forecasts market trends, customer behavior, and operational metrics with 95% accuracy.</p>
+        <p className="text-lg text-gray-300 mb-8">AI-driven analytics platform that predicts market trends, customer behavior, and operational outcomes with 95% accuracy. Uses machine learning models trained on historical data to forecast future performance.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-model forecasting</li>
-            <li>Real-time predictions</li>
-            <li>Anomaly detection</li>
+            <li>Real-time predictive modeling</li>
+            <li>Multi-dimensional trend analysis</li>
+            <li>Automated anomaly detection</li>
+            <li>Customizable forecasting horizons</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>95% prediction accuracy</li>
-            <li>30% revenue increase</li>
+            <li>30% improvement in decision accuracy</li>
+            <li>Reduced operational risks</li>
+            <li>Proactive opportunity identification</li>
+            <li>Data-driven strategy optimization</li>
           </ul>
         </div>
         
@@ -37,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$1499/month</p>
+              <p className="text-2xl font-bold mb-2">$299/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$4999/month</p>
+              <p className="text-2xl font-bold mb-2">$799/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$14999/month</p>
+              <p className="text-2xl font-bold mb-2">$2499/month</p>
             </div>
           </div>
         </div>

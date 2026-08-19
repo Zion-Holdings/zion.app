@@ -1,51 +1,42 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'AI Revenue - Tech Edition | Zion Tech Group',
-  description: 'Transform your Technology operations with our AI Revenue - Tech Edition. This AI-driven solution automates data processing with unprecedented accuracy and effic',
+export const metadata = {
+  title: "AI Revenue - Tech Edition - Zion Tech Group",
+  description: "Transform your Technology operations with our AI Revenue - Tech Edition. This AI-driven solution automates data processing with unprecedented accuracy and effic",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/ai-revenue---tech-edition-83ab2aba',
-  },
+    canonical: `https://ziontechgroup.com/services/ai-revenue---tech-edition-83ab2aba`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">AI Revenue - Tech Edition</h1>
-          <p className="text-lg text-gray-300 mb-8">Transform your Technology operations with our AI Revenue - Tech Edition. This AI-driven solution automates data processing with unprecedented accuracy and efficiency.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>real estate</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">AI Revenue - Tech Edition</h1>
+        <p className="text-lg text-gray-300 mb-8">Transform your Technology operations with our AI Revenue - Tech Edition. This AI-driven solution automates data processing with unprecedented accuracy and efficiency.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Logistics route optimization with traffic prediction</li>
             <li>Automation opportunity identification</li>
             <li>Process discovery with activity analysis</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Reduced human error by 95% with automated processes</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Scalable to millions of transactions per second</li>
             <li>Improved employee productivity with automation</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -63,10 +54,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

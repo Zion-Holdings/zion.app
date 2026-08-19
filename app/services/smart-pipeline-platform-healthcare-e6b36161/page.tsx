@@ -1,51 +1,42 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Smart Pipeline Platform - Healthcare | Zion Tech Group',
-  description: 'Revolutionize healthcare through intelligent automation. Our Smart Pipeline Platform - Healthcare leverages advanced machine learning to deliver monitoring syst',
+export const metadata = {
+  title: "Smart Pipeline Platform - Healthcare - Zion Tech Group",
+  description: "Revolutionize healthcare through intelligent automation. Our Smart Pipeline Platform - Healthcare leverages advanced machine learning to deliver monitoring syst",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/smart-pipeline-platform-healthcare-e6b36161',
-  },
+    canonical: `https://ziontechgroup.com/services/smart-pipeline-platform-healthcare-e6b36161`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Smart Pipeline Platform - Healthcare</h1>
-          <p className="text-lg text-gray-300 mb-8">Revolutionize healthcare through intelligent automation. Our Smart Pipeline Platform - Healthcare leverages advanced machine learning to deliver monitoring systems at scale.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>devops</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">Smart Pipeline Platform - Healthcare</h1>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize healthcare through intelligent automation. Our Smart Pipeline Platform - Healthcare leverages advanced machine learning to deliver monitoring systems at scale.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Open-source friendly with plugin architecture</li>
             <li>Data encryption at rest and in transit</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>CI/CD pipeline with automated testing</li>
             <li>GDPR compliance with data portability</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>24/7 automated operations without human intervention</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -63,10 +54,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Document Processing AI - Zion Tech Group",
-  description: "Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+  description: "Machine learning-powered document automation that extracts, categorizes, and processes documents at scale. Handles invoices, contracts, reports, and other busin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-document-processing-ai-1c45d924`
   }
@@ -13,21 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Document Processing AI</h1>
-        <p className="text-lg text-gray-300 mb-8">Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.</p>
+        <p className="text-lg text-gray-300 mb-8">Machine learning-powered document automation that extracts, categorizes, and processes documents at scale. Handles invoices, contracts, reports, and other business documents.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-format OCR</li>
-            <li>Data extraction</li>
+            <li>OCR with 99% accuracy</li>
+            <li>Data extraction and validation</li>
+            <li>Automated workflow routing</li>
+            <li>Compliance monitoring</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99% accuracy</li>
-            <li>Zero manual entry</li>
+            <li>80% reduction in manual processing</li>
+            <li>Zero data entry errors</li>
+            <li>Faster document turnaround</li>
+            <li>Audit-ready processing logs</li>
           </ul>
         </div>
         
@@ -36,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$399/month</p>
+              <p className="text-2xl font-bold mb-2">$249/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$999/month</p>
+              <p className="text-2xl font-bold mb-2">$599/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$1799/month</p>
             </div>
           </div>
         </div>

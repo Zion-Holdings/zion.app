@@ -1,74 +1,70 @@
-import { Layout } from '@/components/Layout'
+import { } from 'next/navigation';
 
 export const metadata = {
-  title: 'Service - AI-Powered General Solution',
-  description: 'Comprehensive AI governance framework with bias detection, model explainability, audit trails, and regulatory compliance for responsible AI deployment.',
-}
+  title: "AI Ethics, Safety & Governance Framework - Zion Tech Group",
+  description: "Comprehensive AI governance framework with bias detection, model explainability, audit trails, and regulatory compliance for responsible AI deployment.",
+  alternates: {
+    canonical: `https://ziontechgroup.com/services/ai-ethics-governance`
+  }
+};
 
 export default function ServicePage() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-slate-950 text-white">
-        <div className="max-w-4xl mx-auto py-16 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-400 mb-6">
-            Service
-          </h1>
-          
-          <p className="text-xl text-slate-300 mb-8">
-            Comprehensive AI governance framework with bias detection, model explainability, audit trails, and regulatory compliance for responsible AI deployment.
-          </p>
-
-          <div className="bg-slate-900 rounded-xl p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-purple-400 mb-4">
-              Key Features
-            </h2>
-            <ul className="list-disc list-inside space-y-2">
-            <li className="text-purple-300">✓ Automated bias detection across training data and model outputs</li>
-            <li className="text-purple-300">✓ Model interpretability and explainability (SHAP/LIME integration)</li>
-            <li className="text-purple-300">✓ AI ethics board policy generation and compliance tracking</li>
-            <li className="text-purple-300">✓ Regulatory compliance automation (EU AI Act, NIST AI RMF)</li>
-            <li className="text-purple-300">✓ Continuous monitoring and audit log generation</li>
-            </ul>
-          </div>
-
-          <div className="bg-slate-900 rounded-xl p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-purple-400 mb-4">
-              Business Benefits
-            </h2>
-            <ul className="list-disc list-inside space-y-2">
-            <li className="text-purple-300">✓ Reduce costs with ai ethics, safety & governance framework</li>
-            <li className="text-purple-300">✓ Improve operational efficiency</li>
-            <li className="text-purple-300">✓ Scale without complexity</li>
-            <li className="text-purple-300">✓ Enterprise-grade reliability</li>
-            </ul>
-          </div>
-
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-8 text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Pricing</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$$149/mo</div>
-                <div>Basic</div>
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$$449/mo</div>
-                <div>Pro</div>
-              </div>
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$$1,499/mo</div>
-                <div>Enterprise</div>
-              </div>
+    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI Ethics, Safety &amp; Governance Framework</h1>
+        <p className="text-lg text-gray-300 mb-8">Comprehensive AI governance framework with bias detection, model explainability, audit trails, and regulatory compliance for responsible AI deployment.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Automated bias detection across training data and model outputs</li>
+            <li>Model interpretability and explainability (SHAP/LIME integration)</li>
+            <li>AI ethics board policy generation and compliance tracking</li>
+            <li>Regulatory compliance automation (EU AI Act, NIST AI RMF)</li>
+            <li>Continuous monitoring and audit log generation</li>
+          </ul>
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Reduce costs with ai ethics, safety &amp; governance framework</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
+          </ul>
+        </div>
+        
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$149/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$449/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$1,499/mo/month</p>
             </div>
           </div>
-
+        </div>
+        
+        <div className="text-center">
           <a 
-            href="https://calendly.com/kleber-ziontechgroup" 
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full transition-colors"
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
-            Book a Demo
+            Book a Consultation
           </a>
         </div>
       </div>
-    </Layout>
-  )
+    </main>
+  );
 }

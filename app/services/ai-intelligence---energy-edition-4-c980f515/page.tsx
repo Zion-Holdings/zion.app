@@ -1,47 +1,41 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'AI Intelligence - Energy Edition #4 | Zion Tech Group',
-  description: 'Transform your energy operations with our AI Intelligence - Energy Edition #4. This AI-driven solution automates financial planning with unprecedented accuracy ',
+export const metadata = {
+  title: "AI Intelligence - Energy Edition #4 - Zion Tech Group",
+  description: "Transform your energy operations with our AI Intelligence - Energy Edition #4. This AI-driven solution automates financial planning with unprecedented accuracy ",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/ai-intelligence---energy-edition-4-c980f515',
-  },
+    canonical: `https://ziontechgroup.com/services/ai-intelligence---energy-edition-4-c980f515`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">AI Intelligence - Energy Edition #4</h1>
-          <p className="text-lg text-gray-300 mb-8">Transform your energy operations with our AI Intelligence - Energy Edition #4. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>engine</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">AI Intelligence - Energy Edition #4</h1>
+        <p className="text-lg text-gray-300 mb-8">Transform your energy operations with our AI Intelligence - Energy Edition #4. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>HIPAA ready</li>
             <li>Edge computing support</li>
             <li>Audit trails</li>
             <li>Open-source friendly</li>
             <li>Microservices deployment</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>50% reduction in operational costs</li>
             <li>24/7 automated operations</li>
             <li>ROI in under 90 days</li>
             <li>Performance benchmarking</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -59,10 +53,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

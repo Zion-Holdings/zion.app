@@ -1,48 +1,42 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Automation Neural - Education | Zion Tech Group',
-  description: 'Unlock unprecedented growth with Automation Neural - Education. This autonomous system provides workflow management with zero manual intervention needed.',
+export const metadata = {
+  title: "Automation Neural - Education - Zion Tech Group",
+  description: "Unlock unprecedented growth with Automation Neural - Education. This autonomous system provides workflow management with zero manual intervention needed.",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/automation-neural---education-ad66d8a5',
-  },
+    canonical: `https://ziontechgroup.com/services/automation-neural---education-ad66d8a5`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Automation Neural - Education</h1>
-          <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Automation Neural - Education. This autonomous system provides workflow management with zero manual intervention needed.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>analyzer</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">Automation Neural - Education</h1>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Automation Neural - Education. This autonomous system provides workflow management with zero manual intervention needed.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Multi-region deployment</li>
             <li>Mobile-responsive interface</li>
             <li>Performance dashboards</li>
             <li>Microservices deployment</li>
             <li>Comprehensive monitoring</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Self-healing infrastructure</li>
             <li>Cost optimization recommendations</li>
             <li>Intelligent load balancing</li>
             <li>ROI in under 90 days</li>
             <li>99.9% uptime guarantee</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -60,10 +54,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Kubernetes Platform as a Service - Zion Tech Group",
-  description: "Managed Kubernetes with auto-scrolling, service mesh, GitOps, multi-cluster management.",
+  description: "Managed Kubernetes platform with auto-scrolling, service mesh, GitOps deployments, and multi-cluster management across AWS, Azure, and GCP.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-kubernetes-platform-service`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cloud Kubernetes Platform as a Service</h1>
-        <p className="text-lg text-gray-300 mb-8">Managed Kubernetes with auto-scrolling, service mesh, GitOps, multi-cluster management.</p>
+        <p className="text-lg text-gray-300 mb-8">Managed Kubernetes platform with auto-scrolling, service mesh, GitOps deployments, and multi-cluster management across AWS, Azure, and GCP.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-cloud clusters</li>
-            <li>Istio service mesh</li>
-            <li>GitOps delivery</li>
-            <li>Auto-scrolling</li>
-            <li>Cost dashboards</li>
+            <li>Multi-cloud cluster management</li>
+            <li>Built-in service mesh (Istio)</li>
+            <li>GitOps continuous delivery</li>
+            <li>Auto-scrolling policies</li>
+            <li>Cost optimization dashboards</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>80% less complexity</li>
-            <li>Multi-cloud portable</li>
+            <li>Reduce Kubernetes complexity by 80%</li>
+            <li>Deploy in minutes not days</li>
+            <li>Multi-cloud portability</li>
           </ul>
         </div>
         

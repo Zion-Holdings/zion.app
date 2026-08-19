@@ -1,48 +1,42 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'AI-Powered Master DevOps | Zion Tech Group',
-  description: 'Revolutionize Retail through intelligent automation. Our AI-Powered Master DevOps leverages advanced machine learning to deliver threat detection at scale.',
+export const metadata = {
+  title: "AI-Powered Master DevOps - Zion Tech Group",
+  description: "Revolutionize Retail through intelligent automation. Our AI-Powered Master DevOps leverages advanced machine learning to deliver threat detection at scale.",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/ai-powered-master-devops-28630202',
-  },
+    canonical: `https://ziontechgroup.com/services/ai-powered-master-devops-28630202`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">AI-Powered Master DevOps</h1>
-          <p className="text-lg text-gray-300 mb-8">Revolutionize Retail through intelligent automation. Our AI-Powered Master DevOps leverages advanced machine learning to deliver threat detection at scale.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>cloud</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">AI-Powered Master DevOps</h1>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize Retail through intelligent automation. Our AI-Powered Master DevOps leverages advanced machine learning to deliver threat detection at scale.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Predictive modeling with ensemble methods</li>
             <li>Brand monitoring across social channels</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>SOC 2 certified with security controls</li>
             <li>Multi-language support with localization</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Improved product quality with automated testing</li>
             <li>Improved quality with automated testing and validation</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Improved employee productivity with automation</li>
             <li>Reduced customer acquisition costs with optimization</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -60,10 +54,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

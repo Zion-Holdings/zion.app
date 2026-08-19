@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Human Resources Churn Prevention - Zion Tech Group",
-  description: "Machine learning system that identifies smart churn signals in telecom customer behavior, enabling proactive retention strategies and personalized intervention ",
+  description: "Machine learning system that identifies advanced churn signals in telecom customer behavior, enabling proactive retention strategies and personalized interventi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-human-resources-churn-prevention-c90cb7ec`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Predictive Human Resources Churn Prevention</h1>
-        <p className="text-lg text-gray-300 mb-8">Machine learning system that identifies smart churn signals in telecom customer behavior, enabling proactive retention strategies and personalized intervention campaigns.</p>
+        <p className="text-lg text-gray-300 mb-8">Machine learning system that identifies advanced churn signals in telecom customer behavior, enabling proactive retention strategies and personalized intervention campaigns.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

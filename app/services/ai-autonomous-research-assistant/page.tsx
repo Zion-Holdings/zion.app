@@ -1,74 +1,70 @@
-import { Layout } from '@/components/Layout'
+import { } from 'next/navigation';
 
 export const metadata = {
-  title: 'Service - AI-Powered Research Solution',
-  description: 'AI agent that autonomously conducts deep research across academic papers, patents, news, and databases. Produces cited reports, literature reviews, and competit',
-}
+  title: "AI Autonomous Research Assistant - Zion Tech Group",
+  description: "AI agent that autonomously conducts deep research across academic papers, patents, news, and databases. Produces cited reports, literature reviews, and competit",
+  alternates: {
+    canonical: `https://ziontechgroup.com/services/ai-autonomous-research-assistant`
+  }
+};
 
 export default function ServicePage() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-slate-950 text-white">
-        <div className="max-w-4xl mx-auto py-16 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-400 mb-6">
-            Service
-          </h1>
-          
-          <p className="text-xl text-slate-300 mb-8">
-            AI agent that autonomously conducts deep research across academic papers, patents, news, and databases. Produces cited reports, literature reviews, and competitive intelligence briefs. Supports 50+ data sources including PubMed, arXiv, Google Patents, and SEC filings.
-          </p>
-
-          <div className="bg-slate-900 rounded-xl p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-purple-400 mb-4">
-              Key Features
-            </h2>
-            <ul className="list-disc list-inside space-y-2">
-            <li className="text-purple-300">✓ Autonomous multi-source research</li>
-            <li className="text-purple-300">✓ Academic paper analysis (PubMed, arXiv)</li>
-            <li className="text-purple-300">✓ Patent landscape mapping</li>
-            <li className="text-purple-300">✓ Competitive intelligence reports</li>
-            <li className="text-purple-300">✓ Auto-citation and bibliography</li>
-            </ul>
-          </div>
-
-          <div className="bg-slate-900 rounded-xl p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-purple-400 mb-4">
-              Business Benefits
-            </h2>
-            <ul className="list-disc list-inside space-y-2">
-            <li className="text-purple-300">✓ 10x faster literature reviews</li>
-            <li className="text-purple-300">✓ Never miss relevant patents or papers</li>
-            <li className="text-purple-300">✓ Data-driven competitive insights</li>
-            <li className="text-purple-300">✓ Reduce research costs by 70%</li>
-            </ul>
-          </div>
-
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-8 text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Pricing</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$$499/mo</div>
-                <div>Basic</div>
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$$1,499/mo</div>
-                <div>Pro</div>
-              </div>
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$Custom</div>
-                <div>Enterprise</div>
-              </div>
+    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI Autonomous Research Assistant</h1>
+        <p className="text-lg text-gray-300 mb-8">AI agent that autonomously conducts deep research across academic papers, patents, news, and databases. Produces cited reports, literature reviews, and competitive intelligence briefs. Supports 50+ data sources including PubMed, arXiv, Google Patents, and SEC filings.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Autonomous multi-source research</li>
+            <li>Academic paper analysis (PubMed, arXiv)</li>
+            <li>Patent landscape mapping</li>
+            <li>Competitive intelligence reports</li>
+            <li>Auto-citation and bibliography</li>
+          </ul>
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>10x faster literature reviews</li>
+            <li>Never miss relevant patents or papers</li>
+            <li>Data-driven competitive insights</li>
+            <li>Reduce research costs by 70%</li>
+          </ul>
+        </div>
+        
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$499/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$1,499/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
-
+        </div>
+        
+        <div className="text-center">
           <a 
-            href="https://calendly.com/kleber-ziontechgroup" 
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full transition-colors"
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
-            Book a Demo
+            Book a Consultation
           </a>
         </div>
       </div>
-    </Layout>
-  )
+    </main>
+  );
 }

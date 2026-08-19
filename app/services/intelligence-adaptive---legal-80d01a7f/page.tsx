@@ -1,49 +1,42 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Intelligence Adaptive - Legal | Zion Tech Group',
-  description: 'Transform your legal operations with our Intelligence Adaptive - Legal. This AI-driven solution automates workflow management with unprecedented accuracy and ef',
+export const metadata = {
+  title: "Intelligence Adaptive - Legal - Zion Tech Group",
+  description: "Transform your legal operations with our Intelligence Adaptive - Legal. This AI-driven solution automates workflow management with unprecedented accuracy and ef",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/intelligence-adaptive---legal-80d01a7f',
-  },
+    canonical: `https://ziontechgroup.com/services/intelligence-adaptive---legal-80d01a7f`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Intelligence Adaptive - Legal</h1>
-          <p className="text-lg text-gray-300 mb-8">Transform your legal operations with our Intelligence Adaptive - Legal. This AI-driven solution automates workflow management with unprecedented accuracy and efficiency.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>predictor</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">Intelligence Adaptive - Legal</h1>
+        <p className="text-lg text-gray-300 mb-8">Transform your legal operations with our Intelligence Adaptive - Legal. This AI-driven solution automates workflow management with unprecedented accuracy and efficiency.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>GDPR compliance</li>
             <li>Alerting system</li>
             <li>Role-based access control</li>
             <li>Multi-region deployment</li>
             <li>Auto-scaling capabilities</li>
-            <li>Edge computing support</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Dynamic resource allocation</li>
             <li>Enterprise-grade security</li>
             <li>Seamless integration with existing systems</li>
             <li>Scalable to millions of transactions</li>
             <li>50% reduction in operational costs</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -61,10 +54,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

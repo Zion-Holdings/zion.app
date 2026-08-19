@@ -1,49 +1,42 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'AI Predictor - Real Estate Edition #2 | Zion Tech Group',
-  description: 'Next-generation Real Estate solution: AI Predictor - Real Estate Edition #2. Combines financial risk management with adaptive intelligence for optimal results.',
+export const metadata = {
+  title: "AI Predictor - Real Estate Edition #2 - Zion Tech Group",
+  description: "Next-generation Real Estate solution: AI Predictor - Real Estate Edition #2. Combines financial risk management with adaptive intelligence for optimal results.",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/ai-predictor---real-estate-edition-2-ea87f4df',
-  },
+    canonical: `https://ziontechgroup.com/services/ai-predictor---real-estate-edition-2-ea87f4df`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">AI Predictor - Real Estate Edition #2</h1>
-          <p className="text-lg text-gray-300 mb-8">Next-generation Real Estate solution: AI Predictor - Real Estate Edition #2. Combines financial risk management with adaptive intelligence for optimal results.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>insights</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">AI Predictor - Real Estate Edition #2</h1>
+        <p className="text-lg text-gray-300 mb-8">Next-generation Real Estate solution: AI Predictor - Real Estate Edition #2. Combines financial risk management with adaptive intelligence for optimal results.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Healthcare data analytics with patient insights</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Manufacturing quality control with defect detection</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Improved product quality with automated testing</li>
             <li>Improved quality with automated testing and validation</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Faster time-to-market with accelerated development</li>
             <li>Better code quality with automated reviews</li>
-            <li>Better financial planning with predictive models</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -61,10 +54,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

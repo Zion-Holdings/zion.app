@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Energy Inventory Management - Zion Tech Group",
-  description: "AI-driven inventory optimization platform that provides insightful demand forecasting, automated replenishment, and assortment planning for retail operations.",
+  description: "AI-driven inventory optimization platform that provides autonomous demand forecasting, automated replenishment, and assortment planning for retail operations.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-energy-inventory-management-ff3c1fa6`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Energy Inventory Management</h1>
-        <p className="text-lg text-gray-300 mb-8">AI-driven inventory optimization platform that provides insightful demand forecasting, automated replenishment, and assortment planning for retail operations.</p>
+        <p className="text-lg text-gray-300 mb-8">AI-driven inventory optimization platform that provides autonomous demand forecasting, automated replenishment, and assortment planning for retail operations.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

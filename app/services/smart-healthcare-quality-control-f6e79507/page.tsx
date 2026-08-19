@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Healthcare Quality Control - Zion Tech Group",
-  description: "Computer vision system that provides intelligent automated inspection, defect detection, and quality assurance for manufacturing production lines.",
+  description: "Computer vision system that provides smart automated inspection, defect detection, and quality assurance for manufacturing production lines.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-healthcare-quality-control-f6e79507`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Healthcare Quality Control</h1>
-        <p className="text-lg text-gray-300 mb-8">Computer vision system that provides intelligent automated inspection, defect detection, and quality assurance for manufacturing production lines.</p>
+        <p className="text-lg text-gray-300 mb-8">Computer vision system that provides smart automated inspection, defect detection, and quality assurance for manufacturing production lines.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

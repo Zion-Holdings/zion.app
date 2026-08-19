@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Operational Patient Engagement - Zion Tech Group",
-  description: "AI-driven patient engagement platform that delivers proactive personalized care journeys, remote monitoring, and adherence support through intelligent automatio",
+  description: "AI-driven patient engagement platform that delivers adaptive personalized care journeys, remote monitoring, and adherence support through intelligent automation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-operational-patient-engagement-405dbaa6`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Operational Patient Engagement</h1>
-        <p className="text-lg text-gray-300 mb-8">AI-driven patient engagement platform that delivers proactive personalized care journeys, remote monitoring, and adherence support through intelligent automation.</p>
+        <p className="text-lg text-gray-300 mb-8">AI-driven patient engagement platform that delivers adaptive personalized care journeys, remote monitoring, and adherence support through intelligent automation.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

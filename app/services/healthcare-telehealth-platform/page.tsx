@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Healthcare Telehealth Platform - Zion Tech Group",
-  description: "HIPAA-compliant telehealth with HD video, EHR integration, remote monitoring, scheduling.",
+  description: "HIPAA-compliant telehealth platform with HD video consultations, EHR integration, remote patient monitoring, and automated appointment scheduling.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/healthcare-telehealth-platform`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Healthcare Telehealth Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">HIPAA-compliant telehealth with HD video, EHR integration, remote monitoring, scheduling.</p>
+        <p className="text-lg text-gray-300 mb-8">HIPAA-compliant telehealth platform with HD video consultations, EHR integration, remote patient monitoring, and automated appointment scheduling.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HD video</li>
-            <li>EHR integration</li>
-            <li>Remote monitoring</li>
-            <li>Auto scheduling</li>
-            <li>HIPAA messaging</li>
+            <li>HD video consultations</li>
+            <li>EHR/EMR integration (Epic, Cerner)</li>
+            <li>Remote patient monitoring</li>
+            <li>Automated scheduling &amp; reminders</li>
+            <li>HIPAA-compliant messaging</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>300% more reach</li>
-            <li>45% fewer no-shows</li>
+            <li>Increase patient reach by 300%</li>
+            <li>Reduce no-shows by 45%</li>
+            <li>Full HIPAA compliance</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Operational Investment Analytics - Zion Tech Group",
-  description: "AI-driven real estate investment platform that identifies scalable opportunities, analyzes market trends, and optimizes portfolio performance through predictive",
+  description: "AI-driven real estate investment platform that identifies predictive opportunities, analyzes market trends, and optimizes portfolio performance through predicti",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-operational-investment-analytics-29481ae4`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Operational Investment Analytics</h1>
-        <p className="text-lg text-gray-300 mb-8">AI-driven real estate investment platform that identifies scalable opportunities, analyzes market trends, and optimizes portfolio performance through predictive analytics.</p>
+        <p className="text-lg text-gray-300 mb-8">AI-driven real estate investment platform that identifies predictive opportunities, analyzes market trends, and optimizes portfolio performance through predictive analytics.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

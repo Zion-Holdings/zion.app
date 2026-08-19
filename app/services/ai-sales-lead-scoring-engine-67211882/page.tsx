@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Sales Lead Scoring Engine - Zion Tech Group",
-  description: "Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.",
+  description: "Intelligent lead prioritization system that scores and ranks prospects based on engagement, fit, and conversion probability. Increases sales team efficiency by ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-sales-lead-scoring-engine-67211882`
   }
@@ -13,21 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Sales Lead Scoring Engine</h1>
-        <p className="text-lg text-gray-300 mb-8">Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.</p>
+        <p className="text-lg text-gray-300 mb-8">Intelligent lead prioritization system that scores and ranks prospects based on engagement, fit, and conversion probability. Increases sales team efficiency by focusing on high-value leads.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Lead scoring</li>
-            <li>Behavioral analysis</li>
+            <li>Real-time lead scoring</li>
+            <li>Behavioral tracking integration</li>
+            <li>Predictive conversion modeling</li>
+            <li>Automated lead nurturing</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>40% more qualified leads</li>
-            <li>Higher conversion rates</li>
+            <li>40% increase in conversion rates</li>
+            <li>Higher sales team productivity</li>
+            <li>Reduced time-to-close</li>
+            <li>Better lead qualification</li>
           </ul>
         </div>
         
@@ -36,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$249/month</p>
+              <p className="text-2xl font-bold mb-2">$199/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$799/month</p>
+              <p className="text-2xl font-bold mb-2">$449/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$2499/month</p>
+              <p className="text-2xl font-bold mb-2">$1299/month</p>
             </div>
           </div>
         </div>

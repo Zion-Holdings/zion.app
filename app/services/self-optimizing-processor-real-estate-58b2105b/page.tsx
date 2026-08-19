@@ -1,48 +1,41 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Self-Optimizing processor-real estate | Zion Tech Group',
-  description: 'Transform your Real Estate operations with our Self-Optimizing processor-real estate. This AI-driven solution automates language processing with unprecedented a',
+export const metadata = {
+  title: "Self-Optimizing processor-real estate - Zion Tech Group",
+  description: "Transform your Real Estate operations with our Self-Optimizing processor-real estate. This AI-driven solution automates language processing with unprecedented a",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/self-optimizing-processor-real-estate-58b2105b',
-  },
+    canonical: `https://ziontechgroup.com/services/self-optimizing-processor-real-estate-58b2105b`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Self-Optimizing processor-real estate</h1>
-          <p className="text-lg text-gray-300 mb-8">Transform your Real Estate operations with our Self-Optimizing processor-real estate. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>optimizer</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">Self-Optimizing processor-real estate</h1>
+        <p className="text-lg text-gray-300 mb-8">Transform your Real Estate operations with our Self-Optimizing processor-real estate. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Customer service automation with chatbot integration</li>
             <li>Language processing with sentiment analysis</li>
             <li>Data quality with anomaly detection</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Code optimization with performance profiling</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Improved employee productivity with automation</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Better inventory management with demand forecasting</li>
             <li>Improved product quality with automated testing</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -60,10 +53,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

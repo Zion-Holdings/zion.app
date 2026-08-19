@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Market Intelligence - Zion Tech Group",
-  description: "Monitors market trends, competitor activities, and industry news to provide actionable insights.",
+  description: "Competitive analysis platform that monitors market trends, competitor activities, and industry developments. Provides actionable insights for strategic decision",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-market-intelligence-2480d503`
   }
@@ -13,21 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Market Intelligence</h1>
-        <p className="text-lg text-gray-300 mb-8">Monitors market trends, competitor activities, and industry news to provide actionable insights.</p>
+        <p className="text-lg text-gray-300 mb-8">Competitive analysis platform that monitors market trends, competitor activities, and industry developments. Provides actionable insights for strategic decision-making.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Trend monitoring</li>
-            <li>Competitor analysis</li>
+            <li>Real-time competitor monitoring</li>
+            <li>Trend analysis and prediction</li>
+            <li>Market opportunity identification</li>
+            <li>Sentiment analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights</li>
+            <li>Early market trend detection</li>
             <li>Competitive advantage</li>
+            <li>Data-driven strategy decisions</li>
+            <li>Opportunity maximization</li>
           </ul>
         </div>
         
@@ -36,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$599/month</p>
+              <p className="text-2xl font-bold mb-2">$199/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$1999/month</p>
+              <p className="text-2xl font-bold mb-2">$499/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$5999/month</p>
+              <p className="text-2xl font-bold mb-2">$1499/month</p>
             </div>
           </div>
         </div>

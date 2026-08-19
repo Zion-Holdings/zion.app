@@ -1,47 +1,40 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Automated predictor-media | Zion Tech Group',
-  description: 'Revolutionize media through intelligent automation. Our Automated predictor-media leverages advanced machine learning to deliver resource optimization at scale.',
+export const metadata = {
+  title: "Automated predictor-media - Zion Tech Group",
+  description: "Revolutionize media through intelligent automation. Our Automated predictor-media leverages advanced machine learning to deliver resource optimization at scale.",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/automated-predictor-media-187edb54',
-  },
+    canonical: `https://ziontechgroup.com/services/automated-predictor-media-187edb54`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Automated predictor-media</h1>
-          <p className="text-lg text-gray-300 mb-8">Revolutionize media through intelligent automation. Our Automated predictor-media leverages advanced machine learning to deliver resource optimization at scale.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>intelligence</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">Automated predictor-media</h1>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize media through intelligent automation. Our Automated predictor-media leverages advanced machine learning to deliver resource optimization at scale.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>API-first design</li>
             <li>Cloud-native architecture</li>
             <li>Role-based access control</li>
             <li>Mobile-responsive interface</li>
             <li>Data encryption</li>
-            <li>Zero-downtime updates</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Self-healing infrastructure</li>
             <li>3x faster decision making</li>
             <li>Performance benchmarking</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -59,10 +52,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

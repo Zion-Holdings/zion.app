@@ -29,8 +29,8 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>40% reduction in operational costs</li>
-            <li>Process 49% faster with automation</li>
+            <li>32% reduction in operational costs</li>
+            <li>Process 35% faster with automation</li>
             <li>99.9% uptime guarantee with enterprise SLAs</li>
             <li>ROI realized in under 90 days</li>
             <li>Zero-downtime deployment</li>
@@ -42,15 +42,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$115/month</p>
+              <p className="text-2xl font-bold mb-2">$132/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$368/month</p>
+              <p className="text-2xl font-bold mb-2">$357/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$977/month</p>
+              <p className="text-2xl font-bold mb-2">$703/month</p>
             </div>
           </div>
         </div>

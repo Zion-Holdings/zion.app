@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Serverless Application Platform - Zion Tech Group",
-  description: "Build serverless apps with auto-scrolling, event-driven architecture, API management, edge computing.",
+  description: "Build and deploy serverless applications with auto-scrolling, event-driven architecture, API management, and edge computing capabilities.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-serverless-application-platform`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cloud Serverless Application Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Build serverless apps with auto-scrolling, event-driven architecture, API management, edge computing.</p>
+        <p className="text-lg text-gray-300 mb-8">Build and deploy serverless applications with auto-scrolling, event-driven architecture, API management, and edge computing capabilities.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>FaaS</li>
-            <li>Edge computing</li>
-            <li>API gateway</li>
-            <li>Event triggers</li>
-            <li>Observability</li>
+            <li>Function-as-a-Service (FaaS)</li>
+            <li>Edge computing support</li>
+            <li>API gateway with rate limiting</li>
+            <li>Event-driven triggers</li>
+            <li>Built-in observability</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero infra management</li>
-            <li>Pay-per-execution</li>
+            <li>Zero infrastructure management</li>
+            <li>Pay-per-execution pricing</li>
+            <li>Auto-scrolling to millions of requests</li>
           </ul>
         </div>
         

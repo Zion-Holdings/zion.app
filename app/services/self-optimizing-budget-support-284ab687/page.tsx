@@ -1,48 +1,41 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'Self-Optimizing Budget Support | Zion Tech Group',
-  description: 'Transform your Finance operations with our Self-Optimizing Budget Support. This AI-driven solution automates manufacturing quality control with unprecedented ac',
+export const metadata = {
+  title: "Self-Optimizing Budget Support - Zion Tech Group",
+  description: "Transform your Finance operations with our Self-Optimizing Budget Support. This AI-driven solution automates manufacturing quality control with unprecedented ac",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/self-optimizing-budget-support-284ab687',
-  },
+    canonical: `https://ziontechgroup.com/services/self-optimizing-budget-support-284ab687`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Self-Optimizing Budget Support</h1>
-          <p className="text-lg text-gray-300 mb-8">Transform your Finance operations with our Self-Optimizing Budget Support. This AI-driven solution automates manufacturing quality control with unprecedented accuracy and efficiency.</p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>predictor</span>
-          </div>
-        </div>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        <h1 className="text-4xl font-bold mb-6">Self-Optimizing Budget Support</h1>
+        <p className="text-lg text-gray-300 mb-8">Transform your Finance operations with our Self-Optimizing Budget Support. This AI-driven solution automates manufacturing quality control with unprecedented accuracy and efficiency.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>Master data management with golden records</li>
             <li>Image recognition with computer vision</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-300">
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
-        </section>
-
+        </div>
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -60,10 +53,10 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

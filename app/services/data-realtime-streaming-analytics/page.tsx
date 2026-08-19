@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Real-Time Streaming Analytics Platform - Zion Tech Group",
-  description: "Process and analyze millions of events per second with sub-second latency.",
+  description: "Process and analyze millions of events per second with sub-second latency. Supports Kafka, Kinesis, Pub/Sub with built-in windowing, joins, and anomaly detectio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-realtime-streaming-analytics`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Data Real-Time Streaming Analytics Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Process and analyze millions of events per second with sub-second latency.</p>
+        <p className="text-lg text-gray-300 mb-8">Process and analyze millions of events per second with sub-second latency. Supports Kafka, Kinesis, Pub/Sub with built-in windowing, joins, and anomaly detection.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Millions of events/sec</li>
-            <li>Sub-second latency</li>
+            <li>Millions of events/sec throughput</li>
+            <li>Sub-second query latency</li>
             <li>SQL + Python analytics</li>
-            <li>Anomaly detection</li>
-            <li>Kafka, Kinesis, Pub/Sub</li>
+            <li>Built-in anomaly detection</li>
+            <li>Kafka, Kinesis, Pub/Sub connectors</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time decisions</li>
-            <li>Instant anomaly detection</li>
+            <li>Real-time business decisions</li>
+            <li>Detect anomalies instantly</li>
+            <li>Unify batch and streaming</li>
           </ul>
         </div>
         

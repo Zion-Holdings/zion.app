@@ -1,74 +1,70 @@
-import { Layout } from '@/components/Layout'
+import { } from 'next/navigation';
 
 export const metadata = {
-  title: 'Service - AI-Powered technology Solution',
-  description: 'Automated code review powered by large language models. Detects bugs, security vulnerabilities, performance issues, and style violations.',
-}
+  title: "AI Code Review & Quality Automation - Zion Tech Group",
+  description: "Automated code review powered by large language models. Detects bugs, security vulnerabilities, performance issues, and style violations.",
+  alternates: {
+    canonical: `https://ziontechgroup.com/services/ai-code-quality-review-automation`
+  }
+};
 
 export default function ServicePage() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-slate-950 text-white">
-        <div className="max-w-4xl mx-auto py-16 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-400 mb-6">
-            Service
-          </h1>
-          
-          <p className="text-xl text-slate-300 mb-8">
-            Automated code review powered by large language models. Detects bugs, security vulnerabilities, performance issues, and style violations.
-          </p>
-
-          <div className="bg-slate-900 rounded-xl p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-purple-400 mb-4">
-              Key Features
-            </h2>
-            <ul className="list-disc list-inside space-y-2">
-            <li className="text-purple-300">✓ Automated PR review with inline comments</li>
-            <li className="text-purple-300">✓ OWASP Top 10 vulnerability detection</li>
-            <li className="text-purple-300">✓ Performance anti-pattern identification</li>
-            <li className="text-purple-300">✓ Code complexity scoring</li>
-            <li className="text-purple-300">✓ Auto-fix suggestions</li>
-            </ul>
-          </div>
-
-          <div className="bg-slate-900 rounded-xl p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-purple-400 mb-4">
-              Business Benefits
-            </h2>
-            <ul className="list-disc list-inside space-y-2">
-            <li className="text-purple-300">✓ Catch 80% of bugs before human review</li>
-            <li className="text-purple-300">✓ Reduce code review time by 60%</li>
-            <li className="text-purple-300">✓ Enforce coding standards</li>
-            <li className="text-purple-300">✓ Improve code quality and security</li>
-            </ul>
-          </div>
-
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-8 text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Pricing</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$$15/developer/mo</div>
-                <div>Basic</div>
-              </div>
-              <div className="bg-white/20 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$$35/developer/mo</div>
-                <div>Pro</div>
-              </div>
-              <div className="bg-white/10 rounded-lg p-4">
-                <div className="text-3xl font-bold mb-2">$Custom</div>
-                <div>Enterprise</div>
-              </div>
+    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI Code Review &amp; Quality Automation</h1>
+        <p className="text-lg text-gray-300 mb-8">Automated code review powered by large language models. Detects bugs, security vulnerabilities, performance issues, and style violations.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Automated PR review with inline comments</li>
+            <li>OWASP Top 10 vulnerability detection</li>
+            <li>Performance anti-pattern identification</li>
+            <li>Code complexity scoring</li>
+            <li>Auto-fix suggestions</li>
+          </ul>
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Catch 80% of bugs before human review</li>
+            <li>Reduce code review time by 60%</li>
+            <li>Enforce coding standards</li>
+            <li>Improve code quality and security</li>
+          </ul>
+        </div>
+        
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$15/developer/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$35/developer/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
-
+        </div>
+        
+        <div className="text-center">
           <a 
-            href="https://calendly.com/kleber-ziontechgroup" 
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full transition-colors"
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
-            Book a Demo
+            Book a Consultation
           </a>
         </div>
       </div>
-    </Layout>
-  )
+    </main>
+  );
 }

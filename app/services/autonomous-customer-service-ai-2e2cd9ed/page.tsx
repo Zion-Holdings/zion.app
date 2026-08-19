@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Customer Service AI - Zion Tech Group",
-  description: "Fully automated customer support system that handles 80% of inquiries without human intervention.",
+  description: "24/7 intelligent customer support system that handles inquiries, resolves issues, and provides personalized assistance without human intervention. Integrates wi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-customer-service-ai-2e2cd9ed`
   }
@@ -13,22 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Customer Service AI</h1>
-        <p className="text-lg text-gray-300 mb-8">Fully automated customer support system that handles 80% of inquiries without human intervention.</p>
+        <p className="text-lg text-gray-300 mb-8">24/7 intelligent customer support system that handles inquiries, resolves issues, and provides personalized assistance without human intervention. Integrates with existing CRM systems.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>24/7 support</li>
-            <li>Multilingual NLP</li>
-            <li>Sentiment analysis</li>
+            <li>Natural language understanding</li>
+            <li>Multi-channel support (chat, email, social)</li>
+            <li>Sentiment-aware responses</li>
+            <li>Seamless human handoff</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>80% automation rate</li>
-            <li>Zero wait times</li>
+            <li>90% reduction in support tickets</li>
+            <li>Instant response times</li>
+            <li>Consistent service quality</li>
+            <li>24/7 availability</li>
           </ul>
         </div>
         
@@ -37,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$299/month</p>
+              <p className="text-2xl font-bold mb-2">$199/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$899/month</p>
+              <p className="text-2xl font-bold mb-2">$499/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$1499/month</p>
             </div>
           </div>
         </div>
