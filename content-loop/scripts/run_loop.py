@@ -1,13 +1,50 @@
 #!/usr/bin/env python3
-"""Unified exponential content loop runner with long-form page generation."""
+"""Unified exponential content loop runner with long-form page generation.
+
+DISABLED 2026-08-19. This generator is the source of the blog's scaled-content
+problem and must not run again until the existing output is consolidated.
+
+Measured on the live site before disabling:
+  - 588 of 599 indexed slugs (98%) are output of this script
+  - only 5 distinct body templates cover all 974 parseable posts
+  - the sentence "If this matches your current initiative, the next step is a
+    short scoping call and a concrete pilot plan." appears in 359 posts
+    verbatim; three other sentences appear in 223-233 posts each
+  - unique content per post: 17-28% of the body; median 438 words
+  - siblings of the same stem are 0.987 similar (byte-identical apart from the
+    topic string), because ANGLES below multiplies each topic by up to 15
+    suffixes that do not change the body
+  - only 4 posts on the whole blog are genuinely written
+
+That pattern is what Google's March 2024 spam policy calls scaled content
+abuse. The risk is a domain-level penalty, which would take down the 1,061
+legitimate pages with it -- the same reasoning that froze outbound email.
+
+To re-enable deliberately, set ZTG_CONTENT_LOOP_ALLOWED=1. Do not remove this
+guard as a "fix" for the loop not producing output: producing nothing is the
+intended behaviour right now.
+"""
 from __future__ import annotations
 
 import hashlib
 import json
+import os
 import random
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
+
+if os.environ.get('ZTG_CONTENT_LOOP_ALLOWED') != '1':
+    print(json.dumps({
+        'status': 'disabled',
+        'generated': 0,
+        'reason': 'content_loop_disabled_pending_consolidation',
+        'detail': '588/599 indexed slugs are template output of this script; '
+                  '5 body templates cover 974 posts; one identical sentence in 359. '
+                  'Set ZTG_CONTENT_LOOP_ALLOWED=1 only after the consolidation is done.',
+    }, ensure_ascii=False))
+    sys.exit(0)
 
 REPO = Path('.').resolve()
 BLOG_ROOT = REPO / 'app' / 'blog'
