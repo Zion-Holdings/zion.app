@@ -31,22 +31,50 @@ export const RESOURCE_LINKS: readonly NavigationLink[] = [{ name: 'Partners', hr
 { name: 'SSL Checker', href: '/tools/ssl-checker/' },
 { name: 'Platform Status', href: '/tools/health-check/' },];
 
-export const FEATURED_AI_SERVICE_LINKS: readonly NavigationLink[] = [{ name: 'Zion AI Chatbot Builder', href: '/services/ai-chatbot-builder-pro/' },
-{
-    name: 'AI-Powered DevOps',
-    href: '/services/devops-gen-ai-ci-cd/',
-    aliases: ['/services/it-devops-platform-toolchain'],
+// Every href here must be a key of SERVICE_CATEGORY_MAP in
+// app/services/[slug]/page.tsx -- that map is what generateStaticParams()
+// enumerates, so a slug missing from it is never built and the menu entry
+// 404s. The previous list pointed at eight slugs that were absent from the
+// map (ai-chatbot-builder-pro, devops-gen-ai-ci-cd, ai-email-marketing,
+// ai-code-assistant-enterprise, ai-code-migration-assistant,
+// ai-customer-support, ai-analytics, ai-security-responsible-ai); all eight
+// returned 404 in production while the dropdown advertised them site-wide.
+// Old paths are kept as aliases so any inbound link or bookmark still
+// resolves through the alias handling rather than dead-ending.
+export const FEATURED_AI_SERVICE_LINKS: readonly NavigationLink[] = [
+  {
+    name: 'Autonomous AI Agents',
+    href: '/services/ai-agents-autonomous/',
+    aliases: ['/services/ai-chatbot-builder-pro', '/services/ai-customer-support'],
   },
-{
-    name: 'AI Email Analyzer',
-    href: '/services/ai-email-marketing/',
-    aliases: ['/services/ai-email-marketing'],
+  {
+    name: 'Managed AI Operations',
+    href: '/services/managed-ai-operations/',
+    aliases: ['/services/ai-code-assistant-enterprise'],
   },
-{ name: 'Zion AI Code Assistant', href: '/services/ai-code-assistant-enterprise/' },
-{ name: 'Zion AI Code Reviewer', href: '/services/ai-code-migration-assistant/' },
-{ name: 'Zion AI Customer Support Pro', href: '/services/ai-customer-support/' },
-{ name: 'Zion AI Predictive Analytics', href: '/services/ai-analytics/' },
-{ name: 'Zion Security Shield', href: '/services/ai-security-responsible-ai/' },];
+  {
+    name: 'AI Strategy & Roadmap',
+    href: '/services/ai-strategy-roadmap/',
+    aliases: ['/services/ai-code-migration-assistant'],
+  },
+  {
+    name: 'Data & Analytics Platform',
+    href: '/services/data-analytics-platform/',
+    aliases: ['/services/ai-analytics'],
+  },
+  {
+    name: 'Automation & Orchestration',
+    href: '/services/automation-orchestration/',
+    aliases: ['/services/devops-gen-ai-ci-cd', '/services/ai-email-marketing'],
+  },
+  {
+    name: 'Security & Compliance Audit',
+    href: '/services/security-compliance-audit/',
+    aliases: ['/services/ai-security-responsible-ai'],
+  },
+  { name: 'Cloud Cost Optimization', href: '/services/cloud-cost-optimization-service/' },
+  { name: 'Incident Response Retainer', href: '/services/incident-response-retainer/' },
+];
 
 export const TOOLS_LINKS: readonly NavigationLink[] = [{ name: 'ROI Calculator', href: '/tools/roi-calculator/' },
 { name: 'Service Comparison', href: '/tools/service-comparison/' },
