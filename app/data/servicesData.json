@@ -572530,5 +572530,195 @@
       "name": "AI-Powered DevOps",
       "description": "Self-healing infrastructure with predictive incident detection."
     }
+  },
+  {
+    "id": "enterprise-ai-consulting",
+    "name": "Enterprise AI Consulting",
+    "title": "Enterprise AI Consulting | Zion Tech Group",
+    "description": "Strategic AI consulting for enterprise transformation. Roadmaps, use case identification, and ROI-driven implementation.",
+    "keywords": [
+      "AI consulting",
+      "enterprise AI",
+      "digital transformation",
+      "AI strategy"
+    ],
+    "icon": "Brain",
+    "category": "AI & Automation",
+    "price": "From $5,000/mo",
+    "features": [
+      "AI Roadmap",
+      "Use Case Discovery",
+      "ROI Analysis",
+      "Change Management"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Enterprise AI Consulting",
+      "description": "Strategic AI consulting for enterprise transformation."
+    }
+  },
+  {
+    "id": "sase-network-security",
+    "name": "SASE Network Security",
+    "title": "SASE Network Security | Zion Tech Group",
+    "description": "Secure Access Service Edge with zero-trust networking, SD-WAN, and cloud-native threat prevention.",
+    "keywords": [
+      "SASE",
+      "zero trust",
+      "SD-WAN",
+      "cloud security",
+      "network security"
+    ],
+    "icon": "Shield",
+    "category": "Cybersecurity",
+    "price": "From $4,000/mo",
+    "features": [
+      "Zero Trust Network",
+      "Cloud Firewall",
+      "Threat Prevention",
+      "Global PoPs"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "SASE Network Security",
+      "description": "Secure Access Service Edge with zero-trust networking."
+    }
+  },
+  {
+    "id": "ai-agent-orchestration",
+    "name": "AI Agent Orchestration",
+    "title": "AI Agent Orchestration | Zion Tech Group",
+    "description": "Deploy and manage multi-agent AI systems that automate complex workflows across your organization.",
+    "keywords": [
+      "AI agents",
+      "multi-agent systems",
+      "automation",
+      "AI orchestration"
+    ],
+    "icon": "Bot",
+    "category": "AI & Automation",
+    "price": "From $3,500/mo",
+    "features": [
+      "Multi-Agent Deployment",
+      "Workflow Automation",
+      "Agent Monitoring",
+      "Tool Integration"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Agent Orchestration",
+      "description": "Deploy and manage multi-agent AI systems for workflow automation."
+    }
+  },
+  {
+    "id": "enterprise-data-strategy",
+    "name": "Enterprise Data Strategy",
+    "title": "Enterprise Data Strategy | Zion Tech Group",
+    "description": "Build a scalable data foundation with modern lakehouse architecture, governance, and real-time analytics.",
+    "keywords": [
+      "data strategy",
+      "data lakehouse",
+      "data governance",
+      "analytics"
+    ],
+    "icon": "Database",
+    "category": "Data & Analytics",
+    "price": "From $4,500/mo",
+    "features": [
+      "Data Architecture",
+      "Lakehouse Setup",
+      "Governance Framework",
+      "Real-Time Analytics"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Enterprise Data Strategy",
+      "description": "Build a scalable data foundation with modern architecture."
+    }
+  },
+  {
+    "id": "cloud-migration-express",
+    "name": "Cloud Migration Express",
+    "title": "Cloud Migration Express | Zion Tech Group",
+    "description": "Accelerated cloud migration with automated discovery, dependency mapping, and zero-downtime cutover.",
+    "keywords": [
+      "cloud migration",
+      "AWS migration",
+      "Azure migration",
+      "lift and shift"
+    ],
+    "icon": "Upload",
+    "category": "Cloud & Infrastructure",
+    "price": "From $6,000/mo",
+    "features": [
+      "Auto Discovery",
+      "Dependency Mapping",
+      "Zero-Downtime Cutover",
+      "Cost Modeling"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Cloud Migration Express",
+      "description": "Accelerated cloud migration with zero-downtime cutover."
+    }
+  },
+  {
+    "id": "incident-response-automation",
+    "name": "Incident Response Automation",
+    "title": "Incident Response Automation | Zion Tech Group",
+    "description": "AI-powered incident detection, triage, and response that reduces MTTR by 60% across your infrastructure.",
+    "keywords": [
+      "incident response",
+      "AIOps",
+      "MTTR reduction",
+      "automation"
+    ],
+    "icon": "Zap",
+    "category": "Cloud & Infrastructure",
+    "price": "From $3,500/mo",
+    "features": [
+      "Auto Detection",
+      "Intelligent Triage",
+      "Runbook Automation",
+      "Post-Incident Review"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Incident Response Automation",
+      "description": "AI-powered incident response that reduces MTTR by 60%."
+    }
+  },
+  {
+    "id": "predictive-ai-analytics",
+    "name": "Predictive AI Analytics",
+    "title": "Predictive AI Analytics | Zion Tech Group",
+    "description": "Forecast demand, detect anomalies, and optimize operations with machine learning models tuned to your data.",
+    "keywords": [
+      "predictive analytics",
+      "ML models",
+      "demand forecasting",
+      "anomaly detection"
+    ],
+    "icon": "TrendingUp",
+    "category": "Data & Analytics",
+    "price": "From $4,000/mo",
+    "features": [
+      "Demand Forecasting",
+      "Anomaly Detection",
+      "Custom ML Models",
+      "Optimization"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Predictive AI Analytics",
+      "description": "Forecast demand and detect anomalies with custom ML models."
+    }
   }
 ]

@@ -45,6 +45,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Api Health Check</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Api Health Check.</p>
         </Link>
+        <Link href="/tools/base64-encoder/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Base64 Encoder</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Base64 Encoder.</p>
+        </Link>
         <Link href="/tools/cloud-cost-calculator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cloud Cost Calculator</h3>
@@ -80,10 +85,30 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Meta Tag Generator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Meta Tag Generator.</p>
         </Link>
+        <Link href="/tools/number-base-converter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Number Base Converter</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Number Base Converter.</p>
+        </Link>
+        <Link href="/tools/regex-tester/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Regex Tester</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Regex Tester.</p>
+        </Link>
         <Link href="/tools/security-headers-analyzer/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Security Headers Analyzer</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Security Headers Analyzer.</p>
+        </Link>
+        <Link href="/tools/text-diff/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Text Diff</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Text Diff.</p>
+        </Link>
+        <Link href="/tools/timestamp-converter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Timestamp Converter</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Timestamp Converter.</p>
         </Link>
       </div>
     </StandardPage>
