@@ -7,9 +7,9 @@ export const metadata = {
   title: 'AI IT Partnership Growth Playbook | Zion Tech Group',
   description: 'How IT firms can build AI partnerships that close deals and grow revenue.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

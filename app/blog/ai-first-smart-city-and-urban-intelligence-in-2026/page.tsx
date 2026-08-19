@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI-First Smart City and Urban Intelligence in 2026',
   description: 'Deploy AI-assisted urban intelligence and smart city services to improve mobility, safety, and public services.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: 'Free Consultation | Zion Tech Group',
   description: 'Request a free consultation with Zion Tech Group. Tell us about your project and we\'ll propose the right AI and IT services for your budget and goals.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: { canonical: '/free-contact/' },

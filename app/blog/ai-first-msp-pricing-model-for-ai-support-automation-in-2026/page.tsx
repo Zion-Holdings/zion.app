@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI-First MSP Pricing Model for AI Support Automation in 2026 | Zion Tech Group',
   description: 'An MSP pricing model for AI support automation in 2026, covering tier structures, automation credits, response commitments, and ROI measurement for managed AI services.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

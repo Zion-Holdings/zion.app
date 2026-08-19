@@ -4,9 +4,9 @@ export const metadata = {
   title: 'AI Outsourcing vs. In-House IT Teams for LATAM in 2026',
   description: 'Comparing outsourcing versus in-house IT execution for LATAM companies.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

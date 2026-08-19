@@ -2,9 +2,9 @@ export const metadata = {
   title: "AI Consulting vs AI Implementation Services in 2026 | Zion Tech Group",
   description: "Comparing AI consulting versus AI implementation services for enterprises.",
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

@@ -4,9 +4,9 @@ export const metadata = {
   title: 'AI Platform Engineering 2026 Services Guide',
   description: 'A service guide to building, operating, and scaling internal AI platforms safely in 2026.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

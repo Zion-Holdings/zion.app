@@ -2,9 +2,9 @@ export const metadata = {
   title: "AI Integration Patterns for SaaS Products in 2026 | Zion Tech Group",
   description: "Practical AI integration patterns for SaaS products looking to add intelligent features.",
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

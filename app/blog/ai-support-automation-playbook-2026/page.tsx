@@ -7,9 +7,9 @@ export const metadata = {
   title: 'Free AI Support Automation Playbook 2026 | Zion Tech Group',
   description: 'Free AI support automation playbook for MSPs and IT teams in 2026. Step-by-step guide to deploy AI triage, reduce ticket volume, and expand managed services revenue.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

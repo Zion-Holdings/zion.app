@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI-First IT Asset Management and Discovery in 2026',
   description: 'Use IT asset discovery, normalization, and lifecycle automation to reduce shadow IT and improve compliance.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   title: 'AI Computer Vision for Quality Inspection | Zion Tech Group',
   description: 'AI computer vision quality inspection systems that detect defects, measure tolerances, and automate pass/fail decisions on production lines using edge AI.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

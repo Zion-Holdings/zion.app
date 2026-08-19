@@ -2,9 +2,9 @@ export const metadata = {
   title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization | Zion Tech Group',
   description: 'AI automation strategies for enterprise workflow optimization: process mining, hybrid RPA, document workflows, journey automation, and cross-department orchestration.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

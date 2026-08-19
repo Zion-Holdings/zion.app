@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI-First Channel Partner and Reseller Enablement in 2026',
   description: 'AI-assisted partner enablement, co-selling, and reseller operations for faster revenue growth.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

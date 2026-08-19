@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   title: 'Case Studies | Zion Tech Group',
   description: 'Real-world AI and IT transformation case studies from Zion Tech Group.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: { canonical: 'https://ziontechgroup.com/case-studies/' },

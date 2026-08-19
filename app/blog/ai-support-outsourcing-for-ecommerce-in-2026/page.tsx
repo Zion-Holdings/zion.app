@@ -2,9 +2,9 @@ export const metadata = {
   title: "AI Support Outsourcing for Ecommerce in 2026 | Zion Tech Group",
   description: "How AI support outsourcing can reduce ecommerce ticket volume and improve CX.",
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

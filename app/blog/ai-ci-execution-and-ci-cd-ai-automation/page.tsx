@@ -2,9 +2,9 @@ export const metadata = {
   title: "AI CI Execution and CI/CD AI Automation | Zion Tech Group",
   description: "AI CI Execution and CI/CD AI Automation.",
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

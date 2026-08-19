@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI-First Capacity Planning and Resource Forecasting for IT in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first capacity planning and resource forecasting for IT in 2026, including demand sensing, headcount planning, and budget-safe scaling.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

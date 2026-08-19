@@ -5,9 +5,9 @@ export const metadata = {
   title: 'Blog | Zion Tech Group',
   description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: { canonical: '/blog/' },

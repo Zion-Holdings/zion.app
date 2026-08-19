@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: 'Micro SaaS | Zion Tech Group',
   description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: { canonical: '/micro-saas/' },

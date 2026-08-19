@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: 'Public Roadmap | Zion Tech Group',
   description: 'Zion Tech Group public roadmap, planned releases, and platform direction.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: { canonical: '/public-roadmap/' },

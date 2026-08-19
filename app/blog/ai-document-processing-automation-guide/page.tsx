@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI Document Processing Automation Guide for Enterprises | Zion Tech Group',
   description: 'A practical AI document processing automation guide covering ingestion, extraction, validation, routing, and compliance outcomes.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

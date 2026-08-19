@@ -4,9 +4,9 @@ export const metadata = {
   title: 'AI Cybersecurity Platform for MSP & Managed Security',
   description: 'AI-powered MSP and managed security platform for threat detection, SOC operations, client reporting, and scalable security services. Faster detection, tighter client outcomes.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI-First Cloud Cost Management and FinOps in 2026',
   description: 'Use AI-assisted cloud cost management and FinOps practices to reduce waste and improve budgeting.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

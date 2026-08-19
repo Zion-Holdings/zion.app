@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: 'AI for Sales Automation and CRM Intelligence',
   description: 'Deep dive into ai for sales automation and crm intelligence. Learn how Zion Tech Group helps enterprises implement AI-driven ai solutions with proven strategies and ROI metrics.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: { canonical: '/blog/ai-for-sales-automation-and-crm-intelligence/' },

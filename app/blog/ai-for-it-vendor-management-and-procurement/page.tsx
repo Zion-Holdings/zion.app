@@ -2,9 +2,9 @@ export const metadata = {
   title: 'AI for IT Vendor Management and Procurement | Zion Tech Group',
   description: 'Use AI to streamline IT vendor management, procurement, contract analysis, and supplier risk tracking.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
 

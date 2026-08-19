@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: 'How Our AI Agent Fleet Powers Intelligent Service Discovery | Zion Tech Group',
   description: 'At Zion Tech Group, we\'ve built something unprecedented: an autonomous AI agent fleet that not only creates and maintains our service catalog but also powers the discovery experience for our clients. This article explores how our AI agents work together to deliver intelligent, personalized service recommendations in real-time.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: { canonical: '/blog/ai-service-discovery-hub/' },

@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI-First Device Management and IoT Operations in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first device management and IoT operations in 2026, including fleet monitoring, anomaly detection, patch strategy, and incident response.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {

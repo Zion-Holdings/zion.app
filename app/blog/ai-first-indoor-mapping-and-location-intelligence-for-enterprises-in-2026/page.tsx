@@ -5,9 +5,9 @@ export const metadata = {
   title: 'AI-First Indoor Mapping and Location Intelligence for Enterprises in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first indoor mapping and location intelligence for enterprises in 2026, including positioning, asset tracking, wayfinding, and operational value.',
   openGraph: {
-    title: metadata.title || pageTitle,
+    title: 'Page',
     description: metadata.description,
-    url: metadata.canonical || canonicalUrl,
+    url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: {
