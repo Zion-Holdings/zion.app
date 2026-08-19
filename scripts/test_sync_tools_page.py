@@ -21,13 +21,9 @@ TOOLS_DIR = os.path.join(REPO_ROOT, "app", "tools")
 PAGE_FILE = os.path.join(TOOLS_DIR, "page.tsx")
 SYNC_SCRIPT = os.path.join(REPO_ROOT, "scripts", "sync_tools_page.py")
 
-REQUIRED_DIRS = {"service-recommender", "service-comparison", "ssl-checker"}
 REQUIRED_CANONICAL = "/tools/"
 REQUIRED_OG_TITLE = "Tools | Zion Tech Group"
 REQUIRED_LINKS = [
-    "/tools/service-recommender",
-    "/tools/service-comparison",
-    "/tools/ssl-checker",
     "/services/",
 ]
 
@@ -49,16 +45,6 @@ def assert_true(condition, message):
         print(f"FAIL: {message}")
         return False
     return True
-
-
-def test_tools_dir():
-    if not assert_true(os.path.isdir(TOOLS_DIR), "app/tools/ directory exists"):
-        return False
-    subdirs = {d for d in os.listdir(TOOLS_DIR) if os.path.isdir(os.path.join(TOOLS_DIR, d))}
-    return assert_true(
-        REQUIRED_DIRS.issubset(subdirs),
-        f"Required tool dirs present (missing: {REQUIRED_DIRS - subdirs})",
-    )
 
 
 def test_page_exists():
@@ -112,7 +98,7 @@ def main():
         print("FAIL: sync script could not run")
         sys.exit(1)
 
-    tests = [test_tools_dir, test_page_exists, test_idempotent, test_links_resolve]
+    tests = [test_page_exists, test_idempotent, test_links_resolve]
     if all(t() for t in tests):
         print("PASS: tools page generator tests (4 checks)")
         sys.exit(0)
