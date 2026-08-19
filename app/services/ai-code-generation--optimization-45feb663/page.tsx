@@ -1,10 +1,10 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Predictive Manufacturing Churn Prevention - Zion Tech Group",
-  description: "Machine learning system that identifies data-driven churn signals in telecom customer behavior, enabling proactive retention strategies and personalized interve",
+  title: "AI Code Generation & Optimization - Zion Tech Group",
+  description: "Development assistant that generates production-ready code from natural language descriptions, optimizes existing code for performance, and suggests security im",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/predictive-manufacturing-churn-prevention-f6a1657c`
+    canonical: `https://ziontechgroup.com/services/ai-code-generation--optimization-45feb663`
   }
 };
 
@@ -12,26 +12,26 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Predictive Manufacturing Churn Prevention</h1>
-        <p className="text-lg text-gray-300 mb-8">Machine learning system that identifies data-driven churn signals in telecom customer behavior, enabling proactive retention strategies and personalized interve</p>
+        <h1 className="text-4xl font-bold mb-6">AI Code Generation &amp; Optimization</h1>
+        <p className="text-lg text-gray-300 mb-8">Development assistant that generates production-ready code from natural language descriptions, optimizes existing code for performance, and suggests security im</p>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Behavioral analysis</li>
-            <li>Risk scoring</li>
-            <li>Automated interventions</li>
-            <li>Campaign optimization</li>
+            <li>Multi-language code generation</li>
+            <li>Performance optimization suggestions</li>
+            <li>Security vulnerability detection</li>
+            <li>Code documentation generation</li>
           </ul>
         </div>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn rate</li>
-            <li>Increased ARPU</li>
-            <li>Higher customer lifetime value</li>
-            <li>Proactive retention</li>
+            <li>10x faster development speed</li>
+            <li>Improved code quality</li>
+            <li>Reduced bug rates</li>
+            <li>Enhanced security posture</li>
           </ul>
         </div>
 
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$238/month</p>
+              <p className="text-2xl font-bold mb-2">$299/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$598/month</p>
+              <p className="text-2xl font-bold mb-2">$699/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1798/month</p>
+              <p className="text-2xl font-bold mb-2">$1999/month</p>
             </div>
           </div>
         </div>

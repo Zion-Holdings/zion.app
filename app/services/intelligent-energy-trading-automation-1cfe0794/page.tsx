@@ -1,10 +1,10 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Predictive Manufacturing Churn Prevention - Zion Tech Group",
-  description: "Machine learning system that identifies data-driven churn signals in telecom customer behavior, enabling proactive retention strategies and personalized interve",
+  title: "Intelligent Energy Trading Automation - Zion Tech Group",
+  description: "Algorithmic trading platform that executes next-generation strategies using AI-driven market analysis, sentiment processing, and real-time risk management.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/predictive-manufacturing-churn-prevention-f6a1657c`
+    canonical: `https://ziontechgroup.com/services/intelligent-energy-trading-automation-1cfe0794`
   }
 };
 
@@ -12,26 +12,26 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Predictive Manufacturing Churn Prevention</h1>
-        <p className="text-lg text-gray-300 mb-8">Machine learning system that identifies data-driven churn signals in telecom customer behavior, enabling proactive retention strategies and personalized interve</p>
+        <h1 className="text-4xl font-bold mb-6">Intelligent Energy Trading Automation</h1>
+        <p className="text-lg text-gray-300 mb-8">Algorithmic trading platform that executes next-generation strategies using AI-driven market analysis, sentiment processing, and real-time risk management.</p>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Behavioral analysis</li>
-            <li>Risk scoring</li>
-            <li>Automated interventions</li>
-            <li>Campaign optimization</li>
+            <li>Signal generation</li>
+            <li>Execution optimization</li>
+            <li>Risk controls</li>
+            <li>Performance attribution</li>
           </ul>
         </div>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn rate</li>
-            <li>Increased ARPU</li>
-            <li>Higher customer lifetime value</li>
-            <li>Proactive retention</li>
+            <li>Alpha generation</li>
+            <li>Reduced latency</li>
+            <li>Disciplined execution</li>
+            <li>Scalable strategies</li>
           </ul>
         </div>
 
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$238/month</p>
+              <p className="text-2xl font-bold mb-2">$318/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$598/month</p>
+              <p className="text-2xl font-bold mb-2">$798/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1798/month</p>
+              <p className="text-2xl font-bold mb-2">$2398/month</p>
             </div>
           </div>
         </div>

@@ -13,8 +13,8 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Driven Enterprise-Grade Financial Planning</h1>
-        <p className="text-lg text-gray-300 mb-8">Automated financial planning system that creates enterprise-grade personalized wealth strategies, tax optimization, and retirement planning using advanced algorithms.</p>
-        
+        <p className="text-lg text-gray-300 mb-8">Automated financial planning system that creates enterprise-grade personalized wealth strategies, tax optimization, and retirement planning using advanced algor</p>
+
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -24,7 +24,7 @@ export default function ServicePage() {
             <li>Rebalancing automation</li>
           </ul>
         </div>
-        
+
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -34,7 +34,7 @@ export default function ServicePage() {
             <li>Lower fees</li>
           </ul>
         </div>
-        
+
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -52,7 +52,7 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-        
+
         <div className="text-center">
           <a 
             href="https://calendly.com/kleber-ziontechgroup/consultation" 
