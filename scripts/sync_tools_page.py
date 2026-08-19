@@ -38,7 +38,7 @@ def ensure_tools_dir(cards):
 
 def render_page(cards):
     cards_tsx = "\n".join(
-        f'''        <Link href="/tools/{c["slug"]}" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+        f'''        <Link href="/tools/{c["slug"]}/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">{c["icon"]}</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">{c["name"]}</h3>
           <p className="mt-2 text-sm text-slate-400">{c["description"]}</p>

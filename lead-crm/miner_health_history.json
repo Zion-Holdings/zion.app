@@ -201,5 +201,34 @@
         0.125
       ]
     }
+  },
+  {
+    "ts": "2026-08-19T22:14:11.314817+00:00",
+    "queries_run": 12,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 113.174,
+    "queries_per_second": 0.106,
+    "avg_query_s": 9.431,
+    "max_query_s": 10.8407,
+    "status": "ok",
+    "high_signal_leads": 18.5,
+    "lead_quality_ratio": 0.1242,
+    "rolling": {
+      "last_5_queries": [
+        9.830626031965949,
+        4.02458749699872,
+        9.683601762051694,
+        9.565998530946672,
+        9.173463648068719
+      ],
+      "last_5_qps": [
+        0.1017,
+        0.2485,
+        0.1033,
+        0.1045,
+        0.109
+      ]
+    }
   }
 ]
