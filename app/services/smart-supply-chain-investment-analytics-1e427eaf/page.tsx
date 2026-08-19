@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Supply Chain Investment Analytics - Zion Tech Group",
-  description: "AI-driven real estate investment platform that identifies intelligent opportunities, analyzes market trends, and optimizes portfolio performance through predict",
+  description: "AI-driven real estate investment platform that identifies cloud-native opportunities, analyzes market trends, and optimizes portfolio performance through predic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-supply-chain-investment-analytics-1e427eaf`
   }
@@ -13,8 +13,8 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Supply Chain Investment Analytics</h1>
-        <p className="text-lg text-gray-300 mb-8">AI-driven real estate investment platform that identifies intelligent opportunities, analyzes market trends, and optimizes portfolio performance through predictive analytics.</p>
-        
+        <p className="text-lg text-gray-300 mb-8">AI-driven real estate investment platform that identifies cloud-native opportunities, analyzes market trends, and optimizes portfolio performance through predic</p>
+
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -24,7 +24,7 @@ export default function ServicePage() {
             <li>Portfolio analytics</li>
           </ul>
         </div>
-        
+
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -34,7 +34,7 @@ export default function ServicePage() {
             <li>Market timing advantage</li>
           </ul>
         </div>
-        
+
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -52,7 +52,7 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
-        
+
         <div className="text-center">
           <a 
             href="https://calendly.com/kleber-ziontechgroup/consultation" 
