@@ -25,6 +25,8 @@ export default function ContactPage() {
       ]}
       actions={[
         { label: 'Browse services', href: '/services/', style: 'secondary' },
+        { label: 'Free AI/IT tools', href: '/tools/', style: 'secondary' },
+        { label: 'AI Readiness Assessment', href: '/tools/ai-roi-calculator/', style: 'secondary' },
       ]}
     >
       <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
