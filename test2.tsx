@@ -1,19 +1,6 @@
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
-export const metadata = {
-  title: "Adaptive Data Analytics - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Adaptive Data Analytics leverages advanced machine learning to deliver maintenance scheduling at scale.",
-  alternates: {
-    canonical: `https://ziontechgroup.com/services/adaptive-data-analytics-33207b7d`
-  },
-  openGraph: {
-    title: 'Service | Zion Tech Group',
-    description: 'AI/IT service by Zion Tech Group.',
-    url: 'https://ziontechgroup.com/services/',
-    type: 'service',
-  }
-};
 
 export default function ServicePage() {
   return (
