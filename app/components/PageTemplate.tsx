@@ -22,7 +22,7 @@ export default function PageTemplate({
   children,
 }: PageTemplateProps) {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="w-full">
       {breadcrumbItems.length > 0 && (
         <div className="mb-6">
           <Breadcrumb items={breadcrumbItems} />
