@@ -75,6 +75,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Mcp Tester</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Mcp Tester.</p>
         </Link>
+        <Link href="/tools/meta-tag-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Meta Tag Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Meta Tag Generator.</p>
+        </Link>
         <Link href="/tools/security-headers-analyzer/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Security Headers Analyzer</h3>

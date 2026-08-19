@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta Tag Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate SEO meta tags, Open Graph, and Twitter Card tags with live preview. Free, instant, browser-based.">
+  <meta property="og:title" content="Meta Tag Generator | Zion Tech Group">
+  <meta property="og:description" content="Generate meta tags with live Google and social media previews.">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/meta-tag-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    .panel { background: #1e293b; border: 1px solid #334155; border-radius: 1rem; overflow: hidden; }
+    .panel-header { padding: 0.75rem 1rem; background: #0f172a; border-bottom: 1px solid #334155; font-size: 0.875rem; color: #94a3b8; }
+    .panel-body { padding: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; color: #94a3b8; font-size: 0.75rem; margin-bottom: 0.375rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 0.625rem; background: #0f172a; border: 1px solid #334155;
+      border-radius: 0.375rem; color: #e5e7eb; font-size: 0.875rem;
+    }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #6366f1; }
+    .btn { padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; border: none; font-size: 0.875rem; }
+    .btn-primary { background: #6366f1; color: #fff; }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-secondary { background: #0f172a; color: #e5e7eb; border: 1px solid #334155; }
+    .btn-secondary:hover { background: #1e293b; }
+    .btn-sm { padding: 0.375rem 0.75rem; font-size: 0.75rem; }
+    .preview-section { margin-top: 1.5rem; }
+    .preview-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .preview-tab { padding: 0.375rem 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.375rem; cursor: pointer; font-size: 0.75rem; color: #94a3b8; }
+    .preview-tab.active { border-color: #6366f1; color: #a5b4fc; }
+    .preview-pane { display: none; }
+    .preview-pane.active { display: block; }
+    .google-preview { background: #fff; border-radius: 0.5rem; padding: 1rem; color: #1a0dab; }
+    .google-title { font-size: 1.25rem; line-height: 1.4; color: #1a0dab; text-decoration: none; }
+    .google-url { color: #006621; font-size: 0.875rem; }
+    .google-desc { color: #505050; font-size: 0.875rem; margin-top: 0.25rem; }
+    .social-preview { background: #fff; border-radius: 0.75rem; overflow: hidden; max-width: 400px; }
+    .social-image { width: 100%; height: 200px; background: #1e293b; display: flex; align-items: center; justify-content: center; color: #64748b; }
+    .social-image img { width: 100%; height: 100%; object-fit: cover; }
+    .social-content { padding: 0.75rem; }
+    .social-domain { color: #606770; font-size: 0.75rem; text-transform: uppercase; }
+    .social-title { color: #1c1e21; font-weight: 600; font-size: 1rem; margin: 0.25rem 0; }
+    .social-desc { color: #606770; font-size: 0.8125rem; }
+    .code-output { background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; padding: 1rem; font-family: 'SF Mono', Monaco, monospace; font-size: 0.75rem; white-space: pre-wrap; color: #a5b4fc; max-height: 300px; overflow: auto; }
+    .cta-section { margin-top: 2rem; text-align: center; padding: 2rem; background: #0f172a; border-radius: 1rem; }
+    .cta-section h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .cta-section p { color: #94a3b8; margin-bottom: 1rem; }
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .char-count { float: right; color: #64748b; font-size: 0.75rem; }
+    .char-count.warning { color: #f59e0b; }
+    .char-count.danger { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Meta Tag Generator</h1>
+    <p class="subtitle">Generate SEO meta tags, Open Graph, and Twitter Card tags with live preview.</p>
+
+    <div class="grid-2">
+      <!-- Input Panel -->
+      <div class="panel">
+        <div class="panel-header">Page Information</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Page Title <span class="char-count" id="titleCount">0/60</span></label>
+            <input type="text" id="pageTitle" placeholder="e.g., AI Consulting Services | Zion Tech Group" maxlength="100">
+          </div>
+          <div class="form-group">
+            <label>Meta Description <span class="char-count" id="descCount">0/160</span></label>
+            <textarea id="pageDesc" placeholder="Brief description of your page..." maxlength="300"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Canonical URL</label>
+            <input type="url" id="canonicalUrl" placeholder="https://example.com/page/">
+          </div>
+          <div class="form-group">
+            <label>OG Image URL</label>
+            <input type="url" id="ogImage" placeholder="https://example.com/image.jpg">
+          </div>
+          <div class="form-group">
+            <label>Twitter Card Type</label>
+            <select id="twitterCard">
+              <option value="summary">Summary</option>
+              <option value="summary_large_image">Summary Large Image</option>
+              <option value="app">App</option>
+              <option value="player">Player</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Twitter @handle (optional)</label>
+            <input type="text" id="twitterHandle" placeholder="@yourhandle">
+          </div>
+          <button class="btn btn-primary" id="generateBtn" style="width:100%">Generate Tags</button>
+        </div>
+      </div>
+
+      <!-- Preview & Output -->
+      <div>
+        <div class="preview-section">
+          <div class="preview-tabs">
+            <div class="preview-tab active" data-preview="google">Google</div>
+            <div class="preview-tab" data-preview="facebook">Facebook/LinkedIn</div>
+            <div class="preview-tab" data-preview="twitter">Twitter</div>
+            <div class="preview-tab" data-preview="code">Code</div>
+          </div>
+
+          <div class="preview-pane active" id="google">
+            <div class="google-preview">
+              <div class="google-title" id="previewTitle">Page Title</div>
+              <div class="google-url" id="previewUrl">https://example.com/page/</div>
+              <div class="google-desc" id="previewDesc">Page description will appear here...</div>
+            </div>
+          </div>
+
+          <div class="preview-pane" id="facebook">
+            <div class="social-preview">
+              <div class="social-image" id="ogImagePreview">
+                <span>No image</span>
+              </div>
+              <div class="social-content">
+                <div class="social-domain" id="previewDomain">EXAMPLE.COM</div>
+                <div class="social-title" id="ogTitle">Page Title</div>
+                <div class="social-desc" id="ogDesc">Page description will appear here...</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-pane" id="twitter">
+            <div class="social-preview">
+              <div class="social-image" id="twitterImagePreview">
+                <span>No image</span>
+              </div>
+              <div class="social-content">
+                <div class="social-title" id="twitterTitle">Page Title</div>
+                <div class="social-desc" id="twitterDesc">Page description will appear here...</div>
+                <div class="social-domain" id="twitterDomain">example.com</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-pane" id="code">
+            <div class="code-output" id="codeOutput">
+              &lt;!-- Generated meta tags will appear here --&gt;
+            </div>
+            <button class="btn btn-secondary btn-sm" id="copyCode" style="margin-top: 0.75rem;">Copy Code</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h3>Need help with SEO?</h3>
+      <p>Our technical SEO team audits your site structure, metadata, and Core Web Vitals.</p>
+      <div class="btn-group">
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-primary">Book an SEO audit</a>
+        <a href="/services/" class="btn btn-secondary">View services</a>
+      </div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    const inputs = {
+      title: document.getElementById('pageTitle'),
+      desc: document.getElementById('pageDesc'),
+      url: document.getElementById('canonicalUrl'),
+      image: document.getElementById('ogImage'),
+      twitterCard: document.getElementById('twitterCard'),
+      twitterHandle: document.getElementById('twitterHandle'),
+    };
+
+    const titleCount = document.getElementById('titleCount');
+    const descCount = document.getElementById('descCount');
+
+    inputs.title.addEventListener('input', () => {
+      const len = inputs.title.value.length;
+      titleCount.textContent = `${len}/60`;
+      titleCount.className = 'char-count' + (len > 60 ? ' danger' : len > 50 ? ' warning' : '');
+      updatePreviews();
+    });
+
+    inputs.desc.addEventListener('input', () => {
+      const len = inputs.desc.value.length;
+      descCount.textContent = `${len}/160`;
+      descCount.className = 'char-count' + (len > 160 ? ' danger' : len > 140 ? ' warning' : '');
+      updatePreviews();
+    });
+
+    Object.values(inputs).forEach(input => {
+      if (input.tagName === 'SELECT') {
+        input.addEventListener('change', updatePreviews);
+      } else if (input.type === 'url') {
+        input.addEventListener('input', updatePreviews);
+      }
+    });
+
+    // Preview tabs
+    document.querySelectorAll('.preview-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.preview-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.preview-pane').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.preview).classList.add('active');
+      });
+    });
+
+    function updatePreviews() {
+      const title = inputs.title.value || 'Page Title';
+      const desc = inputs.desc.value || 'Page description will appear here...';
+      const url = inputs.url.value || 'https://example.com/page/';
+      const image = inputs.image.value;
+
+      // Google
+      document.getElementById('previewTitle').textContent = title;
+      document.getElementById('previewUrl').textContent = url;
+      document.getElementById('previewDesc').textContent = desc.slice(0, 160);
+
+      // Facebook/LinkedIn
+      document.getElementById('ogTitle').textContent = title;
+      document.getElementById('ogDesc').textContent = desc;
+      document.getElementById('previewDomain').textContent = new URL(url).hostname.toUpperCase();
+      const ogImg = document.getElementById('ogImagePreview');
+      ogImg.innerHTML = image ? `<img src="${image}" alt="OG Image">` : '<span>No image</span>';
+
+      // Twitter
+      document.getElementById('twitterTitle').textContent = title;
+      document.getElementById('twitterDesc').textContent = desc;
+      document.getElementById('twitterDomain').textContent = new URL(url).hostname;
+      const twitterImg = document.getElementById('twitterImagePreview');
+      twitterImg.innerHTML = image ? `<img src="${image}" alt="Twitter Image">` : '<span>No image</span>';
+    }
+
+    document.getElementById('generateBtn').addEventListener('click', generateTags);
+
+    function generateTags() {
+      const title = inputs.title.value.trim();
+      const desc = inputs.desc.value.trim();
+      const url = inputs.url.value.trim();
+      const image = inputs.image.value.trim();
+      const twitterCard = inputs.twitterCard.value;
+      const twitterHandle = inputs.twitterHandle.value.trim();
+
+      if (!title || !desc) {
+        document.getElementById('codeOutput').textContent = '⚠️ Please provide at least a title and description.';
+        return;
+      }
+
+      let tags = `<!-- Basic SEO -->
+<title>${title}</title>
+<meta name="description" content="${desc}">
+<link rel="canonical" href="${url}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${desc}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${url}">`;
+
+      if (image) {
+        tags += `\n<meta property="og:image" content="${image}">
+<meta property="og:image:alt" content="${title}">`;
+      }
+
+      tags += `\n
+<!-- Twitter Card -->
+<meta name="twitter:card" content="${twitterCard}">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${desc}">`;
+
+      if (image) {
+        tags += `\n<meta name="twitter:image" content="${image}">
+<meta name="twitter:image:alt" content="${title}">`;
+      }
+
+      if (twitterHandle) {
+        tags += `\n<meta name="twitter:site" content="${twitterHandle}">
+<meta name="twitter:creator" content="${twitterHandle}">`;
+      }
+
+      tags += `\n
+<!-- Robots -->
+<meta name="robots" content="index, follow">`;
+
+      document.getElementById('codeOutput').textContent = tags;
+    }
+
+    document.getElementById('copyCode').addEventListener('click', () => {
+      const text = document.getElementById('codeOutput').textContent;
+      navigator.clipboard.writeText(text);
+    });
+
+    // Initial preview
+    updatePreviews();
+  </script>
+</body>
+</html>
