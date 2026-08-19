@@ -1,60 +1,111 @@
 {
+  "generatedAt": "2026-08-19T19:56:02.220359+00:00",
+  "state": "send_ready",
+  "ready_count": 13,
   "ready": [
     {
-      "to": "marcus@cybershield.com",
-      "name": null,
+      "to": "sellersupport@shop.tiktok.com",
+      "name": "Shop",
+      "domain": "shop.tiktok.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": null,
-      "status": "ready",
-      "source": "historical_email_miner",
-      "source_query": "\"ziontechgroup.com\"",
-      "domain": "cybershield.com",
-      "is_generic_provider": false,
-      "is_invalid_domain": false,
-      "is_placeholder_domain": false,
-      "confidence": 2
+      "status": "ready"
     },
     {
-      "to": "sophia@dataprotect.com",
-      "name": null,
+      "to": "express@airbnb.com",
+      "name": "Airbnb",
+      "domain": "airbnb.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": null,
-      "status": "ready",
-      "source": "historical_email_miner",
-      "source_query": "\"ziontechgroup.com\"",
-      "domain": "dataprotect.com",
-      "is_generic_provider": false,
-      "is_invalid_domain": false,
-      "is_placeholder_domain": false,
-      "confidence": 2
+      "status": "ready"
     },
     {
-      "to": "shivam.kodag@gsdcouncil.org",
-      "name": null,
+      "to": "falecom@portaldecompraspublicas.com.br",
+      "name": "Portaldecompraspublicas",
+      "domain": "portaldecompraspublicas.com.br",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": null,
-      "status": "ready",
-      "source": "historical_email_miner",
-      "source_query": "\"Zion Tech Group\"",
-      "domain": "gsdcouncil.org",
-      "is_generic_provider": false,
-      "is_invalid_domain": false,
-      "is_placeholder_domain": false,
-      "confidence": 2
+      "status": "ready"
+    },
+    {
+      "to": "nao-responda@agilize.com.br",
+      "name": "Agilize",
+      "domain": "agilize.com.br",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
+    },
+    {
+      "to": "edm.feedback@tiktok.com",
+      "name": "Tiktok",
+      "domain": "tiktok.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
+    },
+    {
+      "to": "discover@qrgroup.qatarairways.com",
+      "name": "Qrgroup",
+      "domain": "qrgroup.qatarairways.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
+    },
+    {
+      "to": "feedback@qr.qatarairways.com",
+      "name": "Qr",
+      "domain": "qr.qatarairways.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
+    },
+    {
+      "to": "admin1@everkerr.com",
+      "name": "Everkerr",
+      "domain": "everkerr.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
+    },
+    {
+      "to": "contacts@pro.io",
+      "name": "Pro",
+      "domain": "pro.io",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
     },
     {
       "to": "mrustogi@rippling.com",
-      "name": null,
+      "name": "Rippling",
+      "domain": "rippling.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": null,
-      "status": "ready",
-      "source": "historical_email_miner",
-      "source_query": "\"ziontechgroup.com\"",
-      "domain": "rippling.com",
-      "is_generic_provider": false,
-      "is_invalid_domain": false,
-      "is_placeholder_domain": false,
-      "confidence": 2
+      "status": "ready"
+    },
+    {
+      "to": "sophia@dataprotect.com",
+      "name": "Dataprotect",
+      "domain": "dataprotect.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
+    },
+    {
+      "to": "shivam.kodag@gsdcouncil.org",
+      "name": "Gsdcouncil",
+      "domain": "gsdcouncil.org",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
+    },
+    {
+      "to": "marcus@cybershield.com",
+      "name": "Cybershield",
+      "domain": "cybershield.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "ready"
     }
   ]
 }
