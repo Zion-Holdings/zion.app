@@ -1,8 +1,8 @@
 {
-  "total_services_main": 14572,
+  "total_services_main": 15655,
   "services_added_discovery": 10,
   "total_services_added_this_run": 10,
-  "last_run": "2026-08-19T13:55:08Z",
+  "last_run": "2026-08-19T17:26:22.491644+00:00",
   "industry_breakdown_main": {
     "technology": 706,
     "real-estate": 569,
@@ -47,12 +47,34 @@
   },
   "landing_pages_generated": 0,
   "outreach_emails_generated": 22636,
-  "sitemap_urls": 14575,
+  "sitemap_urls": 15658,
   "status": "success",
   "total_services": 14572,
-  "unique_services": 14572,
+  "unique_services": 15655,
   "services_discovered": 10,
   "run_history": [
+    {
+      "timestamp": "2026-08-19T17:26:22.491644+00:00",
+      "services_added": 10,
+      "total_services": 15655,
+      "unique_ids": 15655,
+      "sitemap_urls": 15658,
+      "duration_seconds": 0.97851,
+      "rate_services_per_second": 10.22,
+      "target_industries": [
+        "real-estate",
+        "telecom",
+        "gaming",
+        "healthcare",
+        "finance",
+        "manufacturing",
+        "retail",
+        "logistics"
+      ],
+      "engine": "ultra_fast_micro_growth_engine_v10_zion",
+      "batch_size": 10,
+      "note": "Success: 10 new services added via v10_zion engine, synced to zion-support catalog"
+    },
     {
       "timestamp": "2026-08-19T16:55:08Z",
       "services_added": 10,
