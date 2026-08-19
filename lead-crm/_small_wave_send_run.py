@@ -28,8 +28,16 @@ if not REPO:
 sys.path.insert(0, str(REPO))
 
 # Config
-SEND_COUNT = int(os.environ.get('ZTG_SEND_COUNT', '5'))
-SEND_ALLOWED = os.environ.get('ZTG_SEND_ALLOWED', '1') == '1'
+# Default is 1, not 5. A cron run of this script with the variable unset sent
+# five emails in one tick (job zion-outreach-send-small-wave), which is what a
+# "small wave" is explicitly meant to prevent. The batch cap has to fail safe:
+# an operator who wants five passes ZTG_SEND_COUNT=5 deliberately.
+SEND_COUNT = int(os.environ.get('ZTG_SEND_COUNT', '1'))
+# Fail closed. This defaulted to '1', so the script sent live email whenever
+# ZTG_SEND_ALLOWED was simply unset -- the opposite of a send gate, and how
+# repeated cron ticks dispatched mail nobody authorised. Sending now requires
+# the variable to be set to '1' explicitly.
+SEND_ALLOWED = os.environ.get('ZTG_SEND_ALLOWED', '0') == '1'
 SEND_DELAY = 1.0
 
 # Paths
