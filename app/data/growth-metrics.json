@@ -1,8 +1,8 @@
 {
   "total_services_main": 14355,
-  "services_added_discovery": 10,
-  "total_services_added_this_run": 10,
-  "last_run": "2026-08-19T15:06:12Z",
+  "services_added_discovery": 0,
+  "total_services_added_this_run": 0,
+  "last_run": "2026-08-19T15:09:50Z",
   "industry_breakdown_main": {
     "technology": 706,
     "real-estate": 569,
@@ -45,14 +45,27 @@
     "retail": 554,
     "logistics": 535
   },
-  "landing_pages_generated": 10,
+  "landing_pages_generated": 0,
   "outreach_emails_generated": 22636,
-  "sitemap_urls": 14358,
-  "status": "success",
+  "sitemap_urls": 14355,
+  "status": "success_zero_additions",
   "total_services": 14355,
   "unique_services": 14355,
-  "services_discovered": 10,
+  "services_discovered": 0,
   "run_history": [
+    {
+      "timestamp": "2026-08-19T15:09:50Z",
+      "services_added": 0,
+      "total_services": 14355,
+      "unique_ids": 14355,
+      "duration_seconds": 1.0,
+      "rate_services_per_second": 0.0,
+      "landing_pages_generated": 0,
+      "sitemap_urls": 14355,
+      "engine": "ultra_fast_micro_growth_engine_v2.0",
+      "target_industries": ["real-estate", "telecom", "gaming", "healthcare", "finance", "manufacturing", "retail", "logistics"],
+      "note": "Zero-addition run: engine reported 10 added but catalog unchanged due to concurrent writer interference"
+    },
     {
       "timestamp": "2026-08-19T15:06:12Z",
       "services_added": 10,
