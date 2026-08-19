@@ -45,33 +45,35 @@ def render_page(cards):
         </Link>'''
         for c in cards
     )
-    base = '''import type {{ Metadata }} from 'next';
+    base = '''import type { Metadata } from 'next';
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
-export const metadata: Metadata = {{
+export const metadata: Metadata = {
   title: 'Tools | Zion Tech Group',
   description: 'Free AI/IT tools for service recommendations, comparisons, SSL checks, and more.',
-  openGraph: {{
+  openGraph: {
     title: 'Tools | Zion Tech Group',
     description: 'Free AI/IT tools for service recommendations, comparisons, SSL checks.',
     url: 'https://ziontechgroup.com/tools/',
     type: 'website',
-  }},
-  alternates: {{ canonical: '/tools/' }},
-}};
+  },
+  alternates: { canonical: '/tools/' },
+};
 
-export default function ToolsPage() {{
+export default function ToolsPage() {
   return (
     <StandardPage
       title="Tools"
       subtitle="Free utilities built by Zion Tech Group to accelerate your AI and IT initiatives."
       breadcrumbItems={[
-        {{ label: 'Home', href: '/' }},
-        {{ label: 'Tools' }},
+        { label: 'Home', href: '/' },
+        { label: 'Tools' },
       ]}
       actions={[
-        {{ label: 'Browse services', href: '/services/', style: 'secondary' }},
+        { label: 'Get a recommendation', href: '/tools/ai-roi-calculator/', style: 'primary' },
+        { label: 'Browse services', href: '/services/', style: 'secondary' },
+        { label: 'Cloud savings check', href: '/tools/cloud-cost-optimizer/', style: 'secondary' },
       ]}
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
@@ -79,7 +81,7 @@ __CARDS__
       </div>
     </StandardPage>
   );
-}}
+}
 '''
     return base.replace("__CARDS__", cards_tsx)
 

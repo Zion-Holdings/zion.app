@@ -24,9 +24,10 @@ export default function ContactPage() {
         { label: 'Contact' },
       ]}
       actions={[
+        { label: 'Get a recommendation', href: '/tools/ai-roi-calculator/', style: 'primary' },
         { label: 'Browse services', href: '/services/', style: 'secondary' },
         { label: 'Free AI/IT tools', href: '/tools/', style: 'secondary' },
-        { label: 'AI Readiness Assessment', href: '/tools/ai-roi-calculator/', style: 'secondary' },
+        { label: 'Cloud Cost Savings', href: '/tools/cloud-cost-optimizer/', style: 'secondary' },
       ]}
     >
       <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
