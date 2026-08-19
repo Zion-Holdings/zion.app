@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <StandardPage
       title="Contact Us"
-      subtitle="Tell us your goal and we’ll return a short list of best-fit services with estimated ROI and timeline."
+      subtitle="Tell us your goal and we'll return a short list of best-fit services with estimated ROI and timeline."
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Contact' },
