@@ -138,4 +138,5 @@ process_prs.sh
 mactex-20250308.pkg
 git-read-tree.log
 memory/
+.gh_token_env
 .pnpm-store/
