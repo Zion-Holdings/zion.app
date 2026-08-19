@@ -141,7 +141,7 @@ export default function Navigation() {
                 </div>
                 <div className="border-t border-slate-800 mt-3 pt-3 flex items-center justify-between">
                   <span className="text-xs text-slate-500">Explore all service categories</span>
-                  <Link href="/services" className="text-sm font-semibold text-purple-300 hover:text-purple-200" onClick={() => setServicesOpen(false)}>
+                  <Link href="/services/" className="text-sm font-semibold text-purple-300 hover:text-purple-200" onClick={() => setServicesOpen(false)}>
                     View full catalog →
                   </Link>
                 </div>
@@ -221,7 +221,7 @@ export default function Navigation() {
             <NavLink key={i} link={link} />
           ))}
 
-          <Link href="/agents-monitoring" className="relative ml-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-xs font-semibold text-white hover:from-violet-500 hover:to-purple-500 transition-all flex items-center gap-1.5">
+          <Link href="/agents-monitoring/" className="relative ml-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-xs font-semibold text-white hover:from-violet-500 hover:to-purple-500 transition-all flex items-center gap-1.5">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
@@ -229,7 +229,7 @@ export default function Navigation() {
             AI Agents
           </Link>
 
-          <Link href="/contact" className="ml-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
+          <Link href="/contact/" className="ml-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
             Get Free Consultation
           </Link>
         </div>
@@ -353,7 +353,7 @@ export default function Navigation() {
             </Link>
           </div>
           <div className="pt-2">
-            <Link href="/contact" className="block text-center px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white" onClick={() => setMobileOpen(false)}>
+            <Link href="/contact/" className="block text-center px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white" onClick={() => setMobileOpen(false)}>
               Get Free Consultation
             </Link>
           </div>
