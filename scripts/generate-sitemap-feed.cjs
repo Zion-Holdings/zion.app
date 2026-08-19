@@ -47,6 +47,10 @@ const staticRoutes = [
   '/status/',
   '/terms/',
   '/testimonials/',
+  '/tools/',
+  '/tools/service-recommender/',
+  '/tools/service-comparison/',
+  '/tools/ssl-checker/',
   '/use-cases/',
   '/services/',
 ];

@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
 
-on:
+"on":
   push:
-    branches: ["main"]
+    branches: ["main", "hero-carousel"]
   workflow_dispatch:
 
 # Explicit permissions required for GitHub Pages deployment and OIDC authentication

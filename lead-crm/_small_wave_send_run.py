@@ -28,7 +28,7 @@ if not REPO:
 sys.path.insert(0, str(REPO))
 
 # Config
-SEND_COUNT = int(os.environ.get('ZTG_SEND_COUNT', '5'))
+SEND_COUNT = int(os.environ.get('ZTG_SEND_COUNT', '1'))
 SEND_ALLOWED = os.environ.get('ZTG_SEND_ALLOWED', '1') == '1'
 SEND_DELAY = 1.0
 
