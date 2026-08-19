@@ -1,10 +1,10 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Intelligent Healthcare Patient Engagement - Zion Tech Group",
-  description: "AI-driven patient engagement platform that delivers enterprise-grade personalized care journeys, remote monitoring, and adherence support through intelligent au",
+  title: "AI-Generated Predictive Game Content - Zion Tech Group",
+  description: "Procedural content generation platform that creates predictive game assets, levels, narratives, and quests using generative AI, reducing development time and co",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/intelligent-healthcare-patient-engagement-44cd2d8b`
+    canonical: `https://ziontechgroup.com/services/ai-generated-predictive-game-content-293a797b`
   }
 };
 
@@ -12,26 +12,26 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Intelligent Healthcare Patient Engagement</h1>
-        <p className="text-lg text-gray-300 mb-8">AI-driven patient engagement platform that delivers enterprise-grade personalized care journeys, remote monitoring, and adherence support through intelligent automation.</p>
+        <h1 className="text-4xl font-bold mb-6">AI-Generated Predictive Game Content</h1>
+        <p className="text-lg text-gray-300 mb-8">Procedural content generation platform that creates predictive game assets, levels, narratives, and quests using generative AI, reducing development time and costs.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Personalized care plans</li>
-            <li>Remote monitoring</li>
-            <li>Medication adherence</li>
-            <li>Virtual consultations</li>
+            <li>Level generation</li>
+            <li>Asset creation</li>
+            <li>Narrative design</li>
+            <li>Balance testing</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better outcomes</li>
-            <li>Higher satisfaction</li>
-            <li>Reduced readmissions</li>
-            <li>Lower costs</li>
+            <li>Faster content creation</li>
+            <li>Infinite replayability</li>
+            <li>Reduced dev costs</li>
+            <li>Dynamic experiences</li>
           </ul>
         </div>
         
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$258/month</p>
+              <p className="text-2xl font-bold mb-2">$278/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$648/month</p>
+              <p className="text-2xl font-bold mb-2">$698/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1948/month</p>
+              <p className="text-2xl font-bold mb-2">$2098/month</p>
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Intelligent Healthcare Patient Engagement - Zion Tech Group",
-  description: "AI-driven patient engagement platform that delivers enterprise-grade personalized care journeys, remote monitoring, and adherence support through intelligent au",
+  title: "AI-Powered Enterprise-Grade Education Analytics - Zion Tech Group",
+  description: "AI-driven analytics platform that delivers enterprise-grade insights into education operations, providing real-time monitoring, predictive modeling, and automat",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/intelligent-healthcare-patient-engagement-44cd2d8b`
+    canonical: `https://ziontechgroup.com/services/ai-powered-enterprise-grade-education-analytics-598bf104`
   }
 };
 
@@ -12,26 +12,26 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Intelligent Healthcare Patient Engagement</h1>
-        <p className="text-lg text-gray-300 mb-8">AI-driven patient engagement platform that delivers enterprise-grade personalized care journeys, remote monitoring, and adherence support through intelligent automation.</p>
+        <h1 className="text-4xl font-bold mb-6">AI-Powered Enterprise-Grade Education Analytics</h1>
+        <p className="text-lg text-gray-300 mb-8">AI-driven analytics platform that delivers enterprise-grade insights into education operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Personalized care plans</li>
-            <li>Remote monitoring</li>
-            <li>Medication adherence</li>
-            <li>Virtual consultations</li>
+            <li>Real-time data visualization</li>
+            <li>Predictive modeling</li>
+            <li>Automated reporting</li>
+            <li>Custom dashboards</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better outcomes</li>
-            <li>Higher satisfaction</li>
-            <li>Reduced readmissions</li>
-            <li>Lower costs</li>
+            <li>Data-driven decision making</li>
+            <li>Improved operational efficiency</li>
+            <li>Proactive issue detection</li>
+            <li>Enhanced KPI tracking</li>
           </ul>
         </div>
         
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$258/month</p>
+              <p className="text-2xl font-bold mb-2">$199/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$648/month</p>
+              <p className="text-2xl font-bold mb-2">$499/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1948/month</p>
+              <p className="text-2xl font-bold mb-2">$1499/month</p>
             </div>
           </div>
         </div>
