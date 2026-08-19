@@ -11,11 +11,12 @@ Exits non-zero on any failure so the deploy-to-github-pages CI workflow
 fails fast.
 """
 import os
+from pathlib import Path
 import subprocess
 import sys
 import tempfile
 
-REPO_ROOT = "/Users/klebergarciaalcatrao/zion-support.github.io"
+REPO_ROOT = str(Path(__file__).resolve().parent.parent)
 TOOLS_DIR = os.path.join(REPO_ROOT, "app", "tools")
 PAGE_FILE = os.path.join(TOOLS_DIR, "page.tsx")
 SYNC_SCRIPT = os.path.join(REPO_ROOT, "scripts", "sync_tools_page.py")
