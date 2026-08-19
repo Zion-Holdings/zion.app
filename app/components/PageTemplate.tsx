@@ -33,11 +33,12 @@ interface PageTemplateProps {
   title: React.ReactNode;
   subtitle?: React.ReactNode;
   description?: string;
+  summary?: string; // alias for description
   category?: string;
   heroIcon?: string;
   canonical?: string;
   breadcrumbItems?: Array<{ label: string; href?: string }>;
-  breadcrumbs?: Array<{ label: string; href?: string }>;
+  breadcrumbs?: Array<{ label: string; href?: string }>; // alias
   layout?: 'hero' | 'centered' | 'product' | 'tool' | 'serviceDetail';
   actions?: PageAction[];
   features?: FeatureItem[];
@@ -51,6 +52,7 @@ export default function PageTemplate({
   title,
   subtitle,
   description,
+  summary,
   category,
   heroIcon,
   canonical,
@@ -66,8 +68,9 @@ export default function PageTemplate({
 }: PageTemplateProps) {
   const ActionComponent = Link;
   const resolvedBreadcrumbs = breadcrumbs || breadcrumbItems;
+  const resolvedDescription = description ?? summary ?? '';
   return (
-    <div className="min-h-screen bg-slate-950 text-white w-full">
+    <div className="w-full">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         {resolvedBreadcrumbs && resolvedBreadcrumbs.length > 0 && (
           <div className="mb-8">
