@@ -7,8 +7,9 @@ Idempotent: safe to run repeatedly.
 """
 import os
 import re
+from pathlib import Path
 
-REPO_ROOT = "/Users/klebergarciaalcatrao/zion-support.github.io"
+REPO_ROOT = str(Path(__file__).resolve().parent.parent)
 TOOLS_DIR = os.path.join(REPO_ROOT, "app", "tools")
 PAGE_FILE = os.path.join(TOOLS_DIR, "page.tsx")
 
