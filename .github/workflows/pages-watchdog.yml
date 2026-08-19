@@ -27,7 +27,7 @@ jobs:
       - name: Probe Pages
         run: python automation/scripts/pages_watchdog.py
       - name: Upload report artifact
-        uses: actions/upload-artifact@4bd10206f1090cfe5690b91618f6fd840f21135b # v4
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: pages-watchdog-report
           path: automation/reports/pages-watchdog-latest.json
