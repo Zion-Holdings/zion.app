@@ -738,5 +738,10 @@
     "id": "19ed5d5b3dba95b2",
     "email": "cloud@lambdalabs.zendesk.com",
     "query": "subject:readiness assessment"
+  },
+  {
+    "id": "1a01c205ec8921a5",
+    "email": "automated@airbnb.com",
+    "query": "\"ziontechgroup.com\""
   }
 ]

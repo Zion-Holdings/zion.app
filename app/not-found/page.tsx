@@ -4,7 +4,7 @@ import StandardPage from '@/components/StandardPage';
 export const metadata = {
   title: 'Page Not Found | Zion Tech Group',
   description: 'The page you are looking for does not exist or has been moved.',
-  alternates: { canonical: '/404' },
+  alternates: { canonical: '/404/' },
 };
 
 export default function NotFoundPage() {
