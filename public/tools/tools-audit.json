@@ -1,0 +1,193 @@
+{
+  "report_path": "/data/data/com.termux/files/home/.hermes/hermes-agent/zion-support/public/tools/tools-audit.json",
+  "total_tools": 9,
+  "tools_with_lazy_loading_issues": 0,
+  "tools_with_large_scripts": 2,
+  "css_extraction_candidate_kb": 13,
+  "generated_at": "2026-08-19T00:00:00-03:00",
+  "tools_directory": "public/tools/",
+  "tools": [
+    {
+      "name": "agent-prompt-builder",
+      "path": "agent-prompt-builder/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 0,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 0
+      }
+    },
+    {
+      "name": "ai-roi-calculator",
+      "path": "ai-roi-calculator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 88,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 49,
+        "inline_style_attributes": 4,
+        "extraction_candidate_bytes": 3749
+      }
+    },
+    {
+      "name": "api-health-check",
+      "path": "api-health-check/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 187,
+        "has_external_scripts": false,
+        "is_large": true
+      },
+      "css": {
+        "inline_style_block_lines": 60,
+        "inline_style_attributes": 1,
+        "extraction_candidate_bytes": 4662
+      }
+    },
+    {
+      "name": "cloud-cost-calculator",
+      "path": "cloud-cost-calculator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 115,
+        "has_external_scripts": false,
+        "is_large": true
+      },
+      "css": {
+        "inline_style_block_lines": 55,
+        "inline_style_attributes": 3,
+        "extraction_candidate_bytes": 4280
+      }
+    },
+    {
+      "name": "cron-agent-calculator",
+      "path": "cron-agent-calculator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 18,
+        "has_external_scripts": true,
+        "external_scripts": ["https://cdn.tailwindcss.com"],
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 0
+      }
+    },
+    {
+      "name": "json-schema-validator",
+      "path": "json-schema-validator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 51,
+        "has_external_scripts": true,
+        "external_scripts": ["https://cdn.tailwindcss.com"],
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 0
+      }
+    },
+    {
+      "name": "llm-payload-estimator",
+      "path": "llm-payload-estimator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 19,
+        "has_external_scripts": true,
+        "external_scripts": ["https://cdn.tailwindcss.com"],
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 0
+      }
+    },
+    {
+      "name": "mcp-tester",
+      "path": "mcp-tester/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 0,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 0
+      }
+    },
+    {
+      "name": "security-headers-analyzer",
+      "path": "security-headers-analyzer/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 51,
+        "has_external_scripts": true,
+        "external_scripts": ["https://cdn.tailwindcss.com"],
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 0
+      }
+    }
+  ],
+  "summary": {
+    "tools_without_images": 9,
+    "tools_with_images_missing_lazy_loading": 0,
+    "tools_with_inline_scripts": 6,
+    "tools_with_scripts_over_100_lines": ["api-health-check", "cloud-cost-calculator"],
+    "tools_using_cdn": ["cron-agent-calculator", "json-schema-validator", "llm-payload-estimator", "security-headers-analyzer"],
+    "tools_with_custom_inline_css": ["ai-roi-calculator", "api-health-check", "cloud-cost-calculator"],
+    "total_inline_css_bytes": 12691,
+    "css_extraction_candidate_kb": 13,
+    "recommendations": [
+      "No images found across tools — lazy loading audit not applicable.",
+      "api-health-check (187 lines) and cloud-cost-calculator (115 lines) have large inline scripts that could be externalized and minified.",
+      "ai-roi-calculator, api-health-check, and cloud-cost-calculator have substantial inline CSS (13 KB total) that could be extracted to a shared stylesheet.",
+      "Tools using Tailwind CDN (cron-agent-calculator, json-schema-validator, llm-payload-estimator, security-headers-analyzer) could benefit from a production build with only used classes."
+    ]
+  }
+}

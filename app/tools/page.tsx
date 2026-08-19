@@ -33,6 +33,16 @@ export default function ToolsPage() {{
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Agent Prompt Builder</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Agent Prompt Builder.</p>
         </Link>
+        <Link href="/tools/ai-roi-calculator" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Ai Roi Calculator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Ai Roi Calculator.</p>
+        </Link>
+        <Link href="/tools/api-health-check" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Api Health Check</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Api Health Check.</p>
+        </Link>
         <Link href="/tools/cloud-cost-calculator" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cloud Cost Calculator</h3>
