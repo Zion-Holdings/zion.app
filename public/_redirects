@@ -32,7 +32,6 @@
 /services/managed-observability-247 /services/ 301
 /services/sec-soc-as-a-service /services/ 301
 /free-ai-readiness-audit /ai-services/ 301
-/roi-calculator /ai-services/ 301
 /ai/ai-readiness-assessment /ai-services/ 301
 /services/ai-observability-aiops /services/ 301
 /status-page /contact/ 301
@@ -45,3 +44,5 @@
 /services/saas-form-builder /services/ 301
 /services/saas-subscription-analytics /services/ 301
 /agents /agents-monitoring/ 301
+/roi-calculator /tools/ai-roi-calculator/ 301
+/cloud-cost-optimizer /tools/cloud-cost-optimizer/ 301
