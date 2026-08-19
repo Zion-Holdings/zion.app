@@ -53,12 +53,12 @@ class TestSitemapDiskConsistency(unittest.TestCase):
             if not (tool / "index.html").exists():
                 continue
             self.assertTrue(
-                f"/tools/{tool.name}" in sitemap_text,
+                f"/tools/{tool.name}/" in sitemap_text,
                 msg=f"{tool.name} missing from sitemap",
             )
 
     def test_sitemap_has_no_orphan_tool_entries(self) -> None:
-        for match in re.finditer(r"/tools/([a-z0-9-]+)", SITEMAP.read_text()):
+        for match in re.finditer(r"/tools/([a-z0-9-]+)/", SITEMAP.read_text()):
             slug = match.group(1)
             if slug in {'page', 'index', ''}:
                 continue
