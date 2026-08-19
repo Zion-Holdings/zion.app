@@ -4,6 +4,12 @@ import Breadcrumb from '@/components/Breadcrumb';
 export const metadata = {
   title: 'AI-First Channel Partner and Reseller Enablement in 2026',
   description: 'AI-assisted partner enablement, co-selling, and reseller operations for faster revenue growth.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-first-channel-partner-and-reseller-enablement-in-2026/',
   },

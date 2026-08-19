@@ -3,6 +3,12 @@ import Link from 'next/link';
 export const metadata = {
   title: 'AI Outsourcing vs. In-House IT Teams for LATAM in 2026',
   description: 'Comparing outsourcing versus in-house IT execution for LATAM companies.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-outsourcing-vs-inhouse-it-teams-2026/',
   },

@@ -4,6 +4,12 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Solutions | Zion Tech Group',
   description: 'Zion Tech Group solutions by industry and capability.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: { canonical: '/solutions/' },
 };
 

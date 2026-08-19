@@ -1,6 +1,12 @@
 export const metadata = {
   title: "AI Security and Compliance for Brazilian Companies in 2026 | Zion Tech Group",
   description: "AI security and compliance considerations for Brazilian companies adopting AI.",
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
 
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-security-and-compliance-for-brazilian-companies-in-2026/',

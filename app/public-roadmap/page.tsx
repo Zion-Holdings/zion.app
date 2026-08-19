@@ -4,6 +4,12 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Public Roadmap | Zion Tech Group',
   description: 'Zion Tech Group public roadmap, planned releases, and platform direction.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: { canonical: '/public-roadmap/' },
 };
 

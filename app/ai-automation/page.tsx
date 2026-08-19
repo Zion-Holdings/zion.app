@@ -2,6 +2,12 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'AI Automation | Zion Tech Group',
   description: 'AI-powered automation for support, operations, and revenue workflows.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: {
     canonical: 'https://ziontechgroup.com/ai-automation/',
   },

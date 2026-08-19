@@ -1,6 +1,12 @@
 export const metadata = {
   title: "AI Client Retention Tactics for IT and AI Services Companies in 2026 | Zion Tech Group",
   description: "Practical client retention tactics for IT and AI services companies.",
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
 
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-client-retention-tactics-for-it-and-ai-services-companies-in-2026/',

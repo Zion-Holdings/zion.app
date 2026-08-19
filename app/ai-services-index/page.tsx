@@ -4,6 +4,12 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'AI Services Index | Zion Tech Group',
   description: 'Index of Zion Tech Group AI services and solutions.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: { canonical: '/ai-services/' },
 };
 

@@ -1,6 +1,12 @@
 export const metadata = {
   title: 'AIOps Automated Root Cause Analysis for IT Operations | Zion Tech Group',
   description: 'Reduce MTTR with AIOps automated root cause analysis that connects change data, dependency maps, and historical incident patterns.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
 
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/aiops-automated-root-cause-analysis-for-it-operations/',

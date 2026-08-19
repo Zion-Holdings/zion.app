@@ -1,6 +1,12 @@
 export const metadata = {
   title: 'AI for IT Vendor Management and Procurement | Zion Tech Group',
   description: 'Use AI to streamline IT vendor management, procurement, contract analysis, and supplier risk tracking.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
 
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-for-it-vendor-management-and-procurement/',

@@ -4,6 +4,12 @@ import Link from 'next/link'
 export const metadata = {
   title: 'AI Document Processing Automation Guide for Enterprises | Zion Tech Group',
   description: 'A practical AI document processing automation guide covering ingestion, extraction, validation, routing, and compliance outcomes.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-document-processing-automation-guide/',
   },

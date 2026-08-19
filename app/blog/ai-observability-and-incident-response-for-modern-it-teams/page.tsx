@@ -1,6 +1,12 @@
 export const metadata = {
   title: "AI Observability and Incident Response for Modern IT Teams | Zion Tech Group",
   description: "Practical AI observability and incident response patterns for modern IT teams in 2026.",
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
 
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-observability-and-incident-response-for-modern-it-teams/',

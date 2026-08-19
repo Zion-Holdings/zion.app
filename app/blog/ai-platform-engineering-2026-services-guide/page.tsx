@@ -3,6 +3,12 @@ import Link from 'next/link';
 export const metadata = {
   title: 'AI Platform Engineering 2026 Services Guide',
   description: 'A service guide to building, operating, and scaling internal AI platforms safely in 2026.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-platform-engineering-2026-services-guide/',
   },

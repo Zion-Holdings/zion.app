@@ -4,6 +4,12 @@ import Breadcrumb from '@/components/Breadcrumb';
 export const metadata = {
   title: 'AI-First Cloud Cost Management and FinOps in 2026',
   description: 'Use AI-assisted cloud cost management and FinOps practices to reduce waste and improve budgeting.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-first-cloud-cost-management-and-finops-in-2026/',
   },

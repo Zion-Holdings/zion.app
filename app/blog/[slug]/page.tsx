@@ -8,6 +8,12 @@ import path from 'path';
 export const metadata = {
   title: 'Blog Post',
   description: 'Read AI, IT, and automation insights from Zion Tech Group.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: { canonical: '/blog/' },
 };
 

@@ -1,6 +1,12 @@
 export const metadata = {
   title: 'AI for IT Remote Support and Endpoint Assistance | Zion Tech Group',
   description: 'Discover how AI improves remote support, endpoint troubleshooting, guided fixes, and technician enablement.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
 
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-for-it-remote-support-and-endpoint-assistance/',

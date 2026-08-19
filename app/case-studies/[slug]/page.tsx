@@ -15,6 +15,12 @@ const studies: Study[] = [
 export const metadata: Metadata = {
   title: 'Case Studies | Zion Tech Group',
   description: 'Real-world AI and IT transformation case studies from Zion Tech Group.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: { canonical: 'https://ziontechgroup.com/case-studies/' },
 };
 

@@ -4,6 +4,12 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Micro SaaS | Zion Tech Group',
   description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: { canonical: '/micro-saas/' },
 };
 

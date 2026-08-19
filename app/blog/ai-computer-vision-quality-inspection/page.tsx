@@ -7,6 +7,12 @@ import PageTemplate from '@/components/PageTemplate';
 export const metadata: Metadata = {
   title: 'AI Computer Vision for Quality Inspection | Zion Tech Group',
   description: 'AI computer vision quality inspection systems that detect defects, measure tolerances, and automate pass/fail decisions on production lines using edge AI.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-computer-vision-quality-inspection/',
   },

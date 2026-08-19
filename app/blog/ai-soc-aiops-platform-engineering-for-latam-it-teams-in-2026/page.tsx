@@ -3,6 +3,12 @@ import Link from 'next/link';
 export const metadata = {
   title: 'AI SOC + AIOps + Platform Engineering for LATAM IT Teams in 2026',
   description: 'Practical AI SOC, AIOps, and platform engineering models for LATAM IT teams reducing incidents and operating with smaller staff.',
+  openGraph: {
+    title: metadata.title || pageTitle,
+    description: metadata.description,
+    url: metadata.canonical || canonicalUrl,
+    type: 'website',
+  },
   alternates: {
     canonical: 'https://ziontechgroup.com/blog/ai-soc-aiops-platform-engineering-for-latam-it-teams-in-2026/',
   },
