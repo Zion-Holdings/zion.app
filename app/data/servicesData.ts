@@ -5,9 +5,11 @@ export interface Service {
   description: string;
   category: string;
   industry: string;
+  icon?: string;
   features: string[];
   benefits: string[];
   pricing: Record<string, unknown>;
+  popular?: boolean;
   url: string;
   image: string;
 }

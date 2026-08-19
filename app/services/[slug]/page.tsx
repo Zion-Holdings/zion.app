@@ -72,7 +72,7 @@ export default function ServiceSlugPage({ params }: { params: Params }) {
               {Object.entries(service.pricing).map(([tier, price]) => (
                 <div key={tier} className="glass-card p-4">
                   <span className="font-semibold text-white capitalize">{tier}</span>
-                  <span className="text-purple-400 ml-4">{price}</span>
+                  <span className="text-purple-400 ml-4">{String(price)}</span>
                 </div>
               ))}
             </div>

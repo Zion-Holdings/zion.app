@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata = {

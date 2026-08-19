@@ -21,7 +21,7 @@ export interface StandardPageProps {
   subtitle?: string;
   breadcrumbItems?: Array<{ label: string; href?: string }>;
   actions?: Array<{ label: string; href: string; style?: 'primary' | 'secondary' }>;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function StandardPage({
@@ -41,7 +41,7 @@ export default function StandardPage({
           breadcrumbItems={breadcrumbItems}
           actions={actions}
         >
-          <div className="max-w-6xl mx-auto w-full">
+          <div className="max-w-6xl mx-auto w-full px-4 sm:px-0">
             {children}
           </div>
         </PageTemplate>
