@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Driven Data-Driven Marketing Automation - Zion Tech Group",
-  description: "Intelligent marketing platform that creates data-driven campaigns across channels, optimizing content, timing, and audience targeting for maximum engagement.",
+  description: "Intelligent marketing platform that creates data-driven campaigns across channels, optimizing content and targeting.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-driven-data-driven-marketing-automation-c2f7f63f`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Driven Data-Driven Marketing Automation</h1>
-        <p className="text-lg text-gray-300 mb-8">Intelligent marketing platform that creates data-driven campaigns across channels, optimizing content, timing, and audience targeting for maximum engagement.</p>
+        <p className="text-lg text-gray-300 mb-8">Intelligent marketing platform that creates data-driven campaigns across channels, optimizing content and targeting.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

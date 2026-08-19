@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Proactive Data Processing - Zion Tech Group",
-  description: "Intelligent data processing platform that automates extraction, transformation, and loading of data at scale. Handles complex data workflows with minimal human ",
+  description: "Intelligent data processing platform that automates extraction, transformation, and loading of data at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-proactive-data-processing-efc2e6b4`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Proactive Data Processing</h1>
-        <p className="text-lg text-gray-300 mb-8">Intelligent data processing platform that automates extraction, transformation, and loading of data at scale. Handles complex data workflows with minimal human intervention.</p>
+        <p className="text-lg text-gray-300 mb-8">Intelligent data processing platform that automates extraction, transformation, and loading of data at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

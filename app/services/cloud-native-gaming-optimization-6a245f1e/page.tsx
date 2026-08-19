@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud-Native Gaming Optimization - Zion Tech Group",
-  description: "AI-driven cloud optimization platform that automatically manages resource allocation, cost optimization, and performance tuning for cloud-native applications.",
+  description: "AI-driven cloud optimization platform that automatically manages resource allocation and cost optimization.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-native-gaming-optimization-6a245f1e`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cloud-Native Gaming Optimization</h1>
-        <p className="text-lg text-gray-300 mb-8">AI-driven cloud optimization platform that automatically manages resource allocation, cost optimization, and performance tuning for cloud-native applications.</p>
+        <p className="text-lg text-gray-300 mb-8">AI-driven cloud optimization platform that automatically manages resource allocation and cost optimization.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

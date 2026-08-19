@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Scalable IoT Intelligence - Zion Tech Group",
-  description: "Edge AI platform that processes IoT sensor data in real-time, providing scalable insights and automated control for smart devices and industrial systems.",
+  description: "Edge AI platform that processes IoT sensor data in real-time with scalable insights.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-scalable-iot-intelligence-b68f2367`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Scalable IoT Intelligence</h1>
-        <p className="text-lg text-gray-300 mb-8">Edge AI platform that processes IoT sensor data in real-time, providing scalable insights and automated control for smart devices and industrial systems.</p>
+        <p className="text-lg text-gray-300 mb-8">Edge AI platform that processes IoT sensor data in real-time with scalable insights.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Edge processing</li>
             <li>Real-time analytics</li>
-            <li>Automated control</li>
-            <li>Device management</li>
+            <li>Automated responses</li>
+            <li>Energy efficiency</li>
           </ul>
         </div>
         

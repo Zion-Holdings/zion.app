@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Driven Financial Optimization Suite - Zion Tech Group",
-  description: "Industry-specific AI solution that optimizes financial operations, supply chains, and decision-making processes. Delivers measurable improvements in efficiency ",
+  description: "Industry-specific AI solution that optimizes financial operations and decision-making processes.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-driven-financial-optimization-suite-36d4a110`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Driven Financial Optimization Suite</h1>
-        <p className="text-lg text-gray-300 mb-8">Industry-specific AI solution that optimizes financial operations, supply chains, and decision-making processes. Delivers measurable improvements in efficiency and profitability.</p>
+        <p className="text-lg text-gray-300 mb-8">Industry-specific AI solution that optimizes financial operations and decision-making processes.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Media Workflow Automation - Zion Tech Group",
-  description: "Intelligent workflow automation platform that streamlines media processes, eliminates manual tasks, and accelerates business operations through AI-powered orche",
+  description: "Intelligent workflow automation platform that streamlines media processes and eliminates manual tasks.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-media-workflow-automation-6512f9b2`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Media Workflow Automation</h1>
-        <p className="text-lg text-gray-300 mb-8">Intelligent workflow automation platform that streamlines media processes, eliminates manual tasks, and accelerates business operations through AI-powered orchestration.</p>
+        <p className="text-lg text-gray-300 mb-8">Intelligent workflow automation platform that streamlines media processes and eliminates manual tasks.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
