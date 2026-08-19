@@ -140,3 +140,4 @@ git-read-tree.log
 memory/
 .gh_token_env
 .pnpm-store/
+__pycache__/
