@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-fraud-detection-engine-f9c23581` title="AI Fraud Detection Engine" />
+        <BreadcrumbSchema path={`/services/ai-fraud-detection-engine-f9c23581` title="AI Fraud Detection Engine" />
         <h1 className="text-4xl font-bold mb-6">AI Fraud Detection Engine</h1>
         <p className="text-lg text-gray-300 mb-8">Real-time fraud detection for payments, banking, and insurance. Graph neural networks detect complex fraud rings with 99.9% accuracy and sub-millisecond latency</p>
 

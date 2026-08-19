@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-powered-risk-logistics-302d9d34` title="AI-Powered risk-logistics" />
+        <BreadcrumbSchema path={`/services/ai-powered-risk-logistics-302d9d34` title="AI-Powered risk-logistics" />
         <h1 className="text-4xl font-bold mb-6">AI-Powered risk-logistics</h1>
         <p className="text-lg text-gray-300 mb-8">Revolutionize Logistics through intelligent automation. Our AI-Powered risk-logistics leverages advanced machine learning to deliver maintenance scheduling at s</p>
 

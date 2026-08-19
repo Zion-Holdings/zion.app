@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/network-traffic-anomaly-detection-662cf452` title="Network Traffic Anomaly Detection" />
+        <BreadcrumbSchema path={`/services/network-traffic-anomaly-detection-662cf452` title="Network Traffic Anomaly Detection" />
         <h1 className="text-4xl font-bold mb-6">Network Traffic Anomaly Detection</h1>
         <p className="text-lg text-gray-300 mb-8">Real-time AI-powered anomaly detection for telecom networks. Identifies DDoS attacks, fraud, and performance degradation before they impact customers.</p>
 

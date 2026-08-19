@@ -1,5 +1,3 @@
-// scripts/checks/deploy-readiness.cjs
-// Verifies deployment readiness: build output, redirects, sitemap.
 const fs = require('fs');
 const path = require('path');
 
@@ -15,12 +13,13 @@ if (fs.existsSync(pkgPath)) {
   passed = false;
 }
 
-// Check 2: next.config.js exists
-const nextConfigPath = path.join(process.cwd(), 'next.config.js');
-if (fs.existsSync(nextConfigPath)) {
-  checks.push('next.config.js: ok');
+// Check 2: next.config.js or next.config.mjs exists
+const nextConfigJs = path.join(process.cwd(), 'next.config.js');
+const nextConfigMjs = path.join(process.cwd(), 'next.config.mjs');
+if (fs.existsSync(nextConfigJs) || fs.existsSync(nextConfigMjs)) {
+  checks.push(fs.existsSync(nextConfigJs) ? 'next.config.js: ok' : 'next.config.mjs: ok');
 } else {
-  checks.push('next.config.js: MISSING');
+  checks.push('next.config(.js|.mjs): MISSING');
   passed = false;
 }
 
@@ -44,12 +43,6 @@ if (fs.existsSync(tsconfigPath)) {
   passed = false;
 }
 
-console.log('Deploy readiness checks:');
-checks.forEach(c => console.log('  ' + c));
-
-if (!passed) {
-  console.error('\nDeploy readiness FAILED');
-  process.exit(1);
-}
-
-console.log('\nDeploy readiness: ok');
+checks.forEach(c => console.log(`  ${c}`));
+console.log(`\nDeploy readiness ${passed ? 'PASSED' : 'FAILED'}`);
+process.exit(passed ? 0 : 1);

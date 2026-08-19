@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/neural-experience-for-gaming-a71af48b` title="Neural Experience for Gaming" />
+        <BreadcrumbSchema path={`/services/neural-experience-for-gaming-a71af48b` title="Neural Experience for Gaming" />
         <h1 className="text-4xl font-bold mb-6">Neural Experience for Gaming</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Neural Experience for Gaming. This autonomous system provides user experience with zero manual intervention needed.</p>
 

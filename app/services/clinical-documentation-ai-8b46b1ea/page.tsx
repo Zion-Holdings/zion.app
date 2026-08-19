@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/clinical-documentation-ai-8b46b1ea` title="Clinical Documentation AI" />
+        <BreadcrumbSchema path={`/services/clinical-documentation-ai-8b46b1ea` title="Clinical Documentation AI" />
         <h1 className="text-4xl font-bold mb-6">Clinical Documentation AI</h1>
         <p className="text-lg text-gray-300 mb-8">Automate clinical documentation with ambient AI scribes. Generates SOAP notes, coding suggestions, and compliance checks in real-time during patient encounters.</p>
 

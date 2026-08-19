@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-performance-compliance-68e8d868` title="Cognitive Performance Compliance" />
+        <BreadcrumbSchema path={`/services/cognitive-performance-compliance-68e8d868` title="Cognitive Performance Compliance" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Performance Compliance</h1>
         <p className="text-lg text-gray-300 mb-8">Next-generation Manufacturing solution: Cognitive Performance Compliance. Combines resource optimization with adaptive intelligence for optimal results.</p>
 

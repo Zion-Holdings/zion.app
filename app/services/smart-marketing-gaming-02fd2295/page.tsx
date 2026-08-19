@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/smart-marketing-gaming-02fd2295` title="Smart marketing-gaming" />
+        <BreadcrumbSchema path={`/services/smart-marketing-gaming-02fd2295` title="Smart marketing-gaming" />
         <h1 className="text-4xl font-bold mb-6">Smart marketing-gaming</h1>
         <p className="text-lg text-gray-300 mb-8">Revolutionize Gaming through intelligent automation. Our Smart marketing-gaming leverages advanced machine learning to deliver compliance monitoring at scale.</p>
 
