@@ -6,6 +6,7 @@ export interface NavigationLink {
 
 export const PRIMARY_NAV_LINKS: NavigationLink[] = [
   { name: 'Home', href: '/' },
+  { name: 'AI Lab', href: '/ai', badge: 'New' },
   { name: 'Services', href: '/services' },
   { name: 'Industries', href: '/industries' },
   { name: 'Solutions', href: '/solutions' },
@@ -13,6 +14,14 @@ export const PRIMARY_NAV_LINKS: NavigationLink[] = [
   { name: 'AI Agents', href: '/agents-monitoring', badge: 'Live' },
   { name: 'Tools', href: '/tools/service-comparison' },
   { name: 'Contact', href: '/contact' },
+];
+
+export const AI_LAB_LINKS: NavigationLink[] = [
+  { name: 'AI Lab Home', href: '/ai' },
+  { name: 'Solutions Configurator', href: '/ai/solutions-configurator' },
+  { name: 'URL Audit Assistant', href: '/ai/url-audit-assistant' },
+  { name: 'AI Readiness Assessment', href: '/ai/ai-readiness-assessment' },
+  { name: 'Demo Sandbox', href: '/ai/demo' },
 ];
 
 export const SOLUTION_LINKS: NavigationLink[] = [

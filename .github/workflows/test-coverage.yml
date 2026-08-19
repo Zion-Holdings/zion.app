@@ -1,5 +1,5 @@
 name: Test Coverage Guard
-on:
+"on":
   push:
     branches:
     - main

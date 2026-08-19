@@ -8,7 +8,7 @@ concurrency:
   group: pages-watchdog
   cancel-in-progress: true
 
-on:
+"on":
   schedule:
     - cron: '*/15 * * * *'
   workflow_dispatch:
