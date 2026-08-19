@@ -505483,5 +505483,335 @@
     "icon": "\ud83d\udca1",
     "href": "/services/intelligent-transportation-inventory-management-70726cf7",
     "popular": false
+  },
+  {
+    "id": "ai-powered-insightful-retail-personalization-c308a18e",
+    "name": "AI-Powered Insightful Retail Personalization",
+    "description": "Omnichannel personalization engine that delivers insightful product recommendations, dynamic pricing, and individualized experiences across all retail touchpoints.",
+    "category": "customer experience",
+    "industry": "retail",
+    "features": [
+      "Product recommendations",
+      "Dynamic pricing",
+      "Customer segmentation",
+      "Cross-channel orchestration"
+    ],
+    "benefits": [
+      "Increased conversion",
+      "Higher AOV",
+      "Better loyalty",
+      "Revenue growth"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T15:31:40.585000+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-insightful-retail-personalization-c308a18e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-insightful-retail-personalization-c308a18e",
+    "popular": false
+  },
+  {
+    "id": "smart-supply-chain-investment-analytics-1e427eaf",
+    "name": "Smart Supply Chain Investment Analytics",
+    "description": "AI-driven real estate investment platform that identifies cloud-native opportunities, analyzes market trends, and optimizes portfolio performance through predictive analytics.",
+    "category": "analytics",
+    "industry": "real estate",
+    "features": [
+      "Market forecasting",
+      "ROI optimization",
+      "Risk assessment",
+      "Portfolio analytics"
+    ],
+    "benefits": [
+      "Higher returns",
+      "Reduced risk",
+      "Data-driven decisions",
+      "Market timing advantage"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-19T15:31:40.585080+00:00",
+    "contactInfo": {
+      "website": "/services/smart-supply-chain-investment-analytics-1e427eaf",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-supply-chain-investment-analytics-1e427eaf",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-smart-property-valuation-d14b4df9",
+    "name": "AI-Powered Smart Property Valuation",
+    "description": "Machine learning platform that provides smart property valuations using computer vision, market analytics, and predictive modeling. Delivers accurate appraisals in seconds.",
+    "category": "analytics",
+    "industry": "real estate",
+    "features": [
+      "Automated valuation models",
+      "Computer vision analysis",
+      "Market trend prediction",
+      "Comparable property matching"
+    ],
+    "benefits": [
+      "Instant valuations",
+      "95%+ accuracy",
+      "Reduced appraisal costs",
+      "Faster transactions"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:31:40.585115+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-smart-property-valuation-d14b4df9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-smart-property-valuation-d14b4df9",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-enterprise-grade-energy-analytics-5fb4111d",
+    "name": "AI-Powered Enterprise-Grade Energy Analytics",
+    "description": "AI-driven analytics platform that delivers enterprise-grade insights into energy operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time data visualization",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T15:31:40.585127+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-enterprise-grade-energy-analytics-5fb4111d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-enterprise-grade-energy-analytics-5fb4111d",
+    "popular": false
+  },
+  {
+    "id": "intelligent-energy-trading-automation-1cfe0794",
+    "name": "Intelligent Energy Trading Automation",
+    "description": "Algorithmic trading platform that executes next-generation strategies using AI-driven market analysis, sentiment processing, and real-time risk management.",
+    "category": "automation",
+    "industry": "finance",
+    "features": [
+      "Signal generation",
+      "Execution optimization",
+      "Risk controls",
+      "Performance attribution"
+    ],
+    "benefits": [
+      "Alpha generation",
+      "Reduced latency",
+      "Disciplined execution",
+      "Scalable strategies"
+    ],
+    "pricing": {
+      "basic": "318",
+      "pro": "798",
+      "enterprise": "2398"
+    },
+    "timestamp": "2026-08-19T15:31:40.585134+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-energy-trading-automation-1cfe0794",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-energy-trading-automation-1cfe0794",
+    "popular": false
+  },
+  {
+    "id": "predictive-manufacturing-churn-prevention-f6a1657c",
+    "name": "Predictive Manufacturing Churn Prevention",
+    "description": "Machine learning system that identifies data-driven churn signals in telecom customer behavior, enabling proactive retention strategies and personalized intervention campaigns.",
+    "category": "analytics",
+    "industry": "telecommunications",
+    "features": [
+      "Behavioral analysis",
+      "Risk scoring",
+      "Automated interventions",
+      "Campaign optimization"
+    ],
+    "benefits": [
+      "Reduced churn rate",
+      "Increased ARPU",
+      "Higher customer lifetime value",
+      "Proactive retention"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T15:31:40.585153+00:00",
+    "contactInfo": {
+      "website": "/services/predictive-manufacturing-churn-prevention-f6a1657c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-manufacturing-churn-prevention-f6a1657c",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-scalable-customer-analytics-3b2def10",
+    "name": "AI-Driven Scalable Customer Analytics",
+    "description": "Customer intelligence platform that delivers scalable insights into shopper behavior, lifetime value, and churn prediction for retail and e-commerce businesses.",
+    "category": "analytics",
+    "industry": "retail",
+    "features": [
+      "Behavioral analysis",
+      "LTV prediction",
+      "Churn prevention",
+      "Segment activation"
+    ],
+    "benefits": [
+      "Higher retention",
+      "Increased LTV",
+      "Targeted marketing",
+      "Better ROI"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T15:31:40.585240+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-scalable-customer-analytics-3b2def10",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-scalable-customer-analytics-3b2def10",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-real-time-financial-planning-4f2d8c4b",
+    "name": "AI-Driven Real-Time Financial Planning",
+    "description": "Automated financial planning system that creates real-time personalized wealth strategies, tax optimization, and retirement planning using advanced algorithms.",
+    "category": "forecasting",
+    "industry": "finance",
+    "features": [
+      "Goal-based planning",
+      "Tax optimization",
+      "Monte Carlo simulation",
+      "Rebalancing automation"
+    ],
+    "benefits": [
+      "Personalized advice",
+      "Tax efficiency",
+      "Goal achievement",
+      "Lower fees"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:31:40.585251+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-real-time-financial-planning-4f2d8c4b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-real-time-financial-planning-4f2d8c4b",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-enterprise-grade-financial-planning-8cbc0d60",
+    "name": "AI-Driven Enterprise-Grade Financial Planning",
+    "description": "Automated financial planning system that creates enterprise-grade personalized wealth strategies, tax optimization, and retirement planning using advanced algorithms.",
+    "category": "forecasting",
+    "industry": "finance",
+    "features": [
+      "Goal-based planning",
+      "Tax optimization",
+      "Monte Carlo simulation",
+      "Rebalancing automation"
+    ],
+    "benefits": [
+      "Personalized advice",
+      "Tax efficiency",
+      "Goal achievement",
+      "Lower fees"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:31:40.585322+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-enterprise-grade-financial-planning-8cbc0d60",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-enterprise-grade-financial-planning-8cbc0d60",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-intelligent-sales-analytics-bc0994ab",
+    "name": "AI-Powered Intelligent Sales Analytics",
+    "description": "AI-driven analytics platform that delivers intelligent insights into sales operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time data visualization",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T15:31:40.585432+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-intelligent-sales-analytics-bc0994ab",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-intelligent-sales-analytics-bc0994ab",
+    "popular": false
   }
 ]
