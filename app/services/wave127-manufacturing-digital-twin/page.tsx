@@ -1,4 +1,5 @@
-import { } from 'next/navigation';
+import Link from 'next/link';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata = {
   title: "Manufacturing Digital Twin Platform - Zion Tech Group",
@@ -12,6 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <BreadcrumbSchema path={`/services/wave127-manufacturing-digital-twin`} title="Manufacturing Digital Twin Platform" />
         <h1 className="text-4xl font-bold mb-6">Manufacturing Digital Twin Platform</h1>
         <p className="text-lg text-gray-300 mb-8">High-fidelity digital replicas of production lines, facilities, and supply chains. Run what-if scenarios, optimize throughput, simulate disruptions, and validate changes before touching the physical plant — compressing commissioning time by 60%.</p>
         
@@ -54,6 +56,10 @@ export default function ServicePage() {
           </div>
         </div>
         
+        <div className="border-t border-slate-800 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+          <Link href="/services/" className="text-purple-300 hover:text-purple-200">← Back to All Services</Link>
+          <Link href="/tools/" className="text-slate-400 hover:text-slate-300">Try our free tools →</Link>
+        </div>
         <div className="text-center">
           <a 
             href="https://calendly.com/kleber-ziontechgroup/consultation" 

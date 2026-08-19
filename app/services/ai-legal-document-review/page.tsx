@@ -1,4 +1,5 @@
-import { } from 'next/navigation';
+import Link from 'next/link';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata = {
   title: "AI Legal Document Review Assistant - Zion Tech Group",
@@ -12,6 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <BreadcrumbSchema path={`/services/ai-legal-document-review`} title="AI Legal Document Review Assistant" />
         <h1 className="text-4xl font-bold mb-6">AI Legal Document Review Assistant</h1>
         <p className="text-lg text-gray-300 mb-8">Accelerate legal document review with AI-powered contract analysis, clause extraction, risk identification, and compliance checking. Reduces review time by 80% while improving accuracy. Supports NDAs, MSAs, and complex commercial agreements.</p>
         
@@ -53,6 +55,10 @@ export default function ServicePage() {
           </div>
         </div>
         
+        <div className="border-t border-slate-800 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+          <Link href="/services/" className="text-purple-300 hover:text-purple-200">← Back to All Services</Link>
+          <Link href="/tools/" className="text-slate-400 hover:text-slate-300">Try our free tools →</Link>
+        </div>
         <div className="text-center">
           <a 
             href="https://calendly.com/kleber-ziontechgroup/consultation" 

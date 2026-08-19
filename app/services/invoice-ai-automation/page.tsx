@@ -1,4 +1,5 @@
-import { } from 'next/navigation';
+import Link from 'next/link';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata = {
   title: "AI Invoice Processing & Auto-Posting - Zion Tech Group",
@@ -12,6 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <BreadcrumbSchema path={`/services/invoice-ai-automation`} title="AI Invoice Processing &amp; Auto-Posting" />
         <h1 className="text-4xl font-bold mb-6">AI Invoice Processing &amp; Auto-Posting</h1>
         <p className="text-lg text-gray-300 mb-8">Invoice automation: three-way PO matching, OCR line-item extraction, GL coding by vendor and line item, approval workflow per threshold, and ERP auto-post to NetSuite, SAP, or QuickBooks with zero human touch.</p>
         
@@ -53,6 +55,10 @@ export default function ServicePage() {
           </div>
         </div>
         
+        <div className="border-t border-slate-800 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+          <Link href="/services/" className="text-purple-300 hover:text-purple-200">← Back to All Services</Link>
+          <Link href="/tools/" className="text-slate-400 hover:text-slate-300">Try our free tools →</Link>
+        </div>
         <div className="text-center">
           <a 
             href="https://calendly.com/kleber-ziontechgroup/consultation" 

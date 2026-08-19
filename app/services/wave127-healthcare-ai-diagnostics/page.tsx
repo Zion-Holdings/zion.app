@@ -1,4 +1,5 @@
-import { } from 'next/navigation';
+import Link from 'next/link';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata = {
   title: "Healthcare AI Diagnostics Assistant - Zion Tech Group",
@@ -12,6 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <BreadcrumbSchema path={`/services/wave127-healthcare-ai-diagnostics`} title="Healthcare AI Diagnostics Assistant" />
         <h1 className="text-4xl font-bold mb-6">Healthcare AI Diagnostics Assistant</h1>
         <p className="text-lg text-gray-300 mb-8">FDA-aligned AI assistant for clinical decision support. Analyzes medical imaging (X-ray, CT, MRI), correlates patient history, and surfaces differential diagnoses with evidence citations — augmenting clinician judgment, not replacing it.</p>
         
@@ -54,6 +56,10 @@ export default function ServicePage() {
           </div>
         </div>
         
+        <div className="border-t border-slate-800 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+          <Link href="/services/" className="text-purple-300 hover:text-purple-200">← Back to All Services</Link>
+          <Link href="/tools/" className="text-slate-400 hover:text-slate-300">Try our free tools →</Link>
+        </div>
         <div className="text-center">
           <a 
             href="https://calendly.com/kleber-ziontechgroup/consultation" 
