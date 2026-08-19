@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Education Matchmaking Engine - Zion Tech Group",
-  description: "AI-driven matchmaking system that creates data-driven player matches based on skill, playstyle, and behavioral patterns for optimal gaming experiences.",
+  description: "AI-driven matchmaking system that creates scalable player matches based on skill, playstyle, and behavioral patterns for optimal gaming experiences.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-education-matchmaking-engine-70e4a490`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Education Matchmaking Engine</h1>
-        <p className="text-lg text-gray-300 mb-8">AI-driven matchmaking system that creates data-driven player matches based on skill, playstyle, and behavioral patterns for optimal gaming experiences.</p>
+        <p className="text-lg text-gray-300 mb-8">AI-driven matchmaking system that creates scalable player matches based on skill, playstyle, and behavioral patterns for optimal gaming experiences.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

@@ -17861,5 +17861,335 @@
     "icon": "\ud83d\udca1",
     "href": "/services/predictive-proactive-freight-analytics-427ec81d",
     "popular": false
+  },
+  {
+    "id": "intelligent-logistics-trading-automation-05d8f770",
+    "name": "Intelligent Logistics Trading Automation",
+    "description": "Algorithmic trading platform that executes adaptive strategies using AI-driven market analysis, sentiment processing, and real-time risk management.",
+    "category": "automation",
+    "industry": "finance",
+    "features": [
+      "Signal generation",
+      "Execution optimization",
+      "Risk controls",
+      "Performance attribution"
+    ],
+    "benefits": [
+      "Alpha generation",
+      "Reduced latency",
+      "Disciplined execution",
+      "Scalable strategies"
+    ],
+    "pricing": {
+      "basic": "318",
+      "pro": "798",
+      "enterprise": "2398"
+    },
+    "timestamp": "2026-08-19T15:27:54.405255+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-logistics-trading-automation-05d8f770",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-logistics-trading-automation-05d8f770",
+    "popular": false
+  },
+  {
+    "id": "smart-sales-quality-control-48a76429",
+    "name": "Smart Sales Quality Control",
+    "description": "Computer vision system that provides proactive automated inspection, defect detection, and quality assurance for manufacturing production lines.",
+    "category": "automation",
+    "industry": "manufacturing",
+    "features": [
+      "Visual inspection",
+      "Defect classification",
+      "Root cause analysis",
+      "Real-time alerts"
+    ],
+    "benefits": [
+      "Zero defects",
+      "Faster throughput",
+      "Reduced waste",
+      "Consistent quality"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:27:54.405283+00:00",
+    "contactInfo": {
+      "website": "/services/smart-sales-quality-control-48a76429",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-sales-quality-control-48a76429",
+    "popular": false
+  },
+  {
+    "id": "ai-generated-intelligent-game-content-d3c3ed6a",
+    "name": "AI-Generated Intelligent Game Content",
+    "description": "Procedural content generation platform that creates intelligent game assets, levels, narratives, and quests using generative AI, reducing development time and costs.",
+    "category": "development",
+    "industry": "gaming",
+    "features": [
+      "Level generation",
+      "Asset creation",
+      "Narrative design",
+      "Balance testing"
+    ],
+    "benefits": [
+      "Faster content creation",
+      "Infinite replayability",
+      "Reduced dev costs",
+      "Dynamic experiences"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-19T15:27:54.405331+00:00",
+    "contactInfo": {
+      "website": "/services/ai-generated-intelligent-game-content-d3c3ed6a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-generated-intelligent-game-content-d3c3ed6a",
+    "popular": false
+  },
+  {
+    "id": "smart-financial-quality-control-f1a2bff5",
+    "name": "Smart Financial Quality Control",
+    "description": "Computer vision system that provides autonomous automated inspection, defect detection, and quality assurance for manufacturing production lines.",
+    "category": "automation",
+    "industry": "manufacturing",
+    "features": [
+      "Visual inspection",
+      "Defect classification",
+      "Root cause analysis",
+      "Real-time alerts"
+    ],
+    "benefits": [
+      "Zero defects",
+      "Faster throughput",
+      "Reduced waste",
+      "Consistent quality"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:27:54.405346+00:00",
+    "contactInfo": {
+      "website": "/services/smart-financial-quality-control-f1a2bff5",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-financial-quality-control-f1a2bff5",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-intelligent-predictive-maintenance-0f5183e3",
+    "name": "AI-Powered Intelligent Predictive Maintenance",
+    "description": "Industrial IoT platform that uses intelligent sensor analytics and ML to predict equipment failures, optimize maintenance schedules, and maximize uptime.",
+    "category": "analytics",
+    "industry": "manufacturing",
+    "features": [
+      "Condition monitoring",
+      "Failure prediction",
+      "Maintenance optimization",
+      "Asset management"
+    ],
+    "benefits": [
+      "Reduced downtime",
+      "Lower maintenance costs",
+      "Extended asset life",
+      "Safety improvement"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-19T15:27:54.405361+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-intelligent-predictive-maintenance-0f5183e3",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-intelligent-predictive-maintenance-0f5183e3",
+    "popular": false
+  },
+  {
+    "id": "intelligent-gaming-warehouse-automation-8acd5052",
+    "name": "Intelligent Gaming Warehouse Automation",
+    "description": "Warehouse management system that uses automated AI and robotics orchestration for automated picking, packing, inventory tracking, and space optimization.",
+    "category": "automation",
+    "industry": "logistics",
+    "features": [
+      "Automated picking",
+      "Inventory tracking",
+      "Space optimization",
+      "Robot coordination"
+    ],
+    "benefits": [
+      "Higher throughput",
+      "Lower labor costs",
+      "Accuracy improvement",
+      "Scalable operations"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-19T15:27:54.405376+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-gaming-warehouse-automation-8acd5052",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-gaming-warehouse-automation-8acd5052",
+    "popular": false
+  },
+  {
+    "id": "intelligent-education-patient-engagement-a18e26de",
+    "name": "Intelligent Education Patient Engagement",
+    "description": "AI-driven patient engagement platform that delivers insightful personalized care journeys, remote monitoring, and adherence support through intelligent automation.",
+    "category": "customer experience",
+    "industry": "healthcare",
+    "features": [
+      "Personalized care plans",
+      "Remote monitoring",
+      "Medication adherence",
+      "Virtual consultations"
+    ],
+    "benefits": [
+      "Better outcomes",
+      "Higher satisfaction",
+      "Reduced readmissions",
+      "Lower costs"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:27:54.405404+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-education-patient-engagement-a18e26de",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-education-patient-engagement-a18e26de",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-intelligent-manufacturing-analytics-f457d54f",
+    "name": "AI-Powered Intelligent Manufacturing Analytics",
+    "description": "AI-driven analytics platform that delivers intelligent insights into manufacturing operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time data visualization",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T15:27:54.405435+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-intelligent-manufacturing-analytics-f457d54f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-intelligent-manufacturing-analytics-f457d54f",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-insightful-financial-planning-6d220de3",
+    "name": "AI-Driven Insightful Financial Planning",
+    "description": "Automated financial planning system that creates insightful personalized wealth strategies, tax optimization, and retirement planning using advanced algorithms.",
+    "category": "forecasting",
+    "industry": "finance",
+    "features": [
+      "Goal-based planning",
+      "Tax optimization",
+      "Monte Carlo simulation",
+      "Rebalancing automation"
+    ],
+    "benefits": [
+      "Personalized advice",
+      "Tax efficiency",
+      "Goal achievement",
+      "Lower fees"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:27:54.405478+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-insightful-financial-planning-6d220de3",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-insightful-financial-planning-6d220de3",
+    "popular": false
+  },
+  {
+    "id": "intelligent-education-matchmaking-engine-70e4a490",
+    "name": "Intelligent Education Matchmaking Engine",
+    "description": "AI-driven matchmaking system that creates scalable player matches based on skill, playstyle, and behavioral patterns for optimal gaming experiences.",
+    "category": "automation",
+    "industry": "gaming",
+    "features": [
+      "Skill-based matching",
+      "Latency optimization",
+      "Fair play detection",
+      "Dynamic balancing"
+    ],
+    "benefits": [
+      "Better player experience",
+      "Reduced toxicity",
+      "Higher engagement",
+      "Longer sessions"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T15:27:54.405515+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-education-matchmaking-engine-70e4a490",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-education-matchmaking-engine-70e4a490",
+    "popular": false
   }
 ]

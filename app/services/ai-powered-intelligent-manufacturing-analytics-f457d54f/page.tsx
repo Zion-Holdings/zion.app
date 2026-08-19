@@ -1,10 +1,10 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Smart Sales Quality Control - Zion Tech Group",
-  description: "Computer vision system that provides proactive automated inspection, defect detection, and quality assurance for manufacturing production lines.",
+  title: "AI-Powered Intelligent Manufacturing Analytics - Zion Tech Group",
+  description: "AI-driven analytics platform that delivers intelligent insights into manufacturing operations, providing real-time monitoring, predictive modeling, and automate",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/smart-sales-quality-control-48a76429`
+    canonical: `https://ziontechgroup.com/services/ai-powered-intelligent-manufacturing-analytics-f457d54f`
   }
 };
 
@@ -12,26 +12,26 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Smart Sales Quality Control</h1>
-        <p className="text-lg text-gray-300 mb-8">Computer vision system that provides proactive automated inspection, defect detection, and quality assurance for manufacturing production lines.</p>
+        <h1 className="text-4xl font-bold mb-6">AI-Powered Intelligent Manufacturing Analytics</h1>
+        <p className="text-lg text-gray-300 mb-8">AI-driven analytics platform that delivers intelligent insights into manufacturing operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Visual inspection</li>
-            <li>Defect classification</li>
-            <li>Root cause analysis</li>
-            <li>Real-time alerts</li>
+            <li>Real-time data visualization</li>
+            <li>Predictive modeling</li>
+            <li>Automated reporting</li>
+            <li>Custom dashboards</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero defects</li>
-            <li>Faster throughput</li>
-            <li>Reduced waste</li>
-            <li>Consistent quality</li>
+            <li>Data-driven decision making</li>
+            <li>Improved operational efficiency</li>
+            <li>Proactive issue detection</li>
+            <li>Enhanced KPI tracking</li>
           </ul>
         </div>
         
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$258/month</p>
+              <p className="text-2xl font-bold mb-2">$199/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$648/month</p>
+              <p className="text-2xl font-bold mb-2">$499/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1948/month</p>
+              <p className="text-2xl font-bold mb-2">$1499/month</p>
             </div>
           </div>
         </div>

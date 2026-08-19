@@ -1,10 +1,10 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Smart Sales Quality Control - Zion Tech Group",
-  description: "Computer vision system that provides proactive automated inspection, defect detection, and quality assurance for manufacturing production lines.",
+  title: "Intelligent Logistics Trading Automation - Zion Tech Group",
+  description: "Algorithmic trading platform that executes adaptive strategies using AI-driven market analysis, sentiment processing, and real-time risk management.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/smart-sales-quality-control-48a76429`
+    canonical: `https://ziontechgroup.com/services/intelligent-logistics-trading-automation-05d8f770`
   }
 };
 
@@ -12,26 +12,26 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Smart Sales Quality Control</h1>
-        <p className="text-lg text-gray-300 mb-8">Computer vision system that provides proactive automated inspection, defect detection, and quality assurance for manufacturing production lines.</p>
+        <h1 className="text-4xl font-bold mb-6">Intelligent Logistics Trading Automation</h1>
+        <p className="text-lg text-gray-300 mb-8">Algorithmic trading platform that executes adaptive strategies using AI-driven market analysis, sentiment processing, and real-time risk management.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Visual inspection</li>
-            <li>Defect classification</li>
-            <li>Root cause analysis</li>
-            <li>Real-time alerts</li>
+            <li>Signal generation</li>
+            <li>Execution optimization</li>
+            <li>Risk controls</li>
+            <li>Performance attribution</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero defects</li>
-            <li>Faster throughput</li>
-            <li>Reduced waste</li>
-            <li>Consistent quality</li>
+            <li>Alpha generation</li>
+            <li>Reduced latency</li>
+            <li>Disciplined execution</li>
+            <li>Scalable strategies</li>
           </ul>
         </div>
         
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$258/month</p>
+              <p className="text-2xl font-bold mb-2">$318/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$648/month</p>
+              <p className="text-2xl font-bold mb-2">$798/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1948/month</p>
+              <p className="text-2xl font-bold mb-2">$2398/month</p>
             </div>
           </div>
         </div>
