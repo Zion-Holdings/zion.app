@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
-import { CATEGORIES } from '@/constants/categories';
+import { CATEGORIES } from '@/constants/navigation';
 
 interface Recommendation {
   id: string;
@@ -103,7 +103,7 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
           title: service.title,
           description: service.description,
           category: service.category,
-          icon: service.icon,
+          icon: service.category?.[0]?.toUpperCase() || '■',
           benefits: service.benefits?.slice(0, 3) || [],
           pricing: service.pricing || {},
           href: `/services/${service.id}`,
