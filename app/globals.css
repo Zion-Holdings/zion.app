@@ -5,12 +5,53 @@
 :root {
   color-scheme: dark;
 }
+
+/*
+ * Horizontal overflow has to be contained at the root, not per-page: a single
+ * wide child anywhere in the tree scrolls the whole document sideways on a
+ * phone, and there is no way to measure that from this environment (browser
+ * automation cannot run on Android), so it is prevented structurally instead.
+ * Set on both html and body because either one can be the scroll container
+ * depending on how the viewport meta resolves.
+ */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background: #0b0f1a;
   color: #e5e7eb;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+/* Dark-theme scrollbar: the default light track is jarring against #0b0f1a. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+  border: 2px solid #0f172a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Firefox equivalent — thumb then track. */
+html {
+  scrollbar-color: #334155 #0f172a;
+  scrollbar-width: thin;
 }
 .skip-to-content {
   position: absolute;
