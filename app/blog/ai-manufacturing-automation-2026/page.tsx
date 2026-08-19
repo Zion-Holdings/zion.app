@@ -180,7 +180,7 @@ export default function BlogPost() {
               implementation timeline, and technology recommendations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+130****0950" className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-600 to-amber-600 text-white font-semibold">
+              <a href="tel:+13024640950" className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-600 to-amber-600 text-white font-semibold">
                 📞 Call for Assessment
               </a>
               <a href="/contact" className="inline-flex items-center px-6 py-3 rounded-xl border border-slate-700 text-slate-300 font-semibold hover:border-yellow-500/40 transition">

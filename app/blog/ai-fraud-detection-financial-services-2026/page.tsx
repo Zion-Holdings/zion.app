@@ -186,7 +186,7 @@ export default function BlogPost() {
               AI solution with projected ROI and implementation timeline.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+130****0950" className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold">
+              <a href="tel:+13024640950" className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold">
                 📞 Call for Consultation
               </a>
               <a href="/contact" className="inline-flex items-center px-6 py-3 rounded-xl border border-slate-700 text-slate-300 font-semibold hover:border-indigo-500/40 transition">
