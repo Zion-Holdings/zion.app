@@ -1,0 +1,105 @@
+{
+  "total_services_main": 10667,
+  "services_added_discovery": 10,
+  "total_services_added_this_run": 10,
+  "last_run": "2026-08-19T12:41:06.696058+00:00",
+  "industry_breakdown_main": {
+    "technology": 706,
+    "real-estate": 569,
+    "manufacturing": 565,
+    "finance": 562,
+    "healthcare": 554,
+    "retail": 543,
+    "logistics": 524,
+    "gaming": 516,
+    "telecom": 500,
+    "insurance": 412,
+    "transportation": 381,
+    "hospitality": 376,
+    "automotive": 373,
+    "agriculture": 372,
+    "legal": 368,
+    "energy": 363,
+    "education": 360,
+    "sports": 359,
+    "media": 359,
+    "construction": 334,
+    "General": 328,
+    "Finance": 176,
+    "Technology": 114,
+    "Manufacturing": 68,
+    "Marketing": 56,
+    "E-Commerce": 42,
+    "Healthcare": 39,
+    "telecommunications": 37,
+    "SaaS": 36,
+    "Enterprise": 29
+  },
+  "target_industry_counts_main": {
+    "real-estate": 569,
+    "telecom": 502,
+    "gaming": 516,
+    "healthcare": 593,
+    "finance": 738,
+    "manufacturing": 633,
+    "retail": 554,
+    "logistics": 535
+  },
+  "landing_pages_generated": 10667,
+  "outreach_emails_generated": 22636,
+  "sitemap_urls": 10667,
+  "status": "success",
+  "total_services": 10667,
+  "unique_services": 10667,
+  "services_discovered": 10,
+  "run_history": [
+    {
+      "timestamp": "2026-08-19T12:41:06.696058+00:00",
+      "services_added": 10,
+      "total_services": 10667,
+      "unique_ids": 10667,
+      "duration_seconds": 1.0,
+      "rate_services_per_second": 10.0
+    },
+    {
+      "timestamp": "2026-08-19T12:34:38.000000+00:00",
+      "services_added": 10,
+      "total_services": 10157,
+      "unique_ids": 10157,
+      "duration_seconds": 2.0,
+      "rate_services_per_second": 5.0
+    },
+    {
+      "timestamp": "2026-08-19T07:34:23.788781+00:00",
+      "services_added": 10,
+      "total_services": 10062,
+      "unique_ids": 10062,
+      "duration_seconds": 1,
+      "rate_services_per_second": 10
+    },
+    {
+      "timestamp": "2026-08-19T08:39:31.000000+00:00",
+      "services_added": 10,
+      "total_services": 10062,
+      "unique_ids": 10062,
+      "duration_seconds": 16,
+      "rate_services_per_second": 0.625
+    },
+    {
+      "timestamp": "2026-08-19T08:47:53.000000+00:00",
+      "services_added": 10,
+      "total_services": 10072,
+      "unique_ids": 10072,
+      "duration_seconds": 1.13,
+      "rate_services_per_second": 8.85
+    },
+    {
+      "timestamp": "2026-08-19T08:55:02.000000+00:00",
+      "services_added": 10,
+      "total_services": 10072,
+      "unique_ids": 10072,
+      "duration_seconds": 1,
+      "rate_services_per_second": 10
+    }
+  ]
+}
