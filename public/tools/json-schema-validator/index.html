@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Schema Validator | Zion Tech Group</title>
+  <meta name="description" content="Validate JSON data against a JSON Schema draft 7/2019-09/2020-12.">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold mb-2">JSON Schema Validator</h1>
+    <p class="text-slate-300 mb-6">Validate JSON instances against JSON Schema. Supports Draft 7, 2019-09, and 2020-12 basics.</p>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div>
+        <label class="block text-sm font-semibold mb-2">JSON Schema</label>
+        <textarea id="schema" class="w-full h-56 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-sm font-mono" placeholder='{"type":"object","properties":{"name":{"type":"string"}}}'></textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-2">JSON Instance</label>
+        <textarea id="instance" class="w-full h-56 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-sm font-mono" placeholder='{"name":"Zion"}'></textarea>
+      </div>
+    </div>
+    <div class="mt-4 flex gap-3">
+      <button id="validateBtn" class="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold hover:bg-indigo-400">Validate</button>
+      <button id="formatBtn" class="rounded-xl bg-slate-800 px-4 py-2 text-sm font-semibold hover:bg-slate-700">Format Both</button>
+    </div>
+    <div class="mt-4 grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-sm font-semibold mb-2">Schema Result</label>
+        <pre id="schemaResult" class="w-full h-40 overflow-auto rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs font-mono text-slate-200">—</pre>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-2">Validation Result</label>
+        <pre id="validationResult" class="w-full h-40 overflow-auto rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs font-mono text-slate-200">—</pre>
+      </div>
+    </div>
+    <div class="mt-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+      <h2 class="text-xl font-bold mb-2">Need help with API and integration governance?</h2>
+      <p class="text-slate-300 mb-4">Zion Tech Group can help design schemas, APIs, and integration contracts.</p>
+      <a href="/services/api-integration/" class="inline-block rounded-xl bg-indigo-500 px-5 py-3 text-sm font-semibold hover:bg-indigo-400">Explore API Integration</a>
+    </div>
+  </div>
+  <script>
+    'use strict';
+    const schemaEl = document.getElementById('schema');
+    const instanceEl = document.getElementById('instance');
+    const schemaResultEl = document.getElementById('schemaResult');
+    const validationResultEl = document.getElementById('validationResult');
+    const validateBtn = document.getElementById('validateBtn');
+    const formatBtn = document.getElementById('formatBtn');
+
+    function safeJson(text) {
+      try { return JSON.parse(text); }
+      catch (e) { return null; }
+    }
+
+    function validateType(instance, schema) {
+      const errors = [];
+      const check = (path, value, s) => {
+        if (s.type && typeof value !== s.type) errors.push(`${path || '$'}: expected ${s.type}`);
+        if (s.properties && typeof value === 'object' && !Array.isArray(value)) {
+          Object.keys(s.properties || {}).forEach(k => {
+            if (value[k] !== undefined) check(`${path}.${k}`, value[k], s.properties[k]);
+          });
+        }
+        if (s.required && typeof value === 'object') {
+          (s.required || []).forEach(k => {
+            if (value[k] === undefined) errors.push(`${path || '$'}: missing required ${k}`);
+          });
+        }
+      };
+      check('', instance, schema);
+      return errors;
+    }
+
+    validateBtn.addEventListener('click', () => {
+      const schema = safeJson(schemaEl.value);
+      const instance = safeJson(instanceEl.value);
+      if (schema === null) { schemaResultEl.textContent = 'Invalid schema JSON'; return; }
+      if (instance === null) { validationResultEl.textContent = 'Invalid instance JSON'; return; }
+      schemaResultEl.textContent = JSON.stringify(schema, null, 2);
+      const errors = validateType(instance, schema);
+      validationResultEl.textContent = errors.length ? errors.join('\n') : '✅ Valid against schema';
+      validationResultEl.className = `w-full h-40 overflow-auto rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs font-mono text-slate-200 ${errors.length ? 'text-red-400' : 'text-emerald-400'}`;
+    });
+
+    formatBtn.addEventListener('click', () => {
+      const schema = safeJson(schemaEl.value);
+      const instance = safeJson(instanceEl.value);
+      if (schema) schemaEl.value = JSON.stringify(schema, null, 2);
+      if (instance) instanceEl.value = JSON.stringify(instance, null, 2);
+    });
+  </script>
+</body>
+</html>
