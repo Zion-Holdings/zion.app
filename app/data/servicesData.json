@@ -512904,5 +512904,335 @@
     "icon": "\ud83d\udca1",
     "href": "/services/ai-powered-process-experience-30d3aea4",
     "popular": false
+  },
+  {
+    "id": "ai-powered-insightful-route-optimization-34510e60",
+    "name": "AI-Powered Insightful Route Optimization",
+    "description": "Advanced logistics platform that computes insightful optimal routes, load planning, and delivery scheduling using real-time traffic, weather, and constraint data.",
+    "category": "analytics",
+    "industry": "logistics",
+    "features": [
+      "Route optimization",
+      "Load planning",
+      "Real-time tracking",
+      "Dynamic scheduling"
+    ],
+    "benefits": [
+      "Reduced fuel costs",
+      "Faster deliveries",
+      "Higher capacity utilization",
+      "Lower emissions"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T16:55:07.579851+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-insightful-route-optimization-34510e60",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-insightful-route-optimization-34510e60",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-data-driven-clinical-decision-support-76cdee57",
+    "name": "AI-Powered Data-Driven Clinical Decision Support",
+    "description": "Clinical AI system that provides data-driven diagnostic assistance, treatment recommendations, and care pathway optimization for healthcare providers.",
+    "category": "analytics",
+    "industry": "healthcare",
+    "features": [
+      "Diagnostic assistance",
+      "Treatment planning",
+      "Drug interaction checking",
+      "Outcome prediction"
+    ],
+    "benefits": [
+      "Improved accuracy",
+      "Personalized care",
+      "Reduced errors",
+      "Cost optimization"
+    ],
+    "pricing": {
+      "basic": "298",
+      "pro": "748",
+      "enterprise": "2248"
+    },
+    "timestamp": "2026-08-19T16:55:07.579958+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-data-driven-clinical-decision-support-76cdee57",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-data-driven-clinical-decision-support-76cdee57",
+    "popular": false
+  },
+  {
+    "id": "intelligent-operational-patient-engagement-405dbaa6",
+    "name": "Intelligent Operational Patient Engagement",
+    "description": "AI-driven patient engagement platform that delivers adaptive personalized care journeys, remote monitoring, and adherence support through intelligent automation.",
+    "category": "customer experience",
+    "industry": "healthcare",
+    "features": [
+      "Personalized care plans",
+      "Remote monitoring",
+      "Medication adherence",
+      "Virtual consultations"
+    ],
+    "benefits": [
+      "Better outcomes",
+      "Higher satisfaction",
+      "Reduced readmissions",
+      "Lower costs"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T16:55:07.580019+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-operational-patient-engagement-405dbaa6",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-operational-patient-engagement-405dbaa6",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-smart-customer-analytics-1aa15a5b",
+    "name": "AI-Driven Smart Customer Analytics",
+    "description": "Customer intelligence platform that delivers smart insights into shopper behavior, lifetime value, and churn prediction for retail and e-commerce businesses.",
+    "category": "analytics",
+    "industry": "retail",
+    "features": [
+      "Behavioral analysis",
+      "LTV prediction",
+      "Churn prevention",
+      "Segment activation"
+    ],
+    "benefits": [
+      "Higher retention",
+      "Increased LTV",
+      "Targeted marketing",
+      "Better ROI"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T16:55:07.580165+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-smart-customer-analytics-1aa15a5b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-smart-customer-analytics-1aa15a5b",
+    "popular": false
+  },
+  {
+    "id": "predictive-proactive-freight-analytics-427ec81d",
+    "name": "Predictive Proactive Freight Analytics",
+    "description": "Freight intelligence platform that provides proactive rate forecasting, capacity planning, and carrier performance analytics for logistics optimization.",
+    "category": "forecasting",
+    "industry": "logistics",
+    "features": [
+      "Rate forecasting",
+      "Capacity planning",
+      "Carrier scorecards",
+      "Lane optimization"
+    ],
+    "benefits": [
+      "Cost reduction",
+      "Better capacity",
+      "Improved reliability",
+      "Strategic sourcing"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T16:55:07.580208+00:00",
+    "contactInfo": {
+      "website": "/services/predictive-proactive-freight-analytics-427ec81d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-proactive-freight-analytics-427ec81d",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-advanced-game-analytics-7937e39e",
+    "name": "AI-Powered Advanced Game Analytics",
+    "description": "Real-time game analytics platform that provides advanced insights into player behavior, engagement patterns, and monetization opportunities using advanced ML models.",
+    "category": "analytics",
+    "industry": "gaming",
+    "features": [
+      "Player segmentation",
+      "Behavior prediction",
+      "Live ops optimization",
+      "Revenue forecasting"
+    ],
+    "benefits": [
+      "Increased retention",
+      "Higher ARPU",
+      "Better game balance",
+      "Data-driven design"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T16:55:07.580377+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-advanced-game-analytics-7937e39e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-advanced-game-analytics-7937e39e",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-adaptive-supply-chain-analytics-26367d29",
+    "name": "AI-Powered Adaptive Supply Chain Analytics",
+    "description": "AI-driven analytics platform that delivers adaptive insights into supply chain operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time data visualization",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T16:55:07.580488+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-adaptive-supply-chain-analytics-26367d29",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-adaptive-supply-chain-analytics-26367d29",
+    "popular": false
+  },
+  {
+    "id": "intelligent-logistics-warehouse-automation-9f93c94c",
+    "name": "Intelligent Logistics Warehouse Automation",
+    "description": "Warehouse management system that uses smart AI and robotics orchestration for automated picking, packing, inventory tracking, and space optimization.",
+    "category": "automation",
+    "industry": "logistics",
+    "features": [
+      "Automated picking",
+      "Inventory tracking",
+      "Space optimization",
+      "Robot coordination"
+    ],
+    "benefits": [
+      "Higher throughput",
+      "Lower labor costs",
+      "Accuracy improvement",
+      "Scalable operations"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-19T16:55:07.580512+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-logistics-warehouse-automation-9f93c94c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-logistics-warehouse-automation-9f93c94c",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-cloud-native-network-optimization-ad87e92a",
+    "name": "AI-Driven Cloud-Native Network Optimization",
+    "description": "Intelligent network management platform that uses cloud-native algorithms to optimize traffic routing, capacity planning, and quality of service across telecom infrastructure.",
+    "category": "analytics",
+    "industry": "telecommunications",
+    "features": [
+      "Traffic optimization",
+      "Capacity forecasting",
+      "QoS monitoring",
+      "Automated healing"
+    ],
+    "benefits": [
+      "Improved network performance",
+      "Reduced congestion",
+      "Lower operational costs",
+      "Better customer experience"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-19T16:55:07.580531+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-cloud-native-network-optimization-ad87e92a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-cloud-native-network-optimization-ad87e92a",
+    "popular": false
+  },
+  {
+    "id": "intelligent-education-warehouse-automation-cfa06568",
+    "name": "Intelligent Education Warehouse Automation",
+    "description": "Warehouse management system that uses intelligent AI and robotics orchestration for automated picking, packing, inventory tracking, and space optimization.",
+    "category": "automation",
+    "industry": "logistics",
+    "features": [
+      "Automated picking",
+      "Inventory tracking",
+      "Space optimization",
+      "Robot coordination"
+    ],
+    "benefits": [
+      "Higher throughput",
+      "Lower labor costs",
+      "Accuracy improvement",
+      "Scalable operations"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-19T16:55:07.580544+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-education-warehouse-automation-cfa06568",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-education-warehouse-automation-cfa06568",
+    "popular": false
   }
 ]
