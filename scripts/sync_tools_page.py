@@ -10,6 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 PUBLIC_TOOLS = REPO_ROOT / "public" / "tools"
 TOOLS_DIR = REPO_ROOT / "app" / "tools"
 PAGE_FILE = TOOLS_DIR / "page.tsx"
+TOOLS_INDEX = PUBLIC_TOOLS / "index.html"
 
 
 def scan_public_tools():
@@ -83,6 +84,49 @@ __CARDS__
     return base.replace("__CARDS__", cards_tsx)
 
 
+def render_index(cards):
+    items = "\n".join(
+        f'      <a class="card" href="/tools/{c["slug"]}/"><div class="icon">🛠️</div><div class="name">{c["name"]}</div><div class="desc">{c["description"]}</div></a>'
+        for c in cards
+    )
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tools | Zion Tech Group</title>
+<style>
+  :root {{ --bg:#0b0f1a; --card:rgba(255,255,255,0.04); --border:rgba(255,255,255,0.08); --text:#e7eaf0; --muted:#a3a8b8; --accent:#7c3aed; --accent-2:#22d3ee; }}
+  * {{ box-sizing: border-box; }}
+  html, body {{ margin:0; padding:0; background: linear-gradient(180deg,#0b0f1a 0%,#0f1626 100%); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }}
+  .wrap {{ max-width: 980px; margin: 0 auto; padding: 28px 20px 60px; }}
+  .title {{ font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }}
+  .sub {{ color: var(--muted); margin-top: 6px; }}
+  .grid {{ display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); margin-top: 18px; }}
+  @media (max-width: 720px) {{ .grid {{ grid-template-columns: 1fr; }} }}
+  .card {{ background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; text-decoration: none; color: inherit; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); transition: transform .15s ease, border-color .15s ease; }}
+  .card:hover {{ transform: translateY(-2px); border-color: rgba(124,58,237,.35); }}
+  .icon {{ font-size: 28px; margin-bottom: 10px; }}
+  .name {{ font-size: 16px; font-weight: 600; color: #fff; }}
+  .desc {{ margin-top: 6px; font-size: 13px; color: var(--muted); }}
+  .cta {{ margin-top: 22px; }}
+  .cta a {{ color: var(--accent-2); text-decoration: none; font-weight: 600; }}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">Tools</div>
+    <div class="sub">Free utilities built by Zion Tech Group to accelerate your AI and IT initiatives.</div>
+    <div class="grid">
+{items}
+    </div>
+    <div class="cta"><a href="/contact/">Talk to an engineer about your cloud estate →</a></div>
+  </div>
+</body>
+</html>
+"""
+
+
 def sync():
     cards = scan_public_tools()
     if not cards:
@@ -93,9 +137,12 @@ def sync():
             "icon": "🤖",
         }]
     ensure_tools_dir(cards)
-    content = render_page(cards)
-    PAGE_FILE.write_text(content, encoding="utf-8")
+    page_content = render_page(cards)
+    PAGE_FILE.write_text(page_content, encoding="utf-8")
+    index_content = render_index(cards)
+    TOOLS_INDEX.write_text(index_content, encoding="utf-8")
     print(f"SYNCED: {PAGE_FILE} ({len(cards)} tool cards)")
+    print(f"SYNCED: {TOOLS_INDEX} ({len(cards)} tool cards)")
 
 
 if __name__ == "__main__":
