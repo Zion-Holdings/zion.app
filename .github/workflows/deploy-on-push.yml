@@ -11,16 +11,18 @@ permissions:
     - completed
     branches:
     - main
-  push:
-    branches:
-    - main
   workflow_dispatch:
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 90
     env:
       NEXT_TELEMETRY_DISABLED: '1'
+      NODE_OPTIONS: "--max-old-space-size=8192"
+      NEXT_TURBOPACK_USE_WORKER: "0"
     outputs:
       sha: ${{ steps.resolve-sha.outputs.sha }}
     steps:

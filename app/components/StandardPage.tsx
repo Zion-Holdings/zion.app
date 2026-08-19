@@ -41,9 +41,7 @@ export default function StandardPage({
           breadcrumbItems={breadcrumbItems}
           actions={actions}
         >
-          <div className="max-w-6xl mx-auto w-full px-4 sm:px-0">
-            {children}
-          </div>
+          {children}
         </PageTemplate>
       </PageShell>
     </>
