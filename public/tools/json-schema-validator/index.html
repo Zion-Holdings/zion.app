@@ -3,93 +3,295 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JSON Schema Validator | Zion Tech Group</title>
-  <meta name="description" content="Validate JSON data against a JSON Schema draft 7/2019-09/2020-12.">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>JSON Schema Generator & Validator | Zion Tech Group</title>
+  <meta name="description" content="Generate JSON Schema from sample JSON, or validate JSON against an existing schema. Free, instant, browser-based.">
+  <meta property="og:title" content="JSON Schema Generator & Validator | Zion Tech Group">
+  <meta property="og:description" content="Generate and validate JSON schemas instantly. No signup, no data leaves your browser.">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/json-schema-validator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .tab { padding: 0.5rem 1rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .tab.active { border-color: #6366f1; background: #1e1b4b; color: #a5b4fc; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    .editor { background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; overflow: hidden; }
+    .editor-header { padding: 0.75rem 1rem; background: #1e293b; border-bottom: 1px solid #334155; font-size: 0.875rem; color: #94a3b8; display: flex; justify-content: space-between; align-items: center; }
+    .editor-body { position: relative; }
+    textarea { width: 100%; min-height: 300px; padding: 1rem; background: transparent; border: none; color: #e5e7eb; font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; font-size: 0.875rem; resize: vertical; outline: none; }
+    .btn { padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; border: none; font-size: 0.875rem; }
+    .btn-primary { background: #6366f1; color: #fff; }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-secondary { background: #1e293b; color: #e5e7eb; border: 1px solid #334155; }
+    .btn-secondary:hover { background: #334155; }
+    .btn-sm { padding: 0.375rem 0.75rem; font-size: 0.75rem; }
+    .status { padding: 0.75rem 1rem; border-radius: 0.5rem; margin-top: 1rem; font-size: 0.875rem; }
+    .status.success { background: #064e3b; border: 1px solid #059669; color: #34d399; }
+    .status.error { background: #7f1d1d; border: 1px solid #dc2626; color: #fca5a5; }
+    .status.info { background: #1e3a8a; border: 1px solid #3b82f6; color: #93c5fd; }
+    .schema-output { background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 1rem; font-family: 'SF Mono', Monaco, monospace; font-size: 0.875rem; white-space: pre-wrap; max-height: 400px; overflow: auto; }
+    .cta-section { margin-top: 2rem; text-align: center; padding: 2rem; background: #0f172a; border-radius: 1rem; }
+    .cta-section h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .cta-section p { color: #94a3b8; margin-bottom: 1rem; }
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .samples { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .sample-btn { padding: 0.25rem 0.5rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem; color: #94a3b8; }
+    .sample-btn:hover { border-color: #6366f1; color: #e5e7eb; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
 </head>
-<body class="bg-slate-950 text-white">
-  <div class="max-w-6xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold mb-2">JSON Schema Validator</h1>
-    <p class="text-slate-300 mb-6">Validate JSON instances against JSON Schema. Supports Draft 7, 2019-09, and 2020-12 basics.</p>
-    <div class="grid gap-6 md:grid-cols-2">
-      <div>
-        <label class="block text-sm font-semibold mb-2">JSON Schema</label>
-        <textarea id="schema" class="w-full h-56 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-sm font-mono" placeholder='{"type":"object","properties":{"name":{"type":"string"}}}'></textarea>
-      </div>
-      <div>
-        <label class="block text-sm font-semibold mb-2">JSON Instance</label>
-        <textarea id="instance" class="w-full h-56 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-sm font-mono" placeholder='{"name":"Zion"}'></textarea>
-      </div>
-    </div>
-    <div class="mt-4 flex gap-3">
-      <button id="validateBtn" class="rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold hover:bg-indigo-400">Validate</button>
-      <button id="formatBtn" class="rounded-xl bg-slate-800 px-4 py-2 text-sm font-semibold hover:bg-slate-700">Format Both</button>
-    </div>
-    <div class="mt-4 grid md:grid-cols-2 gap-6">
-      <div>
-        <label class="block text-sm font-semibold mb-2">Schema Result</label>
-        <pre id="schemaResult" class="w-full h-40 overflow-auto rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs font-mono text-slate-200">—</pre>
-      </div>
-      <div>
-        <label class="block text-sm font-semibold mb-2">Validation Result</label>
-        <pre id="validationResult" class="w-full h-40 overflow-auto rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs font-mono text-slate-200">—</pre>
-      </div>
-    </div>
-    <div class="mt-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-      <h2 class="text-xl font-bold mb-2">Need help with API and integration governance?</h2>
-      <p class="text-slate-300 mb-4">Zion Tech Group can help design schemas, APIs, and integration contracts.</p>
-      <a href="/services/api-integration/" class="inline-block rounded-xl bg-indigo-500 px-5 py-3 text-sm font-semibold hover:bg-indigo-400">Explore API Integration</a>
-    </div>
-  </div>
-  <script>
-    'use strict';
-    const schemaEl = document.getElementById('schema');
-    const instanceEl = document.getElementById('instance');
-    const schemaResultEl = document.getElementById('schemaResult');
-    const validationResultEl = document.getElementById('validationResult');
-    const validateBtn = document.getElementById('validateBtn');
-    const formatBtn = document.getElementById('formatBtn');
+<body>
+  <div class="container">
+    <h1>JSON Schema Generator & Validator</h1>
+    <p class="subtitle">Generate schemas from sample JSON or validate JSON against a schema. Everything runs in your browser.</p>
 
-    function safeJson(text) {
-      try { return JSON.parse(text); }
-      catch (e) { return null; }
+    <div class="tabs">
+      <div class="tab active" data-tab="generate">Generate Schema</div>
+      <div class="tab" data-tab="validate">Validate JSON</div>
+    </div>
+
+    <!-- Generate Panel -->
+    <div class="panel active" id="generate">
+      <div class="grid-2">
+        <div class="editor">
+          <div class="editor-header">
+            <span>Sample JSON</span>
+            <div class="samples">
+              <span class="sample-btn" data-sample="user">User</span>
+              <span class="sample-btn" data-sample="product">Product</span>
+              <span class="sample-btn" data-sample="config">Config</span>
+            </div>
+          </div>
+          <div class="editor-body">
+            <textarea id="generateInput" placeholder='Paste your JSON here...\n\nExample:\n{\n  "name": "John",\n  "age": 30,\n  "email": "john@example.com"\n}'></textarea>
+          </div>
+        </div>
+        <div>
+          <div class="editor">
+            <div class="editor-header">
+              <span>Generated Schema</span>
+              <button class="btn btn-secondary btn-sm" id="copySchema">Copy</button>
+            </div>
+            <div class="schema-output" id="generateOutput">// Schema will appear here</div>
+          </div>
+          <div id="generateStatus"></div>
+        </div>
+      </div>
+      <div style="margin-top: 1rem;">
+        <button class="btn btn-primary" id="generateBtn">Generate Schema →</button>
+      </div>
+    </div>
+
+    <!-- Validate Panel -->
+    <div class="panel" id="validate">
+      <div class="grid-2">
+        <div class="editor">
+          <div class="editor-header"><span>JSON Schema</span></div>
+          <div class="editor-body">
+            <textarea id="schemaInput" placeholder='Paste your JSON schema here...\n\nExample:\n{\n  "type": "object",\n  "properties": {\n    "name": { "type": "string" },\n    "age": { "type": "number" }\n  },\n  "required": ["name"]\n}'></textarea>
+          </div>
+        </div>
+        <div class="editor">
+          <div class="editor-header"><span>JSON to Validate</span></div>
+          <div class="editor-body">
+            <textarea id="jsonInput" placeholder='Paste your JSON here to validate against the schema...'></textarea>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 1rem;">
+        <button class="btn btn-primary" id="validateBtn">Validate →</button>
+      </div>
+      <div id="validateStatus"></div>
+    </div>
+
+    <div class="cta-section">
+      <h3>Need help with API design?</h3>
+      <p>Our engineers design and review API schemas for correctness, performance, and developer experience.</p>
+      <div class="btn-group">
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-primary">Book a consultation</a>
+        <a href="/services/api-integration/" class="btn btn-secondary">View API services</a>
+      </div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Sample data
+    const samples = {
+      user: JSON.stringify({ id: 1, name: "John Doe", email: "john@example.com", age: 30, active: true, roles: ["admin", "user"] }, null, 2),
+      product: JSON.stringify({ sku: "PROD-001", name: "Widget", price: 29.99, tags: ["sale", "new"], dimensions: { width: 10, height: 5 } }, null, 2),
+      config: JSON.stringify({ appName: "my-app", version: "1.0.0", debug: false, database: { host: "localhost", port: 5432 } }, null, 2),
+    };
+
+    document.querySelectorAll('.sample-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('generateInput').value = samples[btn.dataset.sample];
+      });
+    });
+
+    // Infer schema from value
+    function inferSchema(value, options = {}) {
+      const schema = {};
+      if (value === null) {
+        schema.type = "null";
+      } else if (Array.isArray(value)) {
+        schema.type = "array";
+        if (value.length > 0) {
+          const itemTypes = [...new Set(value.map(v => inferSchema(v).type))];
+          schema.items = itemTypes.length === 1 ? { type: itemTypes[0] } : { type: itemTypes };
+        }
+      } else if (typeof value === "object") {
+        schema.type = "object";
+        schema.properties = {};
+        const required = [];
+        for (const [key, val] of Object.entries(value)) {
+          schema.properties[key] = inferSchema(val);
+          required.push(key);
+        }
+        if (required.length > 0 && !options.noRequired) {
+          schema.required = required;
+        }
+      } else if (typeof value === "string") {
+        schema.type = "string";
+        if (/^\d{4}-\d{2}-\d{2}/.test(value)) schema.format = "date-time";
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) schema.format = "email";
+        if (/^https?:\/\//.test(value)) schema.format = "uri";
+      } else if (typeof value === "number") {
+        schema.type = Number.isInteger(value) ? "integer" : "number";
+      } else if (typeof value === "boolean") {
+        schema.type = "boolean";
+      }
+      return schema;
     }
 
-    function validateType(instance, schema) {
+    // Generate schema
+    document.getElementById('generateBtn').addEventListener('click', () => {
+      const input = document.getElementById('generateInput').value.trim();
+      const statusEl = document.getElementById('generateStatus');
+      const outputEl = document.getElementById('generateOutput');
+
+      if (!input) {
+        statusEl.innerHTML = '<div class="status error">Please paste some JSON first.</div>';
+        return;
+      }
+
+      try {
+        const data = JSON.parse(input);
+        const schema = inferSchema(data);
+        schema.$schema = "http://json-schema.org/draft-07/schema#";
+        outputEl.textContent = JSON.stringify(schema, null, 2);
+        statusEl.innerHTML = '<div class="status success">Schema generated successfully.</div>';
+      } catch (e) {
+        statusEl.innerHTML = `<div class="status error">Invalid JSON: ${e.message}</div>`;
+      }
+    });
+
+    // Copy schema
+    document.getElementById('copySchema').addEventListener('click', () => {
+      const text = document.getElementById('generateOutput').textContent;
+      navigator.clipboard.writeText(text);
+    });
+
+    // Simple validation
+    function validateAgainstSchema(data, schema, path = '') {
       const errors = [];
-      const check = (path, value, s) => {
-        if (s.type && typeof value !== s.type) errors.push(`${path || '$'}: expected ${s.type}`);
-        if (s.properties && typeof value === 'object' && !Array.isArray(value)) {
-          Object.keys(s.properties || {}).forEach(k => {
-            if (value[k] !== undefined) check(`${path}.${k}`, value[k], s.properties[k]);
-          });
+
+      if (schema.type) {
+        const actualType = Array.isArray(data) ? 'array' : (data === null ? 'null' : typeof data);
+        const expectedTypes = Array.isArray(schema.type) ? schema.type : [schema.type];
+        if (!expectedTypes.includes(actualType)) {
+          errors.push({ path, message: `Expected ${expectedTypes.join(' or ')}, got ${actualType}` });
         }
-        if (s.required && typeof value === 'object') {
-          (s.required || []).forEach(k => {
-            if (value[k] === undefined) errors.push(`${path || '$'}: missing required ${k}`);
-          });
+      }
+
+      if (schema.type === 'object' && schema.properties && typeof data === 'object') {
+        if (schema.required) {
+          for (const req of schema.required) {
+            if (!(req in data)) {
+              errors.push({ path: `${path}/${req}`, message: `Missing required property "${req}"` });
+            }
+          }
         }
-      };
-      check('', instance, schema);
+        for (const [key, propSchema] of Object.entries(schema.properties)) {
+          if (key in data) {
+            errors.push(...validateAgainstSchema(data[key], propSchema, `${path}/${key}`));
+          }
+        }
+      }
+
+      if (schema.type === 'array' && schema.items && Array.isArray(data)) {
+        data.forEach((item, i) => {
+          errors.push(...validateAgainstSchema(item, schema.items, `${path}[${i}]`));
+        });
+      }
+
+      if (schema.enum && !schema.enum.includes(data)) {
+        errors.push({ path, message: `Value must be one of: ${schema.enum.join(', ')}` });
+      }
+
+      if (schema.minimum !== undefined && data < schema.minimum) {
+        errors.push({ path, message: `Value ${data} is below minimum ${schema.minimum}` });
+      }
+
+      if (schema.maximum !== undefined && data > schema.maximum) {
+        errors.push({ path, message: `Value ${data} exceeds maximum ${schema.maximum}` });
+      }
+
       return errors;
     }
 
-    validateBtn.addEventListener('click', () => {
-      const schema = safeJson(schemaEl.value);
-      const instance = safeJson(instanceEl.value);
-      if (schema === null) { schemaResultEl.textContent = 'Invalid schema JSON'; return; }
-      if (instance === null) { validationResultEl.textContent = 'Invalid instance JSON'; return; }
-      schemaResultEl.textContent = JSON.stringify(schema, null, 2);
-      const errors = validateType(instance, schema);
-      validationResultEl.textContent = errors.length ? errors.join('\n') : '✅ Valid against schema';
-      validationResultEl.className = `w-full h-40 overflow-auto rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs font-mono text-slate-200 ${errors.length ? 'text-red-400' : 'text-emerald-400'}`;
-    });
+    // Validate
+    document.getElementById('validateBtn').addEventListener('click', () => {
+      const schemaText = document.getElementById('schemaInput').value.trim();
+      const jsonText = document.getElementById('jsonInput').value.trim();
+      const statusEl = document.getElementById('validateStatus');
 
-    formatBtn.addEventListener('click', () => {
-      const schema = safeJson(schemaEl.value);
-      const instance = safeJson(instanceEl.value);
-      if (schema) schemaEl.value = JSON.stringify(schema, null, 2);
-      if (instance) instanceEl.value = JSON.stringify(instance, null, 2);
+      if (!schemaText || !jsonText) {
+        statusEl.innerHTML = '<div class="status error">Please provide both schema and JSON to validate.</div>';
+        return;
+      }
+
+      let schema, data;
+      try {
+        schema = JSON.parse(schemaText);
+      } catch (e) {
+        statusEl.innerHTML = `<div class="status error">Invalid schema JSON: ${e.message}</div>`;
+        return;
+      }
+
+      try {
+        data = JSON.parse(jsonText);
+      } catch (e) {
+        statusEl.innerHTML = `<div class="status error">Invalid JSON to validate: ${e.message}</div>`;
+        return;
+      }
+
+      const errors = validateAgainstSchema(data, schema);
+
+      if (errors.length === 0) {
+        statusEl.innerHTML = '<div class="status success">✓ JSON is valid against the schema.</div>';
+      } else {
+        const list = errors.map(e => `<li><code>${e.path || '/'}</code>: ${e.message}</li>`).join('');
+        statusEl.innerHTML = `<div class="status error"><strong>${errors.length} error(s):</strong><ul style="margin-top:0.5rem;padding-left:1.25rem;">${list}</ul></div>`;
+      }
     });
   </script>
 </body>
