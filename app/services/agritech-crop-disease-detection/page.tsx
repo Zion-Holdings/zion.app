@@ -6,6 +6,12 @@ export const metadata = {
   description: "Detect crop diseases, pest infestations, and nutrient deficiencies from drone and smartphone imagery. Early detection saves 20-40% of crop yield.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/agritech-crop-disease-detection`
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
+  },
   }
 };
 
