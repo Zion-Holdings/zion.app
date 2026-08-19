@@ -266,8 +266,8 @@ def main():
     new_services = []
     for industry in TARGET_INDUSTRIES:
         templates = SERVICE_TEMPLATES.get(industry, [])
-        # Add 1-2 services per industry (5-10 total across 8 industries)
-        for template in templates[:2]:
+        # Add 1 service per industry (8 total across 8 industries — within 5-10 range)
+        for template in templates[:1]:
             new_service = create_service_entry(template, industry)
             new_services.append(new_service)
             print(f"Generated: {new_service['title']} ({industry})")
