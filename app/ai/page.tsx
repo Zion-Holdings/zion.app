@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Zion Tech Group AI services and solutions.',
   openGraph: {
     title: 'Page',
-    description: 'Zion Tech Group AI services and solutions.' /* FIXME */,
+    description: 'Zion Tech Group AI services and solutions.',
     url: 'https://ziontechgroup.com',
     type: 'website',
   },

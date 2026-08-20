@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
   openGraph: {
     title: 'Page',
-    description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.' /* FIXME */,
+    description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
     url: 'https://ziontechgroup.com',
     type: 'website',
   },
