@@ -31,7 +31,7 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        run: npm install --no-audit --fund=false
+        run: npm install --no-audit --fund=false --legacy-peer-deps
         env:
           NODE_OPTIONS: --max-old-space-size=8192
 
