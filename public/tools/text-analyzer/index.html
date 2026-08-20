@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Analyzer - Zion Tech Group</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; padding: 2rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #6366f1; }
+.subtitle { color: #9ca3af; margin-bottom: 2rem; }
+.input-section { margin-bottom: 2rem; }
+textarea { width: 100%; height: 250px; background: #1e293b; border: 1px solid #374151; border-radius: 8px; padding: 1rem; color: #e5e7eb; font-size: 1rem; resize: vertical; }
+textarea:focus { outline: none; border-color: #6366f1; }
+.btn { background: #6366f1; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 1rem; margin-right: 0.5rem; transition: background 0.2s; }
+.btn:hover { background: #4f46e5; }
+.btn-secondary { background: #374151; }
+.btn-secondary:hover { background: #4b5563; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.stat-card { background: #1e293b; border: 1px solid #374151; border-radius: 8px; padding: 1.5rem; text-align: center; }
+.stat-value { font-size: 2rem; font-weight: bold; color: #6366f1; }
+.stat-label { color: #9ca3af; font-size: 0.875rem; margin-top: 0.25rem; }
+.section { background: #1e293b; border: 1px solid #374151; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+.section h2 { color: #6366f1; margin-bottom: 1rem; font-size: 1.25rem; }
+.keyword-list { list-style: none; }
+.keyword-list li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #374151; }
+.keyword-list li:last-child { border-bottom: none; }
+.keyword-word { font-weight: 500; }
+.keyword-count { color: #6366f1; font-weight: bold; }
+.keyword-density { color: #9ca3af; font-size: 0.875rem; }
+.cta-section { text-align: center; margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #1e293b 0%, #0b0f1a 100%); border: 1px solid #6366f1; border-radius: 12px; }
+.cta-section h2 { color: #6366f1; margin-bottom: 1rem; }
+.cta-section p { color: #9ca3af; margin-bottom: 1.5rem; }
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.cta-btn { display: inline-block; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.2s; }
+.cta-primary { background: #6366f1; color: white; }
+.cta-primary:hover { background: #4f46e5; transform: translateY(-2px); }
+.cta-secondary { background: transparent; color: #6366f1; border: 2px solid #6366f1; }
+.cta-secondary:hover { background: #6366f1; color: white; }
+.hidden { display: none; }
+.progress-bar { width: 100%; height: 4px; background: #374151; border-radius: 2px; margin-top: 0.5rem; overflow: hidden; }
+.progress-fill { height: 100%; background: #6366f1; border-radius: 2px; transition: width 0.3s; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Text Analyzer</h1>
+<p class="subtitle">Analise seu texto: palavras, caracteres, legibilidade e densidade de keywords</p>
+
+<div class="input-section">
+<textarea id="textInput" placeholder="Cole ou digite seu texto aqui..."></textarea>
+<div>
+<button class="btn" onclick="analyzeText()">Analisar</button>
+<button class="btn btn-secondary" onclick="clearText()">Limpar</button>
+</div>
+</div>
+
+<div id="results" class="hidden">
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-value" id="wordCount">0</div>
+<div class="stat-label">Palavras</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="charCount">0</div>
+<div class="stat-label">Caracteres</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="charNoSpaces">0</div>
+<div class="stat-label">Caracteres (sem espaços)</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="lineCount">0</div>
+<div class="stat-label">Linhas</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="paragraphCount">0</div>
+<div class="stat-label">Parágrafos</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="sentenceCount">0</div>
+<div class="stat-label">Frases</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="readingTime">0 min</div>
+<div class="stat-label">Tempo de Leitura</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="avgWordLen">0</div>
+<div class="stat-label">Tam. Médio/Palavra</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Top 10 Keywords (Densidade)</h2>
+<ul class="keyword-list" id="keywordList"></ul>
+</div>
+
+<div class="section">
+<h2>Análise de Legibilidade</h2>
+<p id="readabilityText" style="color: #9ca3af;"></p>
+</div>
+</div>
+
+<div class="cta-section">
+<h2>Precisa de ajuda profissional?</h2>
+<p>Nossa equipe pode ajudar a otimizar seu conteúdo e estratégia digital.</p>
+<div class="cta-buttons">
+<a href="/services/" class="cta-btn cta-primary">Ver Serviços</a>
+<a href="https://calendly.com/kleber-ziontechgroup" target="_blank" class="cta-btn cta-secondary">Agendar Consulta</a>
+</div>
+</div>
+</div>
+
+<script>
+const STOP_WORDS = new Set(['a','o','os','as','um','uma','uns','umas','de','do','da','dos','das','em','no','na','nos','nas','por','para','com','sem','sob','sobre','entre','após','antes','durante','que','quem','qual','quais','se','ou','mas','porém','contudo','então','pois','como','mais','menos','muito','pouco','todo','toda','todos','tidas','cada','outro','outra','outros','outras','este','esta','estes','estas','esse','essa','esses','essas','aquele','aquela','aqueles','aquelas','isto','isso','aquele','aquilo','eu','tu','ele','ela','nós','vós','eles','elas','me','te','se','nos','lhe','lhes','meu','minha','meus','minhas','teu','tua','teus','tuas','seu','sua','seus','suas','nosso','nossa','nossos','nossas','você','vocês','não','sim','já','ainda','sempre','nunca','aqui','ali','lá','onde','quando','porque','porquê','e','é','são','foi','ser','estar','ter','haver','fazer','dar','ir','vir','ver','saber','poder','querer','dever','ficar','passar','voltar','chegar','sair','entrar','subir','descer','cair','pôr','ler','falar','ouvir','pensar','sentir','dizer','trazer','seguir','achar','deixar','chamar','virar','conseguir']);
+
+function analyzeText() {
+const text = document.getElementById('textInput').value.trim();
+if (!text) { alert('Por favor, insira um texto para analisar.'); return; }
+
+const words = text.split(/\s+/).filter(w => w.length > 0);
+const wordCount = words.length;
+const charCount = text.length;
+const charNoSpaces = text.replace(/\s/g, '').length;
+const lines = text.split(/\n/);
+const lineCount = lines.length;
+const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+const paragraphCount = paragraphs.length;
+const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+const sentenceCount = sentences.length;
+const readingTime = Math.ceil(wordCount / 200);
+const avgWordLen = wordCount > 0 ? (charNoSpaces / wordCount).toFixed(1) : 0;
+
+document.getElementById('wordCount').textContent = wordCount;
+document.getElementById('charCount').textContent = charCount;
+document.getElementById('charNoSpaces').textContent = charNoSpaces;
+document.getElementById('lineCount').textContent = lineCount;
+document.getElementById('paragraphCount').textContent = paragraphCount;
+document.getElementById('sentenceCount').textContent = sentenceCount;
+document.getElementById('readingTime').textContent = readingTime + ' min';
+document.getElementById('avgWordLen').textContent = avgWordLen;
+
+const freq = {};
+words.forEach(w => {
+const clean = w.toLowerCase().replace(/[^a-záàâãéêíóôõúç]/g, '');
+if (clean.length > 2 && !STOP_WORDS.has(clean)) {
+freq[clean] = (freq[clean] || 0) + 1;
+}
+});
+
+const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 10);
+const keywordList = document.getElementById('keywordList');
+keywordList.innerHTML = '';
+sorted.forEach(([word, count]) => {
+const density = ((count / wordCount) * 100).toFixed(2);
+const li = document.createElement('li');
+li.innerHTML = `<span class="keyword-word">${word}</span><span><span class="keyword-count">${count}x</span> <span class="keyword-density">(${density}%)</span></span>`;
+keywordList.appendChild(li);
+});
+
+if (sorted.length === 0) {
+keywordList.innerHTML = '<li style="color: #9ca3af;">Nenhuma keyword relevante encontrada.</li>';
+}
+
+let readability = '';
+if (sentenceCount > 0 && wordCount > 0) {
+const avgSentLen = wordCount / sentenceCount;
+if (avgSentLen <= 15) readability = 'Texto de fácil leitura. Frases curtas e objetivas.';
+else if (avgSentLen <= 25) readability = 'Legibilidade moderada. Considere encurtar algumas frases.';
+else readability = 'Texto denso. Frases longas podem dificultar a compreensão.';
+}
+document.getElementById('readabilityText').textContent = readability;
+
+document.getElementById('results').classList.remove('hidden');
+}
+
+function clearText() {
+document.getElementById('textInput').value = '';
+document.getElementById('results').classList.add('hidden');
+}
+</script>
+</body>
+</html>

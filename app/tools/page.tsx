@@ -145,6 +145,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Sql Formatter</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Sql Formatter.</p>
         </Link>
+        <Link href="/tools/text-analyzer/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Text Analyzer</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Text Analyzer.</p>
+        </Link>
         <Link href="/tools/text-diff/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Text Diff</h3>
@@ -164,6 +169,11 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">User Agent Parser</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: User Agent Parser.</p>
+        </Link>
+        <Link href="/tools/uuid-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Uuid Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Uuid Generator.</p>
         </Link>
         <Link href="/tools/yaml-to-json/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
