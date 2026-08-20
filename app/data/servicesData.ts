@@ -14,8 +14,9 @@ export interface Service {
   image: string;
 }
 
-import servicesData from './servicesData.json';
+import servicesData from './servicesData_trimmed.json';
 
 export const allServices: Service[] = servicesData as Service[];
+export const ALL_SERVICES_COUNT = 16323; // full dataset size for dynamic route
 
 export default allServices;
