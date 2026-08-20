@@ -88,6 +88,8 @@
 /status-page/ /status-page/index.html 200
 /public-roadmap /public-roadmap/ 301
 /public-roadmap/ /public-roadmap/index.html 200
+/use-cases /use-cases/ 301
+/use-cases/ /use-cases/index.html 200
 
 # cache-bust: 2026-08-11T05:30:00Z
 /dashboard /dashboard/ 301
