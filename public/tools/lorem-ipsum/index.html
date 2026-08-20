@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorem Ipsum Generator | Zion Support</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0b0f1a;
+  color: #e5e7eb;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+.container { max-width: 800px; margin: 0 auto; }
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.subtitle { color: #9ca3af; margin-bottom: 2rem; }
+.card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.card h2 {
+  font-size: 1.1rem;
+  color: #6366f1;
+  margin-bottom: 1rem;
+}
+.controls { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+.control { flex: 1; min-width: 180px; }
+.control label {
+  display: block;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 0.4rem;
+}
+.control input[type="number"], .control input[type="range"] {
+  width: 100%;
+  padding: 0.6rem;
+  background: #0b0f1a;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 1rem;
+}
+.control input[type="range"] { padding: 0; height: 6px; cursor: pointer; }
+.range-value { font-size: 0.9rem; color: #6366f1; font-weight: 600; }
+.checkbox-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.checkbox-control input { width: 18px; height: 18px; accent-color: #6366f1; }
+.checkbox-control label { font-size: 0.9rem; cursor: pointer; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-primary {
+  background: #6366f1;
+  color: white;
+}
+.btn-primary:hover { background: #4f46e5; transform: translateY(-1px); }
+.btn-secondary {
+  background: #1f2937;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+}
+.btn-secondary:hover { background: #374151; }
+.btn-success { background: #10b981; color: white; }
+.actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.output {
+  background: #0b0f1a;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-height: 200px;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+.output:empty::before {
+  content: 'Clique em "Gerar" para criar seu texto...';
+  color: #6b7280;
+  font-style: italic;
+}
+.history {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #9ca3af;
+}
+.history p { margin-bottom: 1rem; }
+.history strong { color: #e5e7eb; }
+.cta-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.cta-primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+}
+.cta-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(99,102,241,0.4); }
+.cta-secondary {
+  background: transparent;
+  color: #6366f1;
+  border: 2px solid #6366f1;
+}
+.cta-secondary:hover { background: #6366f1; color: white; }
+.copy-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #10b981;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.copy-toast.show { opacity: 1; transform: translateY(0); }
+.footer { text-align: center; color: #6b7280; font-size: 0.85rem; margin-top: 2rem; }
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  .controls { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Lorem Ipsum Generator</h1>
+  <p class="subtitle">Gerador de texto placeholder para seus projetos</p>
+
+  <div class="card">
+    <h2>Configurações</h2>
+    <div class="controls">
+      <div class="control">
+        <label for="paragraphs">Parágrafos</label>
+        <input type="range" id="paragraphs" min="1" max="20" value="3">
+        <div class="range-value"><span id="paragraphsVal">3</span></div>
+      </div>
+      <div class="control">
+        <label for="wordsPer">Palavras por parágrafo</label>
+        <input type="range" id="wordsPer" min="10" max="150" value="50">
+        <div class="range-value"><span id="wordsPerVal">50</span></div>
+      </div>
+    </div>
+    <div class="checkbox-control">
+      <input type="checkbox" id="startClassic" checked>
+      <label for="startClassic">Iniciar com "Lorem ipsum dolor sit amet..."</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Gerar Texto</h2>
+    <div class="actions">
+      <button class="btn btn-primary" id="generateBtn">Gerar Lorem Ipsum</button>
+      <button class="btn btn-secondary" id="copyBtn">Copiar Texto</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Resultado</h2>
+    <div class="output" id="output"></div>
+  </div>
+
+  <div class="card">
+    <h2>A História do Lorem Ipsum</h2>
+    <div class="history">
+      <p><strong>Origem ancestral:</strong> Ao contrário do que muitos pensam, o Lorem Ipsum não é um texto aleatório. Suas raízes remontam a um tratado de teoria política escrito por Cícero em 45 A.C., especificamente o documento "De Finibus Bonorum et Malorum" (Sobre os Extremos do Bem e do Mal).</p>
+      <p><strong>O trecho clássico:</strong> A frase "Lorem ipsum dolor sit amet consecutetur" aparece nos parágrafos 1.10.32 e 1.10.33 deste trabalho filosófico. O texto original discutia a ideia de que ninguém busca a dor por si mesma, mas que em certas circunstâncias, a dor pode levar a um bem maior.</p>
+      <p><strong>Adoção na tipografia:</strong> O uso do Lorem Ipsum como texto placeholder começou por volta de 1500, quando um impressor desconhecido pegou uma prova de tipos e embaralhou as palavras para criar um livro de amostras. Sobreviveu por mais de cinco séculos, adaptando-se à era digital.</p>
+      <p><strong>Por que usamos?</strong> O Lorem Ipsum possui uma distribuição de letras mais ou menos normal, o que o torna ideal para preencher espaços em projetos gráficos e layouts sem que o leitor se distraia com o conteúdo — diferente de usar "texto texto texto" repetidamente.</p>
+      <p><strong>Descoberta moderna:</strong> A origem acadêmica do Lorem Ipsum foi descoberta na década de 1980 pela professora McClintock da Hampden-Sydney College, na Virgínia, que encontrou a citação de "consectetur" em edições antigas de Cícero.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Precisa de mais que texto placeholder?</h2>
+    <p style="color: #9ca3af; margin-bottom: 1rem; line-height: 1.6;">
+      Transforme seu projeto com soluções profissionais. Nossa equipe pode ajudar com design, desenvolvimento e estratégia digital.
+    </p>
+    <div class="cta-section">
+      <a href="/services/" class="cta-btn cta-primary">Ver Serviços</a>
+      <a href="https://calendly.com/ziontech" class="cta-btn cta-secondary" target="_blank" rel="noopener">Agendar Consulta</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Zion Support — Lorem Ipsum Generator</p>
+  </div>
+</div>
+
+<div class="copy-toast" id="toast">Copiado!</div>
+
+<script>
+const loremWords = [
+  "lorem","ipsum","dolor","sit","amet","consectetur","adipiscing","elit","sed","do",
+  "eiusmod","tempor","incididunt","ut","labore","et","dolore","magna","aliqua","enim",
+  "ad","minim","veniam","quis","nostrud","exercitation","ullamco","laboris","nisi",
+  "aliquip","ex","ea","commodo","consequat","duis","aute","irure","in","reprehenderit",
+  "voluptate","velit","esse","cillum","fugiat","nulla","pariatur","excepteur","sint",
+  "occaecat","cupidatat","non","proident","sunt","culpa","qui","officia","deserunt",
+  "mollit","anim","id","est","autem","vel","eum","iure","quaerat","voluptatem","quia",
+  "voluptas","aspernatur","aut","odit","fugit","consequuntur","magni","dolores","eos",
+  "ratione","sequi","nesciunt","neque","porro","quisquam","nihil","impedit","quo",
+  "minus","placeat","facere","possimus","omnis","repudiandae","sint","et","molestiae",
+  "non","recusandae","itaque","earum","rerum","hic","tenetur","sapiente","delectus",
+  "reiciendis","voluptatibus","maiores","alias","perferendis","doloribus","asperiores",
+  "repellat","aperiam","ipsa","quae","ab","illo","inventore","veritatis","et","quasi",
+  "architecto","beatae","vitae","dicta","sunt","explicabo","nemo","enim","ipsam",
+  "quia","voluptas","sit","aspernatur","aut","odit","fugit","sed","quia","consequuntur",
+  "magni","dolores","eos","qui","ratione","voluptatem","sequi","nesciunt","neque",
+  "porro","quisquam","est","qui","dolorem","ipsum","quia","dolor","sit","amet",
+  "consectetur","adipisci","velit","sed","quia","non","numquam","eius","modi",
+  "tempora","incidunt","ut","labore","et","dolore","magnam","aliquam","quaerat",
+  "voluptatem","ut","enim","ad","minima","veniam","quis","nostrum","exercitationem",
+  "ullam","corporis","suscipit","laboriosam","nisi","ut","aliquid","ex","ea","commodi",
+  "consequatur","quis","autem","vel","eum","iure","reprehenderit","qui","in","ea",
+  "voluptate","velit","esse","quam","nihil","molestiae","et","iusto","odio","dignissimos",
+  "ducimus","qui","blanditiis","praesentium","voluptatum","deleniti","atque","corrupti",
+  "quos","dolores","et","quas","molestias","excepturi","sint","occaecati","cupiditate",
+  "non","provident","similique","sunt","in","culpa","qui","officia","deserunt","mollitia",
+  "animi","id","est","laborum","et","dolorum","fuga","et","harum","quidem","rerum",
+  "facilis","est","et","expedita","distinctio","nam","libero","tempore","cum","soluta",
+  "nobis","est","eligendi","optio","cumque","nihil","impedit","quo","minus","id",
+  "quod","maxime","placeat","facere","possimus","omnis","voluptas","assumenda","est",
+  "omnis","dolor","repellendus","temporibus","autem","quibusdam","et","aut","officiis",
+  "debitis","aut","rerum","necessitatibus","saepe","eveniet","ut","et","voluptates",
+  "repudiandae","sint","et","molestiae","non","recusandae","itaque","earum","rerum",
+  "hic","tenetur","sapiente","delectus","ut","aut","reiciendis","voluptatibus","maiores",
+  "alias","perferendis","doloribus","asperiores","repellat"
+];
+
+const output = document.getElementById('output');
+const paragraphsInput = document.getElementById('paragraphs');
+const wordsPerInput = document.getElementById('wordsPer');
+const startClassic = document.getElementById('startClassic');
+const paragraphsVal = document.getElementById('paragraphsVal');
+const wordsPerVal = document.getElementById('wordsPerVal');
+const toast = document.getElementById('toast');
+
+paragraphsInput.addEventListener('input', () => {
+  paragraphsVal.textContent = paragraphsInput.value;
+});
+wordsPerInput.addEventListener('input', () => {
+  wordsPerVal.textContent = wordsPerInput.value;
+});
+
+function getRandomWord() {
+  return loremWords[Math.floor(Math.random() * loremWords.length)];
+}
+
+function generateParagraph(wordCount, isFirst) {
+  let words = [];
+  if (isFirst && startClassic.checked) {
+    const classic = ["Lorem","ipsum","dolor","sit","amet","consectetur","adipiscing","elit"];
+    words = [...classic];
+  }
+  while (words.length < wordCount) {
+    words.push(getRandomWord());
+  }
+  // Capitalize first word
+  words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
+  let text = words.join(' ');
+  text += '.';
+  return text;
+}
+
+document.getElementById('generateBtn').addEventListener('click', () => {
+  const numParagraphs = parseInt(paragraphsInput.value);
+  const wordsCount = parseInt(wordsPerInput.value);
+  let result = [];
+  for (let i = 0; i < numParagraphs; i++) {
+    result.push(generateParagraph(wordsCount, i === 0));
+  }
+  output.textContent = result.join('\n\n');
+});
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+  if (!output.textContent) return;
+  navigator.clipboard.writeText(output.textContent).then(() => {
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+});
+
+// Generate initial text
+document.getElementById('generateBtn').click();
+</script>
+</body>
+</html>

@@ -60,10 +60,20 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cloud Cost Optimizer</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Cloud Cost Optimizer.</p>
         </Link>
+        <Link href="/tools/color-contrast/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Color Contrast</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Color Contrast.</p>
+        </Link>
         <Link href="/tools/cron-agent-calculator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cron Agent Calculator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Cron Agent Calculator.</p>
+        </Link>
+        <Link href="/tools/gradient-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Gradient Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Gradient Generator.</p>
         </Link>
         <Link href="/tools/json-schema-validator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
@@ -74,6 +84,16 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Llm Payload Estimator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Llm Payload Estimator.</p>
+        </Link>
+        <Link href="/tools/lorem-ipsum/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Lorem Ipsum</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Lorem Ipsum.</p>
+        </Link>
+        <Link href="/tools/markdown-preview/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Markdown Preview</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Markdown Preview.</p>
         </Link>
         <Link href="/tools/mcp-tester/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
@@ -89,6 +109,11 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Number Base Converter</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Number Base Converter.</p>
+        </Link>
+        <Link href="/tools/password-strength/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Password Strength</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Password Strength.</p>
         </Link>
         <Link href="/tools/regex-tester/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
