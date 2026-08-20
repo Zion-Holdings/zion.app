@@ -6,7 +6,7 @@ export const metadata = {
   description: 'The page you are looking for does not exist or has been moved.',
   openGraph: {
     title: 'Page',
-    description: metadata.description,
+    description: metadata.description /* FIXME */,
     url: 'https://ziontechgroup.com',
     type: 'website',
   },

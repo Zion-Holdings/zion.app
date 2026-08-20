@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: 'Real-world AI and IT transformation case studies from Zion Tech Group.',
   openGraph: {
     title: 'Page',
-    description: metadata.description,
+    description: 'Real-world AI and IT transformation case studies from Zion Tech Group.' /* FIXME */,
     url: 'https://ziontechgroup.com',
     type: 'website',
   },
