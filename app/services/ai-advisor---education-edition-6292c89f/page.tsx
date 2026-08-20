@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Education Edition - Zion Tech Group",
   description: "Next-generation education solution: AI Advisor - Education Edition. Combines compliance monitoring with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---education-edition-6292c89f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

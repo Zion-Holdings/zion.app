@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Performance Engine - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Adaptive Performance Engine leverages advanced machine learning to deliver customer insights at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-performance-engine-5a653dc0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

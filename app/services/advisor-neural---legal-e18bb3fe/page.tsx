@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Neural - Legal - Zion Tech Group",
   description: "Transform your legal operations with our Advisor Neural - Legal. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-neural---legal-e18bb3fe'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

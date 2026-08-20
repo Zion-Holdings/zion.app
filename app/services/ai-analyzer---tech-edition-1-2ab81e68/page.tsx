@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Tech Edition #1 - Zion Tech Group",
   description: "Revolutionize technology through intelligent automation. Our AI Analyzer - Tech Edition #1 leverages advanced machine learning to deliver inventory management a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---tech-edition-1-2ab81e68'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

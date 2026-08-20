@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Analytics for Manufacturing #2 - Zion Tech Group",
   description: "Transform your manufacturing operations with our Adaptive Analytics for Manufacturing #2. This AI-driven solution automates decision support with unprecedented ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analytics-for-manufacturing-2-69d5d490'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

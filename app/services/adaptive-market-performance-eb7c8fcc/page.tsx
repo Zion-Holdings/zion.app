@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Market Performance - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Market Performance. This autonomous system provides code optimization with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-market-performance-eb7c8fcc'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

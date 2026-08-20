@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Hospitality - Zion Tech Group",
   description: "Transform your hospitality operations with our Advisor Self-Optimizing - Hospitality. This AI-driven solution automates risk assessment with unprecedented accur",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-self-optimizing---hospitality-0ab2c7fc'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimizer-finance - Zion Tech Group",
   description: "Transform your finance operations with our Adaptive optimizer-finance. This AI-driven solution automates process automation with unprecedented accuracy and effi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimizer-finance-d5033e5b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Customer Service - Real Estate Edition - Zion Tech Group",
   description: "Next-generation Real Estate solution: AI Customer Service - Real Estate Edition. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-customer-service---real-estate-edition-f326dafa'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive system-automotive - Zion Tech Group",
   description: "Transform your automotive operations with our Adaptive system-automotive. This AI-driven solution automates process automation with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-automotive-59755525'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

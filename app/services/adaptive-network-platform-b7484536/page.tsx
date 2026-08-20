@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Network Platform - Zion Tech Group",
   description: "The future of legal is here with Adaptive Network Platform. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-network-platform-b7484536'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

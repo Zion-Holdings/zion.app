@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Automated - Finance - Zion Tech Group",
   description: "Next-generation finance solution: Advisor Automated - Finance. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-automated---finance-065fbb2d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Data Optimization - Zion Tech Group",
   description: "Transform your technology operations with our Adaptive Data Optimization. This AI-driven solution automates workflow management with unprecedented accuracy and ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-data-optimization-b4ad7c98'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

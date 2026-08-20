@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Suite for Insurance - Zion Tech Group",
   description: "The future of insurance is here with Adaptive Suite for Insurance. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-for-insurance-04a1f5da'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

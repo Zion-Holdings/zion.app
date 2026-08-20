@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive analyzer-agriculture #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive analyzer-agriculture #1. This autonomous system provides decision support with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-agriculture-1-26dffc8d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

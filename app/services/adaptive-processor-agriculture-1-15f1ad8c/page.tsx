@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive processor-agriculture #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive processor-agriculture #1. This autonomous system provides fraud prevention with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-agriculture-1-15f1ad8c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

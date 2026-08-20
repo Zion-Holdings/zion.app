@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Processor for Energy - Zion Tech Group",
   description: "Revolutionize energy through intelligent automation. Our Adaptive Processor for Energy leverages advanced machine learning to deliver maintenance scheduling at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-for-energy-b5c76a9b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

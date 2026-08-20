@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Optimizer for Real-Estate - Zion Tech Group",
   description: "Revolutionize real-estate through intelligent automation. Our Adaptive Optimizer for Real-Estate leverages advanced machine learning to deliver user experience ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimizer-for-real-estate-960e06b5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

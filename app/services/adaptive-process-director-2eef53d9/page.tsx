@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Process Director - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Process Director. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-process-director-2eef53d9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

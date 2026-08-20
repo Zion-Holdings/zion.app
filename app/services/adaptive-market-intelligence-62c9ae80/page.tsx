@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Market Intelligence - Zion Tech Group",
   description: "The future of Gaming is here with Adaptive Market Intelligence. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-market-intelligence-62c9ae80'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

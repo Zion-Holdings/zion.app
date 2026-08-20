@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Maintenance Advisor - Zion Tech Group",
   description: "The future of legal is here with Adaptive Maintenance Advisor. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-maintenance-advisor-8cfcfce7'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

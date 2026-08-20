@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Retail #1 - Zion Tech Group",
   description: "Next-generation retail solution: Advisor Self-Optimizing - Retail #1. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-self-optimizing---retail-1-b64d4131'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

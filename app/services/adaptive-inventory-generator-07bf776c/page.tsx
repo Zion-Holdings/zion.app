@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Inventory Generator - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive Inventory Generator. Powered by cutting-edge AI, this platform delivers document processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-inventory-generator-07bf776c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

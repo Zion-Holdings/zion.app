@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Inventory Manager - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Inventory Manager. This autonomous system provides image recognition with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-inventory-manager-a47921ac'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

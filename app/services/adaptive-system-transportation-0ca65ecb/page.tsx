@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive system-transportation - Zion Tech Group",
   description: "Revolutionize transportation through intelligent automation. Our Adaptive system-transportation leverages advanced machine learning to deliver risk assessment a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-transportation-0ca65ecb'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

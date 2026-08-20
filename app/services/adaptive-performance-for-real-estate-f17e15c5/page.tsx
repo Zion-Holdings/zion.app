@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Performance for Real-Estate - Zion Tech Group",
   description: "Drive innovation in real-estate with Adaptive Performance for Real-Estate. This AI-powered platform transforms market intelligence into a competitive advantage.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-performance-for-real-estate-f17e15c5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

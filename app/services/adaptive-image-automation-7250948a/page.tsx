@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Image Automation - Zion Tech Group",
   description: "Next-generation sports solution: Adaptive Image Automation. Combines language processing with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-image-automation-7250948a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

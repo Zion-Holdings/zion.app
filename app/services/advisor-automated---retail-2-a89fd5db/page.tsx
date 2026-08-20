@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Automated - Retail #2 - Zion Tech Group",
   description: "The future of retail is here with Advisor Automated - Retail #2. Powered by cutting-edge AI, this platform delivers language processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-automated---retail-2-a89fd5db'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

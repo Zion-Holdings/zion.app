@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Agentic Workflow Automation - Zion Tech Group",
   description: "Autonomous AI agents that plan, execute, and monitor multi-step business workflows — from data gathering to decision execution with human-in-the-loop oversight.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-agentic-workflows'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive suite-telecom #1 - Zion Tech Group",
   description: "Next-generation telecom solution: Adaptive suite-telecom #1. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-telecom-1-6b8c7744'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

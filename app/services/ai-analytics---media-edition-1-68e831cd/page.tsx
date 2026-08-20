@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Media Edition #1 - Zion Tech Group",
   description: "The future of media is here with AI Analytics - Media Edition #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---media-edition-1-68e831cd'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

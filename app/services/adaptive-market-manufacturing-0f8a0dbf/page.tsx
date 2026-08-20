@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Market Manufacturing - Zion Tech Group",
   description: "The future of Hospitality is here with Adaptive Market Manufacturing. Powered by cutting-edge AI, this platform delivers sentiment analysis like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-market-manufacturing-0f8a0dbf'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

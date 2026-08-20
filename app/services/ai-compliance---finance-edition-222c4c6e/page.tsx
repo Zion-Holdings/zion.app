@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Compliance - Finance Edition - Zion Tech Group",
   description: "The future of Finance is here with AI Compliance - Finance Edition. Powered by cutting-edge AI, this platform delivers logistics route optimization like never b",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-compliance---finance-edition-222c4c6e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

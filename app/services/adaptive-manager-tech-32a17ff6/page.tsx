@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive manager-tech - Zion Tech Group",
   description: "Transform your technology operations with our Adaptive manager-tech. This AI-driven solution automates code optimization with unprecedented accuracy and efficie",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-tech-32a17ff6'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

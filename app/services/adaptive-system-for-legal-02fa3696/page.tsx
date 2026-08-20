@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive System for Legal - Zion Tech Group",
   description: "Next-generation legal solution: Adaptive System for Legal. Combines quality control with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-for-legal-02fa3696'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

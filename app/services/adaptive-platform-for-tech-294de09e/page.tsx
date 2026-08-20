@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Platform for Tech - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Platform for Tech. This autonomous system provides sales forecasting with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-platform-for-tech-294de09e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

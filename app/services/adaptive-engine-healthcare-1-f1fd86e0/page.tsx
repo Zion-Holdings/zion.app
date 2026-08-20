@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive engine-healthcare #1 - Zion Tech Group",
   description: "Transform your healthcare operations with our Adaptive engine-healthcare #1. This AI-driven solution automates workflow management with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-engine-healthcare-1-f1fd86e0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

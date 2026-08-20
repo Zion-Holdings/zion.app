@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Inventory Automation - Zion Tech Group",
   description: "Revolutionize gaming through intelligent automation. Our Adaptive Inventory Automation leverages advanced machine learning to deliver document processing at sca",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-inventory-automation-76925d0f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

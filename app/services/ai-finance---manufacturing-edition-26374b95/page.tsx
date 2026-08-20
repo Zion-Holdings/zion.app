@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Finance - Manufacturing Edition - Zion Tech Group",
   description: "The future of Manufacturing is here with AI Finance - Manufacturing Edition. Powered by cutting-edge AI, this platform delivers network optimization like never ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-finance---manufacturing-edition-26374b95'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Code Compliance & License Auditor - Zion Tech Group",
   description: "Scan codebases for license compliance, security vulnerabilities, and quality issues. Supports 50+ languages, 200+ license types. Integrates with GitHub, GitLab,",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-code-compliance-auditor'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Agriculture Edition #2 - Zion Tech Group",
   description: "Transform your agriculture operations with our AI Advisor - Agriculture Edition #2. This AI-driven solution automates compliance monitoring with unprecedented a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---agriculture-edition-2-56f74463'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive director-healthcare - Zion Tech Group",
   description: "Transform your healthcare operations with our Adaptive director-healthcare. This AI-driven solution automates decision support with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-director-healthcare-205af58b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

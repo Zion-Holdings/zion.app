@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Energy Edition - Zion Tech Group",
   description: "Transform your energy operations with our AI Director - Energy Edition. This AI-driven solution automates inventory management with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---energy-edition-2a9476b6'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

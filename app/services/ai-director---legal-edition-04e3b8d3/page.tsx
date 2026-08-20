@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Legal Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Director - Legal Edition. This autonomous system provides content generation with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---legal-edition-04e3b8d3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

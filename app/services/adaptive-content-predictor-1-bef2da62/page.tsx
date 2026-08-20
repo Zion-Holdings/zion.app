@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Content Predictor #1 - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Adaptive Content Predictor #1 leverages advanced machine learning to deliver code optimization at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-content-predictor-1-bef2da62'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Media Edition #10 - Zion Tech Group",
   description: "Revolutionize media through intelligent automation. Our AI Director - Media Edition #10 leverages advanced machine learning to deliver language processing at sc",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---media-edition-10-70a1617e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

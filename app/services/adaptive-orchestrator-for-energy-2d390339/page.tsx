@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Orchestrator for Energy - Zion Tech Group",
   description: "Revolutionize energy through intelligent automation. Our Adaptive Orchestrator for Energy leverages advanced machine learning to deliver data processing at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-orchestrator-for-energy-2d390339'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

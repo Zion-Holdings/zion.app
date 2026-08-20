@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive automation-retail - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive automation-retail. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficie",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-automation-retail-094a5674'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

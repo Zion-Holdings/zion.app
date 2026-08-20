@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI BDR/SDR Agent - Zion Tech Group",
   description: "Autonomous AI Business Development & Sales Development Representative: prospect, qualify, email, book meetings, and nurture leads 24/7 without human interventio",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-bdr-sdr'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

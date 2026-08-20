@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Compliance - Manufacturing Edition - Zion Tech Group",
   description: "The future of Manufacturing is here with AI Compliance - Manufacturing Edition. Powered by cutting-edge AI, this platform delivers manufacturing quality control",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-compliance---manufacturing-edition-29c9d5e8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

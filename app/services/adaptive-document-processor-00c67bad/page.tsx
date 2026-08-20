@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Document Processor - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive Document Processor. This AI-driven solution automates fraud prevention with unprecedented accuracy and effici",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-document-processor-00c67bad'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

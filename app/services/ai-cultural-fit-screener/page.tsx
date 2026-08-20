@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Cultural Fit Screener - Zion Tech Group",
   description: "AI evaluates resume+behavioral vs your company values: culture-fit score, behavioral alignment scoring, red-flag indicators before interview, auto short-list ex",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-cultural-fit-screener'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

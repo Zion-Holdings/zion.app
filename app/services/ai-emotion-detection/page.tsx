@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Emotion Detection & Customer Experience Analytics - Zion Tech Group",
   description: "AI that detects customer emotions in real-time across voice, chat, and video. Improve customer experience by understanding how customers feel at every interacti",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-emotion-detection'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

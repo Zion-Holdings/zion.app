@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Gaming Edition #2 - Zion Tech Group",
   description: "The future of gaming is here with AI Automation - Gaming Edition #2. Powered by cutting-edge AI, this platform delivers quality control like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---gaming-edition-2-868a05f1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

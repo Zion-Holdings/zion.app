@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Engine for Manufacturing - Zion Tech Group",
   description: "Revolutionize Manufacturing through intelligent automation. Our Adaptive Engine for Manufacturing leverages advanced machine learning to deliver process automat",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-engine-for-manufacturing-f1ba7051'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

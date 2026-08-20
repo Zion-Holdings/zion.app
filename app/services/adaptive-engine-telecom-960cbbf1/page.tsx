@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive engine-telecom - Zion Tech Group",
   description: "Transform your Telecom operations with our Adaptive engine-telecom. This AI-driven solution automates customer insights with unprecedented accuracy and efficien",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-engine-telecom-960cbbf1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

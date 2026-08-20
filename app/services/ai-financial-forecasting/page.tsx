@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Financial Forecasting & Planning - Zion Tech Group",
   description: "Revenue forecasting, cash flow prediction, and budget optimization using AI models trained on your historical and market data.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-financial-forecasting'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

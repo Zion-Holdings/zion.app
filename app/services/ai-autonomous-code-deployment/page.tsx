@@ -5,6 +5,13 @@ export const metadata = {
   title: "Autonomous Code Deployment Agent - Zion Tech Group",
   description: "Code-review finder, security scan (SAST/DAST), test-retry, feature-flag gate, rollback on error-rate spike, chat-notification on completion.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-autonomous-code-deployment'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

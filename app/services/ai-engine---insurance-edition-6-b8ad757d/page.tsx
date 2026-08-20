@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Insurance Edition #6 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Engine - Insurance Edition #6. This autonomous system provides sales forecasting with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---insurance-edition-6-b8ad757d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Automation for Healthcare - Zion Tech Group",
   description: "Revolutionize Healthcare through intelligent automation. Our Adaptive Automation for Healthcare leverages advanced machine learning to deliver automation opport",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-automation-for-healthcare-76d7d8ef'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

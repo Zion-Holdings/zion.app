@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Sports - Zion Tech Group",
   description: "Transform your sports operations with our Advisor Self-Optimizing - Sports. This AI-driven solution automates content generation with unprecedented accuracy and",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-self-optimizing---sports-510e60e6'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

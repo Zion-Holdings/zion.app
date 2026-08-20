@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Automation for Sales - Zion Tech Group",
   description: "Optimize your sales workflows with Advanced Automation for Sales. This intelligent platform delivers automation workflows through advanced automation and AI.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-automation-for-sales-ef586609'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

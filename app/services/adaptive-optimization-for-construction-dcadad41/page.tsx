@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Optimization for Construction - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive Optimization for Construction leverages advanced machine learning to deliver image recog",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimization-for-construction-dcadad41'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

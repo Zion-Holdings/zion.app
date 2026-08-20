@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive analytics-agriculture - Zion Tech Group",
   description: "Transform your agriculture operations with our Adaptive analytics-agriculture. This AI-driven solution automates workflow management with unprecedented accuracy",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analytics-agriculture-44082896'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

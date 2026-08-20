@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Financial Generator - Zion Tech Group",
   description: "Next-generation real-estate solution: Adaptive Financial Generator. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-financial-generator-5eed1188'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

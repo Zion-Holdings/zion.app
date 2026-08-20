@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Education - Zion Tech Group",
   description: "Revolutionize education through intelligent automation. Our Advisor Self-Optimizing - Education leverages advanced machine learning to deliver user experience a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-self-optimizing---education-09dbd1ac'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

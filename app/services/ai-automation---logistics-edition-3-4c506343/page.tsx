@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Logistics Edition #3 - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our AI Automation - Logistics Edition #3 leverages advanced machine learning to deliver data processing ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---logistics-edition-3-4c506343'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

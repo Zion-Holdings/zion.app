@@ -5,6 +5,13 @@ export const metadata = {
   title: "Ai Bug To Issue Router - Zion Tech Group",
   description: "AI Bug To Issue Router — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-firs",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-bug-to-issue-router'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

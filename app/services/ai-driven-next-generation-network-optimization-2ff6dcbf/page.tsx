@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Driven Next-Generation Network Optimization - Zion Tech Group",
   description: "Intelligent network management platform that uses next-generation algorithms to optimize traffic routing, capacity planning, and quality of service across telec",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-next-generation-network-optimization-2ff6dcbf'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

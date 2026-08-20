@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Compliance for Healthcare - Zion Tech Group",
   description: "Revolutionize Healthcare through intelligent automation. Our Adaptive Compliance for Healthcare leverages advanced machine learning to deliver inventory managem",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-compliance-for-healthcare-19940770'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

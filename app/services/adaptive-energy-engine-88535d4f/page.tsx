@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Energy Engine - Zion Tech Group",
   description: "The future of telecom is here with Adaptive Energy Engine. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-energy-engine-88535d4f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

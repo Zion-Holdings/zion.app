@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Performance Optimization - Zion Tech Group",
   description: "The future of Manufacturing is here with Adaptive Performance Optimization. Powered by cutting-edge AI, this platform delivers image recognition like never befo",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-performance-optimization-d378399a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Coordinator for Manufacturing - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive Coordinator for Manufacturing. Powered by cutting-edge AI, this platform delivers fraud prevention like never ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-coordinator-for-manufacturing-87798910'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

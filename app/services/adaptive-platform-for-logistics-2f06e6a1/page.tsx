@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Platform for Logistics - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Platform for Logistics. This autonomous system provides performance monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-platform-for-logistics-2f06e6a1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

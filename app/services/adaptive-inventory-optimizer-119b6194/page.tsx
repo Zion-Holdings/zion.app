@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Inventory Optimizer - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive Inventory Optimizer. Powered by cutting-edge AI, this platform delivers energy management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-inventory-optimizer-119b6194'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

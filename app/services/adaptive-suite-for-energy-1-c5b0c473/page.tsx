@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Suite for Energy #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Suite for Energy #1. This autonomous system provides financial planning with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-for-energy-1-c5b0c473'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

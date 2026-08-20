@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Coordinator for Legal - Zion Tech Group",
   description: "The future of legal is here with Adaptive Coordinator for Legal. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-coordinator-for-legal-0fd43f86'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

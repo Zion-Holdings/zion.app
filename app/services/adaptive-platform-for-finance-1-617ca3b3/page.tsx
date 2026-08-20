@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Platform for Finance #1 - Zion Tech Group",
   description: "Revolutionize finance through intelligent automation. Our Adaptive Platform for Finance #1 leverages advanced machine learning to deliver financial planning at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-platform-for-finance-1-617ca3b3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

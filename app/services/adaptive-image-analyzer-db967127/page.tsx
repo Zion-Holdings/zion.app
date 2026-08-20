@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Image Analyzer - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Image Analyzer. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-image-analyzer-db967127'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

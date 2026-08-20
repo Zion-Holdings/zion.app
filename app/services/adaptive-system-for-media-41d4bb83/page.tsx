@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive System for Media - Zion Tech Group",
   description: "The future of media is here with Adaptive System for Media. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-for-media-41d4bb83'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

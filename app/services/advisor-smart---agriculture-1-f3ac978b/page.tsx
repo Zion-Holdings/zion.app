@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Smart - Agriculture #1 - Zion Tech Group",
   description: "Transform your agriculture operations with our Advisor Smart - Agriculture #1. This AI-driven solution automates decision support with unprecedented accuracy an",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-smart---agriculture-1-f3ac978b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

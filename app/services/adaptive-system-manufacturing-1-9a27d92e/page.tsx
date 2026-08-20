@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive system-manufacturing #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive system-manufacturing #1. This autonomous system provides fraud prevention with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-manufacturing-1-9a27d92e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

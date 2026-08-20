@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Intelligent - Energy #1 - Zion Tech Group",
   description: "The future of energy is here with Advisor Intelligent - Energy #1. Powered by cutting-edge AI, this platform delivers language processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-intelligent---energy-1-7b81aab7'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

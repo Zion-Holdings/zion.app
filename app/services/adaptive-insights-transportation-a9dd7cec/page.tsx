@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive insights-transportation - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive insights-transportation. This autonomous system provides sales forecasting with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-transportation-a9dd7cec'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

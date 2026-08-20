@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Orchestrator for Agriculture - Zion Tech Group",
   description: "Revolutionize agriculture through intelligent automation. Our Adaptive Orchestrator for Agriculture leverages advanced machine learning to deliver fraud prevent",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-orchestrator-for-agriculture-d895b5f5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

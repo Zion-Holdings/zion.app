@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Energy Edition #3 - Zion Tech Group",
   description: "Transform your energy operations with our AI Analytics - Energy Edition #3. This AI-driven solution automates supply chain with unprecedented accuracy and effic",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---energy-edition-3-9bd1e8fa'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

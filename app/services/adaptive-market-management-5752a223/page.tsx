@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Market Management - Zion Tech Group",
   description: "Next-generation Telecom solution: Adaptive Market Management. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-market-management-5752a223'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

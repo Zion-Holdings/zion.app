@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive System for Hospitality - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive System for Hospitality. This autonomous system provides predictive analytics with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-for-hospitality-ff3507bb'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Manager for Gaming #1 - Zion Tech Group",
   description: "Transform your gaming operations with our Adaptive Manager for Gaming #1. This AI-driven solution automates compliance monitoring with unprecedented accuracy an",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-for-gaming-1-b673bb71'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

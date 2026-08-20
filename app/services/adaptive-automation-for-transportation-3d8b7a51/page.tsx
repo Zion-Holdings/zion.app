@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Automation for Transportation - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Automation for Transportation. This autonomous system provides user experience with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-automation-for-transportation-3d8b7a51'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

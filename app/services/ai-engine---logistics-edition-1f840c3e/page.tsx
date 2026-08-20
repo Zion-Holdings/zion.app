@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Logistics Edition - Zion Tech Group",
   description: "Next-generation logistics solution: AI Engine - Logistics Edition. Combines quality control with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---logistics-edition-1f840c3e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

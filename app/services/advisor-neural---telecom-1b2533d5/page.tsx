@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Neural - Telecom - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Neural - Telecom. This autonomous system provides compliance monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-neural---telecom-1b2533d5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

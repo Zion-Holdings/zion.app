@@ -5,6 +5,13 @@ export const metadata = {
   title: "Agentic Workflow Orchestrator - Zion Tech Group",
   description: "Orchestrate multi-agent AI workflows: DAG of agents with routing, handoff, conditional branches, state persistence, retry logic, human-review gates. LangGraph/S",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/agentic-workflow-orchestrator'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

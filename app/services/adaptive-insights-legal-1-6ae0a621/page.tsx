@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive insights-legal #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive insights-legal #1. This autonomous system provides customer insights with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-legal-1-6ae0a621'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

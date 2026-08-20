@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Tech Edition #6 - Zion Tech Group",
   description: "The future of technology is here with AI Coordinator - Tech Edition #6. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---tech-edition-6-f4a0f38d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

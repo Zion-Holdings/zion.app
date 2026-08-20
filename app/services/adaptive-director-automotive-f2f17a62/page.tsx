@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive director-automotive - Zion Tech Group",
   description: "Revolutionize automotive through intelligent automation. Our Adaptive director-automotive leverages advanced machine learning to deliver workflow management at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-director-automotive-f2f17a62'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

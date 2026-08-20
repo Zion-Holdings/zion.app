@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive processor-sports - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive processor-sports. This autonomous system provides language processing with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-sports-67096840'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

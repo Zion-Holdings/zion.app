@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Suite for Construction - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Suite for Construction. This autonomous system provides process automation with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-for-construction-a2006b5a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

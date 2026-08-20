@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Content Moderation Platform - Zion Tech Group",
   description: "Multi-modal moderation (text/image/video): NSFW, hate-speech, PII, copyright, brand-safety classifier; moderation queue + human-review.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-content-moderation-platform'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

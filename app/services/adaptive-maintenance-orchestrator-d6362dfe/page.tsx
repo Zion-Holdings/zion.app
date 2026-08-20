@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Maintenance Orchestrator - Zion Tech Group",
   description: "Transform your construction operations with our Adaptive Maintenance Orchestrator. This AI-driven solution automates language processing with unprecedented accu",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-maintenance-orchestrator-d6362dfe'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

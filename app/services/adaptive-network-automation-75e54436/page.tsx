@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Network Automation - Zion Tech Group",
   description: "Next-generation healthcare solution: Adaptive Network Automation. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-network-automation-75e54436'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

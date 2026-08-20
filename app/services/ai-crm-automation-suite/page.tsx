@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI CRM Automation Suite - Zion Tech Group",
   description: "Full CRM automation platform: AI lead scoring, email sequences, pipeline tracking, deal insights, automated follow-ups, and smart forecasting across HubSpot, Sa",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-crm-automation-suite'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

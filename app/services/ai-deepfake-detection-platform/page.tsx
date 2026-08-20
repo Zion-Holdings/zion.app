@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Deepfake Detection & Media Authenticity Platform - Zion Tech Group",
   description: "Detect deepfakes, synthetic media, and manipulated content in real-time. AI-powered analysis of video, audio, and images for media integrity verification.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-deepfake-detection-platform'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

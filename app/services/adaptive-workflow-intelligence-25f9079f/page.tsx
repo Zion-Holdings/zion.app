@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Workflow Intelligence - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Workflow Intelligence. This autonomous system provides workflow management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-workflow-intelligence-25f9079f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

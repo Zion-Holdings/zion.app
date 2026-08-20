@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Manufacturing Edition #3 - Zion Tech Group",
   description: "The future of manufacturing is here with AI Automation - Manufacturing Edition #3. Powered by cutting-edge AI, this platform delivers resource optimization like",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---manufacturing-edition-3-149a0441'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Security Predictor - Zion Tech Group",
   description: "Transform your media operations with our Adaptive Security Predictor. This AI-driven solution automates compliance monitoring with unprecedented accuracy and ef",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-security-predictor-342cea47'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

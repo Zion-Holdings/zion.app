@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Healthcare - Zion Tech Group",
   description: "Transform your healthcare operations with our Advisor Self-Optimizing - Healthcare. This AI-driven solution automates content generation with unprecedented accu",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-self-optimizing---healthcare-29187e5a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

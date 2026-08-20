@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Sales Analyzer - Zion Tech Group",
   description: "The future of legal is here with Adaptive Sales Analyzer. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-sales-analyzer-53bf8a1c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

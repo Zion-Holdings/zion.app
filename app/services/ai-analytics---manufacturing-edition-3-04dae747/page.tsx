@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Manufacturing Edition #3 - Zion Tech Group",
   description: "Revolutionize manufacturing through intelligent automation. Our AI Analytics - Manufacturing Edition #3 leverages advanced machine learning to deliver market in",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---manufacturing-edition-3-04dae747'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

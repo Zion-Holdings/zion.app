@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Legal Edition #1 - Zion Tech Group",
   description: "Revolutionize legal through intelligent automation. Our AI Analyzer - Legal Edition #1 leverages advanced machine learning to deliver customer insights at scale",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---legal-edition-1-1e4c4cce'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

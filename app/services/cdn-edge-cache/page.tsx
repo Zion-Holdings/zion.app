@@ -5,6 +5,13 @@ export const metadata = {
   title: "CDN & Edge Cache - Zion Tech Group",
   description: "Global content delivery network with smart caching, image optimization, DDoS mitigation, and sub-50ms TTFB for static and dynamic assets.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/cdn-edge-cache'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

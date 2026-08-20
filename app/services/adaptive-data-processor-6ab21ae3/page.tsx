@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Data Processor - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Data Processor. This autonomous system provides performance monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-data-processor-6ab21ae3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

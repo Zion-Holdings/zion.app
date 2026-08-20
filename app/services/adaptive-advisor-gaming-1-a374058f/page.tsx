@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive advisor-gaming #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive advisor-gaming #1. This autonomous system provides decision support with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-gaming-1-a374058f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

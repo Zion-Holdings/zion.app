@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Process Generator - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive Process Generator leverages advanced machine learning to deliver threat detection at sca",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-process-generator-090e9779'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

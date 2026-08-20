@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Predictive Insights #1 - Zion Tech Group",
   description: "Next-generation media solution: Adaptive Predictive Insights #1. Combines performance monitoring with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictive-insights-1-3b131ecc'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

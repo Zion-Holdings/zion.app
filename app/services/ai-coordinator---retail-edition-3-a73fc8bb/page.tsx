@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Retail Edition #3 - Zion Tech Group",
   description: "The future of Retail is here with AI Coordinator - Retail Edition #3. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---retail-edition-3-a73fc8bb'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Will, Estate & Legacy Planning Assistant - Zion Tech Group",
   description: "Guided AI assistant for creating legally sound wills, trusts, and estate plans. Analyzes assets, family structure, and state laws.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-estate-will-planning-assistant'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Platform for Agriculture #1 - Zion Tech Group",
   description: "Transform your agriculture operations with our Adaptive Platform for Agriculture #1. This AI-driven solution automates decision support with unprecedented accur",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-platform-for-agriculture-1-73a4734e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

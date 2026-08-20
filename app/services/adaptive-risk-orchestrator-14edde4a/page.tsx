@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Risk Orchestrator - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive Risk Orchestrator. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-risk-orchestrator-14edde4a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

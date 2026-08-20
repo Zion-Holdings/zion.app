@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Intelligence for Tech #1 - Zion Tech Group",
   description: "The future of technology is here with Adaptive Intelligence for Tech #1. Powered by cutting-edge AI, this platform delivers decision support like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-intelligence-for-tech-1-b9cb6457'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

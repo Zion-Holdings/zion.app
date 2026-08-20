@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Driven Scalable Marketing Automation - Zion Tech Group",
   description: "Intelligent marketing platform that creates scalable campaigns across channels, optimizing content, timing, and audience targeting for maximum engagement.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-scalable-marketing-automation-cb3e21e4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

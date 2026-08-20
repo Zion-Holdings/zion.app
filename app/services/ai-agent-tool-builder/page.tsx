@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Agent Tool Builder - Zion Tech Group",
   description: "Visual no-code tool builder for LLM agents: define function-calling tools, MCP server scaffolding, OpenAPI wrapper, and sandbox test harness.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-agent-tool-builder'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

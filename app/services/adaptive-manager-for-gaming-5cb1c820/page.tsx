@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Manager for Gaming - Zion Tech Group",
   description: "Revolutionize gaming through intelligent automation. Our Adaptive Manager for Gaming leverages advanced machine learning to deliver network optimization at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-for-gaming-5cb1c820'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

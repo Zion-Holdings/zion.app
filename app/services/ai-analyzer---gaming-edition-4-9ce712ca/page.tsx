@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Gaming Edition #4 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analyzer - Gaming Edition #4. This autonomous system provides network optimization with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---gaming-edition-4-9ce712ca'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

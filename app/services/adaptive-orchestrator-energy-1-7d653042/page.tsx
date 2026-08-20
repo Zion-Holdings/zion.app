@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive orchestrator-energy #1 - Zion Tech Group",
   description: "The future of energy is here with Adaptive orchestrator-energy #1. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-orchestrator-energy-1-7d653042'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

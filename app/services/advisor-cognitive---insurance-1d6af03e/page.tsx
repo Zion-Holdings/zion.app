@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Cognitive - Insurance - Zion Tech Group",
   description: "The future of insurance is here with Advisor Cognitive - Insurance. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-cognitive---insurance-1d6af03e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

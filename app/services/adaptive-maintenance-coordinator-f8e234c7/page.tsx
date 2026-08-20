@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Maintenance Coordinator - Zion Tech Group",
   description: "Transform your insurance operations with our Adaptive Maintenance Coordinator. This AI-driven solution automates image recognition with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-maintenance-coordinator-f8e234c7'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

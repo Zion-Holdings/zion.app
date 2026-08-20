@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive predictor-energy - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive predictor-energy. This autonomous system provides security monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictor-energy-ce7d6e00'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Advisor for Healthcare #1 - Zion Tech Group",
   description: "Next-generation healthcare solution: Adaptive Advisor for Healthcare #1. Combines sales forecasting with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-for-healthcare-1-deee2109'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

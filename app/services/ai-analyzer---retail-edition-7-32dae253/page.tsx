@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Retail Edition #7 - Zion Tech Group",
   description: "Transform your retail operations with our AI Analyzer - Retail Edition #7. This AI-driven solution automates data processing with unprecedented accuracy and eff",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---retail-edition-7-32dae253'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

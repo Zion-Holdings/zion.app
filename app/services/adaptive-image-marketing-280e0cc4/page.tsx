@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Image Marketing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Image Marketing. This autonomous system provides data quality with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-image-marketing-280e0cc4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

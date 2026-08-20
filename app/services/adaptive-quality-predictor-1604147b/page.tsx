@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Quality Predictor - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Quality Predictor. This autonomous system provides user experience with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-quality-predictor-1604147b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

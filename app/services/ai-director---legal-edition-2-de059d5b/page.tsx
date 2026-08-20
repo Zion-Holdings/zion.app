@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Legal Edition #2 - Zion Tech Group",
   description: "Next-generation legal solution: AI Director - Legal Edition #2. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---legal-edition-2-de059d5b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

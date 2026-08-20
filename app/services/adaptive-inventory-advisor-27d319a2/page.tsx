@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Inventory Advisor - Zion Tech Group",
   description: "The future of logistics is here with Adaptive Inventory Advisor. Powered by cutting-edge AI, this platform delivers energy management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-inventory-advisor-27d319a2'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

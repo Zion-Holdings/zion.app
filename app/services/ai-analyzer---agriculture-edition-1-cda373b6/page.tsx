@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Agriculture Edition #1 - Zion Tech Group",
   description: "The future of agriculture is here with AI Analyzer - Agriculture Edition #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like neve",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---agriculture-edition-1-cda373b6'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

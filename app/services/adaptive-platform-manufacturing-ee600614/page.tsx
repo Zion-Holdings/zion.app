@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive platform-manufacturing - Zion Tech Group",
   description: "Transform your Manufacturing operations with our Adaptive platform-manufacturing. This AI-driven solution automates network optimization with unprecedented accu",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-platform-manufacturing-ee600614'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Advisor for Construction - Zion Tech Group",
   description: "Next-generation construction solution: Adaptive Advisor for Construction. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-for-construction-5b6000aa'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

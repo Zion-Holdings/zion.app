@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Intelligent - Real-Estate - Zion Tech Group",
   description: "Revolutionize real-estate through intelligent automation. Our Advisor Intelligent - Real-Estate leverages advanced machine learning to deliver decision support ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-intelligent---real-estate-fe7ea0e4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

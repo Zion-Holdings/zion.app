@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Manufacturing Edition #3 - Zion Tech Group",
   description: "The future of manufacturing is here with AI Director - Manufacturing Edition #3. Powered by cutting-edge AI, this platform delivers financial planning like neve",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---manufacturing-edition-3-3e26937d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Neural - Agriculture - Zion Tech Group",
   description: "The future of agriculture is here with Advisor Neural - Agriculture. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-neural---agriculture-688d2084'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

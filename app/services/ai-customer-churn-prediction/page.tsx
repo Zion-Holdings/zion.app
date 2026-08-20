@@ -5,6 +5,13 @@ export const metadata = {
   title: "Customer Churn Prediction & Prevention - Zion Tech Group",
   description: "Predict which customers are at risk of leaving, understand why, and trigger automated retention campaigns. Integrates with CRM, billing, and support systems.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-customer-churn-prediction'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

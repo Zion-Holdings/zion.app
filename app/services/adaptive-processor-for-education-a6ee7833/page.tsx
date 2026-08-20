@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Processor for Education - Zion Tech Group",
   description: "Transform your education operations with our Adaptive Processor for Education. This AI-driven solution automates language processing with unprecedented accuracy",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-for-education-a6ee7833'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

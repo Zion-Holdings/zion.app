@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Inventory Suite - Zion Tech Group",
   description: "Revolutionize real-estate through intelligent automation. Our Adaptive Inventory Suite leverages advanced machine learning to deliver maintenance scheduling at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-inventory-suite-ad4ffc60'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

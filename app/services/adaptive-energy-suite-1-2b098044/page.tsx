@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Energy Suite #1 - Zion Tech Group",
   description: "Transform your transportation operations with our Adaptive Energy Suite #1. This AI-driven solution automates data processing with unprecedented accuracy and ef",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-energy-suite-1-2b098044'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

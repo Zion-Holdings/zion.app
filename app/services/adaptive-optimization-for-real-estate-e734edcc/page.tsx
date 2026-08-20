@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Optimization for Real-Estate - Zion Tech Group",
   description: "The future of real-estate is here with Adaptive Optimization for Real-Estate. Powered by cutting-edge AI, this platform delivers document processing like never ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimization-for-real-estate-e734edcc'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

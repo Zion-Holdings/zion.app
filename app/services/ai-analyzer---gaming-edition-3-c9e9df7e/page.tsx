@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Gaming Edition #3 - Zion Tech Group",
   description: "Next-generation gaming solution: AI Analyzer - Gaming Edition #3. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---gaming-edition-3-c9e9df7e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

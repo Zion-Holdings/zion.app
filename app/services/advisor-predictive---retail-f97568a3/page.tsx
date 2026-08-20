@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Predictive - Retail - Zion Tech Group",
   description: "Next-generation retail solution: Advisor Predictive - Retail. Combines compliance monitoring with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-predictive---retail-f97568a3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

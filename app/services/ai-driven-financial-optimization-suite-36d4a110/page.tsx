@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Driven Financial Optimization Suite - Zion Tech Group",
   description: "Industry-specific AI solution that optimizes financial operations, supply chains, and decision-making processes. Delivers measurable improvements in efficiency ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-financial-optimization-suite-36d4a110'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

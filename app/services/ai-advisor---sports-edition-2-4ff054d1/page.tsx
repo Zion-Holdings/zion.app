@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Sports Edition #2 - Zion Tech Group",
   description: "Next-generation sports solution: AI Advisor - Sports Edition #2. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---sports-edition-2-4ff054d1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Media Edition #5 - Zion Tech Group",
   description: "Next-generation media solution: AI Automation - Media Edition #5. Combines compliance monitoring with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---media-edition-5-b1059fa3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Media Edition #2 - Zion Tech Group",
   description: "Next-generation media solution: AI Director - Media Edition #2. Combines workflow management with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---media-edition-2-62532ec5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive orchestrator-telecom - Zion Tech Group",
   description: "The future of telecom is here with Adaptive orchestrator-telecom. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-orchestrator-telecom-06c82774'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

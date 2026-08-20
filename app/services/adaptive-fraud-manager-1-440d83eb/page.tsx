@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Fraud Manager #1 - Zion Tech Group",
   description: "Transform your technology operations with our Adaptive Fraud Manager #1. This AI-driven solution automates language processing with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-fraud-manager-1-440d83eb'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

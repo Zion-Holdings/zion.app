@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Media Edition #1 - Zion Tech Group",
   description: "Revolutionize media through intelligent automation. Our AI Automation - Media Edition #1 leverages advanced machine learning to deliver data processing at scale",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---media-edition-1-dde055a0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

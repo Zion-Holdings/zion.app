@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Optimization for Tech - Zion Tech Group",
   description: "Unlock unprecedented growth with Advanced Optimization for Tech. This autonomous system provides performance tuning with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-optimization-for-tech-319a4bf3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

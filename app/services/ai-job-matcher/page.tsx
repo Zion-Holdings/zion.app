@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Job Matcher & Career Path - Zion Tech Group",
   description: "Two-sided AI: job seeker resume vs all open roles + candidate profile vs employer requirements. Fit scores gap analysis interview prep salary benchmark.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-job-matcher'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

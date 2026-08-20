@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Fraud Detection Engine - Zion Tech Group",
   description: "Real-time fraud detection for payments, banking, and insurance. Graph neural networks detect complex fraud rings with 99.9% accuracy and sub-millisecond latency",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-fraud-detection-engine-af04324e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

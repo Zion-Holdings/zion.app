@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Healthcare Edition #8 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Engine - Healthcare Edition #8. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---healthcare-edition-8-cc4a6e6c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

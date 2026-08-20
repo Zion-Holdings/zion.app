@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive management-hospitality - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive management-hospitality. Powered by cutting-edge AI, this platform delivers performance monitoring like never bef",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-management-hospitality-177c0176'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Autonomous - Agriculture - Zion Tech Group",
   description: "Transform your agriculture operations with our Advisor Autonomous - Agriculture. This AI-driven solution automates threat detection with unprecedented accuracy ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-autonomous---agriculture-69d1011e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

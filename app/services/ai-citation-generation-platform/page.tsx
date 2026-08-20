@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Citation Generation Platform - Zion Tech Group",
   description: "Automatic citation generation and management for academic and professional writing. Supports APA, MLA, Chicago, Harvard, and Vancouver styles. Reference managem",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-citation-generation-platform'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

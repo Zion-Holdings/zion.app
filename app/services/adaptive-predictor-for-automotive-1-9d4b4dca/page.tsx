@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Predictor for Automotive #1 - Zion Tech Group",
   description: "The future of automotive is here with Adaptive Predictor for Automotive #1. Powered by cutting-edge AI, this platform delivers decision support like never befor",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictor-for-automotive-1-9d4b4dca'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

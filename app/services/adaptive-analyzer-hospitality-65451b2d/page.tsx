@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive analyzer-hospitality - Zion Tech Group",
   description: "The future of hospitality is here with Adaptive analyzer-hospitality. Powered by cutting-edge AI, this platform delivers document processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-hospitality-65451b2d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Sports Edition #5 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Engine - Sports Edition #5. This autonomous system provides performance monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---sports-edition-5-af8685e8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

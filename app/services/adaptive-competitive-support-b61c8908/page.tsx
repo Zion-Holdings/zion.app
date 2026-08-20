@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Competitive Support - Zion Tech Group",
   description: "The future of Gaming is here with Adaptive Competitive Support. Powered by cutting-edge AI, this platform delivers data governance like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-competitive-support-b61c8908'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

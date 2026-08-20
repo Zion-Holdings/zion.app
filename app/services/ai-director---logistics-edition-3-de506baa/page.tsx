@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Logistics Edition #3 - Zion Tech Group",
   description: "Transform your logistics operations with our AI Director - Logistics Edition #3. This AI-driven solution automates language processing with unprecedented accura",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---logistics-edition-3-de506baa'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

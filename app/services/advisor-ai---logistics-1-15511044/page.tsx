@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor AI - Logistics #1 - Zion Tech Group",
   description: "The future of Logistics is here with Advisor AI - Logistics #1. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-ai---logistics-1-15511044'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Language Optimizer - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Language Optimizer. This autonomous system provides code optimization with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-language-optimizer-55f2f130'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Finance for Gaming - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Finance for Gaming. This autonomous system provides financial planning with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-finance-for-gaming-d0721a9d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Cold Chain Monitoring for Pharmaceuticals - Zion Tech Group",
   description: "IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, compliance reporting (GDP/FDA), and automated corrective actions. Preven",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-cold-chain-monitor'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

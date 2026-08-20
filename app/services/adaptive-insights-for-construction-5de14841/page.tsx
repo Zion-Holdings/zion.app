@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Insights for Construction - Zion Tech Group",
   description: "The future of construction is here with Adaptive Insights for Construction. Powered by cutting-edge AI, this platform delivers data processing like never before",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-for-construction-5de14841'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

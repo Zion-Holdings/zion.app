@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Code Platform - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive Code Platform. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-code-platform-c76c173a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

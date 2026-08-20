@@ -5,6 +5,13 @@ export const metadata = {
   title: "5G Network Slicing Optimizer - Zion Tech Group",
   description: "AI-driven optimization of 5G network slices for maximum efficiency and QoS. Dynamic resource allocation based on traffic patterns and service requirements.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/5g-network-slicing-optimizer-cb909bf5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

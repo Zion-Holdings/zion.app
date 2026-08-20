@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Analyzer for Logistics - Zion Tech Group",
   description: "The future of logistics is here with Adaptive Analyzer for Logistics. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-for-logistics-6d19dee3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

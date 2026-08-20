@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive intelligence-automotive #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive intelligence-automotive #1. This autonomous system provides user experience with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-intelligence-automotive-1-fe49a92e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

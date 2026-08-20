@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Engine for Gaming - Zion Tech Group",
   description: "Next-generation gaming solution: Adaptive Engine for Gaming. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-engine-for-gaming-d446bd3d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Code Generator - Zion Tech Group",
   description: "Revolutionize legal through intelligent automation. Our Adaptive Code Generator leverages advanced machine learning to deliver image recognition at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-code-generator-99a47388'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

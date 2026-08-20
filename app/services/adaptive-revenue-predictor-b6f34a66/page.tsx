@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Revenue Predictor - Zion Tech Group",
   description: "The future of Manufacturing is here with Adaptive Revenue Predictor. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-revenue-predictor-b6f34a66'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

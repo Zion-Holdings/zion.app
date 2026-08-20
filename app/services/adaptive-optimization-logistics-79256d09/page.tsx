@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimization-logistics - Zion Tech Group",
   description: "Next-generation logistics solution: Adaptive optimization-logistics. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimization-logistics-79256d09'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

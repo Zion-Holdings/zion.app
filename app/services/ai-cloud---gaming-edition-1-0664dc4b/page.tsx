@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Cloud - Gaming Edition #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Cloud - Gaming Edition #1. This autonomous system provides market intelligence with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-cloud---gaming-edition-1-0664dc4b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

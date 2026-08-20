@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Logistics Edition #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analytics - Logistics Edition #1. This autonomous system provides financial planning with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---logistics-edition-1-3d6d07e0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Automated - Education - Zion Tech Group",
   description: "Transform your education operations with our Advisor Automated - Education. This AI-driven solution automates supply chain with unprecedented accuracy and effic",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-automated---education-3ae75234'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

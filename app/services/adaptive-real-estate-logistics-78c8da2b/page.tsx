@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive real estate-logistics - Zion Tech Group",
   description: "Revolutionize Logistics through intelligent automation. Our Adaptive real estate-logistics leverages advanced machine learning to deliver market intelligence at",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-real-estate-logistics-78c8da2b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

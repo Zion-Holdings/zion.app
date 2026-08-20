@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Transportation Edition #2 - Zion Tech Group",
   description: "Transform your transportation operations with our AI Engine - Transportation Edition #2. This AI-driven solution automates code optimization with unprecedented ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---transportation-edition-2-8927d868'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

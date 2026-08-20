@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI DevOps - Gaming Edition #1 - Zion Tech Group",
   description: "Revolutionize Gaming through intelligent automation. Our AI DevOps - Gaming Edition #1 leverages advanced machine learning to deliver decision support at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-devops---gaming-edition-1-14945c0f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

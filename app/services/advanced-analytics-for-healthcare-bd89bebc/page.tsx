@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Analytics for Healthcare - Zion Tech Group",
   description: "The future of healthcare is here with Advanced Analytics for Healthcare. Powered by cutting-edge AI, this platform delivers a/b testing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-analytics-for-healthcare-bd89bebc'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

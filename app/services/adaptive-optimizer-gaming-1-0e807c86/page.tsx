@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimizer-gaming #1 - Zion Tech Group",
   description: "Revolutionize gaming through intelligent automation. Our Adaptive optimizer-gaming #1 leverages advanced machine learning to deliver maintenance scheduling at s",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimizer-gaming-1-0e807c86'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

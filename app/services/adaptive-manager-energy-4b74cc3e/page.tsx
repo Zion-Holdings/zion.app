@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive manager-energy - Zion Tech Group",
   description: "The future of energy is here with Adaptive manager-energy. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-energy-4b74cc3e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

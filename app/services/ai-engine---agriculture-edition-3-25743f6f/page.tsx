@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Agriculture Edition #3 - Zion Tech Group",
   description: "Revolutionize agriculture through intelligent automation. Our AI Engine - Agriculture Edition #3 leverages advanced machine learning to deliver network optimiza",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---agriculture-edition-3-25743f6f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

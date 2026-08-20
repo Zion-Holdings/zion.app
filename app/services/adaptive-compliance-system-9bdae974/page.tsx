@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Compliance System - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Compliance System. This autonomous system provides process automation with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-compliance-system-9bdae974'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

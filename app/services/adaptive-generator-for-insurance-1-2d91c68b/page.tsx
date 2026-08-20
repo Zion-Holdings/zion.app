@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Generator for Insurance #1 - Zion Tech Group",
   description: "The future of insurance is here with Adaptive Generator for Insurance #1. Powered by cutting-edge AI, this platform delivers image recognition like never before",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-generator-for-insurance-1-2d91c68b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

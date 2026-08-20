@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive suite-manufacturing - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive suite-manufacturing. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-manufacturing-2a434211'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

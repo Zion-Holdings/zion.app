@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Energy Platform - Zion Tech Group",
   description: "The future of education is here with Adaptive Energy Platform. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-energy-platform-a8eda257'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Retail Edition #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analytics - Retail Edition #1. This autonomous system provides decision support with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---retail-edition-1-b13b519f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

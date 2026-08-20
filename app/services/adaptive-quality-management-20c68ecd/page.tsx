@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Quality Management - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Adaptive Quality Management leverages advanced machine learning to deliver supply chain at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-quality-management-20c68ecd'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

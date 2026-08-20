@@ -5,6 +5,13 @@ export const metadata = {
   title: "Ai Load Testing - Zion Tech Group",
   description: "AI Load Testing — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first archi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-load-testing'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

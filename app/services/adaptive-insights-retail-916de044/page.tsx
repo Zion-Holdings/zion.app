@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive insights-retail - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive insights-retail. This AI-driven solution automates resource optimization with unprecedented accuracy and effi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-retail-916de044'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

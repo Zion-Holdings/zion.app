@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Analyzer for Transportation - Zion Tech Group",
   description: "Transform your transportation operations with our Adaptive Analyzer for Transportation. This AI-driven solution automates inventory management with unprecedente",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-for-transportation-e8ec9147'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

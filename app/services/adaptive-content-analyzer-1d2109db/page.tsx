@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Content Analyzer - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Adaptive Content Analyzer leverages advanced machine learning to deliver workflow management at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-content-analyzer-1d2109db'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

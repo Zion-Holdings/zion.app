@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Adaptive - Manufacturing #1 - Zion Tech Group",
   description: "Next-generation manufacturing solution: Advisor Adaptive - Manufacturing #1. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-adaptive---manufacturing-1-4786da17'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

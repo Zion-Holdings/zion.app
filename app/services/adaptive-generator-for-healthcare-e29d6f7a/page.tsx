@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Generator for Healthcare - Zion Tech Group",
   description: "Next-generation healthcare solution: Adaptive Generator for Healthcare. Combines sales forecasting with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-generator-for-healthcare-e29d6f7a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

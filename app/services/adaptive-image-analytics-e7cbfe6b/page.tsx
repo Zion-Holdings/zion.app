@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Image Analytics - Zion Tech Group",
   description: "Revolutionize healthcare through intelligent automation. Our Adaptive Image Analytics leverages advanced machine learning to deliver data processing at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-image-analytics-e7cbfe6b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Sports Edition #1 - Zion Tech Group",
   description: "The future of sports is here with AI Coordinator - Sports Edition #1. Powered by cutting-edge AI, this platform delivers quality control like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---sports-edition-1-ec3cdb33'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

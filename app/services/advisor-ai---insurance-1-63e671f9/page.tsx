@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor AI - Insurance #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor AI - Insurance #1. This autonomous system provides content generation with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-ai---insurance-1-63e671f9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

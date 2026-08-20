@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimization-transportation - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive optimization-transportation. This autonomous system provides energy management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimization-transportation-c8181c20'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

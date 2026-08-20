@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive marketing-automotive - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive marketing-automotive. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-marketing-automotive-4eaa64ea'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

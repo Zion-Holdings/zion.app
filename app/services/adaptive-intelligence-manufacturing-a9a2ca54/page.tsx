@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive intelligence-manufacturing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive intelligence-manufacturing. This autonomous system provides energy management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-intelligence-manufacturing-a9a2ca54'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

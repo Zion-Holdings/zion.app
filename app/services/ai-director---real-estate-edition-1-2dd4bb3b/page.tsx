@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Real-Estate Edition #1 - Zion Tech Group",
   description: "Transform your real-estate operations with our AI Director - Real-Estate Edition #1. This AI-driven solution automates sales forecasting with unprecedented accu",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---real-estate-edition-1-2dd4bb3b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

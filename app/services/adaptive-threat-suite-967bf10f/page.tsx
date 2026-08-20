@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Threat Suite - Zion Tech Group",
   description: "Next-generation technology solution: Adaptive Threat Suite. Combines content generation with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-threat-suite-967bf10f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

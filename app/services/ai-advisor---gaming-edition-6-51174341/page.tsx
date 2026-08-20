@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Gaming Edition #6 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Advisor - Gaming Edition #6. This autonomous system provides image recognition with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---gaming-edition-6-51174341'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

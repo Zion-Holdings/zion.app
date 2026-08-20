@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Code Assistant (Enterprise) - Zion Tech Group",
   description: "Private, fine-tuned AI coding copilot trained on your internal repositories with role-based access and SOC 2 compliance.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-code-assistant-enterprise'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive orchestrator-sports - Zion Tech Group",
   description: "Revolutionize sports through intelligent automation. Our Adaptive orchestrator-sports leverages advanced machine learning to deliver language processing at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-orchestrator-sports-33a88577'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

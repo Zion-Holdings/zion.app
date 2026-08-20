@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Cloud - Finance Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Cloud - Finance Edition. This autonomous system provides competitive intelligence with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-cloud---finance-edition-45ee5a26'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

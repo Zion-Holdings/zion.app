@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Quality System - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Quality System. This autonomous system provides data processing with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-quality-system-6700a239'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

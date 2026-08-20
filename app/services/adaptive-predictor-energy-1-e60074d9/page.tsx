@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive predictor-energy #1 - Zion Tech Group",
   description: "Transform your energy operations with our Adaptive predictor-energy #1. This AI-driven solution automates workflow management with unprecedented accuracy and ef",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictor-energy-1-e60074d9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Risk Management - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Risk Management. This autonomous system provides performance monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-risk-management-861cc3bb'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

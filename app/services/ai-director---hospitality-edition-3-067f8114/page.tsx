@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Hospitality Edition #3 - Zion Tech Group",
   description: "The future of hospitality is here with AI Director - Hospitality Edition #3. Powered by cutting-edge AI, this platform delivers data processing like never befor",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---hospitality-edition-3-067f8114'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

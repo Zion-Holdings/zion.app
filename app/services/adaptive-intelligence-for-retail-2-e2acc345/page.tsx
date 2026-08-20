@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Intelligence for Retail #2 - Zion Tech Group",
   description: "The future of Retail is here with Adaptive Intelligence for Retail #2. Powered by cutting-edge AI, this platform delivers brand monitoring like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-intelligence-for-retail-2-e2acc345'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

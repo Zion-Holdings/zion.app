@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive system-manufacturing - Zion Tech Group",
   description: "The future of Manufacturing is here with Adaptive system-manufacturing. Powered by cutting-edge AI, this platform delivers process discovery like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-manufacturing-caec645c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

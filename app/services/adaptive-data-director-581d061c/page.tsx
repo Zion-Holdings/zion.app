@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Data Director - Zion Tech Group",
   description: "Revolutionize Manufacturing through intelligent automation. Our Adaptive Data Director leverages advanced machine learning to deliver threat detection at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-data-director-581d061c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

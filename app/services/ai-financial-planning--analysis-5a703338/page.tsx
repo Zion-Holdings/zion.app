@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Financial Planning & Analysis - Zion Tech Group",
   description: "Financial intelligence platform that automates budgeting, forecasting, and financial reporting. Provides real-time insights for better financial decision-making",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-financial-planning--analysis-5a703338'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

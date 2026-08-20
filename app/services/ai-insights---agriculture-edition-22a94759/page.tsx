@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Insights - Agriculture Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Insights - Agriculture Edition. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-insights---agriculture-edition-22a94759'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -4,6 +4,13 @@ export const metadata = {
   title: "AI-Driven Retail Optimization Suite - Zion Tech Group",
   description: "Industry-specific AI solution that optimizes retail operations and decision-making processes.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-retail-optimization-suite-ec5f3473'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

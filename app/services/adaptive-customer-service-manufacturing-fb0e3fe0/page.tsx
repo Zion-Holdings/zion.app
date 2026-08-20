@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive customer service-manufacturing - Zion Tech Group",
   description: "The future of manufacturing is here with Adaptive customer service-manufacturing. Powered by cutting-edge AI, this platform delivers quality assurance like neve",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-customer-service-manufacturing-fb0e3fe0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

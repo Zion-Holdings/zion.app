@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Telecom Edition #1 - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our AI Director - Telecom Edition #1 leverages advanced machine learning to deliver supply chain at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---telecom-edition-1-2c1021fd'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

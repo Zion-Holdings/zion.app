@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Advisor for Transportation - Zion Tech Group",
   description: "Transform your transportation operations with our Adaptive Advisor for Transportation. This AI-driven solution automates content generation with unprecedented a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-for-transportation-07382b38'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

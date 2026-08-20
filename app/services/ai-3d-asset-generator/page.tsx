@@ -5,6 +5,13 @@ export const metadata = {
   title: "Ai 3D Asset Generator - Zion Tech Group",
   description: "AI 3D Asset Generator — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-3d-asset-generator'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

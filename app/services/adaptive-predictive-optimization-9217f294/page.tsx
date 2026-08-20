@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Predictive Optimization - Zion Tech Group",
   description: "Transform your agriculture operations with our Adaptive Predictive Optimization. This AI-driven solution automates maintenance scheduling with unprecedented acc",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictive-optimization-9217f294'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

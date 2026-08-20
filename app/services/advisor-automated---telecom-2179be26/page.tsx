@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Automated - Telecom - Zion Tech Group",
   description: "Transform your telecom operations with our Advisor Automated - Telecom. This AI-driven solution automates inventory management with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-automated---telecom-2179be26'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

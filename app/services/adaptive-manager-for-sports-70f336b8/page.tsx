@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Manager for Sports - Zion Tech Group",
   description: "Revolutionize sports through intelligent automation. Our Adaptive Manager for Sports leverages advanced machine learning to deliver predictive analytics at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-for-sports-70f336b8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

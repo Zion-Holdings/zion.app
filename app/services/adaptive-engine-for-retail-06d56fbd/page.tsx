@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Engine for Retail - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive Engine for Retail. This AI-driven solution automates workflow management with unprecedented accuracy and effi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-engine-for-retail-06d56fbd'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

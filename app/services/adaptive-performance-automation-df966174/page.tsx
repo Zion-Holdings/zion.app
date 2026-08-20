@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Performance Automation - Zion Tech Group",
   description: "The future of gaming is here with Adaptive Performance Automation. Powered by cutting-edge AI, this platform delivers data processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-performance-automation-df966174'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

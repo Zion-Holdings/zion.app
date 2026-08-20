@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Healthcare for Automotive - Zion Tech Group",
   description: "Next-generation Automotive solution: Adaptive Healthcare for Automotive. Combines master data management with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-healthcare-for-automotive-b47c12ee'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

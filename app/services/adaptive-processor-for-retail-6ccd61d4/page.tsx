@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Processor for Retail - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Processor for Retail. This autonomous system provides security monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-for-retail-6ccd61d4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

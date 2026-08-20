@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Network Orchestrator - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Network Orchestrator. This autonomous system provides predictive analytics with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-network-orchestrator-136fe6c2'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

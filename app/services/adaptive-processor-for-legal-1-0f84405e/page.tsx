@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Processor for Legal #1 - Zion Tech Group",
   description: "Revolutionize legal through intelligent automation. Our Adaptive Processor for Legal #1 leverages advanced machine learning to deliver sales forecasting at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-for-legal-1-0f84405e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Neural - Telecom #1 - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our Advisor Neural - Telecom #1 leverages advanced machine learning to deliver document processing at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-neural---telecom-1-adcc7d56'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

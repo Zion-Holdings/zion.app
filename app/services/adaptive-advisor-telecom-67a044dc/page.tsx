@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive advisor-telecom - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our Adaptive advisor-telecom leverages advanced machine learning to deliver predictive analytics at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-telecom-67a044dc'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

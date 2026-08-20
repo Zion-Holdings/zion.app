@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Sports Edition #4 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Advisor - Sports Edition #4. This autonomous system provides performance monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---sports-edition-4-cd7333ce'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

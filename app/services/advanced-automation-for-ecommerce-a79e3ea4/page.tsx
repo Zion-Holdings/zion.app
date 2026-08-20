@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Automation for Ecommerce - Zion Tech Group",
   description: "Optimize your ecommerce workflows with Advanced Automation for Ecommerce. This intelligent platform delivers content personalization through advanced automation",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-automation-for-ecommerce-a79e3ea4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive advisor-gaming - Zion Tech Group",
   description: "Revolutionize gaming through intelligent automation. Our Adaptive advisor-gaming leverages advanced machine learning to deliver inventory management at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-gaming-65cb3d65'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

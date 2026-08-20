@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Risk Optimization - Zion Tech Group",
   description: "Transform your automotive operations with our Adaptive Risk Optimization. This AI-driven solution automates content generation with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-risk-optimization-58e8b297'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

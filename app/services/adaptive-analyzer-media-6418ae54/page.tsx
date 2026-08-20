@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive analyzer-media - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive analyzer-media. This autonomous system provides user experience with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-media-6418ae54'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

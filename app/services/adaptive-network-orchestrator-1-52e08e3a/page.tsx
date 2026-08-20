@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Network Orchestrator #1 - Zion Tech Group",
   description: "Revolutionize legal through intelligent automation. Our Adaptive Network Orchestrator #1 leverages advanced machine learning to deliver resource optimization at",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-network-orchestrator-1-52e08e3a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

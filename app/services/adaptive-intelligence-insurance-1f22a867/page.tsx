@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive intelligence-insurance - Zion Tech Group",
   description: "Next-generation insurance solution: Adaptive intelligence-insurance. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-intelligence-insurance-1f22a867'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

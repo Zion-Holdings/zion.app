@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Fraud Predictor - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Fraud Predictor. This autonomous system provides document processing with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-fraud-predictor-db96f0dc'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Orchestrator for Retail - Zion Tech Group",
   description: "The future of retail is here with Adaptive Orchestrator for Retail. Powered by cutting-edge AI, this platform delivers document processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-orchestrator-for-retail-2260a422'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

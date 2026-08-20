@@ -5,6 +5,13 @@ export const metadata = {
   title: "Precision Agriculture Platform - Zion Tech Group",
   description: "AI-powered precision farming with satellite imagery, soil analysis, crop health monitoring, yield prediction, and automated irrigation scheduling.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/agritech-precision-farming'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

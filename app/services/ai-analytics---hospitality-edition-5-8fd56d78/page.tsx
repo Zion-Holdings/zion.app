@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Hospitality Edition #5 - Zion Tech Group",
   description: "Next-generation hospitality solution: AI Analytics - Hospitality Edition #5. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---hospitality-edition-5-8fd56d78'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

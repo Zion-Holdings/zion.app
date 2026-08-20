@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive processor-transportation - Zion Tech Group",
   description: "Next-generation transportation solution: Adaptive processor-transportation. Combines maintenance scheduling with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-transportation-143c00bc'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

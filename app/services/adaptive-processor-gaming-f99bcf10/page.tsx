@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive processor-gaming - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive processor-gaming. This autonomous system provides financial planning with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-gaming-f99bcf10'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

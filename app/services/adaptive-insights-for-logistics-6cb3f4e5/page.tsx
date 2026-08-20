@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Insights for Logistics - Zion Tech Group",
   description: "Transform your Logistics operations with our Adaptive Insights for Logistics. This AI-driven solution automates master data management with unprecedented accura",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-for-logistics-6cb3f4e5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

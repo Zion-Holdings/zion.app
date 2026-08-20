@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Legal Edition #1 - Zion Tech Group",
   description: "Transform your legal operations with our AI Coordinator - Legal Edition #1. This AI-driven solution automates network optimization with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---legal-edition-1-253ab233'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

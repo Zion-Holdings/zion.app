@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive platform-retail - Zion Tech Group",
   description: "Transform your Retail operations with our Adaptive platform-retail. This AI-driven solution automates energy management with unprecedented accuracy and efficien",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-platform-retail-6e65ad8d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

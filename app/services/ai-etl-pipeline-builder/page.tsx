@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI ETL Pipeline Builder - Zion Tech Group",
   description: "Natural language ETL builder: describe source, target, transformation — AI generates production-ready dbt/Glue/Dataflow pipeline. Auto-tests, docs, type-map.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-etl-pipeline-builder'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

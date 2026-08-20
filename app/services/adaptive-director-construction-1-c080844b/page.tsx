@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive director-construction #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive director-construction #1. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-director-construction-1-c080844b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

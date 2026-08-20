@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Data Intelligence - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Data Intelligence. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-data-intelligence-464bea7c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

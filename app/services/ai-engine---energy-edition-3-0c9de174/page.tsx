@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Energy Edition #3 - Zion Tech Group",
   description: "Next-generation energy solution: AI Engine - Energy Edition #3. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---energy-edition-3-0c9de174'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

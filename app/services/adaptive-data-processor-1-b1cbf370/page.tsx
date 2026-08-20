@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Data Processor #1 - Zion Tech Group",
   description: "Revolutionize gaming through intelligent automation. Our Adaptive Data Processor #1 leverages advanced machine learning to deliver fraud prevention at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-data-processor-1-b1cbf370'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

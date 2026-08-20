@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Team for Tech - Zion Tech Group",
   description: "Optimize your tech workflows with Advanced Team for Tech. This intelligent platform delivers team productivity through advanced automation and AI.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-team-for-tech-5716f2d4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

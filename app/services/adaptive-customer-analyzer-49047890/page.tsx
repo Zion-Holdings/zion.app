@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Customer Analyzer - Zion Tech Group",
   description: "The future of Finance is here with Adaptive Customer Analyzer. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-customer-analyzer-49047890'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

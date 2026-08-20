@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Driven Real-Time Marketing Automation - Zion Tech Group",
   description: "Intelligent marketing platform that creates real-time campaigns across channels, optimizing content and targeting.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-real-time-marketing-automation-dfa2f4b2'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

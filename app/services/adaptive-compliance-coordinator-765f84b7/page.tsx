@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Compliance Coordinator - Zion Tech Group",
   description: "The future of Energy is here with Adaptive Compliance Coordinator. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never befor",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-compliance-coordinator-765f84b7'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

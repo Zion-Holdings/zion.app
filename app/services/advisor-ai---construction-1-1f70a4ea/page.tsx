@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor AI - Construction #1 - Zion Tech Group",
   description: "Transform your construction operations with our Advisor AI - Construction #1. This AI-driven solution automates content generation with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-ai---construction-1-1f70a4ea'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

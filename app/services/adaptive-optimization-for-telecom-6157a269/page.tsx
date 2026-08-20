@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Optimization for Telecom - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Optimization for Telecom. This autonomous system provides automation opportunity with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimization-for-telecom-6157a269'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Automation for Marketing v418 - Zion Tech Group",
   description: "Revolutionize marketing through intelligent automation. Our Advanced Automation for Marketing v418 leverages advanced machine learning to deliver a/b testing at",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-automation-for-marketing-v418-38aca314'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

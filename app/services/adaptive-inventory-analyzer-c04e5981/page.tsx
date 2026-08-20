@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Inventory Analyzer - Zion Tech Group",
   description: "The future of gaming is here with Adaptive Inventory Analyzer. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-inventory-analyzer-c04e5981'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

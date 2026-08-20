@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Gaming Edition #3 - Zion Tech Group",
   description: "The future of Gaming is here with AI Coordinator - Gaming Edition #3. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---gaming-edition-3-c7de6525'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

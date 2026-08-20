@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Financial Manufacturing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Financial Manufacturing. This autonomous system provides workflow management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-financial-manufacturing-a3cd4671'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

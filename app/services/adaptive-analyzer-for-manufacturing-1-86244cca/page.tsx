@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Analyzer for Manufacturing #1 - Zion Tech Group",
   description: "Revolutionize manufacturing through intelligent automation. Our Adaptive Analyzer for Manufacturing #1 leverages advanced machine learning to deliver fraud prev",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-for-manufacturing-1-86244cca'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

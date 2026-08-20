@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive predictor-construction #1 - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive predictor-construction #1 leverages advanced machine learning to deliver workflow manage",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictor-construction-1-b35dc712'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

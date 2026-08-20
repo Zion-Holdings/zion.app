@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Orchestrator for Automotive - Zion Tech Group",
   description: "The future of automotive is here with Adaptive Orchestrator for Automotive. Powered by cutting-edge AI, this platform delivers code optimization like never befo",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-orchestrator-for-automotive-aaf082d9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

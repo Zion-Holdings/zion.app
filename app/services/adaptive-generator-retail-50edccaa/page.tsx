@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive generator-retail - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive generator-retail. This AI-driven solution automates content generation with unprecedented accuracy and effici",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-generator-retail-50edccaa'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

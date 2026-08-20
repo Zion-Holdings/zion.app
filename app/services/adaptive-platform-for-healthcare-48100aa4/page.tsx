@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Platform for Healthcare - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Platform for Healthcare. This autonomous system provides customer journey mapping with zero manual intervention needed",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-platform-for-healthcare-48100aa4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Energy Management - Zion Tech Group",
   description: "Transform your construction operations with our Adaptive Energy Management. This AI-driven solution automates threat detection with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-energy-management-d85f91d5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Document Generator - Zion Tech Group",
   description: "Next-generation retail solution: Adaptive Document Generator. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-document-generator-fbf9cea8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

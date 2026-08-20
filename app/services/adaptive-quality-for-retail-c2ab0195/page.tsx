@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Quality for Retail - Zion Tech Group",
   description: "Next-generation Retail solution: Adaptive Quality for Retail. Combines healthcare data analytics with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-quality-for-retail-c2ab0195'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

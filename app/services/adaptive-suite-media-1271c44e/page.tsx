@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive suite-media - Zion Tech Group",
   description: "Transform your media operations with our Adaptive suite-media. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-media-1271c44e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

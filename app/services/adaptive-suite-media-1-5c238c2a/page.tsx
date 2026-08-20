@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive suite-media #1 - Zion Tech Group",
   description: "Next-generation media solution: Adaptive suite-media #1. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-media-1-5c238c2a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

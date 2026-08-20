@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Inventory Analyzer #2 - Zion Tech Group",
   description: "The future of energy is here with Adaptive Inventory Analyzer #2. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-inventory-analyzer-2-f08ef4a0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

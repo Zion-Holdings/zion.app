@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Autonomous - Insurance - Zion Tech Group",
   description: "Next-generation insurance solution: Advisor Autonomous - Insurance. Combines performance monitoring with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-autonomous---insurance-694ae40a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive insights-healthcare - Zion Tech Group",
   description: "Revolutionize healthcare through intelligent automation. Our Adaptive insights-healthcare leverages advanced machine learning to deliver risk assessment at scal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-healthcare-f282c9d1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

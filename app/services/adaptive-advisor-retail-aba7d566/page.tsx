@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive advisor-retail - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive advisor-retail. This autonomous system provides quality control with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-retail-aba7d566'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

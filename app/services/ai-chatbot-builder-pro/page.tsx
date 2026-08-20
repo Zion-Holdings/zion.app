@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Chatbot Builder Pro - Zion Tech Group",
   description: "Build intelligent, multi-channel chatbots with RAG-powered knowledge bases, workflow automation, and seamless human handoff.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-chatbot-builder-pro'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

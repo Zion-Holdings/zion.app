@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Automotive - Zion Tech Group",
   description: "The future of automotive is here with Advisor Self-Optimizing - Automotive. Powered by cutting-edge AI, this platform delivers decision support like never befor",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-self-optimizing---automotive-f55eaa54'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

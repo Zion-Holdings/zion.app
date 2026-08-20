@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Computer Vision - Zion Tech Group",
   description: "Image recognition, object detection, quality inspection, and visual search powered by deep learning models trained on your domain data.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-computer-vision'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

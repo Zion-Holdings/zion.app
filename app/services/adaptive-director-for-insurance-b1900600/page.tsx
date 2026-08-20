@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Director for Insurance - Zion Tech Group",
   description: "Transform your insurance operations with our Adaptive Director for Insurance. This AI-driven solution automates supply chain with unprecedented accuracy and eff",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-director-for-insurance-b1900600'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

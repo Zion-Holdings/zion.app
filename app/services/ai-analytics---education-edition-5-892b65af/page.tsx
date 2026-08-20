@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Education Edition #5 - Zion Tech Group",
   description: "Transform your education operations with our AI Analytics - Education Edition #5. This AI-driven solution automates decision support with unprecedented accuracy",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---education-edition-5-892b65af'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

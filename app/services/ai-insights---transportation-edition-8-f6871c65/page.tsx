@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Insights - Transportation Edition #8 - Zion Tech Group",
   description: "Revolutionize transportation through intelligent automation. Our AI Insights - Transportation Edition #8 leverages advanced machine learning to deliver code opt",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-insights---transportation-edition-8-f6871c65'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Insights for Sports - Zion Tech Group",
   description: "Transform your sports operations with our Adaptive Insights for Sports. This AI-driven solution automates code optimization with unprecedented accuracy and effi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-for-sports-4ce11e9f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

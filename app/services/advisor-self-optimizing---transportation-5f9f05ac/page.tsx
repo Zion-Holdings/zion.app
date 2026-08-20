@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Self-Optimizing - Transportation - Zion Tech Group",
   description: "Next-generation transportation solution: Advisor Self-Optimizing - Transportation. Combines process automation with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-self-optimizing---transportation-5f9f05ac'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

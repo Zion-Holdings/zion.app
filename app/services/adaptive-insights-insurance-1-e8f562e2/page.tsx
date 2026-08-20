@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive insights-insurance #1 - Zion Tech Group",
   description: "Transform your insurance operations with our Adaptive insights-insurance #1. This AI-driven solution automates maintenance scheduling with unprecedented accurac",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-insurance-1-e8f562e2'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

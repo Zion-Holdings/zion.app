@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Competitive Intel Engine - Zion Tech Group",
   description: "Tracks competitors\\",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-competitive-intel-engine'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

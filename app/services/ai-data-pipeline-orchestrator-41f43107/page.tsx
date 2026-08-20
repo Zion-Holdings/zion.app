@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Data Pipeline Orchestrator - Zion Tech Group",
   description: "Orchestrates data pipelines for AI training with automated data validation and feature engineering.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-data-pipeline-orchestrator-41f43107'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

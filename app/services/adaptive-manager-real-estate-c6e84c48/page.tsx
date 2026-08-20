@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive manager-real-estate - Zion Tech Group",
   description: "The future of real-estate is here with Adaptive manager-real-estate. Powered by cutting-edge AI, this platform delivers language processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-real-estate-c6e84c48'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

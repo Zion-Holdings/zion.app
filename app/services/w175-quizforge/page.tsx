@@ -5,6 +5,13 @@ export const metadata = {
   title: "QuizForge — Assessment & Quiz Builder - Zion Tech Group",
   description: "AI-powered quiz and assessment builder for education and training. Auto-generate from content, adaptive difficulty, and detailed analytics.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/w175-quizforge'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

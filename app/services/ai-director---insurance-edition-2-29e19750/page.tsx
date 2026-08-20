@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Insurance Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Director - Insurance Edition #2. This autonomous system provides market intelligence with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---insurance-edition-2-29e19750'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

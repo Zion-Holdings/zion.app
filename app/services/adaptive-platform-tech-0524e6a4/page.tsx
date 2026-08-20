@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive platform-tech - Zion Tech Group",
   description: "Revolutionize technology through intelligent automation. Our Adaptive platform-tech leverages advanced machine learning to deliver market intelligence at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-platform-tech-0524e6a4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

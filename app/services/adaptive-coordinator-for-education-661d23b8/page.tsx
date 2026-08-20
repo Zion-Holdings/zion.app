@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Coordinator for Education - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Coordinator for Education. This autonomous system provides market intelligence with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-coordinator-for-education-661d23b8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

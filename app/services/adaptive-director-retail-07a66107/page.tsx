@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive director-retail - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive director-retail. This AI-driven solution automates energy management with unprecedented accuracy and efficien",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-director-retail-07a66107'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

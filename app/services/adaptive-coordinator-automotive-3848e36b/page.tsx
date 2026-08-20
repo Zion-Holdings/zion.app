@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive coordinator-automotive - Zion Tech Group",
   description: "The future of automotive is here with Adaptive coordinator-automotive. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-coordinator-automotive-3848e36b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Predictor for Logistics - Zion Tech Group",
   description: "Transform your Logistics operations with our Adaptive Predictor for Logistics. This AI-driven solution automates security monitoring with unprecedented accuracy",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictor-for-logistics-fbf13e2b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Ai Ad Copy Generator - Zion Tech Group",
   description: "AI Ad Copy Generator — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-ad-copy-generator'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

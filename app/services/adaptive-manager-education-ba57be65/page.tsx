@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive manager-education - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive manager-education. This autonomous system provides predictive analytics with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-education-ba57be65'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

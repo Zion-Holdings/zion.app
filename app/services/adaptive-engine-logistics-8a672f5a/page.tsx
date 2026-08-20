@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive engine-logistics - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive engine-logistics. This autonomous system provides supply chain with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-engine-logistics-8a672f5a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

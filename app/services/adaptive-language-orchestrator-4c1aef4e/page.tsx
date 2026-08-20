@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Language Orchestrator - Zion Tech Group",
   description: "The future of real-estate is here with Adaptive Language Orchestrator. Powered by cutting-edge AI, this platform delivers threat detection like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-language-orchestrator-4c1aef4e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

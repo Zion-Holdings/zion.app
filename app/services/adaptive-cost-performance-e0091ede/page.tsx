@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Cost Performance - Zion Tech Group",
   description: "The future of Gaming is here with Adaptive Cost Performance. Powered by cutting-edge AI, this platform delivers market analysis like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-cost-performance-e0091ede'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

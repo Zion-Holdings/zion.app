@@ -5,6 +5,13 @@ export const metadata = {
   title: "Conversation Intelligence & Call Coach - Zion Tech Group",
   description: "Call transcript analysis: talk-listen ratio, sentiment, intent signals, competitor mentions, pricing cues, action item extraction, CRM autofill, team leaderboar",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-conversation-intelligence'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Sales Manager - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Sales Manager. This autonomous system provides resource optimization with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-sales-manager-eece49c0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

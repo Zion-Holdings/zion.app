@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Hospitality Edition #7 - Zion Tech Group",
   description: "Transform your hospitality operations with our AI Advisor - Hospitality Edition #7. This AI-driven solution automates resource optimization with unprecedented a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---hospitality-edition-7-a857c3eb'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

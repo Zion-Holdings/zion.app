@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimizer-retail #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive optimizer-retail #2. This autonomous system provides data processing with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimizer-retail-2-efc9bfd1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

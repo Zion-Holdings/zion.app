@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Compliance Insights - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive Compliance Insights leverages advanced machine learning to deliver fraud prevention at s",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-compliance-insights-7ce728a6'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Autonomous - Hospitality - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Advisor Autonomous - Hospitality leverages advanced machine learning to deliver security monitorin",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-autonomous---hospitality-2ff49980'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

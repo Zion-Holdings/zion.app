@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive generator-hospitality - Zion Tech Group",
   description: "Transform your hospitality operations with our Adaptive generator-hospitality. This AI-driven solution automates energy management with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-generator-hospitality-8053c0b0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

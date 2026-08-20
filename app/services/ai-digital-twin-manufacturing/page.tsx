@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Digital Twin for Manufacturing - Zion Tech Group",
   description: "Create digital twins of manufacturing processes for simulation, optimization, and predictive analytics. Reduce downtime and improve throughput.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-digital-twin-manufacturing'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

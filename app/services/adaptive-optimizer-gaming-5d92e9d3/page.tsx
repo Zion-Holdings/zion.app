@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimizer-gaming - Zion Tech Group",
   description: "The future of gaming is here with Adaptive optimizer-gaming. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimizer-gaming-5d92e9d3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive advisor-construction - Zion Tech Group",
   description: "Transform your construction operations with our Adaptive advisor-construction. This AI-driven solution automates sales forecasting with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-construction-fcb356b8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

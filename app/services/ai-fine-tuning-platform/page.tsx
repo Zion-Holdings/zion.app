@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Model Fine-Tuning Platform - Zion Tech Group",
   description: "Fine-tune LLMs and foundation models on your data. Managed training, RLHF, LoRA/QLoRA support, and model evaluation with A/B testing.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-fine-tuning-platform'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

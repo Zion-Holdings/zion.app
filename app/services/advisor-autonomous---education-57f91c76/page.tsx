@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Autonomous - Education - Zion Tech Group",
   description: "The future of education is here with Advisor Autonomous - Education. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-autonomous---education-57f91c76'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

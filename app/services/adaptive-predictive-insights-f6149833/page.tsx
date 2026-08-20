@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Predictive Insights - Zion Tech Group",
   description: "Transform your automotive operations with our Adaptive Predictive Insights. This AI-driven solution automates workflow management with unprecedented accuracy an",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictive-insights-f6149833'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

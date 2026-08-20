@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI HR Assistant - Zion Tech Group",
   description: "Intelligent HR automation for recruitment, onboarding, employee engagement, and policy Q&A using conversational AI.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-hr-assistant'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

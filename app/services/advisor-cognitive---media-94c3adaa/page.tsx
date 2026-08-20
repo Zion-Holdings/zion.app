@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Cognitive - Media - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Cognitive - Media. This autonomous system provides network optimization with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-cognitive---media-94c3adaa'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

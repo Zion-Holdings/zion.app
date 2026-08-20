@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive system-agriculture #1 - Zion Tech Group",
   description: "The future of agriculture is here with Adaptive system-agriculture #1. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-agriculture-1-9f5d82de'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

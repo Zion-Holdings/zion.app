@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Hospitality Edition - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our AI Engine - Hospitality Edition leverages advanced machine learning to deliver code optimization a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---hospitality-edition-db60e18e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

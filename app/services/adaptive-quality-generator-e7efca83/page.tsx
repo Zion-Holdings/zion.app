@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Quality Generator - Zion Tech Group",
   description: "The future of finance is here with Adaptive Quality Generator. Powered by cutting-edge AI, this platform delivers language processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-quality-generator-e7efca83'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

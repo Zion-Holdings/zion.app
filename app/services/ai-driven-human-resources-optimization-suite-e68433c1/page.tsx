@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Driven Human Resources Optimization Suite - Zion Tech Group",
   description: "Industry-specific AI solution that optimizes human resources operations and decision-making processes.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-human-resources-optimization-suite-e68433c1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Campaign Performance Predictor - Zion Tech Group",
   description: "Predict campaign outcomes before launch. Forecast CTR, conversion rate, and ROAS using historical targeting data and creative asset features.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-campaign-predictor'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

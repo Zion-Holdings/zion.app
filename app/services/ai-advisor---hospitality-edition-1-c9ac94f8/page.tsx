@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Hospitality Edition #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Advisor - Hospitality Edition #1. This autonomous system provides market intelligence with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---hospitality-edition-1-c9ac94f8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

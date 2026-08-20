@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive suite-finance - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive suite-finance. This autonomous system provides decision support with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-finance-62de9c89'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

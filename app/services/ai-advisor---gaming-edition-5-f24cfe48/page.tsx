@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Gaming Edition #5 - Zion Tech Group",
   description: "The future of gaming is here with AI Advisor - Gaming Edition #5. Powered by cutting-edge AI, this platform delivers user experience like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---gaming-edition-5-f24cfe48'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

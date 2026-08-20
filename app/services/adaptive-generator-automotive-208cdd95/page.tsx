@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive generator-automotive - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive generator-automotive. This autonomous system provides sales forecasting with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-generator-automotive-208cdd95'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

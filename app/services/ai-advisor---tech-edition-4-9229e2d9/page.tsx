@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Tech Edition #4 - Zion Tech Group",
   description: "Revolutionize technology through intelligent automation. Our AI Advisor - Tech Edition #4 leverages advanced machine learning to deliver network optimization at",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---tech-edition-4-9229e2d9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Logistics Edition #6 - Zion Tech Group",
   description: "Transform your Logistics operations with our AI Coordinator - Logistics Edition #6. This AI-driven solution automates decision support with unprecedented accura",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---logistics-edition-6-bdab2643'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive experience-healthcare - Zion Tech Group",
   description: "Transform your Healthcare operations with our Adaptive experience-healthcare. This AI-driven solution automates predictive modeling with unprecedented accuracy ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-experience-healthcare-f49fced5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

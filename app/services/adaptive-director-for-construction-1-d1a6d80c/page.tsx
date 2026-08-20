@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Director for Construction #1 - Zion Tech Group",
   description: "The future of construction is here with Adaptive Director for Construction #1. Powered by cutting-edge AI, this platform delivers predictive analytics like neve",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-director-for-construction-1-d1a6d80c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

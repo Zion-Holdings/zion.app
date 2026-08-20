@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Gaming Edition #4 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Coordinator - Gaming Edition #4. This autonomous system provides network optimization with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---gaming-edition-4-cf43aa79'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

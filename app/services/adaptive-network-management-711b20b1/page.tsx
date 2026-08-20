@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Network Management - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive Network Management leverages advanced machine learning to deliver fraud prevention at sc",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-network-management-711b20b1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

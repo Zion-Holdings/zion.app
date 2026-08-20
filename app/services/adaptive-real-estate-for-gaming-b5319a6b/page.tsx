@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Real Estate for Gaming - Zion Tech Group",
   description: "The future of Gaming is here with Adaptive Real Estate for Gaming. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-real-estate-for-gaming-b5319a6b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

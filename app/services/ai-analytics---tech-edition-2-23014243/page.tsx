@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Tech Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analytics - Tech Edition #2. This autonomous system provides language processing with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---tech-edition-2-23014243'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive analyzer-manufacturing - Zion Tech Group",
   description: "Next-generation manufacturing solution: Adaptive analyzer-manufacturing. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-manufacturing-20ec4bac'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

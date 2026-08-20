@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Automation for Sports - Zion Tech Group",
   description: "Transform your sports operations with our Adaptive Automation for Sports. This AI-driven solution automates data processing with unprecedented accuracy and effi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-automation-for-sports-c0651646'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

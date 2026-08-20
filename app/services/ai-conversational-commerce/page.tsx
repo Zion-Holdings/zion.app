@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Conversational Commerce Platform - Zion Tech Group",
   description: "AI shopping assistant that engages customers in natural conversations to recommend products, answer questions, and complete purchases. Increases conversion by 3",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-conversational-commerce'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Manager for Construction - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive Manager for Construction leverages advanced machine learning to deliver risk assessment ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-for-construction-f6034e83'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

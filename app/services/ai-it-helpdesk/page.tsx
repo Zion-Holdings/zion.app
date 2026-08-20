@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI IT Helpdesk & Support - Zion Tech Group",
   description: "Automated Tier-1 IT support for employees: password resets, software installs, device troubleshooting, and knowledge base search.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-it-helpdesk'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

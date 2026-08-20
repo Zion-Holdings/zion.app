@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Language Platform - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Adaptive Language Platform leverages advanced machine learning to deliver financial planning at sc",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-language-platform-ac991e80'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

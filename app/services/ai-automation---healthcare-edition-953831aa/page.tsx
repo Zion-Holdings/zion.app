@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Healthcare Edition - Zion Tech Group",
   description: "Transform your healthcare operations with our AI Automation - Healthcare Edition. This AI-driven solution automates fraud prevention with unprecedented accuracy",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---healthcare-edition-953831aa'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

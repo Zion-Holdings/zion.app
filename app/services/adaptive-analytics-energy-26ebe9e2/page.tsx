@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive analytics-energy - Zion Tech Group",
   description: "Revolutionize energy through intelligent automation. Our Adaptive analytics-energy leverages advanced machine learning to deliver resource optimization at scale",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analytics-energy-26ebe9e2'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

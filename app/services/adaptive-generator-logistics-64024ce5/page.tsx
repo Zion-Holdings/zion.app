@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive generator-logistics - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Adaptive generator-logistics leverages advanced machine learning to deliver supply chain at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-generator-logistics-64024ce5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

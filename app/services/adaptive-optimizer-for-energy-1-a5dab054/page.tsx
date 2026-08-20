@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Optimizer for Energy #1 - Zion Tech Group",
   description: "Next-generation energy solution: Adaptive Optimizer for Energy #1. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimizer-for-energy-1-a5dab054'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

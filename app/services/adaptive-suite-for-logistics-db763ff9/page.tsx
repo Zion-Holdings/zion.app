@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Suite for Logistics - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Adaptive Suite for Logistics leverages advanced machine learning to deliver security monitoring at s",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-for-logistics-db763ff9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

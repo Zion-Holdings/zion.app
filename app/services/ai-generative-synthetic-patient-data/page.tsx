@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Generative Synthetic Patient Data Engine - Zion Tech Group",
   description: "Generate HIPAA-compliant synthetic patient records: realistic demographics, diagnoses, lab values, medications, and care pathways. Train ML models, validate sof",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-generative-synthetic-patient-data'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

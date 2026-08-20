@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Code Director - Zion Tech Group",
   description: "Revolutionize energy through intelligent automation. Our Adaptive Code Director leverages advanced machine learning to deliver data processing at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-code-director-9e54d789'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

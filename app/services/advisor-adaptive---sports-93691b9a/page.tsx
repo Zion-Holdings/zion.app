@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Adaptive - Sports - Zion Tech Group",
   description: "Unlock unprecedented growth with Advisor Adaptive - Sports. This autonomous system provides performance monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-adaptive---sports-93691b9a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

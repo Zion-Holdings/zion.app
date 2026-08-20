@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Insurance Edition #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Coordinator - Insurance Edition #1. This autonomous system provides resource optimization with zero manual intervention need",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---insurance-edition-1-db355149'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

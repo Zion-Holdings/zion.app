@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Data - Real Estate Edition - Zion Tech Group",
   description: "Revolutionize Real Estate through intelligent automation. Our AI Data - Real Estate Edition leverages advanced machine learning to deliver risk assessment at sc",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-data---real-estate-edition-a771255c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

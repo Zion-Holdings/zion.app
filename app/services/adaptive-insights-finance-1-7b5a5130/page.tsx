@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive insights-finance #1 - Zion Tech Group",
   description: "Transform your finance operations with our Adaptive insights-finance #1. This AI-driven solution automates workflow management with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-finance-1-7b5a5130'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

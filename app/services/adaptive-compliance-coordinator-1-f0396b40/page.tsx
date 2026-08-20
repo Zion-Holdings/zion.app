@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Compliance Coordinator #1 - Zion Tech Group",
   description: "Revolutionize construction through intelligent automation. Our Adaptive Compliance Coordinator #1 leverages advanced machine learning to deliver customer insigh",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-compliance-coordinator-1-f0396b40'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

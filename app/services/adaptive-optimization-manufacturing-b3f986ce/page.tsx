@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimization-manufacturing - Zion Tech Group",
   description: "Revolutionize Manufacturing through intelligent automation. Our Adaptive optimization-manufacturing leverages advanced machine learning to deliver inventory man",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimization-manufacturing-b3f986ce'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

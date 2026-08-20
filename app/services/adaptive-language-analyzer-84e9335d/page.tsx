@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Language Analyzer - Zion Tech Group",
   description: "Revolutionize manufacturing through intelligent automation. Our Adaptive Language Analyzer leverages advanced machine learning to deliver process automation at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-language-analyzer-84e9335d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

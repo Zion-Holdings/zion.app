@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Management for Transportation - Zion Tech Group",
   description: "Revolutionize transportation through intelligent automation. Our Adaptive Management for Transportation leverages advanced machine learning to deliver energy ma",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-management-for-transportation-1218cd42'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

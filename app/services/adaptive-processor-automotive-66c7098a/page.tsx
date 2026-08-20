@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive processor-automotive - Zion Tech Group",
   description: "Next-generation automotive solution: Adaptive processor-automotive. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-automotive-66c7098a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

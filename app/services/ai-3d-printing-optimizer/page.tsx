@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI 3D Print Optimization & Quality Control - Zion Tech Group",
   description: "Optimize additive manufacturing: support structure minimization, print orientation optimization, defect detection during printing, and material usage reduction.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-3d-printing-optimizer'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

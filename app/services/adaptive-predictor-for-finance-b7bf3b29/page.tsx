@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Predictor for Finance - Zion Tech Group",
   description: "Revolutionize finance through intelligent automation. Our Adaptive Predictor for Finance leverages advanced machine learning to deliver language processing at s",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-predictor-for-finance-b7bf3b29'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

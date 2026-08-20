@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Driven Intelligent Financial Planning - Zion Tech Group",
   description: "Automated financial planning system that creates intelligent personalized wealth strategies, tax optimization, and retirement planning using advanced algorithms",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-intelligent-financial-planning-5777cd09'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

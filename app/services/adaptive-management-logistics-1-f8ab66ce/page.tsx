@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive management-logistics #1 - Zion Tech Group",
   description: "Transform your logistics operations with our Adaptive management-logistics #1. This AI-driven solution automates supply chain with unprecedented accuracy and ef",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-management-logistics-1-f8ab66ce'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Sports Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analytics - Sports Edition. This autonomous system provides fraud prevention with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---sports-edition-fcc956af'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

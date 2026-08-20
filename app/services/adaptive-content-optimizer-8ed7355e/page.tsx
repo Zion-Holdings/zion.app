@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Content Optimizer - Zion Tech Group",
   description: "Transform your agriculture operations with our Adaptive Content Optimizer. This AI-driven solution automates resource optimization with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-content-optimizer-8ed7355e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

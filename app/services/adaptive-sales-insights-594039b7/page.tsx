@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Sales Insights - Zion Tech Group",
   description: "The future of finance is here with Adaptive Sales Insights. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-sales-insights-594039b7'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

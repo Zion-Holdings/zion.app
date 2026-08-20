@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Process Automation #1 - Zion Tech Group",
   description: "Next-generation hospitality solution: Adaptive Process Automation #1. Combines sales forecasting with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-process-automation-1-63fa80ab'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

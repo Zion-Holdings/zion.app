@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive User Optimizer - Zion Tech Group",
   description: "Next-generation insurance solution: Adaptive User Optimizer. Combines content generation with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-user-optimizer-4d215f40'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Insurance Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Automation - Insurance Edition #2. This autonomous system provides process automation with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---insurance-edition-2-0952753e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

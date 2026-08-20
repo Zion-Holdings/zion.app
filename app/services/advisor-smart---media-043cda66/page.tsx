@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Smart - Media - Zion Tech Group",
   description: "Revolutionize media through intelligent automation. Our Advisor Smart - Media leverages advanced machine learning to deliver compliance monitoring at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-smart---media-043cda66'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

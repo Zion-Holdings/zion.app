@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Cognitive - Real Estate - Zion Tech Group",
   description: "Transform your Real Estate operations with our Advisor Cognitive - Real Estate. This AI-driven solution automates data governance with unprecedented accuracy an",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-cognitive---real-estate-a5b110d0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

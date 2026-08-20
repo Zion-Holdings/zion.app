@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive cloud-manufacturing - Zion Tech Group",
   description: "Transform your Manufacturing operations with our Adaptive cloud-manufacturing. This AI-driven solution automates manufacturing quality control with unprecedente",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-cloud-manufacturing-9ebd9fc9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

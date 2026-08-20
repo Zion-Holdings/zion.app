@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Analyzer for Finance #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Analyzer for Finance #2. This autonomous system provides compliance monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-for-finance-2-21074ec1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

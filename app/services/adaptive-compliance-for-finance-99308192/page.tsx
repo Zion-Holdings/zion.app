@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Compliance for Finance - Zion Tech Group",
   description: "The future of Finance is here with Adaptive Compliance for Finance. Powered by cutting-edge AI, this platform delivers user experience like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-compliance-for-finance-99308192'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Financial Optimizer - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our Adaptive Financial Optimizer leverages advanced machine learning to deliver risk assessment at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-financial-optimizer-00cc7ed4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

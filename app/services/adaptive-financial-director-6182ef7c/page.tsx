@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Financial Director - Zion Tech Group",
   description: "Next-generation legal solution: Adaptive Financial Director. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-financial-director-6182ef7c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

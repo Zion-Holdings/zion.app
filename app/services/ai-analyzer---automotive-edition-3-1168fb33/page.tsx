@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Automotive Edition #3 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analyzer - Automotive Edition #3. This autonomous system provides performance monitoring with zero manual intervention neede",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---automotive-edition-3-1168fb33'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

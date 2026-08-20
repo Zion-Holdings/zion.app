@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Security Intelligence - Zion Tech Group",
   description: "Revolutionize telecom through intelligent automation. Our Adaptive Security Intelligence leverages advanced machine learning to deliver quality control at scale",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-security-intelligence-3e72e1e4'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

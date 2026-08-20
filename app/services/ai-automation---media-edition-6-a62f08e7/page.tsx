@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Media Edition #6 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Automation - Media Edition #6. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---media-edition-6-a62f08e7'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

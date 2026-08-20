@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Advisor for Real-Estate - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Advisor for Real-Estate. This autonomous system provides predictive analytics with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-for-real-estate-84acad0c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

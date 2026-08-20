@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Real Estate for Retail - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Real Estate for Retail. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-real-estate-for-retail-466028d0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

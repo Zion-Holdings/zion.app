@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Communication for Remote-Work - Zion Tech Group",
   description: "Optimize your remote-work workflows with Advanced Communication for Remote-Work. This intelligent platform delivers integration management through advanced auto",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-communication-for-remote-work-30ee1dc3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

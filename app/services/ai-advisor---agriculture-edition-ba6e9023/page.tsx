@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Agriculture Edition - Zion Tech Group",
   description: "Next-generation agriculture solution: AI Advisor - Agriculture Edition. Combines predictive analytics with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---agriculture-edition-ba6e9023'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

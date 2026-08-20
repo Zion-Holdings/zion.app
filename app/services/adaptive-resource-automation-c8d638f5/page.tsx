@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Resource Automation - Zion Tech Group",
   description: "Transform your education operations with our Adaptive Resource Automation. This AI-driven solution automates compliance monitoring with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-resource-automation-c8d638f5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

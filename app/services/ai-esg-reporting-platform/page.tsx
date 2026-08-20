@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI ESG Reporting & Sustainability Platform - Zion Tech Group",
   description: "Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, and GRI/SASB/TCFD compliant report",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-esg-reporting-platform'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI DevOps Chatbot - Zion Tech Group",
   description: "Natural language interface to your infrastructure: ask for logs, deployments, metrics, and incidents; get instant answers and auto-remediation suggestions.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-devops-chatbot'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

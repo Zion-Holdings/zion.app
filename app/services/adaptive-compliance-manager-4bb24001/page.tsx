@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Compliance Manager - Zion Tech Group",
   description: "The future of finance is here with Adaptive Compliance Manager. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-compliance-manager-4bb24001'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

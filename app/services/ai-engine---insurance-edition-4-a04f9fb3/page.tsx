@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Engine - Insurance Edition #4 - Zion Tech Group",
   description: "The future of insurance is here with AI Engine - Insurance Edition #4. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-engine---insurance-edition-4-a04f9fb3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

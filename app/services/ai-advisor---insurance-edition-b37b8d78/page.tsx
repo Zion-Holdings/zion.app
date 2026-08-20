@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Insurance Edition - Zion Tech Group",
   description: "Revolutionize insurance through intelligent automation. Our AI Advisor - Insurance Edition leverages advanced machine learning to deliver language processing at",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---insurance-edition-b37b8d78'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

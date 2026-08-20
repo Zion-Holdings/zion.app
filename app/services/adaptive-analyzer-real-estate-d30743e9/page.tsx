@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive analyzer-real-estate - Zion Tech Group",
   description: "The future of real-estate is here with Adaptive analyzer-real-estate. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-real-estate-d30743e9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

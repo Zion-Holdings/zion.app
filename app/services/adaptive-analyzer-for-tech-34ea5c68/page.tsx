@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Analyzer for Tech - Zion Tech Group",
   description: "Next-generation technology solution: Adaptive Analyzer for Tech. Combines content generation with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analyzer-for-tech-34ea5c68'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

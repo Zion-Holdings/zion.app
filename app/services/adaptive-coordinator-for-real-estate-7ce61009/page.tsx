@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Coordinator for Real Estate - Zion Tech Group",
   description: "Revolutionize Real Estate through intelligent automation. Our Adaptive Coordinator for Real Estate leverages advanced machine learning to deliver sentiment anal",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-coordinator-for-real-estate-7ce61009'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

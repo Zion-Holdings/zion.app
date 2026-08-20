@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Advisor for Tech - Zion Tech Group",
   description: "Transform your technology operations with our Adaptive Advisor for Tech. This AI-driven solution automates workflow management with unprecedented accuracy and e",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-advisor-for-tech-e6a61693'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

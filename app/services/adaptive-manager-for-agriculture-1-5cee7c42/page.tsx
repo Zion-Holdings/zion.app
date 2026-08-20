@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Manager for Agriculture #1 - Zion Tech Group",
   description: "Revolutionize agriculture through intelligent automation. Our Adaptive Manager for Agriculture #1 leverages advanced machine learning to deliver risk assessment",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-for-agriculture-1-5cee7c42'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive director-media - Zion Tech Group",
   description: "Next-generation media solution: Adaptive director-media. Combines decision support with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-director-media-d7843949'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

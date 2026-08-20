@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Processor for Construction - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Processor for Construction. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-for-construction-95c4e85e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

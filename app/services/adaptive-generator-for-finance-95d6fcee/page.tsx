@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Generator for Finance - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Generator for Finance. This autonomous system provides process discovery with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-generator-for-finance-95d6fcee'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

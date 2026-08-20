@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Document System - Zion Tech Group",
   description: "The future of technology is here with Adaptive Document System. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-document-system-9bbd2504'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

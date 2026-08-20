@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Processor for Real-Estate - Zion Tech Group",
   description: "Transform your real-estate operations with our Adaptive Processor for Real-Estate. This AI-driven solution automates code optimization with unprecedented accura",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-for-real-estate-45aeca8d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

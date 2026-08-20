@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Healthcare Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Analyzer - Healthcare Edition #2. This autonomous system provides threat detection with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---healthcare-edition-2-891b8d4e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

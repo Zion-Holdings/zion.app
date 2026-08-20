@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Cognitive - Energy - Zion Tech Group",
   description: "Next-generation energy solution: Advisor Cognitive - Energy. Combines maintenance scheduling with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-cognitive---energy-b516f55e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Automation - Construction Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Automation - Construction Edition #2. This autonomous system provides resource optimization with zero manual intervention ne",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-automation---construction-edition-2-38926f51'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

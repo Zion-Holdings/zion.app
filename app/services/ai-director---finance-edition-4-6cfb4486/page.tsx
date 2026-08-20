@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Finance Edition #4 - Zion Tech Group",
   description: "Next-generation finance solution: AI Director - Finance Edition #4. Combines workflow management with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---finance-edition-4-6cfb4486'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

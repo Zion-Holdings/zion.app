@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Healthcare Edition #4 - Zion Tech Group",
   description: "The future of healthcare is here with AI Analytics - Healthcare Edition #4. Powered by cutting-edge AI, this platform delivers security monitoring like never be",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---healthcare-edition-4-db0ccb13'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive manager-automotive - Zion Tech Group",
   description: "Revolutionize automotive through intelligent automation. Our Adaptive manager-automotive leverages advanced machine learning to deliver network optimization at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-automotive-6204bc4e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

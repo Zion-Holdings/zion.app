@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Customer Director - Zion Tech Group",
   description: "The future of media is here with Adaptive Customer Director. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-customer-director-83ff32be'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

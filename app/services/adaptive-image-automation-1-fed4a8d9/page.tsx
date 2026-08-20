@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Image Automation #1 - Zion Tech Group",
   description: "Transform your manufacturing operations with our Adaptive Image Automation #1. This AI-driven solution automates maintenance scheduling with unprecedented accur",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-image-automation-1-fed4a8d9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

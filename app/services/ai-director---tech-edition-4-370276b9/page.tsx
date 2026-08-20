@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Tech Edition #4 - Zion Tech Group",
   description: "The future of technology is here with AI Director - Tech Edition #4. Powered by cutting-edge AI, this platform delivers energy management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---tech-edition-4-370276b9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

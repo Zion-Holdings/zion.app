@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Processor for Manufacturing #1 - Zion Tech Group",
   description: "Transform your Manufacturing operations with our Adaptive Processor for Manufacturing #1. This AI-driven solution automates workflow management with unprecedent",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-for-manufacturing-1-53d61e78'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

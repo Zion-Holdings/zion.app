@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Supply Optimization - Zion Tech Group",
   description: "Revolutionize transportation through intelligent automation. Our Adaptive Supply Optimization leverages advanced machine learning to deliver financial planning ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-supply-optimization-64e80158'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

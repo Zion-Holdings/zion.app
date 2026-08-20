@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Smart Irrigation Optimization - Zion Tech Group",
   description: "AI-powered irrigation control. Soil moisture monitoring, weather-adaptive scheduling, water usage optimization, and crop-specific recommendations.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/agritech-irrigation-optimization'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

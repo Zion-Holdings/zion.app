@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Finance Edition #7 - Zion Tech Group",
   description: "Next-generation finance solution: AI Advisor - Finance Edition #7. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---finance-edition-7-9431e3ae'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

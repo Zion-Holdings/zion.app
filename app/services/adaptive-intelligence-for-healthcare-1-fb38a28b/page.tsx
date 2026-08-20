@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Intelligence for Healthcare #1 - Zion Tech Group",
   description: "Next-generation healthcare solution: Adaptive Intelligence for Healthcare #1. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-intelligence-for-healthcare-1-fb38a28b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

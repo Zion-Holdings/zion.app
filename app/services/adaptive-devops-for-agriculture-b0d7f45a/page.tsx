@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive DevOps for Agriculture - Zion Tech Group",
   description: "The future of Agriculture is here with Adaptive DevOps for Agriculture. Powered by cutting-edge AI, this platform delivers user experience like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-devops-for-agriculture-b0d7f45a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Finance Edition #7 - Zion Tech Group",
   description: "Revolutionize finance through intelligent automation. Our AI Director - Finance Edition #7 leverages advanced machine learning to deliver workflow management at",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---finance-edition-7-c083263f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive System for Gaming - Zion Tech Group",
   description: "Transform your gaming operations with our Adaptive System for Gaming. This AI-driven solution automates financial planning with unprecedented accuracy and effic",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-system-for-gaming-e4b4174c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

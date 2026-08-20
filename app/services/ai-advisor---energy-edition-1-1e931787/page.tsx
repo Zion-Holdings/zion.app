@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Energy Edition #1 - Zion Tech Group",
   description: "Revolutionize energy through intelligent automation. Our AI Advisor - Energy Edition #1 leverages advanced machine learning to deliver compliance monitoring at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---energy-edition-1-1e931787'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

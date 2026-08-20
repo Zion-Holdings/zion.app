@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Inventory Management & Demand Planning - Zion Tech Group",
   description: "Optimize inventory levels with AI-driven demand forecasting, automated reorder points, and supplier management. Reduces carrying costs by 30% and stockouts by 9",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-inventory-management'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

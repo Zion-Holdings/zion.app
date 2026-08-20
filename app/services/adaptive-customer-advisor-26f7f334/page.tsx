@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Customer Advisor - Zion Tech Group",
   description: "Next-generation real-estate solution: Adaptive Customer Advisor. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-customer-advisor-26f7f334'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

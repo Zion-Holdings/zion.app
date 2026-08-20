@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Market System - Zion Tech Group",
   description: "Next-generation finance solution: Adaptive Market System. Combines performance monitoring with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-market-system-67618ea0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

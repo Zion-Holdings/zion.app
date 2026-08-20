@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Accessibility Compliance Auditor - Zion Tech Group",
   description: "Automated WCAG 2.1/2.2 compliance auditing for websites and applications. Detect accessibility violations, generate remediation guidance, and monitor compliance",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-accessibility-compliance-auditor'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

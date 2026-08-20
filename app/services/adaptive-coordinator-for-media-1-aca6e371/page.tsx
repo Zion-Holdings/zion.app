@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Coordinator for Media #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Coordinator for Media #1. This autonomous system provides predictive analytics with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-coordinator-for-media-1-aca6e371'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

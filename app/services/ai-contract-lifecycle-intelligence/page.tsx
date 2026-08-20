@@ -5,6 +5,13 @@ export const metadata = {
   title: "Contract Lifecycle Intelligence - Zion Tech Group",
   description: "AI contract lifecycle management: extract clauses and dates, auto-flag risk, renewal calendar, benchmark against market terms, amendment tracker across 200+ con",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-contract-lifecycle-intelligence'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

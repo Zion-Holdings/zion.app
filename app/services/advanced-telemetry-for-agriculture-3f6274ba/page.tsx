@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Telemetry for Agriculture - Zion Tech Group",
   description: "Unlock unprecedented growth with Advanced Telemetry for Agriculture. This autonomous system provides sensor data processing with zero manual intervention needed",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-telemetry-for-agriculture-3f6274ba'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

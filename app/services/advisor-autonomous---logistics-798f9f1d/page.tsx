@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Autonomous - Logistics - Zion Tech Group",
   description: "Revolutionize logistics through intelligent automation. Our Advisor Autonomous - Logistics leverages advanced machine learning to deliver language processing at",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-autonomous---logistics-798f9f1d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Caption & Subtitle Generator - Zion Tech Group",
   description: "Multi-language ASR translation, caption formatting, SRT/VTT/WebVTT export with lip-sync timing alignment for video.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-caption-subtitle-generator'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

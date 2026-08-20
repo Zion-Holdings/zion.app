@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Code Reviewer Pro - Zion Tech Group",
   description: "Automated code review that catches bugs, security issues, performance problems, and style violations before production.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-code-reviewer-pro'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

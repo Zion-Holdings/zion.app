@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive engine-agriculture - Zion Tech Group",
   description: "The future of agriculture is here with Adaptive engine-agriculture. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-engine-agriculture-0a3b9d14'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

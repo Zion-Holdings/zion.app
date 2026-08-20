@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Processor for Gaming - Zion Tech Group",
   description: "Next-generation Gaming solution: Adaptive Processor for Gaming. Combines image recognition with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-processor-for-gaming-4bddd4ce'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Network Optimization - Zion Tech Group",
   description: "Transform your retail operations with our Adaptive Network Optimization. This AI-driven solution automates decision support with unprecedented accuracy and effi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-network-optimization-fad449e3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

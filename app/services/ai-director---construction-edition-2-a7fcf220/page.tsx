@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Construction Edition #2 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Director - Construction Edition #2. This autonomous system provides market intelligence with zero manual intervention needed",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---construction-edition-2-a7fcf220'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

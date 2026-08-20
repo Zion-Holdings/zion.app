@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive manager-healthcare #1 - Zion Tech Group",
   description: "Next-generation healthcare solution: Adaptive manager-healthcare #1. Combines user experience with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-healthcare-1-4d1bf8f5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

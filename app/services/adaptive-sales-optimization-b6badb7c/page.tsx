@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Sales Optimization - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Sales Optimization. This autonomous system provides revenue forecasting with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-sales-optimization-b6badb7c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

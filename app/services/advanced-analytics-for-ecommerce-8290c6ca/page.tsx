@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Analytics for Ecommerce - Zion Tech Group",
   description: "Optimize your ecommerce workflows with Advanced Analytics for Ecommerce. This intelligent platform delivers email analytics through advanced automation and AI.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-analytics-for-ecommerce-8290c6ca'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

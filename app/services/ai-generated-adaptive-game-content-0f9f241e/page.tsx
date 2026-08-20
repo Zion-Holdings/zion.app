@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Generated Adaptive Game Content - Zion Tech Group",
   description: "Procedural content generation platform that creates adaptive game assets, levels, narratives, and quests using generative AI, reducing development time and cost",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-generated-adaptive-game-content-0f9f241e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimizer-legal - Zion Tech Group",
   description: "Transform your legal operations with our Adaptive optimizer-legal. This AI-driven solution automates predictive analytics with unprecedented accuracy and effici",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimizer-legal-0abb2740'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

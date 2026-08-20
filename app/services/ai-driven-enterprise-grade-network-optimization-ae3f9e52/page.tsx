@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Driven Enterprise-Grade Network Optimization - Zion Tech Group",
   description: "Intelligent network management platform that uses enterprise-grade algorithms to optimize traffic routing, capacity planning, and quality of service across tele",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-enterprise-grade-network-optimization-ae3f9e52'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

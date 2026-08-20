@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Security System - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Security System. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-security-system-b38c9f08'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

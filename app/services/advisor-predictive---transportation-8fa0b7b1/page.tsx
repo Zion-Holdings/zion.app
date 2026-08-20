@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Predictive - Transportation - Zion Tech Group",
   description: "The future of transportation is here with Advisor Predictive - Transportation. Powered by cutting-edge AI, this platform delivers inventory management like neve",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-predictive---transportation-8fa0b7b1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

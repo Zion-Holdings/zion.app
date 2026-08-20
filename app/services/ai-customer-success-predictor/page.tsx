@@ -5,6 +5,13 @@ export const metadata = {
   title: "Customer Success Predictor - Zion Tech Group",
   description: "Early churn signal detection via usage analytics + support ticket sentiment; auto-create retention playbook per at-risk account.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-customer-success-predictor'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

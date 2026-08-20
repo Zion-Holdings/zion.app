@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Analytics for Education - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Analytics for Education. This autonomous system provides sales forecasting with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-analytics-for-education-b5a5a14f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

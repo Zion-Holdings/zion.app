@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics & BI - Zion Tech Group",
   description: "Transform your data into actionable insights with our advanced AI analytics platform.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

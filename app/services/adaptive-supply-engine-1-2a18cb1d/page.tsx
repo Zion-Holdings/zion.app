@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Supply Engine #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Supply Engine #1. This autonomous system provides energy management with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-supply-engine-1-2a18cb1d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Manager for Transportation #1 - Zion Tech Group",
   description: "Transform your transportation operations with our Adaptive Manager for Transportation #1. This AI-driven solution automates sales forecasting with unprecedented",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-for-transportation-1-f12da1ea'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

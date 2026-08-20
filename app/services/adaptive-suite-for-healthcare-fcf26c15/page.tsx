@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Suite for Healthcare - Zion Tech Group",
   description: "The future of healthcare is here with Adaptive Suite for Healthcare. Powered by cutting-edge AI, this platform delivers energy management like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-for-healthcare-fcf26c15'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

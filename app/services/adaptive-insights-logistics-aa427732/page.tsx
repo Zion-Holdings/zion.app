@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive insights-logistics - Zion Tech Group",
   description: "Next-generation logistics solution: Adaptive insights-logistics. Combines maintenance scheduling with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-logistics-aa427732'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

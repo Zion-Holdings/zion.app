@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Smart - Finance - Zion Tech Group",
   description: "Revolutionize finance through intelligent automation. Our Advisor Smart - Finance leverages advanced machine learning to deliver content generation at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-smart---finance-9fe2d6eb'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

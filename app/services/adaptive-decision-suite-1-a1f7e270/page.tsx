@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Decision Suite #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Decision Suite #1. This autonomous system provides resource optimization with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-decision-suite-1-a1f7e270'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Resource Platform - Zion Tech Group",
   description: "Revolutionize technology through intelligent automation. Our Adaptive Resource Platform leverages advanced machine learning to deliver compliance monitoring at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-resource-platform-9233e3eb'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Resource Suite - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Resource Suite. This autonomous system provides market intelligence with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-resource-suite-7b5936a9'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

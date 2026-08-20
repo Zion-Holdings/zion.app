@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Gaming Edition #3 - Zion Tech Group",
   description: "The future of Gaming is here with AI Director - Gaming Edition #3. Powered by cutting-edge AI, this platform delivers process discovery like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---gaming-edition-3-792dbbee'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

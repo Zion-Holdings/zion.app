@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Legal Edition #2 - Zion Tech Group",
   description: "Transform your legal operations with our AI Advisor - Legal Edition #2. This AI-driven solution automates energy management with unprecedented accuracy and effi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---legal-edition-2-4dc1879e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

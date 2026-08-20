@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Coordinator - Agriculture Edition - Zion Tech Group",
   description: "Transform your agriculture operations with our AI Coordinator - Agriculture Edition. This AI-driven solution automates data processing with unprecedented accura",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-coordinator---agriculture-edition-8108d9d5'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

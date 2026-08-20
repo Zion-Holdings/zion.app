@@ -5,6 +5,13 @@ export const metadata = {
   title: "Autonomous QA Engineering Platform - Zion Tech Group",
   description: "Auto-generate comprehensive E2E tests from user session replay; auto-fix flaky selectors; run tests on every PR; auto-open bug ticket on fail.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-autonomous-qa-engineering'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

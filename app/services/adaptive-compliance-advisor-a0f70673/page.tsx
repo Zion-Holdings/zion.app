@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Compliance Advisor - Zion Tech Group",
   description: "The future of media is here with Adaptive Compliance Advisor. Powered by cutting-edge AI, this platform delivers process automation like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-compliance-advisor-a0f70673'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

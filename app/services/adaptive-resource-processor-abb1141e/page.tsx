@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Resource Processor - Zion Tech Group",
   description: "Transform your sports operations with our Adaptive Resource Processor. This AI-driven solution automates risk assessment with unprecedented accuracy and efficie",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-resource-processor-abb1141e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

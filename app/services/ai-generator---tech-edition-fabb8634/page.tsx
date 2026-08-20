@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Generator - Tech Edition - Zion Tech Group",
   description: "The future of technology is here with AI Generator - Tech Edition. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-generator---tech-edition-fabb8634'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

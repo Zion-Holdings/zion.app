@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analytics - Transportation Edition #8 - Zion Tech Group",
   description: "Transform your transportation operations with our AI Analytics - Transportation Edition #8. This AI-driven solution automates inventory management with unpreced",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analytics---transportation-edition-8-c6ecb50b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

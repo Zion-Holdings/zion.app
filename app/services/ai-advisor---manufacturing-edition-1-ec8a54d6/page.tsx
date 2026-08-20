@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Manufacturing Edition #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Advisor - Manufacturing Edition #1. This autonomous system provides maintenance scheduling with zero manual intervention nee",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---manufacturing-edition-1-ec8a54d6'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

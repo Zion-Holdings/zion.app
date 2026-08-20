@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive insights-manufacturing - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive insights-manufacturing. This autonomous system provides customer journey mapping with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-insights-manufacturing-995210f1'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

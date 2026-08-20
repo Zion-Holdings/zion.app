@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive User Management - Zion Tech Group",
   description: "Transform your legal operations with our Adaptive User Management. This AI-driven solution automates security monitoring with unprecedented accuracy and efficie",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-user-management-1a0e679c'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

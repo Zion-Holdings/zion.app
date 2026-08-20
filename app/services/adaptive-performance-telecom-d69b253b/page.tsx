@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive performance-telecom - Zion Tech Group",
   description: "Transform your Telecom operations with our Adaptive performance-telecom. This AI-driven solution automates fraud prevention with unprecedented accuracy and effi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-performance-telecom-d69b253b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

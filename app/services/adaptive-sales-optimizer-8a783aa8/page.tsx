@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Sales Optimizer - Zion Tech Group",
   description: "Revolutionize agriculture through intelligent automation. Our Adaptive Sales Optimizer leverages advanced machine learning to deliver sales forecasting at scale",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-sales-optimizer-8a783aa8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

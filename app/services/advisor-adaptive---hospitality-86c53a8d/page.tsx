@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Adaptive - Hospitality - Zion Tech Group",
   description: "Revolutionize hospitality through intelligent automation. Our Advisor Adaptive - Hospitality leverages advanced machine learning to deliver fraud prevention at ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-adaptive---hospitality-86c53a8d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

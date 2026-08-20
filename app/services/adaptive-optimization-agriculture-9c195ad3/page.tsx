@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive optimization-agriculture - Zion Tech Group",
   description: "Revolutionize agriculture through intelligent automation. Our Adaptive optimization-agriculture leverages advanced machine learning to deliver fraud prevention ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimization-agriculture-9c195ad3'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

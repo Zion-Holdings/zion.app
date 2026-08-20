@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Language Optimization #1 - Zion Tech Group",
   description: "Transform your insurance operations with our Adaptive Language Optimization #1. This AI-driven solution automates image recognition with unprecedented accuracy ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-language-optimization-1-5c2ccab0'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

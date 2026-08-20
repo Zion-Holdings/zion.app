@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advanced Campaign for Sales - Zion Tech Group",
   description: "Unlock unprecedented growth with Advanced Campaign for Sales. This autonomous system provides spam detection with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advanced-campaign-for-sales-e849d472'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

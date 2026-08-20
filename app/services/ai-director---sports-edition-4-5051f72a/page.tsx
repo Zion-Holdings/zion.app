@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Director - Sports Edition #4 - Zion Tech Group",
   description: "Transform your sports operations with our AI Director - Sports Edition #4. This AI-driven solution automates resource optimization with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-director---sports-edition-4-5051f72a'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

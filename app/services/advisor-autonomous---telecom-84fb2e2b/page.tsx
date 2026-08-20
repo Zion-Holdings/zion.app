@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Autonomous - Telecom - Zion Tech Group",
   description: "Transform your telecom operations with our Advisor Autonomous - Telecom. This AI-driven solution automates image recognition with unprecedented accuracy and eff",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-autonomous---telecom-84fb2e2b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

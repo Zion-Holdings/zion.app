@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Security Engine - Zion Tech Group",
   description: "Transform your manufacturing operations with our Adaptive Security Engine. This AI-driven solution automates language processing with unprecedented accuracy and",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-security-engine-6246011d'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

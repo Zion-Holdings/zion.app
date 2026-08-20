@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Analyzer - Finance Edition #1 - Zion Tech Group",
   description: "Transform your finance operations with our AI Analyzer - Finance Edition #1. This AI-driven solution automates document processing with unprecedented accuracy a",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-analyzer---finance-edition-1-a3062d92'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

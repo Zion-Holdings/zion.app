@@ -5,6 +5,13 @@ export const metadata = {
   title: "Ai Api Orchestration Layer - Zion Tech Group",
   description: "AI Api Orchestration Layer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-api-orchestration-layer'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Employee Engagement Analytics - Zion Tech Group",
   description: "AI-powered employee engagement platform that analyzes survey data, communication patterns, and productivity metrics to predict turnover and recommend interventi",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-employee-engagement-analytics'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

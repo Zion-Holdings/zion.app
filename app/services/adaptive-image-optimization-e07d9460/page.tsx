@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Image Optimization - Zion Tech Group",
   description: "Transform your gaming operations with our Adaptive Image Optimization. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-image-optimization-e07d9460'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Threat Orchestrator - Zion Tech Group",
   description: "The future of automotive is here with Adaptive Threat Orchestrator. Powered by cutting-edge AI, this platform delivers language processing like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-threat-orchestrator-d2fb05e2'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

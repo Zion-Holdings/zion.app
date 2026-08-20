@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI-Driven Insurance Optimization Suite - Zion Tech Group",
   description: "Industry-specific AI solution that optimizes insurance operations, supply chains, and decision-making processes. Delivers measurable improvements in efficiency ",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-driven-insurance-optimization-suite-946c6e88'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

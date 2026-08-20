@@ -5,6 +5,13 @@ export const metadata = {
   title: "Advisor Cognitive - Tech - Zion Tech Group",
   description: "The future of technology is here with Advisor Cognitive - Tech. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/advisor-cognitive---tech-332ae3a2'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

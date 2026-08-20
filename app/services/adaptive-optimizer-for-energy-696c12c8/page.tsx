@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Optimizer for Energy - Zion Tech Group",
   description: "Revolutionize energy through intelligent automation. Our Adaptive Optimizer for Energy leverages advanced machine learning to deliver supply chain at scale.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-optimizer-for-energy-696c12c8'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

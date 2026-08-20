@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive generator-transportation - Zion Tech Group",
   description: "Next-generation transportation solution: Adaptive generator-transportation. Combines quality control with adaptive intelligence for optimal results.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-generator-transportation-8c50cd3b'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

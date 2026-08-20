@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive manager-insurance - Zion Tech Group",
   description: "The future of insurance is here with Adaptive manager-insurance. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-manager-insurance-c2def475'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

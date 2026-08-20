@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Quality Manager - Zion Tech Group",
   description: "Transform your automotive operations with our Adaptive Quality Manager. This AI-driven solution automates language processing with unprecedented accuracy and ef",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-quality-manager-75ec2e6e'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

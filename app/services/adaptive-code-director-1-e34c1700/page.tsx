@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Code Director #1 - Zion Tech Group",
   description: "Unlock unprecedented growth with Adaptive Code Director #1. This autonomous system provides security monitoring with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-code-director-1-e34c1700'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

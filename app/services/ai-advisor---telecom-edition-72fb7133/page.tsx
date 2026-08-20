@@ -5,6 +5,13 @@ export const metadata = {
   title: "AI Advisor - Telecom Edition - Zion Tech Group",
   description: "Unlock unprecedented growth with AI Advisor - Telecom Edition. This autonomous system provides language processing with zero manual intervention needed.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/ai-advisor---telecom-edition-72fb7133'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

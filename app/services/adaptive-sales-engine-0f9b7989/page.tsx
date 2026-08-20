@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive Sales Engine - Zion Tech Group",
   description: "The future of energy is here with Adaptive Sales Engine. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-sales-engine-0f9b7989'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 

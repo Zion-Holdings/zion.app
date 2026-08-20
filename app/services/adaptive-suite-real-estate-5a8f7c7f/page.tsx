@@ -5,6 +5,13 @@ export const metadata = {
   title: "Adaptive suite-real-estate - Zion Tech Group",
   description: "Revolutionize real-estate through intelligent automation. Our Adaptive suite-real-estate leverages advanced machine learning to deliver market intelligence at s",
   alternates: {
+    canonical: 'https://ziontechgroup.com/services/adaptive-suite-real-estate-5a8f7c7f'
+  },
+  openGraph: {
+    title: 'Service | Zion Tech Group',
+    description: 'AI/IT service by Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'service',
   }
 };
 
