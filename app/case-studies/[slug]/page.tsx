@@ -16,13 +16,17 @@ export const metadata: Metadata = {
   title: 'Case Studies | Zion Tech Group',
   description: 'Real-world AI and IT transformation case studies from Zion Tech Group.',
   openGraph: {
-    title: 'Page',
+    title: 'Case Studies | Zion Tech Group',
     description: 'Real-world AI and IT transformation case studies from Zion Tech Group.',
     url: 'https://ziontechgroup.com',
     type: 'website',
   },
   alternates: { canonical: 'https://ziontechgroup.com/case-studies/' },
 };
+
+export function generateStaticParams() {
+  return studies.map((s) => ({ slug: s.slug }));
+}
 
 export default function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
   notFound();
