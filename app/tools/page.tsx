@@ -65,6 +65,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Color Contrast</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Color Contrast.</p>
         </Link>
+        <Link href="/tools/color-palette-gen/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Color Palette Gen</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Color Palette Gen.</p>
+        </Link>
         <Link href="/tools/cron-agent-calculator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cron Agent Calculator</h3>
@@ -74,6 +79,16 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Gradient Generator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Gradient Generator.</p>
+        </Link>
+        <Link href="/tools/hash-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Hash Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Hash Generator.</p>
+        </Link>
+        <Link href="/tools/json-formatter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Json Formatter</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Json Formatter.</p>
         </Link>
         <Link href="/tools/json-schema-validator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
@@ -134,6 +149,16 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Timestamp Converter</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Timestamp Converter.</p>
+        </Link>
+        <Link href="/tools/url-encoder/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Url Encoder</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Url Encoder.</p>
+        </Link>
+        <Link href="/tools/user-agent-parser/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">User Agent Parser</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: User Agent Parser.</p>
         </Link>
       </div>
     </StandardPage>
