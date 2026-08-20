@@ -1,20 +1,6 @@
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
-export const metadata = {
-  title: "Advanced AI & Enterprise Intelligence Hub - Zion Tech Group",
-  description: "Unify generative AI, autonomous agents, multimodal intelligence, RAG, governance, observability, and enterprise copilots into a single advanced AI ...",
-  alternates: {
-  },
-  },
-  openGraph: {
-    title: 'Service | Zion Tech Group',
-    description: 'AI/IT service by Zion Tech Group.',
-    url: 'https://ziontechgroup.com/services/',
-    type: 'service',
-  },
-  }
-};
 
 export default function ServicePage() {
   return (

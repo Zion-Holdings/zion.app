@@ -1,20 +1,6 @@
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
-export const metadata = {
-  title: "Advisor AI - Automotive #1 - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Advisor AI - Automotive #1 leverages advanced machine learning to deliver document processing at sc",
-  alternates: {
-  },
-  },
-  openGraph: {
-    title: 'Service | Zion Tech Group',
-    description: 'AI/IT service by Zion Tech Group.',
-    url: 'https://ziontechgroup.com/services/',
-    type: 'service',
-  },
-  }
-};
 
 export default function ServicePage() {
   return (
