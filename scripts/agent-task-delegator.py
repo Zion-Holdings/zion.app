@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """
-Zion Agent Swarm — Proactive Task Delegator v3.0
+Zion Agent Swarm — Proactive Task Delegator v3.1
+
+Coordinates @ziontechgroup_agents work: site health, catalog/sitemap sync,
+cron health, GitHub Actions status, and actionable delegations.
+Optimized for speed: targeted checks, minimal API calls, precise delegation.
+""" — Proactive Task Delegator v3.0
 
 Scans the zion-support.github.io repo for issues and delivers actionable task
 briefs to @ziontechgroup_agents group (chat_id: -1003886112318).
@@ -14,7 +19,7 @@ import re
 import subprocess
 from datetime import datetime, timezone
 
-REPO = os.path.join(os.path.expanduser("~"), ".hermes/hermes-agent/zion-support")
+REPO = "/data/data/com.termux/files/home/ztg/repo"
 GROUP_CHAT_ID = "-1003886112318"
 HERMES_CRON = os.path.expanduser("~/.hermes/cron/jobs.json")
 
@@ -125,6 +130,7 @@ def generate_brief():
     # Delegation logic
     lines.append("")
     lines.append("📋 DELEGATIONS:")
+    lines.append("   👥 Agentes: @devops-leader @seo-agent @growth-engine @outreach-coord")
 
     if site != "200":
         lines.append("   @devops-leader → INVESTIGAR site down IMEDIATAMENTE")
@@ -132,8 +138,8 @@ def generate_brief():
     if git_changes > 50:
         lines.append("   @devops-leader → COMMIT ou STASH mudanças (>50 files)")
 
-    if svc_count > sitemap_urls + 100:
-        lines.append("   @seo-agent → SYNC sitemap (gap: services vs URLs)")
+    if svc_count > sitemap_urls + 50:
+        lines.append("   @seo-agent → SYNC sitemap/generate_service_index/generate-sitemap-feed")
 
     if cron_errors > 0:
         for j in cron_err_list:
@@ -145,7 +151,9 @@ def generate_brief():
             elif "smoke" in name.lower() or "monitor" in name.lower():
                 lines.append("   @devops-leader → FIX " + name)
 
-    if svc_count < 16000:
+    if sitemap_urls < svc_count - 50:
+        lines.append("   @seo-agent → SYNC sitemap/generate_service_index/generate-sitemap-feed")
+    if svc_count < 20000:
         lines.append("   @growth-engine → GENERATE new services")
 
     lines.append("")
