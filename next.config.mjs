@@ -13,6 +13,12 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   staticPageGenerationTimeout: 300,
+  // Reduce memory pressure with 16K+ service pages
+  dynamicParams: false,
+  experimental: {
+    appDir: true,
+    batchPageGeneration: 4,
+  },
 };
 
 export default nextConfig;
