@@ -45,8 +45,8 @@
 # Orphaned route fallbacks
 /ai-services-index /services/ 301
 /ai-services-index/ /services/ 301
-/free-ai-it-tools /tools 301
-/free-ai-it-tools/ /tools 301
+/free-ai-it-tools /tools/ 301
+/free-ai-it-tools/ /tools/ 301
 /new-ai-services /services/ 301
 /new-ai-services/ /services/ 301
 /faq /faq/ 301
