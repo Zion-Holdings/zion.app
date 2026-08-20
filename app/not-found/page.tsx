@@ -5,8 +5,8 @@ export const metadata = {
   title: 'Page Not Found | Zion Tech Group',
   description: 'The page you are looking for does not exist or has been moved.',
   openGraph: {
-    title: 'Page',
-    description: metadata.description,
+    title: 'Page Not Found | Zion Tech Group',
+    description: 'The page you are looking for does not exist or has been moved.',
     url: 'https://ziontechgroup.com',
     type: 'website',
   },
