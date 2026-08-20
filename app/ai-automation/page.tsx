@@ -3,8 +3,8 @@ export const metadata: Metadata = {
   title: 'AI Automation | Zion Tech Group',
   description: 'AI-powered automation for support, operations, and revenue workflows.',
   openGraph: {
-    title: 'Page',
-    description: metadata.description,
+    title: 'AI Automation | Zion Tech Group',
+    description: 'AI-powered automation for support, operations, and revenue workflows.',
     url: 'https://ziontechgroup.com',
     type: 'website',
   },
