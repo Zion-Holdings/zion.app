@@ -217,12 +217,11 @@ export default function HermesAgentArchitecturePage() {
             When the conversation approaches the model's context length, Hermes automatically compresses the message history — distilling earlier exchanges into a condensed summary while preserving key facts and state. The threshold (default 50%) and target ratio (default 20%) are configurable:
           </p>
           <pre className="bg-slate-900 rounded-lg p-4 text-sm font-mono overflow-x-auto">
-            <code className="text-slate-200">{`# ~/.hermes/config.yaml
+            <code className="text-slate-200 block whitespace-pre"># ~/.hermes/config.yaml
 compression:
   enabled: true
-  threshold: 0.50     # compress when context reaches 50% of context_length
-  target_ratio: 0.20  # compress to 20% of original size</code>}
-            </code>
+  threshold: 0.50
+  target_ratio: 0.20</code>
           </pre>
 
           <h2>Key Paths &amp; Config</h2>
@@ -321,11 +320,10 @@ compression:
             For providers that support it, Hermes can pool multiple API keys per provider and rotate across them automatically when one hits a rate limit or error. Manage with:
           </p>
           <pre className="bg-slate-900 rounded-lg p-4 text-sm font-mono overflow-x-auto">
-            <code className="text-slate-200">{`hermes auth add             # Interactive credential wizard
+            <code className="text-slate-200 block whitespace-pre">hermes auth add             # Interactive credential wizard
 hermes auth list [PROVIDER] # List pooled credentials
 hermes auth remove P INDEX  # Remove by provider + index
-hermes auth reset PROVIDER  # Clear exhaustion status</code>}
-            </code>
+hermes auth reset PROVIDER  # Clear exhaustion status</code>
           </pre>
 
           <h2>Security &amp; Privacy</h2>
@@ -345,11 +343,10 @@ hermes auth reset PROVIDER  # Clear exhaustion status</code>}
             DingTalk, Feishu, WeCom, BlueBubbles (iMessage), Weixin (WeChat), and an API Server — with full tool access, not just chat.
           </p>
           <pre className="bg-slate-900 rounded-lg p-4 text-sm font-mono overflow-x-auto">
-            <code className="text-slate-200">{`hermes gateway run          # Start gateway foreground
+            <code className="text-slate-200 block whitespace-pre">hermes gateway run          # Start gateway foreground
 hermes gateway install      # Install as background service
 hermes gateway start/stop   # Control the service
-hermes gateway setup        # Configure platforms</code>}
-            </code>
+hermes gateway setup        # Configure platforms</code>
           </pre>
 
           <h2>Spawning Additional Instances</h2>
@@ -359,16 +356,15 @@ hermes gateway setup        # Configure platforms</code>}
             <code>hermes</code> process for long autonomous missions (hours/days, full tool access).
           </p>
           <pre className="bg-slate-900 rounded-lg p-4 text-sm font-mono overflow-x-auto">
-            <code className="text-slate-200">{`# One-shot (fire-and-forget, no PTY needed)
+            <code className="text-slate-200 block whitespace-pre"># One-shot (fire-and-forget, no PTY needed)
 hermes chat -q "Set up CI/CD for ~/myapp"
 
 # Interactive PTY via tmux (prompt_toolkit needs a real terminal)
 tmux new-session -d -s agent1 -x 120 -y 40 'hermes'
-sleep 8 && tmux send-keys -t agent1 'Build a FastAPI auth service' Enter
+sleep 8 &amp;&amp; tmux send-keys -t agent1 'Build a FastAPI auth service' Enter
 
 # Worktree mode prevents git conflicts
-tmux new-session -d -s backend -x 120 -y 40 'hermes -w'</code>}
-            </code>
+tmux new-session -d -s backend -x 120 -y 80 'hermes -w'</code>
           </pre>
 
           <div className="bg-slate-900/40 border border-slate-800 rounded-xl p-6">
