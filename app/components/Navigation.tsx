@@ -150,7 +150,7 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <DropdownButton label="AI Lab" open={aiLabOpen} onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }} active={isActive('/ai') || isActive('/agents-monitoring')} />
+            <DropdownButton label="AI Lab" open={aiLabOpen} onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }} active={isActive('/ai') || isActive('/agents-monitoring') || isActive('/hermes') || isActive('/hermes-monitor')} />
             {aiLabOpen && (
               <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
                 <div className="space-y-1">

@@ -38,6 +38,7 @@ export const SOLUTION_LINKS = [
 
 export const AI_LAB_LINKS = [
   { name: 'Agents Monitoring', href: '/agents-monitoring/' },
+  { name: 'Hermes Monitor', href: '/hermes-monitor/' },
   { name: 'AI Labs', href: '/ai/' },
   { name: 'Evaluation', href: '/blog/enterprise-ai-intelligence-hub-vendor-evaluation/' },
 ];
