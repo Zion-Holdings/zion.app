@@ -19,7 +19,7 @@ import re
 import subprocess
 from datetime import datetime, timezone
 
-REPO = "/Users/klebergarciaalcatrao/zion-support.github.io"
+REPO = "/data/data/com.termux/files/home/.hermes/hermes-agent/zion-support"
 GROUP_CHAT_ID = "-1003886112318"
 HERMES_CRON = os.path.expanduser("~/.hermes/cron/jobs.json")
 
@@ -62,7 +62,7 @@ def check_cron_health():
 
 
 def check_services_count():
-    svc_path = os.path.join(REPO, "app/data/services.json")
+    svc_path = os.path.join(REPO, "app/data/servicesData.json")
     try:
         with open(svc_path) as f:
             data = json.load(f)
