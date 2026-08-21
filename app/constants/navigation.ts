@@ -15,6 +15,7 @@ export const PRIMARY_NAV_LINKS = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services/' },
   { name: 'AI Services', href: '/ai-services/' },
+  { name: 'Hermes Agents', href: '/hermes-agents/' },
   { name: 'Products', href: '/products/' },
   { name: 'Solutions', href: '/solutions/' },
   { name: 'Dashboard', href: '/dashboard/' },

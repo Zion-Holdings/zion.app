@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import AccessibilityEnhancer from './components/AccessibilityEnhancer';
 import FloatingAgentStatus from './components/FloatingAgentStatus';
+import HermesAdvertBanner from './components/HermesAdvertBanner';
 
 export const metadata = {
   title: 'Zion Tech Group',
@@ -27,6 +28,7 @@ export default function RootLayout({
           </div>
         </AccessibilityEnhancer>
         <FloatingAgentStatus />
+        <HermesAdvertBanner />
       </body>
     </html>
   );
