@@ -9,6 +9,7 @@ export const CATEGORIES = [
   { key: 'database', label: 'Database', emoji: '💾' },
   { key: 'devops', label: 'DevOps', emoji: '🛠️' },
   { key: 'observability', label: 'Observability', emoji: '📈' },
+  { key: 'agents', label: 'AI Agents', emoji: '⚡' },
 ];
 
 export const PRIMARY_NAV_LINKS = [
@@ -28,6 +29,7 @@ export const PRIMARY_NAV_LINKS = [
 ];
 
 export const SOLUTION_LINKS = [
+  { name: 'Hermes AI Agents', href: '/solutions/hermes-ai-agents/' },
   { name: 'AI & Automation', href: '/solutions/ai-automation/' },
   { name: 'Cloud & DevOps', href: '/solutions/cloud-devops/' },
   { name: 'Security & Compliance', href: '/solutions/security-compliance/' },
@@ -37,14 +39,21 @@ export const SOLUTION_LINKS = [
 ];
 
 export const AI_LAB_LINKS = [
-  { name: 'Agents Monitoring', href: '/agents-monitoring/' },
+  { name: 'Hermes Agent Platform', href: '/services/hermes-agent/' },
+  { name: 'Agent Monitoring', href: '/agents-monitoring/' },
   { name: 'Hermes Monitor', href: '/hermes-monitor/' },
   { name: 'AI Labs', href: '/ai/' },
-  { name: 'Evaluation', href: '/blog/enterprise-ai-intelligence-hub-vendor-evaluation/' },
+  { name: 'Agent Comparison', href: '/docs/agent-framework-comparison/' },
+  { name: 'Skills Guide', href: '/docs/hermes-agent-skills/' },
 ];
 
 export const RESOURCE_LINKS = [
   { name: 'Agent Monitoring', href: '/agents-monitoring/' },
+  { name: 'Hermes Agent Platform', href: '/services/hermes-agent/' },
+  { name: 'Hermes Skills Guide', href: '/docs/hermes-agent-skills/' },
+  { name: 'MCP Integration', href: '/docs/hermes-agent-mcp-integration/' },
+  { name: 'Installation Guide', href: '/docs/hermes-agent-installation/' },
+  { name: 'Agent Comparison', href: '/docs/agent-framework-comparison/' },
   { name: 'System Status', href: '/status/' },
   { name: 'Blog', href: '/blog/' },
   { name: 'Contact', href: '/contact/' },
@@ -59,6 +68,7 @@ export const RESOURCE_LINKS = [
 
 export const FEATURED_AI_SERVICE_LINKS = [
   { name: 'AI Strategy', href: '/services?category=ai' },
+  { name: 'Hermes Agent', href: '/services/hermes-agent/' },
   { name: 'Automation', href: '/services?category=automation' },
   { name: 'Security', href: '/services?category=security' },
   { name: 'Data', href: '/services?category=data' },

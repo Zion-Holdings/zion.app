@@ -14,8 +14,19 @@ services = json.load(open('app/data/servicesData.json'))
 lines = ['<?xml version="1.0" encoding="UTF-8"?>']
 lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
 
-static_pages = ['', 'services/', 'tools/', 'blog/', 'contact/', 'about/', 'pricing/', 
-                'ai-services-index/', 'free-ai-it-tools/', 'new-ai-services/']
+static_pages = ['', 'services/', 'tools/', 'blog/', 'contact/', 'about/', 'pricing/', \
+                'ai-services-index/', 'free-ai-it-tools/', 'new-ai-services/',
+                'hermes-agents/', 'hermes-monitor/', 'agents-monitoring/',
+                'services/hermes-agent/', 'services/hermes-agent-training/',
+                'services/hermes-ai-agent-platform/',
+                'solutions/hermes-ai-agents/',
+                'case-studies/hermes-agent-fleet/',
+                'docs/hermes-agent-skills/',
+                'docs/agent-framework-comparison/',
+                'docs/hermes-agent-installation/',
+                'docs/hermes-agent-mcp-integration/',
+                'dashboard/', 'use-cases/', 'partners/', 'providers/', 'it-vendors/',
+                'careers/', 'faq/', 'privacy/', 'terms/', 'status/']
 for page in static_pages:
     lines.append(f'  <url><loc>https://ziontechgroup.com/{page}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>')
 

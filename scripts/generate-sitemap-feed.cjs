@@ -60,6 +60,17 @@ const staticRoutes = [
   '/tools/security-headers-analyzer/',
   '/use-cases/',
   '/services/',
+  '/services/hermes-agent/',
+  '/services/hermes-agent-training/',
+  '/services/hermes-ai-agent-platform/',
+  '/solutions/hermes-ai-agents/',
+  '/case-studies/hermes-agent-fleet/',
+  '/docs/hermes-agent-skills/',
+  '/docs/agent-framework-comparison/',
+  '/docs/hermes-agent-installation/',
+  '/docs/hermes-agent-mcp-integration/',
+  '/hermes-agents/',
+  '/hermes-monitor/',
 ];
 
 // Load services data
