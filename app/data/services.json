@@ -160496,7 +160496,7 @@
     "popular": true
   },
   {
-    "id": "cloud disaster recovery testing",
+    "id": "cloud-disaster-recovery-testing",
     "title": "Automated DR Testing Platform",
     "description": "Automate disaster recovery testing with AI. Non-disruptive testing, automated failover validation, and compliance reporting for DR readiness.",
     "features": [
@@ -571259,5 +571259,2054 @@
     "icon": "\ud83d\udca1",
     "href": "/services/suite-smart---telecom-0f86a3ca",
     "popular": false
+  },
+  {
+    "id": "conversational-ai-for-energy-155301a3",
+    "name": "Conversational AI for Energy",
+    "description": "Natural language processing system that handles energy inquiries through intelligent chatbots.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Natural language understanding",
+      "Multi-language support",
+      "Context awareness",
+      "Seamless handoff"
+    ],
+    "benefits": [
+      "24/7 availability",
+      "Instant response times",
+      "Consistent service quality",
+      "Reduced support costs"
+    ],
+    "pricing": {
+      "basic": "179",
+      "pro": "449",
+      "enterprise": "1349"
+    },
+    "timestamp": "2026-08-19T19:02:18.864667+00:00",
+    "contactInfo": {
+      "website": "/services/conversational-ai-for-energy-155301a3",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/conversational-ai-for-energy-155301a3",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-automated-gaming-analytics-978972b4",
+    "name": "AI-Powered Automated Gaming Analytics",
+    "description": "AI-driven analytics platform that delivers automated insights into gaming operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.864918+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-automated-gaming-analytics-978972b4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-automated-gaming-analytics-978972b4",
+    "popular": false
+  },
+  {
+    "id": "conversational-ai-for-supply-chain-d235dd0c",
+    "name": "Conversational AI for Supply Chain",
+    "description": "Natural language processing system that handles supply chain inquiries through intelligent chatbots.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Natural language understanding",
+      "Multi-language support",
+      "Context awareness",
+      "Seamless handoff"
+    ],
+    "benefits": [
+      "24/7 availability",
+      "Instant response times",
+      "Consistent service quality",
+      "Reduced support costs"
+    ],
+    "pricing": {
+      "basic": "179",
+      "pro": "449",
+      "enterprise": "1349"
+    },
+    "timestamp": "2026-08-19T19:02:18.864948+00:00",
+    "contactInfo": {
+      "website": "/services/conversational-ai-for-supply-chain-d235dd0c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/conversational-ai-for-supply-chain-d235dd0c",
+    "popular": false
+  },
+  {
+    "id": "cloud-native-insurance-optimization-18003dba",
+    "name": "Cloud-Native Insurance Optimization",
+    "description": "AI-driven cloud optimization platform that automatically manages resource allocation and cost optimization.",
+    "category": "cloud",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Cost optimization",
+      "Performance tuning",
+      "Resource monitoring"
+    ],
+    "benefits": [
+      "Reduced cloud costs",
+      "Better performance",
+      "Automatic scaling",
+      "Optimized resources"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-19T19:02:18.864986+00:00",
+    "contactInfo": {
+      "website": "/services/cloud-native-insurance-optimization-18003dba",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/cloud-native-insurance-optimization-18003dba",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-smart-human-resources-analytics-0eae922c",
+    "name": "AI-Powered Smart Human Resources Analytics",
+    "description": "AI-driven analytics platform that delivers smart insights into human resources operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.865029+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-smart-human-resources-analytics-0eae922c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-smart-human-resources-analytics-0eae922c",
+    "popular": false
+  },
+  {
+    "id": "intelligent-insurance-forecasting-engine-10024be1",
+    "name": "Intelligent Insurance Forecasting Engine",
+    "description": "Machine learning-powered forecasting system that predicts insurance trends, demands, and outcomes with high accuracy.",
+    "category": "forecasting",
+    "industry": "technology",
+    "features": [
+      "Time-series analysis",
+      "Scenario modeling",
+      "Confidence intervals",
+      "Automated alerts"
+    ],
+    "benefits": [
+      "Accurate demand planning",
+      "Reduced forecast errors",
+      "Opportunity identification",
+      "Risk mitigation"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T19:02:18.865041+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-insurance-forecasting-engine-10024be1",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-insurance-forecasting-engine-10024be1",
+    "popular": false
+  },
+  {
+    "id": "conversational-ai-for-financial-c8dd7fb3",
+    "name": "Conversational AI for Financial",
+    "description": "Natural language processing system that handles financial inquiries through intelligent chatbots.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Natural language understanding",
+      "Multi-language support",
+      "Context awareness",
+      "Seamless handoff"
+    ],
+    "benefits": [
+      "24/7 availability",
+      "Instant response times",
+      "Consistent service quality",
+      "Reduced support costs"
+    ],
+    "pricing": {
+      "basic": "179",
+      "pro": "449",
+      "enterprise": "1349"
+    },
+    "timestamp": "2026-08-19T19:02:18.865057+00:00",
+    "contactInfo": {
+      "website": "/services/conversational-ai-for-financial-c8dd7fb3",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/conversational-ai-for-financial-c8dd7fb3",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-predictive-energy-analytics-a012f5ab",
+    "name": "AI-Powered Predictive Energy Analytics",
+    "description": "AI-driven analytics platform that delivers predictive insights into energy operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.865127+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-predictive-energy-analytics-a012f5ab",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-predictive-energy-analytics-a012f5ab",
+    "popular": false
+  },
+  {
+    "id": "cloud-native-healthcare-optimization-48caba27",
+    "name": "Cloud-Native Healthcare Optimization",
+    "description": "AI-driven cloud optimization platform that automatically manages resource allocation and cost optimization.",
+    "category": "cloud",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Cost optimization",
+      "Performance tuning",
+      "Resource monitoring"
+    ],
+    "benefits": [
+      "Reduced cloud costs",
+      "Better performance",
+      "Automatic scaling",
+      "Optimized resources"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-19T19:02:18.865177+00:00",
+    "contactInfo": {
+      "website": "/services/cloud-native-healthcare-optimization-48caba27",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/cloud-native-healthcare-optimization-48caba27",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-autonomous-supply-chain-analytics-6cc2d943",
+    "name": "AI-Powered Autonomous Supply Chain Analytics",
+    "description": "AI-driven analytics platform that delivers autonomous insights into supply chain operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.865218+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-autonomous-supply-chain-analytics-6cc2d943",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-autonomous-supply-chain-analytics-6cc2d943",
+    "popular": false
+  },
+  {
+    "id": "conversational-ai-for-telecommunications-ff204d92",
+    "name": "Conversational AI for Telecommunications",
+    "description": "Natural language processing system that handles telecommunications inquiries through intelligent chatbots.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Natural language understanding",
+      "Multi-language support",
+      "Context awareness",
+      "Seamless handoff"
+    ],
+    "benefits": [
+      "24/7 availability",
+      "Instant response times",
+      "Consistent service quality",
+      "Reduced support costs"
+    ],
+    "pricing": {
+      "basic": "179",
+      "pro": "449",
+      "enterprise": "1349"
+    },
+    "timestamp": "2026-08-19T19:02:18.865486+00:00",
+    "contactInfo": {
+      "website": "/services/conversational-ai-for-telecommunications-ff204d92",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/conversational-ai-for-telecommunications-ff204d92",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-retail-optimization-suite-ec5f3473",
+    "name": "AI-Driven Retail Optimization Suite",
+    "description": "Industry-specific AI solution that optimizes retail operations and decision-making processes.",
+    "category": "industry solutions",
+    "industry": "technology",
+    "features": [
+      "Process optimization",
+      "Decision support",
+      "Performance analytics",
+      "ROI tracking"
+    ],
+    "benefits": [
+      "20%+ efficiency gains",
+      "Cost reduction",
+      "Better decisions",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-19T19:02:18.865540+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-retail-optimization-suite-ec5f3473",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-retail-optimization-suite-ec5f3473",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-next-generation-financial-analytics-163a1b6e",
+    "name": "AI-Powered Next-Generation Financial Analytics",
+    "description": "AI-driven analytics platform that delivers next-generation insights into financial operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.865567+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-next-generation-financial-analytics-163a1b6e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-next-generation-financial-analytics-163a1b6e",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-real-time-legal-analytics-af78010a",
+    "name": "AI-Powered Real-Time Legal Analytics",
+    "description": "AI-driven analytics platform that delivers real-time insights into legal operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.865650+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-real-time-legal-analytics-af78010a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-real-time-legal-analytics-af78010a",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-adaptive-telecommunications-analytics-b7b6ced0",
+    "name": "AI-Powered Adaptive Telecommunications Analytics",
+    "description": "AI-driven analytics platform that delivers adaptive insights into telecommunications operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.866001+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-adaptive-telecommunications-analytics-b7b6ced0",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-adaptive-telecommunications-analytics-b7b6ced0",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-scalable-manufacturing-analytics-bd392a11",
+    "name": "AI-Powered Scalable Manufacturing Analytics",
+    "description": "AI-driven analytics platform that delivers scalable insights into manufacturing operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.866091+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-scalable-manufacturing-analytics-bd392a11",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-scalable-manufacturing-analytics-bd392a11",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-cloud-native-marketing-analytics-3acd7bc0",
+    "name": "AI-Powered Cloud-Native Marketing Analytics",
+    "description": "AI-driven analytics platform that delivers cloud-native insights into marketing operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.866183+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-cloud-native-marketing-analytics-3acd7bc0",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-cloud-native-marketing-analytics-3acd7bc0",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-enterprise-grade-insurance-analytics-0de314dd",
+    "name": "AI-Powered Enterprise-Grade Insurance Analytics",
+    "description": "AI-driven analytics platform that delivers enterprise-grade insights into insurance operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.866265+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-enterprise-grade-insurance-analytics-0de314dd",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-enterprise-grade-insurance-analytics-0de314dd",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-data-driven-media-analytics-9c5b2d64",
+    "name": "AI-Powered Data-Driven Media Analytics",
+    "description": "AI-driven analytics platform that delivers data-driven insights into media operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.866347+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-data-driven-media-analytics-9c5b2d64",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-data-driven-media-analytics-9c5b2d64",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-insightful-healthcare-analytics-ff7b230d",
+    "name": "AI-Powered Insightful Healthcare Analytics",
+    "description": "AI-driven analytics platform that delivers insightful insights into healthcare operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.866574+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-insightful-healthcare-analytics-ff7b230d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-insightful-healthcare-analytics-ff7b230d",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-proactive-sales-analytics-6cfa9dcf",
+    "name": "AI-Powered Proactive Sales Analytics",
+    "description": "AI-driven analytics platform that delivers proactive insights into sales operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.866792+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-proactive-sales-analytics-6cfa9dcf",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-proactive-sales-analytics-6cfa9dcf",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-intelligent-transportation-analytics-96779a9b",
+    "name": "AI-Powered Intelligent Transportation Analytics",
+    "description": "AI-driven analytics platform that delivers intelligent insights into transportation operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.866947+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-intelligent-transportation-analytics-96779a9b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-intelligent-transportation-analytics-96779a9b",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-advanced-education-analytics-9d36a189",
+    "name": "AI-Powered Advanced Education Analytics",
+    "description": "AI-driven analytics platform that delivers advanced insights into education operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-19T19:02:18.867084+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-advanced-education-analytics-9d36a189",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-advanced-education-analytics-9d36a189",
+    "popular": false
+  },
+  {
+    "id": "ai-property-valuation-engine-74d0c56f",
+    "name": "AI Property Valuation Engine",
+    "title": "AI Property Valuation Engine",
+    "description": "Instant, accurate property valuations using AI-powered comparative market analysis. Integrates MLS data, recent sales, and market trends for residential and commercial real estate.",
+    "category": "ai",
+    "industry": "real-estate",
+    "features": [
+      "Automated comparative market analysis",
+      "MLS data integration",
+      "Real-time market trend analysis",
+      "Residential and commercial support",
+      "API for platform integration"
+    ],
+    "benefits": [
+      "Reduce valuation time from days to minutes",
+      "Increase accuracy with ML models",
+      "Scale across multiple markets",
+      "Reduce manual appraisal costs",
+      "Improve client confidence"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "timestamp": "2026-08-19T19:20:02.811488Z",
+    "contactInfo": {
+      "website": "/services/ai-property-valuation-engine-74d0c56f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe0",
+    "href": "/services/ai-property-valuation-engine-74d0c56f",
+    "popular": true
+  },
+  {
+    "id": "network-traffic-anomaly-detection-662cf452",
+    "name": "Network Traffic Anomaly Detection",
+    "title": "Network Traffic Anomaly Detection",
+    "description": "Real-time AI-powered anomaly detection for telecom networks. Identifies DDoS attacks, fraud, and performance degradation before they impact customers.",
+    "category": "security",
+    "industry": "telecom",
+    "features": [
+      "Real-time traffic analysis",
+      "ML-based anomaly detection",
+      "DDoS and fraud identification",
+      "Automated alerting",
+      "Integration with SIEM/SOAR"
+    ],
+    "benefits": [
+      "Detect threats in milliseconds",
+      "Reduce false positives 90%",
+      "Prevent revenue leakage",
+      "Maintain SLA compliance",
+      "Scale to petabyte networks"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-19T19:20:02.811908Z",
+    "contactInfo": {
+      "website": "/services/network-traffic-anomaly-detection-662cf452",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/network-traffic-anomaly-detection-662cf452",
+    "popular": true
+  },
+  {
+    "id": "game-ai-behavior-engine-307b9dab",
+    "name": "Game AI Behavior Engine",
+    "title": "Game AI Behavior Engine",
+    "description": "Create intelligent NPCs with realistic behaviors using advanced AI. Supports dynamic dialogue, adaptive difficulty, and emergent gameplay without scripted decision trees.",
+    "category": "ai",
+    "industry": "gaming",
+    "features": [
+      "Dynamic NPC behavior",
+      "Adaptive difficulty scaling",
+      "Procedural dialogue generation",
+      "Emergent gameplay support",
+      "Unity/Unreal integration"
+    ],
+    "benefits": [
+      "Reduce AI development time 70%",
+      "Increase player engagement",
+      "Create living worlds",
+      "Scale to thousands of NPCs",
+      "No behavior tree maintenance"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-19T19:20:02.811928Z",
+    "contactInfo": {
+      "website": "/services/game-ai-behavior-engine-307b9dab",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/game-ai-behavior-engine-307b9dab",
+    "popular": true
+  },
+  {
+    "id": "clinical-documentation-ai-8b46b1ea",
+    "name": "Clinical Documentation AI",
+    "title": "Clinical Documentation AI",
+    "description": "Automate clinical documentation with ambient AI scribes. Generates SOAP notes, coding suggestions, and compliance checks in real-time during patient encounters.",
+    "category": "ai",
+    "industry": "healthcare",
+    "features": [
+      "Ambient clinical listening",
+      "Real-time SOAP generation",
+      "ICD-10/CPT code suggestions",
+      "Compliance validation",
+      "EHR integration (Epic, Cerner)"
+    ],
+    "benefits": [
+      "Save 2 hours/day per physician",
+      "Reduce documentation errors",
+      "Improve coding accuracy",
+      "Increase patient face time",
+      "Burnout reduction"
+    ],
+    "pricing": {
+      "basic": "299/provider/mo",
+      "pro": "599/provider/mo",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-19T19:20:02.811945Z",
+    "contactInfo": {
+      "website": "/services/clinical-documentation-ai-8b46b1ea",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/clinical-documentation-ai-8b46b1ea",
+    "popular": true
+  },
+  {
+    "id": "ai-fraud-detection-engine-f9c23581",
+    "name": "AI Fraud Detection Engine",
+    "title": "AI Fraud Detection Engine",
+    "description": "Real-time fraud detection for payments, banking, and insurance. Graph neural networks detect complex fraud rings with 99.9% accuracy and sub-millisecond latency.",
+    "category": "security",
+    "industry": "finance",
+    "features": [
+      "Graph neural network detection",
+      "Sub-millisecond scoring",
+      "Fraud ring identification",
+      "Explainable AI decisions",
+      "Real-time model updates"
+    ],
+    "benefits": [
+      "Reduce fraud losses 60%",
+      "Minimize false declines",
+      "Regulatory compliance",
+      "Scale to billions of transactions",
+      "Continuous learning"
+    ],
+    "pricing": {
+      "basic": "0.001/transaction",
+      "pro": "0.0005/transaction",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-19T19:20:02.811960Z",
+    "contactInfo": {
+      "website": "/services/ai-fraud-detection-engine-f9c23581",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/ai-fraud-detection-engine-f9c23581",
+    "popular": true
+  },
+  {
+    "id": "predictive-maintenance-ai-e6075530",
+    "name": "Predictive Maintenance AI",
+    "title": "Predictive Maintenance AI",
+    "description": "Predict equipment failures before they happen using IoT sensor data and AI. Reduces unplanned downtime by 50% and extends asset life across manufacturing operations.",
+    "category": "ai",
+    "industry": "manufacturing",
+    "features": [
+      "Multi-sensor data fusion",
+      "Failure prediction 30+ days out",
+      "Root cause analysis",
+      "Work order automation",
+      "CMMS/ERP integration"
+    ],
+    "benefits": [
+      "Reduce downtime 50%",
+      "Cut maintenance costs 25%",
+      "Extend equipment life",
+      "Optimize spare parts inventory",
+      "Safety incident reduction"
+    ],
+    "pricing": {
+      "basic": "499/asset/mo",
+      "pro": "999/asset/mo",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-19T19:20:02.811974Z",
+    "contactInfo": {
+      "website": "/services/predictive-maintenance-ai-e6075530",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd27",
+    "href": "/services/predictive-maintenance-ai-e6075530",
+    "popular": true
+  },
+  {
+    "id": "personalized-recommendation-engine-e327e790",
+    "name": "Personalized Recommendation Engine",
+    "title": "Personalized Recommendation Engine",
+    "description": "AI-powered personalization across web, mobile, email, and in-store. Real-time recommendations using collaborative filtering, content-based, and session-aware models.",
+    "category": "ai",
+    "industry": "retail",
+    "features": [
+      "Real-time personalization",
+      "Multi-channel delivery",
+      "Cold-start handling",
+      "A/B testing framework",
+      "Revenue attribution"
+    ],
+    "benefits": [
+      "Increase conversion 15-30%",
+      "Boost AOV 10-20%",
+      "Improve customer LTV",
+      "Reduce marketing spend",
+      "Privacy-compliant"
+    ],
+    "pricing": {
+      "basic": "0.001/recommendation",
+      "pro": "0.0005/recommendation",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-19T19:20:02.811989Z",
+    "contactInfo": {
+      "website": "/services/personalized-recommendation-engine-e327e790",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/personalized-recommendation-engine-e327e790",
+    "popular": true
+  },
+  {
+    "id": "route-optimization-ai-de669c09",
+    "name": "Route Optimization AI",
+    "title": "Route Optimization AI",
+    "description": "AI-powered route optimization for last-mile and long-haul logistics. Real-time traffic, weather, and constraint-aware routing with dynamic reoptimization.",
+    "category": "ai",
+    "industry": "logistics",
+    "features": [
+      "Real-time dynamic routing",
+      "Multi-constraint optimization",
+      "Traffic/weather integration",
+      "Fleet-wide optimization",
+      "Driver app integration"
+    ],
+    "benefits": [
+      "Reduce fuel costs 15%",
+      "Improve on-time delivery",
+      "Increase driver efficiency",
+      "Reduce emissions",
+      "Scale to 10,000+ vehicles"
+    ],
+    "pricing": {
+      "basic": "49/vehicle/mo",
+      "pro": "99/vehicle/mo",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-19T19:20:02.812040Z",
+    "contactInfo": {
+      "website": "/services/route-optimization-ai-de669c09",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddfa\ufe0f",
+    "href": "/services/route-optimization-ai-de669c09",
+    "popular": true
+  },
+  {
+    "id": "ai-enterprise-solutions",
+    "name": "AI Enterprise Solutions",
+    "title": "AI Enterprise Solutions | Zion Tech Group",
+    "description": "End-to-end AI integration for enterprise workflows. Proven ROI in 90 days with autonomous agents.",
+    "keywords": [
+      "AI enterprise",
+      "enterprise AI",
+      "AI integration",
+      "autonomous agents",
+      "ROI AI"
+    ],
+    "icon": "Brain",
+    "category": "AI & Automation",
+    "price": "From $5,000/mo",
+    "features": [
+      "Custom AI Agents",
+      "Workflow Automation",
+      "ROI Tracking",
+      "Enterprise Support"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Enterprise Solutions",
+      "description": "End-to-end AI integration for enterprise workflows with proven ROI."
+    }
+  },
+  {
+    "id": "sase-security",
+    "name": "SASE Security",
+    "title": "SASE Security | Zion Tech Group",
+    "description": "Secure Access Service Edge with zero-trust networking and cloud-native threat prevention.",
+    "keywords": [
+      "SASE",
+      "zero trust",
+      "SD-WAN",
+      "cloud security",
+      "network security"
+    ],
+    "icon": "Shield",
+    "category": "Cybersecurity",
+    "price": "From $4,000/mo",
+    "features": [
+      "Zero Trust Network",
+      "Cloud Firewall",
+      "Threat Prevention",
+      "Global PoPs"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "SASE Security",
+      "description": "Secure Access Service Edge with zero-trust networking."
+    }
+  },
+  {
+    "id": "ai-agent-automation",
+    "name": "AI Agent Automation",
+    "title": "AI Agent Automation | Zion Tech Group",
+    "description": "Autonomous AI agents that handle customer support, sales outreach, and data processing 24/7.",
+    "keywords": [
+      "AI agents",
+      "automation",
+      "autonomous AI",
+      "customer support AI",
+      "sales AI"
+    ],
+    "icon": "Bot",
+    "category": "AI & Automation",
+    "price": "From $2,500/mo",
+    "features": [
+      "24/7 Autonomous Operation",
+      "Multi-Agent Orchestration",
+      "CRM Integration",
+      "Analytics"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Agent Automation",
+      "description": "Autonomous AI agents for customer support and sales 24/7."
+    }
+  },
+  {
+    "id": "multimodal-ai-intelligence",
+    "name": "Multimodal AI Intelligence",
+    "title": "Multimodal AI Intelligence | Zion Tech Group",
+    "description": "Analyze text, images, audio, and video with unified AI models for actionable business insights.",
+    "keywords": [
+      "multimodal AI",
+      "computer vision",
+      "NLP",
+      "audio AI",
+      "video analysis"
+    ],
+    "icon": "Eye",
+    "category": "AI & Automation",
+    "price": "From $6,000/mo",
+    "features": [
+      "Text Analysis",
+      "Image Recognition",
+      "Audio Processing",
+      "Video Analytics"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Multimodal AI Intelligence",
+      "description": "Analyze text, images, audio, video with unified AI models."
+    }
+  },
+  {
+    "id": "edge-computing-ai",
+    "name": "Edge Computing AI",
+    "title": "Edge Computing AI | Zion Tech Group",
+    "description": "Deploy AI models on edge devices for real-time inference with sub-10ms latency.",
+    "keywords": [
+      "edge AI",
+      "edge computing",
+      "IoT AI",
+      "real-time inference",
+      "low latency"
+    ],
+    "icon": "Cpu",
+    "category": "Cloud & Infrastructure",
+    "price": "From $5,500/mo",
+    "features": [
+      "Sub-10ms Inference",
+      "IoT Integration",
+      "On-Device ML",
+      "5G Ready"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Edge Computing AI",
+      "description": "Deploy AI on edge devices with sub-10ms inference."
+    }
+  },
+  {
+    "id": "ai-data-pipeline",
+    "name": "AI Data Pipeline",
+    "title": "AI Data Pipeline | Zion Tech Group",
+    "description": "Build real-time ETL pipelines with AI-powered data quality and automated schema detection.",
+    "keywords": [
+      "data pipeline",
+      "ETL",
+      "data engineering",
+      "real-time data",
+      "data quality"
+    ],
+    "icon": "Database",
+    "category": "Data & Analytics",
+    "price": "From $3,500/mo",
+    "features": [
+      "Real-Time ETL",
+      "Data Quality AI",
+      "Schema Detection",
+      "Multi-Source"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Data Pipeline",
+      "description": "Real-time ETL pipelines with AI-powered data quality."
+    }
+  },
+  {
+    "id": "zero-trust-security",
+    "name": "Zero Trust Security",
+    "title": "Zero Trust Security | Zion Tech Group",
+    "description": "Never trust, always verify. Microsegmentation, identity-aware proxies, and continuous verification.",
+    "keywords": [
+      "zero trust",
+      "microsegmentation",
+      "identity security",
+      "network security",
+      "ZTNA"
+    ],
+    "icon": "Lock",
+    "category": "Cybersecurity",
+    "price": "From $4,000/mo",
+    "features": [
+      "Microsegmentation",
+      "Identity-Aware Proxy",
+      "Continuous Verification",
+      "Least Privilege"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Zero Trust Security",
+      "description": "Never trust, always verify with microsegmentation and ZTNA."
+    }
+  },
+  {
+    "id": "ai-powered-devops",
+    "name": "AI-Powered DevOps",
+    "title": "AI-Powered DevOps | Zion Tech Group",
+    "description": "Self-healing infrastructure with predictive incident detection and automated rollback capabilities.",
+    "keywords": [
+      "AIOps",
+      "DevOps",
+      "self-healing",
+      "incident detection",
+      "automation"
+    ],
+    "icon": "Repeat",
+    "category": "Cloud & Infrastructure",
+    "price": "From $4,500/mo",
+    "features": [
+      "Self-Healing",
+      "Predictive Detection",
+      "Auto-Rollback",
+      "CI/CD AI"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI-Powered DevOps",
+      "description": "Self-healing infrastructure with predictive incident detection."
+    }
+  },
+  {
+    "id": "enterprise-ai-consulting",
+    "name": "Enterprise AI Consulting",
+    "title": "Enterprise AI Consulting | Zion Tech Group",
+    "description": "Strategic AI consulting for enterprise transformation. Roadmaps, use case identification, and ROI-driven implementation.",
+    "keywords": [
+      "AI consulting",
+      "enterprise AI",
+      "digital transformation",
+      "AI strategy"
+    ],
+    "icon": "Brain",
+    "category": "AI & Automation",
+    "price": "From $5,000/mo",
+    "features": [
+      "AI Roadmap",
+      "Use Case Discovery",
+      "ROI Analysis",
+      "Change Management"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Enterprise AI Consulting",
+      "description": "Strategic AI consulting for enterprise transformation."
+    }
+  },
+  {
+    "id": "sase-network-security",
+    "name": "SASE Network Security",
+    "title": "SASE Network Security | Zion Tech Group",
+    "description": "Secure Access Service Edge with zero-trust networking, SD-WAN, and cloud-native threat prevention.",
+    "keywords": [
+      "SASE",
+      "zero trust",
+      "SD-WAN",
+      "cloud security",
+      "network security"
+    ],
+    "icon": "Shield",
+    "category": "Cybersecurity",
+    "price": "From $4,000/mo",
+    "features": [
+      "Zero Trust Network",
+      "Cloud Firewall",
+      "Threat Prevention",
+      "Global PoPs"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "SASE Network Security",
+      "description": "Secure Access Service Edge with zero-trust networking."
+    }
+  },
+  {
+    "id": "ai-agent-orchestration",
+    "name": "AI Agent Orchestration",
+    "title": "AI Agent Orchestration | Zion Tech Group",
+    "description": "Deploy and manage multi-agent AI systems that automate complex workflows across your organization.",
+    "keywords": [
+      "AI agents",
+      "multi-agent systems",
+      "automation",
+      "AI orchestration"
+    ],
+    "icon": "Bot",
+    "category": "AI & Automation",
+    "price": "From $3,500/mo",
+    "features": [
+      "Multi-Agent Deployment",
+      "Workflow Automation",
+      "Agent Monitoring",
+      "Tool Integration"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Agent Orchestration",
+      "description": "Deploy and manage multi-agent AI systems for workflow automation."
+    }
+  },
+  {
+    "id": "enterprise-data-strategy",
+    "name": "Enterprise Data Strategy",
+    "title": "Enterprise Data Strategy | Zion Tech Group",
+    "description": "Build a scalable data foundation with modern lakehouse architecture, governance, and real-time analytics.",
+    "keywords": [
+      "data strategy",
+      "data lakehouse",
+      "data governance",
+      "analytics"
+    ],
+    "icon": "Database",
+    "category": "Data & Analytics",
+    "price": "From $4,500/mo",
+    "features": [
+      "Data Architecture",
+      "Lakehouse Setup",
+      "Governance Framework",
+      "Real-Time Analytics"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Enterprise Data Strategy",
+      "description": "Build a scalable data foundation with modern architecture."
+    }
+  },
+  {
+    "id": "cloud-migration-express",
+    "name": "Cloud Migration Express",
+    "title": "Cloud Migration Express | Zion Tech Group",
+    "description": "Accelerated cloud migration with automated discovery, dependency mapping, and zero-downtime cutover.",
+    "keywords": [
+      "cloud migration",
+      "AWS migration",
+      "Azure migration",
+      "lift and shift"
+    ],
+    "icon": "Upload",
+    "category": "Cloud & Infrastructure",
+    "price": "From $6,000/mo",
+    "features": [
+      "Auto Discovery",
+      "Dependency Mapping",
+      "Zero-Downtime Cutover",
+      "Cost Modeling"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Cloud Migration Express",
+      "description": "Accelerated cloud migration with zero-downtime cutover."
+    }
+  },
+  {
+    "id": "incident-response-automation",
+    "name": "Incident Response Automation",
+    "title": "Incident Response Automation | Zion Tech Group",
+    "description": "AI-powered incident detection, triage, and response that reduces MTTR by 60% across your infrastructure.",
+    "keywords": [
+      "incident response",
+      "AIOps",
+      "MTTR reduction",
+      "automation"
+    ],
+    "icon": "Zap",
+    "category": "Cloud & Infrastructure",
+    "price": "From $3,500/mo",
+    "features": [
+      "Auto Detection",
+      "Intelligent Triage",
+      "Runbook Automation",
+      "Post-Incident Review"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Incident Response Automation",
+      "description": "AI-powered incident response that reduces MTTR by 60%."
+    }
+  },
+  {
+    "id": "predictive-ai-analytics",
+    "name": "Predictive AI Analytics",
+    "title": "Predictive AI Analytics | Zion Tech Group",
+    "description": "Forecast demand, detect anomalies, and optimize operations with machine learning models tuned to your data.",
+    "keywords": [
+      "predictive analytics",
+      "ML models",
+      "demand forecasting",
+      "anomaly detection"
+    ],
+    "icon": "TrendingUp",
+    "category": "Data & Analytics",
+    "price": "From $4,000/mo",
+    "features": [
+      "Demand Forecasting",
+      "Anomaly Detection",
+      "Custom ML Models",
+      "Optimization"
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Predictive AI Analytics",
+      "description": "Forecast demand and detect anomalies with custom ML models."
+    }
+  },
+  {
+    "id": "ai-property-valuation-engine-ff17eafc",
+    "name": "AI Property Valuation Engine",
+    "title": "AI Property Valuation Engine",
+    "description": "Instant, accurate property valuations using AI-powered comparative market analysis. Integrates MLS data, recent sales, and market trends for residential and commercial real estate.",
+    "category": "ai",
+    "industry": "real-estate",
+    "features": [
+      "Automated comparative market analysis",
+      "MLS data integration",
+      "Real-time market trend analysis",
+      "Residential and commercial support",
+      "API for platform integration"
+    ],
+    "benefits": [
+      "Reduce valuation time from days to minutes",
+      "Increase accuracy with ML models",
+      "Scale across multiple markets",
+      "Reduce manual appraisal costs",
+      "Improve client confidence"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "timestamp": "2026-08-21T12:46:53.252082Z",
+    "contactInfo": {
+      "website": "/services/ai-property-valuation-engine-ff17eafc",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe0",
+    "href": "/services/ai-property-valuation-engine-ff17eafc",
+    "popular": true
+  },
+  {
+    "id": "network-traffic-anomaly-detection-ba869f7a",
+    "name": "Network Traffic Anomaly Detection",
+    "title": "Network Traffic Anomaly Detection",
+    "description": "Real-time AI-powered anomaly detection for telecom networks. Identifies DDoS attacks, fraud, and performance degradation before they impact customers.",
+    "category": "security",
+    "industry": "telecom",
+    "features": [
+      "Real-time traffic analysis",
+      "ML-based anomaly detection",
+      "DDoS and fraud identification",
+      "Automated alerting",
+      "Integration with SIEM/SOAR"
+    ],
+    "benefits": [
+      "Detect threats in milliseconds",
+      "Reduce false positives 90%",
+      "Prevent revenue leakage",
+      "Maintain SLA compliance",
+      "Scale to petabyte networks"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:46:53.252241Z",
+    "contactInfo": {
+      "website": "/services/network-traffic-anomaly-detection-ba869f7a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/network-traffic-anomaly-detection-ba869f7a",
+    "popular": true
+  },
+  {
+    "id": "game-ai-behavior-engine-1732b635",
+    "name": "Game AI Behavior Engine",
+    "title": "Game AI Behavior Engine",
+    "description": "Create intelligent NPCs with realistic behaviors using advanced AI. Supports dynamic dialogue, adaptive difficulty, and emergent gameplay without scripted decision trees.",
+    "category": "ai",
+    "industry": "gaming",
+    "features": [
+      "Dynamic NPC behavior",
+      "Adaptive difficulty scaling",
+      "Procedural dialogue generation",
+      "Emergent gameplay support",
+      "Unity/Unreal integration"
+    ],
+    "benefits": [
+      "Reduce AI development time 70%",
+      "Increase player engagement",
+      "Create living worlds",
+      "Scale to thousands of NPCs",
+      "No behavior tree maintenance"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:46:53.252283Z",
+    "contactInfo": {
+      "website": "/services/game-ai-behavior-engine-1732b635",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/game-ai-behavior-engine-1732b635",
+    "popular": true
+  },
+  {
+    "id": "clinical-documentation-ai-d9e23900",
+    "name": "Clinical Documentation AI",
+    "title": "Clinical Documentation AI",
+    "description": "Automate clinical documentation with ambient AI scribes. Generates SOAP notes, coding suggestions, and compliance checks in real-time during patient encounters.",
+    "category": "ai",
+    "industry": "healthcare",
+    "features": [
+      "Ambient clinical listening",
+      "Real-time SOAP generation",
+      "ICD-10/CPT code suggestions",
+      "Compliance validation",
+      "EHR integration (Epic, Cerner)"
+    ],
+    "benefits": [
+      "Save 2 hours/day per physician",
+      "Reduce documentation errors",
+      "Improve coding accuracy",
+      "Increase patient face time",
+      "Burnout reduction"
+    ],
+    "pricing": {
+      "basic": "299/provider/mo",
+      "pro": "599/provider/mo",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-21T12:46:53.252323Z",
+    "contactInfo": {
+      "website": "/services/clinical-documentation-ai-d9e23900",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/clinical-documentation-ai-d9e23900",
+    "popular": true
+  },
+  {
+    "id": "ai-fraud-detection-engine-e175d64b",
+    "name": "AI Fraud Detection Engine",
+    "title": "AI Fraud Detection Engine",
+    "description": "Real-time fraud detection for payments, banking, and insurance. Graph neural networks detect complex fraud rings with 99.9% accuracy and sub-millisecond latency.",
+    "category": "security",
+    "industry": "finance",
+    "features": [
+      "Graph neural network detection",
+      "Sub-millisecond scoring",
+      "Fraud ring identification",
+      "Explainable AI decisions",
+      "Real-time model updates"
+    ],
+    "benefits": [
+      "Reduce fraud losses 60%",
+      "Minimize false declines",
+      "Regulatory compliance",
+      "Scale to billions of transactions",
+      "Continuous learning"
+    ],
+    "pricing": {
+      "basic": "0.001/transaction",
+      "pro": "0.0005/transaction",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-21T12:46:53.252360Z",
+    "contactInfo": {
+      "website": "/services/ai-fraud-detection-engine-e175d64b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/ai-fraud-detection-engine-e175d64b",
+    "popular": true
+  },
+  {
+    "id": "predictive-maintenance-ai-fa0dba29",
+    "name": "Predictive Maintenance AI",
+    "title": "Predictive Maintenance AI",
+    "description": "Predict equipment failures before they happen using IoT sensor data and AI. Reduces unplanned downtime by 50% and extends asset life across manufacturing operations.",
+    "category": "ai",
+    "industry": "manufacturing",
+    "features": [
+      "Multi-sensor data fusion",
+      "Failure prediction 30+ days out",
+      "Root cause analysis",
+      "Work order automation",
+      "CMMS/ERP integration"
+    ],
+    "benefits": [
+      "Reduce downtime 50%",
+      "Cut maintenance costs 25%",
+      "Extend equipment life",
+      "Optimize spare parts inventory",
+      "Safety incident reduction"
+    ],
+    "pricing": {
+      "basic": "499/asset/mo",
+      "pro": "999/asset/mo",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-21T12:46:53.252398Z",
+    "contactInfo": {
+      "website": "/services/predictive-maintenance-ai-fa0dba29",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd27",
+    "href": "/services/predictive-maintenance-ai-fa0dba29",
+    "popular": true
+  },
+  {
+    "id": "personalized-recommendation-engine-352c0489",
+    "name": "Personalized Recommendation Engine",
+    "title": "Personalized Recommendation Engine",
+    "description": "AI-powered personalization across web, mobile, email, and in-store. Real-time recommendations using collaborative filtering, content-based, and session-aware models.",
+    "category": "ai",
+    "industry": "retail",
+    "features": [
+      "Real-time personalization",
+      "Multi-channel delivery",
+      "Cold-start handling",
+      "A/B testing framework",
+      "Revenue attribution"
+    ],
+    "benefits": [
+      "Increase conversion 15-30%",
+      "Boost AOV 10-20%",
+      "Improve customer LTV",
+      "Reduce marketing spend",
+      "Privacy-compliant"
+    ],
+    "pricing": {
+      "basic": "0.001/recommendation",
+      "pro": "0.0005/recommendation",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-21T12:46:53.252435Z",
+    "contactInfo": {
+      "website": "/services/personalized-recommendation-engine-352c0489",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/personalized-recommendation-engine-352c0489",
+    "popular": true
+  },
+  {
+    "id": "route-optimization-ai-28a8e871",
+    "name": "Route Optimization AI",
+    "title": "Route Optimization AI",
+    "description": "AI-powered route optimization for last-mile and long-haul logistics. Real-time traffic, weather, and constraint-aware routing with dynamic reoptimization.",
+    "category": "ai",
+    "industry": "logistics",
+    "features": [
+      "Real-time dynamic routing",
+      "Multi-constraint optimization",
+      "Traffic/weather integration",
+      "Fleet-wide optimization",
+      "Driver app integration"
+    ],
+    "benefits": [
+      "Reduce fuel costs 15%",
+      "Improve on-time delivery",
+      "Increase driver efficiency",
+      "Reduce emissions",
+      "Scale to 10,000+ vehicles"
+    ],
+    "pricing": {
+      "basic": "49/vehicle/mo",
+      "pro": "99/vehicle/mo",
+      "enterprise": "custom"
+    },
+    "timestamp": "2026-08-21T12:46:53.252469Z",
+    "contactInfo": {
+      "website": "/services/route-optimization-ai-28a8e871",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddfa\ufe0f",
+    "href": "/services/route-optimization-ai-28a8e871",
+    "popular": true
+  },
+  {
+    "id": "energy-ai-energy-grid-optimizer-9a484080",
+    "name": "AI Energy Grid Optimizer",
+    "title": "AI Energy Grid Optimizer",
+    "description": "Real-time AI optimization of smart grid distribution.",
+    "category": "ai",
+    "industry": "energy",
+    "features": [
+      "Demand prediction",
+      "Load balancing"
+    ],
+    "benefits": [
+      "Reduce waste 30%",
+      "Prevent blackouts"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/energy-ai-energy-grid-optimizer-9a484080",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/energy-ai-energy-grid-optimizer-9a484080",
+    "popular": true
+  },
+  {
+    "id": "energy-carbon-footprint-tracker-1514e55b",
+    "name": "Carbon Footprint Tracker",
+    "title": "Carbon Footprint Tracker",
+    "description": "Automated carbon emissions tracking for ESG compliance.",
+    "category": "sustainability",
+    "industry": "energy",
+    "features": [
+      "Automated tracking",
+      "ESG reports"
+    ],
+    "benefits": [
+      "Simplify reporting",
+      "Ensure compliance"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/energy-carbon-footprint-tracker-1514e55b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udf31",
+    "href": "/services/energy-carbon-footprint-tracker-1514e55b",
+    "popular": true
+  },
+  {
+    "id": "education-ai-tutoring-platform-489da33c",
+    "name": "AI Tutoring Platform",
+    "title": "AI Tutoring Platform",
+    "description": "Personalized AI tutoring that adapts to learning style.",
+    "category": "ai",
+    "industry": "education",
+    "features": [
+      "Adaptive learning",
+      "Real-time feedback"
+    ],
+    "benefits": [
+      "Improve outcomes 40%",
+      "Scale 1:1 tutoring"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "299",
+      "enterprise": "999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/education-ai-tutoring-platform-489da33c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcda",
+    "href": "/services/education-ai-tutoring-platform-489da33c",
+    "popular": true
+  },
+  {
+    "id": "agriculture-precision-agriculture-ai-982ee22c",
+    "name": "Precision Agriculture AI",
+    "title": "Precision Agriculture AI",
+    "description": "Satellite imagery analysis for crop health and yield.",
+    "category": "ai",
+    "industry": "agriculture",
+    "features": [
+      "Crop monitoring",
+      "Yield prediction"
+    ],
+    "benefits": [
+      "Increase yield 20%",
+      "Reduce water 30%"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/agriculture-precision-agriculture-ai-982ee22c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udf3e",
+    "href": "/services/agriculture-precision-agriculture-ai-982ee22c",
+    "popular": true
+  },
+  {
+    "id": "hospitality-hotel-revenue-optimizer-66ee3ca2",
+    "name": "Hotel Revenue Optimizer",
+    "title": "Hotel Revenue Optimizer",
+    "description": "AI-powered dynamic pricing for hotels.",
+    "category": "ai",
+    "industry": "hospitality",
+    "features": [
+      "Dynamic pricing",
+      "Demand forecasting"
+    ],
+    "benefits": [
+      "Increase RevPAR 15%",
+      "Maximize occupancy"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "1999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/hospitality-hotel-revenue-optimizer-66ee3ca2",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe8",
+    "href": "/services/hospitality-hotel-revenue-optimizer-66ee3ca2",
+    "popular": true
+  },
+  {
+    "id": "technology-zero-trust-security-fabric-0034a360",
+    "name": "Zero Trust Security Fabric",
+    "title": "Zero Trust Security Fabric",
+    "description": "Zero-trust architecture with AI threat detection.",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Micro-segmentation",
+      "AI detection"
+    ],
+    "benefits": [
+      "Reduce breach risk 90%",
+      "Compliance ready"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/technology-zero-trust-security-fabric-0034a360",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd12",
+    "href": "/services/technology-zero-trust-security-fabric-0034a360",
+    "popular": true
+  },
+  {
+    "id": "technology-cloud-security-posture-manager-11ba794c",
+    "name": "Cloud Security Posture Manager",
+    "title": "Cloud Security Posture Manager",
+    "description": "AI cloud security across AWS, Azure, GCP.",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Multi-cloud scanning",
+      "Compliance automation"
+    ],
+    "benefits": [
+      "Prevent breaches",
+      "Reduce alert fatigue"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/technology-cloud-security-posture-manager-11ba794c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2601\ufe0f",
+    "href": "/services/technology-cloud-security-posture-manager-11ba794c",
+    "popular": true
+  },
+  {
+    "id": "agriculture-livestock-health-monitor-bcb3c6ed",
+    "name": "Livestock Health Monitor",
+    "title": "Livestock Health Monitor",
+    "description": "IoT + AI for livestock health monitoring.",
+    "category": "iot",
+    "industry": "agriculture",
+    "features": [
+      "Health alerts",
+      "Behavior analysis"
+    ],
+    "benefits": [
+      "Reduce mortality 25%",
+      "Early disease detection"
+    ],
+    "pricing": {
+      "basic": "349",
+      "pro": "999",
+      "enterprise": "3499"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/agriculture-livestock-health-monitor-bcb3c6ed",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udc04",
+    "href": "/services/agriculture-livestock-health-monitor-bcb3c6ed",
+    "popular": true
+  },
+  {
+    "id": "telecom-network-traffic-anomaly-detection-8e33f75c",
+    "name": "Network Traffic Anomaly Detection",
+    "title": "Network Traffic Anomaly Detection",
+    "description": "Real-time AI anomaly detection for telecom.",
+    "category": "security",
+    "industry": "telecom",
+    "features": [
+      "Traffic analysis",
+      "ML detection"
+    ],
+    "benefits": [
+      "Detect threats in ms",
+      "Reduce false positives"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/telecom-network-traffic-anomaly-detection-8e33f75c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/telecom-network-traffic-anomaly-detection-8e33f75c",
+    "popular": true
+  },
+  {
+    "id": "gaming-game-ai-behavior-engine-09979355",
+    "name": "Game AI Behavior Engine",
+    "title": "Game AI Behavior Engine",
+    "description": "Intelligent NPCs with realistic AI behaviors.",
+    "category": "ai",
+    "industry": "gaming",
+    "features": [
+      "Dynamic NPCs",
+      "Adaptive difficulty"
+    ],
+    "benefits": [
+      "Reduce dev time 70%",
+      "Increase engagement"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/gaming-game-ai-behavior-engine-09979355",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/gaming-game-ai-behavior-engine-09979355",
+    "popular": true
   }
 ]
