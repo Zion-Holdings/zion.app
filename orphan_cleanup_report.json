@@ -1,0 +1,3008 @@
+{
+  "timestamp": "2026-08-21T16:34:57.612Z",
+  "dry_run": false,
+  "deletions": [
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "01-ai-18799938",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/01-ai-18799938"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "1x-technologies-a08022e6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/1x-technologies-a08022e6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "4paradigm-f8412dd3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/4paradigm-f8412dd3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "adaptive-ml-a892a04c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/adaptive-ml-a892a04c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "advanced-machine-intelligence-labs-ec4bf068",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/advanced-machine-intelligence-labs-ec4bf068"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "agility-robotics-ed717c0b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/agility-robotics-ed717c0b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-adaptive-game-difficulty-balancing-system-c5e2851c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-adaptive-game-difficulty-balancing-system-c5e2851c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-adaptive-narrative-generation-engine-for-interactive-games-e2dcbbd5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-adaptive-narrative-generation-engine-for-interactive-games-e2dcbbd5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-advisor-real-estate-edition-b3fc827e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-advisor-real-estate-edition-b3fc827e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-cloud-retail-edition-31b27275",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-cloud-retail-edition-31b27275"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-coordinator-real-estate-edition-5b2d7979",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-coordinator-real-estate-edition-5b2d7979"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-6g-network-planning-and-spectrum-optimization-engine-3875a345",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-6g-network-planning-and-spectrum-optimization-engine-3875a345"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-autonomous-digital-asset-management-platform-cefc5f0e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-autonomous-digital-asset-management-platform-cefc5f0e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-autonomous-digital-asset-management-platform-d42c7966",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-autonomous-digital-asset-management-platform-d42c7966"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-clinical-trial-patient-recruitment-and-matching-platform-a176e298",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-clinical-trial-patient-recruitment-and-matching-platform-a176e298"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-cloud-native-financial-planning-c36eea0f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-cloud-native-financial-planning-c36eea0f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-commercial-property-energy-efficiency-and-sustainability-analytics-34cb026e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-commercial-property-energy-efficiency-and-sustainability-analytics-34cb026e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-continuous-compliance-monitoring-and-remediation-engine-0d249d94",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-continuous-compliance-monitoring-and-remediation-engine-0d249d94"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-credit-risk-assessment-and-scoring-engine-56981b0a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-credit-risk-assessment-and-scoring-engine-56981b0a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-cryptocurrency-exchange-fraud-detection-bd9a2e30",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-cryptocurrency-exchange-fraud-detection-bd9a2e30"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-data-driven-financial-planning-8743e787",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-data-driven-financial-planning-8743e787"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-drug-discovery-acceleration-platform-dbd79ada",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-drug-discovery-acceleration-platform-dbd79ada"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-drug-discovery-molecular-modeling-platform-cc08a6b2",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-drug-discovery-molecular-modeling-platform-cc08a6b2"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-game-live-analytics-and-player-sentiment-intelligence-79f3ba63",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-game-live-analytics-and-player-sentiment-intelligence-79f3ba63"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-gaming-economy-monetization-and-virtual-goods-optimization-platform-837c389c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-gaming-economy-monetization-and-virtual-goods-optimization-platform-837c389c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-healthcare-resource-capacity-and-staff-scheduling-platform-45a9028a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-healthcare-resource-capacity-and-staff-scheduling-platform-45a9028a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-intelligent-network-traffic-optimization-fc9f50de",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-intelligent-network-traffic-optimization-fc9f50de"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-intelligent-resource-capacity-planning-assistant-ba0efe13",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-intelligent-resource-capacity-planning-assistant-ba0efe13"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-intelligent-resource-capacity-planning-assistant-bea02e66",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-intelligent-resource-capacity-planning-assistant-bea02e66"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-investment-portfolio-rebalancing-engine-521536fc",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-investment-portfolio-rebalancing-engine-521536fc"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-manufacturing-predictive-maintenance-d781b0b5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-manufacturing-predictive-maintenance-d781b0b5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-manufacturing-process-optimization-engine-46aeab27",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-manufacturing-process-optimization-engine-46aeab27"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-manufacturing-scrap-reduction-and-material-yield-optimization-system-790611d7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-manufacturing-scrap-reduction-and-material-yield-optimization-system-790611d7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-network-anomaly-detection-and-self-healing-system-a0cf22f1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-network-anomaly-detection-and-self-healing-system-a0cf22f1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-predictive-maintenance-for-aviation-apus-84a827ce",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-predictive-maintenance-for-aviation-apus-84a827ce"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-predictive-network-churn-prevention-9a953804",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-predictive-network-churn-prevention-9a953804"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-property-maintenance-and-predictive-repairs-dispatch-platform-98f75da9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-property-maintenance-and-predictive-repairs-dispatch-platform-98f75da9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-property-portfolio-risk-assessment-platform-35747662",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-property-portfolio-risk-assessment-platform-35747662"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-quantum-classical-compute-orchestration-platform-90154f92",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-quantum-classical-compute-orchestration-platform-90154f92"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-quantum-classical-hybrid-computing-orchestrator-88fc0658",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-quantum-classical-hybrid-computing-orchestrator-88fc0658"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-estate-contract-automation-platform-abc5ca60",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-estate-contract-automation-platform-abc5ca60"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-agriculture-yield-prediction-platform-61cf9933",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-agriculture-yield-prediction-platform-61cf9933"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-employee-experience-analytics-platform-463d7d19",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-employee-experience-analytics-platform-463d7d19"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-employee-experience-analytics-platform-fe19b2f3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-employee-experience-analytics-platform-fe19b2f3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-energy-grid-optimization-platform-ed0156b1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-energy-grid-optimization-platform-ed0156b1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-fraud-detection-for-digital-payments-f3eb714f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-fraud-detection-for-digital-payments-f3eb714f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-incident-classification-and-routing-engine-f66624ba",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-incident-classification-and-routing-engine-f66624ba"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-incident-classification-and-routing-engine-f6fd6cc8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-incident-classification-and-routing-engine-f6fd6cc8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-maritime-logistics-optimization-85548430",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-maritime-logistics-optimization-85548430"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-network-behavior-analytics-platform-0d831486",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-network-behavior-analytics-platform-0d831486"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-network-behavior-analytics-platform-30b9603a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-network-behavior-analytics-platform-30b9603a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-supply-chain-visibility-platform-462517dd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-supply-chain-visibility-platform-462517dd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-supply-chain-visibility-platform-afd2be84",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-supply-chain-visibility-platform-afd2be84"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-real-time-water-quality-monitoring-system-09a838a7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-real-time-water-quality-monitoring-system-09a838a7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-semantic-code-embedding-and-search-platform-97a9ea3a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-semantic-code-embedding-and-search-platform-97a9ea3a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-smart-building-hvac-predictive-maintenance-8aa0b0d3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-smart-building-hvac-predictive-maintenance-8aa0b0d3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-soc-threat-hunting-suite-80c87ed7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-soc-threat-hunting-suite-80c87ed7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-soc-threat-hunting-suite-88127616",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-soc-threat-hunting-suite-88127616"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-supply-chain-carbon-footprint-optimization-platform-60e93a39",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-supply-chain-carbon-footprint-optimization-platform-60e93a39"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-sustainable-finance-esg-investment-scoring-and-reporting-platform-5670304c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-sustainable-finance-esg-investment-scoring-and-reporting-platform-5670304c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-telecom-network-energy-efficiency-optimization-system-fb39daaa",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-telecom-network-energy-efficiency-optimization-system-fb39daaa"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-unified-customer-identity-resolution-platform-25df13aa",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-unified-customer-identity-resolution-platform-25df13aa"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-unified-customer-identity-resolution-platform-66df68b7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-unified-customer-identity-resolution-platform-66df68b7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-driven-wearable-health-data-integration-and-emergency-response-system-870bc030",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-driven-wearable-health-data-integration-and-emergency-response-system-870bc030"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enabled-fleet-management-and-predictive-maintenance-platform-9fb34eb9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enabled-fleet-management-and-predictive-maintenance-platform-9fb34eb9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enabled-predictive-maintenance-for-manufacturing-robotics-b566dbdf",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enabled-predictive-maintenance-for-manufacturing-robotics-b566dbdf"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enabled-privacy-compliance-suite-59076533",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enabled-privacy-compliance-suite-59076533"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-engine---legal-edition-3-80218f10",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-engine---legal-edition-3-80218f10"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-engine-insurance-edition-c3bdb541",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-engine-insurance-edition-c3bdb541"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-5g-network-resource-allocation-engine-9239f59d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-5g-network-resource-allocation-engine-9239f59d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-api-security-and-threat-detection-platform-cc1caedb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-api-security-and-threat-detection-platform-cc1caedb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-api-security-and-threat-detection-platform-ec6717fe",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-api-security-and-threat-detection-platform-ec6717fe"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-automated-test-environment-provisioning-engine-66c2a5e5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-automated-test-environment-provisioning-engine-66c2a5e5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-automated-test-environment-provisioning-engine-cfc54d7e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-automated-test-environment-provisioning-engine-cfc54d7e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-autonomous-database-performance-tuning-engine-35e9d0c0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-autonomous-database-performance-tuning-engine-35e9d0c0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-backup-recovery-orchestrator-2c82aead",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-backup-recovery-orchestrator-2c82aead"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-backup-recovery-orchestrator-76e8fb79",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-backup-recovery-orchestrator-76e8fb79"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-container-security-scanner-b86a3daa",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-container-security-scanner-b86a3daa"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-container-security-scanner-c5f15b17",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-container-security-scanner-c5f15b17"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-data-lake-cataloging-bot-7524eff7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-data-lake-cataloging-bot-7524eff7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-data-lake-cataloging-bot-cb8e49a3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-data-lake-cataloging-bot-cb8e49a3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-endpoint-detection-and-response-0b01a551",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-endpoint-detection-and-response-0b01a551"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-endpoint-detection-and-response-ebcbf1ed",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-endpoint-detection-and-response-ebcbf1ed"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-fraud-pattern-detector-5d2fed0e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-fraud-pattern-detector-5d2fed0e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-identity-access-governance-8648a198",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-identity-access-governance-8648a198"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-identity-access-governance-cfc0ebfa",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-identity-access-governance-cfc0ebfa"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-industrial-iot-predictive-maintenance-system-aa01f12f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-industrial-iot-predictive-maintenance-system-aa01f12f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-industrial-iot-predictive-maintenance-system-b904157c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-industrial-iot-predictive-maintenance-system-b904157c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-kubernetes-autoscaling-5b6deb03",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-kubernetes-autoscaling-5b6deb03"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-kubernetes-autoscaling-962cc393",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-kubernetes-autoscaling-962cc393"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-log-anomaly-correlation-37a0eecb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-log-anomaly-correlation-37a0eecb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-log-anomaly-correlation-c5209f4f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-log-anomaly-correlation-c5209f4f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-natural-language-to-sql-query-engine-79006b1b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-natural-language-to-sql-query-engine-79006b1b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-network-traffic-engineering-2baccc7d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-network-traffic-engineering-2baccc7d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-network-traffic-engineering-97c97057",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-network-traffic-engineering-97c97057"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-omnichannel-inventory-distribution-engine-56a5c5f0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-omnichannel-inventory-distribution-engine-56a5c5f0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-predictive-data-pipeline-monitoring-and-alerting-531222a4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-predictive-data-pipeline-monitoring-and-alerting-531222a4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-predictive-data-pipeline-monitoring-and-alerting-98b5b0a9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-predictive-data-pipeline-monitoring-and-alerting-98b5b0a9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-predictive-maintenance-for-aviation-engines-17be63ad",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-predictive-maintenance-for-aviation-engines-17be63ad"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-predictive-model-serving-and-traffic-routing-648b4dd8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-predictive-model-serving-and-traffic-routing-648b4dd8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-predictive-model-serving-and-traffic-routing-cc475745",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-predictive-model-serving-and-traffic-routing-cc475745"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-real-time-defi-fraud-detection-platform-388908b1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-real-time-defi-fraud-detection-platform-388908b1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-real-time-language-translation-platform-f5f31a28",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-real-time-language-translation-platform-f5f31a28"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-real-time-sports-analytics-and-betting-intelligence-3cfdbb1c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-real-time-sports-analytics-and-betting-intelligence-3cfdbb1c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-real-time-urban-traffic-flow-optimization-e468be5d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-real-time-urban-traffic-flow-optimization-e468be5d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-real-time-video-analytics-and-surveillance-platform-3d41f2ea",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-real-time-video-analytics-and-surveillance-platform-3d41f2ea"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-real-time-video-analytics-and-surveillance-platform-6949e5a5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-real-time-video-analytics-and-surveillance-platform-6949e5a5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-sre-reliability-bot-b469ea0d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-sre-reliability-bot-b469ea0d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-sre-reliability-bot-fabf61aa",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-sre-reliability-bot-fabf61aa"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-zero-trust-policy-engine-19a8c83c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-zero-trust-policy-engine-19a8c83c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-zero-trust-policy-engine-910ecc35",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-zero-trust-policy-engine-910ecc35"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-enhanced-zero-trust-security-posture-management-system-6e5b4b26",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enhanced-zero-trust-security-posture-management-system-6e5b4b26"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-fraud-detection-engine-1e41697c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-fraud-detection-engine-1e41697c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-fraud-detection-engine-2acda8b8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-fraud-detection-engine-2acda8b8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-fraud-detection-engine-5e6a3c1c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-fraud-detection-engine-5e6a3c1c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-fraud-detection-engine-62b196b1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-fraud-detection-engine-62b196b1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-fraud-detection-engine-af08de5a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-fraud-detection-engine-af08de5a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-fraud-detection-engine-bec5e2da",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-fraud-detection-engine-bec5e2da"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-fraud-detection-engine-d3f56625",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-fraud-detection-engine-d3f56625"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-fraud-detection-engine-e13a659e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-fraud-detection-engine-e13a659e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-generated-next-generation-game-content-d64a4229",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-generated-next-generation-game-content-d64a4229"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-generated-predictive-game-content-293a797b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-generated-predictive-game-content-293a797b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-insights---education-edition-4-596bc114",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-insights---education-edition-4-596bc114"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-insights-gaming-edition-59494a6d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-insights-gaming-edition-59494a6d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-manager-agriculture-edition-7c0c76cf",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-manager-agriculture-edition-7c0c76cf"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-manager-manufacturing-edition-4604c9c2",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-manager-manufacturing-edition-4604c9c2"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-optimized-supply-chain-and-inventory-demand-planning-system-87e1332c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-optimized-supply-chain-and-inventory-demand-planning-system-87e1332c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-optimizer---transportation-edition-6-a92c5a95",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-optimizer---transportation-edition-6-a92c5a95"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-5g-cloud-native-planning-5fd62e5a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-5g-cloud-native-planning-5fd62e5a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-advanced-customer-analytics-11a4a3bc",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-advanced-customer-analytics-11a4a3bc"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-advanced-logistics-analytics-bb7035c0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-advanced-logistics-analytics-bb7035c0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-advanced-real-estate-analytics-63cdc46f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-advanced-real-estate-analytics-63cdc46f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-advanced-sales-analytics-081374c9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-advanced-sales-analytics-081374c9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-anti-money-laundering-transaction-monitoring-and-sanctions-screening-0eaff3d7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-anti-money-laundering-transaction-monitoring-and-sanctions-screening-0eaff3d7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-agriculture-analytics-348e6671",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-agriculture-analytics-348e6671"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-data-catalog-and-metadata-management-12dcde07",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-data-catalog-and-metadata-management-12dcde07"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-data-catalog-and-metadata-management-654357b8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-data-catalog-and-metadata-management-654357b8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-data-privacy-impact-assessment-tool-1f9848dc",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-data-privacy-impact-assessment-tool-1f9848dc"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-data-privacy-impact-assessment-tool-f8fda0e7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-data-privacy-impact-assessment-tool-f8fda0e7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-education-analytics-e5381a71",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-education-analytics-e5381a71"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-financial-analytics-73ffb658",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-financial-analytics-73ffb658"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-media-analytics-cec803e8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-media-analytics-cec803e8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-automated-route-optimization-7dde88c4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-automated-route-optimization-7dde88c4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-api-schema-evolution-engine-dcfb367f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-api-schema-evolution-engine-dcfb367f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-cloud-migration-orchestration-engine-11110238",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-cloud-migration-orchestration-engine-11110238"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-cloud-migration-orchestration-engine-c9605b13",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-cloud-migration-orchestration-engine-c9605b13"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-customer-analytics-52174b1d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-customer-analytics-52174b1d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-data-center-cooling-optimization-374bbbbf",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-data-center-cooling-optimization-374bbbbf"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-database-optimization-engine-b84987c3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-database-optimization-engine-b84987c3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-hospitality-personalization-engine-e11d1087",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-hospitality-personalization-engine-e11d1087"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-incident-response-and-forensics-platform-a1306408",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-incident-response-and-forensics-platform-a1306408"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-infrastructure-cost-optimization-engine-e551573a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-infrastructure-cost-optimization-engine-e551573a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-manufacturing-quality-control-d4887037",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-manufacturing-quality-control-d4887037"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-retail-store-vision-platform-2a346e87",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-retail-store-vision-platform-2a346e87"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-risk-assessment-ac797200",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-risk-assessment-ac797200"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-supply-chain-planning-engine-14ca9f2b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-supply-chain-planning-engine-14ca9f2b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-supply-chain-risk-assessment-8ad8449f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-supply-chain-risk-assessment-8ad8449f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-telecommunication-ran-optimization-dbf394f0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-telecommunication-ran-optimization-dbf394f0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-autonomous-warehouse-robotics-and-inventory-coordination-system-b642911d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-warehouse-robotics-and-inventory-coordination-system-b642911d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-clinical-decision-support-system-e5822561",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-clinical-decision-support-system-e5822561"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cloud-compliance-auditor-1ca64af8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cloud-compliance-auditor-1ca64af8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cloud-compliance-auditor-20d9684a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cloud-compliance-auditor-20d9684a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cloud-native-agriculture-analytics-c608ef70",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cloud-native-agriculture-analytics-c608ef70"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cloud-native-energy-analytics-d08566a7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cloud-native-energy-analytics-d08566a7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cloud-native-legal-analytics-7c76def5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cloud-native-legal-analytics-7c76def5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cloud-native-operational-analytics-3bbd8d42",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cloud-native-operational-analytics-3bbd8d42"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cloud-native-route-optimization-e1f440fb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cloud-native-route-optimization-e1f440fb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cloud-native-transportation-analytics-466f04ac",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cloud-native-transportation-analytics-466f04ac"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cold-chain-logistics-monitoring-and-quality-assurance-686d55b5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cold-chain-logistics-monitoring-and-quality-assurance-686d55b5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-commercial-lease-optimization-engine-74193711",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-commercial-lease-optimization-engine-74193711"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cross-game-player-preference-and-identity-engine-4b5f67dc",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cross-game-player-preference-and-identity-engine-4b5f67dc"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-cross-platform-player-identity-engine-058f2662",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-cross-platform-player-identity-engine-058f2662"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-customer-journey-optimizer-536c881b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-customer-journey-optimizer-536c881b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-customer-journey-optimizer-d17663bc",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-customer-journey-optimizer-d17663bc"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-customer-sentiment-analysis-acc0bc22",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-customer-sentiment-analysis-acc0bc22"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-data-driven-legal-analytics-8eb52bc9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-data-driven-legal-analytics-8eb52bc9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-data-driven-manufacturing-analytics-12c4d42e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-data-driven-manufacturing-analytics-12c4d42e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-data-driven-operational-analytics-9f61ae41",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-data-driven-operational-analytics-9f61ae41"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-decentralized-finance-protocol-risk-management-platform-7c4b6da5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-decentralized-finance-protocol-risk-management-platform-7c4b6da5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-demand-forecast-for-seasonal-merchandising-a40c198b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-demand-forecast-for-seasonal-merchandising-a40c198b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-digital-twin-manufacturing-process-optimization-system-266ba9a8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-digital-twin-manufacturing-process-optimization-system-266ba9a8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-enterprise-grade-customer-analytics-4f9607e0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-enterprise-grade-customer-analytics-4f9607e0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-enterprise-grade-education-analytics-598bf104",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-enterprise-grade-education-analytics-598bf104"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-financial-fraud-detection-system-09968106",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-financial-fraud-detection-system-09968106"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-game-player-behavior-analytics-4b757073",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-game-player-behavior-analytics-4b757073"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-gaming-content-moderation-and-toxicity-detection-system-9a37dd41",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-gaming-content-moderation-and-toxicity-detection-system-9a37dd41"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-gaming-session-fatigue-and-burnout-prevention-system-b6602bee",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-gaming-session-fatigue-and-burnout-prevention-system-b6602bee"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-healthcare-claims-processing-and-denial-prediction-platform-663c3475",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-healthcare-claims-processing-and-denial-prediction-platform-663c3475"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-healthcare-supply-chain-and-inventory-optimization-platform-bad223ec",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-healthcare-supply-chain-and-inventory-optimization-platform-bad223ec"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-incident-response-automator-2ecfaded",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-incident-response-automator-2ecfaded"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-incident-response-automator-ec9babd2",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-incident-response-automator-ec9babd2"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-incident-root-cause-engine-c4ed7aa1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-incident-root-cause-engine-c4ed7aa1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-industrial-safety-and-worker-behavior-analytics-d158313a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-industrial-safety-and-worker-behavior-analytics-d158313a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-insightful-game-analytics-f289e089",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-insightful-game-analytics-f289e089"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-insightful-marketing-analytics-df80e88f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-insightful-marketing-analytics-df80e88f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-insightful-media-analytics-4becc077",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-insightful-media-analytics-4becc077"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-claims-processing-automation-platform-40311f7c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-claims-processing-automation-platform-40311f7c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-claims-processing-automation-platform-625a0b1e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-claims-processing-automation-platform-625a0b1e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-contract-analysis-and-review-system-0d7c3195",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-contract-analysis-and-review-system-0d7c3195"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-contract-analysis-and-review-system-6435728e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-contract-analysis-and-review-system-6435728e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-customer-onboarding-automation-108029a4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-customer-onboarding-automation-108029a4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-customer-onboarding-automation-ca9056f9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-customer-onboarding-automation-ca9056f9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-gaming-analytics-bc859b4f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-gaming-analytics-bc859b4f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-manufacturing-analytics-f457d54f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-manufacturing-analytics-f457d54f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-media-analytics-91792326",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-media-analytics-91792326"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-subscription-revenue-optimization-44f1f929",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-subscription-revenue-optimization-44f1f929"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-intelligent-subscription-revenue-optimization-5977f185",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-intelligent-subscription-revenue-optimization-5977f185"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-it-asset-lifecycle-manager-dfab0a6a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-it-asset-lifecycle-manager-dfab0a6a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-it-asset-lifecycle-manager-e71b8839",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-it-asset-lifecycle-manager-e71b8839"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-it-procurement-assistant-309ddd31",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-it-procurement-assistant-309ddd31"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-it-procurement-assistant-7a537f91",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-it-procurement-assistant-7a537f91"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-last-mile-delivery-drone-coordination-system-7ec57de9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-last-mile-delivery-drone-coordination-system-7ec57de9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-lead-scoring-optimizer-50c04b08",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-lead-scoring-optimizer-50c04b08"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-lead-scoring-optimizer-f66f2a2f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-lead-scoring-optimizer-f66f2a2f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-logistics-route-optimization-1bdc8320",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-logistics-route-optimization-1bdc8320"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-maritime-port-congestion-and-vessel-delay-prediction-system-12656090",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-maritime-port-congestion-and-vessel-delay-prediction-system-12656090"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-medical-imaging-analysis-and-diagnostics-platform-98edc5cd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-medical-imaging-analysis-and-diagnostics-platform-98edc5cd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-mental-health-chatbot-for-healthcare-providers-25c4c116",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-mental-health-chatbot-for-healthcare-providers-25c4c116"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-multi-access-edge-computing-resource-orchestration-8f6ad2fd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-multi-access-edge-computing-resource-orchestration-8f6ad2fd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-network-anomaly-detector-5049d924",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-network-anomaly-detector-5049d924"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-network-anomaly-detector-b818ad8c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-network-anomaly-detector-b818ad8c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-network-capacity-forecaster-11de7f55",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-network-capacity-forecaster-11de7f55"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-network-capacity-forecaster-930ff50b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-network-capacity-forecaster-930ff50b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-next-generation-education-analytics-cb6ee8a9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-next-generation-education-analytics-cb6ee8a9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-next-generation-logistics-analytics-b67f8109",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-next-generation-logistics-analytics-b67f8109"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-next-generation-property-valuation-709044ad",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-next-generation-property-valuation-709044ad"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-next-generation-sales-analytics-82e6510a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-next-generation-sales-analytics-82e6510a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-next-generation-telecommunications-analytics-161bd3a8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-next-generation-telecommunications-analytics-161bd3a8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-patch-management-agent-aa45c94c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-patch-management-agent-aa45c94c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-patch-management-agent-b475f018",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-patch-management-agent-b475f018"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-precision-medicine-treatment-recommendation-system-69c88a81",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-precision-medicine-treatment-recommendation-system-69c88a81"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-analytics-for-smart-cities-43561dc9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-analytics-for-smart-cities-43561dc9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-financial-analytics-7444c823",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-financial-analytics-7444c823"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-gaming-analytics-53fffa2d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-gaming-analytics-53fffa2d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-healthcare-analytics-30efbe49",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-healthcare-analytics-30efbe49"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-maintenance-for-renewable-energy-53e9e9f4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-maintenance-for-renewable-energy-53e9e9f4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-maintenance-for-wind-turbines-a9f221e0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-maintenance-for-wind-turbines-a9f221e0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-real-estate-analytics-ee97ddbb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-real-estate-analytics-ee97ddbb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-real-estate-market-forecasting-engine-f9574176",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-real-estate-market-forecasting-engine-f9574176"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-predictive-technical-debt-management-system-c002040e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-predictive-technical-debt-management-system-c002040e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-proactive-gaming-analytics-497e4404",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-proactive-gaming-analytics-497e4404"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-proactive-legal-analytics-d8ff8d35",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-proactive-legal-analytics-d8ff8d35"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-proactive-operational-analytics-5d990bfd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-proactive-operational-analytics-5d990bfd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-quality-inspection-vision-system-c36d99ce",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-quality-inspection-vision-system-c36d99ce"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-quantum-job-queue-manager-5fad0e1e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-quantum-job-queue-manager-5fad0e1e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-quantum-job-queue-manager-b1c7a32a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-quantum-job-queue-manager-b1c7a32a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-estate-market-liquidity-analysis-and-exit-timing-engine-76efab6c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-estate-market-liquidity-analysis-and-exit-timing-engine-76efab6c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-estate-tenant-screening-and-risk-scoring-engine-3ed5853f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-estate-tenant-screening-and-risk-scoring-engine-3ed5853f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-estate-tokenized-asset-management-platform-1c5e7fe4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-estate-tokenized-asset-management-platform-1c5e7fe4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-time-currency-and-fx-trading-signal-generation-engine-61f56e51",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-time-currency-and-fx-trading-signal-generation-engine-61f56e51"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-time-feature-store-and-mlops-orchestration-platform-122987e6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-time-feature-store-and-mlops-orchestration-platform-122987e6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-time-fraud-detection-for-insurance-claims-f3f4843f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-time-fraud-detection-for-insurance-claims-f3f4843f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-time-mental-health-chatbot-013cbe40",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-time-mental-health-chatbot-013cbe40"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-time-operational-analytics-6e5e2e8d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-time-operational-analytics-6e5e2e8d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-time-payment-fraud-interception-system-0a9f8e16",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-time-payment-fraud-interception-system-0a9f8e16"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-time-retail-personalization-ee415393",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-time-retail-personalization-ee415393"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-real-time-risk-assessment-cde7dadf",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-real-time-risk-assessment-cde7dadf"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-retail-customer-journey-orchestration-and-conversion-engine-52ef053f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-retail-customer-journey-orchestration-and-conversion-engine-52ef053f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-retail-loss-prevention-and-visual-anomaly-detection-platform-4b30c6d6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-retail-loss-prevention-and-visual-anomaly-detection-platform-4b30c6d6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-retail-personalization-engine-a86ba040",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-retail-personalization-engine-a86ba040"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-scalable-property-valuation-1a95921b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-scalable-property-valuation-1a95921b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-scalable-sales-analytics-78cc647d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-scalable-sales-analytics-78cc647d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-service-mesh-traffic-manager-6dd90e21",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-service-mesh-traffic-manager-6dd90e21"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-service-mesh-traffic-manager-8ec16dfb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-service-mesh-traffic-manager-8ec16dfb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-smart-clinical-decision-support-f16d8141",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-smart-clinical-decision-support-f16d8141"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-smart-insurance-analytics-8f281b0c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-smart-insurance-analytics-8f281b0c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-smart-property-valuation-engine-b2b853a9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-smart-property-valuation-engine-b2b853a9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-telecom-customer-lifetime-value-predictor-eee2ebfd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-telecom-customer-lifetime-value-predictor-eee2ebfd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-powered-visual-search-and-product-discovery-engine-00a2fe83",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-visual-search-and-product-discovery-engine-00a2fe83"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-predictor---logistics-edition-7-23ec2bf1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-predictor---logistics-edition-7-23ec2bf1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-processor---telecom-edition-7-b2634b2b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-processor---telecom-edition-7-b2634b2b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-property-valuation-engine-0a69b2ef",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-property-valuation-engine-0a69b2ef"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-property-valuation-engine-0c8a4961",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-property-valuation-engine-0c8a4961"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-property-valuation-engine-3ec50347",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-property-valuation-engine-3ec50347"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-property-valuation-engine-3f809208",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-property-valuation-engine-3f809208"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-property-valuation-engine-51742721",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-property-valuation-engine-51742721"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-property-valuation-engine-b9d11f2e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-property-valuation-engine-b9d11f2e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-property-valuation-engine-e74e6148",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-property-valuation-engine-e74e6148"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai-property-valuation-engine-f0ee98ff",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-property-valuation-engine-f0ee98ff"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "ai21-labs-951a8b5c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai21-labs-951a8b5c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "aikido-security-0a308121",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/aikido-security-0a308121"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "akool-cf5eab85",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/akool-cf5eab85"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "aleph-alpha-37fd3f12",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/aleph-alpha-37fd3f12"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "alice-company-a4225226",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/alice-company-a4225226"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "all-turtles-0b483e1f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/all-turtles-0b483e1f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "antavo-f01e7ca2",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/antavo-f01e7ca2"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "anthropic-4c283164",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/anthropic-4c283164"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "art-recognition-a1e753ad",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/art-recognition-a1e753ad"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "artisse-ai-8355f9ca",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/artisse-ai-8355f9ca"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "astera-labs-0f8fee80",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/astera-labs-0f8fee80"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-certificate-lifecycle-ai-b6bd4801",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-certificate-lifecycle-ai-b6bd4801"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-certificate-lifecycle-ai-e4aba03d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-certificate-lifecycle-ai-e4aba03d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-data-quality-remediation-agent-69ac382d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-data-quality-remediation-agent-69ac382d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-data-quality-remediation-agent-83085984",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-data-quality-remediation-agent-83085984"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-dependency-vulnerability-ai-56673413",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-dependency-vulnerability-ai-56673413"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-dependency-vulnerability-ai-91ed0f80",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-dependency-vulnerability-ai-91ed0f80"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-email-sequence-personalization-ai-7b28bae6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-email-sequence-personalization-ai-7b28bae6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-email-sequence-personalization-ai-f27d148c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-email-sequence-personalization-ai-f27d148c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-infrastructure-as-code-ai-32e7b91c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-infrastructure-as-code-ai-32e7b91c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-infrastructure-as-code-ai-a8dade48",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-infrastructure-as-code-ai-a8dade48"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-insights-media-64769fb9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-insights-media-64769fb9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-llm-cost-governance-agent-962fe781",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-llm-cost-governance-agent-962fe781"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-llm-cost-governance-agent-9f65af92",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-llm-cost-governance-agent-9f65af92"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-mlops-experiment-tracker-6c999ee6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-mlops-experiment-tracker-6c999ee6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-mlops-experiment-tracker-84f721a7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-mlops-experiment-tracker-84f721a7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-model-drift-monitoring-agent-0f088f2e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-model-drift-monitoring-agent-0f088f2e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-model-drift-monitoring-agent-5b38010e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-model-drift-monitoring-agent-5b38010e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-model-registry-governance-3cd8fc2c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-model-registry-governance-3cd8fc2c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-security-posture-assessment-710ddd51",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-security-posture-assessment-710ddd51"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automated-security-posture-assessment-d0a9546d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-security-posture-assessment-d0a9546d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automation-anywhere-8a42ef60",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automation-anywhere-8a42ef60"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "automation-neural-gaming-0dd17310",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automation-neural-gaming-0dd17310"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-ai-content-moderation-and-safety-platform-c5772282",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-ai-content-moderation-and-safety-platform-c5772282"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-ai-customer-service-voice-assistant-666c5f88",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-ai-customer-service-voice-assistant-666c5f88"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-ai-driven-digital-marketing-campaign-optimizer-a056ab23",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-ai-driven-digital-marketing-campaign-optimizer-a056ab23"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-ai-security-operations-center-06a8d82f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-ai-security-operations-center-06a8d82f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-certificate-rotation-agent-691d0dd2",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-certificate-rotation-agent-691d0dd2"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-coordinator-for-legal-6755e148",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-coordinator-for-legal-6755e148"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-coordinator-for-media-32387ed6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-coordinator-for-media-32387ed6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-cybersecurity-threat-hunting-agent-9d3550f2",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-cybersecurity-threat-hunting-agent-9d3550f2"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-data-quality-profiler-9dc80133",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-data-quality-profiler-9dc80133"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-devsecops-pipeline-agent-117a4837",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-devsecops-pipeline-agent-117a4837"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-devsecops-pipeline-agent-f78d71b5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-devsecops-pipeline-agent-f78d71b5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-edge-ai-inference-server-1e61bf0a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-edge-ai-inference-server-1e61bf0a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-edge-ai-inference-server-b3e8f525",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-edge-ai-inference-server-b3e8f525"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-infrastructure-provisioning-agent-3e921f64",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-infrastructure-provisioning-agent-3e921f64"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-network-configuration-agent-10b96768",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-network-configuration-agent-10b96768"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "autonomous-penetration-testing-platform-f8079f53",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-penetration-testing-platform-f8079f53"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "babyx-709d4b17",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/babyx-709d4b17"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "baichuan-79f45e77",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/baichuan-79f45e77"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "berkshire-grey-db202c76",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/berkshire-grey-db202c76"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "black-duck-software-61032245",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/black-duck-software-61032245"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "blue-prism-489c18cc",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/blue-prism-489c18cc"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "braintrust-6b699191",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/braintrust-6b699191"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "brighter-ai-technologies-d366f194",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/brighter-ai-technologies-d366f194"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "brilliant-labs-60e0bb0a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/brilliant-labs-60e0bb0a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "caper-ai-8b7085ae",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/caper-ai-8b7085ae"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cerebras-systems-f908bb76",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cerebras-systems-f908bb76"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cerence-a4ab21a6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cerence-a4ab21a6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "chai-ai-655db14a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/chai-ai-655db14a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "civitai-213cdabb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/civitai-213cdabb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "clinical-documentation-ai-0203c4b0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/clinical-documentation-ai-0203c4b0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "clinical-documentation-ai-34c0d501",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/clinical-documentation-ai-34c0d501"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "clinical-documentation-ai-4fbe5faa",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/clinical-documentation-ai-4fbe5faa"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "clinical-documentation-ai-71bbec19",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/clinical-documentation-ai-71bbec19"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "clinical-documentation-ai-75719f38",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/clinical-documentation-ai-75719f38"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "clinical-documentation-ai-76261144",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/clinical-documentation-ai-76261144"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "clinical-documentation-ai-85211356",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/clinical-documentation-ai-85211356"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "clinical-documentation-ai-97be8ccb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/clinical-documentation-ai-97be8ccb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cluely-b53b4f8d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cluely-b53b4f8d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "codesmith-9e4a4bc6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/codesmith-9e4a4bc6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cognition-ai-3819c2c8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cognition-ai-3819c2c8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cognitive-analytics-for-energy-1-3971a03c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cognitive-analytics-for-energy-1-3971a03c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cognitive-automation-for-construction-1-a90198c4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cognitive-automation-for-construction-1-a90198c4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cognitive-suite-retail-1-9f2d7bc1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cognitive-suite-retail-1-9f2d7bc1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cohere-c13af785",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cohere-c13af785"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "colloquis-6b88f212",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/colloquis-6b88f212"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "competition-in-artificial-intelligence-6535969e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/competition-in-artificial-intelligence-6535969e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "contextual-ai-56460a13",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/contextual-ai-56460a13"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "conversable-3e683ed5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/conversable-3e683ed5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "conversational-data-warehouse-agent-09295d8b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/conversational-data-warehouse-agent-09295d8b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "conversational-data-warehouse-agent-2dce43cd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/conversational-data-warehouse-agent-2dce43cd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "conversational-data-warehouse-analytics-4692e05c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/conversational-data-warehouse-analytics-4692e05c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "copyleaks-a3650d9c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/copyleaks-a3650d9c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "cross-cloud-cost-arbitrage-ai-132c4585",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/cross-cloud-cost-arbitrage-ai-132c4585"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "data-lineage-intelligence-platform-7b2bcb73",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/data-lineage-intelligence-platform-7b2bcb73"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "director-self-optimizing---sports-fa53f3bb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/director-self-optimizing---sports-fa53f3bb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "dynamic-pricing-engine-for-saas-047b2f2d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/dynamic-pricing-engine-for-saas-047b2f2d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "dynamic-pricing-engine-for-saas-3695db62",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/dynamic-pricing-engine-for-saas-3695db62"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "explainable-ai-governance-platform-f92275ce",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/explainable-ai-governance-platform-f92275ce"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "federated-learning-for-healthcare-data-6828fc38",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/federated-learning-for-healthcare-data-6828fc38"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "federated-learning-for-healthcare-data-df3eba54",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/federated-learning-for-healthcare-data-df3eba54"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "game-ai-behavior-engine-3ecb092b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/game-ai-behavior-engine-3ecb092b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "game-ai-behavior-engine-6be43bfa",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/game-ai-behavior-engine-6be43bfa"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "game-ai-behavior-engine-9fd79ca5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/game-ai-behavior-engine-9fd79ca5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "game-ai-behavior-engine-abe6e923",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/game-ai-behavior-engine-abe6e923"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "game-ai-behavior-engine-b83c278e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/game-ai-behavior-engine-b83c278e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "game-ai-behavior-engine-db13fc3d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/game-ai-behavior-engine-db13fc3d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "game-ai-behavior-engine-f5adfc2a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/game-ai-behavior-engine-f5adfc2a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "game-ai-behavior-engine-f623d069",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/game-ai-behavior-engine-f623d069"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "insights-autonomous-tech-7a6b8973",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/insights-autonomous-tech-7a6b8973"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligence-neural---gaming-d73f9f27",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligence-neural---gaming-d73f9f27"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-api-gateway-with-rate-ai-2a07982f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-api-gateway-with-rate-ai-2a07982f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-api-gateway-with-rate-ai-a08d3394",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-api-gateway-with-rate-ai-a08d3394"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-decision-advisor-f3cd2f2b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-decision-advisor-f3cd2f2b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-director-for-hospitality-be2b9549",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-director-for-hospitality-be2b9549"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-director-for-media-38de5397",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-director-for-media-38de5397"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-education-matchmaking-engine-70e4a490",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-education-matchmaking-engine-70e4a490"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-healthcare-patient-engagement-platform-98d66ecf",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-healthcare-patient-engagement-platform-98d66ecf"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-insurance-matchmaking-engine-860ff28a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-insurance-matchmaking-engine-860ff28a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-marketing-trading-automation-4312969c",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-marketing-trading-automation-4312969c"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-real-estate-trading-automation-51c6a4a0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-real-estate-trading-automation-51c6a4a0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-real-estate-warehouse-automation-c75f8bf3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-real-estate-warehouse-automation-c75f8bf3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-sales-matchmaking-engine-9433a0a1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-sales-matchmaking-engine-9433a0a1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-transportation-trading-automation-edf615e0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-transportation-trading-automation-edf615e0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "intelligent-transportation-warehouse-automation-828a7241",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/intelligent-transportation-warehouse-automation-828a7241"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-augmented-cyber-threat-intelligence-platform-822b6f0f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-augmented-cyber-threat-intelligence-platform-822b6f0f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-augmented-decision-support-system-2736b4b8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-augmented-decision-support-system-2736b4b8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-augmented-legal-contract-drafting-assistant-f92eca04",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-augmented-legal-contract-drafting-assistant-f92eca04"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-augmented-scientific-research-assistant-platform-6adff8a5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-augmented-scientific-research-assistant-platform-6adff8a5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-driven-code-generation-assistant-db0f94b0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-driven-code-generation-assistant-db0f94b0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-orchestrated-robotic-process-automation-04ce2fc0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-orchestrated-robotic-process-automation-04ce2fc0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-orchestrated-workflow-automation-9adb0fcb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-orchestrated-workflow-automation-9adb0fcb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-automated-legal-document-review-platform-521a3c41",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-automated-legal-document-review-platform-521a3c41"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-automated-patent-prior-art-search-engine-4a995843",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-automated-patent-prior-art-search-engine-4a995843"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-business-intelligence-and-analytics-assistant-bb20f7bd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-business-intelligence-and-analytics-assistant-bb20f7bd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-contract-summarization-engine-c542b799",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-contract-summarization-engine-c542b799"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-financial-statement-analysis-engine-becf599d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-financial-statement-analysis-engine-becf599d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-knowledge-base-synthesis-5e504d6f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-knowledge-base-synthesis-5e504d6f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-legal-precedent-discovery-engine-cf617898",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-legal-precedent-discovery-engine-cf617898"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-research-paper-peer-review-system-15ecbfb3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-research-paper-peer-review-system-15ecbfb3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "llm-powered-technical-documentation-generator-08a4b175",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-technical-documentation-generator-08a4b175"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "mlops-feature-store-automation-19ba04cd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/mlops-feature-store-automation-19ba04cd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "multi-cloud-cost-optimization-ai-agent-3e7fcbe3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/multi-cloud-cost-optimization-ai-agent-3e7fcbe3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "multi-cloud-cost-optimization-ai-agent-f49a2e2d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/multi-cloud-cost-optimization-ai-agent-f49a2e2d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "network-traffic-anomaly-detection-10ce9ea9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/network-traffic-anomaly-detection-10ce9ea9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "network-traffic-anomaly-detection-3ddedfa6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/network-traffic-anomaly-detection-3ddedfa6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "network-traffic-anomaly-detection-64968029",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/network-traffic-anomaly-detection-64968029"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "network-traffic-anomaly-detection-69ddfd26",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/network-traffic-anomaly-detection-69ddfd26"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "network-traffic-anomaly-detection-a3032f53",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/network-traffic-anomaly-detection-a3032f53"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "network-traffic-anomaly-detection-aa9d9a4b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/network-traffic-anomaly-detection-aa9d9a4b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "network-traffic-anomaly-detection-b0455df0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/network-traffic-anomaly-detection-b0455df0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "network-traffic-anomaly-detection-b7577ccd",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/network-traffic-anomaly-detection-b7577ccd"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-architecture-optimization-for-edge-17493cf2",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-architecture-optimization-for-edge-17493cf2"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-architecture-search-for-edge-chips-916ad821",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-architecture-search-for-edge-chips-916ad821"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-architecture-search-for-edge-chips-dccd5dde",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-architecture-search-for-edge-chips-dccd5dde"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-insights-energy-dbb425b1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-insights-energy-dbb425b1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-network-hardware-scheduler-ai-9d9b3a5b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-network-hardware-scheduler-ai-9d9b3a5b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-network-hardware-scheduler-ai-c040d4f2",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-network-hardware-scheduler-ai-c040d4f2"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-recommender-for-microservices-957577bc",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-recommender-for-microservices-957577bc"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-recommender-for-microservices-e3d485cb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-recommender-for-microservices-e3d485cb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-search-for-technical-documentation-16f730c1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-search-for-technical-documentation-16f730c1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neural-search-for-technical-documentation-b2aad8a1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neural-search-for-technical-documentation-b2aad8a1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neuro-linguistic-programming-for-enterprise-knowledge-extraction-3040f6f0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neuro-linguistic-programming-for-enterprise-knowledge-extraction-3040f6f0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "neuro-symbolic-reasoning-engine-ef4c1c1e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neuro-symbolic-reasoning-engine-ef4c1c1e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "observability-intelligence-platform-87aae7ff",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/observability-intelligence-platform-87aae7ff"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "orchestrator-neural---logistics-325dd6ed",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/orchestrator-neural---logistics-325dd6ed"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "orchestrator-smart---energy-2-81c78e16",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/orchestrator-smart---energy-2-81c78e16"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "personalized-recommendation-engine-4fc01c9a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/personalized-recommendation-engine-4fc01c9a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "personalized-recommendation-engine-78a8fd29",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/personalized-recommendation-engine-78a8fd29"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "personalized-recommendation-engine-a47749f7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/personalized-recommendation-engine-a47749f7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "personalized-recommendation-engine-b81ab082",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/personalized-recommendation-engine-b81ab082"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "personalized-recommendation-engine-c7274d5a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/personalized-recommendation-engine-c7274d5a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "personalized-recommendation-engine-c7b16917",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/personalized-recommendation-engine-c7b16917"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "personalized-recommendation-engine-e7588efb",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/personalized-recommendation-engine-e7588efb"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "personalized-recommendation-engine-f62b2aa0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/personalized-recommendation-engine-f62b2aa0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "platform-neural---media-1e186920",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/platform-neural---media-1e186920"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-application-performance-ai-7ee259b7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-application-performance-ai-7ee259b7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-application-performance-ai-b5b10e8f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-application-performance-ai-b5b10e8f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-cdn-edge-placement-ai-4efb4b19",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-cdn-edge-placement-ai-4efb4b19"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-cdn-edge-placement-ai-bfde55e7",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-cdn-edge-placement-ai-bfde55e7"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-churn-reduction-ai-30665c7f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-churn-reduction-ai-30665c7f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-churn-reduction-ai-fb6971f9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-churn-reduction-ai-fb6971f9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-cloud-native-freight-analytics-c42a963e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-cloud-native-freight-analytics-c42a963e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-database-index-advisor-7811a8d0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-database-index-advisor-7811a8d0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-database-index-advisor-978aa66d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-database-index-advisor-978aa66d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-generator-for-telecom-2-73dc272f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-generator-for-telecom-2-73dc272f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-infrastructure-capacity-planner-02d4ca55",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-infrastructure-capacity-planner-02d4ca55"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-infrastructure-capacity-planner-ff673cd4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-infrastructure-capacity-planner-ff673cd4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-license-usage-optimizer-ai-45195fc0",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-license-usage-optimizer-ai-45195fc0"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-license-usage-optimizer-ai-7b2c4e67",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-license-usage-optimizer-ai-7b2c4e67"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-maintenance-ai-0c97545e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-maintenance-ai-0c97545e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-maintenance-ai-16224174",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-maintenance-ai-16224174"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-maintenance-ai-4b6eaf9f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-maintenance-ai-4b6eaf9f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-maintenance-ai-762f4e63",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-maintenance-ai-762f4e63"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-maintenance-ai-a27034f9",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-maintenance-ai-a27034f9"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-maintenance-ai-d6ead986",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-maintenance-ai-d6ead986"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-maintenance-ai-dc7192c1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-maintenance-ai-dc7192c1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-maintenance-ai-f5fb9b8e",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-maintenance-ai-f5fb9b8e"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-operational-churn-prevention-cf36f122",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-operational-churn-prevention-cf36f122"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-patient-health-monitoring-and-risk-scoring-system-5f10a45a",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-patient-health-monitoring-and-risk-scoring-system-5f10a45a"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-smart-freight-analytics-b9b7e7ff",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-smart-freight-analytics-b9b7e7ff"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-storage-tiering-ai-207b8513",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-storage-tiering-ai-207b8513"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "predictive-storage-tiering-ai-801e58f5",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/predictive-storage-tiering-ai-801e58f5"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "quantum-inspired-optimization-platform-047b48e8",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/quantum-inspired-optimization-platform-047b48e8"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "route-optimization-ai-002a58a1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/route-optimization-ai-002a58a1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "route-optimization-ai-068636c6",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/route-optimization-ai-068636c6"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "route-optimization-ai-2e7f4523",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/route-optimization-ai-2e7f4523"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "route-optimization-ai-58090bf4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/route-optimization-ai-58090bf4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "route-optimization-ai-8f881d2d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/route-optimization-ai-8f881d2d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "route-optimization-ai-acf20988",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/route-optimization-ai-acf20988"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "route-optimization-ai-c016a7ad",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/route-optimization-ai-c016a7ad"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "route-optimization-ai-e1d4b52b",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/route-optimization-ai-e1d4b52b"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "self-optimizing-manager-logistics-f912d40d",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/self-optimizing-manager-logistics-f912d40d"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "semantic-code-review-engine-fc3b0eed",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/semantic-code-review-engine-fc3b0eed"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-analyzer-for-legal-1-1f3f5af3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-analyzer-for-legal-1-1f3f5af3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-code-director-1-6b2805a1",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-code-director-1-6b2805a1"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-gaming-investment-analytics-093e2a97",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-gaming-investment-analytics-093e2a97"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-operational-investment-analytics-29481ae4",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-operational-investment-analytics-29481ae4"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-real-estate-investment-analytics-platform-694e2c45",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-real-estate-investment-analytics-platform-694e2c45"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-real-estate-quality-control-612c1876",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-real-estate-quality-control-612c1876"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-retail-quality-control-19df709f",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-retail-quality-control-19df709f"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-sales-quality-control-48a76429",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-sales-quality-control-48a76429"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "smart-telecommunications-quality-control-f7a98443",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/smart-telecommunications-quality-control-f7a98443"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "vector-database-optimization-and-intelligent-indexing-service-aa9a1908",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/vector-database-optimization-and-intelligent-indexing-service-aa9a1908"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "zero-shot-document-intelligence-pipeline-3da284b3",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/zero-shot-document-intelligence-pipeline-3da284b3"
+    },
+    {
+      "type": "hash_suffix_dupe",
+      "slug": "zero-shot-document-intelligence-pipeline-71d62c77",
+      "dirPath": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/zero-shot-document-intelligence-pipeline-71d62c77"
+    }
+  ],
+  "sitemap_removals": [
+    "/services/01-ai-18799938/",
+    "/services/1x-technologies-a08022e6/",
+    "/services/4paradigm-f8412dd3/",
+    "/services/adaptive-ml-a892a04c/",
+    "/services/advanced-machine-intelligence-labs-ec4bf068/",
+    "/services/agility-robotics-ed717c0b/",
+    "/services/ai-adaptive-game-difficulty-balancing-system-c5e2851c/",
+    "/services/ai-adaptive-narrative-generation-engine-for-interactive-games-e2dcbbd5/",
+    "/services/ai-advisor-real-estate-edition-b3fc827e/",
+    "/services/ai-cloud-retail-edition-31b27275/",
+    "/services/ai-coordinator-real-estate-edition-5b2d7979/",
+    "/services/ai-driven-6g-network-planning-and-spectrum-optimization-engine-3875a345/",
+    "/services/ai-driven-autonomous-digital-asset-management-platform-cefc5f0e/",
+    "/services/ai-driven-autonomous-digital-asset-management-platform-d42c7966/",
+    "/services/ai-driven-clinical-trial-patient-recruitment-and-matching-platform-a176e298/",
+    "/services/ai-driven-cloud-native-financial-planning-c36eea0f/",
+    "/services/ai-driven-commercial-property-energy-efficiency-and-sustainability-analytics-34cb026e/",
+    "/services/ai-driven-continuous-compliance-monitoring-and-remediation-engine-0d249d94/",
+    "/services/ai-driven-credit-risk-assessment-and-scoring-engine-56981b0a/",
+    "/services/ai-driven-cryptocurrency-exchange-fraud-detection-bd9a2e30/",
+    "/services/ai-driven-data-driven-financial-planning-8743e787/",
+    "/services/ai-driven-drug-discovery-acceleration-platform-dbd79ada/",
+    "/services/ai-driven-drug-discovery-molecular-modeling-platform-cc08a6b2/",
+    "/services/ai-driven-game-live-analytics-and-player-sentiment-intelligence-79f3ba63/",
+    "/services/ai-driven-gaming-economy-monetization-and-virtual-goods-optimization-platform-837c389c/",
+    "/services/ai-driven-healthcare-resource-capacity-and-staff-scheduling-platform-45a9028a/",
+    "/services/ai-driven-intelligent-network-traffic-optimization-fc9f50de/",
+    "/services/ai-driven-intelligent-resource-capacity-planning-assistant-ba0efe13/",
+    "/services/ai-driven-intelligent-resource-capacity-planning-assistant-bea02e66/",
+    "/services/ai-driven-investment-portfolio-rebalancing-engine-521536fc/",
+    "/services/ai-driven-manufacturing-predictive-maintenance-d781b0b5/",
+    "/services/ai-driven-manufacturing-process-optimization-engine-46aeab27/",
+    "/services/ai-driven-manufacturing-scrap-reduction-and-material-yield-optimization-system-790611d7/",
+    "/services/ai-driven-network-anomaly-detection-and-self-healing-system-a0cf22f1/",
+    "/services/ai-driven-predictive-maintenance-for-aviation-apus-84a827ce/",
+    "/services/ai-driven-predictive-network-churn-prevention-9a953804/",
+    "/services/ai-driven-property-maintenance-and-predictive-repairs-dispatch-platform-98f75da9/",
+    "/services/ai-driven-property-portfolio-risk-assessment-platform-35747662/",
+    "/services/ai-driven-quantum-classical-compute-orchestration-platform-90154f92/",
+    "/services/ai-driven-quantum-classical-hybrid-computing-orchestrator-88fc0658/",
+    "/services/ai-driven-real-estate-contract-automation-platform-abc5ca60/",
+    "/services/ai-driven-real-time-agriculture-yield-prediction-platform-61cf9933/",
+    "/services/ai-driven-real-time-employee-experience-analytics-platform-463d7d19/",
+    "/services/ai-driven-real-time-employee-experience-analytics-platform-fe19b2f3/",
+    "/services/ai-driven-real-time-energy-grid-optimization-platform-ed0156b1/",
+    "/services/ai-driven-real-time-fraud-detection-for-digital-payments-f3eb714f/",
+    "/services/ai-driven-real-time-incident-classification-and-routing-engine-f66624ba/",
+    "/services/ai-driven-real-time-incident-classification-and-routing-engine-f6fd6cc8/",
+    "/services/ai-driven-real-time-maritime-logistics-optimization-85548430/",
+    "/services/ai-driven-real-time-network-behavior-analytics-platform-0d831486/",
+    "/services/ai-driven-real-time-network-behavior-analytics-platform-30b9603a/",
+    "/services/ai-driven-real-time-supply-chain-visibility-platform-462517dd/",
+    "/services/ai-driven-real-time-supply-chain-visibility-platform-afd2be84/",
+    "/services/ai-driven-real-time-water-quality-monitoring-system-09a838a7/",
+    "/services/ai-driven-semantic-code-embedding-and-search-platform-97a9ea3a/",
+    "/services/ai-driven-smart-building-hvac-predictive-maintenance-8aa0b0d3/",
+    "/services/ai-driven-soc-threat-hunting-suite-80c87ed7/",
+    "/services/ai-driven-soc-threat-hunting-suite-88127616/",
+    "/services/ai-driven-supply-chain-carbon-footprint-optimization-platform-60e93a39/",
+    "/services/ai-driven-sustainable-finance-esg-investment-scoring-and-reporting-platform-5670304c/",
+    "/services/ai-driven-telecom-network-energy-efficiency-optimization-system-fb39daaa/",
+    "/services/ai-driven-unified-customer-identity-resolution-platform-25df13aa/",
+    "/services/ai-driven-unified-customer-identity-resolution-platform-66df68b7/",
+    "/services/ai-driven-wearable-health-data-integration-and-emergency-response-system-870bc030/",
+    "/services/ai-enabled-fleet-management-and-predictive-maintenance-platform-9fb34eb9/",
+    "/services/ai-enabled-predictive-maintenance-for-manufacturing-robotics-b566dbdf/",
+    "/services/ai-enabled-privacy-compliance-suite-59076533/",
+    "/services/ai-engine---legal-edition-3-80218f10/",
+    "/services/ai-engine-insurance-edition-c3bdb541/",
+    "/services/ai-enhanced-5g-network-resource-allocation-engine-9239f59d/",
+    "/services/ai-enhanced-api-security-and-threat-detection-platform-cc1caedb/",
+    "/services/ai-enhanced-api-security-and-threat-detection-platform-ec6717fe/",
+    "/services/ai-enhanced-automated-test-environment-provisioning-engine-66c2a5e5/",
+    "/services/ai-enhanced-automated-test-environment-provisioning-engine-cfc54d7e/",
+    "/services/ai-enhanced-autonomous-database-performance-tuning-engine-35e9d0c0/",
+    "/services/ai-enhanced-backup-recovery-orchestrator-2c82aead/",
+    "/services/ai-enhanced-backup-recovery-orchestrator-76e8fb79/",
+    "/services/ai-enhanced-container-security-scanner-b86a3daa/",
+    "/services/ai-enhanced-container-security-scanner-c5f15b17/",
+    "/services/ai-enhanced-data-lake-cataloging-bot-7524eff7/",
+    "/services/ai-enhanced-data-lake-cataloging-bot-cb8e49a3/",
+    "/services/ai-enhanced-endpoint-detection-and-response-0b01a551/",
+    "/services/ai-enhanced-endpoint-detection-and-response-ebcbf1ed/",
+    "/services/ai-enhanced-fraud-pattern-detector-5d2fed0e/",
+    "/services/ai-enhanced-identity-access-governance-8648a198/",
+    "/services/ai-enhanced-identity-access-governance-cfc0ebfa/",
+    "/services/ai-enhanced-industrial-iot-predictive-maintenance-system-aa01f12f/",
+    "/services/ai-enhanced-industrial-iot-predictive-maintenance-system-b904157c/",
+    "/services/ai-enhanced-kubernetes-autoscaling-5b6deb03/",
+    "/services/ai-enhanced-kubernetes-autoscaling-962cc393/",
+    "/services/ai-enhanced-log-anomaly-correlation-37a0eecb/",
+    "/services/ai-enhanced-log-anomaly-correlation-c5209f4f/",
+    "/services/ai-enhanced-natural-language-to-sql-query-engine-79006b1b/",
+    "/services/ai-enhanced-network-traffic-engineering-2baccc7d/",
+    "/services/ai-enhanced-network-traffic-engineering-97c97057/",
+    "/services/ai-enhanced-omnichannel-inventory-distribution-engine-56a5c5f0/",
+    "/services/ai-enhanced-predictive-data-pipeline-monitoring-and-alerting-531222a4/",
+    "/services/ai-enhanced-predictive-data-pipeline-monitoring-and-alerting-98b5b0a9/",
+    "/services/ai-enhanced-predictive-maintenance-for-aviation-engines-17be63ad/",
+    "/services/ai-enhanced-predictive-model-serving-and-traffic-routing-648b4dd8/",
+    "/services/ai-enhanced-predictive-model-serving-and-traffic-routing-cc475745/",
+    "/services/ai-enhanced-real-time-defi-fraud-detection-platform-388908b1/",
+    "/services/ai-enhanced-real-time-language-translation-platform-f5f31a28/",
+    "/services/ai-enhanced-real-time-sports-analytics-and-betting-intelligence-3cfdbb1c/",
+    "/services/ai-enhanced-real-time-urban-traffic-flow-optimization-e468be5d/",
+    "/services/ai-enhanced-real-time-video-analytics-and-surveillance-platform-3d41f2ea/",
+    "/services/ai-enhanced-real-time-video-analytics-and-surveillance-platform-6949e5a5/",
+    "/services/ai-enhanced-sre-reliability-bot-b469ea0d/",
+    "/services/ai-enhanced-sre-reliability-bot-fabf61aa/",
+    "/services/ai-enhanced-zero-trust-policy-engine-19a8c83c/",
+    "/services/ai-enhanced-zero-trust-policy-engine-910ecc35/",
+    "/services/ai-enhanced-zero-trust-security-posture-management-system-6e5b4b26/",
+    "/services/ai-fraud-detection-engine-1e41697c/",
+    "/services/ai-fraud-detection-engine-2acda8b8/",
+    "/services/ai-fraud-detection-engine-5e6a3c1c/",
+    "/services/ai-fraud-detection-engine-62b196b1/",
+    "/services/ai-fraud-detection-engine-af08de5a/",
+    "/services/ai-fraud-detection-engine-bec5e2da/",
+    "/services/ai-fraud-detection-engine-d3f56625/",
+    "/services/ai-fraud-detection-engine-e13a659e/",
+    "/services/ai-generated-next-generation-game-content-d64a4229/",
+    "/services/ai-generated-predictive-game-content-293a797b/",
+    "/services/ai-insights---education-edition-4-596bc114/",
+    "/services/ai-insights-gaming-edition-59494a6d/",
+    "/services/ai-manager-agriculture-edition-7c0c76cf/",
+    "/services/ai-manager-manufacturing-edition-4604c9c2/",
+    "/services/ai-optimized-supply-chain-and-inventory-demand-planning-system-87e1332c/",
+    "/services/ai-optimizer---transportation-edition-6-a92c5a95/",
+    "/services/ai-powered-5g-cloud-native-planning-5fd62e5a/",
+    "/services/ai-powered-advanced-customer-analytics-11a4a3bc/",
+    "/services/ai-powered-advanced-logistics-analytics-bb7035c0/",
+    "/services/ai-powered-advanced-real-estate-analytics-63cdc46f/",
+    "/services/ai-powered-advanced-sales-analytics-081374c9/",
+    "/services/ai-powered-anti-money-laundering-transaction-monitoring-and-sanctions-screening-0eaff3d7/",
+    "/services/ai-powered-automated-agriculture-analytics-348e6671/",
+    "/services/ai-powered-automated-data-catalog-and-metadata-management-12dcde07/",
+    "/services/ai-powered-automated-data-catalog-and-metadata-management-654357b8/",
+    "/services/ai-powered-automated-data-privacy-impact-assessment-tool-1f9848dc/",
+    "/services/ai-powered-automated-data-privacy-impact-assessment-tool-f8fda0e7/",
+    "/services/ai-powered-automated-education-analytics-e5381a71/",
+    "/services/ai-powered-automated-financial-analytics-73ffb658/",
+    "/services/ai-powered-automated-media-analytics-cec803e8/",
+    "/services/ai-powered-automated-route-optimization-7dde88c4/",
+    "/services/ai-powered-autonomous-api-schema-evolution-engine-dcfb367f/",
+    "/services/ai-powered-autonomous-cloud-migration-orchestration-engine-11110238/",
+    "/services/ai-powered-autonomous-cloud-migration-orchestration-engine-c9605b13/",
+    "/services/ai-powered-autonomous-customer-analytics-52174b1d/",
+    "/services/ai-powered-autonomous-data-center-cooling-optimization-374bbbbf/",
+    "/services/ai-powered-autonomous-database-optimization-engine-b84987c3/",
+    "/services/ai-powered-autonomous-hospitality-personalization-engine-e11d1087/",
+    "/services/ai-powered-autonomous-incident-response-and-forensics-platform-a1306408/",
+    "/services/ai-powered-autonomous-infrastructure-cost-optimization-engine-e551573a/",
+    "/services/ai-powered-autonomous-manufacturing-quality-control-d4887037/",
+    "/services/ai-powered-autonomous-retail-store-vision-platform-2a346e87/",
+    "/services/ai-powered-autonomous-risk-assessment-ac797200/",
+    "/services/ai-powered-autonomous-supply-chain-planning-engine-14ca9f2b/",
+    "/services/ai-powered-autonomous-supply-chain-risk-assessment-8ad8449f/",
+    "/services/ai-powered-autonomous-telecommunication-ran-optimization-dbf394f0/",
+    "/services/ai-powered-autonomous-warehouse-robotics-and-inventory-coordination-system-b642911d/",
+    "/services/ai-powered-clinical-decision-support-system-e5822561/",
+    "/services/ai-powered-cloud-compliance-auditor-1ca64af8/",
+    "/services/ai-powered-cloud-compliance-auditor-20d9684a/",
+    "/services/ai-powered-cloud-native-agriculture-analytics-c608ef70/",
+    "/services/ai-powered-cloud-native-energy-analytics-d08566a7/",
+    "/services/ai-powered-cloud-native-legal-analytics-7c76def5/",
+    "/services/ai-powered-cloud-native-operational-analytics-3bbd8d42/",
+    "/services/ai-powered-cloud-native-route-optimization-e1f440fb/",
+    "/services/ai-powered-cloud-native-transportation-analytics-466f04ac/",
+    "/services/ai-powered-cold-chain-logistics-monitoring-and-quality-assurance-686d55b5/",
+    "/services/ai-powered-commercial-lease-optimization-engine-74193711/",
+    "/services/ai-powered-cross-game-player-preference-and-identity-engine-4b5f67dc/",
+    "/services/ai-powered-cross-platform-player-identity-engine-058f2662/",
+    "/services/ai-powered-customer-journey-optimizer-536c881b/",
+    "/services/ai-powered-customer-journey-optimizer-d17663bc/",
+    "/services/ai-powered-customer-sentiment-analysis-acc0bc22/",
+    "/services/ai-powered-data-driven-legal-analytics-8eb52bc9/",
+    "/services/ai-powered-data-driven-manufacturing-analytics-12c4d42e/",
+    "/services/ai-powered-data-driven-operational-analytics-9f61ae41/",
+    "/services/ai-powered-decentralized-finance-protocol-risk-management-platform-7c4b6da5/",
+    "/services/ai-powered-demand-forecast-for-seasonal-merchandising-a40c198b/",
+    "/services/ai-powered-digital-twin-manufacturing-process-optimization-system-266ba9a8/",
+    "/services/ai-powered-enterprise-grade-customer-analytics-4f9607e0/",
+    "/services/ai-powered-enterprise-grade-education-analytics-598bf104/",
+    "/services/ai-powered-financial-fraud-detection-system-09968106/",
+    "/services/ai-powered-game-player-behavior-analytics-4b757073/",
+    "/services/ai-powered-gaming-content-moderation-and-toxicity-detection-system-9a37dd41/",
+    "/services/ai-powered-gaming-session-fatigue-and-burnout-prevention-system-b6602bee/",
+    "/services/ai-powered-healthcare-claims-processing-and-denial-prediction-platform-663c3475/",
+    "/services/ai-powered-healthcare-supply-chain-and-inventory-optimization-platform-bad223ec/",
+    "/services/ai-powered-incident-response-automator-2ecfaded/",
+    "/services/ai-powered-incident-response-automator-ec9babd2/",
+    "/services/ai-powered-incident-root-cause-engine-c4ed7aa1/",
+    "/services/ai-powered-industrial-safety-and-worker-behavior-analytics-d158313a/",
+    "/services/ai-powered-insightful-game-analytics-f289e089/",
+    "/services/ai-powered-insightful-marketing-analytics-df80e88f/",
+    "/services/ai-powered-insightful-media-analytics-4becc077/",
+    "/services/ai-powered-intelligent-claims-processing-automation-platform-40311f7c/",
+    "/services/ai-powered-intelligent-claims-processing-automation-platform-625a0b1e/",
+    "/services/ai-powered-intelligent-contract-analysis-and-review-system-0d7c3195/",
+    "/services/ai-powered-intelligent-contract-analysis-and-review-system-6435728e/",
+    "/services/ai-powered-intelligent-customer-onboarding-automation-108029a4/",
+    "/services/ai-powered-intelligent-customer-onboarding-automation-ca9056f9/",
+    "/services/ai-powered-intelligent-gaming-analytics-bc859b4f/",
+    "/services/ai-powered-intelligent-manufacturing-analytics-f457d54f/",
+    "/services/ai-powered-intelligent-media-analytics-91792326/",
+    "/services/ai-powered-intelligent-subscription-revenue-optimization-44f1f929/",
+    "/services/ai-powered-intelligent-subscription-revenue-optimization-5977f185/",
+    "/services/ai-powered-it-asset-lifecycle-manager-dfab0a6a/",
+    "/services/ai-powered-it-asset-lifecycle-manager-e71b8839/",
+    "/services/ai-powered-it-procurement-assistant-309ddd31/",
+    "/services/ai-powered-it-procurement-assistant-7a537f91/",
+    "/services/ai-powered-last-mile-delivery-drone-coordination-system-7ec57de9/",
+    "/services/ai-powered-lead-scoring-optimizer-50c04b08/",
+    "/services/ai-powered-lead-scoring-optimizer-f66f2a2f/",
+    "/services/ai-powered-logistics-route-optimization-1bdc8320/",
+    "/services/ai-powered-maritime-port-congestion-and-vessel-delay-prediction-system-12656090/",
+    "/services/ai-powered-medical-imaging-analysis-and-diagnostics-platform-98edc5cd/",
+    "/services/ai-powered-mental-health-chatbot-for-healthcare-providers-25c4c116/",
+    "/services/ai-powered-multi-access-edge-computing-resource-orchestration-8f6ad2fd/",
+    "/services/ai-powered-network-anomaly-detector-5049d924/",
+    "/services/ai-powered-network-anomaly-detector-b818ad8c/",
+    "/services/ai-powered-network-capacity-forecaster-11de7f55/",
+    "/services/ai-powered-network-capacity-forecaster-930ff50b/",
+    "/services/ai-powered-next-generation-education-analytics-cb6ee8a9/",
+    "/services/ai-powered-next-generation-logistics-analytics-b67f8109/",
+    "/services/ai-powered-next-generation-property-valuation-709044ad/",
+    "/services/ai-powered-next-generation-sales-analytics-82e6510a/",
+    "/services/ai-powered-next-generation-telecommunications-analytics-161bd3a8/",
+    "/services/ai-powered-patch-management-agent-aa45c94c/",
+    "/services/ai-powered-patch-management-agent-b475f018/",
+    "/services/ai-powered-precision-medicine-treatment-recommendation-system-69c88a81/",
+    "/services/ai-powered-predictive-analytics-for-smart-cities-43561dc9/",
+    "/services/ai-powered-predictive-financial-analytics-7444c823/",
+    "/services/ai-powered-predictive-gaming-analytics-53fffa2d/",
+    "/services/ai-powered-predictive-healthcare-analytics-30efbe49/",
+    "/services/ai-powered-predictive-maintenance-for-renewable-energy-53e9e9f4/",
+    "/services/ai-powered-predictive-maintenance-for-wind-turbines-a9f221e0/",
+    "/services/ai-powered-predictive-real-estate-analytics-ee97ddbb/",
+    "/services/ai-powered-predictive-real-estate-market-forecasting-engine-f9574176/",
+    "/services/ai-powered-predictive-technical-debt-management-system-c002040e/",
+    "/services/ai-powered-proactive-gaming-analytics-497e4404/",
+    "/services/ai-powered-proactive-legal-analytics-d8ff8d35/",
+    "/services/ai-powered-proactive-operational-analytics-5d990bfd/",
+    "/services/ai-powered-quality-inspection-vision-system-c36d99ce/",
+    "/services/ai-powered-quantum-job-queue-manager-5fad0e1e/",
+    "/services/ai-powered-quantum-job-queue-manager-b1c7a32a/",
+    "/services/ai-powered-real-estate-market-liquidity-analysis-and-exit-timing-engine-76efab6c/",
+    "/services/ai-powered-real-estate-tenant-screening-and-risk-scoring-engine-3ed5853f/",
+    "/services/ai-powered-real-estate-tokenized-asset-management-platform-1c5e7fe4/",
+    "/services/ai-powered-real-time-currency-and-fx-trading-signal-generation-engine-61f56e51/",
+    "/services/ai-powered-real-time-feature-store-and-mlops-orchestration-platform-122987e6/",
+    "/services/ai-powered-real-time-fraud-detection-for-insurance-claims-f3f4843f/",
+    "/services/ai-powered-real-time-mental-health-chatbot-013cbe40/",
+    "/services/ai-powered-real-time-operational-analytics-6e5e2e8d/",
+    "/services/ai-powered-real-time-payment-fraud-interception-system-0a9f8e16/",
+    "/services/ai-powered-real-time-retail-personalization-ee415393/",
+    "/services/ai-powered-real-time-risk-assessment-cde7dadf/",
+    "/services/ai-powered-retail-customer-journey-orchestration-and-conversion-engine-52ef053f/",
+    "/services/ai-powered-retail-loss-prevention-and-visual-anomaly-detection-platform-4b30c6d6/",
+    "/services/ai-powered-retail-personalization-engine-a86ba040/",
+    "/services/ai-powered-scalable-property-valuation-1a95921b/",
+    "/services/ai-powered-scalable-sales-analytics-78cc647d/",
+    "/services/ai-powered-service-mesh-traffic-manager-6dd90e21/",
+    "/services/ai-powered-service-mesh-traffic-manager-8ec16dfb/",
+    "/services/ai-powered-smart-clinical-decision-support-f16d8141/",
+    "/services/ai-powered-smart-insurance-analytics-8f281b0c/",
+    "/services/ai-powered-smart-property-valuation-engine-b2b853a9/",
+    "/services/ai-powered-telecom-customer-lifetime-value-predictor-eee2ebfd/",
+    "/services/ai-powered-visual-search-and-product-discovery-engine-00a2fe83/",
+    "/services/ai-predictor---logistics-edition-7-23ec2bf1/",
+    "/services/ai-processor---telecom-edition-7-b2634b2b/",
+    "/services/ai-property-valuation-engine-0a69b2ef/",
+    "/services/ai-property-valuation-engine-0c8a4961/",
+    "/services/ai-property-valuation-engine-3ec50347/",
+    "/services/ai-property-valuation-engine-3f809208/",
+    "/services/ai-property-valuation-engine-51742721/",
+    "/services/ai-property-valuation-engine-b9d11f2e/",
+    "/services/ai-property-valuation-engine-e74e6148/",
+    "/services/ai-property-valuation-engine-f0ee98ff/",
+    "/services/ai21-labs-951a8b5c/",
+    "/services/aikido-security-0a308121/",
+    "/services/akool-cf5eab85/",
+    "/services/aleph-alpha-37fd3f12/",
+    "/services/alice-company-a4225226/",
+    "/services/all-turtles-0b483e1f/",
+    "/services/antavo-f01e7ca2/",
+    "/services/anthropic-4c283164/",
+    "/services/art-recognition-a1e753ad/",
+    "/services/artisse-ai-8355f9ca/",
+    "/services/astera-labs-0f8fee80/",
+    "/services/automated-certificate-lifecycle-ai-b6bd4801/",
+    "/services/automated-certificate-lifecycle-ai-e4aba03d/",
+    "/services/automated-data-quality-remediation-agent-69ac382d/",
+    "/services/automated-data-quality-remediation-agent-83085984/",
+    "/services/automated-dependency-vulnerability-ai-56673413/",
+    "/services/automated-dependency-vulnerability-ai-91ed0f80/",
+    "/services/automated-email-sequence-personalization-ai-7b28bae6/",
+    "/services/automated-email-sequence-personalization-ai-f27d148c/",
+    "/services/automated-infrastructure-as-code-ai-32e7b91c/",
+    "/services/automated-infrastructure-as-code-ai-a8dade48/",
+    "/services/automated-insights-media-64769fb9/",
+    "/services/automated-llm-cost-governance-agent-962fe781/",
+    "/services/automated-llm-cost-governance-agent-9f65af92/",
+    "/services/automated-mlops-experiment-tracker-6c999ee6/",
+    "/services/automated-mlops-experiment-tracker-84f721a7/",
+    "/services/automated-model-drift-monitoring-agent-0f088f2e/",
+    "/services/automated-model-drift-monitoring-agent-5b38010e/",
+    "/services/automated-model-registry-governance-3cd8fc2c/",
+    "/services/automated-security-posture-assessment-710ddd51/",
+    "/services/automated-security-posture-assessment-d0a9546d/",
+    "/services/automation-anywhere-8a42ef60/",
+    "/services/automation-neural-gaming-0dd17310/",
+    "/services/autonomous-ai-content-moderation-and-safety-platform-c5772282/",
+    "/services/autonomous-ai-customer-service-voice-assistant-666c5f88/",
+    "/services/autonomous-ai-driven-digital-marketing-campaign-optimizer-a056ab23/",
+    "/services/autonomous-ai-security-operations-center-06a8d82f/",
+    "/services/autonomous-certificate-rotation-agent-691d0dd2/",
+    "/services/autonomous-coordinator-for-legal-6755e148/",
+    "/services/autonomous-coordinator-for-media-32387ed6/",
+    "/services/autonomous-cybersecurity-threat-hunting-agent-9d3550f2/",
+    "/services/autonomous-data-quality-profiler-9dc80133/",
+    "/services/autonomous-devsecops-pipeline-agent-117a4837/",
+    "/services/autonomous-devsecops-pipeline-agent-f78d71b5/",
+    "/services/autonomous-edge-ai-inference-server-1e61bf0a/",
+    "/services/autonomous-edge-ai-inference-server-b3e8f525/",
+    "/services/autonomous-infrastructure-provisioning-agent-3e921f64/",
+    "/services/autonomous-network-configuration-agent-10b96768/",
+    "/services/autonomous-penetration-testing-platform-f8079f53/",
+    "/services/babyx-709d4b17/",
+    "/services/baichuan-79f45e77/",
+    "/services/berkshire-grey-db202c76/",
+    "/services/black-duck-software-61032245/",
+    "/services/blue-prism-489c18cc/",
+    "/services/braintrust-6b699191/",
+    "/services/brighter-ai-technologies-d366f194/",
+    "/services/brilliant-labs-60e0bb0a/",
+    "/services/caper-ai-8b7085ae/",
+    "/services/cerebras-systems-f908bb76/",
+    "/services/cerence-a4ab21a6/",
+    "/services/chai-ai-655db14a/",
+    "/services/civitai-213cdabb/",
+    "/services/clinical-documentation-ai-0203c4b0/",
+    "/services/clinical-documentation-ai-34c0d501/",
+    "/services/clinical-documentation-ai-4fbe5faa/",
+    "/services/clinical-documentation-ai-71bbec19/",
+    "/services/clinical-documentation-ai-75719f38/",
+    "/services/clinical-documentation-ai-76261144/",
+    "/services/clinical-documentation-ai-85211356/",
+    "/services/clinical-documentation-ai-97be8ccb/",
+    "/services/cluely-b53b4f8d/",
+    "/services/codesmith-9e4a4bc6/",
+    "/services/cognition-ai-3819c2c8/",
+    "/services/cognitive-analytics-for-energy-1-3971a03c/",
+    "/services/cognitive-automation-for-construction-1-a90198c4/",
+    "/services/cognitive-suite-retail-1-9f2d7bc1/",
+    "/services/cohere-c13af785/",
+    "/services/colloquis-6b88f212/",
+    "/services/competition-in-artificial-intelligence-6535969e/",
+    "/services/contextual-ai-56460a13/",
+    "/services/conversable-3e683ed5/",
+    "/services/conversational-data-warehouse-agent-09295d8b/",
+    "/services/conversational-data-warehouse-agent-2dce43cd/",
+    "/services/conversational-data-warehouse-analytics-4692e05c/",
+    "/services/copyleaks-a3650d9c/",
+    "/services/cross-cloud-cost-arbitrage-ai-132c4585/",
+    "/services/data-lineage-intelligence-platform-7b2bcb73/",
+    "/services/director-self-optimizing---sports-fa53f3bb/",
+    "/services/dynamic-pricing-engine-for-saas-047b2f2d/",
+    "/services/dynamic-pricing-engine-for-saas-3695db62/",
+    "/services/explainable-ai-governance-platform-f92275ce/",
+    "/services/federated-learning-for-healthcare-data-6828fc38/",
+    "/services/federated-learning-for-healthcare-data-df3eba54/",
+    "/services/game-ai-behavior-engine-3ecb092b/",
+    "/services/game-ai-behavior-engine-6be43bfa/",
+    "/services/game-ai-behavior-engine-9fd79ca5/",
+    "/services/game-ai-behavior-engine-abe6e923/",
+    "/services/game-ai-behavior-engine-b83c278e/",
+    "/services/game-ai-behavior-engine-db13fc3d/",
+    "/services/game-ai-behavior-engine-f5adfc2a/",
+    "/services/game-ai-behavior-engine-f623d069/",
+    "/services/insights-autonomous-tech-7a6b8973/",
+    "/services/intelligence-neural---gaming-d73f9f27/",
+    "/services/intelligent-api-gateway-with-rate-ai-2a07982f/",
+    "/services/intelligent-api-gateway-with-rate-ai-a08d3394/",
+    "/services/intelligent-decision-advisor-f3cd2f2b/",
+    "/services/intelligent-director-for-hospitality-be2b9549/",
+    "/services/intelligent-director-for-media-38de5397/",
+    "/services/intelligent-education-matchmaking-engine-70e4a490/",
+    "/services/intelligent-healthcare-patient-engagement-platform-98d66ecf/",
+    "/services/intelligent-insurance-matchmaking-engine-860ff28a/",
+    "/services/intelligent-marketing-trading-automation-4312969c/",
+    "/services/intelligent-real-estate-trading-automation-51c6a4a0/",
+    "/services/intelligent-real-estate-warehouse-automation-c75f8bf3/",
+    "/services/intelligent-sales-matchmaking-engine-9433a0a1/",
+    "/services/intelligent-transportation-trading-automation-edf615e0/",
+    "/services/intelligent-transportation-warehouse-automation-828a7241/",
+    "/services/llm-augmented-cyber-threat-intelligence-platform-822b6f0f/",
+    "/services/llm-augmented-decision-support-system-2736b4b8/",
+    "/services/llm-augmented-legal-contract-drafting-assistant-f92eca04/",
+    "/services/llm-augmented-scientific-research-assistant-platform-6adff8a5/",
+    "/services/llm-driven-code-generation-assistant-db0f94b0/",
+    "/services/llm-orchestrated-robotic-process-automation-04ce2fc0/",
+    "/services/llm-orchestrated-workflow-automation-9adb0fcb/",
+    "/services/llm-powered-automated-legal-document-review-platform-521a3c41/",
+    "/services/llm-powered-automated-patent-prior-art-search-engine-4a995843/",
+    "/services/llm-powered-business-intelligence-and-analytics-assistant-bb20f7bd/",
+    "/services/llm-powered-contract-summarization-engine-c542b799/",
+    "/services/llm-powered-financial-statement-analysis-engine-becf599d/",
+    "/services/llm-powered-knowledge-base-synthesis-5e504d6f/",
+    "/services/llm-powered-legal-precedent-discovery-engine-cf617898/",
+    "/services/llm-powered-research-paper-peer-review-system-15ecbfb3/",
+    "/services/llm-powered-technical-documentation-generator-08a4b175/",
+    "/services/mlops-feature-store-automation-19ba04cd/",
+    "/services/multi-cloud-cost-optimization-ai-agent-3e7fcbe3/",
+    "/services/multi-cloud-cost-optimization-ai-agent-f49a2e2d/",
+    "/services/network-traffic-anomaly-detection-10ce9ea9/",
+    "/services/network-traffic-anomaly-detection-3ddedfa6/",
+    "/services/network-traffic-anomaly-detection-64968029/",
+    "/services/network-traffic-anomaly-detection-69ddfd26/",
+    "/services/network-traffic-anomaly-detection-a3032f53/",
+    "/services/network-traffic-anomaly-detection-aa9d9a4b/",
+    "/services/network-traffic-anomaly-detection-b0455df0/",
+    "/services/network-traffic-anomaly-detection-b7577ccd/",
+    "/services/neural-architecture-optimization-for-edge-17493cf2/",
+    "/services/neural-architecture-search-for-edge-chips-916ad821/",
+    "/services/neural-architecture-search-for-edge-chips-dccd5dde/",
+    "/services/neural-insights-energy-dbb425b1/",
+    "/services/neural-network-hardware-scheduler-ai-9d9b3a5b/",
+    "/services/neural-network-hardware-scheduler-ai-c040d4f2/",
+    "/services/neural-recommender-for-microservices-957577bc/",
+    "/services/neural-recommender-for-microservices-e3d485cb/",
+    "/services/neural-search-for-technical-documentation-16f730c1/",
+    "/services/neural-search-for-technical-documentation-b2aad8a1/",
+    "/services/neuro-linguistic-programming-for-enterprise-knowledge-extraction-3040f6f0/",
+    "/services/neuro-symbolic-reasoning-engine-ef4c1c1e/",
+    "/services/observability-intelligence-platform-87aae7ff/",
+    "/services/orchestrator-neural---logistics-325dd6ed/",
+    "/services/orchestrator-smart---energy-2-81c78e16/",
+    "/services/personalized-recommendation-engine-4fc01c9a/",
+    "/services/personalized-recommendation-engine-78a8fd29/",
+    "/services/personalized-recommendation-engine-a47749f7/",
+    "/services/personalized-recommendation-engine-b81ab082/",
+    "/services/personalized-recommendation-engine-c7274d5a/",
+    "/services/personalized-recommendation-engine-c7b16917/",
+    "/services/personalized-recommendation-engine-e7588efb/",
+    "/services/personalized-recommendation-engine-f62b2aa0/",
+    "/services/platform-neural---media-1e186920/",
+    "/services/predictive-application-performance-ai-7ee259b7/",
+    "/services/predictive-application-performance-ai-b5b10e8f/",
+    "/services/predictive-cdn-edge-placement-ai-4efb4b19/",
+    "/services/predictive-cdn-edge-placement-ai-bfde55e7/",
+    "/services/predictive-churn-reduction-ai-30665c7f/",
+    "/services/predictive-churn-reduction-ai-fb6971f9/",
+    "/services/predictive-cloud-native-freight-analytics-c42a963e/",
+    "/services/predictive-database-index-advisor-7811a8d0/",
+    "/services/predictive-database-index-advisor-978aa66d/",
+    "/services/predictive-generator-for-telecom-2-73dc272f/",
+    "/services/predictive-infrastructure-capacity-planner-02d4ca55/",
+    "/services/predictive-infrastructure-capacity-planner-ff673cd4/",
+    "/services/predictive-license-usage-optimizer-ai-45195fc0/",
+    "/services/predictive-license-usage-optimizer-ai-7b2c4e67/",
+    "/services/predictive-maintenance-ai-0c97545e/",
+    "/services/predictive-maintenance-ai-16224174/",
+    "/services/predictive-maintenance-ai-4b6eaf9f/",
+    "/services/predictive-maintenance-ai-762f4e63/",
+    "/services/predictive-maintenance-ai-a27034f9/",
+    "/services/predictive-maintenance-ai-d6ead986/",
+    "/services/predictive-maintenance-ai-dc7192c1/",
+    "/services/predictive-maintenance-ai-f5fb9b8e/",
+    "/services/predictive-operational-churn-prevention-cf36f122/",
+    "/services/predictive-patient-health-monitoring-and-risk-scoring-system-5f10a45a/",
+    "/services/predictive-smart-freight-analytics-b9b7e7ff/",
+    "/services/predictive-storage-tiering-ai-207b8513/",
+    "/services/predictive-storage-tiering-ai-801e58f5/",
+    "/services/quantum-inspired-optimization-platform-047b48e8/",
+    "/services/route-optimization-ai-002a58a1/",
+    "/services/route-optimization-ai-068636c6/",
+    "/services/route-optimization-ai-2e7f4523/",
+    "/services/route-optimization-ai-58090bf4/",
+    "/services/route-optimization-ai-8f881d2d/",
+    "/services/route-optimization-ai-acf20988/",
+    "/services/route-optimization-ai-c016a7ad/",
+    "/services/route-optimization-ai-e1d4b52b/",
+    "/services/self-optimizing-manager-logistics-f912d40d/",
+    "/services/semantic-code-review-engine-fc3b0eed/",
+    "/services/smart-analyzer-for-legal-1-1f3f5af3/",
+    "/services/smart-code-director-1-6b2805a1/",
+    "/services/smart-gaming-investment-analytics-093e2a97/",
+    "/services/smart-operational-investment-analytics-29481ae4/",
+    "/services/smart-real-estate-investment-analytics-platform-694e2c45/",
+    "/services/smart-real-estate-quality-control-612c1876/",
+    "/services/smart-retail-quality-control-19df709f/",
+    "/services/smart-sales-quality-control-48a76429/",
+    "/services/smart-telecommunications-quality-control-f7a98443/",
+    "/services/vector-database-optimization-and-intelligent-indexing-service-aa9a1908/",
+    "/services/zero-shot-document-intelligence-pipeline-3da284b3/",
+    "/services/zero-shot-document-intelligence-pipeline-71d62c77/",
+    "/services/smart-automation-suite-food-&amp;-beverage-smart-automation-suite-for-food-beverage/",
+    "/services/smart-automation-suite-media-&amp;-entertainment-smart-automation-suite-for-media-entertainment/"
+  ],
+  "kept": [
+    "hermes-agent",
+    "hermes-agent-training",
+    "cloud disaster recovery testing",
+    "hermes-growth-engine-agent",
+    "hermes-it-field-technician-sourcing"
+  ],
+  "summary": {
+    "catalog_slugs": 16352,
+    "sitemap_service_urls": 16857,
+    "total_orphans": 504,
+    "hash_suffix_dupes_deleted": 497,
+    "ampersand_variants_deleted": 2,
+    "legitimate_pages_kept": 5,
+    "sitemap_entries_removed": 499
+  }
+}
