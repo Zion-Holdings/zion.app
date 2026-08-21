@@ -75,6 +75,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cron Agent Calculator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Cron Agent Calculator.</p>
         </Link>
+        <Link href="/tools/css-minifier/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Css Minifier</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Css Minifier.</p>
+        </Link>
         <Link href="/tools/gradient-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Gradient Generator</h3>
@@ -84,6 +89,16 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Hash Generator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Hash Generator.</p>
+        </Link>
+        <Link href="/tools/image-to-base64/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Image To Base64</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Image To Base64.</p>
+        </Link>
+        <Link href="/tools/js-minifier/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Js Minifier</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Js Minifier.</p>
         </Link>
         <Link href="/tools/json-formatter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
@@ -109,6 +124,11 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Markdown Preview</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Markdown Preview.</p>
+        </Link>
+        <Link href="/tools/markdown-to-html/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Markdown To Html</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Markdown To Html.</p>
         </Link>
         <Link href="/tools/mcp-tester/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>

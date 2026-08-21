@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Minifier - Zion Tech Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0b0f1a;
+--bg-secondary:#111827;
+--bg-tertiary:#1f2937;
+--text:#e5e7eb;
+--text-muted:#9ca3af;
+--accent:#6366f1;
+--accent-hover:#818cf8;
+--accent-glow:rgba(99,102,241,0.3);
+--success:#10b981;
+--warning:#f59e0b;
+--danger:#ef4444;
+--border:#374151;
+}
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+min-height:100vh;
+display:flex;
+flex-direction:column;
+line-height:1.6;
+}
+header{
+background:var(--bg-secondary);
+border-bottom:1px solid var(--border);
+padding:1rem 2rem;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.logo{
+font-weight:800;
+font-size:1.25rem;
+color:var(--text);
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:0.5rem;
+}
+.logo span{color:var(--accent)}
+.logo svg{width:24px;height:24px}
+nav a{
+color:var(--text-muted);
+text-decoration:none;
+font-size:0.9rem;
+margin-left:1.5rem;
+transition:color 0.2s;
+}
+nav a:hover{color:var(--accent)}
+main{
+flex:1;
+max-width:1200px;
+width:100%;
+margin:0 auto;
+padding:2rem;
+}
+.hero{
+text-align:center;
+padding:2rem 0;
+}
+.hero h1{
+font-size:2.5rem;
+font-weight:800;
+margin-bottom:0.5rem;
+background:linear-gradient(135deg,var(--text),var(--accent));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+}
+.hero p{
+color:var(--text-muted);
+font-size:1.1rem;
+max-width:600px;
+margin:0 auto 2rem;
+}
+.tool-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:1.5rem;
+margin-bottom:2rem;
+}
+@media(max-width:768px){
+.tool-container{grid-template-columns:1fr}
+.hero h1{font-size:1.75rem}
+}
+.panel{
+background:var(--bg-secondary);
+border:1px solid var(--border);
+border-radius:12px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+}
+.panel-header{
+background:var(--bg-tertiary);
+padding:0.75rem 1rem;
+border-bottom:1px solid var(--border);
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+.panel-title{
+font-weight:600;
+font-size:0.9rem;
+display:flex;
+align-items:center;
+gap:0.5rem;
+}
+.panel-title svg{width:16px;height:16px;color:var(--accent)}
+.panel-body{
+padding:0;
+flex:1;
+position:relative;
+}
+textarea{
+width:100%;
+height:350px;
+background:var(--bg);
+color:var(--text);
+border:none;
+padding:1rem;
+font-family:'JetBrains Mono',monospace;
+font-size:0.85rem;
+line-height:1.5;
+resize:none;
+outline:none;
+}
+textarea::placeholder{color:#4b5563}
+.panel-footer{
+padding:0.5rem 1rem;
+background:var(--bg-tertiary);
+border-top:1px solid var(--border);
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:0.8rem;
+color:var(--text-muted);
+}
+.badge{
+display:inline-flex;
+align-items:center;
+gap:0.25rem;
+padding:0.2rem 0.6rem;
+border-radius:9999px;
+font-size:0.75rem;
+font-weight:600;
+background:rgba(99,102,241,0.15);
+color:var(--accent);
+}
+.badge.success{background:rgba(16,185,129,0.15);color:var(--success)}
+.badge.warning{background:rgba(245,158,11,0.15);color:var(--warning)}
+.stats-bar{
+display:flex;
+gap:1rem;
+justify-content:center;
+flex-wrap:wrap;
+margin:1.5rem 0;
+}
+.stat{
+background:var(--bg-secondary);
+border:1px solid var(--border);
+border-radius:8px;
+padding:0.75rem 1.5rem;
+text-align:center;
+min-width:140px;
+}
+.stat-value{
+font-size:1.5rem;
+font-weight:700;
+color:var(--text);
+font-family:'JetBrains Mono',monospace;
+}
+.stat-label{
+font-size:0.75rem;
+color:var(--text-muted);
+text-transform:uppercase;
+letter-spacing:0.05em;
+margin-top:0.25rem;
+}
+.stat.savings .stat-value{color:var(--success)}
+.actions{
+display:flex;
+gap:1rem;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:2rem;
+}
+.btn{
+display:inline-flex;
+align-items:center;
+gap:0.5rem;
+padding:0.75rem 1.5rem;
+border-radius:8px;
+font-weight:600;
+font-size:0.9rem;
+text-decoration:none;
+cursor:pointer;
+border:none;
+transition:all 0.2s;
+font-family:inherit;
+}
+.btn svg{width:18px;height:18px}
+.btn-primary{
+background:var(--accent);
+color:#fff;
+box-shadow:0 4px 14px var(--accent-glow);
+}
+.btn-primary:hover{
+background:var(--accent-hover);
+transform:translateY(-1px);
+box-shadow:0 6px 20px var(--accent-glow);
+}
+.btn-secondary{
+background:var(--bg-tertiary);
+color:var(--text);
+border:1px solid var(--border);
+}
+.btn-secondary:hover{
+border-color:var(--accent);
+color:var(--accent);
+}
+.cta-section{
+background:linear-gradient(135deg,var(--bg-secondary),var(--bg-tertiary));
+border:1px solid var(--border);
+border-radius:12px;
+padding:2rem;
+text-align:center;
+margin-top:2rem;
+}
+.cta-section h2{
+font-size:1.5rem;
+margin-bottom:0.5rem;
+}
+.cta-section p{
+color:var(--text-muted);
+margin-bottom:1.5rem;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+}
+.cta-buttons{
+display:flex;
+gap:1rem;
+justify-content:center;
+flex-wrap:wrap;
+}
+footer{
+background:var(--bg-secondary);
+border-top:1px solid var(--border);
+padding:1.5rem 2rem;
+text-align:center;
+color:var(--text-muted);
+font-size:0.85rem;
+}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.toggle-group{
+display:flex;
+background:var(--bg);
+border-radius:6px;
+padding:2px;
+}
+.toggle-btn{
+padding:0.3rem 0.8rem;
+border:none;
+background:transparent;
+color:var(--text-muted);
+font-size:0.75rem;
+font-weight:600;
+cursor:pointer;
+border-radius:4px;
+transition:all 0.2s;
+}
+.toggle-btn.active{
+background:var(--accent);
+color:#fff;
+}
+.toast{
+position:fixed;
+bottom:2rem;
+right:2rem;
+background:var(--success);
+color:#fff;
+padding:0.75rem 1.5rem;
+border-radius:8px;
+font-weight:600;
+font-size:0.9rem;
+box-shadow:0 4px 14px rgba(16,185,129,0.3);
+transform:translateY(100px);
+opacity:0;
+transition:all 0.3s;
+pointer-events:none;
+}
+.toast.show{
+transform:translateY(0);
+opacity:1;
+}
+</style>
+</head>
+<body>
+<header>
+<a href="/" class="logo">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/><polyline points="12,8 18,12 18,16 12,20 6,16 6,12"/></svg>
+Zion<span>Tech</span>
+</a>
+<nav>
+<a href="/services/">Serviços</a>
+<a href="/public-tools/">Ferramentas</a>
+<a href="https://calendly.com/kleber-ziontechgroup">Contato</a>
+</nav>
+</header>
+<main>
+<section class="hero">
+<h1>CSS Minifier</h1>
+<p>Minifique seu CSS instantaneamente. Remova espaços, comentários e quebra de linha. Suporta CSS padrão e aninhado.</p>
+</section>
+
+<div class="tool-container">
+<div class="panel">
+<div class="panel-header">
+<span class="panel-title">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+CSS Original
+</span>
+<div class="toggle-group">
+<button class="toggle-btn active" onclick="setMode('paste')" id="btn-cole">Colar</button>
+<button class="toggle-btn" onclick="setMode('sample')" id="btn-exemplo">Exemplo</button>
+</div>
+</div>
+<div class="panel-body">
+<textarea id="input-css" placeholder="Cole seu CSS aqui...&#10;&#10;.container {&#10;  max-width: 1200px;&#10;  margin: 0 auto;&#10;  padding: 0 1rem;&#10;}&#10;&#10;/* Navbar styles */&#10;.navbar {&#10;  display: flex;&#10;  align-items: center;&#10;  justify-content: space-between;&#10;}"></textarea>
+</div>
+<div class="panel-footer">
+<span id="input-info"><span class="badge">0 bytes</span></span>
+<span id="input-lines">0 linhas</span>
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-header">
+<span class="panel-title">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+CSS Minificado
+</span>
+<button class="toggle-btn" onclick="copyOutput()" id="btn-copiar" style="background:var(--bg);border:1px solid var(--border);padding:0.3rem 0.8rem;border-radius:4px;color:var(--text-muted);font-size:0.75rem;font-weight:600;cursor:pointer;">Copiar</button>
+</div>
+<div class="panel-body">
+<textarea id="output-css" readonly placeholder="CSS minificado aparecerá aqui..."></textarea>
+</div>
+<div class="panel-footer">
+<span id="output-info"><span class="badge">0 bytes</span></span>
+<span id="output-lines">0 linhas</span>
+</div>
+</div>
+</div>
+
+<div class="stats-bar">
+<div class="stat">
+<div class="stat-value" id="stat-original">0</div>
+<div class="stat-label">Original (bytes)</div>
+</div>
+<div class="stat">
+<div class="stat-value" id="stat-minified">0</div>
+<div class="stat-label">Minificado (bytes)</div>
+</div>
+<div class="stat savings">
+<div class="stat-value" id="stat-savings">0%</div>
+<div class="stat-label">Redução</div>
+</div>
+<div class="stat">
+<div class="stat-value" id="stat-removed">0</div>
+<div class="stat-label">Removidos (bytes)</div>
+</div>
+</div>
+
+<div class="actions">
+<button class="btn btn-primary" onclick="minify()">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg>
+Minificar CSS
+</button>
+<button class="btn btn-secondary" onclick="clearAll()">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3,6 5,6 21,6"/><path d="M19,6v14a2,2,0,0,1-2,2H7a2,2,0,0,1-2-2V6m3,0V4a2,2,0,0,1,2-2h4a2,2,0,0,1,2,2v2"/></svg>
+Limpar
+</button>
+</div>
+
+<div class="cta-section">
+<h2>Precisa de CSS otimizado para produção?</h2>
+<p>Nossa equipe pode ajudar a otimizar seu site com as melhores práticas de performance. Agende uma consultoria gratuita.</p>
+<div class="cta-buttons">
+<a href="/services/" class="btn btn-primary">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+Ver Serviços
+</a>
+<a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener" class="btn btn-secondary">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+Agendar Consultoria
+</a>
+</div>
+</div>
+</main>
+
+<footer>
+<p>&copy; 2026 <a href="/">Zion Tech Group</a> — Ferramentas gratuitas para desenvolvedores</p>
+</footer>
+
+<div class="toast" id="toast">Copiado!</div>
+
+<script>
+const inputEl = document.getElementById('input-css');
+const outputEl = document.getElementById('output-css');
+const inputInfo = document.getElementById('input-info');
+const outputInfo = document.getElementById('output-info');
+const inputLines = document.getElementById('input-lines');
+const outputLines = document.getElementById('output-lines');
+const toast = document.getElementById('toast');
+
+function bytes(str) { return new Blob([str]).size; }
+function lines(str) { return str.split('\n').length; }
+function showToast(msg) {
+toast.textContent = msg;
+toast.classList.add('show');
+setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+function updateStats() {
+const orig = inputEl.value;
+const mini = outputEl.value;
+const origBytes = bytes(orig);
+const miniBytes = bytes(mini);
+const saved = origBytes - miniBytes;
+const pct = origBytes > 0 ? ((saved / origBytes) * 100).toFixed(1) : 0;
+
+inputInfo.innerHTML = `<span class="badge">${origBytes} bytes</span>`;
+outputInfo.innerHTML = `<span class="badge success">${miniBytes} bytes</span>`;
+inputLines.textContent = `${lines(orig)} linhas`;
+outputLines.textContent = `${miniLines(mini)} linhas`;
+
+document.getElementById('stat-original').textContent = origBytes;
+document.getElementById('stat-minified').textContent = miniBytes;
+document.getElementById('stat-savings').textContent = pct + '%';
+document.getElementById('stat-removed').textContent = saved;
+}
+function miniLines(str) {
+if (!str) return 0;
+return str.split('\n').filter(l => l.trim()).length || 1;
+}
+
+function expandNestedCSS(css) {
+const lines = css.split('\n');
+const result = [];
+const stack = [];
+let currentBlock = null;
+
+for (let line of lines) {
+const trimmed = line.trim();
+if (!trimmed || trimmed === '}') {
+if (trimmed === '}' && stack.length > 0) {
+stack.pop();
+}
+continue;
+}
+
+const indent = line.search(/\S/);
+const openBrace = trimmed.endsWith('{');
+const closeBrace = trimmed === '}';
+
+if (openBrace) {
+const selector = trimmed.slice(0, -1).trim();
+const fullSelector = buildSelector(selector, stack);
+stack.push({ selector: fullSelector, indent });
+} else {
+while (stack.length > 0 && stack[stack.length-1].indent >= indent) {
+stack.pop();
+}
+if (stack.length > 0) {
+const fullSelector = buildSelector(trimmed.split('{')[0].trim(), stack);
+if (trimmed.includes('{')) {
+stack.push({ selector: fullSelector, indent });
+} else {
+result.push(fullSelector + ' {' + trimmed + '}');
+}
+} else {
+result.push(trimmed);
+}
+}
+}
+return result.join('\n');
+}
+
+function buildSelector(selector, stack) {
+if (stack.length === 0) return selector;
+const parent = stack[stack.length-1].selector;
+if (selector.startsWith('&')) {
+return parent + selector.slice(1);
+}
+if (selector.startsWith(':') || selector.startsWith('[')) {
+return parent + selector;
+}
+return parent + ' ' + selector;
+}
+
+function minify() {
+let css = inputEl.value;
+if (!css.trim()) {
+outputEl.value = '';
+updateStats();
+return;
+}
+
+// Expand nested CSS first
+css = expandNestedCSS(css);
+
+// Remove comments
+css = css.replace(/\/\*[\s\S]*?\*\//g, '');
+
+// Remove newlines and extra spaces
+css = css.replace(/\s+/g, ' ');
+
+// Remove spaces around selectors and properties
+css = css.replace(/\s*{\s*/g, '{');
+css = css.replace(/\s*}\s*/g, '}');
+css = css.replace(/\s*;\s*/g, ';');
+css = css.replace(/\s*:\s*/g, ':');
+css = css.replace(/\s*,\s*/g, ',');
+css = css.replace(/\s*>\s*/g, '>');
+css = css.replace(/\s*\+\s*/g, '+');
+css = css.replace(/\s*~\s*/g, '~');
+
+// Remove last semicolons before closing braces
+css = css.replace(/;}/g, '}');
+
+// Remove leading/trailing spaces
+css = css.trim();
+
+outputEl.value = css;
+updateStats();
+
+if (bytes(css) > 0) {
+showToast('CSS minificado com sucesso!');
+}
+}
+
+function copyOutput() {
+if (!outputEl.value) {
+showToast('Nada para copiar');
+return;
+}
+navigator.clipboard.writeText(outputEl.value).then(() => {
+showToast('Copiado para área de transferência!');
+}).catch(() => {
+outputEl.select();
+document.execCommand('copy');
+showToast('Copiado!');
+});
+}
+
+function clearAll() {
+inputEl.value = '';
+outputEl.value = '';
+updateStats();
+inputEl.focus();
+}
+
+function setMode(mode) {
+const btnCole = document.getElementById('btn-cole');
+const btnExemplo = document.getElementById('btn-exemplo');
+btnCole.classList.toggle('active', mode === 'paste');
+btnExemplo.classList.toggle('active', mode === 'sample');
+
+if (mode === 'sample') {
+inputEl.value = `/* Main container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  /* Header section */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #6366f1;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+
+      a {
+        text-decoration: none;
+        color: #e5e7eb;
+
+        &:hover {
+          color: #6366f1;
+        }
+      }
+    }
+  }
+
+  /* Content area */
+  .content {
+    padding: 2rem 0;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+  }
+}`;
+minify();
+}
+}
+
+// Auto-minify on paste/typing
+inputEl.addEventListener('input', () => {
+if (inputEl.value.trim()) minify();
+});
+
+// Initial update
+updateStats();
+</script>
+</body>
+</html>
