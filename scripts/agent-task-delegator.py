@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Zion Agent Swarm — Proactive Task Delegator v3.1
+Zion Agent Swarm - Proactive Task Delegator v3.1
 
 Coordinates @ziontechgroup_agents work: site health, catalog/sitemap sync,
 cron health, GitHub Actions status, and actionable delegations.
 Optimized for speed: targeted checks, minimal API calls, precise delegation.
-""" — Proactive Task Delegator v3.0
+""" - Proactive Task Delegator v3.0
 
 Scans the zion-support.github.io repo for issues and delivers actionable task
 briefs to @ziontechgroup_agents group (chat_id: -1003886112318).
@@ -99,7 +99,7 @@ def generate_brief():
     cron_total, cron_errors, cron_err_list = check_cron_health()
 
     lines = []
-    lines.append(f"🤖 ZION SWARM BRIEF — {ts()}")
+    lines.append(f"🤖 ZION SWARM BRIEF - {ts()}")
     lines.append("")
 
     # Site status
@@ -123,7 +123,7 @@ def generate_brief():
     if cron_errors > 0:
         lines.append(f"⚠️ Cron: {cron_errors}/{cron_total} jobs with errors")
         for j in cron_err_list[:3]:
-            lines.append(f"   — {j.get('name', '?')}: f={j.get('failure_streak', 0)}")
+            lines.append(f"   - {j.get('name', '?')}: f={j.get('failure_streak', 0)}")
     else:
         lines.append(f"✅ Cron: {cron_total}/{cron_total} healthy")
 
