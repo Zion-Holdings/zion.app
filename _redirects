@@ -18,9 +18,9 @@
 /free-ai-tools /free-tools.html 200
 /free-ai-tools/ /free-tools.html 200
 
-# AI lab fallback
-/ai /tools 301
-/ai/ /tools 301
+# AI lab — serve the real /ai/ page (200), not a redirect to /tools
+/ai /ai/index.html 200
+/ai/ /ai/index.html 200
 
 # Proposal fallback
 /proposal /contact 301
