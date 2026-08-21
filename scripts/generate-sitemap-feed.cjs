@@ -148,6 +148,6 @@ const xml = [
   '</urlset>',
 ].join('\n');
 
-const outPath = path.join(repo, 'sitemap.xml');
+const outPath = path.join(repo, 'public', 'sitemap.xml');
 fs.writeFileSync(outPath, xml, 'utf8');
-console.log(`Generated sitemap.xml with ${entries.length} URLs at ${outPath}`);
+console.log(`Generated public/sitemap.xml with ${entries.length} URLs at ${outPath}`);
