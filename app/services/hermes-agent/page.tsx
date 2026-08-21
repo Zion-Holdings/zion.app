@@ -177,13 +177,50 @@ const BOT_MODE_FEATURES = [
   'Custom personalities via SOUL.md',
 ];
 
+const DEPLOYMENT_MODES = [
+  {
+    mode: 'Cloud-Hosted (Zion Managed)',
+    pros: ['Zero ops overhead', '24/7 expert monitoring', 'Automatic updates', 'Telegram/Discord alerts'],
+    cons: ['Shared infrastructure', 'Custom network rules require support ticket'],
+    bestFor: 'Enterprises wanting managed swarms',
+  },
+  {
+    mode: 'Self-Hosted (Your Infrastructure)',
+    pros: ['Full data control', 'Custom network/security', 'No per-seat licensing', 'Complete audit trail'],
+    cons: ['Ops overhead', 'Requires DevOps team', 'Manual updates'],
+    bestFor: 'Finance, healthcare, government with strict compliance',
+  },
+  {
+    mode: 'Hybrid',
+    pros: ['Sensitive execution in-house', 'Cloud orchestration', 'Best of both worlds', 'Gradual migration path'],
+    cons: ['Complex networking', 'Higher initial setup', 'Cross-environment debugging'],
+    bestFor: ['Orgs with mixed compliance requirements'],
+  },
+];
+
+const INTEGRATIONS = [
+  { category: 'CRM & Sales', tools: ['Salesforce', 'HubSpot', 'Pipedrive', 'ActiveCampaign', 'Zoho CRM', 'Close.io'] },
+  { category: 'Messaging & Comms', tools: ['Telegram', 'Discord', 'Slack', 'WhatsApp', 'Signal', 'Microsoft Teams', 'Google Chat', 'Email (SMTP/Gmail/IMAP)'] },
+  { category: 'Cloud Platforms', tools: ['AWS', 'Google Cloud', 'Azure', 'DigitalOcean', 'Linode', 'Vercel', 'Netlify'] },
+  { category: 'DevOps & CI/CD', tools: ['GitHub Actions', 'GitLab CI', 'CircleCI', 'Jenkins', 'Docker', 'Kubernetes', 'Terraform'] },
+  { category: 'Databases', tools: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite', 'Supabase', 'Firebase'] },
+  { category: 'Marketing & Analytics', tools: ['Google Analytics', 'Mixpanel', 'PostHog', 'Mailchimp', 'SendGrid', 'Notion', 'Airtable'] },
+  { category: 'Security & Compliance', tools: ['Snyk', 'Datadog', 'Sentry', 'Vault', 'Okta', 'Auth0', 'Tenable'] },
+  { category: 'Finance', tools: ['Stripe', 'PayPal', 'QuickBooks', 'Xero', 'Brex', 'Ramp'] },
+  { category: 'Project Management', tools: ['Jira', 'Linear', 'Trello', 'Asana', 'Monday.com', 'ClickUp'] },
+  { category: 'Documentation', tools: ['Confluence', 'Notion', 'GitBook', 'ReadMe', 'Obsidian'] },
+];
+
 const DIFF_TABLE = [
-  { feature: 'Deployment', hermes: 'Self-hosted or 5$ VPS', claudeCode: 'Local CLI (subscription)', openClaw: 'Local CLI (free + API)' },
-  { feature: 'Platforms', hermes: '20+ (Telegram, Discord, Slack, etc.)', claudeCode: 'CLI only', openClaw: 'CLI only' },
-  { feature: 'Automation', hermes: 'Cron + gateway delivery', claudeCode: 'Manual', openClaw: 'Manual' },
-  { feature: 'Memory', hermes: 'Persistent, cross-session, cross-platform', claudeCode: 'Per-session', openClaw: 'Per-session' },
-  { feature: 'Skills', hermes: 'Self-improving, community-shared', claudeCode: 'N/A', openClaw: 'Declarative SOUL.md' },
-  { feature: 'Pricing', hermes: '$5 VPS / Docker / Serverless', claudeCode: 'Subscription', openClaw: 'Free + API fees' },
+  { feature: 'Deployment', hermes: 'Self-hosted, $5 VPS, or Docker', claudeCode: 'Local CLI (subscription)', openClaw: 'Local CLI (free + API fees)', openHands: 'Local CLI (subscription)', },
+  { feature: 'Messaging Platforms', hermes: '20+ (Telegram, Discord, Slack, WhatsApp, etc.)', claudeCode: 'CLI only', openClaw: 'CLI only', openHands: 'CLI only', },
+  { feature: 'Automation', hermes: 'Cron + gateway delivery to any platform', claudeCode: 'Manual', openClaw: 'Manual', openHands: 'Manual', },
+  { feature: 'Memory', hermes: 'Persistent, cross-session, cross-platform', claudeCode: 'Per-session', openClaw: 'Per-session', openHands: 'Per-session', },
+  { feature: 'Skills', hermes: 'Self-improving, community-shared (350+ bundled)', claudeCode: 'N/A', openClaw: 'Declarative SOUL.md', openHands: 'Limited', },
+  { feature: 'Multi-Agent Orchestration', hermes: 'Full (orchestrator + leaf bots, Kanban)', claudeCode: 'Limited', openClaw: 'None', openHands: 'Basic (MCP agents)', },
+  { feature: 'MCP Integration', hermes: '6,000+ servers supported', claudeCode: 'None', openClaw: 'None', openHands: 'Full (built-in)', },
+  { feature: 'Bot Mode', hermes: 'Named specialist bots with @mentions', claudeCode: 'N/A', openClaw: 'N/A', openHands: 'N/A', },
+  { feature: 'Pricing', hermes: '$5 VPS / Docker / Serverless', claudeCode: 'Subscription', openClaw: 'Free + API fees', openHands: 'Free tier + API fees', },
 ];
 
 export default function HermesAgentServicePage() {
@@ -390,6 +427,7 @@ export default function HermesAgentServicePage() {
                   <th className="text-center p-4 text-purple-300 font-medium">Hermes Agent</th>
                   <th className="text-center p-4 text-slate-400 font-medium">Claude Code</th>
                   <th className="text-center p-4 text-slate-400 font-medium">OpenClaw</th>
+                  <th className="text-center p-4 text-slate-400 font-medium">OpenHands</th>
                 </tr>
               </thead>
               <tbody>
@@ -399,10 +437,148 @@ export default function HermesAgentServicePage() {
                     <td className="p-4 text-center text-purple-300 font-medium">{row.hermes}</td>
                     <td className="p-4 text-center text-slate-400">{row.claudeCode}</td>
                     <td className="p-4 text-center text-slate-400">{row.openClaw}</td>
+                    <td className="p-4 text-center text-slate-400">{row.openHands}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          </div>
+          <p className="text-center text-slate-500 text-sm mt-6 max-w-2xl mx-auto">
+            Hermes is the only agent platform with full multi-agent orchestration, 20+ platform
+            gateway, persistent cross-session memory, self-improving skills, and Bot Mode for
+            named specialist teams. Run it for $5/month on a VPS or self-host for full control.
+          </p>
+        </div>
+      </section>
+
+      {/* Enterprise Deployment Models */}
+      <section className="section-standard bg-slate-950/50">
+        <div className="container-standard">
+          <h2 className="text-3xl font-bold text-center mb-2">Enterprise Deployment Models</h2>
+          <p className="text-center text-slate-400 mb-12 max-w-2xl mx-auto">
+            Choose the deployment model that matches your compliance, latency, and data-sovereignty requirements.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+            {DEPLOYMENT_MODES.map((m) => (
+              <div key={m.mode} className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-3">{m.mode}</h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <span className="text-green-400 font-medium">Pros:</span>
+                    <ul className="text-slate-500 mt-1 space-y-0.5">
+                      {m.pros.map((p) => (
+                        <li key={p} className="flex items-start gap-1">• {p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <span className="text-red-400 font-medium">Cons:</span>
+                    <ul className="text-slate-500 mt-1 space-y-0.5">
+                      {m.cons.map((c) => (
+                        <li key={c} className="flex items-start gap-1">• {c}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="pt-2 border-t border-slate-800">
+                    <span className="text-slate-400">Best for: {m.bestFor}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/contact/?service=hermes-deployment&source=service-page"
+              className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-500 hover:to-pink-500 transition-all text-sm"
+            >
+              Book a deployment consultation →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Integrations Ecosystem */}
+      <section className="section-standard">
+        <div className="container-standard">
+          <h2 className="text-3xl font-bold text-center mb-2">Integrations Ecosystem</h2>
+          <p className="text-center text-slate-400 mb-12 max-w-2xl mx-auto">
+            Hermes Agent connects to 100+ platforms via native connectors, MCP servers, and custom plugins.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {INTEGRATIONS.map((cat) => (
+              <div key={cat.category} className="bg-slate-900/60 border border-slate-800 rounded-xl p-5">
+                <h3 className="text-white font-semibold mb-2 text-sm">{cat.category}</h3>
+                <div className="flex flex-wrap gap-1">
+                  {cat.tools.map((t) => (
+                    <span key={t} className="text-xs px-2 py-1 bg-slate-800/60 text-slate-400 rounded">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bot Mode Spotlight */}
+      <section className="section-standard bg-slate-950/50">
+        <div className="container-standard">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-2">Bot Mode Spotlight — Our Agent Fleet</h2>
+            <p className="text-center text-slate-400 mb-12">
+              Our 10 named specialist bots collaborate 24/7 via @mentions and shared Kanban boards.
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">🦉</span><strong className="text-white">OWL</strong></div>
+                <p className="text-slate-500 text-sm">Wave integration, dashboard monitoring, site health checks</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">🧠</span><strong className="text-white">Kilo</strong></div>
+                <p className="text-slate-500 text-sm">Fleet orchestration, quality audits, strategic planning</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">📱</span><strong className="text-white">Tablet</strong></div>
+                <p className="text-slate-500 text-sm">Service research, content writing, SEO generation</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">🔧</span><strong className="text-white">Quel</strong></div>
+                <p className="text-slate-500 text-sm">Frontend code, TypeScript, accessibility, component design</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">🚀</span><strong className="text-white">Rocket</strong></div>
+                <p className="text-slate-500 text-sm">CI/CD, build optimization, deployment pipeline</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">🖥️</span><strong className="text-white">Carol</strong></div>
+                <p className="text-slate-500 text-sm">GitHub Actions, infrastructure, workflow design</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">🌊</span><strong className="text-white">Swell</strong></div>
+                <p className="text-slate-500 text-sm">Performance, SEO, A/B testing, image optimization</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">🤖</span><strong className="text-white">Kilo AI</strong></div>
+                <p className="text-slate-500 text-sm">AI benchmarking, client proposals, predictive analytics</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">🛡️</span><strong className="text-white">Kiloclaw</strong></div>
+                <p className="text-slate-500 text-sm">Security, pen testing, compliance, vulnerability scans</p>
+              </div>
+              <div className="border border-slate-800 rounded-xl p-4 bg-slate-900/40">
+                <div className="flex items-center gap-2 mb-2"><span className="text-xl">☁️</span><strong className="text-white">Cloud</strong></div>
+                <p className="text-slate-500 text-sm">Cloud cost optimization, CDN, multi-cloud failover</p>
+              </div>
+            </div>
+            <div className="mt-8 text-center">
+              <Link
+                href="/blog/hermes-agent-multi-agent-swarm-orchestration/"
+                className="inline-block text-purple-300 hover:text-purple-200 underline text-sm font-medium"
+              >
+                Read the swarm orchestration guide →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

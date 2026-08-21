@@ -45,12 +45,16 @@ export const AI_LAB_LINKS = [
   { name: 'AI Labs', href: '/ai/' },
   { name: 'Agent Comparison', href: '/docs/agent-framework-comparison/' },
   { name: 'Skills Guide', href: '/docs/hermes-agent-skills/' },
+  { name: 'Architecture', href: '/docs/hermes-agent-architecture/' },
+  { name: 'Profiles Guide', href: '/docs/hermes-agent-profiles/' },
 ];
 
 export const RESOURCE_LINKS = [
   { name: 'Agent Monitoring', href: '/agents-monitoring/' },
   { name: 'Hermes Agent Platform', href: '/services/hermes-agent/' },
   { name: 'Hermes Skills Guide', href: '/docs/hermes-agent-skills/' },
+  { name: 'Hermes Architecture', href: '/docs/hermes-agent-architecture/' },
+  { name: 'Profiles Guide', href: '/docs/hermes-agent-profiles/' },
   { name: 'MCP Integration', href: '/docs/hermes-agent-mcp-integration/' },
   { name: 'Installation Guide', href: '/docs/hermes-agent-installation/' },
   { name: 'Agent Comparison', href: '/docs/agent-framework-comparison/' },

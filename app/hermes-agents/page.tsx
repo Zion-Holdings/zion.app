@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 import JsonLd from '@/components/JsonLd';
+import HermesAdvertBanner from '@/components/HermesAdvertBanner';
 
 export const metadata = {
   title: 'Hermes Agents — AI Automation Platform | Zion Tech Group',
