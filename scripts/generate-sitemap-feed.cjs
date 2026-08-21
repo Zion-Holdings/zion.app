@@ -22,9 +22,11 @@ const staticRoutes = [
   '/terms/', '/testimonials/', '/tools/', '/tools/agent-prompt-builder/', '/tools/ai-roi-calculator/',
   '/tools/api-health-check/', '/tools/cloud-cost-calculator/', '/tools/cloud-cost-optimizer/',
   '/tools/cron-agent-calculator/', '/tools/json-schema-validator/', '/tools/llm-payload-estimator/',
-  '/tools/mcp-tester/', '/tools/security-headers-analyzer/', '/use-cases/', '/services/',
+  '/tools/mcp-tester/', '/tools/security-headers-analyzer/', '/tools/hermes-agent-fleet-manager/', '/use-cases/', '/services/',
   '/services/hermes-agent/', '/services/hermes-agent-training/', '/services/hermes-ai-agent-platform/',
   '/solutions/hermes-ai-agents/', '/case-studies/hermes-agent-fleet/', '/docs/hermes-agent-skills/',
+ '/docs/hermes-agent-architecture/',
+ '/docs/hermes-agent-profiles/',
   '/docs/agent-framework-comparison/', '/docs/hermes-agent-installation/', '/docs/hermes-agent-mcp-integration/',
   '/hermes-agents/', '/hermes-monitor/',
 ];
