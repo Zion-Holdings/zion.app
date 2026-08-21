@@ -2,9 +2,15 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import ServiceCard from '@/components/SmartServiceCard';
-import { allServices } from '../data/servicesData';
-import type { Service } from '../data/servicesData';
+import dynamic from 'next/dynamic';
+import { useServicesSearch } from '@/hooks/useServicesSearch';
+import type { SearchIndexEntry } from '@/hooks/useServicesSearch';
+
+// Lazy-load the service card — only needed when results are shown
+const ServiceCard = dynamic(() => import('@/components/SmartServiceCard'), {
+  ssr: false,
+  loading: () => <p className="text-slate-400">Loading…</p>,
+});
 
 
 const CATEGORY_MAP: Record<string, string> = {
@@ -22,7 +28,7 @@ const CATEGORY_MAP: Record<string, string> = {
   'automation': 'automation',
 };
 
-function matchServices(painPoints: string[], budget: number): Service[] {
+function matchServices(painPoints: string[], budget: number, catalog: SearchIndexEntry[]): SearchIndexEntry[] {
   const keywords = new Set<string>();
   for (const p of painPoints) {
     keywords.add(p.toLowerCase());
@@ -30,7 +36,7 @@ function matchServices(painPoints: string[], budget: number): Service[] {
     if (mapped) keywords.add(mapped);
   }
 
-  const scored = allServices
+  const scored = catalog
     .filter((s) => {
       const text = `${s.title} ${s.description} ${(s.features || []).join(' ')}`.toLowerCase();
       const hay = `${text} ${s.category}`;
@@ -59,15 +65,16 @@ export default function PricingCalculatorPage() {
   const [revenue, setRevenue] = useState(5000000);
   const [painPoints, setPainPoints] = useState<string[]>([]);
   const [budgetText, setBudgetText] = useState('');
-  const [results, setResults] = useState<Service[] | null>(null);
+  const [results, setResults] = useState<SearchIndexEntry[] | null>(null);
 
   const budgetNumber = budgetText ? parseInt(budgetText.replace(/[^0-9]/g, ''), 10) : 0;
+  const { services: catalog = [] } = useServicesSearch();
 
   const toggle = (item: string) => {
     setPainPoints((prev) => (prev.includes(item) ? prev.filter((x) => x !== item) : [...prev, item]));
   };
 
-  const calculate = () => setResults(matchServices(painPoints, budgetNumber));
+  const calculate = () => setResults(matchServices(painPoints, budgetNumber, catalog));
 
   return (
     <main className="min-h-screen bg-slate-950 py-20">

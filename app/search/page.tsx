@@ -3,7 +3,8 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { allServices, type Service } from '@/data/servicesData';
+import { useServicesSearch } from '@/hooks/useServicesSearch';
+import type { SearchIndexEntry } from '@/hooks/useServicesSearch';
 
 const CATEGORIES = [
   { key: 'ai', label: 'AI Services', emoji: '🧠', color: 'from-purple-500 to-indigo-500', count: 2148 },
@@ -36,7 +37,8 @@ export default function SearchPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
 
-  const services: Service[] = allServices as Service[];
+  const { services: allServices = [], loading, error } = useServicesSearch();
+  const services: SearchIndexEntry[] = allServices;
 
   const filteredServices = useMemo(() => {
     let list = services;

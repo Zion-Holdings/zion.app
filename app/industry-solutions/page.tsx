@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { INDUSTRY_SERVICES } from '@/components/SmartRecommendationEngine';
 import SmartRecommendationEngine from '@/components/SmartRecommendationEngine';
-import { allServices } from '@/data/servicesData';
+import { useServicesSearch } from '@/hooks/useServicesSearch';
 
 
 const INDUSTRY_CONFIG = [
@@ -81,7 +81,8 @@ const INDUSTRY_CONFIG = [
 ];
 
 export default function IndustrySolutionsPage() {
-  const totalServices = allServices.length;
+  const { totalCount } = useServicesSearch();
+  const totalServices = totalCount;
   const industryCount = INDUSTRY_CONFIG.length;
 
   return (

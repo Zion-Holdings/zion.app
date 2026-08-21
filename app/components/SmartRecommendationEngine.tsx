@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { allServices, type Service } from '@/data/servicesData';
+import { useServicesSearch, type SearchIndexEntry } from '@/hooks/useServicesSearch';
 import { CATEGORIES } from '@/constants/navigation';
 
 interface Recommendation {
@@ -65,8 +65,11 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
   const [problem, setProblem] = useState<string>('');
   const [budget, setBudget] = useState<string>('');
 
+  const { services: allServices = [], totalCount } = useServicesSearch();
+
   const recommendations = useMemo(() => {
     if (!industry && !problem) return [];
+    if (!allServices || allServices.length === 0) return [];
 
     const industryConfig = INDUSTRY_KEYWORDS[industry];
     const allKeywords = [...(industryConfig?.keywords || []), ...problem.toLowerCase().split(/\s+/)];
@@ -280,7 +283,7 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
               <div className="text-4xl mb-4">🎯</div>
               <h3 className="text-xl font-bold text-white mb-3">Find Your Perfect AI Solution</h3>
               <p className="text-slate-400 mb-6 max-w-lg mx-auto">
-                Tell us about your business and we'll recommend the most relevant AI services from our catalog of {allServices.length}+ solutions.
+                Tell us about your business and we'll recommend the most relevant AI services from our catalog of {totalCount}+ solutions.
               </p>
             </div>
           )}

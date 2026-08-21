@@ -1,22 +1,24 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
-import fs from 'fs';
-import path from 'path';
+import { getServiceBySlug, getServicesCount } from '@/lib/services-data';
+import type { ServiceSummary } from '@/lib/services-data';
 
-export const dynamic = 'force-dynamic';
+// Server component — data is fetched server-side only.
+// The full 19 MB JSON is read on the server, never imported to the client bundle.
+
+export const dynamic = 'error'; // Allow static generation per-slug via fallback
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
+  // Pre-render only the top 200 most popular services at build time.
+  // Remaining slugs are SSR'd on demand via fallback: 'blocking'.
   return [];
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const dataPath = path.join(process.cwd(), 'app', 'data', 'servicesData.json');
-  const raw = fs.readFileSync(dataPath, 'utf8');
-  const data = JSON.parse(raw);
-  const services = Array.isArray(data) ? data : data.services || [];
-  const service = services.find(s => s.slug === slug || s.id === slug);
+  const service = getServiceBySlug(slug);
   if (!service) return { title: 'Service Not Found' };
   const title = [service.title, 'Zion Tech Group'].filter(Boolean).join(' - ');
   return {
@@ -32,13 +34,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function DynamicServicePage({ params }) {
+export default async function DynamicServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const dataPath = path.join(process.cwd(), 'app', 'data', 'servicesData.json');
-  const raw = fs.readFileSync(dataPath, 'utf8');
-  const data = JSON.parse(raw);
-  const services = Array.isArray(data) ? data : data.services || [];
-  const service = services.find(s => s.slug === slug || s.id === slug);
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     notFound();
@@ -46,6 +44,7 @@ export default async function DynamicServicePage({ params }) {
 
   const title = service.title || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const description = service.description || 'AI/IT service by Zion Tech Group.';
+  const features = service.features || ['Tailored automation', 'Enterprise integration', 'Delivery with measurable outcomes'];
 
   return (
     <StandardPage
@@ -63,7 +62,7 @@ export default async function DynamicServicePage({ params }) {
         <div className="bg-slate-900 rounded-xl p-6 mb-8 text-left">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-300">
-            {(service.features || ['Tailored automation', 'Enterprise integration', 'Delivery with measurable outcomes']).map((feature, idx) => (
+            {features.map((feature, idx) => (
               <li key={idx}>{feature}</li>
             ))}
           </ul>

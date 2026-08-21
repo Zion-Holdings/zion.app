@@ -1,15 +1,29 @@
-// Service Configurator Wizard — multi-step proposal builder
-// Fully client-side: generates proposal HTML in-browser, no server needed
-'use client';
+// app/configurator/page.tsx - Service Configurator Wizard
+// Server component: fetches data server-side, lazy-loads the client wizard.
+import { Suspense } from 'react';
+import { getServicesSearchIndex, getServicesCount } from '@/lib/services-data';
+import type { ServiceSummary } from '@/lib/services-data';
+import dynamic from 'next/dynamic';
 
-import { useState, useMemo } from 'react';
-import { allServices } from '../data/servicesData';
-import StepsIndicator from '../components/StepsIndicator';
-import type { Service } from '../data/servicesData';
+const ServiceConfiguratorWidget = dynamic(
+  () => import('@/components/ServiceConfiguratorWidget'),
+  { ssr: false, loading: () => <p className="text-slate-400">Loading configurator…</p> }
+);
 
-type Step = 'budget' | 'needs' | 'services' | 'timeline' | 'review';
-
-const COMPANY = {
-  name: 'Zion Tech Group',
-  email: 'kleber@ziontechgroup.com',
+export const metadata = {
+  title: 'Service Configurator | Zion Tech Group',
+  description: 'Answer a few questions and get a tailored AI/IT service proposal.',
 };
+
+export default function ConfiguratorPage() {
+  // Server-side: read a lean projection of the services data.
+  // The 516 KB trimmed JSON is parsed here, only fields needed by the wizard are passed down.
+  const services = getServicesSearchIndex();
+  const total = getServicesCount();
+
+  return (
+    <Suspense fallback={<p className="text-slate-400">Loading configurator…</p>}>
+      <ServiceConfiguratorWidget services={services} totalServices={total} />
+    </Suspense>
+  );
+}
