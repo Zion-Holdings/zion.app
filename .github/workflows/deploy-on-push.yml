@@ -40,7 +40,7 @@ jobs:
         cache: npm
         cache-dependency-path: package-lock.json
     - name: Install dependencies
-      run: npm ci --prefer-offline --no-audit --fund=false
+      run: npm ci --legacy-peer-deps --prefer-offline --no-audit --fund=false
     - name: Static site build
       run: npm run build
     - name: Upload Pages artifact
@@ -109,7 +109,7 @@ jobs:
       with:
         node-version-file: .nvmrc
     - name: Install dependencies
-      run: npm ci --prefer-offline --no-audit --fund=false
+      run: npm ci --legacy-peer-deps --prefer-offline --no-audit --fund=false
     - name: Wait for Pages propagation
       run: "echo \"Waiting 30s for GitHub Pages to propagate...\"\nsleep 30\n# Quick\\\n  \\ sanity check\nset +e\nstatus=$(curl --silent --show-error --max-time 10\\\n  \\ -o /dev/null -w \"%{http_code}\" \"${BASE_URL}/\" || echo \"000\")\nset\\\n  \\ -e\nif [ \"$status\" = \"200\" ]; then\n  echo \"Pages site is live (HTTP\\\n  \\ $status)\"\nelse\n  echo \"Pages returned HTTP $status — smoke tests\\\n  \\ may report failures\"\nfi\n"
     - name: Post-deploy smoke test
