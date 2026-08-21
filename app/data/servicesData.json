@@ -573008,5 +573008,305 @@
     "icon": "\ud83d\uddfa\ufe0f",
     "href": "/services/route-optimization-ai-28a8e871",
     "popular": true
+  },
+  {
+    "id": "energy-ai-energy-grid-optimizer-9a484080",
+    "name": "AI Energy Grid Optimizer",
+    "title": "AI Energy Grid Optimizer",
+    "description": "Real-time AI optimization of smart grid distribution.",
+    "category": "ai",
+    "industry": "energy",
+    "features": [
+      "Demand prediction",
+      "Load balancing"
+    ],
+    "benefits": [
+      "Reduce waste 30%",
+      "Prevent blackouts"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/energy-ai-energy-grid-optimizer-9a484080",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/energy-ai-energy-grid-optimizer-9a484080",
+    "popular": true
+  },
+  {
+    "id": "energy-carbon-footprint-tracker-1514e55b",
+    "name": "Carbon Footprint Tracker",
+    "title": "Carbon Footprint Tracker",
+    "description": "Automated carbon emissions tracking for ESG compliance.",
+    "category": "sustainability",
+    "industry": "energy",
+    "features": [
+      "Automated tracking",
+      "ESG reports"
+    ],
+    "benefits": [
+      "Simplify reporting",
+      "Ensure compliance"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/energy-carbon-footprint-tracker-1514e55b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udf31",
+    "href": "/services/energy-carbon-footprint-tracker-1514e55b",
+    "popular": true
+  },
+  {
+    "id": "education-ai-tutoring-platform-489da33c",
+    "name": "AI Tutoring Platform",
+    "title": "AI Tutoring Platform",
+    "description": "Personalized AI tutoring that adapts to learning style.",
+    "category": "ai",
+    "industry": "education",
+    "features": [
+      "Adaptive learning",
+      "Real-time feedback"
+    ],
+    "benefits": [
+      "Improve outcomes 40%",
+      "Scale 1:1 tutoring"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "299",
+      "enterprise": "999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/education-ai-tutoring-platform-489da33c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcda",
+    "href": "/services/education-ai-tutoring-platform-489da33c",
+    "popular": true
+  },
+  {
+    "id": "agriculture-precision-agriculture-ai-982ee22c",
+    "name": "Precision Agriculture AI",
+    "title": "Precision Agriculture AI",
+    "description": "Satellite imagery analysis for crop health and yield.",
+    "category": "ai",
+    "industry": "agriculture",
+    "features": [
+      "Crop monitoring",
+      "Yield prediction"
+    ],
+    "benefits": [
+      "Increase yield 20%",
+      "Reduce water 30%"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/agriculture-precision-agriculture-ai-982ee22c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udf3e",
+    "href": "/services/agriculture-precision-agriculture-ai-982ee22c",
+    "popular": true
+  },
+  {
+    "id": "hospitality-hotel-revenue-optimizer-66ee3ca2",
+    "name": "Hotel Revenue Optimizer",
+    "title": "Hotel Revenue Optimizer",
+    "description": "AI-powered dynamic pricing for hotels.",
+    "category": "ai",
+    "industry": "hospitality",
+    "features": [
+      "Dynamic pricing",
+      "Demand forecasting"
+    ],
+    "benefits": [
+      "Increase RevPAR 15%",
+      "Maximize occupancy"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "1999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/hospitality-hotel-revenue-optimizer-66ee3ca2",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe8",
+    "href": "/services/hospitality-hotel-revenue-optimizer-66ee3ca2",
+    "popular": true
+  },
+  {
+    "id": "technology-zero-trust-security-fabric-0034a360",
+    "name": "Zero Trust Security Fabric",
+    "title": "Zero Trust Security Fabric",
+    "description": "Zero-trust architecture with AI threat detection.",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Micro-segmentation",
+      "AI detection"
+    ],
+    "benefits": [
+      "Reduce breach risk 90%",
+      "Compliance ready"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/technology-zero-trust-security-fabric-0034a360",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd12",
+    "href": "/services/technology-zero-trust-security-fabric-0034a360",
+    "popular": true
+  },
+  {
+    "id": "technology-cloud-security-posture-manager-11ba794c",
+    "name": "Cloud Security Posture Manager",
+    "title": "Cloud Security Posture Manager",
+    "description": "AI cloud security across AWS, Azure, GCP.",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Multi-cloud scanning",
+      "Compliance automation"
+    ],
+    "benefits": [
+      "Prevent breaches",
+      "Reduce alert fatigue"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/technology-cloud-security-posture-manager-11ba794c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2601\ufe0f",
+    "href": "/services/technology-cloud-security-posture-manager-11ba794c",
+    "popular": true
+  },
+  {
+    "id": "agriculture-livestock-health-monitor-bcb3c6ed",
+    "name": "Livestock Health Monitor",
+    "title": "Livestock Health Monitor",
+    "description": "IoT + AI for livestock health monitoring.",
+    "category": "iot",
+    "industry": "agriculture",
+    "features": [
+      "Health alerts",
+      "Behavior analysis"
+    ],
+    "benefits": [
+      "Reduce mortality 25%",
+      "Early disease detection"
+    ],
+    "pricing": {
+      "basic": "349",
+      "pro": "999",
+      "enterprise": "3499"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/agriculture-livestock-health-monitor-bcb3c6ed",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udc04",
+    "href": "/services/agriculture-livestock-health-monitor-bcb3c6ed",
+    "popular": true
+  },
+  {
+    "id": "telecom-network-traffic-anomaly-detection-8e33f75c",
+    "name": "Network Traffic Anomaly Detection",
+    "title": "Network Traffic Anomaly Detection",
+    "description": "Real-time AI anomaly detection for telecom.",
+    "category": "security",
+    "industry": "telecom",
+    "features": [
+      "Traffic analysis",
+      "ML detection"
+    ],
+    "benefits": [
+      "Detect threats in ms",
+      "Reduce false positives"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/telecom-network-traffic-anomaly-detection-8e33f75c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/telecom-network-traffic-anomaly-detection-8e33f75c",
+    "popular": true
+  },
+  {
+    "id": "gaming-game-ai-behavior-engine-09979355",
+    "name": "Game AI Behavior Engine",
+    "title": "Game AI Behavior Engine",
+    "description": "Intelligent NPCs with realistic AI behaviors.",
+    "category": "ai",
+    "industry": "gaming",
+    "features": [
+      "Dynamic NPCs",
+      "Adaptive difficulty"
+    ],
+    "benefits": [
+      "Reduce dev time 70%",
+      "Increase engagement"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T12:49:02.363628Z",
+    "contactInfo": {
+      "website": "/services/gaming-game-ai-behavior-engine-09979355",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/gaming-game-ai-behavior-engine-09979355",
+    "popular": true
   }
 ]
