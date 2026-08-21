@@ -19,8 +19,8 @@
 /free-ai-tools/ /free-tools.html 200
 
 # AI lab fallback
-/ai /tools 301
-/ai/ /tools 301
+/ai /ai/index.html 200
+/ai/ /ai/index.html 200
 
 # Proposal fallback
 /proposal /contact 301
@@ -32,6 +32,16 @@
 
 # Blog post fallback
 /blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization /blog/ai-automation-best-practices-2026/ 301
+
+# Hermes Agent redirects
+/hermes-agent /services/hermes-agent/ 301
+/hermes-agent/ /services/hermes-agent/ 301
+/hermes-docs /docs/hermes-agent-skills/ 301
+/hermes-docs/ /docs/hermes-agent-skills/ 301
+/hermes-blog /blog/hermes-agent-self-improving-ai-platform/ 301
+/hermes-blog/ /blog/hermes-agent-self-improving-ai-platform/ 301
+/agent-comparison /docs/agent-framework-comparison/ 301
+/agent-comparison/ /docs/agent-framework-comparison/ 301
 /blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/ /blog/ai-automation-best-practices-2026/ 301
 
 # Index.html fallback
@@ -60,9 +70,7 @@
 /free-audit /free-audit/ 301
 /free-audit/ /free-audit/index.html 200
 /proposal /proposal/ 301
-/proposal/ /proposal/ 301
-/ai /ai/ 301
-/ai/ /ai/ 301
+/proposal/ /proposal/index.html 200
 /industries/insurance /industries/insurance/ 301
 /industries/insurance/ /industries/insurance/ 301
 /industries/healthcare /industries/healthcare/ 301
@@ -1092,3 +1100,77 @@
 /tools/service-recommender/ /tools/service-recommender/ 301
 /tools/ssl-checker /tools/ssl-checker/ 301
 /tools/ssl-checker/ /tools/ssl-checker/ 301
+
+# Broken link fixes — 2026-08-21 integrity alert (42 broken URLs)
+/services/it-consulting-2026-6570/ /services/ 301
+/services/it-consulting-2026-6570 /services/ 301
+/it-consulting-2026-6570/ /services/ 301
+/it-consulting-2026-6570 /services/ 301
+/services/cybersecurity-platform-msp-2026-6558/ /services/ 301
+/services/cybersecurity-platform-msp-2026-6558 /services/ 301
+/cybersecurity-platform-msp-2026-6558/ /services/ 301
+/cybersecurity-platform-msp-2026-6558 /services/ 301
+/services/managed-it-services-small-business-2026-6559/ /services/ 301
+/services/managed-it-services-small-business-2026-6559 /services/ 301
+/managed-it-services-small-business-2026-6559/ /services/ 301
+/managed-it-services-small-business-2026-6559 /services/ 301
+/services/cloud-migration-services-2026-6572/ /services/ 301
+/services/cloud-migration-services-2026-6572 /services/ 301
+/cloud-migration-services-2026-6572/ /services/ 301
+/cloud-migration-services-2026-6572 /services/ 301
+/services/ai-observability-2026-6565/ /services/ 301
+/services/ai-observability-2026-6565 /services/ 301
+/ai-observability-2026-6565/ /services/ 301
+/ai-observability-2026-6565 /services/ 301
+/services/cloud-cost-ai-optimizer-2026-6534/ /services/ 301
+/services/cloud-cost-ai-optimizer-2026-6534 /services/ 301
+/cloud-cost-ai-optimizer-2026-6534/ /services/ 301
+/cloud-cost-ai-optimizer-2026-6534 /services/ 301
+/blog/ai-for-cybersecurity-operations-and-threat-hunting/ /blog/ 301
+/blog/ai-for-cybersecurity-operations-and-threat-hunting /blog/ 301
+/blog/ai-agent-frameworks-for-business-automation/ /blog/ 301
+/blog/ai-agent-frameworks-for-business-automation /blog/ 301
+/blog/ai-email-intelligence-evaluation-framework/ /blog/ 301
+/blog/ai-email-intelligence-evaluation-framework /blog/ 301
+/blog/ai-observability-security-and-governance/ /blog/ 301
+/blog/ai-observability-security-and-governance /blog/ 301
+/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/ /blog/ 301
+/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning /blog/ 301
+/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026/ /blog/ 301
+/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026 /blog/ 301
+/blog/cybersecurity-platform-msp-2026-9042/ /blog/ 301
+/blog/cybersecurity-platform-msp-2026-9042 /blog/ 301
+/blog/ai-bdr-sdr-roi-and-cost-model/ /blog/ 301
+/blog/ai-bdr-sdr-roi-and-cost-model /blog/ 301
+/blog/cloud-cost-ai-optimizer-2026-7914/ /blog/ 301
+/blog/cloud-cost-ai-optimizer-2026-7914 /blog/ 301
+/blog/api-orchestration-layer-2026-6658/ /blog/ 301
+/blog/api-orchestration-layer-2026-6658 /blog/ 301
+/blog/ai-for-service-desk-and-support-automation/ /blog/ 301
+/blog/ai-for-service-desk-and-support-automation /blog/ 301
+/blog/ai-for-security-operations-and-compliance/ /blog/ 301
+/blog/ai-for-security-operations-and-compliance /blog/ 301
+/blog/ai-for-devops-and-incident-response/ /blog/ 301
+/blog/ai-for-devops-and-incident-response /blog/ 301
+/blog/api-management-gateway-implementation-playbook/ /blog/ 301
+/blog/api-management-gateway-implementation-playbook /blog/ 301
+/blog/managed-it-services-small-business-2026-9043/ /blog/ 301
+/blog/managed-it-services-small-business-2026-9043 /blog/ 301
+/blog/ai-for-managed-it-and-enterprise-support/ /blog/ 301
+/blog/ai-for-managed-it-and-enterprise-support /blog/ 301
+/blog/ai-for-project-management-and-delivery/ /blog/ 301
+/blog/ai-for-project-management-and-delivery /blog/ 301
+/blog/ai-for-revenue-operations-and-business-intelligence/ /blog/ 301
+/blog/ai-for-revenue-operations-and-business-intelligence /blog/ 301
+/blog/ai-for-data-engineering-and-pipeline-automation/ /blog/ 301
+/blog/ai-for-data-engineering-and-pipeline-automation /blog/ 301
+/blog/ai-for-it-operations-and-observability/ /blog/ 301
+/blog/ai-for-it-operations-and-observability /blog/ 301
+/blog/cybersecurity-for-msps-automation-roadmap/ /blog/ 301
+/blog/cybersecurity-for-msps-automation-roadmap /blog/ 301
+/blog/incident-response-retainer-operations-handbook/ /blog/ 301
+/blog/incident-response-retainer-operations-handbook /blog/ 301
+/blog/ai-for-network-operations-and-telecom-automation/ /blog/ 301
+/blog/ai-for-network-operations-and-telecom-automation /blog/ 301
+/blog/managed-it-services-starter-template/ /blog/ 301
+/blog/managed-it-services-starter-template /blog/ 301
