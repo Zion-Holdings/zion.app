@@ -576332,5 +576332,6023 @@
     "icon": "\ud83e\udd16",
     "href": "/services/hermes-automation-hermes-real-estate-automation-agent-2f8fed",
     "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-bot-suite-platform-91a7d4",
+    "name": "Hermes Telegram Bot Suite Platform",
+    "title": "Hermes Telegram Bot Suite Platform",
+    "description": "Enterprise Bot Suite for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-bot-suite-platform-91a7d4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-bot-suite-platform-91a7d4",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-group-admin-platform-40e300",
+    "name": "Hermes Telegram Group Admin Platform",
+    "title": "Hermes Telegram Group Admin Platform",
+    "description": "Enterprise Group Admin for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-group-admin-platform-40e300",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-group-admin-platform-40e300",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-payment-platform-68d3e1",
+    "name": "Hermes Telegram Payment Platform",
+    "title": "Hermes Telegram Payment Platform",
+    "description": "Enterprise Payment for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-payment-platform-68d3e1",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-payment-platform-68d3e1",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-support-platform-342023",
+    "name": "Hermes Telegram Support Platform",
+    "title": "Hermes Telegram Support Platform",
+    "description": "Enterprise Support for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-support-platform-342023",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-support-platform-342023",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-broadcast-platform-f92870",
+    "name": "Hermes Telegram Broadcast Platform",
+    "title": "Hermes Telegram Broadcast Platform",
+    "description": "Enterprise Broadcast for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-broadcast-platform-f92870",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-broadcast-platform-f92870",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-survey-platform-333bad",
+    "name": "Hermes Telegram Survey Platform",
+    "title": "Hermes Telegram Survey Platform",
+    "description": "Enterprise Survey for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-survey-platform-333bad",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-survey-platform-333bad",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-booking-platform-ff08ec",
+    "name": "Hermes Telegram Booking Platform",
+    "title": "Hermes Telegram Booking Platform",
+    "description": "Enterprise Booking for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-booking-platform-ff08ec",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-booking-platform-ff08ec",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-notification-platform-ecbc6f",
+    "name": "Hermes Telegram Notification Platform",
+    "title": "Hermes Telegram Notification Platform",
+    "description": "Enterprise Notification for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-notification-platform-ecbc6f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-notification-platform-ecbc6f",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-marketing-platform-40324d",
+    "name": "Hermes Telegram Marketing Platform",
+    "title": "Hermes Telegram Marketing Platform",
+    "description": "Enterprise Marketing for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-marketing-platform-40324d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-marketing-platform-40324d",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-moderation-platform-97d962",
+    "name": "Hermes Telegram Moderation Platform",
+    "title": "Hermes Telegram Moderation Platform",
+    "description": "Enterprise Moderation for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-moderation-platform-97d962",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-moderation-platform-97d962",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-crm-bridge-platform-a33646",
+    "name": "Hermes Telegram CRM Bridge Platform",
+    "title": "Hermes Telegram CRM Bridge Platform",
+    "description": "Enterprise CRM Bridge for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-crm-bridge-platform-a33646",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-crm-bridge-platform-a33646",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-e-commerce-platform-d6d7a3",
+    "name": "Hermes Telegram E-commerce Platform",
+    "title": "Hermes Telegram E-commerce Platform",
+    "description": "Enterprise E-commerce for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-e-commerce-platform-d6d7a3",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-e-commerce-platform-d6d7a3",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-analytics-platform-414d77",
+    "name": "Hermes Telegram Analytics Platform",
+    "title": "Hermes Telegram Analytics Platform",
+    "description": "Enterprise Analytics for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-analytics-platform-414d77",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-analytics-platform-414d77",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-knowledge-base-platform-37b207",
+    "name": "Hermes Telegram Knowledge Base Platform",
+    "title": "Hermes Telegram Knowledge Base Platform",
+    "description": "Enterprise Knowledge Base for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-knowledge-base-platform-37b207",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-knowledge-base-platform-37b207",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-telegram-ai-assistant-platform-8d8074",
+    "name": "Hermes Telegram AI Assistant Platform",
+    "title": "Hermes Telegram AI Assistant Platform",
+    "description": "Enterprise AI Assistant for Telegram via Hermes agent swarm",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-telegram-ai-assistant-platform-8d8074",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-hermes-telegram-ai-assistant-platform-8d8074",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-bot-platform-agent-11de71",
+    "name": "Hermes Discord Bot Platform Agent",
+    "title": "Hermes Discord Bot Platform Agent",
+    "description": "Autonomous Discord Bot Platform via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-bot-platform-agent-11de71",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-bot-platform-agent-11de71",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-moderation-agent-e99358",
+    "name": "Hermes Discord Moderation Agent",
+    "title": "Hermes Discord Moderation Agent",
+    "description": "Autonomous Discord Moderation via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-moderation-agent-e99358",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-moderation-agent-e99358",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-ticketing-agent-91a740",
+    "name": "Hermes Discord Ticketing Agent",
+    "title": "Hermes Discord Ticketing Agent",
+    "description": "Autonomous Discord Ticketing via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-ticketing-agent-91a740",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-ticketing-agent-91a740",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-community-agent-9387ce",
+    "name": "Hermes Discord Community Agent",
+    "title": "Hermes Discord Community Agent",
+    "description": "Autonomous Discord Community via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-community-agent-9387ce",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-community-agent-9387ce",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-gaming-agent-2d5057",
+    "name": "Hermes Discord Gaming Agent",
+    "title": "Hermes Discord Gaming Agent",
+    "description": "Autonomous Discord Gaming via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-gaming-agent-2d5057",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-gaming-agent-2d5057",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-education-agent-848eaf",
+    "name": "Hermes Discord Education Agent",
+    "title": "Hermes Discord Education Agent",
+    "description": "Autonomous Discord Education via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-education-agent-848eaf",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-education-agent-848eaf",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-events-agent-3898ff",
+    "name": "Hermes Discord Events Agent",
+    "title": "Hermes Discord Events Agent",
+    "description": "Autonomous Discord Events via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-events-agent-3898ff",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-events-agent-3898ff",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-verification-agent-b9c374",
+    "name": "Hermes Discord Verification Agent",
+    "title": "Hermes Discord Verification Agent",
+    "description": "Autonomous Discord Verification via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-verification-agent-b9c374",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-verification-agent-b9c374",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-logging-agent-4deff2",
+    "name": "Hermes Discord Logging Agent",
+    "title": "Hermes Discord Logging Agent",
+    "description": "Autonomous Discord Logging via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-logging-agent-4deff2",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-logging-agent-4deff2",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-discord-economy-agent-7ebd5d",
+    "name": "Hermes Discord Economy Agent",
+    "title": "Hermes Discord Economy Agent",
+    "description": "Autonomous Discord Economy via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "449",
+      "pro": "1349",
+      "enterprise": "4499"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-discord-economy-agent-7ebd5d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-messaging-hermes-discord-economy-agent-7ebd5d",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-workflow-builder-agent-5b11cf",
+    "name": "Hermes Slack Workflow Builder Agent",
+    "title": "Hermes Slack Workflow Builder Agent",
+    "description": "Enterprise Slack Workflow Builder via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-workflow-builder-agent-5b11cf",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-workflow-builder-agent-5b11cf",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-app-home-agent-4dce92",
+    "name": "Hermes Slack App Home Agent",
+    "title": "Hermes Slack App Home Agent",
+    "description": "Enterprise Slack App Home via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-app-home-agent-4dce92",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-app-home-agent-4dce92",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-scheduled-messages-agent-550ee7",
+    "name": "Hermes Slack Scheduled Messages Agent",
+    "title": "Hermes Slack Scheduled Messages Agent",
+    "description": "Enterprise Slack Scheduled Messages via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-scheduled-messages-agent-550ee7",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-scheduled-messages-agent-550ee7",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-approval-agent-1baa7d",
+    "name": "Hermes Slack Approval Agent",
+    "title": "Hermes Slack Approval Agent",
+    "description": "Enterprise Slack Approval via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-approval-agent-1baa7d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-approval-agent-1baa7d",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-notifications-agent-6d7d53",
+    "name": "Hermes Slack Notifications Agent",
+    "title": "Hermes Slack Notifications Agent",
+    "description": "Enterprise Slack Notifications via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-notifications-agent-6d7d53",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-notifications-agent-6d7d53",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-onboarding-agent-4503e9",
+    "name": "Hermes Slack Onboarding Agent",
+    "title": "Hermes Slack Onboarding Agent",
+    "description": "Enterprise Slack Onboarding via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-onboarding-agent-4503e9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-onboarding-agent-4503e9",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-analytics-agent-d25d17",
+    "name": "Hermes Slack Analytics Agent",
+    "title": "Hermes Slack Analytics Agent",
+    "description": "Enterprise Slack Analytics via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-analytics-agent-d25d17",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-analytics-agent-d25d17",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-knowledge-base-agent-46f81e",
+    "name": "Hermes Slack Knowledge Base Agent",
+    "title": "Hermes Slack Knowledge Base Agent",
+    "description": "Enterprise Slack Knowledge Base via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-knowledge-base-agent-46f81e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-knowledge-base-agent-46f81e",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-support-bot-agent-c971ea",
+    "name": "Hermes Slack Support Bot Agent",
+    "title": "Hermes Slack Support Bot Agent",
+    "description": "Enterprise Slack Support Bot via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-support-bot-agent-c971ea",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-support-bot-agent-c971ea",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-slack-integrations-agent-4ad482",
+    "name": "Hermes Slack Integrations Agent",
+    "title": "Hermes Slack Integrations Agent",
+    "description": "Enterprise Slack Integrations via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-slack-integrations-agent-4ad482",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcac",
+    "href": "/services/hermes-messaging-hermes-slack-integrations-agent-4ad482",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-business-api-agent-6a6738",
+    "name": "Hermes WhatsApp Business API Agent",
+    "title": "Hermes WhatsApp Business API Agent",
+    "description": "WhatsApp Business Business API via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-business-api-agent-6a6738",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-business-api-agent-6a6738",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-order-notifications-agent-53ef53",
+    "name": "Hermes WhatsApp Order Notifications Agent",
+    "title": "Hermes WhatsApp Order Notifications Agent",
+    "description": "WhatsApp Business Order Notifications via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-order-notifications-agent-53ef53",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-order-notifications-agent-53ef53",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-support-agent-6136f4",
+    "name": "Hermes WhatsApp Support Agent",
+    "title": "Hermes WhatsApp Support Agent",
+    "description": "WhatsApp Business Support via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-support-agent-6136f4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-support-agent-6136f4",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-broadcast-agent-6f3e1c",
+    "name": "Hermes WhatsApp Broadcast Agent",
+    "title": "Hermes WhatsApp Broadcast Agent",
+    "description": "WhatsApp Business Broadcast via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-broadcast-agent-6f3e1c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-broadcast-agent-6f3e1c",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-catalog-agent-101a63",
+    "name": "Hermes WhatsApp Catalog Agent",
+    "title": "Hermes WhatsApp Catalog Agent",
+    "description": "WhatsApp Business Catalog via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-catalog-agent-101a63",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-catalog-agent-101a63",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-appointment-agent-c6598d",
+    "name": "Hermes WhatsApp Appointment Agent",
+    "title": "Hermes WhatsApp Appointment Agent",
+    "description": "WhatsApp Business Appointment via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-appointment-agent-c6598d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-appointment-agent-c6598d",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-feedback-agent-65d75f",
+    "name": "Hermes WhatsApp Feedback Agent",
+    "title": "Hermes WhatsApp Feedback Agent",
+    "description": "WhatsApp Business Feedback via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-feedback-agent-65d75f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-feedback-agent-65d75f",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-payment-agent-c3eff9",
+    "name": "Hermes WhatsApp Payment Agent",
+    "title": "Hermes WhatsApp Payment Agent",
+    "description": "WhatsApp Business Payment via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-payment-agent-c3eff9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-payment-agent-c3eff9",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-authentication-agent-535b9a",
+    "name": "Hermes WhatsApp Authentication Agent",
+    "title": "Hermes WhatsApp Authentication Agent",
+    "description": "WhatsApp Business Authentication via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-authentication-agent-535b9a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-authentication-agent-535b9a",
+    "popular": false
+  },
+  {
+    "id": "hermes-messaging-hermes-whatsapp-marketing-agent-e46aa7",
+    "name": "Hermes WhatsApp Marketing Agent",
+    "title": "Hermes WhatsApp Marketing Agent",
+    "description": "WhatsApp Business Marketing via Hermes",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2699",
+      "enterprise": "8999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-hermes-whatsapp-marketing-agent-e46aa7",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcf1",
+    "href": "/services/hermes-messaging-hermes-whatsapp-marketing-agent-e46aa7",
+    "popular": true
+  },
+  {
+    "id": "hermes-devops-hermes-aws-monitor-agent-3775ac",
+    "name": "Hermes AWS Monitor Agent",
+    "title": "Hermes AWS Monitor Agent",
+    "description": "Autonomous Monitor for AWS via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-aws-monitor-agent-3775ac",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-aws-monitor-agent-3775ac",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-aws-scale-agent-937e19",
+    "name": "Hermes AWS Scale Agent",
+    "title": "Hermes AWS Scale Agent",
+    "description": "Autonomous Scale for AWS via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-aws-scale-agent-937e19",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-aws-scale-agent-937e19",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-aws-backup-agent-e06645",
+    "name": "Hermes AWS Backup Agent",
+    "title": "Hermes AWS Backup Agent",
+    "description": "Autonomous Backup for AWS via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-aws-backup-agent-e06645",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-aws-backup-agent-e06645",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-aws-secure-agent-7c479d",
+    "name": "Hermes AWS Secure Agent",
+    "title": "Hermes AWS Secure Agent",
+    "description": "Autonomous Secure for AWS via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-aws-secure-agent-7c479d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-aws-secure-agent-7c479d",
+    "popular": true
+  },
+  {
+    "id": "hermes-devops-hermes-azure-monitor-agent-1c9de2",
+    "name": "Hermes Azure Monitor Agent",
+    "title": "Hermes Azure Monitor Agent",
+    "description": "Autonomous Monitor for Azure via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-azure-monitor-agent-1c9de2",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-azure-monitor-agent-1c9de2",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-azure-scale-agent-0ecc83",
+    "name": "Hermes Azure Scale Agent",
+    "title": "Hermes Azure Scale Agent",
+    "description": "Autonomous Scale for Azure via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-azure-scale-agent-0ecc83",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-azure-scale-agent-0ecc83",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-azure-backup-agent-2870c2",
+    "name": "Hermes Azure Backup Agent",
+    "title": "Hermes Azure Backup Agent",
+    "description": "Autonomous Backup for Azure via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-azure-backup-agent-2870c2",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-azure-backup-agent-2870c2",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-azure-secure-agent-6a690c",
+    "name": "Hermes Azure Secure Agent",
+    "title": "Hermes Azure Secure Agent",
+    "description": "Autonomous Secure for Azure via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-azure-secure-agent-6a690c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-azure-secure-agent-6a690c",
+    "popular": true
+  },
+  {
+    "id": "hermes-devops-hermes-gcp-monitor-agent-7caa8c",
+    "name": "Hermes GCP Monitor Agent",
+    "title": "Hermes GCP Monitor Agent",
+    "description": "Autonomous Monitor for GCP via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-gcp-monitor-agent-7caa8c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-gcp-monitor-agent-7caa8c",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-gcp-scale-agent-fc75ae",
+    "name": "Hermes GCP Scale Agent",
+    "title": "Hermes GCP Scale Agent",
+    "description": "Autonomous Scale for GCP via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-gcp-scale-agent-fc75ae",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-gcp-scale-agent-fc75ae",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-gcp-backup-agent-288082",
+    "name": "Hermes GCP Backup Agent",
+    "title": "Hermes GCP Backup Agent",
+    "description": "Autonomous Backup for GCP via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-gcp-backup-agent-288082",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-gcp-backup-agent-288082",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-gcp-secure-agent-4c8893",
+    "name": "Hermes GCP Secure Agent",
+    "title": "Hermes GCP Secure Agent",
+    "description": "Autonomous Secure for GCP via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-gcp-secure-agent-4c8893",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-gcp-secure-agent-4c8893",
+    "popular": true
+  },
+  {
+    "id": "hermes-devops-hermes-digitalocean-deploy-agent-3dd004",
+    "name": "Hermes DigitalOcean Deploy Agent",
+    "title": "Hermes DigitalOcean Deploy Agent",
+    "description": "Autonomous Deploy for DigitalOcean via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-digitalocean-deploy-agent-3dd004",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-digitalocean-deploy-agent-3dd004",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-digitalocean-monitor-agent-8825fc",
+    "name": "Hermes DigitalOcean Monitor Agent",
+    "title": "Hermes DigitalOcean Monitor Agent",
+    "description": "Autonomous Monitor for DigitalOcean via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-digitalocean-monitor-agent-8825fc",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-digitalocean-monitor-agent-8825fc",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-digitalocean-scale-agent-83e568",
+    "name": "Hermes DigitalOcean Scale Agent",
+    "title": "Hermes DigitalOcean Scale Agent",
+    "description": "Autonomous Scale for DigitalOcean via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-digitalocean-scale-agent-83e568",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-digitalocean-scale-agent-83e568",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-digitalocean-backup-agent-793865",
+    "name": "Hermes DigitalOcean Backup Agent",
+    "title": "Hermes DigitalOcean Backup Agent",
+    "description": "Autonomous Backup for DigitalOcean via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-digitalocean-backup-agent-793865",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-digitalocean-backup-agent-793865",
+    "popular": true
+  },
+  {
+    "id": "hermes-devops-hermes-digitalocean-secure-agent-055a1f",
+    "name": "Hermes DigitalOcean Secure Agent",
+    "title": "Hermes DigitalOcean Secure Agent",
+    "description": "Autonomous Secure for DigitalOcean via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-digitalocean-secure-agent-055a1f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-digitalocean-secure-agent-055a1f",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-linode-deploy-agent-663e8b",
+    "name": "Hermes Linode Deploy Agent",
+    "title": "Hermes Linode Deploy Agent",
+    "description": "Autonomous Deploy for Linode via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-linode-deploy-agent-663e8b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-linode-deploy-agent-663e8b",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-linode-monitor-agent-bd0ccc",
+    "name": "Hermes Linode Monitor Agent",
+    "title": "Hermes Linode Monitor Agent",
+    "description": "Autonomous Monitor for Linode via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-linode-monitor-agent-bd0ccc",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-linode-monitor-agent-bd0ccc",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-linode-scale-agent-693842",
+    "name": "Hermes Linode Scale Agent",
+    "title": "Hermes Linode Scale Agent",
+    "description": "Autonomous Scale for Linode via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-linode-scale-agent-693842",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-linode-scale-agent-693842",
+    "popular": true
+  },
+  {
+    "id": "hermes-devops-hermes-linode-backup-agent-2ad63c",
+    "name": "Hermes Linode Backup Agent",
+    "title": "Hermes Linode Backup Agent",
+    "description": "Autonomous Backup for Linode via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-linode-backup-agent-2ad63c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-linode-backup-agent-2ad63c",
+    "popular": false
+  },
+  {
+    "id": "hermes-devops-hermes-linode-secure-agent-bd3a74",
+    "name": "Hermes Linode Secure Agent",
+    "title": "Hermes Linode Secure Agent",
+    "description": "Autonomous Secure for Linode via Hermes",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-hermes-linode-secure-agent-bd3a74",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-hermes-linode-secure-agent-bd3a74",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-postgresql-backup-agent-4fecf9",
+    "name": "Hermes PostgreSQL Backup Agent",
+    "title": "Hermes PostgreSQL Backup Agent",
+    "description": "Autonomous PostgreSQL Backup via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-postgresql-backup-agent-4fecf9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-postgresql-backup-agent-4fecf9",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-postgresql-query-tuning-agent-6584a3",
+    "name": "Hermes PostgreSQL Query Tuning Agent",
+    "title": "Hermes PostgreSQL Query Tuning Agent",
+    "description": "Autonomous PostgreSQL Query Tuning via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-postgresql-query-tuning-agent-6584a3",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-postgresql-query-tuning-agent-6584a3",
+    "popular": true
+  },
+  {
+    "id": "hermes-data-hermes-postgresql-monitor-agent-098d6e",
+    "name": "Hermes PostgreSQL Monitor Agent",
+    "title": "Hermes PostgreSQL Monitor Agent",
+    "description": "Autonomous PostgreSQL Monitor via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-postgresql-monitor-agent-098d6e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-postgresql-monitor-agent-098d6e",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-mysql-backup-agent-051301",
+    "name": "Hermes MySQL Backup Agent",
+    "title": "Hermes MySQL Backup Agent",
+    "description": "Autonomous MySQL Backup via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-mysql-backup-agent-051301",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-mysql-backup-agent-051301",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-mysql-query-tuning-agent-c44c24",
+    "name": "Hermes MySQL Query Tuning Agent",
+    "title": "Hermes MySQL Query Tuning Agent",
+    "description": "Autonomous MySQL Query Tuning via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-mysql-query-tuning-agent-c44c24",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-mysql-query-tuning-agent-c44c24",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-mysql-monitor-agent-876bbb",
+    "name": "Hermes MySQL Monitor Agent",
+    "title": "Hermes MySQL Monitor Agent",
+    "description": "Autonomous MySQL Monitor via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-mysql-monitor-agent-876bbb",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-mysql-monitor-agent-876bbb",
+    "popular": true
+  },
+  {
+    "id": "hermes-data-hermes-mongodb-backup-agent-9bdf55",
+    "name": "Hermes MongoDB Backup Agent",
+    "title": "Hermes MongoDB Backup Agent",
+    "description": "Autonomous MongoDB Backup via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-mongodb-backup-agent-9bdf55",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-mongodb-backup-agent-9bdf55",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-mongodb-query-tuning-agent-e04371",
+    "name": "Hermes MongoDB Query Tuning Agent",
+    "title": "Hermes MongoDB Query Tuning Agent",
+    "description": "Autonomous MongoDB Query Tuning via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-mongodb-query-tuning-agent-e04371",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-mongodb-query-tuning-agent-e04371",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-mongodb-monitor-agent-4dba3b",
+    "name": "Hermes MongoDB Monitor Agent",
+    "title": "Hermes MongoDB Monitor Agent",
+    "description": "Autonomous MongoDB Monitor via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-mongodb-monitor-agent-4dba3b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-mongodb-monitor-agent-4dba3b",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-redis-admin-agent-2d2a7d",
+    "name": "Hermes Redis Admin Agent",
+    "title": "Hermes Redis Admin Agent",
+    "description": "Autonomous Redis Admin via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-redis-admin-agent-2d2a7d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-redis-admin-agent-2d2a7d",
+    "popular": true
+  },
+  {
+    "id": "hermes-data-hermes-redis-migration-agent-62c1ac",
+    "name": "Hermes Redis Migration Agent",
+    "title": "Hermes Redis Migration Agent",
+    "description": "Autonomous Redis Migration via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-redis-migration-agent-62c1ac",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-redis-migration-agent-62c1ac",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-redis-backup-agent-4e6346",
+    "name": "Hermes Redis Backup Agent",
+    "title": "Hermes Redis Backup Agent",
+    "description": "Autonomous Redis Backup via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-redis-backup-agent-4e6346",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-redis-backup-agent-4e6346",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-redis-query-tuning-agent-860d80",
+    "name": "Hermes Redis Query Tuning Agent",
+    "title": "Hermes Redis Query Tuning Agent",
+    "description": "Autonomous Redis Query Tuning via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-redis-query-tuning-agent-860d80",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-redis-query-tuning-agent-860d80",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-redis-monitor-agent-3a73ce",
+    "name": "Hermes Redis Monitor Agent",
+    "title": "Hermes Redis Monitor Agent",
+    "description": "Autonomous Redis Monitor via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-redis-monitor-agent-3a73ce",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-redis-monitor-agent-3a73ce",
+    "popular": true
+  },
+  {
+    "id": "hermes-data-hermes-bigquery-admin-agent-7d47c4",
+    "name": "Hermes BigQuery Admin Agent",
+    "title": "Hermes BigQuery Admin Agent",
+    "description": "Autonomous BigQuery Admin via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-bigquery-admin-agent-7d47c4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-bigquery-admin-agent-7d47c4",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-bigquery-migration-agent-825a24",
+    "name": "Hermes BigQuery Migration Agent",
+    "title": "Hermes BigQuery Migration Agent",
+    "description": "Autonomous BigQuery Migration via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-bigquery-migration-agent-825a24",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-bigquery-migration-agent-825a24",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-bigquery-backup-agent-7395d1",
+    "name": "Hermes BigQuery Backup Agent",
+    "title": "Hermes BigQuery Backup Agent",
+    "description": "Autonomous BigQuery Backup via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-bigquery-backup-agent-7395d1",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-bigquery-backup-agent-7395d1",
+    "popular": false
+  },
+  {
+    "id": "hermes-data-hermes-bigquery-query-tuning-agent-a343bb",
+    "name": "Hermes BigQuery Query Tuning Agent",
+    "title": "Hermes BigQuery Query Tuning Agent",
+    "description": "Autonomous BigQuery Query Tuning via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-bigquery-query-tuning-agent-a343bb",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-bigquery-query-tuning-agent-a343bb",
+    "popular": true
+  },
+  {
+    "id": "hermes-data-hermes-bigquery-monitor-agent-8fa00a",
+    "name": "Hermes BigQuery Monitor Agent",
+    "title": "Hermes BigQuery Monitor Agent",
+    "description": "Autonomous BigQuery Monitor via Hermes",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-hermes-bigquery-monitor-agent-8fa00a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\uddc4\ufe0f",
+    "href": "/services/hermes-data-hermes-bigquery-monitor-agent-8fa00a",
+    "popular": false
+  },
+  {
+    "id": "hermes-security-hermes-threat-detection-agent-7ba1b7",
+    "name": "Hermes Threat Detection Agent",
+    "title": "Hermes Threat Detection Agent",
+    "description": "Autonomous Threat Detection via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-threat-detection-agent-7ba1b7",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-threat-detection-agent-7ba1b7",
+    "popular": false
+  },
+  {
+    "id": "hermes-security-hermes-vulnerability-scanning-agent-88eb5f",
+    "name": "Hermes Vulnerability Scanning Agent",
+    "title": "Hermes Vulnerability Scanning Agent",
+    "description": "Autonomous Vulnerability Scanning via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-vulnerability-scanning-agent-88eb5f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-vulnerability-scanning-agent-88eb5f",
+    "popular": false
+  },
+  {
+    "id": "hermes-security-hermes-incident-response-agent-7a2451",
+    "name": "Hermes Incident Response Agent",
+    "title": "Hermes Incident Response Agent",
+    "description": "Autonomous Incident Response via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-incident-response-agent-7a2451",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-incident-response-agent-7a2451",
+    "popular": true
+  },
+  {
+    "id": "hermes-security-hermes-siem-agent-7ea295",
+    "name": "Hermes SIEM Agent",
+    "title": "Hermes SIEM Agent",
+    "description": "Autonomous SIEM via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-siem-agent-7ea295",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-siem-agent-7ea295",
+    "popular": false
+  },
+  {
+    "id": "hermes-security-hermes-soar-agent-2eb7fa",
+    "name": "Hermes SOAR Agent",
+    "title": "Hermes SOAR Agent",
+    "description": "Autonomous SOAR via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-soar-agent-2eb7fa",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-soar-agent-2eb7fa",
+    "popular": false
+  },
+  {
+    "id": "hermes-security-hermes-edr-agent-b88b15",
+    "name": "Hermes EDR Agent",
+    "title": "Hermes EDR Agent",
+    "description": "Autonomous EDR via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-edr-agent-b88b15",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-edr-agent-b88b15",
+    "popular": false
+  },
+  {
+    "id": "hermes-security-hermes-iam-agent-09ecdc",
+    "name": "Hermes IAM Agent",
+    "title": "Hermes IAM Agent",
+    "description": "Autonomous IAM via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-iam-agent-09ecdc",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-iam-agent-09ecdc",
+    "popular": true
+  },
+  {
+    "id": "hermes-security-hermes-dlp-agent-ce0047",
+    "name": "Hermes DLP Agent",
+    "title": "Hermes DLP Agent",
+    "description": "Autonomous DLP via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-dlp-agent-ce0047",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-dlp-agent-ce0047",
+    "popular": false
+  },
+  {
+    "id": "hermes-security-hermes-email-security-agent-708461",
+    "name": "Hermes Email Security Agent",
+    "title": "Hermes Email Security Agent",
+    "description": "Autonomous Email Security via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-email-security-agent-708461",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-email-security-agent-708461",
+    "popular": false
+  },
+  {
+    "id": "hermes-security-hermes-endpoint-protection-agent-8efadc",
+    "name": "Hermes Endpoint Protection Agent",
+    "title": "Hermes Endpoint Protection Agent",
+    "description": "Autonomous Endpoint Protection via Hermes",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-hermes-endpoint-protection-agent-8efadc",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-hermes-endpoint-protection-agent-8efadc",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-salesforce-sync-agent-3bf0d4",
+    "name": "Hermes Salesforce Sync Agent",
+    "title": "Hermes Salesforce Sync Agent",
+    "description": "Bi-directional Sync between Salesforce and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-salesforce-sync-agent-3bf0d4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-salesforce-sync-agent-3bf0d4",
+    "popular": true
+  },
+  {
+    "id": "hermes-crm-hermes-salesforce-lead-scoring-agent-facef8",
+    "name": "Hermes Salesforce Lead Scoring Agent",
+    "title": "Hermes Salesforce Lead Scoring Agent",
+    "description": "Bi-directional Lead Scoring between Salesforce and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-salesforce-lead-scoring-agent-facef8",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-salesforce-lead-scoring-agent-facef8",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-salesforce-engagement-agent-1c4acb",
+    "name": "Hermes Salesforce Engagement Agent",
+    "title": "Hermes Salesforce Engagement Agent",
+    "description": "Bi-directional Engagement between Salesforce and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-salesforce-engagement-agent-1c4acb",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-salesforce-engagement-agent-1c4acb",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-hubspot-sync-agent-dd227e",
+    "name": "Hermes HubSpot Sync Agent",
+    "title": "Hermes HubSpot Sync Agent",
+    "description": "Bi-directional Sync between HubSpot and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-hubspot-sync-agent-dd227e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-hubspot-sync-agent-dd227e",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-hubspot-lead-scoring-agent-33cb2b",
+    "name": "Hermes HubSpot Lead Scoring Agent",
+    "title": "Hermes HubSpot Lead Scoring Agent",
+    "description": "Bi-directional Lead Scoring between HubSpot and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-hubspot-lead-scoring-agent-33cb2b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-hubspot-lead-scoring-agent-33cb2b",
+    "popular": true
+  },
+  {
+    "id": "hermes-crm-hermes-hubspot-engagement-agent-f90db6",
+    "name": "Hermes HubSpot Engagement Agent",
+    "title": "Hermes HubSpot Engagement Agent",
+    "description": "Bi-directional Engagement between HubSpot and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-hubspot-engagement-agent-f90db6",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-hubspot-engagement-agent-f90db6",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-pipedrive-sync-agent-cf1069",
+    "name": "Hermes Pipedrive Sync Agent",
+    "title": "Hermes Pipedrive Sync Agent",
+    "description": "Bi-directional Sync between Pipedrive and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-pipedrive-sync-agent-cf1069",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-pipedrive-sync-agent-cf1069",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-pipedrive-lead-scoring-agent-7b68ac",
+    "name": "Hermes Pipedrive Lead Scoring Agent",
+    "title": "Hermes Pipedrive Lead Scoring Agent",
+    "description": "Bi-directional Lead Scoring between Pipedrive and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-pipedrive-lead-scoring-agent-7b68ac",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-pipedrive-lead-scoring-agent-7b68ac",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-pipedrive-engagement-agent-3fad3f",
+    "name": "Hermes Pipedrive Engagement Agent",
+    "title": "Hermes Pipedrive Engagement Agent",
+    "description": "Bi-directional Engagement between Pipedrive and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-pipedrive-engagement-agent-3fad3f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-pipedrive-engagement-agent-3fad3f",
+    "popular": true
+  },
+  {
+    "id": "hermes-crm-hermes-zoho-sync-agent-3ccfba",
+    "name": "Hermes Zoho Sync Agent",
+    "title": "Hermes Zoho Sync Agent",
+    "description": "Bi-directional Sync between Zoho and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-zoho-sync-agent-3ccfba",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-zoho-sync-agent-3ccfba",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-zoho-lead-scoring-agent-1286b7",
+    "name": "Hermes Zoho Lead Scoring Agent",
+    "title": "Hermes Zoho Lead Scoring Agent",
+    "description": "Bi-directional Lead Scoring between Zoho and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-zoho-lead-scoring-agent-1286b7",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-zoho-lead-scoring-agent-1286b7",
+    "popular": false
+  },
+  {
+    "id": "hermes-crm-hermes-zoho-engagement-agent-2d8587",
+    "name": "Hermes Zoho Engagement Agent",
+    "title": "Hermes Zoho Engagement Agent",
+    "description": "Bi-directional Engagement between Zoho and Hermes",
+    "category": "crm",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-crm-hermes-zoho-engagement-agent-2d8587",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd1d",
+    "href": "/services/hermes-crm-hermes-zoho-engagement-agent-2d8587",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-email-lead-scoring-agent-425aa5",
+    "name": "Hermes Email Lead Scoring Agent",
+    "title": "Hermes Email Lead Scoring Agent",
+    "description": "AI Lead Scoring via Email through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-email-lead-scoring-agent-425aa5",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-email-lead-scoring-agent-425aa5",
+    "popular": true
+  },
+  {
+    "id": "hermes-sales-hermes-linkedin-lead-scoring-agent-9aa396",
+    "name": "Hermes LinkedIn Lead Scoring Agent",
+    "title": "Hermes LinkedIn Lead Scoring Agent",
+    "description": "AI Lead Scoring via LinkedIn through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-linkedin-lead-scoring-agent-9aa396",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-linkedin-lead-scoring-agent-9aa396",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-phone-lead-scoring-agent-775a4e",
+    "name": "Hermes Phone Lead Scoring Agent",
+    "title": "Hermes Phone Lead Scoring Agent",
+    "description": "AI Lead Scoring via Phone through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-phone-lead-scoring-agent-775a4e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-phone-lead-scoring-agent-775a4e",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-email-engagement-agent-1682de",
+    "name": "Hermes Email Engagement Agent",
+    "title": "Hermes Email Engagement Agent",
+    "description": "AI Engagement via Email through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-email-engagement-agent-1682de",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-email-engagement-agent-1682de",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-linkedin-engagement-agent-ddebc6",
+    "name": "Hermes LinkedIn Engagement Agent",
+    "title": "Hermes LinkedIn Engagement Agent",
+    "description": "AI Engagement via LinkedIn through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-linkedin-engagement-agent-ddebc6",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-linkedin-engagement-agent-ddebc6",
+    "popular": true
+  },
+  {
+    "id": "hermes-sales-hermes-phone-engagement-agent-57a3c9",
+    "name": "Hermes Phone Engagement Agent",
+    "title": "Hermes Phone Engagement Agent",
+    "description": "AI Engagement via Phone through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-phone-engagement-agent-57a3c9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-phone-engagement-agent-57a3c9",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-email-sequence-builder-agent-18b12b",
+    "name": "Hermes Email Sequence Builder Agent",
+    "title": "Hermes Email Sequence Builder Agent",
+    "description": "AI Sequence Builder via Email through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-email-sequence-builder-agent-18b12b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-email-sequence-builder-agent-18b12b",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-linkedin-sequence-builder-agent-7c8612",
+    "name": "Hermes LinkedIn Sequence Builder Agent",
+    "title": "Hermes LinkedIn Sequence Builder Agent",
+    "description": "AI Sequence Builder via LinkedIn through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-linkedin-sequence-builder-agent-7c8612",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-linkedin-sequence-builder-agent-7c8612",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-phone-sequence-builder-agent-1ea091",
+    "name": "Hermes Phone Sequence Builder Agent",
+    "title": "Hermes Phone Sequence Builder Agent",
+    "description": "AI Sequence Builder via Phone through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-phone-sequence-builder-agent-1ea091",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-phone-sequence-builder-agent-1ea091",
+    "popular": true
+  },
+  {
+    "id": "hermes-sales-hermes-email-meeting-scheduler-agent-d328bd",
+    "name": "Hermes Email Meeting Scheduler Agent",
+    "title": "Hermes Email Meeting Scheduler Agent",
+    "description": "AI Meeting Scheduler via Email through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-email-meeting-scheduler-agent-d328bd",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-email-meeting-scheduler-agent-d328bd",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-linkedin-meeting-scheduler-agent-4a9253",
+    "name": "Hermes LinkedIn Meeting Scheduler Agent",
+    "title": "Hermes LinkedIn Meeting Scheduler Agent",
+    "description": "AI Meeting Scheduler via LinkedIn through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-linkedin-meeting-scheduler-agent-4a9253",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-linkedin-meeting-scheduler-agent-4a9253",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-phone-meeting-scheduler-agent-dd6ea4",
+    "name": "Hermes Phone Meeting Scheduler Agent",
+    "title": "Hermes Phone Meeting Scheduler Agent",
+    "description": "AI Meeting Scheduler via Phone through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-phone-meeting-scheduler-agent-dd6ea4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-phone-meeting-scheduler-agent-dd6ea4",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-email-proposal-generator-agent-8aa313",
+    "name": "Hermes Email Proposal Generator Agent",
+    "title": "Hermes Email Proposal Generator Agent",
+    "description": "AI Proposal Generator via Email through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-email-proposal-generator-agent-8aa313",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-email-proposal-generator-agent-8aa313",
+    "popular": true
+  },
+  {
+    "id": "hermes-sales-hermes-linkedin-proposal-generator-agent-ef9a5f",
+    "name": "Hermes LinkedIn Proposal Generator Agent",
+    "title": "Hermes LinkedIn Proposal Generator Agent",
+    "description": "AI Proposal Generator via LinkedIn through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-linkedin-proposal-generator-agent-ef9a5f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-linkedin-proposal-generator-agent-ef9a5f",
+    "popular": false
+  },
+  {
+    "id": "hermes-sales-hermes-phone-proposal-generator-agent-506198",
+    "name": "Hermes Phone Proposal Generator Agent",
+    "title": "Hermes Phone Proposal Generator Agent",
+    "description": "AI Proposal Generator via Phone through Hermes",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-hermes-phone-proposal-generator-agent-506198",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfaf",
+    "href": "/services/hermes-sales-hermes-phone-proposal-generator-agent-506198",
+    "popular": false
+  },
+  {
+    "id": "hermes-healthcare-hermes-clinical-trial-agent-e9677c",
+    "name": "Hermes Clinical Trial Agent",
+    "title": "Hermes Clinical Trial Agent",
+    "description": "Autonomous Clinical Trial via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-clinical-trial-agent-e9677c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-clinical-trial-agent-e9677c",
+    "popular": false
+  },
+  {
+    "id": "hermes-healthcare-hermes-medical-coding-agent-ff9c4d",
+    "name": "Hermes Medical Coding Agent",
+    "title": "Hermes Medical Coding Agent",
+    "description": "Autonomous Medical Coding via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-medical-coding-agent-ff9c4d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-medical-coding-agent-ff9c4d",
+    "popular": true
+  },
+  {
+    "id": "hermes-healthcare-hermes-telehealth-agent-378f9d",
+    "name": "Hermes Telehealth Agent",
+    "title": "Hermes Telehealth Agent",
+    "description": "Autonomous Telehealth via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-telehealth-agent-378f9d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-telehealth-agent-378f9d",
+    "popular": false
+  },
+  {
+    "id": "hermes-healthcare-hermes-patient-intake-agent-adab88",
+    "name": "Hermes Patient Intake Agent",
+    "title": "Hermes Patient Intake Agent",
+    "description": "Autonomous Patient Intake via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-patient-intake-agent-adab88",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-patient-intake-agent-adab88",
+    "popular": false
+  },
+  {
+    "id": "hermes-healthcare-hermes-prior-auth-agent-46523d",
+    "name": "Hermes Prior Auth Agent",
+    "title": "Hermes Prior Auth Agent",
+    "description": "Autonomous Prior Auth via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-prior-auth-agent-46523d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-prior-auth-agent-46523d",
+    "popular": false
+  },
+  {
+    "id": "hermes-healthcare-hermes-claims-agent-567ce7",
+    "name": "Hermes Claims Agent",
+    "title": "Hermes Claims Agent",
+    "description": "Autonomous Claims via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-claims-agent-567ce7",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-claims-agent-567ce7",
+    "popular": true
+  },
+  {
+    "id": "hermes-healthcare-hermes-revenue-cycle-agent-d241ae",
+    "name": "Hermes Revenue Cycle Agent",
+    "title": "Hermes Revenue Cycle Agent",
+    "description": "Autonomous Revenue Cycle via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-revenue-cycle-agent-d241ae",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-revenue-cycle-agent-d241ae",
+    "popular": false
+  },
+  {
+    "id": "hermes-healthcare-hermes-pharmacy-agent-a5f88e",
+    "name": "Hermes Pharmacy Agent",
+    "title": "Hermes Pharmacy Agent",
+    "description": "Autonomous Pharmacy via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-pharmacy-agent-a5f88e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-pharmacy-agent-a5f88e",
+    "popular": false
+  },
+  {
+    "id": "hermes-healthcare-hermes-lab-agent-92cbbb",
+    "name": "Hermes Lab Agent",
+    "title": "Hermes Lab Agent",
+    "description": "Autonomous Lab via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-lab-agent-92cbbb",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-lab-agent-92cbbb",
+    "popular": false
+  },
+  {
+    "id": "hermes-healthcare-hermes-imaging-agent-0511eb",
+    "name": "Hermes Imaging Agent",
+    "title": "Hermes Imaging Agent",
+    "description": "Autonomous Imaging via Hermes",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-hermes-imaging-agent-0511eb",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-hermes-imaging-agent-0511eb",
+    "popular": true
+  },
+  {
+    "id": "hermes-finance-hermes-fraud-detection-agent-fe76a6",
+    "name": "Hermes Fraud Detection Agent",
+    "title": "Hermes Fraud Detection Agent",
+    "description": "Autonomous Fraud Detection via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-fraud-detection-agent-fe76a6",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-fraud-detection-agent-fe76a6",
+    "popular": false
+  },
+  {
+    "id": "hermes-finance-hermes-aml-agent-6ab922",
+    "name": "Hermes AML Agent",
+    "title": "Hermes AML Agent",
+    "description": "Autonomous AML via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-aml-agent-6ab922",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-aml-agent-6ab922",
+    "popular": false
+  },
+  {
+    "id": "hermes-finance-hermes-kyc-agent-94b56e",
+    "name": "Hermes KYC Agent",
+    "title": "Hermes KYC Agent",
+    "description": "Autonomous KYC via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-kyc-agent-94b56e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-kyc-agent-94b56e",
+    "popular": false
+  },
+  {
+    "id": "hermes-finance-hermes-risk-scoring-agent-090e86",
+    "name": "Hermes Risk Scoring Agent",
+    "title": "Hermes Risk Scoring Agent",
+    "description": "Autonomous Risk Scoring via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-risk-scoring-agent-090e86",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-risk-scoring-agent-090e86",
+    "popular": true
+  },
+  {
+    "id": "hermes-finance-hermes-treasury-agent-5032c0",
+    "name": "Hermes Treasury Agent",
+    "title": "Hermes Treasury Agent",
+    "description": "Autonomous Treasury via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-treasury-agent-5032c0",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-treasury-agent-5032c0",
+    "popular": false
+  },
+  {
+    "id": "hermes-finance-hermes-trade-settlement-agent-2cce3a",
+    "name": "Hermes Trade Settlement Agent",
+    "title": "Hermes Trade Settlement Agent",
+    "description": "Autonomous Trade Settlement via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-trade-settlement-agent-2cce3a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-trade-settlement-agent-2cce3a",
+    "popular": false
+  },
+  {
+    "id": "hermes-finance-hermes-reconciliation-agent-e3c60b",
+    "name": "Hermes Reconciliation Agent",
+    "title": "Hermes Reconciliation Agent",
+    "description": "Autonomous Reconciliation via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-reconciliation-agent-e3c60b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-reconciliation-agent-e3c60b",
+    "popular": false
+  },
+  {
+    "id": "hermes-finance-hermes-financial-close-agent-65aed5",
+    "name": "Hermes Financial Close Agent",
+    "title": "Hermes Financial Close Agent",
+    "description": "Autonomous Financial Close via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-financial-close-agent-65aed5",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-financial-close-agent-65aed5",
+    "popular": true
+  },
+  {
+    "id": "hermes-finance-hermes-expense-audit-agent-666138",
+    "name": "Hermes Expense Audit Agent",
+    "title": "Hermes Expense Audit Agent",
+    "description": "Autonomous Expense Audit via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-expense-audit-agent-666138",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-expense-audit-agent-666138",
+    "popular": false
+  },
+  {
+    "id": "hermes-finance-hermes-payment-operations-agent-a2806e",
+    "name": "Hermes Payment Operations Agent",
+    "title": "Hermes Payment Operations Agent",
+    "description": "Autonomous Payment Operations via Hermes",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-hermes-payment-operations-agent-a2806e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-hermes-payment-operations-agent-a2806e",
+    "popular": false
+  },
+  {
+    "id": "hermes-legal-hermes-research-agent-5200ce",
+    "name": "Hermes Research Agent",
+    "title": "Hermes Research Agent",
+    "description": "Autonomous Research via Hermes",
+    "category": "legal",
+    "industry": "legal",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-legal-hermes-research-agent-5200ce",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2696\ufe0f",
+    "href": "/services/hermes-legal-hermes-research-agent-5200ce",
+    "popular": false
+  },
+  {
+    "id": "hermes-legal-hermes-contract-review-agent-d92952",
+    "name": "Hermes Contract Review Agent",
+    "title": "Hermes Contract Review Agent",
+    "description": "Autonomous Contract Review via Hermes",
+    "category": "legal",
+    "industry": "legal",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-legal-hermes-contract-review-agent-d92952",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2696\ufe0f",
+    "href": "/services/hermes-legal-hermes-contract-review-agent-d92952",
+    "popular": true
+  },
+  {
+    "id": "hermes-legal-hermes-ediscovery-agent-200f44",
+    "name": "Hermes eDiscovery Agent",
+    "title": "Hermes eDiscovery Agent",
+    "description": "Autonomous eDiscovery via Hermes",
+    "category": "legal",
+    "industry": "legal",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-legal-hermes-ediscovery-agent-200f44",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2696\ufe0f",
+    "href": "/services/hermes-legal-hermes-ediscovery-agent-200f44",
+    "popular": false
+  },
+  {
+    "id": "hermes-legal-hermes-ip-management-agent-9c3c04",
+    "name": "Hermes IP Management Agent",
+    "title": "Hermes IP Management Agent",
+    "description": "Autonomous IP Management via Hermes",
+    "category": "legal",
+    "industry": "legal",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-legal-hermes-ip-management-agent-9c3c04",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2696\ufe0f",
+    "href": "/services/hermes-legal-hermes-ip-management-agent-9c3c04",
+    "popular": false
+  },
+  {
+    "id": "hermes-legal-hermes-compliance-agent-b7b818",
+    "name": "Hermes Compliance Agent",
+    "title": "Hermes Compliance Agent",
+    "description": "Autonomous Compliance via Hermes",
+    "category": "legal",
+    "industry": "legal",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-legal-hermes-compliance-agent-b7b818",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2696\ufe0f",
+    "href": "/services/hermes-legal-hermes-compliance-agent-b7b818",
+    "popular": false
+  },
+  {
+    "id": "hermes-real-estate-hermes-valuation-agent-de46cd",
+    "name": "Hermes Valuation Agent",
+    "title": "Hermes Valuation Agent",
+    "description": "Autonomous Valuation via Hermes",
+    "category": "real-estate",
+    "industry": "real-estate",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-real-estate-hermes-valuation-agent-de46cd",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe0",
+    "href": "/services/hermes-real-estate-hermes-valuation-agent-de46cd",
+    "popular": true
+  },
+  {
+    "id": "hermes-real-estate-hermes-property-management-agent-95b898",
+    "name": "Hermes Property Management Agent",
+    "title": "Hermes Property Management Agent",
+    "description": "Autonomous Property Management via Hermes",
+    "category": "real-estate",
+    "industry": "real-estate",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-real-estate-hermes-property-management-agent-95b898",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe0",
+    "href": "/services/hermes-real-estate-hermes-property-management-agent-95b898",
+    "popular": false
+  },
+  {
+    "id": "hermes-real-estate-hermes-marketing-agent-6435af",
+    "name": "Hermes Marketing Agent",
+    "title": "Hermes Marketing Agent",
+    "description": "Autonomous Marketing via Hermes",
+    "category": "real-estate",
+    "industry": "real-estate",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-real-estate-hermes-marketing-agent-6435af",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe0",
+    "href": "/services/hermes-real-estate-hermes-marketing-agent-6435af",
+    "popular": false
+  },
+  {
+    "id": "hermes-real-estate-hermes-construction-agent-f40ea6",
+    "name": "Hermes Construction Agent",
+    "title": "Hermes Construction Agent",
+    "description": "Autonomous Construction via Hermes",
+    "category": "real-estate",
+    "industry": "real-estate",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-real-estate-hermes-construction-agent-f40ea6",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe0",
+    "href": "/services/hermes-real-estate-hermes-construction-agent-f40ea6",
+    "popular": false
+  },
+  {
+    "id": "hermes-real-estate-hermes-investment-analysis-agent-39d173",
+    "name": "Hermes Investment Analysis Agent",
+    "title": "Hermes Investment Analysis Agent",
+    "description": "Autonomous Investment Analysis via Hermes",
+    "category": "real-estate",
+    "industry": "real-estate",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2399",
+      "enterprise": "7999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-real-estate-hermes-investment-analysis-agent-39d173",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe0",
+    "href": "/services/hermes-real-estate-hermes-investment-analysis-agent-39d173",
+    "popular": true
+  },
+  {
+    "id": "hermes-education-hermes-content-generator-agent-3f2af8",
+    "name": "Hermes Content Generator Agent",
+    "title": "Hermes Content Generator Agent",
+    "description": "Autonomous Content Generator via Hermes",
+    "category": "education",
+    "industry": "education",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-education-hermes-content-generator-agent-3f2af8",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcda",
+    "href": "/services/hermes-education-hermes-content-generator-agent-3f2af8",
+    "popular": false
+  },
+  {
+    "id": "hermes-education-hermes-student-success-agent-852fa6",
+    "name": "Hermes Student Success Agent",
+    "title": "Hermes Student Success Agent",
+    "description": "Autonomous Student Success via Hermes",
+    "category": "education",
+    "industry": "education",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-education-hermes-student-success-agent-852fa6",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcda",
+    "href": "/services/hermes-education-hermes-student-success-agent-852fa6",
+    "popular": false
+  },
+  {
+    "id": "hermes-education-hermes-language-learning-agent-94556a",
+    "name": "Hermes Language Learning Agent",
+    "title": "Hermes Language Learning Agent",
+    "description": "Autonomous Language Learning via Hermes",
+    "category": "education",
+    "industry": "education",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-education-hermes-language-learning-agent-94556a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcda",
+    "href": "/services/hermes-education-hermes-language-learning-agent-94556a",
+    "popular": false
+  },
+  {
+    "id": "hermes-education-hermes-training-agent-372f1a",
+    "name": "Hermes Training Agent",
+    "title": "Hermes Training Agent",
+    "description": "Autonomous Training via Hermes",
+    "category": "education",
+    "industry": "education",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-education-hermes-training-agent-372f1a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcda",
+    "href": "/services/hermes-education-hermes-training-agent-372f1a",
+    "popular": true
+  },
+  {
+    "id": "hermes-manufacturing-hermes-predictive-maintenance-agent-fc5a31",
+    "name": "Hermes Predictive Maintenance Agent",
+    "title": "Hermes Predictive Maintenance Agent",
+    "description": "Autonomous Predictive Maintenance via Hermes",
+    "category": "manufacturing",
+    "industry": "manufacturing",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-manufacturing-hermes-predictive-maintenance-agent-fc5a31",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfed",
+    "href": "/services/hermes-manufacturing-hermes-predictive-maintenance-agent-fc5a31",
+    "popular": false
+  },
+  {
+    "id": "hermes-manufacturing-hermes-quality-control-agent-19875c",
+    "name": "Hermes Quality Control Agent",
+    "title": "Hermes Quality Control Agent",
+    "description": "Autonomous Quality Control via Hermes",
+    "category": "manufacturing",
+    "industry": "manufacturing",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-manufacturing-hermes-quality-control-agent-19875c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfed",
+    "href": "/services/hermes-manufacturing-hermes-quality-control-agent-19875c",
+    "popular": false
+  },
+  {
+    "id": "hermes-manufacturing-hermes-supply-chain-agent-146278",
+    "name": "Hermes Supply Chain Agent",
+    "title": "Hermes Supply Chain Agent",
+    "description": "Autonomous Supply Chain via Hermes",
+    "category": "manufacturing",
+    "industry": "manufacturing",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-manufacturing-hermes-supply-chain-agent-146278",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfed",
+    "href": "/services/hermes-manufacturing-hermes-supply-chain-agent-146278",
+    "popular": false
+  },
+  {
+    "id": "hermes-manufacturing-hermes-logistics-agent-a1b6b0",
+    "name": "Hermes Logistics Agent",
+    "title": "Hermes Logistics Agent",
+    "description": "Autonomous Logistics via Hermes",
+    "category": "manufacturing",
+    "industry": "manufacturing",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-manufacturing-hermes-logistics-agent-a1b6b0",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfed",
+    "href": "/services/hermes-manufacturing-hermes-logistics-agent-a1b6b0",
+    "popular": true
+  },
+  {
+    "id": "hermes-manufacturing-hermes-production-planning-agent-1cd875",
+    "name": "Hermes Production Planning Agent",
+    "title": "Hermes Production Planning Agent",
+    "description": "Autonomous Production Planning via Hermes",
+    "category": "manufacturing",
+    "industry": "manufacturing",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-manufacturing-hermes-production-planning-agent-1cd875",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfed",
+    "href": "/services/hermes-manufacturing-hermes-production-planning-agent-1cd875",
+    "popular": false
+  },
+  {
+    "id": "hermes-retail-hermes-recommendation-agent-dc18a6",
+    "name": "Hermes Recommendation Agent",
+    "title": "Hermes Recommendation Agent",
+    "description": "Autonomous Recommendation via Hermes",
+    "category": "retail",
+    "industry": "retail",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-retail-hermes-recommendation-agent-dc18a6",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udecd\ufe0f",
+    "href": "/services/hermes-retail-hermes-recommendation-agent-dc18a6",
+    "popular": false
+  },
+  {
+    "id": "hermes-retail-hermes-inventory-agent-6b04ec",
+    "name": "Hermes Inventory Agent",
+    "title": "Hermes Inventory Agent",
+    "description": "Autonomous Inventory via Hermes",
+    "category": "retail",
+    "industry": "retail",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-retail-hermes-inventory-agent-6b04ec",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udecd\ufe0f",
+    "href": "/services/hermes-retail-hermes-inventory-agent-6b04ec",
+    "popular": false
+  },
+  {
+    "id": "hermes-retail-hermes-pricing-agent-1cfb23",
+    "name": "Hermes Pricing Agent",
+    "title": "Hermes Pricing Agent",
+    "description": "Autonomous Pricing via Hermes",
+    "category": "retail",
+    "industry": "retail",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-retail-hermes-pricing-agent-1cfb23",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udecd\ufe0f",
+    "href": "/services/hermes-retail-hermes-pricing-agent-1cfb23",
+    "popular": true
+  },
+  {
+    "id": "hermes-retail-hermes-customer-service-agent-034195",
+    "name": "Hermes Customer Service Agent",
+    "title": "Hermes Customer Service Agent",
+    "description": "Autonomous Customer Service via Hermes",
+    "category": "retail",
+    "industry": "retail",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-retail-hermes-customer-service-agent-034195",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udecd\ufe0f",
+    "href": "/services/hermes-retail-hermes-customer-service-agent-034195",
+    "popular": false
+  },
+  {
+    "id": "hermes-retail-hermes-returns-agent-0485a9",
+    "name": "Hermes Returns Agent",
+    "title": "Hermes Returns Agent",
+    "description": "Autonomous Returns via Hermes",
+    "category": "retail",
+    "industry": "retail",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1799",
+      "enterprise": "5999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-retail-hermes-returns-agent-0485a9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udecd\ufe0f",
+    "href": "/services/hermes-retail-hermes-returns-agent-0485a9",
+    "popular": false
+  },
+  {
+    "id": "hermes-hr-hermes-recruiting-agent-89f5a5",
+    "name": "Hermes Recruiting Agent",
+    "title": "Hermes Recruiting Agent",
+    "description": "Autonomous Recruiting via Hermes",
+    "category": "hr",
+    "industry": "hr",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-hr-hermes-recruiting-agent-89f5a5",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udc65",
+    "href": "/services/hermes-hr-hermes-recruiting-agent-89f5a5",
+    "popular": false
+  },
+  {
+    "id": "hermes-hr-hermes-onboarding-agent-edecde",
+    "name": "Hermes Onboarding Agent",
+    "title": "Hermes Onboarding Agent",
+    "description": "Autonomous Onboarding via Hermes",
+    "category": "hr",
+    "industry": "hr",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-hr-hermes-onboarding-agent-edecde",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udc65",
+    "href": "/services/hermes-hr-hermes-onboarding-agent-edecde",
+    "popular": true
+  },
+  {
+    "id": "hermes-hr-hermes-performance-agent-6871ce",
+    "name": "Hermes Performance Agent",
+    "title": "Hermes Performance Agent",
+    "description": "Autonomous Performance via Hermes",
+    "category": "hr",
+    "industry": "hr",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-hr-hermes-performance-agent-6871ce",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udc65",
+    "href": "/services/hermes-hr-hermes-performance-agent-6871ce",
+    "popular": false
+  },
+  {
+    "id": "hermes-hr-hermes-payroll-agent-1bfc2d",
+    "name": "Hermes Payroll Agent",
+    "title": "Hermes Payroll Agent",
+    "description": "Autonomous Payroll via Hermes",
+    "category": "hr",
+    "industry": "hr",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-hr-hermes-payroll-agent-1bfc2d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udc65",
+    "href": "/services/hermes-hr-hermes-payroll-agent-1bfc2d",
+    "popular": false
+  },
+  {
+    "id": "hermes-hr-hermes-engagement-agent-ecc75c",
+    "name": "Hermes Engagement Agent",
+    "title": "Hermes Engagement Agent",
+    "description": "Autonomous Engagement via Hermes",
+    "category": "hr",
+    "industry": "hr",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-hr-hermes-engagement-agent-ecc75c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udc65",
+    "href": "/services/hermes-hr-hermes-engagement-agent-ecc75c",
+    "popular": false
+  },
+  {
+    "id": "hermes-energy-hermes-trading-agent-3f59f4",
+    "name": "Hermes Trading Agent",
+    "title": "Hermes Trading Agent",
+    "description": "Autonomous Trading via Hermes",
+    "category": "energy",
+    "industry": "energy",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-energy-hermes-trading-agent-3f59f4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/hermes-energy-hermes-trading-agent-3f59f4",
+    "popular": true
+  },
+  {
+    "id": "hermes-energy-hermes-carbon-credit-agent-f8b734",
+    "name": "Hermes Carbon Credit Agent",
+    "title": "Hermes Carbon Credit Agent",
+    "description": "Autonomous Carbon Credit via Hermes",
+    "category": "energy",
+    "industry": "energy",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-energy-hermes-carbon-credit-agent-f8b734",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/hermes-energy-hermes-carbon-credit-agent-f8b734",
+    "popular": false
+  },
+  {
+    "id": "hermes-energy-hermes-grid-optimization-agent-8bb84b",
+    "name": "Hermes Grid Optimization Agent",
+    "title": "Hermes Grid Optimization Agent",
+    "description": "Autonomous Grid Optimization via Hermes",
+    "category": "energy",
+    "industry": "energy",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-energy-hermes-grid-optimization-agent-8bb84b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/hermes-energy-hermes-grid-optimization-agent-8bb84b",
+    "popular": false
+  },
+  {
+    "id": "hermes-energy-hermes-esg-reporting-agent-90d4d5",
+    "name": "Hermes ESG Reporting Agent",
+    "title": "Hermes ESG Reporting Agent",
+    "description": "Autonomous ESG Reporting via Hermes",
+    "category": "energy",
+    "industry": "energy",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-energy-hermes-esg-reporting-agent-90d4d5",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/hermes-energy-hermes-esg-reporting-agent-90d4d5",
+    "popular": false
+  },
+  {
+    "id": "hermes-energy-hermes-renewable-agent-f10580",
+    "name": "Hermes Renewable Agent",
+    "title": "Hermes Renewable Agent",
+    "description": "Autonomous Renewable via Hermes",
+    "category": "energy",
+    "industry": "energy",
+    "features": [
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    },
+    "timestamp": "2026-08-21T13:43:26.517273Z",
+    "contactInfo": {
+      "website": "/services/hermes-energy-hermes-renewable-agent-f10580",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/hermes-energy-hermes-renewable-agent-f10580",
+    "popular": true
   }
 ]
