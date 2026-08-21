@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JWT Decoder — Zion Tech Group</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0b0f1a;
+    color: #e5e7eb;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle { color: #9ca3af; font-size: 0.9rem; margin-bottom: 2rem; }
+  textarea {
+    width: 100%;
+    height: 140px;
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 12px;
+    color: #e5e7eb;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85rem;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  textarea:focus { border-color: #6366f1; }
+  .error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    display: none;
+  }
+  .results { margin-top: 2rem; }
+  .section {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .section h2 {
+    font-size: 1rem;
+    color: #818cf8;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section h2 .badge {
+    font-size: 0.7rem;
+    background: #6366f1;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+  pre {
+    background: #0f172a;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+    border: 1px solid #1e293b;
+  }
+  .claims-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .claim-card {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    padding: 12px;
+  }
+  .claim-card .label {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .claim-card .value {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    word-break: break-all;
+    font-family: 'Fira Code', monospace;
+  }
+  .claim-card .value.expired { color: #f87171; }
+  .claim-card .value.valid { color: #4ade80; }
+  .countdown { font-size: 1.1rem; font-weight: 600; }
+  .cta-section {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 600px) { .cta-section { grid-template-columns: 1fr; } }
+  .cta-card {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    border: 1px solid #4338ca;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .cta-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .cta-card p { font-size: 0.8rem; color: #c7d2fe; margin-bottom: 1rem; }
+  .cta-card a {
+    display: inline-block;
+    background: #6366f1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .cta-card a:hover { background: #4f46e5; }
+  .divider { border: none; border-top: 1px solid #1e293b; margin: 2rem 0; }
+  footer { text-align: center; margin-top: 3rem; color: #4b5563; font-size: 0.8rem; }
+  footer a { color: #6366f1; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>JWT Decoder</h1>
+  <p class="subtitle">Decode JSON Web Tokens — header, payload, and claims. No signature validation. 100% client-side.</p>
+
+  <textarea id="jwtInput" placeholder="Paste your JWT here (e.g. eyJhbGciOiJIUzI1NiIs...)"></textarea>
+  <div class="error" id="errorMsg"></div>
+
+  <div class="results" id="results" style="display:none;">
+
+    <div class="section">
+      <h2>Header <span class="badge">Decoded</span></h2>
+      <pre id="headerJson"></pre>
+    </div>
+
+    <div class="section">
+      <h2>Payload <span class="badge">Decoded</span></h2>
+      <pre id="payloadJson"></pre>
+    </div>
+
+    <div class="section">
+      <h2>Standard Claims</h2>
+      <div class="claims-grid" id="claimsGrid"></div>
+    </div>
+
+    <div class="section">
+      <h2>Expiration Status</h2>
+      <div id="expStatus"></div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="cta-section">
+      <div class="cta-card">
+        <h3>Security & Compliance Audit</h3>
+        <p>Ensure your auth infrastructure meets industry standards.</p>
+        <a href="/services/security-compliance-audit/">Learn More</a>
+      </div>
+      <div class="cta-card">
+        <h3>Schedule a Consultation</h3>
+        <p>Talk to our security experts about your JWT implementation.</p>
+        <a href="https://calendly.com/kleber-ziontechgroup">Book a Call</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Zion Tech Group &mdash; <a href="https://calendly.com/kleber-ziontechgroup">Schedule a consultation</a></p>
+  </footer>
+</div>
+
+<script>
+const jwtInput = document.getElementById('jwtInput');
+const errorMsg = document.getElementById('errorMsg');
+const results = document.getElementById('results');
+const headerJson = document.getElementById('headerJson');
+const payloadJson = document.getElementById('payloadJson');
+const claimsGrid = document.getElementById('claimsGrid');
+const expStatus = document.getElementById('expStatus');
+
+function base64UrlDecode(str) {
+  str = str.replace(/-/g, '+').replace(/_/g, '/');
+  while (str.length % 4) str += '=';
+  const decoded = atob(str);
+  return decodeURIComponent(decoded.split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+}
+
+function formatDate(ts) {
+  return new Date(ts * 1000).toLocaleString();
+}
+
+function getCountdown(exp) {
+  const now = Math.floor(Date.now() / 1000);
+  const diff = exp - now;
+  if (diff <= 0) return { text: 'Expired', expired: true };
+  const days = Math.floor(diff / 86400);
+  const hours = Math.floor((diff % 86400) / 3600);
+  const mins = Math.floor((diff % 3600) / 60);
+  const secs = diff % 60;
+  let parts = [];
+  if (days) parts.push(days + 'd');
+  if (hours) parts.push(hours + 'h');
+  if (mins) parts.push(mins + 'm');
+  parts.push(secs + 's');
+  return { text: parts.join(' '), expired: false };
+}
+
+function decode() {
+  const token = jwtInput.value.trim();
+  if (!token) { results.style.display = 'none'; errorMsg.style.display = 'none'; return; }
+
+  const parts = token.split('.');
+  if (parts.length !== 3) {
+    errorMsg.textContent = 'Invalid JWT format. Expected 3 parts (header.payload.signature).';
+    errorMsg.style.display = 'block';
+    results.style.display = 'none';
+    return;
+  }
+
+  try {
+    const header = JSON.parse(base64UrlDecode(parts[0]));
+    const payload = JSON.parse(base64UrlDecode(parts[1]));
+
+    errorMsg.style.display = 'none';
+    results.style.display = 'block';
+
+    headerJson.textContent = JSON.stringify(header, null, 2);
+    payloadJson.textContent = JSON.stringify(payload, null, 2);
+
+    const standardClaims = ['iss', 'sub', 'aud', 'jti', 'iat', 'nbf', 'exp'];
+    claimsGrid.innerHTML = '';
+
+    standardClaims.forEach(claim => {
+      if (!(claim in payload)) return;
+      const card = document.createElement('div');
+      card.className = 'claim-card';
+      let value = payload[claim];
+      let extraClass = '';
+      let displayValue;
+
+      if (claim === 'exp' || claim === 'iat' || claim === 'nbf') {
+        displayValue = `${value} (${formatDate(value)})`;
+        if (claim === 'exp') extraClass = value * 1000 < Date.now() ? 'expired' : 'valid';
+      } else if (typeof value === 'object') {
+        displayValue = JSON.stringify(value);
+      } else {
+        displayValue = String(value);
+      }
+
+      card.innerHTML = `<div class="label">${claim}</div><div class="value ${extraClass}">${displayValue}</div>`;
+      claimsGrid.appendChild(card);
+    });
+
+    if (Object.keys(payload).length > 0) {
+      const allClaims = Object.keys(payload).filter(k => !standardClaims.includes(k));
+      if (allClaims.length > 0) {
+        const card = document.createElement('div');
+        card.className = 'claim-card';
+        card.style.gridColumn = '1 / -1';
+        card.innerHTML = `<div class="label">Other Claims</div><div class="value">${allClaims.join(', ')}</div>`;
+        claimsGrid.appendChild(card);
+      }
+    }
+
+    if ('exp' in payload) {
+      const countdown = getCountdown(payload.exp);
+      expStatus.innerHTML = `<div class="claim-card">
+        <div class="label">Expires</div>
+        <div class="value ${countdown.expired ? 'expired' : 'valid'}">${formatDate(payload.exp)}</div>
+        <div class="countdown ${countdown.expired ? 'expired' : 'valid'}" id="countdown">${countdown.text}</div>
+      </div>`;
+    } else {
+      expStatus.innerHTML = '<div class="claim-card"><div class="label">Expiration</div><div class="value">No expiration claim (exp)</div></div>';
+    }
+
+  } catch (e) {
+    errorMsg.textContent = 'Failed to decode: ' + e.message;
+    errorMsg.style.display = 'block';
+    results.style.display = 'none';
+  }
+}
+
+jwtInput.addEventListener('input', decode);
+
+setInterval(() => {
+  if ('exp' in JSON.parse(base64UrlDecode(jwtInput.value.trim().split('.')[1] || 'e30='))) {
+    const countdownEl = document.getElementById('countdown');
+    if (countdownEl) decode();
+  }
+}, 1000);
+</script>
+</body>
+</html>

@@ -75,6 +75,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cron Agent Calculator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Cron Agent Calculator.</p>
         </Link>
+        <Link href="/tools/cron-parser/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cron Parser</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Cron Parser.</p>
+        </Link>
         <Link href="/tools/css-minifier/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Css Minifier</h3>
@@ -89,6 +94,11 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Hash Generator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Hash Generator.</p>
+        </Link>
+        <Link href="/tools/html-entities/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Html Entities</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Html Entities.</p>
         </Link>
         <Link href="/tools/image-to-base64/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
@@ -109,6 +119,11 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Json Schema Validator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Json Schema Validator.</p>
+        </Link>
+        <Link href="/tools/jwt-decoder/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Jwt Decoder</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Jwt Decoder.</p>
         </Link>
         <Link href="/tools/llm-payload-estimator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
