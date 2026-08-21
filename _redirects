@@ -52,6 +52,10 @@
 /ai-resources /docs/ai-resources/index.html 200
 /ai-resources/ /docs/ai-resources/index.html 200
 
+# Configurator fallback
+/configurator /configurator/index.html 200
+/configurator/ /configurator/index.html 200
+
 # Orphaned route fallbacks
 /ai-services-index /services/ 301
 /ai-services-index/ /services/ 301
