@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
@@ -12,6 +13,8 @@ export const metadata = {
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <JsonLd data={'@context': 'https://schema.org', '@type': 'Service', 'name': 'Adaptive advisor-construction', 'description': 'Transform your construction operations with our Adaptive advisor-construction. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.', 'serviceType': 'automation', 'provider': {'@type': 'Organization', 'name': 'Zion Tech Group', 'url': 'https://ziontechgroup.com', 'contactPoint': {'@type': 'ContactPoint', 'email': 'hello@ziontechgroup.com', 'telephone': '+1 (302) 464-0950', 'contactType': 'sales'}}, 'serviceArea': {'@type': 'Place', 'name': 'construction'}, 'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Adaptive advisor-construction Pricing Plans', 'itemListElement': [{'@type': 'Offer', 'name': 'Basic', 'price': '199', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Pro', 'price': '499', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Enterprise', 'price': '1499', 'priceCurrency': 'USD'}]}} />
+    <JsonLd data={'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'Performance dashboards', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Performance dashboards'}}, {'@type': 'Question', 'name': 'Machine learning integration', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Machine learning integration'}}, {'@type': 'Question', 'name': 'SOC 2 certified', 'acceptedAnswer': {'@type': 'Answer', 'text': 'SOC 2 certified'}}, {'@type': 'Question', 'name': 'What business impact can I expect?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Real-time insights and alerts; Self-healing infrastructure; 3x faster decision making'}}, {'@type': 'Question', 'name': 'How do I get started with this service?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Contact our team at hello@ziontechgroup.com or book a free consultation at https://calendly.com/kleber-ziontechgroup/consultation to get started.'}}]} />
       <div className="max-w-4xl mx-auto">
         <BreadcrumbSchema path=`/services/adaptive-advisor-construction-fcb356b8` title="Adaptive advisor-construction" />
         <h1 className="text-4xl font-bold mb-6">Adaptive advisor-construction</h1>
@@ -71,7 +74,6 @@ export default function ServicePage() {
             Book a Consultation
           </a>
         </div>
-      </div>
-    </main>
+      </div></main>
   );
 }

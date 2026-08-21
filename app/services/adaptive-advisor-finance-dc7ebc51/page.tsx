@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
@@ -12,6 +13,8 @@ export const metadata = {
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <JsonLd data={'@context': 'https://schema.org', '@type': 'Service', 'name': 'Adaptive advisor-finance', 'description': 'Unlock unprecedented growth with Adaptive advisor-finance. This autonomous system provides process automation with zero manual intervention needed.', 'serviceType': 'manager', 'provider': {'@type': 'Organization', 'name': 'Zion Tech Group', 'url': 'https://ziontechgroup.com', 'contactPoint': {'@type': 'ContactPoint', 'email': 'hello@ziontechgroup.com', 'telephone': '+1 (302) 464-0950', 'contactType': 'sales'}}, 'serviceArea': {'@type': 'Place', 'name': 'finance'}, 'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Adaptive advisor-finance Pricing Plans', 'itemListElement': [{'@type': 'Offer', 'name': 'Basic', 'price': '199', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Pro', 'price': '499', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Enterprise', 'price': '1499', 'priceCurrency': 'USD'}]}} />
+    <JsonLd data={'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'Comprehensive monitoring', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Comprehensive monitoring'}}, {'@type': 'Question', 'name': 'Cloud-native architecture', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Cloud-native architecture'}}, {'@type': 'Question', 'name': 'Auto-scaling capabilities', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Auto-scaling capabilities'}}, {'@type': 'Question', 'name': 'What business impact can I expect?', 'acceptedAnswer': {'@type': 'Answer', 'text': '24/7 automated operations; Real-time insights and alerts; 50% reduction in operational costs'}}, {'@type': 'Question', 'name': 'How do I get started with this service?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Contact our team at hello@ziontechgroup.com or book a free consultation at https://calendly.com/kleber-ziontechgroup/consultation to get started.'}}]} />
       <div className="max-w-4xl mx-auto">
         <BreadcrumbSchema path=`/services/adaptive-advisor-finance-dc7ebc51` title="Adaptive advisor-finance" />
         <h1 className="text-4xl font-bold mb-6">Adaptive advisor-finance</h1>
@@ -69,7 +72,6 @@ export default function ServicePage() {
             Book a Consultation
           </a>
         </div>
-      </div>
-    </main>
+      </div></main>
   );
 }

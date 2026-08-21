@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Diff | Zion Tech Group</title>
+  <meta name="description" content="Compare two JSON objects side-by-side. Highlights additions, deletions, and changes with color-coded diff output.">
+  <meta property="og:title" content="JSON Diff | Zion Tech Group">
+  <meta property="og:description" content="Free online JSON diff tool — compare two JSON objects with highlighted changes.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/json-diff/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/json-diff/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 768px) { .inputs { grid-template-columns: 1fr; } }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 0.8rem; resize: vertical; min-height: 200px; line-height: 1.5; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .actions { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .btn { padding: 0.6rem 1.5rem; border: none; border-radius: 0.5rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .btn-primary { background: #6366f1; color: #fff; }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-secondary { background: #1e293b; color: #e5e7eb; border: 1px solid #334155; }
+    .btn-secondary:hover { background: #334155; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem 1rem; margin-bottom: 1rem; display: none; }
+    .error-title { color: #fca5a5; font-weight: 600; font-size: 0.875rem; margin-bottom: 0.25rem; }
+    .error-msg { color: #fecaca; font-family: monospace; font-size: 0.8rem; }
+    .results { display: none; }
+    .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .results-header h2 { font-size: 1.125rem; }
+    .legend { display: flex; gap: 1rem; font-size: 0.75rem; }
+    .legend span { display: flex; align-items: center; gap: 0.35rem; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+    .dot-add { background: #065f46; }
+    .dot-rem { background: #7f1d1d; }
+    .dot-chg { background: #92400e; }
+    .diff-output { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1rem; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 0.8rem; line-height: 1.6; overflow-x: auto; white-space: pre-wrap; word-break: break-word; max-height: 500px; overflow-y: auto; }
+    .diff-line { padding: 0.1rem 0.5rem; margin: 0 -0.5rem; border-radius: 0.25rem; }
+    .diff-line.add { background: rgba(6, 95, 70, 0.3); color: #6ee7b7; }
+    .diff-line.rem { background: rgba(127, 29, 29, 0.3); color: #fca5a5; text-decoration: line-through; opacity: 0.8; }
+    .diff-line.chg { background: rgba(146, 64, 14, 0.3); color: #fcd34d; }
+    .diff-line.context { color: #94a3b8; }
+    .diff-line .prefix { display: inline-block; width: 1.25rem; color: #64748b; user-select: none; }
+    .summary { margin-top: 1rem; padding: 0.75rem 1rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; font-size: 0.85rem; }
+    .summary strong { color: #818cf8; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JSON Diff</h1>
+    <p class="subtitle">Compare two JSON objects — highlights additions, deletions, and modifications.</p>
+    
+    <div class="inputs">
+      <div class="field">
+        <label>Original JSON</label>
+        <textarea id="json1" placeholder='{"name": "Alice", "age": 30, "city": "NYC"}'>{
+  "name": "Alice",
+  "age": 30,
+  "city": "New York",
+  "active": true
+}</textarea>
+      </div>
+      <div class="field">
+        <label>Modified JSON</label>
+        <textarea id="json2" placeholder='{"name": "Alice", "age": 31, "country": "USA"}'>{
+  "name": "Alice",
+  "age": 31,
+  "city": "San Francisco",
+  "active": true,
+  "email": "alice@example.com"
+}</textarea>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button class="btn btn-primary" onclick="compare()">Compare</button>
+      <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+      <button class="btn btn-secondary" onclick="swapJson()">Swap</button>
+    </div>
+    
+    <div class="error" id="error">
+      <div class="error-title" id="error-title">Invalid JSON</div>
+      <div class="error-msg" id="error-msg"></div>
+    </div>
+    
+    <div class="results" id="results">
+      <div class="results-header">
+        <h2>Diff Result</h2>
+        <div class="legend">
+          <span><span class="legend-dot dot-add"></span> Added</span>
+          <span><span class="legend-dot dot-rem"></span> Removed</span>
+          <span><span class="legend-dot dot-chg"></span> Changed</span>
+        </div>
+      </div>
+      <div class="diff-output" id="diff-output"></div>
+      <div class="summary" id="summary"></div>
+    </div>
+    
+    <div class="info">
+      <h2>How It Works</h2>
+      <ul>
+        <li><span class="label">Added</span> — Keys present in the modified JSON but missing from the original.</li>
+        <li><span class="label">Removed</span> — Keys present in the original JSON but missing from the modified.</li>
+        <li><span class="label">Changed</span> — Keys present in both but with different values.</li>
+        <li><span class="label">Nested Objects</span> — Recursively compared; arrays are compared by index.</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">All processing happens in your browser. No data is sent to any server.</p>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function parseJson(id) {
+      const el = document.getElementById(id);
+      const val = el.value.trim();
+      if (!val) {
+        throw { title: 'Empty Input', msg: `The ${id === 'json1' ? 'Original' : 'Modified'} JSON field is empty.` };
+      }
+      try {
+        return JSON.parse(val);
+      } catch (e) {
+        throw { title: `Invalid JSON in ${id === 'json1' ? 'Original' : 'Modified'}`, msg: e.message };
+      }
+    }
+
+    function showError(title, msg) {
+      document.getElementById('error').style.display = 'block';
+      document.getElementById('error-title').textContent = title;
+      document.getElementById('error-msg').textContent = msg;
+      document.getElementById('results').style.display = 'none';
+    }
+
+    function hideError() {
+      document.getElementById('error').style.display = 'none';
+    }
+
+    function formatValue(val) {
+      if (val === null) return 'null';
+      if (typeof val === 'object') return JSON.stringify(val, null, 2);
+      if (typeof val === 'string') return `"${val}"`;
+      return String(val);
+    }
+
+    function getType(val) {
+      if (val === null) return 'null';
+      if (Array.isArray(val)) return 'array';
+      return typeof val;
+    }
+
+    function computeDiff(obj1, obj2, path) {
+      const changes = [];
+      const type1 = getType(obj1);
+      const type2 = getType(obj2);
+
+      if (type1 !== type2) {
+        changes.push({ path, type: 'rem', value: obj1 });
+        changes.push({ path, type: 'add', value: obj2 });
+        return changes;
+      }
+
+      if (type1 === 'object') {
+        const keys = new Set([...Object.keys(obj1), ...Object.keys(obj2)]);
+        for (const key of keys) {
+          const newPath = path ? `${path}.${key}` : key;
+          if (!(key in obj1)) {
+            changes.push({ path: newPath, type: 'add', value: obj2[key] });
+          } else if (!(key in obj2)) {
+            changes.push({ path: newPath, type: 'rem', value: obj1[key] });
+          } else {
+            changes.push(...computeDiff(obj1[key], obj2[key], newPath));
+          }
+        }
+      } else if (type1 === 'array') {
+        const maxLen = Math.max(obj1.length, obj2.length);
+        for (let i = 0; i < maxLen; i++) {
+          const newPath = `${path}[${i}]`;
+          if (i >= obj1.length) {
+            changes.push({ path: newPath, type: 'add', value: obj2[i] });
+          } else if (i >= obj2.length) {
+            changes.push({ path: newPath, type: 'rem', value: obj1[i] });
+          } else {
+            changes.push(...computeDiff(obj1[i], obj2[i], newPath));
+          }
+        }
+      } else {
+        if (obj1 !== obj2) {
+          changes.push({ path, type: 'rem', value: obj1 });
+          changes.push({ path, type: 'add', value: obj2 });
+        }
+      }
+
+      return changes;
+    }
+
+    function renderDiff(changes) {
+      const output = document.getElementById('diff-output');
+      if (changes.length === 0) {
+        output.innerHTML = '<div class="diff-line context">No differences found — JSON objects are identical.</div>';
+        document.getElementById('summary').innerHTML = '<strong>Result:</strong> No differences found.';
+        return;
+      }
+
+      let html = '';
+      let addCount = 0, remCount = 0, chgCount = 0;
+
+      for (const change of changes) {
+        const val = formatValue(change.value);
+        const prefix = change.type === 'add' ? '+ ' : '- ';
+        const cls = change.type === 'add' ? 'add' : 'rem';
+        if (change.type === 'add') addCount++;
+        else remCount++;
+        html += `<div class="diff-line ${cls}"><span class="prefix">${prefix}</span>${change.path}: ${val}</div>`;
+      }
+
+      chgCount = Math.min(addCount, remCount);
+      const pureAdds = addCount - chgCount;
+      const pureRems = remCount - chgCount;
+
+      output.innerHTML = html;
+
+      let summaryParts = [];
+      if (chgCount > 0) summaryParts.push(`<strong>${chgCount}</strong> changed`);
+      if (pureAdds > 0) summaryParts.push(`<strong>${pureAdds}</strong> added`);
+      if (pureRems > 0) summaryParts.push(`<strong>${pureRems}</strong> removed`);
+      document.getElementById('summary').innerHTML = `<strong>Summary:</strong> ${summaryParts.join(', ')}.`;
+    }
+
+    function compare() {
+      let obj1, obj2;
+      try {
+        obj1 = parseJson('json1');
+      } catch (e) {
+        showError(e.title, e.msg);
+        return;
+      }
+      try {
+        obj2 = parseJson('json2');
+      } catch (e) {
+        showError(e.title, e.msg);
+        return;
+      }
+
+      hideError();
+      const changes = computeDiff(obj1, obj2, '');
+      renderDiff(changes);
+      document.getElementById('results').style.display = 'block';
+    }
+
+    function clearAll() {
+      document.getElementById('json1').value = '';
+      document.getElementById('json2').value = '';
+      hideError();
+      document.getElementById('results').style.display = 'none';
+    }
+
+    function swapJson() {
+      const a = document.getElementById('json1');
+      const b = document.getElementById('json2');
+      const tmp = a.value;
+      a.value = b.value;
+      b.value = tmp;
+    }
+
+    // Auto-compare on load
+    compare();
+  </script>
+</body>
+</html>

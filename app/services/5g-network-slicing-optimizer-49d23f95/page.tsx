@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
@@ -12,6 +13,8 @@ export const metadata = {
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <JsonLd data={'@context': 'https://schema.org', '@type': 'Service', 'name': '5G Network Slicing Optimizer', 'description': 'AI-driven optimization of 5G network slices for maximum efficiency and QoS. Dynamic resource allocation based on traffic patterns and service requirements.', 'serviceType': 'ai', 'provider': {'@type': 'Organization', 'name': 'Zion Tech Group', 'url': 'https://ziontechgroup.com', 'contactPoint': {'@type': 'ContactPoint', 'email': 'hello@ziontechgroup.com', 'telephone': '+1 (302) 464 0950', 'contactType': 'sales'}}, 'serviceArea': {'@type': 'Place', 'name': 'telecom'}, 'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': '5G Network Slicing Optimizer Pricing Plans', 'itemListElement': [{'@type': 'Offer', 'name': 'Basic', 'price': '1999', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Pro', 'price': '4999', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Enterprise', 'price': '14999', 'priceCurrency': 'USD'}]}} />
+    <JsonLd data={'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'Dynamic slice orchestration', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Dynamic slice orchestration'}}, {'@type': 'Question', 'name': 'QoS guarantee automation', 'acceptedAnswer': {'@type': 'Answer', 'text': 'QoS guarantee automation'}}, {'@type': 'Question', 'name': 'Traffic prediction models', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Traffic prediction models'}}, {'@type': 'Question', 'name': 'What business impact can I expect?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Improve spectral efficiency 40%; Guarantee slice SLAs; Reduce operational costs'}}, {'@type': 'Question', 'name': 'How do I get started with this service?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Contact our team at hello@ziontechgroup.com or book a free consultation at https://calendly.com/kleber-ziontechgroup/consultation to get started.'}}]} />
       <div className="max-w-4xl mx-auto">
         <BreadcrumbSchema path=`/services/5g-network-slicing-optimizer-49d23f95` title="5G Network Slicing Optimizer" />
         <h1 className="text-4xl font-bold mb-6">5G Network Slicing Optimizer</h1>
@@ -71,7 +74,6 @@ export default function ServicePage() {
             Book a Consultation
           </a>
         </div>
-      </div>
-    </main>
+      </div></main>
   );
 }

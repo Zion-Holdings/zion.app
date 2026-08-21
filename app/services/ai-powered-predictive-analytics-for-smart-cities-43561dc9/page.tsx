@@ -107,8 +107,7 @@ export default function ServicePage() {
               Book a Consultation
             </a>
           </div>
-        </div>
-      </main>
+        </div></main>
     </>
   );
 }

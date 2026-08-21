@@ -334571,7 +334571,7 @@
     "name": "Conversational AI Platform"
   },
   {
-    "id": "w131-ai-mLOps",
+    "id": "w131-ai-mlops",
     "title": "MLOps & Model Management Platform",
     "description": "End-to-end ML operations: model training, deployment, monitoring, and governance. Supports TensorFlow, PyTorch, and scikit-learn with automated retraining.",
     "features": [

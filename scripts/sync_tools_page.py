@@ -3,8 +3,11 @@
 
 Ensures app/tools/page.tsx reflects actual public/tools/* directories.
 Idempotent: safe to run repeatedly.
+
+Updated: Injects SoftwareApplication schema (WebApplication array) into tools index page.
 """
 from pathlib import Path
+import json
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PUBLIC_TOOLS = REPO_ROOT / "public" / "tools"
@@ -36,6 +39,38 @@ def ensure_tools_dir(cards):
         (TOOLS_DIR / card["slug"]).mkdir(parents=True, exist_ok=True)
 
 
+def build_tools_index_schema(cards):
+    """Build SoftwareApplication schema for the tools index page."""
+    app_list = []
+    for card in cards:
+        app_list.append({
+            "@type": "WebApplication",
+            "@id": f"https://ziontechgroup.com/tools/{card['slug']}/",
+            "name": card["name"],
+            "description": card.get("description", f"Interactive tool: {card['name']}."),
+            "url": f"https://ziontechgroup.com/tools/{card['slug']}/",
+            "applicationCategory": "BusinessApplication",
+            "applicationSuite": "Zion Tech Group Tools",
+            "operatingSystem": "Any",
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+            "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"},
+        })
+    return {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Zion Tech Group Tools",
+        "description": "Free AI/IT tools for service recommendations, comparisons, SSL checks, and more.",
+        "applicationCategory": "BusinessApplication",
+        "applicationSuite": "Zion Tech Group Tools",
+        "operatingSystem": "Any",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"},
+        "url": "https://ziontechgroup.com/tools/",
+        "@id": "https://ziontechgroup.com/tools/",
+        "hasPart": app_list,
+    }
+
+
 def render_page(cards):
     cards_tsx = "\n".join(
         f'''        <Link href="/tools/{c["slug"]}/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
@@ -45,45 +80,56 @@ def render_page(cards):
         </Link>'''
         for c in cards
     )
-    base = '''import type { Metadata } from 'next';
-import Link from 'next/link';
-import StandardPage from '@/components/StandardPage';
 
-export const metadata: Metadata = {
-  title: 'Tools | Zion Tech Group',
-  description: 'Free AI/IT tools for service recommendations, comparisons, SSL checks, and more.',
-  openGraph: {
-    title: 'Tools | Zion Tech Group',
-    description: 'Free AI/IT tools for service recommendations, comparisons, SSL checks.',
-    url: 'https://ziontechgroup.com/tools/',
-    type: 'website',
-  },
-  alternates: { canonical: '/tools/' },
-};
+    # Build the schema as a TS-compatible string in the page
+    schema_json = json.dumps(build_tools_index_schema(cards), indent=2, ensure_ascii=False)
+    schema_tsx = f"    <JsonLd data={{\n{schema_json}\n    }} />"
 
-export default function ToolsPage() {
-  return (
-    <StandardPage
-      title="Tools"
-      subtitle="Free utilities built by Zion Tech Group to accelerate your AI and IT initiatives."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools' },
-      ]}
-      actions={[
-        { label: 'Get a recommendation', href: '/tools/ai-roi-calculator/', style: 'primary' },
-        { label: 'Browse services', href: '/services/', style: 'secondary' },
-        { label: 'Cloud savings check', href: '/tools/cloud-cost-optimizer/', style: 'secondary' },
-      ]}
-    >
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-__CARDS__
-      </div>
-    </StandardPage>
-  );
-}
-'''
-    return base.replace("__CARDS__", cards_tsx)
+    lines = []
+    lines.append("import type { Metadata } from 'next';")
+    lines.append("import Link from 'next/link';")
+    lines.append("import JsonLd from '@/components/JsonLd';")
+    lines.append("import StandardPage from '@/components/StandardPage';")
+    lines.append("")
+    lines.append("export const metadata: Metadata = {")
+    lines.append("  title: 'Tools | Zion Tech Group',")
+    lines.append("  description: 'Free AI/IT tools for service recommendations, comparisons, SSL checks, and more.',")
+    lines.append("  openGraph: {")
+    lines.append("    title: 'Tools | Zion Tech Group',")
+    lines.append("    description: 'Free AI/IT tools for service recommendations, comparisons, SSL checks.',")
+    lines.append("    url: 'https://ziontechgroup.com/tools/',")
+    lines.append("    type: 'website',")
+    lines.append("  },")
+    lines.append("  alternates: { canonical: '/tools/' },")
+    lines.append("};")
+    lines.append("")
+    lines.append("export default function ToolsPage() {")
+    lines.append("  return (")
+    lines.append("    <>")
+    lines.append(schema_tsx)
+    lines.append("    <StandardPage")
+    lines.append('      title="Tools"')
+    lines.append('      subtitle="Free utilities built by Zion Tech Group to accelerate your AI and IT initiatives."')
+    lines.append("      breadcrumbItems={[")
+    lines.append("        { label: 'Home', href: '/' },")
+    lines.append("        { label: 'Tools' },")
+    lines.append("      ]}")
+    lines.append("      actions={[")
+    lines.append("        { label: 'Get a recommendation', href: '/tools/ai-roi-calculator/', style: 'primary' },")
+    lines.append("        { label: 'Browse services', href: '/services/', style: 'secondary' },")
+    lines.append("        { label: 'Cloud savings check', href: '/tools/cloud-cost-optimizer/', style: 'secondary' },")
+    lines.append("      ]}")
+    lines.append("    >")
+    lines.append('      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">')
+    lines.append(cards_tsx)
+    lines.append("      </div>")
+    lines.append("    </StandardPage>")
+    lines.append("    </>")
+    lines.append("  );")
+    lines.append("}")
+    lines.append("")
+
+    return "\n".join(lines)
 
 
 def render_index(cards):

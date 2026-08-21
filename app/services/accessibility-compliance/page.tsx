@@ -1,3 +1,4 @@
+import JsonLd from '@/components/JsonLd';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
@@ -12,6 +13,8 @@ export const metadata = {
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <JsonLd data={'@context': 'https://schema.org', '@type': 'Service', 'name': 'Accessibility & WCAG Compliance', 'description': 'Automated WCAG 2.2 auditing, AI-powered remediation suggestions, screen reader simulation, and continuous accessibility compliance monitoring.', 'serviceType': 'it', 'provider': {'@type': 'Organization', 'name': 'Zion Tech Group', 'url': 'https://ziontechgroup.com', 'contactPoint': {'@type': 'ContactPoint', 'email': 'commercial@ziontechgroup.com', 'telephone': '+1 302 464 0950', 'contactType': 'sales'}}, 'serviceArea': {'@type': 'Place', 'name': 'General'}, 'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Accessibility & WCAG Compliance Pricing Plans', 'itemListElement': [{'@type': 'Offer', 'name': 'Basic', 'price': '$299/mo', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Pro', 'price': '$799/mo', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Enterprise', 'price': '$2,499/mo', 'priceCurrency': 'USD'}]}} />
+    <JsonLd data={'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'WCAG 2.2 AA/AAA automated auditing', 'acceptedAnswer': {'@type': 'Answer', 'text': 'WCAG 2.2 AA/AAA automated auditing'}}, {'@type': 'Question', 'name': 'Screen reader simulation & navigation testing', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Screen reader simulation & navigation testing'}}, {'@type': 'Question', 'name': 'Auto-generated remediation code snippets', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Auto-generated remediation code snippets'}}, {'@type': 'Question', 'name': 'What business impact can I expect?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Reduce costs with accessibility & wcag compliance; Improve operational efficiency; Scale without complexity'}}, {'@type': 'Question', 'name': 'How do I get started with this service?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Contact our team at hello@ziontechgroup.com or book a free consultation at https://calendly.com/kleber-ziontechgroup/consultation to get started.'}}]} />
       <div className="max-w-4xl mx-auto">
         <BreadcrumbSchema path=`/services/accessibility-compliance` title="Accessibility &amp; WCAG Compliance" />
         <h1 className="text-4xl font-bold mb-6">Accessibility &amp; WCAG Compliance</h1>
@@ -70,7 +73,6 @@ export default function ServicePage() {
             Book a Consultation
           </a>
         </div>
-      </div>
-    </main>
+      </div></main>
   );
 }
