@@ -573308,5 +573308,869 @@
     "icon": "\ud83c\udfae",
     "href": "/services/gaming-game-ai-behavior-engine-09979355",
     "popular": true
+  },
+  {
+    "id": "hermes-ai-agents-multi-agent-swarm-orchestrator-3d267f",
+    "name": "Multi-Agent Swarm Orchestrator",
+    "title": "Multi-Agent Swarm Orchestrator",
+    "description": "Deploy fleets of AI agents with collision avoidance and auto-scaling.",
+    "category": "ai-agents",
+    "industry": "technology",
+    "features": [
+      "10x throughput",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "10x throughput, zero idle compute",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "923",
+      "pro": "2123",
+      "enterprise": "7523"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-ai-agents-multi-agent-swarm-orchestrator-3d267f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd16",
+    "href": "/services/hermes-ai-agents-multi-agent-swarm-orchestrator-3d267f",
+    "popular": true
+  },
+  {
+    "id": "hermes-ai-agents-agent-fleet-manager-4083d9",
+    "name": "Agent Fleet Manager",
+    "title": "Agent Fleet Manager",
+    "description": "Monitor and scale thousands of concurrent agents across profiles.",
+    "category": "ai-agents",
+    "industry": "technology",
+    "features": [
+      "Manage 1000+ agents",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Manage 1000+ agents",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "366",
+      "pro": "2366",
+      "enterprise": "3766"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-ai-agents-agent-fleet-manager-4083d9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd16",
+    "href": "/services/hermes-ai-agents-agent-fleet-manager-4083d9",
+    "popular": true
+  },
+  {
+    "id": "hermes-ai-agents-agent-delegation-matrix-156448",
+    "name": "Agent Delegation Matrix",
+    "title": "Agent Delegation Matrix",
+    "description": "Intelligent task delegation with role-based routing and approval gates.",
+    "category": "ai-agents",
+    "industry": "technology",
+    "features": [
+      "Zero misrouted tasks",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Zero misrouted tasks",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "502",
+      "pro": "1302",
+      "enterprise": "4702"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-ai-agents-agent-delegation-matrix-156448",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd16",
+    "href": "/services/hermes-ai-agents-agent-delegation-matrix-156448",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-telegram-agent-suite-b4c473",
+    "name": "Telegram Agent Suite",
+    "title": "Telegram Agent Suite",
+    "description": "Full-featured bot deployment: group mgmt, inline queries, payments.",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Deploy in minutes",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Deploy in minutes",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "223",
+      "pro": "1823",
+      "enterprise": "5223"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-telegram-agent-suite-b4c473",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-telegram-agent-suite-b4c473",
+    "popular": true
+  },
+  {
+    "id": "hermes-messaging-discord-agent-platform-9597e5",
+    "name": "Discord Agent Platform",
+    "title": "Discord Agent Platform",
+    "description": "Slash commands, modals, auto-moderation, ticketing at enterprise scale.",
+    "category": "messaging",
+    "industry": "technology",
+    "features": [
+      "Enterprise bots",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Enterprise bots",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "257",
+      "pro": "1857",
+      "enterprise": "9257"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-messaging-discord-agent-platform-9597e5",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2708\ufe0f",
+    "href": "/services/hermes-messaging-discord-agent-platform-9597e5",
+    "popular": true
+  },
+  {
+    "id": "hermes-devops-cicd-agent-adb4c3",
+    "name": "CI/CD Agent",
+    "title": "CI/CD Agent",
+    "description": "Pipeline management: detect failures, trigger rebuilds, self-heal deploys.",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "Zero-downtime",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Zero-downtime",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "865",
+      "pro": "865",
+      "enterprise": "4265"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-cicd-agent-adb4c3",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-cicd-agent-adb4c3",
+    "popular": true
+  },
+  {
+    "id": "hermes-devops-infrastructure-monitor-agent-f22b6f",
+    "name": "Infrastructure Monitor Agent",
+    "title": "Infrastructure Monitor Agent",
+    "description": "24/7 multi-cloud monitoring with predictive alerting and auto-remediation.",
+    "category": "devops",
+    "industry": "technology",
+    "features": [
+      "99.99% uptime",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "99.99% uptime",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "523",
+      "pro": "1723",
+      "enterprise": "7123"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-devops-infrastructure-monitor-agent-f22b6f",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd04",
+    "href": "/services/hermes-devops-infrastructure-monitor-agent-f22b6f",
+    "popular": true
+  },
+  {
+    "id": "hermes-security-security-response-agent-12d3a4",
+    "name": "Security Response Agent",
+    "title": "Security Response Agent",
+    "description": "Detect threats, isolate assets, trigger forensics, notify stakeholders.",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "MTTD < 1min",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "MTTD < 1min",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "239",
+      "pro": "1839",
+      "enterprise": "9239"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-security-security-response-agent-12d3a4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udee1\ufe0f",
+    "href": "/services/hermes-security-security-response-agent-12d3a4",
+    "popular": true
+  },
+  {
+    "id": "hermes-data-data-pipeline-agent-73d0f2",
+    "name": "Data Pipeline Agent",
+    "title": "Data Pipeline Agent",
+    "description": "Ingest, transform, validate, alert across batch and streaming data.",
+    "category": "data",
+    "industry": "technology",
+    "features": [
+      "Zero data loss",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Zero data loss",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "728",
+      "pro": "1128",
+      "enterprise": "2528"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-data-data-pipeline-agent-73d0f2",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcca",
+    "href": "/services/hermes-data-data-pipeline-agent-73d0f2",
+    "popular": true
+  },
+  {
+    "id": "hermes-sales-lead-scoring-agent-c5bb6e",
+    "name": "Lead Scoring Agent",
+    "title": "Lead Scoring Agent",
+    "description": "Behavioral scoring, intent detection, automated routing.",
+    "category": "sales",
+    "industry": "technology",
+    "features": [
+      "Higher conversion",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Higher conversion",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "826",
+      "pro": "2026",
+      "enterprise": "7426"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-sales-lead-scoring-agent-c5bb6e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb0",
+    "href": "/services/hermes-sales-lead-scoring-agent-c5bb6e",
+    "popular": true
+  },
+  {
+    "id": "hermes-customer-success-customer-success-agent-7120cc",
+    "name": "Customer Success Agent",
+    "title": "Customer Success Agent",
+    "description": "Health scoring, churn prediction, QBR automation, renewal management.",
+    "category": "customer-success",
+    "industry": "technology",
+    "features": [
+      "Reduced churn",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Reduced churn",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "381",
+      "pro": "1981",
+      "enterprise": "5381"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-customer-success-customer-success-agent-7120cc",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udf1f",
+    "href": "/services/hermes-customer-success-customer-success-agent-7120cc",
+    "popular": true
+  },
+  {
+    "id": "hermes-healthcare-clinical-trial-agent-11e6ab",
+    "name": "Clinical Trial Agent",
+    "title": "Clinical Trial Agent",
+    "description": "Patient recruitment, site monitoring, regulatory compliance tracking.",
+    "category": "healthcare",
+    "industry": "healthcare",
+    "features": [
+      "Faster recruitment",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Faster recruitment",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "394",
+      "pro": "1594",
+      "enterprise": "6994"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-healthcare-clinical-trial-agent-11e6ab",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe5",
+    "href": "/services/hermes-healthcare-clinical-trial-agent-11e6ab",
+    "popular": true
+  },
+  {
+    "id": "hermes-finance-fraud-detection-agent-9a8291",
+    "name": "Fraud Detection Agent",
+    "title": "Fraud Detection Agent",
+    "description": "Real-time anomaly detection, transaction scoring, auto-blocking.",
+    "category": "finance",
+    "industry": "finance",
+    "features": [
+      "Zero fraud loss",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Zero fraud loss",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "677",
+      "pro": "1077",
+      "enterprise": "6477"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-finance-fraud-detection-agent-9a8291",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcb3",
+    "href": "/services/hermes-finance-fraud-detection-agent-9a8291",
+    "popular": true
+  },
+  {
+    "id": "hermes-education-edtech-content-agent-5d487e",
+    "name": "EdTech Content Agent",
+    "title": "EdTech Content Agent",
+    "description": "Curriculum-aligned content generation, assessments, learning paths.",
+    "category": "education",
+    "industry": "education",
+    "features": [
+      "Faster content",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Faster content",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "343",
+      "pro": "1143",
+      "enterprise": "4543"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-education-edtech-content-agent-5d487e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udcda",
+    "href": "/services/hermes-education-edtech-content-agent-5d487e",
+    "popular": true
+  },
+  {
+    "id": "hermes-real-estate-property-valuation-agent-016693",
+    "name": "Property Valuation Agent",
+    "title": "Property Valuation Agent",
+    "description": "Comparative market analysis, trend prediction, automated appraisals.",
+    "category": "real-estate",
+    "industry": "real-estate",
+    "features": [
+      "Accurate valuations",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Accurate valuations",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "224",
+      "pro": "2224",
+      "enterprise": "3624"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-real-estate-property-valuation-agent-016693",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe0",
+    "href": "/services/hermes-real-estate-property-valuation-agent-016693",
+    "popular": true
+  },
+  {
+    "id": "hermes-legal-contract-review-agent-cadb63",
+    "name": "Contract Review Agent",
+    "title": "Contract Review Agent",
+    "description": "Clause analysis, risk scoring, redlining automation.",
+    "category": "legal",
+    "industry": "legal",
+    "features": [
+      "Faster review",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Faster review",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "909",
+      "pro": "1309",
+      "enterprise": "2709"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-legal-contract-review-agent-cadb63",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u2696\ufe0f",
+    "href": "/services/hermes-legal-contract-review-agent-cadb63",
+    "popular": true
+  },
+  {
+    "id": "hermes-manufacturing-predictive-maintenance-agent-154f5b",
+    "name": "Predictive Maintenance Agent",
+    "title": "Predictive Maintenance Agent",
+    "description": "Sensor analysis, failure prediction, work order automation.",
+    "category": "manufacturing",
+    "industry": "manufacturing",
+    "features": [
+      "Reduced downtime",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Reduced downtime",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "894",
+      "pro": "2094",
+      "enterprise": "3494"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-manufacturing-predictive-maintenance-agent-154f5b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfed",
+    "href": "/services/hermes-manufacturing-predictive-maintenance-agent-154f5b",
+    "popular": true
+  },
+  {
+    "id": "hermes-retail-product-recommendation-agent-8cc5b9",
+    "name": "Product Recommendation Agent",
+    "title": "Product Recommendation Agent",
+    "description": "Personalized suggestions, A/B testing, conversion optimization.",
+    "category": "retail",
+    "industry": "retail",
+    "features": [
+      "Higher conversion",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Higher conversion",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "957",
+      "pro": "1757",
+      "enterprise": "5157"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-retail-product-recommendation-agent-8cc5b9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udecd\ufe0f",
+    "href": "/services/hermes-retail-product-recommendation-agent-8cc5b9",
+    "popular": true
+  },
+  {
+    "id": "hermes-hr-recruiting-agent-bd2517",
+    "name": "Recruiting Agent",
+    "title": "Recruiting Agent",
+    "description": "Sourcing, screening, interview scheduling, offer management.",
+    "category": "hr",
+    "industry": "hr",
+    "features": [
+      "Faster hiring",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Faster hiring",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "530",
+      "pro": "2130",
+      "enterprise": "9530"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-hr-recruiting-agent-bd2517",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udc65",
+    "href": "/services/hermes-hr-recruiting-agent-bd2517",
+    "popular": true
+  },
+  {
+    "id": "hermes-energy-energy-trading-agent-1f19b5",
+    "name": "Energy Trading Agent",
+    "title": "Energy Trading Agent",
+    "description": "Price forecasting, position management, risk analytics.",
+    "category": "energy",
+    "industry": "energy",
+    "features": [
+      "Higher profits",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Higher profits",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "415",
+      "pro": "815",
+      "enterprise": "6215"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-energy-energy-trading-agent-1f19b5",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\u26a1",
+    "href": "/services/hermes-energy-energy-trading-agent-1f19b5",
+    "popular": true
+  },
+  {
+    "id": "hermes-logistics-logistics-agent-fbc289",
+    "name": "Logistics Agent",
+    "title": "Logistics Agent",
+    "description": "Route optimization, carrier selection, shipment tracking.",
+    "category": "logistics",
+    "industry": "logistics",
+    "features": [
+      "Faster delivery",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Faster delivery",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "282",
+      "pro": "1882",
+      "enterprise": "9282"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-logistics-logistics-agent-fbc289",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\ude9a",
+    "href": "/services/hermes-logistics-logistics-agent-fbc289",
+    "popular": true
+  },
+  {
+    "id": "hermes-agriculture-precision-agriculture-agent-95f1c9",
+    "name": "Precision Agriculture Agent",
+    "title": "Precision Agriculture Agent",
+    "description": "Satellite imagery, yield prediction, irrigation optimization.",
+    "category": "agriculture",
+    "industry": "agriculture",
+    "features": [
+      "Yield +20%",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Yield +20%",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "293",
+      "pro": "1493",
+      "enterprise": "2893"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-agriculture-precision-agriculture-agent-95f1c9",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udf3e",
+    "href": "/services/hermes-agriculture-precision-agriculture-agent-95f1c9",
+    "popular": true
+  },
+  {
+    "id": "hermes-hospitality-hotel-revenue-agent-3a86d6",
+    "name": "Hotel Revenue Agent",
+    "title": "Hotel Revenue Agent",
+    "description": "Dynamic pricing, demand forecasting, competitor analysis.",
+    "category": "hospitality",
+    "industry": "hospitality",
+    "features": [
+      "RevPAR +15%",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "RevPAR +15%",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "922",
+      "pro": "1322",
+      "enterprise": "2722"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-hospitality-hotel-revenue-agent-3a86d6",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfe8",
+    "href": "/services/hermes-hospitality-hotel-revenue-agent-3a86d6",
+    "popular": true
+  },
+  {
+    "id": "hermes-gaming-game-ai-agent-947aab",
+    "name": "Game AI Agent",
+    "title": "Game AI Agent",
+    "description": "Intelligent NPCs, adaptive difficulty, emergent gameplay.",
+    "category": "gaming",
+    "industry": "gaming",
+    "features": [
+      "Dev time -70%",
+      "Auto-scaling",
+      "Real-time analytics",
+      "Compliance ready",
+      "API integration"
+    ],
+    "benefits": [
+      "Dev time -70%",
+      "Cost reduction",
+      "Time savings",
+      "Scalable",
+      "Zero manual work"
+    ],
+    "pricing": {
+      "basic": "270",
+      "pro": "2270",
+      "enterprise": "3670"
+    },
+    "timestamp": "2026-08-21T13:17:37.976436Z",
+    "contactInfo": {
+      "website": "/services/hermes-gaming-game-ai-agent-947aab",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83c\udfae",
+    "href": "/services/hermes-gaming-game-ai-agent-947aab",
+    "popular": true
   }
 ]
