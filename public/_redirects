@@ -52,3 +52,57 @@
 /services/saas-appointment-scheduler /services/ 301
 /services/saas-form-builder /services/ 301
 /services/saas-subscription-analytics /services/ 301
+
+# Broken blog post redirects — 2026-dated posts that 404
+/ai-observability-2026-6565/ /blog/ 301
+/blog/ai-3d-asset-generator-2026-9202/ /blog/ 301
+/blog/ai-agent-frameworks-for-business-automation/ /blog/ 301
+/blog/ai-bdr-sdr-roi-and-cost-model/ /blog/ 301
+/blog/ai-customer-success-churn-2026-7879/ /blog/ 301
+/blog/ai-data-lakehouse-pipelines-2026-6981/ /blog/ 301
+/blog/ai-development-acceleration-2026-8081/ /blog/ 301
+/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/ /blog/ 301
+/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026/ /blog/ 301
+/blog/ai-for-cybersecurity-operations-and-threat-hunting/ /blog/ 301
+/blog/ai-for-data-engineering-and-pipeline-automation/ /blog/ 301
+/blog/ai-for-devops-and-incident-response/ /blog/ 301
+/blog/ai-for-it-operations-and-observability/ /blog/ 301
+/blog/ai-for-managed-it-and-enterprise-support/ /blog/ 301
+/blog/ai-for-network-operations-and-telecom-automation/ /blog/ 301
+/blog/ai-for-project-management-and-delivery/ /blog/ 301
+/blog/ai-for-quality-assurance-and-testing/ /blog/ 301
+/blog/ai-for-revenue-operations-and-business-intelligence/ /blog/ 301
+/blog/ai-for-sales-automation-and-crm-intelligence/ /blog/ 301
+/blog/ai-for-security-operations-and-compliance/ /blog/ 301
+/blog/ai-for-service-desk-and-support-automation/ /blog/ 301
+/blog/ai-it-operations-automation-2026-7867/ /blog/ 301
+/blog/ai-performance-monitoring-2026-8322/ /blog/ 301
+/blog/ai-predictive-maintenance-for-infrastructure/ /blog/ 301
+/blog/aiops-anomaly-detection-2026-7347/ /blog/ 301
+/blog/aiops-anomaly-detection-2026-7899/ /blog/ 301
+/blog/api-gateway-management-2026-7150/ /blog/ 301
+/blog/api-orchestration-layer-2026-6658/ /blog/ 301
+/blog/autonomous-code-deployment-2026-8109/ /blog/ 301
+/blog/cloud-cost-ai-optimizer-2026-7914/ /blog/ 301
+/blog/cloud-migration-services-2026-6779/ /blog/ 301
+/blog/container-security-lifecycle-2026-6813/ /blog/ 301
+/blog/cybersecurity-for-msps-automation-roadmap/ /blog/ 301
+/blog/cybersecurity-platform-msp-2026-6696/ /blog/ 301
+/blog/cybersecurity-platform-msp-2026-8352/ /blog/ 301
+/blog/cybersecurity-platform-msp-2026-9042/ /blog/ 301
+/blog/data-analytics-platform-modern-enterprise-2026-6905/ /blog/ 301
+/blog/data-warehouse-modernization-2026-8333/ /blog/ 301
+/blog/devsecops-pipeline-2026-6680/ /blog/ 301
+/blog/devsecops-pipeline-2026-6818/ /blog/ 301
+
+# Hermes Agent Fleet Manager tool
+/fleet-manager /tools/hermes-agent-fleet-manager/ 301
+/fleet-manager/ /tools/hermes-agent-fleet-manager/ 301
+# Catch-all for broken blog posts (2026-dated and other missing)
+/blog/ai-observability-2026-6565/ /blog/ 301
+# Remaining broken blog posts
+/blog/managed-it-services-small-business-2026-6559/ /blog/ 301
+/blog/cybersecurity-platform-msp-2026-6558/ /blog/ 301
+/blog/cloud-cost-ai-optimizer-2026-6534/ /blog/ 301
+/blog/it-consulting-2026-6570/ /blog/ 301
+/blog/cloud-migration-services-2026-6572/ /blog/ 301
