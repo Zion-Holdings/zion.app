@@ -1,7 +1,8 @@
-
+# Managed IT redirect
 /managed-it /managed-it/index.html 301
 /managed-it/ /managed-it/index.html 200
 
+# Site-wide URL normalization - remove trailing slash (301 to canonical)
 /pricing /pricing/ 301
 /help /faq/ 301
 /cookies /privacy/ 301
@@ -19,6 +20,8 @@
 /blog/cloud-cost-ai-optimizer /blog/ 301
 /blog/cyber-threat-intelligence /blog/ 301
 /blog/devops-gen-ai-cicd /blog/ 301
+
+# Industry solution redirects
 /solutions/construction-engineering /industries/ 301
 /solutions/ecommerce-retail /industries/ 301
 /solutions/education-training /industries/ 301
@@ -32,29 +35,19 @@
 /solutions/media-entertainment /industries/ 301
 /solutions/technology-and-saas /industries/ 301
 /solutions/* /solutions/ 301
+
+# Service redirects (specific services that moved)
 /services/saas-email-campaigns /services/ 301
 /services/ai-chatbot-builder /services/ 301
 /services/managed-observability-247 /services/ 301
 /services/sec-soc-as-a-service /services/ 301
-/free-ai-readiness-audit /ai-services/ 301
-/roi-calculator /tools/roi-calculator/ 301
-/roi-calculator/ /tools/roi-calculator/ 301
-/ai/ai-readiness-assessment /ai-services/ 301
-/services/ai-observability-aiops /services/ 301
-/status-page /contact/ 301
-/agents-monitoring /services/ 301
-/dashboard /services/ 301
-/sla /faq/ 301
-/cookie-policy /privacy/ 301
-/free-consultation /contact/ 301
-/free-ai-it-tools /tools/ 301
-/ai /ai/ 301
-/ai/ /ai/ 200
 /services/cloud-cost-optimization-platform /services/ 301
 /services/saas-appointment-scheduler /services/ 301
 /services/saas-form-builder /services/ 301
 /services/saas-subscription-analytics /services/ 301
 /services/* /services/ 301
+
+# Old service URLs (by ID) - redirect to services index
 /services/0113da85dd6c /services/ 301
 /services/107d2adc33f7 /services/ 301
 /services/18a20f35c8f6 /services/ 301
@@ -198,16 +191,6 @@
 /services/adaptive-analytics-for-real-estate-8404d2db /services/ 301
 /services/adaptive-analytics-for-retail-f7b5035d /services/ 301
 /services/adaptive-analytics-for-sports-9214385d /services/ 301
-/services/adaptive-analytics-for-technology-890cd92c /services/ 301
-/services/adaptive-analytics-for-telecom-1-dbdefc3e /services/ 301
-/services/adaptive-analytics-for-telecom-bb598c22 /services/ 301
-/services/adaptive-analytics-healthcare-0da0a1c1 /services/ 301
-/services/adaptive-analytics-logistics-7f5580f2 /services/ 301
-/services/adaptive-analytics-manufacturing-42433216 /services/ 301
-/services/adaptive-analytics-proptech-3e760feb /services/ 301
-/services/adaptive-analytics-real-estate-4ea34e3f /services/ 301
-/services/adaptive-analytics-retail-aafb3452 /services/ 301
-/services/adaptive-analytics-sports-0205b558 /services/ 301
 /services/adaptive-analytics-telecom-695f033e /services/ 301
 /services/adaptive-analyzer-agriculture-a1c74be4 /services/ 301
 /services/adaptive-analyzer-for-automotive-620b8007 /services/ 301
@@ -253,21 +236,37 @@
 /services/adaptive-audit-generator-d21b0ac6 /services/ 301
 /services/adaptive-audit-predictor-4883852e /services/ 301
 /services/adaptive-automation-construction-48168d31 /services/ 301
+
+# Additional redirects
 /micro-saas /services/ 301
 /it-consulting-services /services/ 301
 /start-project /contact/ 301
 /contact-intent /contact/ 301
 /partnership-program /partners/ 301
-
 /proposal /services/ 301
 /proposal/ /services/ 301
 /industries/manufacturing/ /industries/manufacturing 200
 /service-comparison /tools/service-comparison/ 301
 /service-comparison/ /tools/service-comparison/ 301
+/sla /faq/ 301
+/status-page /contact/ 301
+/dashboard /services/ 301
+/agents-monitoring /services/ 301
+
+# Cookie & legal pages
+/cookie-policy /privacy/ 301
+/free-consultation /contact/ 301
 
 # Free tools fallbacks
+/free-ai-it-tools /tools/ 301
 /free-tools /free-tools.html 200
 /free-tools/ /free-tools.html 200
+
+# AI section
+/ai /ai/ 301
+/ai/ /ai/ 200
+/ai/ai-readiness-assessment /ai-services/ 301
+/free-ai-readiness-audit /ai-services/ 301
 
 # Search fallback
 /search /search/index.html 200
@@ -276,3 +275,13 @@
 # Free AI tools fallback
 /free-ai-tools /free-ai-tools/index.html 200
 /free-ai-tools/ /free-ai-tools/index.html 200
+
+# Hermes Agent routes - static HTML fallback (fix 404s)
+/services/hermes-agent-content-publishing-distribution /services/hermes-agent-content-publishing-distribution/ 200
+/services/hermes-agent-content-publishing-distribution/ /services/hermes-agent-content-publishing-distribution/index.html 200
+/blog/hermes-agent-crescimento-explosivo /blog/hermes-agent-crescimento-explosivo/ 200
+/blog/hermes-agent-crescimento-explosivo/ /blog/hermes-agent-crescimento-explosivo/index.html 200
+/blog/empresas-hermesses-agent-catalogo /blog/empresas-hermesses-agent-catalogo/ 200
+/blog/empresas-hermesses-agent-catalogo/ /blog/empresas-hermesses-agent-catalogo/index.html 200
+/blog/hermes-agent-criar-catalogo-servicos-infinito /blog/hermes-agent-criar-catalogo-servicos-infinito/ 200
+/blog/hermes-agent-criar-catalogo-servicos-infinito/ /blog/hermes-agent-criar-catalogo-servicos-infinito/index.html 200
