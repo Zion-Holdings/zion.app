@@ -38,7 +38,8 @@
     "lint:fix": "bash -c 'ulimit -n 131072 2>/dev/null || true; npx eslint app components --fix'",
     "deploy:readiness": "node scripts/checks/deploy-readiness.cjs",
     "automation:health": "node scripts/checks/automation-health.cjs",
-    "cron:health": "node scripts/checks/cron-health.cjs"
+    "cron:health": "node scripts/checks/cron-health.cjs",
+    "autonomy:queue-guard": "python3 scripts/automation/autonomy-queue-guard.py"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",
