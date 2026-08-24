@@ -1,0 +1,59 @@
+[
+  {
+    "id": "growth-agent-task-manager-20260821",
+    "name": "Growth Agent Task Manager",
+    "title": "Growth Agent Task Manager",
+    "description": "Visual task management for delegated growth operations — track claims, priorities, zones, and SLA status across the agent swarm.",
+    "icon": "📋",
+    "category": "productivity",
+    "tags": ["growth", "productivity", "coordination", "task-management"],
+    "url": "https://ziontechgroup.com/tools/growth-agent-task-manager/",
+    "features": [
+      "Delegation tracking by zone (Growth, Content, Dev, Research, Social)",
+      "Priority levels (P0, P1, P2) with SLA windows",
+      "Claim status monitoring",
+      "Stall detection and re-dispatch alerts",
+      "Output verification checklist"
+    ],
+    "built_with": "Next.js, React, Tailwind CSS",
+    "zion_crew": true
+  },
+  {
+    "id": "typeform-paperwork-manager-20260821",
+    "name": "Typeform Paperwork Manager",
+    "title": "Typeform Paperwork Manager",
+    "description": "Automate and manage Typeform paperwork workflows — track form submissions, manage response data, and integrate with your business processes.",
+    "icon": "📝",
+    "category": "productivity",
+    "tags": ["typeform", "paperwork", "forms", "automation", "workflow"],
+    "url": "https://ziontechgroup.com/tools/typeform-paperwork-manager/",
+    "features": [
+      "Typeform form submission tracking",
+      "Response data management and export",
+      "Workflow automation for paperwork processes",
+      "Integration-ready architecture",
+      "Real-time status dashboard"
+    ],
+    "built_with": "Next.js, React, Tailwind CSS",
+    "zion_crew": true
+  },
+  {
+    "id": "typeform-paperwork-workflow-automation-20260821",
+    "name": "Typeform Paperwork Workflow Automation",
+    "title": "Typeform Paperwork Workflow Automation",
+    "description": "End-to-end automation for Typeform paperwork workflows — from form submission to processed output, with routing, validation, and notifications.",
+    "icon": "⚡",
+    "category": "automation",
+    "tags": ["typeform", "workflow", "automation", "paperwork", "integration"],
+    "url": "https://ziontechgroup.com/tools/typeform-paperwork-workflow-automation/",
+    "features": [
+      "Automated workflow routing for Typeform submissions",
+      "Data validation and transformation pipelines",
+      "Notification triggers on workflow events",
+      "Error handling and retry logic",
+      "Audit trail and logging"
+    ],
+    "built_with": "Next.js, React, Tailwind CSS",
+    "zion_crew": true
+  }
+]

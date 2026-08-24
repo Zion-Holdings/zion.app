@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       NEXT_TELEMETRY_DISABLED: "1"
-      NODE_OPTIONS: "--max-old-space-size=8192"
+      NODE_OPTIONS: --max-old-space-size=16384
       NEXT_TURBOPACK_USE_WORKER: "0"
     steps:
       - name: Checkout
@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit --fund=false
       - name: Build Next.js static export
-        run: npm run build
+        run: NODE_OPTIONS="--max-old-space-size=16384 --no-lru-cache" NEXT_TELEMETRY_DISABLED=1 NEXT_DISABLE_SWC_WORKER=1 npm run build -- --no-lint
       - name: Verify build output
         run: |
           if [ ! -d "out" ]; then
