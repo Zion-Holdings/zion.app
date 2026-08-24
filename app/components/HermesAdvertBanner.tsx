@@ -15,6 +15,14 @@ const HERMES_ADVERT_BANNERS = [
     href: '/hermes-agents/',
   },
   {
+    bgColor: 'from-indigo-900/40 via-purple-900/30 to-violet-900/40',
+    borderColor: 'border-indigo-500/30',
+    title: 'Build a Team of Specialist AI Bots',
+    subtitle: 'Hermes Agent Bot Mode — named Bots with their own models, memory, and platform connections.',
+    cta: 'Learn About Bot Mode',
+    href: '/services/hermes-agent-bot-mode/',
+  },
+  {
     bgColor: 'from-violet-900/40 via-indigo-900/30 to-blue-900/40',
     borderColor: 'border-violet-500/30',
     title: 'Watch Our AI Agent Fleet Live',

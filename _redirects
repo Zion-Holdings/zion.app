@@ -1228,3 +1228,17 @@
 /hermes-blog/ /hermes-blog/ 200
 /docs/hermes-agent-installation /docs/hermes-agent-skills/ 301
 /docs/hermes-agent-installation/ /docs/hermes-agent-skills/ 301
+
+# Hermes Agent Service Pages
+/hermes-bot-mode /services/hermes-agent-bot-mode/ 301
+/hermes-bot-mode/ /services/hermes-agent-bot-mode/ 301
+/hermes-plugin-development /services/hermes-agent-plugin-development/ 301
+/hermes-plugin-development/ /services/hermes-agent-plugin-development/ 301
+/hermes-a2a /services/hermes-agent-a2a-protocol/ 301
+/hermes-a2a/ /services/hermes-agent-a2a-protocol/ 301
+
+# Hermes Agent Blog Posts
+/hermes-bot-mode-blog /blog/hermes-agent-bot-mode/ 301
+/hermes-bot-mode-blog/ /blog/hermes-agent-bot-mode/ 301
+/hermes-plugin-guide /blog/building-custom-plugins-for-hermes-agent/ 301
+/hermes-plugin-guide/ /blog/building-custom-plugins-for-hermes-agent/ 301

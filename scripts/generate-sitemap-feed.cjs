@@ -24,11 +24,15 @@ const staticRoutes = [
   '/tools/cron-agent-calculator/', '/tools/json-schema-validator/', '/tools/llm-payload-estimator/',
   '/tools/mcp-tester/', '/tools/security-headers-analyzer/', '/tools/hermes-agent-fleet-manager/', '/use-cases/', '/services/',
   '/services/hermes-agent/', '/services/hermes-agent-training/', '/services/hermes-ai-agent-platform/',
-  '/solutions/hermes-ai-agents/', '/case-studies/hermes-agent-fleet/', '/docs/hermes-agent-skills/',
+  '/services/hermes-agent-bot-mode/', '/services/hermes-agent-plugin-development/',
+  '/services/hermes-agent-a2a-protocol/', '/services/hermes-autonomous-workflow-agents/',
+  '/services/hermes-multi-agent-orchestration/', '/solutions/hermes-ai-agents/', '/case-studies/hermes-agent-fleet/', '/docs/hermes-agent-skills/',
  '/docs/hermes-agent-architecture/',
  '/docs/hermes-agent-profiles/',
   '/docs/agent-framework-comparison/', '/docs/hermes-agent-installation/', '/docs/hermes-agent-mcp-integration/',
   '/hermes-agents/', '/hermes-monitor/',
+  '/hermes-agent-v20-guide/', '/docs/hermes-agent-v20-guide/',
+  '/blog/hermes-agent-bot-mode/', '/blog/building-custom-plugins-for-hermes-agent/',
 ];
 
 // ─── Discover ACTUAL service page directories ───────────────────
@@ -49,7 +53,25 @@ const blogPosts = fs.existsSync(blogDir)
       .map(d => d.name)
   : [];
 
-console.log(`Discovered ${blogPosts.length} blog post directories on disk`);
+// Also discover blog posts from blogPosts.json (data-driven via [slug] route)
+const blogPostsJsonPath = path.join(repo, 'app', 'data', 'blogPosts.json');
+const dataDrivenSlugs = [];
+let blogJson = [];
+if (fs.existsSync(blogPostsJsonPath)) {
+  try {
+    blogJson = JSON.parse(fs.readFileSync(blogPostsJsonPath, 'utf8'));
+    for (const post of blogJson) {
+      if (post.slug && !blogPosts.includes(post.slug)) {
+        dataDrivenSlugs.push(post.slug);
+      }
+    }
+  } catch (e) {
+    console.error('Error parsing blogPosts.json:', e.message);
+  }
+}
+const allBlogPosts = [...blogPosts, ...dataDrivenSlugs];
+
+console.log(`Discovered ${blogPosts.length} blog post directories on disk, ${dataDrivenSlugs.length} data-driven blog posts`);
 
 // ─── Docs ───────────────────────────────────────────────────────
 const docsDir = path.join(repo, 'app', 'docs');
@@ -121,7 +143,7 @@ for (const dir of svcDirs) {
 }
 
 // Blog posts
-for (const post of blogPosts) {
+for (const post of allBlogPosts) {
   entries.push({
     loc: `${SITE_URL}/blog/${post}/`,
     lastmod: today,
@@ -185,7 +207,37 @@ console.log(`Generated public/sitemap.xml with ${entries.length} URLs`);
 console.log(`  Static: ${staticRoutes.length}`);
 console.log(`  Hermes: ${hermesPages.length}`);
 console.log(`  Services (real dirs): ${svcDirs.length}`);
-console.log(`  Blog: ${blogPosts.length}`);
+console.log(`  Blog: ${allBlogPosts.length}`);
 console.log(`  Docs: ${docsPosts.length}`);
 console.log(`  Solutions: ${solPages.length}`);
 console.log(`  Case studies: ${casePages.length}`);
+
+// ─── Feed (Atom XML) ─────────────────────────────────────────────
+const feedPath = path.join(repo, 'feed.xml');
+// Build a map of slug → title from blogPosts.json for real titles
+const feedTitleMap = {};
+let feedDateMap = {};
+for (const post of blogJson) {
+  if (post.slug && post.title) feedTitleMap[post.slug] = post.title;
+  if (post.slug && post.date) feedDateMap[post.slug] = post.date;
+}
+// Also check filesystem blog dirs for metadata (dates from git or frontmatter)
+// Sort by date descending — most recent first — then take top 50
+const sortedFeedPosts = [...allBlogPosts].sort((a, b) => {
+  const da = feedDateMap[a] || '1970-01-01';
+  const db = feedDateMap[b] || '1970-01-01';
+  return db.localeCompare(da);
+});
+
+const feedEntries = sortedFeedPosts
+  .slice(0, 50)
+  .map((slug) => {
+    const title = feedTitleMap[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    return `  <entry><title>${title}</title><link href="${SITE_URL}/blog/${slug}/"/></entry>`;
+  })
+  .join('\n');
+
+const feedText = `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <title>Zion Tech Group Blog</title>\n  <link href="${SITE_URL}/blog/"/>\n  <updated>${new Date().toISOString()}</updated>\n${feedEntries}\n</feed>\n`;
+
+fs.writeFileSync(feedPath, feedText, 'utf8');
+console.log(`Generated feed.xml with ${allBlogPosts.slice(0, 50).length} entries`);

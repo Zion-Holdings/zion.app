@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Fix invalid blog slugs, sitemap/feed, and internal links."""
+import json
 import re
 from pathlib import Path
 
@@ -10,7 +11,15 @@ SITEMAP = REPO / 'sitemap.xml'
 FEED = REPO / 'feed.xml'
 BLOG_PAGE = REPO / 'app' / 'blog' / 'page.tsx'
 
-# Build valid slugs
+# Build valid slugs — both filesystem directories AND data-driven blogPosts.json entries
+import json as _json
+blog_posts_json = REPO / 'app' / 'data' / 'blogPosts.json'
+data_driven_slugs = set()
+if blog_posts_json.exists():
+    with open(blog_posts_json, encoding='utf-8') as _f:
+        _posts = _json.load(_f)
+    data_driven_slugs = {p['slug'] for p in _posts if 'slug' in p}
+
 valid_slugs = set()
 for p in BLOG_ROOT.iterdir():
     if p.is_dir() and (p / 'page.tsx').exists() and p.name != '[slug]':
@@ -19,15 +28,30 @@ for p in DOCS_ROOT.iterdir():
     if p.is_dir() and (p / 'index.html').exists():
         valid_slugs.add(p.name)
 
+# Merge in data-driven blog slugs (served via [slug] dynamic route)
+valid_slugs |= data_driven_slugs
+
 print(f'Valid slugs: {len(valid_slugs)}')
 
-# Rewrite app/blog/page.tsx
+# Rewrite app/blog/page.tsx — prefer real titles from blogPosts.json when available
+_blog_json = []
+try:
+    _blog_json = json.load(open(str(blog_posts_json), encoding='utf-8')) if blog_posts_json.exists() else []
+    _title_map = {p['slug']: p.get('title', '') for p in _blog_json}
+except Exception:
+    _title_map = {}
+
 posts = []
 for slug in sorted(valid_slugs):
-    title = slug.replace('-', ' ').replace('/', ' ').strip()
-    title = re.sub(r'\s+', ' ', title)
-    title = title.title()
-    posts.append(f"  {{slug: '{slug}', title: '{title}'}},")
+    if slug in _title_map and _title_map[slug]:
+        title = _title_map[slug].strip()
+    else:
+        title = slug.replace('-', ' ').replace('/', ' ').strip()
+        title = re.sub(r'\s+', ' ', title)
+        title = title.title()
+    # Escape single quotes for TypeScript string safety
+    title_safe = title.replace("'", "\\'")
+    posts.append(f"  {{slug: '{slug}', title: '{title_safe}'}},")
 
 posts_block = '\n'.join(posts)
 blog_page_text = """import Link from 'next/link';
@@ -87,9 +111,15 @@ print('Rewrote sitemap.xml')
 
 # Rewrite feed.xml
 feed_entries = []
-for slug in sorted(valid_slugs)[:50]:
-    title = slug.replace('-', ' ').replace('/', ' ').strip()
-    title = re.sub(r'\s+', ' ', title).title()
+# Sort by date descending — prefer recent posts
+_feed_dates = {p['slug']: p.get('date', '1970-01-01') for p in _blog_json if 'slug' in p}
+_recent_slugs = sorted(valid_slugs, key=lambda s: _feed_dates.get(s, '1970-01-01'), reverse=True)
+for slug in _recent_slugs[:50]:
+    if slug in _title_map and _title_map[slug]:
+        title = _title_map[slug].strip()
+    else:
+        title = slug.replace('-', ' ').replace('/', ' ').strip()
+        title = re.sub(r'\s+', ' ', title).title()
     feed_entries.append(f'<entry><title>{title}</title><link href="https://ziontechgroup.com/blog/{slug}/"/></entry>')
 
 feed_text = '<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <title>Zion Tech Group Blog</title>\n  <link href="https://ziontechgroup.com/blog/"/>\n  <updated>2026-08-17T07:41:05Z</updated>\n' + '\n'.join(feed_entries) + '\n</feed>\n'
