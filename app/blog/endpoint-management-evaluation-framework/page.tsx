@@ -75,7 +75,7 @@ Leading indicators for endpoint management: evaluation framework: workflow compl
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

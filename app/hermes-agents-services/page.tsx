@@ -349,6 +349,21 @@ export default function HermesAgentServicesPage() {
           </Link>
         </section>
       </StandardPage>
+      {/* Documentation CTA Section */}
+      <section className="section-standard bg-slate-950/50 mt-16">
+        <div className="container-standard text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Hermes Agent Documentation</h2>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            Complete guides, CLI reference, skills system documentation, and deployment manuals.
+          </p>
+          <Link
+            href="/hermes-docs/"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25"
+          >
+            Read Documentation →
+          </Link>
+        </div>
+      </section>
       <HermesAdvertBanner />
     </>
   );

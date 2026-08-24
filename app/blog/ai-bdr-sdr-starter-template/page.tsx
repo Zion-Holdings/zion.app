@@ -75,7 +75,7 @@ Leading indicators for ai bdr sdr: starter template: workflow completion rate, e
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -1,24 +1,27 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
-import { getServiceBySlug, getServicesCount } from '@/lib/services-data';
+import { getServicesData } from '@/lib/services-data';
 import type { ServiceSummary } from '@/lib/services-data';
 
 // Server component — data is fetched server-side only.
-// The full 19 MB JSON is read on the server, never imported to the client bundle.
+// Dynamic route uses fallback for incremental static regeneration.
 
-export const dynamic = 'error'; // Allow static generation per-slug via fallback
-export const dynamicParams = true;
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
+export const runtime = 'nodejs';
 
 export async function generateStaticParams() {
-  // Pre-render only the top 200 most popular services at build time.
-  // Remaining slugs are SSR'd on demand via fallback: 'blocking'.
+  // Do not pre-render service pages at build time — too many slugs.
+  // Pages are generated on-demand via ISR with fallback.
   return [];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const services = await getServicesData();
+  const service = services.find(s => s.url?.includes(slug)) || undefined;
   if (!service) return { title: 'Service Not Found' };
   const title = [service.title, 'Zion Tech Group'].filter(Boolean).join(' - ');
   return {
@@ -36,7 +39,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function DynamicServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const services = await getServicesData();
+  const service = services.find(s => s.url?.includes(slug)) || undefined;
 
   if (!service) {
     notFound();

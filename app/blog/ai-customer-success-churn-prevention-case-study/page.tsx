@@ -75,7 +75,7 @@ For ai customer success churn prevention: case study: pick one workflow, assign 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

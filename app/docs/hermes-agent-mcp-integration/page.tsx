@@ -141,7 +141,7 @@ registry.register(
 
 # 2. Add to toolsets.py → TOOLSETS dict
 # 3. (Optional) Add to config.yaml disabled_toolsets
-}
+`}
             </code>
           </pre>
 
@@ -158,7 +158,7 @@ registry.register(
 {`hermes webhook subscribe github-events
 # Creates route at /webhooks/github-events
 # Agent runs automatically on each POST
-}
+`}
             </code>
           </pre>
 

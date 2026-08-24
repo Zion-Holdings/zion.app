@@ -75,7 +75,7 @@ Leading indicators for ai agentic workflows: implementation playbook: workflow c
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

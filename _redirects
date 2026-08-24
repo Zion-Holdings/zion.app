@@ -1218,3 +1218,13 @@
 /blog/ai-for-network-operations-and-telecom-automation /blog/ 301
 /blog/managed-it-services-starter-template/ /blog/ 301
 /blog/managed-it-services-starter-template /blog/ 301
+
+# Hermes Agent Documentation & CLI Pages
+/hermes-docs /hermes-docs/ 301
+/hermes-docs/ /hermes-docs/ 200
+/hermes-cli /hermes-cli/ 301
+/hermes-cli/ /hermes-cli/ 200
+/hermes-blog /hermes-blog/ 301
+/hermes-blog/ /hermes-blog/ 200
+/docs/hermes-agent-installation /docs/hermes-agent-skills/ 301
+/docs/hermes-agent-installation/ /docs/hermes-agent-skills/ 301

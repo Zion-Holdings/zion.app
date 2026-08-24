@@ -280,6 +280,21 @@ export default function HermesToolsPage() {
           </section>
         </div>
       </StandardPage>
+      {/* Docs CTA */}
+      <section className="section-standard bg-slate-950/50">
+        <div className="container-standard text-center">
+          <h2 className="text-2xl font-bold text-white mb-4">Need the Full CLI Reference?</h2>
+          <p className="text-slate-300 mb-4 max-w-2xl mx-auto">
+            Every Hermes CLI command, flag, and slash command in one place — plus installation and configuration guides.
+          </p>
+          <Link
+            href="/hermes-cli/"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-500 hover:to-pink-500 transition-all text-sm"
+          >
+            CLI Reference →
+          </Link>
+        </div>
+      </section>
       <HermesAdvertBanner />
     </>
   );

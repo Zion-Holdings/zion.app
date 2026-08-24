@@ -75,7 +75,7 @@ For ai ad copy generator: case study: pick one workflow, assign ownership, defin
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

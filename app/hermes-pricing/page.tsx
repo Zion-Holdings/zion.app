@@ -237,6 +237,25 @@ export default function HermesPricingPage() {
           </Link>
         </section>
       </StandardPage>
+      {/* Docs CTA */}
+      <section className="text-center bg-gradient-to-r from-purple-600/20 via-pink-600/10 to-indigo-600/20 border border-purple-500/30 rounded-2xl p-12">
+        <h2 className="text-3xl font-bold text-white mb-4">Ready to Deploy Your Agent Fleet?</h2>
+        <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+          Start with a single agent. Scale to hundreds. We handle the infrastructure while your agents do the work.
+        </p>
+        <Link
+          href="/hermes-docs/"
+          className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-500 hover:to-pink-500 transition-all text-sm mr-4"
+        >
+          Read Documentation →
+        </Link>
+        <Link
+          href="https://calendly.com/kleber-ziontechgroup/consultation"
+          className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25"
+        >
+          Book a free consultation →
+        </Link>
+      </section>
       <HermesAdvertBanner />
     </>
   );

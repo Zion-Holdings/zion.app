@@ -339,7 +339,7 @@ export default function HermesAgentsPage() {
         {/* Related Links */}
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Learn More</h2>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-3">
             <Link
               href="/blog/hermes-agent-self-improving-ai-platform/"
               className="block p-4 border border-slate-800 rounded-xl hover:border-purple-500/40"
@@ -353,6 +353,13 @@ export default function HermesAgentsPage() {
             >
               <h3 className="font-semibold text-white">Service: Hermes AI Agent Platform</h3>
               <p className="text-sm text-slate-400">Managed platform for building and deploying AI agent fleets.</p>
+            </Link>
+            <Link
+              href="/hermes-docs/"
+              className="block p-4 border border-slate-800 rounded-xl hover:border-purple-500/40"
+            >
+              <h3 className="font-semibold text-white">Documentation</h3>
+              <p className="text-sm text-slate-400">Complete guides, CLI reference, and deployment manuals.</p>
             </Link>
           </div>
         </section>

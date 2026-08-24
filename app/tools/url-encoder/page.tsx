@@ -68,7 +68,7 @@ export default function Page() {
   );
 
       {/* Injected JSON-LD Schemas */}
-      <JsonLd data={{ {
+      <JsonLd data={{
   "@context": "https://schema.org",
   "@type": [
     "SoftwareApplication",
@@ -102,7 +102,7 @@ export default function Page() {
   "browserRequirements": "Modern web browser with JavaScript enabled",
   "softwareVersion": "1.0"
 } }} />
-      <JsonLd data={{ {
+      <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [

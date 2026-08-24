@@ -95,7 +95,7 @@ hermes mcp add brave-search --command npx --args "-y,@modelcontextprotocol/serve
 hermes mcp test brave-search
 
 # 3. Run Hermes — the tools are available immediately
-hermes -s hermes-agent "Search for recent AI agent security research and summarize"</code>}
+hermes -s hermes-agent "Search for recent AI agent security research and summarize"`}</code>
             </code>
           </pre>
 

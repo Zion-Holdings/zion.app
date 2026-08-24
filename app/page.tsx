@@ -29,6 +29,51 @@ export default function HomePage() {
       ]}
     >
       <AgentsMonitoring />
+
+      {/* Hermes Agent Hero Banner */}
+      <section className="mt-12 max-w-6xl mx-auto">
+        <div className="relative overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-br from-purple-950/60 via-slate-950 to-pink-950/60">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(120,50,200,0.3),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_50%,rgba(200,50,150,0.2),transparent_60%)]" />
+          <div className="relative p-8 md:p-12">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="inline-block w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
+              <span className="text-xs text-purple-300 font-mono uppercase tracking-wider">Powered by Nous Research</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">
+                Hermes Agent Platform
+              </span>
+            </h2>
+            <p className="text-lg text-slate-300 max-w-3xl mb-6">
+              Deploy autonomous AI agents with self-improving skills, persistent memory, and a 20+ platform
+              gateway. Run 24/7 agent fleets that automate CI/CD, SEO content generation, security audits,
+              and growth pipelines — all built on the open-source Hermes platform.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/hermes-agents/"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25"
+              >
+                🚀 Explore Hermes Agent
+              </Link>
+              <Link
+                href="/agents-monitoring/"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-slate-700 text-slate-200 font-semibold rounded-xl hover:border-purple-500/40 hover:bg-slate-900/60 transition-all"
+              >
+                📊 Live Agent Dashboard
+              </Link>
+              <Link
+                href="/hermes-docs/"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-slate-700 text-slate-300 font-medium rounded-xl hover:border-purple-500/40 hover:bg-slate-900/60 transition-all"
+              >
+                📚 Documentation
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto mt-12">
         <Link href="/services?category=ai" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">AI & Automation</h3>

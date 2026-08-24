@@ -75,7 +75,7 @@ For cloud finops: operations handbook: pick one workflow, assign ownership, defi
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

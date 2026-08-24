@@ -75,7 +75,7 @@ For ai data lakehouse pipelines: operations handbook: pick one workflow, assign 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

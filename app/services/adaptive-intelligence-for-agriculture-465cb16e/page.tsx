@@ -77,7 +77,7 @@ export default function ServicePage() {
       </div>
     
       {/* Injected JSON-LD Schemas */}
-      <JsonLd data={{ {
+      <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "optimizer",
@@ -144,7 +144,7 @@ export default function ServicePage() {
     ]
   }
 } }} />
-      <JsonLd data={{ {
+      <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
