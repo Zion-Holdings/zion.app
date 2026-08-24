@@ -87,6 +87,9 @@
 /blog/ /blog/index.html 200
 
 # Key route fallbacks
+/solutions/healthcare /docs/solutions/healthcare/index.html 301
+/industries/financial-services /docs/industries/financial-services/index.html 301
+/tools/phishing-analyzer /docs/tools/phishing-analyzer/index.html 301
 /solutions/healthcare/ /docs/solutions/healthcare/index.html 200
 /tools/phishing-analyzer/ /docs/tools/phishing-analyzer/index.html 200
 /industries/financial-services/ /docs/industries/financial-services/index.html 200
