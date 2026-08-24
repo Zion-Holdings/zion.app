@@ -1,10 +1,8 @@
-import JsonLd from '@/components/JsonLd';
-import Link from 'next/link';
-import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Platform for Gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our AI-Powered Platform for Gaming leverages advanced machine learning to deliver content generation at scale.",
+  description: "The future of gaming is here with AI-Powered Platform for Gaming. Powered by cutting-edge AI, this platform delivers sales process optimization like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-platform-for-gaming-10b51146`
   }
@@ -13,60 +11,51 @@ export const metadata = {
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
-    <JsonLd data={'@context': 'https://schema.org', '@type': 'Service', 'name': 'AI-Powered Platform for Gaming', 'description': 'Revolutionize gaming through intelligent automation. Our AI-Powered Platform for Gaming leverages advanced machine learning to deliver content generation at scale.', 'serviceType': 'engine', 'provider': {'@type': 'Organization', 'name': 'Zion Tech Group', 'url': 'https://ziontechgroup.com', 'contactPoint': {'@type': 'ContactPoint', 'email': 'hello@ziontechgroup.com', 'telephone': '+1 (302) 464-0950', 'contactType': 'sales'}}, 'serviceArea': {'@type': 'Place', 'name': 'gaming'}, 'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'AI-Powered Platform for Gaming Pricing Plans', 'itemListElement': [{'@type': 'Offer', 'name': 'Basic', 'price': '199', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Pro', 'price': '499', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Enterprise', 'price': '1499', 'priceCurrency': 'USD'}]}} />
-    <JsonLd data={'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'SOC 2 certified', 'acceptedAnswer': {'@type': 'Answer', 'text': 'SOC 2 certified'}}, {'@type': 'Question', 'name': 'Alerting system', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Alerting system'}}, {'@type': 'Question', 'name': 'Serverless functions', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Serverless functions'}}, {'@type': 'Question', 'name': 'What business impact can I expect?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Intelligent load balancing; Predictive maintenance scheduling; Dynamic resource allocation'}}, {'@type': 'Question', 'name': 'How do I get started with this service?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Contact our team at hello@ziontechgroup.com or book a free consultation at https://calendly.com/kleber-ziontechgroup/consultation to get started.'}}]} />
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path={`/services/ai-powered-platform-for-gaming-10b51146`} title="AI-Powered Platform for Gaming" />
-        <h1 className="text-4xl font-bold mb-6">💡 AI-Powered Platform for Gaming</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize gaming through intelligent automation. Our AI-Powered Platform for Gaming leverages advanced machine learning to deliver content generation at scale.</p>
-
+        <h1 className="text-4xl font-bold mb-6">AI-Powered Platform for Gaming</h1>
+        <p className="text-lg text-gray-300 mb-8">The future of gaming is here with AI-Powered Platform for Gaming. Powered by cutting-edge AI, this platform delivers sales process optimization like never before.</p>
+        
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified</li>
-            <li>Alerting system</li>
-            <li>Serverless functions</li>
-            <li>Auto-scaling capabilities</li>
-            <li>Rollback mechanisms</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Multi-language support with localization</li>
           </ul>
         </div>
-
+        
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Intelligent load balancing</li>
-            <li>Predictive maintenance scheduling</li>
-            <li>Dynamic resource allocation</li>
-            <li>50% reduction in operational costs</li>
-            <li>Real-time insights and alerts</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
-
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199/month</p>
+              <p className="text-2xl font-bold mb-2">$199</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499/month</p>
+              <p className="text-2xl font-bold mb-2">$499</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499/month</p>
+              <p className="text-2xl font-bold mb-2">$1499</p>
             </div>
           </div>
         </div>
-        <div className="border-t border-slate-800 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <Link href="/services/" className="text-purple-300 hover:text-purple-200">← Back to All Services</Link>
-          <Link href="/tools/" className="text-slate-400 hover:text-slate-300">Try our free tools →</Link>
-        </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
@@ -74,6 +63,7 @@ export default function ServicePage() {
             Book a Consultation
           </a>
         </div>
-      </div></main>
+      </div>
+    </main>
   );
 }

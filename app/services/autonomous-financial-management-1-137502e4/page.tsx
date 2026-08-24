@@ -1,10 +1,8 @@
-import JsonLd from '@/components/JsonLd';
-import Link from 'next/link';
-import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Financial Management #1 - Zion Tech Group",
-  description: "The future of construction is here with Autonomous Financial Management #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
+  description: "Transform your healthcare operations with our Autonomous Financial Management #1. This AI-driven solution automates manufacturing quality control with unprecedented accuracy and efficiency.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-financial-management-1-137502e4`
   }
@@ -13,60 +11,51 @@ export const metadata = {
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
-    <JsonLd data={'@context': 'https://schema.org', '@type': 'Service', 'name': 'Autonomous Financial Management #1', 'description': 'The future of construction is here with Autonomous Financial Management #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.', 'serviceType': 'engine', 'provider': {'@type': 'Organization', 'name': 'Zion Tech Group', 'url': 'https://ziontechgroup.com', 'contactPoint': {'@type': 'ContactPoint', 'email': 'hello@ziontechgroup.com', 'telephone': '+1 (302) 464-0950', 'contactType': 'sales'}}, 'serviceArea': {'@type': 'Place', 'name': 'construction'}, 'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Autonomous Financial Management #1 Pricing Plans', 'itemListElement': [{'@type': 'Offer', 'name': 'Basic', 'price': '199', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Pro', 'price': '499', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Enterprise', 'price': '1499', 'priceCurrency': 'USD'}]}} />
-    <JsonLd data={'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'HIPAA ready', 'acceptedAnswer': {'@type': 'Answer', 'text': 'HIPAA ready'}}, {'@type': 'Question', 'name': 'SOC 2 certified', 'acceptedAnswer': {'@type': 'Answer', 'text': 'SOC 2 certified'}}, {'@type': 'Question', 'name': 'Custom integrations', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Custom integrations'}}, {'@type': 'Question', 'name': 'What business impact can I expect?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Seamless integration with existing systems; ROI in under 90 days; Real-time insights and alerts'}}, {'@type': 'Question', 'name': 'How do I get started with this service?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Contact our team at hello@ziontechgroup.com or book a free consultation at https://calendly.com/kleber-ziontechgroup/consultation to get started.'}}]} />
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path={`/services/autonomous-financial-management-1-137502e4`} title="Autonomous Financial Management #1" />
-        <h1 className="text-4xl font-bold mb-6">💡 Autonomous Financial Management #1</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Autonomous Financial Management #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.</p>
-
+        <h1 className="text-4xl font-bold mb-6">Autonomous Financial Management #1</h1>
+        <p className="text-lg text-gray-300 mb-8">Transform your healthcare operations with our Autonomous Financial Management #1. This AI-driven solution automates manufacturing quality control with unprecedented accuracy and efficiency.</p>
+        
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready</li>
-            <li>SOC 2 certified</li>
-            <li>Custom integrations</li>
-            <li>Performance dashboards</li>
-            <li>Open-source friendly</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
-
+        
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems</li>
-            <li>ROI in under 90 days</li>
-            <li>Real-time insights and alerts</li>
-            <li>Performance benchmarking</li>
-            <li>Enterprise-grade security</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
-
+        
         <div className="border border-purple-500 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199/month</p>
+              <p className="text-2xl font-bold mb-2">$199</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499/month</p>
+              <p className="text-2xl font-bold mb-2">$499</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499/month</p>
+              <p className="text-2xl font-bold mb-2">$1499</p>
             </div>
           </div>
         </div>
-        <div className="border-t border-slate-800 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <Link href="/services/" className="text-purple-300 hover:text-purple-200">← Back to All Services</Link>
-          <Link href="/tools/" className="text-slate-400 hover:text-slate-300">Try our free tools →</Link>
-        </div>
-
+        
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
@@ -74,6 +63,7 @@ export default function ServicePage() {
             Book a Consultation
           </a>
         </div>
-      </div></main>
+      </div>
+    </main>
   );
 }

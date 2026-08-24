@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="canonical" href="https://ziontechgroup.com/faq/"/>
+<title>FAQ | Zion Tech Group</title>
+<style>
+  :root { color-scheme: dark; }
+  body { background: #0b0f1a; color: #e5e7eb; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+  a { color: #93c5fd; text-decoration: none; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  header { border-bottom: 1px solid #1e293b; }
+  nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+  .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; background: linear-gradient(90deg,#a78bfa,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .links a { margin-left: 14px; color: #c4b5fd; font-weight: 500; }
+  .links a:hover { color:#fff; }
+  .hero { padding: 64px 24px; }
+  h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; color:#f8fafc; }
+  p.lead { font-size: 18px; color: #cbd5e1; max-width: 760px; line-height: 1.6; }
+  .section { padding: 24px; }
+  .section-title { font-size: 22px; margin: 0 0 10px; color:#f8fafc; }
+  footer { border-top: 1px solid #1e293b; padding: 24px; color: #94a3b8; font-size: 13px; }
+  .faq { display: grid; gap: 12px; }
+  .item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 18px; }
+  .question { font-weight: 600; color:#f8fafc; margin-bottom:6px; }
+  .answer { color:#cbd5e1; line-height:1.6; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Zion Tech Group</div>
+        <div class="links"><a href="/services/">Services</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p class="lead">Quick answers about working with Zion Tech Group.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="faq">
+          <div class="item">
+            <div class="question">What industries do you serve?</div>
+            <div class="answer">We serve financial services, healthcare, manufacturing, retail, logistics, hospitality, sports, real estate, fintech, telecom, and gaming.</div>
+          </div>
+          <div class="item">
+            <div class="question">How fast can you start?</div>
+            <div class="answer">Most engagements begin within 1-2 weeks after scoping. For urgent needs, we can often start within days.</div>
+          </div>
+          <div class="item">
+            <div class="question">Do you work with existing tools?</div>
+            <div class="answer">Yes. We integrate with common clouds, SIEMs, CRMs, ERPs, and DevOps platforms. We avoid rip-and-replace unless you want it.</div>
+          </div>
+          <div class="item">
+            <div class="question">How do you measure success?</div>
+            <div class="answer">We define KPIs before starting: cost reduction, cycle time, accuracy, uptime, or revenue impact. You get regular reporting.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">© <span id="year"></span> Zion Tech Group · <a href="/">ziontechgroup.com</a></div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

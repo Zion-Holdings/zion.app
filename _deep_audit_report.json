@@ -1,0 +1,2336 @@
+{
+  "summary": {
+    "total_sitemap_urls": 20605,
+    "service_pages": 16408,
+    "blog_pages": 4107,
+    "solution_pages": 16,
+    "landing_pages": 90
+  },
+  "landing_page_errors": [
+    {
+      "url": "https://ziontechgroup.com/free-resources/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/free-contact/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/business-customers/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/integrators/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/dashboard/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/help/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/products/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/careers/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-lab/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/providers/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/it-consulting-services/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/governments/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/roi-calculator/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/status/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/sla/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/industry-solutions/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/faq/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/it-vendors/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/testimonials/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/docs/hermes-agent-v20-guide/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-agent-v20-guide/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-services-index/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-monitor/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/academy/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/docs/agent-framework-comparison/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/docs/agent-framework-comparison/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/docs/hermes-agent-v20-guide/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-security/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-integrations/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-pricing/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-swarm/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-about/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-case-studies/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/hermes-ai-agents/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/hermes-ai-agents/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/ai-automation/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/cloud-devops/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-tools/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/hermes-faq/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/financial-services/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/micro-saas/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/manufacturing/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/managed-it/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/data-analytics/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/case-studies/[slug]/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/security-compliance/",
+      "status": 404,
+      "error": null
+    }
+  ],
+  "service_sample_errors": [
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-healthcare-1-cd047762/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-director-9e54d789/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-advisor-26f7f334/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-learning-mgmt/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-service-manufacturing-fb0e3fe0/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-content-advisor-f69d1e65/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-telecom-0b8caf1f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/warehouse-automation-orchestrator-feacb45d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-content-optimizer-8ed7355e/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-competitive-support-b61c8908/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-field-service/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-hospitality-38bc3d13/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-education-b5a5a14f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-hospitality-3567c74b/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-insights---energy-edition-d7b7b5e7/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-healthcare-217c9b93/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-telecom-6776a461/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-media-1-aca6e371/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-data-director-581d061c/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-insurance-65d01cd3/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-predictive-maintenance-ai/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/5g-network-slicing-optimizer-582b5813/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-progress/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/accessibility-compliance/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-suite-87b8ea98/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-automotive-f57fe54f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-content-mod/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-workflow-automate/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-engine-9b0fa100/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-healthcare-0e68580c/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-trade-comp/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-customer-feedback-analyzer/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-executive-ciso/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/self-optimizing-optimization-transportation-cdc51634/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/5g-network-slicing-optimizer-d43a3f1d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-ai-meeting-minutes/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/automated-processor-hospitality-789a3531/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-real-estate-7ce61009/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-cloud-cost-optimization/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-sports-a7098247/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cloud-network/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-healthcare-1-76ed30b5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cloud-finops/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-dealroom/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-telecom-1dcc9b6e/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-transportation-e8ec9147/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-api/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-energy-6dff1516/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-defect-predict/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-optimization-98f8c665/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-energy-7a89e3a2/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-soc2-ready/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-healthcare-8883e2ad/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-finance-0335626f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-fintech-fraud-detection/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/zero-trust-security/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-system-580ebc05/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-hospitality-65451b2d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-media-8b096ab9/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-insurance-claim/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-for-healthcare-19940770/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/hermes-agent-bot-mode/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-ai-synthetic-data-generator/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-gaming-f5a7bb63/",
+      "status": 503,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ztna/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-hospitality-1-b19319e2/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-insurance-c7208f6f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-gaming-2-849389ef/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-media-1-b13e0263/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-retail-1e95b778/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-facility-mgmt/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-legal-0fd43f86/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-real-estate-c45b03e5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-cloud-manufacturing-9ebd9fc9/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-transportation-1325fc59/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-endpoint-security/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-retention/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-travel-expense/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-edge-compute/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-municipal-automation/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-sports-c0651646/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-manufacturing-5c30c0e2/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-data-analytics-33207b7d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-manufacturing-87798910/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-logistics-075a1b82/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-finance-c8072d9d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-automotive-f850781d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-it-process-automate/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-manufacturing-1-86244cca/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-automotive-3848e36b/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-automotive-ac7e7e09/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-ai-agent-orchestrator/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/zero-trust-network-access/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-retail-1-c45bc3ff/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-insurance-535020e8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-powered-processor-for-logistics-e5efb3f6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-media-f37e30f2/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-energy-26ebe9e2/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cloud-observ/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/warehouse-automation-orchestrator-28532089/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-telecom-089cd042/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-construction-2-c6addd18/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/workflow-automation/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-healthcare-1-deee2109/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-retail-aba7d566/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-agriculture-44082896/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/5g-network-slicing-optimizer-7f874fd2/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-customer-onboard/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-synthetic/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-construction-398cadca/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-automated-compliance-reporting/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-real-estate-4ea34e3f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-quality-mgmt/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-advisor-a0f70673/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-science-ws/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-education-661d23b8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-education-1-b5ec2bc0/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-network-assess/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-cost-performance-e0091ede/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-healthcare-ai-diagnostics/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-breach-sim/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-finance-f32697fd/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-real-estate-8a3bbb8c/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-gaming-0b934f4d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-orchestrator-af8edd46/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-automation-06292323/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-finance-22eeaae9/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-analyzer-49047890/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-retail-094a5674/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/5g-network-slicing-optimizer-cb909bf5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-identity-fraud/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-it-asset-discovery-management/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cost-intel/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-optimizer-2a5381fe/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-tech-ba571167/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-agriculture-0f8775d9/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-content-analytics-0813a80d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-textexport/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-automotive-80fd7ed0/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-director-1-e34c1700/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-hospitality-1580bab0/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-analytics-1832c65b/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/5g-network-slicing-optimizer-49d23f95/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-construction-903d1471/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-manufacturing-1-b2c10b96/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cloud-db/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-finance-2-21074ec1/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-insights-7ce728a6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-generator-99a47388/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-gaming-7f5e52e1/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cloud-cspm/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-automotive-1-b9f425f3/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-manufacturing-20ec4bac/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-manufacturing-0f9ad2a8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-transportation-3d8b7a51/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-logistics-118a4b0a/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-construction-fcb356b8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-construction-43c8a544/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-service-logistics-f1b6a051/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-procure-pay/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/5g-network-slicing-optimizer-e04c40dd/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-healthcare-56195b28/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/warehouse-automation-orchestrator-cadb3631/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-agriculture-189a6032/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-brand-sales-0d705162/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-healthcare-87731de6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-finance-1-6e5c4f3f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-risk-d9f209a7/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-cloud-for-finance-56129d59/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-classify/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-catalog/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-smart-invoice-reconciliation/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-construction-1c694cae/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-analytics-c200f784/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-zero-trust-architecture/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-packaging-opt/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-digestion/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-helpdesk-lite/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-healthcare-2-3dbb4dee/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-coordinator-59f97a16/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cloud-sec-auto/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-content-analyzer-1d2109db/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-sase/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-sports-3eeb7d52/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-education-bfc29368/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-contract-mgmt/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-patient-triage/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-vdi-optimize/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-manager-82ca97de/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-media-e88b33f3/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-manufacturing-digital-twin/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-real-estate-84acad0c/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-transportation-982cb0b2/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-agriculture-ff3d6aa8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/warehouse-automation-orchestrator-41982b07/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-energy-fcast/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-ai-legal-document-analyzer/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-manufacturing-2-69d5d490/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-secure-dev/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-tech-e6a61693/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-cleanroom/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-ticket-intel/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-agriculture-1-26dffc8d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-education-487eafc5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-competitive-real-estate-287cca75/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-real-estate-d30743e9/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-coordinator-765f84b7/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/hermes-agent-plugin-development/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-finance-1-788f6eb5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-intelligence-d2fa53b8/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-insurance-3da6b7a1/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-real-estate-1-846a04d6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-media-6418ae54/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cloud-refactor/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-center-audit/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-data-advisor-37d91145/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-quotegen/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-cloud-for-healthcare-9ec2635a/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-director-83ff32be/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-automotive-18515026/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-construction-1-00b3740c/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/5g-network-slicing-optimizer-b2232347/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/warehouse-automation-orchestrator-5efdf77b/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-crop-disease/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-for-finance-99308192/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-hr-onboarding/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-automotive-1-dbe422aa/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-agriculture-44bd1ebb/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-energy-f27a5a7a/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-manager-4bb24001/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-tech-34ea5c68/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-transportation-07382b38/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-warehouse-intel/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/warehouse-automation-orchestrator-e23a582f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-content-generator-d927f6db/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-agriculture-2-8b2ce01a/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-content-predictor-e6ae1dfe/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-managed-detection-response/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-inventorysync/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-gaming-1-a374058f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-platform-c76c173a/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-for-manufacturing-1-e480db46/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-market-optimizer-02d38d04/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/zero-trust-access/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-insurance-1-3f31237b/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-prep/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-retail-personalization/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-construction-2-5c1942ce/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-logistics-bbb5a349/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-doc-automate/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analytics-energy-1-0c76478a/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-systemstatus/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/hermes-agent-a2a-protocol/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-data-lineage/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-media-6b73f3c1/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-manufacturing-da5361db/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-edtech-adaptive-learning/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-coordinator-1-f0396b40/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-red-team/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/intelligent-risk-analyzer-8d3676a0/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-healthcare-b2ec0035/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-privacy-impact/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-legal-brief/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/orchestrator-intelligent---retail-b456d3a5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/warehouse-automation-orchestrator-90f7c927/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-insights-88e8796b/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-management-3fdff77f/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-construction-1-071643bc/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-leadscoring/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-code-optimizer-1-934e5e58/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-finance-94bfccba/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-it-asset-disposal/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-retail-f079c50a/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-ai-rental-pricing/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-healthcare-76d7d8ef/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-telecom-e78bb7dc/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-optimization-ba7a4713/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-tech-a8a4dd2c/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-compliance-system-9bdae974/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-for-manufacturing-2-927d2141/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave127-multimodal-ai-search/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-data-loss-prevention/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-real-estate-cd364700/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-email-arch-migrate/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cloud-readiness/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-gaming-65cb3d65/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-for-construction-5b6000aa/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cognitive-processor-for-healthcare-54a81958/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-manufacturing-1-1a3fe3d6/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-automotive-f5cc7bc5/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-coordinator-for-real-estate-377c5d22/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-content-predictor-1-bef2da62/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-healthcare-1a196a05/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/wave126-ai-code-review/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-logistics-6d19dee3/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-customer-optimization-34f2111e/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-analyzer-for-healthcare-7d16cf33/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-telecom-67a044dc/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-advisor-finance-dc7ebc51/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-business-manufacturing-f39bbf50/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/adaptive-automation-finance-1-ad8b276d/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/services/w177-cert-mgmt/",
+      "status": 404,
+      "error": null
+    }
+  ],
+  "blog_sample_errors": [
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-documentation-hub/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-autonomous-agents-2026-9140/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-predictive-analytics-transform-business/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cloud-native-app-development-2026-7157/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/site-monitoring-autonomy-service/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/content-generation-distribution-service/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/security-headers-analyzer/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-2026-7548/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/new-hermes-agent-services-launch/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-2026-6608/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-2026-7214/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-complete-guide-2026/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/edge-computing-deployment-2026-9096/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-platform-launch/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agents-enterprise-automation/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-content-publishing-distribution/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/lead-qualification-automation/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-agentic-workflows-2026-6655/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/multi-agent-coordination-setup-service/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/lead-qualification-enrichment-service/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-powered-change-management-for-it-teams-2026/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/why-hermes-ai-agents-outperform-traditional-automation/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-roi-calculator/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/autonomous-code-deployment-2026-7074/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/building-custom-plugins-for-hermes-agent/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/auto-outreach-automation-service/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/api-health-check/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermescom-your-enterprise-hermes-agent-platform/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-platform-deep-dive/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/phishing-analyzer/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-agents-autonomous-business-automation/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-bot-mode/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-2026-6980/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-2026-7280/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cron-agent-calculator/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-cli-reference-complete/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-services-catalog/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/auto-outreach-ai-leads/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/micro-saas-ai-social-media-manager-2026-7475/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-swarm-protocol-actions/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/llm-payload-estimator/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cloud-cost-optimizer/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/free-ai-it-tools-ziontechgroup/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/jwt-decoder/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-for-healthcare-analytics-and-clinical-decision-support/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026-9198/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/[slug]/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-2026-7741/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-it-operations-automation-2026-8143/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-2026-8102/",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-platform-open-source/",
+      "status": 404,
+      "error": null
+    }
+  ],
+  "landing_page_statuses": {
+    "https://ziontechgroup.com/about/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/public-roadmap/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/cookies/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/contact/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/search/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/free-resources/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/industries/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/terms/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/free-contact/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/business-customers/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/integrators/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/dashboard/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/help/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/products/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/case-studies/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/careers/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/ai-lab/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/providers/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/it-consulting-services/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/governments/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/ai/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/agents-monitoring/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/roi-calculator/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/status/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/sla/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/industry-solutions/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/faq/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/ai-services/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/it-vendors/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/testimonials/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/api-health-check/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/ai-roi-calculator/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/cloud-cost-optimizer/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/json-schema-validator/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/docs/hermes-agent-v20-guide/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/cloud-cost-calculator/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/mcp-tester/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/agent-prompt-builder/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/hermes-agent-fleet-manager/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/llm-payload-estimator/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/docs/hermes-agent-profiles/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-agent-v20-guide/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/case-studies/hermes-agent-fleet/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/use-cases/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/ai-services-index/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/docs/hermes-agent-installation/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-monitor/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/academy/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/docs/agent-framework-comparison/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-security/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-integrations/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-pricing/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/healthcare/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/docs/hermes-agent-mcp-integration/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-swarm/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/docs/hermes-agent-architecture/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/cron-agent-calculator/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/security-headers-analyzer/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-about/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/docs/hermes-agent-skills/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-case-studies/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/hermes-ai-agents/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/ai-automation/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/cloud-devops/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-tools/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-faq/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/hermes-agents/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/financial-services/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/government/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/education/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/micro-saas/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/manufacturing/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/managed-it/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/data-analytics/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/case-studies/[slug]/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/security-compliance/": {
+      "status": 404,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/retail/": {
+      "status": 200,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/logistics/": {
+      "status": 200,
+      "error": null
+    }
+  }
+}
