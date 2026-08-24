@@ -63,3 +63,6 @@
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
 }
+
+/* Prevent bundle-injected header hide */
+header { transform: none !important; }
