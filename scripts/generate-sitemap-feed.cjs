@@ -3,6 +3,9 @@
  * Generate sitemap.xml — only pages that ACTUALLY EXIST on disk.
  * Reads service page directories from app/services/ and blog posts from app/blog/.
  * Does NOT pull from servicesData.json (which may have phantom entries).
+ * 
+ * INCLUDES: All Hermes Agent specific pages that are real routes
+ * AUTO-DISCOVER: Tools, Services, Docs from actual directory structure
  */
 const fs = require('fs');
 const path = require('path');
@@ -19,16 +22,11 @@ const staticRoutes = [
   '/free-resources/', '/governments/', '/help/', '/industries/', '/industry-solutions/',
   '/integrators/', '/it-consulting-services/', '/it-vendors/', '/products/', '/providers/',
   '/public-roadmap/', '/roi-calculator/', '/search/', '/sla/', '/solutions/', '/status/',
-  '/terms/', '/testimonials/', '/tools/', '/tools/agent-prompt-builder/', '/tools/ai-roi-calculator/',
-  '/tools/api-health-check/', '/tools/cloud-cost-calculator/', '/tools/cloud-cost-optimizer/',
-  '/tools/cron-agent-calculator/', '/tools/json-schema-validator/', '/tools/llm-payload-estimator/',
-  '/tools/mcp-tester/', '/tools/security-headers-analyzer/', '/tools/hermes-agent-fleet-manager/', '/use-cases/', '/services/',
-  '/services/hermes-agent/', '/services/hermes-agent-training/', '/services/hermes-ai-agent-platform/',
-  '/solutions/hermes-ai-agents/', '/case-studies/hermes-agent-fleet/', '/docs/hermes-agent-skills/',
- '/docs/hermes-agent-architecture/',
- '/docs/hermes-agent-profiles/',
-  '/docs/agent-framework-comparison/', '/docs/hermes-agent-installation/', '/docs/hermes-agent-mcp-integration/',
-  '/hermes-agents/', '/hermes-monitor/',
+  '/terms/', '/testimonials/', '/tools/',
+  // ─── Hermes-specific static routes ────────────────────────────────
+  '/hermes-agents/', '/hermes-monitor/', '/hermes-agents-services/',
+  '/hermes-about/', '/hermes-case-studies/', '/hermes-faq/', '/hermes-integrations/',
+  '/hermes-pricing/', '/hermes-security/', '/hermes-swarm/', '/hermes-tools/',
 ];
 
 // ─── Discover ACTUAL service page directories ───────────────────
@@ -41,15 +39,24 @@ const svcDirs = fs.existsSync(servicesDir)
 
 console.log(`Discovered ${svcDirs.length} service page directories on disk`);
 
-// ─── Blog posts ─────────────────────────────────────────────────
-const blogDir = path.join(repo, 'app', 'blog');
-const blogPosts = fs.existsSync(blogDir)
-  ? fs.readdirSync(blogDir, { withFileTypes: true })
-      .filter(d => d.isDirectory() && !d.name.startsWith('.') && fs.existsSync(path.join(blogDir, d.name, 'page.tsx')))
+// ─── Discover ACTUAL tool page directories ───────────────────────
+const toolsDir = path.join(repo, 'app', 'tools');
+const toolDirs = fs.existsSync(toolsDir)
+  ? fs.readdirSync(toolsDir, { withFileTypes: true })
+      .filter(d => d.isDirectory() && !d.name.startsWith('.') && fs.existsSync(path.join(toolsDir, d.name, 'page.tsx')))
       .map(d => d.name)
   : [];
 
-console.log(`Discovered ${blogPosts.length} blog post directories on disk`);
+console.log(`Discovered ${toolDirs.length} tool page directories on disk`);
+
+// ─── Blog posts (from data/blogPosts.json) ───────────────────────
+const blogDataPath = path.join(repo, 'data', 'blogPosts.json');
+let blogPosts = [];
+if (fs.existsSync(blogDataPath)) {
+  const blogData = JSON.parse(fs.readFileSync(blogDataPath, 'utf8'));
+  blogPosts = blogData.map(function(p) { return p.slug; });
+}
+console.log(`Discovered ${blogPosts.length} blog posts from data/blogPosts.json`);
 
 // ─── Docs ───────────────────────────────────────────────────────
 const docsDir = path.join(repo, 'app', 'docs');
@@ -71,21 +78,29 @@ const solPages = fs.existsSync(solDir)
 
 console.log(`Discovered ${solPages.length} solution directories on disk`);
 
-// ─── Case Studies ──────────────────────────────────────────────
+// ─── Case Studies (including slug-based) ───────────────────────
 const caseDir = path.join(repo, 'app', 'case-studies');
-const casePages = fs.existsSync(caseDir)
-  ? fs.readdirSync(caseDir, { withFileTypes: true })
-      .filter(d => d.isDirectory() && !d.name.startsWith('.') && fs.existsSync(path.join(caseDir, d.name, 'page.tsx')))
-      .map(d => d.name)
-  : [];
+let casePages = [];
+if (fs.existsSync(caseDir)) {
+  const caseEntries = fs.readdirSync(caseDir, { withFileTypes: true });
+  // Find actual page.tsx files
+  const pagesWithContent = caseEntries
+    .filter(d => d.isDirectory() && !d.name.startsWith('.'))
+    .filter(d => {
+      const pagePath = path.join(caseDir, d.name, 'page.tsx');
+      return fs.existsSync(pagePath) && fs.statSync(pagePath).size > 100;
+    })
+    .map(d => d.name);
+  
+  // Also check for [slug] pattern - we use hermes-agent-fleet directly
+  if (caseEntries.some(d => d.name === 'hermes-agent-fleet' && fs.existsSync(path.join(caseDir, 'hermes-agent-fleet', 'page.tsx')))) {
+    pagesWithContent.push('hermes-agent-fleet');
+  }
+  
+  casePages = [...new Set(pagesWithContent)];
+}
 
 console.log(`Discovered ${casePages.length} case study directories on disk`);
-
-// ─── Hermes pages ──────────────────────────────────────────────
-const hermesPages = [
-  '/hermes-about/', '/hermes-case-studies/', '/hermes-faq/', '/hermes-integrations/',
-  '/hermes-pricing/', '/hermes-security/', '/hermes-swarm/', '/hermes-tools/',
-];
 
 // ─── Build entries ──────────────────────────────────────────────
 const entries = [];
@@ -100,16 +115,6 @@ for (const route of staticRoutes) {
   });
 }
 
-// Hermes pages
-for (const route of hermesPages) {
-  entries.push({
-    loc: `${SITE_URL}${route}`,
-    lastmod: today,
-    changefreq: 'weekly',
-    priority: '0.8',
-  });
-}
-
 // Service pages — ONLY those with actual directories
 for (const dir of svcDirs) {
   entries.push({
@@ -117,6 +122,16 @@ for (const dir of svcDirs) {
     lastmod: today,
     changefreq: 'monthly',
     priority: '0.5',
+  });
+}
+
+// Tool pages
+for (const tool of toolDirs) {
+  entries.push({
+    loc: `${SITE_URL}/tools/${tool}/`,
+    lastmod: today,
+    changefreq: 'monthly',
+    priority: '0.6',
   });
 }
 
@@ -182,9 +197,10 @@ const xml = [
 const outPath = path.join(repo, 'public', 'sitemap.xml');
 fs.writeFileSync(outPath, xml, 'utf8');
 console.log(`Generated public/sitemap.xml with ${entries.length} URLs`);
-console.log(`  Static: ${staticRoutes.length}`);
-console.log(`  Hermes: ${hermesPages.length}`);
+console.log(`  Static/Hermes pages: ${staticRoutes.filter(r => !r.includes('services') && !r.includes('tools')).length}`);
+console.log(`  Hermes services (real dirs): ${staticRoutes.filter(r => r.startsWith('/hermes')).length}`);
 console.log(`  Services (real dirs): ${svcDirs.length}`);
+console.log(`  Tools (real dirs): ${toolDirs.length}`);
 console.log(`  Blog: ${blogPosts.length}`);
 console.log(`  Docs: ${docsPosts.length}`);
 console.log(`  Solutions: ${solPages.length}`);
