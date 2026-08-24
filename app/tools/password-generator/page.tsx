@@ -138,7 +138,7 @@ export default function Page() {
   "operatingSystem": "All (web-based)",
   "browserRequirements": "Modern web browser with JavaScript enabled",
   "softwareVersion": "1.0"
-} }} />
+}} />
       <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -176,7 +176,7 @@ export default function Page() {
       }
     }
   ]
-} }} /></StandardPage>
+}} /></StandardPage>
   </>
   );
 }

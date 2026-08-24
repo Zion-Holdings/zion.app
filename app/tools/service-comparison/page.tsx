@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 export default function ServiceComparisonPage() {
   return (
+    <>
     <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -55,5 +56,6 @@ export default function ServiceComparisonPage() {
       <div className="prose prose-invert max-w-3xl">
         <p>The service comparison tool will let you compare Zion services side by side. Stay tuned.</p>
       </div></StandardPage>
+    </>
   );
 }

@@ -402,6 +402,26 @@ export default function ToolsPage() {
     },
     {
       "@type": "WebApplication",
+      "@id": "https://ziontechgroup.com/tools/hermes-agent-skills/",
+      "name": "Hermes Agent Skills & Plugins Directory",
+      "description": "Browse Hermes Agent skills, plugins, and MCP integrations curated by Zion Tech Group.",
+      "url": "https://ziontechgroup.com/tools/hermes-agent-skills/",
+      "applicationCategory": "BusinessApplication",
+      "applicationSuite": "Zion Tech Group Tools",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Zion Tech Group",
+        "url": "https://ziontechgroup.com"
+      }
+    },
+    {
+      "@type": "WebApplication",
       "@id": "https://ziontechgroup.com/tools/html-entities/",
       "name": "Html Entities",
       "description": "Interactive tool: Html Entities.",
@@ -1266,6 +1286,11 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Hermes Agent Fleet Manager</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Hermes Agent Fleet Manager.</p>
+        </Link>
+        <Link href="/tools/hermes-agent-skills/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🧠</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Hermes Agent Skills & Plugins Directory</h3>
+          <p className="mt-2 text-sm text-slate-400">Browse Hermes Agent skills, plugins, and MCP integrations curated by Zion Tech Group.</p>
         </Link>
         <Link href="/tools/html-entities/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>

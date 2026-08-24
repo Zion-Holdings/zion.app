@@ -202,6 +202,57 @@ const SERVICES = [
     cta: 'Contact Sales',
     href: '/contact/?service=hermes-managed',
   },
+  {
+    id: 'bot-mode',
+    title: 'Bot Mode Specialist Teams',
+    icon: '🤖',
+    description:
+      'Deploy named specialist AI Bots with their own models, memory, skills, and routines. Each Bot is an isolated Hermes profile that collaborates via @mentions, group chats, and cross-machine DMs.',
+    features: [
+      'Named specialist Bots with custom SOUL.md personas',
+      'Per-Bot model pinning (Claude, GPT, local models)',
+      'Bot-to-bot messaging with @mentions and direct DMs',
+      'Cross-machine peer protocol (Tailscale, VPN, LAN)',
+      'Recurring cron routines per Bot',
+      'Group room collaboration for multi-agent deliberation',
+    ],
+    cta: 'Build My Bot Team',
+    href: '/services/hermes-agent-bot-mode/',
+  },
+  {
+    id: 'plugin-development',
+    title: 'Custom Plugin Development',
+    icon: '🔌',
+    description:
+      'Extend Hermes Agent with custom plugins that add tools, hooks, slash commands, CLI subcommands, MCP servers, memory providers, and platform adapters — zero core code modifications.',
+    features: [
+      'Custom tool registration via ctx.register_tool()',
+      'Event hooks (pre/post LLM, tool, session lifecycle)',
+      'Slash commands and CLI subcommands',
+      'MCP server integration (1,000+ servers via Composio)',
+      'Memory provider and platform adapter development',
+      'Install-time security scanning + testing',
+    ],
+    cta: 'Build My Plugin',
+    href: '/services/hermes-agent-plugin-development/',
+  },
+  {
+    id: 'a2a-protocol',
+    title: 'A2A Protocol Integration',
+    icon: '🔗',
+    description:
+      'Connect Hermes Agent to the Agent-to-Agent (A2A) v1.0 protocol. Discover, communicate with, and be driven by other A2A-compatible agents across heterogeneous multi-agent systems.',
+    features: [
+      'A2A v1.0 protocol compliance (full implementation)',
+      'Agent discovery via Agent Cards registry',
+      'Bidirectional agent-to-agent communication',
+      'Cross-platform + cross-network agent bridging',
+      'Authentication (OAuth, mTLS, JWT) for A2A connections',
+      'Langfuse observability for A2A conversations',
+    ],
+    cta: 'Enable A2A',
+    href: '/services/hermes-agent-a2a-protocol/',
+  },
 ];
 
 const FLEET_STATS = [
@@ -209,7 +260,7 @@ const FLEET_STATS = [
   { value: '350+', label: 'Skills Installed' },
   { value: '20+', label: 'Platform Integrations' },
   { value: '50K+', label: 'Tasks Completed' },
-  { value: '16,600+', label: 'Services Cataloged' },
+  { value: '16,355+', label: 'Services Cataloged' },
   { value: '99.99%', label: 'Fleet Uptime' },
 ];
 

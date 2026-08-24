@@ -96,7 +96,6 @@ hermes mcp test brave-search
 
 # 3. Run Hermes — the tools are available immediately
 hermes -s hermes-agent "Search for recent AI agent security research and summarize"`}</code>
-            </code>
           </pre>
 
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">Adding Servers in Three Modes</h2>

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 export default function SslCheckerPage() {
   return (
+    <>
     <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -55,5 +56,6 @@ export default function SslCheckerPage() {
       <div className="prose prose-invert max-w-3xl">
         <p>Enter a domain to verify its SSL/TLS certificate health and expiry date.</p>
       </div></StandardPage>
+    </>
   );
 }

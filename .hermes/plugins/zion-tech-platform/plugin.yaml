@@ -1,0 +1,7 @@
+---
+name: hermes-agent-platform
+version: "1.0"
+description: Zion Tech Group plugin for Hermes Agent — site tools, service catalog, deploy, and monitoring
+requires_env:
+  - ZION_SITE_PATH
+---
