@@ -94,3 +94,13 @@
 /dashboard/ /services/ 301
 /index.html / 301
 /index.html/ / 301
+
+# Hermes Agent Platform posts - 2024-01-15
+/blog/hermes-agent-platform/ /blog/hermes-agent-platform/index.html 200
+/blog/hermes-agent-multi-agent-coordination/ /blog/hermes-agent-multi-agent-coordination/index.html 200
+/services/hermes-agent-platform/ /services/hermes-agent-platform/index.html 200
+
+# Hermes Agent Platform posts - coordination
+/blog/hermes-agent-platform/ /blog/hermes-agent-platform/index.html 200
+/blog/hermes-agent-multi-agent-coordination/ /blog/hermes-agent-multi-agent-coordination/index.html 200
+/services/hermes-agent-platform/ /services/hermes-agent-platform/index.html 200
