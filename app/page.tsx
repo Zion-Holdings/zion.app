@@ -50,7 +50,7 @@ export default function HomePage() {
               gateway. Run 24/7 agent fleets that automate CI/CD, SEO content generation, security audits,
               and growth pipelines — all built on the open-source Hermes platform.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/hermes-agents/"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25"

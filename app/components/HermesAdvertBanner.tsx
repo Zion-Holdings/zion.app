@@ -50,7 +50,7 @@ export default function HermesAdvertBanner() {
 
   return (
     <div
-      className={`fixed bottom-4 right-4 z-40 max-w-sm w-full sm:max-w-xs bg-gradient-to-r ${banner.bgColor} border ${banner.borderColor} rounded-2xl p-4 shadow-2xl backdrop-blur-sm`}
+      className={`fixed bottom-4 right-4 z-40 hidden max-w-sm w-full sm:max-w-xs md:block bg-gradient-to-r ${banner.bgColor} border ${banner.borderColor} rounded-2xl p-4 shadow-2xl backdrop-blur-sm`}
     >
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1">
@@ -59,7 +59,7 @@ export default function HermesAdvertBanner() {
         </div>
         <button
           onClick={() => setShow(false)}
-          className="text-slate-500 hover:text-slate-400 transition-colors shrink-0"
+          className="text-slate-300 hover:text-white transition-colors shrink-0"
           aria-label="Dismiss banner"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

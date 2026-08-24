@@ -137,16 +137,13 @@ h4 { font-size: 1.15rem; font-weight: 600; line-height: 1.4; }
   line-height: 1.7;
 }
 
-.prose h2 {
+/* Ensure headings are always white on dark theme, even with prose-invert */
+.prose-invert h2,
+.prose-invert h3,
+.prose-invert h4,
+.prose-invert h5,
+.prose-invert h6 {
   color: var(--text-primary);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.prose h3 {
-  color: var(--text-primary);
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
 }
 
 .prose a {

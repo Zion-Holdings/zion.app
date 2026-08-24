@@ -15,11 +15,11 @@ export default function HermesGuidePost() {
     <article className="max-w-4xl mx-auto px-4 py-16">
       <header className="mb-12">
         <div className="text-sm text-indigo-600 font-medium mb-2">AI Agents</div>
-        <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Hermes AI Agents: The Complete Guide to Multi-Agent Automation</h1>
-        <p className="text-xl text-slate-600">How enterprises deploy fleets of AI agents that coordinate autonomously — and achieve exponential growth through swarm intelligence.</p>
+        <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">Hermes AI Agents: The Complete Guide to Multi-Agent Automation</h1>
+        <p className="text-xl text-slate-300">How enterprises deploy fleets of AI agents that coordinate autonomously — and achieve exponential growth through swarm intelligence.</p>
       </header>
 
-      <div className="prose prose-lg max-w-none">
+      <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-slate-300">
         <h2>What Are Hermes AI Agents?</h2>
         <p>Hermes AI agents are autonomous software entities that perceive their environment, make decisions, and take actions to achieve goals. Unlike simple chatbots, Hermes agents can:</p>
         <ul>
