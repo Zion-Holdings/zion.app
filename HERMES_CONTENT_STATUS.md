@@ -1,47 +1,50 @@
-# Hermes Agent Content — Status para @ZIONTECHGROUP_AGENTS
+# Hermes Agent Content — Status
 # Kleber: cole no grupo
 
 ## Conteúdo Criado (verificado no disco)
 
-### 1. Service Page
-`/app/services/hermes-agent-content-publishing-distribution/page.tsx`
-- 230 linhas, 14.271 bytes
-- Pipeline de conteúdo autônomo com revisão humana
-- SEO, multi-canal, distribuição
+### 1. Service Pages (3 new)
 
-### 2. Blog Posts (PT-BR)
+**a) hermes-agent-bot-mode**
+`app/services/hermes-agent-bot-mode/page.tsx`
+- Bot Mode service page with 4 key capabilities, 3 use cases, 3-tier pricing
 
-**a) hermes-agent-crescimento-explosivo**
-`/app/blog/hermes-agent-crescimento-explosivo/page.tsx`
-- 178 linhas, 10.178 bytes
-- Tema: 16K → 97K serviços (+507%) com agentes de IA
+**b) hermes-agent-plugin-development**
+`app/services/hermes-agent-plugin-development/page.tsx`
+- Plugin development service with 6 plugin types, capabilities table, 2-tier pricing
 
-**b) empresas-hermesses-agent-catalogo**
-`/app/blog/empresas-hermesses-agent-catalogo/page.tsx`
-- 185 linhas, 10.577 bytes
-- Tema: como empresas criam catálogos infinitos com agentes
+**c) hermes-agent-a2a-protocol**
+`app/services/hermes-agent-a2a-protocol/page.tsx`
+- A2A v1.0 protocol integration service with 4 use cases, 2-tier pricing
 
-**c) hermes-agent-criar-catalogo-servicos-infinito**
-`/app/blog/hermes-agent-criar-catalogo-servicos-infinito/page.tsx`
-- 189 linhas, 10.813 bytes
-- Tema: criar catálogo de serviços infinito com agentes de IA
+### 2. Blog Posts (2 new, data-driven via [slug] route)
 
-### 3. Homepage
-`/app/page.tsx` — Seção Hermes Agent adicionada no grid de serviços
+**a) hermes-agent-bot-mode**
+- Added to `app/data/blogPosts.json`
+- Article: "Hermes Agent Bot Mode: How to Build a Team of Specialist AI Bots"
 
-### 4. BlogPosts.json
-`/app/data/blogPosts.json` — 4 entradas adicionadas (total: 4067 entries)
+**b) building-custom-plugins-for-hermes-agent**
+- Added to `app/data/blogPosts.json`
+- Article: "Building Custom Plugins for Hermes Agent — A Developer Guide"
+
+### 3. Hermes Plugin (zion-tech-platform)
+
+`~/.hermes/plugins/zion-tech-platform/`
+- `plugin.yaml` — manifest with requires_env
+- `__init__.py` — 3 tools: zion_service_lookup, zion_blog_lookup, zion_check_routes + hook
+
+### 4. Skill: hermes-agent-site-operations
+
+`.hermes/skills/hermes-agent-site-operations/SKILL.md`
+- Full operational playbook for Hermes Agent + Zion site
+
+### 5. Data Updates
+
+- `servicesData.json` — 3 new service entries added (total: 16,355)
+- `blogPosts.json` — 2 new blog posts added (total: 4,072)
 
 ## Próximos Passos
-- [ ] Git add + commit dos 4 arquivos + blogPosts.json + HERMES_CONTENT_STATUS.md
-- [ ] Git pull --rebase (branch diverged: 2 ahead, 16 behind origin/main)
-- [ ] Git push origin main
-- [ ] Gerar sitemap
-- [ ] Verificar no site (ziontechgroup.com) com curl
-
-## Próximos Passos
-- [ ] Kleber verificar cada página no site
+- [x] Git add + commit dos arquivos
+- [ ] Git pull --rebase + push origin main
 - [ ] Gerar sitemap com `npm run generate-sitemap`
-- [ ] Push para GitHub (se não foi feito ainda)
-- [ ] Aguardar deploy do GitHub Pages
-- [ ] Verificar conteúdo publicado em ziontechgroup.com
+- [ ] Verificar no site (ziontechgroup.com) com curl

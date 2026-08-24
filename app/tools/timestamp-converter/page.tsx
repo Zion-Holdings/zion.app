@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function TimestampConverterPage() {
   return (
+    <>
     <div className="max-w-5xl mx-auto space-y-6">
         <section className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-3">When to use</h2>
@@ -65,7 +66,6 @@ export default function TimestampConverterPage() {
           </div>
         </section>
       </div>
-  );
 
       {/* Injected JSON-LD Schemas */}
       <JsonLd data={{
@@ -101,7 +101,7 @@ export default function TimestampConverterPage() {
   "operatingSystem": "All (web-based)",
   "browserRequirements": "Modern web browser with JavaScript enabled",
   "softwareVersion": "1.0"
-} }} />
+}} />
       <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -139,5 +139,7 @@ export default function TimestampConverterPage() {
       }
     }
   ]
-} }} />
+}} />
+  </>
+  );
 }

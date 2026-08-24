@@ -573805,5 +573805,126 @@
     "icon": "\ud83d\udd17",
     "href": "/services/ai-driven-intelligent-knowledge-graph-and-enterprise-search-platform-5c5ccb5e",
     "popular": false
+  },
+  {
+    "id": "hermes-agent-bot-mode",
+    "name": "Hermes Agent Bot Mode",
+    "title": "Hermes Agent Bot Mode",
+    "description": "Deploy named specialist AI Bots with their own models, memory, skills, and routines. Bot Mode gives you a durable team of AI agents that collaborate via @mentions, group chats, and cross-machine DMs.",
+    "category": "ai",
+    "industry": "technology",
+    "features": [
+      "Named specialist Bots with custom personas (SOUL.md)",
+      "Per-Bot model pinning (Claude, GPT, local models)",
+      "Bot-to-bot messaging via @mentions and direct DMs",
+      "Cross-machine peer protocol (Tailscale, VPN, LAN)",
+      "Persistent Bot Chat history with /compact rerouting",
+      "Recurring cron routines per Bot",
+      "Shared credential pools with main profile",
+      "Group room collaboration for multi-agent deliberation"
+    ],
+    "benefits": [
+      "Specialist Bots for different domains",
+      "24/7 autonomous Bot teams",
+      "Cross-platform messaging (Telegram, Discord, Slack, WhatsApp)",
+      "No credential conflicts between Bots",
+      "Persistent memory across Bot interactions"
+    ],
+    "timestamp": "2026-08-24T12:00:00Z",
+    "contactInfo": {
+      "website": "/services/hermes-agent-bot-mode/",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83e\udd16",
+    "href": "/services/hermes-agent-bot-mode/",
+    "category_label": "AI",
+    "industry_label": "Technology",
+    "pricing": {
+      "basic": "999",
+      "pro": "2499",
+      "enterprise": "Custom"
+    }
+  },
+  {
+    "id": "hermes-agent-plugin-development",
+    "name": "Hermes Agent Plugin Development",
+    "title": "Hermes Agent Plugin Development",
+    "description": "Build custom Hermes Agent plugins that add tools, hooks, slash commands, CLI subcommands, MCP servers, memory providers, and platform adapters \u2014 all without modifying core code.",
+    "category": "ai",
+    "industry": "technology",
+    "features": [
+      "Custom tool registration via ctx.register_tool()",
+      "Event hooks (pre/post LLM, pre/post tool, session lifecycle)",
+      "Slash commands and CLI subcommands",
+      "MCP server integration (3,000+ servers)",
+      "Memory provider plugins (Honcho, Mem0, Hindsight)",
+      "Platform adapter development (Discord, Telegram, custom)",
+      "Image/video generation backend plugins",
+      "Context compression engine plugins"
+    ],
+    "benefits": [
+      "Extend Hermes without touching core code",
+      "Zero core modifications in production",
+      "Install-time security scanning",
+      "1,000+ SaaS app integrations via Composio",
+      "Full CI/CD pipeline + monitoring",
+      "Environment-variable gating (requires_env)"
+    ],
+    "timestamp": "2026-08-24T12:00:00Z",
+    "contactInfo": {
+      "website": "/services/hermes-agent-plugin-development/",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd0c",
+    "href": "/services/hermes-agent-plugin-development/",
+    "category_label": "AI",
+    "industry_label": "Technology",
+    "pricing": {
+      "basic": "499",
+      "pro": "2999",
+      "enterprise": "Custom"
+    }
+  },
+  {
+    "id": "hermes-agent-a2a-protocol",
+    "name": "Hermes Agent A2A Protocol",
+    "title": "Hermes Agent A2A Protocol Integration",
+    "description": "Connect Hermes Agent to the Agent-to-Agent (A2A) v1.0 protocol. Discover, talk to, and be driven by other A2A-compatible agents across heterogeneous multi-agent systems.",
+    "category": "ai",
+    "industry": "technology",
+    "features": [
+      "A2A v1.0 protocol compliance (full implementation)",
+      "Agent discovery via Agent Cards registry",
+      "Bidirectional agent-to-agent communication",
+      "Cross-platform + cross-network agent bridging",
+      "Streaming data exchange between agents",
+      "State synchronization across agent conversations",
+      "Authentication (OAuth, mTLS, JWT) for A2A connections",
+      "Langfuse observability for A2A conversations"
+    ],
+    "benefits": [
+      "Join the emerging A2A ecosystem",
+      "Connect Hermes to heterogeneous agent networks",
+      "Bridge internal agents to external A2A networks",
+      "Real-time agent-to-agent task negotiation",
+      "Full protocol compliance for future-proofing"
+    ],
+    "timestamp": "2026-08-24T12:00:00Z",
+    "contactInfo": {
+      "website": "/services/hermes-agent-a2a-protocol/",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464 0950"
+    },
+    "icon": "\ud83d\udd17",
+    "href": "/services/hermes-agent-a2a-protocol/",
+    "category_label": "AI",
+    "industry_label": "Technology",
+    "pricing": {
+      "basic": "1499",
+      "pro": "4999",
+      "enterprise": "Custom"
+    }
   }
 ]

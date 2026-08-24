@@ -141,7 +141,7 @@ export default function JsonDiffPage() {
   "operatingSystem": "All (web-based)",
   "browserRequirements": "Modern web browser with JavaScript enabled",
   "softwareVersion": "1.0"
-} }} />
+}} />
       <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -179,7 +179,7 @@ export default function JsonDiffPage() {
       }
     }
   ]
-} }} /></StandardPage>
+}} /></StandardPage>
   </>
   );
 }

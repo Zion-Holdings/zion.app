@@ -136,7 +136,7 @@ hermes cron create "30m" \
   --workdir /path/to/project
 
 # One-shot ISO timestamp job
-hermes cron create "2026-08-21T09:00:00" "Send quarterly report"}`
+hermes cron create "2026-08-21T09:00:00" "Send quarterly report"`}
             </code>
           </pre>
 
@@ -180,7 +180,7 @@ hermes cron create "30m" "Your prompt" --deliver "origin"
 hermes cron create "0 9 * * *" "Daily report" --deliver "all"
 
 # Fan out to multiple channels
-hermes cron create "every monday 9am" "Weekly summary" --deliver "origin,telegram:CHAT_ID,local"}`
+hermes cron create "every monday 9am" "Weekly summary" --deliver "origin,telegram:CHAT_ID,local"`}
             </code>
           </pre>
 
@@ -212,7 +212,7 @@ hermes cron create "5m" \
 hermes cron create "30m" \
   --monitor-script "check_deploy_status.py" \
   "Analyze new deployments and report anomalies" \
-  --deliver "telegram:CHAT_ID"}`
+  --deliver "telegram:CHAT_ID"`}
             </code>
           </pre>
 
@@ -275,7 +275,7 @@ hermes cron create "30m" \
 hermes cron create "0 8 * * *" "Collect servicesData.json metrics" --no-agent --script collect_metrics.py
 
 # Job B: process data, using Job A's output as context
-hermes cron create "0 9 * * *" "Process metrics and generate report" --context-from JOB_A_ID --deliver "telegram:CHAT_ID"}``
+hermes cron create "0 9 * * *" "Process metrics and generate report" --context-from JOB_A_ID --deliver "telegram:CHAT_ID"`}
             </code>
           </pre>
 
@@ -292,7 +292,7 @@ hermes cron status          # Scheduler status
 
 # Or use the CLI directly:
 hermes cron list
-hermes cron create "every 2h" "Scan site for 404s" --deliver "telegram:8435383377"}`
+hermes cron create "every 2h" "Scan site for 404s" --deliver "telegram:8435383377"`}
             </code>
           </pre>
 

@@ -95,7 +95,7 @@ hermes mcp test my-server
 
 # Toggle tool selection
 hermes mcp configure my-server
-}
+`}
             </code>
           </pre>
 

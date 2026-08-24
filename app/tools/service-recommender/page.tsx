@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 export default function ServiceRecommenderPage() {
   return (
+    <>
     <JsonLd data={{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -55,5 +56,6 @@ export default function ServiceRecommenderPage() {
       <div className="prose prose-invert max-w-3xl">
         <p>The AI-powered service recommender is coming soon. Use the form below to get matched with the right Zion services.</p>
       </div></StandardPage>
+    </>
   );
 }
