@@ -99,7 +99,7 @@ export default function HermesV20Guide() {
           <h2>Plugin System — v0.20 API Reference</h2>
 
           <h3>Creating a Plugin</h3>
-          <pre>{`~/​.hermes/plugins/my-plugin/
+          <pre>{`~/.hermes/plugins/my-plugin/
 ├── plugin.yaml      # manifest (name, version, description, requires_env)
 ├── __init__.py      # register(ctx) — wires schemas to handlers
 ├── schemas.py       # tool JSON schemas
