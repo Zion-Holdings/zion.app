@@ -1,77 +1,85 @@
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
-import type { Metadata } from 'next';
+'use client';
 
+import { useState } from 'react';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'JWT Decoder — Zion Tech Group',
-  description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',
-  keywords: ['JWT decoder', 'JWT inspector', 'token decoder', 'developer tools'],
-  openGraph: {
-    title: 'JWT Decoder — Zion Tech Group',
-    description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',
-    url: 'https://ziontechgroup.com/tools/jwt-decoder/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'JWT Decoder — Zion Tech Group',
-    description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',
-  },
+  description: 'Decode and inspect JWT tokens in the browser. Header, payload, signature, and expiry info.',
   alternates: { canonical: '/tools/jwt-decoder/' },
-  robots: { index: true, follow: true },
 };
 
-
 export default function JwtDecoderPage() {
-  const breadcrumbItems = [
-    { label: 'Tools', href: '/tools/' },
-    { label: 'JWT Decoder' },
-  ];
+  const [token, setToken] = useState('');
+  const [decoded, setDecoded] = useState<{
+    header?: Record<string, unknown>;
+    payload?: Record<string, unknown>;
+    error?: string;
+  }>({});
+
+  const decodeToken = () => {
+    setDecoded({});
+    if (!token.trim()) return;
+    try {
+      const parts = token.split('.');
+      if (parts.length !== 3) {
+        setDecoded({ error: 'Token must have 3 parts separated by dots.' });
+        return;
+      }
+      const header = JSON.parse(atob(parts[0]));
+      const payload = JSON.parse(atob(parts[1]));
+      setDecoded({ header, payload });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Decoding failed';
+      setDecoded({ error: message });
+    }
+  };
 
   return (
-<>
-    <StandardPage
-      title="JWT Decoder"
-      subtitle="Inspect JWT header, payload, and signature details safely."
-      breadcrumbItems={breadcrumbItems}
-      actions={[
-        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
-        { label: 'Talk to us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="glass-card">
-          <h3 className="text-white font-semibold mb-2">Inspect claims</h3>
-          <p className="text-slate-400 text-sm">View issuer, audience, expiry, and custom claims without backend access.</p>
-        </div>
-        <div className="glass-card">
-          <h3 className="text-white font-semibold mb-2">Debug auth flows</h3>
-          <p className="text-slate-400 text-sm">Spot scope, role, and token lifecycle issues quickly during development.</p>
-        </div>
-        <div className="glass-card">
-          <h3 className="text-white font-semibold mb-2">Stay private</h3>
-          <p className="text-slate-400 text-sm">Decode locally and avoid pasting sensitive tokens into unknown sites.</p>
-        </div>
-        <div className="glass-card">
-          <h3 className="text-white font-semibold mb-2">Use cases</h3>
-          <p className="text-slate-400 text-sm">Auth debugging, integration QA, and access-policy review.</p>
-        </div>
+    <div className="mx-auto max-w-4xl px-4 py-10">
+      <h1 className="text-3xl font-semibold text-white">JWT Decoder</h1>
+      <p className="mt-2 text-slate-300">
+        Inspect JWT header and payload without sending data to a server.
+      </p>
+
+      <div className="mt-6 rounded-xl border border-slate-800 bg-slate-950 p-4">
+        <input
+          value={token}
+          onChange={(event) => setToken(event.target.value)}
+          placeholder="eyJhbGciOi..."
+          className="w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 font-mono text-xs text-slate-200"
+        />
+        <button
+          onClick={decodeToken}
+          className="mt-3 rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500"
+        >
+          Decode
+        </button>
       </div>
 
-      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
-        <h2 className="text-xl font-bold text-white mb-4">Security reminders</h2>
-        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
-          <li>Always decode tokens locally; never paste secrets into untrusted sites.</li>
-          <li>Check expiry, issuer, and audience claims before trusting tokens.</li>
-          <li>Inspect scopes and roles to catch over-permissioned access.</li>
-        </ul>
-        <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/tools/" className="btn-primary text-center">All tools</a>
-          <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
+      {decoded.error && (
+        <div className="mt-4 rounded-xl border border-red-900/60 bg-red-950/60 p-4 text-sm text-red-200">
+          {decoded.error}
         </div>
+      )}
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {decoded.header && (
+          <div className="rounded-xl border border-slate-800 bg-slate-950 p-4">
+            <p className="text-xs text-slate-400">Header</p>
+            <pre className="mt-2 overflow-x-auto text-xs text-slate-200">
+              {JSON.stringify(decoded.header, null, 2)}
+            </pre>
+          </div>
+        )}
+        {decoded.payload && (
+          <div className="rounded-xl border border-slate-800 bg-slate-950 p-4">
+            <p className="text-xs text-slate-400">Payload</p>
+            <pre className="mt-2 overflow-x-auto text-xs text-slate-200">
+              {JSON.stringify(decoded.payload, null, 2)}
+            </pre>
+          </div>
+        )}
       </div>
-    </StandardPage>
-  </>
+    </div>
   );
 }
