@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hermes Agent Bot Mode — Autonomous Messaging Agents Guide | Zion Tech Group</title>
-  <meta name="description" content="A comprehensive guide to Hermes Agent Bot Mode: running autonomous AI agents via Telegram, Discord, Slack, WhatsApp, and 20+ messaging platforms with full tool access." />
+  <title>Hermes Agent Bot Mode — Complete Guide | Zion Tech Group</title>
+  <meta name="description" content="The complete guide to Hermes Agent Bot Mode: autonomous AI agents that work via messaging platforms. Learn how to set up, configure, and use Hermes Agent bots for your business." />
   <link rel="canonical" href="https://ziontechgroup.com/blog/hermes-agent-bot-mode/" />
 </head>
-<body style="margin:0;background:#0b1220;color:#e6f0ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">
+<body style="margin:0;background:#0b1220;color:#e6f0ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6">
   <main style="max-width:800px;margin:0 auto;padding:40px 24px">
     <nav style="margin-bottom:32px">
       <a href="/" style="color:#60a5fa;text-decoration:none;font-weight:600">← Home</a>
@@ -15,212 +15,149 @@
       <a href="/blog/" style="color:#60a5fa;text-decoration:none">Blog</a>
     </nav>
     <article style="padding:48px 0 32px">
-      <h1 style="font-size:32px;font-weight:700;line-height:1.2">Hermes Agent Bot Mode — Running Autonomous Agents via Messaging Platforms</h1>
-      <p style="font-size:17px;line-height:1.6;color:#cbd5e1;margin-top:12px">Bot Mode turns Hermes Agent into a persistent messaging bot that operates across Telegram, Discord, Slack, WhatsApp, Signal, and 20+ other platforms. Your agents execute real terminal commands, browse the web, read/write files, call APIs, and deliver results — all through the chat interface your team already uses. This guide covers everything from setup to advanced multi-agent coordination.</p>
-      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap">
-        <a href="/services/hermes-agent-bot-mode/" style="display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:8px;background:#1e293b;color:#e6f0ff;text-decoration:none;font-weight:600;border:1px solid #334155">Bot Mode service →</a>
-        <a href="/services/hermes-agent-complete-guide/" style="display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:8px;background:#1e293b;color:#e6f0ff;text-decoration:none;font-weight:600;border:1px solid #334155">Complete guide →</a>
-      </div>
+      <h1 style="font-size:32px;font-weight:700;line-height:1.2">Hermes Agent Bot Mode — The Complete Guide</h1>
+      <p style="font-size:17px;color:#cbd5e1;margin-top:12px">Hermes Agent Bot Mode lets you run autonomous AI agents that work directly through messaging platforms — Telegram, Discord, Slack, WhatsApp, and 20+ others. This guide covers everything you need to know.</p>
     </article>
     <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">What Is Bot Mode?</h2>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px">A Hermes Agent bot is a persistent process that connects to a messaging platform via its adapter. When a user sends a message, the agent receives it, runs its conversation loop with the configured LLM, and can call any available tool — terminal commands, file operations, web searches, browser navigation, cron scheduling, delegation to sub-agents, and more.</p>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px;margin-top:12px">The agent runs with the full toolset of a regular Hermes session. It can create cron jobs, spawn sub-agents, write files, execute code, search the web, and navigate browsers — all triggered from a chat message. Results come back as messages in the same conversation.</p>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px;margin-top:12px">Bot Mode is not a chatbot. It doesn't just answer questions — it <em>does things</em>. It runs your terminal. It browses the web. It writes files. It schedules cron jobs. It delegates to sub-agents. It's an autonomous worker that happens to communicate through chat.</p>
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">What Is Hermes Agent Bot Mode?</h2>
+      <p style="color:#cbd5e1;font-size:16px">Hermes Agent Bot Mode transforms Hermes Agent into a persistent messaging bot that can execute tasks autonomously. Instead of just answering questions, your Hermes Agent can run terminal commands, execute code, analyze data, make API calls, and deliver results — all through the chat interface your team already uses.</p>
+      <p style="color:#cbd5e1;font-size:16px;margin-top:12px">The key difference from traditional chatbots: Hermes Agent bots don't just generate text — they <strong>do things</strong>. They have access to tools, a terminal, file system access (if configured), and can delegate complex tasks to themselves or other agents.</p>
     </section>
     <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Platform Support</h2>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px">Hermes connects to 20+ messaging platforms through adapter plugins. Each adapter handles the platform's specific API, message format, and delivery semantics. The full list:</p>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Telegram</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Discord</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Slack</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">WhatsApp</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Signal</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Matrix</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Mattermost</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Email</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">SMS</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">DingTalk</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">WeCom</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Weixin</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Feishu</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">QQBot</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">BlueBubbles</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Yuanbao</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Webhook</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">API Server</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Home Assistant</span>
-        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">IRC</span>
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">Key Features</h2>
+      <div style="display:grid;gap:12px;margin-top:12px">
+        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Multi-Platform Support</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Hermes Agent bots connect to 20+ platforms including Telegram, Discord, Slack, WhatsApp, Signal, Matrix, Mattermost, email, SMS, DingTalk, WeChat, and more. One agent can serve multiple platforms simultaneously.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Tool Access</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Bots have access to the full Hermes Agent toolset: terminal commands, code execution, file operations, web search, browser navigation (via Browser Use), image generation, text-to-speech, and more.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Autonomous Operation</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Once configured, bots operate independently — processing messages, executing tasks, and delivering results without requiring human intervention for every step. They can handle multi-step workflows end-to-end.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Delegation & Subagents</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Complex tasks can be delegated to subagents running in isolated contexts. A bot can spawn workers for parallel processing, research dives, or specialized subtasks — all while maintaining conversation context.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Scheduled & Recurring Tasks</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Bots can be configured with cron-like scheduling for recurring tasks: daily summaries, periodic reports, automated monitoring, scheduled content publishing, and more.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Memory & Context</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Bots maintain conversation memory and can access persistent memory backends (plugins/memory) for cross-session context. Skills can be loaded to give bots domain-specific knowledge.</p>
+        </div>
       </div>
-      <p style="color:#94a3b8;line-height:1.6;font-size:15px;margin-top:12px">Each adapter is a separate module under <code>gateway/platforms/</code>. New adapters can be added without touching the core — the platform adapter pattern keeps the gateway modular.</p>
     </section>
     <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Setup: Telegram Bot Example</h2>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px">The most common setup is a Telegram bot. Here's the workflow:</p>
-      <ol style="list-style:none;padding:0;margin:12px 0;color:#cbd5e1;line-height:1.6;font-size:16px;counter-reset:step">
-        <li style="padding:8px 0;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:24px;height:24px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0">1</span><span style="font-weight:600">Create a bot via BotFather:</span> send `/newbot` to @BotFather on Telegram, choose a name and username, and get your bot token.</li>
-        <li style="padding:8px 0;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:24px;height:24px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0">2</span><span style="font-weight:600">Add the token to config:</span> set `gateway.telegram.bot_token` in <code>config.yaml</code>, or store it in <code>~/.hermes/.env</code> as <code>TELEGRAM_BOT_TOKEN</code>.</li>
-        <li style="padding:8px 0;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:24px;height:24px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0">3</span><span style="font-weight:600">Configure the gateway:</span> set `gateway.platform: telegram` and configure allowed users/groups if needed.</li>
-        <li style="padding:8px 0;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:24px;height:24px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0">4</span><span style="font-weight:600">Start the gateway:</span> run `hermes serve` or `hermes dashboard` to spin up the headless backend. The Telegram adapter connects and starts receiving messages.</li>
-        <li style="padding:8px 0;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:24px;height:24px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0">5</span><span style="font-weight:600">Test it:</span> send a message to your bot. It responds. Try asking it to run a terminal command, search the web, or read a file.</li>
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">Supported Platforms</h2>
+      <p style="color:#cbd5e1;font-size:16px">Hermes Agent supports 20+ messaging platforms through a modular adapter system. Each platform adapter handles authentication, message formatting, and delivery semantics.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Telegram</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Discord</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Slack</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">WhatsApp</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Signal</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Matrix</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Mattermost</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Email</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">SMS</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">DingTalk</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">WeCom</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">WeChat</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Feishu</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">BlueBubbles</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Yuanbao</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Webhook</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">Home Assistant</span>
+        <span style="background:#1e293b;border:1px solid #334155;padding:4px 10px;border-radius:4px;font-size:13px;color:#cbd5e1">IRC</span>
+      </div>
+    </section>
+    <section style="padding:32px 0 16px">
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">How It Works</h2>
+      <p style="color:#cbd5e1;font-size:16px">When you send a message to a Hermes Agent bot, the following happens:</p>
+      <ol style="color:#cbd5e1;font-size:16px;padding-left:20px">
+        <li>The message is received by the gateway via the platform adapter</li>
+        <li>The message is passed to the Hermes Agent conversation loop</li>
+        <li>The agent (LLM) processes the message with full context and available tools</li>
+        <li>If tools are needed, the agent calls them (terminal, file ops, web search, etc.)</li>
+        <li>The agent generates a response based on tool results and conversation context</li>
+        <li>The response is sent back through the platform adapter to the user</li>
       </ol>
+      <p style="color:#cbd5e1;font-size:16px;margin-top:12px">For complex tasks, the agent can delegate to subagents, run code, access the file system, browse the web, and perform actions — all transparently to the user who just sees the final result.</p>
     </section>
     <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Full Toolset Access in Chat</h2>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px">Once connected, your bot has access to the full Hermes toolset — the same tools available in the CLI. Here's what that means in practice:</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px">
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">Use Cases</h2>
+      <div style="display:grid;gap:12px">
         <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Terminal Commands</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Run shell commands, scripts, git operations, builds. The bot drives a real terminal — not a simulated one. Background processes for long-running tasks.</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">File Operations</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Read files with full content visibility (up to 2000 lines per read), write new files, patch existing ones with targeted edits. Markdown, code, config — any text file.</p>
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Personal AI Assistant</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">A Hermes Agent bot on Telegram can be your personal assistant — managing tasks, answering questions, running commands on your behalf, scheduling things, and automating your digital life from your phone.</p>
         </div>
         <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Web Search & Extraction</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Search the web, extract page content as clean markdown, crawl sites for specific data. Works with PDF URLs too — pass the PDF link directly.</p>
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Team Collaboration Bot</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Deploy a Hermes Agent bot in your team's Slack or Discord channel. Team members can ask it to run builds, check deployments, generate reports, summarize documents, and perform operational tasks — all in the flow of conversation.</p>
         </div>
         <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Browser Navigation</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Drive a real headless browser via Browser Use. Navigate pages, fill forms, click elements, extract DOM text, capture screenshots. Handles login walls (stops and asks).</p>
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Customer Support Automation</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">A Hermes Agent bot can handle customer inquiries by searching knowledge bases, checking order status, generating responses based on company documentation, and escalating complex issues to human agents.</p>
         </div>
         <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Code Execution</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Execute Python scripts that call Hermes tools programmatically — web search, terminal, file ops, patch, search_files. Up to 50 tool calls per script, 5-minute timeout.</p>
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Content Publishing Pipeline</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Use a Hermes Agent bot to manage content workflows: research topics, draft articles, publish to CMS, distribute across channels, and schedule social media posts — all triggered via messaging commands.</p>
         </div>
         <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Cron & Scheduling</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Schedule recurring agent runs from chat. Duration-based ("30m"), "every" phrases ("every 2h"), cron expressions ("0 9 * * *"), or ISO timestamps. Monitor scripts detect changes.</p>
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">DevOps & IT Operations</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">A Hermes Agent bot connected to your team's communication platform can monitor infrastructure, respond to alerts, run diagnostic commands, check logs, and report status — bringing AI-assisted operations to your existing chat workflows.</p>
         </div>
-      </div>
-      <p style="color:#94a3b8;line-height:1.6;font-size:15px;margin-top:16px">Tools are organized into toolsets — groups that can be enabled/disabled per platform. Current toolsets include browser, terminal, file, search, vision, delegation, cronjob, memory, skills, kanban, todo, tts, video, image_gen, and 20+ more.</p>
-    </section>
-    <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Slash Commands in Chat</h2>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px">The full CLI command surface is available in chat via slash commands. The gateway intercepts and dispatches them. Key commands:</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px">
-        <div style="border:1px solid #334155;border-radius:8px;padding:14px;background:#1e293b">
-          <h3 style="margin:0 0 4px;font-size:14px;color:#60a5fa">Session Management</h3>
-          <p style="margin:0;color:#94a3b8;font-size:13px;line-height:1.5"><code>/new</code> — new conversation<br><code>/resume</code> — resume a session<br><code>/stop</code> — stop the running agent<br><code>/queue</code> — view queued messages</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:14px;background:#1e293b">
-          <h3 style="margin:0 0 4px;font-size:14px;color:#60a5fa">Operations</h3>
-          <p style="margin:0;color:#94a3b8;font-size:13px;line-height:1.5"><code>/status</code> — agent status<br><code>/copy</code> — copy last response<br><code>/paste</code> — paste content<br><code>/help</code> — command help</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:14px;background:#1e293b">
-          <h3 style="margin:0 0 4px;font-size:14px;color:#60a5fa">Configuration</h3>
-          <p style="margin:0;color:#94a3b8;font-size:13px;line-height:1.5"><code>/skin</code> — switch CLI skin<br><code>/tools</code> — manage enabled toolsets<br><code>/hermes config</code> — config management</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:14px;background:#1e293b">
-          <h3 style="margin:0 0 4px;font-size:14px;color:#60a5fa">Skills & Tools</h3>
-          <p style="margin:0;color:#94a3b8;font-size:13px;line-height:1.5"><code>/skills</code> — manage skills<br><code>/cron</code> — manage cron jobs<br><code>/kanban</code> — manage boards</p>
+        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Multi-Agent Swarms</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">A Hermes Agent bot can orchestrate swarms of subagents for parallel processing — research, analysis, content generation, code review, testing, and more. The bot coordinates the swarm and aggregates results.</p>
         </div>
       </div>
     </section>
     <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Multi-Profile Isolation</h2>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px">Hermes supports profiles — multiple fully isolated instances, each with its own <code>HERMES_HOME</code> directory. This means you can run multiple bots on one server without cross-contamination:</p>
-      <ul style="list-style:none;padding:0;margin:12px 0;color:#cbd5e1;line-height:1.6;font-size:16px">
-        <li>Each profile has its own config, API keys, memory, sessions, skills, gateway, and everything else</li>
-        <li>Use <code>hermes -p &lt;profile&gt;</code> to run a specific profile</li>
-        <li>Profile operations are HOME-anchored, not HERMES_HOME-anchored — <code>_get_profiles_root()</code> returns <code>Path.home() / ".hermes" / "profiles"</code></li>
-        <li>Adapters use token-scoped locks — if an adapter connects with a unique credential (bot token, API key), it acquires a scoped lock on connect and releases it on disconnect</li>
-      </ul>
-      <p style="color:#94a3b8;line-height:1.6;font-size:15px;margin-top:12px">This is critical for production: if you run a Telegram bot for your team and a separate Discord bot for another team, they must not share config, keys, or session state. Profiles enforce that isolation.</p>
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">Getting Started</h2>
+      <p style="color:#cbd5e1;font-size:16px">To run a Hermes Agent bot, you need:</p>
+      <ol style="color:#cbd5e1;font-size:16px;padding-left:20px">
+        <li><strong>Hermes Agent installed</strong> — via pip, from source, or through the desktop app</li>
+        <li><strong>A messaging platform account</strong> — Telegram bot token, Discord bot token, Slack bot token, etc.</li>
+        <li><strong>API keys for LLM providers</strong> — OpenAI, Anthropic, Google, or other supported providers</li>
+        <li><strong>Configuration</strong> — set up the platform adapter in your Hermes config with the bot token and any required settings</li>
+        <li><strong>Gateway running</strong> — start the Hermes gateway with your platform adapter enabled</li>
+      </ol>
+      <p style="color:#cbd5e1;font-size:16px;margin-top:12px">Zion Tech Group can help you set up, configure, and customize Hermes Agent bots for your specific needs — whether for personal use, team collaboration, customer-facing automation, or complex multi-agent workflows.</p>
     </section>
     <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Background Operations</h2>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px">Bot Mode supports several background operation patterns:</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px">
-        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Cron Jobs</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Schedule recurring agent runs. The scheduler ticks every 60 seconds by default. Supports duration, "every" phrases, cron expressions, and ISO timestamps. Catchup window: half the job's period. 3-minute hard interrupt on cron sessions.</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Delegation</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Spawn sub-agents with isolated contexts + terminal sessions. Background delegation returns a handle immediately — the result re-enters the conversation later. Batch mode runs multiple sub-agents in parallel (capped by <code>delegation.max_concurrent_children</code>).</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Long-Running Terminal</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Terminal commands with <code>background=true</code> run in the background. The gateway watches for completion and triggers a new agent turn. Control verbosity via <code>display.background_process_notifications</code>.</p>
-        </div>
-      </div>
-    </section>
-    <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Security Model</h2>
-      <p style="color:#cbd5e1;line-height:1.6;font-size:16px">Bot Mode inherits Hermes' full security model. Key points for production deployments:</p>
-      <ul style="list-style:none;padding:0;margin:12px 0;color:#cbd5e1;line-height:1.6;font-size:16px">
-        <li><strong>Allowlists:</strong> configure `gateway.telegram.allowed_users`, `allowed_groups`, or platform-equivalent settings to restrict who can interact with your bot</li>
-        <li><strong>Group policies:</strong> per-group routing rules — some groups get full access, others get read-only or restricted tool access</li>
-        <li><strong>Secret scoping:</strong> multiplex profiles read env vars from their own secret scope — never borrow from the default profile's <code>os.environ</code>. Fail-closed, never fail-open.</li>
-        <li><strong>Token locks:</strong> adapters acquire scoped locks on connect to prevent two profiles from using the same bot token simultaneously</li>
-        <li><strong> Credential isolation:</strong> each profile's <code>.env</code> lives only in its secret scope. Under multiplex, <code>os.environ</code> holds the default profile's values — a secondary profile's credentials are never leaked.</li>
-      </ul>
-    </section>
-    <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Deployment Options</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px">
-        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Local (CLI/TUI)</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Run `hermes` or `hermes --tui` for local development. Full terminal UI, keyboard-driven. Good for personal use and testing.</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Gateway (Cloud)</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Run `hermes serve` or `hermes dashboard` for a headless backend. Bots spawn detached — they survive app restarts. The messaging gateway (`gateway run`) SURVIVES the app by design.</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Electron Desktop</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Native desktop app with embedded chat, terminal pane, and bot roster. Talks to a <code>tui_gateway</code> backend over JSON-RPC. Separate from CLI and dashboard.</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:15px;color:#60a5fa">Container / Server</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Run the gateway as a systemd service or Docker container for always-on bot operations. Fleet update pipeline handles upgrades across multiple instances.</p>
-        </div>
-      </div>
-      <p style="color:#94a3b8;line-height:1.6;font-size:15px;margin-top:16px">The gateway lifecycle: <code>hermes serve</code> (control plane, desktop-spawned child) dies with the app — by design. The messaging gateway (`gateway run`) SURVIVES the app: the serve backend's `/api/gateway/*` endpoints spawn it detached, so `before-quit`'s backend SIGTERM never reaches it. Bots keep running when the user closes the app.</p>
-    </section>
-    <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Use Cases</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
-        <div style="border:1px solid #334155;border-radius:8px;padding:20px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Personal Assistant</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Research, file management, web lookups, scheduling — all from your phone via Telegram. The agent is available 24/7, remembers context across sessions, and can run long tasks in the background.</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:20px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Team Operations</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Deployed in a Slack/Discord/Telegram channel, handles deployments, monitors, alerts, and incident triage. Team members interact with it naturally — no new UI to learn.</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:20px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Content Automation</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Scheduled cron jobs that publish blog posts, monitor competitors, scrape data, and deliver digests. One agent outlines, several write, one edits, one publishes — all negotiating and coordinating automatically.</p>
-        </div>
-        <div style="border:1px solid #334155;border-radius:8px;padding:20px;background:#1e293b">
-          <h3 style="margin:0 0 8px;font-size:16px;color:#60a5fa">Multi-Agent Swarm</h3>
-          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">An orchestrator bot spawns leaf agents for parallel research, coding, or analysis. Agents coordinate via the A2A protocol, negotiate tasks, and report back — all triggered from chat.</p>
-        </div>
-      </div>
-    </section>
-    <section style="padding:32px 0 16px">
-      <h2 style="font-size:24px;font-weight:700;margin:0 0 16px">Related Reading</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px">
-        <a href="/services/hermes-agent-complete-guide/" style="border:1px solid #334155;border-radius:8px;padding:14px;background:#1e293b;text-decoration:none;color:#e6f0ff">
-          <h3 style="margin:0 0 4px;font-size:15px">Complete Guide</h3>
-          <p style="margin:0;color:#94a3b8;font-size:13px">Everything you need to know about Hermes Agent.</p>
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">Related Reading</h2>
+      <div style="display:grid;gap:12px">
+        <a href="/services/hermes-agent-bot-mode/" style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+          <h3 style="margin:0 0 8px;font-size:16px">Hermes Agent Bot Mode — Service Page</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Professional Hermes Agent bot setup, configuration, and customization services from Zion Tech Group.</p>
         </a>
-        <a href="/services/hermes-agent-plugin-development/" style="border:1px solid #334155;border-radius:8px;padding:14px;background:#1e293b;text-decoration:none;color:#e6f0ff">
-          <h3 style="margin:0 0 4px;font-size:15px">Plugin Development</h3>
-          <p style="margin:0;color:#94a3b8;font-size:13px">Build custom plugins and extensions.</p>
+        <a href="/services/hermes-agent-plugin-development/" style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+          <h3 style="margin:0 0 8px;font-size:16px">Plugin Development</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Extend Hermes Agent with custom plugins, tools, and integrations for your specific workflows.</p>
         </a>
-        <a href="/services/hermes-agent-a2a-protocol/" style="border:1px solid #334155;border-radius:8px;padding:14px;background:#1e293b;text-decoration:none;color:#e6f0ff">
-          <h3 style="margin:0 0 4px;font-size:15px">A2A Protocol</h3>
-          <p style="margin:0;color:#94a3b8;font-size:13px">Agent-to-agent communication and coordination.</p>
+        <a href="/services/hermes-agent-a2a-protocol/" style="border:1px solid #334155;border-radius:8px;padding:16px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+          <h3 style="margin:0 0 8px;font-size:16px">A2A Protocol</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Agent-to-agent communication protocol for coordinating multiple Hermes Agent bots across platforms.</p>
         </a>
-        <a href="/services/hermes-agent-content-publishing-distribution/" style="border:1px solid #334155;border-radius:8px;padding:14px;background:#1e293b;text-decoration:none;color:#e6f0ff">
-          <h3 style="margin:0 0 4px;font-size:15px">Content Publishing</h3>
-          <p style="margin:0;color:#94a3b8;font-size:13px">Automated content creation and distribution.</p>
-        </a>
+      </div>
+    </section>
+    <section style="padding:32px 0 16px">
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">About Zion Tech Group</h2>
+      <p style="color:#cbd5e1;font-size:16px">Zion Tech Group is a technology consultancy specializing in AI, automation, cybersecurity, cloud, and IT services. We help organizations adopt and integrate AI technologies — including autonomous agents like Hermes Agent — to improve operations, reduce costs, and drive innovation.</p>
+      <p style="color:#cbd5e1;font-size:16px;margin-top:12px">Our team has deep expertise in AI systems, agent orchestration, platform integrations, and enterprise-grade deployments. We work with startups, SMEs, and enterprises across multiple industries.</p>
+    </section>
+    <section style="padding:32px 0 16px">
+      <h2 style="font-size:24px;font-weight:700;margin-bottom:16px">Contact Us</h2>
+      <p style="color:#cbd5e1;font-size:16px">Ready to explore Hermes Agent Bot Mode for your organization? Get in touch:</p>
+      <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap">
+        <a href="/contact/" style="background:#2563eb;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600">Contact Zion Tech Group</a>
+        <a href="/services/hermes-agent-bot-mode/" style="background:#1e293b;color:#e6f0ff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;border:1px solid #334155">Explore Bot Mode Services</a>
       </div>
     </section>
     <footer style="margin-top:48px;padding:24px 0;border-top:1px solid #1e293b;color:#64748b;font-size:13px">
