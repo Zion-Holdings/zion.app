@@ -1111,3 +1111,29 @@
 /hermes-agents /services/hermes-agent-platform/ 301
 /help /services/ 301
 /support /services/ 301
+
+# Broken links fix - created $(date)
+/faq/ /faq/ 200
+/faq /faq/ 301
+/careers/ /careers/ 200
+/careers /careers/ 301
+/solutions/ /solutions/ 200
+/solutions /solutions/ 301
+/ai-services-index/ /ai-services-index/ 200
+/ai-services-index /ai-services-index/ 301
+
+# Service cards fix - redirect to /services/
+/services/managed-it-services-small-business-2026-6559/ /services/ 301
+/services/cybersecurity-platform-msp-2026-6558/ /services/ 301
+/services/cloud-cost-ai-optimizer-2026-6534/ /services/ 301
+/services/ai-observability-2026-6565/ /services/ 301
+/services/it-consulting-2026-6570/ /services/ 301
+/services/cloud-migration-services-2026-6572/ /services/ 301
+
+# Blog post fixes
+/blog/ai-agent-tool-builder-operations-handbook/ /blog/ 301
+/blog/ai-data-backup-automation-roadmap/ /blog/ 301
+/blog/ai-data-lakehouse-pipelines-implementation-playbook/ /blog/ 301
+/ai-lab /ai-lab/ 301
+/ai-lab/ /ai-lab/ 200
+/free-ai-it-tools/ /free-ai-it-tools/index.html 200
