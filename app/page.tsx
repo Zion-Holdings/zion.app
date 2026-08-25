@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
+import AgentsMonitoring from '@/components/AgentsMonitoring';
 
 export const metadata: Metadata = {
   title: 'Home | Zion Tech Group',

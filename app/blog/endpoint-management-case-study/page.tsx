@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Endpoint Management: case study',
     url: 'https://ziontechgroup.com/blog/endpoint-management-case-study/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

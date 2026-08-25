@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Endpoint Management: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/endpoint-management-vendor-evaluation/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

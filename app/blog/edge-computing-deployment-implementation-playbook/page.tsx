@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Edge Computing Deployment: implementation playbook',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-implementation-playbook/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

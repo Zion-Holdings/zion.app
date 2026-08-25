@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: '5G Solutions',
     url: 'https://ziontechgroup.com/blog/5g-solutions-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

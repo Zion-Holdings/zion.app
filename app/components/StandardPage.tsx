@@ -1,5 +1,4 @@
-'use client';
-
+// app/components/StandardPage.tsx
 import React from 'react';
 import JsonLd from '@/components/JsonLd';
 import PageShell from '@/components/PageShell';
@@ -22,7 +21,7 @@ export interface StandardPageProps {
   subtitle?: string;
   breadcrumbItems?: Array<{ label: string; href?: string }>;
   actions?: Array<{ label: string; href: string; style?: 'primary' | 'secondary' }>;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function StandardPage({

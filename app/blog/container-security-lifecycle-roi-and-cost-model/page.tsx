@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Container Security Lifecycle: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-roi-and-cost-model/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

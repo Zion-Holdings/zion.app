@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'APM Application Performance: starter template',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-starter-template/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

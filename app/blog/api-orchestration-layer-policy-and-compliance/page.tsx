@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'API Orchestration Layer: policy and compliance',
     url: 'https://ziontechgroup.com/blog/api-orchestration-layer-policy-and-compliance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

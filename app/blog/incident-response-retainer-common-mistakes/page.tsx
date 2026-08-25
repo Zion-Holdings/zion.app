@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Incident Response Retainer: common mistakes',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-common-mistakes/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

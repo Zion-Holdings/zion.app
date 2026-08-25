@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Enterprise AI Intelligence Hub',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

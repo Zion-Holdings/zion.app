@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'API Security Testing',
     url: 'https://ziontechgroup.com/blog/api-security-testing-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

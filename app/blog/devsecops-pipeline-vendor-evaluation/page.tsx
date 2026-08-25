@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'DevSecOps Pipeline: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/devsecops-pipeline-vendor-evaluation/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

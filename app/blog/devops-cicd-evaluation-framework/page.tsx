@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'DevOps CI/CD: evaluation framework',
     url: 'https://ziontechgroup.com/blog/devops-cicd-evaluation-framework/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

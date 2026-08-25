@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Container Security Lifecycle: automation roadmap | Zion Tech Group',
   description: 'Container Security Lifecycle: automation roadmap',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Container Security Lifecycle: automation roadmap | Zion Tech Group',

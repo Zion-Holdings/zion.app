@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Autonomous QA Engineering: policy and compliance',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-policy-and-compliance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

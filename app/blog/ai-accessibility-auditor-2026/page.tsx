@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Accessibility Auditor',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

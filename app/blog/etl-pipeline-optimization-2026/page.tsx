@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'ETL Pipeline Optimization',
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

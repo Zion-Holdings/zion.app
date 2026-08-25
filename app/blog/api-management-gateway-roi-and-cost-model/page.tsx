@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'API Management Gateway: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/api-management-gateway-roi-and-cost-model/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

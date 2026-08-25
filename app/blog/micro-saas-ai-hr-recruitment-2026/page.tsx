@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'MicroSaaS HR Recruitment',
     url: 'https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

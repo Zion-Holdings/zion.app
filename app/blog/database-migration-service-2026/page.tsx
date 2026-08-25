@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Database Migration Service',
     url: 'https://ziontechgroup.com/blog/database-migration-service-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

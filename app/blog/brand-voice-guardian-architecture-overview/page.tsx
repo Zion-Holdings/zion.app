@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Brand Voice Guardian: architecture overview',
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-architecture-overview/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

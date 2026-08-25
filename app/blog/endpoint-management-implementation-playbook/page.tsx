@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Endpoint Management: implementation playbook',
     url: 'https://ziontechgroup.com/blog/endpoint-management-implementation-playbook/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

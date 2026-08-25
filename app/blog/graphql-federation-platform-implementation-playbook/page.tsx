@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'GraphQL Federation Platform: implementation playbook',
     url: 'https://ziontechgroup.com/blog/graphql-federation-platform-implementation-playbook/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Customer Success Churn Prevention',
     url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

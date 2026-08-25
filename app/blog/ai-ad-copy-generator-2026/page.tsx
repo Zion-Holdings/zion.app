@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Ad Copy Generator',
     url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Cost AI Optimizer: automation roadmap',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-automation-roadmap/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

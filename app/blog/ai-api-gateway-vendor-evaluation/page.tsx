@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI API Gateway: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/ai-api-gateway-vendor-evaluation/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

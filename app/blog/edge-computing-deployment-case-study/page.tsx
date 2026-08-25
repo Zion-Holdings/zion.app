@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Edge Computing Deployment: case study',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-case-study/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

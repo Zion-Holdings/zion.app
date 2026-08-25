@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'API Management Gateway: policy and compliance',
     url: 'https://ziontechgroup.com/blog/api-management-gateway-policy-and-compliance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

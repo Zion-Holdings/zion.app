@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Edge Computing Deployment: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/edge-computing-deployment-roi-and-cost-model/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

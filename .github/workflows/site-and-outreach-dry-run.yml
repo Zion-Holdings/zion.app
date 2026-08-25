@@ -1,0 +1,37 @@
+name: site-and-outreach-dry-run
+permissions:
+  contents: read
+
+"on":
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Run site integrity crawler
+        run: |
+          python automation/site_integrity_run.py > automation/reports/site-integrity-report.json
+
+      - name: Upload integrity report
+        uses: actions/upload-artifact@4bd10206f1090cfe5690b91618f6fd840f21135b # v4
+        with:
+          name: site-integrity-report
+          path: automation/reports/site-integrity-report.json
+          retention-days: 7

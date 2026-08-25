@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Native App Development',
     url: 'https://ziontechgroup.com/blog/cloud-native-app-development-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

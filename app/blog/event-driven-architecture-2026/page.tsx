@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Event Driven Architecture',
     url: 'https://ziontechgroup.com/blog/event-driven-architecture-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

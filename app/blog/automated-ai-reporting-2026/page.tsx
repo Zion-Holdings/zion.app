@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Automated AI Reporting',
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

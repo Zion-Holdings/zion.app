@@ -632,10 +632,13 @@ export default function BlogPage() {
 <>
     <StandardPage
       title="Blog"
-      subtitle="Guides, roadmap notes, and implementation playbooks from the Zion platform."
+      subtitle="AI, IT, and automation insights, guides, and industry trends from Zion Tech Group."
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Blog' },
+      ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'secondary' },
       ]}
     >
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

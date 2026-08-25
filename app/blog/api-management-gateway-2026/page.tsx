@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'API Management Gateway',
     url: 'https://ziontechgroup.com/blog/api-management-gateway-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

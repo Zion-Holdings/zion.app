@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Data Analytics Platform',
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

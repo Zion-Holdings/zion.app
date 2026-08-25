@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Cost AI Optimizer: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

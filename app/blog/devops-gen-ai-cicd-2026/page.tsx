@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'GenAI DevOps CI/CD',
     url: 'https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Autonomous Code Deployment: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-checklist-for-it-leaders/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

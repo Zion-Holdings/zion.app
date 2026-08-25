@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cybersecurity for MSPs',
     url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

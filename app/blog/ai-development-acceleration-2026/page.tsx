@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Development Acceleration',
     url: 'https://ziontechgroup.com/blog/ai-development-acceleration-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

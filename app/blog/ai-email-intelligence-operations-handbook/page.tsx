@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Email Intelligence: operations handbook',
     url: 'https://ziontechgroup.com/blog/ai-email-intelligence-operations-handbook/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

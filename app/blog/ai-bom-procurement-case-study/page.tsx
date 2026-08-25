@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI BOM Procurement: case study',
     url: 'https://ziontechgroup.com/blog/ai-bom-procurement-case-study/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

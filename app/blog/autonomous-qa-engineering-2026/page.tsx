@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Autonomous QA Engineering',
     url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

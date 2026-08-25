@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI BDR SDR: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-policy-and-compliance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

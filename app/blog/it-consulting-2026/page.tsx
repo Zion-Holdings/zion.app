@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'IT Consulting',
     url: 'https://ziontechgroup.com/blog/it-consulting-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

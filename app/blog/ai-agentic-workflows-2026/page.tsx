@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Agentic Workflows',
     url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

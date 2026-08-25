@@ -1,0 +1,90 @@
+name: outreach-live-llm-tailoring
+permissions:
+  contents: read
+
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  outreach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ZION_LLM_API_ENDPOINT: ${{ secrets.ZION_LLM_API_ENDPOINT || 'https://openrouter.ai/api/v1' }}
+      ZION_LLM_API_KEY: ${{ secrets.ZION_LLM_API_KEY || secrets.OPENROUTER_API_KEY }}
+      ZION_LLM_MODEL: ${{ secrets.ZION_LLM_MODEL || 'openai/gpt-4o-mini' }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      OUTREACH_DRY_RUN: ${{ secrets.OUTREACH_DRY_RUN || '1' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib requests beautifulsoup4
+
+      - name: Run outreach worker
+        id: outreach-worker
+        run: |
+          echo "[trace] start outreach_worker_automation.py"
+          python scripts/outreach/outreach_worker_automation.py | tee outreach_run.log
+          echo "[trace] outreach exit=$?"
+        continue-on-error: true
+
+      - name: Discover outreach blockers
+        if: always()
+        id: outreach-blockers
+        run: |
+          echo "[trace] start outreach blocker discovery"
+          set -euo pipefail
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          base = Path('outreach_monitor/processed')
+          report = {
+            'timestamp': int(__import__('time').time()),
+            'cwd': str(Path.cwd()),
+            'files': sorted([p.name for p in base.glob('*')]),
+            'llm_readiness': {},
+            'auth_failed': False,
+          }
+          for name in ['llm_tailoring_readiness.json','hot_followup_reply_ledger.jsonl','sent_ledger.jsonl','dry_run_report.jsonl']:
+              p = base / name
+              report[name] = p.exists()
+              if p.exists():
+                  try:
+                      report[name+'_head'] = p.read_text(encoding='utf-8', errors='ignore').splitlines()[:3]
+                  except Exception as e:
+                      report[name+'_head'] = f'ERR:{e}'
+          try:
+              r = json.loads((base/'llm_tailoring_readiness.json').read_text(encoding='utf-8'))
+              report['llm_readiness'] = r
+              report['auth_failed'] = not bool(r.get('local_gmail_modules', {}).get('token_exists')) or bool(r.get('local_gmail_modules', {}).get('auth_error'))
+          except Exception as e:
+              report['auth_failed'] = True
+              report['llm_readiness_error'] = repr(e)
+          print(json.dumps(report, ensure_ascii=False))
+          PY
+
+      - name: Upload outreach reports and trace logs
+        if: always()
+        uses: actions/upload-artifact@4bd10206f1090cfe5690b91618f6fd840f21135b # v4
+        with:
+          name: outreach-reports-${{ github.run_id }}
+          path: |
+            outreach_run.log
+            outreach_monitor/processed/sent_ledger.jsonl
+            outreach_monitor/processed/hot_followup_reply_ledger.jsonl
+            outreach_monitor/processed/dry_run_report.jsonl
+            outreach_monitor/processed/llm_tailoring_readiness.json
+          retention-days: 7

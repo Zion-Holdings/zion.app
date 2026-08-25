@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cyber Threat Intelligence',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

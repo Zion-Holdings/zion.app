@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Incident Response Retainer: policy and compliance',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-policy-and-compliance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

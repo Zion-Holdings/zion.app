@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'ETL Pipeline Optimization: vendor evaluation',
     url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-vendor-evaluation/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

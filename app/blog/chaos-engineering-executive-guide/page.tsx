@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Chaos Engineering: executive guide',
     url: 'https://ziontechgroup.com/blog/chaos-engineering-executive-guide/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Automation Orchestration',
     url: 'https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

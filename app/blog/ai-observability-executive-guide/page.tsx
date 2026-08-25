@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Observability: executive guide',
     url: 'https://ziontechgroup.com/blog/ai-observability-executive-guide/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

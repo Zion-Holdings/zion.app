@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'DevOps CI/CD',
     url: 'https://ziontechgroup.com/blog/devops-cicd-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

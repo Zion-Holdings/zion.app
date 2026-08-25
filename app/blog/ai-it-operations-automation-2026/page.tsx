@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI IT Operations',
     url: 'https://ziontechgroup.com/blog/ai-it-operations-automation-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

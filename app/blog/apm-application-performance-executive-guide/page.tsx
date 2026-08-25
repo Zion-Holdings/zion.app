@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'APM Application Performance: executive guide',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-executive-guide/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

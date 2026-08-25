@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cyber Threat Intelligence: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-roi-and-cost-model/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

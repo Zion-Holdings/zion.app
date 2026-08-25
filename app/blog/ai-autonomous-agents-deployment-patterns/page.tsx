@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Autonomous Agents: deployment patterns',
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-deployment-patterns/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

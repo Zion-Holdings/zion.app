@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Autonomous Code Deployment: starter template',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-starter-template/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

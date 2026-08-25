@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI 3D Asset Generator',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cybersecurity for MSPs: case study',
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-case-study/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cyber Threat Intelligence: deployment patterns',
     url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-deployment-patterns/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

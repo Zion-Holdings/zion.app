@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Brand Voice Guardian: case study',
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-case-study/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: '5G Solutions: security and governance',
     url: 'https://ziontechgroup.com/blog/5g-solutions-security-and-governance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

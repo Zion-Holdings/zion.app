@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Performance Monitoring: automation roadmap',
     url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-automation-roadmap/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

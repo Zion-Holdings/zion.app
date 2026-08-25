@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI BDR SDR',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

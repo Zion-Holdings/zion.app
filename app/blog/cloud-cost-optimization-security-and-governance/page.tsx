@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud Cost Optimization: security and governance',
     url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-security-and-governance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

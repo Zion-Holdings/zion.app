@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI IT Operations: ROI and cost model',
     url: 'https://ziontechgroup.com/blog/ai-it-operations-roi-and-cost-model/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

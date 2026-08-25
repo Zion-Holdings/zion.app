@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Data Analytics Platform: architecture overview',
     url: 'https://ziontechgroup.com/blog/data-analytics-platform-architecture-overview/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Data Backup: architecture overview',
     url: 'https://ziontechgroup.com/blog/ai-data-backup-architecture-overview/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Customer Support: executive guide',
     url: 'https://ziontechgroup.com/blog/ai-customer-support-executive-guide/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

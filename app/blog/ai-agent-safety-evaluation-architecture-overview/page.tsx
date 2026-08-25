@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Agent Safety Evaluation: architecture overview',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-architecture-overview/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

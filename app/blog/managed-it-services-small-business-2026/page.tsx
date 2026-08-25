@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Managed IT Services',
     url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

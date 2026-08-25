@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Autonomous Agents: policy and compliance',
     url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-policy-and-compliance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

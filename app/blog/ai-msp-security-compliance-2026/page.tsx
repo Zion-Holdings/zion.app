@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI MSP Security Compliance',
     url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

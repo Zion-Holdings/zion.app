@@ -1,0 +1,28 @@
+name: Hook Self-Test
+permissions:
+  contents: read
+"on":
+  workflow_dispatch:
+    inputs:
+      hook:
+        description: Hook test target
+        required: false
+        default: app/hooks/__tests__/useAutoJsonLdPage.self-test.cjs
+        type: string
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - name: checkout
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+    - name: run self-test
+      run: 'set -euo pipefail
+
+        node "${{ inputs.hook || ''app/hooks/__tests__/useAutoJsonLdPage.self-test.cjs''
+        }}"
+
+        '
+    timeout-minutes: 20

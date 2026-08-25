@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Cloud FinOps: executive guide',
     url: 'https://ziontechgroup.com/blog/cloud-finops-executive-guide/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

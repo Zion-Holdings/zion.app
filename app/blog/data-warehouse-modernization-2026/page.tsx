@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Data Warehouse Modernization',
     url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

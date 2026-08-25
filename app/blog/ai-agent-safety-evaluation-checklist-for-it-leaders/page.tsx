@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AI Agent Safety Evaluation: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-checklist-for-it-leaders/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

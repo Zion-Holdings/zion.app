@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'AIOps Anomaly Detection',
     url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-2026/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

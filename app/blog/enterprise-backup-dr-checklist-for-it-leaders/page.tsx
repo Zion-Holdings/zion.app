@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Enterprise Backup DR: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-checklist-for-it-leaders/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: 'Container Security Lifecycle: security and governance',
     url: 'https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/',
     type: 'article',
+    siteName: 'Zion Tech Group',
   },
   twitter: {
     card: 'summary_large_image',
