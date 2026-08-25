@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Agent Plugin Development — Build Custom Extensions | Zion Tech Group</title>
+  <meta name="description" content="Build custom plugins, skills, and tools for Hermes Agent. Extend the platform with your own integrations, automation workflows, and domain-specific capabilities." />
+  <link rel="canonical" href="https://ziontechgroup.com/services/hermes-agent-plugin-development/" />
+</head>
+<body style="margin:0;background:#0b1220;color:#e6f0ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">
+  <main style="max-width:900px;margin:0 auto;padding:40px 24px">
+    <nav style="margin-bottom:32px">
+      <a href="/" style="color:#60a5fa;text-decoration:none;font-weight:600">← Home</a>
+      <span style="color:#475569">/</span>
+      <a href="/services/" style="color:#60a5fa;text-decoration:none">Services</a>
+    </nav>
+    <section style="padding:48px 0 32px">
+      <h1 style="font-size:36px;font-weight:700;line-height:1.2">Hermes Agent Plugin Development — Build Custom Extensions</h1>
+      <p style="font-size:18px;line-height:1.6;color:#cbd5e1;margin-top:16px;max-width:720px">Extend Hermes Agent with custom plugins, skills, and tools tailored to your workflows. Build integrations with your internal systems, create domain-specific automation, and package reusable capabilities that your agents can invoke on demand.</p>
+      <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
+        <a href="/contact/" style="display:inline-flex;align-items:center;gap:8px;padding:14px 18px;border-radius:8px;background:#2563eb;color:#fff;text-decoration:none;font-weight:600">Start a project</a>
+        <a href="/blog/hermes-agent-criar-catalogo-servicos-infinito/" style="display:inline-flex;align-items:center;gap:8px;padding:14px 18px;border-radius:8px;background:#1e293b;color:#e6f0ff;text-decoration:none;font-weight:600;border:1px solid #334155">Read the guide</a>
+      </div>
+    </section>
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px">
+      <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+        <h3 style="margin:0 0 8px;font-size:16px">Plugin Architecture</h3>
+        <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Plugins live in <code>~/.hermes/plugins/</code> and register tools, hooks, and CLI commands. The PluginManager discovers them at startup — no core changes needed.</p>
+      </div>
+      <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+        <h3 style="margin:0 0 8px;font-size:16px">Tool Registration</h3>
+        <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Each plugin can register as many tools as needed via <code>ctx.register_tool(...)</code>. Tools get full schema support, availability gating via <code>check_fn</code>, and error wrapping.</p>
+      </div>
+      <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+        <h3 style="margin:0 0 8px;font-size:16px">Lifecycle Hooks</h3>
+        <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Hook into <code>pre_tool_call</code>, <code>post_tool_call</code>, <code>pre_llm_call</code>, <code>post_llm_call</code>, <code>on_session_start</code>, and <code>on_session_end</code> to build observability, validation, and stateful plugins.</p>
+      </div>
+      <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+        <h3 style="margin:0 0 8px;font-size:16px">Skills System</h3>
+        <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Skills are markdown-driven capability packs with SKILL.md frontmatter, scripts, templates, and references. They inject domain knowledge and procedures into the agent's context on demand.</p>
+      </div>
+    </section>
+    <section style="padding:32px 0 16px">
+      <h2 style="font-size:22px;font-weight:700;margin:0 0 12px">What We Build</h2>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Custom integrations:</strong> connect Hermes to your internal APIs, databases, CRMs, ticketing systems, and proprietary tools</span></li>
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Domain-specific skills:</strong> packaged knowledge and procedures for your industry — legal, healthcare, fintech, manufacturing</span></li>
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Automation workflows:</strong> multi-step agent procedures that combine tools, memory, and delegation into repeatable pipelines</span></li>
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Model provider plugins:</strong> connect Hermes to any LLM backend — custom endpoints, on-premise models, specialized providers</span></li>
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Memory backends:</strong> pluggable persistence layers — vector DBs, graph stores, document archives, custom schemas</span></li>
+        <li style="padding:10px 0;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Platform adapters:</strong> connect Hermes to new messaging platforms, channels, or custom webhook receivers</span></li>
+      </ul>
+    </section>
+    <section style="padding:32px 0 16px">
+      <h2 style="font-size:22px;font-weight:700;margin:0 0 12px">Plugin Categories We Support</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px">General Plugins</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Tools, hooks, CLI commands. The most flexible category — anything that doesn't fit elsewhere goes here.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px">Memory Providers</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Pluggable memory backends implementing the MemoryProvider ABC. Honcho, mem0, supermemory, and custom implementations.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px">Model Providers</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Inference backends — OpenAI, Anthropic, Gemini, OpenRouter, custom endpoints. Register via ProviderProfile.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px">Context Engines</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Custom context assembly and retrieval strategies. Plug into the agent's context pipeline for domain-specific enrichment.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px">Image Generation</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Providers for DALL-E, Stable Diffusion, ComfyUI, and other image generation backends — tools agents can call to create visuals.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b">
+          <h3 style="margin:0 0 8px;font-size:16px">Kanban & Dispatch</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Multi-agent work queues with SQLite-backed boards, assignees, reviews, and auto-dispatch. Workers spawned per-task with isolated contexts.</p>
+        </div>
+      </div>
+    </section>
+    <section style="padding:32px 0 16px">
+      <h2 style="font-size:22px;font-weight:700;margin:0 0 12px">Development Approach</h2>
+      <ol style="list-style:none;padding:0;margin:0;counter-reset:phase">
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:phase;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">1</span><span style="color:#cbd5e1"><strong>Requirements gathering:</strong> what integrations, tools, or workflows does the client need? What existing systems must Hermes connect to?</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:phase;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">2</span><span style="color:#cbd5e1"><strong>Architecture:</strong> choose plugin category, define tool schemas, design hook integration points, plan skill structure</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:phase;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">3</span><span style="color:#cbd5e1"><strong>Implementation:</strong> write the plugin in Python, register tools and hooks, package skills with scripts and references, test with real Hermes startup</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:phase;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">4</span><span style="color:#cbd5e1"><strong>Integration testing:</strong> verify the plugin loads correctly, tools appear in the agent's schema, hooks fire at the right times, skills inject properly</span></li>
+        <li style="padding:12px 0;display:flex;gap:12px;align-items:start"><span style="counter-increment:phase;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">5</span><span style="color:#cbd5e1"><strong>Delivery & documentation:</strong> install the plugin, document its tools and usage, hand over maintenance guidance</span></li>
+      </ol>
+    </section>
+    <section style="padding:32px 0 16px">
+      <h2 style="font-size:22px;font-weight:700;margin:0 0 12px">Ideal For</h2>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="padding:8px 0;color:#cbd5e1">Companies that want Hermes to connect to proprietary internal systems</li>
+        <li style="padding:8px 0;color:#cbd5e1">Teams that need domain-specific AI knowledge packaged as reusable skills</li>
+        <li style="padding:8px 0;color:#cbd5e1">Organizations building custom automation workflows on top of Hermes Agent</li>
+        <li style="padding:8px 0;color:#cbd5e1">Developers who want to extend Hermes with new platforms, providers, or tools</li>
+      </ul>
+    </section>
+    <footer style="margin-top:48px;padding:24px 0;border-top:1px solid #1e293b;color:#64748b;font-size:13px">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <span>© 2026 Zion Tech Group. All rights reserved.</span>
+        <div style="display:flex;gap:16px">
+          <a href="/privacy/" style="color:#64748b;text-decoration:none">Privacy</a>
+          <a href="/terms/" style="color:#64748b;text-decoration:none">Terms</a>
+          <a href="/contact/" style="color:#64748b;text-decoration:none">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
