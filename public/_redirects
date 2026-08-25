@@ -1103,3 +1103,11 @@
 /hermes-agents/ /services/hermes-agent-platform/ 301
 /help/ /services/ 301
 /support/ /services/ 301
+
+# Fallbacks for uncovered top-level routes
+/hermes-agents/ /services/hermes-agent-platform/ 301
+/help/ /services/ 301
+/support/ /services/ 301
+/hermes-agents /services/hermes-agent-platform/ 301
+/help /services/ 301
+/support /services/ 301
