@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zion Tech Group",
+  "url": "https://ziontechgroup.com",
+  "logo": "https://ziontechgroup.com/logo.png",
+  "description": "AI & IT Services: managed IT, cybersecurity, cloud migration, AI automation, and consulting.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-305-555-0199",
+    "contactType": "sales",
+    "areaServed": "US",
+    "availableLanguage": ["English", "Portuguese", "Spanish"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/ziontechgroup",
+    "https://twitter.com/ziontechgroup"
+  ]
+}
