@@ -91,7 +91,7 @@ function execWithUlimit(cmd, opts) {
         cwd: repo,
         encoding: 'utf8',
         stdio: ['ignore', 'pipe', 'pipe'],
-        timeout: 60 * 60 * 1000,
+        timeout: 30 * 60 * 1000,
         env: buildEnv,
       });
       attemptOut = ((out.stdout || '') + (out.stderr || '')).slice(-4000);
