@@ -50,6 +50,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Base64 Encoder</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Base64 Encoder.</p>
         </Link>
+        <Link href="/tools/blog-post-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Blog Post Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Blog Post Generator.</p>
+        </Link>
         <Link href="/tools/cloud-cost-calculator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cloud Cost Calculator</h3>
@@ -65,6 +70,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Color Contrast</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Color Contrast.</p>
         </Link>
+        <Link href="/tools/color-converter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Color Converter</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Color Converter.</p>
+        </Link>
         <Link href="/tools/color-palette-gen/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Color Palette Gen</h3>
@@ -75,25 +85,80 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cron Agent Calculator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Cron Agent Calculator.</p>
         </Link>
+        <Link href="/tools/cron-parser/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Cron Parser</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Cron Parser.</p>
+        </Link>
+        <Link href="/tools/css-minifier/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Css Minifier</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Css Minifier.</p>
+        </Link>
+        <Link href="/tools/excel-to-json/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Excel To Json</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Excel To Json.</p>
+        </Link>
         <Link href="/tools/gradient-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Gradient Generator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Gradient Generator.</p>
+        </Link>
+        <Link href="/tools/hash-checker/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Hash Checker</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Hash Checker.</p>
         </Link>
         <Link href="/tools/hash-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Hash Generator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Hash Generator.</p>
         </Link>
+        <Link href="/tools/image-to-base64/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Image To Base64</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Image To Base64.</p>
+        </Link>
+        <Link href="/tools/json-diff/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Json Diff</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Json Diff.</p>
+        </Link>
         <Link href="/tools/json-formatter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Json Formatter</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Json Formatter.</p>
         </Link>
+        <Link href="/tools/json-schema-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Json Schema Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Json Schema Generator.</p>
+        </Link>
         <Link href="/tools/json-schema-validator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Json Schema Validator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Json Schema Validator.</p>
+        </Link>
+        <Link href="/tools/json-to-yaml/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Json To Yaml</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Json To Yaml.</p>
+        </Link>
+        <Link href="/tools/jwt-decoder/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Jwt Decoder</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Jwt Decoder.</p>
+        </Link>
+        <Link href="/tools/jwt-decoder-pro/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Jwt Decoder Pro</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Jwt Decoder Pro.</p>
+        </Link>
+        <Link href="/tools/jwt-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Jwt Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Jwt Generator.</p>
         </Link>
         <Link href="/tools/llm-payload-estimator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
@@ -110,6 +175,11 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Markdown Preview</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Markdown Preview.</p>
         </Link>
+        <Link href="/tools/markdown-previewer/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Markdown Previewer</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Markdown Previewer.</p>
+        </Link>
         <Link href="/tools/mcp-tester/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Mcp Tester</h3>
@@ -120,15 +190,40 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Meta Tag Generator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Meta Tag Generator.</p>
         </Link>
+        <Link href="/tools/mime-lookup/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Mime Lookup</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Mime Lookup.</p>
+        </Link>
         <Link href="/tools/number-base-converter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Number Base Converter</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Number Base Converter.</p>
         </Link>
+        <Link href="/tools/password-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Password Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Password Generator.</p>
+        </Link>
         <Link href="/tools/password-strength/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Password Strength</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Password Strength.</p>
+        </Link>
+        <Link href="/tools/phishing-analyzer/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Phishing Analyzer</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Phishing Analyzer.</p>
+        </Link>
+        <Link href="/tools/qr-code-generator/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Qr Code Generator</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Qr Code Generator.</p>
+        </Link>
+        <Link href="/tools/regex-cheat-sheet/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Regex Cheat Sheet</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Regex Cheat Sheet.</p>
         </Link>
         <Link href="/tools/regex-tester/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
@@ -155,10 +250,20 @@ export default function ToolsPage() {
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Text Diff</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Text Diff.</p>
         </Link>
+        <Link href="/tools/text-to-speech/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Text To Speech</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Text To Speech.</p>
+        </Link>
         <Link href="/tools/timestamp-converter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Timestamp Converter</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Timestamp Converter.</p>
+        </Link>
+        <Link href="/tools/timestamp-to-cron/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Timestamp To Cron</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Timestamp To Cron.</p>
         </Link>
         <Link href="/tools/url-encoder/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>
@@ -174,6 +279,11 @@ export default function ToolsPage() {
           <div className="text-3xl mb-3">🛠️</div>
           <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Uuid Generator</h3>
           <p className="mt-2 text-sm text-slate-400">Interactive tool: Uuid Generator.</p>
+        </Link>
+        <Link href="/tools/word-counter/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+          <div className="text-3xl mb-3">🛠️</div>
+          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">Word Counter</h3>
+          <p className="mt-2 text-sm text-slate-400">Interactive tool: Word Counter.</p>
         </Link>
         <Link href="/tools/yaml-to-json/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
           <div className="text-3xl mb-3">🛠️</div>

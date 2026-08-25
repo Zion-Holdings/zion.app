@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIME Type Lookup | Zion Tech Group</title>
+  <meta name="description" content="Look up MIME types by file extension — supports image, video, audio, text, and application formats.">
+  <meta property="og:title" content="MIME Type Lookup | Zion Tech Group">
+  <meta property="og:description" content="Free online MIME type lookup tool.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/mime-lookup/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/mime-lookup/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .mime-result { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .tag { padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; background: #334155; color: #94a3b8; cursor: pointer; }
+    .tag:hover { background: #475569; }
+    .tag.active { background: #6366f1; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MIME Type Lookup</h1>
+    <p class="subtitle">Look up MIME types by file extension.</p>
+    <div class="field">
+      <label>File Extension</label>
+      <input type="text" id="ext" placeholder="e.g., pdf, jpg, mp4" oninput="lookup()">
+    </div>
+    <div class="buttons">
+      <button class="btn success" onclick="copy()">Copy</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    <div class="section">
+      <h3>Result</h3>
+      <pre id="result">—</pre>
+    </div>
+    <div class="section">
+      <h3>Browse by Category</h3>
+      <div class="tags" id="categories">
+        <span class="tag active" onclick="filter('all')">All</span>
+        <span class="tag" onclick="filter('image')">Image</span>
+        <span class="tag" onclick="filter('video')">Video</span>
+        <span class="tag" onclick="filter('audio')">Audio</span>
+        <span class="tag" onclick="filter('text')">Text</span>
+        <span class="tag" onclick="filter('app')">Application</span>
+      </div>
+      <pre id="list" style="margin-top: 1rem; max-height: 300px; overflow-y: auto;"></pre>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    const mimes = {
+      'jpg': 'image/jpeg', 'jpeg': 'image/jpeg', 'png': 'image/png', 'gif': 'image/gif',
+      'svg': 'image/svg+xml', 'webp': 'image/webp', 'bmp': 'image/bmp', 'ico': 'image/x-icon',
+      'mp4': 'video/mp4', 'webm': 'video/webm', 'avi': 'video/x-msvideo', 'mov': 'video/quicktime',
+      'mp3': 'audio/mpeg', 'wav': 'audio/wav', 'ogg': 'audio/ogg', 'flac': 'audio/flac',
+      'txt': 'text/plain', 'html': 'text/html', 'css': 'text/css', 'js': 'application/javascript',
+      'json': 'application/json', 'xml': 'application/xml', 'pdf': 'application/pdf',
+      'zip': 'application/zip', 'rar': 'application/x-rar', 'tar': 'application/x-tar',
+      'gz': 'application/gzip', 'doc': 'application/msword', 'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'xls': 'application/vnd.ms-excel', 'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'ppt': 'application/vnd.ms-powerpoint', 'pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+      'exe': 'application/x-msdownload', 'dmg': 'application/x-apple-diskimage'
+    };
+    function lookup() {
+      const ext = document.getElementById('ext').value.trim().toLowerCase().replace('.', '');
+      if (!ext) { document.getElementById('result').textContent = '—'; return; }
+      const mime = mimes[ext];
+      document.getElementById('result').textContent = mime || 'Not found';
+    }
+    function copy() {
+      const result = document.getElementById('result').textContent;
+      if (result === '—' || result === 'Not found') return;
+      navigator.clipboard.writeText(result).then(() => {
+        const btn = document.querySelector('.btn.success');
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+      });
+    }
+    function clearAll() {
+      document.getElementById('ext').value = '';
+      document.getElementById('result').textContent = '—';
+    }
+    function filter(cat) {
+      document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      let list = '';
+      for (const [ext, mime] of Object.entries(mimes)) {
+        if (cat === 'all' || mime.startsWith(cat)) {
+          list += `.${ext} → ${mime}\n`;
+        }
+      }
+      document.getElementById('list').textContent = list || 'No matches';
+    }
+    filter('all');
+  </script>
+</body>
+</html>

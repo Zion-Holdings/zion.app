@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Speech | Zion Tech Group</title>
+  <meta name="description" content="Convert text to speech online. Choose from multiple voices, control playback, and download audio — free text-to-speech tool.">
+  <meta property="og:title" content="Text to Speech | Zion Tech Group">
+  <meta property="og:description" content="Free online text-to-speech converter with multiple voices, playback controls, and audio download.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/text-to-speech/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/text-to-speech/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: inherit; resize: vertical; min-height: 150px; font-size: 0.9375rem; line-height: 1.5; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    select { width: 100%; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-size: 0.875rem; cursor: pointer; }
+    select:focus { outline: none; border-color: #6366f1; }
+    .controls { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; display: inline-flex; align-items: center; gap: 0.375rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn:disabled { background: #374151; cursor: not-allowed; opacity: 0.6; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .btn.danger { background: #dc2626; }
+    .btn.danger:hover { background: #b91c1c; }
+    .rate-field { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .rate-field label { font-size: 0.875rem; color: #94a3b8; min-width: 60px; }
+    .rate-field input[type="range"] { flex: 1; accent-color: #6366f1; }
+    .rate-value { font-size: 0.875rem; color: #818cf8; min-width: 40px; text-align: right; }
+    .status { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; margin-bottom: 1rem; font-size: 0.875rem; color: #94a3b8; }
+    .status .indicator { width: 8px; height: 8px; border-radius: 50%; background: #6b7280; }
+    .status.playing .indicator { background: #10b981; animation: pulse 1.5s infinite; }
+    .status.paused .indicator { background: #f59e0b; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: #059669; color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-size: 0.875rem; }
+    .toast.show { opacity: 1; }
+    .char-count { text-align: right; font-size: 0.75rem; color: #6b7280; margin-top: 0.25rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Text to Speech</h1>
+    <p class="subtitle">Convert text to natural-sounding speech. Choose a voice, adjust speed, and download audio.</p>
+
+    <div class="field">
+      <label>Your Text</label>
+      <textarea id="textInput" placeholder="Enter text here to convert to speech...">Welcome to the Text to Speech tool by Zion Tech Group. Type or paste any text here, choose a voice, and click play to hear it spoken aloud.</textarea>
+      <div class="char-count"><span id="charCount">0</span> characters</div>
+    </div>
+
+    <div class="field">
+      <label>Voice</label>
+      <select id="voiceSelect"></select>
+    </div>
+
+    <div class="rate-field">
+      <label>Speed</label>
+      <input type="range" id="rateSlider" min="0.5" max="2" step="0.1" value="1">
+      <span class="rate-value" id="rateValue">1.0x</span>
+    </div>
+
+    <div class="status" id="status">
+      <span class="indicator"></span>
+      <span id="statusText">Ready</span>
+    </div>
+
+    <div class="controls">
+      <button class="btn" id="playBtn" onclick="play()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        Play
+      </button>
+      <button class="btn secondary" id="pauseBtn" onclick="pause()" disabled>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        Pause
+      </button>
+      <button class="btn danger" id="stopBtn" onclick="stop()" disabled>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16"/></svg>
+        Stop
+      </button>
+      <button class="btn success" id="downloadBtn" onclick="downloadAudio()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Download
+      </button>
+    </div>
+
+    <div class="info">
+      <h2>How It Works</h2>
+      <ul>
+        <li><span class="label">Voices</span> — Select from voices available in your browser. The list varies by device and installed language packs.</li>
+        <li><span class="label">Speed</span> — Adjust playback rate from 0.5x (slow) to 2x (fast).</li>
+        <li><span class="label">Controls</span> — Play starts speech, Pause resumes from where you stopped, Stop resets to the beginning.</li>
+        <li><span class="label">Download</span> — Generates an MP3 file using a free TTS service. Limited to 200 characters per download.</li>
+        <li><span class="label">Privacy</span> — Playback uses your browser's built-in speech engine. Your text stays on your device.</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">For longer texts, use the built-in playback. Download is best for short phrases and quotes.</p>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    let synth = window.speechSynthesis;
+    let voices = [];
+    let currentUtterance = null;
+    let isPaused = false;
+
+    const textInput = document.getElementById('textInput');
+    const voiceSelect = document.getElementById('voiceSelect');
+    const rateSlider = document.getElementById('rateSlider');
+    const rateValue = document.getElementById('rateValue');
+    const statusEl = document.getElementById('status');
+    const statusText = document.getElementById('statusText');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const charCount = document.getElementById('charCount');
+
+    // Character count
+    function updateCharCount() {
+      charCount.textContent = textInput.value.length;
+    }
+    textInput.addEventListener('input', updateCharCount);
+    updateCharCount();
+
+    // Rate slider
+    rateSlider.addEventListener('input', function() {
+      rateValue.textContent = parseFloat(this.value).toFixed(1) + 'x';
+    });
+
+    // Load voices
+    function loadVoices() {
+      voices = synth.getVoices();
+      voiceSelect.innerHTML = '';
+      
+      if (voices.length === 0) {
+        const option = document.createElement('option');
+        option.textContent = 'No voices available (loading...)';
+        option.value = '';
+        voiceSelect.appendChild(option);
+        return;
+      }
+
+      // Sort: default first, then by language
+      voices.sort((a, b) => {
+        if (a.default && !b.default) return -1;
+        if (!a.default && b.default) return 1;
+        return a.lang.localeCompare(b.lang);
+      });
+
+      voices.forEach((voice, i) => {
+        const option = document.createElement('option');
+        option.value = i;
+        const defaultTag = voice.default ? ' ★' : '';
+        option.textContent = `${voice.name} (${voice.lang})${defaultTag}`;
+        voiceSelect.appendChild(option);
+      });
+    }
+
+    loadVoices();
+    if (synth.onvoiceschanged !== undefined) {
+      synth.onvoiceschanged = loadVoices;
+    }
+
+    function setStatus(state, text) {
+      statusEl.className = 'status ' + state;
+      statusText.textContent = text;
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function play() {
+      if (synth.speaking && isPaused) {
+        synth.resume();
+        isPaused = false;
+        setStatus('playing', 'Playing...');
+        playBtn.disabled = true;
+        pauseBtn.disabled = false;
+        stopBtn.disabled = false;
+        return;
+      }
+
+      if (synth.speaking) {
+        synth.cancel();
+      }
+
+      const text = textInput.value.trim();
+      if (!text) {
+        showToast('Please enter some text first');
+        return;
+      }
+
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      
+      const selectedIndex = voiceSelect.value;
+      if (voices[selectedIndex]) {
+        currentUtterance.voice = voices[selectedIndex];
+      }
+      
+      currentUtterance.rate = parseFloat(rateSlider.value);
+      currentUtterance.pitch = 1;
+
+      currentUtterance.onstart = function() {
+        setStatus('playing', 'Playing...');
+        playBtn.disabled = true;
+        pauseBtn.disabled = false;
+        stopBtn.disabled = false;
+      };
+
+      currentUtterance.onend = function() {
+        setStatus('idle', 'Finished');
+        playBtn.disabled = false;
+        pauseBtn.disabled = true;
+        stopBtn.disabled = true;
+        isPaused = false;
+      };
+
+      currentUtterance.onerror = function(e) {
+        if (e.error !== 'canceled' && e.error !== 'interrupted') {
+          setStatus('idle', 'Error: ' + e.error);
+        }
+        playBtn.disabled = false;
+        pauseBtn.disabled = true;
+        stopBtn.disabled = true;
+      };
+
+      synth.speak(currentUtterance);
+      isPaused = false;
+    }
+
+    function pause() {
+      if (synth.speaking && !isPaused) {
+        synth.pause();
+        isPaused = true;
+        setStatus('paused', 'Paused');
+        playBtn.disabled = false;
+        pauseBtn.disabled = true;
+      }
+    }
+
+    function stop() {
+      synth.cancel();
+      isPaused = false;
+      setStatus('idle', 'Stopped');
+      playBtn.disabled = false;
+      pauseBtn.disabled = true;
+      stopBtn.disabled = true;
+    }
+
+    function downloadAudio() {
+      const text = textInput.value.trim();
+      if (!text) {
+        showToast('Please enter some text first');
+        return;
+      }
+
+      if (text.length > 200) {
+        showToast('Download limited to 200 characters. Use play for longer text.');
+        return;
+      }
+
+      // Use Google Translate TTS (free, no API key)
+      const lang = voices[voiceSelect.value]?.lang || 'en-US';
+      const langCode = lang.split('-')[0];
+      const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=${langCode}&client=tw-ob`;
+
+      // Open in new tab since direct download may be blocked
+      window.open(url, '_blank');
+      showToast('Download opened in new tab');
+    }
+
+    // Handle page unload - stop speech
+    window.addEventListener('beforeunload', function() {
+      if (synth.speaking) {
+        synth.cancel();
+      }
+    });
+  </script>
+</body>
+</html>
