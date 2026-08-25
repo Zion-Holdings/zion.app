@@ -1,0 +1,11 @@
+{
+  "name": "send_outreach_batch",
+  "schedule": "every 30m",
+  "command": "python3 lead-crm/send_outreach_batch.py lead-crm/outreach_ready_canonical.json",
+  "workdir": "/data/data/com.termux/files/home/zion-support.github.io",
+  "enabled": false,
+  "description": "Outreach batch sender: requires ZTG_SEND_ALLOWED=1 to activate",
+  "log": "lead-crm/outreach_cron.log",
+  "retention_days": 7,
+  "requires_env": ["ZTG_SEND_ALLOWED=1"]
+}

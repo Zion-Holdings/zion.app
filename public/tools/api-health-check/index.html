@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Health Check | Zion Tech Group</title>
+  <meta name="description" content="Check your API endpoint health: HTTP status, response time, SSL certificate, and security headers in seconds.">
+  <meta property="og:title" content="API Health Check | Zion Tech Group">
+  <meta property="og:description" content="Free tool — verify your API endpoint health: status, response time, SSL, and security headers.">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/api-health-check/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .tool { background: #1e293b; border: 1px solid #334155; border-radius: 1rem; padding: 2rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; color: #94a3b8; font-size: 0.875rem; margin-bottom: 0.5rem; font-weight: 500; }
+    .form-group input, .form-group select {
+      width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155;
+      border-radius: 0.5rem; color: #fff; font-size: 1rem;
+    }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #6366f1; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; font-size: 1rem; }
+    .btn-primary { background: #6366f1; color: #fff; }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-primary:disabled { background: #4f46e5; opacity: 0.6; cursor: not-allowed; }
+    .btn-secondary { background: #1e293b; color: #e5e7eb; border: 1px solid #334155; }
+    .btn-secondary:hover { background: #334155; }
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .results { margin-top: 2rem; }
+    .status-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom: 2rem; }
+    .status-card { background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; text-align: center; }
+    .status-card.ok { border-color: #10b981; background: #064e3b; }
+    .status-card.warn { border-color: #f59e0b; background: #451a03; }
+    .status-card.err { border-color: #ef4444; background: #450a0a; }
+    .status-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .status-label { color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .status-value { font-size: 1.25rem; font-weight: 700; }
+    .status-value.ok { color: #34d399; }
+    .status-value.warn { color: #fbbf24; }
+    .status-value.err { color: #f87171; }
+    .headers-section { margin-top: 2rem; }
+    .headers-section h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+    .headers-list { background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; overflow: hidden; }
+    .header-item { display: flex; justify-content: space-between; padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; font-size: 0.875rem; font-family: 'Courier New', monospace; }
+    .header-item:last-child { border-bottom: none; }
+    .header-name { color: #94a3b8; }
+    .header-value { color: #34d399; }
+    .header-value.missing { color: #f87171; }
+    .overall-grade { text-align: center; margin-bottom: 2rem; padding: 2rem; background: #0f172a; border-radius: 1rem; }
+    .overall-grade h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
+    .grade-badge { display: inline-block; padding: 1rem 2rem; border-radius: 1rem; font-size: 2rem; font-weight: 700; }
+    .grade-badge.ok { background: #064e3b; color: #34d399; border: 2px solid #10b981; }
+    .grade-badge.warn { background: #451a03; color: #fbbf24; border: 2px solid #f59e0b; }
+    .grade-badge.err { background: #450a0a; color: #f87171; border: 2px solid #ef4444; }
+    .cta-section { margin-top: 2rem; text-align: center; padding: 2rem; background: #0f172a; border-radius: 1rem; }
+    .cta-section h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .cta-section p { color: #94a3b8; margin-bottom: 1rem; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { color: #6366f1; }
+    .loading { text-align: center; padding: 2rem; color: #94a3b8; }
+    .spinner { display: inline-block; width: 2rem; height: 2rem; border: 3px solid #334155; border-top: 3px solid #6366f1; border-radius: 50%; animation: spin 1s linear infinite; margin-right: 0.5rem; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .error-message { background: #450a0a; border: 1px solid #ef4444; color: #f87171; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; }
+    @media (max-width: 640px) {
+      .status-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>API Health Check</h1>
+    <p class="subtitle">Check your API endpoint health: HTTP status, response time, SSL certificate, and security headers — all in one click.</p>
+
+    <div class="tool">
+      <div class="form-group">
+        <label for="urlInput">API Endpoint URL</label>
+        <input type="url" id="urlInput" placeholder="https://api.example.com/v1/health" value="">
+      </div>
+
+      <div class="form-group">
+        <label for="methodSelect">HTTP Method</label>
+        <select id="methodSelect">
+          <option value="GET">GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="DELETE">DELETE</option>
+          <option value="PATCH">PATCH</option>
+          <option value="HEAD">HEAD</option>
+        </select>
+      </div>
+
+      <div style="display: flex; gap: 1rem;">
+        <button class="btn btn-primary" id="checkBtn">Check Health</button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div id="results" class="results hidden">
+        <div id="overallGrade" class="overall-grade">
+          <h2>Overall Health</h2>
+          <div id="gradeBadge" class="grade-badge">—</div>
+        </div>
+
+        <div class="status-grid">
+          <div class="status-card" id="statusCard">
+            <div class="status-icon">●</div>
+            <div class="status-label">HTTP Status</div>
+            <div class="status-value" id="statusCode">—</div>
+          </div>
+          <div class="status-card" id="timeCard">
+            <div class="status-icon">⏱</div>
+            <div class="status-label">Response Time</div>
+            <div class="status-value" id="responseTime">—</div>
+          </div>
+          <div class="status-card" id="sslCard">
+            <div class="status-icon">🔒</div>
+            <div class="status-label">SSL Certificate</div>
+            <div class="status-value" id="sslStatus">—</div>
+          </div>
+          <div class="status-card" id="headersCard">
+            <div class="status-icon">🛡</div>
+            <div class="status-label">Security Headers</div>
+            <div class="status-value" id="headersStatus">—</div>
+          </div>
+        </div>
+
+        <div class="headers-section">
+          <h3>Security Headers Analysis</h3>
+          <div class="headers-list" id="headersList"></div>
+        </div>
+
+        <div id="errorMsg" class="error-message hidden"></div>
+
+        <div class="cta-section">
+          <h3>Need help securing your API?</h3>
+          <p>Our team specializes in API security, performance optimization, and governance. Let's discuss how we can help.</p>
+          <div class="btn-group">
+            <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-primary">Book free consultation</a>
+            <a href="/services/" class="btn btn-secondary">View our services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    'use strict';
+    const urlInput = document.getElementById('urlInput');
+    const methodSelect = document.getElementById('methodSelect');
+    const checkBtn = document.getElementById('checkBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const resultsDiv = document.getElementById('results');
+    const statusCode = document.getElementById('statusCode');
+    const responseTime = document.getElementById('responseTime');
+    const sslStatus = document.getElementById('sslStatus');
+    const headersStatus = document.getElementById('headersStatus');
+    const headersList = document.getElementById('headersList');
+    const statusCard = document.getElementById('statusCard');
+    const timeCard = document.getElementById('timeCard');
+    const sslCard = document.getElementById('sslCard');
+    const headersCard = document.getElementById('headersCard');
+    const gradeBadge = document.getElementById('gradeBadge');
+    const errorMsg = document.getElementById('errorMsg');
+
+    const securityHeaders = [
+      { name: 'strict-transport-security', label: 'HSTS', weight: 1 },
+      { name: 'content-security-policy', label: 'CSP', weight: 1 },
+      { name: 'x-frame-options', label: 'X-Frame-Options', weight: 1 },
+      { name: 'x-content-type-options', label: 'X-Content-Type-Options', weight: 1 },
+      { name: 'referrer-policy', label: 'Referrer-Policy', weight: 0.5 },
+      { name: 'permissions-policy', label: 'Permissions-Policy', weight: 0.5 },
+      { name: 'x-xss-protection', label: 'X-XSS-Protection', weight: 0.5 },
+    ];
+
+    function setCardStatus(card, status, value, statusClass) {
+      card.className = 'status-card ' + status;
+      const valueEl = card.querySelector('.status-value');
+      valueEl.textContent = value;
+      valueEl.className = 'status-value ' + statusClass;
+    }
+
+    function resetCards() {
+      [statusCard, timeCard, sslCard, headersCard].forEach(card => {
+        card.className = 'status-card';
+        const valueEl = card.querySelector('.status-value');
+        valueEl.textContent = '—';
+        valueEl.className = 'status-value';
+      });
+      gradeBadge.className = 'grade-badge';
+      gradeBadge.textContent = '—';
+    }
+
+    function showError(message) {
+      errorMsg.textContent = message;
+      errorMsg.classList.remove('hidden');
+    }
+
+    function hideError() {
+      errorMsg.classList.add('hidden');
+    }
+
+    async function checkHealth() {
+      let url = urlInput.value.trim();
+      if (!url) {
+        showError('Please enter a valid API endpoint URL.');
+        return;
+      }
+
+      // Add protocol if missing
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+        urlInput.value = url;
+      }
+
+      resultsDiv.classList.remove('hidden');
+      checkBtn.disabled = true;
+      checkBtn.innerHTML = '<span class="spinner"></span>Checking...';
+      resetCards();
+      hideError();
+
+      const startTime = performance.now();
+      let ssl = 'unknown';
+      let isSSL = url.startsWith('https://');
+      let headers = {};
+      let httpStatus = 0;
+      let statusClass = 'err';
+
+      try {
+        const method = methodSelect.value;
+        const options = { method, mode: 'cors', credentials: 'omit' };
+        const response = await fetch(url, options);
+        const endTime = performance.now();
+
+        httpStatus = response.status;
+        response.headers.forEach((value, key) => {
+          headers[key.toLowerCase()] = value;
+        });
+
+        // Determine status class
+        if (httpStatus >= 200 && httpStatus < 300) {
+          statusClass = 'ok';
+        } else if (httpStatus >= 300 && httpStatus < 400) {
+          statusClass = 'warn';
+        } else {
+          statusClass = 'err';
+        }
+
+        // Response time
+        const time = Math.round(endTime - startTime);
+        let timeStatus = 'ok';
+        let timeClass = 'ok';
+        if (time > 1000) { timeStatus = 'warn'; timeClass = 'warn'; }
+        if (time > 3000) { timeStatus = 'err'; timeClass = 'err'; }
+
+        // SSL check
+        if (isSSL) {
+          ssl = 'ok';
+        } else {
+          ssl = 'warn';
+        }
+
+        // Security headers analysis
+        let score = 0;
+        let maxScore = 0;
+        const headersHtml = securityHeaders.map(h => {
+          const present = headers[h.name] !== undefined;
+          score += present ? h.weight : 0;
+          maxScore += h.weight;
+          const value = present ? headers[h.name] : 'MISSING';
+          return `<div class="header-item">
+            <span class="header-name">${h.label}</span>
+            <span class="header-value ${present ? '' : 'missing'}">${value}</span>
+          </div>`;
+        }).join('');
+
+        headersList.innerHTML = headersHtml;
+
+        const pct = maxScore ? score / maxScore : 0;
+        let headersGrade = 'ok';
+        let headersValue = 'Good';
+        if (pct < 0.7) { headersGrade = 'warn'; headersValue = 'Fair'; }
+        if (pct < 0.4) { headersGrade = 'err'; headersValue = 'Poor'; }
+
+        // Set card statuses
+        setCardStatus(statusCard, statusClass, httpStatus, statusClass);
+        setCardStatus(timeCard, timeStatus, time + 'ms', timeClass);
+        setCardStatus(sslCard, ssl, isSSL ? 'Valid' : 'Not HTTPS', ssl);
+        setCardStatus(headersCard, headersGrade, headersValue, headersGrade);
+
+        // Overall grade
+        let overall = 'ok';
+        if (statusClass === 'err' || timeClass === 'err' || headersGrade === 'err') {
+          overall = 'err';
+        } else if (statusClass === 'warn' || timeClass === 'warn' || headersGrade === 'warn') {
+          overall = 'warn';
+        }
+        const overallText = overall === 'ok' ? 'Healthy' : overall === 'warn' ? 'Warning' : 'Critical';
+        gradeBadge.className = 'grade-badge ' + overall;
+        gradeBadge.textContent = overallText;
+
+      } catch (err) {
+        const endTime = performance.now();
+        const time = Math.round(endTime - startTime);
+
+        setCardStatus(statusCard, 'err', 'Failed', 'err');
+        setCardStatus(timeCard, 'err', time + 'ms', 'err');
+        setCardStatus(sslCard, 'err', 'Error', 'err');
+        setCardStatus(headersCard, 'err', 'N/A', 'err');
+
+        gradeBadge.className = 'grade-badge err';
+        gradeBadge.textContent = 'Critical';
+
+        showError('Could not reach the endpoint: ' + err.message + '. This may be due to CORS restrictions or the server being offline.');
+      } finally {
+        checkBtn.disabled = false;
+        checkBtn.textContent = 'Check Health';
+      }
+    }
+
+    function clearResults() {
+      resultsDiv.classList.add('hidden');
+      resetCards();
+      hideError();
+      headersList.innerHTML = '';
+    }
+
+    checkBtn.addEventListener('click', checkHealth);
+    clearBtn.addEventListener('click', clearResults);
+    urlInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') checkHealth();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Cost Savings Calculator | Zion Tech Group</title>
+  <meta name="description" content="Estimate your cloud cost savings by category — compute, storage, networking. Get a personalized optimization report with conservative, moderate, and aggressive scenarios.">
+  <meta property="og:title" content="Cloud Cost Savings Calculator | Zion Tech Group">
+  <meta property="og:description" content="Free calculator — see how much you could save on AWS, Azure, or GCP in 2 minutes.">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/cloud-cost-calculator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .calculator { background: #1e293b; border: 1px solid #334155; border-radius: 1rem; padding: 2rem; }
+    .step-title { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; color: #94a3b8; font-size: 0.875rem; margin-bottom: 0.5rem; }
+    .form-group input, .form-group select {
+      width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155;
+      border-radius: 0.5rem; color: #fff; font-size: 1rem;
+    }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #6366f1; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .results { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #334155; }
+    .results h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
+    .scenario-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-bottom: 2rem; }
+    .scenario { background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; text-align: center; }
+    .scenario.recommended { border-color: #6366f1; background: #1e1b4b; }
+    .scenario-label { color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+    .scenario-savings { font-size: 2rem; font-weight: 700; color: #34d399; }
+    .scenario-pct { color: #6366f1; font-size: 0.875rem; margin-top: 0.25rem; }
+    .scenario-monthly { color: #94a3b8; font-size: 0.75rem; margin-top: 0.5rem; }
+    .breakdown { margin-top: 2rem; }
+    .breakdown h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+    .breakdown-item { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #1e293b; }
+    .breakdown-item:last-child { border-bottom: none; }
+    .breakdown-label { color: #94a3b8; }
+    .breakdown-value { font-weight: 600; color: #34d399; }
+    .cta-section { margin-top: 2rem; text-align: center; padding: 2rem; background: #0f172a; border-radius: 1rem; }
+    .cta-section h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .cta-section p { color: #94a3b8; margin-bottom: 1rem; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; font-size: 1rem; }
+    .btn-primary { background: #6366f1; color: #fff; }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-secondary { background: #1e293b; color: #e5e7eb; border: 1px solid #334155; }
+    .btn-secondary:hover { background: #334155; }
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .total-savings { text-align: center; margin-bottom: 2rem; }
+    .total-savings-amount { font-size: 3rem; font-weight: 700; color: #34d399; }
+    .total-savings-label { color: #94a3b8; font-size: 0.875rem; }
+    .provider-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .provider-tab { padding: 0.5rem 1rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .provider-tab.active { border-color: #6366f1; background: #1e1b4b; color: #a5b4fc; }
+    .hidden { display: none; }
+    .note { color: #64748b; font-size: 0.75rem; margin-top: 0.5rem; }
+    .progress-bar { height: 4px; background: #1e293b; border-radius: 2px; margin-bottom: 2rem; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #6366f1, #7c3aed); transition: width 0.3s ease; }
+    @media (max-width: 640px) {
+      .scenario-grid { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cloud Cost Savings Calculator</h1>
+    <p class="subtitle">Estimate your potential savings across compute, storage, and networking. Results in 2 minutes.</p>
+
+    <div class="progress-bar"><div class="progress-fill" id="progress" style="width: 50%"></div></div>
+
+    <div class="calculator">
+      <!-- Step 1: Provider & Monthly Spend -->
+      <div id="step1">
+        <div class="step-title">What's your monthly cloud spend?</div>
+        <div class="provider-tabs">
+          <div class="provider-tab active" data-provider="aws">AWS</div>
+          <div class="provider-tab" data-provider="azure">Azure</div>
+          <div class="provider-tab" data-provider="gcp">GCP</div>
+          <div class="provider-tab" data-provider="multi">Multi-cloud</div>
+        </div>
+        <div class="form-group">
+          <label>Total Monthly Cloud Spend (USD)</label>
+          <input type="number" id="totalSpend" placeholder="e.g., 25000" min="1000" value="25000">
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Compute (%)</label>
+            <input type="number" id="computePct" placeholder="50" min="0" max="100" value="50">
+          </div>
+          <div class="form-group">
+            <label>Storage (%)</label>
+            <input type="number" id="storagePct" placeholder="25" min="0" max="100" value="25">
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Networking (%)</label>
+            <input type="number" id="networkPct" placeholder="15" min="0" max="100" value="15">
+          </div>
+          <div class="form-group">
+            <label>Other / Data (%)</label>
+            <input type="number" id="otherPct" placeholder="10" min="0" max="100" value="10">
+          </div>
+        </div>
+        <p class="note">Percentages should total 100%. We'll normalize if they don't.</p>
+      </div>
+
+      <!-- Step 2: Results -->
+      <div id="results" class="hidden">
+        <div class="results">
+          <h2>Your Estimated Savings</h2>
+          <div class="total-savings">
+            <div class="total-savings-amount" id="totalSavingsAmount">$0</div>
+            <div class="total-savings-label">Estimated Annual Savings (Moderate Scenario)</div>
+          </div>
+
+          <div class="scenario-grid">
+            <div class="scenario">
+              <div class="scenario-label">Conservative</div>
+              <div class="scenario-savings" id="conservativeSavings">$0</div>
+              <div class="scenario-pct" id="conservativePct">0%</div>
+              <div class="scenario-monthly" id="conservativeMonthly">$0/mo</div>
+            </div>
+            <div class="scenario recommended">
+              <div class="scenario-label">Recommended</div>
+              <div class="scenario-savings" id="moderateSavings">$0</div>
+              <div class="scenario-pct" id="moderatePct">0%</div>
+              <div class="scenario-monthly" id="moderateMonthly">$0/mo</div>
+            </div>
+            <div class="scenario">
+              <div class="scenario-label">Aggressive</div>
+              <div class="scenario-savings" id="aggressiveSavings">$0</div>
+              <div class="scenario-pct" id="aggressivePct">0%</div>
+              <div class="scenario-monthly" id="aggressiveMonthly">$0/mo</div>
+            </div>
+          </div>
+
+          <div class="breakdown">
+            <h3>Savings by Category</h3>
+            <div id="breakdownList"></div>
+          </div>
+
+          <div class="cta-section">
+            <h3>Want to capture these savings?</h3>
+            <p>Our cloud cost optimization team delivers an average of 32% reduction in cloud spend. Book a free assessment to get your personalized roadmap.</p>
+            <div class="btn-group">
+              <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-primary">Book free assessment</a>
+              <a href="/services/cloud-cost-optimization-service/" class="btn btn-secondary">View service details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="navButtons" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+      <button class="btn btn-secondary" id="resetBtn">← Start over</button>
+      <button class="btn btn-primary" id="calcBtn">Calculate savings →</button>
+    </div>
+
+    <a href="/tools/" class="back" style="display:inline-block;margin-top:1.5rem;color:#818cf8;text-decoration:none">← Back to Tools</a>
+  </div>
+
+  <script>
+    const SAVINGS_RATES = {
+      compute: { conservative: 0.15, moderate: 0.28, aggressive: 0.42 },
+      storage: { conservative: 0.12, moderate: 0.25, aggressive: 0.38 },
+      networking: { conservative: 0.10, moderate: 0.20, aggressive: 0.32 },
+      other: { conservative: 0.08, moderate: 0.15, aggressive: 0.25 },
+    };
+
+    let currentProvider = 'aws';
+
+    document.querySelectorAll('.provider-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.provider-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentProvider = tab.dataset.provider;
+      });
+    });
+
+    document.getElementById('calcBtn').addEventListener('click', calculate);
+    document.getElementById('resetBtn').addEventListener('click', reset);
+
+    function getPercentages() {
+      let compute = parseInt(document.getElementById('computePct').value) || 0;
+      let storage = parseInt(document.getElementById('storagePct').value) || 0;
+      let network = parseInt(document.getElementById('networkPct').value) || 0;
+      let other = parseInt(document.getElementById('otherPct').value) || 0;
+      const total = compute + storage + network + other;
+      if (total === 0) return { compute: 50, storage: 25, networking: 15, other: 10 };
+      return {
+        compute: (compute / total) * 100,
+        storage: (storage / total) * 100,
+        networking: (network / total) * 100,
+        other: (other / total) * 100,
+      };
+    }
+
+    function formatCurrency(amount) {
+      if (amount >= 1000000) return '$' + (amount / 1000000).toFixed(1) + 'M';
+      if (amount >= 1000) return '$' + Math.round(amount).toLocaleString();
+      return '$' + Math.round(amount).toLocaleString();
+    }
+
+    function calculate() {
+      const totalSpend = parseFloat(document.getElementById('totalSpend').value) || 0;
+      if (totalSpend < 1000) {
+        alert('Please enter a monthly spend of at least $1,000');
+        return;
+      }
+
+      const pct = getPercentages();
+      const annualSpend = totalSpend * 12;
+
+      const categories = [
+        { key: 'compute', label: 'Compute (EC2/VMs/Containers)', pct: pct.compute },
+        { key: 'storage', label: 'Storage (S3/Blob/GCS)', pct: pct.storage },
+        { key: 'networking', label: 'Networking & Data Transfer', pct: pct.networking },
+        { key: 'other', label: 'Databases, Analytics, Other', pct: pct.other },
+      ];
+
+      const results = categories.map(cat => {
+        const annualCategorySpend = annualSpend * (cat.pct / 100);
+        const rates = SAVINGS_RATES[cat.key];
+        return {
+          label: cat.label,
+          annualSpend: annualCategorySpend,
+          conservative: annualCategorySpend * rates.conservative,
+          moderate: annualCategorySpend * rates.moderate,
+          aggressive: annualCategorySpend * rates.aggressive,
+        };
+      });
+
+      const totalConservative = results.reduce((sum, r) => sum + r.conservative, 0);
+      const totalModerate = results.reduce((sum, r) => sum + r.moderate, 0);
+      const totalAggressive = results.reduce((sum, r) => sum + r.aggressive, 0);
+
+      document.getElementById('conservativeSavings').textContent = formatCurrency(totalConservative);
+      document.getElementById('moderateSavings').textContent = formatCurrency(totalModerate);
+      document.getElementById('aggressiveSavings').textContent = formatCurrency(totalAggressive);
+
+      document.getElementById('conservativePct').textContent = Math.round((totalConservative / annualSpend) * 100) + '% of spend';
+      document.getElementById('moderatePct').textContent = Math.round((totalModerate / annualSpend) * 100) + '% of spend';
+      document.getElementById('aggressivePct').textContent = Math.round((totalAggressive / annualSpend) * 100) + '% of spend';
+
+      document.getElementById('conservativeMonthly').textContent = formatCurrency(totalConservative / 12) + '/mo';
+      document.getElementById('moderateMonthly').textContent = formatCurrency(totalModerate / 12) + '/mo';
+      document.getElementById('aggressiveMonthly').textContent = formatCurrency(totalAggressive / 12) + '/mo';
+
+      document.getElementById('totalSavingsAmount').textContent = formatCurrency(totalModerate);
+
+      const breakdownList = document.getElementById('breakdownList');
+      breakdownList.innerHTML = results.map(r => `
+        <div class="breakdown-item">
+          <div class="breakdown-label">${r.label} (${Math.round(r.annualSpend / 12).toLocaleString()}/mo)</div>
+          <div class="breakdown-value">${formatCurrency(r.moderate)}/yr savings</div>
+        </div>
+      `).join('');
+
+      // Show results
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('results').classList.remove('hidden');
+      document.getElementById('navButtons').classList.add('hidden');
+      document.getElementById('progress').style.width = '100%';
+
+      // Scroll to results
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function reset() {
+      document.getElementById('step1').classList.remove('hidden');
+      document.getElementById('results').classList.add('hidden');
+      document.getElementById('navButtons').classList.remove('hidden');
+      document.getElementById('progress').style.width = '50%';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

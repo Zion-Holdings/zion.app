@@ -1,0 +1,103 @@
+name: PR staleness lifecycle commenter
+
+permissions:
+  contents: read
+  pull-requests: write
+
+"on":
+  schedule:
+    - cron: '0 10,22 * * *'
+  workflow_dispatch:
+
+jobs:
+  comment-stale-prs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Comment on stale PRs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node - <<'NODE'
+          const https = require('https');
+          const http = require('http');
+
+          const REPO = process.env.GITHUB_REPOSITORY;
+          const TOKEN = process.env.GITHUB_TOKEN;
+          const NOW = Date.now();
+          const STALE_SECS = 14 * 24 * 60 * 60 * 1000;
+          const WARN_SECS = 20 * 24 * 60 * 60 * 1000;
+          const CLOSE_SECS = 30 * 24 * 60 * 60 * 1000;
+
+          function gh(path, method = 'GET', body) {
+            return new Promise((resolve, reject) => {
+              const url = new URL(`https://api.github.com/repos/${REPO}${path}`);
+              const options = {
+                hostname: url.hostname,
+                path: url.pathname + url.search,
+                method,
+                headers: {
+                  Authorization: `Bearer ${TOKEN}`,
+                  Accept: 'application/vnd.github+json',
+                  'User-Agent': 'pr-staleness-lifecycle-commenter',
+                  'Content-Type': 'application/json',
+                },
+              };
+              const req = https.request(options, (res) => {
+                let data = '';
+                res.on('data', (chunk) => (data += chunk));
+                res.on('end', () => {
+                  let parsed;
+                  try { parsed = JSON.parse(data || '{}'); } catch { parsed = { data }; }
+                  if (res.statusCode >= 400) return reject(new Error(`GH ${method} ${path} ${res.statusCode}: ${JSON.stringify(parsed).slice(0, 500)}`));
+                  resolve(parsed);
+                });
+              });
+              req.on('error', reject);
+              if (body) req.write(JSON.stringify(body));
+              req.end();
+            });
+          }
+
+          async function sleep(ms) {
+            await new Promise((resolve) => setTimeout(resolve, ms));
+          }
+
+          async function main() {
+            const prs = await gh('/pulls?state=open&per_page=100');
+            if (!Array.isArray(prs) || prs.length === 0) {
+              console.log('No open PRs found.');
+              return 0;
+            }
+
+            const closeWorthy = [];
+            let commented = 0;
+            for (const pr of prs) {
+              if (!pr.number || !pr.updated_at) continue;
+              const age = Date.now() - new Date(pr.updated_at).getTime();
+              if (age > CLOSE_SECS) {
+                closeWorthy.push(pr.number);
+                const body = ':warning: This pull request is very stale and may be closed soon. Please rebase against the current `main` branch or mark this PR as not planned.';
+                for (let attempt = 0; attempt < 3; attempt++) {
+                  try {
+                    await gh(`/issues/${pr.number}/comments`, 'POST', { body });
+                    console.log(`Commented on PR #${pr.number}`);
+                    commented++;
+                    break;
+                  } catch (e) {
+                    if (attempt === 2) console.warn(`Failed to comment on PR #${pr.number}: ${e.message}`);
+                    await sleep(500 * (attempt + 1));
+                  }
+                }
+              }
+            }
+
+            console.log(JSON.stringify({ openPrs: prs.length, commented, closeWorthy }, null, 2));
+            return commented > 0 ? 0 : 0;
+          }
+
+          main().then((code) => process.exit(code)).catch((e) => {
+            console.error(e.message);
+            process.exit(0);
+          });
+          NODE

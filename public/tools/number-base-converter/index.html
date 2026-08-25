@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Base Converter | Zion Tech Group</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #0b0f1a;
+            color: #e5e7eb;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            color: #9ca3af;
+            font-size: 1rem;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .input-field {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .input-field label {
+            display: block;
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .input-field input,
+        .input-field select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            background: #0b0f1a;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            color: #e5e7eb;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input-field input:focus,
+        .input-field select:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .input-field input::placeholder {
+            color: #4b5563;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .results {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .result-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: #0b0f1a;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            transition: border-color 0.2s;
+        }
+
+        .result-item:hover {
+            border-color: #374151;
+        }
+
+        .result-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            min-width: 100px;
+        }
+
+        .result-label .badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-binary { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+        .badge-octal { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+        .badge-decimal { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+        .badge-hex { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+
+        .result-value {
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 0.95rem;
+            color: #e5e7eb;
+            word-break: break-all;
+            text-align: right;
+            flex: 1;
+            margin-left: 1rem;
+            user-select: all;
+        }
+
+        .copy-btn {
+            background: none;
+            border: 1px solid #374151;
+            color: #9ca3af;
+            padding: 0.35rem 0.65rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 0.75rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            border-color: #6366f1;
+            color: #e5e7eb;
+        }
+
+        .copy-btn.copied {
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        .error-msg {
+            color: #f87171;
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            display: none;
+        }
+
+        .error-msg.visible {
+            display: block;
+        }
+
+        .divider {
+            height: 1px;
+            background: #1f2937;
+            margin: 1.5rem 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 85, 247, 0.08));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
+        }
+
+        .cta-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #e5e7eb;
+        }
+
+        .cta-section p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .cta-btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+
+        .cta-btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: #6366f1;
+            border: 1px solid #6366f1;
+        }
+
+        .cta-btn-secondary:hover {
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #1f2937;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .input-field {
+                min-width: 100%;
+            }
+
+            .result-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .result-value {
+                text-align: left;
+                margin-left: 0;
+            }
+
+            .copy-btn {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Number Base Converter</h1>
+            <p>Converta números entre binário, octal, decimal e hexadecimal</p>
+        </header>
+
+        <div class="card">
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="inputValue">Número</label>
+                    <input type="text" id="inputValue" placeholder="Ex: 255, 1010.11, FF.A" autocomplete="off">
+                </div>
+                <div class="input-field" style="max-width: 180px;">
+                    <label for="inputBase">Base de Entrada</label>
+                    <select id="inputBase">
+                        <option value="2">Binário (2)</option>
+                        <option value="8">Octal (8)</option>
+                        <option value="10" selected>Decimal (10)</option>
+                        <option value="16">Hexadecimal (16)</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="convert()">Converter</button>
+            </div>
+            <div class="error-msg" id="errorMsg"></div>
+        </div>
+
+        <div class="card" id="resultsCard">
+            <div class="results" id="results">
+                <div class="result-item">
+                    <div class="result-label">
+                        <span class="badge badge-binary">Bin</span>
+                        Binário
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <span class="result-value" id="resultBinary">—</span>
+                        <button class="copy-btn" data-target="resultBinary">Copiar</button>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">
+                        <span class="badge badge-octal">Oct</span>
+                        Octal
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <span class="result-value" id="resultOctal">—</span>
+                        <button class="copy-btn" data-target="resultOctal">Copiar</button>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">
+                        <span class="badge badge-decimal">Dec</span>
+                        Decimal
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <span class="result-value" id="resultDecimal">—</span>
+                        <button class="copy-btn" data-target="resultDecimal">Copiar</button>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">
+                        <span class="badge badge-hex">Hex</span>
+                        Hexadecimal
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <span class="result-value" id="resultHex">—</span>
+                        <button class="copy-btn" data-target="resultHex">Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="cta-section">
+            <h3>Precisa de ajuda com sistemas numéricos?</h3>
+            <p>Nossa equipe pode ajudar com automações, sistemas embarcados e projetos que envolvam manipulação de dados.</p>
+            <div class="cta-buttons">
+                <a href="/services/" class="cta-btn cta-btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    Ver Serviços
+                </a>
+                <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener" class="cta-btn cta-btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    Agendar Reunião
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Zion Tech Group &mdash; <a href="https://ziontechgroup.com">ziontechgroup.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Auto-convert on input
+        document.getElementById('inputValue').addEventListener('input', debounce(convert, 300));
+        document.getElementById('inputBase').addEventListener('change', convert);
+
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        function isValidForBase(value, base) {
+            const cleaned = value.trim().toUpperCase();
+            if (!cleaned || cleaned === '.' || cleaned === '-.' || cleaned === '-') return false;
+            
+            const digits = {
+                2: /^[01]+(\.[01]+)?$/,
+                8: /^[0-7]+(\.[0-7]+)?$/,
+                10: /^\d+(\.\d+)?$/,
+                16: /^[0-9A-F]+(\.[0-9A-F]+)?$/
+            };
+            
+            const sign = cleaned.startsWith('-') ? '-' : '';
+            const numPart = cleaned.startsWith('-') ? cleaned.slice(1) : cleaned;
+            
+            if (!numPart || numPart === '.') return false;
+            return digits[base].test(numPart);
+        }
+
+        function parseToDecimal(value, base) {
+            const cleaned = value.trim().toUpperCase();
+            const isNegative = cleaned.startsWith('-');
+            const numPart = isNegative ? cleaned.slice(1) : cleaned;
+            
+            const [intPart, fracPart] = numPart.split('.');
+            
+            let decimal = parseInt(intPart, base);
+            
+            if (fracPart) {
+                for (let i = 0; i < fracPart.length; i++) {
+                    const digit = parseInt(fracPart[i], base);
+                    decimal += digit / Math.pow(base, i + 1);
+                }
+            }
+            
+            return isNegative ? -decimal : decimal;
+        }
+
+        function decimalToBase(decimal, base) {
+            if (decimal === 0) return '0';
+            
+            const isNegative = decimal < 0;
+            let num = Math.abs(decimal);
+            
+            let intPart = Math.floor(num);
+            let fracPart = num - intPart;
+            
+            // Convert integer part
+            let intResult = '';
+            if (intPart === 0) {
+                intResult = '0';
+            } else {
+                while (intPart > 0) {
+                    const remainder = intPart % base;
+                    intResult = (remainder < 10 ? remainder.toString() : String.fromCharCode(55 + remainder)) + intResult;
+                    intPart = Math.floor(intPart / base);
+                }
+            }
+            
+            // Convert fractional part (max 10 digits to avoid infinite loops)
+            let fracResult = '';
+            if (fracPart > 0) {
+                fracResult = '.';
+                let count = 0;
+                while (fracPart > 0 && count < 12) {
+                    fracPart *= base;
+                    const digit = Math.floor(fracPart);
+                    fracResult += digit < 10 ? digit.toString() : String.fromCharCode(55 + digit);
+                    fracPart -= digit;
+                    count++;
+                    
+                    // Stop if fractional part is effectively zero
+                    if (fracPart < 1e-10) break;
+                }
+            }
+            
+            return (isNegative ? '-' : '') + intResult + fracResult;
+        }
+
+        function convert() {
+            const inputEl = document.getElementById('inputValue');
+            const baseEl = document.getElementById('inputBase');
+            const errorEl = document.getElementById('errorMsg');
+            
+            const value = inputEl.value.trim();
+            const base = parseInt(baseEl.value);
+            
+            // Clear previous results
+            errorEl.classList.remove('visible');
+            errorEl.textContent = '';
+            
+            if (!value) {
+                setDefaultResults();
+                return;
+            }
+            
+            // Check for valid sign handling
+            const signedValue = value;
+            const isNegative = signedValue.startsWith('-');
+            const unsignedValue = isNegative ? signedValue.slice(1) : signedValue;
+            
+            if (!unsignedValue || unsignedValue === '.') {
+                setDefaultResults();
+                return;
+            }
+            
+            if (!isValidForBase(unsignedValue, base)) {
+                errorEl.textContent = `Número inválido para base ${base}. Verifique os dígitos permitidos.`;
+                errorEl.classList.add('visible');
+                setDefaultResults();
+                return;
+            }
+            
+            try {
+                const decimalValue = parseToDecimal(signedValue, base);
+                
+                document.getElementById('resultBinary').textContent = decimalToBase(decimalValue, 2);
+                document.getElementById('resultOctal').textContent = decimalToBase(decimalValue, 8);
+                document.getElementById('resultDecimal').textContent = decimalValue.toString();
+                document.getElementById('resultHex').textContent = decimalToBase(decimalValue, 16).toUpperCase();
+            } catch (e) {
+                errorEl.textContent = 'Erro ao converter o número.';
+                errorEl.classList.add('visible');
+                setDefaultResults();
+            }
+        }
+
+        function setDefaultResults() {
+            document.getElementById('resultBinary').textContent = '—';
+            document.getElementById('resultOctal').textContent = '—';
+            document.getElementById('resultDecimal').textContent = '—';
+            document.getElementById('resultHex').textContent = '—';
+        }
+
+        // Copy functionality
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const text = document.getElementById(targetId).textContent;
+                
+                if (text === '—') return;
+                
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = 'Copiado!';
+                    this.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.classList.remove('copied');
+                    }, 1500);
+                }).catch(err => {
+                    console.error('Erro ao copiar:', err);
+                });
+            });
+        });
+
+        // Trigger conversion on page load if there's a value
+        if (document.getElementById('inputValue').value) {
+            convert();
+        }
+    </script>
+</body>
+</html>

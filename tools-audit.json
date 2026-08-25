@@ -1,0 +1,250 @@
+{
+  "audit_date": "2025-06-18",
+  "tools_directory": "public/tools/",
+  "tools": {
+    "agent-prompt-builder": {
+      "file": "agent-prompt-builder/index.html",
+      "total_lines": 9,
+      "file_size_kb": 0.23,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 0,
+        "large_scripts": []
+      },
+      "inline_styles": {
+        "style_attributes": 0,
+        "style_blocks": 0,
+        "total_inline_css_kb": 0.0,
+        "extraction_candidate": false
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": false,
+        "has_inline_css": false
+      }
+    },
+    "ai-roi-calculator": {
+      "file": "ai-roi-calculator/index.html",
+      "total_lines": 257,
+      "file_size_kb": 13.15,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 1,
+        "large_scripts": []
+      },
+      "inline_styles": {
+        "style_attributes": 4,
+        "style_blocks": 1,
+        "total_inline_css_kb": 3.64,
+        "extraction_candidate": true
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": false,
+        "has_inline_css": true
+      }
+    },
+    "api-health-check": {
+      "file": "api-health-check/index.html",
+      "total_lines": 338,
+      "file_size_kb": 14.97,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 1,
+        "large_scripts": [
+          {
+            "index": 0,
+            "lines": 185,
+            "size_kb": 6.79
+          }
+        ]
+      },
+      "inline_styles": {
+        "style_attributes": 1,
+        "style_blocks": 1,
+        "total_inline_css_kb": 4.53,
+        "extraction_candidate": true
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": true,
+        "has_inline_css": true
+      }
+    },
+    "cloud-cost-calculator": {
+      "file": "cloud-cost-calculator/index.html",
+      "total_lines": 283,
+      "file_size_kb": 14.5,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 1,
+        "large_scripts": [
+          {
+            "index": 0,
+            "lines": 113,
+            "size_kb": 5.29
+          }
+        ]
+      },
+      "inline_styles": {
+        "style_attributes": 3,
+        "style_blocks": 1,
+        "total_inline_css_kb": 4.16,
+        "extraction_candidate": true
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": true,
+        "has_inline_css": true
+      }
+    },
+    "cron-agent-calculator": {
+      "file": "cron-agent-calculator/index.html",
+      "total_lines": 55,
+      "file_size_kb": 2.82,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 2,
+        "large_scripts": []
+      },
+      "inline_styles": {
+        "style_attributes": 0,
+        "style_blocks": 0,
+        "total_inline_css_kb": 0.0,
+        "extraction_candidate": false
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": false,
+        "has_inline_css": false
+      }
+    },
+    "json-schema-validator": {
+      "file": "json-schema-validator/index.html",
+      "total_lines": 97,
+      "file_size_kb": 4.93,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 2,
+        "large_scripts": []
+      },
+      "inline_styles": {
+        "style_attributes": 0,
+        "style_blocks": 0,
+        "total_inline_css_kb": 0.0,
+        "extraction_candidate": false
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": false,
+        "has_inline_css": false
+      }
+    },
+    "llm-payload-estimator": {
+      "file": "llm-payload-estimator/index.html",
+      "total_lines": 58,
+      "file_size_kb": 2.75,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 2,
+        "large_scripts": []
+      },
+      "inline_styles": {
+        "style_attributes": 0,
+        "style_blocks": 0,
+        "total_inline_css_kb": 0.0,
+        "extraction_candidate": false
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": false,
+        "has_inline_css": false
+      }
+    },
+    "mcp-tester": {
+      "file": "mcp-tester/index.html",
+      "total_lines": 9,
+      "file_size_kb": 0.22,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 0,
+        "large_scripts": []
+      },
+      "inline_styles": {
+        "style_attributes": 0,
+        "style_blocks": 0,
+        "total_inline_css_kb": 0.0,
+        "extraction_candidate": false
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": false,
+        "has_inline_css": false
+      }
+    },
+    "security-headers-analyzer": {
+      "file": "security-headers-analyzer/index.html",
+      "total_lines": 88,
+      "file_size_kb": 4.28,
+      "images": {
+        "total": 0,
+        "missing_lazy_loading": 0,
+        "missing_lazy_tags": []
+      },
+      "scripts": {
+        "total_inline_scripts": 2,
+        "large_scripts": []
+      },
+      "inline_styles": {
+        "style_attributes": 0,
+        "style_blocks": 0,
+        "total_inline_css_kb": 0.0,
+        "extraction_candidate": false
+      },
+      "issues": {
+        "missing_lazy_loading": false,
+        "has_large_scripts": false,
+        "has_inline_css": false
+      }
+    }
+  },
+  "summary": {
+    "total_tools": 9,
+    "tools_with_lazy_loading_issues": 0,
+    "tools_with_large_scripts": 2,
+    "tools_with_inline_css": 3,
+    "css_extraction_candidate_kb": 12
+  }
+}

@@ -1,0 +1,479 @@
+{
+  "report_path": "public/tools/tools-audit.json",
+  "total_tools": 26,
+  "tools_with_lazy_loading_issues": 0,
+  "tools_with_large_scripts": 0,
+  "css_extraction_candidate_kb": 4.22,
+  "generated_at": "2026-08-19T00:00:00-03:00",
+  "tools_directory": "public/tools/",
+  "tools": [
+    {
+      "name": "agent-prompt-builder",
+      "path": "public/tools/agent-prompt-builder/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 0,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 0
+      }
+    },
+    {
+      "name": "ai-roi-calculator",
+      "path": "public/tools/ai-roi-calculator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 5,
+        "inline_style_attributes": 5,
+        "extraction_candidate_bytes": 286
+      }
+    },
+    {
+      "name": "api-health-check",
+      "path": "public/tools/api-health-check/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 2,
+        "inline_style_attributes": 2,
+        "extraction_candidate_bytes": 133
+      }
+    },
+    {
+      "name": "base64-encoder",
+      "path": "public/tools/base64-encoder/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 5,
+        "inline_style_attributes": 5,
+        "extraction_candidate_bytes": 286
+      }
+    },
+    {
+      "name": "cloud-cost-calculator",
+      "path": "public/tools/cloud-cost-calculator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 4,
+        "inline_style_attributes": 4,
+        "extraction_candidate_bytes": 235
+      }
+    },
+    {
+      "name": "cloud-cost-optimizer",
+      "path": "public/tools/cloud-cost-optimizer/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 5,
+        "inline_style_attributes": 5,
+        "extraction_candidate_bytes": 286
+      }
+    },
+    {
+      "name": "color-contrast",
+      "path": "public/tools/color-contrast/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 11,
+        "inline_style_attributes": 11,
+        "extraction_candidate_bytes": 593
+      }
+    },
+    {
+      "name": "color-palette-gen",
+      "path": "public/tools/color-palette-gen/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 2,
+        "inline_style_attributes": 2,
+        "extraction_candidate_bytes": 133
+      }
+    },
+    {
+      "name": "cron-agent-calculator",
+      "path": "public/tools/cron-agent-calculator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": true,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 30
+      }
+    },
+    {
+      "name": "gradient-generator",
+      "path": "public/tools/gradient-generator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 3,
+        "inline_style_attributes": 3,
+        "extraction_candidate_bytes": 184
+      }
+    },
+    {
+      "name": "hash-generator",
+      "path": "public/tools/hash-generator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": true,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 1,
+        "inline_style_attributes": 1,
+        "extraction_candidate_bytes": 81
+      }
+    },
+    {
+      "name": "json-formatter",
+      "path": "public/tools/json-formatter/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 5,
+        "inline_style_attributes": 5,
+        "extraction_candidate_bytes": 286
+      }
+    },
+    {
+      "name": "json-schema-validator",
+      "path": "public/tools/json-schema-validator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 3,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 92
+      }
+    },
+    {
+      "name": "llm-payload-estimator",
+      "path": "public/tools/llm-payload-estimator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": true,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 30
+      }
+    },
+    {
+      "name": "lorem-ipsum",
+      "path": "public/tools/lorem-ipsum/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 2,
+        "inline_style_attributes": 2,
+        "extraction_candidate_bytes": 133
+      }
+    },
+    {
+      "name": "markdown-preview",
+      "path": "public/tools/markdown-preview/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 2,
+        "inline_style_attributes": 2,
+        "extraction_candidate_bytes": 133
+      }
+    },
+    {
+      "name": "mcp-tester",
+      "path": "public/tools/mcp-tester/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 0,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 0
+      }
+    },
+    {
+      "name": "meta-tag-generator",
+      "path": "public/tools/meta-tag-generator/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 3,
+        "inline_style_attributes": 3,
+        "extraction_candidate_bytes": 184
+      }
+    },
+    {
+      "name": "number-base-converter",
+      "path": "public/tools/number-base-converter/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 6,
+        "inline_style_attributes": 6,
+        "extraction_candidate_bytes": 337
+      }
+    },
+    {
+      "name": "password-strength",
+      "path": "public/tools/password-strength/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 3,
+        "inline_style_attributes": 3,
+        "extraction_candidate_bytes": 184
+      }
+    },
+    {
+      "name": "regex-tester",
+      "path": "public/tools/regex-tester/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 2,
+        "inline_style_attributes": 2,
+        "extraction_candidate_bytes": 133
+      }
+    },
+    {
+      "name": "security-headers-analyzer",
+      "path": "public/tools/security-headers-analyzer/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": true,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 0,
+        "inline_style_attributes": 0,
+        "extraction_candidate_bytes": 30
+      }
+    },
+    {
+      "name": "text-diff",
+      "path": "public/tools/text-diff/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 2,
+        "inline_style_attributes": 2,
+        "extraction_candidate_bytes": 133
+      }
+    },
+    {
+      "name": "timestamp-converter",
+      "path": "public/tools/timestamp-converter/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 2,
+        "inline_style_attributes": 2,
+        "extraction_candidate_bytes": 133
+      }
+    },
+    {
+      "name": "url-encoder",
+      "path": "public/tools/url-encoder/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 1,
+        "inline_style_attributes": 1,
+        "extraction_candidate_bytes": 81
+      }
+    },
+    {
+      "name": "user-agent-parser",
+      "path": "public/tools/user-agent-parser/index.html",
+      "images": {
+        "total": 0,
+        "without_lazy_loading": 0
+      },
+      "scripts": {
+        "inline_script_lines": 1,
+        "has_external_scripts": false,
+        "is_large": false
+      },
+      "css": {
+        "inline_style_block_lines": 3,
+        "inline_style_attributes": 3,
+        "extraction_candidate_bytes": 184
+      }
+    }
+  ]
+}

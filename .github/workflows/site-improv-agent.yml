@@ -1,0 +1,81 @@
+name: AI Site Improvement Agent
+
+permissions:
+  contents: read
+
+"on":
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: site-improvement-agent
+  cancel-in-progress: false
+
+jobs:
+  site-improv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps for site integrity checks
+        run: python -m pip install --upgrade pip && pip install requests beautifulsoup4
+
+      - name: Prepare report directory
+        run: mkdir -p automation/reports
+
+      - name: Run site improvement agent
+        id: site-improv-run
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          echo "[trace] start ai-site-improvement-agent.cjs"
+          node automation/ai-site-improvement-agent.cjs --base https://ziontechgroup.com | tee site_improv_run.log
+          echo "[trace] site improv exit=$?"
+
+      - name: Surface site improvement agent results
+        id: site-improv-result
+        if: always()
+        run: |
+          set -euo pipefail
+          report=automation/reports/site-improvement-agent-latest.json
+          if [ -f "$report" ]; then
+            echo "REPORT_EXISTS=1" >> "$GITHUB_OUTPUT"
+            echo '---REPORT HEAD---'
+            sed -n '1,220p' "$report" || true
+          else
+            echo "REPORT_EXISTS=0" >> "$GITHUB_OUTPUT"
+            echo 'site-improvement-agent report missing after run'
+          fi
+
+      - name: Upload site improvement report and trace log
+        if: always()
+        uses: actions/upload-artifact@4bd10206f1090cfe5690b91618f6fd840f21135b # v4
+        with:
+          name: site-improvement-agent-${{ github.run_id }}
+          path: |
+            site_improv_run.log
+            automation/reports/site-improvement-agent-latest.json
+          retention-days: 14
+          if-no-files-found: ignore
