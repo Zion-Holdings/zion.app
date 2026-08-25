@@ -25,10 +25,26 @@ const HERMES_ADVERT_BANNERS = [
   {
     bgColor: 'from-violet-900/40 via-indigo-900/30 to-blue-900/40',
     borderColor: 'border-violet-500/30',
-    title: 'Watch Our AI Agent Fleet Live',
-    subtitle: '10 autonomous agents running CI/CD, SEO, security, and growth automation 24/7.',
-    cta: 'View Dashboard',
-    href: '/agents-monitoring/',
+    title: 'Automate Your Growth Pipeline',
+    subtitle: 'Hermes Growth Engine Agent — discover services, generate pages, send outreach, track leads 24/7.',
+    cta: 'See Growth Engine',
+    href: '/services/hermes-growth-engine-agent/',
+  },
+  {
+    bgColor: 'from-fuchsia-900/40 via-pink-900/30 to-rose-900/40',
+    borderColor: 'border-fuchsia-500/30',
+    title: 'Connect to 6000+ MCP Servers',
+    subtitle: 'Hermes Agent Plugin Development — extend with custom tools, hooks, and 1,000+ SaaS integrations.',
+    cta: 'Build a Plugin',
+    href: '/services/hermes-agent-plugin-development/',
+  },
+  {
+    bgColor: 'from-blue-900/40 via-indigo-900/30 to-cyan-900/40',
+    borderColor: 'border-blue-500/30',
+    title: 'Master Hermes Agent',
+    subtitle: 'Training & Certification — from installation to building specialist bot teams.',
+    cta: 'Training Info',
+    href: '/services/hermes-agent-training/',
   },
 ];
 
