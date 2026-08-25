@@ -1,0 +1,16 @@
+# HerMES Agent fallback redirects (generated fallback-2026-08-23)
+
+/services/hermes-agent-content-publishing-distribution/ /services/hermes-agent-content-publishing-distribution/index.html 200
+/services/hermes-agent-content-publishing-distribution /services/hermes-agent-content-publishing-distribution/index.html 200
+
+/blog/hermes-agent-crescimento-explosivo/ /blog/hermes-agent-crescimento-explosivo/index.html 200
+/blog/hermes-agent-crescimento-explosivo /blog/hermes-agent-crescimento-explosivo/index.html 200
+
+/blog/empresas-hermesses-agent-catalogo/ /blog/empresas-hermesses-agent-catalogo/index.html 200
+/blog/empresas-hermesses-agent-catalogo /blog/empresas-hermesses-agent-catalogo/index.html 200
+
+/blog/hermes-agent-criar-catalogo-servicos-infinito/ /blog/hermes-agent-criar-catalogo-servicos-infinito/index.html 200
+/blog/hermes-agent-criar-catalogo-servicos-infinito /blog/hermes-agent-criar-catalogo-servicos-infinito/index.html 200
+
+/blog/hermes-agent-sistema-de-skills/ /blog/hermes-agent-sistema-de-skills/index.html 200
+/blog/hermes-agent-sistema-de-skills /blog/hermes-agent-sistema-de-skills/index.html 200
