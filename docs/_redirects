@@ -1095,3 +1095,7 @@
 /tools/service-recommender/ /tools/service-recommender/ 301
 /tools/ssl-checker /tools/ssl-checker/ 301
 /tools/ssl-checker/ /tools/ssl-checker/ 301
+# Hermes Agent Platform pages
+/services/hermes-agent-platform/ /services/hermes-agent-platform/index.html 200
+/blog/hermes-agent-platform/ /blog/hermes-agent-platform/index.html 200
+/blog/hermes-agent-multi-agent-coordination/ /blog/hermes-agent-multi-agent-coordination/index.html 200
