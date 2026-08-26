@@ -66,7 +66,7 @@ jobs:
 
       - name: Prepare GitHub Pages artifact
         run: |
-          # Compose the Pages artifact directory: static docs/ base + Next.js `out/` export
+          # Compose the Pages artifact directory: static docs/ base + Next.js out/ export
           ARTIFACT_DIR="$GITHUB_WORKSPACE/pages"
           rm -rf "$ARTIFACT_DIR"
           mkdir -p "$ARTIFACT_DIR"
@@ -83,7 +83,16 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then
             cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"
           fi
-          cp -f public/_redirects "$ARTIFACT_DIR/_redirects" 2>/dev/null || true
+          cp -f public/_redirects "$ARTIFACT_DIR/_redirects" 2>/dev/null  true
+          # Include static service/tool stubs from public/ so affected routes are published
+          if [ -d public/services ]; then
+            mkdir -p "$ARTIFACT_DIR/services"
+            cp -a public/services/. "$ARTIFACT_DIR/services"/
+          fi
+          if [ -d public/tools ]; then
+            mkdir -p "$ARTIFACT_DIR/tools"
+            cp -a public/tools/. "$ARTIFACT_DIR/tools"/
+          fi
           echo "pages=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)" >> "$GITHUB_OUTPUT"
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,80p'
 
