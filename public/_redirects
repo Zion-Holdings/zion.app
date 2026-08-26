@@ -95,8 +95,6 @@
 /use-cases /use-cases/ 301
 /use-cases/ /use-cases/index.html 200
 
-/services/affectiva-emotion-ai-platform/ /services/ 301
-/services/affectiva-emotion-ai-platform /services/ 301
 /services/ai-approval-workflow-engine/ /services/ 301
 /services/ai-approval-workflow-engine /services/ 301
 /services/ai-bookkeeping-automation/ /services/ 301
@@ -473,8 +471,6 @@
 /services/wisk-aero-autonomous-air-taxi /services/ 301
 
 # Auto-generated redirects for stale service slugs (2026-08-17)
-/services/affectiva-emotion-ai-platform/ /services/ 301
-/services/affectiva-emotion-ai-platform /services/ 301
 /services/ai-approval-workflow-engine/ /services/ 301
 /services/ai-approval-workflow-engine /services/ 301
 /services/ai-bookkeeping-automation/ /services/ 301
@@ -1071,17 +1067,11 @@
 /services/w174-waf-managed/ /services/w174-waf-managed/ 301
 /services/w174-warehouse-automation /services/w174-warehouse-automation/ 301
 /services/w174-warehouse-automation/ /services/w174-warehouse-automation/ 301
-/tools/ai-service-router /tools/ai-service-router/ 301
 /tools/ai-service-router/ /tools/ai-service-router/ 301
-/tools/port-scanner /tools/port-scanner/ 301
 /tools/port-scanner/ /tools/port-scanner/ 301
-/tools/roi-calculator /tools/roi-calculator/ 301
 /tools/roi-calculator/ /tools/roi-calculator/ 301
-/tools/service-comparison /tools/service-comparison/ 301
 /tools/service-comparison/ /tools/service-comparison/ 301
-/tools/service-recommender /tools/service-recommender/ 301
 /tools/service-recommender/ /tools/service-recommender/ 301
-/tools/ssl-checker /tools/ssl-checker/ 301
 /tools/ssl-checker/ /tools/ssl-checker/ 301
 # Hermes Agent Platform pages
 /services/hermes-agent-platform/ /services/hermes-agent-platform/index.html 200
