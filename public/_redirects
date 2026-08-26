@@ -1111,3 +1111,9 @@
 /hermes-agents /services/hermes-agent-platform/ 301
 /help /services/ 301
 /support /services/ 301
+
+# Fix missing service redirects for reported 404s
+/services/ai-agents-autonomous /services/?category=ai 301
+/services/ai-agents-autonomous/ /services/?category=ai 301
+/services/cloud-cost-optimization-service /services/?category=cloud 301
+/services/cloud-cost-optimization-service/ /services/?category=cloud 301
