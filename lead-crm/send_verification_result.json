@@ -1,12 +1,6 @@
 {
-  "send_count": 1,
-  "sent_to": "express@airbnb.com",
-  "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-  "httpStatus": 200,
-  "message_id": "1a01c57e92069bf6",
-  "thread_id": "1a01c57e92069bf6",
-  "liveSentCheck": true,
-  "note": "verified_via_fallback_probe",
-  "error": null,
-  "fallbackProbeMessageId": "1a01c57e92069bf6"
+  "send_count": 0,
+  "note": "send_blocked",
+  "blocked_reason": "HTTP 429 rate limit",
+  "error": null
 }
