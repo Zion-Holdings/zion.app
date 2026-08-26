@@ -86,6 +86,14 @@
 /blog /blog/ 301
 /blog/ /blog/index.html 200
 
+# Service fallbacks
+/services/ai-agents-autonomous /services/ 301
+/services/ai-agents-autonomous/ /services/ 301
+/services/cloud-cost-optimization-service /services/ 301
+/services/cloud-cost-optimization-service/ /services/ 301
+/services/ai-data-pipeline /services/ 301
+/services/ai-data-pipeline/ /services/ 301
+
 # Key route fallbacks
 /solutions/healthcare /docs/solutions/healthcare/index.html 301
 /industries/financial-services /docs/industries/financial-services/index.html 301
