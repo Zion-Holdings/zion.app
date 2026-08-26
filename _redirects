@@ -19,3 +19,6 @@
 /docs/free-ai-readiness-audit /docs/free-ai-readiness-audit/index.html 200
 /docs/service-areas /docs/service-areas/index.html 200
 /docs/sla /docs/sla/index.html 200
+
+# Auto-added tools 200 fallbacks
+/tools/json-formatter /tools/json-formatter/ 200
