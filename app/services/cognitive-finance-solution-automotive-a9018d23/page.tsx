@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-finance-solution-automotive-a9018d23` title="Cognitive Finance Solution - Automotive" />
+        <BreadcrumbSchema path="/services/cognitive-finance-solution-automotive-a9018d23" title="Cognitive Finance Solution - Automotive" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Finance Solution - Automotive</h1>
         <p className="text-lg text-gray-300 mb-8">Drive innovation in automotive with Cognitive Finance Solution - Automotive. This AI-powered platform transforms data governance into a competitive advantage.</p>
 

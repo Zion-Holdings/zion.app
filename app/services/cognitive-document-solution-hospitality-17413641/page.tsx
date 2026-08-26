@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-document-solution-hospitality-17413641` title="Cognitive Document Solution - Hospitality" />
+        <BreadcrumbSchema path="/services/cognitive-document-solution-hospitality-17413641" title="Cognitive Document Solution - Hospitality" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Document Solution - Hospitality</h1>
         <p className="text-lg text-gray-300 mb-8">Quantum leap forward for hospitality: Cognitive Document Solution - Hospitality. Uses quantum-inspired algorithms to deliver lakehouse architecture at exponenti</p>
 

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-generator-for-quantum-0d1f1f5a` title="Cognitive Generator for Quantum" />
+        <BreadcrumbSchema path="/services/cognitive-generator-for-quantum-0d1f1f5a" title="Cognitive Generator for Quantum" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Generator for Quantum</h1>
         <p className="text-lg text-gray-300 mb-8">Next-generation quantum solution: Cognitive Generator for Quantum. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
 

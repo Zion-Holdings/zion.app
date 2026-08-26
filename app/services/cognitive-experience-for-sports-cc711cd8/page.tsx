@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-experience-for-sports-cc711cd8` title="Cognitive Experience for Sports" />
+        <BreadcrumbSchema path="/services/cognitive-experience-for-sports-cc711cd8" title="Cognitive Experience for Sports" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Experience for Sports</h1>
         <p className="text-lg text-gray-300 mb-8">The future of sports is here with Cognitive Experience for Sports. Powered by cutting-edge AI, this platform delivers data quality like never before.</p>
 

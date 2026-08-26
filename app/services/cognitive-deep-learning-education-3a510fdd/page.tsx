@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-deep-learning-education-3a510fdd` title="Cognitive deep learning-education" />
+        <BreadcrumbSchema path="/services/cognitive-deep-learning-education-3a510fdd" title="Cognitive deep learning-education" />
         <h1 className="text-4xl font-bold mb-6">Cognitive deep learning-education</h1>
         <p className="text-lg text-gray-300 mb-8">Drive innovation in education with Cognitive deep learning-education. This AI-powered platform transforms healthcare data analytics into a competitive advantage</p>
 

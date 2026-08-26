@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-executive-solution-martech-7199ba1c` title="Cognitive Executive Solution - MARTECH" />
+        <BreadcrumbSchema path="/services/cognitive-executive-solution-martech-7199ba1c" title="Cognitive Executive Solution - MARTECH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Executive Solution - MARTECH</h1>
         <p className="text-lg text-gray-300 mb-8">Enhance your martech business with Cognitive Executive Solution - MARTECH. Our solution provides quota optimization with enterprise-grade reliability and securi</p>
 

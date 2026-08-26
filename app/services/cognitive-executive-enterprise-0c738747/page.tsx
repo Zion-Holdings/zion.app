@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-executive-enterprise-0c738747` title="Cognitive Executive Enterprise" />
+        <BreadcrumbSchema path="/services/cognitive-executive-enterprise-0c738747" title="Cognitive Executive Enterprise" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Executive Enterprise</h1>
         <p className="text-lg text-gray-300 mb-8">Enhance your technology business with Cognitive Executive Enterprise. Our solution provides supply chain with enterprise-grade reliability and security.</p>
 

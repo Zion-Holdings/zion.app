@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-director-solution-manufacturing-1-d238d201` title="Cognitive Director Solution - Manufacturing #1" />
+        <BreadcrumbSchema path="/services/cognitive-director-solution-manufacturing-1-d238d201" title="Cognitive Director Solution - Manufacturing #1" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Director Solution - Manufacturing #1</h1>
         <p className="text-lg text-gray-300 mb-8">Enhance your manufacturing business with Cognitive Director Solution - Manufacturing #1. Our solution provides vendor management with enterprise-grade reliabili</p>
 

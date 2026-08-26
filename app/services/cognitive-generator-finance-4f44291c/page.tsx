@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-generator-finance-4f44291c` title="Cognitive generator-finance" />
+        <BreadcrumbSchema path="/services/cognitive-generator-finance-4f44291c" title="Cognitive generator-finance" />
         <h1 className="text-4xl font-bold mb-6">Cognitive generator-finance</h1>
         <p className="text-lg text-gray-300 mb-8">Transform your finance operations with our Cognitive generator-finance. This AI-driven solution automates master data management with unprecedented accuracy and</p>
 

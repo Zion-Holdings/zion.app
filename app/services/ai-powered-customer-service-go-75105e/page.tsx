@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-powered-customer-service-go-75105e` title="AI-Powered Customer Service Go (Ecommerce)" />
+        <BreadcrumbSchema path="/services/ai-powered-customer-service-go-75105e" title="AI-Powered Customer Service Go (Ecommerce)" />
         <h1 className="text-4xl font-bold mb-6">AI-Powered Customer Service Go (Ecommerce)</h1>
         <p className="text-lg text-gray-300 mb-8">AI-Powered Customer Service Go (Ecommerce) is an AI-powered ecommerce solution that transforms how businesses operate through intelligent automation and real-ti</p>
 

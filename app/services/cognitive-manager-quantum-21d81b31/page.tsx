@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-manager-quantum-21d81b31` title="Cognitive manager-quantum" />
+        <BreadcrumbSchema path="/services/cognitive-manager-quantum-21d81b31" title="Cognitive manager-quantum" />
         <h1 className="text-4xl font-bold mb-6">Cognitive manager-quantum</h1>
         <p className="text-lg text-gray-300 mb-8">Transform your quantum operations with our Cognitive manager-quantum. This AI-driven solution automates user experience with unprecedented accuracy and efficien</p>
 

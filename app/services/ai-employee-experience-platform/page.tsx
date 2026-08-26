@@ -14,7 +14,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <BreadcrumbSchema path={`/services/ai-employee-experience-platform`} title="AI Employee Experience & Engagement Platform" />
-        <h1 className="text-4xl font-bold mb-6">👨‍💼 AI Employee Experience & Engagement Platform</h1>
+        <h1 className="text-4xl font-bold mb-6">👨💼 AI Employee Experience & Engagement Platform</h1>
         <p className="text-lg text-gray-300 mb-8">AI-powered employee experience platform with sentiment analysis, engagement surveys, career pathing, and automated HR workflow optimization.</p>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
@@ -46,11 +46,11 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$$5/employee/mo/month</p>
+              <p className="text-2xl font-bold mb-2">$5/employee/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$$12/employee/mo/month</p>
+              <p className="text-2xl font-bold mb-2">$12/employee/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>

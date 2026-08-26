@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-hr-advisor-7efe200b` title="Cognitive HR Advisor" />
+        <BreadcrumbSchema path="/services/cognitive-hr-advisor-7efe200b" title="Cognitive HR Advisor" />
         <h1 className="text-4xl font-bold mb-6">Cognitive HR Advisor</h1>
         <p className="text-lg text-gray-300 mb-8">Optimize your startup workflows with Cognitive HR Advisor. This intelligent platform delivers financial planning through advanced automation and AI.</p>
 

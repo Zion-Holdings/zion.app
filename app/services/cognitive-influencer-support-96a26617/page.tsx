@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-influencer-support-96a26617` title="Cognitive Influencer Support" />
+        <BreadcrumbSchema path="/services/cognitive-influencer-support-96a26617" title="Cognitive Influencer Support" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Influencer Support</h1>
         <p className="text-lg text-gray-300 mb-8">The future of technology is here with Cognitive Influencer Support. Powered by cutting-edge AI, this platform delivers survey automation like never before.</p>
 

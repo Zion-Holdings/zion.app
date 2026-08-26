@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-experience-solution-construction-1-ab2b9598` title="Cognitive Experience Solution - Construction #1" />
+        <BreadcrumbSchema path="/services/cognitive-experience-solution-construction-1-ab2b9598" title="Cognitive Experience Solution - Construction #1" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Experience Solution - Construction #1</h1>
         <p className="text-lg text-gray-300 mb-8">Optimize your construction workflows with Cognitive Experience Solution - Construction #1. This intelligent platform delivers feedback collection through advanc</p>
 

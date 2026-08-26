@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-driven-autonomous-digital-asset-management-platform-cefc5f0e` title="AI-Driven Autonomous Digital Asset Management Platform" />
+        <BreadcrumbSchema path="/services/ai-driven-autonomous-digital-asset-management-platform-cefc5f0e" title="AI-Driven Autonomous Digital Asset Management Platform" />
         <h1 className="text-4xl font-bold mb-6">AI-Driven Autonomous Digital Asset Management Platform</h1>
         <p className="text-lg text-gray-300 mb-8">Zion Tech Group delivers AI-Driven Autonomous Digital Asset Management Platform solutions that combine deep domain expertise with cutting-edge artificial intell</p>
 

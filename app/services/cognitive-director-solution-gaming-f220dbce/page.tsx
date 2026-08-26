@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-director-solution-gaming-f220dbce` title="Cognitive Director Solution - Gaming" />
+        <BreadcrumbSchema path="/services/cognitive-director-solution-gaming-f220dbce" title="Cognitive Director Solution - Gaming" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Director Solution - Gaming</h1>
         <p className="text-lg text-gray-300 mb-8">Drive innovation in gaming with Cognitive Director Solution - Gaming. This AI-powered platform transforms resource allocation into a competitive advantage.</p>
 

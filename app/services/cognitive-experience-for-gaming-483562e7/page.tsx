@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-experience-for-gaming-483562e7` title="Cognitive Experience for Gaming" />
+        <BreadcrumbSchema path="/services/cognitive-experience-for-gaming-483562e7" title="Cognitive Experience for Gaming" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Experience for Gaming</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Experience for Gaming. This autonomous system provides intelligent automation with zero manual intervention needed.</p>
 

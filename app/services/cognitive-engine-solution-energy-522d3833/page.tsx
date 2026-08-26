@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-engine-solution-energy-522d3833` title="Cognitive Engine Solution - Energy" />
+        <BreadcrumbSchema path="/services/cognitive-engine-solution-energy-522d3833" title="Cognitive Engine Solution - Energy" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Engine Solution - Energy</h1>
         <p className="text-lg text-gray-300 mb-8">Quantum leap forward for energy: Cognitive Engine Solution - Energy. Uses quantum-inspired algorithms to deliver predictive modeling at exponential speed.</p>
 

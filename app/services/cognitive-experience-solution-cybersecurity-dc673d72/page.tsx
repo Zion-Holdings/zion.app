@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-experience-solution-cybersecurity-dc673d72` title="Cognitive Experience Solution - Cybersecurity" />
+        <BreadcrumbSchema path="/services/cognitive-experience-solution-cybersecurity-dc673d72" title="Cognitive Experience Solution - Cybersecurity" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Experience Solution - Cybersecurity</h1>
         <p className="text-lg text-gray-300 mb-8">Next-generation cybersecurity solution: Cognitive Experience Solution - Cybersecurity. Combines logistics route optimization with adaptive intelligence for opti</p>
 

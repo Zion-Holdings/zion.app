@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-financial-cleantech-426a8562` title="Cognitive financial-cleantech" />
+        <BreadcrumbSchema path="/services/cognitive-financial-cleantech-426a8562" title="Cognitive financial-cleantech" />
         <h1 className="text-4xl font-bold mb-6">Cognitive financial-cleantech</h1>
         <p className="text-lg text-gray-300 mb-8">Transform your cleantech operations with our Cognitive financial-cleantech. This AI-driven solution automates executive dashboards with unprecedented accuracy a</p>
 

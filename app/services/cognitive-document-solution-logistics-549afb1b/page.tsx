@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-document-solution-logistics-549afb1b` title="Cognitive Document Solution - Logistics" />
+        <BreadcrumbSchema path="/services/cognitive-document-solution-logistics-549afb1b" title="Cognitive Document Solution - Logistics" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Document Solution - Logistics</h1>
         <p className="text-lg text-gray-300 mb-8">Hyper-accelerated logistics solution: Cognitive Document Solution - Logistics. Combines recruitment automation with next-gen AI for maximum velocity.</p>
 

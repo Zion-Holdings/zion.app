@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-image-compliance-7e2f70a3` title="Cognitive Image Compliance" />
+        <BreadcrumbSchema path="/services/cognitive-image-compliance-7e2f70a3" title="Cognitive Image Compliance" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Image Compliance</h1>
         <p className="text-lg text-gray-300 mb-8">Enhance your telecom business with Cognitive Image Compliance. Our solution provides pipeline management with enterprise-grade reliability and security.</p>
 

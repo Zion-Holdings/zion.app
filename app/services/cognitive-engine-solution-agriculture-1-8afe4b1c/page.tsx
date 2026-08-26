@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-engine-solution-agriculture-1-8afe4b1c` title="Cognitive Engine Solution - Agriculture #1" />
+        <BreadcrumbSchema path="/services/cognitive-engine-solution-agriculture-1-8afe4b1c" title="Cognitive Engine Solution - Agriculture #1" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Engine Solution - Agriculture #1</h1>
         <p className="text-lg text-gray-300 mb-8">Enhance your agriculture business with Cognitive Engine Solution - Agriculture #1. Our solution provides project portfolio with enterprise-grade reliability and</p>
 

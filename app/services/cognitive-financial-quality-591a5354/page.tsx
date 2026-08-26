@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-financial-quality-591a5354` title="Cognitive Financial Quality" />
+        <BreadcrumbSchema path="/services/cognitive-financial-quality-591a5354" title="Cognitive Financial Quality" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Financial Quality</h1>
         <p className="text-lg text-gray-300 mb-8">Next-generation agriculture solution: Cognitive Financial Quality. Combines container orchestration with adaptive intelligence for optimal results.</p>
 

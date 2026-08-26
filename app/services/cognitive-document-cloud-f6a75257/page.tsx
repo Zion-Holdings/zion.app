@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-document-cloud-f6a75257` title="Cognitive Document Cloud" />
+        <BreadcrumbSchema path="/services/cognitive-document-cloud-f6a75257" title="Cognitive Document Cloud" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Document Cloud</h1>
         <p className="text-lg text-gray-300 mb-8">Transform your retail operations with our Cognitive Document Cloud. This AI-driven solution automates campaign optimization with unprecedented accuracy and effi</p>
 

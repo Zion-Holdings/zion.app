@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-disaster-quality-e0bd4af9` title="Cognitive Disaster Quality" />
+        <BreadcrumbSchema path="/services/cognitive-disaster-quality-e0bd4af9" title="Cognitive Disaster Quality" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Disaster Quality</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Disaster Quality. This autonomous system provides intelligent automation with zero manual intervention needed.</p>
 

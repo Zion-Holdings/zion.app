@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-director-solution-real-estate-2ef758d5` title="Cognitive Director Solution - Real-Estate" />
+        <BreadcrumbSchema path="/services/cognitive-director-solution-real-estate-2ef758d5" title="Cognitive Director Solution - Real-Estate" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Director Solution - Real-Estate</h1>
         <p className="text-lg text-gray-300 mb-8">Revolutionize real-estate through intelligent automation. Our Cognitive Director Solution - Real-Estate leverages advanced machine learning to deliver quality c</p>
 

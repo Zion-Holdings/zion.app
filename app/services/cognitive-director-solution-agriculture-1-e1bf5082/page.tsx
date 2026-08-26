@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-director-solution-agriculture-1-e1bf5082` title="Cognitive Director Solution - Agriculture #1" />
+        <BreadcrumbSchema path="/services/cognitive-director-solution-agriculture-1-e1bf5082" title="Cognitive Director Solution - Agriculture #1" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Director Solution - Agriculture #1</h1>
         <p className="text-lg text-gray-300 mb-8">Next-generation agriculture solution: Cognitive Director Solution - Agriculture #1. Combines feature engineering with adaptive intelligence for optimal results.</p>
 

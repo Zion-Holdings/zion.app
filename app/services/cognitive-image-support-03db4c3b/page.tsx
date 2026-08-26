@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-image-support-03db4c3b` title="Cognitive Image Support" />
+        <BreadcrumbSchema path="/services/cognitive-image-support-03db4c3b" title="Cognitive Image Support" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Image Support</h1>
         <p className="text-lg text-gray-300 mb-8">Transform your media operations with our Cognitive Image Support. This AI-driven solution automates regulatory tracking with unprecedented accuracy and efficien</p>
 

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-engine-solution-real-estate-8cf5fd6a` title="Cognitive Engine Solution - Real-Estate" />
+        <BreadcrumbSchema path="/services/cognitive-engine-solution-real-estate-8cf5fd6a" title="Cognitive Engine Solution - Real-Estate" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Engine Solution - Real-Estate</h1>
         <p className="text-lg text-gray-300 mb-8">Drive innovation in real-estate with Cognitive Engine Solution - Real-Estate. This AI-powered platform transforms churn prediction into a competitive advantage.</p>
 

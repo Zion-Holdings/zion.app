@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-director-solution-edtech-c4d9a0f0` title="Cognitive Director Solution - EDTECH" />
+        <BreadcrumbSchema path="/services/cognitive-director-solution-edtech-c4d9a0f0" title="Cognitive Director Solution - EDTECH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Director Solution - EDTECH</h1>
         <p className="text-lg text-gray-300 mb-8">Drive innovation in edtech with Cognitive Director Solution - EDTECH. This AI-powered platform transforms content moderation into a competitive advantage.</p>
 

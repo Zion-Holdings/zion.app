@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-powered-customer-service-gaming-9688e1f1` title="AI-Powered customer service-gaming" />
+        <BreadcrumbSchema path="/services/ai-powered-customer-service-gaming-9688e1f1" title="AI-Powered customer service-gaming" />
         <h1 className="text-4xl font-bold mb-6">AI-Powered customer service-gaming</h1>
         <p className="text-lg text-gray-300 mb-8">Transform your gaming operations with our AI-Powered customer service-gaming. This AI-driven solution automates budget tracking with unprecedented accuracy and </p>
 

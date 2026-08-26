@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-generator-solution-gaming-55bc3d1c` title="Cognitive Generator Solution - Gaming" />
+        <BreadcrumbSchema path="/services/cognitive-generator-solution-gaming-55bc3d1c" title="Cognitive Generator Solution - Gaming" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Generator Solution - Gaming</h1>
         <p className="text-lg text-gray-300 mb-8">The future of gaming is here with Cognitive Generator Solution - Gaming. Powered by cutting-edge AI, this platform delivers master data management like never be</p>
 

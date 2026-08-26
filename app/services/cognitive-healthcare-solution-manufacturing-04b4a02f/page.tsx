@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-healthcare-solution-manufacturing-04b4a02f` title="Cognitive Healthcare Solution - Manufacturing" />
+        <BreadcrumbSchema path="/services/cognitive-healthcare-solution-manufacturing-04b4a02f" title="Cognitive Healthcare Solution - Manufacturing" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Healthcare Solution - Manufacturing</h1>
         <p className="text-lg text-gray-300 mb-8">Drive innovation in manufacturing with Cognitive Healthcare Solution - Manufacturing. This AI-powered platform transforms document processing into a competitive</p>
 

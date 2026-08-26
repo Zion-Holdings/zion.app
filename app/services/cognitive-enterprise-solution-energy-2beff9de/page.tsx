@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-enterprise-solution-energy-2beff9de` title="Cognitive Enterprise Solution - Energy" />
+        <BreadcrumbSchema path="/services/cognitive-enterprise-solution-energy-2beff9de" title="Cognitive Enterprise Solution - Energy" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Enterprise Solution - Energy</h1>
         <p className="text-lg text-gray-300 mb-8">Optimize your energy workflows with Cognitive Enterprise Solution - Energy. This intelligent platform delivers sentiment analysis through advanced automation an</p>
 

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-document-solution-construction-1-dac1dd13` title="Cognitive Document Solution - Construction #1" />
+        <BreadcrumbSchema path="/services/cognitive-document-solution-construction-1-dac1dd13" title="Cognitive Document Solution - Construction #1" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Document Solution - Construction #1</h1>
         <p className="text-lg text-gray-300 mb-8">Enhance your construction business with Cognitive Document Solution - Construction #1. Our solution provides brand sentiment with enterprise-grade reliability a</p>
 

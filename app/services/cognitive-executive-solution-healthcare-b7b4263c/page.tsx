@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-executive-solution-healthcare-b7b4263c` title="Cognitive Executive Solution - Healthcare" />
+        <BreadcrumbSchema path="/services/cognitive-executive-solution-healthcare-b7b4263c" title="Cognitive Executive Solution - Healthcare" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Executive Solution - Healthcare</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Executive Solution - Healthcare. This autonomous system provides recruitment automation with zero manual intervention</p>
 

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-document-for-insurance-32be8d43` title="Cognitive Document for Insurance" />
+        <BreadcrumbSchema path="/services/cognitive-document-for-insurance-32be8d43" title="Cognitive Document for Insurance" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Document for Insurance</h1>
         <p className="text-lg text-gray-300 mb-8">Hyper-accelerated insurance solution: Cognitive Document for Insurance. Combines hr analytics with next-gen AI for maximum velocity.</p>
 

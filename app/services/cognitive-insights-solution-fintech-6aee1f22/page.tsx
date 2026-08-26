@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-insights-solution-fintech-6aee1f22` title="Cognitive Insights Solution - FINTECH" />
+        <BreadcrumbSchema path="/services/cognitive-insights-solution-fintech-6aee1f22" title="Cognitive Insights Solution - FINTECH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Insights Solution - FINTECH</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Insights Solution - FINTECH. This autonomous system provides pricing optimization with zero manual intervention neede</p>
 

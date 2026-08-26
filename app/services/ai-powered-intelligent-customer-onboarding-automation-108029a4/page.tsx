@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-powered-intelligent-customer-onboarding-automation-108029a4` title="AI-Powered Intelligent Customer Onboarding Automation" />
+        <BreadcrumbSchema path="/services/ai-powered-intelligent-customer-onboarding-automation-108029a4" title="AI-Powered Intelligent Customer Onboarding Automation" />
         <h1 className="text-4xl font-bold mb-6">AI-Powered Intelligent Customer Onboarding Automation</h1>
         <p className="text-lg text-gray-300 mb-8">Zion Tech Group delivers AI-Powered Intelligent Customer Onboarding Automation solutions that combine deep domain expertise with cutting-edge artificial intelli</p>
 

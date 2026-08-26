@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-executive-revenue-6a4e463d` title="Cognitive Executive Revenue" />
+        <BreadcrumbSchema path="/services/cognitive-executive-revenue-6a4e463d" title="Cognitive Executive Revenue" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Executive Revenue</h1>
         <p className="text-lg text-gray-300 mb-8">The future of logistics is here with Cognitive Executive Revenue. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.</p>
 

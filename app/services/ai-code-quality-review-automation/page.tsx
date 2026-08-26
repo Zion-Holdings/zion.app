@@ -14,7 +14,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <BreadcrumbSchema path={`/services/ai-code-quality-review-automation`} title="AI Code Review & Quality Automation" />
-        <h1 className="text-4xl font-bold mb-6">👨‍💻 AI Code Review & Quality Automation</h1>
+        <h1 className="text-4xl font-bold mb-6">👨💻 AI Code Review & Quality Automation</h1>
         <p className="text-lg text-gray-300 mb-8">Automated code review powered by large language models. Detects bugs, security vulnerabilities, performance issues, and style violations.</p>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
@@ -46,11 +46,11 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$$15/developer/mo/month</p>
+              <p className="text-2xl font-bold mb-2">$15/developer/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$$35/developer/mo/month</p>
+              <p className="text-2xl font-bold mb-2">$35/developer/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>

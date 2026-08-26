@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-healthcare-for-legal-f0d2e74d` title="Cognitive Healthcare for Legal" />
+        <BreadcrumbSchema path="/services/cognitive-healthcare-for-legal-f0d2e74d" title="Cognitive Healthcare for Legal" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Healthcare for Legal</h1>
         <p className="text-lg text-gray-300 mb-8">The future of legal is here with Cognitive Healthcare for Legal. Powered by cutting-edge AI, this platform delivers market intelligence like never before.</p>
 

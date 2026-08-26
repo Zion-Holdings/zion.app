@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-insights-solution-agriculture-e571d197` title="Cognitive Insights Solution - Agriculture" />
+        <BreadcrumbSchema path="/services/cognitive-insights-solution-agriculture-e571d197" title="Cognitive Insights Solution - Agriculture" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Insights Solution - Agriculture</h1>
         <p className="text-lg text-gray-300 mb-8">Next-generation agriculture solution: Cognitive Insights Solution - Agriculture. Combines cost reduction with adaptive intelligence for optimal results.</p>
 

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-generator-solution-legal-1-c66d657a` title="Cognitive Generator Solution - Legal #1" />
+        <BreadcrumbSchema path="/services/cognitive-generator-solution-legal-1-c66d657a" title="Cognitive Generator Solution - Legal #1" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Generator Solution - Legal #1</h1>
         <p className="text-lg text-gray-300 mb-8">Optimize your legal workflows with Cognitive Generator Solution - Legal #1. This intelligent platform delivers content moderation through advanced automation an</p>
 

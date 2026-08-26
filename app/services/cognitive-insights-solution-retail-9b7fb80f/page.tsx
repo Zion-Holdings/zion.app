@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-insights-solution-retail-9b7fb80f` title="Cognitive Insights Solution - Retail" />
+        <BreadcrumbSchema path="/services/cognitive-insights-solution-retail-9b7fb80f" title="Cognitive Insights Solution - Retail" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Insights Solution - Retail</h1>
         <p className="text-lg text-gray-300 mb-8">The future of retail is here with Cognitive Insights Solution - Retail. Powered by cutting-edge AI, this platform delivers customer service automation like neve</p>
 

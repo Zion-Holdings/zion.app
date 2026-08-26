@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-healthcare-solution-construction-aa4c2ed7` title="Cognitive Healthcare Solution - Construction" />
+        <BreadcrumbSchema path="/services/cognitive-healthcare-solution-construction-aa4c2ed7" title="Cognitive Healthcare Solution - Construction" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Healthcare Solution - Construction</h1>
         <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Cognitive Healthcare Solution - Construction. This AI-driven solution automates feedback collection with unprece</p>
 

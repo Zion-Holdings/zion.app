@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-driven-real-time-network-behavior-analytics-platform-0d831486` title="AI-Driven Real-Time Network Behavior Analytics Platform" />
+        <BreadcrumbSchema path="/services/ai-driven-real-time-network-behavior-analytics-platform-0d831486" title="AI-Driven Real-Time Network Behavior Analytics Platform" />
         <h1 className="text-4xl font-bold mb-6">AI-Driven Real-Time Network Behavior Analytics Platform</h1>
         <p className="text-lg text-gray-300 mb-8">Zion Tech Group delivers AI-Driven Real-Time Network Behavior Analytics Platform solutions that combine deep domain expertise with cutting-edge artificial intel</p>
 

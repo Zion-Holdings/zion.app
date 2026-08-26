@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-finance-solution-gaming-655be7aa` title="Cognitive Finance Solution - Gaming" />
+        <BreadcrumbSchema path="/services/cognitive-finance-solution-gaming-655be7aa" title="Cognitive Finance Solution - Gaming" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Finance Solution - Gaming</h1>
         <p className="text-lg text-gray-300 mb-8">Enhance your gaming business with Cognitive Finance Solution - Gaming. Our solution provides cost reduction with enterprise-grade reliability and security.</p>
 

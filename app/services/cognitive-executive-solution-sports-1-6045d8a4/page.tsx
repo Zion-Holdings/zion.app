@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-executive-solution-sports-1-6045d8a4` title="Cognitive Executive Solution - Sports #1" />
+        <BreadcrumbSchema path="/services/cognitive-executive-solution-sports-1-6045d8a4" title="Cognitive Executive Solution - Sports #1" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Executive Solution - Sports #1</h1>
         <p className="text-lg text-gray-300 mb-8">Quantum leap forward for sports: Cognitive Executive Solution - Sports #1. Uses quantum-inspired algorithms to deliver scenario planning at exponential speed.</p>
 

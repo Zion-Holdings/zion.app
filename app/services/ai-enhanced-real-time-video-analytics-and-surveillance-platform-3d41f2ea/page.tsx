@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-enhanced-real-time-video-analytics-and-surveillance-platform-3d41f2ea` title="AI-Enhanced Real-Time Video Analytics and Surveillance Platform" />
+        <BreadcrumbSchema path="/services/ai-enhanced-real-time-video-analytics-and-surveillance-platform-3d41f2ea" title="AI-Enhanced Real-Time Video Analytics and Surveillance Platform" />
         <h1 className="text-4xl font-bold mb-6">AI-Enhanced Real-Time Video Analytics and Surveillance Platform</h1>
         <p className="text-lg text-gray-300 mb-8">Zion Tech Group delivers AI-Enhanced Real-Time Video Analytics and Surveillance Platform solutions that combine deep domain expertise with cutting-edge artifici</p>
 

@@ -3,7 +3,7 @@ import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 
 export const metadata = {
   title: "Adaptive ML - Zion Tech Group",
-  description: "Adaptive ML (often styled as Adaptive) is a private software company based in New York, United States and Paris, France. The company focuses on reinforcement learning (“RLOps”), providing tools that allow organizations to customize and operate open-source large language models for specific applicati",
+  description: "Adaptive ML (often styled as Adaptive) is a private software company based in New York, United States and Paris, France. The company focuses on reinforcement learning ("RLOps"), providing tools that allow organizations to customize and operate open-source large language models for specific applicati",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-ml-a892a04c`
   }
@@ -15,7 +15,7 @@ export default function ServicePage() {
       <div className="max-w-4xl mx-auto">
         <BreadcrumbSchema path={`/services/adaptive-ml-a892a04c`} title="Adaptive ML" />
         <h1 className="text-4xl font-bold mb-6"> Adaptive ML</h1>
-        <p className="text-lg text-gray-300 mb-8">Adaptive ML (often styled as Adaptive) is a private software company based in New York, United States and Paris, France. The company focuses on reinforcement learning (“RLOps”), providing tools that allow organizations to customize and operate open-source large language models for specific applicati</p>
+        <p className="text-lg text-gray-300 mb-8">Adaptive ML (often styled as Adaptive) is a private software company based in New York, United States and Paris, France. The company focuses on reinforcement learning ("RLOps"), providing tools that allow organizations to customize and operate open-source large language models for specific applicati</p>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-generator-solution-althealth-c225f0a3` title="Cognitive Generator Solution - ALTHEALTH" />
+        <BreadcrumbSchema path="/services/cognitive-generator-solution-althealth-c225f0a3" title="Cognitive Generator Solution - ALTHEALTH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Generator Solution - ALTHEALTH</h1>
         <p className="text-lg text-gray-300 mb-8">Next-generation althealth solution: Cognitive Generator Solution - ALTHEALTH. Combines content generation with adaptive intelligence for optimal results.</p>
 

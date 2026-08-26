@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-decision-solution-proptech-39307dfd` title="Cognitive Decision Solution - PROPTECH" />
+        <BreadcrumbSchema path="/services/cognitive-decision-solution-proptech-39307dfd" title="Cognitive Decision Solution - PROPTECH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Decision Solution - PROPTECH</h1>
         <p className="text-lg text-gray-300 mb-8">Hyper-accelerated proptech solution: Cognitive Decision Solution - PROPTECH. Combines pipeline management with next-gen AI for maximum velocity.</p>
 

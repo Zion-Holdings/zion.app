@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-enhanced-predictive-data-pipeline-monitoring-and-alerting-531222a4` title="AI-Enhanced Predictive Data Pipeline Monitoring and Alerting" />
+        <BreadcrumbSchema path="/services/ai-enhanced-predictive-data-pipeline-monitoring-and-alerting-531222a4" title="AI-Enhanced Predictive Data Pipeline Monitoring and Alerting" />
         <h1 className="text-4xl font-bold mb-6">AI-Enhanced Predictive Data Pipeline Monitoring and Alerting</h1>
         <p className="text-lg text-gray-300 mb-8">Zion Tech Group delivers AI-Enhanced Predictive Data Pipeline Monitoring and Alerting solutions that combine deep domain expertise with cutting-edge artificial </p>
 

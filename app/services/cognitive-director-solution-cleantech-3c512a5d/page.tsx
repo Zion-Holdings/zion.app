@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-director-solution-cleantech-3c512a5d` title="Cognitive Director Solution - CLEANTECH" />
+        <BreadcrumbSchema path="/services/cognitive-director-solution-cleantech-3c512a5d" title="Cognitive Director Solution - CLEANTECH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Director Solution - CLEANTECH</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Director Solution - CLEANTECH. This autonomous system provides reputation management with zero manual intervention ne</p>
 

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-enterprise-solution-fintech-e0759f73` title="Cognitive Enterprise Solution - FINTECH" />
+        <BreadcrumbSchema path="/services/cognitive-enterprise-solution-fintech-e0759f73" title="Cognitive Enterprise Solution - FINTECH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Enterprise Solution - FINTECH</h1>
         <p className="text-lg text-gray-300 mb-8">The future of fintech is here with Cognitive Enterprise Solution - FINTECH. Powered by cutting-edge AI, this platform delivers capacity management like never be</p>
 

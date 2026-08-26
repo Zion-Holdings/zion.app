@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-generator-solution-aitech-c3c9de33` title="Cognitive Generator Solution - AITECH" />
+        <BreadcrumbSchema path="/services/cognitive-generator-solution-aitech-c3c9de33" title="Cognitive Generator Solution - AITECH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Generator Solution - AITECH</h1>
         <p className="text-lg text-gray-300 mb-8">Optimize your aitech workflows with Cognitive Generator Solution - AITECH. This intelligent platform delivers background checks through advanced automation and </p>
 

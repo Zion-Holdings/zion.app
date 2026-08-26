@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-finance-solution-proptech-b682c354` title="Cognitive Finance Solution - PROPTECH" />
+        <BreadcrumbSchema path="/services/cognitive-finance-solution-proptech-b682c354" title="Cognitive Finance Solution - PROPTECH" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Finance Solution - PROPTECH</h1>
         <p className="text-lg text-gray-300 mb-8">Optimize your proptech workflows with Cognitive Finance Solution - PROPTECH. This intelligent platform delivers customer service automation through advanced aut</p>
 

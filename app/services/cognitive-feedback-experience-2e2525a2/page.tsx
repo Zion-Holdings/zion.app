@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-feedback-experience-2e2525a2` title="Cognitive Feedback Experience" />
+        <BreadcrumbSchema path="/services/cognitive-feedback-experience-2e2525a2" title="Cognitive Feedback Experience" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Feedback Experience</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Feedback Experience. This autonomous system provides loyalty optimization with zero manual intervention needed.</p>
 

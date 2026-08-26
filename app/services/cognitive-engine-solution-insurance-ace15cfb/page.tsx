@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-engine-solution-insurance-ace15cfb` title="Cognitive Engine Solution - Insurance" />
+        <BreadcrumbSchema path="/services/cognitive-engine-solution-insurance-ace15cfb" title="Cognitive Engine Solution - Insurance" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Engine Solution - Insurance</h1>
         <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: Cognitive Engine Solution - Insurance. Combines financial risk management with adaptive intelligence for optimal results.</p>
 

@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-insights-solution-cybersecurity-c06d0305` title="Cognitive Insights Solution - Cybersecurity" />
+        <BreadcrumbSchema path="/services/cognitive-insights-solution-cybersecurity-c06d0305" title="Cognitive Insights Solution - Cybersecurity" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Insights Solution - Cybersecurity</h1>
         <p className="text-lg text-gray-300 mb-8">Optimize your cybersecurity workflows with Cognitive Insights Solution - Cybersecurity. This intelligent platform delivers project portfolio through advanced au</p>
 

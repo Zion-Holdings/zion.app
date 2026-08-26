@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-finance-solution-finance-2-bf04deb4` title="Cognitive Finance Solution - Finance #2" />
+        <BreadcrumbSchema path="/services/cognitive-finance-solution-finance-2-bf04deb4" title="Cognitive Finance Solution - Finance #2" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Finance Solution - Finance #2</h1>
         <p className="text-lg text-gray-300 mb-8">Quantum leap forward for finance: Cognitive Finance Solution - Finance #2. Uses quantum-inspired algorithms to deliver risk assessment at exponential speed.</p>
 

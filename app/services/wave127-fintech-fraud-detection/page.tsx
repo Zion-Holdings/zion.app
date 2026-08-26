@@ -20,7 +20,7 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time transaction scoring (<50ms latency)</li>
+            <li>Real-time transaction scoring (&lt;50ms latency)</li>
             <li>Graph-based fraud ring detection</li>
             <li>Behavioral biometrics (keystroke, device fingerprint)</li>
             <li>Adaptive ML with online learning from feedback</li>
@@ -50,11 +50,11 @@ export default function ServicePage() {
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$24997/month</p>
+              <p className="text-2xl font-bold mb-2">$24,997/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$49997/month</p>
+              <p className="text-2xl font-bold mb-2">$49,997/month</p>
             </div>
           </div>
         </div>

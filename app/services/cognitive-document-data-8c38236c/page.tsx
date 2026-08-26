@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-document-data-8c38236c` title="Cognitive Document Data" />
+        <BreadcrumbSchema path="/services/cognitive-document-data-8c38236c" title="Cognitive Document Data" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Document Data</h1>
         <p className="text-lg text-gray-300 mb-8">Transform your technology operations with our Cognitive Document Data. This AI-driven solution automates manufacturing quality control with unprecedented accura</p>
 

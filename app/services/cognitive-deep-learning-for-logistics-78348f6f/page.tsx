@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-deep-learning-for-logistics-78348f6f` title="Cognitive Deep Learning for Logistics" />
+        <BreadcrumbSchema path="/services/cognitive-deep-learning-for-logistics-78348f6f" title="Cognitive Deep Learning for Logistics" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Deep Learning for Logistics</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Deep Learning for Logistics. This autonomous system provides intelligent automation with zero manual intervention nee</p>
 

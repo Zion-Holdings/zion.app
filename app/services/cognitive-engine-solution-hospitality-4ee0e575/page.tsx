@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-engine-solution-hospitality-4ee0e575` title="Cognitive Engine Solution - Hospitality" />
+        <BreadcrumbSchema path="/services/cognitive-engine-solution-hospitality-4ee0e575" title="Cognitive Engine Solution - Hospitality" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Engine Solution - Hospitality</h1>
         <p className="text-lg text-gray-300 mb-8">Enhance your hospitality business with Cognitive Engine Solution - Hospitality. Our solution provides quality assurance with enterprise-grade reliability and se</p>
 

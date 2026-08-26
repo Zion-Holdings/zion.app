@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-disaster-system-1d54c099` title="Cognitive Disaster System" />
+        <BreadcrumbSchema path="/services/cognitive-disaster-system-1d54c099" title="Cognitive Disaster System" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Disaster System</h1>
         <p className="text-lg text-gray-300 mb-8">Optimize your energy workflows with Cognitive Disaster System. This intelligent platform delivers document processing through advanced automation and AI.</p>
 

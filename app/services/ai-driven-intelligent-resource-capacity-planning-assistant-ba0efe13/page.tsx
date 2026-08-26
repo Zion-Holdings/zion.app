@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/ai-driven-intelligent-resource-capacity-planning-assistant-ba0efe13` title="AI-Driven Intelligent Resource Capacity Planning Assistant" />
+        <BreadcrumbSchema path="/services/ai-driven-intelligent-resource-capacity-planning-assistant-ba0efe13" title="AI-Driven Intelligent Resource Capacity Planning Assistant" />
         <h1 className="text-4xl font-bold mb-6">AI-Driven Intelligent Resource Capacity Planning Assistant</h1>
         <p className="text-lg text-gray-300 mb-8">Zion Tech Group delivers AI-Driven Intelligent Resource Capacity Planning Assistant solutions that combine deep domain expertise with cutting-edge artificial in</p>
 

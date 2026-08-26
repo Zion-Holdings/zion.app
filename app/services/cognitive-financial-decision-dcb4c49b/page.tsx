@@ -13,7 +13,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/cognitive-financial-decision-dcb4c49b` title="Cognitive Financial Decision" />
+        <BreadcrumbSchema path="/services/cognitive-financial-decision-dcb4c49b" title="Cognitive Financial Decision" />
         <h1 className="text-4xl font-bold mb-6">Cognitive Financial Decision</h1>
         <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Financial Decision. This autonomous system provides demand planning with zero manual intervention needed.</p>
 

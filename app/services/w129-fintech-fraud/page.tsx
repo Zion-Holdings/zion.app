@@ -33,7 +33,7 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>94% fraud detection</li>
-            <li><50ms latency</li>
+            <li>&lt;50ms latency</li>
             <li>AML compliance</li>
             <li>Reduced chargebacks</li>
           </ul>
@@ -48,11 +48,11 @@ export default function ServicePage() {
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$24997/month</p>
+              <p className="text-2xl font-bold mb-2">$24,997/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$49997/month</p>
+              <p className="text-2xl font-bold mb-2">$49,997/month</p>
             </div>
           </div>
         </div>
