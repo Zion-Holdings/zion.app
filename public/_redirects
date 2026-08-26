@@ -712,6 +712,6 @@
 /services/ai-agents-autonomous/ /services/?category=ai 301
 /services/cloud-cost-optimization-service /services/?category=cloud 301
 /services/cloud-cost-optimization-service/ /services/?category=cloud 301
-
 # Additional service redirects from PR #70886
 /services/ai-predictive-analytics /services/ai-predictive-analytics 301
+# Fix reported 404s
