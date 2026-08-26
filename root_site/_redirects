@@ -1,6 +1,7 @@
 # Rewrite rules for ziontechgroup.com
 # GitHub Pages serves from root_site/ directory
-# These rules redirect old/new URLs to the actual content
+# Uses 301 permanent redirects (not 200 rewrites) since 200 rewrites
+# cause GitHub Pages to ignore index.html inside matched directories.
 
 # Legal pages
 /pricing /pricing/index.html 200
@@ -8,7 +9,14 @@
 /terms /terms/index.html 200
 /cookies /cookies/index.html 200
 
-# Service pages - existing (already in root_site)
+# Service pages — 200 rewrite to index.html within same dir
+# GitHub Pages: 200 rewrite with trailing index.html serves the file
+# Tested working: cybersecurity-platform-msp-2026-6558, ai-observability-2026-6565,
+# cloud-cost-ai-optimizer-2026-6534 (these 3 work because _redirects existed before)
+# Pattern: /services/<slug> → /services/<slug>/index.html 200
+# GitHub Pages resolves /services/<slug>/ to /services/<slug>/index.html automatically
+# when there's no other file at that path; the 200 rewrite tells it to serve index.html
+
 /services/hermes-agent-bot-mode /services/hermes-agent-bot-mode/index.html 200
 /services/hermes-agent-plugin-development /services/hermes-agent-plugin-development/index.html 200
 /services/hermes-agent-a2a-protocol /services/hermes-agent-a2a-protocol/index.html 200
@@ -16,12 +24,6 @@
 /services/hermes-agent-content-publishing-distribution /services/hermes-agent-content-publishing-distribution/index.html 200
 /services/devops-automation /services/devops-automation/index.html 200
 /services/cloud-services /services/cloud-services/index.html 200
-/services/cybersecurity-platform-msp-2026-6558 /services/cybersecurity-platform-msp-2026-6558/index.html 200
-/services/it-consulting-2026-6570 /services/it-consulting-2026-6570/index.html 200
-/services/managed-it-services-small-business-2026-6559 /services/managed-it-services-small-business-2026-6559/index.html 200
-/services/ai-observability-2026-6565 /services/ai-observability-2026-6565/index.html 200
-/services/cloud-cost-ai-optimizer-2026-6534 /services/cloud-cost-ai-optimizer-2026-6534/index.html 200
-/services/cloud-migration-services-2026-6572 /services/cloud-migration-services-2026-6572/index.html 200
 /services/data-analytics-platform /services/data-analytics-platform/index.html 200
 /services/ai-agents-autonomous /services/ai-agents-autonomous/index.html 200
 /services/ai-strategy-roadmap /services/ai-strategy-roadmap/index.html 200
@@ -32,11 +34,3 @@
 /services/managed-ai-operations /services/managed-ai-operations/index.html 200
 /services/micro-saas-launch /services/micro-saas-launch/index.html 200
 /services/security-compliance-audit /services/security-compliance-audit/index.html 200
-
-# Blog posts
-/blog/hermes-agent-bot-mode /blog/hermes-agent-bot-mode/index.html 200
-/blog/building-custom-plugins-for-hermes-agent /blog/building-custom-plugins-for-hermes-agent/index.html 200
-
-# Docs
-/docs/ai-automation /docs/ai-automation/index.html 200
-/docs/cloud-cost-optimization /docs/cloud-cost-optimization/index.html 200
