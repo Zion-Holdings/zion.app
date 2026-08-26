@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "last_checked": "2026-08-18T07:16:47Z",
   "repo": "Zion-support/zion-support.github.io",
   "known_runs": {
@@ -3315,5 +3316,13 @@
     "32171134323": "completed",
     "32173099910": "in_progress",
     "32173102725": "completed"
+=======
+  "last_checked": "2026-08-26T01:24:28Z",
+  "repo": "Zion-support/zion-support.github.io",
+  "known_runs": {
+    "32918847899": "failure",
+    "32918625546": "failure",
+    "32918634027": "in_progress"
+>>>>>>> origin/main
   }
 }

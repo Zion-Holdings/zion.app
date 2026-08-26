@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-REPO_DIR="/data/data/com.termux/files/home/ztg/repo"
+REPO_DIR="/Users/klebergarciaalcatrao/zion-support.github.io"
 cd "$REPO_DIR"
 
 # --- Quick state checks ---

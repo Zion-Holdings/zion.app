@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "ts": "2026-08-25T17:32:48.991358+00:00",
   "queries_run": 12,
   "contacts_found": 1,
@@ -7,11 +8,22 @@
   "queries_per_second": 0.1051,
   "avg_query_s": 9.5128,
   "max_query_s": 11.4699,
+=======
+  "ts": "2026-08-26T01:28:16.691798+00:00",
+  "queries_run": 11,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 116.674,
+  "queries_per_second": 0.0943,
+  "avg_query_s": 10.605,
+  "max_query_s": 12.3894,
+>>>>>>> origin/main
   "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
+<<<<<<< HEAD
       10.088969108001038,
       4.100897227999667,
       9.363711646998127,
@@ -24,6 +36,20 @@
       0.1068,
       0.1027,
       0.1125
+=======
+      10.546569453996199,
+      11.110341223000432,
+      4.506964189997234,
+      11.00867149199621,
+      11.417032530000142
+    ],
+    "last_5_qps": [
+      0.0948,
+      0.09,
+      0.2219,
+      0.0908,
+      0.0876
+>>>>>>> origin/main
     ]
   }
 }
