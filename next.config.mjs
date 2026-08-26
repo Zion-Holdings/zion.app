@@ -5,7 +5,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  staticPageGenerationTimeout: 120,
+  staticPageGenerationTimeout: 60,
+  compress: true,
+  generateEtags: false,
+  experimental: {
+    preloadEntriesOnStart: false,
+  },
 };
 
 export default nextConfig;
