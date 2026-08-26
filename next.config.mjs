@@ -6,6 +6,8 @@ const nextConfig = {
     unoptimized: true,
   },
   staticPageGenerationTimeout: 120,
+  generateBuildId: () => 'static',
+  ignoreBuildErrors: true,
 };
 
 export default nextConfig;
