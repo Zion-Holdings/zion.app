@@ -1,27 +1,21 @@
-# Static redirect rules for Zion Tech Group
-# GitHub Pages uses _redirects for SPA-style routing and URL rewrites
+# Heroku/Fly.io style redirect rules
 # Format: FROM TO TYPE
+# These rules handle URL rewriting for the Zion Tech Group site.
 
-# Legacy paths that should redirect to their new locations
-/managed-it /services/it-managed-it-ops 301
-/managed-it-services /services/it-managed-it-ops 301
-/proposal /contact 301
-/consultation /contact 301
+# Service detail pages - serve directly from public/services/
+/services/hermes-agent-bot-mode /services/hermes-agent-bot-mode/index.html 200
+/services/hermes-agent-plugin-development /services/hermes-agent-plugin-development/index.html 200
+/services/hermes-agent-a2a-protocol /services/hermes-agent-a2a-protocol/index.html 200
+/services/hermes-agent-complete-guide /services/hermes-agent-complete-guide/index.html 200
+/services/hermes-agent-content-publishing-distribution /services/hermes-agent-content-publishing-distribution/index.html 200
 
-# Search
-/search /search/index.html 200
-/search/ /search/index.html 200
+# Blog posts - serve directly from public/blog/
+/blog/hermes-agent-bot-mode /blog/hermes-agent-bot-mode/index.html 200
+/blog/building-custom-plugins-for-hermes-agent /blog/building-custom-plugins-for-hermes-agent/index.html 200
 
-# Free tools
-/free-tools /free-tools.html 200
-/free-tools/ /free-tools.html 200
-/free-ai-tools /tools 201
-/free-ai-tools/ /tools 201
-
-# AI Lab
-/ai-lab /tools 201
-/ai-lab/ /tools 201
-
-# Dashboard
-/dashboard /dashboard/index.html 200
-/dashboard/ /dashboard/index.html 200
+# Docs - serve directly from public/docs/
+/docs/ai-roi-calculator /docs/ai-roi-calculator/index.html 200
+/docs/business-impact /docs/business-impact/index.html 200
+/docs/free-ai-readiness-audit /docs/free-ai-readiness-audit/index.html 200
+/docs/service-areas /docs/service-areas/index.html 200
+/docs/sla /docs/sla/index.html 200
