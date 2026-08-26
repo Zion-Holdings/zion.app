@@ -23,10 +23,6 @@ function normalizeSlug(slug: string[]): string {
   return (Array.isArray(slug) ? slug : [slug]).join('/');
 }
 
-export function generateStaticParams() {
-  return Object.keys(SERVICE_CATEGORY_MAP).map((slug) => ({ slug }));
-}
-
 export const metadata: Metadata = {
   title: 'Service | Zion Tech Group',
   description: 'Service details and delivery guidance.',
