@@ -1,331 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UUID Generator | Zion Support Tools</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0b0f1a;
-  color: #e5e7eb;
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  line-height: 1.6;
-}
-.container { max-width: 900px; margin: 0 auto; }
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #6366f1, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.subtitle { color: #9ca3af; margin-bottom: 2rem; font-size: 0.95rem; }
-.card {
-  background: #111827;
-  border: 1px solid #1f2937;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; color: #d1d5db; }
-select, input[type="number"] {
-  width: 100%;
-  padding: 0.75rem;
-  background: #1f2937;
-  border: 1px solid #374151;
-  border-radius: 8px;
-  color: #e5e7eb;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  outline: none;
-}
-select:focus, input:focus { border-color: #6366f1; }
-.row { display: flex; gap: 1rem; flex-wrap: wrap; }
-.row > div { flex: 1; min-width: 200px; }
-.btn {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
-.btn-primary {
-  background: #6366f1;
-  color: #fff;
-  width: 100%;
-}
-.btn-primary:hover { background: #4f46e5; }
-.btn-secondary {
-  background: #1f2937;
-  color: #e5e7eb;
-  border: 1px solid #374151;
-}
-.btn-secondary:hover { background: #374151; }
-.btn-row { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
-.btn-row .btn { flex: 1; min-width: 140px; }
-.results {
-  max-height: 400px;
-  overflow-y: auto;
-  margin-top: 1rem;
-  font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 0.85rem;
-}
-.result-item {
-  padding: 0.5rem 0.75rem;
-  background: #1f2937;
-  border-radius: 6px;
-  margin-bottom: 0.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-}
-.result-item .uuid-text { word-break: break-all; flex: 1; }
-.copy-btn {
-  background: #374151;
-  border: none;
-  color: #e5e7eb;
-  padding: 0.35rem 0.6rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.75rem;
-  white-space: nowrap;
-}
-.copy-btn:hover { background: #4b5563; }
-.copy-all-btn {
-  background: #6366f1;
-  border: none;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  margin-top: 1rem;
-}
-.copy-all-btn:hover { background: #4f46e5; }
-.count-badge {
-  background: #1f2937;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  color: #9ca3af;
-  margin-bottom: 1rem;
-  display: inline-block;
-}
-.cta-section {
-  background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(129,140,248,0.05));
-  border: 1px solid rgba(99,102,241,0.3);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  text-align: center;
-}
-.cta-section h2 { margin-bottom: 0.5rem; font-size: 1.3rem; }
-.cta-section p { color: #9ca3af; margin-bottom: 1rem; }
-.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-.cta-buttons .btn { min-width: 180px; }
-.toast {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: #10b981;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s;
-  pointer-events: none;
-}
-.toast.show { opacity: 1; transform: translateY(0); }
-footer { text-align: center; color: #6b7280; font-size: 0.85rem; margin-top: 2rem; padding-bottom: 1rem; }
-footer a { color: #6366f1; text-decoration: none; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UUID Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate UUID v4 identifiers instantly. Create single or multiple UUIDs and copy them to your clipboard.">
+  <meta property="og:title" content="UUID Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online UUID v4 generator. Generate one or multiple UUIDs instantly.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/uuid-generator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/uuid-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input[type="number"] { width: 100%; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input[type="number"]:focus { outline: none; border-color: #6366f1; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.copy { background: #059669; }
+    .btn.copy:hover { background: #047857; }
+    .result-box { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .result-box input { flex: 1; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; }
+    .uuid-list { background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; max-height: 400px; overflow-y: auto; margin-bottom: 1rem; }
+    .uuid-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid #334155; }
+    .uuid-item:last-child { border-bottom: none; }
+    .uuid-item span { flex: 1; font-family: monospace; font-size: 0.875rem; color: #e5e7eb; word-break: break-all; }
+    .uuid-item .btn { flex-shrink: 0; padding: 0.25rem 0.5rem; font-size: 0.75rem; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: #059669; color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; font-size: 0.875rem; }
+    .toast.show { opacity: 1; }
+  </style>
 </head>
 <body>
-<div class="container">
-  <h1>UUID / GUID Generator</h1>
-  <p class="subtitle">Generate v4 (random) and v1 (timestamp-based) UUIDs instantly. 100% client-side — your data never leaves your browser.</p>
-
-  <div class="card">
-    <div class="row">
-      <div>
-        <label for="version">UUID Version</label>
-        <select id="version">
-          <option value="v4">v4 (Random)</option>
-          <option value="v1">v1 (Timestamp-based)</option>
-        </select>
-      </div>
-      <div>
-        <label for="format">Output Format</label>
-        <select id="format">
-          <option value="hyphens">With hyphens (8-4-4-4-12)</option>
-          <option value="nohyphens">Without hyphens</option>
-          <option value="urn">URN (urn:uuid:...)</option>
-          <option value="msguid">MS GUID ({...})</option>
-        </select>
-      </div>
-      <div>
-        <label for="count">Quantity (1-100)</label>
-        <input type="number" id="count" min="1" max="100" value="5">
-      </div>
+  <div class="container">
+    <h1>UUID Generator</h1>
+    <p class="subtitle">Generate universally unique identifiers (UUID v4) instantly.</p>
+    
+    <div class="field">
+      <label>Number of UUIDs: <span id="countValue">5</span></label>
+      <input type="number" id="count" value="5" min="1" max="100">
     </div>
-    <button class="btn btn-primary" id="generateBtn">Generate UUID(s)</button>
+    
+    <div class="actions">
+      <button class="btn" onclick="generate()">Generate UUIDs</button>
+      <button class="btn secondary" onclick="generateOne()">Single UUID</button>
+      <button class="btn copy" onclick="copyAll()">Copy All</button>
+    </div>
+    
+    <div class="uuid-list" id="uuidList"></div>
+    
+    <div class="info">
+      <h2>About UUID v4</h2>
+      <ul>
+        <li><span class="label">Version 4</span> — Randomly generated UUIDs using cryptographic randomness.</li>
+        <li><span class="label">Uniqueness</span> — 2^122 possible values make collisions practically impossible.</li>
+        <li><span class="label">Format</span> — 36 characters: 8-4-4-4-12 hexadecimal digits (e.g., xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx).</li>
+        <li><span class="label">Privacy</span> — Generated locally in your browser using crypto.getRandomValues(). Never stored or transmitted.</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">Use UUIDs for database keys, session tokens, API identifiers, and distributed systems.</p>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
   </div>
 
-  <div class="card">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-      <h2>Results</h2>
-      <span class="count-badge" id="countBadge">0 generated</span>
-    </div>
-    <div class="results" id="results">
-      <p style="color:#6b7280; text-align:center; padding:2rem;">Click "Generate" to create UUIDs</p>
-    </div>
-    <button class="copy-all-btn" id="copyAllBtn" style="display:none;">Copy All</button>
-  </div>
+  <div class="toast" id="toast">Copied to clipboard!</div>
 
-  <div class="cta-section">
-    <h2>Need More Than UUIDs?</h2>
-    <p>Explore our full suite of tools or book a free consultation.</p>
-    <div class="cta-buttons">
-      <a href="/services/" class="btn btn-secondary">View All Services</a>
-      <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener" class="btn btn-primary">Book Consultation</a>
-    </div>
-  </div>
-
-  <footer>
-    Built by <a href="https://ziontechgroup.com">Zion Tech Group</a>
-  </footer>
-</div>
-
-<div class="toast" id="toast">Copied!</div>
-
-<script>
-(function() {
-  function uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0;
-      var v = c === 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
-  }
-
-  function uuidv1() {
-    var now = new Date();
-    var gregorianUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
-      now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
-    var ms = now.getUTCMilliseconds();
-    var timestamp = ((gregorianUtc * 10000) + (ms * 10) + 0x01B21DD213814000) >>> 0;
-
-    var timeLow = (timestamp & 0xFFFFFFFF) >>> 0;
-    var timeMid = ((timestamp >>> 32) & 0xFFFF) >>> 0;
-    var timeHi = ((timestamp >>> 48) & 0x0FFF) | 0x1000;
-
-    var clockSeq = (Math.random() * 0x3FFF | 0) & 0x3FFF;
-    var clockSeqLow = clockSeq & 0xFF;
-    var clockSeqHi = ((clockSeq >>> 8) & 0x3F) | 0x80;
-
-    var node = [];
-    for (var i = 0; i < 6; i++) node.push(Math.floor(Math.random() * 256));
-
-    var hex = function(n, width) {
-      return n.toString(16).padStart(width, '0');
-    };
-
-    return hex(timeLow, 8) + '-' +
-           hex(timeMid, 4) + '-' +
-           hex(timeHi, 4) + '-' +
-           hex(clockSeqHi, 2) + hex(clockSeqLow, 2) + '-' +
-           node.map(function(b) { return hex(b, 2); }).join('');
-  }
-
-  function formatUUID(uuid, format) {
-    switch (format) {
-      case 'nohyphens': return uuid.replace(/-/g, '');
-      case 'urn': return 'urn:uuid:' + uuid;
-      case 'msguid': return '{' + uuid + '}';
-      default: return uuid;
-    }
-  }
-
-  function generate() {
-    var version = document.getElementById('version').value;
-    var format = document.getElementById('format').value;
-    var countInput = document.getElementById('count');
-    var count = Math.max(1, Math.min(100, parseInt(countInput.value) || 1));
-    countInput.value = count;
-
-    var uuids = [];
-    var generator = version === 'v4' ? uuidv4 : uuidv1;
-
-    for (var i = 0; i < count; i++) {
-      uuids.push(formatUUID(generator(), format));
+  <script>
+    function generateUUID() {
+      const array = new Uint8Array(16);
+      crypto.getRandomValues(array);
+      
+      // Set version 4
+      array[6] = (array[6] & 0x0f) | 0x40;
+      // Set variant 10xx
+      array[8] = (array[8] & 0x3f) | 0x80;
+      
+      const hex = Array.from(array, b => b.toString(16).padStart(2, '0')).join('');
+      
+      return [
+        hex.slice(0, 8),
+        hex.slice(8, 12),
+        hex.slice(12, 16),
+        hex.slice(16, 20),
+        hex.slice(20, 32)
+      ].join('-');
     }
 
-    renderResults(uuids);
-    document.getElementById('copyAllBtn').style.display = 'inline-block';
-    document.getElementById('countBadge').textContent = count + ' generated';
-  }
+    function renderUUIDs(count) {
+      const list = document.getElementById('uuidList');
+      list.innerHTML = '';
+      
+      for (let i = 0; i < count; i++) {
+        const uuid = generateUUID();
+        const item = document.createElement('div');
+        item.className = 'uuid-item';
+        item.innerHTML = `
+          <span>${uuid}</span>
+          <button class="btn copy" onclick="copyUUID('${uuid}', this)">Copy</button>
+        `;
+        list.appendChild(item);
+      }
+    }
 
-  function renderResults(uuids) {
-    var container = document.getElementById('results');
-    container.innerHTML = '';
+    function generate() {
+      const count = Math.min(100, Math.max(1, parseInt(document.getElementById('count').value) || 5));
+      document.getElementById('count').value = count;
+      document.getElementById('countValue').textContent = count;
+      renderUUIDs(count);
+    }
 
-    uuids.forEach(function(uuid) {
-      var item = document.createElement('div');
-      item.className = 'result-item';
+    function generateOne() {
+      document.getElementById('count').value = 1;
+      document.getElementById('countValue').textContent = 1;
+      renderUUIDs(1);
+    }
 
-      var textSpan = document.createElement('span');
-      textSpan.className = 'uuid-text';
-      textSpan.textContent = uuid;
-      item.appendChild(textSpan);
-
-      var copyBtn = document.createElement('button');
-      copyBtn.className = 'copy-btn';
-      copyBtn.textContent = 'Copy';
-      copyBtn.addEventListener('click', function() {
-        navigator.clipboard.writeText(uuid).then(function() {
-          showToast('Copied: ' + uuid.substring(0, 8) + '...');
-        });
+    function copyUUID(uuid, btn) {
+      navigator.clipboard.writeText(uuid).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 1500);
       });
-      item.appendChild(copyBtn);
+    }
 
-      container.appendChild(item);
+    function copyAll() {
+      const spans = document.querySelectorAll('#uuidList .uuid-item span');
+      if (spans.length === 0) return;
+      
+      const uuids = Array.from(spans).map(s => s.textContent).join('\n');
+      navigator.clipboard.writeText(uuids).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => { toast.classList.remove('show'); }, 2000);
+      });
+    }
+
+    document.getElementById('count').addEventListener('input', function() {
+      document.getElementById('countValue').textContent = this.value;
     });
-  }
 
-  function showToast(message) {
-    var toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(function() { toast.classList.remove('show'); }, 2000);
-  }
-
-  function copyAll() {
-    var items = document.querySelectorAll('.uuid-text');
-    var text = Array.from(items).map(function(el) { return el.textContent; }).join('\n');
-    navigator.clipboard.writeText(text).then(function() {
-      showToast('All UUIDs copied!');
-    });
-  }
-
-  document.getElementById('generateBtn').addEventListener('click', generate);
-  document.getElementById('copyAllBtn').addEventListener('click', copyAll);
-  document.getElementById('count').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') generate();
-  });
-
-  generate();
-})();
-</script>
+    // Generate on load
+    generate();
+  </script>
 </body>
 </html>

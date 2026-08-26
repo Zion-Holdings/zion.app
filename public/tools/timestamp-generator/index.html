@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timestamp Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate Unix timestamps for any date — past, present, and future.">
+  <meta property="og:title" content="Timestamp Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online Unix timestamp generator.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/timestamp-generator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/timestamp-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+    .stat { background: #0f172a; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: #818cf8; font-family: monospace; }
+    .stat-label { font-size: 0.75rem; color: #94a3b8; margin-top: 0.25rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input { width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Timestamp Generator</h1>
+    <p class="subtitle">Generate Unix timestamps for any date.</p>
+    <div class="section">
+      <h3>Current Timestamp</h3>
+      <div class="stats">
+        <div class="stat"><div class="stat-value" id="currentSeconds">0</div><div class="stat-label">Unix Seconds</div></div>
+        <div class="stat"><div class="stat-value" id="currentMillis">0</div><div class="stat-label">Unix Milliseconds</div></div>
+      </div>
+    </div>
+    <div class="section">
+      <h3>Generate from Date</h3>
+      <div class="field">
+        <label>Date & Time</label>
+        <input type="datetime-local" id="dateInput" onchange="generate()">
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-value" id="generatedSeconds">—</div><div class="stat-label">Unix Seconds</div></div>
+        <div class="stat"><div class="stat-value" id="generatedMillis">—</div><div class="stat-label">Unix Milliseconds</div></div>
+      </div>
+      <div class="buttons" style="margin-top: 1rem;">
+        <button class="btn success" onclick="copySeconds()">Copy Seconds</button>
+        <button class="btn" onclick="setNow()">Set Now</button>
+      </div>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    function updateCurrent() {
+      const now = Date.now();
+      document.getElementById('currentSeconds').textContent = Math.floor(now / 1000);
+      document.getElementById('currentMillis').textContent = now;
+    }
+    updateCurrent();
+    setInterval(updateCurrent, 1000);
+    function generate() {
+      const input = document.getElementById('dateInput').value;
+      if (!input) return;
+      const date = new Date(input);
+      const ts = date.getTime();
+      document.getElementById('generatedSeconds').textContent = Math.floor(ts / 1000);
+      document.getElementById('generatedMillis').textContent = ts;
+    }
+    function setNow() {
+      const now = new Date();
+      const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+      document.getElementById('dateInput').value = local;
+      generate();
+    }
+    function copySeconds() {
+      const ts = document.getElementById('generatedSeconds').textContent;
+      if (ts === '—') return;
+      navigator.clipboard.writeText(ts);
+    }
+    setNow();
+  </script>
+</body>
+</html>

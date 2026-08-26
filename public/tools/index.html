@@ -1,86 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tools | Zion Tech Group</title>
-<style>
-  :root { --bg:#0b0f1a; --card:rgba(255,255,255,0.04); --border:rgba(255,255,255,0.08); --text:#e7eaf0; --muted:#a3a8b8; --accent:#7c3aed; --accent-2:#22d3ee; }
-  * { box-sizing: border-box; }
-  html, body { margin:0; padding:0; background: linear-gradient(180deg,#0b0f1a 0%,#0f1626 100%); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 60px; }
-  .title { font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }
-  .sub { color: var(--muted); margin-top: 6px; }
-  .grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
-  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; text-decoration: none; color: inherit; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); transition: transform .15s ease, border-color .15s ease; }
-  .card:hover { transform: translateY(-2px); border-color: rgba(124,58,237,.35); }
-  .icon { font-size: 28px; margin-bottom: 10px; }
-  .name { font-size: 16px; font-weight: 600; color: #fff; }
-  .desc { margin-top: 6px; font-size: 13px; color: var(--muted); }
-  .cta { margin-top: 22px; }
-  .cta a { color: var(--accent-2); text-decoration: none; font-weight: 600; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Developer Tools | Zion Tech Group</title>
+  <meta name="description" content="Free developer utilities from Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/" />
 </head>
-<body>
-  <div class="wrap">
-    <div class="title">Tools</div>
-    <div class="sub">Free utilities built by Zion Tech Group to accelerate your AI and IT initiatives.</div>
-    <div class="grid">
-      <a class="card" href="/tools/agent-prompt-builder/"><div class="icon">🛠️</div><div class="name">Agent Prompt Builder</div><div class="desc">Interactive tool: Agent Prompt Builder.</div></a>
-      <a class="card" href="/tools/ai-roi-calculator/"><div class="icon">🛠️</div><div class="name">Ai Roi Calculator</div><div class="desc">Interactive tool: Ai Roi Calculator.</div></a>
-      <a class="card" href="/tools/api-health-check/"><div class="icon">🛠️</div><div class="name">Api Health Check</div><div class="desc">Interactive tool: Api Health Check.</div></a>
-      <a class="card" href="/tools/base64-encoder/"><div class="icon">🛠️</div><div class="name">Base64 Encoder</div><div class="desc">Interactive tool: Base64 Encoder.</div></a>
-      <a class="card" href="/tools/blog-post-generator/"><div class="icon">🛠️</div><div class="name">Blog Post Generator</div><div class="desc">Interactive tool: Blog Post Generator.</div></a>
-      <a class="card" href="/tools/cloud-cost-calculator/"><div class="icon">🛠️</div><div class="name">Cloud Cost Calculator</div><div class="desc">Interactive tool: Cloud Cost Calculator.</div></a>
-      <a class="card" href="/tools/cloud-cost-optimizer/"><div class="icon">🛠️</div><div class="name">Cloud Cost Optimizer</div><div class="desc">Interactive tool: Cloud Cost Optimizer.</div></a>
-      <a class="card" href="/tools/color-contrast/"><div class="icon">🛠️</div><div class="name">Color Contrast</div><div class="desc">Interactive tool: Color Contrast.</div></a>
-      <a class="card" href="/tools/color-converter/"><div class="icon">🛠️</div><div class="name">Color Converter</div><div class="desc">Interactive tool: Color Converter.</div></a>
-      <a class="card" href="/tools/color-palette-gen/"><div class="icon">🛠️</div><div class="name">Color Palette Gen</div><div class="desc">Interactive tool: Color Palette Gen.</div></a>
-      <a class="card" href="/tools/cron-agent-calculator/"><div class="icon">🛠️</div><div class="name">Cron Agent Calculator</div><div class="desc">Interactive tool: Cron Agent Calculator.</div></a>
-      <a class="card" href="/tools/cron-parser/"><div class="icon">🛠️</div><div class="name">Cron Parser</div><div class="desc">Interactive tool: Cron Parser.</div></a>
-      <a class="card" href="/tools/css-minifier/"><div class="icon">🛠️</div><div class="name">Css Minifier</div><div class="desc">Interactive tool: Css Minifier.</div></a>
-      <a class="card" href="/tools/excel-to-json/"><div class="icon">🛠️</div><div class="name">Excel To Json</div><div class="desc">Interactive tool: Excel To Json.</div></a>
-      <a class="card" href="/tools/gradient-generator/"><div class="icon">🛠️</div><div class="name">Gradient Generator</div><div class="desc">Interactive tool: Gradient Generator.</div></a>
-      <a class="card" href="/tools/hash-checker/"><div class="icon">🛠️</div><div class="name">Hash Checker</div><div class="desc">Interactive tool: Hash Checker.</div></a>
-      <a class="card" href="/tools/hash-generator/"><div class="icon">🛠️</div><div class="name">Hash Generator</div><div class="desc">Interactive tool: Hash Generator.</div></a>
-      <a class="card" href="/tools/image-to-base64/"><div class="icon">🛠️</div><div class="name">Image To Base64</div><div class="desc">Interactive tool: Image To Base64.</div></a>
-      <a class="card" href="/tools/json-diff/"><div class="icon">🛠️</div><div class="name">Json Diff</div><div class="desc">Interactive tool: Json Diff.</div></a>
-      <a class="card" href="/tools/json-formatter/"><div class="icon">🛠️</div><div class="name">Json Formatter</div><div class="desc">Interactive tool: Json Formatter.</div></a>
-      <a class="card" href="/tools/json-schema-generator/"><div class="icon">🛠️</div><div class="name">Json Schema Generator</div><div class="desc">Interactive tool: Json Schema Generator.</div></a>
-      <a class="card" href="/tools/json-schema-validator/"><div class="icon">🛠️</div><div class="name">Json Schema Validator</div><div class="desc">Interactive tool: Json Schema Validator.</div></a>
-      <a class="card" href="/tools/json-to-yaml/"><div class="icon">🛠️</div><div class="name">Json To Yaml</div><div class="desc">Interactive tool: Json To Yaml.</div></a>
-      <a class="card" href="/tools/jwt-decoder/"><div class="icon">🛠️</div><div class="name">Jwt Decoder</div><div class="desc">Interactive tool: Jwt Decoder.</div></a>
-      <a class="card" href="/tools/jwt-decoder-pro/"><div class="icon">🛠️</div><div class="name">Jwt Decoder Pro</div><div class="desc">Interactive tool: Jwt Decoder Pro.</div></a>
-      <a class="card" href="/tools/jwt-generator/"><div class="icon">🛠️</div><div class="name">Jwt Generator</div><div class="desc">Interactive tool: Jwt Generator.</div></a>
-      <a class="card" href="/tools/llm-payload-estimator/"><div class="icon">🛠️</div><div class="name">Llm Payload Estimator</div><div class="desc">Interactive tool: Llm Payload Estimator.</div></a>
-      <a class="card" href="/tools/lorem-ipsum/"><div class="icon">🛠️</div><div class="name">Lorem Ipsum</div><div class="desc">Interactive tool: Lorem Ipsum.</div></a>
-      <a class="card" href="/tools/markdown-preview/"><div class="icon">🛠️</div><div class="name">Markdown Preview</div><div class="desc">Interactive tool: Markdown Preview.</div></a>
-      <a class="card" href="/tools/markdown-previewer/"><div class="icon">🛠️</div><div class="name">Markdown Previewer</div><div class="desc">Interactive tool: Markdown Previewer.</div></a>
-      <a class="card" href="/tools/mcp-tester/"><div class="icon">🛠️</div><div class="name">Mcp Tester</div><div class="desc">Interactive tool: Mcp Tester.</div></a>
-      <a class="card" href="/tools/meta-tag-generator/"><div class="icon">🛠️</div><div class="name">Meta Tag Generator</div><div class="desc">Interactive tool: Meta Tag Generator.</div></a>
-      <a class="card" href="/tools/mime-lookup/"><div class="icon">🛠️</div><div class="name">Mime Lookup</div><div class="desc">Interactive tool: Mime Lookup.</div></a>
-      <a class="card" href="/tools/number-base-converter/"><div class="icon">🛠️</div><div class="name">Number Base Converter</div><div class="desc">Interactive tool: Number Base Converter.</div></a>
-      <a class="card" href="/tools/password-generator/"><div class="icon">🛠️</div><div class="name">Password Generator</div><div class="desc">Interactive tool: Password Generator.</div></a>
-      <a class="card" href="/tools/password-strength/"><div class="icon">🛠️</div><div class="name">Password Strength</div><div class="desc">Interactive tool: Password Strength.</div></a>
-      <a class="card" href="/tools/phishing-analyzer/"><div class="icon">🛠️</div><div class="name">Phishing Analyzer</div><div class="desc">Interactive tool: Phishing Analyzer.</div></a>
-      <a class="card" href="/tools/qr-code-generator/"><div class="icon">🛠️</div><div class="name">Qr Code Generator</div><div class="desc">Interactive tool: Qr Code Generator.</div></a>
-      <a class="card" href="/tools/regex-cheat-sheet/"><div class="icon">🛠️</div><div class="name">Regex Cheat Sheet</div><div class="desc">Interactive tool: Regex Cheat Sheet.</div></a>
-      <a class="card" href="/tools/regex-tester/"><div class="icon">🛠️</div><div class="name">Regex Tester</div><div class="desc">Interactive tool: Regex Tester.</div></a>
-      <a class="card" href="/tools/security-headers-analyzer/"><div class="icon">🛠️</div><div class="name">Security Headers Analyzer</div><div class="desc">Interactive tool: Security Headers Analyzer.</div></a>
-      <a class="card" href="/tools/sql-formatter/"><div class="icon">🛠️</div><div class="name">Sql Formatter</div><div class="desc">Interactive tool: Sql Formatter.</div></a>
-      <a class="card" href="/tools/text-analyzer/"><div class="icon">🛠️</div><div class="name">Text Analyzer</div><div class="desc">Interactive tool: Text Analyzer.</div></a>
-      <a class="card" href="/tools/text-diff/"><div class="icon">🛠️</div><div class="name">Text Diff</div><div class="desc">Interactive tool: Text Diff.</div></a>
-      <a class="card" href="/tools/text-to-speech/"><div class="icon">🛠️</div><div class="name">Text To Speech</div><div class="desc">Interactive tool: Text To Speech.</div></a>
-      <a class="card" href="/tools/timestamp-converter/"><div class="icon">🛠️</div><div class="name">Timestamp Converter</div><div class="desc">Interactive tool: Timestamp Converter.</div></a>
-      <a class="card" href="/tools/timestamp-to-cron/"><div class="icon">🛠️</div><div class="name">Timestamp To Cron</div><div class="desc">Interactive tool: Timestamp To Cron.</div></a>
-      <a class="card" href="/tools/url-encoder/"><div class="icon">🛠️</div><div class="name">Url Encoder</div><div class="desc">Interactive tool: Url Encoder.</div></a>
-      <a class="card" href="/tools/user-agent-parser/"><div class="icon">🛠️</div><div class="name">User Agent Parser</div><div class="desc">Interactive tool: User Agent Parser.</div></a>
-      <a class="card" href="/tools/uuid-generator/"><div class="icon">🛠️</div><div class="name">Uuid Generator</div><div class="desc">Interactive tool: Uuid Generator.</div></a>
-      <a class="card" href="/tools/word-counter/"><div class="icon">🛠️</div><div class="name">Word Counter</div><div class="desc">Interactive tool: Word Counter.</div></a>
-      <a class="card" href="/tools/yaml-to-json/"><div class="icon">🛠️</div><div class="name">Yaml To Json</div><div class="desc">Interactive tool: Yaml To Json.</div></a>
-    </div>
-    <div class="cta"><a href="/contact/">Talk to an engineer about your cloud estate →</a></div>
-  </div>
+<body style="margin:0;background:#0b1220;color:#e6f0ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">
+  <main style="max-width:1100px;margin:0 auto;padding:24px">
+    <section style="padding:40px 0 24px">
+      <h1 style="font-size:36px;font-weight:700">Developer Tools</h1>
+      <p style="color:#cbd5e1;margin-top:12px;max-width:720px">Free utilities built by Zion. No sign-up required.</p>
+      <a href="/free-ai-it-tools/" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 16px;border-radius:8px;background:#2563eb;color:#fff;text-decoration:none;font-weight:600">All tools</a>
+    </section>
+  </main>
 </body>
 </html>

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Breadcrumb from './Breadcrumb';
@@ -68,75 +70,45 @@ export default function PageTemplate({
   showBottomCta = false,
   children,
 }: PageTemplateProps) {
-  // Fallback resolution: aliases + empty-string guard
-  const resolvedTitle = title ?? headline ?? '';
-  const resolvedSubtitle = subtitle ?? '';
-  const resolvedDescription = description ?? summary ?? '';
-  const resolvedBreadcrumbs = breadcrumbs || breadcrumbItems;
-  const ActionComponent = Link;
-
   return (
     <div className="w-full">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        {resolvedBreadcrumbs && resolvedBreadcrumbs.length > 0 && (
-          <div className="mb-8">
-            <Breadcrumb items={resolvedBreadcrumbs} />
-          </div>
-        )}
+      {breadcrumbItems.length > 0 && (
+        <div className="mb-6">
+          <Breadcrumb items={breadcrumbItems} />
+        </div>
+      )}
 
-        {layout === 'hero' && (
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            {heroIcon && <span className="text-5xl mb-4 block">{heroIcon}</span>}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
-              {resolvedTitle || 'Untitled Page'}
-            </h1>
-            {resolvedSubtitle && (
-              <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
-                {resolvedSubtitle}
-              </p>
-            )}
-            {actions.length > 0 && (
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                {actions.map((action, idx) => (
-                  <ActionComponent
-                    key={idx}
-                    href={action.href}
-                    className={`${action.style === 'secondary' ? 'btn-secondary' : 'btn-primary'} text-lg px-10 py-4 inline-flex items-center justify-center`}
-                  >
-                    {action.label}
-                  </ActionComponent>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+      {layout === 'hero' && (
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
+          {subtitle && <p className="text-xl text-slate-300 leading-relaxed mb-6">{subtitle}</p>}
+          {actions.length > 0 && (
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {actions.map((action, idx) => (
+                <Link key={idx} href={action.href} className={`${action.style === 'secondary' ? 'btn-secondary' : 'btn-primary'} text-lg px-10 py-4 inline-block`}>
+                  {action.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
-        {layout !== 'hero' && (
-          <div className="max-w-4xl mx-auto mb-16">
-            {heroIcon && <span className="text-5xl mb-4 block">{heroIcon}</span>}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
-              {resolvedTitle || 'Untitled Page'}
-            </h1>
-            {resolvedSubtitle && (
-              <p className="text-xl text-slate-300 leading-relaxed mb-8">
-                {resolvedSubtitle}
-              </p>
-            )}
-            {actions.length > 0 && (
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                {actions.map((action, idx) => (
-                  <ActionComponent
-                    key={idx}
-                    href={action.href}
-                    className={`${action.style === 'secondary' ? 'btn-secondary' : 'btn-primary'} text-lg px-10 py-4 inline-flex items-center justify-center`}
-                  >
-                    {action.label}
-                  </ActionComponent>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+      {layout !== 'hero' && (
+        <div className="max-w-4xl mx-auto mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
+          {subtitle && <p className="text-xl text-slate-300 leading-relaxed mb-6">{subtitle}</p>}
+          {actions.length > 0 && (
+            <div className="flex flex-col sm:flex-row gap-4">
+              {actions.map((action, idx) => (
+                <Link key={idx} href={action.href} className={`${action.style === 'secondary' ? 'btn-secondary' : 'btn-primary'} text-lg px-10 py-4 inline-block`}>
+                  {action.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
         <div className="w-full">{children}</div>
       </div>

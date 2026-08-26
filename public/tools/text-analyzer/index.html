@@ -1,185 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Text Analyzer - Zion Tech Group</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; padding: 2rem; }
-.container { max-width: 1200px; margin: 0 auto; }
-h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #6366f1; }
-.subtitle { color: #9ca3af; margin-bottom: 2rem; }
-.input-section { margin-bottom: 2rem; }
-textarea { width: 100%; height: 250px; background: #1e293b; border: 1px solid #374151; border-radius: 8px; padding: 1rem; color: #e5e7eb; font-size: 1rem; resize: vertical; }
-textarea:focus { outline: none; border-color: #6366f1; }
-.btn { background: #6366f1; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 1rem; margin-right: 0.5rem; transition: background 0.2s; }
-.btn:hover { background: #4f46e5; }
-.btn-secondary { background: #374151; }
-.btn-secondary:hover { background: #4b5563; }
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-.stat-card { background: #1e293b; border: 1px solid #374151; border-radius: 8px; padding: 1.5rem; text-align: center; }
-.stat-value { font-size: 2rem; font-weight: bold; color: #6366f1; }
-.stat-label { color: #9ca3af; font-size: 0.875rem; margin-top: 0.25rem; }
-.section { background: #1e293b; border: 1px solid #374151; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
-.section h2 { color: #6366f1; margin-bottom: 1rem; font-size: 1.25rem; }
-.keyword-list { list-style: none; }
-.keyword-list li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #374151; }
-.keyword-list li:last-child { border-bottom: none; }
-.keyword-word { font-weight: 500; }
-.keyword-count { color: #6366f1; font-weight: bold; }
-.keyword-density { color: #9ca3af; font-size: 0.875rem; }
-.cta-section { text-align: center; margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #1e293b 0%, #0b0f1a 100%); border: 1px solid #6366f1; border-radius: 12px; }
-.cta-section h2 { color: #6366f1; margin-bottom: 1rem; }
-.cta-section p { color: #9ca3af; margin-bottom: 1.5rem; }
-.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-.cta-btn { display: inline-block; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.2s; }
-.cta-primary { background: #6366f1; color: white; }
-.cta-primary:hover { background: #4f46e5; transform: translateY(-2px); }
-.cta-secondary { background: transparent; color: #6366f1; border: 2px solid #6366f1; }
-.cta-secondary:hover { background: #6366f1; color: white; }
-.hidden { display: none; }
-.progress-bar { width: 100%; height: 4px; background: #374151; border-radius: 2px; margin-top: 0.5rem; overflow: hidden; }
-.progress-fill { height: 100%; background: #6366f1; border-radius: 2px; transition: width 0.3s; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Analyzer | Zion Tech Group</title>
+  <meta name="description" content="Analyze text online — word count, character count, keyword density, and reading time.">
+  <meta property="og:title" content="Text Analyzer | Zion Tech Group">
+  <meta property="og:description" content="Free online text analyzer with keyword density.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/text-analyzer/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/text-analyzer/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 120px; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+    .stat { background: #0f172a; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: #818cf8; }
+    .stat-label { font-size: 0.75rem; color: #94a3b8; margin-top: 0.25rem; }
+    .keyword-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .keyword-item:last-child { border-bottom: none; }
+    .keyword-word { color: #fff; }
+    .keyword-count { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-<div class="container">
-<h1>Text Analyzer</h1>
-<p class="subtitle">Analise seu texto: palavras, caracteres, legibilidade e densidade de keywords</p>
-
-<div class="input-section">
-<textarea id="textInput" placeholder="Cole ou digite seu texto aqui..."></textarea>
-<div>
-<button class="btn" onclick="analyzeText()">Analisar</button>
-<button class="btn btn-secondary" onclick="clearText()">Limpar</button>
-</div>
-</div>
-
-<div id="results" class="hidden">
-<div class="stats-grid">
-<div class="stat-card">
-<div class="stat-value" id="wordCount">0</div>
-<div class="stat-label">Palavras</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="charCount">0</div>
-<div class="stat-label">Caracteres</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="charNoSpaces">0</div>
-<div class="stat-label">Caracteres (sem espaços)</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="lineCount">0</div>
-<div class="stat-label">Linhas</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="paragraphCount">0</div>
-<div class="stat-label">Parágrafos</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="sentenceCount">0</div>
-<div class="stat-label">Frases</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="readingTime">0 min</div>
-<div class="stat-label">Tempo de Leitura</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="avgWordLen">0</div>
-<div class="stat-label">Tam. Médio/Palavra</div>
-</div>
-</div>
-
-<div class="section">
-<h2>Top 10 Keywords (Densidade)</h2>
-<ul class="keyword-list" id="keywordList"></ul>
-</div>
-
-<div class="section">
-<h2>Análise de Legibilidade</h2>
-<p id="readabilityText" style="color: #9ca3af;"></p>
-</div>
-</div>
-
-<div class="cta-section">
-<h2>Precisa de ajuda profissional?</h2>
-<p>Nossa equipe pode ajudar a otimizar seu conteúdo e estratégia digital.</p>
-<div class="cta-buttons">
-<a href="/services/" class="cta-btn cta-primary">Ver Serviços</a>
-<a href="https://calendly.com/kleber-ziontechgroup" target="_blank" class="cta-btn cta-secondary">Agendar Consulta</a>
-</div>
-</div>
-</div>
-
-<script>
-const STOP_WORDS = new Set(['a','o','os','as','um','uma','uns','umas','de','do','da','dos','das','em','no','na','nos','nas','por','para','com','sem','sob','sobre','entre','após','antes','durante','que','quem','qual','quais','se','ou','mas','porém','contudo','então','pois','como','mais','menos','muito','pouco','todo','toda','todos','tidas','cada','outro','outra','outros','outras','este','esta','estes','estas','esse','essa','esses','essas','aquele','aquela','aqueles','aquelas','isto','isso','aquele','aquilo','eu','tu','ele','ela','nós','vós','eles','elas','me','te','se','nos','lhe','lhes','meu','minha','meus','minhas','teu','tua','teus','tuas','seu','sua','seus','suas','nosso','nossa','nossos','nossas','você','vocês','não','sim','já','ainda','sempre','nunca','aqui','ali','lá','onde','quando','porque','porquê','e','é','são','foi','ser','estar','ter','haver','fazer','dar','ir','vir','ver','saber','poder','querer','dever','ficar','passar','voltar','chegar','sair','entrar','subir','descer','cair','pôr','ler','falar','ouvir','pensar','sentir','dizer','trazer','seguir','achar','deixar','chamar','virar','conseguir']);
-
-function analyzeText() {
-const text = document.getElementById('textInput').value.trim();
-if (!text) { alert('Por favor, insira um texto para analisar.'); return; }
-
-const words = text.split(/\s+/).filter(w => w.length > 0);
-const wordCount = words.length;
-const charCount = text.length;
-const charNoSpaces = text.replace(/\s/g, '').length;
-const lines = text.split(/\n/);
-const lineCount = lines.length;
-const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
-const paragraphCount = paragraphs.length;
-const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
-const sentenceCount = sentences.length;
-const readingTime = Math.ceil(wordCount / 200);
-const avgWordLen = wordCount > 0 ? (charNoSpaces / wordCount).toFixed(1) : 0;
-
-document.getElementById('wordCount').textContent = wordCount;
-document.getElementById('charCount').textContent = charCount;
-document.getElementById('charNoSpaces').textContent = charNoSpaces;
-document.getElementById('lineCount').textContent = lineCount;
-document.getElementById('paragraphCount').textContent = paragraphCount;
-document.getElementById('sentenceCount').textContent = sentenceCount;
-document.getElementById('readingTime').textContent = readingTime + ' min';
-document.getElementById('avgWordLen').textContent = avgWordLen;
-
-const freq = {};
-words.forEach(w => {
-const clean = w.toLowerCase().replace(/[^a-záàâãéêíóôõúç]/g, '');
-if (clean.length > 2 && !STOP_WORDS.has(clean)) {
-freq[clean] = (freq[clean] || 0) + 1;
-}
-});
-
-const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 10);
-const keywordList = document.getElementById('keywordList');
-keywordList.innerHTML = '';
-sorted.forEach(([word, count]) => {
-const density = ((count / wordCount) * 100).toFixed(2);
-const li = document.createElement('li');
-li.innerHTML = `<span class="keyword-word">${word}</span><span><span class="keyword-count">${count}x</span> <span class="keyword-density">(${density}%)</span></span>`;
-keywordList.appendChild(li);
-});
-
-if (sorted.length === 0) {
-keywordList.innerHTML = '<li style="color: #9ca3af;">Nenhuma keyword relevante encontrada.</li>';
-}
-
-let readability = '';
-if (sentenceCount > 0 && wordCount > 0) {
-const avgSentLen = wordCount / sentenceCount;
-if (avgSentLen <= 15) readability = 'Texto de fácil leitura. Frases curtas e objetivas.';
-else if (avgSentLen <= 25) readability = 'Legibilidade moderada. Considere encurtar algumas frases.';
-else readability = 'Texto denso. Frases longas podem dificultar a compreensão.';
-}
-document.getElementById('readabilityText').textContent = readability;
-
-document.getElementById('results').classList.remove('hidden');
-}
-
-function clearText() {
-document.getElementById('textInput').value = '';
-document.getElementById('results').classList.add('hidden');
-}
-</script>
+  <div class="container">
+    <h1>Text Analyzer</h1>
+    <p class="subtitle">Analyze text with keyword density and stats.</p>
+    <div class="field">
+      <label>Input Text</label>
+      <textarea id="input" placeholder="Paste your text here..." oninput="analyze()">The quick brown fox jumps over the lazy dog. The dog barked at the fox, and the fox ran away quickly. This is a sample text for analyzing keyword density and other text statistics.</textarea>
+    </div>
+    <div class="buttons">
+      <button class="btn success" onclick="copyStats()">Copy Stats</button>
+      <button class="btn" onclick="clearAll()">Clear</button>
+    </div>
+    <div class="section">
+      <h3>Statistics</h3>
+      <div class="stats">
+        <div class="stat"><div class="stat-value" id="wordCount">0</div><div class="stat-label">Words</div></div>
+        <div class="stat"><div class="stat-value" id="charCount">0</div><div class="stat-label">Characters</div></div>
+        <div class="stat"><div class="stat-value" id="charNoSpaces">0</div><div class="stat-label">Chars (no spaces)</div></div>
+        <div class="stat"><div class="stat-value" id="sentenceCount">0</div><div class="stat-label">Sentences</div></div>
+        <div class="stat"><div class="stat-value" id="paragraphCount">0</div><div class="stat-label">Paragraphs</div></div>
+        <div class="stat"><div class="stat-value" id="readingTime">0s</div><div class="stat-label">Reading Time</div></div>
+      </div>
+    </div>
+    <div class="section">
+      <h3>Keyword Density (Top 10)</h3>
+      <div id="keywords"></div>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    function analyze() {
+      const text = document.getElementById('input').value;
+      const words = text.trim().split(/\s+/).filter(w => w.length > 0);
+      const wordCount = words.length;
+      const charCount = text.length;
+      const charNoSpaces = text.replace(/\s/g, '').length;
+      const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+      const paragraphs = text.split(/\n\n+/).filter(p => p.trim().length > 0);
+      const readingTime = Math.ceil(wordCount / 200);
+      
+      document.getElementById('wordCount').textContent = wordCount;
+      document.getElementById('charCount').textContent = charCount;
+      document.getElementById('charNoSpaces').textContent = charNoSpaces;
+      document.getElementById('sentenceCount').textContent = sentences.length;
+      document.getElementById('paragraphCount').textContent = paragraphs.length || (text.trim() ? 1 : 0);
+      document.getElementById('readingTime').textContent = readingTime + 'm';
+      
+      // Keyword density
+      const stopWords = ['the','a','an','and','or','but','in','on','at','to','for','of','is','it','this','that','with','as','by','from','be','are','was','were','has','have','had','do','does','did','will','would','could','should','may','might','can','shall','i','you','he','she','we','they','my','your','his','her','our','their'];
+      const freq = {};
+      words.forEach(w => {
+        const word = w.toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (word.length > 2 && !stopWords.includes(word)) {
+          freq[word] = (freq[word] || 0) + 1;
+        }
+      });
+      
+      const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 10);
+      const container = document.getElementById('keywords');
+      container.innerHTML = '';
+      sorted.forEach(([word, count]) => {
+        const pct = ((count / wordCount) * 100).toFixed(1);
+        const item = document.createElement('div');
+        item.className = 'keyword-item';
+        item.innerHTML = `<span class="keyword-word">${word}</span><span class="keyword-count">${count} (${pct}%)</span>`;
+        container.appendChild(item);
+      });
+    }
+    function copyStats() {
+      const stats = `Words: ${document.getElementById('wordCount').textContent}\nCharacters: ${document.getElementById('charCount').textContent}\nSentences: ${document.getElementById('sentenceCount').textContent}\nReading Time: ${document.getElementById('readingTime').textContent}`;
+      navigator.clipboard.writeText(stats);
+    }
+    function clearAll() {
+      document.getElementById('input').value = '';
+      analyze();
+    }
+    analyze();
+  </script>
 </body>
 </html>

@@ -1,15 +1,72 @@
-// Service Configurator Wizard — multi-step proposal builder
-// Fully client-side: generates proposal HTML in-browser, no server needed
-'use client';
+import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import StandardPage from '@/components/StandardPage';
+import Link from 'next/link';
 
-import { useState, useMemo } from 'react';
-import { allServices } from '../data/servicesData';
-import StepsIndicator from '../components/StepsIndicator';
-import type { Service } from '../data/servicesData';
-
-type Step = 'budget' | 'needs' | 'services' | 'timeline' | 'review';
-
-const COMPANY = {
-  name: 'Zion Tech Group',
-  email: 'kleber@ziontechgroup.com',
+export const metadata: Metadata = {
+  title: 'Configurator | Zion Tech Group',
+  description: 'Start a configurator-style intake for Zion Tech Group services and get a short engagement plan.',
+  openGraph: {
+    title: 'Configurator | Zion Tech Group',
+    description: 'Tell us your constraints and get a short engagement plan.',
+    url: 'https://ziontechgroup.com/configurator/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Configurator | Zion Tech Group',
+    description: 'Tell us your constraints and get a short engagement plan.',
+  },
+  alternates: { canonical: '/configurator/' },
 };
+
+
+export default function ConfiguratorPage() {
+  return (
+<>
+    <StandardPage
+      title="Configurator"
+      subtitle="Pick your priorities and we’ll propose a lightweight engagement plan."
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Configurator' },
+      ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
+      ]}
+    >
+      <div className="max-w-3xl mx-auto">
+        <p className="text-slate-300 text-lg leading-relaxed mb-8">
+          Use this intake to scope cloud, security, data, automation, or AI work. We’ll return a short plan with recommended services, milestones, and timeline.
+        </p>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 className="text-white font-semibold mb-2">Goal</h3>
+            <p className="text-slate-400 text-sm">Pick the primary outcome you want in the next 30 to 90 days.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 className="text-white font-semibold mb-2">Timeline</h3>
+            <p className="text-slate-400 text-sm">Choose a pilot, program, or managed-service cadence.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 className="text-white font-semibold mb-2">Model</h3>
+            <p className="text-slate-400 text-sm">Select advisory, co-development, or fully managed delivery.</p>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 mt-6">
+          <h3 className="text-white font-semibold mb-2">What happens next</h3>
+          <p className="text-slate-400 text-sm">After submission, we review constraints, propose a short plan, and schedule a follow-up to align on scope and timeline.</p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
+          <Link href="/contact/" className="btn-primary text-center">Start intake</Link>
+          <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
+        </div>
+      </div>
+    </StandardPage>
+  </>
+  );
+}

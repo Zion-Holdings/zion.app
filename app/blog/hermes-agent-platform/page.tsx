@@ -1,150 +1,63 @@
-import type { Metadata } from 'next'
-import BreadcrumbSchema from '@/components/BreadcrumbSchema'
-import StandardPage from '@/components/StandardPage'
-import JsonLd from '@/components/JsonLd'
-
-export const metadata: Metadata = {
-  title: 'Hermes Agent Platform: O Gerenciador de Agentes que Escalona sua Operação | Zion Tech Group Blog',
-  description: 'Como o Hermes Agent Platform gerencia agentes autônomos em múltiplas zonas, distribui tarefas, escala entregas e anuncia no site — para empresas que querem operação com IA escalável.',
-  openGraph: {
-    title: 'Hermes Agent Platform: O Gerenciador de Agentes que Escalona sua Operação',
-    description: 'Gerencie agentes autônomos em múltiplas zonas, distribua tarefas, e escale entregas com coordenação multi-agent.',
-    url: 'https://ziontechgroup.com/blog/hermes-agent-platform/',
-    type: 'article',
-  },
-  alternates: { canonical: '/blog/hermes-agent-platform/' },
-}
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Hermes Agent Platform: O Gerenciador de Agentes que Escalona sua Operação',
-  description: 'Como o Hermes Agent Platform gerencia agentes autônomos em múltiplas zonas, distribui tarefas, escala entregas e anuncia no site — para empresas que querem operação com IA escalável.',
-  author: { '@type': 'Organization', name: 'Zion Tech Group' },
-  publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
-  datePublished: new Date().toISOString().split('T')[0],
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ziontechgroup.com/blog/hermes-agent-platform/' },
-}
-
-export default function Page() {
+export default function HermesAgentGuideCompletoPage() {
   return (
-    <StandardPage jsonLd={jsonLd} breadcrumb={
-      <BreadcrumbSchema
-        items={[
-          { label: 'Início', url: '/' },
-          { label: 'Blog', url: '/blog/' },
-          { label: 'Hermes Agent Platform' },
-        ]}
-      />
-    }>
-      <article className="max-w-4xl mx-auto px-4 py-12">
-        <header className="mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Hermes Agent Platform: O Gerenciador de Agentes que Escalona sua Operação
-          </h1>
-          <p className="text-xl text-gray-600">
-            Gerencie agentes autônomos em múltiplas zonas, distribua tarefas, e escale entregas com coordenação multi-agent — tudo orchestrato por uma plataforma única.
-          </p>
-          <p className="mt-6 text-sm text-gray-500">
-            Por Zion Tech Group · {new Date().toLocaleDateString('pt-BR')}
-          </p>
-        </header>
-
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">O problema: agentes trabalhando sozinhos</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            A maioria das equipes que adota IA começa com um agente — um bot que responde tickets, outro que monitora servidores, um terceiro que gera relatórios.
-            Por um tempo, funciona. Mas rapidamente a operação vira um labirinto de agentes que não conversam entre si, tarefas que se repetem, e resultados que ninguém consegue rastrear.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            O problema não é a IA. O problema é a <strong>coordenação</strong>. Quando agentes trabalham em silos, duplicam trabalho, deixam entregas paradas sem avisar, e tornam a operação impossível de escalar.
-          </p>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">A solução: coordenação multi-agent com zonas</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            O <strong>Hermes Agent Platform</strong> foi construído para resolver exatamente isso: transformar agentes isolados em uma operação coordenada, escalável e rastreável.
-            A plataforma introduz quatro conceitos que mudam a forma como agentes trabalham juntos.
-          </p>
-
-          <h3 className="text-xl font-bold text-gray-800 mt-6 mb-2">1. Zonas de operação</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Cada agente opera dentro de uma <strong>zona</strong> — um domínio de responsabilidade definido. A zona define o que o agente pode fazer, quem ele pode contactar, e quais decisões ele pode tomar sozinho.
-          </p>
-
-          <h3 className="text-xl font-bold text-gray-800 mt-6 mb-2">2. Delegação inteligente</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Quando uma tarefa chega, o Hermes agent platform avalia quais agentes estão disponíveis, quais zonas eles cobrem, e a melhor combinação para entregar o trabalho. A delegação é baseada no contexto da tarefa, nas competências de cada agente, e no estado atual da operação.
-          </p>
-
-          <h3 className="text-xl font-bold text-gray-800 mt-6 mb-2">3. Coordenação de fluxo</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Tarefas complexas são desenhadas como fluxos — sequências de ações que podem envolver múltiplos agentes em múltiplas zonas. O Hermes agent platform rastreia o fluxo inteiro e sabe o que fazer se um agente falha em uma etapa.
-          </p>
-
-          <h3 className="text-xl font-bold text-gray-800 mt-6 mb-2">4. Skills como extensões</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Um agente não nasce sabendo tudo. O Hermes agent platform organiza <strong>skills</strong> — habilidades especializadas que agentes podem invocar quando necessário. Skills são reutilizáveis, versionadas, e compartilhadas entre agentes.
-          </p>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Como usar o Hermes Agent Platform</h2>
-
-          <h3 className="text-xl font-bold text-gray-800 mt-6 mb-2">Instalar um agente</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Cada agente é instalado como uma unidade autônoma com sua identidade, suas zonas de operação, e seus skills iniciais. Agentes podem ser instalados gradualmente — um por vez, ou em lote.
-          </p>
-
-          <h3 className="text-xl font-bold text-gray-800 mt-6 mb-2">Definir zonas</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Zonas são definidas pela equipe — não pela plataforma. Você diz quais domínios de responsabilidade existem na sua operação e como as zonas se conectam.
-          </p>
-
-          <h3 className="text-xl font-bold text-gray-800 mt-6 mb-2">Delegar tarefas</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Tarefas são delegadas para a plataforma — não para agentes individuais. Você diz o que precisa ser feito; o Hermes agent platform descobre quais agentes são os melhores para entregar.
-          </p>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Cases de uso</h2>
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">Suporte técnico multi-canal</h3>
-              <p className="text-gray-700">Agentes de suporte distribuídos entre email, chat, e telefone, coordenados por zona de prioridade, com rastreamento completo de cada interação.</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">Monitoramento e resposta a incidentes</h3>
-              <p className="text-gray-700">Agentes de monitoramento em múltiplas zonas de infraestrutura, com fluxo de resposta coordenando os agentes apropriados e escalando para humanos quando necessário.</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">Geração de relatórios empresariais</h3>
-              <p className="text-gray-700">Agentes especializados em coleta de dados, análise, e formatação trabalhando em fluxo para produzir relatórios que normalmente exigiriam horas de trabalho manual.</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">Onboarding de novos clientes</h3>
-              <p className="text-gray-700">Fluxo de onboarding coordena agentes de configuração, treinamento, e suporte — garantindo que nenhuma etapa seja esquecida.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg mb-8">
-          <h2 className="text-2xl font-bold text-blue-900 mb-3">Pronto para coordenar seus agentes?</h2>
-          <p className="text-blue-800 leading-relaxed mb-4">
-            Se sua equipe já tem agentes trabalhando em silos — ou se você está prestes a adicionar múltiplos agentes e quer evitar o caos — o Hermes Agent Platform é a camada de coordenação que faltava.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a href="/contact/" className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
-              Falar com a Zion Tech Group
-            </a>
-            <a href="/services/hermes-agent-platform/" className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg border border-blue-300 hover:bg-blue-50 transition">
-              Ver serviço Hermes Agent Platform
-            </a>
-          </div>
-        </section>
-      </article>
+    <StandardPage
+      title="Guia Definitivo: Como Usar Hermes Agent para Automação Inteligente"
+      subtitle="Aprenda a automatizar tarefas complexas com agentes autônomos que trabalham em coordenação, entregam resultados em swarm, e melhoram continuamente."
+      jsonLd={jsonLd}
+      breadcrumbItems={breadcrumbItems}
+      actions={[
+        { label: 'Fale com um engenheiro', href: '/contact/', style: 'primary' },
+        { label: 'Blog Hermes Agent', href: '/blog/', style: 'secondary' },
+      ]}
+    >
+      <div className="prose prose-invert max-w-none">
+        <h2>O que é Hermes Agent?</h2>
+        <p>Hermes Agent é um sistema de agentes autônomos que permite que equipes de inteligência artificial trabalhem em conjunto para entregar resultados complexos. Diferente de ferramentas de automação tradicionais que seguem regras prédéfinidas, Hermes Agent usa agentes que raciocinam, tomam decisões, aprendem com a experiência, e se coordenam entre si para resolver problemas que seriam impossíveis para um único agente trabalhando sozinho.</p>
+        <p>Cada agente no ecossistema Hermes tem um papel específico, pode ser especializado em uma zona de atuação (Growth, Content, Dev, Research, Social), e trabalha em coordenação com outros agents para entregar resultados que são maiores que a soma das partes individuais.</p>
+        <h2>Por que usar Hermes Agent?</h2>
+        <p>O valor de Hermes Agent vem de três capacidades fundamentais que nenhuma ferramenta de automação tradicional oferece:</p>
+        <h3>1. Coordenação em Swarm</h3>
+        <p>Em vez de uma tarefa por vez em sequência, múltiplos agents podem trabalhar simultaneamente em diferentes partes de um problema. Um agente pesquisa, um redige, um revisa, um publica — e todos se comunicam durante o processo para garantir qualidade e consistência.</p>
+        <h3>2. Delegação Inteligente</h3>
+        <p>Tarefas complexas são decompostas automaticamente em subtarefas que são distribuídas para os agents com as competências adequadas. O agente que melhor se adequa à tarefa é selecionado automaticamente, com base em sua zona de atuação, skills habilitados, e histórico de desempenho.</p>
+        <h3>3. Auto-Melhoria Contínua</h3>
+        <p>Após cada tarefa realizada, os agents refletem sobre o que funcionou, o que não funcionou, e como podem melhorar na próxima iteração. Essa capacidade de aprendizado contínuo significa que o sistema se torna mais eficaz com o tempo, sem intervenção manual constante.</p>
+        <h2>Como começar com Hermes Agent</h2>
+        <p>Configurar Hermes Agent não é complicado. Siga estes passos para começar a entregar resultados com agentes autônomos:</p>
+        <h3>Passo 1: Configure sua conta e zonas de atuação</h3>
+        <p>Identifique as zonas em que deseja operar — Growth (captação de leads, outreach, parcerias), Content (criação de conteúdo, SEO, blog posts), Dev (scripts, infraestrutura, correções), Research (análise de mercado, intelligence), ou Social (distribuição, comunidade). Cada zona terá agents especializados.</p>
+        <h3>Passo 2: Habilitar skills relevantes</h3>
+        <p>Cada agente pode ter skills habilitados que expandem suas capacidades. Para Growth, habilite skills de outreach e email intelligence. Para Content, habilite skills de criação de conteúdo e SEO. Para Dev, habilite skills de script e infraestrutura. Quanto mais skills relevantes habilitados, mais capaz o agente.</p>
+        <h3>Passo 3: Delegue sua primeira tarefa</h3>
+        <p>Comece com uma tarefa clara e verificável. Exemplo: "Pesquisar mercado de X e entregar relatório de 5 páginas com insights e recomendações." O agente delegará subtarefas para os agents adequados, coordenará o trabalho, e entregará resultados.</p>
+        <h3>Passo 4: Coordene em swarm para tarefas complexas</h3>
+        <p>Para tarefas que envolvem múltiplas zonas, coordene os agents em swarm. Exemplo: para lançar um novo serviço, coordene Growth (outreach), Content (criação de material), Dev (infraestrutura), e Social (anúncio). Cada agente trabalha em sua zona enquanto todos se coordenam.</p>
+        <h2>Exemplos reais de uso</h2>
+        <p>Aqui estão exemplos de como empresas e equipes usam Hermes Agent para entregar resultados concretos:</p>
+        <h3>Criação de conteúdo em escala</h3>
+        <p>Uma equipe de marketing usa Hermes Agent para criar, revisar, e publicar conteúdo de blog regularmente. Um agente pesquisa tópicos e keywords, outro escreve o rascunho, outro faz revisão e SEO, e outro publica. O processo é automatizado, consistente, e de alta qualidade.</p>
+        <h3>Captação de leads inteligente</h3>
+        <p>Uma equipe de vendas usa Hermes Agent para identificar prospects, pesquisar informações relevantes, personalizar mensagens de outreach, e seguir-up automaticamente. O agente de Growth coordena todo o processo, desde a identificação até a agenda de reunião.</p>
+        <h3>Automação de infraestrutura</h3>
+        <p>Uma equipe de engenharia usa Hermes Agent para monitorar sistemas, detectar problemas, e aplicar correções automaticamente. O agente de Dev é especializado em scripts, monitoramento, e troubleshooting, e pode resolver problemas comuns sem intervenção humana.</p>
+        <h3>Inteligência de mercado</h3>
+        <p>Uma equipe de strategy usa Hermes Agent para monitorar concorrentes, analisar mercado, identificar oportunidades e ameaças, e preparar relatórios executivos. O agente de Research coleta dados de múltiplas fontes, analisa, e entrega insights acionáveis.</p>
+        <h2>Melhores práticas para usar Hermes Agent</h2>
+        <p>Para obter o máximo de Hermes Agent, siga estas práticas:</p>
+        <h3>1. Defina tarefas claras e verificáveis</h3>
+        <p>Tarefas vagas geram resultados vagos. Seja específico sobre o que você quer: "Pesquisar mercado de X" é vago. "Entregar relatório de 5 páginas sobre mercado de X, com análise de concorrentes, tamanho de mercado, tendências, e 3 recomendações estratégicas" é claro e verificável.</p>
+        <h3>2. Use delegação com contexto adequado</h3>
+        <p>Quando delegar uma tarefa, forneça contexto suficiente para que o agente entenda o objetivo, restrições, e critérios de sucesso. Quanto mais contexto relevante, melhor o agente pode entregar resultados alinhados com suas necessidades.</p>
+        <h3>3. Coordene múltiplos agents para resultados complexos</h3>
+        <p>Para problemas que envolvem múltiplas dimensões, não dependa de um único agente. Coordene agents de diferentes zonas em swarm para entregar resultados que seriam impossíveis para um agente trabalhando isoladamente.</p>
+        <h3>4. Revise e refine regularmente</h3>
+        <p>Revise os resultados dos agents regularmente, identifique padrões de melhorias possíveis, e ajuste prompts, skills, e configurações conforme necessário. Hermes Agent se melhora com feedback contínuo.</p>
+        <h3>5. Monitore e meça resultados</h3>
+        <p>Defina métricas de sucesso para cada tarefa e zona. Monitore o desempenho dos agents ao longo do tempo, identifique oportunidades de otimização, e ajuste a operação para maximizar resultados.</p>
+        <h2>Conclusão</h2>
+        <p>Hermes Agent transforma a maneira como equipes entregam trabalho inteligente. Em vez de depender de processos manuais e fragmentados, equipes podem usar agentes autônomos que trabalham em coordenação para entregar resultados de alta qualidade, de forma consistente e escalável.</p>
+        <p>Se você quer começar a usar Hermes Agent na sua equipe ou empresa, fale com a equipe da Zion Tech Group. Nós ajudamos você a configurar os agents, habilitar as skills adequadas, e entregar resultados reais com automação inteligente de agentes.</p>
+      </div>
     </StandardPage>
   )
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -11,11 +12,18 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/academy/',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Academy | Zion Tech Group',
+    description: 'Technical enablement and learning for AI, IT, and automation teams.',
+  },
   alternates: { canonical: '/academy/' },
 };
 
+
 export default function AcademyPage() {
   return (
+<>
     <StandardPage
       title="Academy"
       subtitle="Workshops, learning paths, and enablement for teams adopting AI and modern IT."
@@ -29,7 +37,7 @@ export default function AcademyPage() {
       ]}
     >
       <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
-        <Link href="/blog" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/blog/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">AI Literacy</h3>
           <p className="text-slate-400 text-sm">Foundations for leaders and practitioners.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Read blog →</span>
@@ -45,6 +53,22 @@ export default function AcademyPage() {
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
       </div>
+
+      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Why learning with Zion</h2>
+        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
+          <li>Curriculum aligned to production AI and automation stacks, not theory alone.</li>
+          <li>Hands-on labs built on real client environments and compliance constraints.</li>
+          <li>Flexible formats: workshops, async paths, and team coaching.</li>
+          <li>Outcome tracking tied to adoption metrics and business results.</li>
+          <li>Regular content refresh from live project experience.</li>
+        </ul>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/services/" className="btn-primary text-center">Browse services</a>
+          <a href="/contact/" className="btn-secondary text-center">Start learning</a>
+        </div>
+      </div>
     </StandardPage>
+  </>
   );
 }

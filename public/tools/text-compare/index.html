@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Compare | Zion Tech Group</title>
+  <meta name="description" content="Compare two texts side-by-side. Highlights additions, deletions, and changes with color-coded diff output.">
+  <meta property="og:title" content="Text Compare | Zion Tech Group">
+  <meta property="og:description" content="Free online text comparison tool — diff checker with highlighted changes.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/text-compare/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/text-compare/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 768px) { .inputs { grid-template-columns: 1fr; } }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 0.8rem; resize: vertical; min-height: 200px; line-height: 1.5; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .actions { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .btn { padding: 0.6rem 1.5rem; border: none; border-radius: 0.5rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .btn-primary { background: #6366f1; color: #fff; }
+    .btn-primary:hover { background: #4f46e5; }
+    .btn-secondary { background: #1e293b; color: #e5e7eb; border: 1px solid #334155; }
+    .btn-secondary:hover { background: #334155; }
+    .btn-success { background: #059669; color: #fff; }
+    .btn-success:hover { background: #047857; }
+    .results { display: none; }
+    .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem; }
+    .results-header h2 { font-size: 1.125rem; }
+    .legend { display: flex; gap: 1rem; font-size: 0.75rem; }
+    .legend span { display: flex; align-items: center; gap: 0.35rem; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+    .dot-add { background: #065f46; }
+    .dot-rem { background: #7f1d1d; }
+    .dot-chg { background: #92400e; }
+    .diff-output { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1rem; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 0.8rem; line-height: 1.6; overflow-x: auto; white-space: pre-wrap; word-break: break-word; max-height: 500px; overflow-y: auto; }
+    .diff-line { padding: 0.1rem 0.5rem; margin: 0 -0.5rem; border-radius: 0.25rem; }
+    .diff-line.add { background: rgba(6, 95, 70, 0.3); color: #6ee7b7; }
+    .diff-line.rem { background: rgba(127, 29, 29, 0.3); color: #fca5a5; text-decoration: line-through; opacity: 0.8; }
+    .diff-line.chg { background: rgba(146, 64, 14, 0.3); color: #fcd34d; }
+    .diff-line.context { color: #94a3b8; }
+    .diff-line .prefix { display: inline-block; width: 1.25rem; color: #64748b; user-select: none; }
+    .summary { margin-top: 1rem; padding: 0.75rem 1rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; font-size: 0.85rem; }
+    .summary strong { color: #818cf8; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .copy-toast { position: fixed; bottom: 2rem; right: 2rem; background: #059669; color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-size: 0.875rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+    .copy-toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Text Compare</h1>
+    <p class="subtitle">Compare two texts side-by-side — highlights additions, deletions, and changes.</p>
+    
+    <div class="inputs">
+      <div class="field">
+        <label>Original Text</label>
+        <textarea id="original" placeholder="Paste your original text here...">Hello world!
+This is the original text.
+It has multiple lines.
+Some lines will change.
+This line stays the same.</textarea>
+      </div>
+      <div class="field">
+        <label>Modified Text</label>
+        <textarea id="modified" placeholder="Paste your modified text here...">Hello there!
+This is the modified text.
+It has multiple lines.
+Some lines have been updated.
+This line stays the same.
+A brand new line appears here.</textarea>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button class="btn btn-primary" onclick="compare()">Compare</button>
+      <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+      <button class="btn btn-secondary" onclick="swapText()">Swap</button>
+      <button class="btn btn-success" onclick="copyResult()">Copy Result</button>
+    </div>
+    
+    <div class="results" id="results">
+      <div class="results-header">
+        <h2>Diff Result</h2>
+        <div class="legend">
+          <span><span class="legend-dot dot-add"></span> Added</span>
+          <span><span class="legend-dot dot-rem"></span> Removed</span>
+          <span><span class="legend-dot dot-chg"></span> Changed</span>
+        </div>
+      </div>
+      <div class="diff-output" id="diff-output"></div>
+      <div class="summary" id="summary"></div>
+    </div>
+    
+    <div class="info">
+      <h2>How It Works</h2>
+      <ul>
+        <li><span class="label">Added</span> — Lines present in the modified text but missing from the original.</li>
+        <li><span class="label">Removed</span> — Lines present in the original text but missing from the modified.</li>
+        <li><span class="label">Changed</span> — Lines that were modified (detected as a removal + addition at the same position).</li>
+        <li><span class="label">Algorithm</span> — Uses Longest Common Subsequence (LCS) for accurate line-by-line diffing.</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">All processing happens in your browser. No data is sent to any server.</p>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  
+  <div class="copy-toast" id="copyToast">Result copied to clipboard!</div>
+
+  <script>
+    // Longest Common Subsequence based diff
+    function computeLCSMatrix(a, b) {
+      const m = a.length;
+      const n = b.length;
+      const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+      
+      for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+          if (a[i - 1] === b[j - 1]) {
+            dp[i][j] = dp[i - 1][j - 1] + 1;
+          } else {
+            dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+          }
+        }
+      }
+      return dp;
+    }
+
+    function computeDiff(lines1, lines2) {
+      const dp = computeLCSMatrix(lines1, lines2);
+      const diff = [];
+      let i = lines1.length;
+      let j = lines2.length;
+      
+      while (i > 0 || j > 0) {
+        if (i > 0 && j > 0 && lines1[i - 1] === lines2[j - 1]) {
+          diff.unshift({ type: 'context', value: lines1[i - 1] });
+          i--;
+          j--;
+        } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
+          diff.unshift({ type: 'add', value: lines2[j - 1] });
+          j--;
+        } else if (i > 0) {
+          diff.unshift({ type: 'rem', value: lines1[i - 1] });
+          i--;
+        }
+      }
+      return diff;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function renderDiff(diff) {
+      const output = document.getElementById('diff-output');
+      
+      if (diff.length === 0 || diff.every(d => d.type === 'context')) {
+        output.innerHTML = '<div class="diff-line context">No differences found — texts are identical.</div>';
+        document.getElementById('summary').innerHTML = '<strong>Result:</strong> No differences found.';
+        return;
+      }
+
+      let html = '';
+      let addCount = 0, remCount = 0, chgCount = 0;
+      
+      // Post-process: pair consecutive rem+add as "changed"
+      const processed = [];
+      let k = 0;
+      while (k < diff.length) {
+        if (diff[k].type === 'rem' && k + 1 < diff.length && diff[k + 1].type === 'add') {
+          processed.push({ type: 'chg', oldValue: diff[k].value, newValue: diff[k + 1].value });
+          k += 2;
+        } else {
+          processed.push(diff[k]);
+          k++;
+        }
+      }
+
+      for (const item of processed) {
+        if (item.type === 'context') {
+          html += `<div class="diff-line context"><span class="prefix">  </span>${escapeHtml(item.value)}</div>`;
+        } else if (item.type === 'add') {
+          addCount++;
+          html += `<div class="diff-line add"><span class="prefix">+ </span>${escapeHtml(item.value)}</div>`;
+        } else if (item.type === 'rem') {
+          remCount++;
+          html += `<div class="diff-line rem"><span class="prefix">- </span>${escapeHtml(item.value)}</div>`;
+        } else if (item.type === 'chg') {
+          chgCount++;
+          html += `<div class="diff-line chg"><span class="prefix">~ </span><span class="rem" style="text-decoration:line-through;opacity:0.7;">${escapeHtml(item.oldValue)}</span> → <span class="add">${escapeHtml(item.newValue)}</span></div>`;
+        }
+      }
+
+      output.innerHTML = html;
+
+      let summaryParts = [];
+      if (chgCount > 0) summaryParts.push(`<strong>${chgCount}</strong> changed`);
+      if (addCount > 0) summaryParts.push(`<strong>${addCount}</strong> added`);
+      if (remCount > 0) summaryParts.push(`<strong>${remCount}</strong> removed`);
+      document.getElementById('summary').innerHTML = `<strong>Summary:</strong> ${summaryParts.join(', ')}.`;
+    }
+
+    function compare() {
+      const original = document.getElementById('original').value;
+      const modified = document.getElementById('modified').value;
+      
+      if (!original && !modified) {
+        document.getElementById('results').style.display = 'none';
+        return;
+      }
+
+      const lines1 = original.split('\n');
+      const lines2 = modified.split('\n');
+      const diff = computeDiff(lines1, lines2);
+      renderDiff(diff);
+      document.getElementById('results').style.display = 'block';
+    }
+
+    function clearAll() {
+      document.getElementById('original').value = '';
+      document.getElementById('modified').value = '';
+      document.getElementById('results').style.display = 'none';
+    }
+
+    function swapText() {
+      const a = document.getElementById('original');
+      const b = document.getElementById('modified');
+      const tmp = a.value;
+      a.value = b.value;
+      b.value = tmp;
+    }
+
+    function copyResult() {
+      const output = document.getElementById('diff-output');
+      if (!output || output.textContent.trim() === '') return;
+      
+      const summary = document.getElementById('summary').textContent;
+      const text = output.innerText;
+      const fullText = `${summary}\n\n${text}`;
+      
+      navigator.clipboard.writeText(fullText).then(() => {
+        const toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+
+    // Auto-compare on load
+    compare();
+  </script>
+</body>
+</html>

@@ -4,34 +4,30 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
-import { CATEGORIES, PRIMARY_NAV_LINKS, SOLUTION_LINKS, AI_LAB_LINKS, RESOURCE_LINKS, FEATURED_AI_SERVICE_LINKS, type NavigationLink } from '@/constants/navigation';
+import { PRIMARY_NAV_LINKS, SOLUTION_LINKS, FEATURED_AI_SERVICE_LINKS, TOOLS_LINKS, NavigationLink } from '@/constants/navigation';
 
 const SITE_TITLE = 'Zion Tech Group';
-
-const SERVICE_GRID = CATEGORIES.slice(0, 10);
-
-const RESOURCE_GROUPS = [
-  { title: 'Platform', items: RESOURCE_LINKS.filter((l) => ['Agent Monitoring', 'System Status'].includes(l.name)) },
-  { title: 'Growth', items: [{ name: '📖 Blog', href: '/blog' }] },
-  { title: 'Company', items: [{ name: '❓ FAQ', href: '/faq' }, { name: 'ℹ️ About', href: '/about' }] },
-];
 
 export default function Navigation() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
-  const [aiLabOpen, setAiLabOpen] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileToolsOpen, setMobileToolsOpen] = useState(false);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMobileOpen(false);
     setServicesOpen(false);
     setSolutionsOpen(false);
-    setResourcesOpen(false);
-    setAiLabOpen(false);
+    setToolsOpen(false);
+    setMobileServicesOpen(false);
+    setMobileSolutionsOpen(false);
+    setMobileToolsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -112,6 +108,34 @@ export default function Navigation() {
     );
   }
 
+  function MobileAccordionItem({ label, open, onClick, children }: { label: string; open: boolean; onClick: () => void; children: React.ReactNode }) {
+    return (
+      <div className="border-b border-slate-800 last:border-b-0">
+        <button
+          className="w-full flex items-center justify-between px-3 py-3 text-sm font-semibold text-slate-200 hover:text-white transition-colors"
+          onClick={onClick}
+          aria-expanded={open}
+        >
+          {label}
+          <svg
+            className={`w-4 h-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        {open && (
+          <div className="px-3 pb-3 space-y-1">
+            {children}
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
     <header id="site-navigation" className={`sticky top-0 z-50 w-full border-b transition-all ${scrolled ? 'border-slate-800 bg-slate-950/95 backdrop-blur-2xl shadow-lg shadow-black/20' : 'border-slate-800/60 bg-slate-950/80 backdrop-blur-xl'}`}>
       <nav className="container-page flex h-16 items-center justify-between gap-4" aria-label="Main navigation">
@@ -123,19 +147,21 @@ export default function Navigation() {
 
         <div className="hidden lg:flex items-center gap-1">
           <div className="relative">
-            <DropdownButton label="Services" open={servicesOpen} onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} active={isActive('/services')} />
+            <DropdownButton label="Services" open={servicesOpen} onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setToolsOpen(false); }} active={isActive('/services')} />
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-2 w-[640px] rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
                 <div className="grid grid-cols-2 gap-3">
-                  {SERVICE_GRID.map((category) => (
+                  {FEATURED_AI_SERVICE_LINKS.map((link, i) => (
                     <Link
-                      key={category.key}
-                      href={`/services/?category=${category.key}`}
-                      className="group flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-3 hover:border-purple-500/40 hover:bg-slate-900 transition-colors"
+                      key={i}
+                      href={link.href}
+                      className={`block rounded-lg px-3 py-2 text-sm transition-colors ${
+                        isActive(link.href) ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                      }`}
                       onClick={() => setServicesOpen(false)}
+                      role="menuitem"
                     >
-                      <span className="text-xl">{category.emoji}</span>
-                      <span className="text-sm font-medium text-slate-200 group-hover:text-white">{category.label}</span>
+                      {link.name}
                     </Link>
                   ))}
                 </div>
@@ -150,28 +176,7 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <DropdownButton label="AI Lab" open={aiLabOpen} onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }} active={isActive('/ai') || isActive('/agents-monitoring')} />
-            {aiLabOpen && (
-              <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
-                <div className="space-y-1">
-                  {AI_LAB_LINKS.map((link, i) => (
-                    <Link
-                      key={i}
-                      href={link.href}
-                      className="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800"
-                      onClick={() => setAiLabOpen(false)}
-                      role="menuitem"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="relative">
-            <DropdownButton label="Solutions" open={solutionsOpen} onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} active={isActive('/solutions')} />
+            <DropdownButton label="Solutions" open={solutionsOpen} onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setToolsOpen(false); }} active={isActive('/solutions')} />
             {solutionsOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl p-2 z-50" role="menu">
                 {SOLUTION_LINKS.map((link, i) => (
@@ -192,32 +197,27 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <DropdownButton label="Resources" open={resourcesOpen} onClick={() => { setResourcesOpen(!resourcesOpen); setServicesOpen(false); setSolutionsOpen(false); setAiLabOpen(false); }} active={isActive('/agents-monitoring')} />
-            {resourcesOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-2">Resources</div>
-                    <div className="space-y-1">
-                      {RESOURCE_GROUPS.flatMap((group) => group.items).map((link, i) => (
-                        <Link
-                          key={i}
-                          href={link.href}
-                          className="block rounded-lg px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800"
-                          onClick={() => setResourcesOpen(false)}
-                          role="menuitem"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+            <DropdownButton label="Tools" open={toolsOpen} onClick={() => { setToolsOpen(!toolsOpen); setServicesOpen(false); setSolutionsOpen(false); }} active={isActive('/tools')} />
+            {toolsOpen && (
+              <div className="absolute top-full left-0 mt-2 w-64 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl p-2 z-50" role="menu">
+                {TOOLS_LINKS.map((link, i) => (
+                  <Link
+                    key={i}
+                    href={link.href}
+                    className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                      isActive(link.href) ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                    }`}
+                    onClick={() => setToolsOpen(false)}
+                    role="menuitem"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
               </div>
             )}
           </div>
 
-          {PRIMARY_NAV_LINKS.filter(l => !['/', '/services', '/solutions', '/agents-monitoring'].includes(l.href)).map((link, i) => (
+          {PRIMARY_NAV_LINKS.filter(l => !['/', '/services', '/solutions', '/tools'].includes(l.href)).map((link, i) => (
             <NavLink key={i} link={link} />
           ))}
 
@@ -229,7 +229,7 @@ export default function Navigation() {
             AI Agents
           </Link>
 
-          <Link href="/contact/" className="ml-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
+          <Link href="/contact/" className="ml-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white hover:from-purple-500 hover:to-pink-600 transition-all shadow-lg shadow-purple-500/25">
             Get Free Consultation
           </Link>
         </div>
@@ -250,25 +250,30 @@ export default function Navigation() {
       </nav>
 
       {mobileOpen && (
-        <div ref={mobilePanelRef} className="lg:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
-          {PRIMARY_NAV_LINKS.map((link, i) => {
-            const active = isActive(link.href);
-            return (
-              <Link
-                key={i}
-                href={link.href}
-                aria-current={active ? 'page' : undefined}
-                className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  active ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
-                }`}
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-          <div className="border-t border-slate-800 pt-2 mt-2">
-            <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">Solutions</div>
+        <div ref={mobilePanelRef} className="lg:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl max-h-[80vh] overflow-y-auto">
+          <MobileAccordionItem label="Services" open={mobileServicesOpen} onClick={() => { setMobileServicesOpen(!mobileServicesOpen); setMobileSolutionsOpen(false); setMobileToolsOpen(false); }}>
+            {FEATURED_AI_SERVICE_LINKS.map((link, i) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={i}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`block rounded-lg px-3 py-2 text-sm transition-colors ${
+                    active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+            <Link href="/services/" className="block rounded-lg px-3 py-2 text-sm font-semibold text-purple-300 hover:text-purple-200 mt-1" onClick={() => setMobileOpen(false)}>
+              View full catalog →
+            </Link>
+          </MobileAccordionItem>
+
+          <MobileAccordionItem label="Solutions" open={mobileSolutionsOpen} onClick={() => { setMobileSolutionsOpen(!mobileSolutionsOpen); setMobileServicesOpen(false); setMobileToolsOpen(false); }}>
             {SOLUTION_LINKS.map((link, i) => {
               const active = isActive(link.href);
               return (
@@ -276,7 +281,7 @@ export default function Navigation() {
                   key={i}
                   href={link.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                  className={`block rounded-lg px-3 py-2 text-sm transition-colors ${
                     active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
                   }`}
                   onClick={() => setMobileOpen(false)}
@@ -285,17 +290,17 @@ export default function Navigation() {
                 </Link>
               );
             })}
-          </div>
-          <div className="border-t border-slate-800 pt-2 mt-2">
-            <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">Featured AI</div>
-            {FEATURED_AI_SERVICE_LINKS.slice(0, 5).map((link, i) => {
+          </MobileAccordionItem>
+
+          <MobileAccordionItem label="Tools" open={mobileToolsOpen} onClick={() => { setMobileToolsOpen(!mobileToolsOpen); setMobileServicesOpen(false); setMobileSolutionsOpen(false); }}>
+            {TOOLS_LINKS.map((link, i) => {
               const active = isActive(link.href);
               return (
                 <Link
                   key={i}
                   href={link.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                  className={`block rounded-lg px-3 py-2 text-sm transition-colors ${
                     active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
                   }`}
                   onClick={() => setMobileOpen(false)}
@@ -304,18 +309,18 @@ export default function Navigation() {
                 </Link>
               );
             })}
-          </div>
-          <div className="border-t border-slate-800 pt-2 mt-2">
-            <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">AI Lab</div>
-            {AI_LAB_LINKS.map((link, i) => {
+          </MobileAccordionItem>
+
+          <div className="px-4 py-2 space-y-1">
+            {PRIMARY_NAV_LINKS.filter(l => !['/', '/services', '/solutions', '/tools'].includes(l.href)).map((link, i) => {
               const active = isActive(link.href);
               return (
                 <Link
                   key={i}
                   href={link.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
-                    active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                  className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                    active ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -324,35 +329,15 @@ export default function Navigation() {
               );
             })}
           </div>
-          <div className="border-t border-slate-800 pt-2 mt-2">
-            <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">Resources</div>
-            {RESOURCE_LINKS.map((link, i) => {
-              const active = isActive(link.href);
-              return (
-                <Link
-                  key={i}
-                  href={link.href}
-                  aria-current={active ? 'page' : undefined}
-                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
-                    active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
-                  }`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
-          <div className="pt-3">
-            <Link href="/agents-monitoring" className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-sm font-semibold text-white" onClick={() => setMobileOpen(false)}>
+
+          <div className="p-4 pt-3 space-y-2">
+            <Link href="/agents-monitoring/" className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-sm font-semibold text-white" onClick={() => setMobileOpen(false)}>
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
               </span>
               AI Agent Dashboard
             </Link>
-          </div>
-          <div className="pt-2">
             <Link href="/contact/" className="block text-center px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white" onClick={() => setMobileOpen(false)}>
               Get Free Consultation
             </Link>

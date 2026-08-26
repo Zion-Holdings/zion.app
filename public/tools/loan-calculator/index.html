@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan / Mortgage Payment Calculator | Zion Tech Group</title>
+  <meta name="description" content="Free loan and mortgage payment calculator — compute monthly payment, total interest, total paid, and payoff time. Add extra monthly payments to see interest saved, view the full amortization schedule, and download it as CSV.">
+  <meta property="og:title" content="Loan / Mortgage Payment Calculator | Zion Tech Group">
+  <meta property="og:description" content="Calculate monthly payments, total interest, and payoff time. See how extra monthly payments cut your interest, with a full amortization schedule and CSV export.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/loan-calculator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/loan-calculator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .hint { display: block; font-size: 0.75rem; color: #64748b; margin-top: 0.35rem; }
+    input[type="text"], input[type="number"], select { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; font-size: 0.875rem; }
+    input[type="number"]:focus, input[type="text"]:focus, select:focus { outline: none; border-color: #6366f1; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .term-row { display: flex; gap: 0.5rem; }
+    .term-row input { flex: 1; }
+    .term-row select { flex: 0 0 110px; }
+    .buttons { display: flex; gap: 0.5rem; margin: 1.25rem 0 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .results { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .results h3 { font-size: 1rem; margin-bottom: 1rem; color: #818cf8; }
+    .result-item { display: flex; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .result-item:last-child { border-bottom: none; }
+    .result-label { flex: 0 0 220px; font-size: 0.875rem; color: #94a3b8; font-weight: 600; }
+    .result-value { flex: 1; font-family: monospace; font-size: 0.875rem; color: #e5e7eb; word-break: break-all; }
+    .result-value.empty { color: #64748b; font-style: italic; }
+    .result-value.big { font-size: 1.125rem; font-weight: 700; color: #818cf8; }
+    .result-value.saved { color: #34d399; }
+    .schedule-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .schedule-head h3 { margin-bottom: 0; }
+    .query-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    .query-table th, .query-table td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #334155; font-size: 0.875rem; }
+    .query-table th { color: #94a3b8; font-weight: 600; }
+    .query-table td { font-family: monospace; word-break: break-all; }
+    .query-table td.num, .query-table th.num { text-align: right; }
+    .table-wrap { overflow-x: auto; }
+    .row-hidden { display: none; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      .result-item { flex-direction: column; gap: 0.15rem; }
+      .result-label { flex: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Loan / Mortgage Payment Calculator</h1>
+    <p class="subtitle">Monthly payment, total interest, payoff time, and a full amortization schedule.</p>
+
+    <div class="grid">
+      <div class="field">
+        <label for="amount">Loan amount</label>
+        <input type="number" id="amount" value="300000" min="0" step="any" placeholder="300000">
+      </div>
+      <div class="field">
+        <label for="rate">Annual interest rate (%)</label>
+        <input type="number" id="rate" value="6.5" min="0" step="any" placeholder="6.5">
+      </div>
+      <div class="field">
+        <label for="term">Loan term</label>
+        <div class="term-row">
+          <input type="number" id="term" value="30" min="1" step="1" placeholder="30">
+          <select id="termUnit">
+            <option value="years" selected>Years</option>
+            <option value="months">Months</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="extra">Extra monthly payment (optional)</label>
+        <input type="number" id="extra" value="0" min="0" step="any" placeholder="0">
+        <span class="hint">Applied to principal every month.</span>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="btn" onclick="calculate()">Calculate</button>
+      <button class="btn success" id="csvBtn" onclick="downloadCsv()">Download CSV</button>
+      <button class="btn secondary" onclick="clearAll()">Reset</button>
+    </div>
+
+    <div class="error" id="error"></div>
+
+    <div class="results" id="results" style="display: none;">
+      <h3>Payment Summary</h3>
+      <div id="resultsContent"></div>
+    </div>
+
+    <div class="results" id="schedule" style="display: none;">
+      <div class="schedule-head">
+        <h3>Amortization Schedule</h3>
+        <div class="buttons" style="margin: 0;">
+          <button class="btn secondary" id="collapseBtn" onclick="toggleSchedule()">Hide</button>
+          <button class="btn secondary" id="showAllBtn" onclick="toggleShowAll()">Show all</button>
+        </div>
+      </div>
+      <div id="scheduleBody">
+        <div class="table-wrap">
+          <table class="query-table">
+            <thead>
+              <tr>
+                <th class="num">#</th>
+                <th>Date</th>
+                <th class="num">Payment</th>
+                <th class="num">Principal</th>
+                <th class="num">Interest</th>
+                <th class="num">Total Interest</th>
+                <th class="num">Balance</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleRows"></tbody>
+          </table>
+        </div>
+        <span class="hint" id="scheduleNote"></span>
+      </div>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    var lastSchedule = null;
+    var showAll = false;
+    var scheduleOpen = true;
+    var MAX_MONTHS = 600;
+
+    function fmtMoney(n) {
+      var neg = n < 0;
+      var v = Math.abs(Math.round(n * 100) / 100).toFixed(2);
+      var parts = v.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return (neg ? '-$' : '$') + parts.join('.');
+    }
+
+    function fmtMonths(m) {
+      var y = Math.floor(m / 12), mo = m % 12, out = [];
+      if (y) out.push(y + (y === 1 ? ' year' : ' years'));
+      if (mo) out.push(mo + (mo === 1 ? ' month' : ' months'));
+      if (!out.length) out.push('0 months');
+      return out.join(' ') + ' (' + m + (m === 1 ? ' payment)' : ' payments)');
+    }
+
+    // Standard amortizing payment: P * r * (1+r)^n / ((1+r)^n - 1)
+    function monthlyPayment(principal, annualRatePct, months) {
+      var r = annualRatePct / 100 / 12;
+      if (r === 0) return principal / months;
+      var f = Math.pow(1 + r, months);
+      return principal * r * f / (f - 1);
+    }
+
+    function buildSchedule(principal, annualRatePct, months, extra) {
+      var r = annualRatePct / 100 / 12;
+      var base = monthlyPayment(principal, annualRatePct, months);
+      var pay = base + extra;
+      if (!isFinite(base) || !isFinite(pay) || pay <= 0) {
+        return { error: 'These values overflow the payment formula — try a shorter term or a lower rate.' };
+      }
+      var bal = principal, totalInterest = 0, rows = [], m = 0;
+      while (bal > 0.005) {
+        m++;
+        if (m > MAX_MONTHS * 2) return { error: 'Schedule exceeded ' + (MAX_MONTHS * 2) + ' months.' };
+        var interest = bal * r;
+        var princ = pay - interest;
+        if (princ <= 0) return { error: 'The monthly payment does not cover the interest — the loan would never be repaid.' };
+        if (princ > bal) princ = bal;
+        var actual = princ + interest;
+        bal = bal - princ;
+        if (bal < 0.005) bal = 0;
+        totalInterest += interest;
+        rows.push({ n: m, payment: actual, principal: princ, interest: interest, cumInterest: totalInterest, balance: bal });
+      }
+      return { base: base, payment: pay, rows: rows, months: rows.length, totalInterest: totalInterest, totalPaid: principal + totalInterest };
+    }
+
+    function num(id) {
+      var raw = document.getElementById(id).value.trim();
+      if (raw === '') return NaN;
+      return Number(raw);
+    }
+
+    function calculate() {
+      var errorEl = document.getElementById('error');
+      var resultsEl = document.getElementById('results');
+      var scheduleEl = document.getElementById('schedule');
+
+      function fail(msg) {
+        errorEl.textContent = '✗ ' + msg;
+        errorEl.style.display = 'block';
+        resultsEl.style.display = 'none';
+        scheduleEl.style.display = 'none';
+        lastSchedule = null;
+      }
+
+      var amount = num('amount');
+      var rate = num('rate');
+      var term = num('term');
+      var extra = num('extra');
+      if (document.getElementById('extra').value.trim() === '') extra = 0;
+      var unit = document.getElementById('termUnit').value;
+
+      if (!isFinite(amount) || amount <= 0) return fail('Enter a loan amount greater than 0.');
+      if (!isFinite(rate) || rate < 0) return fail('Enter an annual interest rate of 0 or more.');
+      if (rate > 200) return fail('Annual interest rate must be 200% or less.');
+      if (!isFinite(term) || term <= 0) return fail('Enter a loan term greater than 0.');
+      if (!isFinite(extra) || extra < 0) return fail('Extra monthly payment cannot be negative.');
+
+      var months = unit === 'years' ? Math.round(term * 12) : Math.round(term);
+      if (months < 1) return fail('Loan term must be at least 1 month.');
+      if (months > MAX_MONTHS) return fail('Loan term must be ' + MAX_MONTHS + ' months (' + (MAX_MONTHS / 12) + ' years) or less.');
+
+      var baseline = buildSchedule(amount, rate, months, 0);
+      if (baseline.error) return fail(baseline.error);
+      var result = extra > 0 ? buildSchedule(amount, rate, months, extra) : baseline;
+      if (result.error) return fail(result.error);
+
+      errorEl.style.display = 'none';
+      lastSchedule = { rows: result.rows, amount: amount, rate: rate, months: months, extra: extra };
+
+      var interestSaved = baseline.totalInterest - result.totalInterest;
+      var monthsSaved = baseline.months - result.months;
+
+      var html = '';
+      html += row('Monthly payment' + (extra > 0 ? ' (incl. extra)' : ''), fmtMoney(result.payment), 'big');
+      if (extra > 0) {
+        html += row('Base payment', fmtMoney(baseline.base));
+        html += row('Extra per month', fmtMoney(extra));
+      }
+      html += row('Total interest', fmtMoney(result.totalInterest));
+      html += row('Total paid', fmtMoney(result.totalPaid));
+      html += row('Payoff time', fmtMonths(result.months));
+      if (extra > 0) {
+        html += row('Interest saved by extra', fmtMoney(interestSaved), 'saved');
+        html += row('Time saved', monthsSaved > 0 ? fmtMonths(monthsSaved).replace(/ \(.*\)$/, '') + ' earlier' : 'None');
+        html += row('Interest without extra', fmtMoney(baseline.totalInterest));
+      } else {
+        html += row('Interest saved by extra', 'No extra payment entered', 'empty');
+      }
+      html += row('Loan amount', fmtMoney(amount));
+      html += row('Scheduled term', fmtMonths(months));
+
+      document.getElementById('resultsContent').innerHTML = html;
+      resultsEl.style.display = 'block';
+
+      renderSchedule();
+      scheduleEl.style.display = 'block';
+      scheduleOpen = true;
+      document.getElementById('scheduleBody').style.display = 'block';
+      document.getElementById('collapseBtn').textContent = 'Hide';
+    }
+
+    function row(label, value, cls) {
+      return '<div class="result-item"><div class="result-label">' + escapeHtml(label) +
+        '</div><div class="result-value' + (cls ? ' ' + cls : '') + '">' + escapeHtml(value) + '</div></div>';
+    }
+
+    function renderSchedule() {
+      if (!lastSchedule) return;
+      var rows = lastSchedule.rows;
+      var limit = showAll ? rows.length : Math.min(12, rows.length);
+      var out = [];
+      for (var i = 0; i < rows.length; i++) {
+        var r = rows[i];
+        out.push('<tr' + (i >= limit ? ' class="row-hidden"' : '') + '>' +
+          '<td class="num">' + r.n + '</td>' +
+          '<td>' + monthLabel(r.n) + '</td>' +
+          '<td class="num">' + fmtMoney(r.payment) + '</td>' +
+          '<td class="num">' + fmtMoney(r.principal) + '</td>' +
+          '<td class="num">' + fmtMoney(r.interest) + '</td>' +
+          '<td class="num">' + fmtMoney(r.cumInterest) + '</td>' +
+          '<td class="num">' + fmtMoney(r.balance) + '</td>' +
+          '</tr>');
+      }
+      document.getElementById('scheduleRows').innerHTML = out.join('');
+      var btn = document.getElementById('showAllBtn');
+      if (rows.length <= 12) {
+        btn.style.display = 'none';
+      } else {
+        btn.style.display = '';
+        btn.textContent = showAll ? 'Show first 12' : 'Show all ' + rows.length;
+      }
+      document.getElementById('scheduleNote').textContent =
+        'Showing ' + limit + ' of ' + rows.length + ' payments. Final balance: ' + fmtMoney(rows[rows.length - 1].balance) + '.';
+    }
+
+    function monthLabel(n) {
+      var d = new Date();
+      var m = d.getMonth() + n;
+      var y = d.getFullYear() + Math.floor(m / 12);
+      var names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      return names[((m % 12) + 12) % 12] + ' ' + y;
+    }
+
+    function toggleShowAll() {
+      showAll = !showAll;
+      renderSchedule();
+    }
+
+    function toggleSchedule() {
+      scheduleOpen = !scheduleOpen;
+      document.getElementById('scheduleBody').style.display = scheduleOpen ? 'block' : 'none';
+      document.getElementById('collapseBtn').textContent = scheduleOpen ? 'Hide' : 'Show';
+    }
+
+    function csvCell(v) {
+      var s = String(v);
+      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    }
+
+    function downloadCsv() {
+      if (!lastSchedule) { calculate(); }
+      if (!lastSchedule) return;
+      var rows = lastSchedule.rows;
+      var lines = ['Payment #,Date,Payment,Principal,Interest,Cumulative Interest,Remaining Balance'];
+      for (var i = 0; i < rows.length; i++) {
+        var r = rows[i];
+        lines.push([
+          r.n,
+          csvCell(monthLabel(r.n)),
+          r.payment.toFixed(2),
+          r.principal.toFixed(2),
+          r.interest.toFixed(2),
+          r.cumInterest.toFixed(2),
+          r.balance.toFixed(2)
+        ].join(','));
+      }
+      var blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'amortization-schedule.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+
+      var btn = document.getElementById('csvBtn');
+      var original = btn.textContent;
+      btn.textContent = 'Downloaded!';
+      setTimeout(function () { btn.textContent = original; }, 2000);
+    }
+
+    function clearAll() {
+      document.getElementById('amount').value = '';
+      document.getElementById('rate').value = '';
+      document.getElementById('term').value = '';
+      document.getElementById('termUnit').value = 'years';
+      document.getElementById('extra').value = '0';
+      document.getElementById('error').style.display = 'none';
+      document.getElementById('results').style.display = 'none';
+      document.getElementById('schedule').style.display = 'none';
+      lastSchedule = null;
+      showAll = false;
+      document.getElementById('amount').focus();
+    }
+
+    function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    ['amount', 'rate', 'term', 'extra'].forEach(function (id) {
+      document.getElementById(id).addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') calculate();
+      });
+    });
+    document.getElementById('termUnit').addEventListener('change', function () {
+      var t = document.getElementById('term');
+      if (this.value === 'months' && t.value === '30') t.value = '360';
+      else if (this.value === 'years' && t.value === '360') t.value = '30';
+      if (document.getElementById('results').style.display !== 'none') calculate();
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

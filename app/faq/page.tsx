@@ -1,25 +1,32 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'FAQ | Zion Tech Group',
   description:
-    'Common questions about AI and IT services, engagement models, pricing, onboarding, support, security, and deployment timelines.',
+  'Common questions about AI and IT services, engagement models, pricing, onboarding, support, security, and deployment timelines.',
   openGraph: {
     title: 'FAQ | Zion Tech Group',
     description:
       'Common questions about AI and IT services, timing, security, pricing, and onboarding.',
     url: 'https://ziontechgroup.com/faq/',
-    siteName: 'Zion Tech Group',
     type: 'website',
     locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQ | Zion Tech Group',
+    description: 'Common questions about AI and IT services, timing, security, pricing, and onboarding.',
   },
   alternates: { canonical: '/faq/' },
 };
 
+
 export default function FAQPage() {
   return (
+<>
     <StandardPage
       title="Frequently Asked Questions"
       subtitle="Straight answers about AI and IT services, pricing, onboarding, support, and what to expect from a Zion engagement."
@@ -64,5 +71,6 @@ export default function FAQPage() {
         </div>
       </div>
     </StandardPage>
+  </>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
@@ -11,18 +12,23 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/use-cases/',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Use Cases | Zion Tech Group',
+    description: 'High-signal use cases for AI, IT, and automation engagements.',
+  },
   alternates: { canonical: '/use-cases/' },
 };
 
 const USE_CASES = [
-  { title: 'Reduce support workload', emoji: '🤖', category: 'Automation', path: '/services?category=automation', desc: 'Deploy AI triage, ticket routing, and knowledge-base assistants that lower ticket volume and speed resolution.' },
-  { title: 'Modernize cloud infrastructure', emoji: '☁️', category: 'Cloud', path: '/services?category=cloud', desc: 'Migrate workloads, tighten observability, and reduce cloud spend without introducing reliability risk.' },
-  { title: 'Strengthen security posture', emoji: '🔐', category: 'Security', path: '/services?category=security', desc: 'Run penetration testing, secure identity flows, and prepare incident-response playbooks before breaches happen.' },
-  { title: 'Turn data into decisions', emoji: '📊', category: 'Data', path: '/services?category=data', desc: 'Build governed analytics pipelines, dashboards, and forecasting models that turn raw data into action.' },
-  { title: 'Ship AI products faster', emoji: '🧠', category: 'AI', path: '/services?category=ai', desc: 'Use pretrained models, RAG systems, and evaluation pipelines to ship production AI experiences in weeks.' },
-  { title: 'Expand revenue with Micro-SaaS', emoji: '🚀', category: 'Micro-SaaS', path: '/services?category=micro-saas', desc: 'Launch repeatable, monetizable tools and self-service experiences on proven infrastructure.' },
-  { title: 'Scale IoT operations', emoji: '📡', category: 'IoT', path: '/services?category=iot', desc: 'Connect edge devices, normalize telemetry, and run anomaly detection at scale.' },
-  { title: 'Protect business records', emoji: '💾', category: 'Database', path: '/services?category=database', desc: 'Improve query performance, automate backups, and simplify data governance with managed database services.' },
+  { title: 'Reduce support workload', emoji: '🤖', category: 'Automation', path: '/services/?category=automation', desc: 'Deploy AI triage, ticket routing, and knowledge-base assistants that lower ticket volume and speed resolution.' },
+  { title: 'Modernize cloud infrastructure', emoji: '☁️', category: 'Cloud', path: '/services/?category=cloud', desc: 'Migrate workloads, tighten observability, and reduce cloud spend without introducing reliability risk.' },
+  { title: 'Strengthen security posture', emoji: '🔐', category: 'Security', path: '/services/?category=security', desc: 'Run penetration testing, secure identity flows, and prepare incident-response playbooks before breaches happen.' },
+  { title: 'Turn data into decisions', emoji: '📊', category: 'Data', path: '/services/?category=data', desc: 'Build governed analytics pipelines, dashboards, and forecasting models that turn raw data into action.' },
+  { title: 'Ship AI products faster', emoji: '🧠', category: 'AI', path: '/services/?category=ai', desc: 'Use pretrained models, RAG systems, and evaluation pipelines to ship production AI experiences in weeks.' },
+  { title: 'Expand revenue with Micro-SaaS', emoji: '🚀', category: 'Micro-SaaS', path: '/services/?category=micro-saas', desc: 'Launch repeatable, monetizable tools and self-service experiences on proven infrastructure.' },
+  { title: 'Scale IoT operations', emoji: '📡', category: 'IoT', path: '/services/?category=iot', desc: 'Connect edge devices, normalize telemetry, and run anomaly detection at scale.' },
+  { title: 'Protect business records', emoji: '💾', category: 'Database', path: '/services/?category=database', desc: 'Improve query performance, automate backups, and simplify data governance with managed database services.' },
 ];
 
 const INDUSTRIES = [
@@ -34,21 +40,20 @@ const INDUSTRIES = [
   { key: 'education-&-research', label: 'Education & Research', emoji: '🎓', focus: 'Learning intelligence, assessment automation, and research ops' },
 ];
 
+
 export default function UseCasesPage() {
   return (
+<>
     <StandardPage
-      title={
-        <>
-          Use Cases That{' '}
-          <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">
-            Move the Needle
-          </span>
-        </>
-      }
+      title="Use Cases"
       subtitle="From customer experience to infrastructure reliability, these are the patterns where Zion clients see fast, measurable results."
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Use Cases' },
+      ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
       ]}
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -83,14 +88,15 @@ export default function UseCasesPage() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
-                <Link href="/services?category=ai" className="text-xs text-purple-300 hover:text-purple-200">AI services →</Link>
-                <Link href="/use-cases" className="text-xs text-slate-300 hover:text-white">Use cases →</Link>
-                <Link href="/contact" className="text-xs text-slate-300 hover:text-white">Talk to us →</Link>
+                <Link href="/services/?category=ai" className="text-xs text-purple-300 hover:text-purple-200">AI services →</Link>
+                <Link href="/use-cases/" className="text-xs text-slate-300 hover:text-white">Use cases →</Link>
+                <Link href="/contact/" className="text-xs text-slate-300 hover:text-white">Talk to us →</Link>
               </div>
             </div>
           ))}
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

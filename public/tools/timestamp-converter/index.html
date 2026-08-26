@@ -4,387 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timestamp Converter | Zion Tech Group</title>
-  <meta name="description" content="Convert between Unix timestamps (seconds and milliseconds), ISO 8601, and human-readable formats. Instant conversion to local, UTC, epoch, and day of the week.">
+  <meta name="description" content="Convert Unix timestamps to human-readable dates and vice versa.">
   <meta property="og:title" content="Timestamp Converter | Zion Tech Group">
-  <meta property="og:description" content="Free tool — convert between Unix timestamps, ISO 8601, and readable dates. Local, UTC, epoch, day of the week.">
+  <meta property="og:description" content="Free online Unix timestamp converter — seconds, milliseconds, ISO 8601.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/timestamp-converter/">
   <link rel="canonical" href="https://ziontechgroup.com/tools/timestamp-converter/">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
-    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
-    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
     .subtitle { color: #94a3b8; margin-bottom: 2rem; }
-    .tool { background: #1e293b; border: 1px solid #334155; border-radius: 1rem; padding: 2rem; }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; color: #94a3b8; font-size: 0.875rem; margin-bottom: 0.5rem; font-weight: 500; }
-    .form-group input, .form-group select {
-      width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155;
-      border-radius: 0.5rem; color: #fff; font-size: 1rem; font-family: 'Courier New', monospace;
-    }
-    .form-group input:focus, .form-group select:focus { outline: none; border-color: #6366f1; }
-    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; font-size: 1rem; }
-    .btn-primary { background: #6366f1; color: #fff; }
-    .btn-primary:hover { background: #4f46e5; }
-    .btn-secondary { background: #1e293b; color: #e5e7eb; border: 1px solid #334155; }
-    .btn-secondary:hover { background: #334155; }
-    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .results { margin-top: 2rem; }
-    .result-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 2rem; }
-    .result-card { background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
-    .result-label { color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; font-weight: 600; }
-    .result-value { font-size: 1rem; font-weight: 600; color: #e5e7eb; word-break: break-all; font-family: 'Courier New', monospace; }
-    .result-value.local { color: #60a5fa; }
-    .result-value.utc { color: #a78bfa; }
-    .result-value.epoch-s { color: #34d399; }
-    .result-value.epoch-ms { color: #f472b6; }
-    .result-value.iso { color: #fbbf24; }
-    .result-value.dow { color: #fb923c; }
-    .result-value.rel { color: #67e8f9; }
-    .copy-btn {
-      display: inline-flex; align-items: center; gap: 0.25rem;
-      margin-top: 0.5rem; padding: 0.25rem 0.75rem; font-size: 0.75rem;
-      background: #1e293b; border: 1px solid #334155; border-radius: 0.25rem;
-      color: #94a3b8; cursor: pointer;
-    }
-    .copy-btn:hover { background: #334155; color: #e5e7eb; }
-    .copy-btn.copied { background: #064e3b; border-color: #10b981; color: #34d399; }
-    .mode-selector { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-    .mode-btn {
-      padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem;
-      background: #0f172a; border: 1px solid #334155; color: #94a3b8;
-      cursor: pointer; font-weight: 500;
-    }
-    .mode-btn.active { background: #6366f1; border-color: #6366f1; color: #fff; }
-    .mode-btn:hover:not(.active) { border-color: #6366f1; color: #e5e7eb; }
-    .input-row { display: flex; gap: 0.5rem; }
-    .input-row input { flex: 1; }
-    .input-row .btn { white-space: nowrap; }
-    .cta-section { margin-top: 2rem; text-align: center; padding: 2rem; background: #0f172a; border-radius: 1rem; }
-    .cta-section h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .cta-section p { color: #94a3b8; margin-bottom: 1rem; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .section h2 { font-size: 1rem; margin-bottom: 1rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input { width: 100%; padding: 0.5rem 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input:focus { outline: none; border-color: #6366f1; }
+    .results { margin-top: 1rem; }
+    .result-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #334155; font-size: 0.875rem; }
+    .result-item:last-child { border-bottom: none; }
+    .result-item .label { color: #94a3b8; }
+    .result-item .value { font-family: monospace; color: #e5e7eb; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
     .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
-    .back:hover { color: #6366f1; }
-    .error-message { background: #450a0a; border: 1px solid #ef4444; color: #f87171; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; }
-    .error-message.hidden { display: none; }
-    .results.hidden { display: none; }
-    @media (max-width: 640px) {
-      .result-grid { grid-template-columns: 1fr; }
-      .input-row { flex-direction: column; }
-    }
+    .back:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Timestamp Converter</h1>
-    <p class="subtitle">Convert between Unix timestamps (seconds and milliseconds), ISO 8601, and human-readable formats. Instant conversion to local, UTC, epoch, and day of the week.</p>
-
-    <div class="tool">
-      <div class="mode-selector">
-        <button class="mode-btn active" data-mode="auto">Auto-detect</button>
-        <button class="mode-btn" data-mode="seconds">Unix Seconds</button>
-        <button class="mode-btn" data-mode="milliseconds">Unix Milliseconds</button>
-        <button class="mode-btn" data-mode="iso">ISO 8601</button>
-        <button class="mode-btn" data-mode="human">Human Date</button>
+    <p class="subtitle">Convert between Unix timestamps, ISO 8601, and human-readable dates.</p>
+    
+    <div class="section">
+      <h2>Timestamp → Date</h2>
+      <div class="field">
+        <input type="text" id="ts" placeholder="Unix timestamp (e.g. 1700000000)">
       </div>
-
-      <div class="form-group">
-        <label for="inputValue">Enter Timestamp or Date</label>
-        <div class="input-row">
-          <input type="text" id="inputValue" placeholder="e.g., 1724083200, 2024-08-19T17:00:00Z, or 2024-08-19 14:00:00">
-          <button class="btn btn-secondary" id="nowBtn">Now</button>
-        </div>
-      </div>
-
-      <div style="display: flex; gap: 1rem;">
-        <button class="btn btn-primary" id="convertBtn">Convert</button>
-        <button class="btn btn-secondary" id="clearBtn">Clear</button>
-      </div>
-
-      <div id="errorMsg" class="error-message hidden"></div>
-
-      <div id="results" class="results hidden">
-        <div class="result-grid">
-          <div class="result-card">
-            <div class="result-label">Local Date</div>
-            <div class="result-value local" id="localDate">—</div>
-            <button class="copy-btn" data-target="localDate">Copy</button>
-          </div>
-          <div class="result-card">
-            <div class="result-label">UTC Date</div>
-            <div class="result-value utc" id="utcDate">—</div>
-            <button class="copy-btn" data-target="utcDate">Copy</button>
-          </div>
-          <div class="result-card">
-            <div class="result-label">ISO 8601</div>
-            <div class="result-value iso" id="isoDate">—</div>
-            <button class="copy-btn" data-target="isoDate">Copy</button>
-          </div>
-          <div class="result-card">
-            <div class="result-label">Unix Seconds</div>
-            <div class="result-value epoch-s" id="epochSeconds">—</div>
-            <button class="copy-btn" data-target="epochSeconds">Copy</button>
-          </div>
-          <div class="result-card">
-            <div class="result-label">Unix Milliseconds</div>
-            <div class="result-value epoch-ms" id="epochMillis">—</div>
-            <button class="copy-btn" data-target="epochMillis">Copy</button>
-          </div>
-          <div class="result-card">
-            <div class="result-label">Day of Week</div>
-            <div class="result-value dow" id="dayOfWeek">—</div>
-            <button class="copy-btn" data-target="dayOfWeek">Copy</button>
-          </div>
-          <div class="result-card">
-            <div class="result-label">Relative Time</div>
-            <div class="result-value rel" id="relativeTime">—</div>
-            <button class="copy-btn" data-target="relativeTime">Copy</button>
-          </div>
-        </div>
-
-        <div class="cta-section">
-          <h3>Need help with data pipelines or automation?</h3>
-          <p>Our team specializes in real-time data processing, timestamp handling, and workflow automation. Let's discuss how we can help.</p>
-          <div class="btn-group">
-            <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-primary">Book free consultation</a>
-            <a href="/services/" class="btn btn-secondary">View our services</a>
-          </div>
-        </div>
-      </div>
+      <button class="btn" onclick="tsToDate()">Convert</button>
+      <button class="btn" onclick="now()" style="margin-left: 0.5rem;">Now</button>
+      <div class="results" id="dateResults"></div>
     </div>
-
+    
+    <div class="section">
+      <h2>Date → Timestamp</h2>
+      <div class="field">
+        <input type="datetime-local" id="dateInput">
+      </div>
+      <div class="results" id="tsResults"></div>
+    </div>
+    
+    <div class="info">
+      <h2>Quick Reference</h2>
+      <ul>
+        <li><span class="label">Unix timestamp</span> — Seconds since Jan 1, 1970 00:00:00 UTC.</li>
+        <li><span class="label">10 digits</span> = seconds, <span class="label">13 digits</span> = milliseconds.</li>
+        <li><span class="label">ISO 8601</span> — YYYY-MM-DDTHH:mm:ss.sssZ (universal sortable format).</li>
+      </ul>
+    </div>
+    
     <a href="/tools/" class="back">← Back to Tools</a>
   </div>
 
   <script>
-    'use strict';
-    const inputValue = document.getElementById('inputValue');
-    const convertBtn = document.getElementById('convertBtn');
-    const clearBtn = document.getElementById('clearBtn');
-    const nowBtn = document.getElementById('nowBtn');
-    const resultsDiv = document.getElementById('results');
-    const errorMsg = document.getElementById('errorMsg');
-    const modeBtns = document.querySelectorAll('.mode-btn');
-
-    const localDateEl = document.getElementById('localDate');
-    const utcDateEl = document.getElementById('utcDate');
-    const isoDateEl = document.getElementById('isoDate');
-    const epochSecondsEl = document.getElementById('epochSeconds');
-    const epochMillisEl = document.getElementById('epochMillis');
-    const dayOfWeekEl = document.getElementById('dayOfWeek');
-    const relativeTimeEl = document.getElementById('relativeTime');
-
-    let currentMode = 'auto';
-
-    // Mode selector
-    modeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        modeBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentMode = btn.dataset.mode;
-      });
-    });
-
-    function showError(message) {
-      errorMsg.textContent = message;
-      errorMsg.classList.remove('hidden');
-    }
-
-    function hideError() {
-      errorMsg.classList.add('hidden');
-    }
-
-    function hideResults() {
-      resultsDiv.classList.add('hidden');
-    }
-
-    function pad(n) { return n < 10 ? '0' + n : String(n); }
-
-    function formatLocal(date) {
-      return date.toLocaleString(undefined, {
-        year: 'numeric', month: '2-digit', day: '2-digit',
-        hour: '2-digit', minute: '2-digit', second: '2-digit',
-        timeZoneName: 'short'
-      });
-    }
-
-    function formatUTC(date) {
-      const y = date.getUTCFullYear();
-      const mo = pad(date.getUTCMonth() + 1);
-      const d = pad(date.getUTCDate());
-      const h = pad(date.getUTCHours());
-      const mi = pad(date.getUTCMinutes());
-      const s = pad(date.getUTCSeconds());
-      return `${y}-${mo}-${d} ${h}:${mi}:${s} UTC`;
-    }
-
-    function getDayOfWeek(date) {
-      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      return days[date.getUTCDay()];
-    }
-
-    function getRelativeTime(date) {
-      const now = Date.now();
-      const diff = date.getTime() - now;
-      const absDiff = Math.abs(diff);
-      const isPast = diff < 0;
-
-      const seconds = Math.floor(absDiff / 1000);
-      const minutes = Math.floor(seconds / 60);
-      const hours = Math.floor(minutes / 60);
-      const days = Math.floor(hours / 24);
-      const weeks = Math.floor(days / 7);
-      const months = Math.floor(days / 30);
-      const years = Math.floor(days / 365);
-
-      let text;
-      if (seconds < 60) text = 'just now';
-      else if (minutes < 60) text = `${minutes} minute${minutes !== 1 ? 's' : ''}`;
-      else if (hours < 24) text = `${hours} hour${hours !== 1 ? 's' : ''}`;
-      else if (days < 7) text = `${days} day${days !== 1 ? 's' : ''}`;
-      else if (weeks < 5) text = `${weeks} week${weeks !== 1 ? 's' : ''}`;
-      else if (months < 12) text = `${months} month${months !== 1 ? 's' : ''}`;
-      else text = `${years} year${years !== 1 ? 's' : ''}`;
-
-      return isPast ? `${text} ago` : `in ${text}`;
-    }
-
-    function detectAndParse(value, mode) {
-      value = value.trim();
-      if (!value) return null;
-
-      let timestamp;
-
-      if (mode === 'seconds') {
-        timestamp = parseInt(value, 10);
-        if (isNaN(timestamp)) return null;
-        return timestamp * 1000;
-      }
-
-      if (mode === 'milliseconds') {
-        timestamp = parseInt(value, 10);
-        if (isNaN(timestamp)) return null;
-        return timestamp;
-      }
-
-      if (mode === 'iso') {
-        const date = new Date(value);
-        if (isNaN(date.getTime())) return null;
-        return date.getTime();
-      }
-
-      if (mode === 'human') {
-        const date = new Date(value);
-        if (isNaN(date.getTime())) return null;
-        return date.getTime();
-      }
-
-      // Auto-detect
-      // Try as number first
-      if (/^\d+$/.test(value)) {
-        const num = parseInt(value, 10);
-        // Heuristic: if > 1e12, it's milliseconds; if > 1e9 and < 1e12, it's seconds
-        if (num > 1e12) {
-          return num; // milliseconds
-        }
-        return num * 1000; // seconds
-      }
-
-      // Try as ISO or human date
-      const date = new Date(value);
-      if (!isNaN(date.getTime())) {
-        return date.getTime();
-      }
-
-      return null;
-    }
-
-    function convert() {
-      const value = inputValue.value;
-      if (!value.trim()) {
-        showError('Please enter a timestamp or date value.');
+    function tsToDate() {
+      const ts = document.getElementById('ts').value;
+      if (!ts) return;
+      let num = parseInt(ts);
+      if (ts.length === 10) num *= 1000;
+      const d = new Date(num);
+      if (isNaN(d.getTime())) {
+        document.getElementById('dateResults').innerHTML = '<p style="color: #f87171;">Invalid timestamp</p>';
         return;
       }
-
-      hideError();
-
-      const ms = detectAndParse(value, currentMode);
-      if (ms === null) {
-        showError('Could not parse the input. Please enter a valid Unix timestamp, ISO 8601 date, or human-readable date format.');
-        hideResults();
+      document.getElementById('dateResults').innerHTML = `
+        <div class="result-item"><span class="label">ISO 8601:</span><span class="value">${d.toISOString()}</span></div>
+        <div class="result-item"><span class="label">Local:</span><span class="value">${d.toLocaleString()}</span></div>
+        <div class="result-item"><span class="label">UTC:</span><span class="value">${d.toUTCString()}</span></div>
+        <div class="result-item"><span class="label">Relative:</span><span class="value" style="color: #818cf8;">${getRelative(d)}</span></div>
+      `;
+    }
+    function dateToTs() {
+      const dateStr = document.getElementById('dateInput').value;
+      if (!dateStr) return;
+      const d = new Date(dateStr);
+      if (isNaN(d.getTime())) {
+        document.getElementById('tsResults').innerHTML = '<p style="color: #f87171;">Invalid date</p>';
         return;
       }
-
-      const date = new Date(ms);
-
-      // Populate results
-      localDateEl.textContent = formatLocal(date);
-      utcDateEl.textContent = formatUTC(date);
-      isoDateEl.textContent = date.toISOString();
-      epochSecondsEl.textContent = Math.floor(ms / 1000).toString();
-      epochMillisEl.textContent = ms.toString();
-      dayOfWeekEl.textContent = getDayOfWeek(date);
-      relativeTimeEl.textContent = getRelativeTime(date);
-
-      resultsDiv.classList.remove('hidden');
+      document.getElementById('tsResults').innerHTML = `
+        <div class="result-item"><span class="label">Unix (seconds):</span><span class="value">${Math.floor(d.getTime() / 1000)}</span></div>
+        <div class="result-item"><span class="label">Unix (ms):</span><span class="value">${d.getTime()}</span></div>
+      `;
     }
-
-    function clearAll() {
-      inputValue.value = '';
-      hideResults();
-      hideError();
+    function now() {
+      const d = new Date();
+      document.getElementById('ts').value = Math.floor(d.getTime() / 1000);
+      tsToDate();
     }
-
-    function setNow() {
-      const now = Date.now();
-      inputValue.value = now.toString();
-      hideError();
+    function getRelative(d) {
+      const diff = Date.now() - d.getTime();
+      const abs = Math.abs(diff);
+      const mins = Math.floor(abs / 60000);
+      const hrs = Math.floor(abs / 3600000);
+      const days = Math.floor(abs / 86400000);
+      if (mins < 1) return 'just now';
+      if (mins < 60) return diff > 0 ? mins + ' min ago' : 'in ' + mins + ' min';
+      if (hrs < 24) return diff > 0 ? hrs + ' hr ago' : 'in ' + hrs + ' hr';
+      return diff > 0 ? days + ' days ago' : 'in ' + days + ' days';
     }
-
-    // Copy functionality
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.dataset.target;
-        const text = document.getElementById(targetId).textContent;
-        if (text === '—') return;
-        
-        navigator.clipboard.writeText(text).then(() => {
-          btn.textContent = 'Copied!';
-          btn.classList.add('copied');
-          setTimeout(() => {
-            btn.textContent = 'Copy';
-            btn.classList.remove('copied');
-          }, 1500);
-        }).catch(() => {
-          // Fallback for non-secure contexts
-          const ta = document.createElement('textarea');
-          ta.value = text;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          try {
-            document.execCommand('copy');
-            btn.textContent = 'Copied!';
-            btn.classList.add('copied');
-            setTimeout(() => {
-              btn.textContent = 'Copy';
-              btn.classList.remove('copied');
-            }, 1500);
-          } catch (e) {
-            btn.textContent = 'Failed';
-          }
-          document.body.removeChild(ta);
-        });
-      });
-    });
-
-    // Event listeners
-    convertBtn.addEventListener('click', convert);
-    clearBtn.addEventListener('click', clearAll);
-    nowBtn.addEventListener('click', setNow);
-    inputValue.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') convert();
-    });
+    document.getElementById('dateInput').addEventListener('input', dateToTs);
   </script>
 </body>
 </html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cron Explainer &amp; Next Runs | Zion Tech Group</title>
+  <meta name="description" content="Explain any 5-field cron expression in plain English and preview the next 10 execution times, with field-level validation errors.">
+  <meta property="og:title" content="Cron Explainer &amp; Next Runs | Zion Tech Group">
+  <meta property="og:description" content="Decode cron expressions and preview upcoming run times in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/cron-next-runs/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/cron-next-runs/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    input[type="text"] { width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1rem; letter-spacing: .04em; }
+    input[type="text"]:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.copy { background: #059669; }
+    .btn.copy:hover { background: #047857; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .presets { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .chip { background: #0f172a; border: 1px solid #334155; color: #cbd5e1; padding: 0.35rem 0.7rem; border-radius: 999px; font-size: 0.78rem; cursor: pointer; font-family: ui-monospace, monospace; }
+    .chip:hover { border-color: #6366f1; color: #fff; }
+    .desc { font-size: 1.02rem; color: #e5e7eb; line-height: 1.5; }
+    .err { background: #2a1215; border: 1px solid #7f1d1d; color: #fca5a5; border-radius: 0.5rem; padding: 0.85rem; font-size: 0.875rem; line-height: 1.5; }
+    .fields { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; margin-top: 1rem; }
+    .fcell { background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; padding: 0.6rem; text-align: center; }
+    .fcell.bad { border-color: #7f1d1d; background: #2a1215; }
+    .fcell .fname { font-size: 0.66rem; color: #94a3b8; text-transform: uppercase; letter-spacing: .04em; }
+    .fcell .fval { font-family: ui-monospace, monospace; color: #818cf8; margin-top: 0.2rem; font-size: 0.95rem; word-break: break-all; }
+    ol.runs { list-style: none; counter-reset: r; }
+    ol.runs li { counter-increment: r; display: flex; gap: 0.75rem; align-items: baseline; padding: 0.5rem 0; border-bottom: 1px solid #24314a; font-family: ui-monospace, monospace; font-size: 0.9rem; }
+    ol.runs li:last-child { border-bottom: none; }
+    ol.runs li::before { content: counter(r) "."; color: #64748b; min-width: 1.6rem; }
+    ol.runs .dow { color: #94a3b8; }
+    ol.runs .rel { color: #64748b; margin-left: auto; font-size: 0.8rem; }
+    .note { font-size: 0.8rem; color: #94a3b8; margin-top: 0.75rem; line-height: 1.55; }
+    table.ref { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    table.ref th, table.ref td { text-align: left; padding: 0.45rem 0.5rem; border-bottom: 1px solid #24314a; }
+    table.ref th { color: #94a3b8; font-weight: 600; }
+    table.ref td code { color: #818cf8; font-family: ui-monospace, monospace; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    @media (max-width: 720px) { .fields { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cron Explainer &amp; Next Runs</h1>
+    <p class="subtitle">Decode a 5-field cron expression and preview when it fires next.</p>
+
+    <div class="section">
+      <label for="expr">Cron expression (minute hour day-of-month month day-of-week)</label>
+      <input type="text" id="expr" value="0 9 * * 1" spellcheck="false" autocapitalize="off" autocomplete="off">
+      <div class="presets" id="presets"></div>
+      <div class="fields" id="fields"></div>
+      <div class="buttons">
+        <button class="btn copy" id="btnCopyExpr">Copy Expression</button>
+        <button class="btn copy" id="btnCopyRuns">Copy Next Runs</button>
+        <button class="btn secondary" id="btnClear">Clear</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Meaning</h3>
+      <div id="out"></div>
+    </div>
+
+    <div class="section">
+      <h3>Next 10 runs <span style="color:#64748b;font-size:.8rem;font-weight:400">(your local time)</span></h3>
+      <ol class="runs" id="runs"></ol>
+      <p class="note" id="runsNote"></p>
+    </div>
+
+    <div class="section">
+      <h3>Syntax reference</h3>
+      <table class="ref">
+        <tr><th>Syntax</th><th>Meaning</th></tr>
+        <tr><td><code>*</code></td><td>Every value</td></tr>
+        <tr><td><code>*/15</code></td><td>Every 15th value (0, 15, 30, 45)</td></tr>
+        <tr><td><code>1-5</code></td><td>Range, 1 through 5 inclusive</td></tr>
+        <tr><td><code>9-17/2</code></td><td>Every 2nd value within 9–17</td></tr>
+        <tr><td><code>1,15,30</code></td><td>A specific list of values</td></tr>
+        <tr><td><code>MON</code> / <code>JAN</code></td><td>Day and month names (case-insensitive)</td></tr>
+        <tr><td><code>0</code> or <code>7</code></td><td>Both mean Sunday in day-of-week</td></tr>
+      </table>
+      <p class="note">Field ranges: minute 0–59, hour 0–23, day-of-month 1–31, month 1–12, day-of-week 0–7.
+        When <em>both</em> day-of-month and day-of-week are restricted, cron fires when <strong>either</strong> matches (POSIX OR behaviour) — <code>0 0 1 * MON</code> means the 1st of the month <em>or</em> any Monday.
+        Everything is computed locally in your browser; no data leaves the page.</p>
+    </div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+  /* ==== CORE:START ==== */
+  (function (root) {
+    'use strict';
+
+    var DOW = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    var MON = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+               'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    var DOW_LONG = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var MON_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                    'August', 'September', 'October', 'November', 'December'];
+
+    var SPECS = [
+      { name: 'minute', min: 0, max: 59 },
+      { name: 'hour', min: 0, max: 23 },
+      { name: 'day-of-month', min: 1, max: 31 },
+      { name: 'month', min: 1, max: 12 },
+      { name: 'day-of-week', min: 0, max: 7 }
+    ];
+
+    var ALIASES = {
+      '@yearly': '0 0 1 1 *', '@annually': '0 0 1 1 *', '@monthly': '0 0 1 * *',
+      '@weekly': '0 0 * * 0', '@daily': '0 0 * * *', '@midnight': '0 0 * * *',
+      '@hourly': '0 * * * *'
+    };
+
+    function CronError(message, fieldIndex) {
+      this.name = 'CronError';
+      this.message = message;
+      this.fieldIndex = typeof fieldIndex === 'number' ? fieldIndex : -1;
+    }
+    CronError.prototype = Object.create(Error.prototype);
+
+    // Resolve a token to a number, accepting day/month names in the right fields.
+    function toNumber(token, idx, spec) {
+      var t = String(token).toUpperCase();
+      if (idx === 4) {
+        var d = DOW.indexOf(t);
+        if (d !== -1) { return d; }
+      }
+      if (idx === 3) {
+        var m = MON.indexOf(t);
+        if (m !== -1) { return m + 1; }
+      }
+      if (!/^\d+$/.test(t)) {
+        throw new CronError('"' + token + '" is not a valid ' + spec.name + ' value.', idx);
+      }
+      return parseInt(t, 10);
+    }
+
+    function assertInRange(value, idx, spec, token) {
+      if (value < spec.min || value > spec.max) {
+        throw new CronError('"' + token + '" is out of range for ' + spec.name +
+          ' (allowed ' + spec.min + '-' + spec.max + ').', idx);
+      }
+    }
+
+    // Expand one field into a sorted, de-duplicated list of matching values.
+    function parseField(raw, idx) {
+      var spec = SPECS[idx];
+      var field = String(raw).trim();
+      if (field === '') {
+        throw new CronError('The ' + spec.name + ' field is empty.', idx);
+      }
+      var out = {};
+      var parts = field.split(',');
+
+      for (var i = 0; i < parts.length; i++) {
+        var part = parts[i].trim();
+        if (part === '') {
+          throw new CronError('Empty entry in the ' + spec.name +
+            ' field — check for a stray comma.', idx);
+        }
+
+        var step = 1;
+        var slash = part.indexOf('/');
+        var body = part;
+        if (slash !== -1) {
+          body = part.slice(0, slash).trim();
+          var stepRaw = part.slice(slash + 1).trim();
+          if (!/^\d+$/.test(stepRaw) || parseInt(stepRaw, 10) === 0) {
+            throw new CronError('"' + part + '" has an invalid step in ' + spec.name +
+              ' — the step must be a positive whole number.', idx);
+          }
+          step = parseInt(stepRaw, 10);
+          if (body === '') {
+            throw new CronError('"' + part + '" is missing a value before the step.', idx);
+          }
+        }
+
+        var lo, hi;
+        if (body === '*') {
+          lo = spec.min; hi = spec.max;
+        } else if (body.indexOf('-') > 0) {
+          var seg = body.split('-');
+          if (seg.length !== 2) {
+            throw new CronError('"' + body + '" is not a valid range in ' + spec.name + '.', idx);
+          }
+          lo = toNumber(seg[0], idx, spec);
+          hi = toNumber(seg[1], idx, spec);
+          assertInRange(lo, idx, spec, seg[0]);
+          assertInRange(hi, idx, spec, seg[1]);
+          if (lo > hi) {
+            throw new CronError('Range "' + body + '" is backwards in ' + spec.name + '.', idx);
+          }
+        } else {
+          lo = toNumber(body, idx, spec);
+          assertInRange(lo, idx, spec, body);
+          hi = (slash !== -1) ? spec.max : lo;
+        }
+
+        for (var v = lo; v <= hi; v += step) { out[v] = true; }
+      }
+
+      var values = Object.keys(out).map(Number).sort(function (a, b) { return a - b; });
+
+      // Day-of-week 7 and 0 both mean Sunday.
+      if (idx === 4) {
+        values = values.map(function (v) { return v === 7 ? 0 : v; });
+        var seen = {}, uniq = [];
+        values.forEach(function (v) { if (!seen[v]) { seen[v] = true; uniq.push(v); } });
+        values = uniq.sort(function (a, b) { return a - b; });
+      }
+      return values;
+    }
+
+    function parseCron(expression) {
+      var expr = String(expression == null ? '' : expression).trim();
+      if (expr === '') { throw new CronError('Enter a cron expression.', -1); }
+      if (ALIASES[expr.toLowerCase()]) { expr = ALIASES[expr.toLowerCase()]; }
+
+      var fields = expr.split(/\s+/);
+      if (fields.length !== 5) {
+        throw new CronError('A cron expression needs exactly 5 space-separated fields; got ' +
+          fields.length + '.', -1);
+      }
+
+      return {
+        expression: expr,
+        fields: fields,
+        minute: parseField(fields[0], 0),
+        hour: parseField(fields[1], 1),
+        dom: parseField(fields[2], 2),
+        month: parseField(fields[3], 3),
+        dow: parseField(fields[4], 4),
+        domRestricted: fields[2].trim() !== '*',
+        dowRestricted: fields[4].trim() !== '*'
+      };
+    }
+
+    // POSIX rule: if both day fields are restricted, either matching is enough.
+    function dayMatches(parsed, date) {
+      var domHit = parsed.dom.indexOf(date.getDate()) !== -1;
+      var dowHit = parsed.dow.indexOf(date.getDay()) !== -1;
+      if (parsed.domRestricted && parsed.dowRestricted) { return domHit || dowHit; }
+      if (parsed.domRestricted) { return domHit; }
+      if (parsed.dowRestricted) { return dowHit; }
+      return true;
+    }
+
+    function nextRuns(parsed, count, from) {
+      var n = count || 10;
+      var cursor = from ? new Date(from.getTime()) : new Date();
+      cursor.setSeconds(0, 0);
+      cursor.setMinutes(cursor.getMinutes() + 1);
+
+      var results = [];
+      // Bounded scan: 5 years of minutes is far beyond any real schedule, and
+      // guarantees termination for impossible dates like Feb 30.
+      var limit = 5 * 366 * 24 * 60;
+      var steps = 0;
+
+      while (results.length < n && steps < limit) {
+        steps++;
+        if (parsed.month.indexOf(cursor.getMonth() + 1) === -1) {
+          // Jump to the 1st of the next month instead of crawling minute by minute.
+          cursor.setMonth(cursor.getMonth() + 1, 1);
+          cursor.setHours(0, 0, 0, 0);
+          continue;
+        }
+        if (!dayMatches(parsed, cursor)) {
+          cursor.setDate(cursor.getDate() + 1);
+          cursor.setHours(0, 0, 0, 0);
+          continue;
+        }
+        if (parsed.hour.indexOf(cursor.getHours()) === -1) {
+          cursor.setHours(cursor.getHours() + 1, 0, 0, 0);
+          continue;
+        }
+        if (parsed.minute.indexOf(cursor.getMinutes()) === -1) {
+          cursor.setMinutes(cursor.getMinutes() + 1, 0, 0);
+          continue;
+        }
+        results.push(new Date(cursor.getTime()));
+        cursor.setMinutes(cursor.getMinutes() + 1);
+      }
+      return results;
+    }
+
+    root.CronLib = {
+      parseCron: parseCron,
+      parseField: parseField,
+      nextRuns: nextRuns,
+      dayMatches: dayMatches,
+      CronError: CronError,
+      SPECS: SPECS,
+      DOW_LONG: DOW_LONG,
+      MON_LONG: MON_LONG
+    };
+  })(typeof module !== 'undefined' && module.exports ? module.exports : window);
+  /* ==== CORE:END ==== */
+  </script>
+
+  <script>
+  (function () {
+    'use strict';
+    if (typeof window === 'undefined' || !window.CronLib) { return; }
+    var L = window.CronLib;
+    var $ = function (id) { return document.getElementById(id); };
+
+    var PRESETS = [
+      ['Every minute', '* * * * *'],
+      ['Every 15 min', '*/15 * * * *'],
+      ['Hourly', '0 * * * *'],
+      ['Daily 9am', '0 9 * * *'],
+      ['Weekdays 9am', '0 9 * * MON-FRI'],
+      ['Mondays 9am', '0 9 * * 1'],
+      ['1st of month', '0 0 1 * *'],
+      ['Business hours', '0 9-17/2 * * MON-FRI'],
+      ['Leap day', '0 0 29 2 *']
+    ];
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+    function fmt(d) {
+      return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) +
+        ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+    }
+
+    function relative(d, now) {
+      var ms = d - now;
+      var mins = Math.round(ms / 60000);
+      if (mins < 60) { return 'in ' + mins + ' min'; }
+      var hrs = Math.round(mins / 60);
+      if (hrs < 48) { return 'in ' + hrs + ' hr'; }
+      var days = Math.round(hrs / 24);
+      if (days < 60) { return 'in ' + days + ' days'; }
+      return 'in ' + Math.round(days / 30) + ' months';
+    }
+
+    // Describe one field as a human phrase.
+    function listPhrase(values, mapper) {
+      var parts = values.map(mapper);
+      if (parts.length === 1) { return parts[0]; }
+      if (parts.length === 2) { return parts[0] + ' and ' + parts[1]; }
+      return parts.slice(0, -1).join(', ') + ', and ' + parts[parts.length - 1];
+    }
+
+    function describe(p) {
+      var everyMinute = p.minute.length === 60;
+      var everyHour = p.hour.length === 24;
+      var when;
+
+      if (everyMinute && everyHour) {
+        when = 'Every minute';
+      } else if (everyMinute) {
+        when = 'Every minute during ' + listPhrase(p.hour, function (h) { return pad(h) + ':00'; });
+      } else if (everyHour) {
+        when = 'At minute ' + listPhrase(p.minute, String) + ' of every hour';
+      } else if (p.minute.length === 1 && p.hour.length === 1) {
+        when = 'At ' + pad(p.hour[0]) + ':' + pad(p.minute[0]);
+      } else {
+        when = 'At minute ' + listPhrase(p.minute, String) +
+          ' past hour ' + listPhrase(p.hour, String);
+      }
+
+      var dayBits = [];
+      if (p.domRestricted) {
+        dayBits.push('on day ' + listPhrase(p.dom, String) + ' of the month');
+      }
+      if (p.dowRestricted) {
+        dayBits.push('on ' + listPhrase(p.dow, function (d) { return L.DOW_LONG[d]; }));
+      }
+
+      var days;
+      if (dayBits.length === 2) {
+        days = dayBits[0] + ' or ' + dayBits[1] + ' (cron fires when either matches)';
+      } else if (dayBits.length === 1) {
+        days = dayBits[0];
+      } else {
+        days = 'every day';
+      }
+
+      var months = p.month.length === 12
+        ? ''
+        : ' in ' + listPhrase(p.month, function (m) { return L.MON_LONG[m - 1]; });
+
+      return when + ', ' + days + months + '.';
+    }
+
+    function renderFields(fields, badIndex) {
+      var wrap = $('fields');
+      wrap.innerHTML = '';
+      if (!fields) { return; }
+      for (var i = 0; i < L.SPECS.length; i++) {
+        var cell = document.createElement('div');
+        cell.className = 'fcell' + (i === badIndex ? ' bad' : '');
+        var name = document.createElement('div');
+        name.className = 'fname';
+        name.textContent = L.SPECS[i].name;
+        var val = document.createElement('div');
+        val.className = 'fval';
+        val.textContent = fields[i] !== undefined ? fields[i] : '—';
+        cell.appendChild(name);
+        cell.appendChild(val);
+        wrap.appendChild(cell);
+      }
+    }
+
+    var lastRuns = [];
+
+    function run() {
+      var raw = $('expr').value;
+      var out = $('out');
+      var runs = $('runs');
+      var note = $('runsNote');
+      out.innerHTML = '';
+      runs.innerHTML = '';
+      note.textContent = '';
+      lastRuns = [];
+
+      var parsed;
+      try {
+        parsed = L.parseCron(raw);
+      } catch (err) {
+        var box = document.createElement('div');
+        box.className = 'err';
+        box.textContent = err.message;
+        out.appendChild(box);
+        var fields = String(raw || '').trim().split(/\s+/);
+        renderFields(fields.length === 5 ? fields : null,
+          typeof err.fieldIndex === 'number' ? err.fieldIndex : -1);
+        return;
+      }
+
+      renderFields(parsed.fields, -1);
+      var p = document.createElement('div');
+      p.className = 'desc';
+      p.textContent = describe(parsed);
+      out.appendChild(p);
+
+      var now = new Date();
+      var list = L.nextRuns(parsed, 10, now);
+      lastRuns = list;
+
+      if (!list.length) {
+        note.textContent = 'No run found within the next 5 years — this schedule may be impossible ' +
+          '(for example February 30).';
+        return;
+      }
+
+      list.forEach(function (d) {
+        var li = document.createElement('li');
+        var stamp = document.createElement('span');
+        stamp.textContent = fmt(d);
+        var dow = document.createElement('span');
+        dow.className = 'dow';
+        dow.textContent = L.DOW_LONG[d.getDay()];
+        var rel = document.createElement('span');
+        rel.className = 'rel';
+        rel.textContent = relative(d, now);
+        li.appendChild(stamp);
+        li.appendChild(dow);
+        li.appendChild(rel);
+        runs.appendChild(li);
+      });
+
+      if (list.length < 10) {
+        note.textContent = 'Only ' + list.length +
+          ' run(s) fall within the next 5 years for this schedule.';
+      }
+    }
+
+    function flash(btn, msg) {
+      var old = btn.textContent;
+      btn.textContent = msg;
+      setTimeout(function () { btn.textContent = old; }, 1600);
+    }
+
+    function copyText(text, btn) {
+      if (!text) { flash(btn, 'Nothing to copy'); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { flash(btn, 'Copied!'); },
+          function () { legacy(text, btn); });
+      } else { legacy(text, btn); }
+    }
+
+    function legacy(text, btn) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); flash(btn, 'Copied!'); }
+      catch (e) { flash(btn, 'Failed'); }
+      document.body.removeChild(ta);
+    }
+
+    var presetWrap = $('presets');
+    PRESETS.forEach(function (pair) {
+      var b = document.createElement('button');
+      b.className = 'chip';
+      b.type = 'button';
+      b.textContent = pair[0];
+      b.title = pair[1];
+      b.addEventListener('click', function () { $('expr').value = pair[1]; run(); });
+      presetWrap.appendChild(b);
+    });
+
+    $('expr').addEventListener('input', run);
+    $('btnCopyExpr').addEventListener('click', function () {
+      copyText($('expr').value.trim(), this);
+    });
+    $('btnCopyRuns').addEventListener('click', function () {
+      copyText(lastRuns.map(function (d) {
+        return fmt(d) + '  ' + L.DOW_LONG[d.getDay()];
+      }).join('\n'), this);
+    });
+    $('btnClear').addEventListener('click', function () {
+      $('expr').value = '';
+      run();
+    });
+
+    run();
+  })();
+  </script>
+</body>
+</html>

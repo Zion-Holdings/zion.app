@@ -10,10 +10,12 @@ Fixed (vs. earlier paste):
     mixed-schema outreach_sent_history.jsonl is handled robustly.
 """
 import json, os
+from pathlib import Path
 
-ALL_LEADS_FILE = "/Users/klebergarciaalcatrao/zion-support.github.io/lead-crm/all-leads.json"
-READY_FILE     = "/Users/klebergarciaalcatrao/zion-support.github.io/lead-crm/outreach_ready_canonical.json"
-HISTORY_FILE   = "/Users/klebergarciaalcatrao/zion-support.github.io/lead-crm/outreach_sent_history.jsonl"
+SCRIPT_DIR = Path(__file__).resolve().parent
+ALL_LEADS_FILE = str(SCRIPT_DIR / "all-leads.json")
+READY_FILE     = str(SCRIPT_DIR / "outreach_ready_canonical.json")
+HISTORY_FILE   = str(SCRIPT_DIR / "outreach_sent_history.jsonl")
 
 def _email_of(lead: dict) -> str:
     return (lead.get("to") or lead.get("email") or lead.get("recipient") or "").strip().lower()

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import StandardPage from '@/components/StandardPage';
 import { testimonials } from '@/data/testimonials';
 
@@ -12,11 +13,18 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/testimonials/',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Testimonials | Zion Tech Group',
+    description: 'Real outcomes from Zion Tech Group clients.',
+  },
   alternates: { canonical: '/testimonials/' },
 };
 
+
 export default function TestimonialsPage() {
   return (
+<>
     <StandardPage
       title={
         <>
@@ -30,6 +38,10 @@ export default function TestimonialsPage() {
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Testimonials' },
+      ]}
+      actions={[
+        { label: 'Browse services', href: '/services/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
       ]}
     >
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
@@ -47,7 +59,7 @@ export default function TestimonialsPage() {
             </div>
             <p className="text-slate-300 leading-relaxed text-sm">{t.review_text}</p>
             <div className="mt-5 pt-4 border-t border-slate-800">
-              <Link href="/services" className="text-purple-300 text-xs font-semibold hover:text-white">View similar services →</Link>
+              <Link href="/services/" className="text-purple-300 text-xs font-semibold hover:text-white">View similar services →</Link>
             </div>
           </div>
         ))}
@@ -60,10 +72,10 @@ export default function TestimonialsPage() {
             <p className="text-slate-300 text-sm">Tell us your goal and we’ll return a short list of best-fit services with estimated ROI and timeline.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/services" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
+            <Link href="/services/" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
               Talk to an Engineer
             </Link>
-            <Link href="/services" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
+            <Link href="/services/" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
               Explore Services
             </Link>
           </div>
@@ -74,5 +86,6 @@ export default function TestimonialsPage() {
         </div>
       </section>
     </StandardPage>
+  </>
   );
 }

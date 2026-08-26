@@ -180,6 +180,59 @@ def msg_id_to_text(msg_id: str) -> str:
     except Exception:
         return ''
 
+def is_non_prospect(addr: str) -> bool:
+    """True when an address cannot be a sales prospect.
+
+    The miner scans the inbox, so From/To carry automated senders and our
+    own addresses far more often than leads. On 2026-08-18 this sent seven
+    identical commercial emails to notification@service.tiktok.com,
+    team@notifications.resend.com, cloud@lambdalabs.zendesk.com and
+    support@vultr.com, because every header address was treated as a
+    prospect. Filtering here is what stops that at the source.
+    """
+    a = (addr or '').strip().lower()
+    if not a or '@' not in a:
+        return True
+
+    local, _, domain = a.partition('@')
+
+    # Our own addresses are never prospects.
+    if 'ziontechgroup' in domain:
+        return True
+
+    # Automated senders: no human reads these, and replying to them is
+    # what mailbox providers score as spam.
+    NOREPLY_LOCAL = (
+        'noreply', 'no-reply', 'donotreply', 'do-not-reply', 'notification',
+        'notifications', 'alert', 'alerts', 'bounce', 'bounces', 'mailer',
+        'mailer-daemon', 'postmaster', 'automated', 'auto-confirm', 'system',
+        'root', 'daemon', 'webmaster', 'abuse',
+    )
+    if any(local == n or local.startswith(n + '-') or local.startswith(n + '.')
+           for n in NOREPLY_LOCAL):
+        return True
+
+    # Support desks and shared inboxes: real humans, wrong context. A cold
+    # pitch into a support queue gets marked as spam by the agent handling it.
+    SUPPORT_LOCAL = ('support', 'help', 'helpdesk', 'billing', 'admin',
+                     'team', 'cloud', 'security', 'privacy', 'legal')
+    if local in SUPPORT_LOCAL:
+        return True
+
+    # Ticketing / transactional-mail platforms: the address belongs to the
+    # platform, not to a company we can sell to.
+    PLATFORM_DOMAIN = (
+        'zendesk.com', 'freshdesk.com', 'intercom.io', 'helpscout.net',
+        'notifications.resend.com', 'sendgrid.net', 'mailgun.org',
+        'amazonses.com', 'service.tiktok.com', 'github.com', 'gitlab.com',
+        'atlassian.net', 'slack.com', 'google.com', 'accounts.google.com',
+    )
+    if any(domain == d or domain.endswith('.' + d) for d in PLATFORM_DOMAIN):
+        return True
+
+    return False
+
+
 def extract_contacts_metadata(msg_id: str):
     try:
         import urllib.request, json as _json
@@ -192,9 +245,13 @@ def extract_contacts_metadata(msg_id: str):
         headers = msg.get('payload', {}).get('headers', [])
         hdr_map = {h['name'].lower(): h['value'] for h in headers}
         emails = set()
-        for field in ('from', 'to', 'cc', 'bcc'):
+        # Reply-To beats From when present: it is where a human actually
+        # reads. 'to'/'cc'/'bcc' on an inbound message are our own addresses
+        # and other recipients, never the prospect, so they are not mined.
+        for field in ('reply-to', 'from'):
             val = hdr_map.get(field, '') or ''
             emails.update(m.group(0).lower() for m in EMAIL_RE.finditer(val) if m)
+        emails = {e for e in emails if not is_non_prospect(e)}
         if emails:
             return list(emails)
         # Light fallback: scan body/snippet for prospect emails.

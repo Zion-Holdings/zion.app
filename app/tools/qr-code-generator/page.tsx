@@ -1,77 +1,57 @@
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
-import type { Metadata } from 'next';
+'use client';
 
+import { useState } from 'react';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'QR Code Generator — Zion Tech Group',
-  description: 'Generate QR codes for URLs, text, and contact data. Download PNGs for print and web use.',
-  keywords: ['QR code generator', 'QR code', 'developer tools', 'print QR'],
-  openGraph: {
-    title: 'QR Code Generator — Zion Tech Group',
-    description: 'Generate QR codes for URLs, text, and contact data. Download PNGs for print and web use.',
-    url: 'https://ziontechgroup.com/tools/qr-code-generator/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'QR Code Generator — Zion Tech Group',
-    description: 'Generate QR codes for URLs, text, and contact data. Download PNGs for print and web use.',
-  },
+  description: 'Generate QR codes instantly from text or URLs. Download PNG directly in your browser.',
   alternates: { canonical: '/tools/qr-code-generator/' },
-  robots: { index: true, follow: true },
 };
 
-
 export default function QrCodeGeneratorPage() {
-  const breadcrumbItems = [
-    { label: 'Tools', href: '/tools/' },
-    { label: 'QR Code Generator' },
-  ];
+  const [text, setText] = useState('');
+  const [qrUrl, setQrUrl] = useState('');
+
+  const generate = () => {
+    if (!text.trim()) return;
+    const api = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${encodeURIComponent(text)}`;
+    setQrUrl(api);
+  };
 
   return (
-<>
-    <StandardPage
-      title="QR Code Generator"
-      subtitle="Create QR codes for URLs, text, and contact data."
-      breadcrumbItems={breadcrumbItems}
-      actions={[
-        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
-        { label: 'Talk to us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="glass-card">
-          <h3 className="text-white font-semibold mb-2">Fast generation</h3>
-          <p className="text-slate-400 text-sm">Create QR codes instantly from URLs, text, and contact data.</p>
-        </div>
-        <div className="glass-card">
-          <h3 className="text-white font-semibold mb-2">Export ready</h3>
-          <p className="text-slate-400 text-sm">Download clean PNG outputs for web, print, and events.</p>
-        </div>
-        <div className="glass-card">
-          <h3 className="text-white font-semibold mb-2">Event friendly</h3>
-          <p className="text-slate-400 text-sm">Use for campaigns, tickets, Wi-Fi sharing, and business cards.</p>
-        </div>
-        <div className="glass-card">
-          <h3 className="text-white font-semibold mb-2">Use cases</h3>
-          <p className="text-slate-400 text-sm">Marketing, venue entry, and contact sharing.</p>
-        </div>
+    <div className="mx-auto max-w-3xl px-4 py-10">
+      <h1 className="text-3xl font-semibold text-white">QR Code Generator</h1>
+      <p className="mt-2 text-slate-300">
+        Create a QR code from any text or URL.
+      </p>
+
+      <div className="mt-6 rounded-xl border border-slate-800 bg-slate-950 p-4">
+        <input
+          value={text}
+          onChange={(event) => setText(event.target.value)}
+          placeholder="https://ziontechgroup.com"
+          className="w-full rounded-lg border border-slate-800 bg-slate-900 px-3 py-2 text-sm text-slate-200"
+        />
+        <button
+          onClick={generate}
+          className="mt-3 rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500"
+        >
+          Generate
+        </button>
       </div>
 
-      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
-        <h2 className="text-xl font-bold text-white mb-4">Best practices</h2>
-        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
-          <li>Keep QR payloads short to improve scan reliability on low-resolution cameras.</li>
-          <li>Use error correction when printing for outdoor or damaged-surface use.</li>
-          <li>Combine with analytics redirects to measure campaign performance.</li>
-        </ul>
-        <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/tools/" className="btn-primary text-center">All tools</a>
-          <a href="/contact/" className="btn-secondary text-center">Talk to us</a>
+      {qrUrl && (
+        <div className="mt-6 rounded-xl border border-slate-800 bg-slate-950 p-4">
+          <img src={qrUrl} alt="QR Code" className="mx-auto h-64 w-64 object-contain" />
+          <a
+            href={qrUrl}
+            download="qr-code.png"
+            className="mt-4 block text-center text-sm text-purple-300 hover:text-purple-200"
+          >
+            Download PNG
+          </a>
         </div>
-      </div>
-    </StandardPage>
-  </>
+      )}
+    </div>
   );
 }

@@ -2,14 +2,43 @@
 import sys, json, base64, urllib.request, urllib.parse, urllib.error, datetime, time, os
 from pathlib import Path
 
-REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
-if not REPO.exists():
+def _resolve_repo() -> Path:
+    """Pick the clone that actually holds the canonical outreach batch.
+
+    Several checkouts of this repo can coexist (Termux clone, macOS clone, CI
+    workspace). A stub directory that merely exists would strand the sender on
+    an empty lead-crm, so require the canonical batch file to be present.
+    """
+    marker = Path('lead-crm') / 'outreach_ready_canonical.json'
+    candidates = []
+    env_repo = os.environ.get('ZTG_REPO')
+    if env_repo:
+        candidates.append(Path(env_repo))
     try:
-        REPO = Path(__file__).resolve().parent.parent
+        candidates.append(Path(__file__).resolve().parent.parent)
     except Exception:
-        REPO = Path('/Users/miami2/zion.app')
-if not REPO.exists():
-    REPO = Path('C:/Users/Zion/tmp/zion-clone-test2')
+        pass
+    candidates.extend([
+        Path('/data/data/com.termux/files/home/zion-support.github.io'),
+        Path('/Users/miami2/zion.app'),
+        Path('C:/Users/Zion/tmp/zion-clone-test2'),
+    ])
+    for cand in candidates:
+        try:
+            if (cand / marker).exists():
+                return cand
+        except Exception:
+            continue
+    for cand in candidates:
+        try:
+            if cand.exists():
+                return cand
+        except Exception:
+            continue
+    return Path(__file__).resolve().parent.parent
+
+
+REPO = _resolve_repo()
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
 try:
@@ -22,10 +51,7 @@ except Exception:
 
 def _gog_headers():
     from commands.google_workspace import gog_headers
-    try:
-        return gog_headers()
-    except Exception:
-        return None
+    return gog_headers()
 
 
 def _send_request(req, timeout=30):
@@ -115,6 +141,49 @@ def _load_excluded() -> set:
         return set()
 
 
+# Local parts that are never a human prospect. Cataloguing these one address at
+# a time never keeps up -- wave2/wave3 on 2026-08-16 mailed no_reply@,
+# business-noreply@ and no_responder@ before anyone noticed -- so match the
+# shape instead of the address.
+_UNMAILABLE_LOCAL_PARTS = (
+    'no-reply', 'noreply', 'no_reply',
+    'no-responder', 'noresponder', 'no_responder',
+    'donotreply', 'do-not-reply', 'do_not_reply',
+    'bounce', 'bounces', 'mailer-daemon', 'postmaster',
+    'notification', 'notifications', 'notify',
+    'automated', 'auto-confirm', 'unsubscribe',
+)
+
+# Machine-only sending domains: the local part looks human (team@, hello@) but
+# the domain itself is a transactional/notification subdomain, so nobody reads
+# replies. Matched on dot-delimited labels to avoid clipping real companies --
+# "notifications.resend.com" is blocked, "mynotifyapp.com" is not.
+_UNMAILABLE_DOMAIN_LABELS = (
+    'notification', 'notifications', 'notify',
+    'noreply', 'no-reply', 'bounce', 'bounces',
+    'mailer', 'email', 'mail', 'smtp',
+    'transactional', 'automated', 'alerts',
+)
+
+
+def _unmailable_reason(addr: str) -> str:
+    """Return a reason string when an address must never receive cold outreach."""
+    addr = (addr or '').strip().lower()
+    if not addr or '@' not in addr:
+        return 'malformed_address'
+    local, _, domain = addr.partition('@')
+    for token in _UNMAILABLE_LOCAL_PARTS:
+        if token in local:
+            return f'unmailable_local_part:{token}'
+    # Only subdomain labels count: the registrable domain of a real company can
+    # legitimately be "email.com", but "email.acme.com" is a sending subdomain.
+    labels = domain.split('.')
+    for label in labels[:-2]:
+        if label in _UNMAILABLE_DOMAIN_LABELS:
+            return f'unmailable_sending_domain:{label}'
+    return ''
+
+
 _SENT_LOCK = REPO / 'lead-crm' / '.ceo_outreach_sent.lock'
 
 # in-memory fast path for same-run dedup
@@ -148,6 +217,9 @@ for _legacy_path in [REPO / 'lead-crm' / 'outreach_sent_history.jsonl', REPO / '
 
 def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None):
     to_key = (to_addr or '').lower()
+    _unmailable = _unmailable_reason(to_key)
+    if _unmailable:
+        return None, _unmailable
     if to_key in _load_excluded():
         return None, 'excluded'
     key = (to_key, (subject or '').strip(), thread_id or '', message_id or '')
@@ -171,7 +243,7 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
             'References: %s' % message_id,
             'In-Reply-To: %s' % message_id,
         ])
-    raw_email_lines.extend(['', html or body])
+    raw_email_lines.extend(['', html or body or ''])
     raw_email = '\r\n'.join(raw_email_lines)
     encoded = base64.urlsafe_b64encode(raw_email.encode('utf-8')).decode('utf-8')
     payload = json.dumps({'raw': encoded, 'threadId': thread_id} if thread_id else {'raw': encoded}).encode('utf-8')
@@ -216,7 +288,9 @@ def _tailor_message(chat_fn, r):
     company = r.get('company_name') or r.get('name') or ''
     website = r.get('website') or 'https://ziontechgroup.com'
     contact = r.get('display_name') or r.get('recipient') or r.get('to') or ''
-    primary_services = ', '.join(r.get('service_references_primary', []) or [])
+    primary_services = ', '.join(
+        s for s in (r.get('service_references_primary', []) or []) if isinstance(s, str)
+    )
     prompt = (
         "You are Kleber Garcia Alcatrão, CEO of Zion Tech Group. "
         "Rewrite the following outreach reply into a concise, personalized continuation. "
@@ -408,6 +482,15 @@ def _analyze_and_improve(rows, excluded):
                     f"Conheça mais aqui: https://ziontechgroup.com"
                 )
                 summary['contacts_with_personalized_body'] += 1
+        elif not r.get('body'):
+            improvement['body'] = (
+                f"Olá,\n\n"
+                f"Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\n"
+                f"Entramos em contato por uma oportunidade de parceria. Nossos serviços de IA e automação de TI podem gerar valor rápido para sua equipe.\n\n"
+                f"Se fizer sentido, podemos agendar uma conversa rápida: https://calendly.com/kleber-ziontechgroup\n\n"
+                f"Conheça mais aqui: https://ziontechgroup.com"
+            )
+            summary['contacts_with_personalized_body'] += 1
         if to in excluded:
             improvement['_excluded'] = True
             summary['excluded_count'] += 1
@@ -464,26 +547,62 @@ def main():
         _update_miner_health(analysis_summary, 'analyzed_no_send')
         print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends', 'analysisSummary': analysis_summary}, ensure_ascii=False))
         return
+    # Preflight: fail fast and loudly when Google credentials are unusable.
+    # Without this, gog_headers() raising left every message to be POSTed with
+    # no Authorization header, producing a wall of HTTP 401s that look like a
+    # Gmail problem instead of a missing-token problem.
+    try:
+        _preflight_headers = _gog_headers()
+    except Exception as e:
+        print(json.dumps({
+            'error': 'google_credentials_unavailable',
+            'detail': f'{type(e).__name__}: {e}',
+            'hint': 'gog_tokens.json (client_id, client_secret, refresh_token) is required; no messages were attempted',
+            'send_count': 0,
+            'results': [],
+        }, ensure_ascii=False))
+        return
+    if not (_preflight_headers or {}).get('Authorization'):
+        print(json.dumps({
+            'error': 'google_credentials_missing_authorization',
+            'hint': 'gog_headers() returned no Authorization header; no messages were attempted',
+            'send_count': 0,
+            'results': [],
+        }, ensure_ascii=False))
+        return
+    # Run analysis and improvement pass to generate heuristic bodies before sending
+    analysis = _analyze_and_improve(rows, excluded)
+    improved_rows = analysis['improved']
+    analysis_summary = analysis['summary']
+    improved_by_to = {r.get('to'): r for r in improved_rows if r.get('to')}
+    for r in rows:
+        k = r.get('to') or r.get('recipient') or r.get('email')
+        if k and k.lower() in improved_by_to:
+            r.update(improved_by_to.pop(k.lower()))
     for r in rows:
         to = r.get('email') or r.get('recipient') or r.get('to')
         if not to:
             outputs.append({'to': None, 'success': False, 'error': 'missing email'})
             continue
         to = to.lower()
+        _unmailable = _unmailable_reason(to)
+        if _unmailable:
+            outputs.append({'to': to, 'success': False, 'reason': _unmailable, 'error': 'unmailable-address'})
+            continue
         if to in excluded:
             outputs.append({'to': to, 'success': False, 'reason': 'excluded', 'error': 'excluded-by-list'})
             continue
         tailored = _tailor_message(chat_fn, dict(r))
         html = tailored.get('html') or r.get('html')
-        subj = tailored.get('subject', tailored.get('subject','') or r.get('subject','') or '')
-        body = tailored.get('body', tailored.get('body','') or r.get('body','') or '')
+        subj = tailored.get('subject') or r.get('subject') or ''
+        body = tailored.get('body') or r.get('body') or ''
         try:
             mid, tid = send_mail(to, subj, body, html, thread_id=r.get('thread_id'), message_id=r.get('message_id'))
             outputs.append({'to': to, 'success': True, 'message_id': mid, 'thread_id': tid,
                             'llm_provider': tailored.get('llm_provider'), 'llm_model': tailored.get('llm_model')})
         except Exception as e:
             outputs.append({'to': to, 'success': False, 'error': str(e)})
-        time.sleep(0.25)
+        time.sleep(3.0)
     print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
                       'send_count': len(outputs), 'skipped_templates': skipped_templates,
                       'results': outputs}))

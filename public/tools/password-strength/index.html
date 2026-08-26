@@ -1,427 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Password Strength Checker — Zion Tech Group</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0b0f1a;--surface:#111827;--surface2:#1f2937;--border:#374151;
-  --text:#e5e7eb;--text2:#9ca3af;--accent:#6366f1;--accent2:#818cf8;
-  --success:#10b981;--danger:#ef4444;--warning:#f59e0b;
-}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
-.container{max-width:720px;margin:0 auto;padding:2rem 1rem}
-header{text-align:center;margin-bottom:2rem}
-header h1{font-size:2rem;color:var(--accent2);margin-bottom:.25rem}
-header p{color:var(--text2);font-size:.95rem}
-.logo{display:inline-block;background:var(--accent);color:#fff;padding:.25rem .75rem;border-radius:6px;font-weight:700;font-size:.85rem;margin-bottom:.75rem}
-
-.input-section{margin-bottom:1.5rem}
-.field label{display:block;font-size:.85rem;font-weight:600;color:var(--text2);margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.05em}
-.password-wrapper{position:relative}
-.password-wrapper input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.85rem 3rem .85rem 1rem;color:var(--text);font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:1.1rem;transition:border-color .2s}
-.password-wrapper input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(99,102,241,.15)}
-.toggle-btn{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text2);cursor:pointer;font-size:1rem;padding:.25rem .5rem;border-radius:4px;transition:color .2s}
-.toggle-btn:hover{color:var(--accent2)}
-
-.score-section{margin-bottom:1.5rem}
-.score-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
-.score-label{font-size:.9rem;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.05em}
-.score-value{font-size:1.8rem;font-weight:800}
-.score-bar{height:12px;background:var(--surface2);border-radius:6px;overflow:hidden;margin-bottom:.25rem}
-.score-fill{height:100%;border-radius:6px;transition:width .4s ease,background .4s ease}
-.score-labels{display:flex;justify-content:space-between;font-size:.75rem;color:var(--text2);margin-top:.25rem}
-
-.crack-time{text-align:center;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:1.5rem}
-.crack-time .label{font-size:.8rem;color:var(--text2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.25rem}
-.crack-time .value{font-size:1.4rem;font-weight:700}
-
-.checks-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.5rem}
-.check-item{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:.85rem}
-.check-item .icon{font-size:1rem;width:1.2rem;text-align:center}
-.check-item.pass{color:var(--success)}
-.check-item.fail{color:var(--text2);opacity:.6}
-.check-item .text{flex:1}
-
-.patterns-section{margin-bottom:1.5rem}
-.patterns-section h3{font-size:.85rem;color:var(--text2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
-.pattern-warning{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:6px;margin-bottom:.4rem;font-size:.85rem;color:var(--danger)}
-
-.generator-section{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
-.generator-section h2{font-size:1.1rem;color:var(--accent2);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-.gen-options{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;margin-bottom:1rem}
-.gen-options label{display:flex;align-items:center;gap:.4rem;cursor:pointer;font-size:.9rem}
-.gen-options input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
-.gen-length{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
-.gen-length label{font-size:.9rem;color:var(--text2)}
-.gen-length input[type=number]{width:70px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.4rem .5rem;color:var(--text);font-family:monospace;font-size:.95rem;text-align:center}
-.gen-length input[type=number]:focus{outline:none;border-color:var(--accent)}
-.gen-result{display:flex;gap:.5rem;margin-bottom:1rem}
-.gen-result input{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.6rem .75rem;color:var(--accent2);font-family:monospace;font-size:.95rem}
-.gen-result button{background:var(--accent);color:#fff;border:none;padding:.6rem 1rem;border-radius:6px;cursor:pointer;font-weight:600;font-size:.85rem;white-space:nowrap;transition:opacity .2s}
-.gen-result button:hover{opacity:.85}
-
-.cta-section{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
-.cta-card{background:linear-gradient(135deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-align:center}
-.cta-card h3{font-size:1.1rem;margin-bottom:.5rem;color:#fff}
-.cta-card p{font-size:.9rem;color:var(--text2);margin-bottom:1rem}
-.cta-btn{display:inline-block;padding:.7rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem;transition:transform .15s,box-shadow .15s}
-.cta-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
-.cta-btn.primary{background:var(--accent);color:#fff}
-.cta-btn.secondary{background:transparent;color:var(--accent2);border:2px solid var(--accent)}
-.cta-btn.secondary:hover{background:var(--accent);color:#fff}
-
-footer{text-align:center;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--text2);font-size:.8rem}
-footer a{color:var(--accent2);text-decoration:none}
-
-@media(max-width:480px){
-  .checks-grid{grid-template-columns:1fr}
-  .gen-options{grid-template-columns:1fr}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker | Zion Tech Group</title>
+  <meta name="description" content="Check password strength online — analyze length, complexity, entropy, and crack time.">
+  <meta property="og:title" content="Password Strength Checker | Zion Tech Group">
+  <meta property="og:description" content="Free online password strength analyzer.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/password-strength/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/password-strength/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 700px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input:focus { outline: none; border-color: #6366f1; }
+    .strength-bar { height: 8px; background: #334155; border-radius: 4px; margin-bottom: 1rem; overflow: hidden; }
+    .strength-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .stat { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .stat:last-child { border-bottom: none; }
+    .stat-label { color: #94a3b8; font-size: 0.875rem; }
+    .stat-value { font-family: monospace; font-size: 0.875rem; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-<div class="container">
-
-  <header>
-    <div class="logo">ZION TECH GROUP</div>
+  <div class="container">
     <h1>Password Strength Checker</h1>
-    <p>Verifique a força da sua senha em tempo real e gere senhas seguras</p>
-  </header>
-
-  <div class="input-section">
+    <p class="subtitle">Analyze password strength, complexity, and crack time.</p>
     <div class="field">
-      <label for="password">Senha</label>
-      <div class="password-wrapper">
-        <input type="password" id="password" placeholder="Digite sua senha para verificar..." autocomplete="off" spellcheck="false">
-        <button class="toggle-btn" id="toggleBtn" title="Mostrar/Ocultar">👁</button>
-      </div>
+      <label>Password</label>
+      <input type="text" id="password" placeholder="Enter password..." oninput="analyze()">
     </div>
+    <div class="strength-bar"><div class="strength-fill" id="strengthFill" style="width: 0%"></div></div>
+    <div class="section">
+      <h3>Analysis</h3>
+      <div id="stats"></div>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
   </div>
-
-  <div class="score-section">
-    <div class="score-header">
-      <span class="score-label">Força</span>
-      <span class="score-value" id="scoreValue">0</span>
-    </div>
-    <div class="score-bar"><div class="score-fill" id="scoreFill" style="width:0%;background:var(--danger)"></div></div>
-    <div class="score-labels"><span>Muito Fraca</span><span>Fraca</span><span>Boa</span><span>Forte</span><span>Excelente</span></div>
-  </div>
-
-  <div class="crack-time" id="crackTime">
-    <div class="label">Tempo estimado de quebra</div>
-    <div class="value" id="crackValue">Instantâneo</div>
-  </div>
-
-  <div class="checks-grid" id="checksGrid"></div>
-
-  <div class="patterns-section" id="patternsSection" style="display:none">
-    <h3>⚠️ Padrões Detectados</h3>
-    <div id="patternsList"></div>
-  </div>
-
-  <div class="generator-section">
-    <h2>🔐 Gerador de Senha Segura</h2>
-    <div class="gen-options">
-      <label><input type="checkbox" id="genLower" checked> Minúsculas (a-z)</label>
-      <label><input type="checkbox" id="genUpper" checked> Maiúsculas (A-Z)</label>
-      <label><input type="checkbox" id="genNumbers" checked> Números (0-9)</label>
-      <label><input type="checkbox" id="genSymbols" checked> Símbolos (!@#...)</label>
-    </div>
-    <div class="gen-length">
-      <label for="genLength">Tamanho:</label>
-      <input type="number" id="genLength" min="6" max="64" value="16">
-    </div>
-    <div class="gen-result">
-      <input type="text" id="genOutput" readonly placeholder="Clique em Gerar...">
-      <button id="genBtn">Gerar</button>
-      <button id="copyBtn" title="Copiar">📋</button>
-    </div>
-  </div>
-
-  <div class="cta-section">
-    <div class="cta-card">
-      <h3>Auditoria de Segurança</h3>
-      <p>Proteja sua empresa com uma auditoria completa de segurança e conformidade.</p>
-      <a href="/services/security-compliance-audit/" class="cta-btn primary">Ver Serviço</a>
-    </div>
-    <div class="cta-card">
-      <h3>Agende uma Consultoria</h3>
-      <p>Converse com nossos especialistas em segurança da informação.</p>
-      <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener" class="cta-btn secondary">Agendar no Calendly</a>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2026 <a href="/">Zion Tech Group</a> — Ferramentas para desenvolvedores</p>
-  </footer>
-
-</div>
-
-<script>
-(function(){
-  const passwordEl = document.getElementById('password');
-  const toggleBtn = document.getElementById('toggleBtn');
-  const scoreValue = document.getElementById('scoreValue');
-  const scoreFill = document.getElementById('scoreFill');
-  const crackValue = document.getElementById('crackValue');
-  const checksGrid = document.getElementById('checksGrid');
-  const patternsSection = document.getElementById('patternsSection');
-  const patternsList = document.getElementById('patternsList');
-  const genBtn = document.getElementById('genBtn');
-  const copyBtn = document.getElementById('copyBtn');
-  const genOutput = document.getElementById('genOutput');
-  const genLower = document.getElementById('genLower');
-  const genUpper = document.getElementById('genUpper');
-  const genNumbers = document.getElementById('genNumbers');
-  const genSymbols = document.getElementById('genSymbols');
-  const genLength = document.getElementById('genLength');
-
-  const commonPatterns = [
-    {regex:/^[a-z]+$/,name:'Apenas letras minúsculas'},
-    {regex:/^[A-Z]+$/,name:'Apenas letras maiúsculas'},
-    {regex:/^[0-9]+$/,name:'Apenas números'},
-    {regex:/(.)\1{2,}/,name:'Caracteres repetidos (ex: aaa)'},
-    {regex:/(012|123|234|345|456|567|678|789|890)/,name:'Sequência numérica'},
-    {regex:/(abc|bcd|cde|def|efg|fgh|ghi|hij|ijk|jkl|klm|lmn|mno|nop|opq|pqr|qrs|rst|stu|tuv|uvw|vwx|wxy|xyz)/i,name:'Sequência alfabética'},
-    {regex:/(qwerty|asdf|zxcv|password|123456|abc123|admin|letmein|welcome|monkey|dragon|master|login|princess|football|shadow|sunshine|trustno1|iloveu)/i,name:'Palavra comum em senhas'},
-    {regex:/(19|20)\d{2}/,name:'Ano comum'},
-    {regex:/^\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}$/,name:'Formato de data'},
-  ];
-
-  const keyboardRows = [
-    ['qwertyuiop','asdfghjkl','zxcvbnm'],
-    ['1234567890']
-  ];
-
-  function hasKeyboardRow(str){
-    const lower = str.toLowerCase();
-    for(const row of keyboardRows){
-      for(let i=0;i<=row[0].length-3;i++){
-        if(lower.includes(row[0].substring(i,i+3))) return true;
-      }
+  <script>
+    function analyze() {
+      const pw = document.getElementById('password').value;
+      const fill = document.getElementById('strengthFill');
+      const stats = document.getElementById('stats');
+      if (!pw) { fill.style.width = '0%'; stats.innerHTML = ''; return; }
+      let score = 0;
+      const len = pw.length;
+      if (len >= 8) score++;
+      if (len >= 12) score++;
+      if (len >= 16) score++;
+      if (/[a-z]/.test(pw)) score++;
+      if (/[A-Z]/.test(pw)) score++;
+      if (/[0-9]/.test(pw)) score++;
+      if (/[^a-zA-Z0-9]/.test(pw)) score++;
+      const pwned = len < 8 ? 'Very Common' : len < 12 ? 'Common' : len < 16 ? 'Rare' : 'Very Rare';
+      const crackTime = len < 4 ? 'Instantly' : len < 8 ? 'Seconds' : len < 12 ? 'Hours' : len < 16 ? 'Years' : 'Centuries';
+      const colors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#10b981'];
+      const labels = ['Very Weak', 'Weak', 'Fair', 'Strong', 'Very Strong'];
+      const pct = Math.min(100, (score / 7) * 100);
+      fill.style.width = pct + '%';
+      fill.style.background = colors[Math.min(4, Math.floor(score / 1.5))];
+      stats.innerHTML = `
+        <div class="stat"><span class="stat-label">Strength</span><span class="stat-value" style="color: ${colors[Math.min(4, Math.floor(score / 1.5))]}">${labels[Math.min(4, Math.floor(score / 1.5))]}</span></div>
+        <div class="stat"><span class="stat-label">Length</span><span class="stat-value">${len}</span></div>
+        <div class="stat"><span class="stat-label">Lowercase</span><span class="stat-value">${/[a-z]/.test(pw) ? '✓' : '✗'}</span></div>
+        <div class="stat"><span class="stat-label">Uppercase</span><span class="stat-value">${/[A-Z]/.test(pw) ? '✓' : '✗'}</span></div>
+        <div class="stat"><span class="stat-label">Numbers</span><span class="stat-value">${/[0-9]/.test(pw) ? '✓' : '✗'}</span></div>
+        <div class="stat"><span class="stat-label">Symbols</span><span class="stat-value">${/[^a-zA-Z0-9]/.test(pw) ? '✓' : '✗'}</span></div>
+        <div class="stat"><span class="stat-label">Crack Time</span><span class="stat-value">${crackTime}</span></div>
+      `;
     }
-    return false;
-  }
-
-  function calculateEntropy(pwd){
-    let poolSize = 0;
-    if(/[a-z]/.test(pwd)) poolSize += 26;
-    if(/[A-Z]/.test(pwd)) poolSize += 26;
-    if(/[0-9]/.test(pwd)) poolSize += 10;
-    if(/[^a-zA-Z0-9]/.test(pwd)) poolSize += 32;
-    if(poolSize === 0) return 0;
-    return pwd.length * Math.log2(poolSize);
-  }
-
-  function estimateCrackTime(entropy){
-    // Assume 10 billion guesses per second (offline attack, powerful GPU)
-    const guessesPerSec = 1e10;
-    const totalGuesses = Math.pow(2, entropy - 1); // average case
-    const seconds = totalGuesses / guessesPerSec;
-
-    if(seconds < 1e-3) return 'Instantâneo';
-    if(seconds < 1) return Math.round(seconds*1000)+' milissegundos';
-    if(seconds < 60) return Math.round(seconds)+' segundos';
-    if(seconds < 3600) return Math.round(seconds/60)+' minutos';
-    if(seconds < 86400) return Math.round(seconds/3600)+' horas';
-    if(seconds < 2592000) return Math.round(seconds/86400)+' dias';
-    if(seconds < 31536000) return Math.round(seconds/2592000)+' meses';
-    if(seconds < 31536000*100) return Math.round(seconds/31536000)+' anos';
-    if(seconds < 31536000*1000) return Math.round(seconds/31536000)+' anos';
-    if(seconds < 31536000*1e6) return 'Milhões de anos';
-    if(seconds < 31536000*1e9) return 'Bilhões de anos';
-    return 'Trilhões de anos';
-  }
-
-  function evaluatePassword(pwd){
-    if(!pwd) return {score:0,entropy:0,checks:[],patterns:[]};
-
-    const checks = [];
-    let score = 0;
-
-    // Length
-    const len = pwd.length;
-    if(len >= 8) { score += 10; checks.push({pass:true,text:'Tamanho ≥ 8 caracteres',icon:'✓'}); }
-    else { checks.push({pass:false,text:'Tamanho < 8 caracteres',icon:'✗'}); }
-    if(len >= 12) score += 5;
-    if(len >= 16) score += 5;
-
-    // Lowercase
-    if(/[a-z]/.test(pwd)) { score += 10; checks.push({pass:true,text:'Letras minúsculas (a-z)',icon:'✓'}); }
-    else { checks.push({pass:false,text:'Sem letras minúsculas',icon:'✗'}); }
-
-    // Uppercase
-    if(/[A-Z]/.test(pwd)) { score += 10; checks.push({pass:true,text:'Letras maiúsculas (A-Z)',icon:'✓'}); }
-    else { checks.push({pass:false,text:'Sem letras maiúsculas',icon:'✗'}); }
-
-    // Numbers
-    if(/[0-9]/.test(pwd)) { score += 10; checks.push({pass:true,text:'Números (0-9)',icon:'✓'}); }
-    else { checks.push({pass:false,text:'Sem números',icon:'✗'}); }
-
-    // Symbols
-    if(/[^a-zA-Z0-9]/.test(pwd)) { score += 15; checks.push({pass:true,text:'Símbolos especiais (!@#$...)',icon:'✓'}); }
-    else { checks.push({pass:false,text:'Sem símbolos',icon:'✗'}); }
-
-    // Unique chars
-    const unique = new Set(pwd).size;
-    const ratio = unique / len;
-    if(ratio > 0.7 && len >= 8) { score += 10; checks.push({pass:true,text:'Boa variedade de caracteres',icon:'✓'}); }
-    else if(ratio < 0.5) { score -= 5; checks.push({pass:false,text:'Poucos caracteres únicos',icon:'✗'}); }
-
-    // Not all same type
-    const types = (/[a-z]/.test(pwd)?1:0) + (/[A-Z]/.test(pwd)?1:0) + (/[0-9]/.test(pwd)?1:0) + (/[^a-zA-Z0-9]/.test(pwd)?1:0);
-    if(types >= 3) score += 10;
-    if(types === 4) score += 5;
-
-    // Middle numbers or symbols
-    const middle = pwd.slice(1,-1);
-    if(/[^a-zA-Z]/.test(middle)) score += 5;
-
-    // Bonus for length
-    if(len >= 20) score += 10;
-    if(len >= 24) score += 5;
-
-    // Detect patterns (penalties)
-    const patterns = [];
-    for(const pat of commonPatterns){
-      if(pat.regex.test(pwd)){
-        patterns.push(pat.name);
-        score -= 8;
-      }
-    }
-    if(hasKeyboardRow(pwd)){
-      patterns.push('Padrão de teclado (ex: qwerty, asdf)');
-      score -= 8;
-    }
-
-    // Common substitutions
-    if(/[a@4][s$5][dDfF]/.test(pwd) || /p[a@4][s$5]{2}/.test(pwd)){
-      patterns.push('Substituição comum detectada (ex: p@ss)');
-      score -= 5;
-    }
-
-    // Bonus: no patterns at all
-    if(patterns.length === 0 && types >= 3) score += 10;
-
-    score = Math.max(0, Math.min(100, score));
-
-    const entropy = calculateEntropy(pwd);
-    return {score,entropy,checks,patterns};
-  }
-
-  function getScoreColor(score){
-    if(score < 30) return 'var(--danger)';
-    if(score < 50) return 'var(--warning)';
-    if(score < 70) return 'var(--accent2)';
-    return 'var(--success)';
-  }
-
-  function getScoreLabel(score){
-    if(score < 20) return 'Muito Fraca';
-    if(score < 40) return 'Fraca';
-    if(score < 60) return 'Razoável';
-    if(score < 80) return 'Forte';
-    return 'Excelente';
-  }
-
-  function render(){
-    const pwd = passwordEl.value;
-    if(!pwd){
-      scoreValue.textContent = '0';
-      scoreValue.style.color = 'var(--danger)';
-      scoreFill.style.width = '0%';
-      scoreFill.style.background = 'var(--danger)';
-      crackValue.textContent = 'Instantâneo';
-      checksGrid.innerHTML = '';
-      patternsSection.style.display = 'none';
-      return;
-    }
-
-    const {score,entropy,checks,patterns} = evaluatePassword(pwd);
-
-    scoreValue.textContent = score+' - '+getScoreLabel(score);
-    scoreValue.style.color = getScoreColor(score);
-    scoreFill.style.width = score+'%';
-    scoreFill.style.background = getScoreColor(score);
-
-    crackValue.textContent = estimateCrackTime(entropy);
-
-    checksGrid.innerHTML = checks.map(c =>
-      '<div class="check-item '+(c.pass?'pass':'fail')+'"><span class="icon">'+c.icon+'</span><span class="text">'+c.text+'</span></div>'
-    ).join('');
-
-    if(patterns.length > 0){
-      patternsSection.style.display = 'block';
-      patternsList.innerHTML = patterns.map(p =>
-        '<div class="pattern-warning"><span>⚠️</span><span>'+p+'</span></div>'
-      ).join('');
-    } else {
-      patternsSection.style.display = 'none';
-    }
-  }
-
-  function generatePassword(){
-    let chars = '';
-    if(genLower.checked) chars += 'abcdefghijklmnopqrstuvwxyz';
-    if(genUpper.checked) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    if(genNumbers.checked) chars += '0123456789';
-    if(genSymbols.checked) chars += '!@#$%^&*()-_=+[]{}|;:,.<>?';
-
-    if(!chars) chars = 'abcdefghijklmnopqrstuvwxyz';
-
-    let pwd = '';
-    const len = parseInt(genLength.value) || 16;
-    for(let i=0;i<len;i++){
-      pwd += chars.charAt(Math.floor(Math.random()*chars.length));
-    }
-
-    // Ensure at least one of each selected type
-    let result = pwd.split('');
-    let pos = 0;
-    if(genLower.checked && !/[a-z]/.test(pwd)){ result[pos++] = 'abcdefghijklmnopqrstuvwxyz'.charAt(Math.floor(Math.random()*26)); }
-    if(genUpper.checked && !/[A-Z]/.test(pwd)){ result[pos++] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.charAt(Math.floor(Math.random()*26)); }
-    if(genNumbers.checked && !/[0-9]/.test(pwd)){ result[pos++] = '0123456789'.charAt(Math.floor(Math.random()*10)); }
-    if(genSymbols.checked && !/[^a-zA-Z0-9]/.test(pwd)){ result[pos++] = '!@#$%^&*()-_=+[]{}|;:,.<>?'.charAt(Math.floor(Math.random()*29)); }
-
-    // Shuffle
-    for(let i=result.length-1;i>0;i--){
-      const j = Math.floor(Math.random()*(i+1));
-      [result[i],result[j]] = [result[j],result[i]];
-    }
-
-    genOutput.value = result.join('');
-    passwordEl.value = genOutput.value;
-    render();
-  }
-
-  passwordEl.addEventListener('input', render);
-
-  toggleBtn.addEventListener('click',function(){
-    if(passwordEl.type === 'password'){
-      passwordEl.type = 'text';
-      toggleBtn.textContent = '🙈';
-    } else {
-      passwordEl.type = 'password';
-      toggleBtn.textContent = '👁';
-    }
-  });
-
-  genBtn.addEventListener('click', generatePassword);
-
-  copyBtn.addEventListener('click',function(){
-    if(!genOutput.value) return;
-    navigator.clipboard.writeText(genOutput.value).then(function(){
-      copyBtn.textContent = '✅';
-      setTimeout(function(){ copyBtn.textContent = '📋'; }, 1500);
-    });
-  });
-
-  // Initial render
-  render();
-})();
-</script>
+  </script>
 </body>
 </html>

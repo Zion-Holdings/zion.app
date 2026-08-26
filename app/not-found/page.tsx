@@ -1,20 +1,28 @@
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
+import type { Metadata } from 'next';
 
-export const metadata = {
+
+export const metadata: Metadata = {
   title: 'Page Not Found | Zion Tech Group',
   description: 'The page you are looking for does not exist or has been moved.',
   openGraph: {
     title: 'Page Not Found | Zion Tech Group',
     description: 'The page you are looking for does not exist or has been moved.',
-    url: 'https://ziontechgroup.com',
+    url: 'https://ziontechgroup.com/404',
     type: 'website',
   },
   alternates: { canonical: '/404/' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Page Not Found | Zion Tech Group',
+    description: 'The page you are looking for does not exist or has been moved.',
+  },
 };
 
 export default function NotFoundPage() {
   return (
+<>
     <StandardPage
       title="Page Not Found"
       subtitle="The page you are looking for does not exist or has been moved."
@@ -44,6 +52,12 @@ export default function NotFoundPage() {
           </Link>
         </div>
       </div>
+    
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com", "description": "AI-native IT services company.", "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "url": "https://ziontechgroup.com/contact/" } }) }}
+      />
     </StandardPage>
+  </>
   );
 }

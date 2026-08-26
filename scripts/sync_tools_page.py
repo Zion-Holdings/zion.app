@@ -1,151 +1,239 @@
 #!/usr/bin/env python3
-"""Sync the /tools index page with available tool subdirectories.
+"""Regenerate app/tools/page.tsx tool grid from public/tools/<slug>/index.html on disk.
 
-Ensures app/tools/page.tsx reflects actual public/tools/* directories.
-Idempotent: safe to run repeatedly.
+Self-healing: any tool directory present in public/tools/ is guaranteed a card.
+Titles/descriptions come from a curated map; unknown slugs fall back to a
+title-cased slug and the tool page's <meta name="description">.
+
+Usage: python3 scripts/sync_tools_page.py
 """
-from pathlib import Path
+import os
+import re
+import sys
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-PUBLIC_TOOLS = REPO_ROOT / "public" / "tools"
-TOOLS_DIR = REPO_ROOT / "app" / "tools"
-PAGE_FILE = TOOLS_DIR / "page.tsx"
-TOOLS_INDEX = PUBLIC_TOOLS / "index.html"
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TOOLS_DIR = os.path.join(REPO, "public", "tools")
+PAGE = os.path.join(REPO, "app", "tools", "page.tsx")
 
-
-def scan_public_tools():
-    if not PUBLIC_TOOLS.exists():
-        return []
-    items = []
-    for child in sorted(PUBLIC_TOOLS.iterdir()):
-        if child.is_dir() and (child / "index.html").exists():
-            slug = child.name
-            title = slug.replace("-", " ").title()
-            items.append({
-                "name": title,
-                "slug": slug,
-                "description": f"Interactive tool: {title}.",
-                "icon": "🛠️",
-            })
-    return items
-
-
-def ensure_tools_dir(cards):
-    TOOLS_DIR.mkdir(parents=True, exist_ok=True)
-    for card in cards:
-        (TOOLS_DIR / card["slug"]).mkdir(parents=True, exist_ok=True)
-
-
-def render_page(cards):
-    cards_tsx = "\n".join(
-        f'''        <Link href="/tools/{c["slug"]}/" className="group block rounded-xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
-          <div className="text-3xl mb-3">{c["icon"]}</div>
-          <h3 className="text-lg font-semibold text-white group-hover:text-purple-300">{c["name"]}</h3>
-          <p className="mt-2 text-sm text-slate-400">{c["description"]}</p>
-        </Link>'''
-        for c in cards
-    )
-    base = '''import type { Metadata } from 'next';
-import Link from 'next/link';
-import StandardPage from '@/components/StandardPage';
-
-export const metadata: Metadata = {
-  title: 'Tools | Zion Tech Group',
-  description: 'Free AI/IT tools for service recommendations, comparisons, SSL checks, and more.',
-  openGraph: {
-    title: 'Tools | Zion Tech Group',
-    description: 'Free AI/IT tools for service recommendations, comparisons, SSL checks.',
-    url: 'https://ziontechgroup.com/tools/',
-    type: 'website',
-  },
-  alternates: { canonical: '/tools/' },
-};
-
-export default function ToolsPage() {
-  return (
-    <StandardPage
-      title="Tools"
-      subtitle="Free utilities built by Zion Tech Group to accelerate your AI and IT initiatives."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools' },
-      ]}
-      actions={[
-        { label: 'Get a recommendation', href: '/tools/ai-roi-calculator/', style: 'primary' },
-        { label: 'Browse services', href: '/services/', style: 'secondary' },
-        { label: 'Cloud savings check', href: '/tools/cloud-cost-optimizer/', style: 'secondary' },
-      ]}
-    >
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-__CARDS__
-      </div>
-    </StandardPage>
-  );
+CURATED = {
+    "base64-encoder": ("Base64 Encoder", "Encode and decode Base64 with UTF-8 support."),
+    "base64-image": ("Base64 Image Encoder", "Encode images to Base64 data URIs."),
+    "blog-post-generator": ("Blog Post Generator", "Draft blog outlines and introductions."),
+    "case-converter": ("Case Converter", "Convert between 9 text cases instantly."),
+    "color-contrast": ("Color Contrast Checker", "Check WCAG AA/AAA contrast ratios."),
+    "color-converter": ("Color Converter", "Convert between HEX, RGB, and HSL with live preview."),
+    "color-palette-gen": ("Color Palette Generator", "Generate palettes and export as CSS or JSON."),
+    "color-picker": ("Color Picker", "Pick colors with HEX/RGB/HSL values."),
+    "cron-generator": ("Cron Generator", "Build cron expressions from a schedule."),
+    "cron-parser": ("Cron Parser", "Parse and explain cron expressions."),
+    "css-minifier": ("CSS Minifier", "Minify CSS and see size savings."),
+    "css-minifier-pro": ("CSS Minifier Pro", "Minify CSS with advanced options."),
+    "excel-to-json": ("Excel to JSON", "Convert CSV/TSV data to JSON."),
+    "gradient-generator": ("CSS Gradient Generator", "Design CSS gradients visually."),
+    "hash-checker": ("Hash Checker", "Compare hashes to verify integrity."),
+    "hash-generator": ("Hash Generator", "Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes."),
+    "html-entities": ("HTML Entities", "Encode and decode HTML entities."),
+    "http-status": ("HTTP Status Codes", "Browse and search HTTP status codes."),
+    "image-resize": ("Image Resize", "Resize images with aspect ratio lock."),
+    "image-to-base64": ("Image to Base64", "Convert images to base64 strings."),
+    "js-minifier": ("JS Minifier", "Minify JavaScript and see size savings."),
+    "js-obfuscator": ("JS Obfuscator", "Obfuscate JavaScript code."),
+    "json-diff": ("JSON Diff", "Compare two JSON objects and highlight differences."),
+    "json-formatter": ("JSON Formatter", "Format, minify, and validate JSON quickly."),
+    "json-schema-generator": ("JSON Schema Generator", "Infer a JSON Schema from sample JSON."),
+    "json-to-csv": ("JSON to CSV", "Convert JSON arrays to CSV."),
+    "json-to-yaml": ("JSON to YAML", "Convert JSON to YAML instantly."),
+    "jwt-decoder": ("JWT Decoder", "Inspect header and payload without sending data anywhere."),
+    "jwt-decoder-pro": ("JWT Decoder Pro", "Decode JWTs and inspect algorithm details."),
+    "jwt-generator": ("JWT Generator", "Build signed JWTs for testing."),
+    "lorem-ipsum": ("Lorem Ipsum Generator", "Generate placeholder text."),
+    "lorem-ipsum-pro": ("Lorem Ipsum Pro", "Paragraphs, sentences, or words on demand."),
+    "markdown-previewer": ("Markdown Previewer", "Preview markdown rendering in real-time."),
+    "markdown-to-html": ("Markdown to HTML", "Convert Markdown to HTML instantly."),
+    "md5-hash": ("MD5 Hash", "Generate MD5 hashes from text or files."),
+    "meta-tag-generator": ("Meta Tag Generator", "Generate SEO and Open Graph meta tags."),
+    "mime-lookup": ("MIME Type Lookup", "Find MIME types by extension or category."),
+    "number-base-converter": ("Number Base Converter", "Convert between binary, octal, decimal, hex."),
+    "password-generator": ("Password Generator", "Generate secure, customizable passwords."),
+    "password-generator-pro": ("Password Generator Pro", "Advanced generator with strength meter."),
+    "password-strength": ("Password Strength", "Analyze entropy and estimated crack time."),
+    "percentage-calculator": ("Percentage Calculator", "Percentages, percent change, and discounts."),
+    "qr-code-generator": ("QR Code Generator", "Generate and download QR codes instantly."),
+    "qr-scanner": ("QR Scanner", "Decode QR codes from an uploaded image."),
+    "regex-cheat-sheet": ("Regex Cheat Sheet", "Searchable regex syntax reference."),
+    "regex-tester": ("Regex Tester", "Test patterns and matches in real time."),
+    "sql-query-builder": ("SQL Query Builder", "Build SELECT, INSERT, UPDATE, DELETE queries."),
+    "text-analyzer": ("Text Analyzer", "Counts, reading time, and keyword density."),
+    "text-compare": ("Text Compare", "Compare two texts side-by-side."),
+    "text-diff": ("Text Diff", "Highlight differences between two texts."),
+    "text-slug": ("Text to Slug", "Convert text to URL-friendly slugs."),
+    "text-to-speech": ("Text to Speech", "Read text aloud with browser voices."),
+    "timestamp-converter": ("Timestamp Converter", "Convert Unix timestamps to dates and vice versa."),
+    "timestamp-generator": ("Timestamp Generator", "Generate Unix timestamps for any date."),
+    "timestamp-to-cron": ("Timestamp to Cron", "Turn a specific time into a cron expression."),
+    "unit-converter": ("Unit Converter", "Length, weight, temperature, data, speed, area."),
+    "url-encoder": ("URL Encoder", "Encode and decode URLs with UTF-8 support."),
+    "url-parser": ("URL Parser", "Break a URL into its components."),
+    "uuid-generator": ("UUID Generator", "Generate UUID v4 identifiers instantly."),
+    "word-counter": ("Word Counter", "Count words, characters, and reading time."),
+    "yaml-formatter": ("YAML Formatter", "Format and validate YAML."),
+    "yaml-to-json": ("YAML to JSON", "Convert YAML to JSON instantly."),
 }
-'''
-    return base.replace("__CARDS__", cards_tsx)
+
+CARD = (
+    '        <a href="/tools/{slug}/" className="rounded-2xl border border-slate-800 '
+    'bg-slate-900/60 p-6 hover:border-purple-500/40">\n'
+    '          <h3 className="text-white font-semibold mb-2">{title}</h3>\n'
+    '          <p className="text-slate-400 text-sm">{desc}</p>\n'
+    "        </a>"
+)
+
+SITEMAP = os.path.join(REPO, "public", "sitemap.xml")
+SITE = "https://ziontechgroup.com"
+# Match a tool <url> element and only the whitespace that follows it, so removal
+# never eats the newline belonging to the previous line (which would join entries).
+TOOL_LOC_RE = re.compile(
+    r"[ \t]*<url><loc>" + re.escape(SITE) + r"/tools/[a-z0-9-]+/</loc>.*?</url>[ \t]*\n?"
+)
+
+SERVICE_PAGE = os.path.join(REPO, "app", "services", "[slug]", "page.tsx")
+# Same shape as TOOL_LOC_RE, but the trailing slug is required: this must not
+# match the /services/ index entry, which has to survive the strip-and-reinsert.
+SERVICE_LOC_RE = re.compile(
+    r"[ \t]*<url><loc>" + re.escape(SITE) + r"/services/[a-z0-9-]+/</loc>.*?</url>[ \t]*\n?"
+)
 
 
-def render_index(cards):
-    items = "\n".join(
-        f'      <a class="card" href="/tools/{c["slug"]}/"><div class="icon">🛠️</div><div class="name">{c["name"]}</div><div class="desc">{c["description"]}</div></a>'
-        for c in cards
+def esc(text):
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def discover():
+    if not os.path.isdir(TOOLS_DIR):
+        sys.exit(f"missing {TOOLS_DIR}")
+    tools = []
+    for slug in sorted(os.listdir(TOOLS_DIR)):
+        path = os.path.join(TOOLS_DIR, slug, "index.html")
+        if not os.path.isfile(path):
+            continue
+        if slug in CURATED:
+            title, desc = CURATED[slug]
+        else:
+            title = slug.replace("-", " ").title()
+            html = open(path, encoding="utf-8", errors="replace").read()
+            m = re.search(r'<meta\s+name="description"\s+content="([^"]+)"', html)
+            desc = m.group(1) if m else f"{title} utility."
+            if len(desc) > 90:
+                desc = desc[:87].rstrip() + "..."
+        tools.append((slug, title, desc))
+    return tools
+
+
+def discover_services():
+    """Read the service slugs that app/services/[slug]/ actually builds.
+
+    SERVICE_CATEGORY_MAP is the single source of truth: generateStaticParams
+    enumerates its keys, so a slug in that map is a page that exists and a
+    slug missing from it is a 404. Parsing the map here means the sitemap
+    cannot drift from what the route builds -- which is exactly how all ten
+    service pages ended up live but absent from the sitemap.
+    """
+    if not os.path.isfile(SERVICE_PAGE):
+        return []
+    src = open(SERVICE_PAGE, encoding="utf-8").read()
+    m = re.search(
+        r"const SERVICE_CATEGORY_MAP[^=]*=\s*\{(.*?)\n\};", src, re.S
     )
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tools | Zion Tech Group</title>
-<style>
-  :root {{ --bg:#0b0f1a; --card:rgba(255,255,255,0.04); --border:rgba(255,255,255,0.08); --text:#e7eaf0; --muted:#a3a8b8; --accent:#7c3aed; --accent-2:#22d3ee; }}
-  * {{ box-sizing: border-box; }}
-  html, body {{ margin:0; padding:0; background: linear-gradient(180deg,#0b0f1a 0%,#0f1626 100%); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }}
-  .wrap {{ max-width: 980px; margin: 0 auto; padding: 28px 20px 60px; }}
-  .title {{ font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }}
-  .sub {{ color: var(--muted); margin-top: 6px; }}
-  .grid {{ display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); margin-top: 18px; }}
-  @media (max-width: 720px) {{ .grid {{ grid-template-columns: 1fr; }} }}
-  .card {{ background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; text-decoration: none; color: inherit; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); transition: transform .15s ease, border-color .15s ease; }}
-  .card:hover {{ transform: translateY(-2px); border-color: rgba(124,58,237,.35); }}
-  .icon {{ font-size: 28px; margin-bottom: 10px; }}
-  .name {{ font-size: 16px; font-weight: 600; color: #fff; }}
-  .desc {{ margin-top: 6px; font-size: 13px; color: var(--muted); }}
-  .cta {{ margin-top: 22px; }}
-  .cta a {{ color: var(--accent-2); text-decoration: none; font-weight: 600; }}
-</style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="title">Tools</div>
-    <div class="sub">Free utilities built by Zion Tech Group to accelerate your AI and IT initiatives.</div>
-    <div class="grid">
-{items}
-    </div>
-    <div class="cta"><a href="/contact/">Talk to an engineer about your cloud estate →</a></div>
-  </div>
-</body>
-</html>
-"""
+    if not m:
+        return []
+    return re.findall(r"^\s*'([a-z0-9-]+)'\s*:", m.group(1), re.M)
 
 
-def sync():
-    cards = scan_public_tools()
-    if not cards:
-        cards = [{
-            "name": "Service Recommender",
-            "slug": "service-recommender",
-            "description": "Answer a few questions and get a ranked list of best-fit Zion AI/IT services with estimated ROI and timeline.",
-            "icon": "🤖",
-        }]
-    ensure_tools_dir(cards)
-    page_content = render_page(cards)
-    PAGE_FILE.write_text(page_content, encoding="utf-8")
-    index_content = render_index(cards)
-    TOOLS_INDEX.write_text(index_content, encoding="utf-8")
-    print(f"SYNCED: {PAGE_FILE} ({len(cards)} tool cards)")
-    print(f"SYNCED: {TOOLS_INDEX} ({len(cards)} tool cards)")
+def sync_service_sitemap(services):
+    """Ensure public/sitemap.xml carries one <url> entry per service page."""
+    if not os.path.isfile(SITEMAP) or not services:
+        return False
+    src = open(SITEMAP, encoding="utf-8").read()
+
+    # Drop existing /services/<slug>/ entries, keeping the /services/ index,
+    # then re-insert the full set.
+    stripped = SERVICE_LOC_RE.sub("", src)
+    block = "".join(
+        f"  <url><loc>{SITE}/services/{s}/</loc>"
+        f"<changefreq>monthly</changefreq><priority>0.8</priority></url>\n"
+        for s in services
+    )
+    if "</urlset>" not in stripped:
+        return False
+    new = stripped.replace("</urlset>", block + "</urlset>", 1)
+    if new == src:
+        return False
+    open(SITEMAP, "w", encoding="utf-8").write(new)
+    return True
+
+
+def sync_sitemap(tools):
+    """Ensure public/sitemap.xml has exactly one <url> entry per deployed tool."""
+    if not os.path.isfile(SITEMAP):
+        print("no public/sitemap.xml; skipping sitemap sync")
+        return False
+    src = open(SITEMAP, encoding="utf-8").read()
+
+    # Drop every existing /tools/<slug>/ entry, then re-insert the full set.
+    stripped = TOOL_LOC_RE.sub("", src)
+    block = "".join(
+        f"  <url><loc>{SITE}/tools/{s}/</loc>"
+        f"<changefreq>monthly</changefreq><priority>0.7</priority></url>\n"
+        for s, _, _ in tools
+    )
+    if "</urlset>" not in stripped:
+        print("sitemap.xml missing </urlset>; skipping sitemap sync")
+        return False
+    new = stripped.replace("</urlset>", block + "</urlset>", 1)
+    if new == src:
+        return False
+    open(SITEMAP, "w", encoding="utf-8").write(new)
+    return True
+
+
+def main():
+    tools = discover()
+    grid = "\n".join(
+        CARD.format(slug=s, title=esc(t), desc=esc(d)) for s, t, d in tools
+    )
+    src = open(PAGE, encoding="utf-8").read()
+
+    pattern = re.compile(
+        r'(<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">\n)'
+        r"(.*?)"
+        r"(\n      </div>)",
+        re.S,
+    )
+    if not pattern.search(src):
+        sys.exit("could not locate tool grid in app/tools/page.tsx")
+
+    new = pattern.sub(lambda m: m.group(1) + grid + m.group(3), src, count=1)
+    page_changed = new != src
+    if page_changed:
+        open(PAGE, "w", encoding="utf-8").write(new)
+
+    sitemap_changed = sync_sitemap(tools)
+    services = discover_services()
+    services_changed = sync_service_sitemap(services)
+
+    if page_changed:
+        print(f"synced {len(tools)} tool cards into app/tools/page.tsx")
+    else:
+        print(f"tools page already in sync ({len(tools)} tools)")
+    if sitemap_changed:
+        print(f"synced {len(tools)} tool URLs into public/sitemap.xml")
+    else:
+        print("sitemap already in sync")
+    if services_changed:
+        print(f"synced {len(services)} service URLs into public/sitemap.xml")
+    else:
+        print(f"service sitemap already in sync ({len(services)} services)")
 
 
 if __name__ == "__main__":
-    sync()
+    main()

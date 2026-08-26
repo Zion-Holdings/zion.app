@@ -1,16 +1,17 @@
-import { ReactNode } from 'react';
-import Link from 'next/link';
+'use client';
+import type { ReactNode } from 'react';
 
-interface JsonLdProps {
-  data: Record<string, unknown> | Record<string, unknown>[];
-}
+type JsonLdProps = {
+  data: unknown;
+  children?: ReactNode;
+};
 
 export default function JsonLd({ data }: JsonLdProps) {
-  const json = JSON.stringify(data);
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: json }}
+      suppressHydrationWarning
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
 }

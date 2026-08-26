@@ -1,28 +1,34 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import type { Metadata } from 'next';
 
-export const metadata = {
+
+export const metadata: Metadata = {
   title: 'Cloud Cost AI Optimizer: checklist for IT leaders | Zion Tech Group',
   description: 'Cloud Cost AI Optimizer: checklist for IT leaders',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud Cost AI Optimizer: checklist for IT leaders',
+    title: 'Cloud Cost AI Optimizer: checklist for IT leaders | Zion Tech Group',
     description: 'Cloud Cost AI Optimizer: checklist for IT leaders',
     url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cloud Cost AI Optimizer: checklist for IT leaders | Zion Tech Group',
+    description: 'Cloud Cost AI Optimizer: checklist for IT leaders',
+  },
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: checklist for IT leaders", "description": "Cloud Cost AI Optimizer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-25T12:02:59Z", "dateModified": "2026-08-25T12:02:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Cloud Cost AI Optimizer: checklist for IT leaders' }]} className="mb-8" />
+        <SiteBreadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Cloud Cost AI Optimizer: checklist for IT leaders" }]} className="mb-8" />
         <header className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Cloud Cost AI Optimizer: checklist for IT leaders</h1>
           <p className="mt-4 text-lg text-slate-300">Cloud Cost AI Optimizer: checklist for IT leaders</p>
@@ -36,17 +42,17 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-## Market signal
-Demand is rising for durable cloud cost ai optimizer: checklist for it leaders capabilities rather than one-off automations. Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment. The strongest programs differentiate themselves with operational maturity, not feature breadth. Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing. Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.
+<h2>Market signal</h2>
+<p>Demand is rising for durable cloud cost ai optimizer: checklist for it leaders capabilities rather than one-off automations. Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment. The strongest programs differentiate themselves with operational maturity, not feature breadth. Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing. Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.</p>
 
-## Capability map
-Map capabilities against current workflow friction for cloud cost ai optimizer: checklist for it leaders. Highest-ROI automations reduce handoffs and rework rather than simply digitizing existing handoffs. A capability map makes priorities visible to leadership and creates a shared view of where automation should start. Revisit the map quarterly; new opportunities emerge as teams mature and data quality improves. Share the map with operators and validate assumptions before investing in automation.
+<h2>Capability map</h2>
+<p>Map capabilities against current workflow friction for cloud cost ai optimizer: checklist for it leaders. Highest-ROI automations reduce handoffs and rework rather than simply digitizing existing handoffs. A capability map makes priorities visible to leadership and creates a shared view of where automation should start. Revisit the map quarterly; new opportunities emerge as teams mature and data quality improves. Share the map with operators and validate assumptions before investing in automation.</p>
 
-## Execution playbook
-1) Define success metrics. 2) Choose one primary workflow. 3) Automate the lowest-risk step first. 4) Add observability. 5) Expand only after stable operation. Document decisions, owners, dates, and metrics in a shared workspace so progress remains visible to all stakeholders. Review the playbook after each phase and update it with lessons learned; the playbook becomes organizational memory. Repeatable execution separates successful teams from teams that rely on heroics and undocumented workarounds. Keep the playbook short and actionable; long strategy documents rarely change behavior on the ground.
+<h2>Execution playbook</h2>
+<p>1) Define success metrics. 2) Choose one primary workflow. 3) Automate the lowest-risk step first. 4) Add observability. 5) Expand only after stable operation. Document decisions, owners, dates, and metrics in a shared workspace so progress remains visible to all stakeholders. Review the playbook after each phase and update it with lessons learned; the playbook becomes organizational memory. Repeatable execution separates successful teams from teams that rely on heroics and undocumented workarounds. Keep the playbook short and actionable; long strategy documents rarely change behavior on the ground.</p>
 
-## Conversion path
-If this guide matches your cloud cost ai optimizer: checklist for it leaders initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.
+<h2>Conversion path</h2>
+<p>If this guide matches your cloud cost ai optimizer: checklist for it leaders initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.</p>
 
         </section>
 
@@ -54,10 +60,10 @@ If this guide matches your cloud cost ai optimizer: checklist for it leaders ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-roi-and-cost-model">Api Security Testing Roi And Cost Model</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-case-study">Autonomous Qa Engineering Case Study</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7790">Smart Contract Audit 2026 7790</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026">Micro Saas Ai Hr Recruitment 2026</Link></li>
+              <li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-common-mistakes/">Cyber Threat Intelligence Common Mistakes</Link></li>
+<li><Link href="/blog/smart-contract-audit-2026/">Smart Contract Audit 2026</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-common-mistakes/">Autonomous Qa Engineering Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +78,6 @@ If this guide matches your cloud cost ai optimizer: checklist for it leaders ini
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
         />
       </article>
     </div>

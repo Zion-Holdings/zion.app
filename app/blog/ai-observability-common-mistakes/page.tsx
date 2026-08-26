@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Observability: common mistakes | Zion Tech Group',
   description: 'AI Observability: common mistakes',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Observability: common mistakes',
@@ -13,16 +13,21 @@ export const metadata = {
     type: 'article',
     siteName: 'Zion Tech Group',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Observability: common mistakes | Zion Tech Group',
+    description: 'AI Observability: common mistakes',
+  },
   alternates: { canonical: '/blog/ai-observability-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: common mistakes", "description": "AI Observability: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-25T12:02:55Z", "dateModified": "2026-08-25T12:02:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: common mistakes", "description": "AI Observability: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-18T12:25:28Z", "dateModified": "2026-08-18T12:25:28Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-common-mistakes/"};
 
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'AI Observability: common mistakes' }]} className="mb-8" />
+        <SiteBreadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "AI Observability: common mistakes" }]} className="mb-8" />
         <header className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">AI Observability: common mistakes</h1>
           <p className="mt-4 text-lg text-slate-300">AI Observability: common mistakes</p>
@@ -36,20 +41,20 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-## Business context
-Strong investments in ai observability: common mistakes reduce manual work, improve customer experience, and create faster feedback loops between operations and revenue. The best programs tie capability building to business outcomes: faster throughput, fewer preventable incidents, and clearer accountability. Leadership support increases when ai observability: common mistakes is framed as strategic capability rather than an experimental cost center. Focus on durable value: scalable processes, reusable integrations, and measurable outcomes that survive turnover and budget cycles. When business context is clear, funding and staffing decisions become easier because stakeholders understand the expected return.
+<h2>Business context</h2>
+<p>Strong investments in ai observability: common mistakes reduce manual work, improve customer experience, and create faster feedback loops between operations and revenue. The best programs tie capability building to business outcomes: faster throughput, fewer preventable incidents, and clearer accountability. Leadership support increases when ai observability: common mistakes is framed as strategic capability rather than an experimental cost center. Focus on durable value: scalable processes, reusable integrations, and measurable outcomes that survive turnover and budget cycles. When business context is clear, funding and staffing decisions become easier because stakeholders understand the expected return.</p>
 
-## Technical considerations
-For ai observability: common mistakes, prefer services with documented APIs, webhooks, and role-based access control. Avoid point solutions that become brittle after the pilot; choose platforms designed for production workloads and operational visibility. Centralize data contracts and use lightweight integration points so you can adapt when requirements change. Retain fallback paths for exceptions and edge cases; resilient systems handle failure modes gracefully instead of breaking end-to-end. Document interfaces and ownership so future teams can extend the system without rewriting core logic.
+<h2>Technical considerations</h2>
+<p>For ai observability: common mistakes, prefer services with documented APIs, webhooks, and role-based access control. Avoid point solutions that become brittle after the pilot; choose platforms designed for production workloads and operational visibility. Centralize data contracts and use lightweight integration points so you can adapt when requirements change. Retain fallback paths for exceptions and edge cases; resilient systems handle failure modes gracefully instead of breaking end-to-end. Document interfaces and ownership so future teams can extend the system without rewriting core logic.</p>
 
-## Operational rollout
-Pilot ai observability: common mistakes with one team, document runbooks, train operators, then expand. Broad rollouts without ownership create unrecoverable backlogs and erode trust in automation. Operational readiness should be checked before expansion: alerting, on-call coverage, incident response, and change management. Make success visible through dashboards and weekly reviews so momentum builds from real progress, not slide decks. Operational excellence is built during the pilot, not after a failed broad rollout.
+<h2>Operational rollout</h2>
+<p>Pilot ai observability: common mistakes with one team, document runbooks, train operators, then expand. Broad rollouts without ownership create unrecoverable backlogs and erode trust in automation. Operational readiness should be checked before expansion: alerting, on-call coverage, incident response, and change management. Make success visible through dashboards and weekly reviews so momentum builds from real progress, not slide decks. Operational excellence is built during the pilot, not after a failed broad rollout.</p>
 
-## Success signals
-A successful rollout of ai observability: common mistakes produces clearer metrics, faster execution, and fewer preventable incidents. If those outcomes do not appear, revisit scope and workflow design instead of adding more tooling. Look for consistent adoption, stable error rates, and positive operator feedback before declaring success. Sustained success requires continuous improvement, not a one-time implementation project. Celebrate evidence-based wins publicly; they build momentum for the next phase.
+<h2>Success signals</h2>
+<p>A successful rollout of ai observability: common mistakes produces clearer metrics, faster execution, and fewer preventable incidents. If those outcomes do not appear, revisit scope and workflow design instead of adding more tooling. Look for consistent adoption, stable error rates, and positive operator feedback before declaring success. Sustained success requires continuous improvement, not a one-time implementation project. Celebrate evidence-based wins publicly; they build momentum for the next phase.</p>
 
-## Recommended next step
-Start with one workflow, one owner, and one success metric. Expansion should follow evidence, not enthusiasm. A focused pilot beats a scattered roadmap because it produces proof points that stakeholders can verify. If this matches your current initiative, the next step is a short scoping call and a concrete pilot plan.
+<h2>Recommended next step</h2>
+<p>Start with one workflow, one owner, and one success metric. Expansion should follow evidence, not enthusiasm. A focused pilot beats a scattered roadmap because it produces proof points that stakeholders can verify. If this matches your current initiative, the next step is a short scoping call and a concrete pilot plan.</p>
 
         </section>
 
@@ -57,10 +62,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-deployment-patterns">Ai Ad Copy Generator Deployment Patterns</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026">Enterprise Backup Dr 2026</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026">Cloud Native App Development 2026</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7238">Smart Contract Audit 2026 7238</Link></li>
+              <li><Link href="/blog/ai-customer-success-churn-prevention-security-and-governance/">Ai Customer Success Churn Prevention Security And Governance</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-policy-and-compliance/">Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-api-gateway-evaluation-framework/">Ai Api Gateway Evaluation Framework</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-checklist-for-it-leaders/">Ai Performance Monitoring Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +80,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

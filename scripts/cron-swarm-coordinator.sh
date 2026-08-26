@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-REPO_DIR="/Users/klebergarciaalcatrao/zion-support.github.io"
+REPO_DIR="/data/data/com.termux/files/home/ztg/repo"
 cd "$REPO_DIR"
 
 # --- Quick state checks ---
@@ -21,12 +21,12 @@ UNCOMMITTED=$(git status --porcelain 2>/dev/null | wc -l)
 SERVICE_COUNT=$(python3 -c "import json;print(len(json.load(open('app/data/servicesData.json'))))" 2>/dev/null || echo "0")
 
 # Sitemap URL count
-SITEMAP_URLS=$(grep -c 'ziontechgroup.com/services/' sitemap.xml 2>/dev/null || echo "0")
+SITEMAP_URLS=$(grep -c 'ziontechgroup.com/services/' public/sitemap.xml 2>/dev/null || echo "0")
 
 # Cron job statuses — query the jobs.json directly for precision
 CRON_JSON=$(python3 -c "
 import json
-with open('/Users/klebergarciaalcatrao/.hermes/cron/jobs.json') as f:
+with open('/data/data/com.termux/files/home/.hermes/cron/jobs.json') as f:
     data = json.load(f)
 jobs = data.get('jobs', [])
 total = len(jobs)
@@ -43,7 +43,7 @@ CRON_ERR=$(echo "$CRON_JSON" | head -1 | cut -d'|' -f3)
 CRON_ERRORS=$(echo "$CRON_JSON" | tail -n +2 2>/dev/null || true)
 
 # Coordination doc modtime
-COORD_AGE=$(( ($(date +%s) - $(stat -f %m ~/.hermes/multi-agent-coordination.md 2>/dev/null || echo $(date +%s))) / 60 )) 2>/dev/null || COORD_AGE=999
+COORD_AGE=$(( ($(date +%s) - $(stat -c %Y ~/.hermes/multi-agent-coordination.md 2>/dev/null || echo $(date +%s))) / 60 )) 2>/dev/null || COORD_AGE=999
 
 # --- Build report ---
 echo "🧠 **ZION SWARM COORDINATOR v3.0** — $(date '+%H:%M') UTC-3"

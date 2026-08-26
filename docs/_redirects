@@ -1100,6 +1100,15 @@
 /blog/hermes-agent-platform/ /blog/hermes-agent-platform/index.html 200
 /blog/hermes-agent-multi-agent-coordination/ /blog/hermes-agent-multi-agent-coordination/index.html 200
 # Fallbacks for uncovered top-level routes
-/hermes-agents/ /services/hermes-agent-platform/ 301
 /help/ /services/ 301
 /support/ /services/ 301
+
+# Fallbacks for uncovered top-level routes
+/help/ /services/ 301
+/support/ /services/ 301
+/help /services/ 301
+/support /services/ 301
+/ai-lab/ /ai-lab/index.html 200
+/automation/ /automation/index.html 200
+/ai-lab /ai-lab/index.html 200
+/automation /automation/index.html 200

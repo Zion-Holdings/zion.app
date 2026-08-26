@@ -1,6 +1,6 @@
-// app/components/PageShell.tsx
+'use client';
+
 import React from 'react';
-import AccessibilityEnhancer from '@/components/AccessibilityEnhancer';
 
 export interface PageShellProps {
   children: React.ReactNode;
@@ -12,20 +12,21 @@ export interface PageShellProps {
 }
 
 /**
- * PageShell — the root page shell used in app/layout.tsx.
- * Wraps all page content with AccessibilityEnhancer and main-content container.
- * Navigation and Footer are rendered at the layout level, not here.
+ * PageShell — content container for pages rendered inside app/layout.tsx.
  *
- * Individual pages should use PageTemplate for consistent hero/content layout.
+ * This deliberately does NOT render Navigation/Footer/AccessibilityEnhancer:
+ * app/layout.tsx already wraps every route in them. Because StandardPage (used
+ * by 100 pages) renders PageShell, doing it here shipped two <nav>, two
+ * <footer> and two id="main-content" nodes on every page -- duplicate IDs are
+ * invalid HTML and point the skip link at the wrong target.
+ *
+ * Props are kept optional and unused-but-accepted so existing callers keep
+ * type-checking; individual pages use PageTemplate for hero/content layout.
  */
 export default function PageShell({ children }: PageShellProps) {
   return (
-    <div className="min-h-screen bg-slate-950 text-white flex flex-col">
-      <AccessibilityEnhancer>
-        <div id="main-content" className="flex-1">
-          {children}
-        </div>
-      </AccessibilityEnhancer>
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      {children}
     </div>
   );
 }

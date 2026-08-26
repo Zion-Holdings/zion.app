@@ -432,3 +432,4 @@
 {"ts": "2026-08-18T21:09:01.147542+00:00", "email": "jeff@ehva.ai", "msg_id": "19ed62e5bad88de0", "query": "subject:readiness assessment", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-18T21:09:01.653578+00:00", "email": "cloud@lambdalabs.zendesk.com", "msg_id": "19ed5d5b3dba95b2", "query": "subject:readiness assessment", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-19T22:26:32.642585+00:00", "email": "automated@airbnb.com", "msg_id": "1a01c205ec8921a5", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-25T17:31:58.927335+00:00", "email": "marketing@npbrasil.com", "msg_id": "1a039f9b77e45673", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}

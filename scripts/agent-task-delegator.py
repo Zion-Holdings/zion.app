@@ -5,8 +5,6 @@ Zion Agent Swarm — Proactive Task Delegator v3.1
 Coordinates @ziontechgroup_agents work: site health, catalog/sitemap sync,
 cron health, GitHub Actions status, and actionable delegations.
 Optimized for speed: targeted checks, minimal API calls, precise delegation.
-""" — Proactive Task Delegator v3.0
-
 Scans the zion-support.github.io repo for issues and delivers actionable task
 briefs to @ziontechgroup_agents group (chat_id: -1003886112318).
 
