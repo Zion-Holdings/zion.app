@@ -1,0 +1,27 @@
+Subject: Transform Your General Operations with Real-Time Trending Analytics
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Real-Time Trending Analytics.
+
+Real-time windowed aggregation engine: 1-minute tumbling and hopping windows per dimension, per-interval top-K ranking, out-of-norm alerting, sigma deviation triggering, and curated drill-down with root-cause dimension linking per window.
+
+**Key Benefits:**
+- Reduce costs with real-time trending analytics
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $149/month
+- Pro: $449/month
+- Enterprise: $1,499/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

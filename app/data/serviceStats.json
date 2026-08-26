@@ -1,0 +1,45 @@
+{
+  "total_services": 85,
+  "by_category": {
+    "ai": 33,
+    "it": 24,
+    "micro-saas": 12,
+    "cloud": 4,
+    "security": 3,
+    "data": 3,
+    "automation": 2,
+    "devops": 2,
+    "email-intelligence": 2
+  },
+  "by_stage": {
+    "published": 85
+  },
+  "by_industry": {
+    "General": 7,
+    "Finance": 5,
+    "Technology": 5,
+    "Analytics": 3,
+    "E-Commerce": 3,
+    "Data Engineering": 3,
+    "API Management": 2,
+    "Customer Support": 2,
+    "Marketing": 2,
+    "HR": 2,
+    "Low-Code": 2,
+    "Compliance": 2,
+    "Data Protection": 2,
+    "Cloud": 2,
+    "Productivity": 2
+  },
+  "price_ranges": {
+    "starter": [],
+    "pro": [],
+    "enterprise": []
+  },
+  "features_per_service": [],
+  "avg_rating": 0,
+  "total_features": 85,
+  "total_benefits": 85,
+  "services_with_pricing": 85,
+  "services_with_rating": 0
+}

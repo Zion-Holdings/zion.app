@@ -1,0 +1,273 @@
+import { Service } from './serviceTypes';
+
+// =============================================================================
+// Wave 244 — New Real Services (Micro-SaaS, IT, AI)
+// =============================================================================
+
+// Micro-SaaS Services (3)
+export const wave249MicroSaasServices: Service[] = [
+  {
+    id: 'micro-saas-social-media-scheduler',
+    title: 'Social Media Scheduler & Analytics — Micro-SaaS',
+    description:
+      'Multi-platform social media scheduling with AI-powered content suggestions, optimal posting times, engagement analytics, and team collaboration. Supports Instagram, LinkedIn, Twitter, Facebook, and TikTok.',
+    features: [
+      'Visual content calendar with drag-and-drop scheduling across Instagram, LinkedIn, Twitter, Facebook, TikTok, and Pinterest',
+      'AI content suggestions based on trending topics, hashtag analysis, and your brand voice with auto-generated captions',
+      'Optimal posting time analysis that determines when your audience is most active and engaged on each platform',
+      'Engagement analytics dashboard showing reach, impressions, clicks, and conversions with competitor benchmarking',
+      'Team collaboration with approval workflows, content libraries, and brand guideline enforcement',
+      'Automated reposting of evergreen content and cross-platform content adaptation for different formats',
+    ],
+    benefits: [
+      'Save 10+ hours per week by scheduling all social media content in one place instead of managing each platform separately',
+      'Increase engagement by 40% with AI-optimized posting times and content suggestions tailored to your audience',
+      'Maintain consistent brand presence across all platforms with approval workflows and brand guideline enforcement',
+      'Measure ROI with clear attribution showing which posts drive traffic, leads, and revenue',
+      'Scale social media output without adding marketing headcount through automation and AI assistance',
+    ],
+    pricing: { basic: '$49/mo', pro: '$129/mo', enterprise: '$299/mo' },
+    contactInfo: { website: '/services/micro-saas-social-media-scheduler', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '📱',
+    href: '/services/micro-saas-social-media-scheduler',
+    popular: true,
+    category: 'micro-saas',
+    industry: 'Marketing',
+    stage: 'published',
+  },
+  {
+    id: 'micro-saas-project-timeline-tracker',
+    title: 'Project Timeline & Milestone Tracker — Micro-SaaS',
+    description:
+      'Visual project timeline management with Gantt charts, milestone tracking, dependency management, and automated status reporting. Perfect for agencies and project-based teams.',
+    features: [
+      'Interactive Gantt chart with drag-and-drop timeline editing, milestone markers, and critical path visualization',
+      'Dependency management with automatic schedule adjustment when tasks are delayed or completed early',
+      'Automated status reporting with weekly digest emails, stakeholder updates, and executive summary dashboards',
+      'Resource allocation view showing team member workload, availability, and overallocation warnings',
+      'Time tracking integration with automatic progress calculation based on logged hours versus estimates',
+      'Client-facing portal where stakeholders can view project progress, approve milestones, and provide feedback',
+    ],
+    benefits: [
+      'Deliver projects on time with visual timelines that make dependencies, bottlenecks, and delays immediately visible',
+      'Reduce status meeting time by 70% with automated reports that keep stakeholders informed without manual updates',
+      'Improve resource utilization with workload visibility that prevents overallocation and burnout',
+      'Increase client satisfaction with transparent progress tracking and proactive communication about timeline changes',
+      'Scale project management without adding PM headcount through automation and standardized workflows',
+    ],
+    pricing: { basic: '$79/mo', pro: '$199/mo', enterprise: '$499/mo' },
+    contactInfo: { website: '/services/micro-saas-project-timeline-tracker', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '📊',
+    href: '/services/micro-saas-project-timeline-tracker',
+    category: 'micro-saas',
+    industry: 'Project Management',
+    stage: 'published',
+  },
+  {
+    id: 'micro-saas-knowledge-base-wiki',
+    title: 'Knowledge Base & Internal Wiki — Micro-SaaS',
+    description:
+      'Self-hosted knowledge base with AI-powered search, content suggestions, and analytics. Reduces support tickets by 30% and helps teams find information instantly.',
+    features: [
+      'AI-powered search with natural language understanding, synonym matching, and contextual results ranking',
+      'Content suggestion engine that identifies gaps in documentation based on support tickets and search queries',
+      'Rich text editor with templates, version history, and collaborative editing with real-time presence indicators',
+      'Analytics dashboard showing most-viewed articles, failed searches, content gaps, and user satisfaction ratings',
+      'Customizable branding, domain mapping, and access controls for public, internal, or customer-facing knowledge bases',
+      'Integration with Slack, Teams, and help desk platforms for instant knowledge base search from existing workflows',
+    ],
+    benefits: [
+      'Reduce support ticket volume by 30% with self-service documentation that answers common questions instantly',
+      'Improve employee productivity with AI search that finds information in seconds instead of minutes or hours',
+      'Identify documentation gaps automatically based on what users are searching for but cannot find',
+      'Maintain institutional knowledge even as team members leave, preventing information loss and onboarding delays',
+      'Scale support without adding headcount by deflecting routine questions to comprehensive self-service documentation',
+    ],
+    pricing: { basic: '$59/mo', pro: '$149/mo', enterprise: '$399/mo' },
+    contactInfo: { website: '/services/micro-saas-knowledge-base-wiki', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '📚',
+    href: '/services/micro-saas-knowledge-base-wiki',
+    category: 'micro-saas',
+    industry: 'Documentation',
+    stage: 'published',
+  },
+];
+
+// IT Services (3)
+export const wave249ItServices: Service[] = [
+  {
+    id: 'it-cloud-cost-optimization',
+    title: 'Cloud Cost Optimization & FinOps',
+    description:
+      'Automated cloud cost analysis, right-sizing recommendations, reserved instance planning, and waste elimination across AWS, Azure, and GCP. Typically reduces cloud spend by 30-45%.',
+    features: [
+      'Multi-cloud cost analysis across AWS, Azure, and GCP with unified dashboard showing spend by service, team, and project',
+      'Automated right-sizing recommendations for compute, storage, and database resources based on actual utilization patterns',
+      'Reserved instance and savings plan analysis with purchase recommendations and ROI calculations for commitment-based discounts',
+      'Waste identification including unused volumes, idle instances, orphaned resources, and over-provisioned databases',
+      'Budget alerts and anomaly detection that notify teams when spending exceeds thresholds or deviates from historical patterns',
+      'Chargeback and showback reporting that allocates cloud costs to teams, projects, and business units for accountability',
+    ],
+    benefits: [
+      'Reduce cloud spending by 30-45% through automated identification of waste, right-sizing, and commitment optimization',
+      'Eliminate manual cost analysis with continuous monitoring that finds savings opportunities automatically',
+      'Improve budget accuracy with forecasting that predicts future spend based on growth trends and planned changes',
+      'Increase accountability with chargeback reports that show exactly which teams and projects drive cloud costs',
+      'Optimize reserved instance coverage to maximize discounts without over-committing to unused capacity',
+    ],
+    pricing: { basic: '$699/mo', pro: '$1,799/mo', enterprise: '$4,499/mo' },
+    contactInfo: { website: '/services/it-cloud-cost-optimization', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '💰',
+    href: '/services/it-cloud-cost-optimization',
+    popular: true,
+    category: 'it',
+    industry: 'Cloud Operations',
+    stage: 'published',
+  },
+  {
+    id: 'it-zero-trust-security-implementation',
+    title: 'Zero Trust Security Architecture Implementation',
+    description:
+      'Complete zero trust security implementation including identity verification, micro-segmentation, least-privilege access, and continuous monitoring. NIST 800-207 compliant.',
+    features: [
+      'Identity-centric security with multi-factor authentication, conditional access policies, and continuous identity verification',
+      'Micro-segmentation of network resources with software-defined perimeters and east-west traffic inspection',
+      'Least-privilege access management with just-in-time provisioning, role-based controls, and regular access reviews',
+      'Continuous monitoring and validation of device health, user behavior, and session risk with real-time threat response',
+      'Data classification and protection with encryption, DLP policies, and access controls based on sensitivity levels',
+      'Compliance mapping to NIST 800-207, CMMC, and industry frameworks with automated evidence collection and reporting',
+    ],
+    benefits: [
+      'Reduce breach risk by 80% with zero trust architecture that eliminates implicit trust and verifies every access request',
+      'Meet regulatory requirements with NIST 800-207 compliant implementation and automated compliance documentation',
+      'Enable secure remote work with identity-based access that works from any device, any location, any network',
+      'Reduce lateral movement risk with micro-segmentation that contains breaches to isolated network segments',
+      'Improve security visibility with continuous monitoring that detects and responds to threats in real time',
+    ],
+    pricing: { basic: '$2,999/mo', pro: '$7,499/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-zero-trust-security-implementation', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🔒',
+    href: '/services/it-zero-trust-security-implementation',
+    category: 'it',
+    industry: 'Cybersecurity',
+    stage: 'published',
+  },
+  {
+    id: 'it-data-migration-service',
+    title: 'Enterprise Data Migration Service',
+    description:
+      'End-to-end data migration from legacy systems to modern platforms. Includes schema mapping, data cleansing, validation, and zero-downtime cutover. Supports databases, data warehouses, and cloud platforms.',
+    features: [
+      'Source system analysis and schema mapping with automated discovery of data structures, relationships, and dependencies',
+      'Data cleansing and transformation with deduplication, standardization, and quality validation rules',
+      'Parallel migration execution with change data capture for zero-downtime cutover from legacy to target systems',
+      'Automated validation with row counts, checksums, and business rule verification to ensure data integrity',
+      'Rollback planning and execution with point-in-time recovery if issues are detected during or after migration',
+      'Post-migration optimization including indexing, partitioning, and query performance tuning on the target platform',
+    ],
+    benefits: [
+      'Eliminate data loss risk with automated validation that verifies every record is migrated accurately and completely',
+      'Reduce migration downtime to near-zero with change data capture and parallel execution strategies',
+      'Improve data quality with automated cleansing that deduplicates, standardizes, and validates during migration',
+      'Accelerate time to value on new platforms by ensuring data is optimized and query-ready from day one',
+      'Reduce migration costs by 50% with automated tooling that eliminates manual scripting and validation',
+    ],
+    pricing: { basic: '$4,999/project', pro: '$12,499/project', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-data-migration-service', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🔄',
+    href: '/services/it-data-migration-service',
+    category: 'it',
+    industry: 'Data Engineering',
+    stage: 'published',
+  },
+];
+
+// AI Services (3)
+export const wave249AiServices: Service[] = [
+  {
+    id: 'ai-legal-contract-analyzer',
+    title: 'AI Legal Contract Analyzer & Review',
+    description:
+      'AI-powered contract analysis that extracts key terms, identifies risks, compares against standard templates, and flags unusual clauses. Reduces legal review time by 70%.',
+    features: [
+      'Automated extraction of key contract terms including parties, dates, obligations, payment terms, and termination clauses',
+      'Risk identification engine that flags unusual clauses, missing provisions, and deviations from standard templates',
+      'Contract comparison against your organization template library with redline-style difference highlighting',
+      'Obligation tracking with automated extraction of deadlines, deliverables, and compliance requirements',
+      'Multi-language contract analysis supporting English, Spanish, French, German, and Portuguese legal documents',
+      'Integration with contract management systems including DocuSign, Ironclad, and Agiloft for seamless workflow',
+    ],
+    benefits: [
+      'Reduce legal review time by 70% with AI that extracts and analyzes key terms in seconds instead of hours',
+      'Reduce legal risk by catching unusual clauses and missing provisions that manual reviewers may miss under time pressure',
+      'Standardize contract quality by comparing every contract against approved templates and flagging deviations',
+      'Improve compliance with automated obligation tracking that ensures no deadline or requirement is overlooked',
+      'Scale legal operations without adding headcount by automating routine contract review tasks',
+    ],
+    pricing: { basic: '$399/mo', pro: '$999/mo', enterprise: '$2,499/mo' },
+    contactInfo: { website: '/services/ai-legal-contract-analyzer', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '⚖️',
+    href: '/services/ai-legal-contract-analyzer',
+    popular: true,
+    category: 'ai',
+    industry: 'Legal Technology',
+    stage: 'published',
+  },
+  {
+    id: 'ai-supply-chain-demand-forecasting',
+    title: 'AI Supply Chain Demand Forecasting',
+    description:
+      'Machine learning demand forecasting that analyzes historical sales, seasonality, market trends, and external factors. Reduces inventory costs by 25% and stockouts by 40%.',
+    features: [
+      'Multi-variable demand forecasting using historical sales, seasonality, promotions, weather, and economic indicators',
+      'SKU-level predictions with confidence intervals that enable safety stock optimization and reorder point calculation',
+      'What-if scenario modeling for new product launches, market expansion, and supply chain disruption planning',
+      'Automated anomaly detection that identifies demand spikes, drops, and pattern changes requiring immediate attention',
+      'Supplier lead time forecasting that accounts for historical performance, geopolitical factors, and logistics constraints',
+      'Integration with ERP and inventory management systems including SAP, Oracle, NetSuite, and Fishbowl',
+    ],
+    benefits: [
+      'Reduce inventory holding costs by 25% with accurate forecasts that optimize stock levels without risking stockouts',
+      'Decrease stockouts by 40% with early warning systems that detect demand increases before they impact availability',
+      'Improve cash flow by reducing excess inventory while maintaining service levels that keep customers satisfied',
+      'Enable proactive planning with scenario modeling that prepares for disruptions before they impact operations',
+      'Increase forecast accuracy by 50% compared to spreadsheet-based methods using machine learning on diverse data sources',
+    ],
+    pricing: { basic: '$1,199/mo', pro: '$2,999/mo', enterprise: '$7,499/mo' },
+    contactInfo: { website: '/services/ai-supply-chain-demand-forecasting', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '📦',
+    href: '/services/ai-supply-chain-demand-forecasting',
+    category: 'ai',
+    industry: 'Supply Chain',
+    stage: 'published',
+  },
+  {
+    id: 'ai-voice-agent-customer-service',
+    title: 'AI Voice Agent for Customer Service',
+    description:
+      'Conversational AI voice agent that handles customer calls naturally. Understands context, accesses knowledge base, processes orders, and escalates complex issues. Available 24/7 in 30+ languages.',
+    features: [
+      'Natural language understanding with context awareness that maintains conversation flow across multiple turns and topics',
+      'Knowledge base integration that provides accurate answers to product, policy, and procedure questions in real time',
+      'Order processing capabilities including placement, modification, cancellation, and status checking with CRM integration',
+      'Sentiment analysis that detects customer frustration and automatically escalates to human agents when needed',
+      'Multi-language support for 30+ languages with native-sounding voices and cultural conversation adaptation',
+      'Call analytics dashboard showing resolution rates, average handle time, customer satisfaction, and escalation patterns',
+    ],
+    benefits: [
+      'Reduce call center costs by 60% with AI that handles routine inquiries without human intervention',
+      'Provide 24/7 customer support in multiple languages without staffing overnight or international teams',
+      'Improve customer satisfaction with instant responses that eliminate hold times and provide consistent accurate answers',
+      'Scale call handling capacity instantly during peak periods without hiring and training temporary staff',
+      'Free human agents from routine calls so they can focus on complex issues that require empathy and judgment',
+    ],
+    pricing: { basic: '$0.08/min', pro: '$0.12/min', enterprise: 'Custom' },
+    contactInfo: { website: '/services/ai-voice-agent-customer-service', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🎙️',
+    href: '/services/ai-voice-agent-customer-service',
+    popular: true,
+    category: 'ai',
+    industry: 'Customer Service',
+    stage: 'published',
+  },
+];

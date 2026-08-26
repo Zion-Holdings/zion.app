@@ -1,0 +1,795 @@
+[
+  {
+    "id": "sentiment-trend-analyzer",
+    "name": "AI Sentiment Trend Analyzer",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "Track sentiment evolution across email conversations. Predict customer satisfaction trends, detect relationship deterioration early, and get real-time alerts on negative sentiment shifts. Our AI analyzes every interaction to build a comprehensive relationship health profile.",
+    "price": "$529/month",
+    "features": [
+      "Real-time sentiment tracking across threads",
+      "Trend prediction with ML algorithms",
+      "Sudden sentiment drop alerts",
+      "Customer satisfaction forecasting",
+      "Relationship health scoring",
+      "Historical sentiment reports",
+      "Multi-language support"
+    ],
+    "benefits": [
+      "Prevent customer churn before it happens",
+      "Identify at-risk accounts proactively",
+      "Improve customer success metrics by 40%",
+      "Data-driven relationship management"
+    ],
+    "icon": "📊",
+    "link": "/services/sentiment-trend-analyzer",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "sentiment-analysis",
+      "customer-success",
+      "churn-prevention",
+      "ai",
+      "email-intelligence"
+    ]
+  },
+  {
+    "id": "sentiment-evolution-tracking",
+    "name": "Sentiment Evolution Tracking",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "Monitor how sentiment changes over time in business conversations. Track the emotional arc of negotiations, support tickets, and client relationships with precision analytics.",
+    "price": "$449/month",
+    "features": [
+      "Conversation-level sentiment timeline",
+      "Emotion arc visualization",
+      "Comparative sentiment analysis",
+      "Automated escalation triggers"
+    ],
+    "benefits": [
+      "Understand conversation dynamics",
+      "Catch problems early",
+      "Track support quality"
+    ],
+    "icon": "📈",
+    "link": "/services/sentiment-evolution-tracking",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "sentiment",
+      "tracking",
+      "analytics"
+    ]
+  },
+  {
+    "id": "customer-satisfaction-predictor",
+    "name": "Customer Satisfaction Predictor",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "AI-powered prediction of customer satisfaction scores based on email interaction patterns. Identify happy customers for upsell opportunities and at-risk accounts for intervention.",
+    "price": "$599/month",
+    "features": [
+      "NPS prediction from email data",
+      "Churn risk scoring",
+      "Upsell opportunity detection",
+      "Satisfaction trend dashboards"
+    ],
+    "benefits": [
+      "Increase NPS by 25%",
+      "Reduce churn by 35%",
+      "Identify upsell moments"
+    ],
+    "icon": "🎯",
+    "link": "/services/customer-satisfaction-predictor",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "customer-success",
+      "prediction",
+      "nps"
+    ]
+  },
+  {
+    "id": "relationship-health-monitor",
+    "name": "Relationship Health Monitor",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "Comprehensive relationship health scoring based on sentiment trends, response patterns, and engagement metrics across all email interactions.",
+    "price": "$479/month",
+    "features": [
+      "Relationship health scoring",
+      "Trend deterioration alerts",
+      "Engagement metrics tracking",
+      "Account-level dashboards"
+    ],
+    "benefits": [
+      "Quantify relationship quality",
+      "Prevent account loss",
+      "Improve client retention"
+    ],
+    "icon": "💚",
+    "link": "/services/relationship-health-monitor",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "relationship",
+      "health",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "sentiment-alert-system",
+    "name": "Real-time Sentiment Alert System",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "Instant alerts when sentiment drops, escalates, or shifts dramatically in email conversations. Configurable thresholds and escalation workflows.",
+    "price": "$399/month",
+    "features": [
+      "Instant sentiment drop alerts",
+      "Customizable alert thresholds",
+      "Escalation workflow integration",
+      "Multi-channel notifications"
+    ],
+    "benefits": [
+      "Respond to issues within minutes",
+      "Prevent escalation",
+      "Maintain service quality"
+    ],
+    "icon": "🚨",
+    "link": "/services/sentiment-alert-system",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "alerts",
+      "sentiment",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "response-time-optimizer",
+    "name": "AI Response Time Optimizer",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "Optimize email response timing for maximum engagement. AI analyzes recipient patterns, SLA requirements, and historical data to recommend the perfect moment to send.",
+    "price": "$479/month",
+    "features": [
+      "Optimal send time prediction",
+      "SLA compliance tracking",
+      "Engagement pattern analysis",
+      "Response bottleneck detection",
+      "Timezone-aware scheduling",
+      "Team performance analytics"
+    ],
+    "benefits": [
+      "Increase email response rates by 45%",
+      "Meet all SLA deadlines",
+      "Identify and fix bottlenecks"
+    ],
+    "icon": "⏱️",
+    "link": "/services/response-time-optimizer",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "response-time",
+      "optimization",
+      "sla",
+      "email-intelligence"
+    ]
+  },
+  {
+    "id": "sla-compliance-monitor",
+    "name": "SLA Compliance Monitor",
+    "category": "IT Services",
+    "subcategory": "Service Management",
+    "description": "Real-time SLA compliance monitoring for email responses. Track response times against commitments, generate compliance reports, and get proactive alerts before breaches.",
+    "price": "$429/month",
+    "features": [
+      "Real-time SLA tracking",
+      "Breach prediction alerts",
+      "Compliance dashboards",
+      "Automated escalation"
+    ],
+    "benefits": [
+      "99.5% SLA compliance",
+      "Prevent breaches proactively",
+      "Audit-ready reporting"
+    ],
+    "icon": "✅",
+    "link": "/services/sla-compliance-monitor",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "sla",
+      "compliance",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "email-engagement-analytics",
+    "name": "Email Engagement Analytics",
+    "category": "AI Services",
+    "subcategory": "Analytics",
+    "description": "Deep analytics on email engagement patterns. Understand when recipients are most responsive, which content drives replies, and how to optimize communication effectiveness.",
+    "price": "$549/month",
+    "features": [
+      "Engagement heat maps",
+      "Response rate analytics",
+      "Content effectiveness scoring",
+      "A/B testing for email timing"
+    ],
+    "benefits": [
+      "Boost reply rates by 60%",
+      "Data-driven communication",
+      "Optimize team productivity"
+    ],
+    "icon": "📊",
+    "link": "/services/email-engagement-analytics",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "analytics",
+      "engagement",
+      "email"
+    ]
+  },
+  {
+    "id": "smart-email-scheduler",
+    "name": "Smart Email Scheduler",
+    "category": "Micro SaaS",
+    "subcategory": "Productivity",
+    "description": "AI-powered email scheduling that finds the optimal time to send based on recipient behavior patterns, timezone preferences, and engagement history.",
+    "price": "$349/month",
+    "features": [
+      "AI send-time optimization",
+      "Timezone detection",
+      "Queue management",
+      "Batch scheduling"
+    ],
+    "benefits": [
+      "Higher open rates",
+      "Better engagement",
+      "Save time on scheduling"
+    ],
+    "icon": "📬",
+    "link": "/services/smart-email-scheduler",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "scheduling",
+      "productivity",
+      "email"
+    ]
+  },
+  {
+    "id": "response-bottleneck-detector",
+    "name": "Response Bottleneck Detector",
+    "category": "IT Services",
+    "subcategory": "Operations",
+    "description": "Identify and eliminate email response bottlenecks in your organization. AI maps workflow delays, overloaded queues, and process inefficiencies.",
+    "price": "$459/month",
+    "features": [
+      "Bottleneck identification",
+      "Workflow delay mapping",
+      "Load balancing recommendations",
+      "Performance benchmarking"
+    ],
+    "benefits": [
+      "Reduce response times by 50%",
+      "Balance team workload",
+      "Streamline workflows"
+    ],
+    "icon": "🔍",
+    "link": "/services/response-bottleneck-detector",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "bottleneck",
+      "operations",
+      "workflow"
+    ]
+  },
+  {
+    "id": "thread-summarizer-pro",
+    "name": "AI Thread Summarizer Pro",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "Transform lengthy email threads into concise executive briefs. Auto-extract key decisions, action items, and important milestones from complex conversations.",
+    "price": "$549/month",
+    "features": [
+      "Executive brief generation",
+      "Decision extraction AI",
+      "Action item auto-detection",
+      "Sentiment shift tracking",
+      "Thread timeline creation",
+      "Multi-format summaries"
+    ],
+    "benefits": [
+      "Save 2+ hours daily on email reading",
+      "Never miss a decision or action",
+      "Onboard team members faster"
+    ],
+    "icon": "📝",
+    "link": "/services/thread-summarizer-pro",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "summarization",
+      "thread-analysis",
+      "productivity",
+      "email-intelligence"
+    ]
+  },
+  {
+    "id": "executive-email-briefing",
+    "name": "Executive Email Briefing Service",
+    "category": "Micro SaaS",
+    "subcategory": "Executive Tools",
+    "description": "Daily executive briefings generated from email threads. Get a 2-minute summary of everything that happened, decisions made, and actions needed.",
+    "price": "$699/month",
+    "features": [
+      "Daily briefing generation",
+      "Priority-based summaries",
+      "Decision tracking",
+      "Action item dashboard"
+    ],
+    "benefits": [
+      "Start each day informed",
+      "Save 3 hours daily",
+      "Never miss critical updates"
+    ],
+    "icon": "📋",
+    "link": "/services/executive-email-briefing",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "executive",
+      "briefing",
+      "productivity"
+    ]
+  },
+  {
+    "id": "action-item-extractor",
+    "name": "AI Action Item Extractor",
+    "category": "AI Services",
+    "subcategory": "Task Management",
+    "description": "Automatically extract action items, tasks, and deadlines from email conversations. Assign owners, track completion, and integrate with project management tools.",
+    "price": "$449/month",
+    "features": [
+      "Auto action item detection",
+      "Deadline extraction",
+      "Owner assignment",
+      "PM tool integration"
+    ],
+    "benefits": [
+      "Never miss a task",
+      "Accountability tracking",
+      "Seamless PM integration"
+    ],
+    "icon": "✅",
+    "link": "/services/action-item-extractor",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "action-items",
+      "task-management",
+      "extraction"
+    ]
+  },
+  {
+    "id": "email-decision-tracker",
+    "name": "Email Decision Tracker",
+    "category": "Micro SaaS",
+    "subcategory": "Governance",
+    "description": "Track all decisions made via email. Build a searchable decision log with context, participants, and follow-up status for governance and compliance.",
+    "price": "$499/month",
+    "features": [
+      "Decision auto-detection",
+      "Decision log database",
+      "Context preservation",
+      "Compliance reporting"
+    ],
+    "benefits": [
+      "Complete decision audit trail",
+      "Governance compliance",
+      "Eliminate \"who decided what\" disputes"
+    ],
+    "icon": "⚖️",
+    "link": "/services/email-decision-tracker",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "decisions",
+      "governance",
+      "compliance"
+    ]
+  },
+  {
+    "id": "conversation-timeline-builder",
+    "name": "Conversation Timeline Builder",
+    "category": "Micro SaaS",
+    "subcategory": "Visualization",
+    "description": "Visualize email conversations as interactive timelines. See the flow of discussions, key events, attachments, and participant engagement at a glance.",
+    "price": "$379/month",
+    "features": [
+      "Interactive timeline visualization",
+      "Event highlighting",
+      "Attachment tracking",
+      "Participant mapping"
+    ],
+    "benefits": [
+      "Understand conversation flow",
+      "Quick reference",
+      "Visual context for decisions"
+    ],
+    "icon": "📅",
+    "link": "/services/conversation-timeline-builder",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "timeline",
+      "visualization",
+      "conversation"
+    ]
+  },
+  {
+    "id": "attachment-intelligence",
+    "name": "AI Attachment Intelligence",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "Deep analysis of email attachments. Detect sensitive data (PII, PCI, credentials), track file versions across threads, and generate smart document summaries.",
+    "price": "$599/month",
+    "features": [
+      "Sensitive data detection (SSN, CC, API keys)",
+      "File version tracking",
+      "Auto-categorization by type",
+      "Content extraction & summarization",
+      "Risk level assessment",
+      "DLP integration"
+    ],
+    "benefits": [
+      "Prevent data leaks",
+      "Track document evolution",
+      "Comply with data regulations"
+    ],
+    "icon": "📎",
+    "link": "/services/attachment-intelligence",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "attachments",
+      "dlp",
+      "security",
+      "email-intelligence"
+    ]
+  },
+  {
+    "id": "email-dlp-scanner",
+    "name": "Email DLP Scanner",
+    "category": "Security Services",
+    "subcategory": "Data Protection",
+    "description": "Advanced Data Loss Prevention scanning for email attachments and body content. Detect PII, PHI, PCI data, credentials, and confidential information before it leaves your organization.",
+    "price": "$699/month",
+    "features": [
+      "PII/PHI/PCI detection",
+      "Credential scanning",
+      "Custom policy enforcement",
+      "Quarantine workflows"
+    ],
+    "benefits": [
+      "Prevent data breaches",
+      "GDPR/HIPAA compliance",
+      "Protect intellectual property"
+    ],
+    "icon": "🛡️",
+    "link": "/services/email-dlp-scanner",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "dlp",
+      "security",
+      "compliance"
+    ]
+  },
+  {
+    "id": "document-version-tracker",
+    "name": "Document Version Tracker",
+    "category": "Micro SaaS",
+    "subcategory": "Document Management",
+    "description": "Track document versions across email threads. See what changed between versions, who modified what, and maintain a complete revision history.",
+    "price": "$399/month",
+    "features": [
+      "Version detection",
+      "Change tracking",
+      "Revision history",
+      "Diff comparison"
+    ],
+    "benefits": [
+      "Never work on wrong version",
+      "Complete audit trail",
+      "Eliminate version confusion"
+    ],
+    "icon": "📄",
+    "link": "/services/document-version-tracker",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "documents",
+      "versioning",
+      "management"
+    ]
+  },
+  {
+    "id": "attachment-risk-assessor",
+    "name": "Attachment Risk Assessor",
+    "category": "Security Services",
+    "subcategory": "Risk Management",
+    "description": "Assess risk levels of email attachments based on content analysis, file type, source reputation, and sensitive data presence. Automated risk scoring and alerting.",
+    "price": "$549/month",
+    "features": [
+      "Automated risk scoring",
+      "Content analysis",
+      "Source reputation checking",
+      "Alert workflows"
+    ],
+    "benefits": [
+      "Proactive risk management",
+      "Compliance reporting",
+      "Reduce security incidents"
+    ],
+    "icon": "⚠️",
+    "link": "/services/attachment-risk-assessor",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "risk",
+      "security",
+      "assessment"
+    ]
+  },
+  {
+    "id": "smart-file-categorizer",
+    "name": "Smart File Categorizer",
+    "category": "AI Services",
+    "subcategory": "Document AI",
+    "description": "AI-powered automatic categorization of email attachments. Classify documents by type, department, project, and sensitivity level for better organization and retrieval.",
+    "price": "$349/month",
+    "features": [
+      "Auto-categorization",
+      "Department tagging",
+      "Project association",
+      "Sensitivity classification"
+    ],
+    "benefits": [
+      "Better file organization",
+      "Faster retrieval",
+      "Automated filing"
+    ],
+    "icon": "🗂️",
+    "link": "/services/smart-file-categorizer",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "categorization",
+      "documents",
+      "ai"
+    ]
+  },
+  {
+    "id": "meeting-scheduler-ai",
+    "name": "AI Meeting Scheduler",
+    "category": "AI Services",
+    "subcategory": "Email Intelligence",
+    "description": "Automatically detect meeting intent in emails, find optimal time slots across participants, generate calendar invites with full context, and handle rescheduling intelligently.",
+    "price": "$649/month",
+    "features": [
+      "Meeting intent detection from emails",
+      "Smart slot finding across timezones",
+      "Calendar invite generation",
+      "Reschedule & cancel management",
+      "Agenda extraction from emails",
+      "Follow-up automation"
+    ],
+    "benefits": [
+      "Save 5+ hours/week on scheduling",
+      "Eliminate back-and-forth emails",
+      "Never double-book"
+    ],
+    "icon": "📅",
+    "link": "/services/meeting-scheduler-ai",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "meeting",
+      "scheduling",
+      "calendar",
+      "email-intelligence"
+    ]
+  },
+  {
+    "id": "timezone-aware-scheduler",
+    "name": "Timezone-Aware Meeting Scheduler",
+    "category": "Micro SaaS",
+    "subcategory": "Global Teams",
+    "description": "Schedule meetings across multiple timezones effortlessly. AI finds the fairest time for global teams, respecting working hours and personal preferences.",
+    "price": "$449/month",
+    "features": [
+      "Multi-timezone optimization",
+      "Working hours respect",
+      "Fairness scoring",
+      "Preference learning"
+    ],
+    "benefits": [
+      "Global team coordination",
+      "Respect work-life balance",
+      "Reduce scheduling conflicts"
+    ],
+    "icon": "🌍",
+    "link": "/services/timezone-aware-scheduler",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "timezone",
+      "global",
+      "scheduling"
+    ]
+  },
+  {
+    "id": "meeting-agenda-generator",
+    "name": "AI Meeting Agenda Generator",
+    "category": "AI Services",
+    "subcategory": "Productivity",
+    "description": "Automatically generate meeting agendas from email threads, project context, and previous meeting notes. Ensure every meeting has clear purpose and structure.",
+    "price": "$379/month",
+    "features": [
+      "Auto-agenda from email context",
+      "Topic extraction",
+      "Time allocation suggestions",
+      "Previous action follow-ups"
+    ],
+    "benefits": [
+      "Better meeting outcomes",
+      "Focused discussions",
+      "Accountability tracking"
+    ],
+    "icon": "📋",
+    "link": "/services/meeting-agenda-generator",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "agenda",
+      "meetings",
+      "productivity"
+    ]
+  },
+  {
+    "id": "calendar-conflict-resolver",
+    "name": "Calendar Conflict Resolver",
+    "category": "Micro SaaS",
+    "subcategory": "Productivity",
+    "description": "AI-powered resolution of calendar conflicts. Automatically find alternative slots, negotiate rescheduling, and prioritize meetings based on business impact.",
+    "price": "$429/month",
+    "features": [
+      "Conflict detection",
+      "Auto-rescheduling",
+      "Priority-based decisions",
+      "Negotiation workflows"
+    ],
+    "benefits": [
+      "Eliminate double-bookings",
+      "Optimize calendar",
+      "Reduce scheduling stress"
+    ],
+    "icon": "🔀",
+    "link": "/services/calendar-conflict-resolver",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "calendar",
+      "conflict-resolution",
+      "productivity"
+    ]
+  },
+  {
+    "id": "meeting-follow-up-automator",
+    "name": "Meeting Follow-Up Automator",
+    "category": "Micro SaaS",
+    "subcategory": "Automation",
+    "description": "Automatically generate and send meeting follow-up emails with action items, decisions, and next steps. Track completion and send reminders.",
+    "price": "$399/month",
+    "features": [
+      "Auto follow-up emails",
+      "Action item tracking",
+      "Deadline reminders",
+      "Completion reporting"
+    ],
+    "benefits": [
+      "Never forget follow-ups",
+      "Accountability enforcement",
+      "Meeting ROI tracking"
+    ],
+    "icon": "🔄",
+    "link": "/services/meeting-follow-up-automator",
+    "contactInfo": {
+      "mobile": "+1 302 464 0950",
+      "email": "kleber@ziontechgroup.com",
+      "address": "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    "tags": [
+      "follow-up",
+      "automation",
+      "meetings"
+    ]
+  }
+]

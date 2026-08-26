@@ -1,5 +1,5 @@
 name: Continuous Pages Deploy
-"on":
+on:
   push:
     branches: [ main ]
   workflow_dispatch:
@@ -18,30 +18,30 @@ jobs:
       pages: ${{ steps.prepare_pages.outputs.pages }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
-          fetch-depth: 1
-          filter: tree:0
+          fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v5
         with:
-          node-version-file: '.nvmrc'
+          node-version: '20'
           cache: 'npm'
           cache-dependency-path: package-lock.json
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
       - name: Install dependencies
-        run: npm install --no-audit --fund=false --legacy-peer-deps
+        run: npm install --no-audit --fund=false
         env:
-          NODE_OPTIONS: --max-old-space-size=8192
+          NODE_OPTIONS: --max-old-space-size=4096
+          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
       - name: Build artifact
         id: build
         run: |
           set -euo pipefail
-          export NODE_OPTIONS="--max-old-space-size=8192"
-          # Fix EMFILE: raise file descriptor limit for 90K+ service pages
-          ulimit -n 131072 2>/dev/null || ulimit -n 65536
           node scripts/build-wrapper.cjs > build.log 2>&1 || true
           echo "build_log_start"
           set +x
@@ -85,7 +85,7 @@ jobs:
           fi
           cp -f public/_redirects "$ARTIFACT_DIR/_redirects" 2>/dev/null || true
           # Ensure new fallback pages exist in the exported artifact, even if Next didn't emit them.
-          for f in use-cases/index.html "industries/financial-services/index.html" "public-roadmap/index.html" "tools/phishing-analyzer/index.html" status/index.html "solutions/healthcare/index.html" "free-consultation/index.html" "pricing/index.html" "services/cloud-cost-optimization/index.html" "services/ai-observability/index.html" "services/it-staff-augmentation/index.html" "services/ai-email-intelligence/index.html" "services/ai-smart-global-campaign/index.html" "tools/json-to-csv/index.html" "industries/healthcare/index.html" "industries/insurance/index.html" "industries/legal/index.html" "press/index.html" "feed.xml"; do
+          for f in use-cases/index.html "industries/financial-services/index.html" "public-roadmap/index.html" "tools/phishing-analyzer/index.html" status/index.html "solutions/healthcare/index.html" "free-consultation/index.html"; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ]; then
               if [ -f "public/$f" ]; then
@@ -133,7 +133,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.5
 
       - name: Verify deployment
         run: |
@@ -144,4 +144,3 @@ jobs:
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
-        continue-on-error: true

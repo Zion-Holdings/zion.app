@@ -1,77 +1,40 @@
-import Link from 'next/link';
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
-import type { Metadata } from 'next';
 
-
-export const metadata: Metadata = {
-  title: 'AI Automation | Zion Tech Group',
-  description: 'AI automation services and tooling from Zion Tech Group.',
-  openGraph: {
-    title: 'AI Automation | Zion Tech Group',
-    description: 'AI automation services and tooling from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/automation/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'AI Automation | Zion Tech Group',
-    description: 'AI automation services and tooling from Zion Tech Group.',
-  },
-  alternates: { canonical: '/automation/' },
+export const metadata = {
+  title: 'Automation',
+  description: 'Intelligent process automation services from Zion Tech Group. RPA, workflow automation, AI-powered business processes.',
 };
 
-
 export default function AutomationPage() {
+  const services = [
+    { icon: '🤖', name: 'Robotic Process Automation', href: '/robotic-process-automation', desc: 'Automate repetitive tasks with intelligent bots that learn and adapt.' },
+    { icon: '⚡', name: 'Workflow Automation', href: '/workflow-automation', desc: 'Design and deploy automated workflows across your organization.' },
+    { icon: '🧠', name: 'AI-Powered Automation', href: '/ai-workflow-automation', desc: 'Intelligent automation that makes decisions based on context and data.' },
+    { icon: '📧', name: 'Email Automation', href: '/email-automation', desc: 'Automated email campaigns, sequences, and intelligent responses.' },
+    { icon: '🔗', name: 'System Integration', href: '/system-integration', desc: 'Connect your systems with API integrations and data pipelines.' },
+    { icon: '📊', name: 'Process Mining', href: '/process-automation', desc: 'Discover automation opportunities through data-driven process analysis.' },
+  ];
   return (
-<>
-    <StandardPage
-      title="AI Automation"
-      subtitle="Streamline operations with practical AI automation."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Automation', href: '/automation/' },
-      ]}
-      actions={[
-        { label: 'Start a project', href: '/start-project/', style: 'primary' },
-        { label: 'Contact us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="space-y-6 text-slate-300">
-        <p>Explore automation opportunities across your workflows.</p>
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-            <h3 className="text-white font-semibold mb-2">Support automation</h3>
-            <p className="text-slate-400 text-sm">Ticket routing, response drafting, and escalation handling.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-            <h3 className="text-white font-semibold mb-2">Report automation</h3>
-            <p className="text-slate-400 text-sm">Generate reports from structured data with consistent formatting.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-            <h3 className="text-white font-semibold mb-2">Revenue operations</h3>
-            <p className="text-slate-400 text-sm">Lead follow-up sequencing, reminders, and pipeline hygiene.</p>
+    <div className="relative overflow-hidden">
+      <section className="relative overflow-hidden border-b border-purple-500/20 bg-gradient-to-b from-slate-950 via-purple-950/30 to-slate-900">
+        <div className="relative mx-auto max-w-5xl px-4 pb-20 pt-24 sm:px-6 lg:px-8">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-purple-400">Automation</p>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Intelligent Automation</h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">Transform your business with AI-powered automation. Reduce costs, eliminate errors, and scale operations.</p>
+        </div>
+      </section>
+      <section className="bg-gradient-to-b from-slate-900 to-slate-950">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((s, i) => (
+              <a key={i} href={s.href} className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+                <span className="text-3xl">{s.icon}</span>
+                <h3 className="mt-3 text-lg font-semibold text-white group-hover:text-purple-300">{s.name}</h3>
+                <p className="mt-2 text-sm text-slate-400">{s.desc}</p>
+              </a>
+            ))}
           </div>
         </div>
-        <p>
-          For tailored options, visit <Link href="/services/" className="text-purple-300 font-semibold hover:text-white">services</Link> or <Link href="/contact/" className="text-purple-300 font-semibold hover:text-white">contact</Link>.
-        </p>
-      </div>
-
-      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
-        <h2 className="text-xl font-bold text-white mb-4">Automation outcomes</h2>
-        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
-          <li>Reduced manual effort in support, ops, and reporting workflows.</li>
-          <li>Measurable deflection rates and faster resolution times.</li>
-          <li>Consistent output quality with fewer errors and omissions.</li>
-          <li>Audit trails and human-in-the-loop controls where required.</li>
-        </ul>
-        <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/services/" className="btn-primary text-center">Explore services</a>
-          <a href="/contact/" className="btn-secondary text-center">Start a project</a>
-        </div>
-      </div>
-    </StandardPage>
-  </>
+      </section>
+    </div>
   );
 }

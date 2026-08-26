@@ -8,7 +8,7 @@ concurrency:
   group: pages-watchdog
   cancel-in-progress: true
 
-"on":
+on:
   schedule:
     - cron: '*/15 * * * *'
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -27,7 +27,7 @@ jobs:
       - name: Probe Pages
         run: python automation/scripts/pages_watchdog.py
       - name: Upload report artifact
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: pages-watchdog-report
           path: automation/reports/pages-watchdog-latest.json

@@ -1,0 +1,27 @@
+Subject: Transform Your Technology Operations with Serverless Application Platform
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Serverless Application Platform.
+
+Build and deploy serverless applications with auto-scaling, pay-per-execution pricing, and built-in observability. Supports Node.js, Python, Go, and Rust runtimes.
+
+**Key Benefits:**
+- Zero infrastructure management
+- Pay only for what you use
+- Instant scaling to millions of requests
+
+**Pricing:**
+- Basic: $199/month
+- Pro: $599/month
+- Enterprise: $Custom/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

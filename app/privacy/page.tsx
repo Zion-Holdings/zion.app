@@ -1,59 +1,39 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Privacy Policy | Zion Tech Group',
-  description: 'Privacy policy for Zion Tech Group: data collection, use, retention, security, and your rights.',
-  openGraph: { title: 'Privacy Policy | Zion Tech Group',
-    description: 'Data practices and privacy rights.',
-    url: 'https://ziontechgroup.com/privacy/',
-  type: 'website' },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Privacy Policy | Zion Tech Group',
-    description: 'Data practices and privacy rights.',
-  },
-  alternates: { canonical: '/privacy/' },
+  description: 'Privacy policy for Zion Tech Group services, website, and AI tools.',
+  alternates: { canonical: '/privacy' },
 };
 
+const sections = [
+  { title: 'Information We Collect', body: 'We collect information you provide directly, such as contact forms, scheduling requests, and communications with Zion Tech Group.' },
+  { title: 'How We Use Information', body: 'We use information to deliver AI/IT services, improve website performance, and communicate about projects or proposals.' },
+  { title: 'Data Sharing', body: 'We do not sell personal data. We may share data with service providers necessary to deliver services, under confidentiality obligations.' },
+  { title: 'Security', body: 'We apply reasonable technical and organizational measures to protect data during engagement.' },
+  { title: 'Your Choices', body: 'You may request updates or deletion of personal data by contacting kleber@ziontechgroup.com.' },
+  { title: 'Contact', body: 'For privacy questions, email kleber@ziontechgroup.com or use https://ziontechgroup.com/contact.' },
+];
 
-export default function PrivacyPage() {
+export default function PrivacyPolicyPage() {
   return (
-<>
-    <StandardPage title="Privacy Policy" subtitle="How we collect, use, and protect your data." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]}>
-      <div className="max-w-3xl mx-auto space-y-6 text-slate-300">
-        <p>We collect information needed to deliver services, improve site performance, and communicate updates. We do not sell personal data.</p>
+    <main className="mx-auto max-w-3xl px-6 py-16">
+      <h1 className="text-3xl font-semibold tracking-tight">Privacy Policy</h1>
+      <p className="mt-3 text-gray-600">Effective date: 2026-07-13</p>
 
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">What we collect</h3>
-          <p className="text-slate-400 text-sm">Contact details, project context, service usage signals, and technical logs required for delivery and security.</p>
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">How we use it</h3>
-          <p className="text-slate-400 text-sm">To respond to inquiries, run agreed services, improve reliability, and meet contractual or compliance obligations.</p>
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">Data retention</h3>
-          <p className="text-slate-400 text-sm">We keep personal data only as long as needed for delivery, legal, or security requirements. You can request deletion when retention is no longer required.</p>
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">Security</h3>
-          <p className="text-slate-400 text-sm">Access is restricted, activity is logged, and sensitive data is handled under documented controls.</p>
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">Your rights</h3>
-          <p className="text-slate-400 text-sm">You can request access, correction, deletion, or export of personal data. We honor lawful requests within verified channels.</p>
-        </div>
-
-        <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact privacy team →</Link>
+      <div className="mt-10 space-y-8">
+        {sections.map(s => (
+          <section key={s.title}>
+            <h2 className="text-xl font-medium">{s.title}</h2>
+            <p className="mt-2">{s.body}</p>
+          </section>
+        ))}
       </div>
-    </StandardPage>
-  </>
+
+      <div className="mt-12">
+        <Link href="/" className="text-sm underline">Back to homepage</Link>
+      </div>
+    </main>
   );
 }

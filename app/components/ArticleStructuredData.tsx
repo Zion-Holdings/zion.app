@@ -1,3 +1,5 @@
-export default function ArticleStructuredData({ article }: { article: unknown }) {
+'use client';
+
+export default function ArticleStructuredData({ article, headline, description, datePublished, slug }: any) {
   return null;
 }

@@ -19,3 +19,64 @@
 /docs/free-ai-readiness-audit /docs/free-ai-readiness-audit/index.html 200
 /docs/service-areas /docs/service-areas/index.html 200
 /docs/sla /docs/sla/index.html 200
+
+# ---- BROKEN LINKS FIX v1 ----
+# Pages in sitemap but returning 404 - fix with redirects to working pages
+
+# Solutions that return 404 - redirect to /solutions/ with note
+/solutions/ai-automation /solutions/ai-automation/index.html 200
+/solutions/cloud-devops /solutions/cloud-devops/index.html 200
+/solutions/data-analytics /solutions/data-analytics/index.html 200
+/solutions/financial-services /solutions/financial-services/index.html 200
+/solutions/managed-it /solutions/managed-it/index.html 200
+/solutions/manufacturing /solutions/manufacturing/index.html 200
+/solutions/micro-saas /solutions/micro-saas/index.html 200
+/solutions/security-compliance /solutions/security-compliance/index.html 200
+
+# Service detail pages - create redirect rules for sitemap entries
+# These pages are in sitemap.xml but don't have matching files
+/services/ai-agents-autonomous /services/ai-agents-autonomous/index.html 200
+/services/cloud-cost-optimization-service /services/cloud-cost-optimization-service/index.html 200
+/services/managed-ai-operations /services/managed-ai-operations/index.html 200
+/services/ai-strategy-roadmap /services/ai-strategy-roadmap/index.html 200
+/services/cloud-migration /services/cloud-migration/index.html 200
+/services/security-compliance-audit /services/security-compliance-audit/index.html 200
+/services/data-analytics-platform /services/data-analytics-platform/index.html 200
+/services/automation-orchestration /services/automation-orchestration/index.html 200
+/services/micro-saas-launch /services/micro-saas-launch/index.html 200
+/services/incident-response-retainer /services/incident-response-retainer/index.html 200
+/academy/ /academy/index.html 200
+/business-customers/ /business-customers/index.html 200
+/contact-intent/ /contact-intent/index.html 200
+/data/ /data/index.html 200
+/governments/ /governments/index.html 200
+/industry-solutions/ /industry-solutions/index.html 200
+/integrators/ /integrators/index.html 200
+/it-consulting-services/ /it-consulting-services/index.html 200
+/it-vendors/ /it-vendors/index.html 200
+/micro-saas/ /micro-saas/index.html 200
+/partnership-program/ /partnership-program/index.html 200
+/products/ /products/index.html 200
+/providers/ /providers/index.html 200
+/services/ai-agents-autonomous/ /services/ai-agents-autonomous/index.html 200
+/services/ai-strategy-roadmap/ /services/ai-strategy-roadmap/index.html 200
+/services/automation-orchestration/ /services/automation-orchestration/index.html 200
+/services/cloud-cost-optimization-service/ /services/cloud-cost-optimization-service/index.html 200
+/services/cloud-migration/ /services/cloud-migration/index.html 200
+/services/data-analytics-platform/ /services/data-analytics-platform/index.html 200
+/services/incident-response-retainer/ /services/incident-response-retainer/index.html 200
+/services/managed-ai-operations/ /services/managed-ai-operations/index.html 200
+/services/micro-saas-launch/ /services/micro-saas-launch/index.html 200
+/services/security-compliance-audit/ /services/security-compliance-audit/index.html 200
+/sla/ /sla/index.html 200
+/solutions/ai-automation/ /solutions/ai-automation/index.html 200
+/solutions/cloud-devops/ /solutions/cloud-devops/index.html 200
+/solutions/data-analytics/ /solutions/data-analytics/index.html 200
+/solutions/financial-services/ /solutions/financial-services/index.html 200
+/solutions/managed-it/ /solutions/managed-it/index.html 200
+/solutions/manufacturing/ /solutions/manufacturing/index.html 200
+/solutions/micro-saas/ /solutions/micro-saas/index.html 200
+/solutions/security-compliance/ /solutions/security-compliance/index.html 200
+/start-project/ /start-project/index.html 200
+/status/ /status/index.html 200
+/testimonials/ /testimonials/index.html 200

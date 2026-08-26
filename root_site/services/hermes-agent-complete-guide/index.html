@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Agent Complete Guide — Everything You Need to Know | Zion Tech Group</title>
+  <meta name="description" content="The complete guide to Hermes Agent: autonomous AI agents, multi-agent orchestration, plugin development, A2A protocol, and deployment across 20+ messaging platforms." />
+  <link rel="canonical" href="https://ziontechgroup.com/services/hermes-agent-complete-guide/" />
+</head>
+<body style="margin:0;background:#0b1220;color:#e6f0ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">
+  <main style="max-width:900px;margin:0 auto;padding:40px 24px">
+    <nav style="margin-bottom:32px">
+      <a href="/" style="color:#60a5fa;text-decoration:none;font-weight:600">← Home</a>
+      <span style="color:#475569">/</span>
+      <a href="/services/" style="color:#60a5fa;text-decoration:none">Services</a>
+    </nav>
+    <section style="padding:48px 0 32px">
+      <h1 style="font-size:36px;font-weight:700;line-height:1.2">Hermes Agent Complete Guide — Everything You Need to Know</h1>
+      <p style="font-size:18px;line-height:1.6;color:#cbd5e1;margin-top:16px;max-width:720px">Hermes Agent is an autonomous AI agent platform that runs coding agents, orchestrates multi-agent swarms, deploys bots across 20+ messaging platforms, and builds custom plugins and skills. This guide covers everything — from installation to advanced A2A protocol orchestration.</p>
+      <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
+        <a href="/contact/" style="display:inline-flex;align-items:center;gap:8px;padding:14px 18px;border-radius:8px;background:#2563eb;color:#fff;text-decoration:none;font-weight:600">Start a project</a>
+        <a href="/blog/hermes-agent-crescimento-explosivo/" style="display:inline-flex;align-items:center;gap:8px;padding:14px 18px;border-radius:8px;background:#1e293b;color:#e6f0ff;text-decoration:none;font-weight:600;border:1px solid #334155">Read the explosive growth guide</a>
+      </div>
+    </section>
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:32px">
+      <a href="/services/hermes-agent-bot-mode/" style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+        <h3 style="margin:0 0 8px;font-size:17px">Bot Mode</h3>
+        <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Run autonomous agents via Telegram, Discord, Slack, WhatsApp, Signal, and 20+ other platforms.</p>
+        <p style="margin-top:8px;font-size:13px;color:#60a5fa">→ Learn more</p>
+      </a>
+      <a href="/services/hermes-agent-plugin-development/" style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+        <h3 style="margin:0 0 8px;font-size:17px">Plugin Development</h3>
+        <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Build custom plugins, tools, skills, and integrations — extend Hermes with your own capabilities.</p>
+        <p style="margin-top:8px;font-size:13px;color:#60a5fa">→ Learn more</p>
+      </a>
+      <a href="/services/hermes-agent-a2a-protocol/" style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+        <h3 style="margin:0 0 8px;font-size:17px">A2A Protocol</h3>
+        <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Agent-to-agent communication, discovery, negotiation, and multi-agent swarm coordination.</p>
+        <p style="margin-top:8px;font-size:13px;color:#60a5fa">→ Learn more</p>
+      </a>
+      <a href="/services/hermes-agent-content-publishing-distribution/" style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+        <h3 style="margin:0 0 8px;font-size:17px">Content Publishing & Distribution</h3>
+        <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Automated content creation, publishing, and distribution across channels using autonomous agents.</p>
+        <p style="margin-top:8px;font-size:13px;color:#60a5fa">→ Learn more</p>
+      </a>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">What Is Hermes Agent?</h2>
+      <p style="color:#cbd5e1;line-height:1.7;font-size:17px">Hermes Agent is a personal AI agent that runs the same agent core across a CLI, a messaging gateway (Telegram, Discord, Slack, and ~20 other platforms), a TUI, and an Electron desktop app. It learns across sessions (memory + skills), delegates to subagents, runs scheduled jobs, and drives a real terminal and browser.</p>
+      <p style="color:#cbd5e1;line-height:1.7;font-size:17px;margin-top:12px">It is extended primarily through plugins and skills, not by growing the core. Two properties shape every design decision: per-conversation prompt caching is sacred, and the core is a narrow waist — capability lives at the edges.</p>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Core Capabilities</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Terminal & File Access</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Hermes drives a real terminal — runs shell commands, scripts, builds, git operations, language servers. Reads and writes files with full content visibility. Executes code in isolated contexts.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Web & Browser</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Web search, page extraction, browser navigation with a real headless browser (Browser Use). Scrapes sites, extracts content, fills forms, clicks elements, captures screenshots.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Subagent Delegation</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Spawns isolated sub-agents with their own terminal sessions and toolset. Batch mode runs multiple sub-agents in parallel. Background delegation returns a handle and the result re-enters later.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Cron & Scheduling</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Schedule recurring agent runs — duration-based, "every" phrases, cron expressions, or ISO timestamps. Monitor scripts detect changes and suppress runs when nothing changed.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Memory & Skills</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Cross-session memory via pluggable backends. Skills are markdown-driven capability packs with scripts, templates, and references. Both persist and improve across conversations.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Kanban & Dispatch</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Durable SQLite-backed boards for multi-agent collaboration. Workers spawned per-task with isolated contexts. Dispatcher reclaims stale claims and promotes ready tasks.</p>
+        </div>
+      </div>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Platform Support</h2>
+      <p style="color:#cbd5e1;line-height:1.6;font-size:17px">Hermes connects to 20+ messaging platforms through adapter plugins. Each adapter handles the platform's specific API, message format, and delivery semantics.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Telegram</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Discord</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Slack</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">WhatsApp</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Signal</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Matrix</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Mattermost</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Email</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">SMS</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">DingTalk</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">WeCom</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Weixin</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Feishu</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">QQBot</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">BlueBubbles</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Yuanbao</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Webhook</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">API Server</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">Home Assistant</span>
+        <span style="border:1px solid #334155;border-radius:6px;padding:6px 12px;background:#1e293b;color:#94a3b8;font-size:13px">IRC</span>
+      </div>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Deployment Options</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">CLI / TUI</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Run locally with `hermes` or `hermes --tui`. Full terminal UI, keyboard-driven, rich display with animated spinners and activity feed.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Gateway (Cloud)</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">`hermes serve` or `hermes dashboard` — headless backend that spawns bots detached. Survives app restart. Bots keep running when the user closes the desktop app.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Electron Desktop</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Native desktop app with embedded chat, terminal pane, and bot roster. Talks to a `tui_gateway` backend over JSON-RPC. Separate from the CLI and dashboard surfaces.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Container / Server</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Run the gateway as a systemd service or Docker container for always-on bot operations. Fleet update pipeline handles upgrades across multiple instances.</p>
+        </div>
+      </div>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Model & Provider Support</h2>
+      <p style="color:#cbd5e1;line-height:1.6;font-size:17px">Hermes is model-agnostic. Every inference backend ships as a plugin under `plugins/model-providers/`. Current built-in providers include OpenAI, Anthropic, Gemini, OpenRouter, Deepseek, NVIDIA, and custom endpoints. Each plugin registers a ProviderProfile at module load.</p>
+      <p style="color:#cbd5e1;line-height:1.6;font-size:17px;margin-top:12px">Smart model routing lets you pin different models for different task types — coding, research, vision, curation, title generation. You can override per-session, per-tool, or per-cron-job.</p>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Security Model</h2>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Per-profile isolation:</strong> every profile has its own HERMES_HOME — config, API keys, memory, sessions, skills, gateway, everything. No cross-contamination.</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Token-scoped locks:</strong> adapters acquire scoped locks on connect to prevent two profiles from using the same credential simultaneously.</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Secret scoping:</strong> multiplex profiles read env vars from their own secret scope — never borrow from the default profile's os.environ. Fail-closed, never fail-open.</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Allowlists & admission:</strong> per-platform user/group allowlists, bot policies, and group-level routing rules. Unauthorized senders are rejected cleanly.</span></li>
+        <li style="padding:12px 0;display:flex;gap:12px;align-items:start"><span style="color:#22c55e">✓</span><span style="color:#cbd5e1"><strong>Env var policy:</strong> `.env` is for secrets only (API keys, tokens, passwords). All behavioral settings — timeouts, thresholds, feature flags — go in `config.yaml`.</span></li>
+      </ul>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Customization</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Skin Engine</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Data-driven CLI theming. Skins customize banner colors, spinner faces/verbs/wings, tool prefix, response box, branding text. Built-in skins: default, ares, mono, slate. Users can create custom YAML skins.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Skills System</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Built-in skills in `skills/` (shipped and loadable by default) and optional skills in `optional-skills/` (heavier/niche, installed explicitly). Skills have SKILL.md frontmatter, scripts, templates, and references.</p>
+        </div>
+        <div style="border:1px solid #334155;border-radius:12px;padding:24px;background:#1e293b">
+          <h3 style="margin:0 0 12px;font-size:18px;color:#60a5fa">Toolsets</h3>
+          <p style="margin:0;color:#94a3b8;line-height:1.6">Toolsets are groups of tools that can be enabled/disabled per platform. Current toolsets: browser, terminal, file, search, vision, delegation, cronjob, memory, skills, kanban, todo, tts, video, image_gen, and 20+ more.</p>
+        </div>
+      </div>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Ideal For</h2>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#60a5fa">●</span><span style="color:#cbd5e1"><strong>Individual developers:</strong> a CLI agent that drives your terminal, reads files, runs commands, searches the web, and persists across sessions</span></li>
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#60a5fa">●</span><span style="color:#cbd5e1"><strong>Small teams:</strong> a shared bot in Discord/Slack/Telegram that handles deployments, research, monitoring, and incident triage</span></li>
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#60a5fa">●</span><span style="color:#cbd5e1"><strong>Content operations:</strong> autonomous agents that research, write, publish, and distribute content — 300+ articles generated this way</span></li>
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#60a5fa">●</span><span style="color:#cbd5e1"><strong>Managed services:</strong> MSPs and IT consultancies running bots for client monitoring, incident response, security compliance, and cloud cost optimization</span></li>
+        <li style="padding:10px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="color:#60a5fa">●</span><span style="color:#cbd5e1"><strong>Multi-agent swarms:</strong> orchestrators spawning leaf agents for parallel research, coding, analysis — coordinating via the A2A protocol</span></li>
+        <li style="padding:10px 0;display:flex;gap:12px;align-items:start"><span style="color:#60a5fa">●</span><span style="color:#cbd5e1"><strong>Enterprises:</strong> custom plugin development, on-premise model integration, compliance automation, and proprietary system connectors</span></li>
+      </ul>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Getting Started</h2>
+      <ol style="list-style:none;padding:0;margin:0;counter-reset:step">
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">1</span><span style="color:#cbd5e1"><strong>Install Hermes:</strong> `pip install hermes-agent` or clone the repo and set up your Python environment. Configure your model provider and API key in `~/.hermes/config.yaml`.</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">2</span><span style="color:#cbd5e1"><strong>Choose your interface:</strong> CLI for local development, TUI for a richer terminal experience, gateway for cloud-hosted bots, or Electron desktop for a native app.</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">3</span><span style="color:#cbd5e1"><strong>Connect a platform:</strong> set up a Telegram bot, Discord bot, Slack app, or any of the 20+ supported platforms. Configure the adapter in config.yaml with your bot token.</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">4</span><span style="color:#cbd5e1"><strong>Load skills:</strong> install and enable skills for your use case — GitHub workflows, research methods, creative tools, devops procedures. Skills inject domain knowledge into the agent.</span></li>
+        <li style="padding:12px 0;border-bottom:1px solid #1e293b;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">5</span><span style="color:#cbd5e1"><strong>Start delegating:</strong> ask Hermes to research, code, deploy, monitor, or coordinate. Use delegation for parallel work, cron for scheduled runs, kanban for multi-agent collaboration.</span></li>
+        <li style="padding:12px 0;display:flex;gap:12px;align-items:start"><span style="counter-increment:step;width:28px;height:28px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">6</span><span style="color:#cbd5e1"><strong>Extend it:</strong> build custom plugins, skills, tools, and integrations. The plugin system is the primary extension point — no core changes needed.</span></li>
+      </ol>
+    </section>
+    <section style="padding:48px 0 32px">
+      <h2 style="font-size:26px;font-weight:700;margin:0 0 20px">Related Services</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <a href="/services/hermes-agent-bot-mode/" style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+          <h3 style="margin:0 0 8px;font-size:17px">Bot Mode</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Autonomous messaging agents across 20+ platforms.</p>
+        </a>
+        <a href="/services/hermes-agent-plugin-development/" style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+          <h3 style="margin:0 0 8px;font-size:17px">Plugin Development</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Custom integrations, tools, and skills.</p>
+        </a>
+        <a href="/services/hermes-agent-a2a-protocol/" style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+          <h3 style="margin:0 0 8px;font-size:17px">A2A Protocol</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Multi-agent communication and coordination.</p>
+        </a>
+        <a href="/services/hermes-agent-content-publishing-distribution/" style="border:1px solid #334155;border-radius:12px;padding:20px;background:#1e293b;text-decoration:none;color:#e6f0ff">
+          <h3 style="margin:0 0 8px;font-size:17px">Content Publishing</h3>
+          <p style="margin:0;color:#94a3b8;font-size:14px;line-height:1.5">Automated content creation and distribution.</p>
+        </a>
+      </div>
+    </section>
+    <footer style="margin-top:48px;padding:24px 0;border-top:1px solid #1e293b;color:#64748b;font-size:13px">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <span>© 2026 Zion Tech Group. All rights reserved.</span>
+        <div style="display:flex;gap:16px">
+          <a href="/privacy/" style="color:#64748b;text-decoration:none">Privacy</a>
+          <a href="/terms/" style="color:#64748b;text-decoration:none">Terms</a>
+          <a href="/contact/" style="color:#64748b;text-decoration:none">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

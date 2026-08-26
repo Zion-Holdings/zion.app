@@ -1,15 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Industries | Zion Tech Group</title>
-  <meta name="description" content="Industry-specific AI and IT delivery patterns." />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Solutions by Industry | Zion Tech Group</title>
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="AI automation, IT, cloud, and security solutions for 10+ industries: Technology, Healthcare, Financial Services, Retail, Energy, Manufacturing, Legal, Media, Logistics, Education. Get custom recommendations." />
+  <meta property="og:title" content="AI Solutions by Industry | Zion Tech Group" />
+  <meta property="og:description" content="Production-ready AI and IT solutions tailored to industry requirements and compliance. Browse specialized solutions for healthcare, finance, technology, and more." />
+  <meta property="og:url" content="https://ziontechgroup.com/industries/" />
+  <meta property="og:type" content="website" />
   <link rel="canonical" href="https://ziontechgroup.com/industries/" />
+  <style>
+    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; color: #e5e7eb; background: #020617; }
+    a { color: inherit; text-decoration: none; }
+    .max-w-6xl { max-width: 1152px; margin: 0 auto; }
+    .px-6 { padding-left: 24px; padding-right: 24px; }
+    .py-24 { padding-top: 24px; padding-bottom: 24px; }
+    .text-center { text-align: center; }
+    .text-4xl { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; }
+    .text-3xl { font-size: clamp(24px, 3.5vw, 36px); line-height: 1.15; }
+    .text-xl { font-size: clamp(18px, 2.2vw, 22px); }
+    .text-lg { font-size: 18px; }
+    .text-sm { font-size: 14px; }
+    .text-xs { font-size: 12px; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+    .leading-relaxed { line-height: 1.6; }
+    .mb-3 { margin-bottom: 12px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .mb-8 { margin-bottom: 32px; }
+    .mb-12 { margin-bottom: 48px; }
+    .flex { display: flex; }
+    .inline-flex { display: inline-flex; }
+    .flex-wrap { flex-wrap: wrap; }
+    .items-center { align-items: center; }
+    .gap-3 { gap: 12px; }
+    .gap-4 { gap: 16px; }
+    .gap-5 { gap: 20px; }
+    .gap-6 { gap: 24px; }
+    .grid { display: grid; }
+    .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .rounded-xl { border-radius: 12px; }
+    .rounded-2xl { border-radius: 16px; }
+    .border { border: 1px solid #1e293b; }
+    .border-slate-800 { border-color: #1e293b; }
+    .bg-slate-950 { background-color: #020617; }
+    .bg-slate-900\\/60 { background-color: rgba(15,23,42,0.6); }
+    .bg-gradient-to-r { background-image: linear-gradient(to right, #9333ea, #db2777); }
+    .text-white { color: #f8fafc; }
+    .text-slate-300 { color: #cbd5e1; }
+    .text-slate-400 { color: #94a3b8; }
+    .text-purple-300 { color: #d8b4fe; }
+    .text-purple-400 { color: #c084fc; }
+    .text-emerald-300 { color: #6ee7b7; }
+    .text-emerald-400 { color: #34d399; }
+    .text-cyan-400 { color: #20c4a7; }
+    .text-amber-400 { color: #fbbf24; }
+    .text-orange-400 { color: #fb923c; }
+    .hover\\:border-purple-500\\/40:hover { border-color: rgba(168,85,247,0.4); }
+    .transition-colors { transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
+    @media (min-width: 768px) { .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .pill-bar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .pill { border: 1px solid #1f2937; background: #0b1220; color: #cbd5e1; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+    .pill.active { border-color: rgba(168,85,247,0.5); color: #fff; background: rgba(15,23,42,0.7); }
+    .industry { border: 1px solid #1e293b; background: rgba(15,23,42,0.6); border-radius: 16px; padding: 20px; }
+    .industry:hover { border-color: rgba(168,85,247,0.4); }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: #111827; color: #cbd5e1; border: 1px solid #1f2937; padding: 5px 9px; border-radius: 999px; }
+    .cta-row { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; padding: 12px 16px; font-weight: 600; }
+    .btn-primary { background: linear-gradient(to right, #7c3aed, #db2777); color: #fff; }
+    .btn-secondary { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.12); }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .stat-card { background: rgba(15,23,42,0.6); border: 1px solid #1e293b; border-radius: 12px; padding: 20px; text-align: center; }
+    .stat-value { font-size: 28px; font-weight: 700; background: linear-gradient(to right, #a78bfa, #34d399); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat-label { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+  </style>
 </head>
 <body>
-  <nav aria-label="Primary"><a href="/">Zion Tech Group</a></nav>
-  <main id="main-content"><h1>Industries</h1><p>Continue to <a href="/industries/">/industries/</a>.</p></main>
-  <footer><p>© Zion Tech Group</p></footer>
+  <main class="max-w-6xl px-6 py-24">
+    <header class="text-center" style="max-width: 768px; margin: 0 auto;">
+      <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-900/20 px-3 py-1 text-xs text-emerald-300 mb-6">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        AI Solutions by Industry
+      </div>
+      <h1 class="text-4xl font-bold tracking-tight mb-4">
+        <span style="background: linear-gradient(to right, #c084fc, #f472b6); -webkit-background-clip: text; background-clip: text; color: transparent;">Built for Your Industry</span>
+      </h1>
+      <p class="text-slate-300 text-xl leading-relaxed mb-8">
+        Practical AI implementations with measurable outcomes — compliance-aware, domain-specific, and production-ready. 
+        Choose your industry to see tailored solutions.
+      </p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value">4,500+</div>
+          <div class="stat-label">Services Available</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10+</div>
+          <div class="stat-label">Industries Covered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">9</div>
+          <div class="stat-label">Active AI Agents</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="mt-24 text-center mb-16">
+      <h2 class="text-3xl font-bold text-white mb-6">Explore Solutions by Industry</h2>
+      <p class="text-slate-300 max-w-2xl mx-auto">
+        Each industry page provides specialized AI, IT, cloud, and automation solutions tailored to 
+        your sector's unique challenges and compliance requirements.
+      </p>
+    </section>
+
+    <section class="mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-5" data-industries>
+      <article class="industry" data-industry="technology">
+        <div class="meta">
+          <span class="tag">Technology</span>
+          <span class="tag">SaaS</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Technology & SaaS</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI automation, DevOps, cloud optimization, and security solutions. Reduce costs, improve reliability, and scale faster.</p>
+        <div class="text-xs text-slate-400">145+ services · 50% faster deployments</div>
+        <div class="cta-row">
+          <a href="/industries/technology-saas/" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="healthcare">
+        <div class="meta">
+          <span class="tag">Healthcare</span>
+          <span class="tag">HIPAA</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Healthcare & Life Sciences</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI medical diagnosis, drug discovery, patient scheduling, and clinical data analytics. HIPAA-compliant solutions.</p>
+        <div class="text-xs text-slate-400">12+ services · 30% error reduction</div>
+        <div class="cta-row">
+          <a href="/industries/healthcare-life-sciences/" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="financial">
+        <div class="meta">
+          <span class="tag">Financial</span>
+          <span class="tag">Fintech</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Financial Services & FinTech</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI fraud detection, compliance automation, secure cloud infrastructure, and financial data analytics.</p>
+        <div class="text-xs text-slate-400">23+ services · 99.9% fraud detection</div>
+        <div class="cta-row">
+          <a href="/industries/financial-services-fintech/" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="retail">
+        <div class="meta">
+          <span class="tag">Retail</span>
+          <span class="tag">E-Commerce</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Retail & E-Commerce</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI product recommendations, inventory optimization, customer behavior analytics, and e-commerce automation.</p>
+        <div class="text-xs text-slate-400">57+ services · 40% conversion boost</div>
+        <div class="cta-row">
+          <a href="/industries/retail-ecommerce/" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="energy">
+        <div class="meta">
+          <span class="tag">Energy</span>
+          <span class="tag">Utilities</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Energy & Utilities</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI grid optimization, demand forecasting, renewable energy management, and utility automation.</p>
+        <div class="text-xs text-slate-400">69+ services · 15% waste reduction</div>
+        <div class="cta-row">
+          <a href="/industries/energy-utilities/" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="manufacturing">
+        <div class="meta">
+          <span class="tag">Manufacturing</span>
+          <span class="tag">Industrial</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Manufacturing & Industrial</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI quality inspection, predictive maintenance, production optimization, and industrial automation.</p>
+        <div class="text-xs text-slate-400">25+ services · 30% downtime reduction</div>
+        <div class="cta-row">
+          <a href="/services/?category=ai" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="legal">
+        <div class="meta">
+          <span class="tag">Legal</span>
+          <span class="tag">Compliance</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Legal & Compliance</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI contract analysis, legal document automation, compliance monitoring, and regulatory technology.</p>
+        <div class="text-xs text-slate-400">77+ services · 80% faster review</div>
+        <div class="cta-row">
+          <a href="/industries/legal-compliance/" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="media">
+        <div class="meta">
+          <span class="tag">Media</span>
+          <span class="tag">Entertainment</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Media & Entertainment</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI content creation, video analysis, recommendation engines, and digital media automation.</p>
+        <div class="text-xs text-slate-400">95+ services · 10x faster creation</div>
+        <div class="cta-row">
+          <a href="/industries/media-entertainment/" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="logistics">
+        <div class="meta">
+          <span class="tag">Logistics</span>
+          <span class="tag">Supply Chain</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Logistics & Supply Chain</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI supply chain visibility, route optimization, demand forecasting, and logistics automation.</p>
+        <div class="text-xs text-slate-400">57+ services · 25% cost reduction</div>
+        <div class="cta-row">
+          <a href="/services/?category=data" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+
+      <article class="industry" data-industry="education">
+        <div class="meta">
+          <span class="tag">Education</span>
+          <span class="tag">Research</span>
+        </div>
+        <h2 class="text-lg font-semibold text-white mb-2">Education & Research</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-2">AI-powered learning platforms, research automation, student analytics, and educational technology solutions.</p>
+        <div class="text-xs text-slate-400">15+ services · 40% learning improvement</div>
+        <div class="cta-row">
+          <a href="/services/?category=ai" class="btn btn-primary text-sm">View Solutions</a>
+          <a href="/contact/" class="btn btn-secondary text-sm">Get Proposal</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="mt-24 text-center">
+      <div class="inline-flex flex-col items-center gap-4 rounded-2xl border border-purple-500/30 bg-purple-900/20 px-8 py-10">
+        <h3 class="text-3xl font-bold text-white">Not sure where to start?</h3>
+        <p class="text-slate-300 max-w-2xl">We'll map your requirements to the right AI and IT services — with an estimated timeline and ROI.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/contact/" class="btn btn-primary text-lg px-10 py-4">Start a Conversation</a>
+          <a href="/services/" class="btn btn-secondary text-lg px-10 py-4">Browse Full Catalog</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const bar = document.querySelector('[data-filter]');
+    const items = document.querySelectorAll('[data-industries] [data-industry]');
+    if (bar) {
+      bar.addEventListener('click', (e) => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+        bar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter-value');
+        items.forEach((el) => {
+          const value = el.getAttribute('data-industry');
+          el.style.display = (filter === 'all' || value === filter) ? '' : 'none';
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
-import { CATEGORIES } from '@/constants/navigation';
+import { CATEGORIES } from '@/constants/categories';
 
 interface Recommendation {
   id: string;
@@ -89,8 +89,8 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
         const categoryMatch = industryConfig?.category === service.category ? 3 : 0;
         
         // Size-based pricing filter
-        const pricingValues = Object.values(service.pricing || {} as Record<string, string>);
-        const minPrice = Math.min(...pricingValues.map((p: any) => parseFloat(p.replace('$', '').replace('/mo', '')) || 999999));
+        const pricingValues = Object.values(service.pricing || {});
+        const minPrice = Math.min(...pricingValues.map(p => parseFloat(p.replace('$', '').replace('/mo', '')) || 999999));
         const sizeMultiplier = BUSINESS_SIZE_MULTIPLIERS[businessSize] || 1;
         const priceCompatible = minPrice * sizeMultiplier <= (parseInt(budget) || Infinity);
 
@@ -103,7 +103,7 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
           title: service.title,
           description: service.description,
           category: service.category,
-          icon: service.category?.[0]?.toUpperCase() || '■',
+          icon: service.icon,
           benefits: service.benefits?.slice(0, 3) || [],
           pricing: service.pricing || {},
           href: `/services/${service.id}`,
@@ -111,7 +111,7 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
           matchReasons: matchedKeywords.slice(0, 3)
         };
       })
-      .filter((s): s is Recommendation => s !== null)
+      .filter(Boolean)
       .sort((a, b) => b.score - a.score)
       .slice(0, 6);
 
@@ -371,35 +371,5 @@ export const INDUSTRY_SERVICES: Record<string, {
       'ai-last-mile-optimization'
     ],
     roiMultiplier: 3.2
-  },
-  'technology': {
-    title: 'Technology AI Solutions',
-    description: 'DevOps, cloud infrastructure, and API integration solutions',
-    services: [
-      'ai-devops-automation',
-      'ai-cloud-cost-optimization',
-      'ai-observability',
-      'ai-integration-apis',
-      'ai-security-operations-assistant',
-      'ai-api-management',
-      'ai-low-code-automation',
-      'ai-digital-twin-platform'
-    ],
-    roiMultiplier: 3.0
-  },
-  'energy': {
-    title: 'Energy & Utilities AI Solutions',
-    description: 'Smart grid, demand forecasting, and renewable energy optimization',
-    services: [
-      'ai-grid-demand-forecaster',
-      'ai-renewable-energy-optimizer',
-      'ai-smart-meter-analytics',
-      'ai-utility-demand-response',
-      'ai-energy-consumption-optimizer',
-      'ai-predictive-asset-maintenance',
-      'ai-carbon-intensity-optimizer',
-      'ai-iot-sensor-fleet'
-    ],
-    roiMultiplier: 3.6
   }
 };

@@ -1,6 +1,6 @@
 
+export const metadata = { title: 'Security & Compliance — Zion Tech Group', description: 'Security and compliance services from Zion Tech Group: monitoring, controls, incident readiness, audit evidence, and risk reduction.' };
 import Link from 'next/link';
-export const metadata = { title: 'Security & Compliance — Zion Tech Group', description: 'Security and compliance services from Zion Tech Group: monitoring, controls, incident readiness, audit evidence, and risk reduction.' , alternates: { canonical: 'https://ziontechgroup.com/business-solutions/security-compliance/' } };
 
 const items = [
   { title: 'Security Controls', desc: 'Access controls, identity hygiene, logging, and prevention patterns that reduce incident severity.' },

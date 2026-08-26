@@ -1,59 +1,39 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | Zion Tech Group',
-  description: 'Terms of service governing the use of ziontechgroup.com and Zion Tech Group services.',
-  openGraph: { title: 'Terms of Service | Zion Tech Group',
-    description: 'Service terms and usage rules.',
-    url: 'https://ziontechgroup.com/terms/',
-  type: 'website' },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Terms of Service | Zion Tech Group',
-    description: 'Service terms and usage rules.',
-  },
-  alternates: { canonical: '/terms/' },
+  description: 'Terms of service for Zion Tech Group website, tools, and AI/IT services.',
+  alternates: { canonical: '/terms' },
 };
 
+const sections = [
+  { title: 'Agreement', body: 'By using Zion Tech Group services or website, you agree to these terms.' },
+  { title: 'Services', body: 'Services include AI/IT consulting, implementation, support, and associated software. Specific terms may apply per proposal.' },
+  { title: 'Acceptable Use', body: 'You agree not to misuse services, attempt unauthorized access, or interfere with operations.' },
+  { title: 'Intellectual Property', body: 'Content and deliverables remain with their respective owners unless otherwise agreed in writing.' },
+  { title: 'Limitation of Liability', body: 'To the maximum extent permitted by law, Zion Tech Group is not liable for indirect or incidental damages from service use.' },
+  { title: 'Contact', body: 'Questions? Contact kleber@ziontechgroup.com or https://ziontechgroup.com/contact.' },
+];
 
-export default function TermsPage() {
+export default function TermsOfServicePage() {
   return (
-<>
-    <StandardPage title="Terms of Service" subtitle="Rules and terms for using Zion Tech Group services and website." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Terms of Service' }]}>
-      <div className="max-w-3xl mx-auto space-y-6 text-slate-300">
-        <p>By using this site or engaging Zion Tech Group, you agree to these terms. Services are provided subject to scope, timeline, and payment terms agreed in writing.</p>
+    <main className="mx-auto max-w-3xl px-6 py-16">
+      <h1 className="text-3xl font-semibold tracking-tight">Terms of Service</h1>
+      <p className="mt-3 text-gray-600">Effective date: 2026-07-13</p>
 
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">Acceptable use</h3>
-          <p className="text-slate-400 text-sm">Use the site and services lawfully. Do not interfere with security, access controls, or delivery operations.</p>
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">Service scope</h3>
-          <p className="text-slate-400 text-sm">Statements on this site describe capabilities and typical engagements. Final scope is defined in a signed agreement or statement of work.</p>
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">Intellectual property</h3>
-          <p className="text-slate-400 text-sm">Unauthorized use or copying of site materials is prohibited unless permitted in writing.</p>
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">Limitation of liability</h3>
-          <p className="text-slate-400 text-sm">We are not liable for indirect or consequential damages. Our total liability is limited to fees paid for the direct service giving rise to the claim.</p>
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h3 className="text-white font-semibold mb-2">Changes</h3>
-          <p className="text-slate-400 text-sm">We may update terms from time to time. Continued use after changes implies acceptance of updated terms.</p>
-        </div>
-
-        <Link href="/contact/" className="text-purple-300 hover:text-purple-200">Contact legal/contracts →</Link>
+      <div className="mt-10 space-y-8">
+        {sections.map(s => (
+          <section key={s.title}>
+            <h2 className="text-xl font-medium">{s.title}</h2>
+            <p className="mt-2">{s.body}</p>
+          </section>
+        ))}
       </div>
-    </StandardPage>
-  </>
+
+      <div className="mt-12">
+        <Link href="/" className="text-sm underline">Back to homepage</Link>
+      </div>
+    </main>
   );
 }

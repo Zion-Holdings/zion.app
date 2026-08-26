@@ -3,8 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-
-
 const engines = [
   { version: 'V996', icon: '🔮', name: 'Predictive Analytics', desc: 'Predict reply probability, response time, and engagement scores.' },
   { version: 'V997', icon: '🌍', name: 'Multi-Language Intelligence', desc: 'Detect languages, adapt tone per culture, cross-cultural communication.' },

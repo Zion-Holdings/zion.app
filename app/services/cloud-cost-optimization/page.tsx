@@ -1,43 +1,69 @@
+import { } from 'next/navigation';
+
 export const metadata = {
-  title: 'Cloud Cost Optimization — Zion Tech Group',
-  description: 'Cloud cost optimization services: FinOps, resource rightsizing, commitment strategy, and spend governance.',
-  alternates: { canonical: '/services/cloud-cost-optimization/' },
+  title: "Cloud Cost Optimization Service - Zion Tech Group",
+  description: "Expert cloud cost optimization service including resource right-sizing, reserved instance planning, waste elimination, and FinOps governance implementation.",
+  alternates: {
+    canonical: `https://ziontechgroup.com/services/cloud-cost-optimization`
+  }
 };
 
-export default function CloudCostOptimizationPage() {
+export default function ServicePage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-3xl font-semibold text-white">Cloud Cost Optimization</h1>
-      <p className="mt-2 text-slate-300">
-        Reduce cloud waste without sacrificing performance or reliability.
-      </p>
-
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        <div className="rounded-xl border border-slate-800 bg-slate-950 p-6">
-          <h2 className="text-xl font-semibold text-white">FinOps Practice</h2>
-          <p className="mt-2 text-sm text-slate-300">
-            Budgeting, forecasting, accountability models, and executive reporting for cloud spend.
-          </p>
+    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">Cloud Cost Optimization Service</h1>
+        <p className="text-lg text-gray-300 mb-8">Expert cloud cost optimization service including resource right-sizing, reserved instance planning, waste elimination, and FinOps governance implementation.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Resource Right-sizing</li>
+            <li>Reserved Instance Planning</li>
+            <li>Waste Elimination</li>
+            <li>FinOps Governance</li>
+            <li>Monthly Reporting</li>
+          </ul>
         </div>
-        <div className="rounded-xl border border-slate-800 bg-slate-950 p-6">
-          <h2 className="text-xl font-semibold text-white">Rightsizing</h2>
-          <p className="mt-2 text-sm text-slate-300">
-            Analyze utilization and resize workloads to match real demand and SLA requirements.
-          </p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Reduce cloud costs 40%</li>
+            <li>Optimize resource usage</li>
+            <li>Implement FinOps practices</li>
+          </ul>
         </div>
-        <div className="rounded-xl border border-slate-800 bg-slate-950 p-6">
-          <h2 className="text-xl font-semibold text-white">Commitment Strategy</h2>
-          <p className="mt-2 text-sm text-slate-300">
-            Reserved instances, savings plans, and workload placement for maximum return.
-          </p>
+        
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$1,500/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$4,000/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
+            </div>
+          </div>
         </div>
-        <div className="rounded-xl border border-slate-800 bg-slate-950 p-6">
-          <h2 className="text-xl font-semibold text-white">Spend Governance</h2>
-          <p className="mt-2 text-sm text-slate-300">
-            Policies, alerts, and anomaly detection to prevent budget overruns and surprise bills.
-          </p>
+        
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+          >
+            Book a Consultation
+          </a>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

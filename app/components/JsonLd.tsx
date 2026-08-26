@@ -1,17 +1,17 @@
-'use client';
-import type { ReactNode } from 'react';
+import React from 'react';
 
-type JsonLdProps = {
-  data: unknown;
-  children?: ReactNode;
-};
-
-export default function JsonLd({ data }: JsonLdProps) {
-  return (
-    <script
-      type="application/ld+json"
-      suppressHydrationWarning
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
+interface JsonLdProps {
+  data: Record<string, unknown>;
 }
+
+const JsonLd: React.FC<JsonLdProps> = ({ data }) => (
+  <script
+    type="application/ld+json"
+    suppressHydrationWarning
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+  />
+);
+
+JsonLd.displayName = 'JsonLd';
+
+export default JsonLd;

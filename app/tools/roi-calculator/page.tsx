@@ -1,118 +1,233 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
+// app/tools/roi-calculator/page.tsx — ROI Calculator (server wrapper + ping tracking)
+// Metadata exported by layout.tsx
 
-export const metadata: Metadata = {
-  title: 'ROI Calculator | Zion Tech Group',
-  description: 'Estimate project ROI and timeline from baseline metrics.',
-  openGraph: {
-    title: 'ROI Calculator',
-    description: 'Simple AI/IT ROI estimator.',
-    url: 'https://ziontechgroup.com/tools/roi-calculator/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ROI Calculator',
-    description: 'Simple AI/IT ROI estimator.',
-  },
-  alternates: { canonical: '/tools/roi-calculator/' },
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import RouterPing from './pingClient';
+import ROICalculatorClient from './ROICalculatorClient';
+
+export const metadata = {
+  title: 'ROI Calculator — Zion Tech Group',
+  description: 'Calculate the return on investment for AI and IT services with our free ROI calculator.',
+
 };
 
-const INPUTS = [
-  {
-    label: 'Monthly operational cost',
-    hint: 'Current labor, tooling, and exception handling cost for the target workflow.',
-  },
-  {
-    label: 'Automation target',
-    hint: 'Percent of repeatable work you expect to automate in the first 90 days.',
-  },
-  {
-    label: 'Implementation weeks',
-    hint: 'Planned delivery duration including pilot, instrumentation, and handoff.',
-  },
-  {
-    label: 'Risk allowance',
-    hint: 'Buffer for change management, fallback handling, and exceptions.',
-  },
-];
-
-
-export default function RoiCalculatorPage() {
+export default function ROICalculatorPage() {
   return (
-<>
-    <StandardPage
-      title="ROI Calculator"
-      subtitle="Use these inputs to build an early ROI estimate before scoping a pilot."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools' },
-        { label: 'ROI Calculator' },
-      ]}
-      actions={[
-        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
-        { label: 'Start a project', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="max-w-5xl mx-auto grid gap-4">
-        <div className="grid gap-4 md:grid-cols-2">
-          {INPUTS.map((item) => (
-            <div key={item.label} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-              <label className="block text-sm text-slate-300 mb-1">{item.label}</label>
-              <p className="text-slate-400 text-xs mb-3">{item.hint}</p>
-              <input
-                type="text"
-                placeholder="0"
-                className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-white outline-none focus:border-purple-500"
-              />
+    <main className="min-h-screen bg-slate-950 py-20">
+      <RouterPing />
+
+      {/* ── JSON-LD Structured Data ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: 'ROI Calculator',
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'All',
+            description:
+              'Free interactive ROI calculator for AI & IT services. Adjust your monthly budget to see estimated payback period, monthly return, and year-1 net gain.',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'USD',
+            },
+          }),
+        }}
+      />
+
+      <div className="container-page max-w-4xl">
+        {/* ── Back Link ── */}
+        <Link
+          href="/tools/"
+          className="text-purple-400 text-sm hover:underline mb-8 inline-block"
+        >
+          ← All Tools
+        </Link>
+
+        {/* ── Header ── */}
+        <div className="text-center mb-10">
+          <div className="text-5xl mb-4">📈</div>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            ROI Calculator
+          </h1>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
+            Estimate the business value AI &amp; IT services deliver for your
+            organisation. Drag the slider below to see payback period, monthly
+            return, and year-1 net gain — all in real time.
+          </p>
+        </div>
+
+        {/* ── Interactive Calculator ── */}
+        <ROICalculatorClient />
+
+        {/* ── How It Works ── */}
+        <section className="mt-16 mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">
+            How It Works
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-3">
+            <div className="rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 text-center">
+              <div className="text-3xl mb-3">💰</div>
+              <h3 className="text-white font-semibold mb-2">1. Set Your Budget</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Move the slider or tap a preset (Small Team, Mid-Size Org,
+                Enterprise) to choose your monthly investment.
+              </p>
             </div>
-          ))}
-        </div>
-
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-2">How to use this estimate</h2>
-          <p className="text-slate-300 text-sm leading-relaxed mb-3">
-            Start with one workflow, keep scope small, and measure weekly. Use this estimate to set expectations with stakeholders and to choose the right engagement model.
-          </p>
-          <p className="text-slate-300 text-sm leading-relaxed">
-            Include operational costs: monitoring, on-call coverage, training, and exception handling. Ignoring these creates unrealistic ROI models.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-purple-500/30 bg-purple-900/20 p-6">
-          <h2 className="text-xl font-bold text-white mb-2">Want a validated estimate?</h2>
-          <p className="text-slate-300 text-sm mb-4">
-            Share your baseline numbers and target workflow. We will return a short list of best-fit services with estimated ROI and timeline.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/contact/" className="btn-primary text-center">Contact us</Link>
-            <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
+            <div className="rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 text-center">
+              <div className="text-3xl mb-3">📊</div>
+              <h3 className="text-white font-semibold mb-2">2. See the Impact</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                The calculator instantly estimates monthly return, payback
+                period, and year-1 net gain based on industry productivity
+                benchmarks.
+              </p>
+            </div>
+            <div className="rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 text-center">
+              <div className="text-3xl mb-3">📅</div>
+              <h3 className="text-white font-semibold mb-2">3. Book a Review</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Ready to go deeper? Schedule a free ROI review with our team
+                for a tailored breakdown specific to your workflows.
+              </p>
+            </div>
           </div>
+        </section>
+
+        {/* ── Why Use This Calculator ── */}
+        <section className="mb-12 rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/10 to-slate-900/30 p-8">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            Why Use This Calculator?
+          </h2>
+          <ul className="space-y-3 text-slate-300">
+            <li className="flex items-start gap-3">
+              <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
+              <span>
+                <strong className="text-white">Realistic benchmarks</strong> — Based on
+                productivity lift data from AI, automation, cloud, and IT
+                categories (3.2×, 2.5×, 2.0×, and 1.8× respectively).
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
+              <span>
+                <strong className="text-white">No sign-up required</strong> — Free,
+                private, runs entirely in your browser. Nothing is sent to a
+                server.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
+              <span>
+                <strong className="text-white">Instant feedback</strong> — Every slider
+                movement updates the three key metrics in real time so you can
+                explore different scenarios.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
+              <span>
+                <strong className="text-white">Actionable next step</strong> — Book a
+                free ROI review directly when you&apos;re ready for a custom
+                analysis.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            <details className="group rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 open:border-purple-500/30 transition-all">
+              <summary className="text-white font-medium cursor-pointer list-none flex justify-between items-center gap-2">
+                <span>What does the productivity lift represent?</span>
+                <span className="text-slate-500 group-open:rotate-180 transition-transform shrink-0">
+                  ▼
+                </span>
+              </summary>
+              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                The lift multiplier (e.g., 3.2× for AI services) is based on
+                industry studies of time-to-value improvements when adopting
+                managed AI/IT solutions vs. building in-house. It reflects
+                combined savings in development time, ongoing maintenance, and
+                operational overhead.
+              </p>
+            </details>
+
+            <details className="group rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 open:border-purple-500/30 transition-all">
+              <summary className="text-white font-medium cursor-pointer list-none flex justify-between items-center gap-2">
+                <span>Why is the payback period fixed at 6 months?</span>
+                <span className="text-slate-500 group-open:rotate-180 transition-transform shrink-0">
+                  ▼
+                </span>
+              </summary>
+              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                Most managed AI &amp; IT services reach deployment maturity within
+                4–8 weeks, and the productivity gains more than offset the
+                investment by month 6. This is a conservative estimate — many
+                clients see positive ROI within 3 months.
+              </p>
+            </details>
+
+            <details className="group rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 open:border-purple-500/30 transition-all">
+              <summary className="text-white font-medium cursor-pointer list-none flex justify-between items-center gap-2">
+                <span>Can I use this for my specific department or team?</span>
+                <span className="text-slate-500 group-open:rotate-180 transition-transform shrink-0">
+                  ▼
+                </span>
+              </summary>
+              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                Absolutely. The presets (Small Team, Mid-Size Org, Enterprise)
+                give you a starting point, but you can fine-tune the slider to
+                any value between $500 and $50,000/month. For a fully custom
+                analysis, book a free ROI review.
+              </p>
+            </details>
+
+            <details className="group rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 open:border-purple-500/30 transition-all">
+              <summary className="text-white font-medium cursor-pointer list-none flex justify-between items-center gap-2">
+                <span>Is my data saved or tracked when I use this?</span>
+                <span className="text-slate-500 group-open:rotate-180 transition-transform shrink-0">
+                  ▼
+                </span>
+              </summary>
+              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                No. The calculator runs entirely client-side — no form
+                submission, no API calls, no data persistence. We only track a
+                lightweight page-view ping to understand which tools are most
+                useful.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <div className="text-center rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/15 to-slate-900/40 p-10">
+          <h2 className="text-2xl font-bold text-white mb-3">
+            Ready for a Custom ROI Analysis?
+          </h2>
+          <p className="text-slate-400 mb-6 max-w-lg mx-auto leading-relaxed">
+            Our team will build a tailored ROI model for your specific
+            workflows, team size, and service category — free and no
+            obligation.
+          </p>
+          <a
+            href="mailto:kleber@ziontechgroup.com"
+            className="btn-primary text-lg px-10 py-4 inline-block"
+          >
+            📅 Schedule a Free ROI Review
+          </a>
+          <p className="text-slate-500 text-xs mt-4">
+            Or email kleber@ziontechgroup.com directly
+          </p>
         </div>
       </div>
-      <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h2 className="text-lg font-bold text-white mb-3">Related offerings</h2>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-            <h3 className="text-white font-semibold text-sm mb-1">Enterprise Services</h3>
-            <p className="text-slate-400 text-xs mb-2">AI, IT, security, and data programs with measurable outcomes.</p>
-            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
-          </Link>
-          <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-            <h3 className="text-white font-semibold text-sm mb-1">Industry Solutions</h3>
-            <p className="text-slate-400 text-xs mb-2">Purpose-built AI and IT solutions by industry.</p>
-            <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
-          </Link>
-          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-4 hover:border-purple-500/40">
-            <h3 className="text-white font-semibold text-sm mb-1">Insights & Guides</h3>
-            <p className="text-slate-400 text-xs mb-2">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
-            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
-          </Link>
-        </div>
-      </div>
-    </StandardPage>
-  </>
+    </main>
   );
 }

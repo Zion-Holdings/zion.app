@@ -1,105 +1,156 @@
-import type { Metadata } from 'next';
+// app/services/page.tsx - Full Service Catalog
+'use client';
+
+import { useState, useMemo, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import SmartSearchBar from '@/components/SmartSearchBar';
 import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
+import { ServiceGridSkeleton } from '@/components/Skeletons';
+import { allServices } from '../data/servicesData';
+import type { Service } from '../data/servicesData';
 
-export const metadata: Metadata = {
-  title: 'Services | Zion Tech Group',
-  description: 'AI, IT, and Micro-SaaS services for enterprise automation, managed AI, cloud, security, data, and DevOps.',
-  keywords: ['AI services', 'IT services', 'managed AI', 'cloud migration', 'security compliance', 'data analytics', 'automation', 'Micro-SaaS'],
-  openGraph: {
-    title: 'Services | Zion Tech Group',
-    description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
-    url: 'https://ziontechgroup.com/services/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Services | Zion Tech Group',
-    description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
-  },
-  alternates: { canonical: '/services/' },
-};
-
+const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & Analytics', automation: 'Automation', 'micro-saas': 'Micro-SaaS', devops: 'DevOps', blockchain: 'Blockchain', iot: 'IoT & Edge', 'email-intelligence': 'Email Intelligence', observability: 'Observability', identity: 'Identity & Access', cms: 'CMS & Content', ecommerce: 'E-Commerce', documentation: 'Documentation', 'ai-ml-ops': 'AI/ML Ops', devsecops: 'DevSecOps', fintech: 'FinTech', edtech: 'EdTech', 'healthcare-it': 'Healthcare IT', 'data-streaming': 'Data Streaming', search: 'Search', api: 'API Management' };
 const CATEGORIES = [
-  { key: 'ai', label: 'AI & Machine Learning', desc: 'Managed AI, LLM platforms, predictive systems, and autonomous workflows.' },
-  { key: 'it', label: 'IT & Infrastructure', desc: 'Cloud, DevOps, endpoint management, observability, and enterprise operations.' },
-  { key: 'security', label: 'Security & Compliance', desc: 'Threat detection, governance, identity, incident response, and compliance automation.' },
-  { key: 'data', label: 'Data & Analytics', desc: 'Pipelines, governance, forecasting, dashboards, and warehouse modernization.' },
-  { key: 'automation', label: 'Automation', desc: 'Workflow automation, RPA, support automation, and integration orchestration.' },
-  { key: 'micro-saas', label: 'Micro-SaaS', desc: 'Repeatable monetizable tools built on proven infrastructure and delivery patterns.' },
+  { key: 'all' as const, label: 'All' },
+  { key: 'ai' as const, label: 'AI' },
+  { key: 'it' as const, label: 'IT' },
+  { key: 'cloud' as const, label: 'Cloud' },
+  { key: 'security' as const, label: 'Security' },
+  { key: 'data' as const, label: 'Data' },
+  { key: 'automation' as const, label: 'Automation' },
+  { key: 'micro-saas' as const, label: 'Micro-SaaS' },
+  { key: 'devops' as const, label: 'DevOps' },
+  { key: 'blockchain' as const, label: 'Blockchain' },
+  { key: 'iot' as const, label: 'IoT' },
+  { key: 'email-intelligence' as const, label: 'Email Intel' },
+  { key: 'observability' as const, label: 'Observability' },
+  { key: 'identity' as const, label: 'Identity' },
+  { key: 'cms' as const, label: 'CMS' },
+  { key: 'ecommerce' as const, label: 'E-Commerce' },
+  { key: 'documentation' as const, label: 'Docs' },
+  { key: 'ai-ml-ops' as const, label: 'AI/ML Ops' },
+  { key: 'devsecops' as const, label: 'DevSecOps' },
+  { key: 'fintech' as const, label: 'FinTech' },
+  { key: 'edtech' as const, label: 'EdTech' },
+  { key: 'healthcare-it' as const, label: 'Healthcare' },
+  { key: 'data-streaming' as const, label: 'Streaming' },
+  { key: 'search' as const, label: 'Search' },
+  { key: 'api' as const, label: 'API' },
 ];
 
+function ServicesContent() {
+  const searchParams = useSearchParams();
+  const urlCategory = (searchParams?.get('category') || 'all');
+  const [activeCategory, setActiveCategory] = useState(urlCategory);
+  const [searchQuery, setSearchQuery] = useState('');
 
-export default function ServicesPage() {
+  const firstTier = (pricing: Record<string,string>): string =>
+    Object.values(pricing)[0] || 'Contact for Quote';
+
+  const filteredServices = useMemo(() => {
+    let services = allServices;
+    if (activeCategory !== 'all') services = services.filter((s: Service) => s.category === activeCategory);
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      services = services.filter((s: Service) => s.title.toLowerCase().includes(q) || s.description.toLowerCase().includes(q) || s.category.toLowerCase().includes(q));
+    }
+    return services;
+  }, [activeCategory, searchQuery]);
+
   return (
-<>
-    <StandardPage
-      title="Services"
-      subtitle="Enterprise-grade services across AI, IT, security, data, and automation. Choose a category to see use cases and delivery patterns."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Services' },
-      ]}
-      actions={[
-        { label: 'Start a project', href: '/contact/', style: 'primary' },
-        { label: 'Case studies', href: '/case-studies/', style: 'secondary' },
-      ]}
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {CATEGORIES.map((category) => (
-            <Link key={category.key} href={`/services/?category=${category.key}`} className="glass-card">
-              <h3 className="font-semibold text-white mb-2">{category.label}</h3>
-              <p className="text-slate-400 text-sm">{category.desc}</p>
-              <span className="text-purple-400 text-xs mt-3 inline-block">Browse services →</span>
-            </Link>
+    <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: 'Zion Tech Group Service Catalog',
+          description: 'Browse AI, IT, cloud, security, data, automation, and DevOps services across multiple categories.',
+          url: 'https://ziontechgroup.com/services',
+          isPartOf: { '@type': 'WebSite', url: 'https://ziontechgroup.com/', name: 'Zion Tech Group' },
+          about: {
+            '@type': 'Organization',
+            name: 'Zion Tech Group',
+            url: 'https://ziontechgroup.com',
+            email: 'kleber@ziontechgroup.com',
+            telephone: '+1 302 464 0950',
+            address: '364 E Main St STE 1008, Middletown, DE 19709',
+          },
+          breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ziontechgroup.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://ziontechgroup.com/services' },
+            ],
+          },
+        }}
+      />
+    <main className="min-h-screen bg-slate-950 py-20">
+      <div className="container-page">
+        <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
+        <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+        {/* Smart Fuzzy Search Bar */}
+        <div className="max-w-3xl mx-auto mt-8">
+          <SmartSearchBar
+            initialQuery={urlCategory !== 'all' ? '' : ''}
+            initialCategory={urlCategory}
+          />
+        </div>
+        <div className="flex flex-wrap justify-center gap-3 mt-8 mb-12">
+          {CATEGORIES.map((cat) => (
+            <button key={cat.key} onClick={() => setActiveCategory(cat.key)} className={`rounded-full px-6 py-2.5 text-sm font-semibold transition ${activeCategory === cat.key ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg' : 'bg-slate-900/50 text-slate-400 border border-slate-700/50 hover:border-purple-500/50'}`}>{cat.label}</button>
           ))}
         </div>
-
-        <div className="mt-16 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
-          <h2 className="text-2xl font-bold text-white mb-3">Delivery principles</h2>
-          <p className="text-slate-300 text-sm leading-relaxed mb-4">
-            We start from one measurable outcome, add ownership and observability, then expand after stable operation. This reduces risk and shortens time-to-value.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div>
-              <h3 className="text-white font-semibold mb-1">Outcome-first</h3>
-              <p className="text-slate-400 text-xs">Scope, success metrics, and rollback criteria before implementation.</p>
+        <div className="text-center mb-12"><span className="text-slate-400">Showing <span className="text-purple-400 font-semibold">{filteredServices.length}</span> of <span className="text-purple-400 font-semibold">{allServices.length}</span> services</span></div>
+        <div className="feature-grid">
+          {filteredServices.map((service: Service) => (
+            <div key={service.id} className="glass-card flex flex-col h-full">
+              <div className="flex-1">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 uppercase tracking-wider">{SVC_CAT_LABELS[service.category as string] || service.category}</span>
+                  <span className="text-xs text-slate-500">{service.category}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2 leading-snug">{service.title}</h3>
+                <p className="text-slate-400 text-sm mb-4 leading-relaxed">{service.description}</p>
+                <ul className="space-y-2 mb-4">{service.features.slice(0,5).map((f:string,i:number) => <li key={i} className="text-slate-300 text-sm flex items-start gap-2"><span className="text-purple-400 mt-1 shrink-0">•</span><span>{f}</span></li>)}</ul>
+              </div>
+              <div className="mt-auto pt-4 border-t border-slate-700/50">
+                <div className="flex justify-between items-center">
+                  <span className="text-purple-300 text-sm font-medium">Starting at {firstTier(service.pricing)}</span>
+                </div>
+                <Link href={`/services/${service.id}`} className="text-sm text-purple-400 hover:underline inline-flex items-center gap-1 mt-1">View Details →</Link>
+              </div>
             </div>
-            <div>
-              <h3 className="text-white font-semibold mb-1">Operational readiness</h3>
-              <p className="text-slate-400 text-xs">Monitoring, on-call coverage, and incident response built in from day one.</p>
-            </div>
-            <div>
-              <h3 className="text-white font-semibold mb-1">Evidence-based expansion</h3>
-              <p className="text-slate-400 text-xs">Scale only after validated adoption, stable operations, and clear ownership.</p>
-            </div>
-          </div>
+          ))}
         </div>
-
-        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
-          <h2 className="text-xl font-bold text-white mb-4">Explore related offerings</h2>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold mb-1">Industry Solutions</h3>
-              <p className="text-slate-400 text-xs mb-3">Purpose-built AI and IT solutions by industry, from healthcare to logistics.</p>
-              <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
-            </Link>
-            <Link href="/tools/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold mb-1">Developer Tools</h3>
-              <p className="text-slate-400 text-xs mb-3">Free utilities for JSON, JWT, regex, QR, and text processing.</p>
-              <span className="text-purple-300 text-xs font-semibold inline-block">Use tools →</span>
-            </Link>
-            <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
-              <h3 className="text-white font-semibold mb-1">Insights & Guides</h3>
-              <p className="text-slate-400 text-xs mb-3">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
-              <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
-            </Link>
+        <div className="text-center mt-16">
+          <Link href="/configurator/" className="btn-primary text-lg">Get Your Custom Proposal →</Link>
+          <div className="mt-6 space-y-2">
+            <p className="text-slate-400 text-sm">📞 <a href="tel:+130****0950" className="text-purple-300 hover:underline">+1 302 464 0950</a></p>
+            <p className="text-slate-400 text-sm">✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-purple-300 hover:underline">kleber@ziontechgroup.com</a></p>
+            <p className="text-slate-400 text-sm">📍 364 E Main St STE 1008, Middletown, DE 19709</p>
           </div>
         </div>
       </div>
-    </StandardPage>
-  </>
+    </main>
+    </>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen bg-slate-950 py-20">
+        <div className="container-page">
+          <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
+          <p className="section-subheading text-center">Browse all services</p>
+          <div className="mt-8">
+            <ServiceGridSkeleton />
+          </div>
+        </div>
+      </main>
+    }>
+      <ServicesContent />
+    </Suspense>
   );
 }

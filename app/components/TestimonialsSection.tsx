@@ -84,8 +84,8 @@ export default function TestimonialsSection() {
   }, [visible]);
 
   const displayed = [...testimonials].sort((a, b) => {
-    if ((a.featured || false) !== (b.featured || false)) return (a.featured || false) ? -1 : 1;
-    return (b.rating || 0) - (a.rating || 0);
+    if (a.featured !== b.featured) return a.featured ? -1 : 1;
+    return b.rating - a.rating;
   });
 
   return (
@@ -132,7 +132,7 @@ export default function TestimonialsSection() {
                   </div>
                 </div>
 
-                <Stars rating={t.rating || 0} />
+                <Stars rating={t.rating} />
 
                 <blockquote className="mt-3 text-slate-300 text-sm leading-relaxed line-clamp-4">
                   “{t.review_text}”
@@ -167,7 +167,7 @@ export default function TestimonialsSection() {
 /* ── Global AggregateRating ─────────────────────────────── */
 function AggregateRatingSchema({ testimonials }: { testimonials: Testimonial[] }) {
   const total  = testimonials.length;
-  const sum    = testimonials.reduce((acc, t) => acc + (t.rating || 0), 0);
+  const sum    = testimonials.reduce((acc, t) => acc + t.rating, 0);
   const avg    = (sum / total).toFixed(1);
 
   const schema = {

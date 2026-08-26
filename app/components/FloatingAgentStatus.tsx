@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { INITIAL_AGENT_STATUS, WAVE_DATA } from '@/data/agent-logs';
 
 export default function FloatingAgentStatus() {
   const [expanded, setExpanded] = useState(false);
   const [time, setTime] = useState('');
+  const [pulse, setPulse] = useState(true);
 
   useEffect(() => {
     const update = () => {
@@ -14,12 +14,9 @@ export default function FloatingAgentStatus() {
     };
     update();
     const interval = setInterval(update, 1000);
-    return () => clearInterval(interval);
+    const pulseInterval = setInterval(() => setPulse(p => !p), 2000);
+    return () => { clearInterval(interval); clearInterval(pulseInterval); };
   }, []);
-
-  const activeBots = INITIAL_AGENT_STATUS.filter(a => a.status === 'active').length;
-  const totalServices = 833;
-  const totalWaves = WAVE_DATA.length;
 
   return (
     <>
@@ -41,29 +38,36 @@ export default function FloatingAgentStatus() {
 
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="text-center">
-                <div className="text-xl font-bold text-purple-400">{activeBots}</div>
+                <div className="text-xl font-bold text-purple-400">6</div>
                 <div className="text-[9px] text-slate-500 uppercase">Agents</div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-bold text-emerald-400">{totalServices}</div>
+                <div className="text-xl font-bold text-emerald-400">795</div>
                 <div className="text-[9px] text-slate-500 uppercase">Services</div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-bold text-pink-400">{totalWaves}</div>
+                <div className="text-xl font-bold text-pink-400">37</div>
                 <div className="text-[9px] text-slate-500 uppercase">Waves</div>
               </div>
             </div>
 
             <div className="space-y-2 mb-4">
-              {INITIAL_AGENT_STATUS.map(agent => (
-                <div key={agent.telegram} className="flex items-center gap-2 text-xs">
+              {[
+                { name: 'Carol', emoji: '🖥️', role: 'DevOps', status: 'active' },
+                { name: 'Kilo', emoji: '🧠', role: 'Orchestration', status: 'active' },
+                { name: 'Tablet', emoji: '📱', role: 'Research', status: 'active' },
+                { name: 'Quel', emoji: '🔧', role: 'Code Quality', status: 'available' },
+                { name: 'Rocket', emoji: '🚀', role: 'Deploy', status: 'available' },
+                { name: 'OWL', emoji: '🦉', role: 'Integration', status: 'active' },
+              ].map(bot => (
+                <div key={bot.name} className="flex items-center gap-2 text-xs">
                   <span className="relative flex h-2 w-2 shrink-0">
-                    {agent.status === 'active' && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />}
-                    <span className={`relative inline-flex rounded-full h-2 w-2 ${agent.status === 'active' ? 'bg-emerald-500' : agent.status === 'available' ? 'bg-blue-500' : 'bg-slate-500'}`} />
+                    {bot.status === 'active' && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />}
+                    <span className={`relative inline-flex rounded-full h-2 w-2 ${bot.status === 'active' ? 'bg-emerald-500' : 'bg-blue-500'}`} />
                   </span>
-                  <span className="text-sm">{agent.emoji}</span>
-                  <span className="text-slate-300 font-medium">{agent.name}</span>
-                  <span className="text-slate-600 text-[10px] ml-auto">{agent.role.split(' ')[0]}</span>
+                  <span className="text-sm">{bot.emoji}</span>
+                  <span className="text-slate-300 font-medium">{bot.name}</span>
+                  <span className="text-slate-600 text-[10px] ml-auto">{bot.role}</span>
                 </div>
               ))}
             </div>
@@ -93,7 +97,7 @@ export default function FloatingAgentStatus() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <span className="text-xs font-medium text-white">{activeBots} Agents Active</span>
+            <span className="text-xs font-medium text-white">6 Agents Active</span>
             <span className="text-[10px] text-slate-500">·</span>
             <span className="text-[10px] text-slate-400">{time}</span>
           </button>

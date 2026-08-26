@@ -1,0 +1,27 @@
+Subject: Transform Your General Operations with Streaming ETL Pipeline
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Streaming ETL Pipeline.
+
+Sub-second streaming data pipelines with exactly-once delivery, windowed aggregations, schema evolution, and native connectors for Kafka, Pulsar, and Kinesis.
+
+**Key Benefits:**
+- Reduce costs with streaming etl pipeline
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $199/month
+- Pro: $599/month
+- Enterprise: $1,999/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

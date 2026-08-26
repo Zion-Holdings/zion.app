@@ -1,403 +1,138 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
-import StandardPage from '@/components/StandardPage';
 
-export const metadata: Metadata = {
-  title: 'Tools | Zion Tech Group',
-  description: 'Free developer tools and utilities from Zion Tech Group.',
-  openGraph: {
-    title: 'Tools | Zion Tech Group',
-    description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
-    url: 'https://ziontechgroup.com/tools/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Tools | Zion Tech Group',
-    description: 'Utilities for JSON, JWT, regex, UUID, QR, and text processing.',
-  },
-  alternates: { canonical: '/tools/' },
+export const metadata = {
+  title: 'Free Developer Tools & Utilities | Zion Tech Group',
+  description: '50+ free online developer tools: JSON formatter, JWT decoder, regex tester, SQL formatter, color palette generator, QR code generator, and more.',
+  alternates: { canonical: '/tools' },
 };
 
-/*
- * The tool card grid below is GENERATED. Do not hand-edit it, and do not remove
- * cards because a matching `app/tools/<slug>/` route does not exist.
- *
- * Every tool is a self-contained static page at `public/tools/<slug>/index.html`,
- * which Next.js copies verbatim into the export. There is intentionally no app
- * route for them, so any check that infers "orphan link" from the absence of an
- * `app/` directory will wrongly delete working, deployed pages.
- *
- * Source of truth: `public/tools/`. Regenerate with:
- *     python3 scripts/sync_tools_page.py
- * CI (.github/workflows/deploy.yml) fails the build if this grid or
- * public/sitemap.xml drifts from what is on disk.
- */
+const tools = [
+  { id: 'json-formatter', icon: '📋', title: 'JSON Formatter & Validator', desc: 'Format, validate, and prettify JSON with syntax highlighting', category: 'Data' },
+  { id: 'json-to-csv-converter', icon: '🔄', title: 'JSON to CSV Converter', desc: 'Convert JSON arrays to CSV and vice versa', category: 'Data' },
+  { id: 'json-schema-generator', icon: '📐', title: 'JSON Schema Generator', desc: 'Auto-generate JSON Schema from sample JSON data', category: 'Data' },
+  { id: 'json-diff-viewer', icon: '⚖️', title: 'JSON Diff Viewer', desc: 'Compare two JSON documents and highlight differences', category: 'Data' },
+  { id: 'yaml-json-converter', icon: '🔁', title: 'YAML ⇄ JSON Converter', desc: 'Convert between YAML and JSON formats instantly', category: 'Data' },
+  { id: 'xml-formatter-validator', icon: '📄', title: 'XML Formatter & Validator', desc: 'Format, validate, and minify XML documents', category: 'Data' },
+  { id: 'css-gradient-generator', icon: '🌈', title: 'CSS Gradient Generator', desc: 'Visual CSS gradient builder with live preview', category: 'CSS' },
+  { id: 'css-minifier-beautifier', icon: '🎨', title: 'CSS Minifier & Beautifier', desc: 'Minify CSS for production or beautify for development', category: 'CSS' },
+  { id: 'html-to-jsx', icon: '⚛️', title: 'HTML to JSX Converter', desc: 'Convert HTML markup to React JSX syntax', category: 'HTML' },
+  { id: 'html-minifier-beautifier', icon: '📝', title: 'HTML Minifier & Beautifier', desc: 'Minify HTML for performance or format for readability', category: 'HTML' },
+  { id: 'sql-formatter', icon: '🗃️', title: 'SQL Formatter', desc: 'Format and beautify SQL queries with syntax highlighting', category: 'Data' },
+  { id: 'jwt-decoder', icon: '🔑', title: 'JWT Decoder', desc: 'Decode and inspect JWT tokens with claims visualization', category: 'Security' },
+  { id: 'color-palette-generator', icon: '🎨', title: 'Color Palette Generator', desc: 'Generate beautiful color palettes for your designs', category: 'Design' },
+  { id: 'color-contrast-checker', icon: '👁️', title: 'Color Contrast Checker', desc: 'Check WCAG accessibility contrast ratios', category: 'Design' },
+  { id: 'color-blindness-simulator', icon: '🔍', title: 'Color Blindness Simulator', desc: 'Simulate how designs look for different types of color blindness', category: 'Design' },
+  { id: 'box-shadow-generator', icon: '📦', title: 'Box Shadow Generator', desc: 'Visual CSS box shadow builder with live preview', category: 'CSS' },
+  { id: 'image-color-extractor', icon: '🖼️', title: 'Image Color Extractor', desc: 'Extract dominant colors from any image', category: 'Design' },
+  { id: 'unit-converter', icon: '📏', title: 'Unit Converter', desc: 'Convert between length, weight, temperature, and data units', category: 'Utilities' },
+  { id: 'currency-converter', icon: '💱', title: 'Currency Converter', desc: 'Real-time currency conversion for 150+ currencies', category: 'Utilities' },
+  { id: 'base64', icon: '🔐', title: 'Base64 Encoder/Decoder', desc: 'Encode and decode Base64 strings and files', category: 'Encoding' },
+  { id: 'url-encoder-decoder', icon: '🔗', title: 'URL Encoder/Decoder', desc: 'Encode and decode URL parameters safely', category: 'Encoding' },
+  { id: 'qr-code-generator', icon: '📱', title: 'QR Code Generator', desc: 'Generate customizable QR codes for URLs, text, and more', category: 'Utilities' },
+  { id: 'password-generator', icon: '🔒', title: 'Password Generator', desc: 'Generate secure random passwords with custom rules', category: 'Security' },
+  { id: 'password-strength-checker', icon: '💪', title: 'Password Strength Checker', desc: 'Analyze password strength and get improvement tips', category: 'Security' },
+  { id: 'regex-tester', icon: '🔬', title: 'Regex Tester', desc: 'Test and debug regular expressions with live matching', category: 'Text' },
+  { id: 'timestamp-converter', icon: '⏰', title: 'Unix Timestamp Converter', desc: 'Convert between Unix timestamps and human-readable dates', category: 'Utilities' },
+  { id: 'uuid-generator', icon: '🆔', title: 'UUID/GUID Generator', desc: 'Generate RFC 4122 compliant UUIDs (v1, v4, v5)', category: 'Utilities' },
+  { id: 'lorem-ipsum-generator', icon: '📃', title: 'Lorem Ipsum Generator', desc: 'Generate placeholder text for designs and mockups', category: 'Text' },
+  { id: 'word-counter', icon: '🔢', title: 'Word & Character Counter', desc: 'Count words, characters, sentences, and paragraphs', category: 'Text' },
+  { id: 'string-case-converter', icon: '🔤', title: 'String Case Converter', desc: 'Convert between camelCase, snake_case, kebab-case, and more', category: 'Text' },
+  { id: 'markdown-preview', icon: '📖', title: 'Markdown Preview', desc: 'Live markdown preview with GitHub Flavored Markdown', category: 'Text' },
+  { id: 'cron-expression-explainer', icon: '⏱️', title: 'Cron Expression Explainer', desc: 'Parse and explain cron expressions in plain English', category: 'Utilities' },
+  { id: 'number-base-converter', icon: '🔢', title: 'Number Base Converter', desc: 'Convert between binary, octal, decimal, and hexadecimal', category: 'Utilities' },
+  { id: 'subnet-calculator', icon: '🌐', title: 'Subnet Calculator', desc: 'Calculate subnet ranges, CIDR, and network addresses', category: 'Network' },
+  { id: 'secure-hash-generator', icon: '🔐', title: 'Secure Hash Generator', desc: 'Generate SHA-256, SHA-512, MD5, and other hashes', category: 'Security' },
+  { id: 'api-endpoint-tester', icon: '🧪', title: 'API Endpoint Tester', desc: 'Test REST APIs with custom headers and payloads', category: 'API' },
+  { id: 'jwt-signature-verifier', icon: '✅', title: 'JWT Signature Verifier', desc: 'Verify JWT signatures with public keys', category: 'Security' },
+  { id: 'html-entity-decoder', icon: '🔤', title: 'HTML Entity Decoder', desc: 'Decode HTML entities to plain text', category: 'Text' },
+  { id: 'csv-validator', icon: '✅', title: 'CSV Validator', desc: 'Validate and format CSV data', category: 'Data' },
+  { id: 'ip-address-validator', icon: '🌐', title: 'IP Address Validator', desc: 'Validate IPv4 and IPv6 addresses with details', category: 'Network' },
+  { id: 'email-validator', icon: '📧', title: 'Email Validator', desc: 'Validate email addresses and extract components', category: 'Text' },
+  { id: 'phone-number-formatter', icon: '📱', title: 'Phone Number Formatter', desc: 'Format phone numbers for different countries', category: 'Utilities' },
+  { id: 'credit-card-validator', icon: '💳', title: 'Credit Card Validator', desc: 'Validate credit card numbers with Luhn algorithm', category: 'Validation' },
+  { id: 'geolocation-geocoder', icon: '📍', title: 'Geolocation Geocoder', desc: 'Convert addresses to coordinates and vice versa', category: 'Geolocation' },
+  { id: 'weather-api-mock', icon: '🌤️', title: 'Weather API Mock', desc: 'Mock weather data for testing and development', category: 'API' },
+  { id: 'graphql-query-builder', icon: '📊', title: 'GraphQL Query Builder', desc: 'Build and test GraphQL queries visually', category: 'API' },
+  { id: 'rate-limit-calculator', icon: '📈', title: 'Rate Limit Calculator', desc: 'Calculate API rate limits and quotas', category: 'API' },
+  { id: 'webhook-inspector', icon: '🔗', title: 'Webhook Inspector', desc: 'Inspect and debug webhook payloads', category: 'API' },
+  { id: 'oauth-debugger', icon: '🔑', title: 'OAuth Debugger', desc: 'Debug OAuth flows and token exchanges', category: 'Authentication' },
+  { id: 'cors-proxy', icon: '🔓', title: 'CORS Proxy', desc: 'Test CORS headers with proxy URLs', category: 'Development' },
+  { id: 'cookie-parser', icon: '🍪', title: 'Cookie Parser', desc: 'Parse and decode cookie strings', category: 'Web' },
+  { id: 'http-header-analyzer', icon: '📬', title: 'HTTP Header Analyzer', desc: 'Analyze and format HTTP headers', category: 'Web' },
+  { id: 'ai-support-triage', icon: '🚨', title: 'AI Support Triage', desc: 'Classify incident severity, likely causes, and remediation steps', category: 'Support' },
+  { id: 'cloud-cost-estimator', icon: '🧮', title: 'Cloud Cost Estimator', desc: 'Compare estimated AWS/GCP/Azure spend and optimization tips', category: 'Cloud' },
+  { id: 'tech-stack-recommender', icon: '🧩', title: 'Tech Stack Recommender', desc: 'Get a curated modern stack recommendation by project profile', category: 'Architecture' },
+  { id: 'incident-postmortem', icon: '📋', title: 'Incident Postmortem', desc: 'Generate a lightweight postmortem draft from incident inputs', category: 'Operations' },
+  { id: 'jwt-inspector', icon: '🔎', title: 'JWT Inspector', desc: 'Decode JWT header/payload and inspect claims client-side', category: 'Security' },
+  { id: 'ai-quick-audit', icon: '🧭', title: 'AI Quick Audit', desc: '8-question 2-minute readiness check with maturity score and next steps', category: 'AI' },
+  { id: 'free-tools-hub', icon: '🧲', title: 'Free Services & Tools Hub', desc: 'Explore Zion free tools and IT/AI services in one place', category: 'Growth' },
+];
+
 export default function ToolsPage() {
+  const categories = [...new Set(tools.map(t => t.category))];
+
   return (
-<>
-    <StandardPage
-      title="Developer Tools"
-      subtitle="Free utilities built by Zion. No sign-up required."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools' },
-      ]}
-      actions={[
-        { label: 'Browse services', href: '/services/', style: 'primary' },
-        { label: 'Contact us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-        <a href="/tools/base64-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Base64 Encoder</h3>
-          <p className="text-slate-400 text-sm">Encode and decode Base64 with UTF-8 support.</p>
-        </a>
-        <a href="/tools/base64-image/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Base64 Image Encoder</h3>
-          <p className="text-slate-400 text-sm">Encode images to Base64 data URIs.</p>
-        </a>
-        <a href="/tools/blog-post-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Blog Post Generator</h3>
-          <p className="text-slate-400 text-sm">Draft blog outlines and introductions.</p>
-        </a>
-        <a href="/tools/case-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Case Converter</h3>
-          <p className="text-slate-400 text-sm">Convert between 9 text cases instantly.</p>
-        </a>
-        <a href="/tools/color-contrast/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Color Contrast Checker</h3>
-          <p className="text-slate-400 text-sm">Check WCAG AA/AAA contrast ratios.</p>
-        </a>
-        <a href="/tools/color-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Color Converter</h3>
-          <p className="text-slate-400 text-sm">Convert between HEX, RGB, and HSL with live preview.</p>
-        </a>
-        <a href="/tools/color-palette-gen/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Color Palette Generator</h3>
-          <p className="text-slate-400 text-sm">Generate palettes and export as CSS or JSON.</p>
-        </a>
-        <a href="/tools/color-picker/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Color Picker</h3>
-          <p className="text-slate-400 text-sm">Pick colors with HEX/RGB/HSL values.</p>
-        </a>
-        <a href="/tools/cron-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Cron Generator</h3>
-          <p className="text-slate-400 text-sm">Build cron expressions from a schedule.</p>
-        </a>
-        <a href="/tools/cron-next-runs/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Cron Next Runs</h3>
-          <p className="text-slate-400 text-sm">Explain any 5-field cron expression in plain English and preview the next 10 execution...</p>
-        </a>
-        <a href="/tools/cron-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Cron Parser</h3>
-          <p className="text-slate-400 text-sm">Parse and explain cron expressions.</p>
-        </a>
-        <a href="/tools/css-box-shadow/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Css Box Shadow</h3>
-          <p className="text-slate-400 text-sm">Visual CSS box-shadow and border-radius generator. Stack multiple shadows, control offs...</p>
-        </a>
-        <a href="/tools/css-minifier/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">CSS Minifier</h3>
-          <p className="text-slate-400 text-sm">Minify CSS and see size savings.</p>
-        </a>
-        <a href="/tools/css-minifier-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">CSS Minifier Pro</h3>
-          <p className="text-slate-400 text-sm">Minify CSS with advanced options.</p>
-        </a>
-        <a href="/tools/csv-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Csv To Json</h3>
-          <p className="text-slate-400 text-sm">Convert CSV to JSON online with RFC 4180 quoted-field support. Choose comma, semicolon,...</p>
-        </a>
-        <a href="/tools/date-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Date Diff</h3>
-          <p className="text-slate-400 text-sm">Calculate the difference between two dates in years, months, days, total days, weeks, h...</p>
-        </a>
-        <a href="/tools/duration-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Duration Calculator</h3>
-          <p className="text-slate-400 text-sm">Parse, format, add and convert time durations. Supports '1h 30m', ISO-8601 PT1H30M, HH:...</p>
-        </a>
-        <a href="/tools/env-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Env Converter</h3>
-          <p className="text-slate-400 text-sm">Convert config between .env, JSON, YAML, Docker Compose, Kubernetes ConfigMap, and shel...</p>
-        </a>
-        <a href="/tools/excel-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Excel to JSON</h3>
-          <p className="text-slate-400 text-sm">Convert CSV/TSV data to JSON.</p>
-        </a>
-        <a href="/tools/gradient-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">CSS Gradient Generator</h3>
-          <p className="text-slate-400 text-sm">Design CSS gradients visually.</p>
-        </a>
-        <a href="/tools/hash-checker/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Hash Checker</h3>
-          <p className="text-slate-400 text-sm">Compare hashes to verify integrity.</p>
-        </a>
-        <a href="/tools/hash-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Hash Generator</h3>
-          <p className="text-slate-400 text-sm">Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes.</p>
-        </a>
-        <a href="/tools/header-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Header Analyzer</h3>
-          <p className="text-slate-400 text-sm">Paste HTTP response headers and get a security grade with per-check findings and copy-p...</p>
-        </a>
-        <a href="/tools/html-entities/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">HTML Entities</h3>
-          <p className="text-slate-400 text-sm">Encode and decode HTML entities.</p>
-        </a>
-        <a href="/tools/http-status/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">HTTP Status Codes</h3>
-          <p className="text-slate-400 text-sm">Browse and search HTTP status codes.</p>
-        </a>
-        <a href="/tools/id-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Id Generator</h3>
-          <p className="text-slate-400 text-sm">Generate UUID v4, time-ordered UUID v7, ULID, Nano ID, and short alphanumeric IDs in bu...</p>
-        </a>
-        <a href="/tools/image-resize/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Image Resize</h3>
-          <p className="text-slate-400 text-sm">Resize images with aspect ratio lock.</p>
-        </a>
-        <a href="/tools/image-to-base64/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Image to Base64</h3>
-          <p className="text-slate-400 text-sm">Convert images to base64 strings.</p>
-        </a>
-        <a href="/tools/js-minifier/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JS Minifier</h3>
-          <p className="text-slate-400 text-sm">Minify JavaScript and see size savings.</p>
-        </a>
-        <a href="/tools/js-obfuscator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JS Obfuscator</h3>
-          <p className="text-slate-400 text-sm">Obfuscate JavaScript code.</p>
-        </a>
-        <a href="/tools/json-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON Diff</h3>
-          <p className="text-slate-400 text-sm">Compare two JSON objects and highlight differences.</p>
-        </a>
-        <a href="/tools/json-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON Formatter</h3>
-          <p className="text-slate-400 text-sm">Format, minify, and validate JSON quickly.</p>
-        </a>
-        <a href="/tools/json-query/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Json Query</h3>
-          <p className="text-slate-400 text-sm">Query JSON with dot and bracket path expressions like users[0].name or items[*].id. Bro...</p>
-        </a>
-        <a href="/tools/json-schema-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON Schema Generator</h3>
-          <p className="text-slate-400 text-sm">Infer a JSON Schema from sample JSON.</p>
-        </a>
-        <a href="/tools/json-to-csv/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON to CSV</h3>
-          <p className="text-slate-400 text-sm">Convert JSON arrays to CSV.</p>
-        </a>
-        <a href="/tools/json-to-yaml/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON to YAML</h3>
-          <p className="text-slate-400 text-sm">Convert JSON to YAML instantly.</p>
-        </a>
-        <a href="/tools/jwt-decoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JWT Decoder</h3>
-          <p className="text-slate-400 text-sm">Inspect header and payload without sending data anywhere.</p>
-        </a>
-        <a href="/tools/jwt-decoder-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JWT Decoder Pro</h3>
-          <p className="text-slate-400 text-sm">Decode JWTs and inspect algorithm details.</p>
-        </a>
-        <a href="/tools/jwt-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JWT Generator</h3>
-          <p className="text-slate-400 text-sm">Build signed JWTs for testing.</p>
-        </a>
-        <a href="/tools/list-sorter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">List Sorter</h3>
-          <p className="text-slate-400 text-sm">Sort, deduplicate, shuffle, number, and reformat a list of lines. Natural sort, case op...</p>
-        </a>
-        <a href="/tools/loan-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Loan Calculator</h3>
-          <p className="text-slate-400 text-sm">Free loan and mortgage payment calculator — compute monthly payment, total interest, to...</p>
-        </a>
-        <a href="/tools/lorem-ipsum/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Lorem Ipsum Generator</h3>
-          <p className="text-slate-400 text-sm">Generate placeholder text.</p>
-        </a>
-        <a href="/tools/lorem-ipsum-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Lorem Ipsum Pro</h3>
-          <p className="text-slate-400 text-sm">Paragraphs, sentences, or words on demand.</p>
-        </a>
-        <a href="/tools/markdown-previewer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Markdown Previewer</h3>
-          <p className="text-slate-400 text-sm">Preview markdown rendering in real-time.</p>
-        </a>
-        <a href="/tools/markdown-to-html/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Markdown to HTML</h3>
-          <p className="text-slate-400 text-sm">Convert Markdown to HTML instantly.</p>
-        </a>
-        <a href="/tools/md5-hash/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">MD5 Hash</h3>
-          <p className="text-slate-400 text-sm">Generate MD5 hashes from text or files.</p>
-        </a>
-        <a href="/tools/meta-tag-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Meta Tag Generator</h3>
-          <p className="text-slate-400 text-sm">Generate SEO and Open Graph meta tags.</p>
-        </a>
-        <a href="/tools/mime-lookup/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">MIME Type Lookup</h3>
-          <p className="text-slate-400 text-sm">Find MIME types by extension or category.</p>
-        </a>
-        <a href="/tools/number-base-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Number Base Converter</h3>
-          <p className="text-slate-400 text-sm">Convert between binary, octal, decimal, hex.</p>
-        </a>
-        <a href="/tools/og-preview/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Og Preview</h3>
-          <p className="text-slate-400 text-sm">Preview how a page looks when shared on Facebook, LinkedIn, X, and Google — with live c...</p>
-        </a>
-        <a href="/tools/password-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Password Generator</h3>
-          <p className="text-slate-400 text-sm">Generate secure, customizable passwords.</p>
-        </a>
-        <a href="/tools/password-generator-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Password Generator Pro</h3>
-          <p className="text-slate-400 text-sm">Advanced generator with strength meter.</p>
-        </a>
-        <a href="/tools/password-strength/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Password Strength</h3>
-          <p className="text-slate-400 text-sm">Analyze entropy and estimated crack time.</p>
-        </a>
-        <a href="/tools/percentage-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Percentage Calculator</h3>
-          <p className="text-slate-400 text-sm">Percentages, percent change, and discounts.</p>
-        </a>
-        <a href="/tools/qr-code-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">QR Code Generator</h3>
-          <p className="text-slate-400 text-sm">Generate and download QR codes instantly.</p>
-        </a>
-        <a href="/tools/qr-scanner/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">QR Scanner</h3>
-          <p className="text-slate-400 text-sm">Decode QR codes from an uploaded image.</p>
-        </a>
-        <a href="/tools/readability-score/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Readability Score</h3>
-          <p className="text-slate-400 text-sm">Score article text for Flesch Reading Ease, grade level, Gunning Fog, passive voice, lo...</p>
-        </a>
-        <a href="/tools/regex-cheat-sheet/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Regex Cheat Sheet</h3>
-          <p className="text-slate-400 text-sm">Searchable regex syntax reference.</p>
-        </a>
-        <a href="/tools/regex-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Regex Tester</h3>
-          <p className="text-slate-400 text-sm">Test patterns and matches in real time.</p>
-        </a>
-        <a href="/tools/robots-sitemap/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Robots Sitemap</h3>
-          <p className="text-slate-400 text-sm">Build a robots.txt file with user-agent, allow/disallow rules, crawl-delay and sitemap...</p>
-        </a>
-        <a href="/tools/sql-query-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">SQL Query Builder</h3>
-          <p className="text-slate-400 text-sm">Build SELECT, INSERT, UPDATE, DELETE queries.</p>
-        </a>
-        <a href="/tools/subnet-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Subnet Calculator</h3>
-          <p className="text-slate-400 text-sm">Free online IPv4 subnet calculator. Enter an address with a CIDR prefix or netmask to g...</p>
-        </a>
-        <a href="/tools/text-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Text Analyzer</h3>
-          <p className="text-slate-400 text-sm">Counts, reading time, and keyword density.</p>
-        </a>
-        <a href="/tools/text-compare/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Text Compare</h3>
-          <p className="text-slate-400 text-sm">Compare two texts side-by-side.</p>
-        </a>
-        <a href="/tools/text-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Text Diff</h3>
-          <p className="text-slate-400 text-sm">Highlight differences between two texts.</p>
-        </a>
-        <a href="/tools/text-encrypt/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Text Encrypt</h3>
-          <p className="text-slate-400 text-sm">Encrypt and decrypt text in your browser with AES-GCM 256 and a passphrase (PBKDF2 SHA-...</p>
-        </a>
-        <a href="/tools/text-slug/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Text to Slug</h3>
-          <p className="text-slate-400 text-sm">Convert text to URL-friendly slugs.</p>
-        </a>
-        <a href="/tools/text-to-speech/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Text to Speech</h3>
-          <p className="text-slate-400 text-sm">Read text aloud with browser voices.</p>
-        </a>
-        <a href="/tools/timestamp-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Timestamp Converter</h3>
-          <p className="text-slate-400 text-sm">Convert Unix timestamps to dates and vice versa.</p>
-        </a>
-        <a href="/tools/timestamp-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Timestamp Generator</h3>
-          <p className="text-slate-400 text-sm">Generate Unix timestamps for any date.</p>
-        </a>
-        <a href="/tools/timestamp-to-cron/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Timestamp to Cron</h3>
-          <p className="text-slate-400 text-sm">Turn a specific time into a cron expression.</p>
-        </a>
-        <a href="/tools/unit-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Unit Converter</h3>
-          <p className="text-slate-400 text-sm">Length, weight, temperature, data, speed, area.</p>
-        </a>
-        <a href="/tools/url-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">URL Encoder</h3>
-          <p className="text-slate-400 text-sm">Encode and decode URLs with UTF-8 support.</p>
-        </a>
-        <a href="/tools/url-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">URL Parser</h3>
-          <p className="text-slate-400 text-sm">Break a URL into its components.</p>
-        </a>
-        <a href="/tools/uuid-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">UUID Generator</h3>
-          <p className="text-slate-400 text-sm">Generate UUID v4 identifiers instantly.</p>
-        </a>
-        <a href="/tools/word-counter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Word Counter</h3>
-          <p className="text-slate-400 text-sm">Count words, characters, and reading time.</p>
-        </a>
-        <a href="/tools/yaml-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">YAML Formatter</h3>
-          <p className="text-slate-400 text-sm">Format and validate YAML.</p>
-        </a>
-        <a href="/tools/yaml-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">YAML to JSON</h3>
-          <p className="text-slate-400 text-sm">Convert YAML to JSON instantly.</p>
-        </a>
-      </div>
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+            50+ free online tools for developers, designers, and data professionals. No signup required, no data stored.
+          </p>
+          <p className="text-slate-400 max-w-3xl mx-auto mt-2">
+            If you need custom AI integrations, IT automation, or managed delivery, Zion Tech Group can build tailored solutions on top of these patterns.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book Consultation</a>
+            <Link href="/contact/" className="btn-secondary text-lg">Contact Us</Link>
+          </div>
+        </header>
 
-      <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
-        <h2 className="text-xl font-bold text-white mb-4">Tooling philosophy</h2>
-        <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
-          <li>Built for speed with no sign-up or backend dependency.</li>
-          <li>Privacy-first: inputs stay in your browser and are never stored.</li>
-          <li>Expanded based on real developer workflow needs.</li>
-          <li>Request new utilities through our contact form.</li>
-        </ul>
-        <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="/services/" className="btn-primary text-center">Browse services</a>
-          <a href="/contact/" className="btn-secondary text-center">Request a tool</a>
-        </div>
-      </div>
+        {categories.map(cat => (
+          <div key={cat} className="mb-10">
+            <h2 className="text-xl font-semibold text-white mb-4 border-b border-slate-700 pb-2">{cat}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {tools.filter(t => t.category === cat).map(tool => (
+                <Link
+                  key={tool.id}
+                  href={`/tools/${tool.id}`}
+                  className="group block p-5 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-emerald-500/50 hover:bg-slate-800 transition-all"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <div>
+                      <h3 className="text-white font-semibold group-hover:text-emerald-400 transition-colors">{tool.title}</h3>
+                      <p className="text-slate-400 text-sm mt-1">{tool.desc}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
 
-      <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
-        <h2 className="text-xl font-bold text-white mb-4">Explore related offerings</h2>
-        <div className="grid gap-4 sm:grid-cols-3">
-          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
-            <h3 className="text-white font-semibold mb-1">Enterprise Services</h3>
-            <p className="text-slate-400 text-xs mb-3">AI, IT, security, and data programs with measurable outcomes.</p>
-            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
-          </Link>
-          <Link href="/solutions/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
-            <h3 className="text-white font-semibold mb-1">Industry Solutions</h3>
-            <p className="text-slate-400 text-xs mb-3">Purpose-built AI and IT solutions by industry.</p>
-            <span className="text-purple-300 text-xs font-semibold inline-block">View solutions →</span>
-          </Link>
-          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
-            <h3 className="text-white font-semibold mb-1">Insights & Guides</h3>
-            <p className="text-slate-400 text-xs mb-3">Practical guidance on AI, IT, automation, and enterprise delivery.</p>
-            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
-          </Link>
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+            <span className="text-emerald-400">Need custom tools or integrations?</span>
+            <Link href="/contact/" className="text-emerald-300 hover:text-emerald-200 underline">
+              Contact us
+            </Link>
+          </div>
         </div>
+
+        <section className="cta-section text-center mt-16">
+          <h2 className="text-3xl font-bold text-white mb-4">Need More Than Free Tools?</h2>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            We offer AI implementation, IT automation, managed support, and custom integrations for teams that want production-ready solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book a Consultation</a>
+            <Link href="/services/" className="btn-secondary text-lg">View Services</Link>
+          </div>
+        </section>
       </div>
-    </StandardPage>
-  </>
+    </main>
   );
 }

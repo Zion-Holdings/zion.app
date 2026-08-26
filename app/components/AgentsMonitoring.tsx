@@ -134,8 +134,8 @@ export default function AgentsMonitoring() {
 
   const activeBots = AGENTS.filter(a => a.status === 'active').length;
   const totalActions = actions.length;
-  const totalWaves = 48;
-  const totalServices = 833;
+  const totalWaves = 83;
+  const totalServices = 850;
   const avgUptime = '99.97%';
 
   const filteredActions = actions.filter(a =>
@@ -236,9 +236,6 @@ export default function AgentsMonitoring() {
               <Link href="/services/" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
                 🛠️ Explore {totalServices}+ Services
               </Link>
-              <Link href="/dashboard/" className="inline-flex items-center gap-2 bg-slate-800/60 border border-purple-500/30 text-purple-300 px-6 py-3 rounded-xl font-medium text-sm hover:bg-purple-500/10 hover:border-purple-400/50 transition-all">
-                🖥️ Agent Dashboard
-              </Link>
               <Link href="/contact/" className="inline-flex items-center gap-2 bg-slate-800/60 border border-purple-500/30 text-purple-300 px-6 py-3 rounded-xl font-medium text-sm hover:bg-purple-500/10 hover:border-purple-400/50 transition-all">
                 📞 Get a Free Proposal
               </Link>
@@ -284,7 +281,7 @@ export default function AgentsMonitoring() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {[
-                  { icon: '🔨', title: 'Build & Deploy', desc: 'Agents write code, create service pages, and deploy to production — automatically. Every wave of services goes from idea to live in minutes.', stats: `${totalWaves} waves deployed` },
+                  { icon: '🔨', title: 'Build & Deploy', desc: 'Agents write code, create service pages, and deploy to production — automatically. Every wave of services goes from idea to live in minutes.', stats: '55 waves deployed' },
                   { icon: '🔍', title: 'Audit & Verify', desc: 'Continuous link checking, type-checking, and quality audits ensure every page works perfectly. Zero broken links guaranteed.', stats: '100% link health' },
                   { icon: '📈', title: 'Grow & Improve', desc: 'Agents research market pricing, write compelling content, and add new services daily. The catalog grows every day.', stats: `${totalServices}+ services` },
                 ].map(item => (

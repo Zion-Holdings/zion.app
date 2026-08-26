@@ -1,62 +1,42 @@
-import type { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
+import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Free Tools & Calculators | Zion Tech Group',
-  description: 'Free online tools for network diagnostics, security checks, and planning.',
-  openGraph: {
-    title: 'Free Tools & Calculators | Zion Tech Group',
-    description: 'Free online tools for network diagnostics, security checks, and planning.',
-    url: 'https://ziontechgroup.com/free-tools/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Free Tools & Calculators | Zion Tech Group',
-    description: 'Free online tools for network diagnostics, security checks, and planning.',
-  },
-  alternates: { canonical: '/free-tools/' },
+export const metadata = {
+  title: 'Free Developer Tools & Utilities | Zion Tech Group',
+  description: '50+ free online developer tools: JSON formatter, JWT decoder, regex tester, SQL formatter, color palette generator, QR code generator, and more.',
+  alternates: { canonical: '/free-tools' },
 };
 
-
-export default function FreeToolsPage() {
+export default function FreeToolsProxy() {
   return (
-<>
-    <StandardPage
-      title="Free Tools & Calculators"
-      subtitle="Practical self-service tools for network diagnostics, security checks, and planning."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Free Tools & Calculators' },
-      ]}
-      actions={[
-        { label: 'Browse all tools', href: '/tools/', style: 'primary' },
-        { label: 'Contact us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="max-w-5xl mx-auto">
-        <p className="text-slate-300 mb-6">
-          Use these free utilities to assess infrastructure health, compare services, and estimate ROI before talking to sales.
-        </p>
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            { name: 'ROI Calculator', href: '/tools/roi-calculator/', desc: 'Estimate return on automation investments.' },
-            { name: 'Service Comparison', href: '/tools/service-comparison/', desc: 'Compare service tiers by capability and cost.' },
-            { name: 'Port Scanner', href: '/tools/port-scanner/', desc: 'Check open ports and exposure risk.' },
-            { name: 'SSL Checker', href: '/tools/ssl-checker/', desc: 'Validate certificate setup and expiry.' },
-            { name: 'Platform Status', href: '/tools/health-check/', desc: 'Verify connectivity and endpoint health.' },
-            { name: 'AI Service Router', href: '/tools/ai-service-router/', desc: 'Get a recommended AI service stack.' },
-          ].map((item) => (
-            <a key={item.href} href={item.href} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40 transition-all">
-              <h3 className="text-white font-semibold mb-2">{item.name}</h3>
-              <p className="text-slate-400 text-sm">{item.desc}</p>
-              <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Open tool →</span>
-            </a>
-          ))}
-        </div>
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+            50+ free online tools for developers, designers, and data professionals. No signup required, no data stored.
+          </p>
+          <p className="text-slate-400 max-w-3xl mx-auto mt-2">
+            If you need custom AI integrations, IT automation, or managed delivery, Zion Tech Group can build tailored solutions on top of these patterns.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book Consultation</a>
+            <Link href="/contact/" className="btn-secondary text-lg">Contact Us</Link>
+          </div>
+        </header>
+
+        <section className="cta-section text-center mt-16">
+          <h2 className="text-3xl font-bold text-white mb-4">Need More Than Free Tools?</h2>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            We offer AI implementation, IT automation, managed support, and custom integrations for teams that want production-ready solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book a Consultation</a>
+            <Link href="/services/" className="btn-secondary text-lg">View Services</Link>
+          </div>
+        </section>
       </div>
-    </StandardPage>
-  </>
+    </main>
   );
 }

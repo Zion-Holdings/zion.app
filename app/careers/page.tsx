@@ -1,83 +1,113 @@
-import type { Metadata } from 'next';
+// app/careers/page.tsx — Improved Careers Page
 import Link from 'next/link';
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
 
-export const metadata: Metadata = {
-  title: 'Careers | Zion Tech Group',
-  description: 'Join Zion Tech Group: AI, IT, and engineering careers with remote-friendly roles, measurable impact, and a culture of continuous learning.',
-  openGraph: {
-    title: 'Careers | Zion Tech Group',
-    description: 'Open roles and culture at Zion Tech Group.',
-    url: 'https://ziontechgroup.com/careers/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Careers | Zion Tech Group',
-    description: 'Open roles and culture at Zion Tech Group.',
-  },
-  alternates: { canonical: '/careers/' },
+export const metadata = {
+  title: 'Careers',
+  description: 'Join Zion Tech Group. Remote-first roles in AI engineering, DevOps, and solution architecture.',
 };
 
-
 export default function CareersPage() {
+  const jobs = [
+    {
+      title: 'Senior AI Engineer',
+      location: 'Remote / Hybrid',
+      type: 'Full-time',
+      desc: 'Design and deploy production AI systems — RAG pipelines, autonomous agents, fine-tuned LLMs, and ML infrastructure.',
+      requirements: ['5+ years ML/AI experience', 'Python, PyTorch/TensorFlow', 'RAG, embeddings, vector DBs', 'LLM fine-tuning and deployment'],
+    },
+    {
+      title: 'DevOps / Platform Engineer',
+      location: 'Remote',
+      type: 'Full-time',
+      desc: 'Build and maintain cloud infrastructure, CI/CD pipelines, and observability systems for enterprise clients.',
+      requirements: ['AWS/Azure/GCP expertise', 'Kubernetes, Terraform, Docker', 'CI/CD (GitHub Actions, GitLab)', 'Monitoring and incident response'],
+    },
+    {
+      title: 'Solution Architect',
+      location: 'Remote / Travel',
+      type: 'Full-time',
+      desc: 'Lead enterprise AI deployments from discovery to production. Bridge technical and business requirements.',
+      requirements: ['Enterprise architecture experience', 'AI/ML solution design', 'Client-facing communication', 'Cloud migration expertise'],
+    },
+    {
+      title: 'Full-Stack Developer',
+      location: 'Remote',
+      type: 'Full-time',
+      desc: 'Build modern web applications, Micro SAAS platforms, and internal tools using Next.js, TypeScript, and cloud services.',
+      requirements: ['Next.js, React, TypeScript', 'Node.js or Python backends', 'PostgreSQL, Redis', 'Cloud deployment (Vercel, AWS)'],
+    },
+  ];
+
+  const benefits = [
+    'Competitive salary + equity',
+    'Remote-first culture',
+    'Health, dental, vision insurance',
+    '401(k) matching',
+    'Conference & learning budget',
+    'Open-source contribution time',
+    'Flexible PTO',
+    'Latest equipment & tools',
+  ];
+
   return (
-<>
-    <StandardPage
-      title="Careers"
-      subtitle="Build reliable AI systems and client-facing delivery practices with a team that values ownership and craft."
-      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Careers' }]}
-      actions={[{ label: 'Start a project', href: '/start-project/', style: 'primary' }]}
-    >
-      <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto mb-16">
-        <Link href="/start-project/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Engineering</h3>
-          <p className="text-slate-400 text-sm">Platform, infrastructure, and AI engineering roles.</p>
-          <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">View roles →</span>
-        </Link>
-        <Link href="/start-project/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Delivery</h3>
-          <p className="text-slate-400 text-sm">Client-facing delivery, solutions, and onboarding.</p>
-          <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">View roles →</span>
-        </Link>
-        <Link href="/start-project/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Operations</h3>
-          <p className="text-slate-400 text-sm">Support, observability, and operational excellence.</p>
-          <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">View roles →</span>
-        </Link>
-      </div>
-
-      <div className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-white text-2xl font-semibold mb-4">How we work</h2>
-        <p className="text-slate-300 text-lg leading-relaxed mb-6">
-          We ship small, validate outcomes, and iterate quickly. Teams own delivery end-to-end, with clear metrics and decision rights.
+    <div className="min-h-screen bg-slate-950 text-white py-16 px-4">
+      <div className="max-w-4xl mx-auto">
+        <Link href="/about/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← About</Link>
+        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          Careers at Zion Tech Group
+        </h1>
+        <p className="text-slate-400 text-lg mb-12">
+          Build the future of AI & enterprise software. Remote-first, competitive compensation, open-source contributions welcome.
         </p>
-        <div className="grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-            <h3 className="text-white font-semibold mb-2">Remote-first</h3>
-            <p className="text-slate-400 text-sm">Async collaboration with core overlap windows. Home-office setup support available.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-            <h3 className="text-white font-semibold mb-2">Learning budget</h3>
-            <p className="text-slate-400 text-sm">Annual education allowance for courses, certifications, and conference attendance.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-            <h3 className="text-white font-semibold mb-2">Career paths</h3>
-            <p className="text-slate-400 text-sm">Individual contributor and leadership tracks, with regular growth reviews every 6 months.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-            <h3 className="text-white font-semibold mb-2">Impact visibility</h3>
-            <p className="text-slate-400 text-sm">Your work connects to client outcomes and product metrics, with transparent dashboards.</p>
-          </div>
-        </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 mt-10">
-          <Link href="/contact/" className="btn-primary text-center">Talk to recruiting</Link>
-          <Link href="/services/" className="btn-secondary text-center">Explore services</Link>
-        </div>
+        {/* Benefits */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">Why Work With Us</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {benefits.map((b) => (
+              <div key={b} className="flex items-start gap-2 text-sm text-slate-300">
+                <span className="text-green-400 mt-0.5">✓</span>
+                {b}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Open Positions */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">Open Positions</h2>
+          <div className="space-y-4">
+            {jobs.map((job) => (
+              <div key={job.title} className="bg-slate-900/80 border border-slate-700 rounded-xl p-6 hover:border-purple-500/60 transition">
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <h3 className="font-semibold text-lg text-white">{job.title}</h3>
+                    <p className="text-purple-400 text-sm">{job.location} · {job.type}</p>
+                  </div>
+                  <Link href="/contact/" className="btn-secondary whitespace-nowrap ml-4 text-sm">Apply</Link>
+                </div>
+                <p className="text-slate-400 text-sm mb-3">{job.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {job.requirements.map((req) => (
+                    <span key={req} className="text-xs bg-slate-800 text-slate-400 px-2 py-1 rounded-full">{req}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="text-center bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-2xl p-10 border border-purple-500/20">
+          <h2 className="text-2xl font-bold text-white mb-4">Don't See a Perfect Fit?</h2>
+          <p className="text-slate-400 mb-6">
+            We're always looking for talented people. Send us your resume and we'll keep you in mind.
+          </p>
+          <a href="mailto:kleber@ziontechgroup.com?subject=Career Inquiry" className="btn-primary">
+            ✉ Send Your Resume
+          </a>
+        </section>
       </div>
-    </StandardPage>
-  </>
+    </div>
   );
 }

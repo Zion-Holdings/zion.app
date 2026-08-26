@@ -1,0 +1,27 @@
+Subject: Transform Your E-Commerce Operations with Data Sync & Change Capture
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Data Sync & Change Capture.
+
+Change data capture (CDC) sync engine that replicates real-time changes from Postgres, MySQL, MongoDB, and Snowflake to any destination with schema evolution.
+
+**Key Benefits:**
+- Reduce costs with data sync & change capture
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $149/month
+- Pro: $449/month
+- Enterprise: $1,499/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

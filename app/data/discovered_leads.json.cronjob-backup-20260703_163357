@@ -1,0 +1,1255 @@
+[
+  {
+    "id": "_6323718013147672599",
+    "company": "Hypercubic",
+    "name": "Sai Gurrapu",
+    "email": "sai.gurrapu@hypercubic.ai",
+    "phone": "",
+    "industry": "Modernization",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991133",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991143",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sai.gurrapu@hypercubic.ai          risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_5965999126562186782",
+    "company": "BrainKey",
+    "name": "Owen Phillips, PhD",
+    "email": "owen.phd@brainkey.ai",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991163",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991166",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG owen.phd@brainkey.ai               risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_3320507066343420851",
+    "company": "Atlas Discovery",
+    "name": "Sanjukta Bhattacharya",
+    "email": "sanjukta.bhattacharya@atlasdiscovery.bio",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991180",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991182",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sanjukta.bhattacharya@atlasdiscovery.bio risky  score 38  \u00b7 verification port (25) blocked here \u2014 scored on pattern + infra"
+    }
+  },
+  {
+    "id": "-2191970930712350064",
+    "company": "Pango",
+    "name": "Founding Full-stack Software Engineer",
+    "email": "steve@pango.ai",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 100,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991193",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991194",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG steve@pango.ai                     risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_5193334168621745952",
+    "company": "Pango",
+    "name": "Steve Rahimi",
+    "email": "steve.rahimi@pango.ai",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991208",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991210",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG steve.rahimi@pango.ai              risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_2699749834448839604",
+    "company": "Pango",
+    "name": "Lukasz Reszczynski",
+    "email": "lukasz.reszczynski@pango.ai",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991220",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991222",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG lukasz.reszczynski@pango.ai        risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_8755252774466739898",
+    "company": "Gilgamesh Pharmaceuticals",
+    "name": "JONATHAN SPORN",
+    "email": "jonathan.sporn@gilgameshpharmaceutical.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 80,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991232",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991234",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG jonathan.sporn@gilgameshpharmaceutical.com risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_5752394812793570457",
+    "company": "Wheelhouse",
+    "name": "Bryant Loy",
+    "email": "bryant.loy@usewheelhouse.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991243",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991245",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG bryant.loy@usewheelhouse.com       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-5073253975760355079",
+    "company": "Wheelhouse",
+    "name": "Andrew Kitchell",
+    "email": "andrew.kitchell@usewheelhouse.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991254",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991256",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG andrew.kitchell@usewheelhouse.com  risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_6992413108124425225",
+    "company": "Wheelhouse",
+    "name": "Andreas Buschermole",
+    "email": "andreas.buschermole@usewheelhouse.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991266",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991267",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG andreas.buschermole@usewheelhouse.com risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-4610320655674519019",
+    "company": "Copia",
+    "name": "Komal Ahmad",
+    "email": "komal.ahmad@gocopia.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991277",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991278",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG komal.ahmad@gocopia.com            risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-6436165486510953916",
+    "company": "Sorting Robotics",
+    "name": "Nohtal Partansky",
+    "email": "nohtal.partansky@sortingrobotics.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991288",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991289",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG nohtal.partansky@sortingrobotics.com risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_1249210637578451071",
+    "company": "Finnix",
+    "name": "Reinhart Hermanus",
+    "email": "reinhart.hermanus@finnix.id",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991299",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991300",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG reinhart.hermanus@finnix.id        risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_8720087777189437589",
+    "company": "Bear Flag Robotics",
+    "name": "Igino Cafiero",
+    "email": "igino.cafiero@bearflagrobotics.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 80,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991310",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991311",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG igino.cafiero@bearflagrobotics.com risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-5803455439512269434",
+    "company": "Helix Nanotechnologies",
+    "name": "Nikolai Eroshenko",
+    "email": "nikolai.eroshenko@helixnano.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991321",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991323",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG nikolai.eroshenko@helixnano.com    risky  score 38  \u00b7 verification port (25) blocked here \u2014 scored on pattern + infra"
+    }
+  },
+  {
+    "id": "_5298635451757565856",
+    "company": "Volta Labs, Inc.",
+    "name": "Udayan Umapathi",
+    "email": "udayan.umapathi@voltalabs.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991332",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991338",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG udayan.umapathi@voltalabs.com      risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "4_170316807298680442",
+    "company": "XGenomes",
+    "name": "Kalim Mir",
+    "email": "kalim.mir@xgenomes.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991348",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991349",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG kalim.mir@xgenomes.com             risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-7173794658664663296",
+    "company": "Switchboard",
+    "name": "Michael Ip",
+    "email": "michael.ip@onswitchboard.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991359",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991360",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG michael.ip@onswitchboard.com       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_8556066670659899240",
+    "company": "PlateJoy",
+    "name": "Christina Bognet",
+    "email": "christina.bognet@platejoy.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991369",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991371",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG christina.bognet@platejoy.com      risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_4149610156433735839",
+    "company": "Lygos",
+    "name": "Eric Steen",
+    "email": "eric.steen@lygos.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991380",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991382",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG eric.steen@lygos.com               risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-8163185279925437440",
+    "company": "Invitris",
+    "name": "Patrick Grossmann",
+    "email": "patrick.grossmann@invitris.com",
+    "phone": "",
+    "industry": "Healthcare IT",
+    "source": "openleads",
+    "status": "New",
+    "score": 80,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "EHR integration",
+      "patient analytics",
+      "HIPAA compliance"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991391",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991392",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG patrick.grossmann@invitris.com     risky  score 38  \u00b7 DMARC configured"
+    }
+  },
+  {
+    "id": "_8111575608523678398",
+    "company": "Miyagi Labs",
+    "name": "Tyrone Davis III",
+    "email": "tyrone.iii@miyagilabs.ai",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991402",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991403",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG tyrone.iii@miyagilabs.ai           risky  score 38  \u00b7 DMARC configured"
+    }
+  },
+  {
+    "id": "_1120022130177849544",
+    "company": "Cambium Assessment Inc",
+    "name": "Senior Software Engineer (AI Applications)",
+    "email": "website@cambiumassessment.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 99,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991413",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991415",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG website@cambiumassessment.com      risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2168961827987865706",
+    "company": "Studdy",
+    "name": "Michael Lam",
+    "email": "michael.lam@studdy.ai",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991424",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991426",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG michael.lam@studdy.ai              risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_4090602711846430711",
+    "company": "SimCare",
+    "name": "Vrishank Saini",
+    "email": "vrishank.saini@simcare.ai",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991435",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991437",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG vrishank.saini@simcare.ai          risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-6752525741142074556",
+    "company": "Chiron",
+    "name": "James Booth",
+    "email": "james.booth@projectchiron.org",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 75,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991446",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991448",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG james.booth@projectchiron.org      risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-1151112456150765515",
+    "company": "Able",
+    "name": "Ravish Agrawal",
+    "email": "ravish.agrawal@ablejobs.co",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991457",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991459",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG ravish.agrawal@ablejobs.co         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_3684601544907878322",
+    "company": "Codingal",
+    "name": "Vivek Prakash",
+    "email": "vivek.prakash@codingal.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991469",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991470",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG vivek.prakash@codingal.com         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_1829035611857457796",
+    "company": "Educato",
+    "name": "Codrut Lemeni",
+    "email": "codrut.lemeni@educato.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991480",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991481",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG codrut.lemeni@educato.com          risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_5265522576826800769",
+    "company": "Manara",
+    "name": "Iliana Montauk",
+    "email": "iliana.montauk@manara.tech",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991494",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991496",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG iliana.montauk@manara.tech         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2224551229487081324",
+    "company": "Flint",
+    "name": "Sohan Choudhury",
+    "email": "sohan.choudhury@flintk12.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991505",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991507",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sohan.choudhury@flintk12.com       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-6610511531432322556",
+    "company": "Study Edge",
+    "name": "Ethan Fieldman",
+    "email": "ethan.fieldman@studyedge.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 75,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991516",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991517",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG ethan.fieldman@studyedge.com       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2020868984958474466",
+    "company": "SuperKalam",
+    "name": "Vimal Singh Rathore",
+    "email": "vimal.rathore@superkalam.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991527",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991528",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG vimal.rathore@superkalam.com       risky  score 38  \u00b7 DMARC configured"
+    }
+  },
+  {
+    "id": "_2348183144576216140",
+    "company": "Excellence Learning",
+    "name": "Sovann Linden",
+    "email": "sovann.linden@excellence-ai.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991538",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991540",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sovann.linden@excellence-ai.com    risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-1127653077911680282",
+    "company": "HOKALI",
+    "name": "Ignacio Viau",
+    "email": "ignacio.viau@hokali.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991549",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991550",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG ignacio.viau@hokali.com            risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_5959499594412360141",
+    "company": "Bloom",
+    "name": "Sam Yang",
+    "email": "sam.yang@bloomapp.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991560",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991561",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sam.yang@bloomapp.com              risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_7878622003605634464",
+    "company": "RocketLit",
+    "name": "Brendan Finch",
+    "email": "brendan.finch@rocketlit.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991570",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991572",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG brendan.finch@rocketlit.com        risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_7871835226650467729",
+    "company": "Obento Health",
+    "name": "Naxin Wang",
+    "email": "naxin.wang@getobento.com",
+    "phone": "",
+    "industry": "EdTech",
+    "source": "openleads",
+    "status": "New",
+    "score": 77,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "adaptive learning",
+      "engagement",
+      "automated grading"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-07-03T16:33:52.991581",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-07-03T16:33:52.991583",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG naxin.wang@getobento.com           risky  score 38  \u00b7 SPF configured"
+    }
+  }
+]

@@ -1,6 +1,6 @@
 
+export const metadata = { title: 'Data Analytics — Zion Tech Group', description: 'Data analytics and AI services from Zion Tech Group: dashboards, forecasting, governed pipelines, and revenue-driving insight.' };
 import Link from 'next/link';
-export const metadata = { title: 'Data Analytics — Zion Tech Group', description: 'Data analytics and AI services from Zion Tech Group: dashboards, forecasting, governed pipelines, and revenue-driving insight.' , alternates: { canonical: 'https://ziontechgroup.com/business-solutions/data-analytics/' } };
 
 const items = [
   { title: 'Analytics Dashboards', desc: 'Operational dashboards with KPI tracking, drilldowns, and anomaly highlights for faster decisions.' },

@@ -1,7 +1,6 @@
 
+export const metadata = { title: 'Micro SaaS Services', description: 'Ready-to-use micro-SaaS products from Zion Tech Group. AI-powered tools and platforms for your business.' };
 import Link from 'next/link';
-
-export const metadata = { title: 'Micro SaaS Services', description: 'Ready-to-use micro-SaaS products from Zion Tech Group. AI-powered tools and platforms for your business.', alternates: { canonical: 'https://ziontechgroup.com/micro-saas-services/' } };
 
 export default function MicroSaaSListPage() {
   const services = [

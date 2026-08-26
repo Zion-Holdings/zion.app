@@ -1,0 +1,27 @@
+Subject: Transform Your Finance Operations with Enterprise API Gateway
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Enterprise API Gateway.
+
+Unified API gateway: JWT/OAuth2 auth, rate-limit, circuit-breaker, request/response transform, analytics, multi-tenant API key mgmt.
+
+**Key Benefits:**
+- Reduce costs with enterprise api gateway
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $99/month
+- Pro: $349/month
+- Enterprise: $1,299/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

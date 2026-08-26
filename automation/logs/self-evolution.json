@@ -1,0 +1,750 @@
+{
+  "version": 7,
+  "emailCount": 330,
+  "improvements": [],
+  "learningHistory": [
+    {
+      "timestamp": "2026-06-18T07:59:41.739Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T07:59:41.747Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 3,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T07:59:41.755Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T07:59:41.762Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T07:59:41.766Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:01:31.316Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:01:31.323Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:01:31.332Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:01:31.339Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:01:31.343Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:27:54.326Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:27:54.335Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:27:54.342Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:27:54.349Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T08:27:54.352Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T09:30:23.779Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T09:30:23.786Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T09:30:23.794Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T09:30:23.801Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-18T09:30:23.805Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:08:35.346Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 6,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:08:35.355Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:08:35.364Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:08:35.371Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:08:35.375Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:03.906Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:03.913Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:03.925Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:03.931Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:03.936Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:15.438Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:15.446Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 3,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:15.455Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:15.463Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:15.467Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:31.054Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:31.062Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:31.072Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:31.079Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:31.125Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:38.054Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:38.061Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:38.070Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:38.077Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:38.082Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:58.552Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:58.560Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 3,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:58.569Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:58.575Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-22T19:10:58.579Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T12:59:16.592Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T12:59:16.599Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T12:59:16.608Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T12:59:16.614Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T12:59:16.618Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T13:08:06.366Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T13:08:06.374Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 3,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T13:08:06.383Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T13:08:06.390Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T13:08:06.394Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T16:17:43.460Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T16:17:43.469Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T16:17:43.478Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T16:17:43.484Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T16:17:43.489Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T19:16:55.919Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T19:16:55.928Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 3,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T19:16:55.938Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T19:16:55.945Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T19:16:55.949Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T21:13:32.785Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T21:13:32.793Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T21:13:32.803Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T21:13:32.809Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-25T21:13:32.814Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T01:16:22.600Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T01:16:22.608Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 3,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T01:16:22.617Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T01:16:22.624Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T01:16:22.629Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T04:15:30.483Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 7,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T04:15:30.492Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T04:15:30.502Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T04:15:30.509Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T04:15:30.513Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T10:58:51.370Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 4,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T10:58:51.377Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T10:58:51.387Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T10:58:51.393Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T10:58:51.397Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T14:57:51.382Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T14:57:51.390Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T14:57:51.399Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T14:57:51.405Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T14:57:51.409Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 0,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T18:48:39.713Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 5,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T18:48:39.723Z",
+      "type": "sales",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T18:48:39.734Z",
+      "type": "support",
+      "qualityScore": 100,
+      "responseTime": 2,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T18:48:39.740Z",
+      "type": "general",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    },
+    {
+      "timestamp": "2026-06-26T18:48:39.745Z",
+      "type": "billing",
+      "qualityScore": 100,
+      "responseTime": 1,
+      "wasSuccessful": true
+    }
+  ],
+  "responseQualityHistory": [],
+  "templateScores": {
+    "support": {
+      "total": 13200,
+      "count": 132,
+      "avgScore": 100
+    },
+    "sales": {
+      "total": 6600,
+      "count": 66,
+      "avgScore": 100
+    },
+    "general": {
+      "total": 6600,
+      "count": 66,
+      "avgScore": 100
+    },
+    "billing": {
+      "total": 6600,
+      "count": 66,
+      "avgScore": 100
+    }
+  },
+  "bestPerformingTemplates": {
+    "support": {
+      "count": 132,
+      "avgScore": 100
+    },
+    "sales": {
+      "count": 66,
+      "avgScore": 100
+    },
+    "general": {
+      "count": 66,
+      "avgScore": 100
+    },
+    "billing": {
+      "count": 66,
+      "avgScore": 100
+    }
+  },
+  "detectedPatterns": {},
+  "lastEvolution": "2026-06-26T18:48:39.745Z"
+}

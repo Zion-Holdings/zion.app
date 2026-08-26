@@ -1,38 +1,43 @@
+'use client';
+
 import { useState, useEffect, useRef } from 'react';
 
 interface AnimatedCounterProps {
   target: number;
   duration?: number;
+  suffix?: string;
+  prefix?: string;
 }
 
-export default function AnimatedCounter({ target, duration = 2000 }: AnimatedCounterProps) {
+export default function AnimatedCounter({ target, duration = 2000, suffix = '+', prefix = '' }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
-  const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const start = 0;
-    const startTime = performance.now();
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
-    const animate = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(start + (target - start) * easeOut));
-
-      if (progress < 1) {
-        animationRef.current = requestAnimationFrame(animate);
+  useEffect(() => {
+    if (!isVisible) return;
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
       }
-    };
+    }, 16);
+    return () => clearInterval(timer);
+  }, [isVisible, target, duration]);
 
-    animationRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, [target, duration]);
-
-  return <span ref={ref}>{count}</span>;
-}
+  return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>;
+}

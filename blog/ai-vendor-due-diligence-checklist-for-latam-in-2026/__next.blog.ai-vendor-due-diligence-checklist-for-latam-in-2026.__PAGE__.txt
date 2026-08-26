@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[484,[],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4 text-white","children":"AI Vendor Due Diligence Checklist for LATAM in 2026"}],["$","div",null,{"className":"text-sm text-slate-500 mb-8","children":"Published: 2026-07-07"}],["$","div",null,{"className":"prose prose-invert max-w-none text-slate-300 leading-relaxed","dangerouslySetInnerHTML":{"__html":"<p>AI vendor due diligence checklist for LATAM technology buyers.</p><ul><li>Local delivery and partnership enablement</li><li>Lead gen and negotiation support</li><li>Free tools and resell opportunities</li></ul><p><a href=\"/services\">Explore AI services</a></p><p><a href=\"/contact\">Contact us</a></p>"}}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+4:null

@@ -1,0 +1,1286 @@
+[
+  {
+    "id": "_-472101500402062247",
+    "company": "Superb AI",
+    "name": "Hyun Kim",
+    "email": "hyun.kim@superb-ai.com",
+    "phone": "",
+    "industry": "MLOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199409",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199434",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG hyun.kim@superb-ai.com             risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-7746521760895519140",
+    "company": "Sarus",
+    "name": "Maxime Agostini",
+    "email": "maxime.agostini@sarus.tech",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199449",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199451",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG maxime.agostini@sarus.tech         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_-747671774611606881",
+    "company": "Comvex",
+    "name": "Engineer * EHR Integrations * Senior-lev",
+    "email": "peter.lever@comvex.ai",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 89,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199460",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199462",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG peter.lever@comvex.ai              risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-6774655910061838282",
+    "company": "BearCamp ( \uffe3(\u30a8)\uffe3)",
+    "name": "Kan Ouivirach",
+    "email": "kan.ouivirach@kanouivirach.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 65,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199475",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199477",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG kan.ouivirach@kanouivirach.com     risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2313111204670557902",
+    "company": "Nitrode",
+    "name": "Ben Kim",
+    "email": "ben.kim@nitrode.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199484",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199486",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG ben.kim@nitrode.com                risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-3712842013211420358",
+    "company": "",
+    "name": "Lesley Duff",
+    "email": "lesley.duff@dataquine.dev",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199493",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199495",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG lesley.duff@dataquine.dev          risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-7928517607569325765",
+    "company": "Metaplane",
+    "name": "Guru Mahendran",
+    "email": "guru.mahendran@metaplane.dev",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199501",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199503",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG guru.mahendran@metaplane.dev       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_4009604886072622479",
+    "company": "",
+    "name": "Matthew Powers",
+    "email": "matthew.powers@mungingdata.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 65,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199519",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199520",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG matthew.powers@mungingdata.com     risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2133966948115288843",
+    "company": "Vision Lab",
+    "name": "Tanachart (James) Kujareevanich",
+    "email": "tanachart.kujareevanich@thevisionlab.ai",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199530",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199531",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG tanachart.kujareevanich@thevisionlab.ai risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "33_80620775721758927",
+    "company": "goto @gojek @raystack",
+    "name": "Akarsh Satija",
+    "email": "akarsh.satija@akarsh.me",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199539",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199540",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG akarsh.satija@akarsh.me            risky  score 38  \u00b7 verification port (25) blocked here \u2014 scored on pattern + infra"
+    }
+  },
+  {
+    "id": "-1644260792372037286",
+    "company": "Mezmo",
+    "name": "Lee Liu",
+    "email": "lee.liu@mezmo.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199547",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199548",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG lee.liu@mezmo.com                  risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-7141618145442412270",
+    "company": "",
+    "name": "Nitesh Turaga",
+    "email": "nitesh.turaga@niteshturaga.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199554",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199555",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG nitesh.turaga@niteshturaga.com     risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_5760024589568745537",
+    "company": "Secoda",
+    "name": "Etai Mizrahi",
+    "email": "etai.mizrahi@secoda.co",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199562",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199563",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG etai.mizrahi@secoda.co             risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_7886522117881080429",
+    "company": "6thSense",
+    "name": "James Baek",
+    "email": "james.baek@6thsense.dev",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "Outreach Composed",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199569",
+        "action": "Lead discovered via integrated pipeline"
+      },
+      {
+        "timestamp": "2026-06-27T23:48:21.858674",
+        "action": "Outreach composed - queued for sending"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199571",
+    "lastContact": "2026-06-27T23:48:21.858672",
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG james.baek@6thsense.dev            risky  score 38  \u00b7 verification port (25) blocked here \u2014 scored on pattern + infra"
+    }
+  },
+  {
+    "id": "-7101233796741602847",
+    "company": "Haladir",
+    "name": "Jibran Hutchins",
+    "email": "jibran.hutchins@haladir.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199576",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199578",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG jibran.hutchins@haladir.com        risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_8009756831283019868",
+    "company": "",
+    "name": "Okza Pradhana",
+    "email": "okza.pradhana@leetcode.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199584",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199585",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG okza.pradhana@leetcode.com         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2264941634588932239",
+    "company": "PeerDB",
+    "name": "Sai Srirampur",
+    "email": "sai.srirampur@peerdb.io",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199591",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199592",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sai.srirampur@peerdb.io            risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2215199800506132708",
+    "company": "Trellis AI",
+    "name": "Mac Klinkachorn",
+    "email": "mac.klinkachorn@runtrellis.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199598",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199599",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG mac.klinkachorn@runtrellis.com     risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_8623797856618966954",
+    "company": "",
+    "name": "Jin Mingjian",
+    "email": "jin.mingjian@jinmingjian.xyz",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 65,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199605",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199607",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG jin.mingjian@jinmingjian.xyz       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-4269000152224932895",
+    "company": "Datafold",
+    "name": "Gleb Mezhanskiy",
+    "email": "gleb.mezhanskiy@datafold.com",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199613",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199614",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG gleb.mezhanskiy@datafold.com       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-3492758731734828552",
+    "company": "Lume",
+    "name": "Robert Ross",
+    "email": "robert.ross@lume.ai",
+    "phone": "",
+    "industry": "Data Engineering",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199620",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199622",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG robert.ross@lume.ai                risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_1281230595237122384",
+    "company": "Specific",
+    "name": "Fabian Lindfors",
+    "email": "fabian.lindfors@specific.dev",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199630",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199632",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG fabian.lindfors@specific.dev       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_-523125613940660454",
+    "company": "EggAI",
+    "name": "Marcus Purzer",
+    "email": "marcus.purzer@egg-ai.com",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199639",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199640",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG marcus.purzer@egg-ai.com           risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_4684712340124067544",
+    "company": "EggAI",
+    "name": "Dr. Jan Heurich",
+    "email": "dr.heurich@egg-ai.com",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199646",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199648",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG dr.heurich@egg-ai.com              risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_2411761779246394545",
+    "company": "EggAI",
+    "name": "Robin Prothmann",
+    "email": "robin.prothmann@egg-ai.com",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199653",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199655",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG robin.prothmann@egg-ai.com         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_2031947361032194771",
+    "company": "Compose",
+    "name": "Jason McCay",
+    "email": "jason.mccay@mongohq.com",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 65,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199673",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199675",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG jason.mccay@mongohq.com            risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_6969356448120053401",
+    "company": "Okay",
+    "name": "Tomas Barreto",
+    "email": "tomas.barreto@okayhq.com",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199688",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199689",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG tomas.barreto@okayhq.com           risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2510983704425440892",
+    "company": "Return",
+    "name": "Willem-Jan Schutte",
+    "email": "willemjan.schutte@return.energy",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199695",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199697",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG willemjan.schutte@return.energy    risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_2027612820500805741",
+    "company": "Return",
+    "name": "Daniel Witvoet",
+    "email": "daniel.witvoet@return.energy",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199702",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199704",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG daniel.witvoet@return.energy       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-5859609255394288631",
+    "company": "Return",
+    "name": "Sjoerd Bazen",
+    "email": "sjoerd.bazen@return.energy",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199709",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199711",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sjoerd.bazen@return.energy         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_6534541853181764948",
+    "company": "Pipekit",
+    "name": "Caelan Urquhart",
+    "email": "caelan.urquhart@pipekit.io",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199717",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199718",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG caelan.urquhart@pipekit.io         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_1758063043698675353",
+    "company": "Sequent Tech",
+    "name": "Senior Fullstack Engineer",
+    "email": "team@sequentech.io",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 89,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199724",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199725",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 13,
+      "raw": "~PG team@sequentech.io                 risky  score 13  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_2896734255089835704",
+    "company": "Sequent Tech",
+    "name": "Shai Bargil",
+    "email": "shai.bargil@sequentech.io",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199732",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199733",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG shai.bargil@sequentech.io          risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-2839794857941112423",
+    "company": "Sequent Tech",
+    "name": "Eduardo Robles",
+    "email": "eduardo.robles@sequentech.io",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199739",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199740",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG eduardo.robles@sequentech.io       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_7193422109760879969",
+    "company": "Sequent Tech",
+    "name": "David Ruescas",
+    "email": "david.ruescas@sequentech.io",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199746",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199747",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG david.ruescas@sequentech.io        risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-8459067332525701587",
+    "company": "Depot",
+    "name": "Kyle Galbraith",
+    "email": "kyle.galbraith@depot.dev",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199753",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199754",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG kyle.galbraith@depot.dev           risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-4317064371817487013",
+    "company": "Dedalus Labs",
+    "name": "Cathy Di",
+    "email": "cathy.di@dedaluslabs.ai",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199763",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199764",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG cathy.di@dedaluslabs.ai            risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-7045934273089377697",
+    "company": "Ryvn",
+    "name": "Albert Lam",
+    "email": "albert.lam@ryvn.ai",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199770",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199772",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG albert.lam@ryvn.ai                 risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_2111425454111144204",
+    "company": "Relvy AI",
+    "name": "Bharath Bhat",
+    "email": "bharath.bhat@relvy.ai",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199778",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199779",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG bharath.bhat@relvy.ai              risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-8647964077932737957",
+    "company": "Lark",
+    "name": "Vijit Dhingra",
+    "email": "vijit.dhingra@getlark.ai",
+    "phone": "",
+    "industry": "DevOps",
+    "source": "openleads",
+    "status": "New",
+    "score": 67,
+    "budget": "$10K-$50K",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "AI automation",
+      "process optimization"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-27T23:47:43.199785",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-27T23:47:43.199787",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG vijit.dhingra@getlark.ai           risky  score 38  \u00b7 DMARC configured"
+    }
+  }
+]

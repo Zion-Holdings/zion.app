@@ -1,0 +1,27 @@
+Subject: Transform Your General Operations with Container Registry + Trivy Scan
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Container Registry + Trivy Scan.
+
+Private container registry with built-in Trivy CVE scanning, SBOM generation, image signing, and promotion pipeline (dev→staging→prod).
+
+**Key Benefits:**
+- Reduce costs with container registry + trivy scan
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/month
+- Pro: $899/month
+- Enterprise: $2,999/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

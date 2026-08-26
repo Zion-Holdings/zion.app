@@ -1,7 +1,6 @@
 
+export const metadata = { title: 'Innovation Bundles', description: 'Curated bundles of AI and IT services at discounted prices. Combine solutions for maximum impact.' };
 import Link from 'next/link';
-
-export const metadata = { title: 'Innovation Bundles', description: 'Curated bundles of AI and IT services at discounted prices. Combine solutions for maximum impact.', alternates: { canonical: 'https://ziontechgroup.com/innovation-bundles/' } };
 
 export default function InnovationBundlesPage() {
   const bundles = [

@@ -1,0 +1,16 @@
+export type AILabToolId =
+  | 'ai-site-evolution-advisor'
+  | 'ai-code-reviewer'
+  | 'ai-performance-optimizer'
+  | 'ai-content-generator'
+  | 'ai-seo-analyzer'
+  | 'ai-accessibility-auditor'
+  | 'ai-security-scanner'
+  | 'ai-layout-designer'
+  | 'ai-front-page-services-content'
+  | 'ai-content-freshness-agent'
+  | 'ai-content-health-seo-audits'
+  | 'ai-performance-optimizer'
+  | 'ai-app-evolution-audit'
+  | 'ai-layout-design-automation'
+  | 'ai-content-freshness-agent';

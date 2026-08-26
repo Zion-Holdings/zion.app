@@ -2,9 +2,6 @@ export const metadata = {
   title: "Nebius LATAM AI Cloud Partnership Guide | Zion Tech Group",
   description: "Nebius LATAM AI cloud partnership guide: practical steps for expanding AI cloud reach in Latin America through local delivery partners.",
 
-  alternates: {
-    canonical: 'https://ziontechgroup.com/blog/nebius-latam-ai-cloud-partnership-guide/',
-  },
 };
 
 export default function Page() {

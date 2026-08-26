@@ -1,19 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="/styles.css"/>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Zion Tech Group</title>
-  <meta name="description" content="Contact Zion Tech Group for AI, IT, and automation engagements." />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Contact Zion Tech Group for AI, IT, automation, cloud, and managed delivery. Request a proposal, schedule a consultation, or call us directly." />
   <link rel="canonical" href="https://ziontechgroup.com/contact/" />
+  <style>
+    :root { color-scheme: dark; }
+    body { background: #0b0f1a; color: #e5e7eb; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+    a { color: #93c5fd; text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    header { border-bottom: 1px solid #1e293b; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; background: linear-gradient(90deg,#a78bfa,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .links a { margin-left: 14px; color: #c4b5fd; font-weight: 500; }
+    .links a:hover { color:#fff; }
+    .hero { padding: 64px 24px; }
+    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; color:#f8fafc; }
+    p.lead { font-size: 18px; color: #cbd5e1; max-width: 760px; line-height: 1.6; }
+    .section { padding: 24px; }
+    .section-title { font-size: 22px; margin: 0 0 10px; color:#f8fafc; }
+    .section-lead { color: #cbd5e1; max-width: 760px; margin: 0 0 14px; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; color: #94a3b8; font-size: 13px; }
+    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; background: linear-gradient(90deg,#7c3aed,#db2777); color: #fff; text-decoration: none; font-weight: 600; }
+    .btn.secondary { background: rgba(255,255,255,0.08); color:#fff; border: 1px solid rgba(255,255,255,0.12); }
+    .cta-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+    ul { color: #cbd5e1; }
+    li { margin: 10px 0; }
+  </style>
 </head>
-<body style="margin:0;background:#0b1220;color:#e6f0ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">
-  <main style="max-width:1100px;margin:0 auto;padding:24px">
-    <section style="padding:40px 0 24px">
-      <h1 style="font-size:36px;font-weight:700">Contact</h1>
-      <p style="color:#cbd5e1;margin-top:12px;max-width:720px">Tell us about your environment and goals. We usually respond within one business day.</p>
-      <a href="mailto:contact@ziontechgroup.com" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 16px;border-radius:8px;background:#2563eb;color:#fff;text-decoration:none;font-weight:600">Email us</a>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Zion Tech Group</div>
+        <div class="links"><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/solutions/">Solutions</a></div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Contact us</h1><p class="lead">Tell us your goal and we’ll return a concrete execution plan.</p><div class="cta-row"><a class="btn" href="mailto:kleber@ziontechgroup.com?subject=Project%20Inquiry%20-%20Zion%20Tech%20Group">Email us</a><a class="btn secondary" href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener">Schedule a call</a><a class="btn secondary" href="tel:+13024640950">Call +1 302 464 0950</a></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Best paths</h2><ul><li>Email: kleber@ziontechgroup.com</li><li>Phone: +1 302 464 0950</li><li>Schedule via Calendly or Google Meet</li><li>Office: 364 E Main St STE 1008, Middletown, DE 19709</li></ul><p><a href="/services/">See services →</a></p>
+      </div>
     </section>
   </main>
+  <footer>
+    <div class="container">© <span id="year"></span> Zion Tech Group · <a href="/">ziontechgroup.com</a></div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
+export const metadata = { title: 'AI Solutions — Zion Tech Group', description: 'AI solutions from Zion Tech Group: automation, copilots, document intelligence, anomaly detection, and generative AI implementations.' };
 import Link from 'next/link';
-export const metadata = { title: 'AI Solutions — Zion Tech Group', description: 'AI solutions from Zion Tech Group: automation, copilots, document intelligence, anomaly detection, and generative AI implementations.' , alternates: { canonical: 'https://ziontechgroup.com/business-solutions/ai-solutions/' } };
 
 const items = [
   { title: 'AI Automation', desc: 'Reduce manual work with document processing, approval flows, workflow copilots, and scheduled AI actions.' },

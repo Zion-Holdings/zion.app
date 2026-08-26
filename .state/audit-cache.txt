@@ -1,0 +1,6 @@
+last audit state cache
+ts=2026-07-10T12:30:00Z
+main=e41df3a94
+pages=built
+hot_followup_new=0
+note=do not commit unless meaningful delta detected

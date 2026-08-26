@@ -6,7 +6,6 @@ import ServiceCard from '@/components/SmartServiceCard';
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
 
-
 const CATEGORY_MAP: Record<string, string> = {
   'manual email': 'automation',
   'slow response': 'automation',

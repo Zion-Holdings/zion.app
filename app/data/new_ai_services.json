@@ -1,0 +1,842 @@
+[
+  {
+    "id": "ai-powered-analytics-platform-healthcare-ai-powered-analytics-platform-for-healthcare",
+    "title": "AI-Powered Analytics Platform for Healthcare",
+    "description": "Advanced healthcare analytics platform leveraging machine learning to AI diagnostics, patient data analytics, telemedicine automation. Provides real-time insights and predictive capabilities for strategic decision-making.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "HIPAA-compliant",
+      "Patient data anonymization",
+      "Medical record integration",
+      "Clinical decision support"
+    ],
+    "benefits": [
+      "64% reduction in operational costs",
+      "Process 76% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "82",
+      "pro": "332",
+      "enterprise": "882"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-analytics-platform-healthcare-ai-powered-analytics-platform-for-healthcare",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-analytics-platform-healthcare-ai-powered-analytics-platform-for-healthcare",
+    "popular": true,
+    "category": "ai",
+    "industry": "Healthcare"
+  },
+  {
+    "id": "automated-workflow-system-finance-automated-workflow-system-for-finance",
+    "title": "Automated Workflow System for Finance",
+    "description": "End-to-end workflow automation solution for finance operations. Streamlines Fraud detection, algorithmic trading, risk assessment through intelligent process orchestration.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "PCI-DSS compliant",
+      "Real-time fraud detection",
+      "Regulatory reporting",
+      "Risk modeling"
+    ],
+    "benefits": [
+      "50% reduction in operational costs",
+      "Process 91% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "136",
+      "pro": "412",
+      "enterprise": "833"
+    },
+    "contactInfo": {
+      "website": "/services/automated-workflow-system-finance-automated-workflow-system-for-finance",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/automated-workflow-system-finance-automated-workflow-system-for-finance",
+    "popular": true,
+    "category": "it",
+    "industry": "Finance"
+  },
+  {
+    "id": "intelligent-decision-support-system-e-commerce-intelligent-decision-support-system-for-e-commerce",
+    "title": "Intelligent Decision Support System for E-commerce",
+    "description": "AI-driven decision support system for e-commerce. Delivers data-backed recommendations for Personalized recommendations, inventory optimization, customer behavior analytics with confidence scoring.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Personalized recommendations",
+      "Inventory forecasting",
+      "Customer behavior analysis",
+      "AB testing"
+    ],
+    "benefits": [
+      "50% reduction in operational costs",
+      "Process 98% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "102",
+      "pro": "324",
+      "enterprise": "698"
+    },
+    "contactInfo": {
+      "website": "/services/intelligent-decision-support-system-e-commerce-intelligent-decision-support-system-for-e-commerce",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-decision-support-system-e-commerce-intelligent-decision-support-system-for-e-commerce",
+    "popular": true,
+    "category": "cloud",
+    "industry": "E-commerce"
+  },
+  {
+    "id": "predictive-intelligence-engine-manufacturing-predictive-intelligence-engine-for-manufacturing",
+    "title": "Predictive Intelligence Engine for Manufacturing",
+    "description": "Machine learning-powered predictive intelligence engine for manufacturing. Forecasts outcomes for Predictive maintenance, quality control, supply chain optimization with 95% accuracy.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Predictive maintenance",
+      "Quality control automation",
+      "Process optimization",
+      "IoT integration"
+    ],
+    "benefits": [
+      "50% reduction in operational costs",
+      "Process 99% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "98",
+      "pro": "336",
+      "enterprise": "920"
+    },
+    "contactInfo": {
+      "website": "/services/predictive-intelligence-engine-manufacturing-predictive-intelligence-engine-for-manufacturing",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-intelligence-engine-manufacturing-predictive-intelligence-engine-for-manufacturing",
+    "popular": true,
+    "category": "security",
+    "industry": "Manufacturing"
+  },
+  {
+    "id": "smart-automation-suite-logistics-smart-automation-suite-for-logistics",
+    "title": "Smart Automation Suite for Logistics",
+    "description": "Comprehensive smart automation suite designed for logistics enterprises. Automates Route optimization, fleet management, warehouse automation across all operational layers.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Route optimization",
+      "Fleet tracking",
+      "Demand forecasting",
+      "Warehouse automation"
+    ],
+    "benefits": [
+      "35% reduction in operational costs",
+      "Process 53% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "70",
+      "pro": "368",
+      "enterprise": "719"
+    },
+    "contactInfo": {
+      "website": "/services/smart-automation-suite-logistics-smart-automation-suite-for-logistics",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-automation-suite-logistics-smart-automation-suite-for-logistics",
+    "popular": true,
+    "category": "data",
+    "industry": "Logistics"
+  },
+  {
+    "id": "ai-powered-analytics-platform-retail-ai-powered-analytics-platform-for-retail",
+    "title": "AI-Powered Analytics Platform for Retail",
+    "description": "Advanced retail analytics platform leveraging machine learning to Demand forecasting, pricing optimization, customer segmentation. Provides real-time insights and predictive capabilities for strategic decision-making.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Dynamic pricing",
+      "Customer segmentation",
+      "Inventory management",
+      "Sales forecasting"
+    ],
+    "benefits": [
+      "66% reduction in operational costs",
+      "Process 89% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "59",
+      "pro": "166",
+      "enterprise": "636"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-analytics-platform-retail-ai-powered-analytics-platform-for-retail",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-analytics-platform-retail-ai-powered-analytics-platform-for-retail",
+    "popular": true,
+    "category": "automation",
+    "industry": "Retail"
+  },
+  {
+    "id": "automated-workflow-system-energy-automated-workflow-system-for-energy",
+    "title": "Automated Workflow System for Energy",
+    "description": "End-to-end workflow automation solution for energy operations. Streamlines Grid optimization, renewable energy management, consumption analytics through intelligent process orchestration.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Grid optimization",
+      "Consumption analytics",
+      "Renewable integration",
+      "Demand response"
+    ],
+    "benefits": [
+      "51% reduction in operational costs",
+      "Process 93% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "127",
+      "pro": "254",
+      "enterprise": "531"
+    },
+    "contactInfo": {
+      "website": "/services/automated-workflow-system-energy-automated-workflow-system-for-energy",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/automated-workflow-system-energy-automated-workflow-system-for-energy",
+    "popular": true,
+    "category": "micro-saas",
+    "industry": "Energy"
+  },
+  {
+    "id": "intelligent-decision-support-system-real-estate-intelligent-decision-support-system-for-real-estate",
+    "title": "Intelligent Decision Support System for Real Estate",
+    "description": "AI-driven decision support system for real estate. Delivers data-backed recommendations for Property valuation, market analysis, tenant matching with confidence scoring.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Property valuation",
+      "Market trend analysis",
+      "Tenant matching",
+      "Investment scoring"
+    ],
+    "benefits": [
+      "63% reduction in operational costs",
+      "Process 47% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "68",
+      "pro": "354",
+      "enterprise": "859"
+    },
+    "contactInfo": {
+      "website": "/services/intelligent-decision-support-system-real-estate-intelligent-decision-support-system-for-real-estate",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-decision-support-system-real-estate-intelligent-decision-support-system-for-real-estate",
+    "popular": true,
+    "category": "devops",
+    "industry": "Real Estate"
+  },
+  {
+    "id": "predictive-intelligence-engine-education-predictive-intelligence-engine-for-education",
+    "title": "Predictive Intelligence Engine for Education",
+    "description": "Machine learning-powered predictive intelligence engine for education. Forecasts outcomes for Learning analytics, student performance prediction, curriculum optimization with 95% accuracy.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Learning analytics",
+      "Student performance prediction",
+      "Curriculum optimization",
+      "Attendance tracking"
+    ],
+    "benefits": [
+      "62% reduction in operational costs",
+      "Process 63% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "132",
+      "pro": "315",
+      "enterprise": "981"
+    },
+    "contactInfo": {
+      "website": "/services/predictive-intelligence-engine-education-predictive-intelligence-engine-for-education",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-intelligence-engine-education-predictive-intelligence-engine-for-education",
+    "popular": true,
+    "category": "blockchain",
+    "industry": "Education"
+  },
+  {
+    "id": "smart-automation-suite-media-&-entertainment-smart-automation-suite-for-media-entertainment",
+    "title": "Smart Automation Suite for Media & Entertainment",
+    "description": "Comprehensive smart automation suite designed for media & entertainment enterprises. Automates Content recommendation, audience analytics, ad optimization across all operational layers.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Content recommendation",
+      "Audience analytics",
+      "Ad optimization",
+      "Engagement tracking"
+    ],
+    "benefits": [
+      "42% reduction in operational costs",
+      "Process 80% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "96",
+      "pro": "260",
+      "enterprise": "492"
+    },
+    "contactInfo": {
+      "website": "/services/smart-automation-suite-media-&-entertainment-smart-automation-suite-for-media-entertainment",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-automation-suite-media-&-entertainment-smart-automation-suite-for-media-entertainment",
+    "popular": true,
+    "category": "iot",
+    "industry": "Media & Entertainment"
+  },
+  {
+    "id": "ai-powered-analytics-platform-telecommunications-ai-powered-analytics-platform-for-telecommunications",
+    "title": "AI-Powered Analytics Platform for Telecommunications",
+    "description": "Advanced telecommunications analytics platform leveraging machine learning to Network optimization, customer churn prediction, 5G analytics. Provides real-time insights and predictive capabilities for strategic decision-making.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Network optimization",
+      "Customer churn prediction",
+      "5G analytics",
+      "Service quality monitoring"
+    ],
+    "benefits": [
+      "63% reduction in operational costs",
+      "Process 78% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "60",
+      "pro": "342",
+      "enterprise": "713"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-analytics-platform-telecommunications-ai-powered-analytics-platform-for-telecommunications",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-analytics-platform-telecommunications-ai-powered-analytics-platform-for-telecommunications",
+    "popular": true,
+    "category": "ai",
+    "industry": "Telecommunications"
+  },
+  {
+    "id": "automated-workflow-system-automotive-automated-workflow-system-for-automotive",
+    "title": "Automated Workflow System for Automotive",
+    "description": "End-to-end workflow automation solution for automotive operations. Streamlines Autonomous driving, fleet telemetry, predictive maintenance through intelligent process orchestration.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Autonomous driving",
+      "Fleet telemetry",
+      "Predictive maintenance",
+      "Route optimization"
+    ],
+    "benefits": [
+      "52% reduction in operational costs",
+      "Process 66% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "111",
+      "pro": "258",
+      "enterprise": "522"
+    },
+    "contactInfo": {
+      "website": "/services/automated-workflow-system-automotive-automated-workflow-system-for-automotive",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/automated-workflow-system-automotive-automated-workflow-system-for-automotive",
+    "popular": true,
+    "category": "it",
+    "industry": "Automotive"
+  },
+  {
+    "id": "intelligent-decision-support-system-agriculture-intelligent-decision-support-system-for-agriculture",
+    "title": "Intelligent Decision Support System for Agriculture",
+    "description": "AI-driven decision support system for agriculture. Delivers data-backed recommendations for Crop monitoring, yield prediction, supply chain optimization with confidence scoring.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Crop monitoring",
+      "Yield prediction",
+      "Weather integration",
+      "Supply chain optimization"
+    ],
+    "benefits": [
+      "40% reduction in operational costs",
+      "Process 49% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "115",
+      "pro": "368",
+      "enterprise": "977"
+    },
+    "contactInfo": {
+      "website": "/services/intelligent-decision-support-system-agriculture-intelligent-decision-support-system-for-agriculture",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-decision-support-system-agriculture-intelligent-decision-support-system-for-agriculture",
+    "popular": true,
+    "category": "cloud",
+    "industry": "Agriculture"
+  },
+  {
+    "id": "predictive-intelligence-engine-construction-predictive-intelligence-engine-for-construction",
+    "title": "Predictive Intelligence Engine for Construction",
+    "description": "Machine learning-powered predictive intelligence engine for construction. Forecasts outcomes for Project management AI, safety monitoring, resource optimization with 95% accuracy.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Project management AI",
+      "Safety monitoring",
+      "Resource optimization",
+      "Cost tracking"
+    ],
+    "benefits": [
+      "44% reduction in operational costs",
+      "Process 38% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "131",
+      "pro": "301",
+      "enterprise": "911"
+    },
+    "contactInfo": {
+      "website": "/services/predictive-intelligence-engine-construction-predictive-intelligence-engine-for-construction",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-intelligence-engine-construction-predictive-intelligence-engine-for-construction",
+    "popular": true,
+    "category": "security",
+    "industry": "Construction"
+  },
+  {
+    "id": "smart-automation-suite-hospitality-smart-automation-suite-for-hospitality",
+    "title": "Smart Automation Suite for Hospitality",
+    "description": "Comprehensive smart automation suite designed for hospitality enterprises. Automates Dynamic pricing, guest experience analytics, staffing optimization across all operational layers.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Dynamic pricing",
+      "Guest experience analytics",
+      "Staffing optimization",
+      "Revenue management"
+    ],
+    "benefits": [
+      "48% reduction in operational costs",
+      "Process 99% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "72",
+      "pro": "371",
+      "enterprise": "689"
+    },
+    "contactInfo": {
+      "website": "/services/smart-automation-suite-hospitality-smart-automation-suite-for-hospitality",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-automation-suite-hospitality-smart-automation-suite-for-hospitality",
+    "popular": true,
+    "category": "data",
+    "industry": "Hospitality"
+  },
+  {
+    "id": "ai-powered-analytics-platform-legal-ai-powered-analytics-platform-for-legal",
+    "title": "AI-Powered Analytics Platform for Legal",
+    "description": "Advanced legal analytics platform leveraging machine learning to Contract analysis, case prediction, legal research automation. Provides real-time insights and predictive capabilities for strategic decision-making.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Contract analysis",
+      "Case prediction",
+      "Legal research automation",
+      "Compliance monitoring"
+    ],
+    "benefits": [
+      "30% reduction in operational costs",
+      "Process 31% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "136",
+      "pro": "266",
+      "enterprise": "726"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-analytics-platform-legal-ai-powered-analytics-platform-for-legal",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-analytics-platform-legal-ai-powered-analytics-platform-for-legal",
+    "popular": true,
+    "category": "automation",
+    "industry": "Legal"
+  },
+  {
+    "id": "automated-workflow-system-insurance-automated-workflow-system-for-insurance",
+    "title": "Automated Workflow System for Insurance",
+    "description": "End-to-end workflow automation solution for insurance operations. Streamlines Claims processing, risk assessment, fraud detection through intelligent process orchestration.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Claims processing",
+      "Risk assessment",
+      "Fraud detection",
+      "Policy management"
+    ],
+    "benefits": [
+      "62% reduction in operational costs",
+      "Process 70% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "67",
+      "pro": "193",
+      "enterprise": "566"
+    },
+    "contactInfo": {
+      "website": "/services/automated-workflow-system-insurance-automated-workflow-system-for-insurance",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/automated-workflow-system-insurance-automated-workflow-system-for-insurance",
+    "popular": true,
+    "category": "micro-saas",
+    "industry": "Insurance"
+  },
+  {
+    "id": "intelligent-decision-support-system-government-intelligent-decision-support-system-for-government",
+    "title": "Intelligent Decision Support System for Government",
+    "description": "AI-driven decision support system for government. Delivers data-backed recommendations for Citizen services automation, policy analysis, resource allocation with confidence scoring.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Citizen services automation",
+      "Policy analysis",
+      "Resource allocation",
+      "Public safety monitoring"
+    ],
+    "benefits": [
+      "39% reduction in operational costs",
+      "Process 54% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "50",
+      "pro": "270",
+      "enterprise": "545"
+    },
+    "contactInfo": {
+      "website": "/services/intelligent-decision-support-system-government-intelligent-decision-support-system-for-government",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-decision-support-system-government-intelligent-decision-support-system-for-government",
+    "popular": true,
+    "category": "devops",
+    "industry": "Government"
+  },
+  {
+    "id": "predictive-intelligence-engine-transportation-predictive-intelligence-engine-for-transportation",
+    "title": "Predictive Intelligence Engine for Transportation",
+    "description": "Machine learning-powered predictive intelligence engine for transportation. Forecasts outcomes for Fleet management, route optimization, demand forecasting with 95% accuracy.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Fleet management",
+      "Route optimization",
+      "Demand forecasting",
+      "Performance analytics"
+    ],
+    "benefits": [
+      "52% reduction in operational costs",
+      "Process 53% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "130",
+      "pro": "261",
+      "enterprise": "830"
+    },
+    "contactInfo": {
+      "website": "/services/predictive-intelligence-engine-transportation-predictive-intelligence-engine-for-transportation",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-intelligence-engine-transportation-predictive-intelligence-engine-for-transportation",
+    "popular": true,
+    "category": "blockchain",
+    "industry": "Transportation"
+  },
+  {
+    "id": "smart-automation-suite-food-&-beverage-smart-automation-suite-for-food-beverage",
+    "title": "Smart Automation Suite for Food & Beverage",
+    "description": "Comprehensive smart automation suite designed for food & beverage enterprises. Automates Supply chain, demand forecasting, quality control across all operational layers.",
+    "features": [
+      "AI-powered automation",
+      "Enterprise-grade security",
+      "24/7 monitoring",
+      "API-first integration",
+      "Scalable architecture",
+      "Real-time analytics",
+      "Customizable workflows",
+      "Supply chain",
+      "Demand forecasting",
+      "Quality control",
+      "Inventory management"
+    ],
+    "benefits": [
+      "60% reduction in operational costs",
+      "Process 59% faster with automation",
+      "99.9% uptime guarantee with enterprise SLAs",
+      "ROI realized in under 90 days",
+      "Zero-downtime deployment",
+      "24/7 AI-powered support",
+      "Seamless integration with existing systems"
+    ],
+    "pricing": {
+      "basic": "82",
+      "pro": "286",
+      "enterprise": "820"
+    },
+    "contactInfo": {
+      "website": "/services/smart-automation-suite-food-&-beverage-smart-automation-suite-for-food-beverage",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-automation-suite-food-&-beverage-smart-automation-suite-for-food-beverage",
+    "popular": true,
+    "category": "iot",
+    "industry": "Food & Beverage"
+  }
+]

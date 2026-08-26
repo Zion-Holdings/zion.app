@@ -1,0 +1,662 @@
+[
+  {
+    "id": "-3230025460045922017",
+    "company": "PromptArmor",
+    "name": "Shankar Krishnan",
+    "email": "shankar.krishnan@promptarmor.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497737",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497744",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG shankar.krishnan@promptarmor.com   risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-1277751806442934468",
+    "company": "Credal.ai",
+    "name": "Ravin Thambapillai",
+    "email": "ravin.thambapillai@credal.ai",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497757",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497758",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG ravin.thambapillai@credal.ai       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-6682697011647815913",
+    "company": "ChainSecurity",
+    "name": "Blockchain Security Engineer",
+    "email": "jobs@chainsecurity.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 100,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497767",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497768",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 13,
+      "raw": "~PG jobs@chainsecurity.com             risky  score 13  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_5810147102588179776",
+    "company": "ChainSecurity",
+    "name": "Blockchain Security Engineer",
+    "email": "blockchain.engineer@chainsecurity.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497774",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497775",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG blockchain.engineer@chainsecurity.com risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_7979733081798615461",
+    "company": "CyberFend",
+    "name": "Sreenath Kurupati",
+    "email": "sreenath.kurupati@cyberfend.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497781",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497782",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sreenath.kurupati@cyberfend.com    risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-4017921832272096758",
+    "company": "LogosGuard",
+    "name": "Abel John",
+    "email": "abel.john@logosguard.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497788",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497789",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG abel.john@logosguard.com           risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_5060434995566335447",
+    "company": "ContextFort",
+    "name": "Ashwin Ramachandran",
+    "email": "ashwin.ramachandran@contextfort.ai",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497795",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497796",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG ashwin.ramachandran@contextfort.ai risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-7570526875229438872",
+    "company": "CodeAnt AI",
+    "name": "Amartya Jha",
+    "email": "amartya.jha@codeant.ai",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497802",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497803",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG amartya.jha@codeant.ai             risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_1191847701250209257",
+    "company": "Archon",
+    "name": "George Parks",
+    "email": "george.parks@archon.inc",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497808",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497809",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG george.parks@archon.inc            risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_3218535972563116410",
+    "company": "Agentic Fabriq",
+    "name": "Paulina Xu",
+    "email": "paulina.xu@agenticfabriq.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497821",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497822",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG paulina.xu@agenticfabriq.com       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_8402985392727990780",
+    "company": "Skypher",
+    "name": "Louis Mutricy",
+    "email": "louis.mutricy@skypher.co",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497828",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497829",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG louis.mutricy@skypher.co           risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-4280117554729068302",
+    "company": "Variance",
+    "name": "Karine Mellata",
+    "email": "karine.mellata@variance.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497835",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497836",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG karine.mellata@variance.com        risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-8977198715409072990",
+    "company": "Gecko Security",
+    "name": "Jeevan Jutla",
+    "email": "jeevan.jutla@gecko.security",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497841",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497842",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG jeevan.jutla@gecko.security        risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_4801434044224325237",
+    "company": "Tarsal",
+    "name": "Sunny Rekhi",
+    "email": "sunny.rekhi@tarsal.co",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497848",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497849",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG sunny.rekhi@tarsal.co              risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_2735443666413260183",
+    "company": "Hunter2",
+    "name": "Fletcher Heisler",
+    "email": "fletcher.heisler@hunter2.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497856",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497857",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG fletcher.heisler@hunter2.com       risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-1077809333999350668",
+    "company": "GhostEye",
+    "name": "Mohammad Eshan",
+    "email": "mohammad.eshan@ghosteye.ai",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497863",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497866",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG mohammad.eshan@ghosteye.ai         risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "-5547434818596680983",
+    "company": "Metalware",
+    "name": "Ryan Chow",
+    "email": "ryan.chow@metalware.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497874",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497875",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG ryan.chow@metalware.com            risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_7382346614950599974",
+    "company": "ComplyDo",
+    "name": "Leo Schuhmann",
+    "email": "leo.schuhmann@complydo.io",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497897",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497901",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG leo.schuhmann@complydo.io          risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_7052908119344996390",
+    "company": "Probo",
+    "name": "Antoine Bouchardy",
+    "email": "antoine.bouchardy@probo.com",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497909",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497910",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG antoine.bouchardy@probo.com        risky  score 38  \u00b7 SPF configured"
+    }
+  },
+  {
+    "id": "_7536277838907110076",
+    "company": "Antigen",
+    "name": "Saad Jamal",
+    "email": "saad.jamal@antigen.sh",
+    "phone": "",
+    "industry": "Cybersecurity",
+    "source": "openleads",
+    "status": "New",
+    "score": 82,
+    "budget": "$100K+",
+    "timeline": "1-3 months",
+    "painPoints": [
+      "threat detection",
+      "SOC automation",
+      "incident response"
+    ],
+    "activities": [
+      {
+        "timestamp": "2026-06-30T18:47:00.497917",
+        "action": "Lead discovered via integrated pipeline"
+      }
+    ],
+    "discoveredAt": "2026-06-30T18:47:00.497918",
+    "lastContact": null,
+    "notes": "",
+    "verified": true,
+    "verification": {
+      "status": "risky",
+      "score": 38,
+      "raw": "~PG saad.jamal@antigen.sh              risky  score 38  \u00b7 DMARC configured"
+    }
+  }
+]

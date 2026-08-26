@@ -1,0 +1,337 @@
+[
+  {
+    "file": "docs/index.html",
+    "link": "/services/cloud-cost-optimization-platform/",
+    "tried": "docs/services/cloud-cost-optimization-platform/"
+  },
+  {
+    "file": "docs/ai-claims-automation/index.html",
+    "link": "/services/ai-claims-automation/",
+    "tried": "docs/services/ai-claims-automation/"
+  },
+  {
+    "file": "docs/ai-lab/index.html",
+    "link": "/ai/demo/",
+    "tried": "docs/ai/demo/"
+  },
+  {
+    "file": "docs/free-tools-hub/index.html",
+    "link": "/tools/favicon-generator/",
+    "tried": "docs/tools/favicon-generator/"
+  },
+  {
+    "file": "docs/seo/ai-services-catalog/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/enterprise-ai-free-trial/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-chatbot-builder-free-trial/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-computer-vision-quality-assurance/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-copilot-it-support/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-document-intelligence-free-trial/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-enterprise-copilot-free-resources/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-observability-free-trial/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-process-automation-enterprise/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-support-automation-playbook/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/enterprise-ai-poc-starter-kit/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/free-ai-it-readiness-kit/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-agriculture/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-aviation-aerospace/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-business-intelligence/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-construction/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-context-engineering/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-data-pipeline-automation/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-document-automation-free-tools/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-document-processing/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-edge-realtime/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-education-adaptive/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-energy-optimization/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-fleet-logistics/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-fraud-detection/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-governance-trust/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-government-public-sector/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-healthcare-clinical/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-insurance-claims/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-legal-contract/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-manufacturing-quality/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-media-entertainment/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-memory-agents/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-model-orchestration/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-retail-forecasting/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-revenue-forecasting/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-revenue-operations/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/seo/ai-smart-city/index.html",
+    "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+    "tried": "docs/_next/static/chunks/webpack-820d47b7d6d1545d.js"
+  },
+  {
+    "file": "docs/tools/port-scanner/index.html",
+    "link": "/services/w178-insurance-claims-auto/",
+    "tried": "docs/services/w178-insurance-claims-auto/"
+  },
+  {
+    "file": "docs/tools/ssl-checker/index.html",
+    "link": "/services/w178-insurance-claims-auto/",
+    "tried": "docs/services/w178-insurance-claims-auto/"
+  },
+  {
+    "file": "docs/blog/ai-agentic-workflow-automation-reduce-manual-work-hours/index.html",
+    "link": "/services/ai-predictive-analytics-platform",
+    "tried": "docs/services/ai-predictive-analytics-platform"
+  },
+  {
+    "file": "docs/blog/ai-computer-vision-quality-inspection/index.html",
+    "link": "/services/ai-document-processing-ocr",
+    "tried": "docs/services/ai-document-processing-ocr"
+  },
+  {
+    "file": "docs/blog/cloud-cost-optimization-platform-reduce-waste/index.html",
+    "link": "/services/cloud-cost-optimization-platform",
+    "tried": "docs/services/cloud-cost-optimization-platform"
+  },
+  {
+    "file": "docs/blog/cloud-cost-optimization-platform-reduce-waste/index.html",
+    "link": "/services/cloud-migration-assessment-tool",
+    "tried": "docs/services/cloud-migration-assessment-tool"
+  },
+  {
+    "file": "docs/blog/cyber-incident-response-retainer-ready-before-breach/index.html",
+    "link": "/services/siem-as-a-service",
+    "tried": "docs/services/siem-as-a-service"
+  },
+  {
+    "file": "docs/blog/cyber-incident-response-retainer-ready-before-breach/index.html",
+    "link": "/services/zero-trust-network-architecture",
+    "tried": "docs/services/zero-trust-network-architecture"
+  },
+  {
+    "file": "docs/blog/data-warehouse-modernization-legacy-to-cloud/index.html",
+    "link": "/services/cloud-migration-assessment-tool",
+    "tried": "docs/services/cloud-migration-assessment-tool"
+  },
+  {
+    "file": "docs/blog/data-warehouse-modernization-legacy-to-cloud/index.html",
+    "link": "/services/ai-predictive-analytics-platform",
+    "tried": "docs/services/ai-predictive-analytics-platform"
+  },
+  {
+    "file": "docs/blog/fleet-management-gps-tracking-visibility-utilization/index.html",
+    "link": "/services/fleet-management-gps-tracking",
+    "tried": "docs/services/fleet-management-gps-tracking"
+  },
+  {
+    "file": "docs/blog/fleet-management-gps-tracking-visibility-utilization/index.html",
+    "link": "/services/ai-predictive-analytics-platform",
+    "tried": "docs/services/ai-predictive-analytics-platform"
+  },
+  {
+    "file": "docs/blog/managed-observability-247-detect-issues-before-customers/index.html",
+    "link": "/services/siem-as-a-service",
+    "tried": "docs/services/siem-as-a-service"
+  },
+  {
+    "file": "docs/blog/managed-observability-247-detect-issues-before-customers/index.html",
+    "link": "/services/devops-automation-consulting",
+    "tried": "docs/services/devops-automation-consulting"
+  },
+  {
+    "file": "docs/blog/property-management-suite-automate-leases-maintenance/index.html",
+    "link": "/services/property-management-suite",
+    "tried": "docs/services/property-management-suite"
+  },
+  {
+    "file": "docs/blog/property-management-suite-automate-leases-maintenance/index.html",
+    "link": "/services/smart-booking-scheduling-platform",
+    "tried": "docs/services/smart-booking-scheduling-platform"
+  },
+  {
+    "file": "docs/blog/property-management-suite-automate-leases-maintenance/index.html",
+    "link": "/services/ai-helpdesk-ticketing-system",
+    "tried": "docs/services/ai-helpdesk-ticketing-system"
+  },
+  {
+    "file": "docs/blog/managed-service-providers-add-ai-layer/index.html",
+    "link": "/services/siem-as-a-service",
+    "tried": "docs/services/siem-as-a-service"
+  },
+  {
+    "file": "docs/blog/rag-knowledge-base-platform-internal-ai-assistants/index.html",
+    "link": "/services/ai-predictive-analytics-platform",
+    "tried": "docs/services/ai-predictive-analytics-platform"
+  },
+  {
+    "file": "docs/blog/online-lead-generation-for-it-agencies/index.html",
+    "link": "/services/lead-generation-outreach-automation",
+    "tried": "docs/services/lead-generation-outreach-automation"
+  },
+  {
+    "file": "docs/blog/online-lead-generation-for-it-agencies/index.html",
+    "link": "/services/seo-consulting",
+    "tried": "docs/services/seo-consulting"
+  },
+  {
+    "file": "docs/blog/zion-tech-group-free-ai-tools-guide/index.html",
+    "link": "/services/free-tools",
+    "tried": "docs/services/free-tools"
+  },
+  {
+    "file": "docs/blog/zion-tech-group-free-ai-tools-guide/index.html",
+    "link": "/services/ai-development-acceleration",
+    "tried": "docs/services/ai-development-acceleration"
+  },
+  {
+    "file": "docs/blog/zion-tech-group-free-ai-tools-guide/index.html",
+    "link": "/services/devops-automation-consulting",
+    "tried": "docs/services/devops-automation-consulting"
+  },
+  {
+    "file": "docs/blog/zion-tech-group-free-ai-tools-guide/index.html",
+    "link": "/services/nextjs-static-export",
+    "tried": "docs/services/nextjs-static-export"
+  }
+]

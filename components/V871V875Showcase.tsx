@@ -1,0 +1,211 @@
+'use client';
+
+import { useState } from 'react';
+
+export default function V871V875Showcase() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const engines = [
+    {
+      id: 'v871',
+      name: 'V871: AI Supply Chain Resilience',
+      icon: '🔗',
+      description: 'Disruption prediction, alternative sourcing, inventory optimization, and supplier risk monitoring',
+      color: 'from-blue-600 to-cyan-600',
+      features: [
+        'Disruption prediction with geopolitical & natural disaster monitoring',
+        'Alternative sourcing strategy with 12 qualified suppliers',
+        'Inventory optimization (45→60 days of supply)',
+        'Supplier risk monitoring across 4 tiers',
+        'Logistics optimization with route planning',
+        'Reply-all enforcement for supply chain communications'
+      ]
+    },
+    {
+      id: 'v872',
+      name: 'V872: Customer Journey Orchestration',
+      icon: '🗺️',
+      description: 'Cross-channel journey mapping, real-time triggers, journey optimization, and attribution modeling',
+      color: 'from-purple-600 to-pink-600',
+      features: [
+        '47 active journeys with 23.4% conversion rate',
+        '156 real-time triggers (18% cart recovery)',
+        'Journey optimization with A/B testing',
+        'Multi-touch attribution modeling',
+        'Personalization with next-best-action AI',
+        'Reply-all enforcement for journey orchestration'
+      ]
+    },
+    {
+      id: 'v873',
+      name: 'V873: AI Compliance & Regulatory Intelligence',
+      icon: '⚖️',
+      description: 'Regulatory change monitoring, policy impact analysis, compliance gap assessment, and audit preparation',
+      color: 'from-green-600 to-emerald-600',
+      features: [
+        '23 active regulations with 8 pending changes',
+        '78% overall readiness with 4 critical gaps',
+        'Audit preparation (85% evidence collection)',
+        'Compliance risk assessment and mitigation',
+        'Training and certification tracking',
+        'Reply-all enforcement for compliance communications'
+      ]
+    },
+    {
+      id: 'v874',
+      name: 'V874: Intelligent IT Service Management',
+      icon: '🛠️',
+      description: 'Incident auto-resolution, change management, CMDB automation, and SLA optimization',
+      color: 'from-orange-600 to-red-600',
+      features: [
+        '47 open incidents with intelligent routing',
+        '34% auto-resolution rate',
+        '96.2% change success rate',
+        'CMDB automation with dependency mapping',
+        '94.8% SLA compliance tracking',
+        'Reply-all enforcement for ITSM operations'
+      ]
+    },
+    {
+      id: 'v875',
+      name: 'V875: AI Brand & Reputation Monitoring',
+      icon: '📊',
+      description: 'Brand sentiment tracking, crisis detection, influencer identification, and reputation scoring',
+      color: 'from-amber-600 to-yellow-600',
+      features: [
+        '72% positive sentiment (+5% MoM)',
+        '2 active crisis alerts with severity assessment',
+        '156 brand advocates identified',
+        '78/100 reputation score (Strong)',
+        'Share of voice and content performance analytics',
+        'Reply-all enforcement for brand communications'
+      ]
+    }
+  ];
+
+  const stats = [
+    { label: 'Email Intelligence Engines', value: '875+', icon: '🤖' },
+    { label: 'Total Services', value: '4,147', icon: '🎯' },
+    { label: 'New Domains', value: '5', icon: '🌐' },
+    { label: 'Reply-All Enforcement', value: '100%', icon: '✅' }
+  ];
+
+  return (
+    <section id="v871-v875" className="py-20 bg-gradient-to-br from-cyan-900 via-blue-900 to-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-white text-sm font-semibold mb-4">
+            V871-V875 • Resilience & Orchestration Suite
+          </div>
+          <h2 className="text-5xl font-bold text-white mb-6">
+            Resilience & Orchestration Intelligence
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            5 advanced email intelligence engines powering Supply Chain Resilience, Customer Journey Orchestration, 
+            Compliance Intelligence, ITSM, and Brand Monitoring with AI-driven insights
+          </p>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          {stats.map((stat, idx) => (
+            <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+              <div className="text-4xl mb-2">{stat.icon}</div>
+              <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-sm text-gray-300">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Engine Tabs */}
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-2 justify-center">
+            {engines.map((engine, idx) => (
+              <button
+                key={engine.id}
+                onClick={() => setActiveTab(idx)}
+                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                  activeTab === idx
+                    ? `bg-gradient-to-r ${engine.color} text-white shadow-lg scale-105`
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                }`}
+              >
+                <span className="mr-2">{engine.icon}</span>
+                {engine.id.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Active Engine Details */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 mb-16">
+          <div className="flex items-start gap-6 mb-8">
+            <div className={`text-6xl p-4 rounded-2xl bg-gradient-to-br ${engines[activeTab].color} shadow-xl`}>
+              {engines[activeTab].icon}
+            </div>
+            <div className="flex-1">
+              <h3 className="text-3xl font-bold text-white mb-3">{engines[activeTab].name}</h3>
+              <p className="text-lg text-gray-300">{engines[activeTab].description}</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {engines[activeTab].features.map((feature, idx) => (
+              <div key={idx} className="flex items-start gap-3 p-4 bg-white/5 rounded-xl">
+                <div className={`text-2xl mt-1 bg-gradient-to-r ${engines[activeTab].color} bg-clip-text text-transparent`}>
+                  ✓
+                </div>
+                <div className="text-gray-200">{feature}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-white text-center mb-8">
+            30 New Services Across 5 Resilience Domains
+          </h3>
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {engines.map((engine, idx) => (
+              <div key={engine.id} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all">
+                <div className={`text-4xl mb-4 bg-gradient-to-r ${engine.color} bg-clip-text text-transparent`}>
+                  {engine.icon}
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">{engine.id.toUpperCase()}</h4>
+                <p className="text-sm text-gray-400 mb-4">
+                  {engine.name.split(':')[1]?.trim()}
+                </p>
+                <div className="text-xs text-gray-500">
+                  6 specialized services
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <div className="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-8 shadow-2xl">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Ready to Build Resilient Operations?
+            </h3>
+            <p className="text-gray-200 mb-6 max-w-2xl">
+              Deploy AI-powered intelligence across Supply Chain, Customer Journeys, Compliance, 
+              IT Operations, and Brand Management with reply-all enforcement
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/contact" className="px-8 py-3 bg-white text-cyan-600 rounded-xl font-semibold hover:bg-gray-100 transition-all">
+                Get Started
+              </a>
+              <a href="/services" className="px-8 py-3 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-all border border-white/30">
+                View All Services
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

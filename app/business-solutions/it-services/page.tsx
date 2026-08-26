@@ -1,6 +1,6 @@
 
+export const metadata = { title: 'IT Services — Zion Tech Group', description: 'Managed IT services from Zion Tech Group: cloud, cybersecurity, platform engineering, support, and infrastructure modernization.' };
 import Link from 'next/link';
-export const metadata = { title: 'IT Services — Zion Tech Group', description: 'Managed IT services from Zion Tech Group: cloud, cybersecurity, platform engineering, support, and infrastructure modernization.' , alternates: { canonical: 'https://ziontechgroup.com/business-solutions/it-services/' } };
 
 const items = [
   { title: 'Managed IT', desc: 'Support and operations with clear SLAs, incident response, and cost predictability.' },

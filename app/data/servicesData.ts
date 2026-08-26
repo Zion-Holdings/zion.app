@@ -1,22 +1,25 @@
-export interface Service {
-  id: string;
-  name: string;
-  title: string;
-  description: string;
-  category: string;
-  industry: string;
-  icon?: string;
-  features: string[];
-  benefits: string[];
-  pricing: Record<string, unknown>;
-  popular?: boolean;
-  url: string;
-  image: string;
-}
+type Service = Record<string, any>;
 
-import servicesData from './servicesData_trimmed.json';
+const rawObject = require('./servicesData.json') as { services?: Service[] };
+const rawData: Service[] = Array.isArray(rawObject) ? rawObject : (rawObject.services || []);
 
-export const allServices: Service[] = servicesData as Service[];
-export const ALL_SERVICES_COUNT = 16323; // full dataset size for dynamic route
+// Normalize services data - ensure both 'name' and 'title' fields exist
+const allServices: readonly Service[] = rawData.map((service: Service) => ({
+  ...service,
+  // Ensure title field exists (use name if title not present)
+  title: service.title || service.name || '',
+  // Normalize description to description (some may have 'desc')
+  description: service.description || service.desc || '',
+  // Ensure href is set correctly
+  href: service.href || `/services/${service.id}`,
+  // Ensure contactInfo exists
+  contactInfo: service.contactInfo || {
+    email: 'info@ziontechgroup.com',
+    phone: '+1-302-464-0950',
+    website: `/services/${service.id}`
+  }
+}));
 
+export type { Service };
+export { allServices };
 export default allServices;
