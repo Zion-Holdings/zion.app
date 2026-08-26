@@ -63,7 +63,6 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=16384
           NEXT_TELEMETRY_DISABLED: "1"
           NEXT_TURBOPACK_USE_WORKER: "0"
-          NODE_OPTIONS: --max-old-space-size=16384
 
       - name: Prepare GitHub Pages artifact
         run: |
