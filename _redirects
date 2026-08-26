@@ -110,6 +110,18 @@
 /public-roadmap/ /public-roadmap/index.html 200
 /use-cases /use-cases/ 301
 /use-cases/ /use-cases/index.html 200
+/products /products/ 301
+/products/ /products/index.html 200
+/providers /providers/ 301
+/providers/ /providers/index.html 200
+/portal /portal/index.html 200
+/portal/ /portal/index.html 200
+/integrators /integrators/ 301
+/integrators/ /integrators/index.html 200
+/lead-crm /lead-crm/ 301
+/lead-crm/ /lead-crm/index.html 200
+/roicalculator /roicalculator/ 301
+/roicalculator/ /roicalculator/index.html 200
 
 # cache-bust: 2026-08-11T05:30:00Z
 /dashboard /dashboard/ 301

@@ -1,8 +1,195 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="refresh" content="0; url=/docs/tools/ai-roi-calculator/">
-<title>Redirecting</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI ROI Calculator | Zion Tech Group Tools</title>
+<meta name="description" content="Free AI ROI calculator from Zion Tech Group: estimate the potential return on AI investment by comparing current manual costs against projected AI-assisted efficiency gains."/>
+<link rel="canonical" href="https://ziontechgroup.com/tools/ai-roi-calculator/"/>
+<meta property="og:title" content="AI ROI Calculator | Zion Tech Group"/>
+<meta property="og:description" content="Estimate the potential return on AI investment — compare manual costs against AI-assisted efficiency gains."/>
+<meta property="og:url" content="https://ziontechgroup.com/tools/ai-roi-calculator/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI ROI Calculator | Zion Tech Group"/>
+<meta name="twitter:description" content="Estimate the potential return on AI investment — compare manual costs against AI-assisted efficiency gains."/>
+<style>
+  body{font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;margin:0}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid #1e293b;background:#0f172a}
+  nav{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:16px 24px;flex-wrap:wrap;gap:12px}
+  .brand{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+  nav a{color:#94a3b8;text-decoration:none;font-size:0.875rem;padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
+  nav a:hover{color:#fff;background:#1e293b}
+  nav a.cta{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-weight:600;padding:8px 16px}
+  nav a.cta:hover{background:linear-gradient(135deg,#6d28d9,#9333ea)}
+  .wrap{max-width:800px;margin:0 auto;padding:60px 24px}
+  .breadcrumb{display:flex;flex-wrap:wrap;gap:4px;font-size:0.8125rem;color:#64748b;margin-bottom:24px}
+  .breadcrumb a{color:#a78bfa;text-decoration:none}
+  .breadcrumb a:hover{color:#c084fc}
+  .breadcrumb span{color:#475569}
+  h1{font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.2}
+  .subtitle{color:#94a3b8;font-size:1.125rem;margin:0 0 40px;line-height:1.6}
+  .input-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+  .field{margin-bottom:8px}
+  .field label{display:block;font-size:0.8125rem;color:#94a3b8;margin-bottom:6px;font-weight:600}
+  .field input[type="number"]{width:100%;background:#0f172a;border:1px solid #334155;border-radius:8px;color:#e2e8f0;padding:10px 12px;font-family:inherit;font-size:0.9375rem}
+  .field input[type="number"]:focus{outline:none;border-color:#a855f7}
+  .field .hint{font-size:0.75rem;color:#64748b;margin-top:4px}
+  .result{background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #a855f7;border-radius:12px;padding:24px;margin-top:32px}
+  .result h2{font-size:1rem;font-weight:700;color:#c084fc;margin:0 0 16px}
+  .result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .result-card{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:16px;text-align:center}
+  .result-card .number{font-size:1.75rem;font-weight:800;background:linear-gradient(135deg,#34d399,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .result-card .label{font-size:0.75rem;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:0.05em}
+  .result-card.highlight{background:#1e293b;border-color:#a855f7}
+  .result-card.highlight .number{background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .btn{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.9375rem}
+  .btn:hover{background:linear-gradient(135deg,#6d28d9,#9333ea);transform:translateY(-1px)}
+  .btn-secondary{background:#334155;color:#e2e8f0;border:1px solid #475569;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.9375rem}
+  .btn-secondary:hover{background:#475569}
+  footer{border-top:1px solid #1e293b;background:#0f172a;padding:32px 24px;margin-top:48px}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;max-width:1200px;margin:0 auto}
+  .footer-grid h4{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#64748b;margin:0 0 12px}
+  .footer-grid ul{list-style:none;padding:0;margin:0}
+  .footer-grid li{margin-bottom:8px}
+  .footer-grid a{color:#94a3b8;text-decoration:none;font-size:0.875rem}
+  .footer-grid a:hover{color:#a855f7}
+  .copyright{width:100%;text-align:center;color:#64748b;font-size:0.8125rem;margin-top:24px;padding-top:16px;border-top:1px solid #1e293b}
+  .status-badge{position:fixed;bottom:16px;right:16px;background:#0f172a;border:1px solid #a855f7;border-radius:24px;padding:8px 14px;display:flex;align-items:center;gap:8px;font-size:0.8125rem;color:#e2e8f0;box-shadow:0 4px 12px rgba(168,85,247,.15)}
+  .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+</style>
 </head>
-<body>Redirecting…</body>
+<body>
+<header>
+  <nav>
+    <a class="brand" href="/">Zion Tech Group</a>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">
+      <a href="/services/">Services</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/contact/">Contact</a>
+      <a href="/agents-monitoring/" style="background:#1e293b;border:1px solid #a855f7;color:#e2e8f0;padding:6px 14px;border-radius:20px;font-size:0.8125rem;font-weight:500">AI Agents</a>
+      <a href="/contact/" class="cta">Get Free Consultation</a>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a><span>/</span>
+    <a href="/tools/">Tools</a><span>/</span>
+    <span>AI ROI Calculator</span>
+  </div>
+
+  <div class="wrap">
+    <h1>AI ROI Calculator</h1>
+    <p class="subtitle">Estimate the potential return on AI investment by comparing your current manual costs against projected AI-assisted efficiency gains.</p>
+
+    <div class="input-grid">
+      <div class="field">
+        <label for="hours">Hours spent per week on the task</label>
+        <input type="number" id="hours" value="40" min="0" step="1"/>
+        <div class="hint">Total person-hours across the team</div>
+      </div>
+      <div class="field">
+        <label for="rate">Fully loaded hourly rate ($)</label>
+        <input type="number" id="rate" value="75" min="0" step="1"/>
+        <div class="hint">Salary, benefits, overhead</div>
+      </div>
+      <div class="field">
+        <label for="weeks">Weeks per year on this task</label>
+        <input type="number" id="weeks" value="48" min="0" step="1"/>
+        <div class="hint">Adjust for seasonal work</div>
+      </div>
+      <div class="field">
+        <label for="efficiency">Estimated efficiency gain (%)</label>
+        <input type="number" id="efficiency" value="40" min="0" max="100" step="5"/>
+        <div class="hint">Time saved or output gained from AI assistance</div>
+      </div>
+    </div>
+
+    <div class="result">
+      <h2>Projected annual impact</h2>
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="number" id="current-cost">$144,000</div>
+          <div class="label">Current annual cost</div>
+        </div>
+        <div class="result-card highlight">
+          <div class="number" id="savings">$57,600</div>
+          <div class="label">Projected annual savings</div>
+        </div>
+        <div class="result-card">
+          <div class="number" id="roi">40%</div>
+          <div class="label">Efficiency gain</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="/contact/" class="btn">Talk to Sales</a>
+      <a href="/services/" class="btn-secondary">Explore Services</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Services &amp; Tech</h4>
+        <ul>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/ai-services/">AI Services</a></li>
+          <li><a href="/products/">Products</a></li>
+          <li><a href="/solutions/">Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Free Tools</h4>
+        <ul>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/agents-monitoring/">AI Agent Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company &amp; Trust</h4>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/use-cases/">Use Cases</a></li>
+          <li><a href="/testimonials/">Testimonials</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal &amp; Resources</h4>
+        <ul>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><a href="/sla/">SLA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Zion Tech Group. All rights reserved.
+      <a href="/sitemap.xml" style="margin-left:16px;color:#64748b">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<div class="status-badge">
+  <span class="dot"></span>
+  <span>10 Agents Active</span>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI ROI Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Estimate the potential return on AI investment by comparing manual costs against AI-assisted efficiency gains.","url":"https://ziontechgroup.com/tools/ai-roi-calculator/","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}
+</script>
+</body>
 </html>

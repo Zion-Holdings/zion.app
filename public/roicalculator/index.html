@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="ROI Calculator — Zion Tech Group">
+<meta name="description" content="Calculate ROI for AI and IT automation projects. Estimate cost savings, revenue impact, and payback period for your initiatives.">
+<meta name="robots" content="index, follow">
+<title>ROI Calculator — Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com/roicalculator/">
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; }
+.subtitle { font-size: 1.125rem; color: #94a3b8; margin-bottom: 2rem; }
+calculator { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+calculator h3 { color: #fff; font-size: 1.125rem; margin: 0 0 1rem 0; }
+.row { display: flex; gap: 16px; margin-bottom: 12px; align-items: flex-end; }
+.row label { flex: 0 0 200px; color: #94a3b8; font-size: 0.875rem; }
+.row input, .row select { flex: 1; padding: 8px 12px; border-radius: 6px; border: 1px solid #475569; background: #0f172a; color: #e2e8f0; font-size: 0.875rem; }
+.result { background: #2563eb; border-radius: 12px; padding: 24px; text-align: center; margin-top: 1rem; }
+.result .big { font-size: 2.5rem; font-weight: 700; color: #fff; }
+.result .label { color: #bfdbfe; font-size: 0.875rem; margin-top: 4px; }
+.actions { display: flex; gap: 12px; margin-top: 2rem; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 12px 24px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+.btn-primary { background: #7c3aed; color: #fff; }
+.btn-primary:hover { opacity: 0.9; }
+.btn-secondary { background: #334155; color: #e2e8f0; border: 1px solid #475569; }
+.btn-secondary:hover { background: #475569; }
+.footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #334155; color: #64748b; font-size: 0.875rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>ROI Calculator</h1>
+  <p class="subtitle">Estimate the return on investment for AI and IT automation projects.</p>
+  <div class="calculator">
+    <h3>Parâmetros do projeto</h3>
+    <div class="row">
+      <label for="annual-cost">Custo anual atual (R$)</label>
+      <input type="number" id="annual-cost" value="500000" min="0" step="10000">
+    </div>
+    <div class="row">
+      <label for="automation-pct">% de automação estimada</label>
+      <input type="number" id="automation-pct" value="40" min="0" max="100">
+    </div>
+    <div class="row">
+      <label for="revenue-impact">Impacto de receita adicional anual (R$)</label>
+      <input type="number" id="revenue-impact" value="200000" min="0" step="10000">
+    </div>
+    <div class="row">
+      <label for="implementation-cost">Custo de implementação (R$)</label>
+      <input type="number" id="implementation-cost" value="150000" min="0" step="10000">
+    </div>
+    <div class="row">
+      <label for="duration">Duração (meses)</label>
+      <input type="number" id="duration" value="12" min="1" max="60">
+    </div>
+    <div class="result">
+      <div class="big" id="roi-display">267%</div>
+      <div class="label">ROI estimado (3 anos) — Clique em "Calcular" para atualizar</div>
+    </div>
+    <div style="text-align:center; margin-top: 1rem;">
+      <button class="btn btn-primary" onclick="calculateROI()">Calcular</button>
+      <button class="btn btn-secondary" onclick="resetROI()">Resetar</button>
+    </div>
+  </div>
+  <div class="actions">
+    <a href="/contact/" class="btn btn-primary">Falar com especialista</a>
+    <a href="/services/" class="btn btn-secondary">Explorar serviços</a>
+  </div>
+  <div class="footer">
+    Zion Tech Group — AI and IT services for enterprises. <a href="/" style="color:#a78bfa;">Home</a>
+  </div>
+</div>
+<script>
+function calculateROI() {
+  const cost = parseFloat(document.getElementById('annual-cost').value) || 0;
+  const pct = parseFloat(document.getElementById('automation-pct').value) || 0;
+  const revenue = parseFloat(document.getElementById('revenue-impact').value) || 0;
+  const impl = parseFloat(document.getElementById('implementation-cost').value) || 0;
+  const months = parseFloat(document.getElementById('duration').value) || 12;
+  const annualSavings = cost * (pct / 100);
+  const threeYearSavings = (annualSavings + revenue) * 3;
+  const totalCost = impl + cost * (months / 12);
+  const roi = totalCost > 0 ? ((threeYearSavings - totalCost) / totalCost) * 100 : 0;
+  document.getElementById('roi-display').textContent = roi.toFixed(0) + '%';
+}
+function resetROI() {
+  document.getElementById('annual-cost').value = 500000;
+  document.getElementById('automation-pct').value = 40;
+  document.getElementById('revenue-impact').value = 200000;
+  document.getElementById('implementation-cost').value = 150000;
+  document.getElementById('duration').value = 12;
+  document.getElementById('roi-display').textContent = '267%';
+}
+</script>
+</body>
+</html>

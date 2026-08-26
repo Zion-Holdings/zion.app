@@ -1,5 +1,6 @@
 {
   "checked_at": "2026-08-26T01:15:29.491061+00:00",
+  "checked_at": "2026-08-25T23:02:22.336486+00:00",
   "routes_checked": 10,
   "routes_ok": 8,
   "routes_broken": 2,
@@ -75,6 +76,7 @@
       "error": null,
       "ok": false,
       "broken_since": "2026-08-26T01:15:29.390999+00:00"
+      "broken_since": "2026-08-25T23:02:22.321090+00:00"
     },
     {
       "url": "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
@@ -83,6 +85,7 @@
       "error": null,
       "ok": false,
       "broken_since": "2026-08-26T01:15:29.488295+00:00"
+      "broken_since": "2026-08-25T23:02:22.335143+00:00"
     }
   ]
 }
