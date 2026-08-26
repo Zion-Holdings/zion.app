@@ -111,6 +111,8 @@ jobs:
           git add -A
           if ! git diff --staged --quiet; then
             git commit -m "chore(content): uninterruptable content loop tick"
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Zion-support/zion-support.github.io.git
+
             git push origin HEAD:main
           fi
 

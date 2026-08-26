@@ -50,6 +50,8 @@ jobs:
         git config user.email "openclaw@ziontechgroup.com"
         git add public/og-images/
         git diff --cached --quiet || git commit -m "feat(auto): generate OG images for content"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Zion-support/zion-support.github.io.git
+
         git push origin HEAD:${{ github.ref }}
       continue-on-error: true
     - name: Notify Telegram on completion

@@ -47,6 +47,9 @@ jobs:
         git diff --cached --quiet || git commit -m "chore(auto): update sitemap.xml
         with fresh priorities and lastmod"
 
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Zion-support/zion-support.github.io.git
+
+
         git push origin HEAD:${{ github.ref }}
 
         '

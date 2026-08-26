@@ -70,6 +70,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add app/config/aiCatalog.ts automation/reports/stale-promotion-repromotion-latest.json
           git commit -m "chore(promotion): auto-recover healthy promoted routes"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Zion-support/zion-support.github.io.git
+
           git push origin "$branch"
           gh pr create --base main --head "$branch" --title "chore(promotion): auto-recover healthy promoted routes" --body "Auto-restores previously demoted promoted routes once route health recovery threshold is met for consecutive checks."
 
