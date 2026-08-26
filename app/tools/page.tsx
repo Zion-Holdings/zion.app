@@ -49,6 +49,18 @@ export default function ToolsPage() {
       ]}
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+        <a href="/tools/agent-prompt-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Agent Prompt Builder</h3>
+          <p className="text-slate-400 text-sm">Agent Prompt Builder utility.</p>
+        </a>
+        <a href="/tools/ai-roi-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Ai Roi Calculator</h3>
+          <p className="text-slate-400 text-sm">Ai Roi Calculator utility.</p>
+        </a>
+        <a href="/tools/api-health-check/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Api Health Check</h3>
+          <p className="text-slate-400 text-sm">Check your API endpoint health: HTTP status, response time, SSL certificate, and securi...</p>
+        </a>
         <a href="/tools/base64-encoder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Base64 Encoder</h3>
           <p className="text-slate-400 text-sm">Encode and decode Base64 with UTF-8 support.</p>
@@ -65,6 +77,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Case Converter</h3>
           <p className="text-slate-400 text-sm">Convert between 9 text cases instantly.</p>
         </a>
+        <a href="/tools/cloud-cost-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Cloud Cost Calculator</h3>
+          <p className="text-slate-400 text-sm">Estimate your cloud cost savings by category — compute, storage, networking. Get a pers...</p>
+        </a>
+        <a href="/tools/cloud-cost-optimizer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Cloud Cost Optimizer</h3>
+          <p className="text-slate-400 text-sm">Cloud Cost Optimizer utility.</p>
+        </a>
         <a href="/tools/color-contrast/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Color Contrast Checker</h3>
           <p className="text-slate-400 text-sm">Check WCAG AA/AAA contrast ratios.</p>
@@ -80,6 +100,10 @@ export default function ToolsPage() {
         <a href="/tools/color-picker/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Color Picker</h3>
           <p className="text-slate-400 text-sm">Pick colors with HEX/RGB/HSL values.</p>
+        </a>
+        <a href="/tools/cron-agent-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Cron Agent Calculator</h3>
+          <p className="text-slate-400 text-sm">Calculate cron intervals, agent workload, and API rate limits for multi-agent swarms.</p>
         </a>
         <a href="/tools/cron-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Cron Generator</h3>
@@ -185,6 +209,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">JSON Schema Generator</h3>
           <p className="text-slate-400 text-sm">Infer a JSON Schema from sample JSON.</p>
         </a>
+        <a href="/tools/json-schema-validator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Json Schema Validator</h3>
+          <p className="text-slate-400 text-sm">Generate JSON Schema from JSON data and validate JSON against schemas. 100% client-side...</p>
+        </a>
         <a href="/tools/json-to-csv/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">JSON to CSV</h3>
           <p className="text-slate-400 text-sm">Convert JSON arrays to CSV.</p>
@@ -209,6 +237,14 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">List Sorter</h3>
           <p className="text-slate-400 text-sm">Sort, deduplicate, shuffle, number, and reformat a list of lines. Natural sort, case op...</p>
         </a>
+        <a href="/tools/llm-comparison/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Llm Comparison</h3>
+          <p className="text-slate-400 text-sm">Llm Comparison utility.</p>
+        </a>
+        <a href="/tools/llm-payload-estimator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Llm Payload Estimator</h3>
+          <p className="text-slate-400 text-sm">Estimate token counts and request costs across leading LLM providers.</p>
+        </a>
         <a href="/tools/loan-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Loan Calculator</h3>
           <p className="text-slate-400 text-sm">Free loan and mortgage payment calculator — compute monthly payment, total interest, to...</p>
@@ -221,6 +257,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Lorem Ipsum Pro</h3>
           <p className="text-slate-400 text-sm">Paragraphs, sentences, or words on demand.</p>
         </a>
+        <a href="/tools/markdown-preview/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Markdown Preview</h3>
+          <p className="text-slate-400 text-sm">Markdown Preview utility.</p>
+        </a>
         <a href="/tools/markdown-previewer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Markdown Previewer</h3>
           <p className="text-slate-400 text-sm">Preview markdown rendering in real-time.</p>
@@ -228,6 +268,10 @@ export default function ToolsPage() {
         <a href="/tools/markdown-to-html/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Markdown to HTML</h3>
           <p className="text-slate-400 text-sm">Convert Markdown to HTML instantly.</p>
+        </a>
+        <a href="/tools/mcp-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Mcp Tester</h3>
+          <p className="text-slate-400 text-sm">Mcp Tester utility.</p>
         </a>
         <a href="/tools/md5-hash/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">MD5 Hash</h3>
@@ -265,6 +309,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Percentage Calculator</h3>
           <p className="text-slate-400 text-sm">Percentages, percent change, and discounts.</p>
         </a>
+        <a href="/tools/phishing-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Phishing Analyzer</h3>
+          <p className="text-slate-400 text-sm">Free phishing analyzer tool from Zion Tech Group. Inspect links, headers, and risk sign...</p>
+        </a>
         <a href="/tools/qr-code-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">QR Code Generator</h3>
           <p className="text-slate-400 text-sm">Generate and download QR codes instantly.</p>
@@ -288,6 +336,14 @@ export default function ToolsPage() {
         <a href="/tools/robots-sitemap/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Robots Sitemap</h3>
           <p className="text-slate-400 text-sm">Build a robots.txt file with user-agent, allow/disallow rules, crawl-delay and sitemap...</p>
+        </a>
+        <a href="/tools/security-headers-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Security Headers Analyzer</h3>
+          <p className="text-slate-400 text-sm">Analyze HTTP response headers for security best practices and get a security grade.</p>
+        </a>
+        <a href="/tools/sql-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Sql Formatter</h3>
+          <p className="text-slate-400 text-sm">Sql Formatter utility.</p>
         </a>
         <a href="/tools/sql-query-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">SQL Query Builder</h3>
@@ -344,6 +400,10 @@ export default function ToolsPage() {
         <a href="/tools/url-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">URL Parser</h3>
           <p className="text-slate-400 text-sm">Break a URL into its components.</p>
+        </a>
+        <a href="/tools/user-agent-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">User Agent Parser</h3>
+          <p className="text-slate-400 text-sm">User Agent Parser utility.</p>
         </a>
         <a href="/tools/uuid-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">UUID Generator</h3>

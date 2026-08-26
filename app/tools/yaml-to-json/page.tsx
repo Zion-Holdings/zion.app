@@ -1,67 +1,83 @@
-import type { Metadata } from 'next';
-import JsonLd from '@/components/JsonLd';
-import StandardPage from '@/components/StandardPage';
+"use client";
+import { useState } from "react";
+export default function Page() {
+  const [yaml, setYaml] = useState(`name: Zion Tech Group
+services:
+  - AI Consulting
+  - Managed IT
+  - Cybersecurity
+settings:
+  active: true
+  retries: 3`);
+  const [json, setJson] = useState("");
 
-export const metadata: Metadata = {
-  title: 'YAML to JSON Converter | Zion Tech Group',
-  description: 'Convert YAML snippets to JSON online. Paste YAML and get clean structured JSON instantly.',
-  openGraph: {
-    title: 'YAML to JSON Converter | Zion Tech Group',
-    description: 'Convert YAML snippets to JSON online. Paste YAML and get clean structured JSON instantly.',
-    url: 'https://ziontechgroup.com/tools/yaml-to-json/',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'YAML to JSON Converter | Zion Tech Group',
-    description: 'Convert YAML snippets to JSON online. Paste YAML and get clean structured JSON instantly.',
-  },
-  alternates: { canonical: '/tools/yaml-to-json/' },
-};
+  function convert(e) {
+    e.preventDefault();
+    try {
+      const obj = {};
+      const lines = yaml.split("\n");
+      let stack = [obj];
+      let lastKey = null;
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'YAML to JSON Converter',
-  description: 'Convert YAML snippets to JSON online.',
-  url: 'https://ziontechgroup.com/tools/yaml-to-json/',
-};
+      for (const raw of lines) {
+        const line = raw.replace(/\t/g, "  ");
+        const indent = line.search(/\S|$/);
+        const text = line.trim();
+        if (!text || text.startsWith("#")) continue;
 
-export default function YamlToJsonPage() {
+        while (stack.length > 1 && indent <= stack[stack.length - 1].indent) stack.pop();
+
+        const current = stack[stack.length - 1].node;
+        if (text.includes(":")) {
+          const idx = text.indexOf(":");
+          const key = text.slice(0, idx).trim();
+          const valueRaw = text.slice(idx + 1).trim();
+          if (!valueRaw || valueRaw.startsWith("#")) {
+            const child = {};
+            current[key] = child;
+            stack.push({ indent, node: child });
+            lastKey = key;
+          } else if (valueRaw.startsWith('"') && valueRaw.endsWith('"')) {
+            current[key] = valueRaw.slice(1, -1);
+          } else if (valueRaw === "true" || valueRaw === "false") {
+            current[key] = valueRaw === "true";
+          } else if (!isNaN(valueRaw) && valueRaw !== "") {
+            current[key] = Number(valueRaw);
+          } else {
+            current[key] = valueRaw;
+          }
+        }
+      }
+
+      setJson(JSON.stringify(obj, null, 2));
+    } catch (err) {
+      setJson("Error: " + err.message);
+    }
+  }
+
   return (
-<>
-    <StandardPage
-      title="YAML to JSON"
-      subtitle="Convert YAML configuration snippets into structured JSON safely in your browser."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Tools', href: '/tools/' },
-        { label: 'YAML to JSON' },
-      ]}
-      actions={[
-        { label: 'All tools', href: '/tools/', style: 'primary' },
-        { label: 'Contact us', href: '/contact/', style: 'secondary' },
-      ]}
-    >
-      <div className="max-w-4xl mx-auto space-y-6">
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-2">How to use</h2>
-          <ol className="list-decimal list-inside text-slate-300 space-y-2 text-sm">
-            <li>Paste your YAML content into the input area.</li>
-            <li>Review the generated JSON output.</li>
-            <li>Copy the result for use in configs, APIs, or docs.</li>
-          </ol>
-        </div>
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-          <h2 className="text-xl font-bold text-white mb-2">Use cases</h2>
-          <ul className="list-disc list-inside text-slate-300 space-y-2 text-sm">
-            <li>Translate Kubernetes or CI configs to JSON.</li>
-            <li>Debug YAML payloads before sending to APIs.</li>
-            <li>Inspect structured exports in JSON form.</li>
-          </ul>
-        </div>
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="max-w-4xl mx-auto px-4">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">YAML to JSON</h1>
+        <p className="text-gray-600 mb-6">Convert simple YAML into formatted JSON.</p>
+        <form onSubmit={convert} className="space-y-4">
+          <textarea
+            value={yaml}
+            onChange={(e) => setYaml(e.target.value)}
+            placeholder="key: value"
+            className="w-full h-64 p-4 border rounded-lg font-mono text-sm"
+          />
+          <button type="submit" className="px-6 py-2 bg-emerald-600 text-white rounded-lg">
+            Convert
+          </button>
+        </form>
+        {json && (
+          <div className="mt-6 p-4 bg-white border rounded-lg">
+            <div className="text-sm font-semibold text-gray-700 mb-2">Output</div>
+            <pre className="text-sm font-mono whitespace-pre-wrap">{json}</pre>
+          </div>
+        )}
       </div>
-    </StandardPage>
-  </>
+    </div>
   );
 }
