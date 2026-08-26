@@ -21,6 +21,10 @@ const nextConfig = {
       config.optimization.splitChunks = false;
       config.optimization.minimize = false;
     }
+    // Reduce file-handle pressure on Windows for very large route sets
+    if (config.parallelism === undefined) {
+      config.parallelism = 1;
+    }
     return config;
   },
 };
