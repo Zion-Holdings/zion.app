@@ -1,6 +1,8 @@
 {
   "send_count": 0,
+  "status": "blocked",
   "note": "send_blocked",
   "blocked_reason": "HTTP 429 rate limit",
-  "error": null
+  "source_file": "outreach_next_wave.json",
+  "timestamp": "2026-08-26T01:31:13.149330+00:00"
 }
