@@ -1,7 +1,7 @@
 name: Continuous Pages Deploy
 "on":
   push:
-    branches: [ main ]
+    branches: [ main, site-audit-fixes ]
   workflow_dispatch:
 permissions:
   contents: read
