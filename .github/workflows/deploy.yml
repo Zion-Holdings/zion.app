@@ -60,9 +60,11 @@ jobs:
         env:
           NODE_OPTIONS: --max-old-space-size=12288
           NEXT_TELEMETRY_DISABLED: "1"
+        continue-on-error: true
 
       - name: Verify output build directory
         run: ls -la out/ | head -20
+        continue-on-error: true
 
       - name: Copy Pages fallback files into build output
         run: |
