@@ -57,6 +57,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Ai Roi Calculator</h3>
           <p className="text-slate-400 text-sm">Free AI ROI calculator from Zion Tech Group: estimate the potential return on AI invest...</p>
         </a>
+        <a href="/tools/ai-service-router/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Ai Service Router</h3>
+          <p className="text-slate-400 text-sm">Route requests by intent, data sensitivity, and latency target.</p>
+        </a>
         <a href="/tools/api-health-check/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Api Health Check</h3>
           <p className="text-slate-400 text-sm">Check your API endpoint health: HTTP status, response time, SSL certificate, and securi...</p>
@@ -164,6 +168,10 @@ export default function ToolsPage() {
         <a href="/tools/header-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Header Analyzer</h3>
           <p className="text-slate-400 text-sm">Paste HTTP response headers and get a security grade with per-check findings and copy-p...</p>
+        </a>
+        <a href="/tools/hermes-agent-fleet-manager/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Hermes Agent Fleet Manager</h3>
+          <p className="text-slate-400 text-sm">Monitor and manage your Hermes AI agent fleet. Track active agents, their status, task...</p>
         </a>
         <a href="/tools/html-entities/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">HTML Entities</h3>
@@ -313,6 +321,10 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Phishing Analyzer</h3>
           <p className="text-slate-400 text-sm">Free phishing analyzer tool from Zion Tech Group. Inspect links, headers, and risk sign...</p>
         </a>
+        <a href="/tools/port-scanner/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Port Scanner</h3>
+          <p className="text-slate-400 text-sm">Check common service ports and surface open or filtered results.</p>
+        </a>
         <a href="/tools/qr-code-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">QR Code Generator</h3>
           <p className="text-slate-400 text-sm">Generate and download QR codes instantly.</p>
@@ -337,9 +349,21 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">Robots Sitemap</h3>
           <p className="text-slate-400 text-sm">Build a robots.txt file with user-agent, allow/disallow rules, crawl-delay and sitemap...</p>
         </a>
+        <a href="/tools/roi-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Roi Calculator</h3>
+          <p className="text-slate-400 text-sm">Estimate project ROI and timeline from baseline metrics.</p>
+        </a>
         <a href="/tools/security-headers-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Security Headers Analyzer</h3>
           <p className="text-slate-400 text-sm">Analyze HTTP response headers for security best practices and get a security grade.</p>
+        </a>
+        <a href="/tools/service-comparison/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Service Comparison</h3>
+          <p className="text-slate-400 text-sm">Service Comparison utility.</p>
+        </a>
+        <a href="/tools/service-recommender/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Service Recommender</h3>
+          <p className="text-slate-400 text-sm">Find best-fit services from goals and constraints.</p>
         </a>
         <a href="/tools/sql-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Sql Formatter</h3>
@@ -348,6 +372,10 @@ export default function ToolsPage() {
         <a href="/tools/sql-query-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">SQL Query Builder</h3>
           <p className="text-slate-400 text-sm">Build SELECT, INSERT, UPDATE, DELETE queries.</p>
+        </a>
+        <a href="/tools/ssl-checker/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Ssl Checker</h3>
+          <p className="text-slate-400 text-sm">Inspect certificate basics and expiry window.</p>
         </a>
         <a href="/tools/subnet-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Subnet Calculator</h3>
@@ -408,6 +436,10 @@ export default function ToolsPage() {
         <a href="/tools/uuid-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">UUID Generator</h3>
           <p className="text-slate-400 text-sm">Generate UUID v4 identifiers instantly.</p>
+        </a>
+        <a href="/tools/webhook-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Webhook Tester</h3>
+          <p className="text-slate-400 text-sm">Test, debug, and inspect webhooks in real-time. Send test payloads, inspect incoming re...</p>
         </a>
         <a href="/tools/word-counter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Word Counter</h3>

@@ -104654,6 +104654,7 @@
   </url>
   <url><loc>https://ziontechgroup.com/tools/agent-prompt-builder/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/ai-roi-calculator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/ai-service-router/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/api-health-check/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/base64-encoder/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/base64-image/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -104681,6 +104682,7 @@
   <url><loc>https://ziontechgroup.com/tools/hash-checker/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/hash-generator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/header-analyzer/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/hermes-agent-fleet-manager/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/html-entities/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/http-status/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/id-generator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -104718,15 +104720,20 @@
   <url><loc>https://ziontechgroup.com/tools/password-strength/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/percentage-calculator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/phishing-analyzer/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/port-scanner/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/qr-code-generator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/qr-scanner/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/readability-score/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/regex-cheat-sheet/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/regex-tester/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/robots-sitemap/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/roi-calculator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/security-headers-analyzer/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/service-comparison/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/service-recommender/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/sql-formatter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/sql-query-builder/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/ssl-checker/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/subnet-calculator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/text-analyzer/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/text-compare/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -104742,6 +104749,7 @@
   <url><loc>https://ziontechgroup.com/tools/url-parser/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/user-agent-parser/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/uuid-generator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/webhook-tester/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/word-counter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/yaml-formatter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/yaml-to-json/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
