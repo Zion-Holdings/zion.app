@@ -483,6 +483,9 @@
 /services/ai-voice-agent-phone/ /services/ai-voice-agent/ 301
 /services/ai-voice-agent-phone /services/ai-voice-agent/ 301
 # New content page fallbacks
+# Fix 404s for live services
+/services/ai-agents-autonomous/ /services/ai-agents 301
+/services/cloud-cost-optimization-service/ /services/cloud-cost-optimization 301
 /ai-roi-calculator/ /docs/ai-roi-calculator/index.html 200
 /ai-roi-calculator /docs/ai-roi-calculator/index.html 200
 /business-impact/ /docs/business-impact/index.html 200
