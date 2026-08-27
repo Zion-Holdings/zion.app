@@ -17,7 +17,7 @@ import re
 import subprocess
 from datetime import datetime, timezone
 
-REPO = "/data/data/com.termux/files/home/ztg/repo"
+REPO = "/Users/klebergarciaalcatrao/zion-support.github.io"
 GROUP_CHAT_ID = "-1003886112318"
 HERMES_CRON = os.path.expanduser("~/.hermes/cron/jobs.json")
 
