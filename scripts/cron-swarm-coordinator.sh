@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-REPO_DIR="/data/data/com.termux/files/home/ztg/repo"
+REPO_DIR="/Users/klebergarciaalcatrao/zion-support.github.io"
 cd "$REPO_DIR"
 
 # --- Quick state checks ---
@@ -26,7 +26,7 @@ SITEMAP_URLS=$(grep -c 'ziontechgroup.com/services/' public/sitemap.xml 2>/dev/n
 # Cron job statuses — query the jobs.json directly for precision
 CRON_JSON=$(python3 -c "
 import json
-with open('/data/data/com.termux/files/home/.hermes/cron/jobs.json') as f:
+with open('/Users/klebergarciaalcatrao/.hermes/cron/jobs.json') as f:
     data = json.load(f)
 jobs = data.get('jobs', [])
 total = len(jobs)

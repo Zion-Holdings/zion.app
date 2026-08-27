@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate sitemap.xml from services data and known static routes.
- * Reads app/data/servicesData.json and produces a valid XML sitemap.
+ * Reads app/data/services.json (master catalog) and produces a valid XML sitemap.
  */
 const fs = require('fs');
 const path = require('path');
@@ -65,12 +65,12 @@ const staticRoutes = [
 // Load services data
 let services = [];
 try {
-  const servicesDataPath = path.join(repo, 'app/data/servicesData.json');
+  const servicesDataPath = path.join(repo, 'app/data/services.json');
   const raw = fs.readFileSync(servicesDataPath, 'utf8');
   services = JSON.parse(raw);
-  console.log(`Loaded ${services.length} services from servicesData.json`);
+  console.log(`Loaded ${services.length} services from services.json`);
 } catch (e) {
-  console.error('Failed to load servicesData.json:', e.message);
+  console.error('Failed to load services.json:', e.message);
   process.exit(1);
 }
 
@@ -148,6 +148,6 @@ const xml = [
   '</urlset>',
 ].join('\n');
 
-const outPath = path.join(repo, 'sitemap.xml');
+const outPath = path.join(repo, 'public/sitemap.xml');
 fs.writeFileSync(outPath, xml, 'utf8');
 console.log(`Generated sitemap.xml with ${entries.length} URLs at ${outPath}`);

@@ -13,7 +13,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 BASE = Path("/Users/klebergarciaalcatrao/zion-support.github.io")
-SERVICES_FILE = BASE / "app" / "data" / "servicesData.json"
+SERVICES_FILE = BASE / "app" / "data" / "services.json"
 STABLE_FILE = BASE / "app" / "data" / "services.json"
 SERVICES_DIR = BASE / "app" / "services"
 CRON_OUTPUT = BASE / "cron_output"
