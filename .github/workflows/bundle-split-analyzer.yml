@@ -21,11 +21,11 @@ jobs:
       pull-requests: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         fetch-depth: 100
     - name: Setup Node.js
-      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+      uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
       with:
         node-version: '20'
         cache: npm
@@ -47,7 +47,7 @@ jobs:
         '
     - name: Upload report artifact
       if: always()
-      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       with:
         name: bundle-split-report
         path: '.hermes/memory/bundle-split/latest-report.json
@@ -61,7 +61,7 @@ jobs:
         \ \"Bundle split warnings detected\"\n  exit 1\nfi\n"
     - name: Comment on PR with recommendations
       if: github.event_name == 'pull_request' && failure()
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nconst reportPath = '.hermes/memory/bundle-split/latest-report.json';\n\
           let body = '\U0001F4E6 **Bundle Split Analysis \u2014 Recommendations**\\\
@@ -80,7 +80,7 @@ jobs:
           \ context.issue.number,\n  body\n});\n"
     - name: Open GitHub issue on main branch regressions
       if: github.event_name == 'push' && failure() && github.ref == 'refs/heads/main'
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         script: "const fs = require('fs');\nconst reportPath = '.hermes/memory/bundle-split/latest-report.json';\n\
           const title = '\U0001F4E6 Bundle Split Regressions on Main';\nlet body =\

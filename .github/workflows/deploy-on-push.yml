@@ -27,14 +27,14 @@ jobs:
       sha: ${{ steps.resolve-sha.outputs.sha }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         token: ${{ github.token }}
         ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha
           || github.sha }}
         fetch-depth: 1
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
         node-version-file: .nvmrc
         cache: npm
@@ -44,7 +44,7 @@ jobs:
     - name: Static site build
       run: npm run build
     - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v4
+      uses: actions/upload-pages-artifact@v5
       with:
         path: out
     - name: Write deploy status (triggered)
@@ -63,7 +63,7 @@ jobs:
 
         '
     - name: Upload deploy status artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: deploy-status
         path: automation/reports/deploy-status-latest.json
@@ -88,7 +88,7 @@ jobs:
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v5
   smoke-tests:
     needs:
     - build
@@ -100,12 +100,12 @@ jobs:
       BASE_URL: https://ziontechgroup.com
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         ref: ${{ needs.build.outputs.sha }}
         fetch-depth: 100
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
         node-version-file: .nvmrc
     - name: Install dependencies
@@ -130,7 +130,7 @@ jobs:
       continue-on-error: true
     - name: Upload deploy watchdog report
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: deploy-watchdog-report
         path: automation/reports/deploy-watchdog-latest.json
