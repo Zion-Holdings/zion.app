@@ -27,7 +27,11 @@ export function generateStaticParams() {
   return Object.keys(SERVICE_CATEGORY_MAP).map((slug) => ({ slug }));
 }
 
-export const metadata: Metadata = {
+export function generateStaticParams() {
+  return Object.keys(SERVICE_CATEGORY_MAP).map((slug) => ({ slug: [slug] }));
+}
+
+
   title: 'Service | Zion Tech Group',
   description: 'Service details and delivery guidance.',
   openGraph: {
