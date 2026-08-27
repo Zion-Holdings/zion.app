@@ -63,6 +63,14 @@ jobs:
       - name: Verify output build directory
         run: ls -la out/ | head -20
 
+      - name: Copy Pages fallback files into build output
+        run: |
+          mkdir -p out/{tools,services/ai-agents-autonomous,services/cloud-cost-optimization-service}
+          cp -f public/_redirects out/_redirects || true
+          cp -Rf public/tools out/tools || true
+          cp -Rf public/services/ai-agents-autonomous out/services/ai-agents-autonomous || true
+          cp -Rf public/services/cloud-cost-optimization-service out/services/cloud-cost-optimization-service || true
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
