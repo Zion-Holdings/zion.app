@@ -79,7 +79,7 @@ function main() {
   let lastLines = '';
   let exitCode = 1;
   let attempted = [];
-  const buildEnv = { ...process.env, NODE_OPTIONS: '--max-old-space-size=8192' };
+  const buildEnv = { ...process.env, NODE_OPTIONS: '--max-old-space-size=12288' };
 
 // Fix EMFILE: spawn build via bash with raised ulimit for 90K+ service pages
 function execWithUlimit(cmd, opts) {
