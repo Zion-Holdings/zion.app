@@ -64,8 +64,7 @@ jobs:
           \ run type-check` locally to reproduce.\\n\\n' +\n  `*Commit: ${context.payload.headCommit?.id?.slice(0,\
           \ 7) || 'N/A'}*\\n`;\n\nconst existing = await github.rest.issues.listForRepo({\n\
           \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  labels: ['type-coverage',\
-          \ 'autonomous'],\n  state: 'open'\n});\nconst already = existing.data.find((i:\
-          \ any) => i.title === title);\nif (!already) {\n  await github.rest.issues.create({\n\
+          \ 'autonomous'],\n  state: 'open'\n});\nconst already = existing.data.find((i) => i.title === title);\nif (!already) {\n  await github.rest.issues.create({\n\
           \    owner: context.repo.owner,\n    repo: context.repo.repo,\n    title,\n\
           \    body,\n    labels: ['type-coverage', 'autonomous', 'code-quality']\n\
           \  });\n}\n"

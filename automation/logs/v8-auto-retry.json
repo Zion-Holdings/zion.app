@@ -1,0 +1,9 @@
+{
+  "retries": {
+    "d1": {
+      "attempts": 3,
+      "lastError": "Cannot read properties of undefined (reading 'toLowerCase')",
+      "lastAttempt": "2026-05-28T16:15:23.521Z"
+    }
+  }
+}

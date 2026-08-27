@@ -45,7 +45,7 @@ jobs:
         \ true\necho \"exit_code=$?\" >> $GITHUB_OUTPUT\n"
     - name: Upload ESLint report
       if: always()
-      uses: actions/upload-artifact@4bd10206f1090cfe5690b91618f6fd840f21135b # v4
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
       with:
         name: eslint-autonomous-report
         path: /tmp/eslint-report.json

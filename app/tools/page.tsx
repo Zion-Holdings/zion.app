@@ -51,11 +51,11 @@ export default function ToolsPage() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
         <a href="/tools/agent-prompt-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Agent Prompt Builder</h3>
-          <p className="text-slate-400 text-sm">Agent Prompt Builder utility.</p>
+          <p className="text-slate-400 text-sm">Free agent prompt builder from Zion Tech Group: construct well-structured prompts for a...</p>
         </a>
         <a href="/tools/ai-roi-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Ai Roi Calculator</h3>
-          <p className="text-slate-400 text-sm">Ai Roi Calculator utility.</p>
+          <p className="text-slate-400 text-sm">Free AI ROI calculator from Zion Tech Group: estimate the potential return on AI invest...</p>
         </a>
         <a href="/tools/api-health-check/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Api Health Check</h3>
@@ -239,7 +239,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/llm-comparison/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Llm Comparison</h3>
-          <p className="text-slate-400 text-sm">Llm Comparison utility.</p>
+          <p className="text-slate-400 text-sm">Free MCP (Model Context Protocol) tester from Zion Tech Group: verify MCP server connec...</p>
         </a>
         <a href="/tools/llm-payload-estimator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Llm Payload Estimator</h3>
@@ -271,7 +271,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/mcp-tester/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Mcp Tester</h3>
-          <p className="text-slate-400 text-sm">Mcp Tester utility.</p>
+          <p className="text-slate-400 text-sm">Free MCP (Model Context Protocol) tester from Zion Tech Group: verify MCP server connec...</p>
         </a>
         <a href="/tools/md5-hash/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">MD5 Hash</h3>
