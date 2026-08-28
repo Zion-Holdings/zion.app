@@ -129,8 +129,11 @@ async function growthCycle({ lead, dryRun = true, concurrency = 2, delayMs = 100
         { name: "Email", type: "email", value: lead.email },
         { name: "Company", type: "rich_text", value: lead.company || "" },
         { name: "Source", type: "select", value: "outreach" },
+        { name: "Status", type: "status", value: "New" },
       ],
     });
+  } else {
+    result.steps.notion = { skipped: true, reason: "no_notion_database" };
   }
 
   result.steps.firecrawl = await runStep("firecrawl", "FIRECRAWL_SCRAPE", { url: site_url });
