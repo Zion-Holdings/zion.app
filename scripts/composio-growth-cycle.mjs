@@ -215,7 +215,7 @@ https://ziontechgroup.com`,
   });
 
   result.steps.linkedin = await runStep("linkedin", "LINKEDIN_CREATE_LINKED_IN_POST", {
-    author: lead.email || "zion@ziontechgroup.com",
+    author: "urn:li:person:kVn6PzlxZl",
     commentary: `New lead captured: ${lead.firstName || lead.email} via Zion automation.`,
     visibility: "PUBLIC",
   });
