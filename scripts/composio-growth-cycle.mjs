@@ -103,7 +103,7 @@ export async function brevoCreateContact({ email, firstName, lastName, listId })
 
 // --- PILLAR C: DevOps ---
 export async function githubCreateIssue({ owner, repo, title, body }) {
-  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('GITHUB_CREATE_ISSUE', { owner, repo, title, body }), 'github'), undefined, 'github');
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('GITHUB_CREATE_AN_ISSUE', { owner, repo, title, body }), 'github'), undefined, 'github');
 }
 export async function supabaseRunSql({ ref, query }) {
   return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('SUPABASE_BETA_RUN_SQL_QUERY', { ref, query }), 'supabase'), undefined, 'supabase');
@@ -211,7 +211,7 @@ export async function notifyBatchComplete({ total, succeeded, failed, telegramCh
 // --- Orchestrator ---
 export async function growthCycle({ lead, config = {} }) {
   const {
-    teamId = 'ZIO',
+    teamId = 'a92e1670-db71-4cec-bb71-b3c647ca164b',
     notionDatabaseId,
     apolloEnabled = true,
     resendEnabled = true,
