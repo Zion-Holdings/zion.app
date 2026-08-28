@@ -750,3 +750,6 @@
 /services/ai-agents-autonomous/ /services/ai-agents-autonomous.html 200
 /services/cloud-cost-optimization-service/ /services/cloud-cost-optimization-service.html 200
 /services/index/ /services/index.html 200
+
+/services /services/ 301
+/services/ /services/ 301
