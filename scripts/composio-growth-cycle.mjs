@@ -190,7 +190,7 @@ https://ziontechgroup.com`,
     owner: "Zion-support",
     repo: "zion-support.github.io",
     title: `Lead: ${lead.firstName || lead.email}`,
-    body: `Email: ${lead.email}\nLinear: ${result.steps.linear?.data?.id || "n/a"}\nNotion: ${result.steps.notion?.data?.id || "n/a"}`,
+    body: `Email: ${lead.email}\nLinear: ${result.steps.linear?.data?.id || "n/a"}\nNotion: ${result.steps.notion?.data?.id || "n/a"}\nResend: ${result.steps.resend?.data?.id || "n/a"}\nSerpAPI: ${result.steps.serpapi?.ok ? "ok" : "n/a"}\nFirecrawl: ${result.steps.firecrawl?.ok ? "ok" : "n/a"}`,
   });
   if (!dryRun && !result.steps.github.ok) {
     result.steps.github = { skipped: true, reason: "github_failed" };
