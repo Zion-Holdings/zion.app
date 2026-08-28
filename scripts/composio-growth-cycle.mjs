@@ -90,12 +90,12 @@ export async function createCalendarEvent({ calendarId, summary, start, end, att
 export async function firecrawlScrape({ url }) {
   return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('FIRECRAWL_SCRAPE', { url }), 'firecrawl'), undefined, 'firecrawl');
 }
-export async function gscSearchAnalytics({ siteUrl, startDate, endDate, rowLimit = 20, startRow = 0 }) {
-  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY', { site_url: siteUrl, start_date: startDate, end_date: endDate, row_limit: rowLimit, start_row: startRow }), 'gsc'), undefined, 'gsc');
+export async function gscSearchAnalytics({ site_url, start_date, end_date, row_limit = 20, startRow = 0 }) {
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY', { site_url: site_url, start_date: start_date, end_date: end_date, row_limit: row_limit, start_row: startRow }), 'gsc'), undefined, 'gsc');
 }
 export async function resendCreateContact({ email, firstName, lastName }) {
   if (!process.env.COMPOSIO_RESEND_AUDIENCE_ID) return { skipped: true, reason: 'missing COMPOSIO_RESEND_AUDIENCE_ID' };
-  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('RESEND_CREATE_CONTACT', { email, first_name: firstName, last_name: lastName, audience_id: process.env.COMPOSIO_RESEND_AUDIENCE_ID }), 'resend'), undefined, 'resend');
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('RESEND_CREATE_CONTACT', { email, first_name: firstName, last_name: lastName, audienceId: process.env.COMPOSIO_RESEND_AUDIENCE_ID }), 'resend'), undefined, 'resend');
 }
 export async function brevoCreateContact({ email, firstName, lastName, listId }) {
   return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('BREVO_CREATE_CONTACT', { email, first_name: firstName, last_name: lastName, list_ids: [listId].filter(Boolean) }), 'brevo'), undefined, 'brevo');
@@ -218,7 +218,7 @@ export async function growthCycle({ lead, config = {} }) {
     calendarEnabled = false,
     linkedinEnabled = false,
     supabaseRef,
-    siteUrl = 'https://ziontechgroup.com',
+    site_url = 'https://ziontechgroup.com',
     telegramChatId,
     discordChannelId,
   } = config;
@@ -260,14 +260,14 @@ export async function growthCycle({ lead, config = {} }) {
     if (isFailed(result.steps.notion)) result.steps.notion = { skipped: true, reason: 'notion_failed' };
   }
 
-  result.steps.firecrawl = await firecrawlScrape({ url: siteUrl });
+  result.steps.firecrawl = await firecrawlScrape({ url: site_url });
   if (isFailed(result.steps.firecrawl)) result.steps.firecrawl = { skipped: true, reason: 'firecrawl_failed' };
 
   result.steps.gsc = await gscSearchAnalytics({
-    siteUrl,
-    startDate: '2026-08-01',
-    endDate: '2026-08-27',
-    rowLimit: 20,
+    site_url,
+    start_date: '2026-08-01',
+    end_date: '2026-08-27',
+    row_limit: 20,
     startRow: 0,
   });
   if (isFailed(result.steps.gsc)) result.steps.gsc = { skipped: true, reason: 'gsc_failed' };
@@ -374,10 +374,10 @@ export async function triggerGitHubWorkflow({ owner, repo, workflow, ref = 'main
   );
 }
 
-export async function monitorSeo({ siteUrl, startDate, endDate, rowLimit = 20 }) {
+export async function monitorSeo({ site_url, start_date, end_date, row_limit = 20 }) {
   const [gsc, firecrawl] = await Promise.allSettled([
-    gscSearchAnalytics({ siteUrl, startDate, endDate, rowLimit }),
-    firecrawlScrape({ url: siteUrl }),
+    gscSearchAnalytics({ site_url, start_date, end_date, row_limit }),
+    firecrawlScrape({ url: site_url }),
   ]);
   const result = {};
   if (gsc.status === 'fulfilled') result.gsc = gsc.value;
