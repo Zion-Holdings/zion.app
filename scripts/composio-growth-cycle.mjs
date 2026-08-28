@@ -208,6 +208,16 @@ https://ziontechgroup.com`,
     result.steps.supabase = { skipped: true, reason: "dry_run" };
   }
 
+  result.steps.stripe = await runStep("stripe", "STRIPE_CREATE_CUSTOMER", {
+    email: lead.email,
+    name: `${lead.firstName || ""} ${lead.lastName || ""}`.trim() || lead.email,
+    metadata: { source: "zion_outreach" },
+  });
+
+  result.steps.linkedin = await runStep("linkedin", "LINKEDIN_CREATE_LINKED_IN_POST", {
+    text: `New lead captured: ${lead.firstName || lead.email} via Zion automation.`,
+  });
+
   await notifyLeadCaptured({ lead, linearId: result.steps.linear?.data?.id, notionId: result.steps.notion?.data?.id, telegramChatId, discordChannelId });
 
   log("growthCycle.done", { lead: lead.email, stage: "done", dryRun });
