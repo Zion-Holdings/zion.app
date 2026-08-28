@@ -89,6 +89,9 @@ async function growthCycle({ lead, dryRun = true, concurrency = 2, delayMs = 100
     notionDatabaseId,
     apolloEnabled = true,
     resendEnabled = true,
+    youtubeEnabled = false,
+    openRouterEnabled = false,
+    whatsappEnabled = false,
     calendarEnabled = false,
     linkedinEnabled = false,
     supabaseRef,
@@ -158,6 +161,42 @@ async function growthCycle({ lead, dryRun = true, concurrency = 2, delayMs = 100
     });
   } else {
     result.steps.resend = { skipped: true, reason: "resend_disabled" };
+  }
+
+  if (youtubeEnabled) {
+    result.steps.youtube = await runStep("youtube", "YOUTUBE_LIST_CHANNEL_VIDEOS", {
+      query: `${lead.company || lead.email} AI automation`,
+      maxResults: 3,
+    });
+    if (!result.steps.youtube.ok) {
+      result.steps.youtube = { skipped: true, reason: "youtube_failed" };
+    }
+  }
+
+  if (openRouterEnabled) {
+    result.steps.openrouter = await runStep("openrouter", "OPENROUTER_CREATE_CHAT_COMPLETION", {
+      model: "openai/gpt-4o-mini",
+      messages: [
+        { role: "system", content: "You are a helpful outreach assistant." },
+        {
+          role: "user",
+          content: `Write a short follow-up to ${lead.firstName || lead.email} from ${lead.company || "their company"} about AI automation. Max 100 words.`,
+        },
+      ],
+    });
+    if (!result.steps.openrouter.ok) {
+      result.steps.openrouter = { skipped: true, reason: "openrouter_failed" };
+    }
+  }
+
+  if (whatsappEnabled) {
+    result.steps.whatsapp = await runStep("whatsapp", "WHATSAPP_SEND_MESSAGE", {
+      to: lead.phone || process.env.COMPOSIO_WHATSAPP_TO,
+      text: `Hi ${lead.firstName || "there"}, this is Zion Tech Group. Let's talk about AI automation.`,
+    });
+    if (!result.steps.whatsapp.ok) {
+      result.steps.whatsapp = { skipped: true, reason: "whatsapp_failed" };
+    }
   }
 
   result.steps.gmail = await runStep("gmail", "GMAIL_FETCH_EMAILS", {
