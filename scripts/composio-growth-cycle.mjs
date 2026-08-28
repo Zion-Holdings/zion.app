@@ -142,8 +142,8 @@ async function growthCycle({ lead, dryRun = true, concurrency = 2, delayMs = 100
     start_row: 0,
   });
 
-  result.steps.serpapi = await runStep("serpapi", "SERPAPI_GOOGLE_SEARCH", {
-    query: `ziontechgroup.com AI IT services`,
+  result.steps.serpapi = await runStep("serpapi", "SERPAPI_SEARCH", {
+    query: "ziontechgroup.com AI IT services",
     num: 10,
   });
 
