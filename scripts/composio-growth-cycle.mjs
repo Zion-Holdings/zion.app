@@ -144,7 +144,6 @@ async function growthCycle({ lead, dryRun = true, concurrency = 2, delayMs = 100
 
   result.steps.serpapi = await runStep("serpapi", "SERPAPI_SEARCH", {
     query: "ziontechgroup.com AI IT services",
-    num: 10,
   });
 
   if (resendEnabled) {
