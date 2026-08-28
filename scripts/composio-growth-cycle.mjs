@@ -126,6 +126,33 @@ export async function youtubeSearch({ query, maxResults = 5 }) {
   return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('YOUTUBE_SEARCH_YOUTUBE_VIDEOS', { query, maxResults }), 'youtube'), undefined, 'youtube');
 }
 
+// --- Pillar E: Content Creation ---
+export async function canvaCreateDesign({ templateId, title, elements = [] }) {
+  return await withBackoff(() => withCircuitBreaker(() =>
+    COMPOSIO('CANVA_CREATE_DESIGN', {
+      template_id: templateId,
+      title,
+      elements,
+    }), 'canva'), undefined, 'canva');
+}
+
+export async function huggingFaceGenerateText({ model, prompt, maxTokens = 512, temperature = 0.7 }) {
+  return await withBackoff(() => withCircuitBreaker(() =>
+    COMPOSIO('HUGGINGFACE_TEXT_GENERATION', {
+      model,
+      inputs: prompt,
+      parameters: { max_new_tokens: maxTokens, temperature },
+    }), 'huggingface'), undefined, 'huggingface');
+}
+
+export async function checkGmailReply({ email, maxAgeDays = 7 }) {
+  const res = await gmailSearchEmails({
+    query: `from:${email} newer_than:${maxAgeDays}d`,
+    maxResults: 5,
+  });
+  return Array.isArray(res) && res.length > 0;
+}
+
 // --- Alertas ---
 export async function telegramSendMessage({ chatId, text, parseMode = 'Markdown' }) {
   return await withBackoff(() =>
@@ -360,6 +387,30 @@ export async function monitorSeo({ siteUrl, startDate, endDate, rowLimit = 20 })
   return result;
 }
 
+export async function generatePersonalizedCopy({ lead, tone = 'professional', maxWords = 150 }) {
+  const prompt = `Write a personalized outreach email to ${lead.firstName || 'there'} at ${lead.company || 'their company'}. Tone: ${tone}. Max ${maxWords} words. Include a clear CTA for AI automation services.`;
+  const response = await huggingFaceGenerateText({
+    model: 'meta-llama/Llama-3.3-70B-Instruct',
+    prompt,
+    maxTokens: 300,
+    temperature: 0.7,
+  });
+  return response.choices?.[0]?.text || response.raw || response;
+}
+
+export async function createCampaignImage({ lead, templateId, brandColors = ['#6366f1', '#8b5cf6'] }) {
+  const design = await canvaCreateDesign({
+    templateId,
+    title: `Campaign - ${lead.firstName || lead.email}`,
+    elements: [
+      { type: 'text', content: `Hi ${lead.firstName || 'there'},` },
+      { type: 'text', content: "Let's talk about AI automation" },
+      { type: 'color', value: brandColors[0] },
+    ],
+  });
+  return design;
+}
+
 export async function runGrowthBatchWithNotifications({ leads, config = {}, concurrency = 2, delayMs = 300, telegramChatId, discordChannelId }) {
   const results = await runGrowthBatch({ leads, config, concurrency, delayMs });
   const succeeded = results.filter((r) => !r._error || r.skipped).length;
@@ -385,6 +436,30 @@ export async function runContinuousCycle({ leads, config = {}, intervalMs = 60_0
     run++;
   }
   return allResults;
+}
+
+// --- Advanced Orchestration ---
+export async function fullOutboundFlow({ lead, config = {} }) {
+  const results = { lead: lead.email, steps: {} };
+
+  results.steps.copy = await generatePersonalizedCopy({ lead });
+  if (isFailed(results.steps.copy)) results.steps.copy = { skipped: true, reason: 'copy_failed' };
+
+  results.steps.canva = await createCampaignImage({ lead, templateId: process.env.COMPOSIO_CANVA_TEMPLATE_ID });
+  if (isFailed(results.steps.canva)) results.steps.canva = { skipped: true, reason: 'canva_failed' };
+
+  results.steps.brevo = await brevoCreateContact({
+    email: lead.email,
+    firstName: lead.firstName,
+    lastName: lead.lastName,
+    listId: process.env.COMPOSIO_BREVO_LIST_ID,
+  });
+  if (isFailed(results.steps.brevo)) results.steps.brevo = { skipped: true, reason: 'brevo_failed' };
+
+  results.steps.resend = await resendCreateContact({ email: lead.email, firstName: lead.firstName, lastName: lead.lastName });
+  if (isFailed(results.steps.resend)) results.steps.resend = { skipped: true, reason: 'resend_failed' };
+
+  return results;
 }
 
 const DEMO_LEAD = { email: 'lead1@example.com', firstName: 'Lead', lastName: 'One', company: 'Zion', subject: 'Follow-up Zion Tech Group', body: 'Olá, vamos conversar?' };
