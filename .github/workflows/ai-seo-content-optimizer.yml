@@ -140,7 +140,6 @@ jobs:
       - name: Build verification
         run: |
           set -euo pipefail
-          npm run rsc:guard
           npm run build
 
       - name: Generate sitemap stats

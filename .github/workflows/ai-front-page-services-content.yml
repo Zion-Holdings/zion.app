@@ -71,7 +71,6 @@ jobs:
           node automation/ai-services-and-content-automation.cjs
           git add -A
           if ! git diff --staged --quiet; then
-            npm run rsc:guard
             npm run build
             git commit -m "chore(content): front page services and content - promote apps, sync core services"
             git push

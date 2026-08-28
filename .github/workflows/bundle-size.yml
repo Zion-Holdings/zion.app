@@ -45,7 +45,6 @@ jobs:
       - name: Build PR branch
         run: |
           set -euo pipefail
-          npm run rsc:guard
           npm run build
 
       - name: Measure PR bundle

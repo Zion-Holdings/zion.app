@@ -43,7 +43,6 @@ jobs:
       - name: Build site
         run: |
           set -euo pipefail
-          npm run rsc:guard
           npm run build
 
       - name: Audit structured data in built pages

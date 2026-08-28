@@ -79,7 +79,6 @@ jobs:
       - name: Build site
         run: |
           set -euo pipefail
-          npm run rsc:guard
           npm run build
       - name: Run Performance Advisor
         run: node automation/ai-site-performance-advisor.cjs

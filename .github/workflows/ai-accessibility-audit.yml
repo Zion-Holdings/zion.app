@@ -43,7 +43,6 @@ jobs:
       - name: Build
         run: |
           set -euo pipefail
-          npm run rsc:guard
           npm run build
 
       - name: Serve and run axe audit

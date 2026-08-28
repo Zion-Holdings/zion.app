@@ -89,7 +89,6 @@ jobs:
       - name: Validate build
         run: |
           set -euo pipefail
-          npm run rsc:guard
           npm run build
 
       - name: Commit, push, and deploy

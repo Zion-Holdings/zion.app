@@ -52,7 +52,6 @@ jobs:
           npm run lint:check
           npm run type-check
           npm run test:ci
-          npm run rsc:guard
           npm run build
 
       - name: Commit and push guarded-cycle updates

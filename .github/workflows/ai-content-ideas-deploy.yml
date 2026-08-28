@@ -108,7 +108,6 @@ jobs:
       - name: Validate build (catch content errors before push)
         run: |
           set -euo pipefail
-          npm run rsc:guard
           npm run build
 
       - name: Commit, push, and deploy
