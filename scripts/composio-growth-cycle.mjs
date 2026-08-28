@@ -162,6 +162,17 @@ async function growthCycle({ lead, dryRun = true, concurrency = 2, delayMs = 100
     query: `from:${lead.email}`,
   });
 
+  result.steps.gmail_create_draft = await runStep("gmail_draft", "GMAIL_CREATE_EMAIL_DRAFT", {
+    recipient_email: lead.email,
+    subject: "Next step: proposal/short engagement",
+    body: `Hi ${lead.firstName || ""},
+Following up from outreach. If AI/IT support is useful this quarter, I can send a 1-page proposal within 24 hours.
+Best,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+https://ziontechgroup.com`,
+  });
+
   result.steps.brevo = await runStep("brevo", "BREVO_GET_ALL_CONTACTS", {
     limit: 10,
     offset: 0,
