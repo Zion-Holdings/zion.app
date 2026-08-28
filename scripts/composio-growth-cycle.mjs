@@ -47,9 +47,7 @@ function runComposio(tool, payload = {}) {
 const SKIP_ON_ERROR = new Set([
   "APOLLO_PEOPLE_ENRICHMENT",
   "GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY",
-  "RESEND_CREATE_CONTACT",
   "LINKEDIN_CREATE_LINKED_IN_POST",
-  "GITHUB_CREATE_AN_ISSUE",
   "SUPABASE_BETA_RUN_SQL_QUERY",
   "FIRECRAWL_SCRAPE",
 ]);
@@ -142,6 +140,11 @@ async function growthCycle({ lead, dryRun = true, concurrency = 2, delayMs = 100
     end_date: "2026-08-27",
     row_limit: 20,
     start_row: 0,
+  });
+
+  result.steps.serpapi = await runStep("serpapi", "SERPAPI_GOOGLE_SEARCH", {
+    query: `ziontechgroup.com AI IT services`,
+    num: 10,
   });
 
   if (resendEnabled) {
