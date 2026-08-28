@@ -753,3 +753,4 @@
 
 /services /services/ 301
 /services/ /services/ 301
+/tools/* /tools/:splat/index.html 200
