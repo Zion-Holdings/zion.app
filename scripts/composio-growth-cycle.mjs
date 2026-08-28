@@ -20,72 +20,110 @@ const COMPOSIO = (slug, data) => {
 const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 const log = (label, payload) => console.log(`[composio] ${label}: ${JSON.stringify(payload)}`);
 
-async function withBackoff(fn, max = 3) {
+async function withBackoff(fn, max = 3, label) {
   for (let i = 0; i < max; i++) {
     const res = await fn();
     if (!res._error) return res;
-    await sleep(1000 * 2 ** i);
+    await sleep(withJitter(1000 * 2 ** i));
   }
   return fn();
 }
 
 const isFailed = (res) => res && typeof res === 'object' && res._error === true;
 
+// --- Resilience ---
+function withJitter(ms, jitter = 0.2) {
+  return ms + (Math.random() - 0.5) * 2 * ms * jitter;
+}
+
+const circuitBreakerState = { failures: 0, successes: 0, state: 'closed', lastFailure: null };
+const CIRCUIT_OPEN_THRESHOLD = 5;
+const CIRCUIT_COOLDOWN = 30_000;
+
+async function withCircuitBreaker(fn, label = 'composio') {
+  const now = Date.now();
+  if (circuitBreakerState.state === 'open') {
+    if (now - circuitBreakerState.lastFailure > CIRCUIT_COOLDOWN) {
+      circuitBreakerState.state = 'half-open';
+      circuitBreakerState.failures = 0;
+      circuitBreakerState.successes = 0;
+    } else {
+      return { _error: true, stderr: `circuit_open: ${label}` };
+    }
+  }
+  const res = await fn();
+  if (!res._error) {
+    circuitBreakerState.successes++;
+    if (circuitBreakerState.state === 'half-open' && circuitBreakerState.successes >= 2) {
+      circuitBreakerState.state = 'closed';
+      circuitBreakerState.failures = 0;
+    }
+    return res;
+  }
+  circuitBreakerState.failures++;
+  circuitBreakerState.lastFailure = now;
+  if (circuitBreakerState.failures >= CIRCUIT_OPEN_THRESHOLD) {
+    circuitBreakerState.state = 'open';
+    circuitBreakerState.failures = 0;
+  }
+  return res;
+}
+
 // --- PILLAR A: Lead Capture & CRM ---
 export async function gmailSearchEmails({ query = 'newer_than:1d', maxResults = 20 }) {
   return await withBackoff(() => COMPOSIO('GMAIL_SEARCH_EMAILS', { q: query, max_results: maxResults }));
 }
 export async function createLinearIssue({ teamId, title, description, priority = 3 }) {
-  return await withBackoff(() => COMPOSIO('LINEAR_CREATE_LINEAR_ISSUE', { team_id: teamId, title, description, priority }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('LINEAR_CREATE_LINEAR_ISSUE', { team_id: teamId, title, description, priority }), 'linear'), undefined, 'linear');
 }
 export async function notionInsertRow({ databaseId, properties }) {
-  return await withBackoff(() => COMPOSIO('NOTION_INSERT_ROW_DATABASE', { database_id: databaseId, properties }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('NOTION_INSERT_ROW_DATABASE', { database_id: databaseId, properties }), 'notion'), undefined, 'notion');
 }
 export async function findFreeSlots({ calendarId, timeMin, timeMax, durationMinutes = 30 }) {
-  return await withBackoff(() => COMPOSIO('GOOGLECALENDAR_FIND_FREE_SLOTS', { calendar_id: calendarId, time_min: timeMin, time_max: timeMax, duration_minutes: durationMinutes }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('GOOGLECALENDAR_FIND_FREE_SLOTS', { calendar_id: calendarId, time_min: timeMin, time_max: timeMax, duration_minutes: durationMinutes }), 'calendar'), undefined, 'calendar');
 }
 export async function createCalendarEvent({ calendarId, summary, start, end, attendees = [] }) {
-  return await withBackoff(() => COMPOSIO('GOOGLECALENDAR_CREATE_EVENT', { calendar_id: calendarId, summary, start, end, attendees }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('GOOGLECALENDAR_CREATE_EVENT', { calendar_id: calendarId, summary, start, end, attendees }), 'calendar'), undefined, 'calendar');
 }
 
 // --- PILLAR B: Content & SEO ---
 export async function firecrawlScrape({ url }) {
-  return await withBackoff(() => COMPOSIO('FIRECRAWL_SCRAPE', { url }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('FIRECRAWL_SCRAPE', { url }), 'firecrawl'), undefined, 'firecrawl');
 }
 export async function gscSearchAnalytics({ siteUrl, startDate, endDate, rowLimit = 20, startRow = 0 }) {
-  return await withBackoff(() => COMPOSIO('GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY', { site_url: siteUrl, start_date: startDate, end_date: endDate, row_limit: rowLimit, start_row: startRow }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY', { site_url: siteUrl, start_date: startDate, end_date: endDate, row_limit: rowLimit, start_row: startRow }), 'gsc'), undefined, 'gsc');
 }
 export async function resendCreateContact({ email, firstName, lastName }) {
   if (!process.env.COMPOSIO_RESEND_AUDIENCE_ID) return { skipped: true, reason: 'missing COMPOSIO_RESEND_AUDIENCE_ID' };
-  return await withBackoff(() => COMPOSIO('RESEND_CREATE_CONTACT', { email, first_name: firstName, last_name: lastName, audience_id: process.env.COMPOSIO_RESEND_AUDIENCE_ID }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('RESEND_CREATE_CONTACT', { email, first_name: firstName, last_name: lastName, audience_id: process.env.COMPOSIO_RESEND_AUDIENCE_ID }), 'resend'), undefined, 'resend');
 }
 export async function brevoCreateContact({ email, firstName, lastName, listId }) {
-  return await withBackoff(() => COMPOSIO('BREVO_CREATE_CONTACT', { email, first_name: firstName, last_name: lastName, list_ids: [listId].filter(Boolean) }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('BREVO_CREATE_CONTACT', { email, first_name: firstName, last_name: lastName, list_ids: [listId].filter(Boolean) }), 'brevo'), undefined, 'brevo');
 }
 
 // --- PILLAR C: DevOps ---
 export async function githubCreateIssue({ owner, repo, title, body }) {
-  return await withBackoff(() => COMPOSIO('GITHUB_CREATE_ISSUE', { owner, repo, title, body }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('GITHUB_CREATE_ISSUE', { owner, repo, title, body }), 'github'), undefined, 'github');
 }
 export async function supabaseRunSql({ ref, query }) {
-  return await withBackoff(() => COMPOSIO('SUPABASE_BETA_RUN_SQL_QUERY', { ref, query }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('SUPABASE_BETA_RUN_SQL_QUERY', { ref, query }), 'supabase'), undefined, 'supabase');
 }
 export async function cloudflarePurgeCache({ zoneId, files = [] }) {
-  return await withBackoff(() => COMPOSIO('CLOUDFLARE_PURGE_CACHE', { zone_id: zoneId, files }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('CLOUDFLARE_PURGE_CACHE', { zone_id: zoneId, files }), 'cloudflare'), undefined, 'cloudflare');
 }
 
 // --- PILLAR D: Enrichment ---
 export async function verifyEmailHunter({ email }) {
-  return await withBackoff(() => COMPOSIO('HUNTER_EMAIL_VERIFIER', { email }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('HUNTER_EMAIL_VERIFIER', { email }), 'hunter'), undefined, 'hunter');
 }
 export async function apolloEnrichPerson({ email }) {
-  return await withBackoff(() => COMPOSIO('APOLLO_PEOPLE_ENRICHMENT', { email }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('APOLLO_PEOPLE_ENRICHMENT', { email }), 'apollo'), undefined, 'apollo');
 }
 export async function linkedinCreatePost({ text, visibility = 'PUBLIC' }) {
-  return await withBackoff(() => COMPOSIO('LINKEDIN_CREATE_LINKED_IN_POST', { text, visibility }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('LINKEDIN_CREATE_LINKED_IN_POST', { text, visibility }), 'linkedin'), undefined, 'linkedin');
 }
 export async function youtubeSearch({ query, maxResults = 5 }) {
-  return await withBackoff(() => COMPOSIO('YOUTUBE_SEARCH_YOUTUBE_VIDEOS', { query, maxResults }));
+  return await withBackoff(() => withCircuitBreaker(() => COMPOSIO('YOUTUBE_SEARCH_YOUTUBE_VIDEOS', { query, maxResults }), 'youtube'), undefined, 'youtube');
 }
 
 // --- Alertas ---
