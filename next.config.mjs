@@ -11,6 +11,7 @@ const nextConfig = {
   experimental: {
     preloadEntriesOnStart: false,
   },
+  parallelism: 2,
 };
 
 export default nextConfig;

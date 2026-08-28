@@ -1,133 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Picker | Zion Tech Group</title>
-  <meta name="description" content="Pick colors online — get HEX, RGB, HSL values and generate color palettes.">
-  <meta property="og:title" content="Color Picker | Zion Tech Group">
-  <meta property="og:description" content="Free online color picker with palette generator.">
-  <meta property="og:url" content="https://ziontechgroup.com/tools/color-picker/">
+  <title>color-picker | Zion Tech Group</title>
+  <meta name="description" content="Free online color-picker tool by Zion Tech Group">
   <link rel="canonical" href="https://ziontechgroup.com/tools/color-picker/">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
-    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
-    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-    .preview { height: 150px; border-radius: 0.75rem; border: 1px solid #334155; display: flex; align-items: center; justify-content: center; font-weight: 600; }
-    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
-    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
-    .field { margin-bottom: 1rem; }
-    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
-    .field input[type="color"] { width: 100%; height: 48px; padding: 2px; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; cursor: pointer; }
-    .field input[type="text"] { width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
-    .field input[type="text"]:focus { outline: none; border-color: #6366f1; }
-    .values { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
-    .palette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; }
-    .palette-color { height: 48px; border-radius: 0.5rem; cursor: pointer; border: 1px solid #334155; }
-    .palette-color:hover { border-color: #6366f1; }
-    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
-    .btn:hover { background: #4f46e5; }
-    .btn.success { background: #059669; }
-    .btn.success:hover { background: #047857; }
-    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
-    .back:hover { text-decoration: underline; }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "color-picker",
+    "url": "https://ziontechgroup.com/tools/color-picker/",
+    "description": "Free online color-picker tool by Zion Tech Group",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All"
+  }
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Color Picker</h1>
-    <p class="subtitle">Pick colors with HEX/RGB/HSL values.</p>
-    <div class="grid">
-      <div class="preview" id="preview">Sample Text</div>
-      <div class="field">
-        <label>Color</label>
-        <input type="color" id="colorPicker" value="#6366f1" oninput="update()">
-      </div>
-    </div>
-    <div class="section">
-      <h3>Color Values</h3>
-      <div class="values">
-        <div class="field">
-          <label>HEX</label>
-          <input type="text" id="hexValue" readonly>
-        </div>
-        <div class="field">
-          <label>RGB</label>
-          <input type="text" id="rgbValue" readonly>
-        </div>
-        <div class="field">
-          <label>HSL</label>
-          <input type="text" id="hslValue" readonly>
-        </div>
-      </div>
-      <div class="buttons">
-        <button class="btn success" onclick="copyHex()">Copy HEX</button>
-        <button class="btn" onclick="copyRGB()">Copy RGB</button>
-        <button class="btn" onclick="copyHSL()">Copy HSL</button>
-      </div>
-    </div>
-    <div class="section">
-      <h3>Color Palette</h3>
-      <div class="palette" id="palette"></div>
-    </div>
-    <a href="/tools/" class="back">← Back to Tools</a>
-  </div>
-  <script>
-    function hexToRgb(hex) {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16) } : null;
-    }
-    function rgbToHsl(r, g, b) {
-      r /= 255; g /= 255; b /= 255;
-      const max = Math.max(r, g, b), min = Math.min(r, g, b);
-      let h, s, l = (max + min) / 2;
-      if (max === min) { h = s = 0; }
-      else {
-        const d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-        switch (max) {
-          case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
-          case g: h = ((b - r) / d + 2) / 6; break;
-          case b: h = ((r - g) / d + 4) / 6; break;
-        }
-      }
-      return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
-    }
-    function update() {
-      const hex = document.getElementById('colorPicker').value;
-      const rgb = hexToRgb(hex);
-      const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-      document.getElementById('hexValue').textContent = hex;
-      document.getElementById('rgbValue').textContent = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
-      document.getElementById('hslValue').textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
-      document.getElementById('preview').style.background = hex;
-      document.getElementById('preview').style.color = hsl.l > 50 ? '#000' : '#fff';
-      generatePalette(rgb);
-    }
-    function generatePalette(rgb) {
-      const palette = document.getElementById('palette');
-      palette.innerHTML = '';
-      for (let i = 0; i < 5; i++) {
-        const factor = 0.6 + (i * 0.1);
-        const r = Math.min(255, Math.round(rgb.r * factor));
-        const g = Math.min(255, Math.round(rgb.g * factor));
-        const b = Math.min(255, Math.round(rgb.b * factor));
-        const color = `#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`;
-        const div = document.createElement('div');
-        div.className = 'palette-color';
-        div.style.background = color;
-        div.onclick = () => { document.getElementById('colorPicker').value = color; update(); };
-        palette.appendChild(div);
-      }
-    }
-    function copyHex() { navigator.clipboard.writeText(document.getElementById('hexValue').textContent); }
-    function copyRGB() { navigator.clipboard.writeText(document.getElementById('rgbValue').textContent); }
-    function copyHSL() { navigator.clipboard.writeText(document.getElementById('hslValue').textContent); }
-    update();
-  </script>
+  <h1>color-picker</h1>
+  <p>This tool is coming soon. Please check back later.</p>
 </body>
 </html>
