@@ -1,0 +1,46 @@
+{
+  "redirects_parity": {
+    "root_public": true,
+    "root_docs": true
+  },
+  "service_200_count": 31,
+  "service_301_count": 33491,
+  "missing_200_services": [
+    "accessibility-compliance",
+    "ai",
+    "ai-agent-automation",
+    "ai-agents-autonomous",
+    "ai-data-pipeline",
+    "ai-email-intelligence",
+    "ai-observability",
+    "ai-observability-2026-6565",
+    "ai-smart-global-campaign",
+    "automation",
+    "cloud",
+    "cloud-cost-ai-optimizer-2026-6534",
+    "cloud-cost-optimization",
+    "cloud-cost-optimization-service",
+    "cloud-infrastructure-optimization",
+    "cloud-migration-services-2026-6572",
+    "cybersecurity-governance",
+    "cybersecurity-platform-msp-2026-6558",
+    "data-analytics-platform",
+    "hermes-agent-a2a-protocol",
+    "hermes-agent-bot-mode",
+    "hermes-agent-complete-guide",
+    "hermes-agent-content-publishing-distribution",
+    "hermes-agent-platform",
+    "hermes-agent-plugin-development",
+    "it-consulting-2026-6570",
+    "it-staff-augmentation",
+    "managed-it-operations",
+    "managed-it-services-small-business-2026-6559",
+    "security"
+  ],
+  "sitemap_urls": 1280,
+  "sitemap_service_urls": 31,
+  "sitemap_parity": {
+    "root_public": true,
+    "root_docs": true
+  }
+}

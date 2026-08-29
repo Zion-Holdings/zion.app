@@ -1,191 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Agent Prompt Builder | Zion Tech Group Tools</title>
-<meta name="description" content="Free agent prompt builder from Zion Tech Group: construct well-structured prompts for autonomous AI agents with clear instructions, constraints, output format, and context."/>
-<link rel="canonical" href="https://ziontechgroup.com/tools/agent-prompt-builder/"/>
-<meta property="og:title" content="Agent Prompt Builder | Zion Tech Group"/>
-<meta property="og:description" content="Build structured prompts for autonomous AI agents — instructions, constraints, output format, and context."/>
-<meta property="og:url" content="https://ziontechgroup.com/tools/agent-prompt-builder/"/>
-<meta property="og:type" content="website"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Agent Prompt Builder | Zion Tech Group"/>
-<meta name="twitter:description" content="Build structured prompts for autonomous AI agents — instructions, constraints, output format, and context."/>
-<style>
-  body{font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;margin:0}
-  .container{max-width:1200px;margin:0 auto;padding:0 24px}
-  header{border-bottom:1px solid #1e293b;background:#0f172a}
-  nav{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:16px 24px;flex-wrap:wrap;gap:12px}
-  .brand{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
-  nav a{color:#94a3b8;text-decoration:none;font-size:0.875rem;padding:6px 12px;border-radius:6px;transition:color .15s,background .15s}
-  nav a:hover{color:#fff;background:#1e293b}
-  nav a.cta{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-weight:600;padding:8px 16px}
-  nav a.cta:hover{background:linear-gradient(135deg,#6d28d9,#9333ea)}
-  .wrap{max-width:800px;margin:0 auto;padding:60px 24px}
-  .breadcrumb{display:flex;flex-wrap:wrap;gap:4px;font-size:0.8125rem;color:#64748b;margin-bottom:24px}
-  .breadcrumb a{color:#a78bfa;text-decoration:none}
-  .breadcrumb a:hover{color:#c084fc}
-  .breadcrumb span{color:#475569}
-  h1{font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.2}
-  .subtitle{color:#94a3b8;font-size:1.125rem;margin:0 0 40px;line-height:1.6}
-  .section{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:24px;margin-bottom:20px}
-  .section h2{font-size:1.25rem;font-weight:700;color:#c084fc;margin:0 0 16px}
-  .field{margin-bottom:16px}
-  .field label{display:block;font-size:0.875rem;color:#94a3b8;margin-bottom:6px;font-weight:600}
-  .field textarea{width:100%;background:#0f172a;border:1px solid #334155;border-radius:8px;color:#e2e8f0;padding:12px;font-family:inherit;font-size:0.9375rem;resize:vertical;min-height:80px}
-  .field textarea:focus{outline:none;border-color:#a855f7}
-  .field p{font-size:0.8125rem;color:#64748b;margin:0}
-  .example{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:16px;margin-bottom:16px;font-family:ui-monospace,Menlo,monospace;font-size:0.8125rem;color:#cbd5e1;white-space:pre-wrap;line-height:1.6}
-  .example-label{font-size:0.75rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-  .btn{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.9375rem}
-  .btn:hover{background:linear-gradient(135deg,#6d28d9,#9333ea);transform:translateY(-1px)}
-  .btn-secondary{background:#334155;color:#e2e8f0;border:1px solid #475569;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.9375rem}
-  .btn-secondary:hover{background:#475569}
-  footer{border-top:1px solid #1e293b;background:#0f172a;padding:32px 24px;margin-top:48px}
-  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;max-width:1200px;margin:0 auto}
-  .footer-grid h4{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#64748b;margin:0 0 12px}
-  .footer-grid ul{list-style:none;padding:0;margin:0}
-  .footer-grid li{margin-bottom:8px}
-  .footer-grid a{color:#94a3b8;text-decoration:none;font-size:0.875rem}
-  .footer-grid a:hover{color:#a855f7}
-  .copyright{width:100%;text-align:center;color:#64748b;font-size:0.8125rem;margin-top:24px;padding-top:16px;border-top:1px solid #1e293b}
-  .status-badge{position:fixed;bottom:16px;right:16px;background:#0f172a;border:1px solid #a855f7;border-radius:24px;padding:8px 14px;display:flex;align-items:center;gap:8px;font-size:0.8125rem;color:#e2e8f0;box-shadow:0 4px 12px rgba(168,85,247,.15)}
-  .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Prompt Builder | Zion Tech Group</title>
+  <meta name="description" content="Build, test, and optimize prompts for AI agents — with templates, variable injection, and evaluation against test cases.">
+  <link rel="canonical" href="https://ziontechgroup.com/Users/miami2/zion-support.github.io/public/tools/agent-prompt-builder/index.html/">
+  <meta property="og:title" content="AI Agent Prompt Builder">
+  <meta property="og:description" content="Build, test, and optimize prompts for AI agents — with templates, variable injection, and evaluation against test cases.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ziontechgroup.com/Users/miami2/zion-support.github.io/public/tools/agent-prompt-builder/index.html/">
 </head>
 <body>
-<header>
-  <nav>
-    <a class="brand" href="/">Zion Tech Group</a>
-    <div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">
-      <a href="/services/">Services</a>
-      <a href="/tools/">Tools</a>
-      <a href="/blog/">Blog</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/contact/">Contact</a>
-      <a href="/agents-monitoring/" style="background:#1e293b;border:1px solid #a855f7;color:#e2e8f0;padding:6px 14px;border-radius:20px;font-size:0.8125rem;font-weight:500">AI Agents</a>
-      <a href="/contact/" class="cta">Get Free Consultation</a>
-    </div>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0b1220; color: #e6f0ff; line-height: 1.6; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin: 32px 0 12px; color: #94a3b8; }
+  p { margin: 0 0 16px; color: #cbd5e1; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 24px 0; }
+  .card { border: 1px solid #1e293b; border-radius: 10px; padding: 20px; background: #0f172a; }
+  .card h3 { font-size: 1.1rem; margin-bottom: 8px; color: #60a5fa; }
+  .card p { font-size: 0.9rem; color: #94a3b8; }
+  .cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; background: #2563eb; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; margin-top: 24px; }
+  .nav { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+  .nav a { color: #94a3b8; text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+  .nav a:hover { color: #e6f0ff; border-bottom-color: #2563eb; }
+  .footer { margin-top: 48px; padding: 24px 0; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.85rem; }
+  .footer a { color: #64748b; text-decoration: none; margin-right: 16px; }
+</style>
+<div class="wrap">
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/blog/">Blog</a>
+    <a href="/tools/">Tools</a>
+    <a href="/contact/">Contact</a>
   </nav>
-</header>
-
-<div class="container">
-  <div class="breadcrumb">
-    <a href="/">Home</a><span>/</span>
-    <a href="/tools/">Tools</a><span>/</span>
-    <span>Agent Prompt Builder</span>
-  </div>
-
+  <h1>AI Agent Prompt Builder</h1>
+  <p>Great agent behavior starts with great prompts. This tool helps you build, iterate, and evaluate prompts for AI agents — from simple single-turn instructions to complex multi-step workflows with tool use.</p>
+<h2>Features</h2>
+<div class="card-grid">
+  <div class="card"><h3>Prompt Templates</h3><p>Start from proven templates for common agent patterns: triage, research, summarization, extraction, and multi-step reasoning.</p></div>
+  <div class="card"><h3>Variable Injection</h3><p>Define input variables and see how your prompt behaves across different inputs. Catch edge cases before deployment.</p></div>
+  <div class="card"><h3>Test Cases</h3><p>Build a library of test cases with expected outputs. Run your prompt against the full set and catch regressions fast.</p></div>
+  <div class="card"><h3>Version Comparison</h3><p>Compare prompt versions side-by-side on the same inputs. See what changed and whether it improved.</p></div>
+</div>
+<h2>Best Practices Built In</h2>
+<p>System prompts separate instructions from data. Few-shot examples where they help. Clear output format specifications. Guardrails against unwanted behaviors. And evaluation before deployment — not after.</p>
+  <a href="/contact/" class="cta">Start a project</a>
+</div>
+<div class="footer">
   <div class="wrap">
-    <h1>Agent Prompt Builder</h1>
-    <p class="subtitle">Construct well-structured prompts for autonomous AI agents. Define the role, the task, the constraints, the output format, and the context — then export a prompt ready to use.</p>
-
-    <div class="section">
-      <h2>Prompt structure</h2>
-      <div class="field">
-        <label for="role">Agent Role</label>
-        <textarea id="role" placeholder="You are an expert X who specializes in Y...">You are an expert technical writer specializing in AI and automation for enterprise IT.</textarea>
-        <p>Define who the agent is and what it knows.</p>
-      </div>
-      <div class="field">
-        <label for="task">Task Description</label>
-        <textarea id="task" placeholder="Your job is to...">Your job is to analyze incoming email and produce a structured classification with intent, priority, and suggested response approach.</textarea>
-        <p>Describe what the agent should do, clearly and specifically.</p>
-      </div>
-      <div class="field">
-        <label for="context">Context &amp; Constraints</label>
-        <textarea id="context" placeholder="Constraints: ...">Constraints: classify into one of five intent categories only. If the email is ambiguous, flag it rather than forcing a classification. Do not invent facts not present in the email.</textarea>
-        <p>Set the boundaries — what the agent should and should not do.</p>
-      </div>
-      <div class="field">
-        <label for="output">Output Format</label>
-        <textarea id="output" placeholder="Output format: ...">Output format: a JSON object with fields: intent (string), priority (low/medium/high), reasoning (brief string), suggested_action (string).</textarea>
-        <p>Define exactly how the agent should structure its response.</p>
-      </div>
-      <div class="field">
-        <label for="examples">Examples (optional)</label>
-        <textarea id="examples" placeholder="Example input/output...">Example: Email = "Can we get a quote for AI observability?" → Intent = "sales_inquiry", Priority = "medium", Action = "route to sales, draft quote response"</textarea>
-        <p>Give the agent a concrete example of the expected behavior.</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="example-label">Example assembled prompt</div>
-      <div class="example">You are an expert technical writer specializing in AI and automation for enterprise IT.
-
-Your job is to analyze incoming email and produce a structured classification with intent, priority, and suggested response approach.
-
-Constraints: classify into one of five intent categories only. If the email is ambiguous, flag it rather than forcing a classification. Do not invent facts not present in the email.
-
-Output format: a JSON object with fields: intent (string), priority (low/medium/high), reasoning (brief string), suggested_action (string).
-
-Example: Email = "Can we get a quote for AI observability?" → Intent = "sales_inquiry", Priority = "medium", Action = "route to sales, draft quote response"</textarea>
-    </div>
-
-    <div class="cta-row">
-      <a href="/contact/" class="btn">Talk to Sales</a>
-      <a href="/services/" class="btn-secondary">Explore Services</a>
+    <p>&copy; 2026 Zion Tech Group. All rights reserved.</p>
+    <div>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
     </div>
   </div>
 </div>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Services &amp; Tech</h4>
-        <ul>
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/ai-services/">AI Services</a></li>
-          <li><a href="/products/">Products</a></li>
-          <li><a href="/solutions/">Solutions</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Free Tools</h4>
-        <ul>
-          <li><a href="/tools/">Tools</a></li>
-          <li><a href="/agents-monitoring/">AI Agent Dashboard</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company &amp; Trust</h4>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/use-cases/">Use Cases</a></li>
-          <li><a href="/testimonials/">Testimonials</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal &amp; Resources</h4>
-        <ul>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/privacy/">Privacy</a></li>
-          <li><a href="/terms/">Terms</a></li>
-          <li><a href="/sla/">SLA</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      &copy; 2026 Zion Tech Group. All rights reserved.
-      <a href="/sitemap.xml" style="margin-left:16px;color:#64748b">Sitemap</a>
-    </div>
-  </div>
-</footer>
-
-<div class="status-badge">
-  <span class="dot"></span>
-  <span>10 Agents Active</span>
-</div>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Agent Prompt Builder","applicationCategory":"DeveloperTool","operatingSystem":"Web","description":"Build structured prompts for autonomous AI agents — role, task, constraints, output format, and examples.","url":"https://ziontechgroup.com/tools/agent-prompt-builder/","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"}}
-</script>
 </body>
 </html>

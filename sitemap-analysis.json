@@ -1,0 +1,49 @@
+{
+  "sitemap_total": 975,
+  "service_sitemap_count": 1,
+  "redirect_rules_total": 348,
+  "service_redirect_rules": 287,
+  "static_service_pages": 30,
+  "missing_200": [
+    {
+      "url": "https://ziontechgroup.com/services/",
+      "rule": "NO RULE"
+    }
+  ],
+  "missing_static": [
+    "https://ziontechgroup.com/services/"
+  ],
+  "missing_from_sitemap": [
+    "https://ziontechgroup.com/services/accessibility-compliance/",
+    "https://ziontechgroup.com/services/ai/",
+    "https://ziontechgroup.com/services/ai-agent-automation/",
+    "https://ziontechgroup.com/services/ai-agents-autonomous/",
+    "https://ziontechgroup.com/services/ai-data-pipeline/",
+    "https://ziontechgroup.com/services/ai-email-intelligence/",
+    "https://ziontechgroup.com/services/ai-observability/",
+    "https://ziontechgroup.com/services/ai-observability-2026-6565/",
+    "https://ziontechgroup.com/services/ai-smart-global-campaign/",
+    "https://ziontechgroup.com/services/automation/",
+    "https://ziontechgroup.com/services/cloud/",
+    "https://ziontechgroup.com/services/cloud-cost-ai-optimizer-2026-6534/",
+    "https://ziontechgroup.com/services/cloud-cost-optimization/",
+    "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
+    "https://ziontechgroup.com/services/cloud-infrastructure-optimization/",
+    "https://ziontechgroup.com/services/cloud-migration-services-2026-6572/",
+    "https://ziontechgroup.com/services/cybersecurity-governance/",
+    "https://ziontechgroup.com/services/cybersecurity-platform-msp-2026-6558/",
+    "https://ziontechgroup.com/services/data-analytics-platform/",
+    "https://ziontechgroup.com/services/hermes-agent-a2a-protocol/",
+    "https://ziontechgroup.com/services/hermes-agent-bot-mode/",
+    "https://ziontechgroup.com/services/hermes-agent-complete-guide/",
+    "https://ziontechgroup.com/services/hermes-agent-content-publishing-distribution/",
+    "https://ziontechgroup.com/services/hermes-agent-platform/",
+    "https://ziontechgroup.com/services/hermes-agent-plugin-development/",
+    "https://ziontechgroup.com/services/it-consulting-2026-6570/",
+    "https://ziontechgroup.com/services/it-staff-augmentation/",
+    "https://ziontechgroup.com/services/managed-it-operations/",
+    "https://ziontechgroup.com/services/managed-it-services-small-business-2026-6559/",
+    "https://ziontechgroup.com/services/security/"
+  ],
+  "dead_targets": []
+}

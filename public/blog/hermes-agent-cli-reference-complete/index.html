@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes Agent CLI Reference — Complete Command Guide | Zion Tech Group</title>
+  <meta name="description" content="Full CLI reference for Hermes Agent. Every command, global flag, slash command, and subcommand for installation, configuration, cron jobs, skills, MCP servers, and Bot Mode.">
+  <link rel="canonical" href="https://ziontechgroup.com/blog/hermes-agent-cli-reference-complete/">
+  <meta property="og:title" content="Hermes Agent CLI Reference — Complete Command Guide">
+  <meta property="og:description" content="Full CLI reference for Hermes Agent. Every command, global flag, slash command, and subcommand for installation, configuration, cron jobs, skills, MCP servers, and Bot Mode.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ziontechgroup.com/blog/hermes-agent-cli-reference-complete/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0b1220; color: #e6f0ff; line-height: 1.7; }
+    .footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.82rem; }
+    .footer a { color: #64748b; text-decoration: none; margin-right: 12px; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <p>The Hermes CLI is the command-line interface for managing autonomous AI agents. From installation to advanced orchestration, these commands cover everything.</p><h2>Core Commands</h2><pre>hermes              # Interactive chat
+hermes setup        # Interactive wizard
+hermes model        # Pick/change model
+hermes tools        # Enable/disable toolsets
+hermes doctor       # Health check
+hermes status       # Component status</pre><h2>Cron Jobs</h2><pre>hermes cron list    # List scheduled jobs
+hermes cron create "30m"  # Create job
+hermes cron run ID  # Trigger now
+hermes cron remove ID  # Delete job</pre><h2>Skills</h2><pre>hermes skills list  # List installed skills
+hermes skills browse  # Browse hub skills
+hermes skills install ID  # Install skill
+hermes skills update  # Update outdated skills</pre><h2>MCP Servers</h2><pre>hermes mcp list     # List MCP servers
+hermes mcp add NAME --url URL  # Add server
+hermes mcp test NAME  # Test connection</pre><h2>Profiles</h2><pre>hermes profile list  # List profiles
+hermes profile create NAME  # Create profile
+hermes profile use NAME  # Switch profile</pre>
+</div>
+<div class="footer">
+  <div class="wrap">
+    <p>&copy; 2026 Zion Tech Group. All rights reserved.</p>
+    <div>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

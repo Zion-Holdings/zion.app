@@ -90,7 +90,7 @@
       tags += `<meta name="twitter:title" content="${title}">\n`;
       tags += `<meta name="twitter:description" content="${description}">\n`;
       if (ogImage) tags += `<meta name="twitter:image" content="${ogImage}">\n`;
-      tags += `<link rel="canonical" href="${url}">`;
+      tags += `<link rel="canonical" href="#">`;
       
       document.getElementById('output').textContent = tags;
     }

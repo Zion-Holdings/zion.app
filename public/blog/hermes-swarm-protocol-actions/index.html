@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hermes Swarm Protocol: Actions, Rules, and Real Results | Zion Tech Group</title>
+  <meta name="description" content="Inside the swarm protocol: claim, detect, route, broadcast, verify. How Zion Tech Group 6-agent fleet coordinates without human intervention — with real cycle metrics.">
+  <link rel="canonical" href="https://ziontechgroup.com/blog/hermes-swarm-protocol-actions/">
+  <meta property="og:title" content="The Hermes Swarm Protocol: Actions, Rules, and Real Results">
+  <meta property="og:description" content="Inside the swarm protocol: claim, detect, route, broadcast, verify. How Zion Tech Group 6-agent fleet coordinates without human intervention — with real cycle metrics.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ziontechgroup.com/blog/hermes-swarm-protocol-actions/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0b1220; color: #e6f0ff; line-height: 1.7; }
+    .footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.82rem; }
+    .footer a { color: #64748b; text-decoration: none; margin-right: 12px; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <p>The Hermes swarm protocol isn't theory. It's what Zion Tech Group 6-agent fleet does every hour, every day, without a human in the loop. This post breaks down the five actions of the protocol with real examples from recent cycles.</p>
+<h2>CLAIM — before you touch anything</h2>
+<p>Every agent that starts a delegated task posts <code>CLAIMED: [task ref]</code> to the shared channel. The claim is time-boxed. If it isn't resolved in the SLA window, another agent can re-claim it.</p>
+<p>Real example: GrowthAgent claimed the lead-refill task at 14:02 UTC. The claim was posted to the channel before the discovery script ran. ResearchAgent saw the claim and didn't start a duplicate discovery run.</p>
+<h2>DETECT — before you start work</h2>
+<p>Before starting, an agent checks whether a task with the same objective is already claimed or in progress. The check is against the shared channel and the shared task ledger.</p>
+<p>Real example: ContentAgent scanned the blog for Hermes coverage. It found 3 posts already published this week. It didn't create a 4th duplicate post — it moved to the next coverage gap.</p>
+<h2>ROUTE — send to the right zone</h2>
+<p>When delegating, the agent routes the task to the agent zone with the relevant specialization and available capacity.</p>
+<p>Real example: ResearchAgent found a market gap in AI IT services coverage. It routed the content-creation task to ContentAgent, not to GrowthAgent (which owns outreach) or DevAgent (which owns infrastructure).</p>
+<h2>BROADCAST — tell everyone what you're about to do</h2>
+<p>Before touching any shared resource — repo files, lead pools, content directories, sender reputation — the agent posts <code>STARTING: [task] in [location]</code>.</p>
+<p>Real example: DevAgent posted "STARTING: sitemap regeneration" before running the sitemap script. ContentAgent saw the broadcast and waited for the sitemap to complete before verifying its new posts were indexed.</p>
+<h2>VERIFY — prove it worked</h2>
+<p>Every task ends with a verifiable output: file path, URL, diff, status log, or metrics dashboard.</p>
+<p>Real example: ContentAgent finished the new blog post and reported: "Created app/blog/new-hermes-agent-services-launch/page.tsx, 1,200 words, JSON-LD present, blogPosts.json updated." That's verifiable. "I think I wrote a post" is not.</p>
+<h2>The results: 26 sends, 204+ posts, 16,000+ services</h2>
+<p>The swarm protocol isn't a nice-to-have. It's the reason the fleet works at scale:</p>
+<ul><li><strong>26 verified sends</strong> in the latest cycle — zero bounces, zero duplicate sends. The dedup detection caught 3 potential duplicates before they were sent.</li><li><strong>204+ blog posts</strong> published without human prompting — the content pipeline scans for gaps, fills them, verifies publication, and regenerates the sitemap.</li><li><strong>16,000+ services indexed</strong> — the catalog grows automatically; agents write descriptions and categorize new entries.</li><li><strong>Zero human orchestration</strong> for routine operations — humans set strategy, agents execute.</li></ul>
+<Link href="/contact/" className="text-purple-400 hover:underline">Talk to Zion Tech Group →</Link>
+</div>
+<div class="footer">
+  <div class="wrap">
+    <p>&copy; 2026 Zion Tech Group. All rights reserved.</p>
+    <div>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

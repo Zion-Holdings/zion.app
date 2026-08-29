@@ -3,108 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Diff | Zion Tech Group</title>
-  <meta name="description" content="Compare two texts and highlight differences.">
-  <meta property="og:title" content="Text Diff | Zion Tech Group">
-  <meta property="og:description" content="Free online text comparison tool.">
-  <meta property="og:url" content="https://ziontechgroup.com/tools/text-diff/">
-  <link rel="canonical" href="https://ziontechgroup.com/tools/text-diff/">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
-    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
-    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 150px; }
-    textarea:focus { outline: none; border-color: #6366f1; }
-    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
-    .btn:hover { background: #4f46e5; }
-    .btn.secondary { background: #374151; }
-    .btn.secondary:hover { background: #4b5563; }
-    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
-    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
-    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; }
-    .added { background: #065f46; color: #a7f3d0; }
-    .removed { background: #7f1d1d; color: #fecaca; }
-    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
-    .back:hover { text-decoration: underline; }
-  </style>
+  <title>Text Diff Tool | Zion Tech Group</title>
+  <meta name="description" content="Compare two text strings or files side-by-side — see additions, deletions, and changes highlighted clearly.">
+  <link rel="canonical" href="https://ziontechgroup.com/Users/miami2/zion-support.github.io/public/tools/text-diff/index.html/">
+  <meta property="og:title" content="Text Diff Tool">
+  <meta property="og:description" content="Compare two text strings or files side-by-side — see additions, deletions, and changes highlighted clearly.">
+  <meta property="og:type" content="website">
 </head>
 <body>
-  <div class="container">
-    <h1>Text Diff</h1>
-    <p class="subtitle">Compare two texts and highlight differences.</p>
-    
-    <div class="grid">
-      <div class="field">
-        <label>Original Text</label>
-        <textarea id="original">Hello world! This is the original text.</textarea>
-      </div>
-      <div class="field">
-        <label>Modified Text</label>
-        <textarea id="modified">Hello there! This is the modified text.</textarea>
-      </div>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0b1220; color: #e6f0ff; line-height: 1.6; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin: 28px 0 10px; color: #94a3b8; }
+  p { margin: 0 0 14px; color: #cbd5e1; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 20px 0; }
+  .card { border: 1px solid #1e293b; border-radius: 8px; padding: 16px; background: #0f172a; }
+  .card h3 { font-size: 1rem; margin-bottom: 6px; color: #60a5fa; }
+  .card p { font-size: 0.85rem; color: #94a3b8; }
+  .cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: #2563eb; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; margin-top: 20px; }
+  .nav { display: flex; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
+  .nav a { color: #94a3b8; text-decoration: none; }
+  .nav a:hover { color: #e6f0ff; }
+  .footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.8rem; }
+  .footer a { color: #64748b; text-decoration: none; margin-right: 12px; }
+  code { background: #1e293b; padding: 2px 6px; border-radius: 4px; font-size: 0.85em; }
+</style>
+<div class="wrap">
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/tools/">Tools</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <h1>Text Diff Tool</h1>
+  <p>Compare any two pieces of text and see exactly what changed. Useful for code review, document editing, config comparisons, and debugging output differences.</p>
+<h2>Use Cases</h2>
+<div class="card-grid">
+  <div class="card"><h3>Code Review</h3><p>See what changed between before and after — line by line, with additions and deletions highlighted.</p></div>
+  <div class="card"><h3>Config Drift</h3><p>Compare production vs. staging configs, or current vs. desired state, to spot unintended differences.</p></div>
+  <div class="card"><h3>Document Drafting</h3><p>Track changes between document versions. See what was added, removed, or modified.</p></div>
+</div>
+  <a href="/contact/" class="cta">Talk to Zion Tech Group</a>
+</div>
+<div class="footer">
+  <div class="wrap">
+    <p>&copy; 2026 Zion Tech Group.</p>
+    <div>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
     </div>
-    
-    <div class="buttons">
-      <button class="btn" onclick="compare()">Compare</button>
-      <button class="btn secondary" onclick="clearAll()">Clear</button>
-    </div>
-    
-    <div class="section">
-      <h3>Result</h3>
-      <pre id="result">—</pre>
-    </div>
-    
-    <a href="/tools/" class="back">← Back to Tools</a>
   </div>
-
-  <script>
-    function compare() {
-      const original = document.getElementById('original').value;
-      const modified = document.getElementById('modified').value;
-      const resultEl = document.getElementById('result');
-      
-      if (!original && !modified) {
-        resultEl.textContent = '—';
-        return;
-      }
-      
-      // Simple diff algorithm
-      const lines1 = original.split('\n');
-      const lines2 = modified.split('\n');
-      const maxLen = Math.max(lines1.length, lines2.length);
-      let result = '';
-      
-      for (let i = 0; i < maxLen; i++) {
-        const l1 = lines1[i] || '';
-        const l2 = lines2[i] || '';
-        
-        if (l1 === l2) {
-          result += l1 + '\n';
-        } else {
-          if (l1) result += '<span class="removed">- ' + escapeHtml(l1) + '</span>\n';
-          if (l2) result += '<span class="added">+ ' + escapeHtml(l2) + '</span>\n';
-        }
-      }
-      
-      resultEl.innerHTML = result;
-    }
-    
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
-    
-    function clearAll() {
-      document.getElementById('original').value = '';
-      document.getElementById('modified').value = '';
-      document.getElementById('result').textContent = '—';
-    }
-  </script>
+</div>
 </body>
 </html>

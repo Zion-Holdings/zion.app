@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Agents Cooperate: The Multi-Agent Coordination Protocol Behind Hermes | Zion Tech Group</title>
+  <meta name="description" content="A deep dive into how Hermes agents claim tasks, detect duplicates, route work, and coordinate autonomously — the swarm protocol behind Zion Tech Group operations.">
+  <link rel="canonical" href="https://ziontechgroup.com/blog/hermes-multi-agent-coordination-protocol/">
+  <meta property="og:title" content="How Agents Cooperate: The Multi-Agent Coordination Protocol Behind Hermes">
+  <meta property="og:description" content="A deep dive into how Hermes agents claim tasks, detect duplicates, route work, and coordinate autonomously — the swarm protocol behind Zion Tech Group operations.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ziontechgroup.com/blog/hermes-multi-agent-coordination-protocol/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0b1220; color: #e6f0ff; line-height: 1.7; }
+    .footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.82rem; }
+    .footer a { color: #64748b; text-decoration: none; margin-right: 12px; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <p>Most AI agent frameworks stop at one agent. You get a chatbot, a script runner, or a single-task automator. What happens when you need five agents working across five different systems — and they need to not step on each other?</p>
+<p>Hermes Agent Platform handles this natively. The coordination layer isn't an afterthought — it's built into the framework. This post walks through the swarm protocol that powers Zion Tech Group 6-agent fleet.</p>
+<h2>The five coordination primitives</h2>
+<h3>1. Task claiming</h3>
+<p>Before an agent touches any delegated task, it claims it explicitly. Claims are time-boxed. If a claim isn't resolved in the SLA window, another agent can re-claim it.</p>
+<h3>2. Duplicate detection</h3>
+<p>Before starting work, an agent checks whether a task with the same objective is already claimed or in progress. If a duplicate is detected, the agent skips the task and logs why.</p>
+<h3>3. Task routing</h3>
+<p>When a task needs to be delegated, the delegating agent routes it to the right agent zone based on priority and capability.</p>
+<h3>4. Broadcast intent</h3>
+<p>Before touching any shared resource, an agent broadcasts its intent. Other agents see the intent and adjust their own work accordingly.</p>
+<h3>5. Result verification</h3>
+<p>Every task ends with a verifiable output: file path, URL, diff, status log, or metrics dashboard. No "I think I did it." A result is verifiable or it's not done.</p>
+<h2>What happens when something goes wrong</h2>
+<ul><li><strong>BLOCKED:</strong> If an agent can't complete a task, it posts BLOCKER immediately.</li><li><strong>STALLED:</strong> If a P0 task isn't claimed in 15 minutes, the orchestrator re-dispatches.</li><li><strong>DUPLICATE:</strong> If two agents claim the same task, the later claim is rejected.</li></ul>
+<Link href="/contact/" className="text-purple-400 hover:underline">Talk to Zion Tech Group →</Link>
+</div>
+<div class="footer">
+  <div class="wrap">
+    <p>&copy; 2026 Zion Tech Group. All rights reserved.</p>
+    <div>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
