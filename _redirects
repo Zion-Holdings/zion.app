@@ -841,6 +841,54 @@
 /blog/zero-trust-architecture-msps-checklist /blog/zero-trust-architecture-msps-checklist/index.html 200
 /service-discovery /service-discovery/index.html 200
 
+# Success Stories
+/success-stories /success-stories/index.html 200
+/success-stories/ /success-stories/index.html 200
+
+# Hermes Agent ghost URLs — static fallbacks (local HTML files exist)
+/hermes-agents-services /hermes-agents-services/index.html 200
+/hermes-agents-services/ /hermes-agents-services/index.html 200
+/hermes-swarm /hermes-swarm/index.html 200
+/hermes-swarm/ /hermes-swarm/index.html 200
+/hermes-tools /hermes-tools/index.html 200
+/hermes-tools/ /hermes-tools/index.html 200
+/hermes-security /hermes-security/index.html 200
+/hermes-security/ /hermes-security/index.html 200
+/hermes-case-studies /hermes-case-studies/index.html 200
+/hermes-case-studies/ /hermes-case-studies/index.html 200
+/hermes-pricing /hermes-pricing/index.html 200
+/hermes-pricing/ /hermes-pricing/index.html 200
+/hermes-monitor /hermes-monitor/index.html 200
+/hermes-monitor/ /hermes-monitor/index.html 200
+/hermes-integrations /hermes-integrations/index.html 200
+/hermes-integrations/ /hermes-integrations/index.html 200
+/hermes-about /hermes-about/index.html 200
+/hermes-about/ /hermes-about/index.html 200
+/hermes-faq /hermes-faq/index.html 200
+/hermes-faq/ /hermes-faq/index.html 200
+/hermes-platform /hermes-platform/index.html 200
+/hermes-platform/ /hermes-platform/index.html 200
+/case-studies/hermes-agent-fleet /case-studies/hermes-agent-fleet/index.html 200
+/case-studies/hermes-agent-fleet/ /case-studies/hermes-agent-fleet/index.html 200
+/solutions/hermes-ai-agents /solutions/hermes-ai-agents/index.html 200
+/solutions/hermes-ai-agents/ /solutions/hermes-ai-agents/index.html 200
+
+# Docs subpages — static fallbacks
+/docs/hermes-agent-architecture /docs/hermes-agent-architecture/index.html 200
+/docs/hermes-agent-architecture/ /docs/hermes-agent-architecture/index.html 200
+/docs/hermes-agent-installation /docs/hermes-agent-installation/index.html 200
+/docs/hermes-agent-installation/ /docs/hermes-agent-installation/index.html 200
+/docs/hermes-agent-skills /docs/hermes-agent-skills/index.html 200
+/docs/hermes-agent-skills/ /docs/hermes-agent-skills/index.html 200
+/docs/agent-framework-comparison /docs/agent-framework-comparison/index.html 200
+/docs/agent-framework-comparison/ /docs/agent-framework-comparison/index.html 200
+/docs/hermes-agent-mcp-integration /docs/hermes-agent-mcp-integration/index.html 200
+/docs/hermes-agent-mcp-integration/ /docs/hermes-agent-mcp-integration/index.html 200
+/docs/hermes-agent-profiles /docs/hermes-agent-profiles/index.html 200
+/docs/hermes-agent-profiles/ /docs/hermes-agent-profiles/index.html 200
+
+# End of ghost URL rules
+
 # Splat rules — cover all pages in these directories
 /blog/* /blog/:splat/index.html 200
 /services/* /services/:splat/index.html 200
