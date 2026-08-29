@@ -19,7 +19,7 @@ export default function ServicePage() {
     <>
       <title>Predictive Infrastructure Capacity Planner | Zion Tech Group</title>
       <meta name="description" content="Zion Tech Group delivers enterprise-grade Predictive Infrastructure Capacity Planner solutions that combine deep domain expertise with cutting-edge artific" />
-      <link rel="canonical" href="https://ziontechgroup.com/services/predictive-infrastructure-capacity-planner-02d4ca55" />
+      <link rel="canonical" href="https://ziontechgroup.com/services/predictive-infrastructure-capacity-planner-02d4ca55//" />
       <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"AI/IT","name":"Predictive Infrastructure Capacity Planner","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"description":"Zion Tech Group delivers enterprise-grade Predictive Infrastructure Capacity Planner solutions that combine deep domain expertise with cutting-edge artificial intelligence. Our platform enables organizations to automate complex workflows, reduce operational overhead, and unlock data-driven insights at scale. Built on a secure, production-ready architecture with 24/7 monitoring, SLA-backed reliability, and seamless integration with existing toolchains.","areaServed":"Global"}</script>
       <meta property="og:title" content="Predictive Infrastructure Capacity Planner - AI & IT Solutions | Zion Tech Group" />
       <meta property="og:description" content="Zion Tech Group delivers enterprise-grade Predictive Infrastructure Capacity Planner solutions that combine deep domain expertise with cutting-edge artific" />

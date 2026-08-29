@@ -33,7 +33,7 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>94% fraud detection</li>
-            <li><50ms latency</li>
+            <li>&lt;50ms latency</li>
             <li>AML compliance</li>
             <li>Reduced chargebacks</li>
           </ul>

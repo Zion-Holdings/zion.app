@@ -19,7 +19,7 @@ export default function ServicePage() {
     <>
       <title>Semantic Code Review Engine | Zion Tech Group</title>
       <meta name="description" content="Zion Tech Group delivers Semantic Code Review Engine solutions that combine deep domain expertise with cutting-edge artificial intelligence. Our platform u" />
-      <link rel="canonical" href="https://ziontechgroup.com/services/semantic-code-review-engine-fc3b0eed" />
+      <link rel="canonical" href="https://ziontechgroup.com/services/semantic-code-review-engine-fc3b0eed/" />
       <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"AI/IT","name":"Semantic Code Review Engine","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"description":"Zion Tech Group delivers Semantic Code Review Engine solutions that combine deep domain expertise with cutting-edge artificial intelligence. Our platform uses large language models to perform context-aware code analysis, detecting security vulnerabilities, architectural anti-patterns, and code quality issues that traditional linters miss. Built on a secure, production-ready architecture with 24/7 monitoring, SLA-backed reliability, and seamless integration with existing CI/CD pipelines and version control systems.","areaServed":"Global"}</script>
       <meta property="og:title" content="Semantic Code Review Engine - AI & IT Solutions | Zion Tech Group" />
       <meta property="og:description" content="Zion Tech Group delivers Semantic Code Review Engine solutions that combine deep domain expertise with cutting-edge artificial intelligence. Our platform u" />
