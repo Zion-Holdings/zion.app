@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-customer-success-churn-prevention-policy-and-compliance">Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-7069">Ai Agentic Workflows 2026 7069</Link></li>
+<li><Link href="/blog/blog/">Ai Agentic Workflows 2026 7069</Link></li>
 <li><Link href="/blog/api-management-gateway-roi-and-cost-model">Api Management Gateway Roi And Cost Model</Link></li>
 <li><Link href="/blog/event-driven-architecture-2026">Event Driven Architecture 2026</Link></li>
             </ul>

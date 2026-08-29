@@ -47,7 +47,7 @@ Leading indicators for microsaas translation engine: checklist for it leaders: w
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-security-testing-policy-and-compliance">Api Security Testing Policy And Compliance</Link></li>
 <li><Link href="/blog/data-warehouse-modernization-2026-6608">Data Warehouse Modernization 2026 6608</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6732">Ai Bom Procurement 2026 6732</Link></li>
+<li><Link href="/blog/blog/">Ai Bom Procurement 2026 6732</Link></li>
 <li><Link href="/blog/devsecops-pipeline-operations-handbook">Devsecops Pipeline Operations Handbook</Link></li>
             </ul>
           </div>

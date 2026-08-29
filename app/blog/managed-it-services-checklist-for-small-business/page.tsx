@@ -2,30 +2,30 @@ import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
-  title: 'IT consulting vendor evaluation | Zion Tech Group',
-  description: 'IT consulting vendor evaluation. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.',
-  keywords: ['it consulting', 'AI services', 'IT services', 'Zion Tech Group'],
+  title: 'Managed IT services checklist for small business | Zion Tech Group',
+  description: 'Managed IT services checklist for small business. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.',
+  keywords: ['managed it services small business', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'IT consulting vendor evaluation | Zion Tech Group',
-    description: 'IT consulting vendor evaluation. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.',
-    url: 'https://ziontechgroup.com/blog/it-consulting-vendor-evaluation/',
+    title: 'Managed IT services checklist for small business | Zion Tech Group',
+    description: 'Managed IT services checklist for small business. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.',
+    url: 'https://ziontechgroup.com/blog/managed-it-services-checklist-for-small-business/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-vendor-evaluation/' },
+  alternates: { canonical: '/blog/managed-it-services-checklist-for-small-business/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT consulting vendor evaluation", "description": "IT consulting vendor evaluation. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-29T20:48:34.001774Z", "dateModified": "2026-08-29T20:48:34.001774Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT services checklist for small business", "description": "Managed IT services checklist for small business. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-29T20:48:34.001774Z", "dateModified": "2026-08-29T20:48:34.001774Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-checklist-for-small-business/"};
 
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'IT consulting vendor evaluation' }]} className="mb-8" />
+        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Managed IT services checklist for small business' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">IT consulting vendor evaluation</h1>
-          <p className="mt-4 text-lg text-slate-300">IT consulting vendor evaluation. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Managed IT services checklist for small business</h1>
+          <p className="mt-4 text-lg text-slate-300">Managed IT services checklist for small business. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -36,7 +36,7 @@ export default function Page() {
         </header>
         <section className="prose prose-invert max-w-none">
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">Action checklist</h2>
-          <p className="mb-4 text-slate-300">For it consulting vendor evaluation: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.</p>
+          <p className="mb-4 text-slate-300">For managed it services checklist for small business: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.</p>
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">What to read next</h2>
           <ul className="list-disc pl-6 text-slate-300 space-y-2">
             <li><Link href="/blog/ai-msp-security-compliance-implementation-playbook/">Ai Msp Security Compliance Implementation Playbook</Link></li>

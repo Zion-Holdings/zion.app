@@ -45,8 +45,8 @@ Leading indicators for microsaas hr recruitment: security and governance: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026-6703">Ai Observability 2026 6703</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-6545">Enterprise Backup Dr 2026 6545</Link></li>
+              <li><Link href="/blog/blog/">Ai Observability 2026 6703</Link></li>
+<li><Link href="/blog/blog/">Enterprise Backup Dr 2026 6545</Link></li>
 <li><Link href="/blog/managed-it-services-case-study">Managed It Services Case Study</Link></li>
 <li><Link href="/blog/ai-customer-success-churn-prevention-starter-template">Ai Customer Success Churn Prevention Starter Template</Link></li>
             </ul>

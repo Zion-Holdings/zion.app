@@ -2,30 +2,30 @@ import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
-  title: 'Cloud cost optimization ROI and cost model | Zion Tech Group',
-  description: 'Cloud cost optimization ROI and cost model. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.',
+  title: 'Cloud cost optimization automation roadmap | Zion Tech Group',
+  description: 'Cloud cost optimization automation roadmap. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.',
   keywords: ['cloud cost optimization', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
-    title: 'Cloud cost optimization ROI and cost model | Zion Tech Group',
-    description: 'Cloud cost optimization ROI and cost model. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-roi-and-cost-model/',
+    title: 'Cloud cost optimization automation roadmap | Zion Tech Group',
+    description: 'Cloud cost optimization automation roadmap. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-cost-optimization-roi-and-cost-model/' },
+  alternates: { canonical: '/blog/cloud-cost-optimization-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud cost optimization ROI and cost model", "description": "Cloud cost optimization ROI and cost model. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-29T20:48:34.001774Z", "dateModified": "2026-08-29T20:48:34.001774Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud cost optimization automation roadmap", "description": "Cloud cost optimization automation roadmap. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-29T20:48:34.001774Z", "dateModified": "2026-08-29T20:48:34.001774Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-automation-roadmap/"};
 
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Cloud cost optimization ROI and cost model' }]} className="mb-8" />
+        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Cloud cost optimization automation roadmap' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Cloud cost optimization ROI and cost model</h1>
-          <p className="mt-4 text-lg text-slate-300">Cloud cost optimization ROI and cost model. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Cloud cost optimization automation roadmap</h1>
+          <p className="mt-4 text-lg text-slate-300">Cloud cost optimization automation roadmap. Practical guide from Zion Tech Group with a checklist, implementation playbook, and recommended next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -36,7 +36,7 @@ export default function Page() {
         </header>
         <section className="prose prose-invert max-w-none">
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">Action checklist</h2>
-          <p className="mb-4 text-slate-300">For cloud cost optimization roi and cost model: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.</p>
+          <p className="mb-4 text-slate-300">For cloud cost optimization automation roadmap: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.</p>
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">What to read next</h2>
           <ul className="list-disc pl-6 text-slate-300 space-y-2">
             <li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>

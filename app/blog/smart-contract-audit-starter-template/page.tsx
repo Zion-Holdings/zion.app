@@ -46,7 +46,7 @@ Leading indicators for smart contract audit: starter template: workflow completi
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/accessibility-compliance-2026">Accessibility Compliance 2026</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6547">Event Driven Architecture 2026 6547</Link></li>
+<li><Link href="/blog/blog/">Event Driven Architecture 2026 6547</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-evaluation-framework">Cloud Cost Optimization Evaluation Framework</Link></li>
 <li><Link href="/blog/incident-response-retainer-policy-and-compliance">Incident Response Retainer Policy And Compliance</Link></li>
             </ul>

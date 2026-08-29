@@ -54,7 +54,7 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-starter-template/">Data Analytics Platform Starter Template</Link></li>
+              <li><Link href="/blog/services/">Data Analytics Platform Starter Template</Link></li>
 <li><Link href="/blog/api-orchestration-layer-security-and-governance/">Api Orchestration Layer Security And Governance</Link></li>
 <li><Link href="/blog/microsaas-social-media-manager-executive-guide/">Microsaas Social Media Manager Executive Guide</Link></li>
 <li><Link href="/blog/ai-data-lakehouse-pipelines-deployment-patterns/">Ai Data Lakehouse Pipelines Deployment Patterns</Link></li>
