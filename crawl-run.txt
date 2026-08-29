@@ -1,0 +1,77 @@
+🔍 Starting deep crawl of https://ziontechgroup.com...
+Max pages: 500
+
+  Crawled 50 pages...
+
+============================================================
+CRAWL COMPLETE: 68 pages
+============================================================
+
+📊 SUMMARY:
+  Total pages: 68
+  ✅ 200 OK: 68
+  ❌ 404 Not Found: 0
+  🔄 3xx Redirects: 0
+  💥 5xx Server Error: 0
+  ❗ Other errors: 0
+  ⚠️ Fetch failed: 0
+
+📁 Report saved to: site-deep-crawl.json
+
+============================================================
+BROKEN 404 PAGES:
+============================================================
+
+============================================================
+WORKING PAGES (first 50):
+============================================================
+  [200] https://ziontechgroup.com — Zion Tech Group — AI & IT Services
+  [200] https://ziontechgroup.com/contact/ — Contact | Zion Tech Group
+  [200] https://ziontechgroup.com/services/ — AI Services & Solutions — Zion Tech Group
+  [200] https://ziontechgroup.com/tools/ — Developer Tools | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/json-formatter/ — JSON Formatter | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/base64-encoder/ — Base64 Encoder/Decoder | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/uuid-generator/ — UUID Generator | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/sql-formatter/ — SQL Query Formatter | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/hash-generator/ — Hash Generator | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/cron-generator/ — cron-generator | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/cron-parser/ — Cron Parser | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/password-generator/ — Password Generator | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/qr-code-generator/ — QR Code Generator | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/json-to-csv/ — JSON to CSV Converter | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/csv-to-json/ — csv-to-json | Zion Tech Group
+  [200] https://ziontechgroup.com/tools/yaml-to-json/ — YAML to JSON Converter | Zion Tech Group
+  [200] https://ziontechgroup.com/blog/ai-observability-security-and-governance/ — AI Observability Security and Governance | Zion Tech Group Blog
+  [200] https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/ — Cloud Cost AI Optimizer Checklist
+  [200] https://ziontechgroup.com/blog/ai-msp-security-compliance-implementation-playbook/ — AI MSP Security Compliance Playbook
+  [200] https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/ — Cybersecurity Platform MSP 2026
+  [200] https://ziontechgroup.com/blog/devsecops-pipeline-2026/ — DevSecOps Pipeline 2026
+  [200] https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting/ — Ai for Cybersecurity Operations and Threat Hunting | Zion Tech Group
+  [200] https://ziontechgroup.com/blog/ — Blog | Zion Tech Group
+  [200] https://ziontechgroup.com/privacy/ — Privacy Policy | Zion Tech Group
+  [200] https://ziontechgroup.com/terms/ — Terms of Service | Zion Tech Group
+  [200] https://ziontechgroup.com/ — Zion Tech Group — AI & IT Services
+  [200] https://ziontechgroup.com/services/ai-email-intelligence/ — AI Email Intelligence — Zion Tech Group
+  [200] https://ziontechgroup.com/services/cybersecurity-platform-msp-2026-6558/ — Cybersecurity Platform for MSPs | Zion Tech Group
+  [200] https://ziontechgroup.com/services/cloud-cost-optimization/ — Cloud Cost Optimization Services | Zion Tech Group
+  [200] https://ziontechgroup.com/services/ai-observability/ — AI Observability — Zion Tech Group
+  [200] https://ziontechgroup.com/services/it-consulting-2026-6570/ — IT Consulting Services | Zion Tech Group
+  [200] https://ziontechgroup.com/services/managed-it-services-small-business-2026-6559/ — Managed IT Services for Small Business | Zion Tech Group
+  [200] https://ziontechgroup.com/services/it-staff-augmentation/ — IT Staff Augmentation — Zion Tech Group
+  [200] https://ziontechgroup.com/services/cloud-migration-services-2026-6572/ — Cloud Migration Services | Zion Tech Group
+  [200] https://ziontechgroup.com/services/ai-smart-global-campaign/ — AI Smart Global Campaign Services | Zion Tech Group
+  [200] https://ziontechgroup.com/services/ai-observability-2026-6565/ — AI Observability Services | Zion Tech Group
+  [200] https://ziontechgroup.com/services/cloud-cost-ai-optimizer-2026-6534/ — Cloud Cost AI Optimizer | Zion Tech Group
+  [200] https://ziontechgroup.com/free-ai-it-tools/ — Free AI &amp; IT Tools | Zion Tech Group
+  [200] https://ziontechgroup.com/services/data-analytics-platform/ — Data Analytics Platform — Zion Tech Group
+  [200] https://ziontechgroup.com/pricing/ — Pricing | Zion Tech Group
+  [200] https://ziontechgroup.com/agents-monitoring/ — Agent Monitoring — Zion Tech Group
+  [200] https://ziontechgroup.com/ai-services/ — Redirecting
+  [200] https://ziontechgroup.com/products/ — Products — Zion Tech Group
+  [200] https://ziontechgroup.com/solutions/ — Solutions | Zion Tech Group
+  [200] https://ziontechgroup.com/use-cases/ — Use Cases | Zion Tech Group
+  [200] https://ziontechgroup.com/testimonials/ — Customer Testimonials — Zion Tech Group
+  [200] https://ziontechgroup.com/about/ — About | Zion Tech Group
+  [200] https://ziontechgroup.com/faq/ — FAQ | Zion Tech Group
+  [200] https://ziontechgroup.com/sla/ — Service Level Agreement — Zion Tech Group
+  [200] https://ziontechgroup.com/sitemap.xml — (no title)

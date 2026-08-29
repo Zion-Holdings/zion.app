@@ -19,8 +19,8 @@ export default function ServicePage() {
     <>
       <title>Quantum-Inspired Optimization Platform | Zion Tech Group</title>
       <meta name="description" content="Zion Tech Group delivers Quantum-Inspired Optimization Platform solutions that combine deep domain expertise with cutting-edge artificial intelligence. Our" />
-      <link rel="canonical" href="https://ziontechgroup.com/services/quantum-inspired-optimization-platform-ef0acfea//" />
-      <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"AI/IT","name":"Quantum-Inspired Optimization Platform","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"description":"Zion Tech Group delivers Quantum-Inspired Optimization Platform solutions that combine deep domain expertise with cutting-edge artificial intelligence. Our platform leverages quantum annealing algorithms and tensor network methods to solve combinatorial optimization problems in logistics, portfolio management, and resource allocation with near-quantum speedups on classical hardware. Built on a secure, production-ready architecture with 24/7 monitoring, SLA-backed reliability, and seamless integration with existing optimization toolchains and simulation frameworks.","areaServed":"Global"}</script>
+      <link rel="canonical" href="https://ziontechgroup.com/services/quantum-inspired-optimization-platform-ef0acfea/" />
+      
       <meta property="og:title" content="Quantum-Inspired Optimization Platform - AI & IT Solutions | Zion Tech Group" />
       <meta property="og:description" content="Zion Tech Group delivers Quantum-Inspired Optimization Platform solutions that combine deep domain expertise with cutting-edge artificial intelligence. Our" />
       <meta property="og:type" content="website" />

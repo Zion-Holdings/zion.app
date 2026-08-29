@@ -20,7 +20,7 @@ export default function ServicePage() {
       <title>Zero-Shot Document Intelligence Pipeline | Zion Tech Group</title>
       <meta name="description" content="Zion Tech Group delivers Zero-Shot Document Intelligence Pipeline solutions that combine deep domain expertise with cutting-edge artificial intelligence. O" />
       <link rel="canonical" href="https://ziontechgroup.com/services/zero-shot-document-intelligence-pipeline-3da284b3/" />
-      <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"AI/IT","name":"Zero-Shot Document Intelligence Pipeline","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"description":"Zion Tech Group delivers Zero-Shot Document Intelligence Pipeline solutions that combine deep domain expertise with cutting-edge artificial intelligence. Our platform extracts structured data from arbitrary documents using foundation models that require no task-specific training data, handling invoices, contracts, receipts, and forms out of the box. Built on a secure, production-ready architecture with 24/7 monitoring, SLA-backed reliability, and seamless integration with existing document management and ERP systems.","areaServed":"Global"}</script>
+      
       <meta property="og:title" content="Zero-Shot Document Intelligence Pipeline - AI & IT Solutions | Zion Tech Group" />
       <meta property="og:description" content="Zion Tech Group delivers Zero-Shot Document Intelligence Pipeline solutions that combine deep domain expertise with cutting-edge artificial intelligence. O" />
       <meta property="og:type" content="website" />

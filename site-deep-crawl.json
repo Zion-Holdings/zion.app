@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-25T11:13:01.285758",
+  "timestamp": "2026-08-29T06:20:46.650498",
   "base_url": "https://ziontechgroup.com",
-  "total_pages": 423,
-  "working_200": 327,
-  "broken_404": 96,
+  "total_pages": 68,
+  "working_200": 68,
+  "broken_404": 0,
   "redirects_3xx": 0,
   "server_error_5xx": 0,
   "other_errors": 0,
@@ -22,22 +22,107 @@
     {
       "url": "https://ziontechgroup.com/services/",
       "status": 200,
-      "title": "Services | Zion Tech Group"
+      "title": "AI Services & Solutions \u2014 Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/",
+      "url": "https://ziontechgroup.com/tools/",
       "status": 200,
-      "title": "Zion Tech Group \u2014 AI & IT Services"
+      "title": "Developer Tools | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/pricing/",
+      "url": "https://ziontechgroup.com/tools/json-formatter/",
       "status": 200,
-      "title": "Pricing | Zion Tech Group"
+      "title": "JSON Formatter | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/about/",
+      "url": "https://ziontechgroup.com/tools/base64-encoder/",
       "status": 200,
-      "title": "About | Zion Tech Group"
+      "title": "Base64 Encoder/Decoder | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/uuid-generator/",
+      "status": 200,
+      "title": "UUID Generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/sql-formatter/",
+      "status": 200,
+      "title": "SQL Query Formatter | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/hash-generator/",
+      "status": 200,
+      "title": "Hash Generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/cron-generator/",
+      "status": 200,
+      "title": "cron-generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/cron-parser/",
+      "status": 200,
+      "title": "Cron Parser | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/password-generator/",
+      "status": 200,
+      "title": "Password Generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/qr-code-generator/",
+      "status": 200,
+      "title": "QR Code Generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/json-to-csv/",
+      "status": 200,
+      "title": "JSON to CSV Converter | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/csv-to-json/",
+      "status": 200,
+      "title": "csv-to-json | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/yaml-to-json/",
+      "status": 200,
+      "title": "YAML to JSON Converter | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-observability-security-and-governance/",
+      "status": 200,
+      "title": "AI Observability Security and Governance | Zion Tech Group Blog"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/",
+      "status": 200,
+      "title": "Cloud Cost AI Optimizer Checklist"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-implementation-playbook/",
+      "status": 200,
+      "title": "AI MSP Security Compliance Playbook"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/",
+      "status": 200,
+      "title": "Cybersecurity Platform MSP 2026"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026/",
+      "status": 200,
+      "title": "DevSecOps Pipeline 2026"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting/",
+      "status": 200,
+      "title": "Ai for Cybersecurity Operations and Threat Hunting | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/",
+      "status": 200,
+      "title": "Blog | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/privacy/",
@@ -50,2561 +135,220 @@
       "title": "Terms of Service | Zion Tech Group"
     },
     {
+      "url": "https://ziontechgroup.com/",
+      "status": 200,
+      "title": "Zion Tech Group \u2014 AI & IT Services"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-email-intelligence/",
+      "status": 200,
+      "title": "AI Email Intelligence \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cybersecurity-platform-msp-2026-6558/",
+      "status": 200,
+      "title": "Cybersecurity Platform for MSPs | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cloud-cost-optimization/",
+      "status": 200,
+      "title": "Cloud Cost Optimization Services | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-observability/",
+      "status": 200,
+      "title": "AI Observability \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/it-consulting-2026-6570/",
+      "status": 200,
+      "title": "IT Consulting Services | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/managed-it-services-small-business-2026-6559/",
+      "status": 200,
+      "title": "Managed IT Services for Small Business | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/it-staff-augmentation/",
+      "status": 200,
+      "title": "IT Staff Augmentation \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cloud-migration-services-2026-6572/",
+      "status": 200,
+      "title": "Cloud Migration Services | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-smart-global-campaign/",
+      "status": 200,
+      "title": "AI Smart Global Campaign Services | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-observability-2026-6565/",
+      "status": 200,
+      "title": "AI Observability Services | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cloud-cost-ai-optimizer-2026-6534/",
+      "status": 200,
+      "title": "Cloud Cost AI Optimizer | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/free-ai-it-tools/",
+      "status": 200,
+      "title": "Free AI &amp; IT Tools | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/data-analytics-platform/",
+      "status": 200,
+      "title": "Data Analytics Platform \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/pricing/",
+      "status": 200,
+      "title": "Pricing | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/agents-monitoring/",
+      "status": 200,
+      "title": "Agent Monitoring \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-services/",
+      "status": 200,
+      "title": "Redirecting"
+    },
+    {
+      "url": "https://ziontechgroup.com/products/",
+      "status": 200,
+      "title": "Products \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/",
+      "status": 200,
+      "title": "Solutions | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/use-cases/",
+      "status": 200,
+      "title": "Use Cases | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/testimonials/",
+      "status": 200,
+      "title": "Customer Testimonials \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/about/",
+      "status": 200,
+      "title": "About | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/faq/",
+      "status": 200,
+      "title": "FAQ | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/sla/",
+      "status": 200,
+      "title": "Service Level Agreement \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/sitemap.xml",
+      "status": 200,
+      "title": "(no title)"
+    },
+    {
+      "url": "https://ziontechgroup.com/industries/",
+      "status": 200,
+      "title": "Industries | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/jwt-decoder/",
+      "status": 200,
+      "title": "JWT Decoder | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/regex-tester/",
+      "status": 200,
+      "title": "Regex Tester | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/word-counter/",
+      "status": 200,
+      "title": "Word Counter | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/hermes-agent-bot-mode/",
+      "status": 200,
+      "title": "Hermes Agent Bot Mode \u2014 Autonomous AI Agents | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/hermes-agent-plugin-development/",
+      "status": 200,
+      "title": "Hermes Agent Plugin Development \u2014 Build Custom Extensions | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/hermes-agent-a2a-protocol/",
+      "status": 200,
+      "title": "Hermes Agent A2A Protocol \u2014 Agent-to-Agent Communication | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/hermes-agent-complete-guide/",
+      "status": 200,
+      "title": "Hermes Agent Complete Guide \u2014 Everything You Need to Know | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services?category=cloud",
+      "status": 200,
+      "title": "AI Services & Solutions \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services?category=security",
+      "status": 200,
+      "title": "AI Services & Solutions \u2014 Zion Tech Group"
+    },
+    {
       "url": "https://ziontechgroup.com/cookies/",
       "status": 200,
       "title": "Cookie Policy | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/managed-it-services-small-business-2026-6559/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/cybersecurity-platform-msp-2026-6558/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/cloud-cost-ai-optimizer-2026-6534/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/ai-observability-2026-6565/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/it-consulting-2026-6570/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/cloud-migration-services-2026-6572/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/",
-      "status": 200,
-      "title": "Blog | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-implementation-playbook/",
-      "status": 200,
-      "title": "AI MSP Security Compliance: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-observability-security-and-governance/",
-      "status": 200,
-      "title": "AI Observability: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-evaluation-framework/",
-      "status": 200,
-      "title": "Endpoint Management: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-email-intelligence-evaluation-framework/",
-      "status": 200,
-      "title": "AI Email Intelligence: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/apm-application-performance-starter-template/",
-      "status": 200,
-      "title": "APM Application Performance: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-security-and-governance/",
-      "status": 200,
-      "title": "AI Data Lakehouse Pipelines: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-9042/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/services",
-      "status": 200,
-      "title": "Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-it-operations-implementation-playbook/",
-      "status": 200,
-      "title": "AI IT Operations: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/graphql-federation-platform-implementation-playbook/",
-      "status": 200,
-      "title": "GraphQL Federation Platform: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-2026/",
-      "status": 200,
-      "title": "AI Customer Success Churn Prevention | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-ad-copy-generator-roi-and-cost-model/",
-      "status": 200,
-      "title": "AI Ad Copy Generator: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-orchestration-layer-2026-6658/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-2026/",
-      "status": 200,
-      "title": "Cloud FinOps | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026-7914/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-roi-and-cost-model/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-it-operations-automation-2026/",
-      "status": 200,
-      "title": "AI IT Operations | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-policy-and-compliance/",
-      "status": 200,
-      "title": "AI Accessibility Optimizer: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-implementation-playbook/",
-      "status": 200,
-      "title": "Cloud FinOps: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-executive-guide/",
-      "status": 200,
-      "title": "AI MSP Security Compliance: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-vendor-evaluation/",
-      "status": 200,
-      "title": "Enterprise AI Intelligence Hub: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Cloud Cost AI Optimizer: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026/",
-      "status": 200,
-      "title": "Data Analytics Platform | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/accessibility-compliance-operations-handbook/",
-      "status": 200,
-      "title": "Accessibility Compliance: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-optimization-roi-and-cost-model/",
-      "status": 200,
-      "title": "Cloud Cost Optimization: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-translation-engine-policy-and-compliance/",
-      "status": 200,
-      "title": "MicroSaaS Translation Engine: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-automation-roadmap/",
-      "status": 200,
-      "title": "Cloud Cost AI Optimizer: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/it-consulting-security-and-governance/",
-      "status": 200,
-      "title": "IT Consulting: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/aiops-anomaly-detection-architecture-overview/",
-      "status": 200,
-      "title": "AIOps Anomaly Detection: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/chaos-engineering-case-study/",
-      "status": 200,
-      "title": "Chaos Engineering: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-executive-guide/",
-      "status": 200,
-      "title": "Cloud Migration Services: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-support-deployment-patterns/",
-      "status": 200,
-      "title": "AI Customer Support: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-devops-and-incident-response/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-security-operations-and-compliance/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-sales-automation-and-crm-intelligence/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-performance-testing-2026/",
-      "status": 200,
-      "title": "API Performance Testing | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-automation-roadmap/",
-      "status": 200,
-      "title": "Managed IT Services: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/event-driven-architecture-starter-template/",
-      "status": 200,
-      "title": "Event Driven Architecture: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-starter-template/",
-      "status": 200,
-      "title": "AI Data Backup: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026/",
-      "status": 200,
-      "title": "MicroSaaS HR Recruitment | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/",
-      "status": 200,
-      "title": "Container Security Lifecycle: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/edge-computing-deployment-roi-and-cost-model/",
-      "status": 200,
-      "title": "Edge Computing Deployment: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-performance-testing-implementation-playbook/",
-      "status": 200,
-      "title": "API Performance Testing: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026/",
-      "status": 200,
-      "title": "MicroSaaS Translation Engine | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-executive-guide/",
-      "status": 200,
-      "title": "MicroSaaS HR Recruitment: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/brand-voice-guardian-starter-template/",
-      "status": 200,
-      "title": "Brand Voice Guardian: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-ad-copy-generator-case-study/",
-      "status": 200,
-      "title": "AI Ad Copy Generator: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-it-operations-and-observability/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-2026/",
-      "status": 200,
-      "title": "Cloud Migration Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/network-infrastructure-architecture-overview/",
-      "status": 200,
-      "title": "Network Infrastructure: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Endpoint Management: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/network-infrastructure-2026/",
-      "status": 200,
-      "title": "Network Infrastructure | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-code-deployment-2026-8109/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-case-study/",
-      "status": 200,
-      "title": "API Gateway Management: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-2026-8333/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-2026-7150/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-automation-roadmap/",
-      "status": 200,
-      "title": "Data Warehouse Modernization: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-vendor-evaluation/",
-      "status": 200,
-      "title": "AI Accessibility Auditor: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-translation-engine-architecture-overview/",
-      "status": 200,
-      "title": "MicroSaaS Translation Engine: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026-9043/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-management-gateway-implementation-playbook/",
-      "status": 200,
-      "title": "API Management Gateway: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/",
-      "status": 200,
-      "title": "GenAI DevOps CI/CD | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-project-management-and-delivery/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-managed-it-and-enterprise-support/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-data-engineering-and-pipeline-automation/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "AI Performance Monitoring: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-policy-and-compliance/",
-      "status": 200,
-      "title": "Data Analytics Platform: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-revenue-operations-and-business-intelligence/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/",
-      "status": 200,
-      "title": "Automation Orchestration: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-backup-dr-deployment-patterns/",
-      "status": 200,
-      "title": "Enterprise Backup DR: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-roi-and-cost-model/",
-      "status": 200,
-      "title": "Cloud FinOps: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026/",
-      "status": 200,
-      "title": "AIOps Anomaly Detection | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-support-implementation-playbook/",
-      "status": 200,
-      "title": "AI Customer Support: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-operations-handbook/",
-      "status": 200,
-      "title": "Automated AI Reporting: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-architecture-overview/",
-      "status": 200,
-      "title": "Managed IT Services: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-common-mistakes/",
-      "status": 200,
-      "title": "Cloud FinOps: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-automation-roadmap/",
-      "status": 200,
-      "title": "Automated AI Reporting: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-roi-and-cost-model/",
-      "status": 200,
-      "title": "DevSecOps Pipeline: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Cloud Migration Services: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-service-desk-and-support-automation/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026/",
-      "status": 200,
-      "title": "MicroSaaS Expense Tracker | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-native-app-development-roi-and-cost-model/",
-      "status": 200,
-      "title": "Cloud Native App Development: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-policy-and-compliance/",
-      "status": 200,
-      "title": "Data Warehouse Modernization: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-executive-guide/",
-      "status": 200,
-      "title": "Data Warehouse Modernization: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-network-operations-and-telecom-automation/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-operations-handbook/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-for-msps-automation-roadmap/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-policy-and-compliance/",
-      "status": 200,
-      "title": "MicroSaaS Customer Onboarding: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/container-security-lifecycle-evaluation-framework/",
-      "status": 200,
-      "title": "Container Security Lifecycle: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-management-gateway-roi-and-cost-model/",
-      "status": 200,
-      "title": "API Management Gateway: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/apm-application-performance-operations-handbook/",
-      "status": 200,
-      "title": "APM Application Performance: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-customer-onboarding-2026/",
-      "status": 200,
-      "title": "MicroSaaS Customer Onboarding | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-code-deployment-automation-roadmap/",
-      "status": 200,
-      "title": "Autonomous Code Deployment: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/network-infrastructure-common-mistakes/",
-      "status": 200,
-      "title": "Network Infrastructure: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-evaluation-framework/",
-      "status": 200,
-      "title": "AI Data Backup: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/",
-      "status": 200,
-      "title": "API Security Testing: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-implementation-playbook/",
-      "status": 200,
-      "title": "Endpoint Management: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-performance-testing-roi-and-cost-model/",
-      "status": 200,
-      "title": "API Performance Testing: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-security-testing-2026/",
-      "status": 200,
-      "title": "API Security Testing | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-common-mistakes/",
-      "status": 200,
-      "title": "AI Accessibility Auditor: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-starter-template/",
-      "status": 200,
-      "title": "AI 3D Asset Generator: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-social-media-manager-2026/",
-      "status": 200,
-      "title": "MicroSaaS Social Media Manager | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-vendor-evaluation/",
-      "status": 200,
-      "title": "ETL Pipeline Optimization: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agentic-workflows-policy-and-compliance/",
-      "status": 200,
-      "title": "AI Agentic Workflows: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Automated AI Reporting: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/genai-devops-cicd-case-study/",
-      "status": 200,
-      "title": "GenAI DevOps CI/CD: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-policy-and-compliance/",
-      "status": 200,
-      "title": "AI 3D Asset Generator: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/edge-computing-deployment-deployment-patterns/",
-      "status": 200,
-      "title": "Edge Computing Deployment: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-development-acceleration-starter-template/",
-      "status": 200,
-      "title": "AI Development Acceleration: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-expense-tracker-evaluation-framework/",
-      "status": 200,
-      "title": "MicroSaaS Expense Tracker: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-qa-engineering-deployment-patterns/",
-      "status": 200,
-      "title": "Autonomous QA Engineering: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-backup-dr-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Enterprise Backup DR: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026/",
-      "status": 200,
-      "title": "DevSecOps Pipeline | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-automation-roadmap/",
-      "status": 200,
-      "title": "Cloud FinOps: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/genai-devops-cicd-evaluation-framework/",
-      "status": 200,
-      "title": "GenAI DevOps CI/CD: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-common-mistakes/",
-      "status": 200,
-      "title": "AI Performance Monitoring: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-vendor-evaluation/",
-      "status": 200,
-      "title": "Endpoint Management: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/",
-      "status": 200,
-      "title": "Cybersecurity for MSPs | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-tool-builder-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "AI Agent Tool Builder: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-case-study/",
-      "status": 200,
-      "title": "Endpoint Management: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/container-security-lifecycle-2026-6813/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-2026-6779/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-ad-copy-generator-security-and-governance/",
-      "status": 200,
-      "title": "AI Ad Copy Generator: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026-7347/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026-6905/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-8352/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-automation-roadmap/",
-      "status": 200,
-      "title": "Cloud Migration Services: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-support-evaluation-framework/",
-      "status": 200,
-      "title": "AI Customer Support: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-2026/",
-      "status": 200,
-      "title": "Automated AI Reporting | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-expense-tracker-deployment-patterns/",
-      "status": 200,
-      "title": "MicroSaaS Expense Tracker: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-2026-7879/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-2026-9202/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026-6818/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-automation-roadmap/",
-      "status": 200,
-      "title": "AI Agent Safety Evaluation: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-native-app-development-common-mistakes/",
-      "status": 200,
-      "title": "Cloud Native App Development: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-starter-template/",
-      "status": 200,
-      "title": "Cloud Migration Services: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-architecture-overview/",
-      "status": 200,
-      "title": "AI Accessibility Auditor: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-integration-operations-handbook/",
-      "status": 200,
-      "title": "API Integration: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-roi-and-cost-model/",
-      "status": 200,
-      "title": "AI Data Lakehouse Pipelines: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/container-security-lifecycle-2026/",
-      "status": 200,
-      "title": "Container Security Lifecycle | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-deployment-patterns/",
-      "status": 200,
-      "title": "Automated AI Reporting: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-code-deployment-2026/",
-      "status": 200,
-      "title": "Autonomous Code Deployment | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-architecture-overview/",
-      "status": 200,
-      "title": "AI Accessibility Optimizer: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-autonomous-agents-starter-template/",
-      "status": 200,
-      "title": "AI Autonomous Agents: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-2026/",
-      "status": 200,
-      "title": "AI Data Backup | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "AI Accessibility Auditor: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026/",
-      "status": 200,
-      "title": "AI Data Lakehouse Pipelines | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-operations-handbook/",
-      "status": 200,
-      "title": "Cloud FinOps: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-predictive-maintenance-for-infrastructure/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-operations-handbook/",
-      "status": 200,
-      "title": "AI BDR SDR: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-code-deployment-case-study/",
-      "status": 200,
-      "title": "Autonomous Code Deployment: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-automation-roadmap/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-development-acceleration-2026-8081/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-2026-8322/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026-7899/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-security-and-governance/",
-      "status": 200,
-      "title": "Automated AI Reporting: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/",
-      "status": 200,
-      "title": "Cloud Cost AI Optimizer | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-starter-template/",
-      "status": 200,
-      "title": "Managed IT Services: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "AI Customer Success Churn Prevention: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-implementation-playbook/",
-      "status": 200,
-      "title": "Data Warehouse Modernization: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-architecture-overview/",
-      "status": 200,
-      "title": "AI Agent Safety Evaluation: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-management-gateway-architecture-overview/",
-      "status": 200,
-      "title": "API Management Gateway: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/accessibility-compliance-2026/",
-      "status": 200,
-      "title": "Accessibility Compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-architecture-overview/",
-      "status": 200,
-      "title": "Data Analytics Platform: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-api-gateway-vendor-evaluation/",
-      "status": 200,
-      "title": "AI API Gateway: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-qa-engineering-vendor-evaluation/",
-      "status": 200,
-      "title": "Autonomous QA Engineering: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-quality-assurance-and-testing/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026-6680/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026-6981/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-it-operations-automation-2026-7867/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-translation-engine-deployment-patterns/",
-      "status": 200,
-      "title": "MicroSaaS Translation Engine: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-starter-template/",
-      "status": 200,
-      "title": "Cloud Cost AI Optimizer: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/edge-computing-deployment-evaluation-framework/",
-      "status": 200,
-      "title": "Edge Computing Deployment: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-2026-7512/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026-8713/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/apm-application-performance-automation-roadmap/",
-      "status": 200,
-      "title": "APM Application Performance: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-6696/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-roi-and-cost-model/",
-      "status": 200,
-      "title": "MicroSaaS HR Recruitment: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-translation-engine-automation-roadmap/",
-      "status": 200,
-      "title": "MicroSaaS Translation Engine: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-performance-testing-common-mistakes/",
-      "status": 200,
-      "title": "API Performance Testing: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-qa-engineering-case-study/",
-      "status": 200,
-      "title": "Autonomous QA Engineering: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/",
-      "status": 200,
-      "title": "AI BOM Procurement: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-autonomous-agents-deployment-patterns/",
-      "status": 200,
-      "title": "AI Autonomous Agents: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/brand-voice-guardian-vendor-evaluation/",
-      "status": 200,
-      "title": "Brand Voice Guardian: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-ad-copy-generator-starter-template/",
-      "status": 200,
-      "title": "AI Ad Copy Generator: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-social-media-manager-starter-template/",
-      "status": 200,
-      "title": "MicroSaaS Social Media Manager: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-automation-roadmap/",
-      "status": 200,
-      "title": "AI Accessibility Auditor: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-qa-engineering-2026/",
-      "status": 200,
-      "title": "Autonomous QA Engineering | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/brand-voice-guardian-case-study/",
-      "status": 200,
-      "title": "Brand Voice Guardian: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-native-app-development-2026/",
-      "status": 200,
-      "title": "Cloud Native App Development | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-integration-vendor-evaluation/",
-      "status": 200,
-      "title": "API Integration: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-translation-engine-common-mistakes/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-api-gateway-roi-and-cost-model/",
-      "status": 200,
-      "title": "AI API Gateway: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/apm-application-performance-roi-and-cost-model/",
-      "status": 200,
-      "title": "APM Application Performance: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-development-acceleration-operations-handbook/",
-      "status": 200,
-      "title": "AI Development Acceleration: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-api-gateway-security-and-governance/",
-      "status": 200,
-      "title": "AI API Gateway: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-executive-guide/",
-      "status": 200,
-      "title": "AI BDR SDR: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-security-testing-evaluation-framework/",
-      "status": 200,
-      "title": "API Security Testing: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-api-gateway-2026/",
-      "status": 200,
-      "title": "AI API Gateway | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-support-pro-2026/",
-      "status": 200,
-      "title": "AI Customer Support | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-evaluation-framework/",
-      "status": 200,
-      "title": "ETL Pipeline Optimization: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-it-operations-executive-guide/",
-      "status": 200,
-      "title": "AI IT Operations: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cyber-threat-intelligence-starter-template/",
-      "status": 200,
-      "title": "Cyber Threat Intelligence: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-deployment-patterns/",
-      "status": 200,
-      "title": "Cloud FinOps: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-operations-handbook/",
-      "status": 200,
-      "title": "Enterprise AI Intelligence Hub: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-automation-roadmap/",
-      "status": 200,
-      "title": "API Gateway Management: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-2026/",
-      "status": 200,
-      "title": "Endpoint Management | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-backup-dr-common-mistakes/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-social-media-manager-operations-handbook/",
-      "status": 200,
-      "title": "MicroSaaS Social Media Manager: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-2026/",
-      "status": 200,
-      "title": "AI 3D Asset Generator | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-executive-guide/",
-      "status": 200,
-      "title": "AI 3D Asset Generator: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/container-security-lifecycle-operations-handbook/",
-      "status": 200,
-      "title": "Container Security Lifecycle: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-executive-guide/",
-      "status": 200,
-      "title": "DevSecOps Pipeline: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-security-and-governance/",
-      "status": 200,
-      "title": "AI Performance Monitoring: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-backup-dr-security-and-governance/",
-      "status": 200,
-      "title": "Enterprise Backup DR: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-native-app-development-automation-roadmap/",
-      "status": 200,
-      "title": "Cloud Native App Development: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/event-driven-architecture-policy-and-compliance/",
-      "status": 200,
-      "title": "Event Driven Architecture: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-development-acceleration-executive-guide/",
-      "status": 200,
-      "title": "AI Development Acceleration: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "AI Agent Safety Evaluation: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/aiops-anomaly-detection-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "AIOps Anomaly Detection: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/it-consulting-architecture-overview/",
-      "status": 200,
-      "title": "IT Consulting: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-2026/",
-      "status": 200,
-      "title": "AI MSP Security Compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/it-consulting-2026-7881/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-management-gateway-2026-8049/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-2026-7305/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/accessibility-compliance-2026-6803/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-optimization-case-study/",
-      "status": 200,
-      "title": "Cloud Cost Optimization: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-automation-roadmap/",
-      "status": 200,
-      "title": "AI 3D Asset Generator: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-operations-handbook/",
-      "status": 200,
-      "title": "MicroSaaS Customer Onboarding: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-autonomous-agents-roi-and-cost-model/",
-      "status": 200,
-      "title": "AI Autonomous Agents: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/chaos-engineering-roi-and-cost-model/",
-      "status": 200,
-      "title": "Chaos Engineering: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/database-migration-service-policy-and-compliance/",
-      "status": 200,
-      "title": "Database Migration Service: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "ETL Pipeline Optimization: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-2026-6593/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-2026-7616/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-architecture-overview/",
-      "status": 200,
-      "title": "API Gateway Management: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-2026-8540/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-evaluation-framework/",
-      "status": 200,
-      "title": "AI MSP Security Compliance: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-optimization-security-and-governance/",
-      "status": 200,
-      "title": "Cloud Cost Optimization: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-deployment-patterns/",
-      "status": 200,
-      "title": "AI Data Backup: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/edge-computing-deployment-operations-handbook/",
-      "status": 200,
-      "title": "Edge Computing Deployment: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-deployment-patterns/",
-      "status": 200,
-      "title": "AI Agent Safety Evaluation: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-deployment-patterns/",
-      "status": 200,
-      "title": "AI Performance Monitoring: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-2026/",
-      "status": 200,
-      "title": "API Gateway Management | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-optimization-checklist-2026/",
-      "status": 200,
-      "title": "Cloud Cost Optimization | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-policy-and-compliance/",
-      "status": 200,
-      "title": "MicroSaaS HR Recruitment: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/",
-      "status": 200,
-      "title": "Chaos Engineering: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-common-mistakes/",
-      "status": 200,
-      "title": "Automated AI Reporting: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026/",
-      "status": 200,
-      "title": "Automation Orchestration | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-vendor-evaluation/",
-      "status": 200,
-      "title": "Incident Response Retainer: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-security-and-governance/",
-      "status": 200,
-      "title": "Endpoint Management: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-vendor-evaluation/",
-      "status": 200,
-      "title": "DevSecOps Pipeline: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-ad-copy-generator-common-mistakes/",
-      "status": 200,
-      "title": "AI Ad Copy Generator: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-case-study/",
-      "status": 200,
-      "title": "AI 3D Asset Generator: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-orchestration-layer-executive-guide/",
-      "status": 200,
-      "title": "API Orchestration Layer: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-email-intelligence-2026/",
-      "status": 200,
-      "title": "AI Email Intelligence | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/database-migration-service-2026/",
-      "status": 200,
-      "title": "Database Migration Service | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-2026/",
-      "status": 200,
-      "title": "Enterprise AI Intelligence Hub | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/smart-contract-audit-2026/",
-      "status": 200,
-      "title": "Smart Contract Audit | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bom-procurement-security-and-governance/",
-      "status": 200,
-      "title": "AI BOM Procurement: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/edge-computing-deployment-case-study/",
-      "status": 200,
-      "title": "Edge Computing Deployment: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bom-procurement-case-study/",
-      "status": 200,
-      "title": "AI BOM Procurement: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-2026/",
-      "status": 200,
-      "title": "ETL Pipeline Optimization | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-case-study/",
-      "status": 200,
-      "title": "AI Customer Success Churn Prevention: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/event-driven-architecture-case-study/",
-      "status": 200,
-      "title": "Event Driven Architecture: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-policy-and-compliance/",
-      "status": 200,
-      "title": "5G Solutions: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/event-driven-architecture-implementation-playbook/",
-      "status": 200,
-      "title": "Event Driven Architecture: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/apm-application-performance-case-study/",
-      "status": 200,
-      "title": "APM Application Performance: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-vendor-evaluation/",
-      "status": 200,
-      "title": "Data Warehouse Modernization: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/network-infrastructure-2026-6709/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026-6629/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-2026-7708/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-support-pro-2026-6840/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-integration-architecture-overview/",
-      "status": 200,
-      "title": "API Integration: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-case-study/",
-      "status": 200,
-      "title": "AI MSP Security Compliance: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-orchestration-layer-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "API Orchestration Layer: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-operations-handbook/",
-      "status": 200,
-      "title": "AI MSP Security Compliance: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cyber-threat-intelligence-common-mistakes/",
-      "status": 200,
-      "title": "Cyber Threat Intelligence: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-2026/",
-      "status": 200,
-      "title": "AI Accessibility Optimizer | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Data Analytics Platform: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/graphql-federation-platform-case-study/",
-      "status": 200,
-      "title": "GraphQL Federation Platform: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-roi-and-cost-model/",
-      "status": 200,
-      "title": "Endpoint Management: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-8490/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-2026-8556/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-for-msps-policy-and-compliance/",
-      "status": 200,
-      "title": "Cybersecurity for MSPs: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-email-intelligence-deployment-patterns/",
-      "status": 200,
-      "title": "AI Email Intelligence: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-observability-2026-7807/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026-9164/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026-8128/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/container-security-lifecycle-2026-7158/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-2026-9161/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/apm-application-performance-2026-7912/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-observability-vendor-evaluation/",
-      "status": 200,
-      "title": "AI Observability: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-development-acceleration-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "AI Development Acceleration: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-orchestration-layer-starter-template/",
-      "status": 200,
-      "title": "API Orchestration Layer: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-security-testing-2026-9038/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-partnership-automation-framework-for-it-companies-2026/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bom-procurement-2026-8319/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-2026-9039/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-tool-builder-2026-7896/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-deployment-patterns/",
-      "status": 200,
-      "title": "MicroSaaS HR Recruitment: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-observability-implementation-playbook/",
-      "status": 200,
-      "title": "AI Observability: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026-7318/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-2026-7294/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-2026-8068/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-native-app-development-vendor-evaluation/",
-      "status": 200,
-      "title": "Cloud Native App Development: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-2026-6874/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026-6774/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/smart-contract-audit-architecture-overview/",
-      "status": 200,
-      "title": "Smart Contract Audit: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-common-mistakes/",
-      "status": 200,
-      "title": "Incident Response Retainer: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-orchestration-layer-architecture-overview/",
-      "status": 200,
-      "title": "API Orchestration Layer: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-performance-testing-architecture-overview/",
-      "status": 200,
-      "title": "API Performance Testing: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-automation-roadmap/",
-      "status": 200,
-      "title": "AI Accessibility Optimizer: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-code-deployment-starter-template/",
-      "status": 200,
-      "title": "Autonomous Code Deployment: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-observability-common-mistakes/",
-      "status": 200,
-      "title": "AI Observability: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-development-acceleration-deployment-patterns/",
-      "status": 200,
-      "title": "AI Development Acceleration: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-for-msps-case-study/",
-      "status": 200,
-      "title": "Cybersecurity for MSPs: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-case-study/",
-      "status": 200,
-      "title": "5G Solutions: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/chaos-engineering-architecture-overview/",
-      "status": 200,
-      "title": "Chaos Engineering: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-vendor-evaluation/",
-      "status": 200,
-      "title": "AI Agent Safety Evaluation: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-executive-guide/",
-      "status": 200,
-      "title": "Enterprise AI Intelligence Hub: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cyber-threat-intelligence-2026/",
-      "status": 200,
-      "title": "Cyber Threat Intelligence | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-starter-template/",
-      "status": 200,
-      "title": "AI Data Lakehouse Pipelines: starter template | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/it-consulting-2026/",
-      "status": 200,
-      "title": "IT Consulting | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-roi-and-cost-model/",
-      "status": 200,
-      "title": "Managed IT Services: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-it-operations-roi-and-cost-model/",
-      "status": 200,
-      "title": "AI IT Operations: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-executive-guide/",
-      "status": 200,
-      "title": "AI Accessibility Optimizer: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-api-gateway-deployment-patterns/",
-      "status": 200,
-      "title": "AI API Gateway: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-deployment-patterns/",
-      "status": 200,
-      "title": "Cloud Migration Services: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devops-cicd-architecture-overview/",
-      "status": 200,
-      "title": "DevOps CI/CD: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026-6610/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/chaos-engineering-common-mistakes/",
-      "status": 200,
-      "title": "Chaos Engineering: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-2026-6964/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-2026-8845/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-security-and-governance/",
-      "status": 200,
-      "title": "AI Accessibility Auditor: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/",
-      "status": 200,
-      "title": "AI Accessibility Auditor | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-common-mistakes/",
-      "status": 200,
-      "title": "Cloud Migration Services: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-security-testing-2026-8969/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/graphql-federation-platform-2026-7308/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-7041/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-2026-9012/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-it-operations-operations-handbook/",
-      "status": 200,
-      "title": "AI IT Operations: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/graphql-federation-platform-executive-guide/",
-      "status": 200,
-      "title": "GraphQL Federation Platform: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/smart-contract-audit-implementation-playbook/",
-      "status": 200,
-      "title": "Smart Contract Audit: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-autonomous-agents-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "AI Autonomous Agents: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-expense-tracker-policy-and-compliance/",
-      "status": 200,
-      "title": "MicroSaaS Expense Tracker: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/brand-voice-guardian-2026/",
-      "status": 200,
-      "title": "Brand Voice Guardian | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-implementation-playbook/",
-      "status": 200,
-      "title": "Cloud Cost AI Optimizer: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "5G Solutions: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-security-and-governance/",
-      "status": 200,
-      "title": "AI Customer Success Churn Prevention: security and governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-safety-evaluation-implementation-playbook/",
-      "status": 200,
-      "title": "AI Agent Safety Evaluation: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-vendor-evaluation/",
-      "status": 200,
-      "title": "AI Data Backup: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-deployment-patterns/",
-      "status": 200,
-      "title": "MicroSaaS Customer Onboarding: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/endpoint-management-executive-guide/",
-      "status": 200,
-      "title": "Endpoint Management: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/aiops-anomaly-detection-roi-and-cost-model/",
-      "status": 200,
-      "title": "AIOps Anomaly Detection: ROI and cost model | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/smart-contract-audit-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Smart Contract Audit: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/chaos-engineering-automation-roadmap/",
-      "status": 200,
-      "title": "Chaos Engineering: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-common-mistakes/",
-      "status": 200,
-      "title": "ETL Pipeline Optimization: common mistakes | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-2026/",
-      "status": 200,
-      "title": "Incident Response Retainer | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/event-driven-architecture-executive-guide/",
-      "status": 200,
-      "title": "Event Driven Architecture: executive guide | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/chaos-engineering-2026/",
-      "status": 200,
-      "title": "Chaos Engineering | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-automation-roadmap/",
-      "status": 200,
-      "title": "AI Customer Success Churn Prevention: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/database-migration-service-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Database Migration Service: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-evaluation-framework/",
-      "status": 200,
-      "title": "AI BDR SDR: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/edge-computing-deployment-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Edge Computing Deployment: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-social-media-manager-case-study/",
-      "status": 200,
-      "title": "MicroSaaS Social Media Manager: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-automation-roadmap/",
-      "status": 200,
-      "title": "5G Solutions: automation roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-autonomous-agents-operations-handbook/",
-      "status": 200,
-      "title": "AI Autonomous Agents: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-email-intelligence-case-study/",
-      "status": 200,
-      "title": "AI Email Intelligence: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Incident Response Retainer: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-native-app-development-case-study/",
-      "status": 200,
-      "title": "Cloud Native App Development: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devops-cicd-evaluation-framework/",
-      "status": 200,
-      "title": "DevOps CI/CD: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/",
-      "status": 200,
-      "title": "ETL Pipeline Optimization: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/genai-devops-cicd-deployment-patterns/",
-      "status": 200,
-      "title": "GenAI DevOps CI/CD: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/graphql-federation-platform-2026/",
-      "status": 200,
-      "title": "GraphQL Federation Platform | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-policy-and-compliance/",
-      "status": 200,
-      "title": "Automated AI Reporting: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-observability-architecture-overview/",
-      "status": 200,
-      "title": "AI Observability: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-email-intelligence-operations-handbook/",
-      "status": 200,
-      "title": "AI Email Intelligence: operations handbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-integration-policy-and-compliance/",
-      "status": 200,
-      "title": "API Integration: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-policy-and-compliance/",
-      "status": 200,
-      "title": "Managed IT Services: policy and compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bom-procurement-implementation-playbook/",
-      "status": 200,
-      "title": "AI BOM Procurement: implementation playbook | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-vendor-evaluation/",
-      "status": 200,
-      "title": "API Gateway Management: vendor evaluation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-architecture-overview/",
-      "status": 200,
-      "title": "MicroSaaS Customer Onboarding: architecture overview | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-checklist-for-it-leaders/",
-      "status": 200,
-      "title": "Data Warehouse Modernization: checklist for IT leaders | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-deployment-patterns/",
-      "status": 200,
-      "title": "AI Accessibility Optimizer: deployment patterns | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-it-operations-case-study/",
-      "status": 200,
-      "title": "AI IT Operations: case study | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-social-media-manager-2026-6785/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/database-migration-service-2026-8955/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-integration-2026-8945/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-2026-7694/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/database-migration-service-2026-8265/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026-6560/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/event-driven-architecture-2026-8893/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-2026-6805/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/network-infrastructure-evaluation-framework/",
-      "status": 200,
-      "title": "Network Infrastructure: evaluation framework | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-implementation-playbook/",
+      "url": "https://ziontechgroup.com/blog/hermes-agent-criar-catalogo-servicos-infinito/",
       "status": 200,
-      "title": "AI 3D Asset Generator: implementation playbook | Zion Tech Group"
+      "title": "Como Criar um Cat\u00e1logo de Servi\u00e7os Infinito com Agentes de IA | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/blog/api-management-gateway-operations-handbook/",
+      "url": "https://ziontechgroup.com/blog/hermes-agent-multi-agent-coordination/",
       "status": 200,
-      "title": "API Management Gateway: operations handbook | Zion Tech Group"
+      "title": "Hermes Agent Multi-Agent Coordination: Como Agentes Trabalham Juntos para Entregar Resultados Reais | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-vendor-evaluation/",
+      "url": "https://ziontechgroup.com/blog/hermes-agent-crescimento-explosivo/",
       "status": 200,
-      "title": "AI Performance Monitoring: vendor evaluation | Zion Tech Group"
+      "title": "Como o Hermes Agent Levou a Zion Tech Group de 16K para 97K Servi\u00e7os em Semanas | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-optimization-vendor-evaluation/",
+      "url": "https://ziontechgroup.com/services/hermes-agent-content-publishing-distribution/",
       "status": 200,
-      "title": "Cloud Cost Optimization: vendor evaluation | Zion Tech Group"
+      "title": "Hermes Agent \u2014 Autonomous AI Agent Platform | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-implementation-playbook/",
+      "url": "https://ziontechgroup.com/services/hermes-agent-platform/",
       "status": 200,
-      "title": "AI BDR SDR: implementation playbook | Zion Tech Group"
+      "title": "Hermes Agent Platform | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-policy-and-compliance/",
+      "url": "https://ziontechgroup.com/blog/empresas-hermesses-agent-catalogo/",
       "status": 200,
-      "title": "DevSecOps Pipeline: policy and compliance | Zion Tech Group"
+      "title": "Como Empresas Usam Agentes Hermes para Criar Cat\u00e1logos de Servi\u00e7os Infinitos | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/blog/api-security-testing-executive-guide/",
+      "url": "https://ziontechgroup.com/blog/hermes-agent-platform/",
       "status": 200,
-      "title": "API Security Testing: executive guide | Zion Tech Group"
+      "title": "Hermes Agent Platform: O Gerenciador de Agentes que Escalona sua Opera\u00e7\u00e3o | Zion Tech Group"
     }
   ],
-  "broken_404_pages": [
-    {
-      "url": "https://ziontechgroup.com/managed-it-services-small-business-2026-6559/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/cybersecurity-platform-msp-2026-6558/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/cloud-cost-ai-optimizer-2026-6534/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/ai-observability-2026-6565/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/it-consulting-2026-6570/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/cloud-migration-services-2026-6572/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-9042/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-orchestration-layer-2026-6658/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026-7914/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-roi-and-cost-model/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-devops-and-incident-response/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-security-operations-and-compliance/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-sales-automation-and-crm-intelligence/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-it-operations-and-observability/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/autonomous-code-deployment-2026-8109/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-2026-8333/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-2026-7150/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026-9043/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-project-management-and-delivery/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-managed-it-and-enterprise-support/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-data-engineering-and-pipeline-automation/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-revenue-operations-and-business-intelligence/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-service-desk-and-support-automation/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-network-operations-and-telecom-automation/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-operations-handbook/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-for-msps-automation-roadmap/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/container-security-lifecycle-2026-6813/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-migration-services-2026-6779/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026-7347/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026-6905/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-8352/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-2026-7879/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-3d-asset-generator-2026-9202/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026-6818/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-predictive-maintenance-for-infrastructure/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-automation-roadmap/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-development-acceleration-2026-8081/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-2026-8322/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026-7899/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-for-quality-assurance-and-testing/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026-6680/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026-6981/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-it-operations-automation-2026-7867/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-2026-7512/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026-8713/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-6696/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/microsaas-translation-engine-common-mistakes/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/enterprise-backup-dr-common-mistakes/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/it-consulting-2026-7881/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-management-gateway-2026-8049/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/etl-pipeline-optimization-2026-7305/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/accessibility-compliance-2026-6803/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bdr-sdr-2026-6593/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-accessibility-auditor-2026-7616/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-2026-8540/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/network-infrastructure-2026-6709/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026-6629/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-2026-7708/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-support-pro-2026-6840/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-8490/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-2026-8556/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-observability-2026-7807/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026-9164/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026-8128/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/container-security-lifecycle-2026-7158/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-warehouse-modernization-2026-9161/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/apm-application-performance-2026-7912/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-security-testing-2026-9038/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-partnership-automation-framework-for-it-companies-2026/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-bom-procurement-2026-8319/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-backup-2026-9039/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-agent-tool-builder-2026-7896/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026-7318/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cloud-finops-2026-7294/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-2026-8068/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-2026-6874/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026-6774/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026-6610/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/incident-response-retainer-2026-6964/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-customer-success-churn-2026-8845/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-security-testing-2026-8969/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/graphql-federation-platform-2026-7308/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-7041/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/ai-performance-monitoring-2026-9012/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/micro-saas-ai-social-media-manager-2026-6785/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/database-migration-service-2026-8955/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-integration-2026-8945/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/automated-ai-reporting-2026-7694/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/database-migration-service-2026-8265/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026-6560/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/event-driven-architecture-2026-8893/",
-      "status": 404,
-      "title": null
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/api-gateway-management-2026-6805/",
-      "status": 404,
-      "title": null
-    }
-  ]
+  "broken_404_pages": []
 }
