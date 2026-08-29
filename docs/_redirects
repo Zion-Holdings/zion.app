@@ -1021,6 +1021,14 @@
 /blog/enterprise-backup-dr-2026-6545 /blog/ 301
 /blog/event-driven-architecture-2026-6547 /blog/ 301
 
+/services /services/index.html 200
+/blog /blog/index.html 200
+/tools /tools/index.html 200
+/services/ /services/index.html 200
+/tools/ /tools/index.html 200
+/ /index.html 200
+/sitemap.xml /sitemap.xml 200
+/robots.txt /robots.txt 200
 /blog/ai-email-intelligence-automation-scale /blog/ai-email-intelligence-automation-scale/index.html 200
 /blog/ai-observability-production-monitoring-2026 /blog/ai-observability-production-monitoring-2026/index.html 200
 /blog/automated-incident-response-playbooks /blog/automated-incident-response-playbooks/index.html 200
