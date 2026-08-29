@@ -1,30 +1,31 @@
 # Site Audit & Deploy Status
 
 **Last updated:** 2026-08-29  
-**Status:** Site live; local build stalled; deploy pending
+**Status:** BLOCKED — Pages workflow not completing
 
 ## What’s Working
-- Homepage and 64 discovered URLs returning 200 OK
-- `/careers/`, `/solutions/`, `/styles.css`, `/free-consultation/`, `/partners/`, `/blog/` all live
-- Service fallback stubs confirmed present under `public/services/*` and `docs/services/*`
-- Sitemap synced: `1280` URLs, `31` service entries
+- Local fixes committed to `main`: canonical link repairs, enriched fallbacks, sitemap sync
+- `gh-pages` branch updated to match latest `main`
+- GitHub Pages source re-pointed to `main`
 
-## What Was Broken / Now Fixed
-- Old audit flagged missing `/careers/`, `/solutions/`, `/styles.css`; all now present and returning 200
-- Old audit flagged workflow failures; current issue is local `npm run build` stalling during static export generation
-- Bad canonical links fixed in 54 static HTML fallbacks
-- `docs/solutions/index.html` and `docs/careers/index.html` recreated with fuller content
+## What’s Broken
+- Core live routes still 404: `/`, `/careers/`, `/solutions/`, `/services/`, `/tools/`, `/blog/`, `/products/`, `/use-cases/`, `/about/`, `/faq/`, `/sla/`
+- Latest Pages workflow runs are stuck `pending`/`in_progress`; earlier runs show `cancelled`
+- No successful deploy artifact since source alignment
 
-## Current Blocker
-- Local `npm run build` appears stalled in Next.js static export phase; `out/` not produced after extended runtime
-- GitHub Actions workflow likely the safer deploy path right now
+## Root Cause
+- GitHub Actions `gh-pages.yml` runs are not reaching a terminal success state
+- This is a CI/deploy blocker, not a content blocker
+
+## Next Step
+- Inspect the latest Pages workflow run details/jobs to find the actual failure mode
+- Fix the workflow blocker, then trigger a new deploy
 
 ## Live Verification
 ```bash
 curl -s -o /dev/null -w '%{http_code}' https://ziontechgroup.com/
 curl -s -o /dev/null -w '%{http_code}' https://ziontechgroup.com/careers/
 curl -s -o /dev/null -w '%{http_code}' https://ziontechgroup.com/solutions/
-curl -s -o /dev/null -w '%{http_code}' https://ziontechgroup.com/styles.css
 ```
 
 ## Credentials Status
