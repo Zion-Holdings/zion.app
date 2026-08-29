@@ -1,8 +1,7 @@
 {
   "send_count": 0,
-  "status": "blocked",
-  "note": "send_blocked",
-  "blocked_reason": "HTTP 429 rate limit",
+  "status": "no_send_deduped",
+  "note": "all candidates deduped or already sent",
   "source_file": "outreach_next_wave.json",
-  "timestamp": "2026-08-26T01:31:13.149330+00:00"
+  "timestamp": "2026-08-29T03:04:39.499042+00:00"
 }
