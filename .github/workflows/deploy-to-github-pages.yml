@@ -91,6 +91,41 @@ jobs:
             mkdir -p "$ARTIFACT_DIR/tools"
             cp -a public/tools/. "$ARTIFACT_DIR/tools"/
           fi
+          if [ -d public/blog ]; then
+            mkdir -p "$ARTIFACT_DIR/blog"
+            cp -a public/blog/. "$ARTIFACT_DIR/blog"/
+          fi
+          if [ -d public/solutions ]; then
+            mkdir -p "$ARTIFACT_DIR/solutions"
+            cp -a public/solutions/. "$ARTIFACT_DIR/solutions"/
+          fi
+          if [ -d public/careers ]; then
+            mkdir -p "$ARTIFACT_DIR/careers"
+            cp -a public/careers/. "$ARTIFACT_DIR/careers"/
+          fi
+          if [ -d public/dashboard ]; then
+            mkdir -p "$ARTIFACT_DIR/dashboard"
+            cp -a public/dashboard/. "$ARTIFACT_DIR/dashboard"/
+          fi
+          if [ -d public/products ]; then
+            mkdir -p "$ARTIFACT_DIR/products"
+            cp -a public/products/. "$ARTIFACT_DIR/products"/
+          fi
+          if [ -d public/ai-services ]; then
+            mkdir -p "$ARTIFACT_DIR/ai-services"
+            cp -a public/ai-services/. "$ARTIFACT_DIR/ai-services"/
+          fi
+          if [ -d public/industries ]; then
+            mkdir -p "$ARTIFACT_DIR/industries"
+            cp -a public/industries/. "$ARTIFACT_DIR/industries"/
+          fi
+          if [ -d public/search ]; then
+            mkdir -p "$ARTIFACT_DIR/search"
+            cp -a public/search/. "$ARTIFACT_DIR/search"/
+          fi
+          if [ -f public/styles.css ]; then
+            cp -f public/styles.css "$ARTIFACT_DIR/styles.css" || true
+          fi
           echo "pages=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)" >> "$GITHUB_OUTPUT"
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,80p'
 
