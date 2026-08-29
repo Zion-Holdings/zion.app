@@ -14,9 +14,6 @@
 /favicon.ico /favicon.svg 200
 /workflows/deploy.yml/ai-lab /ai-lab/index.html 200
 /ai-lab/ /ai-lab/index.html 200
-/ai-observability-2026-6565/ /services/?category=ai 301
-/ai-resources /docs/ai-resources/index.html 200
-/ai-resources/ /docs/ai-resources/index.html 200
 /ai-roi-calculator /docs/ai-roi-calculator/index.html 200
 /ai-roi-calculator/ /docs/ai-roi-calculator/index.html 200
 /ai-services-index /services/ 301
@@ -25,10 +22,6 @@
 /automation /automation/index.html 200
 /automation/ /automation/index.html 200
 /blog/ /blog/index.html 200
-/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization /blog/ai-automation-best-practices-2026/ 301
-/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/ /blog/ai-automation-best-practices-2026/ 301
-/blog/cloud-migration-services-2026-1121/ /blog/cloud-migration-services-2026-500/ 301
-/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
 /blog/hermes-agent-mcp-integration/ blog/hermes-agent-mcp-integration/index.html 200
 /blog/hermes-agent-multi-agent-coordination/ /blog/hermes-agent-multi-agent-coordination/index.html 200
 /blog/hermes-agent-multi-agent-swarm-orchestration/ blog/hermes-agent-multi-agent-swarm-orchestration/index.html 200
@@ -37,11 +30,8 @@
 /business-impact /docs/business-impact/index.html 200
 /business-impact/ /docs/business-impact/index.html 200
 /case-studies/ /case-studies/index.html 200
-/cloud-cost-ai-optimizer-2026-6534/ /services/?category=cloud 301
-/cloud-migration-services-2026-6572/ /services/?category=cloud 301
 /consultation /contact 301
 /contact/ /contact/index.html 200
-/cybersecurity-platform-msp-2026-6558/ /services/?category=security 301
 /free-ai-it-tools /tools/ 301
 /free-ai-it-tools/ /tools/ 301
 /free-ai-readiness-audit /docs/free-ai-readiness-audit/index.html 200
@@ -56,14 +46,9 @@
 /help/ /services/ 301
 /index.html / 301
 /index.html/ / 301
-/industries/financial-services /docs/industries/financial-services/index.html 301
-/industries/financial-services/ /docs/industries/financial-services/index.html 200
 /industry-solutions /solutions 301
 /integrators/ /integrators/index.html 200
-/it-consulting-2026-6570/ /services/?category=it 301
 /lead-crm/ /lead-crm/index.html 200
-/managed-it /services/it-managed-it-ops 301
-/managed-it-services-small-business-2026-6559/ /services/?category=it 301
 /new-ai-services /services/ 301
 /new-ai-services/ /services/ 301
 /portal /portal/index.html 200
@@ -123,15 +108,12 @@
 /services/ai-healthcare-scheduling/ /services/ 301
 /services/ai-image-video-generator /services/ 301
 /services/ai-image-video-generator/ /services/ 301
-/services/ai-incident-response-and-oncall-automation/ /services/?category=ai 301
 /services/ai-internal-app-builder /services/ 301
 /services/ai-internal-app-builder/ /services/ 301
 /services/ai-knowledge-base-rag-platform /services/ 301
 /services/ai-knowledge-base-rag-platform/ /services/ 301
 /services/ai-legal-document-analyzer /services/ 301
 /services/ai-legal-document-analyzer/ /services/ 301
-/services/ai-medical-diagnosis/ /services/?category=ai 301
-/services/ai-meeting-intelligence-minutes-and-actions/ /services?category=ai 301
 /services/ai-product-description-seo-generator /services/ 301
 /services/ai-product-description-seo-generator/ /services/ 301
 /services/ai-real-estate-listing-optimizer /services/ 301
@@ -149,9 +131,7 @@
 /services/ai-seo-content-engine /services/ 301
 /services/ai-seo-content-engine/ /services/ 301
 /services/ai-voice-agent-phone /services/ 301
-/services/ai-voice-agent-phone /services/ai-voice-agent/ 301
 /services/ai-voice-agent-phone/ /services/ 301
-/services/ai-voice-agent-phone/ /services/ai-voice-agent/ 301
 /services/appwrite /services/ 301
 /services/appwrite/ /services/ 301
 /services/auto-intelligent-workflows /services/ 301
@@ -174,8 +154,6 @@
 /services/cloud-hybrid-orchestration/ /services/ 301
 /services/cloud-migration-service /services/ 301
 /services/cloud-migration-service/ /services/ 301
-/services/cloud-migration-services-2026-1121/ /services/cloud-migration-services-2026-500/ 301
-/services/contract-lifecycle/ /services/?category=ai 301
 /services/cyber-incident-response-retainer /services/ 301
 /services/cyber-incident-response-retainer/ /services/ 301
 /services/darktrace-ai-cyber-defense /services/ 301
@@ -183,30 +161,19 @@
 /services/data-backup-recovery /services/ 301
 /services/data-backup-recovery/ /services/ 301
 /services/data-lake-platform /services/ 301
-/services/data-lake-platform /services/?category=data 301
-/services/data-lake-platform /services/data-analytics 301
 /services/data-lake-platform/ /services/ 301
-/services/data-lake-platform/ /services/?category=data 301
-/services/data-lake-platform/ /services/data-analytics 301
 /services/deepl-ai-translation-services /services/ 301
 /services/deepl-ai-translation-services/ /services/ 301
 /services/defi-compliance-engine /services/ 301
 /services/defi-compliance-engine/ /services/ 301
-/services/demand-forecasting/ /services/?category=data 301
-/services/devops-automation /services/?category=automation 301
-/services/devops-automation/ /services/?category=automation 301
 /services/devops-pipeline /services/ 301
 /services/devops-pipeline/ /services/ 301
 /services/devops-plane-project-management /services/ 301
 /services/devops-plane-project-management/ /services/ 301
-/services/dynamic-pricing/ /services/?category=ai 301
 /services/elevenlabs-synthetic-voice-cloning /services/ 301
 /services/elevenlabs-synthetic-voice-cloning/ /services/ 301
 /services/email-threat-detector /services/ 301
 /services/email-threat-detector/ /services/ 301
-/services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
-/services/fleet-management/ /services/?category=ai 301
-/services/fraud-detection-ai/ /services/?category=ai 301
 /services/github-copilot-ai-code-generation /services/ 301
 /services/github-copilot-ai-code-generation/ /services/ 301
 /services/gitpod-cde /services/ 301
@@ -216,7 +183,6 @@
 /services/hawk-eye-ai-video-analytics /services/ 301
 /services/hawk-eye-ai-video-analytics/ /services/ 301
 /services/hermes-agent-platform/ /services/hermes-agent-platform/index.html 200
-/services/hl7-fhir-integration/ /services/?category=data 301
 /services/ibm-ai-factsheets-governance /services/ 301
 /services/ibm-ai-factsheets-governance/ /services/ 301
 /services/ibm-quantum-network /services/ 301
@@ -233,7 +199,6 @@
 /services/intel-openfl-federated-learning/ /services/ 301
 /services/iot-device-management /services/ 301
 /services/iot-device-management/ /services/ 301
-/services/iot-integration/ /services/?category=iot 301
 /services/ironclad-ai-contract-lifecycle-management /services/ 301
 /services/ironclad-ai-contract-lifecycle-management/ /services/ 301
 /services/it-vcio-service /services/ 301
@@ -244,12 +209,10 @@
 /services/keycloak/ /services/ 301
 /services/kilobots-swarm-intelligence-platform /services/ 301
 /services/kilobots-swarm-intelligence-platform/ /services/ 301
-/services/legal-document-ai/ /services/?category=ai 301
 /services/locus-robotics-autonomous-amr /services/ 301
 /services/locus-robotics-autonomous-amr/ /services/ 301
 /services/loki /services/ 301
 /services/loki/ /services/ 301
-/services/managed-it /services/it-managed-it-ops 301
 /services/managed-observability-247 /services/ 301
 /services/managed-observability-247/ /services/ 301
 /services/microsoft-365-management /services/ 301
@@ -282,7 +245,6 @@
 /services/prometheus/ /services/ 301
 /services/real-time-analytics /services/ 301
 /services/real-time-analytics/ /services/ 301
-/services/route-optimization/ /services/?category=ai 301
 /services/saas-api-rate-limiter /services/ 301
 /services/saas-api-rate-limiter/ /services/ 301
 /services/saas-appointment-scheduler /services/ 301
@@ -315,7 +277,6 @@
 /services/sec-soc-as-a-service/ /services/ 301
 /services/smart-building-platform /services/ 301
 /services/smart-building-platform/ /services/ 301
-/services/smart-inventory-ai/ /services/?category=ai 301
 /services/starlink-satellite-internet /services/ 301
 /services/starlink-satellite-internet/ /services/ 301
 /services/suno-ai-music-generation /services/ 301
@@ -516,15 +477,11 @@
 /services/wisk-aero-autonomous-air-taxi/ /services/ 301
 /sla /docs/sla/index.html 200
 /sla/ /docs/sla/index.html 200
-/solutions/healthcare /docs/solutions/healthcare/index.html 301
-/solutions/healthcare/ /docs/solutions/healthcare/index.html 200
 /status-page/ /status-page/index.html 200
 /status/ /status/index.html 200
 /status/ status/index.html 200
 /support /services/ 301
 /support/ /services/ 301
-/tools/phishing-analyzer /docs/tools/phishing-analyzer/index.html 301
-/tools/phishing-analyzer/ /docs/tools/phishing-analyzer/index.html 200
 /use-cases/ /use-cases/index.html 200
 /tools/ai-agents-autonomous/ /tools/ai-agents-autonomous.html 200
 /tools/base64-image/ /tools/base64-image.html 200
@@ -572,7 +529,6 @@
 /services/cloud-cost-optimization-service/ /services/cloud-cost-optimization-service.html 200
 /services/index/ /services/index.html 200
 
-/tools/* /tools/:splat/index.html 200/tools/agent-prompt-builder /tools/agent-prompt-builder/ 200
 /tools/ai-roi-calculator /tools/ai-roi-calculator/ 200
 /tools/api-health-check /tools/api-health-check/ 200
 /tools/base64-encoder /tools/base64-encoder/ 200
@@ -890,6 +846,4 @@
 # End of ghost URL rules
 
 # Splat rules — cover all pages in these directories
-/blog/* /blog/:splat/index.html 200
-/services/* /services/:splat/index.html 200
 /feed/ /feed.xml 200
