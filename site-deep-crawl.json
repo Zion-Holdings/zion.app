@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-08-29T06:20:46.650498",
+  "timestamp": "2026-08-29T08:20:47.883242",
   "base_url": "https://ziontechgroup.com",
-  "total_pages": 68,
-  "working_200": 68,
+  "total_pages": 65,
+  "working_200": 65,
   "broken_404": 0,
   "redirects_3xx": 0,
   "server_error_5xx": 0,
@@ -82,7 +82,7 @@
     {
       "url": "https://ziontechgroup.com/tools/csv-to-json/",
       "status": 200,
-      "title": "csv-to-json | Zion Tech Group"
+      "title": "CSV to JSON Converter | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/tools/yaml-to-json/",
@@ -97,22 +97,22 @@
     {
       "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/",
       "status": 200,
-      "title": "Cloud Cost AI Optimizer Checklist"
+      "title": "Cloud Cost AI Optimizer \u2014 Checklist for IT Leaders | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-implementation-playbook/",
       "status": 200,
-      "title": "AI MSP Security Compliance Playbook"
+      "title": "AI MSP Security Compliance Playbook | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/",
       "status": 200,
-      "title": "Cybersecurity Platform MSP 2026"
+      "title": "Cybersecurity Platform for MSPs | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026/",
       "status": 200,
-      "title": "DevSecOps Pipeline 2026"
+      "title": "DevSecOps Pipeline 2026 | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting/",
@@ -152,7 +152,7 @@
     {
       "url": "https://ziontechgroup.com/services/cloud-cost-optimization/",
       "status": 200,
-      "title": "Cloud Cost Optimization Services | Zion Tech Group"
+      "title": "Cloud Cost Optimization | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/services/ai-observability/",
@@ -197,7 +197,7 @@
     {
       "url": "https://ziontechgroup.com/free-ai-it-tools/",
       "status": 200,
-      "title": "Free AI &amp; IT Tools | Zion Tech Group"
+      "title": "Free AI & IT Tools | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/services/data-analytics-platform/",
@@ -212,12 +212,12 @@
     {
       "url": "https://ziontechgroup.com/agents-monitoring/",
       "status": 200,
-      "title": "Agent Monitoring \u2014 Zion Tech Group"
+      "title": "Agent Monitoring | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/ai-services/",
       "status": 200,
-      "title": "Redirecting"
+      "title": "AI Services | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/products/",
@@ -247,7 +247,7 @@
     {
       "url": "https://ziontechgroup.com/faq/",
       "status": 200,
-      "title": "FAQ | Zion Tech Group"
+      "title": "Frequently Asked Questions | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/sla/",
@@ -263,21 +263,6 @@
       "url": "https://ziontechgroup.com/industries/",
       "status": 200,
       "title": "Industries | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/tools/jwt-decoder/",
-      "status": 200,
-      "title": "JWT Decoder | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/tools/regex-tester/",
-      "status": 200,
-      "title": "Regex Tester | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/tools/word-counter/",
-      "status": 200,
-      "title": "Word Counter | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/services/hermes-agent-bot-mode/",
@@ -300,14 +285,14 @@
       "title": "Hermes Agent Complete Guide \u2014 Everything You Need to Know | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/services?category=cloud",
+      "url": "https://ziontechgroup.com/services/cloud/",
       "status": 200,
-      "title": "AI Services & Solutions \u2014 Zion Tech Group"
+      "title": "Cloud Services | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/services?category=security",
+      "url": "https://ziontechgroup.com/services/security/",
       "status": 200,
-      "title": "AI Services & Solutions \u2014 Zion Tech Group"
+      "title": "Security Services | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/cookies/",

@@ -68,11 +68,6 @@
       "https://ziontechgroup.com/"
     ],
     [
-      "https://ziontechgroup.com/tools/meta-tag-generator//",
-      "${url}",
-      "https://ziontechgroup.com/tools/meta-tag-generator/${url}"
-    ],
-    [
       "https://ziontechgroup.com/tools/agent-prompt-builder//",
       "/",
       "https://ziontechgroup.com/"
@@ -81,16 +76,6 @@
       "https://ziontechgroup.com/tools/agent-prompt-builder//",
       "/",
       "https://ziontechgroup.com/"
-    ],
-    [
-      "https://ziontechgroup.com/tools/markdown-preview//",
-      "$2",
-      "https://ziontechgroup.com/tools/markdown-preview/$2"
-    ],
-    [
-      "https://ziontechgroup.com/tools/markdown-previewer//",
-      "$2",
-      "https://ziontechgroup.com/tools/markdown-previewer/$2"
     ],
     [
       "https://ziontechgroup.com/portal//",
