@@ -69,6 +69,28 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+    
+      <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8 max-w-5xl mx-auto">
+        <h2 className="text-xl font-bold text-white mb-4">Explore related</h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <Link href="/services/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Services</h3>
+            <p className="text-slate-400 text-xs mb-2">AI, IT, and automation services with measurable outcomes.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">View services →</span>
+          </Link>
+          <Link href="/blog/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Insights</h3>
+            <p className="text-slate-400 text-xs mb-2">Guides on AI delivery, security, data, and DevOps.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Read blog →</span>
+          </Link>
+          <Link href="/contact/" className="rounded-xl border border-slate-700 bg-slate-950 p-5 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold text-sm mb-1">Contact</h3>
+            <p className="text-slate-400 text-xs mb-2">Talk with Zion about your environment and timeline.</p>
+            <span className="text-purple-300 text-xs font-semibold inline-block">Contact us →</span>
+          </Link>
+        </div>
+      </div>
+
     </StandardPage>
   );
 }

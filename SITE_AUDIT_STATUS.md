@@ -1,34 +1,27 @@
 # Site Audit & Deploy Status
 
-**Last updated:** 2026-08-25  
-**Status:** BLOCKED — Pages artifact not updating
+**Last updated:** 2026-08-29  
+**Status:** Site live; local build stalled; deploy pending
 
 ## What’s Working
-- 24 routes return 200 OK
-- `/faq/` fixed and live
-- All stubs committed/pushed to `main` and `gh-pages`
+- Homepage and 64 discovered URLs returning 200 OK
+- `/careers/`, `/solutions/`, `/styles.css`, `/free-consultation/`, `/partners/`, `/blog/` all live
+- Service fallback stubs confirmed present under `public/services/*` and `docs/services/*`
+- Sitemap synced: `1280` URLs, `31` service entries
 
-## What’s Broken
-- `/careers/` → 404
-- `/solutions/` → 404
-- `/styles.css` → 404
-- Multiple deep crawl routes → 404
+## What Was Broken / Now Fixed
+- Old audit flagged missing `/careers/`, `/solutions/`, `/styles.css`; all now present and returning 200
+- Old audit flagged workflow failures; current issue is local `npm run build` stalling during static export generation
+- Bad canonical links fixed in 54 static HTML fallbacks
+- `docs/solutions/index.html` and `docs/careers/index.html` recreated with fuller content
 
-## Root Cause
-- GitHub Pages artifact last updated: `2026-08-25T13:56:04Z`
-- Workflow runs `32860912488` and `32861355778` cancelled/not completing
-- Pages source: `gh-pages` branch, `build_type: workflow`
-- Code is ready; deploy pipeline is failing
+## Current Blocker
+- Local `npm run build` appears stalled in Next.js static export phase; `out/` not produced after extended runtime
+- GitHub Actions workflow likely the safer deploy path right now
 
-## Manual Actions Needed
-1. Open **Actions → Continuous Pages Deploy**
-2. Check why runs are failing/cancelling
-3. Fix workflow blocker
-4. Trigger new deploy manually
-
-## Verification
-After deploy, check:
+## Live Verification
 ```bash
+curl -s -o /dev/null -w '%{http_code}' https://ziontechgroup.com/
 curl -s -o /dev/null -w '%{http_code}' https://ziontechgroup.com/careers/
 curl -s -o /dev/null -w '%{http_code}' https://ziontechgroup.com/solutions/
 curl -s -o /dev/null -w '%{http_code}' https://ziontechgroup.com/styles.css

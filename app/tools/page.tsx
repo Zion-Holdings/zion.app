@@ -51,7 +51,7 @@ export default function ToolsPage() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
         <a href="/tools/agent-prompt-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Agent Prompt Builder</h3>
-          <p className="text-slate-400 text-sm">Free agent prompt builder from Zion Tech Group: construct well-structured prompts for a...</p>
+          <p className="text-slate-400 text-sm">Build, test, and optimize prompts for AI agents — with templates, variable injection, a...</p>
         </a>
         <a href="/tools/ai-roi-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Ai Roi Calculator</h3>
@@ -111,7 +111,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/cron-next-runs/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Cron Next Runs</h3>
-          <p className="text-slate-400 text-sm">Free online cron-next-runs tool by Zion Tech Group</p>
+          <p className="text-slate-400 text-sm">Calculate the next scheduled runs for any cron expression — see upcoming execution time...</p>
         </a>
         <a href="/tools/cron-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Cron Parser</h3>
@@ -131,11 +131,11 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/csv-to-json/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Csv To Json</h3>
-          <p className="text-slate-400 text-sm">Free online csv-to-json tool by Zion Tech Group</p>
+          <p className="text-slate-400 text-sm">Convert CSV files to JSON format instantly — with options for array, object, and key-va...</p>
         </a>
         <a href="/tools/date-diff/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Date Diff</h3>
-          <p className="text-slate-400 text-sm">Free online date-diff tool by Zion Tech Group</p>
+          <p className="text-slate-400 text-sm">Calculate the difference between two dates — days, weeks, months, years, and even busin...</p>
         </a>
         <a href="/tools/duration-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Duration Calculator</h3>
@@ -203,7 +203,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/json-query/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Json Query</h3>
-          <p className="text-slate-400 text-sm">Free online json-query tool by Zion Tech Group</p>
+          <p className="text-slate-400 text-sm">Query, filter, and extract data from JSON using path expressions — like jq in your brow...</p>
         </a>
         <a href="/tools/json-schema-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">JSON Schema Generator</h3>
@@ -239,7 +239,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/llm-comparison/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Llm Comparison</h3>
-          <p className="text-slate-400 text-sm">Free MCP (Model Context Protocol) tester from Zion Tech Group: verify MCP server connec...</p>
+          <p className="text-slate-400 text-sm">Compare language models side-by-side on price, context window, speed, and capability —...</p>
         </a>
         <a href="/tools/llm-payload-estimator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Llm Payload Estimator</h3>
@@ -323,7 +323,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/readability-score/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Readability Score</h3>
-          <p className="text-slate-400 text-sm">Free online readability-score tool by Zion Tech Group</p>
+          <p className="text-slate-400 text-sm">Measure the readability of any text — Flesch-Kincaid, Gunning Fog, SMOG, and more reada...</p>
         </a>
         <a href="/tools/regex-cheat-sheet/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Regex Cheat Sheet</h3>
@@ -351,7 +351,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/subnet-calculator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Subnet Calculator</h3>
-          <p className="text-slate-400 text-sm">Free online subnet-calculator tool by Zion Tech Group</p>
+          <p className="text-slate-400 text-sm">Calculate subnet masks, CIDR notation, network addresses, broadcast addresses, and host...</p>
         </a>
         <a href="/tools/text-analyzer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Text Analyzer</h3>

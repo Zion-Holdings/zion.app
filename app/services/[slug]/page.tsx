@@ -27,11 +27,7 @@ export function generateStaticParams() {
   return Object.keys(SERVICE_CATEGORY_MAP).map((slug) => ({ slug }));
 }
 
-export function generateStaticParams() {
-  return Object.keys(SERVICE_CATEGORY_MAP).map((slug) => ({ slug: [slug] }));
-}
-
-
+export const metadata = {
   title: 'Service | Zion Tech Group',
   description: 'Service details and delivery guidance.',
   openGraph: {
@@ -45,7 +41,7 @@ export function generateStaticParams() {
     title: 'Service | Zion Tech Group',
     description: 'Service details and delivery guidance.',
   },
-  alternates: { canonical: '/services/' },
+  alternates: { canonical: `https://ziontechgroup.com/services/${slug}/` },
 };
 
 const jsonLd = {"@context": "https://schema.org", "@type": "WebPage", "name": "", "description": "", "url": "https://ziontechgroup.com/services/[slug]/"};
