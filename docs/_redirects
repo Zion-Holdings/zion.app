@@ -1035,3 +1035,7 @@
 /blog/cloud-cost-optimization-ai-cut-spend /blog/cloud-cost-optimization-ai-cut-spend/index.html 200
 /blog/zero-trust-architecture-msps-checklist /blog/zero-trust-architecture-msps-checklist/index.html 200
 /service-discovery /service-discovery/index.html 200
+
+# Splat rules — cover all pages in these directories
+/blog/* /blog/:splat/index.html 200
+/services/* /services/:splat/index.html 200
