@@ -42,7 +42,7 @@ export default function InnovationBundlesPage() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/consultation" className="mt-4 block w-full rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2.5 text-center text-sm font-semibold text-white">
+                <Link href="/contact/" className="mt-4 block w-full rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2.5 text-center text-sm font-semibold text-white">
                   Get This Bundle
                 </Link>
               </div>

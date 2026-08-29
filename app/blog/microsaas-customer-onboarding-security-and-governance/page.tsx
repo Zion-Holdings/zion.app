@@ -45,9 +45,9 @@ For microsaas customer onboarding: security and governance: pick one workflow, a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/blog/">Automation Orchestration Enterprise 2026 6768</Link></li>
-<li><Link href="/blog/blog/">Cybersecurity Platform Msp 2026 6834</Link></li>
-<li><Link href="/blog/blog/">Api Security Testing 2026 6830</Link></li>
+              <li><Link href="/blog/">Automation Orchestration Enterprise 2026 6768</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6834</Link></li>
+<li><Link href="/blog/">Api Security Testing 2026 6830</Link></li>
 <li><Link href="/blog/ai-autonomous-agents-architecture-overview">Ai Autonomous Agents Architecture Overview</Link></li>
             </ul>
           </div>

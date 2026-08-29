@@ -7,7 +7,7 @@
   <meta name="description" content="How DevSecOps pipeline automation transforms security from a bottleneck into a competitive advantage — integrating security scanning, compliance validation, and threat detection directly into CI/CD workflows.">
   <link rel="canonical" href="https://ziontechgroup.com/blog/devsecops-pipeline-automation/">
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/favicon.svg">
+  <link rel="icon" href="/favicon.ico">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #0b1220; color: #e6f0ff; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
