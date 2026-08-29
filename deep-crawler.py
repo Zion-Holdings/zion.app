@@ -123,7 +123,7 @@ def main():
         ],
     }
 
-    with open('/data/data/com.termux/files/home/zion-support.github.io/site-deep-crawl.json', 'w') as f:
+    with open('site-deep-crawl.json', 'w') as f:
         json.dump(report, f, indent=2)
 
     print(f"\n📁 Report saved to: site-deep-crawl.json")
