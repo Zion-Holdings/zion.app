@@ -1,27 +1,32 @@
-import StandardPage from '@/components/StandardPage';
-import type { Metadata } from 'next';
+---
+name: phishing-analyzer
+route: /tools/phishing-analyzer
+description: Free phishing analyzer tool from Zion Tech Group — inspect links, headers, and risk signals instantly.
+---
 
-export const metadata: Metadata = {
-  title: 'Healthcare Solutions | Zion Tech Group',
-  description: 'AI and IT solutions for healthcare: clinical operations, diagnostics, patient pathways, and compliance.',
+import StandardPage from '@/components/StandardPage';
+
+export const metadata = {
+  title: 'Phishing Analyzer | Zion Tech Group',
+  description: 'Free phishing analyzer tool from Zion Tech Group. Inspect links, headers, and risk signals instantly.',
   openGraph: {
-    title: 'Healthcare Solutions | Zion Tech Group',
-    description: 'AI and IT solutions for healthcare: clinical operations, diagnostics, patient pathways, and compliance.',
-    url: 'https://ziontechgroup.com/solutions/healthcare',
+    title: 'Phishing Analyzer | Zion Tech Group',
+    description: 'Free phishing analyzer tool from Zion Tech Group. Inspect links, headers, and risk signals instantly.',
+    url: 'https://ziontechgroup.com/tools/phishing-analyzer',
     type: 'website',
   },
-  alternates: { canonical: '/solutions/healthcare/' },
+  alternates: { canonical: '/tools/phishing-analyzer/' },
 };
 
-export default function HealthcarePage() {
+export default function PhishingAnalyzerPage() {
   return (
     <StandardPage
-      title="Healthcare Solutions"
-      subtitle="Modernize healthcare delivery with governed AI and secure cloud infrastructure."
+      title="Phishing Analyzer"
+      subtitle="Analyze emails and URLs for phishing indicators in seconds."
       breadcrumbItems={[
         { label: 'Home', href: '/' },
-        { label: 'Solutions', href: '/solutions/' },
-        { label: 'Healthcare' },
+        { label: 'Tools', href: '/tools/' },
+        { label: 'Phishing Analyzer' },
       ]}
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">

@@ -1,27 +1,32 @@
-import StandardPage from '@/components/StandardPage';
-import type { Metadata } from 'next';
+---
+name: financial-services
+route: /industries/financial-services
+description: AI and IT solutions for financial services — fraud defense, compliance, payment intelligence, and analytics.
+---
 
-export const metadata: Metadata = {
-  title: 'Healthcare Solutions | Zion Tech Group',
-  description: 'AI and IT solutions for healthcare: clinical operations, diagnostics, patient pathways, and compliance.',
+import StandardPage from '@/components/StandardPage';
+
+export const metadata = {
+  title: 'Financial Services | Zion Tech Group',
+  description: 'AI and IT solutions for financial services: fraud defense, compliance, payment intelligence, and analytics.',
   openGraph: {
-    title: 'Healthcare Solutions | Zion Tech Group',
-    description: 'AI and IT solutions for healthcare: clinical operations, diagnostics, patient pathways, and compliance.',
-    url: 'https://ziontechgroup.com/solutions/healthcare',
+    title: 'Financial Services | Zion Tech Group',
+    description: 'AI and IT solutions for financial services: fraud defense, compliance, payment intelligence, and analytics.',
+    url: 'https://ziontechgroup.com/industries/financial-services',
     type: 'website',
   },
-  alternates: { canonical: '/solutions/healthcare/' },
+  alternates: { canonical: '/industries/financial-services/' },
 };
 
-export default function HealthcarePage() {
+export default function FinancialServicesPage() {
   return (
     <StandardPage
-      title="Healthcare Solutions"
-      subtitle="Modernize healthcare delivery with governed AI and secure cloud infrastructure."
+      title="Financial Services"
+      subtitle="Secure, compliant, and high-performance technology for finance and fintech."
       breadcrumbItems={[
         { label: 'Home', href: '/' },
-        { label: 'Solutions', href: '/solutions/' },
-        { label: 'Healthcare' },
+        { label: 'Industries', href: '/industries/' },
+        { label: 'Financial Services' },
       ]}
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
