@@ -64,10 +64,10 @@
 /help/ /services/ 301
 /index.html / 301
 /index.html/ / 301
-/industries/financial-services /docs/industries/financial-services/index.html 301
-/industries/financial-services/ /docs/industries/financial-services/index.html 200
+/industries/financial-services /industries/financial-services/ 301
+/industries/financial-services/ /industries/financial-services/index.html 200
 /industries/healthcare /industries/healthcare/ 301
-/industries/healthcare/ /industries/healthcare/ 301
+/industries/healthcare/ /industries/healthcare/index.html 200
 /industries/insurance /industries/insurance/ 301
 /industries/insurance/ /industries/insurance/ 301
 /industries/legal /industries/legal/ 301
@@ -662,8 +662,8 @@
 /services/wisk-aero-autonomous-air-taxi/ /services/ 301
 /sla /docs/sla/index.html 200
 /sla/ /docs/sla/index.html 200
-/solutions/healthcare /docs/solutions/healthcare/index.html 301
-/solutions/healthcare/ /docs/solutions/healthcare/index.html 200
+/solutions/healthcare /solutions/healthcare/ 301
+/solutions/healthcare/ /solutions/healthcare/index.html 200
 /status-page /status-page/ 301
 /status-page/ /status-page/index.html 200
 /support /services/ 301
@@ -672,8 +672,8 @@
 /terms/ /terms/ 301
 /tools/ai-service-router /tools/ai-service-router/ 301
 /tools/ai-service-router/ /tools/ai-service-router/ 301
-/tools/phishing-analyzer /docs/tools/phishing-analyzer/index.html 301
-/tools/phishing-analyzer/ /docs/tools/phishing-analyzer/index.html 200
+/tools/phishing-analyzer /tools/phishing-analyzer/ 301
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 /tools/port-scanner /tools/port-scanner/ 301
 /tools/port-scanner/ /tools/port-scanner/ 301
 /tools/roi-calculator /tools/roi-calculator/ 301
