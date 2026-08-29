@@ -43,6 +43,9 @@ export default function FinancialServicesPage() {
           <p className="text-slate-400 text-sm">Penetration testing, identity flows, and incident-response playbooks.</p>
         </div>
       </div>
+          <div className="prose prose-invert max-w-none">
+        <h2>Why financial services</h2><p>Financial services organizations need secure, compliant, and high-performance systems. Zion Tech Group delivers solutions that support risk management, customer experience, and regulatory requirements.</p><h2>Solutions</h2><ul><li>Payment and fraud detection platforms</li><li>Customer onboarding and KYC automation</li><li>Risk analytics and reporting</li><li>Cloud and infrastructure modernization</li></ul>
+      </div>
     </StandardPage>
   );
 }

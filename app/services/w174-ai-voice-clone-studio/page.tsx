@@ -23,7 +23,7 @@ export default function ServicePage() {
             <li>Voice cloning from 30-second audio sample</li>
             <li>50+ language support with accent control</li>
             <li>Emotion and speaking style adjustment</li>
-            <li>Real-time streaming TTS (< 200ms first byte)</li>
+            <li>Real-time streaming TTS (&lt; 200ms first byte)</li>
             <li>Consent and licensing management</li>
             <li>Audio watermarking for authenticity</li>
             <li>API with SSML support and pronunciation dictionaries</li>

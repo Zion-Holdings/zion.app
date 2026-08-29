@@ -23,7 +23,7 @@ export default function ServicePage() {
             <li>24/7 SOC with AI-augmented threat detection</li>
             <li>Endpoint, network, and cloud telemetry correlation</li>
             <li>Threat hunting by veteran security analysts</li>
-            <li>Incident investigation & containment (<15 min SLA)</li>
+            <li>Incident investigation &amp; containment (&lt;15 min SLA)</li>
             <li>Playbook-driven & custom incident response</li>
             <li>Monthly threat landscape briefings</li>
             <li>Deception technology & honeypot deployment</li>

@@ -38,6 +38,9 @@ export default function HealthcarePage() {
           <p className="text-slate-400 text-sm">Penetration testing, identity flows, and incident-response playbooks.</p>
         </div>
       </div>
+          <div className="prose prose-invert max-w-none">
+        <h2>Why healthcare</h2><p>Healthcare organizations need secure, compliant, and responsive technology platforms. Zion Tech Group delivers solutions that support clinical operations, patient data governance, and regulatory requirements.</p><h2>Solutions</h2><ul><li>Secure clinical communications and collaboration</li><li>Data interoperability and analytics</li><li>Compliance automation and audit readiness</li><li>Operational resilience and incident response</li></ul>
+      </div>
     </StandardPage>
   );
 }
