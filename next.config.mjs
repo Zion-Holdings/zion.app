@@ -12,4 +12,4 @@ const nextConfig = {
   inlineStyles: false,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
