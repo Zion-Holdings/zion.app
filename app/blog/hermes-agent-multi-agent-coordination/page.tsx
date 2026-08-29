@@ -1,11 +1,3 @@
----
-title: "Hermes Agent Multi-Agent Coordination: Como sua Operação Entrega em Swarm"
-description: "Coordenação multi-agent de Hermes Agent: como sua equipe usa zonas, delegação e auto-reflexão para entregar mais, com menos gargalos — e como o site anuncia cada conquista."
-date: 2026-08-24
-template: blog
-tags: ['hermes-agent', 'multiagent', 'coordenação', 'swarm', 'entrega']
----
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import StandardPage from '@/components/StandardPage'

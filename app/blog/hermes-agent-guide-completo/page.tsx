@@ -1,11 +1,3 @@
----
-title: "Guia Definitivo: Como Usar Hermes Agent para Automação Inteligente"
-description: "Aprenda a usar Hermes Agent do zero: configuração, delegação de tarefas, coordenação multi-agent, e como entregar resultados reais com agentes autônomos."
-date: 2026-08-24
-template: blog
-tags: ['hermes-agent', 'guia', 'automação', 'multiagente', 'produtividade']
----
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import StandardPage from '@/components/StandardPage'

@@ -1,9 +1,3 @@
----
-name: financial-services
-route: /industries/financial-services
-description: AI and IT solutions for financial services — fraud defense, compliance, payment intelligence, and analytics.
----
-
 import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
