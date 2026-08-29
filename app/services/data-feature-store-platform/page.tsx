@@ -21,7 +21,7 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Offline store (Snowflake/BigQuery/Parquet)</li>
-            <li>Online store (Redis low-latency <50ms)</li>
+            <li>Online store (Redis low-latency &lt;50ms)</li>
             <li>Point-in-time correctness per feature</li>
             <li>Feature lineage + SDK (Python/Java)</li>
           </ul>

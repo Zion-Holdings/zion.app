@@ -23,7 +23,7 @@ export default function ServicePage() {
             <li>Image manipulation detection</li>
             <li>Video deepfake detection</li>
             <li>Audio deepfake detection</li>
-            <li>Real-time API (< 200ms)</li>
+            <li>Real-time API (&lt; 200ms)</li>
             <li>Batch processing</li>
             <li>Integration with social media platforms</li>
             <li>Confidence scores with explanations</li>

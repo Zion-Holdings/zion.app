@@ -1,13 +1,13 @@
 {
-  "send_count": 1,
-  "sent_to": "sellersupport@shop.tiktok.com",
-  "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-  "httpStatus": 200,
-  "message_id": "1a04cbaf49cd0533",
-  "thread_id": "1a04cbaf49cd0533",
-  "liveSentCheck": "confirmed_api",
-  "note": "Gmail API returned 200 with id/threadId; index probe missed within 60s (eventual consistency).",
+  "send_count": 0,
+  "sent_to": null,
+  "subject": null,
+  "httpStatus": null,
+  "message_id": null,
+  "thread_id": null,
+  "liveSentCheck": null,
+  "note": "all candidates deduped or already sent",
   "error": null,
   "source_file": "outreach_next_wave.json",
-  "timestamp": "2026-08-29T08:55:18.058791+00:00"
+  "timestamp": "2026-08-29T08:58:00.000000+00:00"
 }

@@ -21,7 +21,7 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>YOLOv8/RT-DETR model fine-tune on your SKU</li>
-            <li>Inference on edge device <30ms per frame</li>
+            <li>Inference on edge device &lt;30ms per frame</li>
             <li>Real-time alarm + MES work-order auto-create</li>
             <li>SPC chart + shift defect trend report</li>
           </ul>

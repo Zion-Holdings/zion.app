@@ -24,7 +24,7 @@ export default function ServicePage() {
             <li>Automated failover and failback</li>
             <li>Regular DR testing (non-disruptive)</li>
             <li>Multi-region deployment</li>
-            <li>RPO < 15 min, RTO < 1 hour</li>
+            <li>RPO &lt; 15 min, RTO &lt; 1 hour</li>
             <li>Compliance reporting</li>
             <li>Runbook automation</li>
             <li>24/7 monitoring</li>

@@ -20,7 +20,7 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time scoring (<50ms)</li>
+            <li>Real-time scoring (&lt;50ms)</li>
             <li>Adaptive thresholds</li>
             <li>Case management dashboard</li>
             <li>Investigation tools</li>

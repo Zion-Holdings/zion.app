@@ -20,7 +20,7 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time transaction scoring (< 100ms latency)</li>
+            <li>Real-time transaction scoring (&lt; 100ms latency)</li>
             <li>Behavioral biometrics for account takeover detection</li>
             <li>Graph analytics for fraud ring identification</li>
             <li>Adaptive ML models that learn from new fraud patterns</li>

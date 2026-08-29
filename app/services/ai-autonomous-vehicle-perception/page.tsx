@@ -25,7 +25,7 @@ export default function ServicePage() {
             <li>Pedestrian and cyclist prediction</li>
             <li>Traffic sign and signal recognition</li>
             <li>Sensor fusion (camera, LiDAR, radar)</li>
-            <li>Real-time processing (< 50ms)</li>
+            <li>Real-time processing (&lt; 50ms)</li>
             <li>Simulation environment</li>
             <li>HD map integration</li>
           </ul>
