@@ -99,7 +99,7 @@
 /services/ai /services/ai/index.html 200
 /services/ai-agent-automation /services/ai-agent-automation/index.html 200
 /services/ai-agents-autonomous /services/ai-agents-autonomous/index.html 200
-/services/ai-agents-autonomous/ /services/ai-agents-autonomous.html 200
+/services/ai-agents-autonomous/ /services/ai-agents-autonomous/index.html 200
 /services/ai-approval-workflow-engine /services/ 301
 /services/ai-bookkeeping-automation /services/ 301
 /services/ai-code-security-scanner /services/ 301
@@ -138,7 +138,7 @@
 /services/climworks-direct-air-capture /services/ 301
 /services/cloud /services/cloud/index.html 200
 /services/cloud-cost-optimization-service /services/cloud-cost-optimization-service/index.html 200
-/services/cloud-cost-optimization-service/ /services/cloud-cost-optimization-service.html 200
+/services/cloud-cost-optimization-service/ /services/cloud-cost-optimization-service/index.html 200
 /services/cloud-hybrid-orchestration /services/ 301
 /services/cloud-infrastructure-optimization /services/cloud-infrastructure-optimization/index.html 200
 /services/cloud-migration-service /services/ 301
