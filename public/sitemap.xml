@@ -25800,4 +25800,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url><loc>https://ziontechgroup.com/robots.txt</loc><changefreq>always</changefreq><priority>1.0</priority></url>
+  <url><loc>https://ziontechgroup.com/feed/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Zion Tech Group</title>
-  <subtitle>AI & IT services with measurable outcomes.</subtitle>
-  <link href="https://ziontechgroup.com/" rel="alternate"/>
-  <link href="https://ziontechgroup.com/feed.xml" rel="self"/>
-  <id>https://ziontechgroup.com/</id>
-  <updated>2026-08-25T00:00:00Z</updated>
-  <author><name>Zion Tech Group</name><email>commercial@ziontechgroup.com</email></author>
-  <entry>
-    <title>Zion Tech Group — AI & IT Services</title>
-    <link href="https://ziontechgroup.com/"/>
-    <id>https://ziontechgroup.com/</id>
-    <updated>2026-08-25T00:00:00Z</updated>
-    <summary>AI-driven automation, cloud optimization, cybersecurity, and managed IT services.</summary>
-  </entry>
-</feed>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zion Tech Group Blog</title>
+    <link>https://ziontechgroup.com/blog/</link>
+    <description>AI, IT infrastructure, managed services, and technology insights from Zion Tech Group.</description>
+    <atom:link href="https://ziontechgroup.com/feed/" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+  </channel>
+</rss>

@@ -1039,3 +1039,4 @@
 # Splat rules — cover all pages in these directories
 /blog/* /blog/:splat/index.html 200
 /services/* /services/:splat/index.html 200
+/feed/ /feed.xml 200
