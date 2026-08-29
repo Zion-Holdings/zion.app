@@ -83,7 +83,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/cloud-cost-optimizer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Cloud Cost Optimizer</h3>
-          <p className="text-slate-400 text-sm">Cloud Cost Optimizer utility.</p>
+          <p className="text-slate-400 text-sm">Cloud Cost Optimizer — Zion Tech Group.</p>
         </a>
         <a href="/tools/color-contrast/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Color Contrast Checker</h3>
@@ -259,7 +259,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/markdown-preview/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Markdown Preview</h3>
-          <p className="text-slate-400 text-sm">Markdown Preview utility.</p>
+          <p className="text-slate-400 text-sm">Markdown Preview — Zion Tech Group.</p>
         </a>
         <a href="/tools/markdown-previewer/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Markdown Previewer</h3>
@@ -343,7 +343,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/sql-formatter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Sql Formatter</h3>
-          <p className="text-slate-400 text-sm">Sql Formatter utility.</p>
+          <p className="text-slate-400 text-sm">Sql Formatter — Zion Tech Group.</p>
         </a>
         <a href="/tools/sql-query-builder/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">SQL Query Builder</h3>
@@ -403,7 +403,7 @@ export default function ToolsPage() {
         </a>
         <a href="/tools/user-agent-parser/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">User Agent Parser</h3>
-          <p className="text-slate-400 text-sm">User Agent Parser utility.</p>
+          <p className="text-slate-400 text-sm">User Agent Parser — Zion Tech Group.</p>
         </a>
         <a href="/tools/uuid-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">UUID Generator</h3>
