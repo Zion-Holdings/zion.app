@@ -1,9 +1,8 @@
 {
-  "checked_at": "2026-08-26T01:15:29.491061+00:00",
-  "checked_at": "2026-08-25T23:02:22.336486+00:00",
+  "checked_at": "2026-08-29T11:04:38.336202+00:00",
   "routes_checked": 10,
-  "routes_ok": 8,
-  "routes_broken": 2,
+  "routes_ok": 10,
+  "routes_broken": 0,
   "routes": [
     {
       "url": "https://ziontechgroup.com/",
@@ -72,20 +71,18 @@
     {
       "url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
       "final_url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
-      "status": 404,
+      "status": 200,
       "error": null,
-      "ok": false,
-      "broken_since": "2026-08-26T01:15:29.390999+00:00"
-      "broken_since": "2026-08-25T23:02:22.321090+00:00"
+      "ok": true,
+      "broken_since": null
     },
     {
       "url": "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
       "final_url": "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
-      "status": 404,
+      "status": 200,
       "error": null,
-      "ok": false,
-      "broken_since": "2026-08-26T01:15:29.488295+00:00"
-      "broken_since": "2026-08-25T23:02:22.335143+00:00"
+      "ok": true,
+      "broken_since": null
     }
   ]
 }
