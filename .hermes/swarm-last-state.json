@@ -1,0 +1,34 @@
+{
+  "site_status": "200",
+  "service_count": 6956,
+  "sitemap_urls": 31,
+  "git_branch": "main",
+  "git_log": "0fff05a8634 feat: content wave - auto generated",
+  "cron_total": 31,
+  "cron_ok": 27,
+  "cron_err": 4,
+  "uncommitted": 10,
+  "coord_age_min": 15482,
+  "cron_errors": [
+    {
+      "id": "e8d4771b",
+      "name": "zion-service-counts-check",
+      "streak": 7
+    },
+    {
+      "id": "e5cdf52c",
+      "name": "zion-link-audit",
+      "streak": 1
+    },
+    {
+      "id": "9d9b0dd7",
+      "name": "ztg-link-audit",
+      "streak": 1
+    },
+    {
+      "id": "1994f5bb",
+      "name": "pages-canonical-deploy-verifier",
+      "streak": 1
+    }
+  ]
+}

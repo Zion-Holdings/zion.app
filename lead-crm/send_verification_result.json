@@ -2,12 +2,12 @@
   "send_count": 0,
   "sent_to": null,
   "subject": null,
-  "httpStatus": null,
+  "httpStatus": 429,
   "message_id": null,
   "thread_id": null,
-  "liveSentCheck": null,
-  "note": "all candidates deduped or already sent",
-  "error": null,
-  "source_file": "outreach_next_wave.json",
-  "timestamp": "2026-08-29T08:58:00.000000+00:00"
+  "liveSentCheck": false,
+  "note": "HTTP 429 rate limit",
+  "error": "HTTP 429 rate limit",
+  "verifiedAt": "2026-08-30T15:30:49.024493+00:00",
+  "send_blocked": "HTTP 429"
 }

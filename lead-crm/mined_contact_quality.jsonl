@@ -436,3 +436,7 @@
 {"ts": "2026-08-26T01:09:23.621835+00:00", "email": "position-tracking@semrush.com", "msg_id": "1a03b909ed59bb40", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-27T00:36:53.318601+00:00", "email": "replyto@microsoft.com", "msg_id": "1a040a1e5c798b46", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-27T00:36:53.336636+00:00", "email": "replyto@email.microsoft.com", "msg_id": "1a040a1e5c798b46", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-30T14:32:00.815673+00:00", "email": "4c180zmjzngzmqtn3l9s15qxj3n0o11shg1o@reply.airbnb.com", "msg_id": "1a05314d0f6c7506", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-30T14:32:01.290936+00:00", "email": "4w26yxkhxlexkorl1j7qz3ovh1lym0jmlvsy@reply.airbnb.com", "msg_id": "1a0531205fc94d19", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-30T14:42:03.084522+00:00", "email": "46yuona7nb4naehbr9xgptel7rboc1iyex9j@reply.airbnb.com", "msg_id": "1a0531d12f6dc78b", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-30T14:42:03.556596+00:00", "email": "4ixkdczwc0tcz360gym5ei3awg0d11uzguwe@reply.airbnb.com", "msg_id": "1a053195336060f6", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
