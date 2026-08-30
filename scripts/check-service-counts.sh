@@ -9,7 +9,7 @@ cd "$(dirname "$0")/.."
 catalog_count=$(python3 -c "import json; print(len(json.load(open('app/data/servicesData.json'))))" 2>/dev/null || echo 0)
 
 # Count URLs in sitemap
-sitemap_count=$(grep -c '<loc>' sitemap.xml 2>/dev/null || echo 0)
+sitemap_count=$(python3 -c "import xml.etree.ElementTree as ET; print(len(ET.parse('public/sitemap.xml').getroot().findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}url')))" 2>/dev/null || echo 0)
 
 # Count generated service pages
 page_count=$(find app/services -name "page.tsx" 2>/dev/null | wc -l | tr -d ' ')

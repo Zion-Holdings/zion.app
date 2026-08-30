@@ -168,3 +168,5 @@ test_persist.txt
 tmp-*/
 *.tmp.js
 
+.swarm-state.json
+route_check.sh
