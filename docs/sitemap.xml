@@ -25989,8 +25989,8 @@
   <url>
     <loc>https://ziontechgroup.com/tools/phishing-analyzer/</loc>
     <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ziontechgroup.com/tools/port-scanner/</loc>
@@ -26313,8 +26313,8 @@
   <url>
     <loc>https://ziontechgroup.com/free-consultation/</loc>
     <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ziontechgroup.com/free-tools/</loc>
@@ -26398,13 +26398,12 @@
     <loc>https://ziontechgroup.com/hermes-tools/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+    <priority>0.5</priority>  </url>
   <url>
     <loc>https://ziontechgroup.com/industries/financial-services/</loc>
     <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ziontechgroup.com/industries/healthcare/</loc>
@@ -26500,13 +26499,12 @@
     <loc>https://ziontechgroup.com/solutions/government/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+    <priority>0.5</priority>  </url>
   <url>
     <loc>https://ziontechgroup.com/solutions/healthcare/</loc>
     <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ziontechgroup.com/solutions/hermes-ai-agents/</loc>
@@ -26524,13 +26522,12 @@
     <loc>https://ziontechgroup.com/solutions/retail/</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+    <priority>0.5</priority>  </url>
   <url>
     <loc>https://ziontechgroup.com/status-page/</loc>
     <lastmod>2026-08-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ziontechgroup.com/success-stories/</loc>
