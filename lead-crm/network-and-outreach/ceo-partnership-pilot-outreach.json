@@ -1,0 +1,7 @@
+{
+  "subject": "Partnership opportunity: Zion Tech Group — AI/IT services and free tools",
+  "body": "<p>Hi,</p><p>Thanks for the conversation so far. I’d like to propose a simple next step that benefits both teams.</p><p>We can move forward in two complementary ways:</p><ul><li>Co-sale or referral on AI/IT managed services with clear margin sharing</li><li>Pilot one low-risk, high-value automation or observability project with measurable outcomes</li></ul><p>Our new AI services are built for real operations, not demos. We also offer free tools and assessments at <a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a> so you can evaluate value before scaling.</p><p>If helpful, I’m available for a short call: <a href=\"https://calendly.com/kleber-ziontechgroup\">https://calendly.com/kleber-ziontechgroup</a></p><p>Best,<br>Kleber Garcia Alcatrao<br>CEO — Zion Tech Group</p>",
+  "llm_instruction": "Rewrite in the client’s language, keep the partnership pilot and Calendly/ziontechgroup.com CTAs, keep tone friendly professional CEO-level.",
+  "lead_signals": ["partnership", "referral", "co-sale", "pilot", "margin sharing", "free tools"],
+  "service_pages": ["/services", "/free-tools-hub", "/free-resources"]
+}
