@@ -154,7 +154,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/ /use-cases/ /industries/financial-services/ /public-roadmap/ /status-page/ /solutions/healthcare/ /free-consultation/ /tools/phishing-analyzer/; do
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/ /use-cases/ /industries/financial-services/ /public-roadmap/ /status-page/ /solutions/healthcare/ /free-consultation/ /tools/phishing-analyzer/ /tools/zion-roi-calculator/ /docs/ai-resources/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done

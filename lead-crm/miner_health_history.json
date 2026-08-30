@@ -1,92 +1,5 @@
 [
   {
-    "ts": "2026-08-30T15:26:10.297187+00:00",
-    "queries_run": 12,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 113.766,
-    "queries_per_second": 0.1055,
-    "avg_query_s": 9.4802,
-    "max_query_s": 14.2042,
-    "status": "ok",
-    "high_signal_leads": 0.2,
-    "lead_quality_ratio": 0.105,
-    "rolling": {
-      "last_5_queries": [
-        9.040268570010085,
-        4.033462842984591,
-        9.843270107987337,
-        9.431065876997309,
-        8.751647994009545
-      ],
-      "last_5_qps": [
-        0.1106,
-        0.2479,
-        0.1016,
-        0.106,
-        0.1143
-      ]
-    }
-  },
-  {
-    "ts": "2026-08-30T15:32:58.154091+00:00",
-    "queries_run": 12,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 112.462,
-    "queries_per_second": 0.1067,
-    "avg_query_s": 9.3717,
-    "max_query_s": 10.6475,
-    "status": "ok",
-    "high_signal_leads": 0.2,
-    "lead_quality_ratio": 0.1053,
-    "rolling": {
-      "last_5_queries": [
-        9.869263261993183,
-        3.8959468429966364,
-        9.417453762987861,
-        10.242260839004302,
-        9.318629839021014
-      ],
-      "last_5_qps": [
-        0.1013,
-        0.2567,
-        0.1062,
-        0.0976,
-        0.1073
-      ]
-    }
-  },
-  {
-    "ts": "2026-08-30T15:41:59.342810+00:00",
-    "queries_run": 12,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 113.498,
-    "queries_per_second": 0.1057,
-    "avg_query_s": 9.4579,
-    "max_query_s": 10.6503,
-    "status": "ok",
-    "high_signal_leads": 0.2,
-    "lead_quality_ratio": 0.1052,
-    "rolling": {
-      "last_5_queries": [
-        9.97291537700221,
-        3.9055973819922656,
-        10.542312645993661,
-        10.139352914993651,
-        8.914466993999667
-      ],
-      "last_5_qps": [
-        0.1003,
-        0.256,
-        0.0949,
-        0.0986,
-        0.1122
-      ]
-    }
-  },
-  {
     "ts": "2026-08-30T16:02:57.458282+00:00",
     "queries_run": 13,
     "contacts_found": 0,
@@ -576,6 +489,93 @@
         0.0927,
         0.0989,
         0.098
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-30T23:12:25.631164+00:00",
+    "queries_run": 12,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 113.944,
+    "queries_per_second": 0.1053,
+    "avg_query_s": 9.4951,
+    "max_query_s": 10.7428,
+    "status": "ok",
+    "high_signal_leads": 0.0,
+    "lead_quality_ratio": 0.1053,
+    "rolling": {
+      "last_5_queries": [
+        9.67669487799867,
+        3.735893228003988,
+        10.096430646022782,
+        10.381765300000552,
+        8.704805955989286
+      ],
+      "last_5_qps": [
+        0.1033,
+        0.2677,
+        0.099,
+        0.0963,
+        0.1149
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-30T23:22:05.937334+00:00",
+    "queries_run": 12,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 116.569,
+    "queries_per_second": 0.1029,
+    "avg_query_s": 9.7136,
+    "max_query_s": 10.8482,
+    "status": "ok",
+    "high_signal_leads": 0.0,
+    "lead_quality_ratio": 0.1051,
+    "rolling": {
+      "last_5_queries": [
+        10.290981492988067,
+        3.8401816120021977,
+        10.187019762001,
+        9.786470301012741,
+        9.569410570024047
+      ],
+      "last_5_qps": [
+        0.0972,
+        0.2604,
+        0.0982,
+        0.1022,
+        0.1045
+      ]
+    }
+  },
+  {
+    "ts": "2026-08-30T23:31:59.144663+00:00",
+    "queries_run": 13,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 110.306,
+    "queries_per_second": 0.1179,
+    "avg_query_s": 9.1447,
+    "max_query_s": 10.0549,
+    "status": "ok",
+    "high_signal_leads": 0.0,
+    "lead_quality_ratio": 0.1057,
+    "rolling": {
+      "last_5_queries": [
+        9.684915493009612,
+        3.5780978050024714,
+        9.931463570013875,
+        9.256983839994064,
+        8.817592378007248
+      ],
+      "last_5_qps": [
+        0.1033,
+        0.2795,
+        0.1007,
+        0.108,
+        0.1134
       ]
     }
   }

@@ -1,11 +1,12 @@
 {
-  "send_count": 0,
-  "sent_to": null,
-  "subject": null,
-  "httpStatus": null,
-  "message_id": null,
-  "thread_id": null,
-  "liveSentCheck": false,
-  "note": "rate_limited",
-  "error": "HTTP 429 rate limit"
+  "send_count": 1,
+  "sent_to": "coface.latinamerica@coface.com",
+  "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+  "httpStatus": 200,
+  "message_id": "1a054fc49514b52f",
+  "thread_id": "1a054fc49514b52f",
+  "liveSentCheck": true,
+  "note": "verified_via_fallback_probe",
+  "error": null,
+  "fallbackProbeMessageId": "1a054fc49514b52f"
 }
