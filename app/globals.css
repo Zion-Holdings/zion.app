@@ -1,19 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@reference gap-2;
+@reference rounded-xl;
+@reference bg-indigo-600;
+@reference px-6;
+@reference py-3;
+@reference font-semibold;
+@reference text-white;
+@reference shadow-lg;
+@reference shadow-indigo-950/40;
+@reference transition-colors;
+@reference duration-200;
+@reference hover:bg-indigo-500;
+@reference focus-visible:outline-none;
+@reference focus-visible:ring-2;
+@reference focus-visible:ring-indigo-400;
+@reference focus-visible:ring-offset-2;
+@reference focus-visible:ring-offset-slate-950;
 
 :root {
   color-scheme: dark;
 }
 
-/*
- * Horizontal overflow has to be contained at the root, not per-page: a single
- * wide child anywhere in the tree scrolls the whole document sideways on a
- * phone, and there is no way to measure that from this environment (browser
- * automation cannot run on Android), so it is prevented structurally instead.
- * Set on both html and body because either one can be the scroll container
- * depending on how the viewport meta resolves.
- */
 html,
 body {
   overflow-x: hidden;
@@ -28,7 +36,6 @@ body {
   padding: 0;
 }
 
-/* Dark-theme scrollbar: the default light track is jarring against #0b0f1a. */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -48,11 +55,11 @@ body {
   background: #475569;
 }
 
-/* Firefox equivalent — thumb then track. */
 html {
   scrollbar-color: #334155 #0f172a;
   scrollbar-width: thin;
 }
+
 .skip-to-content {
   position: absolute;
   left: -9999px;
@@ -61,6 +68,7 @@ html {
   height: 1px;
   overflow: hidden;
 }
+
 .skip-to-content:focus {
   left: 0;
   top: 0;
@@ -73,12 +81,6 @@ html {
   color: white;
 }
 
-/*
- * btn-primary / btn-secondary are referenced by 57 page files but were never
- * defined in any stylesheet, so every CTA rendered as unstyled inline text.
- * Defined as component classes so Tailwind emits them once and @apply keeps
- * them consistent with the utility scale used across the pages.
- */
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600
