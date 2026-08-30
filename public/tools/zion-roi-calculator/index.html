@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de ROI — Zion Tech Group</title>
+  <meta name="description" content="Calcule o retorno sobre investimento (ROI) estimado com serviços de automação, IA e TI da Zion Tech Group. Ferramenta interativa gratuita.">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/zion-roi-calculator/">
+  <meta property="og:title" content="Calculadora de ROI — Zion Tech Group">
+  <meta property="og:description" content="Calcule o retorno sobre investimento estimado com automação, IA e serviços de TI da Zion Tech Group.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/zion-roi-calculator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0b1220; color: #e6f0ff; line-height: 1.7; }
+    .wrap { max-width: 800px; margin: 0 auto; padding: 40px 28px; }
+    h1 { font-size: 1.8rem; margin-bottom: 8px; }
+    .sub { color: #94a3b8; margin-bottom: 32px; }
+    .card { background: #1a2332; border: 1px solid #2d3a4a; border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 1.1rem; margin-bottom: 16px; color: #f1f5f9; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+    label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 6px; font-weight: 500; }
+    input, select { width: 100%; padding: 10px 14px; background: #0b1220; border: 1px solid #2d3a4a; border-radius: 6px; color: #e6f0ff; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    input:focus, select:focus { border-color: #3b82f6; }
+    .result { background: linear-gradient(135deg, #1e3a5f, #1a2332); border: 1px solid #3b82f6; border-radius: 8px; padding: 28px; text-align: center; margin-top: 24px; }
+    .result .value { font-size: 2.5rem; font-weight: 700; color: #60a5fa; margin: 12px 0; }
+    .result .label { font-size: 0.85rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+    .breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; text-align: left; }
+    .breakdown div { background: rgba(255,255,255,0.04); border-radius: 6px; padding: 12px 16px; }
+    .breakdown .num { font-size: 1.2rem; font-weight: 600; color: #e6f0ff; }
+    .footer { color: #64748b; font-size: 0.8rem; margin-top: 32px; text-align: center; border-top: 1px solid #2d3a4a; padding-top: 20px; }
+    button { background: #3b82f6; color: #fff; border: none; padding: 12px 24px; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; width: 100%; }
+    button:hover { background: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Calculadora de ROI</h1>
+    <p class="sub">Estimativa de retorno sobre investimento com serviços de automação, IA e TI da Zion Tech Group.</p>
+
+    <div class="card">
+      <h2>Parâmetros do Investimento</h2>
+      <div class="grid">
+        <div>
+          <label for="investimento">Investimento inicial (R$)</label>
+          <input type="number" id="investimento" value="50000" min="1000" step="1000">
+        </div>
+        <div>
+          <label for="tempo">Tempo de retorno (meses)</label>
+          <input type="number" id="tempo" value="12" min="1" max="60">
+        </div>
+        <div>
+          <label for="economia">Economia mensal estimada (R$)</label>
+          <input type="number" id="economia" value="8000" min="0" step="100">
+        </div>
+        <div>
+          <label for="receita">Receita adicional mensal (R$)</label>
+          <input type="number" id="receita" value="3000" min="0" step="100">
+        </div>
+      </div>
+    </div>
+
+    <button onclick="calcular()">Calcular ROI</button>
+
+    <div class="result" id="resultado" style="display:none;">
+      <div class="label">ROI Estimado</div>
+      <div class="value" id="roiValue">—</div>
+      <div class="breakdown" id="breakdown"></div>
+    </div>
+
+    <div class="footer">
+      Valores estimados com fins ilustrativos. Resultados reais variam conforme escopo, complexidade e contexto de implementação.
+    </div>
+  </div>
+
+  <script>
+    function calcular() {
+      const invest = parseFloat(document.getElementById('investimento').value) || 0;
+      const tempo = parseInt(document.getElementById('tempo').value) || 1;
+      const economia = parseFloat(document.getElementById('economia').value) || 0;
+      const receita = parseFloat(document.getElementById('receita').value) || 0;
+
+      const ganhoTotal = (economia + receita) * tempo;
+      const roi = invest > 0 ? ((ganhoTotal - invest) / invest) * 100 : 0;
+      const payback = (economia + receita) > 0 ? (invest / (economia + receita)).toFixed(1) : '—';
+
+      document.getElementById('roiValue').textContent = roi.toFixed(1) + '%';
+      document.getElementById('resultado').style.display = 'block';
+
+      document.getElementById('breakdown').innerHTML = `
+        <div><div class="label">Ganho total em ${tempo} meses</div><div class="num">R$ ${ganhoTotal.toLocaleString('pt-BR')}</div></div>
+        <div><div class="label">Tempo de payback</div><div class="num">${payback} meses</div></div>
+        <div><div class="label">Investimento inicial</div><div class="num">R$ ${invest.toLocaleString('pt-BR')}</div></div>
+        <div><div class="label">Retorno líquido</div><div class="num" style="color:${roi >= 0 ? '#4ade80' : '#f87171'}">R$ ${(ganhoTotal - invest).toLocaleString('pt-BR')}</div></div>
+      `;
+    }
+  </script>
+</body>
+</html>

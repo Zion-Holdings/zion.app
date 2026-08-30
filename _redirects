@@ -1040,3 +1040,9 @@
 /blog/* /blog/:splat/index.html 200
 /services/* /services/:splat/index.html 200
 /feed/ /feed.xml 200
+/docs/auth /docs/auth/index.html 200
+/docs/auth/ /docs/auth/index.html 200
+/docs/partner /docs/partner/index.html 200
+/docs/partner/ /docs/partner/index.html 200
+/docs/success-stories /docs/success-stories/index.html 200
+/docs/success-stories/ /docs/success-stories/index.html 200
