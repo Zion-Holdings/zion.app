@@ -13,7 +13,7 @@ permissions:
 
 # Prevent concurrent deployment runs from colliding
 concurrency:
-  group: "pages"
+  group: deploy-to-github-pages
   cancel-in-progress: false
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Setup Node.js 20
         uses: actions/setup-node@v4

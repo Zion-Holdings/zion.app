@@ -13,7 +13,7 @@ permissions:
 
 # Prevent concurrent deployment runs from colliding
 concurrency:
-  group: "pages"
+  group: deploy-main
   cancel-in-progress: true
 
 jobs:
