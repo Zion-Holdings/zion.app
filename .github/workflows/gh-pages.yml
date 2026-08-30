@@ -42,7 +42,7 @@ jobs:
         id: build
         run: |
           set -euo pipefail
-          node scripts/build-wrapper.cjs > build.log 2>&1 || true
+          node scripts/build-wrapper.cjs > build.log 2>&1
           echo "build_log_start"
           set +x
           echo "---- BUILD LOG TAIL ----"
