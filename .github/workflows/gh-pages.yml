@@ -99,7 +99,7 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
-          for f in case-studies/index.html industries/index.html testimonials/index.html automation/index.html "services/ai-workflow-automation/index.html" "services/ai-email-intelligence/index.html" "services/ai-smart-global-campaign/index.html" "free-ai-it-tools/index.html"; do
+          for f in case-studies/index.html industries/index.html testimonials/index.html automation/index.html "services/ai-workflow-automation/index.html" "services/ai-email-intelligence/index.html" "services/ai-smart-global-campaign/index.html" "free-ai-it-tools/index.html" "services/ai-readiness-assessment/index.html"; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
