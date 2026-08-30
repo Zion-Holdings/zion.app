@@ -1,0 +1,683 @@
+[
+  {
+    "timestamp": "2026-08-06T22:00:17.063651",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "total_potential_value": 9900,
+    "expected_revenue": 2475.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T00:00:14.908611",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "total_potential_value": 10800,
+    "expected_revenue": 2700.0,
+    "conversion_rate_target": "25%",
+    "new_unique_leads_added": 5
+  },
+  {
+    "timestamp": "2026-08-07T04:32:51.796117",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10800,
+    "expected_revenue": 2700.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T06:00:17.544584",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10300,
+    "expected_revenue": 2575.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T08:08:42.688820",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9800,
+    "expected_revenue": 2450.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T08:13:23.516317",
+    "event": "content_generation_tick",
+    "content_pieces": 6,
+    "blog_posts": 3,
+    "service_pages": 2,
+    "case_studies": 1,
+    "status": "draft"
+  },
+  {
+    "timestamp": "2026-08-07T10:00:02.340620",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11300,
+    "expected_revenue": 2825.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T12:00:04.631221",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11000,
+    "expected_revenue": 2750.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T14:00:02.170854",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11000,
+    "expected_revenue": 2750.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T16:00:12.556337",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10500,
+    "expected_revenue": 2625.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T16:00:56.735434",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10100,
+    "expected_revenue": 2525.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T17:26:28.892372",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T18:00:01.555539",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T02:00:01.112296",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9000,
+    "expected_revenue": 2250.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T04:00:03.443338",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10500,
+    "expected_revenue": 2625.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T06:00:02.265664",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10300,
+    "expected_revenue": 2575.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T08:00:01.536102",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11000,
+    "expected_revenue": 2750.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T10:00:02.353310",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 12000,
+    "expected_revenue": 3000.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T12:00:01.782374",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10000,
+    "expected_revenue": 2500.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T12:07:25.087355",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10800,
+    "expected_revenue": 2700.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T14:00:01.330164",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11000,
+    "expected_revenue": 2750.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T16:00:01.478227",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10000,
+    "expected_revenue": 2500.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T18:00:03.177174",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11300,
+    "expected_revenue": 2825.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T20:00:04.594271",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10300,
+    "expected_revenue": 2575.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-08T22:00:04.971625",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10500,
+    "expected_revenue": 2625.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T00:00:09.643833",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10300,
+    "expected_revenue": 2575.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T00:06:02.769004",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10100,
+    "expected_revenue": 2525.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T02:00:30.123056",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10000,
+    "expected_revenue": 2500.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T04:00:00.975067",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T06:00:01.028003",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10500,
+    "expected_revenue": 2625.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T06:00:26.362500",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10600,
+    "expected_revenue": 2650.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T08:00:23.729848",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10800,
+    "expected_revenue": 2700.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T16:00:11.021784",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10100,
+    "expected_revenue": 2525.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T20:00:34.292379",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9400,
+    "expected_revenue": 2350.0,
+    "conversion_rate_target": "25%",
+    "send_blocked": true,
+    "note": "Pre-run JSON context processed"
+  },
+  {
+    "timestamp": "2026-08-10T02:12:44.689201",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%",
+    "send_blocked": true,
+    "note": "Pre-run JSON context processed"
+  },
+  {
+    "timestamp": "2026-08-10T06:01:40.804251",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10100,
+    "expected_revenue": 2525.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-10T08:01:03.238045",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11300,
+    "expected_revenue": 2825.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-10T20:00:57.289434",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10800,
+    "expected_revenue": 2700.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-10T22:01:02.234378",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10300,
+    "expected_revenue": 2575.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T00:00:01.178160",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-10T18:12:10.027318",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-10T18:12:10.027318",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T04:36:58.894614",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 12000,
+    "expected_revenue": 3000.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T06:00:04.393719",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10800,
+    "expected_revenue": 2700.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T08:00:03.140016",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11100,
+    "expected_revenue": 2775.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T12:00:02.235567",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9300,
+    "expected_revenue": 2325.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T14:00:02.517261",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9300,
+    "expected_revenue": 2325.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T16:00:05.113676",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10100,
+    "expected_revenue": 2525.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T18:00:01.960801",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 8300,
+    "expected_revenue": 2075.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T20:00:01.836971",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11100,
+    "expected_revenue": 2775.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T22:00:02.060315",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-12T00:00:02.184898",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-14T16:33:26.612204+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 0 worker scripts (path gap: lead-crm/ not in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T16:40:21.013195+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 0 worker scripts (path gap: lead-crm/ not in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T16:53:17.347237+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T17:36:58.626708+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T17:47:49.353275+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T17:56:12.458364+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T18:05:50.929164+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T18:35:56.600277+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T18:58:08.939037+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T19:03:33.902732+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T19:16:41.637780+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T19:26:07.646266+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T19:39:15.468959+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T20:39:05.292871+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  },
+  {
+    "timestamp": "2026-08-14T20:45:28.641534+00:00",
+    "event": "outreach_run_blocked",
+    "state": "send_ready",
+    "send_blocked": true,
+    "leads_processed": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%",
+    "ready_leads_count": 15,
+    "wrapper_result": "discovered 1 worker script: send_outreach_batch.py (path gap fixed, lead-crm/ now in search_roots)",
+    "action": "recorded_audit_row_and_exited_gracefully",
+    "note": "send_blocked=true in outreach_ready_canonical.json - did not execute outreach worker"
+  }
+]

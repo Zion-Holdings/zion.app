@@ -1,0 +1,2 @@
+{"ts": "2026-08-18T18:46:02.394334+00:00", "event": "worker_run", "queue_size": 0, "processed": 0}
+{"ts": "2026-08-18T18:46:51.605197+00:00", "event": "worker_run", "queue_size": 50, "processed": 50}
