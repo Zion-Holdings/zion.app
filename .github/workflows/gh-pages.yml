@@ -85,7 +85,7 @@ jobs:
           fi
           cp -f public/_redirects "$ARTIFACT_DIR/_redirects" 2>/dev/null || true
           # Ensure new fallback pages exist in the exported artifact, even if Next didn't emit them.
-          for f in use-cases/index.html "industries/financial-services/index.html" "public-roadmap/index.html" "tools/phishing-analyzer/index.html" status/index.html "solutions/healthcare/index.html" "free-consultation/index.html" "pricing/index.html" "partners/index.html" "careers/index.html"; do
+          for f in use-cases/index.html "industries/financial-services/index.html" "public-roadmap/index.html" "tools/phishing-analyzer/index.html" status/index.html "solutions/healthcare/index.html" "free-consultation/index.html" "pricing/index.html" "partners/index.html" "careers/index.html" "services/ai-readiness-assessment/index.html"; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ]; then
               if [ -f "public/$f" ]; then
