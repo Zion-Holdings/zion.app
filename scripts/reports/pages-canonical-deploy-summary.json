@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-08-30T22:35:46.078690+00:00",
+  "status": "mismatch",
+  "mismatchCount": 3,
+  "actionItems": [
+    {
+      "route": "/portal",
+      "issue": "missing_page_level_canonical",
+      "expectedCanonical": null,
+      "liveCanonical": "https://ziontechgroup.com/portal"
+    },
+    {
+      "route": "/contact",
+      "issue": "deployed_layout_override_or_stale_cache",
+      "expectedCanonical": "/contact",
+      "liveCanonical": "https://ziontechgroup.com/contact"
+    },
+    {
+      "route": "/services/ai-agents-autonomous",
+      "issue": "missing_page_level_canonical",
+      "expectedCanonical": null,
+      "liveCanonical": "https://ziontechgroup.com/services/ai-agents-autonomous"
+    }
+  ]
+}

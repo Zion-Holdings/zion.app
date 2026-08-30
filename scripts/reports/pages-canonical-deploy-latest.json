@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-08-30T22:35:46.078690+00:00",
+  "routes": [
+    {
+      "route": "/",
+      "url": "https://ziontechgroup.com/",
+      "live_canonical": "https://ziontechgroup.com",
+      "expected_canonical": null,
+      "status": "ok",
+      "issue": null
+    },
+    {
+      "route": "/portal",
+      "url": "https://ziontechgroup.com/portal/",
+      "live_canonical": "https://ziontechgroup.com/portal",
+      "expected_canonical": null,
+      "status": "mismatch",
+      "issue": "missing_page_level_canonical"
+    },
+    {
+      "route": "/contact",
+      "url": "https://ziontechgroup.com/contact/",
+      "live_canonical": "https://ziontechgroup.com/contact",
+      "expected_canonical": "/contact",
+      "status": "mismatch",
+      "issue": "deployed_layout_override_or_stale_cache"
+    },
+    {
+      "route": "/services/ai-agents-autonomous",
+      "url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
+      "live_canonical": "https://ziontechgroup.com/services/ai-agents-autonomous",
+      "expected_canonical": null,
+      "status": "mismatch",
+      "issue": "missing_page_level_canonical"
+    }
+  ]
+}
