@@ -1,28 +1,18 @@
 {
-  "timestamp": "2026-08-29T09:35:48",
+  "timestamp": "2026-08-30T01:51:09.564590",
   "base_url": "https://ziontechgroup.com",
-  "total_pages": 4302,
-  "working_200": 2453,
-  "broken_404": 1849,
+  "total_pages": 65,
+  "working_200": 65,
+  "broken_404": 0,
   "redirects_3xx": 0,
   "server_error_5xx": 0,
   "other_errors": 0,
   "fetch_failed": 0,
   "all_pages": [
     {
-      "url": "https://ziontechgroup.com/",
+      "url": "https://ziontechgroup.com",
       "status": 200,
       "title": "Zion Tech Group \u2014 AI & IT Services"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/",
-      "status": 200,
-      "title": "AI Services & Solutions \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/about/",
-      "status": 200,
-      "title": "About | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/contact/",
@@ -30,14 +20,9 @@
       "title": "Contact | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/pricing/",
+      "url": "https://ziontechgroup.com/services/",
       "status": 200,
-      "title": "Pricing | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/",
-      "status": 200,
-      "title": "Blog | Zion Tech Group"
+      "title": "AI Services & Solutions \u2014 Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/tools/",
@@ -45,29 +30,99 @@
       "title": "Developer Tools | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/ai-services-index/",
+      "url": "https://ziontechgroup.com/tools/json-formatter/",
       "status": 200,
-      "title": "AI Services Index | Zion Tech Group"
+      "title": "JSON Formatter | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/free-ai-it-tools/",
+      "url": "https://ziontechgroup.com/tools/base64-encoder/",
       "status": 200,
-      "title": "Free AI & IT Tools | Zion Tech Group"
+      "title": "Base64 Encoder/Decoder | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/new-ai-services/",
+      "url": "https://ziontechgroup.com/tools/uuid-generator/",
       "status": 200,
-      "title": "New AI Services | Zion Tech Group"
+      "title": "UUID Generator | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/careers/",
+      "url": "https://ziontechgroup.com/tools/sql-formatter/",
       "status": 200,
-      "title": "Careers | Zion Tech Group"
+      "title": "SQL Query Formatter | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/partners/",
+      "url": "https://ziontechgroup.com/tools/hash-generator/",
       "status": 200,
-      "title": "Partners & Integrations | Zion Tech Group"
+      "title": "Hash Generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/cron-generator/",
+      "status": 200,
+      "title": "cron-generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/cron-parser/",
+      "status": 200,
+      "title": "Cron Parser | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/password-generator/",
+      "status": 200,
+      "title": "Password Generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/qr-code-generator/",
+      "status": 200,
+      "title": "QR Code Generator | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/json-to-csv/",
+      "status": 200,
+      "title": "JSON to CSV Converter | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/csv-to-json/",
+      "status": 200,
+      "title": "CSV to JSON Converter | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/tools/yaml-to-json/",
+      "status": 200,
+      "title": "YAML to JSON Converter | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-observability-security-and-governance/",
+      "status": 200,
+      "title": "AI Observability Security and Governance | Zion Tech Group Blog"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/",
+      "status": 200,
+      "title": "Cloud Cost AI Optimizer \u2014 Checklist for IT Leaders | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-msp-security-compliance-implementation-playbook/",
+      "status": 200,
+      "title": "AI MSP Security Compliance Playbook | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/",
+      "status": 200,
+      "title": "Cybersecurity Platform for MSPs \u2014 Cybersecurity Platform Msp 2026 \u2014 Cybersecurity Platform Msp 2026 | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/devsecops-pipeline-2026/",
+      "status": 200,
+      "title": "DevSecOps Pipeline 2026 \u2014 Devsecops Pipeline 2026 \u2014 Devsecops Pipeline 2026 | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting/",
+      "status": 200,
+      "title": "Ai for Cybersecurity Operations and Threat Hunting | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/",
+      "status": 200,
+      "title": "Blog | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/privacy/",
@@ -80,159 +135,9 @@
       "title": "Terms of Service | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/use-cases/",
+      "url": "https://ziontechgroup.com/",
       "status": 200,
-      "title": "Use Cases | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/solutions/",
-      "status": 200,
-      "title": "Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/industries/",
-      "status": 200,
-      "title": "Industries | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/testimonials/",
-      "status": 200,
-      "title": "Customer Testimonials \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/dashboard/",
-      "status": 200,
-      "title": "Dashboard | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/faq/",
-      "status": 200,
-      "title": "Frequently Asked Questions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/search/",
-      "status": 200,
-      "title": "Search | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/sla/",
-      "status": 200,
-      "title": "Service Level Agreement \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/products/",
-      "status": 200,
-      "title": "Products \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/providers/",
-      "status": 200,
-      "title": "Providers \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/agents-monitoring/",
-      "status": 200,
-      "title": "Agent Monitoring | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/ai/",
-      "status": 200,
-      "title": "Artificial Intelligence | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/ai-lab/",
-      "status": 200,
-      "title": "AI Lab | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/ai-services/",
-      "status": 200,
-      "title": "AI Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/business-customers/",
-      "status": 200,
-      "title": "Business Customers | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/case-studies/",
-      "status": 200,
-      "title": "Case Studies | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/cookies/",
-      "status": 200,
-      "title": "Cookie Policy | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/help/",
-      "status": 200,
-      "title": "Help & Resources | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/integrators/",
-      "status": 200,
-      "title": "Integrators \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/public-roadmap/",
-      "status": 200,
-      "title": "Public Roadmap | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/status/",
-      "status": 200,
-      "title": "System Status & Uptime Dashboard \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/portal/",
-      "status": 200,
-      "title": "Partner Portal \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/managed-it/",
-      "status": 200,
-      "title": "Managed IT Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/new-ai-services/",
-      "status": 200,
-      "title": "New AI Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/consultation/",
-      "status": 200,
-      "title": "Free Consultation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/automation/",
-      "status": 200,
-      "title": "Intelligent Automation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/service-comparison/",
-      "status": 200,
-      "title": "Service Comparison | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/accessibility-compliance/",
-      "status": 200,
-      "title": "Accessibility Compliance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/ai-agent-automation/",
-      "status": 200,
-      "title": "AI Agent Automation | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
-      "status": 200,
-      "title": "AI Agents \u2014 Autonomous | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/ai-data-pipeline/",
-      "status": 200,
-      "title": "AI Data Pipeline - Zion Tech Group"
+      "title": "Zion Tech Group \u2014 AI & IT Services"
     },
     {
       "url": "https://ziontechgroup.com/services/ai-email-intelligence/",
@@ -240,9 +145,14 @@
       "title": "AI Email Intelligence \u2014 Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/services/ai-observability-2026-6565/",
+      "url": "https://ziontechgroup.com/services/cybersecurity-platform-msp-2026-6558/",
       "status": 200,
-      "title": "AI Observability Services | Zion Tech Group"
+      "title": "Cybersecurity Platform for MSPs \u2014 Cybersecurity Platform Msp 2026 6558 \u2014 Cybersecurity Platform Msp 2026 6558 | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cloud-cost-optimization/",
+      "status": 200,
+      "title": "Cloud Cost Optimization | Zion Tech Group | blog - cloud-cost-optimization-checklist-2026-2"
     },
     {
       "url": "https://ziontechgroup.com/services/ai-observability/",
@@ -250,59 +160,44 @@
       "title": "AI Observability \u2014 Zion Tech Group"
     },
     {
+      "url": "https://ziontechgroup.com/services/it-consulting-2026-6570/",
+      "status": 200,
+      "title": "IT Consulting Services \u2014 It Consulting 2026 6570 \u2014 It Consulting 2026 6570 | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/managed-it-services-small-business-2026-6559/",
+      "status": 200,
+      "title": "Managed IT Services for Small Business \u2014 Managed It Services Small Business 2026 6559 \u2014 Managed It Services Small Business 2026 6559 | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/it-staff-augmentation/",
+      "status": 200,
+      "title": "IT Staff Augmentation \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cloud-migration-services-2026-6572/",
+      "status": 200,
+      "title": "Cloud Migration Services \u2014 Cloud Migration Services 2026 6572 \u2014 Cloud Migration Services 2026 6572 | Zion Tech Group | blog - cloud-migration-services-2026-6572"
+    },
+    {
       "url": "https://ziontechgroup.com/services/ai-smart-global-campaign/",
       "status": 200,
       "title": "AI Smart Global Campaign Services | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/services/ai/",
+      "url": "https://ziontechgroup.com/services/ai-observability-2026-6565/",
       "status": 200,
-      "title": "AI Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/automation/",
-      "status": 200,
-      "title": "Intelligent Automation | Zion Tech Group"
+      "title": "AI Observability Services \u2014 Ai Observability 2026 6565 \u2014 Ai Observability 2026 6565 | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/services/cloud-cost-ai-optimizer-2026-6534/",
       "status": 200,
-      "title": "Cloud Cost AI Optimizer | Zion Tech Group"
+      "title": "Cloud Cost AI Optimizer \u2014 Cloud Cost Ai Optimizer 2026 6534 \u2014 Cloud Cost Ai Optimizer 2026 6534 | Zion Tech Group | blog - cloud-cost-ai-optimizer-2026-6534"
     },
     {
-      "url": "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
+      "url": "https://ziontechgroup.com/free-ai-it-tools/",
       "status": 200,
-      "title": "Cloud Cost Optimization Service | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/cloud-cost-optimization/",
-      "status": 200,
-      "title": "Cloud Cost Optimization | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/cloud-infrastructure-optimization/",
-      "status": 200,
-      "title": "Cloud Infrastructure Optimization \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/cloud-migration-services-2026-6572/",
-      "status": 200,
-      "title": "Cloud Migration Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/cloud/",
-      "status": 200,
-      "title": "Cloud Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/cybersecurity-governance/",
-      "status": 200,
-      "title": "Cybersecurity Governance | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/cybersecurity-platform-msp-2026-6558/",
-      "status": 200,
-      "title": "Cybersecurity Platform for MSPs | Zion Tech Group"
+      "title": "Free AI & IT Tools | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/services/data-analytics-platform/",
@@ -310,9 +205,64 @@
       "title": "Data Analytics Platform \u2014 Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/services/hermes-agent-a2a-protocol/",
+      "url": "https://ziontechgroup.com/pricing/",
       "status": 200,
-      "title": "Hermes Agent A2A Protocol \u2014 Agent-to-Agent Communication | Zion Tech Group"
+      "title": "Pricing | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/agents-monitoring/",
+      "status": 200,
+      "title": "Agent Monitoring | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-services/",
+      "status": 200,
+      "title": "AI Services | Zion Tech Group | public/services/ai/index.html"
+    },
+    {
+      "url": "https://ziontechgroup.com/products/",
+      "status": 200,
+      "title": "Products \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/solutions/",
+      "status": 200,
+      "title": "Solutions | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/use-cases/",
+      "status": 200,
+      "title": "Use Cases | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/testimonials/",
+      "status": 200,
+      "title": "Customer Testimonials \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/about/",
+      "status": 200,
+      "title": "About | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/faq/",
+      "status": 200,
+      "title": "Frequently Asked Questions | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/sla/",
+      "status": 200,
+      "title": "Service Level Agreement \u2014 Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/sitemap.xml",
+      "status": 200,
+      "title": "(no title)"
+    },
+    {
+      "url": "https://ziontechgroup.com/industries/",
+      "status": 200,
+      "title": "Industries | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/services/hermes-agent-bot-mode/",
@@ -320,9 +270,49 @@
       "title": "Hermes Agent Bot Mode \u2014 Autonomous AI Agents | Zion Tech Group"
     },
     {
+      "url": "https://ziontechgroup.com/services/hermes-agent-plugin-development/",
+      "status": 200,
+      "title": "Hermes Agent Plugin Development \u2014 Build Custom Extensions | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/hermes-agent-a2a-protocol/",
+      "status": 200,
+      "title": "Hermes Agent A2A Protocol \u2014 Agent-to-Agent Communication | Zion Tech Group"
+    },
+    {
       "url": "https://ziontechgroup.com/services/hermes-agent-complete-guide/",
       "status": 200,
       "title": "Hermes Agent Complete Guide \u2014 Everything You Need to Know | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cloud/",
+      "status": 200,
+      "title": "Cloud Services | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/services/security/",
+      "status": 200,
+      "title": "Security Services | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/cookies/",
+      "status": 200,
+      "title": "Cookie Policy | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-criar-catalogo-servicos-infinito/",
+      "status": 200,
+      "title": "Como Criar um Cat\u00e1logo de Servi\u00e7os Infinito com Agentes de IA | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-multi-agent-coordination/",
+      "status": 200,
+      "title": "Hermes Agent Multi-Agent Coordination: Como Agentes Trabalham Juntos para Entregar Resultados Reais | Zion Tech Group"
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/hermes-agent-crescimento-explosivo/",
+      "status": 200,
+      "title": "Como o Hermes Agent Levou a Zion Tech Group de 16K para 97K Servi\u00e7os em Semanas | Zion Tech Group"
     },
     {
       "url": "https://ziontechgroup.com/services/hermes-agent-content-publishing-distribution/",
@@ -335,79 +325,15 @@
       "title": "Hermes Agent Platform | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/services/hermes-agent-plugin-development/",
+      "url": "https://ziontechgroup.com/blog/empresas-hermesses-agent-catalogo/",
       "status": 200,
-      "title": "Hermes Agent Plugin Development \u2014 Build Custom Extensions | Zion Tech Group"
+      "title": "Como Empresas Usam Agentes Hermes para Criar Cat\u00e1logos de Servi\u00e7os Infinitos | Zion Tech Group"
     },
     {
-      "url": "https://ziontechgroup.com/services/it-consulting-2026-6570/",
+      "url": "https://ziontechgroup.com/blog/hermes-agent-platform/",
       "status": 200,
-      "title": "IT Consulting Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/it-staff-augmentation/",
-      "status": 200,
-      "title": "IT Staff Augmentation \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/managed-it-operations/",
-      "status": 200,
-      "title": "Managed IT Operations \u2014 Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/managed-it-services-small-business-2026-6559/",
-      "status": 200,
-      "title": "Managed IT Services for Small Business | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/services/security/",
-      "status": 200,
-      "title": "Security Services | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/",
-      "status": 200,
-      "title": "5 Proven AI Automation Strategies for Enterprise Workflow Optimization | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026-152/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026-6569/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026-6638/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026-6707/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026-6776/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026-6845/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026-6914/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
-    },
-    {
-      "url": "https://ziontechgroup.com/blog/5g-solutions-2026-6983/",
-      "status": 200,
-      "title": "5G Solutions | Zion Tech Group"
+      "title": "Hermes Agent Platform: O Gerenciador de Agentes que Escalona sua Opera\u00e7\u00e3o | Zion Tech Group"
     }
-  ]
+  ],
+  "broken_404_pages": []
 }
