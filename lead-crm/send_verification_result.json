@@ -1,12 +1,11 @@
 {
-  "send_count": 1,
-  "sent_to": "442x98vs8wp8vz2wcz0bah29vfzc01kvb5tp@reply.airbnb.com",
-  "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-  "httpStatus": 200,
-  "message_id": "1a0573494f2703c1",
-  "thread_id": "1a0573494f2703c1",
-  "liveSentCheck": true,
-  "note": "verified_via_fallback_probe",
-  "error": null,
-  "fallbackProbeMessageId": "1a0573494f2703c1"
+  "send_count": 0,
+  "sent_to": null,
+  "subject": null,
+  "httpStatus": null,
+  "message_id": null,
+  "thread_id": null,
+  "liveSentCheck": false,
+  "note": null,
+  "error": null
 }
