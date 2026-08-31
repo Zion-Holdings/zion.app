@@ -1,0 +1,57 @@
+name: composio-uptime-monitor
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check homepage
+        id: home
+        uses: composio/composio-http-request@v1
+        with:
+          method: "GET"
+          url: "https://ziontechgroup.com/"
+          timeout_ms: 10000
+
+      - name: Check contact
+        id: contact
+        uses: composio/composio-http-request@v1
+        with:
+          method: "GET"
+          url: "https://ziontechgroup.com/contact/"
+          timeout_ms: 10000
+
+      - name: Check tools
+        id: tools
+        uses: composio/composio-http-request@v1
+        with:
+          method: "GET"
+          url: "https://ziontechgroup.com/tools/"
+          timeout_ms: 10000
+
+      - name: Aggregate status
+        id: status
+        run: |
+          home=${{ steps.home.outputs.status_code }}
+          contact=${{ steps.contact.outputs.status_code }}
+          tools=${{ steps.tools.outputs.status_code }}
+          if [ "$home" != "200" ] || [ "$contact" != "200" ] || [ "$tools" != "200" ]; then
+            echo "ok=false" >> $GITHUB_OUTPUT
+          else
+            echo "ok=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Alert Telegram if degraded
+        if: fromJSON(steps.status.outputs.result).ok == false
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Zion uptime alert:
+            /=${{ steps.home.outputs.status_code || 'n/a' }}
+            /contact=${{ steps.contact.outputs.status_code || 'n/a' }}
+            /tools=${{ steps.tools.outputs.status_code || 'n/a' }}
