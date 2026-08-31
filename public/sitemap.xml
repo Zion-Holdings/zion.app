@@ -49147,3 +49147,27 @@
     <priority>0.6</priority>
   </url>
 </urlset>
+  <url>
+    <loc>https://ziontechgroup.com/services/ai-agent-support/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ziontechgroup.com/services/ai-operations/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ziontechgroup.com/blog/ai-agent-observability-production/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ziontechgroup.com/blog/enterprise-ai-it-roadmap-2026/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
