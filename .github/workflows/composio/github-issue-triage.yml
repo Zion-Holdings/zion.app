@@ -1,0 +1,58 @@
+name: composio-github-issue-triage
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Create Linear issue
+        uses: composio/composio-create-linear-issue@v1
+        with:
+          team_name: "Zion Support"
+          title: "Issue #${{ github.event.issue.number }}: ${{ github.event.issue.title }}"
+          description: |
+            Author: ${{ github.event.issue.user.login }}
+            Link: ${{ github.event.issue.html_url }}
+            Labels: ${{ github.event.issue.labels }}
+
+      - name: Create Notion page
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+          action: NOTION_CREATE_NOTION_PAGE
+          input: |
+            {
+              "parent_id": "3c9b94b0-eaf7-813a-9bd3-f0a2522b06bb",
+              "title": "Issue #${{ github.event.issue.number }}: ${{ github.event.issue.title }}",
+              "markdown": "Opened by ${{ github.event.issue.user.login }}.\n\nLink: ${{ github.event.issue.html_url }}"
+            }
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            New issue:
+            #${{ github.event.issue.number }}: ${{ github.event.issue.title }}
+            ${{ github.event.issue.html_url }}
