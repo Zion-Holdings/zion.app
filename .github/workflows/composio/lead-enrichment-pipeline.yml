@@ -1,0 +1,82 @@
+name: composio-lead-enrichment-pipeline
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: "Domain to enrich"
+        required: false
+        type: string
+        default: "ziontechgroup.com"
+      email:
+        description: "Email to enrich"
+        required: false
+        type: string
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Hunter domain search
+        id: hunter
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_HUNTER_CONNECTION_ID }}
+          action: HUNTER_DOMAIN_SEARCH
+          input: |
+            {
+              "domain": "${{ github.event.inputs.domain || 'ziontechgroup.com' }}",
+              "limit": 10,
+              "type": "personal"
+            }
+
+      - name: Apollo enrichment
+        id: apollo
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_APOLLO_CONNECTION_ID }}
+          action: APOLLO_PEOPLE_ENRICHMENT
+          input: |
+            {
+              "q_keywords": "${{ github.event.inputs.domain || 'ziontechgroup.com' }}",
+              "person_titles": ["CTO", "VP Engineering", "Head of IT"]
+            }
+
+      - name: Create Linear issue
+        uses: composio/composio-create-linear-issue@v1
+        with:
+          team_name: "Zion Support"
+          title: "Lead enrichment: ${{ github.event.inputs.domain || 'ziontechgroup.com' }}"
+          description: |
+            Hunter result: ${{ steps.hunter.outputs.result || 'n/a' }}
+            Apollo result: ${{ steps.apollo.outputs.result || 'n/a' }}
+            Issue: ${{ github.event.issue.html_url }}
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Zion lead enrichment:
+            Domain: ${{ github.event.inputs.domain || 'ziontechgroup.com' }}
+            Hunter: ${{ steps.hunter.outputs.result || 'n/a' }}
+            Apollo: ${{ steps.apollo.outputs.result || 'n/a' }}

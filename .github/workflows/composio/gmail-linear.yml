@@ -7,6 +7,7 @@ on:
   issue_comment:
     types:
       - created
+  workflow_dispatch:
 
 jobs:
   sync-leads:
@@ -17,6 +18,14 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
       - name: Read latest outreach monitor output
         id: read
         run: |
@@ -26,7 +35,7 @@ jobs:
             exit 0
           fi
           echo "path=$latest" >> $GITHUB_OUTPUT
-          echo "items=$(jq 'length' "$latest" 2>/dev/null || echo 0)' >> $GITHUB_OUTPUT
+          echo "items=$(jq 'length' "$latest" 2>/dev/null || echo 0)" >> $GITHUB_OUTPUT
 
       - name: Create Linear issue for new outreach thread
         if: ${{ steps.read.outputs.no_file != '1' && steps.read.outputs.items != '0' && contains(github.event.issue.labels.*.name, 'lead') }}
@@ -37,3 +46,4 @@ jobs:
           description: |
             File: ${{ steps.read.outputs.path }}
             Count: ${{ steps.read.outputs.items }}
+            Issue: ${{ github.event.issue.html_url }}

@@ -1,0 +1,70 @@
+name: composio-gmail-brevo-resend-broadcast
+
+on:
+  schedule:
+    - cron: "0 8 * * 1,4"
+  workflow_dispatch:
+
+jobs:
+  broadcast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Fetch recent emails
+        id: gmail
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
+          action: GMAIL_FETCH_EMAILS
+          input: |
+            {
+              "max_results": 20,
+              "query": "in:inbox newer_than:7d"
+            }
+
+      - name: Send Brevo broadcast
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
+          action: BREVO_SEND_EMAIL
+          input: |
+            {
+              "to": "${{ secrets.BREVO_BROADCAST_TO || 'kleber@ziontechgroup.com' }}",
+              "subject": "Zion Tech Group — AI/IT update",
+              "html": "<p>Weekly update from Zion Tech Group.</p>"
+            }
+
+      - name: Create Resend contact
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+          action: RESEND_CREATE_CONTACT
+          input: |
+            {
+              "email": "${{ secrets.BREVO_BROADCAST_TO || 'kleber@ziontechgroup.com' }}",
+              "firstName": "Zion",
+              "lastName": "Broadcast",
+              "audienceId": "36bc979f-6357-4916-afd3-e4b6e9bdf873"
+            }
+
+      - name: Telegram summary
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Zion broadcast:
+            Gmail fetch: ${{ steps.gmail.outputs.result || 'n/a' }}
+            Brevo send: ok
+            Resend contact: ok
