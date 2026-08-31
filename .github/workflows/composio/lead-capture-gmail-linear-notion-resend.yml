@@ -39,25 +39,29 @@ jobs:
         uses: composio/composio-sdk-action@v1
         with:
           connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
-          action: NOTION_CREATE_NOTION_PAGE
+          action: NOTION_CREATE_PAGE
           input: |
             {
-              "parent_id": "3c9b94b0-eaf7-813a-9bd3-f0a2522b06bb",
-              "title": "Lead: ${{ github.event.issue.title }}",
-              "markdown": "New lead from GitHub issue.\n\nLink: ${{ github.event.issue.html_url }}"
+              "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}",
+              "parent": { "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}" },
+              "properties": {
+                "Name": { "title": [{ "text": { "content": "${{ github.event.issue.title }}" } }] },
+                "Source": { "rich_text": [{ "text": { "content": "GitHub Issue" } }] },
+                "Status": { "status": { "name": "New" } }
+              }
             }
 
       - name: Create Resend contact
         uses: composio/composio-sdk-action@v1
         with:
           connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
-          action: RESEND_CREATE_CONTACT
+          action: RESEND_SEND_EMAIL
           input: |
             {
-              "email": "${{ github.event.issue.title }}",
-              "firstName": "Lead",
-              "lastName": "GitHub",
-              "audienceId": "36bc979f-6357-4916-afd3-e4b6e9bdf873"
+              "to": "${{ secrets.RESEND_TO_EMAIL }}",
+              "from": "${{ secrets.RESEND_FROM_EMAIL }}",
+              "subject": "Novo lead: ${{ github.event.issue.title }}",
+              "html": "<p>Novo lead a partir da issue <a href=\\\"${{ github.event.issue.html_url }}\\\">#${{ github.event.issue.number }}</a>.</p>"
             }
 
       - name: Send Brevo email
@@ -67,7 +71,7 @@ jobs:
           action: BREVO_SEND_EMAIL
           input: |
             {
-              "to": "${{ github.event.issue.title }}",
+              "to": "${{ secrets.RESEND_TO_EMAIL }}",
               "subject": "Zion Tech Group — Soluções em TI e IA",
               "html": "<p>Olá, vimos seu interesse em <strong>${{ github.event.issue.title }}</strong>. Podemos ajudar com <a href='https://ziontechgroup.com'>nossos serviços</a>.</p>"
             }
