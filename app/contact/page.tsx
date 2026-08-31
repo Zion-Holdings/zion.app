@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: { canonical: '/contact/' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact | Zion Tech Group',
+    description: 'Get in touch for AI and IT services.',
+  },
 };
 
 export default function ContactPage() {

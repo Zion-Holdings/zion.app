@@ -4,6 +4,17 @@ import StandardPage from '@/components/StandardPage';
 export const metadata = {
   title: 'Blog | Zion Tech Group',
   description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
+  openGraph: {
+    title: 'Blog | Zion Tech Group',
+    description: 'AI, IT, and automation insights and guides.',
+    url: 'https://ziontechgroup.com/blog/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Zion Tech Group',
+    description: 'AI, IT, and automation insights and guides.',
+  },
   alternates: { canonical: '/blog/' },
 };
 

@@ -1,5 +1,20 @@
 
-export const metadata = { title: 'Business Solutions — Zion Tech Group', description: 'Explore Zion Tech Group’s AI and IT business solutions: automation, analytics, security, and managed services designed to grow revenue and reduce cost.' , alternates: { canonical: 'https://ziontechgroup.com/business-solutions/' } };
+export const metadata = {
+  title: 'Business Solutions — Zion Tech Group',
+  description: 'Explore Zion Tech Group’s AI and IT business solutions: automation, analytics, security, and managed services designed to grow revenue and reduce cost.',
+  openGraph: {
+    title: 'Business Solutions — Zion Tech Group',
+    description: 'AI and IT business solutions for measurable outcomes.',
+    url: 'https://ziontechgroup.com/business-solutions/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Business Solutions — Zion Tech Group',
+    description: 'AI and IT business solutions for measurable outcomes.',
+  },
+  alternates: { canonical: 'https://ziontechgroup.com/business-solutions/' },
+};
 
 import Link from 'next/link';
 
@@ -24,7 +39,7 @@ export default function BusinessSolutionsHub() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="https://ziontechgroup.com" className="rounded-xl bg-purple-600 px-5 py-3 text-sm font-semibold text-white hover:bg-purple-500">Explore free tools</Link>
-            <Link href="/contact" className="rounded-xl border border-purple-500/30 px-5 py-3 text-sm font-semibold text-purple-200 hover:bg-purple-500/10">Talk to our team</Link>
+            <Link href="/contact/" className="rounded-xl border border-purple-500/30 px-5 py-3 text-sm font-semibold text-purple-200 hover:bg-purple-500/10">Talk to our team</Link>
           </div>
         </div>
       </section>
