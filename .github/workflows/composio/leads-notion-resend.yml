@@ -52,5 +52,5 @@ jobs:
               "to": "${{ secrets.RESEND_TO_EMAIL }}",
               "from": "${{ secrets.RESEND_FROM_EMAIL }}",
               "subject": "Novo lead: ${{ github.event.issue.title }}",
-              "html": "<p>Novo lead criado a partir da issue <a href=\"${{ github.event.issue.html_url }}\">#${{ github.event.issue.number }}</a>.</p>"
+              "html": "<p>Novo lead criado a partir da issue <a href=\\\"${{ github.event.issue.html_url }}\\\">#${{ github.event.issue.number }}</a>.</p>"
             }
