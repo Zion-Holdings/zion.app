@@ -33,7 +33,7 @@ jobs:
           ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
       - name: Install dependencies
-        run: npm install --no-audit --fund=false
+        run: npm ci --no-audit --fund=false
         env:
           NODE_OPTIONS: --max-old-space-size=12288
           ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
