@@ -1,28 +1,18 @@
 {
   "site_status": "200",
-  "service_count": 6956,
-  "sitemap_urls": 31,
+  "service_count": 7006,
+  "sitemap_urls": 16276,
   "git_branch": "main",
-  "git_log": "0fff05a8634 feat: content wave - auto generated",
+  "git_log": "55ba0368135 feat: content wave - auto generated",
   "cron_total": 31,
-  "cron_ok": 27,
-  "cron_err": 4,
-  "uncommitted": 10,
-  "coord_age_min": 15482,
+  "cron_ok": 29,
+  "cron_err": 2,
+  "uncommitted": 0,
+  "coord_age_min": 16150,
   "cron_errors": [
     {
-      "id": "e8d4771b",
-      "name": "zion-service-counts-check",
-      "streak": 7
-    },
-    {
-      "id": "e5cdf52c",
-      "name": "zion-link-audit",
-      "streak": 1
-    },
-    {
-      "id": "9d9b0dd7",
-      "name": "ztg-link-audit",
+      "id": "8d74b838",
+      "name": "web-prospecting-it-services",
       "streak": 1
     },
     {
