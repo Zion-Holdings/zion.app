@@ -1,0 +1,44 @@
+name: composio-stripe-payment-monitor
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  check-payments:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Check Stripe recent payments
+        id: stripe
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+          action: STRIPE_LIST_EVENTS
+          input: |
+            {
+              "type": "payment_intent.succeeded",
+              "limit": 5
+            }
+
+      - name: Send Telegram summary
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Zion Stripe:
+            Recent payments: ${{ steps.stripe.outputs.count || '0' }}
+            Data: ${{ steps.stripe.outputs.result || 'No events' }}
