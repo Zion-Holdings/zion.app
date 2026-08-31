@@ -1,0 +1,70 @@
+name: composio-gmail-linear-notion-sync
+
+on:
+  issues:
+    types:
+      - opened
+      - labeled
+  issue_comment:
+    types:
+      - created
+  schedule:
+    - cron: "0 9 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Sync GitHub issue to Linear
+        if: ${{ github.event_name == 'issues' || github.event_name == 'issue_comment' }}
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_LINEAR_CONNECTION_ID }}
+          action: LINEAR_CREATE_ISSUE
+          input: |
+            {
+              "teamId": "${{ secrets.LINEAR_TEAM_ID }}",
+              "title": "GH #${{ github.event.issue.number }}: ${{ github.event.issue.title }}",
+              "description": "${{ github.event.issue.body }}"
+            }
+
+      - name: Sync issue to Notion
+        if: ${{ github.event_name == 'issues' || github.event_name == 'issue_comment' }}
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+          action: NOTION_CREATE_PAGE
+          input: |
+            {
+              "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}",
+              "parent": { "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}" },
+              "properties": {
+                "Name": { "title": [{ "text": { "content": "${{ github.event.issue.title }}" } }] },
+                "Source": { "rich_text": [{ "text": { "content": "GitHub Issue #${{ github.event.issue.number }}" } }] },
+                "Status": { "status": { "name": "Open" } }
+              }
+            }
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            🔄 Gmail-Linear-Notion sync:
+            Issue: #${{ github.event.issue.number }}: ${{ github.event.issue.title }}
+            Linear + Notion updated.
+            Link: ${{ github.event.issue.html_url }}
