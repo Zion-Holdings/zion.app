@@ -37,17 +37,17 @@ export default function AgentsMonitoringPage() {
       ]}
     >
       <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
-        <Link href="/services?category=ai" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/services/?category=ai" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Observability</h3>
           <p className="text-slate-400 text-sm">Traces, metrics, and logs for agentic systems.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
-        <Link href="/services?category=automation" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/services/?category=automation" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Automation</h3>
           <p className="text-slate-400 text-sm">Runbooks, auto-remediation, and alert routing.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
-        <Link href="/services?category=security" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/services/?category=security" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Security</h3>
           <p className="text-slate-400 text-sm">Identity, policy, and incident-response controls.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
