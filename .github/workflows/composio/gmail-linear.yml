@@ -1,9 +1,12 @@
 name: composio-gmail-linear
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
-  workflow_dispatch:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
 
 jobs:
   sync-leads:
