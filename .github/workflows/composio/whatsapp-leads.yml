@@ -1,0 +1,45 @@
+name: composio-whatsapp-leads
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  followup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Composio
+        uses: composio/composio-action@main
+        with:
+          api_key: ${{ secrets.COMPOSIO_API_KEY }}
+
+      - name: Send WhatsApp follow-up
+        uses: composio/composio-action@main
+        with:
+          connection_id: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
+          app: "whatsapp"
+          action: "send_message"
+          parameters: |
+            {
+              "to": "${{ secrets.WHATSAPP_TO_NUMBER }}",
+              "template_name": "${{ secrets.WHATSAPP_TEMPLATE_NAME }}",
+              "lead_title": "${{ github.event.issue.title }}",
+              "lead_url": "${{ github.event.issue.html_url }}",
+              "source_label": "${{ secrets.GMAIL_LABEL || 'leads' }}"
+            }
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+
+      - name: Comment back to issue
+        run: |
+          echo "WhatsApp follow-up sent to lead: ${{ github.event.issue.title }}" >> "$GITHUB_STEP_SUMMARY"
