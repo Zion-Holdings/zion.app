@@ -1,0 +1,84 @@
+name: composio-stripe-notion-resend-revenue
+
+on:
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+jobs:
+  revenue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Check Stripe revenue events
+        id: stripe
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+          action: STRIPE_LIST_EVENTS
+          input: |
+            {
+              "type": "payment_intent.succeeded",
+              "limit": 10
+            }
+
+      - name: Aggregate revenue JSON
+        id: aggregate
+        run: |
+          cat > /tmp/revenue.json <<EOF
+          {
+            "date": "$(date -u +%Y-%m-%d)",
+            "stripe": ${{ steps.stripe.outputs.result || '{}' }}
+          }
+          EOF
+          cat /tmp/revenue.json
+
+      - name: Sync revenue to Notion
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+          action: NOTION_CREATE_PAGE
+          input: |
+            {
+              "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}",
+              "parent": { "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}" },
+              "properties": {
+                "Name": { "title": [{ "text": { "content": "Revenue sync $(date -u +%Y-%m-%d)" } }] },
+                "Source": { "rich_text": [{ "text": { "content": "Stripe" } }] },
+                "Status": { "status": { "name": "Synced" } }
+              }
+            }
+
+      - name: Send Resend revenue report
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+          action: RESEND_SEND_EMAIL
+          input: |
+            {
+              "to": "${{ secrets.RESEND_TO_EMAIL }}",
+              "from": "${{ secrets.RESEND_FROM_EMAIL }}",
+              "subject": "Zion revenue report: $(date -u +%Y-%m-%d)",
+              "html": "<p>Stripe events synced to Notion. Check dashboard for details.</p>"
+            }
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            💰 Revenue sync completed:
+            Date: $(date -u +%Y-%m-%d)
+            Stripe events: ${{ steps.stripe.outputs.result }}

@@ -1,0 +1,67 @@
+name: composio-sentry-github-linear-escalation
+
+on:
+  issues:
+    types:
+      - opened
+      - labeled
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  escalate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Create Sentry issue from bug context
+        if: ${{ contains(github.event.issue.labels.*.name, 'bug') || contains(github.event.pull_request.labels.*.name, 'bug') }}
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_SENTRY_CONNECTION_ID }}
+          action: SENTRY_CREATE_ISSUE
+          input: |
+            {
+              "title": "${{ github.event.issue.title || github.event.pull_request.title }}",
+              "body": "${{ github.event.issue.body || github.event.pull_request.body }}",
+              "labels": ["github", "auto-created"],
+              "project": "${{ secrets.SENTRY_PROJECT || 'default' }}",
+              "organization": "${{ secrets.SENTRY_ORG }}"
+            }
+
+      - name: Create Linear escalation issue
+        if: ${{ contains(github.event.issue.labels.*.name, 'bug') || contains(github.event.pull_request.labels.*.name, 'bug') }}
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_LINEAR_CONNECTION_ID }}
+          action: LINEAR_CREATE_ISSUE
+          input: |
+            {
+              "teamId": "${{ secrets.LINEAR_TEAM_ID }}",
+              "title": "ESCALATE: ${{ github.event.issue.title || github.event.pull_request.title }}",
+              "description": "Sentry issue created from GitHub ${{ github.event_name }}: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}"
+            }
+
+      - name: Notify Telegram on escalation
+        if: ${{ contains(github.event.issue.labels.*.name, 'bug') || contains(github.event.pull_request.labels.*.name, 'bug') }}
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            🚨 Escalation:
+            ${{ github.event_name == 'issues' && format('Issue #{0}: {1}', github.event.issue.number, github.event.issue.title) || format('PR #{0}: {1}', github.event.pull_request.number, github.event.pull_request.title) }}
+            Sentry + Linear created.
+            Link: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}

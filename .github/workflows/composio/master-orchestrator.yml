@@ -1,8 +1,14 @@
 name: composio-master-orchestrator
 
 on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 8 * * 1-5"
   workflow_dispatch:
 
 jobs:
@@ -22,83 +28,67 @@ jobs:
       - name: Install Composio SDK
         run: npm install @composio/core
 
-      - name: Run Firecrawl crawl
-        id: firecrawl
-        uses: composio/composio-sdk-action@v1
-        continue-on-error: true
-        with:
-          connection_id: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
-          action: FIRECRAWL_SCRAPE
-          input: |
-            {
-              "url": "https://ziontechgroup.com",
-              "formats": ["markdown"],
-              "onlyMainContent": true
-            }
+      - name: Extract event context
+        id: ctx
+        run: |
+          if [ "${{ github.event_name }}" = "issues" ]; then
+            echo "type=issue" >> $GITHUB_OUTPUT
+            echo "number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+            echo "title=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+            echo "url=${{ github.event.issue.html_url }}" >> $GITHUB_OUTPUT
+            echo "labels=$(echo '${{ toJSON(github.event.issue.labels) }}' | jq -r 'map(.name) | join(", ")')" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "issue_comment" ]; then
+            echo "type=comment" >> $GITHUB_OUTPUT
+            echo "number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+            echo "title=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+            echo "url=${{ github.event.issue.html_url }}" >> $GITHUB_OUTPUT
+            echo "labels=$(echo '${{ toJSON(github.event.issue.labels) }}' | jq -r 'map(.name) | join(", ")')" >> $GITHUB_OUTPUT
+          else
+            echo "type=scheduled" >> $GITHUB_OUTPUT
+            echo "number=0" >> $GITHUB_OUTPUT
+            echo "title=Daily sync" >> $GITHUB_OUTPUT
+            echo "url=" >> $GITHUB_OUTPUT
+            echo "labels=" >> $GITHUB_OUTPUT
+          fi
 
-      - name: Run GSC query
-        id: gsc
+      - name: Sync to Notion
+        id: notion
         uses: composio/composio-sdk-action@v1
-        continue-on-error: true
-        with:
-          connection_id: ${{ secrets.COMPOSIO_GOOGLE_SEARCH_CONSOLE_CONNECTION_ID }}
-          action: GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY
-          input: |
-            {
-              "site_url": "sc-domain:ziontechgroup.com",
-              "start_date": "$(date -d '7 days ago' +%Y-%m-%d)",
-              "end_date": "$(date +%Y-%m-%d)",
-              "dimensions": ["query"],
-              "row_limit": 20
-            }
-
-      - name: Run Sentry issues
-        id: sentry
-        uses: composio/composio-sdk-action@v1
-        continue-on-error: true
-        with:
-          connection_id: ${{ secrets.COMPOSIO_SENTRY_CONNECTION_ID }}
-          action: SENTRY_LIST_AN_ORGANIZATIONS_ISSUES
-          input: |
-            {
-              "organization": "zion-holdings",
-              "query": "is:unresolved",
-              "limit": 20
-            }
-
-      - name: Run Stripe payments
-        id: stripe
-        uses: composio/composio-sdk-action@v1
-        continue-on-error: true
-        with:
-          connection_id: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
-          action: STRIPE_LIST_EVENTS
-          input: |
-            {
-              "type": "payment_intent.succeeded",
-              "limit": 5
-            }
-
-      - name: Create summary Notion page
-        uses: composio/composio-sdk-action@v1
-        continue-on-error: true
         with:
           connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
-          action: NOTION_CREATE_NOTION_PAGE
+          action: NOTION_CREATE_PAGE
           input: |
             {
-              "parent_id": "3c9b94b0-eaf7-813a-9bd3-f0a2522b06bb",
-              "title": "Daily Master Orchestrator - $(date +%Y-%m-%d)",
-              "markdown": "## Firecrawl\n${{ steps.firecrawl.outputs.result || 'n/a' }}\n\n## GSC\n${{ steps.gsc.outputs.result || 'n/a' }}\n\n## Sentry\n${{ steps.sentry.outputs.result || 'n/a' }}\n\n## Stripe\n${{ steps.stripe.outputs.result || 'n/a' }}"
+              "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}",
+              "parent": { "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}" },
+              "properties": {
+                "Name": { "title": [{ "text": { "content": "${{ steps.ctx.outputs.title }}" } }] },
+                "Source": { "rich_text": [{ "text": { "content": "GitHub ${{ steps.ctx.outputs.type }}" } }] },
+                "Status": { "status": { "name": "Open" } }
+              }
             }
 
-      - name: Telegram summary
+      - name: Create Linear issue
+        id: linear
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_LINEAR_CONNECTION_ID }}
+          action: LINEAR_CREATE_ISSUE
+          input: |
+            {
+              "teamId": "${{ secrets.LINEAR_TEAM_ID }}",
+              "title": "GH #${{ steps.ctx.outputs.number }}: ${{ steps.ctx.outputs.title }}",
+              "description": "${{ steps.ctx.outputs.url }}"
+            }
+
+      - name: Send Telegram summary
         uses: composio/composio-send-telegram-message@v1
         with:
           chat_id: "-1003886112318"
           text: |
-            Zion Master Orchestrator:
-            Firecrawl: ${{ steps.firecrawl.outputs.result || 'n/a' }}
-            GSC: ${{ steps.gsc.outputs.result || 'n/a' }}
-            Sentry: ${{ steps.sentry.outputs.result || 'n/a' }}
-            Stripe: ${{ steps.stripe.outputs.result || 'n/a' }}
+            🔄 Orchestrator:
+            Type: ${{ steps.ctx.outputs.type }}
+            Title: ${{ steps.ctx.outputs.title }}
+            Labels: ${{ steps.ctx.outputs.labels }}
+            Notion: ${{ steps.notion.outputs.result }}
+            Linear: ${{ steps.linear.outputs.result }}
