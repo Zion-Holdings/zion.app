@@ -156,6 +156,30 @@ def generate_brief():
 
     lines.append("")
     lines.append("🎯 PRIORIDADE: Site UP → Cron Healthy → Sitemap Sync")
+    lines.append("")
+    lines.append("🔍 GAPS / BOTTLENECKS:")
+    if site != "200":
+        lines.append("   • Site indisponível — bloqueia toda a cadeia de validação e deploy.")
+    if cron_errors > 0:
+        lines.append(f"   • Cron instability: {cron_errors}/{cron_total} jobs com failure_streak — pode saturar retries e atrasar content/outreach loops.")
+    if git_changes > 0:
+        lines.append(f"   • Git drift: {git_changes} arquivos alterados sem commit — risco de perda de trabalho e conflitos em produção.")
+    if sitemap_urls < svc_count - 50:
+        lines.append("   • Sitemap lag: index menor que catálogo — SEO perde cobertura e crawl budget.")
+    else:
+        lines.append("   • Sitemap coverage ok (não é gargalo no momento).")
+    if svc_count < 20000:
+        lines.append(f"   • Catálogo abaixo do alvo ({svc_count:,} < 20k) — limita pipeline de conteúdo exponencial.")
+    lines.append("")
+    lines.append("📌 NEXT ACTIONS:")
+    if site != "200":
+        lines.append("   1) @devops-leader restaura site e valida /health + rotas críticas.")
+    if cron_errors > 0:
+        lines.append("   2) Ajustar política de retry / fallback nos jobs com failure_streak alto.")
+    if git_changes > 0:
+        lines.append("   3) @devops-leader faz commit/stash das mudanças pendentes antes do próximo deploy.")
+    if svc_count < 20000:
+        lines.append("   4) @growth-engine acelera geração de serviços até atingir 20k.")
 
     return "\n".join(lines)
 

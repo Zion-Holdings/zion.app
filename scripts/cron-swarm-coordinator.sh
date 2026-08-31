@@ -24,7 +24,7 @@ SERVICE_COUNT=$(python3 -c "import json;print(len(json.load(open('app/data/servi
 SITEMAP_URLS=$(grep -c 'ziontechgroup.com/services/' public/sitemap.xml 2>/dev/null || echo "0")
 
 # Cron job statuses — query the jobs.json directly for precision
-CRON_JSON=$(python3 -c "
+CRON_JSON=$(python3 <<'PYEOF'
 import json, os
 with open(os.path.expanduser('~/.hermes/cron/jobs.json')) as f:
     data = json.load(f)
@@ -34,8 +34,9 @@ errors = [j for j in jobs if j.get('failure_streak', 0) > 0 or j.get('last_statu
 ok = total - len(errors)
 print(f'{total}|{ok}|{len(errors)}')
 for j in errors:
-    print(f'ERR|{j[\"id\"][:8]}|{j[\"name\"][:40]}|streak={j.get(\"failure_streak\",0)}')
-" 2>/dev/null || echo "0|0|0")
+    print(f'ERR|{j["id"][:8]}|{j["name"][:40]}|streak={j.get("failure_streak",0)}')
+PYEOF
+ 2>/dev/null || echo "0|0|0")
 
 CRON_TOTAL=$(echo "$CRON_JSON" | head -1 | cut -d'|' -f1)
 CRON_OK=$(echo "$CRON_JSON" | head -1 | cut -d'|' -f2)

@@ -6,6 +6,6 @@
   "message_id": null,
   "thread_id": null,
   "liveSentCheck": false,
-  "note": null,
+  "note": "blocked_by_config_or_env",
   "error": null
 }
