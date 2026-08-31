@@ -764,7 +764,6 @@
 /services/ai-agents-autonomous/ /services/ai-agents-autonomous.html 200
 /services/cloud-cost-optimization-service/ /services/cloud-cost-optimization-service.html 200
 /services/index/ /services/index.html 200
-
 /services /services/ 301
 /services/ /services/ 301
 /tools/* /tools/:splat/index.html 200/tools/agent-prompt-builder /tools/agent-prompt-builder/ 200
@@ -1020,7 +1019,6 @@
 /blog/data-warehouse-modernization-2026-7988 /blog/ 301
 /blog/enterprise-backup-dr-2026-6545 /blog/ 301
 /blog/event-driven-architecture-2026-6547 /blog/ 301
-
 /services /services/index.html 200
 /blog /blog/index.html 200
 /tools /tools/index.html 200
@@ -1035,7 +1033,6 @@
 /blog/cloud-cost-optimization-ai-cut-spend /blog/cloud-cost-optimization-ai-cut-spend/index.html 200
 /blog/zero-trust-architecture-msps-checklist /blog/zero-trust-architecture-msps-checklist/index.html 200
 /service-discovery /service-discovery/index.html 200
-
 # Splat rules — cover all pages in these directories
 /blog/* /blog/:splat/index.html 200
 /services/* /services/:splat/index.html 200
@@ -1046,3 +1043,8 @@
 /docs/partner/ /docs/partner/index.html 200
 /docs/success-stories /docs/success-stories/index.html 200
 /docs/success-stories/ /docs/success-stories/index.html 200
+/services/ai-customer-support-pro /services/ 301
+/services/ai-customer-support-pro/ /services/ 301
+/services/ai-readiness-assessment/ /ai/ai-readiness-assessment/ 301
+/services/ai-data-pipeline-integration/ /services/ai-data-pipeline-integration/index.html 200
+/services/ai-governance-risk-compliance/ /services/ai-governance-risk-compliance/index.html 200
