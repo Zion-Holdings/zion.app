@@ -1,7 +1,18 @@
 
 import Link from 'next/link';
 
-export const metadata = { title: 'Micro SaaS Services', description: 'Ready-to-use micro-SaaS products from Zion Tech Group. AI-powered tools and platforms for your business.', alternates: { canonical: 'https://ziontechgroup.com/micro-saas-services/' } };
+export const metadata = {
+  openGraph: {
+    title: 'Micro-SaaS Products | Zion Tech Group',
+    description: 'Ready-to-use AI-powered micro-SaaS products. Start free, scale as you grow.',
+    url: 'https://ziontechgroup.com/micro-saas-services/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Micro-SaaS Products | Zion Tech Group',
+    description: 'Ready-to-use AI-powered micro-SaaS products. Start free, scale as you grow.',
+  }, title: 'Micro SaaS Services', description: 'Ready-to-use micro-SaaS products from Zion Tech Group. AI-powered tools and platforms for your business.', alternates: { canonical: 'https://ziontechgroup.com/micro-saas-services/' } };
 
 export default function MicroSaaSListPage() {
   const services = [

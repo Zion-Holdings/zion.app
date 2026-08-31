@@ -1,6 +1,17 @@
 import Link from 'next/link';
 
-export const metadata = { title: 'Free Resources', description: 'Free AI tools, guides, templates, and resources from Zion Tech Group.', alternates: { canonical: 'https://ziontechgroup.com/free-resources/' } };
+export const metadata = {
+  openGraph: {
+    title: 'Free Resources & Guides | Zion Tech Group',
+    description: 'Guides, tools, templates, and documentation to help you succeed with AI and IT transformation.',
+    url: 'https://ziontechgroup.com/free-resources/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Resources & Guides | Zion Tech Group',
+    description: 'Guides, tools, templates, and documentation to help you succeed with AI and IT transformation.',
+  }, title: 'Free Resources', description: 'Free AI tools, guides, templates, and resources from Zion Tech Group.', alternates: { canonical: 'https://ziontechgroup.com/free-resources/' } };
 
 export default function FreeResourcesPage() {
   const resources = [

@@ -1,7 +1,18 @@
 
 import Link from 'next/link';
 
-export const metadata = { title: 'Innovation Bundles', description: 'Curated bundles of AI and IT services at discounted prices. Combine solutions for maximum impact.', alternates: { canonical: 'https://ziontechgroup.com/innovation-bundles/' } };
+export const metadata = {
+  openGraph: {
+    title: 'Innovation Bundles | Zion Tech Group',
+    description: 'Combine complementary AI and IT services at discounted prices. Save up to 33% vs. buying individually.',
+    url: 'https://ziontechgroup.com/innovation-bundles/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Innovation Bundles | Zion Tech Group',
+    description: 'Combine complementary AI and IT services at discounted prices. Save up to 33% vs. buying individually.',
+  }, title: 'Innovation Bundles', description: 'Curated bundles of AI and IT services at discounted prices. Combine solutions for maximum impact.', alternates: { canonical: 'https://ziontechgroup.com/innovation-bundles/' } };
 
 export default function InnovationBundlesPage() {
   const bundles = [
