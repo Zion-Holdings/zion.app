@@ -7,6 +7,5 @@
   "thread_id": null,
   "liveSentCheck": false,
   "note": "rate_limited",
-  "error": "HTTP 429 rate limit",
-  "send_blocked": "HTTP 429"
+  "error": "HTTP 429 rate limit"
 }
