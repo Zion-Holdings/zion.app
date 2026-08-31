@@ -18,25 +18,35 @@ jobs:
           url: "https://ziontechgroup.com/"
           timeout_ms: 10000
 
-      - name: Alert Telegram if degraded
-        if: ${{ failure() || steps.health.outputs.status_code != '200' }}
+      - name: Aggregate status JSON
+        id: status
+        run: |
+          if [ "${{ failure() || steps.health.outputs.status_code != '200' }}" = "true" ]; then
+            echo '{"ok":false,"code":${{ steps.health.outputs.status_code || 0 }},"conclusion":"${{ github.event.workflow_run.conclusion || 'n/a' }}"}' >/tmp/status.json
+          else
+            echo '{"ok":true,"code":${{ steps.health.outputs.status_code }},"conclusion":"${{ github.event.workflow_run.conclusion || 'n/a' }}"}' >/tmp/status.json
+          fi
+
+      - name: Send Telegram on degraded/unknown
+        if: fromJSON(steps.status.outputs.result).ok == false
         uses: composio/composio-send-telegram-message@v1
         with:
           chat_id: "-1003886112318"
           text: |
             Zion alert:
-            Site check failed or workflow failed.
-            Conclusion: ${{ github.event.workflow_run.conclusion }}
-            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}
+            Code: ${{ steps.health.outputs.status_code || 'n/a' }}
+            Conclusion: ${{ fromJSON(steps.status.outputs.result).conclusion }}
+            Link: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}
 
-      - name: Alert email via Resend if degraded
-        if: ${{ failure() || steps.health.outputs.status_code != '200' }}
+      - name: Send email on degraded/unknown
+        if: fromJSON(steps.status.outputs.result).ok == false
         uses: composio/composio-send-resend-email@v1
         with:
           to: "kleber@ziontechgroup.com"
           from: "ziontechgroup@alcatrao.eti.br"
           subject: "ziontechgroup.com health alert"
           body: |
-            Health check failed.
-            Conclusion: ${{ github.event.workflow_run.conclusion }}
+            Health check failed or workflow failed.
+            Code: ${{ steps.health.outputs.status_code || 'n/a' }}
+            Conclusion: ${{ fromJSON(steps.status.outputs.result).conclusion }}
             Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}

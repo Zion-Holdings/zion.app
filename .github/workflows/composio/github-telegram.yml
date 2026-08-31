@@ -22,7 +22,9 @@ jobs:
         id: summary
         run: |
           if [ "${{ github.event_name }}" = "workflow_run" ]; then
-            echo "status=${{ github.event.workflow_run.conclusion || 'unknown' }}" >> $GITHUB_OUTPUT
+            conclusion="${{ github.event.workflow_run.conclusion || 'unknown' }}"
+            if [ "${{ github.event.workflow_run.conclusion }}" = "" ]; then conclusion="unknown"; fi
+            echo "status=${conclusion}" >> $GITHUB_OUTPUT
             echo "title=Workflow ${{ github.event.workflow_run.name }} #${{ github.event.workflow_run.run_number }}" >> $GITHUB_OUTPUT
             echo "url=${{ github.event.workflow_run.html_url }}" >> $GITHUB_OUTPUT
           elif [ "${{ github.event_name }}" = "issues" ]; then
@@ -35,7 +37,7 @@ jobs:
           fi
 
       - name: Send to Telegram via Composio
-        if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure' }}
+        if: ${{ github.event_name == 'workflow_run' && (github.event.workflow_run.conclusion == 'failure' || github.event.workflow_run.conclusion == 'cancelled' || github.event.workflow_run.conclusion == 'timed_out' || github.event.workflow_run.conclusion == '') }}
         uses: composio/composio-send-telegram-message@v1
         with:
           chat_id: "-1003886112318"
