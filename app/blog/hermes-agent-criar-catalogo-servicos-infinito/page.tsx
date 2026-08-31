@@ -6,6 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 export const metadata: Metadata = {
   title: 'Como Criar um Catálogo de Serviços Infinito com Agentes de IA | Zion Tech Group',
   description: 'Um guia prático para criar um catálogo de serviços infinito com agentes Hermes Agent — indexar, descrever, categorizar, publicar — sem gargalo manual por serviço.',
+  openGraph: {
+    title: metadata.title,
+    description: metadata.description,
+    url: 'https://ziontechgroup.com/blog/hermes-agent-criar-catalogo-servicos-infinito/',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: metadata.title,
+    description: metadata.description,
+  },
+  alternates: { canonical: '/blog/hermes-agent-criar-catalogo-servicos-infinito/' },
 }
 
 const steps = [
@@ -19,11 +31,11 @@ const steps = [
   },
   {
     title: 'Pilotar com um batch de serviços',
-    body: 'Comece com um batch de 10-50 serviços para validar o pipeline. Neste piloto, sua equipe deve fornecer as ideias de serviços, reviewar as descrições geradas pelos agentes, verificar a categorização e o SEO, e validar a publicação e o catálogo final. O piloto serve para ajustar o pipeline antes de escalar.',
+    body: 'Comece com um batch de 10-50 serviços para validar o pipeline. Neste piloto, sua equipe deve fornecer as ideias de serviços, revisar as descrições geradas pelos agentes, verificar a categorização e o SEO, e validar a publicação e o catálogo final. O piloto serve para ajustar o pipeline antes de escalar.',
   },
   {
     title: 'Escalar para produção contínua',
-    body: 'Com o pipeline validado, escalone para produção contínua. A equipe passa a focar em fornecer novas ideias de serviços, reviewar amostras das descrições geradas (quality spot-check), atualizar a taxonomia quando necessário, e monitorar o catálogo e ajustar a operação. Os agentes Hermes Agent operam em escala — produzindo serviços continuamente, com sua equipe focada em estratégia e quality assurance, não em produção manual.',
+    body: 'Com o pipeline validado, escalone para produção contínua. A equipe passa a focar em fornecer novas ideias de serviços, revisar amostras das descrições geradas (quality spot-check), atualizar a taxonomia quando necessário, e monitorar o catálogo e ajustar a operação. Os agentes Hermes Agent operam em escala — produzindo serviços continuamente, com sua equipe focada em estratégia e quality assurance, não em produção manual.',
   },
   {
     title: 'Manter o catálogo atualizado',
@@ -69,7 +81,7 @@ export default function CriarCatalogoServicosInfinito() {
 
       <section>
         <h2>A solução: agentes Hermes Agent para catálogo infinito</h2>
-        <p>Agentes Hermes Agent resolvem o gargalo automatizando cada etapa do pipeline de catálogo. Em vez de cada serviço esperar por um humano disponível, os agentes operam em paralelo — 24/7, sem burnouts, sem pausas, sem limitação de capacity.</p>
+        <p>Agentes Hermes Agent resolvem o gargalo automatizando cada etapa do pipeline de catálogo. Em vez de cada serviço esperar por um humano disponível, os agentes operam em paralelo — 24/7, sem burnouts, sem pausas, sem limitação de capacidade.</p>
         <p>O pipeline de catálogo com Hermes Agent tem 5 zonas de trabalho:</p>
         <ul>
           <li><strong>Indexação</strong> — descobrir e mapear novos serviços, categorias e serviços relacionados</li>
@@ -78,33 +90,26 @@ export default function CriarCatalogoServicosInfinito() {
           <li><strong>Categorização</strong> — classificar em categoria, indústria, função e tags relevantes</li>
           <li><strong>Publicação e manutenção</strong> — publicar a página, atualizar o catálogo e manter atualizado</li>
         </ul>
-        <p>Cada zona pode ter um ou mais agentes Hermes Agent operando em paralelo — o que permite catálogos grandes, atualizados e publicados continuamente.</p>
       </section>
 
       <section>
-        <h2>Guia prático: como criar seu catálogo infinito</h2>
-        <p>Este guia cobre o processo de um catálogo de serviços infinito com agentes Hermes Agent — do início ao scale.</p>
-        {steps.map((step, i) => (
-          <div key={i} style={{ marginBottom: '24px' }}>
-            <h3 style={{ color: '#2563eb', fontSize: '1.1rem', margin: '0 0 8px' }}>Passo {i + 1}: {step.title}</h3>
-            <p style={{ margin: 0 }}>{step.body}</p>
-          </div>
-        ))}
+        <h2>Etapas práticas</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {steps.map((item, idx) => (
+            <div key={idx} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+              <h3 className="text-white font-semibold mb-2">{idx + 1}. {item.title}</h3>
+              <p className="text-slate-300 text-sm">{item.body}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section>
-        <h2>Resultado: catálogo infinito em prática</h2>
-        <p>Com agentes Hermes Agent operando em pipeline, empresas podem ter catálogos que crescem continuamente — sem recrutamento de equipe de conteúdo, sem burnouts, sem gargalos operacionais.</p>
-        <p>O crescimento do catálogo não é limitado pela capacity da equipe — é limitado apenas pela demanda real de novos serviços. E como a demanda de serviços é geralmente muito maior que a capacity de produzir páginas, esse é um vantagem competitiva real.</p>
-        <p>Empresas com catálogos infinitos podem atender mais clientes, com mais serviços descritos e publicados — e ganhar oportunidades que empresas com catálogos limitados perdem.</p>
-      </section>
-
-      <section>
-        <h2>Pronto para criar seu catálogo infinito?</h2>
-        <p>Se sua empresa quer crescer seu catálogo de serviços sem depender de recrutamento de equipe de conteúdo, converse com a Zion Tech Group sobre agentes Hermes Agent.</p>
-        <div className="cta-buttons">
-          <a href="/contact/" style={{ background: '#2563eb', color: 'white', padding: '10px 20px', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, display: 'inline-block' }}>Falar com especialista</a>
-          <a href="/services/" style={{ color: '#2563eb', padding: '10px 20px', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, border: '1px solid #2563eb', display: 'inline-block' }}>Ver todos os serviços</a>
+        <h2>Próximos passos</h2>
+        <p>Se você quer crescer seu catálogo sem aumentar headcount, comece por um batch pequeno e um agente por zona. Valide a qualidade antes de escalar. O mercado premia quem tem a página pronta quando o cliente busca.</p>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/contact/" className="btn-primary text-center">Fale com a Zion</a>
+          <a href="/services/" className="btn-secondary text-center">Ver serviços</a>
         </div>
       </section>
     </StandardPage>

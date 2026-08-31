@@ -6,6 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 export const metadata: Metadata = {
   title: 'Como o Hermes Agent Levou a Zion Tech Group de 16K para 97K Serviços em Semanas | Zion Tech Group',
   description: 'Como o Hermes Agent fez a Zion Tech Group crescer de ~16.000 para ~97.000 serviços — sem recrutamento de equipe de conteúdo, sem burnouts, sem gargalos operacionais.',
+  openGraph: {
+    title: metadata.title,
+    description: metadata.description,
+    url: 'https://ziontechgroup.com/blog/hermes-agent-crescimento-explosivo/',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: metadata.title,
+    description: metadata.description,
+  },
+  alternates: { canonical: '/blog/hermes-agent-crescimento-explosivo/' },
 }
 
 const growthMetrics = [
@@ -78,22 +90,6 @@ export default function HermesCrescimentoExplosivo() {
         </table>
         <p>Crescimento de mais de 500% em 6 semanas — sem recrutamento de equipe adicional, sem contratações, sem treinamento de novo pessoal.</p>
         <p>O que mudou não foi a equipe — mudou o pipeline de catálogo. Em vez de cada serviço esperar por um humano disponível, cada serviço é produzido por um agente que nunca cansa, nunca se atrasa, e nunca desiste.</p>
-      </section>
-
-      <section>
-        <h2>O que isso significa para empresas de serviços</h2>
-        <p>Qualquer empresa de serviços com um catálogo pode obter o mesmo resultado: usar agentes Hermes Agent para indexar, descrever, SEO, publicar, e manter atualizado um catálogo de serviços — em escala, sem gargalo humano.</p>
-        <p>O diferencial não é o número de serviços — é a capacidade de atender mais necessidades de clientes com serviços que estão catalogados, descritos, e publicados. Quando um cliente busca um serviço, a empresa que tem a página pronta ganha a oportunidade.</p>
-        <p>Com Hermes Agent, empresas podem ter páginas prontas para serviços que antes não teriam tempo de catalogar — abrindo novos mercados, novos clientes, e novas oportunidades de receita.</p>
-      </section>
-
-      <section>
-        <h2>Pronto para explosão de crescimento?</h2>
-        <p>Se sua empresa quer crescer seu catálogo de serviços sem depender de recrutamento de equipe de conteúdo, converse com a Zion Tech Group.</p>
-        <div className="cta-buttons">
-          <a href="/contact/" className="btn-primary">Falar com especialista</a>
-          <a href="/services/" className="btn-secondary">Ver todos os serviços</a>
-        </div>
       </section>
     </StandardPage>
   )

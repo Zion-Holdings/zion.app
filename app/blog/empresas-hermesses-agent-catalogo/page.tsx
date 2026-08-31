@@ -6,6 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 export const metadata: Metadata = {
   title: 'Como Empresas Usam Agentes Hermes para Criar Catálogos de Serviços Infinitos | Zion Tech Group',
   description: 'Empresas que usam agentes Hermes para gerar catálogos de serviços infinitos — indexando, descrevendo, categorizando, publicando. Volume infinito sem gargalo manual.',
+  openGraph: {
+    title: metadata.title,
+    description: metadata.description,
+    url: 'https://ziontechgroup.com/blog/empresas-hermesses-agent-catalogo/',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: metadata.title,
+    description: metadata.description,
+  },
+  alternates: { canonical: '/blog/empresas-hermesses-agent-catalogo/' },
 }
 
 const empresas = [
@@ -21,15 +33,15 @@ const empresas = [
     nome: 'Empresas de Serviços B2B',
     descricao: 'Empresas de serviços B2B usam agentes Hermes para expandir seus catálogos sem depender de equipes de conteúdo — crescendo para atender mais necessidades de clientes.',
     categoria: 'Expansão de catálogo',
-    problema: 'Crescimento de catálogo limitado pela capacidade de produзir conteúdo novo — não pela demanda real do mercado.',
-    solucao: 'Agentes Hermes Agent indexam, descrevem, SEO, publicam, e mantêm atualizado catálogo de serviços em escala.',
-    resultado: 'Empresas com catálogos maiores, mais servicos descritos, e mais clientes atendidos — sem recrutamento adicional.',
+    problema: 'Crescimento de catálogo limitado pela capacidade de produzir conteúdo novo — não pela demanda real do mercado.',
+    solucao: 'Agentes Hermes Agent indexam, descrevem, SEO, publicam, e mantém atualizado catálogo de serviços em escala.',
+    resultado: 'Empresas com catálogos maiores, mais serviços descritos, e mais clientes atendidos — sem recrutamento adicional.',
   },
   {
     nome: 'Startups de Serviços',
-    descricao: 'Startups usam agentes Hermes para construir catálogos completos desde o início — com mais serviços descritos e publicados do que possivel com equipe pequena.',
+    descricao: 'Startups usam agentes Hermes para construir catálogos completos desde o início — com mais serviços descritos e publicados do que possível com equipe pequena.',
     categoria: 'Catálogo inicial escalável',
-    problema: 'Equipe pequena não consegue produzir conteúdo para um catálogo grande desde o início — limitando growth e perception de capacidade.',
+    problema: 'Equipe pequena não consegue produzir conteúdo para um catálogo grande desde o início — limitando growth e percepção de capacidade.',
     solucao: 'Agentes Hermes Agent constroem o catálogo completo desde o início — sem depender de capacity manual.',
     resultado: 'Startups com catálogos maduros desde o início, mais clientes potenciais convertidos, e percepção de empresa maior.',
   },
@@ -90,55 +102,54 @@ export default function EmpresasHermessesAgent() {
   return (
     <StandardPage
       title={metadata.title}
-      subtitle="Empresas que usam agentes Hermes para gerar catálogos de serviços infinitos — indexando, descrevendo, categorizando, publicando."
+      subtitle="Como empresas usam agentes Hermes para criar catálogos de serviços infinitos — indexando, descrevendo, categorizando, publicando."
       description={metadata.description}
       jsonLd={jsonLd}
       breadcrumb={breadcrumb}
     >
       <section>
-        <h2>O que significa catálogo de serviços infinito</h2>
-        <p>Um catálogo de serviços infinito é um catálogo que cresce sem limitação humana — onde cada novo serviço é automaticamente indexado, descrito, SEO, publicado, e mantido atualizado por agentes Hermes Agent.</p>
-        <p>Empresas que usam essa abordagem podem oferecer serviços que antes não catalogavam porque o custo de criar a página, descrever, e publicar era muito alto para uma equipe pequena.</p>
-        <p>Com agentes Hermes Agent, o custo por serviço novo cai drasticamente — o que permite catálogos grandes, atualizados, e disponíveis para clientes que buscam exatamente esse serviço.</p>
+        <p>Empresas de todos os tamanhos estão usando agentes Hermes para transformar seus catálogos de serviços. O resultado é crescimento acelerado, menos gargalos operacionais e mais oportunidades de atendimento.</p>
       </section>
 
       <section>
-        <h2>Empresas que usam agentes Hermes para catálogo infinito</h2>
-        <p>Estas empresas usam agentes Hermes Agent para gerar catálogos de serviços em escala — sem depender de equipes de conteúdo manual para cada nova página de serviço.</p>
-        <div className="company-grid">
-          {empresas.map((emp) => (
-            <div key={emp.nome} className="company-card">
-              <h3>{emp.nome}</h3>
-              <span className="company-category">{emp.categoria}</span>
-              <p>{emp.descricao}</p>
-              <div className="company-details">
-                <p><strong>Problema:</strong> {emp.problema}</p>
-                <p><strong>Solução:</strong> {emp.solucao}</p>
-                <p><strong>Resultado:</strong> {emp.resultado}</p>
-              </div>
+        <h2>O desafio do crescimento manual</h2>
+        <p>A maioria das empresas de serviços cresce até o limite da capacidade humana de produzir conteúdo. Cada novo serviço exige uma página completa: descrição, SEO, formatação e publicação. Quando a equipe é pequena, o catálogo fica menor do que a demanda real do mercado.</p>
+        <p>O gargalo não é falta de ideias. É o tempo necessário para transformar cada ideia em uma página de serviço pronta para converter visitantes em clientes.</p>
+      </section>
+
+      <section>
+        <h2>Casos reais</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {empresas.map((item, idx) => (
+            <div key={idx} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+              <h3 className="text-white font-semibold mb-2">{item.nome}</h3>
+              <p className="text-slate-400 text-sm mb-2">{item.descricao}</p>
+              <p className="text-purple-300 text-xs font-semibold mb-1">Problema: {item.problema}</p>
+              <p className="text-slate-300 text-xs mb-1">Solução: {item.solucao}</p>
+              <p className="text-emerald-300 text-xs font-semibold">Resultado: {item.resultado}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section>
-        <h2>O que empresas aprendem com catálogo infinito</h2>
-        {insights.map((insight) => (
-          <div key={insight.titulo} className="insight-card">
-            <h3>{insight.titulo}</h3>
-            <p>{insight.texto}</p>
-          </div>
-        ))}
+        <h2>Insights operacionais</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {insights.map((item, idx) => (
+            <div key={idx} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+              <h3 className="text-white font-semibold mb-2">{item.titulo}</h3>
+              <p className="text-slate-300 text-sm">{item.texto}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section>
-        <h2>Como começar com catálogo infinito</h2>
-        <p>Empresas que querem crescer catálogo de serviços sem recrutamento de equipe de conteúdo podem começar com um pilot de agentes Hermes Agent.</p>
-        <p>O processo é simples: definir as zonas de trabalho (indexação, descrição, SEO, publicação, QA), configurar os agentes Hermes Agent, e operar em escala.</p>
-        <p>O resultado é um catálogo que cresce sem limitação humana — e empres a que serve mais clientes com mais serviços descritos e publicados.</p>
-        <div className="cta-buttons">
-          <a href="/contact/" className="btn-primary">Falar com especialista</a>
-          <a href="/services/" className="btn-secondary">Ver todos os serviços</a>
+        <h2>Próximos passos</h2>
+        <p>Se você quer expandir seu catálogo sem aumentar headcount, o próximo passo é mapear o pipeline atual e identificar o gargalo de publicação. A partir daí, agentes Hermes podem automatizar as etapas repetidas sem perder controle de qualidade.</p>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="/contact/" className="btn-primary text-center">Fale com a Zion</a>
+          <a href="/services/" className="btn-secondary text-center">Ver serviços</a>
         </div>
       </section>
     </StandardPage>
