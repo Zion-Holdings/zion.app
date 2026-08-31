@@ -8,6 +8,5 @@
   "liveSentCheck": false,
   "note": "rate_limited",
   "error": "HTTP 429 rate limit",
-  "send_blocked": "HTTP 429",
-  "timestamp": "2026-08-31T03:49:06.083917Z"
+  "send_blocked": "HTTP 429"
 }
