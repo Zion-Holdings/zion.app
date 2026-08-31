@@ -1,0 +1,42 @@
+name: composio-production-alert
+
+on:
+  workflow_run:
+    types: [completed]
+    workflows: ["gh-pages.yml"]
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check site health
+        id: health
+        uses: composio/composio-http-request@v1
+        with:
+          method: "GET"
+          url: "https://ziontechgroup.com/"
+          timeout_ms: 10000
+
+      - name: Alert Telegram if degraded
+        if: ${{ failure() || steps.health.outputs.status_code != '200' }}
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Zion alert:
+            Site check failed or workflow failed.
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      - name: Alert email via Resend if degraded
+        if: ${{ failure() || steps.health.outputs.status_code != '200' }}
+        uses: composio/composio-send-resend-email@v1
+        with:
+          to: "kleber@ziontechgroup.com"
+          from: "ziontechgroup@alcatrao.eti.br"
+          subject: "ziontechgroup.com health alert"
+          body: |
+            Health check failed.
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

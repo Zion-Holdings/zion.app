@@ -1,0 +1,36 @@
+name: composio-gmail-linear
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  sync-leads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Read latest outreach monitor output
+        id: read
+        run: |
+          latest=$(ls -1 automation/reports/*.json 2>/dev/null | tail -n 1 || true)
+          if [ -z "$latest" ]; then
+            echo "no_file=1" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "path=$latest" >> $GITHUB_OUTPUT
+          echo "items=$(jq 'length' "$latest" 2>/dev/null || echo 0)' >> $GITHUB_OUTPUT
+
+      - name: Create Linear issue for new outreach thread
+        if: ${{ steps.read.outputs.no_file != '1' && steps.read.outputs.items != '0' }}
+        uses: composio/composio-create-linear-issue@v1
+        with:
+          team_name: "Zion Support"
+          title: "Outreach monitor update ${{ github.run_number }}"
+          description: |
+            File: ${{ steps.read.outputs.path }}
+            Count: ${{ steps.read.outputs.items }}

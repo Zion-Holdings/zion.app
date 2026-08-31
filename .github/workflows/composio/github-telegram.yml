@@ -1,0 +1,45 @@
+name: composio-github-telegram
+
+on:
+  workflow_run:
+    types: [completed]
+    workflows: ["gh-pages.yml", "production-health-monitor.yml"]
+  issues:
+    types: [opened, labeled]
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  notify-telegram:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    steps:
+      - name: Prepare short summary
+        id: summary
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            echo "status=${{ github.event.workflow_run.conclusion || 'unknown' }}" >> $GITHUB_OUTPUT
+            echo "title=Workflow ${{ github.event.workflow_run.name }} #${{ github.event.workflow_run.run_number }}" >> $GITHUB_OUTPUT
+            echo "url=${{ github.event.workflow_run.html_url }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "issues" ]; then
+            echo "title=Issue #${{ github.event.issue.number }}: ${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+            echo "url=${{ github.event.issue.html_url }}" >> $GITHUB_OUTPUT
+            echo "labels=$(echo '${{ toJSON(github.event.issue.labels) }}' | jq -r 'map(.name) | join(", ")')" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "title=PR #${{ github.event.pull_request.number }}: ${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
+            echo "url=${{ github.event.pull_request.html_url }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send to Telegram via Composio
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Zion GitHub:
+            ${{ steps.summary.outputs.title || 'Update' }}
+            Status: ${{ steps.summary.outputs.status || 'n/a' }}
+            ${{ steps.summary.outputs.labels || '' }}
+            Link: ${{ steps.summary.outputs.url }}
