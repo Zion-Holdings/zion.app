@@ -34,6 +34,7 @@ jobs:
           fi
 
       - name: Send to Telegram via Composio
+        if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure' }}
         uses: composio/composio-send-telegram-message@v1
         with:
           chat_id: "-1003886112318"
@@ -41,5 +42,7 @@ jobs:
             Zion GitHub:
             ${{ steps.summary.outputs.title || 'Update' }}
             Status: ${{ steps.summary.outputs.status || 'n/a' }}
+            Conclusion: ${{ github.event.workflow_run.conclusion }}
             ${{ steps.summary.outputs.labels || '' }}
             Link: ${{ steps.summary.outputs.url }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}
