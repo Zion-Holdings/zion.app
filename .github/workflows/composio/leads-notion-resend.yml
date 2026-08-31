@@ -1,0 +1,56 @@
+name: composio-leads-notion-resend
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  enrich-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Enrich lead and sync to Notion
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+          action: NOTION_CREATE_PAGE
+          input: |
+            {
+              "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}",
+              "parent": { "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}" },
+              "properties": {
+                "Name": { "title": [{ "text": { "content": "${{ github.event.issue.title }}" } }] },
+                "Source": { "rich_text": [{ "text": { "content": "GitHub Issue" } }] },
+                "Status": { "status": { "name": "New" } }
+              }
+            }
+
+      - name: Send summary email via Resend
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+          action: RESEND_SEND_EMAIL
+          input: |
+            {
+              "to": "${{ secrets.RESEND_TO_EMAIL }}",
+              "from": "${{ secrets.RESEND_FROM_EMAIL }}",
+              "subject": "Novo lead: ${{ github.event.issue.title }}",
+              "html": "<p>Novo lead criado a partir da issue <a href=\"${{ github.event.issue.html_url }}\">#${{ github.event.issue.number }}</a>.</p>"
+            }
