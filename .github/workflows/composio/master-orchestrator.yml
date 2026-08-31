@@ -1,0 +1,104 @@
+name: composio-master-orchestrator
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Run Firecrawl crawl
+        id: firecrawl
+        uses: composio/composio-sdk-action@v1
+        continue-on-error: true
+        with:
+          connection_id: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
+          action: FIRECRAWL_SCRAPE
+          input: |
+            {
+              "url": "https://ziontechgroup.com",
+              "formats": ["markdown"],
+              "onlyMainContent": true
+            }
+
+      - name: Run GSC query
+        id: gsc
+        uses: composio/composio-sdk-action@v1
+        continue-on-error: true
+        with:
+          connection_id: ${{ secrets.COMPOSIO_GOOGLE_SEARCH_CONSOLE_CONNECTION_ID }}
+          action: GOOGLE_SEARCH_CONSOLE_SEARCH_ANALYTICS_QUERY
+          input: |
+            {
+              "site_url": "sc-domain:ziontechgroup.com",
+              "start_date": "$(date -d '7 days ago' +%Y-%m-%d)",
+              "end_date": "$(date +%Y-%m-%d)",
+              "dimensions": ["query"],
+              "row_limit": 20
+            }
+
+      - name: Run Sentry issues
+        id: sentry
+        uses: composio/composio-sdk-action@v1
+        continue-on-error: true
+        with:
+          connection_id: ${{ secrets.COMPOSIO_SENTRY_CONNECTION_ID }}
+          action: SENTRY_LIST_AN_ORGANIZATIONS_ISSUES
+          input: |
+            {
+              "organization": "zion-holdings",
+              "query": "is:unresolved",
+              "limit": 20
+            }
+
+      - name: Run Stripe payments
+        id: stripe
+        uses: composio/composio-sdk-action@v1
+        continue-on-error: true
+        with:
+          connection_id: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+          action: STRIPE_LIST_EVENTS
+          input: |
+            {
+              "type": "payment_intent.succeeded",
+              "limit": 5
+            }
+
+      - name: Create summary Notion page
+        uses: composio/composio-sdk-action@v1
+        continue-on-error: true
+        with:
+          connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+          action: NOTION_CREATE_NOTION_PAGE
+          input: |
+            {
+              "parent_id": "3c9b94b0-eaf7-813a-9bd3-f0a2522b06bb",
+              "title": "Daily Master Orchestrator - $(date +%Y-%m-%d)",
+              "markdown": "## Firecrawl\n${{ steps.firecrawl.outputs.result || 'n/a' }}\n\n## GSC\n${{ steps.gsc.outputs.result || 'n/a' }}\n\n## Sentry\n${{ steps.sentry.outputs.result || 'n/a' }}\n\n## Stripe\n${{ steps.stripe.outputs.result || 'n/a' }}"
+            }
+
+      - name: Telegram summary
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Zion Master Orchestrator:
+            Firecrawl: ${{ steps.firecrawl.outputs.result || 'n/a' }}
+            GSC: ${{ steps.gsc.outputs.result || 'n/a' }}
+            Sentry: ${{ steps.sentry.outputs.result || 'n/a' }}
+            Stripe: ${{ steps.stripe.outputs.result || 'n/a' }}
