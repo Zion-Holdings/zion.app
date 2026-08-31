@@ -26,7 +26,8 @@ jobs:
           text: |
             Zion alert:
             Site check failed or workflow failed.
-            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            Conclusion: ${{ github.event.workflow_run.conclusion }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}
 
       - name: Alert email via Resend if degraded
         if: ${{ failure() || steps.health.outputs.status_code != '200' }}
@@ -37,4 +38,5 @@ jobs:
           subject: "ziontechgroup.com health alert"
           body: |
             Health check failed.
-            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            Conclusion: ${{ github.event.workflow_run.conclusion }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}
