@@ -1048,3 +1048,14 @@
 /services/ai-readiness-assessment/ /ai/ai-readiness-assessment/ 301
 /services/ai-data-pipeline-integration/ /services/ai-data-pipeline-integration/index.html 200
 /services/ai-governance-risk-compliance/ /services/ai-governance-risk-compliance/index.html 200
+# URLs de serviços genéricas que retornam 404 -> mapear para serviços reais
+/services/ai-services /services/ai/index.html 301
+/services/automation-services /services/automation/index.html 301
+/services/security-services /services/security/index.html 301
+/services/cloud-services /services/cloud/index.html 301
+/services/data-analytics /services/data-analytics-platform/index.html 301
+/services/data-analytics/ /services/data-analytics-platform/index.html 301
+
+# /new retorna 404 -> redirecionar para blog ou homepage
+/new /blog/ 301
+
