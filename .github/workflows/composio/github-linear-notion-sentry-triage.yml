@@ -1,0 +1,87 @@
+name: composio-github-linear-notion-sentry-triage
+
+on:
+  issues:
+    types:
+      - opened
+      - labeled
+  issue_comment:
+    types:
+      - created
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+  workflow_dispatch:
+
+jobs:
+  auto-triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Create Linear issue from GitHub issue
+        if: ${{ github.event_name == 'issues' && github.event.action == 'opened' }}
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_LINEAR_CONNECTION_ID }}
+          action: LINEAR_CREATE_ISSUE
+          input: |
+            {
+              "teamId": "${{ secrets.LINEAR_TEAM_ID }}",
+              "title": "GH #${{ github.event.issue.number }}: ${{ github.event.issue.title }}",
+              "description": "${{ github.event.issue.body }}"
+            }
+
+      - name: Sync to Notion knowledge base
+        if: ${{ github.event_name == 'issues' || github.event_name == 'pull_request' }}
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+          action: NOTION_CREATE_PAGE
+          input: |
+            {
+              "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}",
+              "parent": { "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}" },
+              "properties": {
+                "Name": { "title": [{ "text": { "content": "${{ github.event.issue.title || github.event.pull_request.title }}" } }] },
+                "Source": { "rich_text": [{ "text": { "content": "GitHub ${{ github.event_name }} #${{ github.event.issue.number || github.event.pull_request.number }}" } }] },
+                "Status": { "status": { "name": "Open" } }
+              }
+            }
+
+      - name: Create Sentry issue from error context
+        if: ${{ contains(github.event.issue.labels.*.name, 'bug') || contains(github.event.pull_request.labels.*.name, 'bug') }}
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_SENTRY_CONNECTION_ID }}
+          action: SENTRY_CREATE_ISSUE
+          input: |
+            {
+              "title": "${{ github.event.issue.title || github.event.pull_request.title }}",
+              "body": "${{ github.event.issue.body || github.event.pull_request.body }}",
+              "labels": ["github", "auto-created"],
+              "project": "${{ secrets.SENTRY_PROJECT || 'default' }}",
+              "organization": "${{ secrets.SENTRY_ORG }}"
+            }
+
+      - name: Send Telegram summary
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            🗂️ Auto-triage:
+            ${{ github.event_name == 'issues' && format('Issue #{0}: {1}', github.event.issue.number, github.event.issue.title) || format('PR #{0}: {1}', github.event.pull_request.number, github.event.pull_request.title) }}
+            Labels: ${{ toJSON(github.event.issue.labels.*.name) || toJSON(github.event.pull_request.labels.*.name) }}
+            Link: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}

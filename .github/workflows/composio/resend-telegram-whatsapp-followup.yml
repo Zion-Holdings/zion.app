@@ -1,0 +1,80 @@
+name: composio-resend-telegram-whatsapp-followup
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+    inputs:
+      lead:
+        required: true
+        type: string
+        description: "Lead name or company"
+
+jobs:
+  multi-channel-followup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Extract lead info
+        id: lead
+        run: |
+          if [ "${{ github.event_name }}" = "issues" ] || [ "${{ github.event_name }}" = "issue_comment" ]; then
+            echo "name=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+            echo "url=${{ github.event.issue.html_url }}" >> $GITHUB_OUTPUT
+          else
+            echo "name=${{ inputs.lead }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send email via Resend
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+          action: RESEND_SEND_EMAIL
+          input: |
+            {
+              "to": "${{ secrets.RESEND_TO_EMAIL }}",
+              "from": "${{ secrets.RESEND_FROM_EMAIL }}",
+              "subject": "Follow-up: ${{ steps.lead.outputs.name }}",
+              "html": "<p>Olá! Vimos seu interesse em <strong>${{ steps.lead.outputs.name }}</strong>. Nossa equipe entrará em contato em breve.</p><p><a href='https://ziontechgroup.com/contact/'>Agende uma conversa</a></p>"
+            }
+
+      - name: Send Telegram notification
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            📬 Follow-up enviado para: ${{ steps.lead.outputs.name }}
+            Link: ${{ steps.lead.outputs.url }}
+            Canal: Email + Telegram
+
+      - name: Send WhatsApp follow-up
+        uses: composio/composio-action@main
+        with:
+          api_key: ${{ secrets.COMPOSIO_API_KEY }}
+          connection_id: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
+          app: "whatsapp"
+          action: "send_message"
+          parameters: |
+            {
+              "to": "${{ secrets.WHATSAPP_TO_NUMBER }}",
+              "template_name": "${{ secrets.WHATSAPP_TEMPLATE_NAME || 'followup_lead' }}",
+              "lead_title": "${{ steps.lead.outputs.name }}",
+              "lead_url": "${{ steps.lead.outputs.url }}",
+              "source_label": "GitHub Issues"
+            }

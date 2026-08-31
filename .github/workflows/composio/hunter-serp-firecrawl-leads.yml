@@ -1,0 +1,120 @@
+name: composio-hunter-serp-firecrawl-leads
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+    inputs:
+      company:
+        required: true
+        type: string
+        description: "Company domain or name"
+
+jobs:
+  enrich-leads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Extract target from issue
+        id: target
+        run: |
+          if [ "${{ github.event_name }}" = "issues" ] || [ "${{ github.event_name }}" = "issue_comment" ]; then
+            echo "company=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+            echo "issue_number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+          else
+            echo "company=${{ inputs.company }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Hunter email enrichment
+        id: hunter
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_HUNTER_CONNECTION_ID }}
+          action: HUNTER_FIND_EMAIL
+          input: |
+            {
+              "domain": "${{ steps.target.outputs.company }}",
+              "type": "personal"
+            }
+
+      - name: SerpApi company research
+        id: serp
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
+          action: SERPAPI_SEARCH
+          input: |
+            {
+              "q": "${{ steps.target.outputs.company }} site contacts about us",
+              "num": 5
+            }
+
+      - name: Firecrawl deep page crawl
+        id: firecrawl
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
+          action: FIRECRAWL_SCRAPE_URL
+          input: |
+            {
+              "url": "https://${{ steps.target.outputs.company }}",
+              "onlyMainContent": true,
+              "maxAge": 86400000
+            }
+
+      - name: Aggregate enrichment JSON
+        id: aggregate
+        run: |
+          cat > /tmp/enrichment.json <<EOF
+          {
+            "company": "${{ steps.target.outputs.company }}",
+            "issue_number": "${{ steps.target.outputs.issue_number }}",
+            "hunter": ${{ steps.hunter.outputs.result || '{}' }},
+            "serp": ${{ steps.serp.outputs.result || '{}' }},
+            "firecrawl": ${{ steps.firecrawl.outputs.result || '{}' }}
+          }
+          EOF
+          cat /tmp/enrichment.json
+
+      - name: Sync to Notion
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+          action: NOTION_CREATE_PAGE
+          input: |
+            {
+              "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}",
+              "parent": { "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}" },
+              "properties": {
+                "Name": { "title": [{ "text": { "content": "${{ steps.target.outputs.company }}" } }] },
+                "Source": { "rich_text": [{ "text": { "content": "GitHub Issue #${{ steps.target.outputs.issue_number }}" } }] },
+                "Status": { "status": { "name": "Enriched" } },
+                "Summary": { "rich_text": [{ "text": { "content": "Hunter + SerpApi + Firecrawl enrichment" } }] }
+              }
+            }
+
+      - name: Send Telegram alert
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            🎯 Lead enriched: ${{ steps.target.outputs.company }}
+            Issue: #${{ steps.target.outputs.issue_number }}
+            Hunter: ${{ steps.hunter.outputs.result }}
+            Firecrawl: ${{ steps.firecrawl.outputs.result }}

@@ -1,0 +1,57 @@
+name: composio-canva-assets-generator
+
+on:
+  issues:
+    types:
+      - opened
+  workflow_dispatch:
+    inputs:
+      topic:
+        required: true
+        type: string
+        description: "Asset topic"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Extract asset brief
+        id: brief
+        run: |
+          if [ "${{ github.event_name }}" = "issues" ]; then
+            echo "topic=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+          else
+            echo "topic=${{ inputs.topic }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate Canva asset via Composio
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_CANVA_CONNECTION_ID }}
+          action: CANVA_CREATE_DESIGN
+          input: |
+            {
+              "title": "${{ steps.brief.outputs.topic }}",
+              "type": "social_media_post",
+              "brand_kit_id": "${{ secrets.CANVA_BRAND_KIT_ID || '' }}"
+            }
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            🎨 New asset generated: ${{ steps.brief.outputs.topic }}

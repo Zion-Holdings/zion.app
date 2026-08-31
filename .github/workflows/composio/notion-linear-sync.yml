@@ -45,6 +45,6 @@ jobs:
           input: |
             {
               "teamId": "${{ secrets.LINEAR_TEAM_ID }}",
-              "title": "${{ fromJson(steps.notion.outputs.result).properties.Name.title[0].plain_text }}",
-              "description": "${{ fromJson(steps.notion.outputs.result).properties.Description.rich_text[0].plain_text }}"
+              "title": "${{ fromJSON(steps.notion.outputs.result).properties.Name.title[0].plain_text || github.event.issue.title }}",
+              "description": "${{ fromJSON(steps.notion.outputs.result).properties.Description.rich_text[0].plain_text || github.event.issue.body }}"
             }

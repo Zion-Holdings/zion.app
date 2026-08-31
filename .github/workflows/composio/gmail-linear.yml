@@ -38,7 +38,7 @@ jobs:
           echo "items=$(jq 'length' "$latest" 2>/dev/null || echo 0)" >> $GITHUB_OUTPUT
 
       - name: Create Linear issue for new outreach thread
-        if: ${{ steps.read.outputs.no_file != '1' && steps.read.outputs.items != '0' && contains(github.event.issue.labels.*.name, 'lead') }}
+        if: ${{ steps.read.outputs.no_file != '1' && steps.read.outputs.items != '0' }}
         uses: composio/composio-create-linear-issue@v1
         with:
           team_name: "Zion Support"

@@ -1,0 +1,80 @@
+name: composio-sentry-health-unified-telemetry
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  health-and-monitoring:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Check site health
+        id: health
+        uses: composio/composio-http-request@v1
+        with:
+          method: "GET"
+          url: "https://ziontechgroup.com/"
+          timeout_ms: 10000
+
+      - name: Check payments activity
+        id: stripe
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+          action: STRIPE_LIST_EVENTS
+          input: |
+            {
+              "type": "payment_intent.succeeded",
+              "limit": 5
+            }
+
+      - name: Aggregate status JSON
+        id: status
+        run: |
+          cat > /tmp/status.json <<EOF
+          {
+            "site_code": "${{ steps.health.outputs.status_code }}",
+            "stripe": ${{ steps.stripe.outputs.result || '{}' }},
+            "ok": ${{ steps.health.outputs.status_code == '200' && '' == 'false' }}
+          }
+          EOF
+          cat /tmp/status.json
+
+      - name: Send Telegram on degraded/unknown
+        if: ${{ steps.health.outputs.status_code != '200' }}
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            ⚠️ Zion alert:
+            Site code: ${{ steps.health.outputs.status_code || 'n/a' }}
+            Stripe events: ${{ steps.stripe.outputs.result || 'none' }}
+            Link: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      - name: Create GitHub issue on Stripe anomaly
+        if: ${{ fromJSON(steps.stripe.outputs.result).data && fromJSON(steps.stripe.outputs.result).data | length > 0 && false }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Stripe anomaly detected`;
+            const body = `Recent Stripe events: ${JSON.stringify(context.payload.stripe, null, 2)}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body
+            });

@@ -1,0 +1,71 @@
+name: composio-brevo-resend-campaigns
+
+on:
+  issues:
+    types:
+      - opened
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  campaigns:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Extract campaign context
+        id: ctx
+        run: |
+          if [ "${{ github.event_name }}" = "issues" ]; then
+            echo "subject=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+            echo "body=${{ github.event.issue.body }}" >> $GITHUB_OUTPUT
+          else
+            echo "subject=Zion Tech Group — novidades" >> $GITHUB_OUTPUT
+            echo "body=Novidades em IA, automação e suporte de TI." >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send campaign via Brevo
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
+          action: BREVO_SEND_EMAIL
+          input: |
+            {
+              "to": "${{ secrets.BREVO_TO_EMAIL }}",
+              "subject": "${{ steps.ctx.outputs.subject }}",
+              "htmlContent": "<p>${{ steps.ctx.outputs.body }}</p><p><a href='https://ziontechgroup.com/contact/'>Fale conosco</a></p>"
+            }
+
+      - name: Send transactional email via Resend
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+          action: RESEND_SEND_EMAIL
+          input: |
+            {
+              "to": "${{ secrets.RESEND_TO_EMAIL }}",
+              "from": "${{ secrets.RESEND_FROM_EMAIL }}",
+              "subject": "Confirmação: ${{ steps.ctx.outputs.subject }}",
+              "html": "<p>Este é um e-mail transacional de confirmação.</p><p>${{ steps.ctx.outputs.body }}</p>"
+            }
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            📣 Campaign sent:
+            Subject: ${{ steps.ctx.outputs.subject }}
+            Channels: Brevo + Resend
