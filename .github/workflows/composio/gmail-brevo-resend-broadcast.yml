@@ -46,17 +46,17 @@ jobs:
               "html": "<p>Weekly update from Zion Tech Group.</p>"
             }
 
-      - name: Create Resend contact
+      - name: Send Resend notification
         uses: composio/composio-sdk-action@v1
         with:
           connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
-          action: RESEND_CREATE_CONTACT
+          action: RESEND_SEND_EMAIL
           input: |
             {
-              "email": "${{ secrets.BREVO_BROADCAST_TO || 'kleber@ziontechgroup.com' }}",
-              "firstName": "Zion",
-              "lastName": "Broadcast",
-              "audienceId": "36bc979f-6357-4916-afd3-e4b6e9bdf873"
+              "to": "${{ secrets.RESEND_TO_EMAIL }}",
+              "from": "${{ secrets.RESEND_FROM_EMAIL }}",
+              "subject": "Zion Tech Group — AI/IT update",
+              "html": "<p>Weekly update from Zion Tech Group.</p>"
             }
 
       - name: Telegram summary

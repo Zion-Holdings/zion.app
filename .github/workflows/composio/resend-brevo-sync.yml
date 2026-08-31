@@ -46,9 +46,22 @@ jobs:
           action: BREVO_SEND_EMAIL
           input: |
             {
-              "to": "${{ github.event.issue.title }}",
+              "to": "${{ secrets.BREVO_TO_EMAIL }}",
               "subject": "Zion Tech Group — Soluções em TI e IA",
               "html": "<p>Olá, vimos seu interesse em <strong>${{ github.event.issue.title }}</strong>. Podemos ajudar com <a href='https://ziontechgroup.com'>nossos serviços</a>.</p>"
+            }
+
+      - name: Send Resend notification
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+          action: RESEND_SEND_EMAIL
+          input: |
+            {
+              "to": "${{ secrets.RESEND_TO_EMAIL }}",
+              "from": "${{ secrets.RESEND_FROM_EMAIL }}",
+              "subject": "Sync: ${{ github.event.issue.title }}",
+              "html": "<p>Resend+Brevo sync para: <strong>${{ github.event.issue.title }}</strong></p>"
             }
 
       - name: Notify Telegram
