@@ -1,0 +1,42 @@
+name: composio-sheets-leads-export
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Search Zion Sheets
+        id: sheets
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_GOOGLE_SHEETS_CONNECTION_ID }}
+          action: GOOGLESHEETS_SEARCH_SPREADSHEETS
+          input: |
+            {
+              "query": "zion"
+            }
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Zion Sheets search:
+            ${{ steps.sheets.outputs.result || 'n/a' }}

@@ -1,0 +1,45 @@
+name: composio-calendly-linear-sync
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Create Linear issue for Calendly booking
+        uses: composio/composio-create-linear-issue@v1
+        with:
+          team_name: "Zion Support"
+          title: "Calendly: ${{ github.event.issue.title }}"
+          description: |
+            New booking or meeting request.
+            Issue: ${{ github.event.issue.html_url }}
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            New Calendly lead:
+            ${{ github.event.issue.title }}
+            ${{ github.event.issue.html_url }}

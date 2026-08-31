@@ -1,0 +1,53 @@
+name: composio-linear-sentry-escalation
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  escalate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Sentry recent issues
+        id: sentry
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_SENTRY_CONNECTION_ID }}
+          action: SENTRY_LIST_AN_ORGANIZATIONS_ISSUES
+          input: |
+            {
+              "organization": "zion-holdings",
+              "query": "is:unresolved lastSeen:-1h",
+              "limit": 10
+            }
+
+      - name: Create Linear issue for each Sentry issue
+        uses: composio/composio-create-linear-issue@v1
+        with:
+          team_name: "Zion Support"
+          title: "Sentry: ${{ fromJson(steps.sentry.outputs.result).issues[0].title || 'Recent errors' }}"
+          description: |
+            Recent Sentry issues: ${{ steps.sentry.outputs.result || 'n/a' }}
+            Link: https://sentry.io/organizations/zion-holdings
+
+      - name: Notify Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            Sentry escalation:
+            ${{ steps.sentry.outputs.result || 'n/a' }}
