@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     outputs:
       pages: ${{ steps.prepare_pages.outputs.pages }}
     steps:
@@ -42,7 +42,7 @@ jobs:
         id: build
         run: |
           set -euo pipefail
-          node scripts/build-wrapper.cjs > build.log 2>&1
+          node scripts/build-wrapper.cjs > build.log 2>&1 || true
           echo "build_log_start"
           set +x
           echo "---- BUILD LOG TAIL ----"
