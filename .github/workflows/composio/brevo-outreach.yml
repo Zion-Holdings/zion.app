@@ -1,0 +1,39 @@
+name: composio-brevo-outreach
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  send-outreach:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Send Brevo outreach email
+        uses: composio/composio-sdk-action@v1
+        with:
+          connection_id: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
+          action: BREVO_SEND_EMAIL
+          input: |
+            {
+              "to": "${{ github.event.issue.title }}",
+              "subject": "Zion Tech Group — Soluções em TI e IA",
+              "html": "<p>Olá, vimos seu interesse em <strong>${{ github.event.issue.title }}</strong>. Podemos ajudar com <a href='https://ziontechgroup.com'>nossos serviços</a>.</p>"
+            }
