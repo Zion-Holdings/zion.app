@@ -1,0 +1,49 @@
+name: composio-canva-telegram-assets
+
+on:
+  issues:
+    types:
+      - opened
+  issue_comment:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  generate-and-send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Create Canva design
+        uses: composio/composio-sdk-action@v1
+        id: canva
+        with:
+          connection_id: ${{ secrets.COMPOSIO_CANVA_CONNECTION_ID }}
+          action: CANVA_CREATE_DESIGN
+          input: |
+            {
+              "title": "${{ github.event.issue.title }}",
+              "format": "Social Media",
+              "size": "1080x1080"
+            }
+
+      - name: Send to Telegram
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            New Canva asset:
+            ${{ github.event.issue.title }}
+            Design ID: ${{ fromJson(steps.canva.outputs.result).id || 'n/a' }}
