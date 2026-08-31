@@ -12,6 +12,7 @@ on:
 jobs:
   notify-telegram:
     runs-on: ubuntu-latest
+    fail-fast: false
     permissions:
       contents: read
       issues: read
