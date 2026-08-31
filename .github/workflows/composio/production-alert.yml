@@ -4,8 +4,6 @@ on:
   workflow_run:
     types: [completed]
     workflows: ["gh-pages.yml"]
-  schedule:
-    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 jobs:
