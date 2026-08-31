@@ -3,18 +3,13 @@
   "service_count": 7006,
   "sitemap_urls": 16276,
   "git_branch": "main",
-  "git_log": "55ba0368135 feat: content wave - auto generated",
+  "git_log": "896e78ab605 chore: add explicit Pages redirects for /docs/ai-resources and /tools/zion-roi-calculator",
   "cron_total": 31,
-  "cron_ok": 29,
-  "cron_err": 2,
-  "uncommitted": 0,
-  "coord_age_min": 16150,
+  "cron_ok": 30,
+  "cron_err": 1,
+  "uncommitted": 8,
+  "coord_age_min": 16241,
   "cron_errors": [
-    {
-      "id": "8d74b838",
-      "name": "web-prospecting-it-services",
-      "streak": 1
-    },
     {
       "id": "1994f5bb",
       "name": "pages-canonical-deploy-verifier",

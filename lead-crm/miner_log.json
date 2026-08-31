@@ -435,5 +435,71 @@
     "event": "miner_timeout",
     "query": "subject:\"platform engineering\"",
     "note": "soft timeout reached after search; breaking before metadata extraction"
+  },
+  {
+    "ts": "2026-08-31T02:14:49.168489+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T02:22:28.566569+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T02:32:21.786138+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T02:42:23.326136+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T02:52:30.912146+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"AI services\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T03:06:02.744492+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T03:12:40.560956+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"AI services\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T03:22:24.654229+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"AI services\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T03:32:30.361355+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T03:42:37.918107+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-31T03:54:00.040347+00:00",
+    "event": "miner_timeout",
+    "query": "subject:sase",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]

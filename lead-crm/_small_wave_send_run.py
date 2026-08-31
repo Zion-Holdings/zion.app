@@ -119,7 +119,7 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
     headers['Content-Type'] = 'application/json'
     req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
     last_err = None
-    for attempt in range(1, 5):
+    for attempt in range(1, 6):
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
                 result = json.loads(r.read())
@@ -129,14 +129,14 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
         except urllib.error.HTTPError as e:
             last_err = e
             if e.code in (429, 500, 502, 503, 504):
-                wait = 2 * attempt
+                wait = 6 * attempt
                 time.sleep(wait)
                 continue
             raise
         except Exception as e:
             last_err = e
-            if attempt < 4:
-                time.sleep(2 * attempt)
+            if attempt < 5:
+                time.sleep(6 * attempt)
                 continue
             raise last_err
     if last_err:
