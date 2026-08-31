@@ -50,12 +50,16 @@ jobs:
         uses: composio/composio-sdk-action@v1
         with:
           connection_id: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
-          action: NOTION_CREATE_NOTION_PAGE
+          action: NOTION_CREATE_PAGE
           input: |
             {
-              "parent_id": "3c9b94b0-eaf7-813a-9bd3-f0a2522b06bb",
-              "title": "Content Ideas - $(date +%Y-%m-%d)",
-              "markdown": "## Firecrawl\n${{ steps.firecrawl.outputs.result || 'n/a' }}\n\n## SerpAPI\n${{ steps.serpapi.outputs.result || 'n/a' }}"
+              "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}",
+              "parent": { "database_id": "${{ secrets.NOTION_LEADS_DB_ID }}" },
+              "properties": {
+                "Name": { "title": [{ "text": { "content": "Content Ideas - $(date +%Y-%m-%d)" } }] },
+                "Source": { "rich_text": [{ "text": { "content": "Firecrawl + SerpAPI" } }] },
+                "Status": { "status": { "name": "Open" } }
+              }
             }
 
       - name: Notify Telegram
