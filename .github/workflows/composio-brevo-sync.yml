@@ -25,20 +25,16 @@ jobs:
       - name: Brevo sync
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          COMPOSIO_BREVO_CONNECTION_ID: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
         run: |
           cat > brevo.mjs <<'EOF'
           import { Composio } from '@composio/core';
           const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
           const client = composio.getClient();
-          const accounts = await client.connectedAccounts.list({});
-          const brevo = (accounts.items || []).find(a => a.toolkit?.slug === 'brevo');
-          if (!brevo) {
-            console.error('No Brevo connected account found');
-            process.exit(1);
-          }
+          const connectionId = process.env.COMPOSIO_BREVO_CONNECTION_ID;
           const result = await client.tools.execute('BREVO_GET_ALL_CONTACTS', {
-            connection_id: brevo.id,
-            entity_id: brevo.user_id,
+            connection_id: connectionId,
+            entity_id: 'pg-test-b311dcc6-03f6-4077-8774-c90cfd6fcf29',
             arguments: {
               limit: 10
             }
