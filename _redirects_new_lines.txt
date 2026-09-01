@@ -1,0 +1,15 @@
+# Redirecionamentos para URLs com 404 — mapeamento para páginas existentes
+# Adicionados em 2026-08-31 — Kleber Garcia Alcatrão
+
+# URL raiz que não tem página própria — leva ao blog
+/new /blog/ 301
+
+# Serviços genéricos que não existem como páginas individuais — mapeiam para páginas reais
+/services/ai-services /services/ai/index.html 301
+/services/data-analytics /services/data-analytics-platform/index.html 301
+/services/automation-services /services/automation/index.html 301
+/services/security-services /services/security/index.html 301
+/services/cloud-services /services/cloud/index.html 301
+
+# Blog post sobre Composio — cria página real
+/blog/composio /blog/composio-ai-agent-automation-2026/ 301
