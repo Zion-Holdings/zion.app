@@ -1,12 +1,12 @@
-name: composio-brevo-sync
+name: composio-whatsapp-followup
 
 on:
-  schedule:
-    - cron: "0 9 * * *"
   workflow_dispatch:
+  issues:
+    types: [opened]
 
 jobs:
-  sync:
+  send:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,27 +22,28 @@ jobs:
       - name: Install Composio SDK
         run: npm install @composio/core
 
-      - name: Brevo sync
+      - name: Send WhatsApp follow-up
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
         run: |
-          cat > brevo.mjs <<'EOF'
+          cat > send-whatsapp.mjs <<'EOF'
           import { Composio } from '@composio/core';
           const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
           const client = composio.getClient();
           const accounts = await client.connectedAccounts.list({});
-          const brevo = (accounts.items || []).find(a => a.toolkit?.slug === 'brevo');
-          if (!brevo) {
-            console.error('No Brevo connected account found');
+          const whatsapp = (accounts.items || []).find(a => a.toolkit?.slug === 'whatsapp');
+          if (!whatsapp) {
+            console.error('No WhatsApp connected account found');
             process.exit(1);
           }
-          const result = await client.tools.execute('BREVO_GET_CONTACTS', {
-            connection_id: brevo.id,
-            entity_id: brevo.user_id,
+          const result = await client.tools.execute('WHATSAPP_SEND_MESSAGE', {
+            connection_id: whatsapp.id,
+            entity_id: whatsapp.user_id,
             arguments: {
-              limit: 10
+              to: '',
+              message: 'New lead from GitHub issue: Zion Tech Group'
             }
           });
           console.log(JSON.stringify(result, null, 2));
           EOF
-          node brevo.mjs
+          node send-whatsapp.mjs

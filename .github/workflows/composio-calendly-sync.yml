@@ -2,11 +2,11 @@ name: composio-calendly-sync
 
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "0 11 * * *"
   workflow_dispatch:
 
 jobs:
-  calendly-sync:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,26 +22,25 @@ jobs:
       - name: Install Composio SDK
         run: npm install @composio/core
 
-      - name: Test Calendly connection
-        id: calendly
+      - name: Calendly sync
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-          COMPOSIO_CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
         run: |
-          cat > sync.mjs <<'EOF'
+          cat > calendly.mjs <<'EOF'
           import { Composio } from '@composio/core';
           const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
           const client = composio.getClient();
-          const connectionId = process.env.COMPOSIO_CALENDLY_CONNECTION_ID;
-          const result = await client.tools.execute('CALENDLY_LIST_EVENTS', {
-            connection_id: connectionId,
-            entity_id: 'pg-test-b311dcc6-03f6-4077-8774-c90cfd6fcf29',
+          const accounts = await client.connectedAccounts.list({});
+          const calendly = (accounts.items || []).find(a => a.toolkit?.slug === 'calendly');
+          if (!calendly) {
+            console.error('No Calendly connected account found');
+            process.exit(1);
+          }
+          const result = await client.tools.execute('CALENDYLIST_EVENT_TYPES', {
+            connection_id: calendly.id,
+            entity_id: calendly.user_id,
             arguments: {}
           });
           console.log(JSON.stringify(result, null, 2));
           EOF
-          node sync.mjs
-
-      - name: Comment summary
-        run: |
-          echo "Calendly connection tested successfully." >> "$GITHUB_STEP_SUMMARY"
+          node calendly.mjs

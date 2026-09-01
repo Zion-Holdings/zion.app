@@ -1,12 +1,12 @@
-name: composio-brevo-sync
+name: composio-stripe-monitor
 
 on:
   schedule:
-    - cron: "0 9 * * *"
+    - cron: "0 10 * * *"
   workflow_dispatch:
 
 jobs:
-  sync:
+  monitor:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,27 +22,27 @@ jobs:
       - name: Install Composio SDK
         run: npm install @composio/core
 
-      - name: Brevo sync
+      - name: Stripe monitor
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
         run: |
-          cat > brevo.mjs <<'EOF'
+          cat > stripe.mjs <<'EOF'
           import { Composio } from '@composio/core';
           const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
           const client = composio.getClient();
           const accounts = await client.connectedAccounts.list({});
-          const brevo = (accounts.items || []).find(a => a.toolkit?.slug === 'brevo');
-          if (!brevo) {
-            console.error('No Brevo connected account found');
+          const stripe = (accounts.items || []).find(a => a.toolkit?.slug === 'stripe');
+          if (!stripe) {
+            console.error('No Stripe connected account found');
             process.exit(1);
           }
-          const result = await client.tools.execute('BREVO_GET_CONTACTS', {
-            connection_id: brevo.id,
-            entity_id: brevo.user_id,
+          const result = await client.tools.execute('STRIPE_LIST_PAYMENTS', {
+            connection_id: stripe.id,
+            entity_id: stripe.user_id,
             arguments: {
-              limit: 10
+              limit: 5
             }
           });
           console.log(JSON.stringify(result, null, 2));
           EOF
-          node brevo.mjs
+          node stripe.mjs
