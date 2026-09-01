@@ -12,8 +12,13 @@ export const metadata = {
   openGraph: {
     title: 'Financial Services | Zion Tech Group',
     description: 'AI and IT solutions for financial services: fraud defense, compliance, payment intelligence, and analytics.',
-    url: 'https://ziontechgroup.com/industries/financial-services',
+    url: 'https://ziontechgroup.com/industries/financial-services/',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Financial Services | Zion Tech Group',
+    description: 'AI and IT solutions for financial services: fraud defense, compliance, payment intelligence, and analytics.',
   },
   alternates: { canonical: '/industries/financial-services/' },
 };
