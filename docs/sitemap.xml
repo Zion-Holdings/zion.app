@@ -25803,3 +25803,4 @@
   <url><loc>https://ziontechgroup.com/robots.txt</loc><changefreq>always</changefreq><priority>1.0</priority></url>
   <url><loc>https://ziontechgroup.com/feed/</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
 </urlset>
+  <url><loc>https://ziontechgroup.com/blog/starrocks-data-pipeline-for-it-infrastructure-and-mlops-in-2026/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
