@@ -6,7 +6,8 @@
 /services/cybersecurity-governance /services/cybersecurity-governance/index.html 200
 /services/ai-agent-automation /services/ai-agent-automation/index.html 200
 /services/cloud-infrastructure-optimization /services/cloud-infrastructure-optimization/index.html 200
-/blog/ai-msp-security-compliance-implementation-playbook /blog/ai-msp-security-compliance-implementation-playbook/index.html 200
+/blog/ai-observability-beyond-dashboards /blog/ai-agent-observability-production/ 301
+/blog/ai-observability-beyond-dashboards/ /blog/ai-agent-observability-production/ 301
 /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/index.html 200
 /sla /sla/index.html 200
 /testimonials /testimonials/index.html 200
