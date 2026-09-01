@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Honeypot Fabric - Deploy deceptive infrastructure: SSH honeypots, HTTP/HTTPS decoy servers, dummy services, email traps, IoT/OT decoys, VoIP honeypots, and industrial control system simulators to detect and analyze attackers.">
+    <meta name="keywords" content="honeypot, honeypot fabric, decoy server, SSH honeypot, HTTP honeypot, email trap, IoT honeypot, industrial control system, attack detection, threat intelligence, deception technology, fake service, network security, intrusion detection, attack simulation">
+    <title>Honeypot Fabric - Zion Tech Group Tool</title>
+    <link rel="canonical" href="https://ziontechgroup.com/tools/honeypot-fabric/">
+    <meta property="og:title" content="Honeypot Fabric">
+    <meta property="og:description" content="Deploy deceptive infrastructure to detect and analyze attackers — SSH, HTTP, email, IoT, VoIP, ICS honeypots, and custom decoy services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ziontechgroup.com/tools/honeypot-fabric/">
+    <meta property="og:image" content="https://ziontechgroup.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Honeypot Fabric">
+    <meta name="twitter:description" content="Deploy deceptive infrastructure to detect and analyze attackers — SSH, HTTP, email, IoT, VoIP, ICS honeypots, and custom decoy services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a1a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; padding: 3rem 1rem; background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 100%); margin-bottom: 2rem; border-radius: 8px; }
+        h1 { font-size: 2.5rem; color: #c084fc; margin-bottom: 0.5rem; font-weight: 700; }
+        .subtitle { color: #a78bfa; font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .tagline { color: #e879f9; font-size: 1rem; font-weight: 500; }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0; }
+        .badge { background: rgba(192, 132, 252, 0.1); border: 1px solid rgba(192, 132, 252, 0.3); color: #c084fc; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; }
+        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 768px) { .content { grid-template-columns: 1fr; } }
+        .section { background: #1e293b; border-radius: 8px; padding: 1.5rem; border: 1px solid #334155; }
+        h2 { color: #c084fc; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
+        h3 { color: #e879f9; font-size: 1rem; margin-bottom: 0.5rem; font-weight: 500; }
+        ul { list-style: none; padding-left: 0; }
+        ul li { padding: 0.5rem 0; border-bottom: 1px solid #334155; color: #cbd5e1; }
+        ul li:last-child { border-bottom: none; }
+        ul li::before { content: "▹ "; color: #e879f9; font-weight: bold; }
+        .cta { display: inline-block; background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; margin-top: 1rem; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3); }
+        .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5); }
+        footer { text-align: center; padding: 2rem 1rem; color: #64748b; font-size: 0.9rem; margin-top: 2rem; border-top: 1px solid #334155; }
+        .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
+        .footer-links a { color: #c084fc; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🕸️ Honeypot Fabric</h1>
+            <p class="subtitle">Deploy deceptive infrastructure to detect and analyze attackers</p>
+            <p class="tagline">Your one-stop platform for comprehensive honeypot deployment and threat intelligence</p>
+            <div class="badge-row">
+                <span class="badge">🕸️ SSH Honeypot</span>
+                <span class="badge">🌐 HTTP/HTTPS Decoy</span>
+                <span class="badge">📧 Email Trap</span>
+                <span class="badge">📡 IoT/OT Decoy</span>
+                <span class="badge">📞 VoIP Honeypot</span>
+                <span class="badge">🏭 ICS Simulator</span>
+                <span class="badge">🎯 Database Trap</span>
+                <span class="badge">🔌 Custom Service</span>
+                <span class="badge">📊 Attack Analytics</span>
+                <span class="badge">👤 Interactive Honeypot</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="section">
+                <h2>🕸️ Honeypot Types</h2>
+                <h3>SSH Honeypot</h3>
+                <ul>
+                    <li>Capture brute-force attempts and valid credentials</li>
+                    <li>Emulate OpenSSH with realistic shell commands</li>
+                    <li>Record attacker IP, timing, and techniques</li>
+                    <li>Integrate with threat intelligence feeds</li>
+                </ul>
+                <h3>HTTP/HTTPS Decoy Server</h3>
+                <ul>
+                    <li>Emulate web applications (WordPress, Jenkins, etc.)</li>
+                    <li>Capture web scanner scans and exploitation attempts</li>
+                    <li>Log all requests with full headers and payloads</li>
+                    <li>Virtual hosts for multi-tenant deception</li>
+                </ul>
+                <h3>Email Trap (Spam Honey)</h3>
+                <ul>
+                    <li>Deploy unused email addresses on public sites</li>
+                    <li>Capture spam, phishing, and malware campaigns</li>
+                    <li>Analyze sender behavior and spam patterns</li>
+                    <li>Feed data to email filtering systems</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>📡 IoT, Industrial & Specialized</h2>
+                <h3>IoT/OT Decoy</h3>
+                <ul>
+                    <li>Emulate smart devices, cameras, thermostats</li>
+                    <li>Simulate industrial protocols (Modbus, DNP3, BACnet)</li>
+                    <li>Capture IoT botnet recruitment attempts</li>
+                    <li>Monitor IoT exploit kits and malware</li>
+                </ul>
+                <h3>VoIP Honeypot</h3>
+                <ul>
+                    <li>Emulate SIP servers and IP phones</li>
+                    <li>Capture toll fraud attempts and vishing</li>
+                    <li>Log SIP traffic and RTP streams (if configured)</li>
+                    <li>Detect VoIP scanning and vulnerability probes</li>
+                </ul>
+                <h3>Industrial Control System (ICS) Simulator</h3>
+                <ul>
+                    <li>Simulate PLCs, RTUs, and HMIs</li>
+                    <li>Capture ICS-specific attack patterns</li>
+                    <li>Monitor for Stuxnet-like and Triton-like threats</li>
+                    <li>Provide ICS threat intelligence feeds</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>🎯 Deception & Analysis</h2>
+                <h3>Database Honeypot</h3>
+                <ul>
+                    <li>SQL Server, MySQL, PostgreSQL emulations</li>
+                    <li>Capture SQL injection attempts and database scans</li>
+                    <li>Log attacker queries and techniques</li>
+                    <li>Integrate with WAF and SIEM systems</li>
+                </ul>
+                <h3>Interactive Honeypot</h3>
+                <ul>
+                    <li>High-interaction honeypots with real OS</li>
+                    <li>Allow attackers to explore and escalate (safely)</li>
+                    <li>Record full attacker sessions and commands</li>
+                    <li>Capture malware samples for analysis</li>
+                </ul>
+                <h3>Custom Decoy Services</h3>
+                <ul>
+                    <li>Create any custom service on any port</li>
+                    <li>Emulate proprietary protocols</li>
+                    <li>Deploy decoys tailored to your environment</li>
+                    <li>Rapidly spin up and tear down honeypots</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>📊 Threat Intelligence</h2>
+                <h3>Attack Detection</h3>
+                <ul>
+                    <li>Real-time alerts for honeypot interactions</li>
+                    <li>Automated attacker IP blocking</li>
+                    <li>Geolocation and ASN analysis of attackers</li>
+                    <li>Integration with SIEM and SOAR platforms</li>
+                </ul>
+                <h3>Attack Analysis</h3>
+                <ul>
+                    <li>Detailed logs of every interaction</li>
+                    <li>Automated attack pattern recognition</li>
+                    <li>Technique and TTP identification (MITRE ATT&CK)</li>
+                    <li>Credential and malware sample capture</li>
+                </ul>
+                <h3>Reporting</h3>
+                <ul>
+                    <li>Customizable honeypot dashboards</li>
+                    <li>Attack trend reports and analytics</li>
+                    <li>Export data for threat intelligence platforms</li>
+                    <li>Compliance reporting for security audits</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2.5rem 0;">
+            <a href="/services/cybersecurity-platform-msp-2026-6558/" class="cta">Deploy Your Honeypot Grid →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/services/">Services</a>
+            <a href="/tools/">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/services/cybersecurity-platform-msp-2026-6558/">Contact</a>
+        </div>
+        <p>© 2026 Zion Tech Group. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

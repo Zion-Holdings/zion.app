@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Subnet Firewall Configurator - Design and deploy firewall rules for subnet segmentation: ACLs, NAT rules, traffic filtering, DMZ configuration, inter-VLAN routing, micro-segmentation, firewall policies, and compliance standards (PCI DSS, HIPAA, ISO 27001, NIST).">
+    <meta name="keywords" content="subnet firewall, firewall configurator, ACL rules, NAT, traffic filtering, DMZ, VLAN, micro-segmentation, firewall policy, PCI DSS, HIPAA, ISO 27001, NIST, network segmentation, security zone, firewall rules generator, subnet security, firewall design">
+    <title>Subnet Firewall Configurator - Zion Tech Group Tool</title>
+    <link rel="canonical" href="https://ziontechgroup.com/tools/subnet-firewall-configurator/">
+    <meta property="og:title" content="Subnet Firewall Configurator">
+    <meta property="og:description" content="Design and deploy firewall rules for subnet segmentation — ACLs, NAT, traffic filtering, DMZ, micro-segmentation, and compliance standards.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ziontechgroup.com/tools/subnet-firewall-configurator/">
+    <meta property="og:image" content="https://ziontechgroup.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Subnet Firewall Configurator">
+    <meta name="twitter:description" content="Design and deploy firewall rules for subnet segmentation — ACLs, NAT, traffic filtering, DMZ, micro-segmentation, and compliance standards.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a1a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; padding: 3rem 1rem; background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 100%); margin-bottom: 2rem; border-radius: 8px; }
+        h1 { font-size: 2.5rem; color: #c084fc; margin-bottom: 0.5rem; font-weight: 700; }
+        .subtitle { color: #a78bfa; font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .tagline { color: #e879f9; font-size: 1rem; font-weight: 500; }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0; }
+        .badge { background: rgba(192, 132, 252, 0.1); border: 1px solid rgba(192, 132, 252, 0.3); color: #c084fc; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; }
+        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 768px) { .content { grid-template-columns: 1fr; } }
+        .section { background: #1e293b; border-radius: 8px; padding: 1.5rem; border: 1px solid #334155; }
+        h2 { color: #c084fc; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
+        h3 { color: #e879f9; font-size: 1rem; margin-bottom: 0.5rem; font-weight: 500; }
+        ul { list-style: none; padding-left: 0; }
+        ul li { padding: 0.5rem 0; border-bottom: 1px solid #334155; color: #cbd5e1; }
+        ul li:last-child { border-bottom: none; }
+        ul li::before { content: "▹ "; color: #e879f9; font-weight: bold; }
+        .cta { display: inline-block; background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; margin-top: 1rem; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3); }
+        .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5); }
+        footer { text-align: center; padding: 2rem 1rem; color: #64748b; font-size: 0.9rem; margin-top: 2rem; border-top: 1px solid #334155; }
+        .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
+        .footer-links a { color: #c084fc; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Subnet Firewall Configurator</h1>
+            <p class="subtitle">Design and deploy rock-solid firewall rules for subnet segmentation</p>
+            <p class="tagline">Your one-stop platform for comprehensive firewall design, rule generation, and compliance validation</p>
+            <div class="badge-row">
+                <span class="badge">🔐 ACL Generator</span>
+                <span class="badge">🔄 NAT Rules</span>
+                <span class="badge">🚦 Traffic Filtering</span>
+                <span class="badge">🏗️ DMZ Setup</span>
+                <span class="badge">📊 Micro-Segmentation</span>
+                <span class="badge">📋 Firewall Policies</span>
+                <span class="badge">✅ PCI DSS</span>
+                <span class="badge">✅ HIPAA</span>
+                <span class="badge">✅ ISO 27001</span>
+                <span class="badge">✅ NIST</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="section">
+                <h2>🔐 Firewall Rule Generation</h2>
+                <h3>Access Control Lists (ACLs)</h3>
+                <ul>
+                    <li>Generate Cisco IOS, Juniper Junos, Palo Alto, and Fortinet ACLs</li>
+                    <li>Source/destination-based rules with protocol and port filters</li>
+                    <li>Implicit deny-all at end of each ACL</li>
+                    <li>Rule ordering optimization for performance</li>
+                </ul>
+                <h3>NAT Rules</h3>
+                <ul>
+                    <li>Source NAT (SNAT) for outbound traffic</li>
+                    <li>Destination NAT (DNAT) for inbound services</li>
+                    <li>Port forwarding with security restrictions</li>
+                    <li>PAT (Port Address Translation) for many-to-one</li>
+                </ul>
+                <h3>Traffic Filtering</h3>
+                <ul>
+                    <li>Layer 3-4 filtering (IP, protocol, port)</li>
+                    <li>Application-layer filtering rules</li>
+                    <li>Stateful inspection rule generation</li>
+                    <li>Traffic shaping and QoS integration</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>🏗️ Architecture & Segmentation</h2>
+                <h3>DMZ Configuration</h3>
+                <ul>
+                    <li>Build DMZ networks with selective access</li>
+                    <li>DMZ to internal network restrictions</li>
+                    <li>Public-facing service isolation</li>
+                    <li>Bastion host and jump server patterns</li>
+                </ul>
+                <h3>Inter-VLAN Routing</h3>
+                <ul>
+                    <li>VLAN-to-VLAN firewall rules</li>
+                    <li>Layer 3 switch ACL integration</li>
+                    <li>Routing between security zones</li>
+                    <li>Voice/Video VLAN special handling</li>
+                </ul>
+                <h3>Micro-Segmentation</h3>
+                <ul>
+                    <li>Workload-level isolation rules</li>
+                    <li>East-west traffic control</li>
+                    <li>Application-specific segmentation</li>
+                    <li>Zero Trust network micro-seg</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>📋 Policy Management</h2>
+                <h3>Firewall Policies</h3>
+                <ul>
+                    <li>Centralized policy definitions</li>
+                    <li>Role-based access policies</li>
+                    <li>Time-based rule activation</li>
+                    <li>Policy versioning and rollback</li>
+                </ul>
+                <h3>Security Zone Design</h3>
+                <ul>
+                    <li>Define security zones (untrusted, DMZ, trusted)</li>
+                    <li>Zone-to-zone access matrix</li>
+                    <li>Default deny between zones</li>
+                    <li>Explicit permit for required flows</li>
+                </ul>
+                <h3>Audit & Compliance</h3>
+                <ul>
+                    <li>PCI DSS firewall requirement mapping</li>
+                    <li>HIPAA network security rule generation</li>
+                    <li>ISO 27001 Annex A controls</li>
+                    <li>NIST SP 800-53 firewall controls</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>🎯 Why Choose Us</h2>
+                <h3>Expert Firewall Design</h3>
+                <ul>
+                    <li>Decades of combined firewall administration experience</li>
+                    <li>Vendor-agnostic: Cisco, Juniper, Palo Alto, Fortinet, pfSense, etc.</li>
+                    <li>Understanding of both perimeter and internal firewalls</li>
+                    <li>Knowledge of cloud firewall services (AWS, Azure, GCP)</li>
+                </ul>
+                <h3>Practical Implementation</h3>
+                <ul>
+                    <li>Generate ready-to-deploy rule sets</li>
+                    <li>Validate rules for conflicts and shadowed entries</li>
+                    <li>Performance impact assessment</li>
+                    <li>Testing and validation procedures</li>
+                </ul>
+                <h3>Ongoing Support</h3>
+                <ul>
+                    <li>Regular firewall audits and rule cleanup</li>
+                    <li>Incident response for firewall-related issues</li>
+                    <li>Training and documentation for your team</li>
+                    <li>Change management for firewall updates</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 2.5rem 0;">
+            <a href="/services/cybersecurity-platform-msp-2026-6558/" class="cta">Get Firewall Design →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/services/">Services</a>
+            <a href="/tools/">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/services/cybersecurity-platform-msp-2026-6558/">Contact</a>
+        </div>
+        <p>© 2026 Zion Tech Group. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thrift Fuzzer — Automated fuzzing for Apache Thrift RPC services to discover protocol vulnerabilities, unexpected behaviors, and edge cases.">
+    <title>Thrift Fuzzer — Automated Apache Thrift RPC Testing | Zion Tech Group</title>
+    <link rel="canonical" href="https://ziontechgroup.com/tools/thrift-fuzzer/">
+    <meta property="og:title" content="Thrift Fuzzer — Automated Apache Thrift RPC Testing">
+    <meta property="og:description" content="Automated fuzzing for Apache Thrift RPC services. Discover protocol vulnerabilities, unexpected behaviors, and edge cases before production deployment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ziontechgroup.com/tools/thrift-fuzzer/">
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #1a1a1a; }
+        h1 { font-size: 2em; margin-bottom: 0.3em; }
+        h2 { font-size: 1.3em; margin-top: 1.5em; color: #333; }
+        .lead { font-size: 1.1em; color: #555; margin-bottom: 1.5em; }
+        .card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin: 1em 0; }
+        .tech-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5em; margin: 1em 0; }
+        .tech { background: #fff; border: 1px solid #e5e7eb; padding: 6px 12px; border-radius: 6px; font-size: 0.9em; text-align: center; }
+        code { background: #f3f4f6; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        pre { background: #1a1a1a; color: #f0f0f0; padding: 16px; border-radius: 6px; overflow-x: auto; }
+        .tag { display: inline-block; background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 9999px; font-size: 0.85em; margin-right: 4px; }
+        footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #e5e7eb; color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+<main>
+<h1>Thrift Fuzzer</h1>
+<p class="lead">Automated fuzzing tool for <strong>Apache Thrift RPC services</strong> — discovers protocol vulnerabilities, unexpected behaviors, and edge cases before production deployment.</p>
+
+<div class="card">
+<h2>What Is Thrift Fuzzing?</h2>
+<p>Apache Thrift is a widely-used RPC framework supporting multiple languages (Python, C++, Java, Go, Node.js, etc.) and multiple protocols (Binary, Compact, JSON). Fuzzing a Thrift service means sending <strong>malformed, incomplete, or unexpected inputs</strong> through the protocol to find:</p>
+<ul>
+<li><strong>Buffer overflows</strong> and memory safety issues</li>
+<li><strong>Protocol violations</strong> — malformed messages, unexpected field types</li>
+<li><strong>Input validation gaps</strong> — unhandled edge cases, missing bounds checks</li>
+<li><strong>Denial of service vectors</strong> — inputs that crash or hang the service</li>
+<li><strong>Deserialization bugs</strong> — unexpected object injection, type confusion</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>How It Works</h2>
+<p>The Thrift Fuzzer tool automates the fuzzing process:</p>
+<ol>
+<li><strong>Target discovery:</strong> Identifies Thrift endpoints (TCP ports, HTTP transports)</li>
+<li><strong>Protocol analysis:</strong> Infers the Thrift interface from serialized traffic or schema files (.thrift)</li>
+<li><strong>Fuzz input generation:</strong> Creates mutated inputs — random bytes, truncated messages, type mismatches, boundary values</li>
+<li><strong>Execution & monitoring:</strong> Sends fuzz inputs while monitoring for crashes, errors, timeouts, and unexpected responses</li>
+<li><strong>Result reporting:</strong> Classifies findings by severity (info, low, medium, high, critical) with reproducible test cases</li>
+</ol>
+<p>Supports both <strong>white-box</strong> (schema available) and <strong>black-box</strong> (no schema) testing modes.</p>
+</div>
+
+<div class="card">
+<h2>Key Features</h2>
+<div class="tech-list">
+<span class="tech">Binary Protocol</span>
+<span class="tech">Compact Protocol</span>
+<span class="tech">JSON Protocol</span>
+<span class="tech">Socket Transport</span>
+<span class="tech">HTTP Transport</span>
+<span class="tech">SSL/TLS</span>
+<span class="tech">Multi-language</span>
+<span class="tech">Schema-based</span>
+<span class="tech">Black-box</span>
+<span class="tech">Crash Detection</span>
+<span class="tech">Timeout Handling</span>
+<span class="tech">Severity Classification</span>
+<span class="tech">Test Case Export</span>
+<span class="tech">CI/CD Integration</span>
+</div>
+</div>
+
+<div class="card">
+<h2>Use Cases</h2>
+<ul>
+<li><strong>Pre-deployment testing:</strong> Validate Thrift microservices before production</li>
+<li><strong>Penetration testing:</strong> Identify protocol-level vulnerabilities in existing services</li>
+<li><strong>Regression testing:</strong> Ensure protocol changes don't introduce new vulnerabilities</li>
+<li><strong>Security audits:</strong> Systematic fuzzing as part of security assessment</li>
+<li><strong>CI/CD pipelines:</strong> Automated fuzzing in deployment pipelines</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Technical Approach</h2>
+<p>The fuzzer uses a combination of:</p>
+<ul>
+<li><strong>Protocol-aware mutation:</strong> Knows Thrift wire format — mutates meaningful portions (field headers, type codes, lengths) rather than random bytes</li>
+<li><strong>Smart fuzzing:</strong> Prioritizes inputs likely to trigger interesting behavior based on protocol semantics</li>
+<li><strong>Stateful fuzzing:</strong> Maintains connection state and sequences of calls for more realistic testing</li>
+<li><strong>Crash triaging:</strong> Automatically reduces crashing inputs to minimal reproducible test cases</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Getting Started</h2>
+<p>Use the Thrift Fuzzer tool to scan your Thrift services:</p>
+<pre># Basic usage — point to a Thrift service
+thrift-fuzzer scan \
+  --target localhost:9090 \
+  --protocol binary \
+  --duration 60s
+
+# With schema file (white-box mode)
+thrift-fuzzer scan \
+  --target api.example.com:8080 \
+  --schema user_service.thrift \
+  --report findings.json
+
+# JSON protocol
+thrift-fuzzer scan \
+  --target service.example.com:8080 \
+  --protocol json \
+  --timeout 30s \
+  --max-tests 1000</pre>
+<p>Results include a detailed report with:</p>
+<ul>
+<li>Findings classified by severity</li>
+<li>Reproducible test cases for each finding</li>
+<li>Statistical summary (tests run, coverage, crashes found)</li>
+<li>Recommendations for remediation</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Why Use Automated Fuzzing?</h2>
+<ul>
+<li><strong>Finds bugs testing would miss:</strong> Edge cases and malformed inputs are hard to manually craft</li>
+<li><strong>Scales efficiently:</strong> Run thousands of test cases automatically</li>
+<li><strong>Continuous security:</strong> Integrate fuzzing into development and deployment pipelines</li>
+<li><strong>Protocol validation:</strong> Verify that services handle all protocol variations correctly</li>
+<li><strong>Compliance support:</strong> Document testing performed for security audits</li>
+</ul>
+</div>
+
+<footer>
+<p><strong>Thrift Fuzzer</strong> — part of Zion Tech Group's security testing toolkit suite.</p>
+<p>Apache Thrift™ is a project from the Apache Software Foundation. This tool is for authorized testing only.</p>
+<p>© 2025–2026 Zion Tech Group. All rights reserved.</p>
+</footer>
+</main>
+</body>
+</html>
