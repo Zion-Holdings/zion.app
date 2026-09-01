@@ -1055,3 +1055,13 @@
 
 /services/ai-automation /services/ai-automation/index.html 200
 # rebuilt 2026-09-01T21:27:25Z
+/about/contact/ /contact/ 301
+/services/services/ /services/ 301
+/services/blog/ /blog/ 301
+/services/contact/ /contact/ 301
+/ai/services/ /services/ 301
+/ai/blog/ /blog/ 301
+/ai/tools/ /tools/ 301
+/ai/contact/ /contact/ 301
+/ai/privacy/ /privacy/ 301
+/ai/terms/ /terms/ 301
