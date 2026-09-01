@@ -2,45 +2,34 @@
 
 ## Current Status
 ✅ **Composio API key**: working
-✅ **1Password connection**: ACTIVE (`ca_o33DKzYQ3qt1`)
+✅ **1Password connection**: ACTIVE (`ca_o33DKzYQ3qt1`) — usable via Composio, vault inventory currently returns empty
+✅ **GitHub Actions**: validated via `composio-onepassword-master` workflow
 
-## New Connections Created
-OAuth connections are ready for authorization. Visit these links:
-
-| Toolkit | Connection ID | Authorize Link |
-|---------|---------------|----------------|
-| **Stripe** | `ca_ETsNUa_-X-u4` | https://connect.composio.dev/link/lk_7P1AOPGd-i-c |
-| **Calendly** | `ca_nCAb79c3MOV7` | https://connect.composio.dev/link/lk_r0L4db3D2wk5 |
-| **WhatsApp** | `ca_iOaEyWj9GQOh` | https://connect.composio.dev/link/lk_F_GHneZYWDkh |
-
-> ⚠️ These links expire at **2026-09-01T15:31:39Z**. Authorize them before then.
+## Created Connections
+- **Stripe**: `ca_JPLfah993JGX` — OAuth link created, account status currently EXPIRED
+- **Calendly**: `ca_ghd4GeXSjlLe` — OAuth link created, account status currently EXPIRED
+- **WhatsApp**: `ca_5Nk9L3KbupLA` — OAuth link created, account status currently EXPIRED
 
 ## Still Needed: API Keys
-For these API-key-based toolkits, I need the real keys from you:
+These toolkits require manual account creation because no browser/headless path is available here:
 
-| Toolkit | What I Need |
-|---------|-------------|
-| **Brevo** | Brevo API key (starts with `xkeysib-`) |
-| **Resend** | Resend API key (starts with `re_`) |
-| **SerpApi** | SerpApi API key (64-char string) |
-| **Firecrawl** | Firecrawl API key (starts with `fc-`) |
-| **Tavily** | Tavily API key (starts with `tvly-`) |
+| Toolkit | What is needed |
+|---------|----------------|
+| Brevo | API key starting with `xkeysib-` |
+| Resend | API key starting with `re_` |
+| SerpApi | 64-character API key |
+| Firecrawl | API key starting with `fc-` |
+| Tavily | API key starting with `tvly-` |
 
-**Send me the keys in this format:**
+**Provide keys in this format:**
 ```
-BREVO_API_KEY=xkeysib-...
-RESEND_API_KEY=re_...
-SERPAPI_API_KEY=...
-FIRECRAWL_API_KEY=fc-...
-TAVILY_API_KEY=tvly-...
+BREVO_API_KEY=***
+RESEND_API_KEY=***
+SERPAPI_API_KEY=***
+FIRECRAWL_API_KEY=***
+TAVILY_API_KEY=***
 ```
 
-## After You Share Keys
-1. I'll create the connected accounts via Composio API
-2. Add all new `connection_id`s as GitHub secrets
-3. Update all 8 workflow files
-4. Trigger validation runs
-5. Enable Telegram alerts if you provide bot token + chat ID
-
-## Security Note
-I will use these keys only to create Composio connected accounts and will not store them in plain text in the repo or memory. They will be sent via GitHub secrets.
+## Constraints
+- Browser path is unavailable in this environment (`android-arm64` unsupported).
+- After receiving keys, I can create connected accounts via API, set GitHub secrets, update workflows, and trigger validation runs.
