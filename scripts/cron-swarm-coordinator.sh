@@ -37,9 +37,9 @@ EOF
 # Add detail if any gap/bottleneck exists
 if (( gaps_count > 0 || bottleneck_count > 0 )); then
   MSG+=$'\n📋 Detalhes:'
-  python3 - <<'PY' >> "$BROADCAST_FILE" 2>/dev/null || true
-import json
-with open("/tmp/agent_task_delegator_report.json") as f:
+  python3 - "$REPORT" - <<'PY' >> "$BROADCAST_FILE" 2>/dev/null || true
+import json, sys
+with open(sys.argv[1]) as f:
     r=json.load(f)
 print("GAPS:")
 for g in r.get("gaps", []):
