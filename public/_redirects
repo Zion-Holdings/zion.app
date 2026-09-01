@@ -6,8 +6,7 @@
 /services/cybersecurity-governance /services/cybersecurity-governance/index.html 200
 /services/ai-agent-automation /services/ai-agent-automation/index.html 200
 /services/cloud-infrastructure-optimization /services/cloud-infrastructure-optimization/index.html 200
-/blog/ai-observability-beyond-dashboards /blog/ai-agent-observability-production/ 301
-/blog/ai-observability-beyond-dashboards/ /blog/ai-agent-observability-production/ 301
+/blog/ai-msp-security-compliance-implementation-playbook /blog/ai-msp-security-compliance-implementation-playbook/index.html 200
 /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/index.html 200
 /sla /sla/index.html 200
 /testimonials /testimonials/index.html 200
@@ -72,10 +71,7 @@
 /free-consultation /free-consultation/ 301
 /free-consultation/ /free-consultation/index.html 200
 /free-tools /free-tools.html 200
-/services/financial-services /industries/financial-services/ 301
-/services/financial-services/ /industries/financial-services/ 301
-/tools/pipeline-blog /tools/ 301
-/tools/pipeline-blog/ /tools/ 301
+/free-tools/ /free-tools.html 200
 /help /services/ 301
 /help/ /services/ 301
 /index.html / 301
@@ -1054,23 +1050,4 @@
 /services/ai-data-pipeline-integration/ /services/ai-data-pipeline-integration/index.html 200
 /services/ai-governance-risk-compliance/ /services/ai-governance-risk-compliance/index.html 200
 /tools/zion-roi-calculator/  /tools/zion-roi-calculator/index.html  200
-
-# Hermes/docs gap repair 2026-08-31
-/case-studies/hermes-agent-fleet /case-studies/ 301
-/docs/agent-framework-comparison /docs/ 301
-/docs/hermes-agent-architecture /docs/ 301
-/docs/hermes-agent-installation /docs/ 301
-/docs/hermes-agent-mcp-integration /blog/hermes-agent-mcp-integration/index.html 301
-/docs/hermes-agent-profiles /docs/ 301
-/docs/hermes-agent-skills /docs/ 301
-/hermes-about /about/ 301
-/hermes-agents-services /services/ 301
-/hermes-case-studies /case-studies/ 301
-/hermes-faq /faq 301
-/hermes-integrations /solutions/ 301
-/hermes-monitor /agents-monitoring/ 301
-/hermes-pricing /pricing/ 301
-/hermes-security /pricing/ 301
-/hermes-swarm /solutions/ 301
-/hermes-tools /tools/ 301
-/solutions/hermes-ai-agents /ai-services/ 301
+/blog/starrocks-data-pipeline-for-it-infrastructure-and-mlops-in-2026/ /blog/starrocks-data-pipeline-for-it-infrastructure-and-mlops-in-2026/index.html 200
