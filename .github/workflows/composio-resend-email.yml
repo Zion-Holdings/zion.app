@@ -14,23 +14,32 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Setup Composio
-        uses: composio/composio-action@main
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          api_key: ${{ secrets.COMPOSIO_API_KEY }}
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
 
       - name: Send email via Resend
-        uses: composio/composio-action@main
-        with:
-          connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
-          app: "resend"
-          action: "send_email"
-          parameters: |
-            {
-              "to": "kleber@ziontechgroup.com",
-              "subject": "Zion lead captured",
-              "body": "New lead from GitHub issue: ${{ github.event.issue.title }}",
-              "from": "Zion <noreply@ziontechgroup.com>"
-            }
+        id: resend
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          cat > send.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const client = composio.getClient();
+          const result = await client.tools.execute('RESEND_SEND_EMAIL', {
+            connection_id: process.env.COMPOSIO_RESEND_CONNECTION_ID,
+            arguments: {
+              to: 'kleber@ziontechgroup.com',
+              subject: 'Zion lead captured',
+              body: 'New lead from GitHub issue',
+              from: 'Zion <noreply@ziontechgroup.com>'
+            }
+          });
+          console.log(JSON.stringify(result, null, 2));
+          EOF
+          node send.mjs
