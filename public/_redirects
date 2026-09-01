@@ -1054,5 +1054,6 @@
 /new /blog/ 301
 
 /services/ai-automation /services/ai-automation/index.html 200
-/newsletter //newsletter/ 200
-/free-tools-hub //free-tools-hub/ 200
+/newsletter /newsletter/ 200
+/free-tools-hub /free-tools-hub/ 200
+/cloud-cost-optimizer /cloud-cost-optimizer/ 200
