@@ -460,3 +460,4 @@
 {"ts": "2026-08-31T22:01:33.949008+00:00", "email": "account-update@amazon.com", "msg_id": "1a059d0ab1a3ffe9", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-31T22:31:54.633670+00:00", "email": "aishwarb@mathworks.com", "msg_id": "1a059eca3628b2fc", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-31T23:11:43.831631+00:00", "email": "partner@email.tiktok.com", "msg_id": "1a05a168ae25ef2f", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-09-01T00:14:10.247505+00:00", "email": "4u5znzmjzngzmqtn3i5l7ez6seybz0oh60jt@reply.airbnb.com", "msg_id": "1a05a4fd36398675", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
