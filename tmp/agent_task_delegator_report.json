@@ -1,14 +1,12 @@
 {
-  "timestamp": "2026-09-01T18:41:52.448830Z",
+  "timestamp": "2026-09-01T19:41:02.261236Z",
   "repo": "/data/data/com.termux/files/home/ztg/repo",
   "scripts_found": 16,
   "gaps": [
     {
       "type": "git_uncommitted",
-      "count": 3,
+      "count": 1,
       "items": [
-        "## main",
-        " M outreach_monitor/processed/monitor_report.jsonl",
         " M tmp/agent_task_delegator_report.json"
       ]
     }
