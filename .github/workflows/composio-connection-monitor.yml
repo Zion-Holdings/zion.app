@@ -52,13 +52,10 @@ jobs:
           echo "inactive_count=$(jq '.inactive | length' summary.json)" >> "$GITHUB_OUTPUT"
           echo "summary=$(jq -c . summary.json)" >> "$GITHUB_OUTPUT"
 
-      - name: Alert if needed
-        if: ${{ steps.set.outputs.inactive_count > 0 }}
-        uses: composio/composio-action@main
-        with:
-          api_key: ${{ secrets.COMPOSIO_API_KEY }}
-          connection_id: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
-          app: "1password"
-          action: "list_items"
-        env:
-          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      - name: Show summary
+        run: |
+          cat summary.json
+          if [ "${{ steps.set.outputs.inactive_count }}" -gt 0 ]; then
+            echo "⚠️ Inactive connections detected"
+            exit 1
+          fi
