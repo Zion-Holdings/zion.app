@@ -44,7 +44,7 @@ jobs:
             arguments: {
               to: 'kleber@ziontechgroup.com',
               subject: 'Zion lead captured',
-              body: 'New lead from GitHub issue',
+              text: 'New lead from GitHub issue',
               from: 'Zion <noreply@ziontechgroup.com>'
             }
           });
