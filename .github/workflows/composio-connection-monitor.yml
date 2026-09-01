@@ -1,0 +1,55 @@
+name: composio-connection-monitor
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Check connections
+        id: check
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          cat > monitor.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const client = composio.getClient();
+          const accounts = await client.connectedAccounts.list({});
+          const items = accounts.items || [];
+          const active = items.filter(a => a.status === 'ACTIVE');
+          const inactive = items.filter(a => a.status !== 'ACTIVE');
+          console.log(`Total: ${items.length}, Active: ${active.length}, Inactive: ${inactive.length}`);
+          const summary = {
+            total: items.length,
+            active: active.map(a => ({ toolkit: a.toolkit?.slug, id: a.id, status: a.status })),
+            inactive: inactive.map(a => ({ toolkit: a.toolkit?.slug, id: a.id, status: a.status }))
+          };
+          console.log(JSON.stringify(summary, null, 2));
+          EOF
+          node monitor.mjs
+
+      - name: Alert if needed
+        if: ${{ failure() || contains(fromJson(steps.check.outputs.summary).inactive, 'status') }}
+        uses: composio/composio-send-telegram-message@v1
+        with:
+          chat_id: "-1003886112318"
+          text: |
+            ⚠️ Composio connection issue detected.
+            Check the workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
