@@ -262,12 +262,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/tools/cloud-cost-optimizer/</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ziontechgroup.com/tools/cron-agent-calculator/</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>daily</changefreq>
@@ -4055,12 +4049,6 @@
   </url>
   <url>
     <loc>https://ziontechgroup.com/services/ai-cloud---retail-edition-4c0f79ac</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-cloud-cost-optimizer</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -49176,7 +49164,6 @@
   <url><loc>https://ziontechgroup.com/tools/blog-post-generator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/case-converter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/cloud-cost-calculator/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://ziontechgroup.com/tools/cloud-cost-optimizer/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/color-contrast/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/color-converter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ziontechgroup.com/tools/color-palette-gen/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -49277,66 +49264,6 @@
   <url><loc>https://ziontechgroup.com/services/automation-orchestration/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ziontechgroup.com/services/micro-saas-launch/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ziontechgroup.com/services/incident-response-retainer/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-data-governance/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-prompt-eng-service/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/security-incident-response-retention/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/cloud-multi-cloud-management/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-customer-experience-automation/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-devsecops-pipeline/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-soc-monitoring/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-compliance-automation/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-cloud-security-posture/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/ai-it-asset-discovery/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
 </urlset>
   <url>
     <loc>https://ziontechgroup.com/services/ai-agent-support/</loc>
