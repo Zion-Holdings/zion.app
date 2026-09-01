@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-09-01T15:13:42.110254Z",
+  "repo": "/data/data/com.termux/files/home/ztg/repo",
+  "scripts_found": 16,
+  "gaps": [
+    {
+      "type": "git_uncommitted",
+      "count": 11,
+      "items": [
+        "## main",
+        "?? _tmp_route_probe.sh",
+        "?? commands/__pycache__/",
+        "?? commands/google_workspace.py",
+        "?? outreach_monitor/processed/historical_miner_ts.txt",
+        "?? outreach_monitor/processed/monitor_report.jsonl",
+        "?? outreach_monitor/processed/pending_ceo_drafts.jsonl",
+        "?? scripts/agent-task-delegator.py",
+        "?? scripts/cron-swarm-coordinator.sh",
+        "?? scripts/outreach/",
+        "?? tmp/"
+      ]
+    }
+  ],
+  "bottlenecks": [],
+  "findings": []
+}
