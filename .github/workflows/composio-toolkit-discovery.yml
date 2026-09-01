@@ -1,0 +1,61 @@
+name: composio-toolkit-discovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      toolkit:
+        description: 'Composio toolkit slug, e.g. whatsapp, firecrawl, brevo, stripe, calendly, serpapi, tavily, _1password'
+        required: true
+        type: string
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Discover and run toolkit
+        id: run
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          TOOLKIT: ${{ inputs.toolkit }}
+        run: |
+          cat > discover.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const client = composio.getClient();
+          const toolkit = process.env.TOOLKIT;
+          const accounts = await client.connectedAccounts.list({});
+          const account = (accounts.items || []).find(a => a.toolkit?.slug === toolkit);
+          if (!account) {
+            console.error('No connected account for toolkit:', toolkit);
+            process.exit(1);
+          }
+          const tools = await client.tools.list({ toolkits: [toolkit] });
+          const items = tools.items || [];
+          const safe = items.find(t => /list|get|fetch|find|search/i.test(t.slug));
+          const tool = safe || items[0];
+          if (!tool) {
+            console.error('No tools found for toolkit:', toolkit);
+            process.exit(1);
+          }
+          console.log('Using tool:', tool.slug);
+          const result = await client.tools.execute(tool.slug, {
+            connection_id: account.id,
+            entity_id: account.user_id,
+            arguments: {}
+          });
+          console.log(JSON.stringify(result, null, 2));
+          EOF
+          node discover.mjs
