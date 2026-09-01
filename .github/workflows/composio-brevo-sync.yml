@@ -36,7 +36,7 @@ jobs:
             console.error('No Brevo connected account found');
             process.exit(1);
           }
-          const result = await client.tools.execute('BREVO_GET_CONTACTS', {
+          const result = await client.tools.execute('BREVO_GET_ALL_CONTACTS', {
             connection_id: brevo.id,
             entity_id: brevo.user_id,
             arguments: {

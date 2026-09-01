@@ -33,7 +33,7 @@ jobs:
           const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
           const client = composio.getClient();
           const connectionId = process.env.COMPOSIO_FIRECRAWL_CONNECTION_ID;
-          const result = await client.tools.execute('FIRECRAWL_SCRAPE_URL', {
+          const result = await client.tools.execute('FIRECRAWL_CRAWL_V2', {
             connection_id: connectionId,
             entity_id: 'pg-test-b311dcc6-03f6-4077-8774-c90cfd6fcf29',
             arguments: {

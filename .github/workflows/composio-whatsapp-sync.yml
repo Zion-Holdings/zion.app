@@ -33,7 +33,7 @@ jobs:
           const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
           const client = composio.getClient();
           const connectionId = process.env.COMPOSIO_WHATSAPP_CONNECTION_ID;
-          const result = await client.tools.execute('WHATSAPP_SEND_MESSAGE', {
+          const result = await client.tools.execute('WHATSAPP_GET_BUSINESS_PROFILE', {
             connection_id: connectionId,
             entity_id: 'pg-test-b311dcc6-03f6-4077-8774-c90cfd6fcf29',
             arguments: {
