@@ -1,6 +1,11 @@
 # Zion — Composio Setup Runbook
 
 ## Active connected accounts
+- `slack`: `ca_iNn901LyBqIt` (OAUTH2)
+- `notion`: `ca_05vYUI1P4n1K` (OAUTH2)
+- `googlecalendar`: `ca_AqVxXvunFJRB` (OAUTH2)
+- `github`: `ca_72-qFVqJUjQw`, `ca_Z01pMsg6LzmZ` (OAUTH2)
+- `gmail`: `ca_44QurvlRkeij`, `ca_XTbiJitLsbsf` (OAUTH2)
 - `_1password`: `ca_o33DKzYQ3qt1` (API_KEY)
 - `calendly`: `ca__gkOoPIPBCeQ` (OAUTH2)
 - `whatsapp`: `ca_h3rR7GLcJPIj` (OAUTH2)
@@ -16,15 +21,14 @@
 - `instagram`: `ca_zn0DO6FrviS5` (OAUTH2)
 - `sentry`: `ca_thqX8GzdHVyi` (OAUTH2)
 - `googlesheets`: `ca_aHnP1XTtxb53` (OAUTH2)
-- `googlecalendar`: `ca_uMy6ZvAQfEL6` (OAUTH2)
 - `telegram`: `ca_9BlPASitW65o` (API_KEY)
 
-## Pending OAuth authorization
-- `gmail`: `ca_ZTeh5Gd6Ty1j` (INITIALIZING)
-- `whatsapp`: `ca_5Nk9L3KbupLA` (INITIALIZING)
-- `calendly`: `ca_ghd4GeXSjlLe` (INITIALIZING)
-- `stripe`: `ca_JPLfah993JGX` (INITIALIZING)
+## Pending OAuth authorization / non-active
+- `hubspot`: `ca_aWnQfua2Esxv` (INITIATED)
+- `nocrm_io`: `ca_BHxNYSW5_wYL` (EXPIRED)
+- `perplexityai`: `ca_diU-hwHXof4T` (EXPIRED)
 
 ## Next automation
 - Use active connection IDs in workflows to read/write data across tools.
 - 1Password sync workflow validated: `composio-onepassword-master.yml`.
+- Gmail outreach monitor can use `ca_44QurvlRkeij` or `ca_XTbiJitLsbsf`.
