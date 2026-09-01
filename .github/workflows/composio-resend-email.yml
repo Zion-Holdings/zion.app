@@ -1,0 +1,36 @@
+name: composio-resend-email
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened]
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Composio
+        uses: composio/composio-action@main
+        with:
+          api_key: ${{ secrets.COMPOSIO_API_KEY }}
+
+      - name: Send email via Resend
+        uses: composio/composio-action@main
+        with:
+          connection_id: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+          app: "resend"
+          action: "send_email"
+          parameters: |
+            {
+              "to": "kleber@ziontechgroup.com",
+              "subject": "Zion lead captured",
+              "body": "New lead from GitHub issue: ${{ github.event.issue.title }}",
+              "from": "Zion <noreply@ziontechgroup.com>"
+            }
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
