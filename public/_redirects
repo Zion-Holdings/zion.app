@@ -1050,23 +1050,4 @@
 /services/ai-data-pipeline-integration/ /services/ai-data-pipeline-integration/index.html 200
 /services/ai-governance-risk-compliance/ /services/ai-governance-risk-compliance/index.html 200
 /tools/zion-roi-calculator/  /tools/zion-roi-calculator/index.html  200
-
-# Hermes/docs gap repair 2026-08-31
-/case-studies/hermes-agent-fleet /case-studies/ 301
-/docs/agent-framework-comparison /docs/ 301
-/docs/hermes-agent-architecture /docs/ 301
-/docs/hermes-agent-installation /docs/ 301
-/docs/hermes-agent-mcp-integration /blog/hermes-agent-mcp-integration/index.html 301
-/docs/hermes-agent-profiles /docs/ 301
-/docs/hermes-agent-skills /docs/ 301
-/hermes-about /about/ 301
-/hermes-agents-services /services/ 301
-/hermes-case-studies /case-studies/ 301
-/hermes-faq /faq 301
-/hermes-integrations /solutions/ 301
-/hermes-monitor /agents-monitoring/ 301
-/hermes-pricing /pricing/ 301
-/hermes-security /pricing/ 301
-/hermes-swarm /solutions/ 301
-/hermes-tools /tools/ 301
-/solutions/hermes-ai-agents /ai-services/ 301
+/blog/starrocks-data-pipeline-for-it-infrastructure-and-mlops-in-2026/ /blog/starrocks-data-pipeline-for-it-infrastructure-and-mlops-in-2026/index.html 200
