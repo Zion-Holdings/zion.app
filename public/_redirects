@@ -71,7 +71,10 @@
 /free-consultation /free-consultation/ 301
 /free-consultation/ /free-consultation/index.html 200
 /free-tools /free-tools.html 200
-/free-tools/ /free-tools.html 200
+/services/financial-services /industries/financial-services/ 301
+/services/financial-services/ /industries/financial-services/ 301
+/tools/pipeline-blog /tools/ 301
+/tools/pipeline-blog/ /tools/ 301
 /help /services/ 301
 /help/ /services/ 301
 /index.html / 301
