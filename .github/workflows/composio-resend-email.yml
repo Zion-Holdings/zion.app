@@ -26,6 +26,7 @@ jobs:
         id: resend
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          COMPOSIO_RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
         run: |
           cat > send.mjs <<'EOF'
           import { Composio } from '@composio/core';
@@ -33,6 +34,7 @@ jobs:
           const client = composio.getClient();
           const result = await client.tools.execute('RESEND_SEND_EMAIL', {
             connection_id: process.env.COMPOSIO_RESEND_CONNECTION_ID,
+            entity_id: 'kleber@ziontechgroup.com',
             arguments: {
               to: 'kleber@ziontechgroup.com',
               subject: 'Zion lead captured',
