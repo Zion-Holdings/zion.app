@@ -1,21 +1,16 @@
 name: Build and Deploy Zion Site
-
 on:
   push:
     branches: [ main, gh-pages ]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-            steps:
+    steps:
       - uses: actions/checkout@v4
         with:
           ref: gh-pages
@@ -31,7 +26,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
-
   deploy:
     needs: build
     runs-on: ubuntu-latest

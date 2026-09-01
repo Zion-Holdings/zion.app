@@ -1,21 +1,16 @@
 name: CI/CD Pipeline
-
 on:
   push:
     branches: [ main, gh-pages ]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-            steps:
+    steps:
       - uses: actions/checkout@v4
         with:
           ref: gh-pages
