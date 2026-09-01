@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[484,[],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen bg-slate-950 py-20","children":["$","div",null,{"className":"container-page","children":[["$","h1",null,{"className":"text-3xl font-bold text-white mb-4","children":"System Status"}],["$","p",null,{"className":"text-slate-300 mb-6","children":"Live platform health is available on the dedicated status page."}],["$","a",null,{"href":"/status/","className":"text-purple-400 hover:text-purple-300","children":"Open Status →"}]]}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+4:null

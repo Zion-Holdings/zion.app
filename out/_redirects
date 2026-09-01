@@ -1,0 +1,34 @@
+/tools/favicon-generator/  /tools/favicon-generator/index.html  200
+
+# Canonical sitemap
+/sitemap.xml  /sitemap-0.xml  301
+
+/case-studies/    /contact/    301
+/industries/    /services/    301
+/free-tools-hub/    /tools/    301
+/products/    /services/    301
+/consultation/    /contact/    301
+/site-map/    /    301
+/faq/    /about/    301
+/status/    /    301
+/configurator/    /contact/    301
+/dashboard/    /contact/    301
+/docs/    /    301
+/automation/  /services/ai-workflow-automation/  301
+/free-ai-itools/ /free-ai-it-tools/ 302
+/free-ai-itools /free-ai-it-tools/ 302
+/careers/  /contact/  301
+/free-consultation /free-consultation/index.html 200
+/free-consultation/ /free-consultation/index.html 200
+/free-audit /free-audit/index.html 200
+/free-audit/ /free-audit/index.html 200
+/proposal /proposal/index.html 200
+/proposal/ /proposal/index.html 200
+/industries/insurance/ /industries/insurance/index.html 200
+/industries/healthcare/ /industries/healthcare/index.html 200
+/industries/legal/ /industries/legal/index.html 200
+/tools/ai-quick-audit /tools/ai-quick-audit/index.html 200
+/tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
+/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
+/assets/js/conversion-events.js /assets/js/conversion-events.js 200

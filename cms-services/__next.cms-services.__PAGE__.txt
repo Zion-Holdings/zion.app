@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[484,[],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"style":{"minHeight":"100vh","display":"flex","alignItems":"center","justifyContent":"center","background":"#020617"},"children":["$","div",null,{"style":{"textAlign":"center","padding":"2rem"},"children":[["$","p",null,{"style":{"color":"#94a3b8","fontSize":"1.1rem"},"children":"Redirecting to CMS Services..."}],["$","meta",null,{"httpEquiv":"refresh","content":"0;url=/services/?category=cms"}],["$","p",null,{"style":{"marginTop":"1rem"},"children":["$","a",null,{"href":"/services/?category=cms","style":{"color":"#a78bfa","textDecoration":"underline"},"children":"Click here if not redirected"}]}]]}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+4:null

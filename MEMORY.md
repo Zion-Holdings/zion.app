@@ -1,0 +1,1689 @@
+- [EmailInteraction] 2026-08-21 22:22:08 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-21 22:22:10 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-21 22:22:10 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-23 21:19:58 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-23 21:20:00 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-23 21:20:00 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-24 16:50:11 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-24 16:50:13 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-24 16:50:13 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-24 21:40:28 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-24 21:40:30 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-24 21:40:30 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-24 22:59:17 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-24 22:59:19 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-24 22:59:19 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 04:17:48 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 04:17:51 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 04:17:51 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 04:43:50 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 04:43:53 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 04:43:53 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 04:51:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 04:51:21 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 04:51:21 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 04:53:08 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 04:53:10 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 04:53:10 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:00:05 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:00:07 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 05:00:07 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:03:36 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:03:39 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 05:03:39 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:10:43 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:10:45 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 05:10:45 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:15:24 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:15:25 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 05:15:25 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:23:14 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:23:16 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 05:23:16 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:25:07 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:25:09 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 05:25:09 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:25:39 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:25:57 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: Wincher <no-reply@wincher.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:57 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:58 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:58 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:58 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:58 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:58 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:58 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:58 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:25:58 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:26:50 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:27:06 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 05:27:06 | Human review needed: Wincher <no-reply@wincher.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:06 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:06 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:27:07 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:36:36 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:36:54 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: Wincher <no-reply@wincher.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:36:55 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:43:35 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:43:54 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: Wincher <no-reply@wincher.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:55 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:55 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:55 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:43:55 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:52:33 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:52:49 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 05:52:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:49 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:49 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:49 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:49 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:49 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:49 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:49 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: Wincher <no-reply@wincher.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:52:50 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 05:58:45 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 05:59:04 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 05:59:05 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:08:40 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:08:56 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:08:56 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:56 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:56 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:56 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:56 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:56 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:08:57 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:13:23 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:13:41 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:13:41 | Human review needed: GitHub <noreply@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:41 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:41 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:41 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:13:42 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:22:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:22:37 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:22:37 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:37 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:37 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:37 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:22:38 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:25:58 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:26:15 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:26:15 | Human review needed: Agrius IT <marketing@agriusit.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:15 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:15 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:15 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:15 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:15 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:26:16 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:27:42 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:27:58 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:27:58 | Human review needed: Agrius IT <marketing@agriusit.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:58 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:58 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:58 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:58 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:58 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:58 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:58 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:27:59 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:30:22 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:30:41 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: Agrius IT <marketing@agriusit.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:41 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:42 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:42 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:30:42 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:35:45 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:36:02 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: Agrius IT <marketing@agriusit.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:02 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:36:03 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:42:09 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:42:27 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: Agrius IT <marketing@agriusit.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:27 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:28 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:28 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:28 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:42:28 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:45:38 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:45:54 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:45:54 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:54 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:54 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: Agrius IT <marketing@agriusit.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | Human review needed: EA SPORTS FC <EA@e.ea.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:45:55 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:53:21 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:53:38 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:53:38 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:38 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:38 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: Agrius IT <marketing@agriusit.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:53:39 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 06:55:15 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 06:55:31 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 06:55:31 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:31 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:31 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:31 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:31 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:31 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:31 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:31 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: Agrius IT <marketing@agriusit.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 06:55:32 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:05:54 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:06:10 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:06:10 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:10 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:06:11 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:12:47 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:13:03 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:13:03 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: Alibaba Cloud <newsletter-sg@newsletter.alibabacloud.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:04 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:13:05 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:15:57 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:16:14 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:16:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:20:32 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:20:50 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:50 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:20:51 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:23:23 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:23:40 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:23:40 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:40 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:40 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:40 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:40 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:40 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:40 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:40 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:23:41 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:32:00 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:32:17 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:32:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:32:18 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:43:28 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:43:46 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:43:47 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:52:35 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:52:52 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:52:53 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:54:07 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 07:54:25 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 07:54:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 07:54:26 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 07:59:56 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:00:14 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:00:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:00:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:02:48 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:03:07 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:03:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:07 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:07 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:03:08 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:08:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:08:37 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:08:37 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:37 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:37 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:37 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:08:38 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:11:33 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:11:51 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:11:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:12:49 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:13:05 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:13:06 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:14:31 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:14:48 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:14:49 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:16:31 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:16:48 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:48 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:16:49 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:20:23 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:20:41 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:41 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:42 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:42 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:20:42 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:28:31 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:28:48 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:28:48 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:48 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:48 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:28:49 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:29:55 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:30:13 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:13 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:14 | Human review needed: "Aviso de Inclusão" <avisodeinclusao@spcbrasil.org.br> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:14 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:30:14 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 08:51:08 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 08:51:24 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 08:51:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:24 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 08:51:25 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:02:21 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:02:38 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:38 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:02:39 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:09:00 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:09:18 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:18 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:19 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:09:19 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:14:28 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:14:45 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:14:45 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:45 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:45 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:45 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:45 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:14:46 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:19:54 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:20:11 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:12 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:12 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:12 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:12 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:12 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:12 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:20:12 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:26:07 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:26:23 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:26:23 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:23 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:23 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:23 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:23 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:26:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:29:37 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:29:54 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:54 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:55 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:55 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:55 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:55 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:29:55 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:35:29 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:35:45 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:45 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:46 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:35:46 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:44:53 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:45:10 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:10 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:45:11 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:48:35 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:48:51 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:48:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:51 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:48:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:50:21 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:50:38 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:38 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:50:39 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 09:54:54 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 09:55:11 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Nick Bryant <nick@wordify.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: "Dooray!" <noreply@dooray.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: "Kleber Garcia AlcatrÃƒÂ£o @ Zion Tech Group" <kleber@ziontechgroup.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:11 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:12 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:12 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:12 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:12 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 09:55:12 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 12:45:52 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 12:46:09 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:09 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 12:46:10 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 13:26:01 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 13:26:17 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Agilize News <marketing@mkt.agilize.com.br> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: "github-actions[bot]" <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:17 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 13:26:18 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 16:27:48 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 16:28:04 | Fetched 20 unread emails
+- [EmailInteraction] 2026-08-25 16:28:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:04 | Human review needed: kleber@ziontechgroup.com (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:04 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | Human review needed: Kleber Garcia Alcatrao <notifications@github.com> (priority=high)
+- [EmailInteraction] 2026-08-25 16:28:05 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-25 23:40:33 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-25 23:40:35 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-25 23:40:35 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-26 02:08:58 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-26 02:09:00 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-26 02:09:00 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-26 10:41:26 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-26 10:41:28 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-26 10:41:28 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-27 01:09:59 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-27 01:10:01 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-27 01:10:01 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-27 20:46:43 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-27 20:46:45 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-27 20:46:45 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-28 04:18:03 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-28 04:18:05 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-28 04:18:05 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-28 11:25:26 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-28 11:25:28 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-28 11:25:28 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-28 20:09:29 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-28 20:09:31 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-28 20:09:31 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-28 21:57:29 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-28 21:57:31 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-28 21:57:31 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 03:09:45 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 03:09:48 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 03:09:48 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 03:29:55 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 03:29:57 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 03:29:57 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 04:19:00 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 04:19:03 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 04:19:03 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 11:39:22 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 11:39:24 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 11:39:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 13:57:52 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 13:57:54 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 13:57:54 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 14:06:13 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 14:06:15 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 14:06:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 14:11:50 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 14:11:52 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 14:11:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 14:27:31 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 14:27:33 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 14:27:33 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 14:32:56 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 14:32:58 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 14:32:58 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 14:46:23 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 14:46:25 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 14:46:25 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 14:52:41 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 14:52:43 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 14:52:43 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 15:27:28 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 15:27:30 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 15:27:30 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 15:37:07 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 15:37:09 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 15:37:09 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 15:40:38 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 15:40:39 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 15:40:39 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 15:51:46 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 15:51:48 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 15:51:48 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:00:42 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:00:44 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:00:44 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:04:47 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:04:49 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:04:49 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:13:20 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:13:23 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:13:23 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:21:40 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:21:42 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:21:42 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:28:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:28:21 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:28:21 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:45:58 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:46:00 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:46:00 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:49:52 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:49:54 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:49:54 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:56:44 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:56:46 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:56:46 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 16:59:25 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 16:59:27 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 16:59:27 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 17:05:46 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 17:05:48 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 17:05:48 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 17:13:30 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 17:13:31 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 17:13:31 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 17:27:52 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 17:27:54 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 17:27:54 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 17:30:32 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 17:30:34 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 17:30:34 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 17:45:11 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 17:45:13 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 17:45:13 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 17:50:05 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 17:50:07 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 17:50:07 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 18:05:22 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 18:05:24 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 18:05:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 18:09:36 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 18:09:39 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 18:09:39 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 18:31:58 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 18:32:00 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 18:32:00 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 18:47:32 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 18:47:34 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 18:47:34 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:00:34 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:00:36 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:00:36 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:07:24 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:07:26 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:07:26 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:10:42 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:10:44 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:10:44 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:17:14 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:17:16 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:17:16 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:23:37 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:23:39 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:23:39 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:26:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:26:21 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:26:21 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:29:51 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:29:53 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:29:53 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:40:43 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:40:44 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:40:44 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:46:10 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:46:12 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:46:12 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:50:52 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:50:54 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:50:54 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 19:57:15 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 19:57:17 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 19:57:17 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:08:32 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:08:34 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:08:34 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:17:08 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:17:10 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:17:10 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:25:07 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:25:09 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:25:09 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:28:39 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:28:40 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:28:40 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:34:30 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:34:32 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:34:32 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:39:13 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:39:15 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:39:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:41:14 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:41:16 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:41:16 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:42:04 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:42:06 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:42:06 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:45:01 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:45:03 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:45:03 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:48:22 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:48:24 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:48:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:53:03 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:53:04 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:53:04 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:54:42 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:54:44 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:54:44 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:55:47 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:55:49 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:55:49 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 20:57:54 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 20:57:56 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 20:57:56 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:06:49 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:06:52 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:06:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:12:28 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:12:30 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:12:30 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:18:29 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:18:32 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:18:32 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:24:24 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:24:26 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:24:26 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:25:41 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:25:43 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:25:43 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:37:21 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:37:22 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:37:22 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:41:58 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:42:00 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:42:00 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:44:10 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:44:12 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:44:12 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:45:56 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:45:57 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:45:57 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:51:18 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:51:20 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:51:20 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 21:52:58 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 21:53:00 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 21:53:00 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:04:24 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:04:25 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:04:25 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:09:31 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:09:33 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:09:33 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:22:47 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:22:49 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:22:49 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:25:18 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:25:20 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:25:20 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:32:41 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:32:43 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:32:43 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:37:54 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:37:56 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:37:56 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:48:13 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:48:15 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:48:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:53:55 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:53:57 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:53:57 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:57:28 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:57:30 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:57:30 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 22:59:20 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 22:59:22 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 22:59:22 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:01:38 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:01:39 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:01:40 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:05:20 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:05:21 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:05:21 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:11:22 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:11:24 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:11:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:13:32 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:13:33 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:13:33 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:16:03 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:16:04 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:16:04 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:18:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:18:20 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:18:20 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:20:21 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:20:23 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:20:23 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:24:17 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:24:20 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:24:20 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:29:59 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:30:01 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:30:01 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:41:15 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:41:17 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:41:17 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:45:10 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:45:11 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:45:11 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:46:01 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:46:03 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:46:03 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:49:24 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:49:26 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:49:26 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:53:50 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:53:52 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:53:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-29 23:56:40 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-29 23:56:42 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-29 23:56:42 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 00:00:27 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 00:00:29 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 00:00:29 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 00:02:49 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 00:02:51 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 00:02:51 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 00:41:11 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 00:41:13 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 00:41:13 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 01:20:33 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 01:20:35 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 01:20:35 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 01:41:24 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 01:41:26 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 01:41:26 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 01:50:48 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 01:50:50 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 01:50:50 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 01:53:23 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 01:53:24 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 01:53:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 01:58:42 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 01:58:44 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 01:58:44 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:02:48 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:02:50 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:02:50 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:08:36 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:08:38 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:08:38 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:18:37 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:18:39 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:18:39 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:21:13 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:21:15 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:21:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:22:39 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:22:41 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:22:41 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:25:40 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:25:42 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:25:42 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:28:04 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:28:06 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:28:06 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:29:48 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:29:50 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:29:50 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:44:37 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:44:40 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:44:40 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:47:52 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:47:54 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:47:54 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:58:24 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:58:26 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:58:26 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 02:58:52 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 02:58:54 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 02:58:54 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 03:00:03 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 03:00:04 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 03:00:05 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 03:10:49 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 03:10:52 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 03:10:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 03:16:01 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 03:16:04 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 03:16:04 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 03:28:55 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 03:28:57 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 03:28:57 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 03:31:51 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 03:31:52 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 03:31:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 03:51:40 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 03:51:42 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 03:51:42 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 03:52:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 03:52:21 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 03:52:21 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 03:57:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 03:57:21 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 03:57:21 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 04:03:50 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 04:03:52 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 04:03:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 04:13:39 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 04:13:41 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 04:13:41 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 04:29:31 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 04:29:33 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 04:29:33 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 04:48:48 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 04:48:50 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 04:48:50 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 04:55:12 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 04:55:15 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 04:55:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 05:18:16 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 05:18:18 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 05:18:18 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 05:44:47 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 05:44:49 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 05:44:49 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 06:06:11 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 06:06:13 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 06:06:13 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 06:18:06 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 06:18:08 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 06:18:08 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 06:44:27 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 06:44:29 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 06:44:29 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 07:01:42 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 07:01:44 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 07:01:44 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 07:11:19 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 07:11:21 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 07:11:21 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 07:19:13 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 07:19:15 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 07:19:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 07:32:53 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 07:32:55 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 07:32:55 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 07:38:21 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 07:38:24 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 07:38:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 08:07:59 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 08:08:00 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 08:08:00 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 08:44:01 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 08:44:03 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 08:44:03 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 09:44:16 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 09:44:18 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 09:44:18 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 10:06:49 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 10:06:51 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 10:06:51 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 14:49:56 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 14:49:58 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 14:49:58 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 19:24:23 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 19:24:25 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 19:24:25 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-30 21:36:01 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-30 21:36:03 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-30 21:36:03 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-31 01:44:02 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-31 01:44:04 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-31 01:44:04 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-31 04:09:50 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-31 04:09:52 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-31 04:09:52 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-08-31 07:56:17 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-08-31 07:56:19 | Fetched 0 unread emails
+- [EmailInteraction] 2026-08-31 07:56:19 | === Email Interaction Agent Completed ===
