@@ -1,12 +1,15 @@
 name: CI/CD Pipeline
+
 on:
   push:
     branches: [ main, gh-pages ]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -17,5 +20,5 @@ jobs:
           fetch-depth: 0
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: .
       - uses: actions/deploy-pages@v4
