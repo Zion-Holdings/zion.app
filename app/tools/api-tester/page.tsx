@@ -5,6 +5,17 @@ import { useState } from 'react';
 export const metadata = {
   title: 'API Tester — Zion Tech Group',
   description: 'Free API testing tool: inspect requests, response codes, headers, and latency from your browser.',
+  openGraph: {
+    title: 'API Tester — Zion Tech Group',
+    description: 'Free API testing tool from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/tools/api-tester/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API Tester — Zion Tech Group',
+    description: 'Free API testing tool from Zion Tech Group.',
+  },
   alternates: { canonical: '/tools/api-tester/' },
 };
 

@@ -10,6 +10,11 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/tools/phishing-analyzer/',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Phishing Analyzer | Zion Tech Group',
+    description: 'Free phishing analyzer tool from Zion Tech Group. Inspect links, headers, and risk signals instantly.',
+  },
   alternates: { canonical: '/tools/phishing-analyzer/' },
 }
 
