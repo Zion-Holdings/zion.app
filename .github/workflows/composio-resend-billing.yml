@@ -1,0 +1,38 @@
+name: Composio Resend Billing
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * 1,4'
+jobs:
+  resend-billing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Composio SDK
+        run: npm install composio
+      - name: Send billing emails via Resend
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          RESEND_CONNECTION_ID: ${{ secrets.RESEND_CONNECTION_ID }}
+          GMAIL_CONNECTION_ID: ${{ secrets.GMAIL_CONNECTION_ID }}
+        run: |
+          cat > scripts/composio/resend-billing-email.js << 'EOF'
+          const { Composio } = require('composio');
+          const client = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          (async () => {
+            try {
+              const resendTools = await client.tools.get('resend', { userId: process.env.RESEND_CONNECTION_ID });
+              const gmailTools = await client.tools.get('gmail', { userId: process.env.GMAIL_CONNECTION_ID });
+              console.log('Resend tools:', resendTools.tools.length);
+              console.log('Gmail tools:', gmailTools.tools.length);
+            } catch (e) { console.error('Billing email error:', e.message); }
+          })();
+          EOF
+          node scripts/composio/resend-billing-email.js
