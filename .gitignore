@@ -1,3 +1,7 @@
 .next/
 node_modules/
 core
+
+MEMORY.md
+logs/
+sitemap.xml
