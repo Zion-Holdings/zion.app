@@ -1,0 +1,75 @@
+name: composio-master-sync
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Run master sync
+        id: sync
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          cat > master-sync.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const client = composio.getClient();
+          const accounts = await client.connectedAccounts.list({});
+          const items = accounts.items || [];
+          const active = items.filter(a => a.status === 'ACTIVE');
+          const inactive = items.filter(a => a.status !== 'ACTIVE');
+          const summary = {
+            total: items.length,
+            active_count: active.length,
+            inactive_count: inactive.length,
+            active: active.map(a => ({ toolkit: a.toolkit?.slug, id: a.id })),
+            inactive: inactive.map(a => ({ toolkit: a.toolkit?.slug, id: a.id }))
+          };
+          console.log(JSON.stringify(summary, null, 2));
+          const fs = await import('fs');
+          fs.writeFileSync('master-sync-summary.json', JSON.stringify(summary));
+          EOF
+          node master-sync.mjs
+
+      - name: Send summary email
+        id: email
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          cat > send-summary.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const client = composio.getClient();
+          const fs = await import('fs');
+          const summary = JSON.parse(fs.readFileSync('master-sync-summary.json', 'utf8'));
+          const body = `Composio Master Sync Summary\n\nTotal: ${summary.total}\nActive: ${summary.active_count}\nInactive: ${summary.inactive_count}\n\nActive toolkits:\n${summary.active.map(a => `- ${a.toolkit}: ${a.id}`).join('\n')}\n\nInactive toolkits:\n${summary.inactive.map(a => `- ${a.toolkit}: ${a.id}`).join('\n')}`;
+          const result = await client.tools.execute('RESEND_SEND_EMAIL', {
+            connection_id: process.env.COMPOSIO_RESEND_CONNECTION_ID,
+            entity_id: 'kleber@ziontechgroup.com',
+            arguments: {
+              to: 'kleber@ziontechgroup.com',
+              subject: 'Composio Master Sync - Zion',
+              text: body,
+              from: 'Zion <noreply@ziontechgroup.com>'
+            }
+          });
+          console.log(JSON.stringify(result, null, 2));
+          EOF
+          node send-summary.mjs
