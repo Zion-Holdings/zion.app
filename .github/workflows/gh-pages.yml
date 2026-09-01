@@ -18,12 +18,12 @@ jobs:
       pages: ${{ steps.prepare_pages.outputs.pages }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           fetch-depth: 1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -53,7 +53,7 @@ jobs:
 
       - name: Upload build diagnostics on failure or completion
         if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: build-diagnostics-${{ github.run_number }}
           path: |
@@ -128,7 +128,7 @@ jobs:
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
 
       - name: Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: artifacts/pages
 
@@ -143,7 +143,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4.0.5
+        uses: actions/deploy-pages@v5
 
       - name: Verify deployment
         run: |
