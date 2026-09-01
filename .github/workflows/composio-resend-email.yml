@@ -26,15 +26,21 @@ jobs:
         id: resend
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-          COMPOSIO_RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
         run: |
           cat > send.mjs <<'EOF'
           import { Composio } from '@composio/core';
           const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
           const client = composio.getClient();
+          const accounts = await client.connectedAccounts.list({});
+          const resend = (accounts.items || []).find(a => a.toolkit?.slug === 'resend');
+          if (!resend) {
+            console.error('No Resend connected account found');
+            process.exit(1);
+          }
+          const entityId = resend.user_id;
           const result = await client.tools.execute('RESEND_SEND_EMAIL', {
-            connection_id: process.env.COMPOSIO_RESEND_CONNECTION_ID,
-            entity_id: 'kleber@ziontechgroup.com',
+            connection_id: resend.id,
+            entity_id: entityId,
             arguments: {
               to: 'kleber@ziontechgroup.com',
               subject: 'Zion lead captured',
