@@ -2,7 +2,7 @@ name: composio-connection-monitor
 
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -26,30 +26,35 @@ jobs:
         id: check
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          COMPOSIO_1PASSWORD_CONNECTION_ID: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
         run: |
           cat > monitor.mjs <<'EOF'
           import { Composio } from '@composio/core';
           const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
           const client = composio.getClient();
-          const accounts = await client.connectedAccounts.list({});
-          const items = accounts.items || [];
-          const active = items.filter(a => a.status === 'ACTIVE');
-          const inactive = items.filter(a => a.status !== 'ACTIVE');
-          console.log(`Total: ${items.length}, Active: ${active.length}, Inactive: ${inactive.length}`);
-          const summary = {
-            total: items.length,
-            active: active.map(a => ({ toolkit: a.toolkit?.slug, id: a.id, status: a.status })),
-            inactive: inactive.map(a => ({ toolkit: a.toolkit?.slug, id: a.id, status: a.status }))
-          };
-          console.log(JSON.stringify(summary, null, 2));
+          const ids = [process.env.COMPOSIO_1PASSWORD_CONNECTION_ID];
+          const labels = ['1password'];
+          const results = [];
+          for (let i = 0; i < ids.length; i++) {
+            const id = ids[i];
+            try {
+              const res = await client.tools.execute('_1PASSWORD_LIST_ITEMS', { connection_id: id, entity_id: 'pg-test-b311dcc6-03f6-4077-8774-c90cfd6fcf29', arguments: {} });
+              results.push({ label: labels[i], status: 'ACTIVE', ok: true });
+            } catch (e) {
+              results.push({ label: labels[i], status: 'INACTIVE', ok: false, message: e?.message || String(e) });
+            }
+          }
+          const active = results.filter(r => r.ok).length;
+          const inactive = results.filter(r => !r.ok).length;
+          console.log(`Total: ${results.length}, Active: ${active}, Inactive: ${inactive}`);
           const fs = await import('fs');
-          fs.writeFileSync('summary.json', JSON.stringify(summary));
+          fs.writeFileSync('summary.json', JSON.stringify({ total: results.length, active, inactive, results }));
           EOF
           node monitor.mjs
 
       - name: Set outputs
         run: |
-          echo "inactive_count=$(jq '.inactive | length' summary.json)" >> "$GITHUB_OUTPUT"
+          echo "inactive_count=$(jq '.inactive' summary.json)" >> "$GITHUB_OUTPUT"
           echo "summary=$(jq -c . summary.json)" >> "$GITHUB_OUTPUT"
 
       - name: Show summary
