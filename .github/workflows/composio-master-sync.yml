@@ -60,9 +60,15 @@ jobs:
           const fs = await import('fs');
           const summary = JSON.parse(fs.readFileSync('master-sync-summary.json', 'utf8'));
           const body = `Composio Master Sync Summary\n\nTotal: ${summary.total}\nActive: ${summary.active_count}\nInactive: ${summary.inactive_count}\n\nActive toolkits:\n${summary.active.map(a => `- ${a.toolkit}: ${a.id}`).join('\n')}\n\nInactive toolkits:\n${summary.inactive.map(a => `- ${a.toolkit}: ${a.id}`).join('\n')}`;
+          const accounts = await client.connectedAccounts.list({});
+          const resend = (accounts.items || []).find(a => a.toolkit?.slug === 'resend');
+          if (!resend) {
+            console.error('No Resend connected account found');
+            process.exit(1);
+          }
           const result = await client.tools.execute('RESEND_SEND_EMAIL', {
-            connection_id: process.env.COMPOSIO_RESEND_CONNECTION_ID,
-            entity_id: 'kleber@ziontechgroup.com',
+            connection_id: resend.id,
+            entity_id: resend.user_id,
             arguments: {
               to: 'kleber@ziontechgroup.com',
               subject: 'Composio Master Sync - Zion',
