@@ -42,14 +42,23 @@ jobs:
             inactive: inactive.map(a => ({ toolkit: a.toolkit?.slug, id: a.id, status: a.status }))
           };
           console.log(JSON.stringify(summary, null, 2));
+          const fs = await import('fs');
+          fs.writeFileSync('summary.json', JSON.stringify(summary));
           EOF
           node monitor.mjs
 
+      - name: Set outputs
+        run: |
+          echo "inactive_count=$(jq '.inactive | length' summary.json)" >> "$GITHUB_OUTPUT"
+          echo "summary=$(jq -c . summary.json)" >> "$GITHUB_OUTPUT"
+
       - name: Alert if needed
-        if: ${{ failure() || contains(fromJson(steps.check.outputs.summary).inactive, 'status') }}
-        uses: composio/composio-send-telegram-message@v1
+        if: ${{ steps.set.outputs.inactive_count > 0 }}
+        uses: composio/composio-action@main
         with:
-          chat_id: "-1003886112318"
-          text: |
-            ⚠️ Composio connection issue detected.
-            Check the workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          api_key: ${{ secrets.COMPOSIO_API_KEY }}
+          connection_id: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+          app: "1password"
+          action: "list_items"
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
