@@ -1,0 +1,94 @@
+/**
+ * Zion Composio Maximize Engine
+ * Auto-discovers every ACTIVE connected toolkit and runs a verified read playbook.
+ * Does not depend on COMPOSIO_*_CONNECTION_ID secrets.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import { discoverZionConnections, executeTool } from './discover-connections.mjs';
+
+const PLAYBOOK = [
+  { toolkit: 'github', tool: 'GITHUB_GET_THE_AUTHENTICATED_USER', args: {} },
+  { toolkit: 'calendly', tool: 'CALENDLY_GET_CURRENT_USER', args: {} },
+  { toolkit: 'stripe', tool: 'STRIPE_LIST_PRODUCTS', args: { limit: 20 } },
+  { toolkit: 'stripe', tool: 'STRIPE_LIST_CHARGES', args: { limit: 10 } },
+  { toolkit: 'stripe', tool: 'STRIPE_LIST_CUSTOMERS', args: { limit: 10 } },
+  { toolkit: 'resend', tool: 'RESEND_LIST_DOMAINS', args: {} },
+  { toolkit: 'gmail', tool: 'GMAIL_FETCH_EMAILS', args: { max_results: 5, query: 'newer_than:7d' } },
+  { toolkit: 'notion', tool: 'NOTION_SEARCH_NOTION_PAGE', args: { query: 'Zion', page_size: 10 } },
+  { toolkit: 'slack', tool: 'SLACK_LIST_ALL_CHANNELS', args: { limit: 30, exclude_archived: true } },
+  { toolkit: 'linear', tool: 'LINEAR_LIST_LINEAR_ISSUES', args: { first: 10 } },
+  { toolkit: 'tavily', tool: 'TAVILY_SEARCH', args: { query: 'AI automation agency competitors Europe 2026', max_results: 5, include_answer: true } },
+  { toolkit: 'serpapi', tool: 'SERPAPI_GOOGLE_LIGHT_SEARCH', args: { q: 'Zion Tech Group', num: 8 } },
+  { toolkit: 'hunter', tool: 'HUNTER_ACCOUNT_INFORMATION', args: {} },
+  { toolkit: 'openrouter', tool: 'OPENROUTER_GET_CREDITS', args: {} },
+  { toolkit: 'telegram', tool: 'TELEGRAM_GET_ME', args: {} },
+  { toolkit: 'linkedin', tool: 'LINKEDIN_GET_MY_INFO', args: {} },
+  { toolkit: 'instagram', tool: 'INSTAGRAM_GET_USER_INFO', args: {} },
+  { toolkit: 'youtube', tool: 'YOUTUBE_GET_CHANNEL_STATISTICS', args: { id: 'UCKrJNz3OqQ6Im9bQbJko7Ug' } },
+  { toolkit: 'sentry', tool: 'SENTRY_GET_PROJECT_LIST', args: {} },
+  { toolkit: 'supabase', tool: 'SUPABASE_LIST_ALL_PROJECTS', args: {} },
+  { toolkit: 'airtable', tool: 'AIRTABLE_LIST_BASES', args: {} },
+  { toolkit: 'googlecalendar', tool: 'GOOGLECALENDAR_LIST_CALENDARS', args: {} },
+  { toolkit: 'cursor', tool: 'CURSOR_GET_ME', args: {} },
+  { toolkit: 'hugging_face', tool: 'HUGGING_FACE_GET_WHOAMI', args: {} },
+  { toolkit: 'discord', tool: 'DISCORD_GET_MY_USER', args: {} },
+  { toolkit: 'ninox', tool: 'NINOX_LIST_TEAMS', args: {} },
+  { toolkit: '_1password', tool: '_1PASSWORD_LIST_VAULTS', args: {} },
+];
+
+function compact(result) {
+  if (!result?.data) return { ok: result.ok, error: result.error, skipped: result.skipped };
+  const data = result.data;
+  if (Array.isArray(data)) return { ok: true, count: data.length };
+  if (typeof data !== 'object') return { ok: true };
+  const keys = Object.keys(data);
+  const summary = { ok: true, keys: keys.slice(0, 12) };
+  for (const key of ['id', 'name', 'email', 'status', 'username', 'login', 'total_credits', 'plan_name']) {
+    if (data[key] != null && typeof data[key] !== 'object') summary[key] = data[key];
+  }
+  for (const key of keys) {
+    if (Array.isArray(data[key])) summary[`${key}_count`] = data[key].length;
+  }
+  return summary;
+}
+
+async function run() {
+  const ts = new Date().toISOString();
+  console.log(`\n═══ ZION COMPOSIO MAXIMIZE ENGINE — ${ts} ═══\n`);
+
+  const { active, inventory } = await discoverZionConnections();
+  console.log(`Accounts: ${inventory.totalAccounts}`);
+  console.log(`ACTIVE toolkits (${inventory.activeToolkits.length}): ${inventory.activeToolkits.join(', ')}`);
+  console.log(`No ACTIVE connection (${inventory.expiredOrFailedToolkits.length}): ${inventory.expiredOrFailedToolkits.join(', ')}`);
+
+  const executions = [];
+  for (const step of PLAYBOOK) {
+    process.stdout.write(`→ ${step.toolkit.padEnd(16)} ${step.tool} `);
+    const result = await executeTool(step.toolkit, step.tool, step.args, active);
+    executions.push({ ...step, ...compact(result), http: result.http });
+    console.log(result.skipped ? `SKIP ${result.reason}` : result.ok ? 'OK' : `FAIL ${JSON.stringify(result.error).slice(0, 120)}`);
+  }
+
+  const report = {
+    timestamp: ts,
+    engine: 'zion-composio-engine',
+    inventory,
+    activeToolkits: Object.keys(active).sort(),
+    executions,
+    healthScore: Math.round((inventory.activeToolkits.length / Math.max(1, inventory.activeToolkits.length + inventory.expiredOrFailedToolkits.length)) * 100),
+  };
+
+  const outDir = path.join(process.cwd(), 'automation', 'reports');
+  fs.mkdirSync(outDir, { recursive: true });
+  const outFile = path.join(outDir, 'composio-live-report.json');
+  fs.writeFileSync(outFile, JSON.stringify(report, null, 2));
+  console.log(`\nHealth score: ${report.healthScore}%`);
+  console.log(`Report: ${outFile}`);
+  return report;
+}
+
+run().catch((error) => {
+  console.error('FATAL:', error);
+  process.exit(1);
+});

@@ -1,0 +1,79 @@
+# Zion Composio Specialist Playbook
+
+Research-backed operating manual for extracting maximum value from Composio on Zion.
+
+## Platform model (2026)
+
+Composio is not a pile of per-app MCP tools. Production use has three layers:
+
+1. **Connect MCP** (`https://connect.composio.dev/mcp`) — 7 meta-tools: search, schemas, multi-execute (up to 50), manage/wait connections, remote workbench, remote bash.
+2. **Sessions** (`composio.create(user_id)`) — agent-time discovery + managed OAuth. Execute through the session, never through a raw user_id helper, or meta-tools fail with `can only be called inside a tool-router session`.
+3. **Direct REST v3.1** (`https://backend.composio.dev/api/v3.1`) — deterministic scripts. `POST /tools/execute/{slug}` with `connected_account_id` + `user_id` + `arguments`. On v3.1, omitting `version` selects **latest**. On v3 it selects the frozen `00000000_00` pin and looks "empty."
+
+Terminology (never use the old words in new code):
+
+| Old | Current |
+|---|---|
+| entity ID | `user_id` |
+| actions | tools (`GITHUB_CREATE_AN_ISSUE`) |
+| apps | toolkits (`github`) |
+| integration | auth config |
+| connection | connected account |
+
+## Specialist rules for Zion
+
+1. **Discover, do not hardcode.** `GET /connected_accounts` and pick the newest `ACTIVE` row per toolkit. GitHub secrets named `COMPOSIO_HUBSPOT_CONNECTION_ID` went stale while 31 other toolkits stayed live.
+2. **Verify the slug** with `GET /tools/{slug}` before execute. Catalog search ranking is noisy (it will happily return `STRIPE_ATTACH_PAYMENT_METHOD` for "list").
+3. **Read-only first.** Mutation tools (create price, send Slack, create Linear issue) only after a verified schema.
+4. **Pin versions in scheduled jobs** when you parse structured fields (`charges.data[].amount`). Use `latest` only when an LLM consumes the payload.
+5. **Triggers beat cron** for Calendly bookings, Stripe payments, Gmail, and GitHub. Register one project webhook; Composio signs and retries. Gmail/Calendar are polling (~15 min); Slack/Notion are realtime.
+6. **Per-user isolation.** Do not mix `kleber@ziontechgroup.com` (all expired) with the playground user. Production identity should own the ACTIVE accounts.
+7. **Never log tokens.** Connection IDs can live in internal reports; API keys cannot.
+8. **Quota-aware playbooks.** Skip Firecrawl/Hunter/OpenRouter when the previous call returned 402/429 instead of looping.
+
+## Maximum-value playbooks per live toolkit
+
+### Revenue
+- **Calendly** → list event types with the user URI (`Exactly one of user or organization`). Discovery event: 30 min, Google Meet, [book](https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1).
+- **Stripe** → list products/prices/payment links; create missing Growth/Starter prices; do not invent HubSpot deals when HubSpot is expired.
+- **Resend** → verified domain `ziontechgroup.com`. Send only to Zion inboxes from automations unless a human approved outreach.
+- **WhatsApp** → repair WABA permissions before sending. Current Graph id `780439071624836` is unauthorized.
+
+### Pipeline
+- **Gmail** → query `newer_than:7d` / `label:INBOX`. Current signal: gh-pages mirror job failing for 5h+.
+- **Linear** → team `a92e1670-db71-4cec-bb71-b3c647ca164b`. Stop creating duplicate `Outreach: Kleber` tickets.
+- **Notion** → search + create under the existing Zion parent page. Growth Loop status pages already exist.
+- **Airtable** → `Sales CRM` (`appsO95N9PqNEuwUX`) is the live lightweight CRM while HubSpot is dark.
+- **Google Sheets** → `Zion Leads` (`1RE4UUTu9AOTvH_gZPECjIhT3ye561Z01NF2QEzgd_cY`).
+- **Hunter** → wait for monthly reset; do not burn 429s.
+
+### Intelligence
+- **Tavily** `TAVILY_SEARCH` with `include_answer` for competitor briefs (Goodish, Alice Labs, n8n/Make shops).
+- **SerpAPI** `SERPAPI_GOOGLE_LIGHT_SEARCH` (`q`) for brand SERP. `SERPAPI_SEARCH` is the generic alias.
+- **Sentry** `javascript-nextjs` for Next.js errors.
+- **Cursor** `CURSOR_LIST_AGENTS` to de-dupe parallel cloud agents rewriting the same repo.
+
+### Brand
+- **Instagram** `@zion.tech.group` (2.9k) — change website from `.com.br` to `https://ziontechgroup.com`.
+- **YouTube** `UCKrJNz3OqQ6Im9bQbJko7Ug` — do not publish from the unrelated "Surf Family" OAuth channel.
+- **LinkedIn** personal + company page `ziontechgroup`.
+- **Telegram** keep replies in-originating-chat via `telegram-agent-listener`.
+
+## Recommended architecture
+
+```
+Composio v3.1
+ ├─ discover-connections.mjs   (source of truth)
+ ├─ zion-composio-engine.mjs   (weekday 08:20 / 16:20 UTC)
+ ├─ revenue-pipeline-v2.mjs    (Stripe + Calendly + Resend)
+ ├─ lead-to-revenue-v2.mjs     (Gmail + Notion + Linear + Slack)
+ └─ connection-monitor-v2.mjs  (health score from live accounts)
+```
+
+Event-driven next step (after HubSpot + WhatsApp reconnect):
+
+`Calendly booking trigger → Stripe payment link → Resend confirmation → Airtable/Sheets lead row → Slack #support`
+
+## Security note
+
+A 2026 Composio incident involved leaked GitHub OAuth tokens from an employee mailbox. Zion policy: rotate any key that appears in chat logs, keep 1Password as the only secret store, and treat playground connections as non-production until they are owned by `kleber@ziontechgroup.com`.

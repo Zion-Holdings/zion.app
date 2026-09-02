@@ -1,91 +1,65 @@
-import { Composio } from '@composio/core';
-
-const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
-const userId = process.env.ZION_USER_ID || 'zion-revenue';
-
-const connections = {
-  calendly: process.env.COMPOSIO_CALENDLY_CONNECTION_ID,
-  whatsapp: process.env.COMPOSIO_WHATSAPP_CONNECTION_ID,
-  stripe: process.env.COMPOSIO_STRIPE_CONNECTION_ID,
-  resend: process.env.COMPOSIO_RESEND_CONNECTION_ID,
-  hubspot: process.env.COMPOSIO_HUBSPOT_CONNECTION_ID,
-};
-
-async function executeTool(name, toolSlug, connectionId, args = {}) {
-  if (!connectionId) return { skipped: true };
-  try {
-    const result = await composio.tools.execute(toolSlug, {
-      connectionId,
-      entity_id: userId,
-      arguments: args,
-    });
-    return { ok: true, result };
-  } catch (e) {
-    return { ok: false, error: e.message };
-  }
-}
+import { discoverZionConnections, executeTool } from './discover-connections.mjs';
 
 async function run() {
   const ts = new Date().toISOString();
-  console.log(`\n═══ ZION REVENUE PIPELINE v2.0 — ${ts} ═══\n`);
+  console.log(`\n═══ ZION REVENUE PIPELINE v3 (auto-discover) — ${ts} ═══\n`);
 
+  const { active } = await discoverZionConnections();
   const summary = { timestamp: ts, revenue: [], notifications: [] };
 
-  // 1. STRIPE: List recent charges
-  console.log('→ Stripe: recent charges');
-  const charges = await executeTool('stripe', 'STRIPE_LIST_CHARGES', connections.stripe, { limit: 50 });
-  if (charges.ok) {
-    const data = charges.result?.data || [];
-    const totalCents = data.reduce((s, c) => s + (c.amount || 0), 0);
-    summary.revenue.push({ type: 'stripe_charges', count: data.length, totalCents, totalUSD: (totalCents / 100).toFixed(2) });
-    console.log(`  ${data.length} charges, total: $${(totalCents / 100).toFixed(2)}`);
-  }
-
-  // 2. CALENDLY: Upcoming events
-  console.log('→ Calendly: upcoming events');
-  const events = await executeTool('calendly', 'CALENDLY_LIST_EVENTS', connections.calendly, { limit: 20 });
-  if (events.ok) {
-    const data = events.result?.data || events.result?.events || [];
-    summary.revenue.push({ type: 'calendly_events', count: data.length });
-    console.log(`  ${data.length} upcoming events`);
-  }
-
-  // 3. HUBSPOT: Deals
-  console.log('→ HubSpot: deals');
-  const deals = await executeTool('hubspot', 'HUBSPOT_FETCH_DEALS', connections.hubspot, { limit: 20 });
-  if (deals.ok) {
-    const data = deals.result?.data || [];
-    summary.revenue.push({ type: 'hubspot_deals', count: data.length });
-    console.log(`  ${data.length} deals`);
-  }
-
-  // 4. WHATSAPP: Notify CEO of revenue summary
-  console.log('→ WhatsApp: CEO notification');
-  const revenueMsg = `💰 Zion Revenue Update (${ts.slice(0, 10)})
-
-Stripe: ${charges.ok ? `${charges.result?.data?.length || 0} charges` : 'FAIL'}
-Calendly: ${events.ok ? `${(events.result?.data || events.result?.events || []).length} events` : 'FAIL'}
-HubSpot: ${deals.ok ? `${deals.result?.data?.length || 0} deals` : 'FAIL'}`;
-
-  const waResult = await executeTool('whatsapp', 'WHATSAPP_SEND_MESSAGE', connections.whatsapp, {
-    to: process.env.WHATSAPP_TO_NUMBER || 'kleber@ziontechgroup.com',
-    body: revenueMsg,
+  console.log('→ Stripe: products / charges / customers');
+  const products = await executeTool('stripe', 'STRIPE_LIST_PRODUCTS', { limit: 20 }, active);
+  const charges = await executeTool('stripe', 'STRIPE_LIST_CHARGES', { limit: 50 }, active);
+  const customers = await executeTool('stripe', 'STRIPE_LIST_CUSTOMERS', { limit: 25 }, active);
+  const chargeRows = charges.ok ? (charges.data?.data || []) : [];
+  const totalCents = chargeRows.reduce((sum, charge) => sum + (charge.amount || 0), 0);
+  summary.revenue.push({
+    type: 'stripe',
+    products: products.ok ? (products.data?.data || []).length : 0,
+    charges: chargeRows.length,
+    customers: customers.ok ? (customers.data?.data || []).length : 0,
+    totalUSD: (totalCents / 100).toFixed(2),
+    ok: products.ok || charges.ok,
   });
-  summary.notifications.push({ channel: 'whatsapp', ok: waResult.ok });
 
-  // 5. RESEND: CEO email report
-  console.log('→ Resend: CEO email report');
-  const resendResult = await executeTool('resend', 'RESEND_SEND_EMAIL', connections.resend, {
-    from: 'Zion Tech Group <noreply@ziontechgroup.com>',
-    to: ['kleber@ziontechgroup.com'],
-    subject: `[Zion] Revenue Pipeline — ${ts.slice(0, 10)}`,
-    text: revenueMsg,
+  console.log('→ Calendly: current user + event types');
+  const user = await executeTool('calendly', 'CALENDLY_GET_CURRENT_USER', {}, active);
+  const userUri = user.data?.resource?.uri;
+  const events = userUri
+    ? await executeTool('calendly', 'CALENDLY_LIST_EVENT_TYPES', { user: userUri, count: 20, active: true }, active)
+    : { ok: false, error: 'no calendly user uri' };
+  summary.revenue.push({
+    type: 'calendly',
+    schedulingUrl: user.data?.resource?.scheduling_url || null,
+    eventTypes: events.ok ? (events.data?.collection || []).length : 0,
+    ok: user.ok,
   });
-  summary.notifications.push({ channel: 'resend', ok: resendResult.ok });
+
+  const reportText = `Zion Revenue Update (${ts.slice(0, 10)})
+Stripe products: ${summary.revenue[0].products}
+Stripe charges: ${summary.revenue[0].charges} ($${summary.revenue[0].totalUSD})
+Stripe customers: ${summary.revenue[0].customers}
+Calendly: ${summary.revenue[1].schedulingUrl || 'FAIL'} (${summary.revenue[1].eventTypes} event types)`;
+
+  if (active.resend) {
+    console.log('→ Resend: CEO email report');
+    const resend = await executeTool('resend', 'RESEND_SEND_EMAIL', {
+      from: 'Zion Tech Group <noreply@ziontechgroup.com>',
+      to: ['kleber@ziontechgroup.com'],
+      subject: `[Zion] Revenue Pipeline — ${ts.slice(0, 10)}`,
+      text: reportText,
+    }, active);
+    summary.notifications.push({ channel: 'resend', ok: resend.ok });
+  } else {
+    summary.notifications.push({ channel: 'resend', skipped: true });
+  }
 
   console.log('\n═══ REVENUE PIPELINE COMPLETE ═══');
   console.log(JSON.stringify(summary, null, 2));
   return summary;
 }
 
-run().catch(e => { console.error('FATAL:', e); process.exit(1); });
+run().catch((error) => {
+  console.error('FATAL:', error);
+  process.exit(1);
+});
