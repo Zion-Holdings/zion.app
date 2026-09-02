@@ -1,0 +1,30 @@
+{
+  "name": "zion-tech-group",
+  "version": "2.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:check": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "export:static": "next build",
+    "pages:sync": "node scripts/sync-public-pages.cjs",
+    "check:source": "node scripts/checks/core-source-check.cjs"
+  },
+  "dependencies": {
+    "next": "^16.2.10",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

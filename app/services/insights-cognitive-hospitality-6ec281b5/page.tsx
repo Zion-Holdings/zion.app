@@ -1,77 +1,27 @@
-import Link from 'next/link';
-import BreadcrumbSchema from '@/components/BreadcrumbSchema';
-
 export const metadata = {
-  title: "Insights Cognitive - Hospitality - Zion Tech Group",
-  description: "Next-generation hospitality solution: Insights Cognitive - Hospitality. Combines testing automation with adaptive intelligence for optimal results.",
-  alternates: {
-    canonical: `https://ziontechgroup.com/services/insights-cognitive-hospitality-6ec281b5`
-  }
+  title: "Insights Cognitive - Hospitality",
+  description: "Zion Tech Group delivers Insights Cognitive - Hospitality with measurable outcomes.",
+  alternates: { canonical: "https://ziontechgroup.com/services/insights-cognitive-hospitality-6ec281b5/" },
 };
 
-export default function ServicePage() {
+export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <BreadcrumbSchema path=`/services/insights-cognitive-hospitality-6ec281b5` title="Insights Cognitive - Hospitality" />
-        <h1 className="text-4xl font-bold mb-6">Insights Cognitive - Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Insights Cognitive - Hospitality. Combines testing automation with adaptive intelligence for optimal results.</p>
-
-        <div className="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Budget optimization with cost allocation</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-          </ul>
-        </div>
-
-        <div className="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Reduced compensation administration time</li>
-            <li>better stakeholder satisfaction ratings</li>
-            <li>Reduced sales cycle length</li>
-            <li>reduced workplace safety incidents</li>
-            <li>Improved recruitment conversion rates</li>
-          </ul>
-        </div>
-
-        <div className="border border-purple-500 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199/month</p>
-            </div>
-            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
-              <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499/month</p>
-            </div>
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499/month</p>
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-slate-800 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <Link href="/services/" className="text-purple-300 hover:text-purple-200">← Back to All Services</Link>
-          <Link href="/tools/" className="text-slate-400 hover:text-slate-300">Try our free tools →</Link>
-        </div>
-
-        <div className="text-center">
-          <a 
-            href="https://calendly.com/kleber-ziontechgroup/consultation" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
-          >
-            Book a Consultation
-          </a>
-        </div>
-      </div>
+    <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem 1rem' }}>
+      <h1>Insights Cognitive - Hospitality</h1>
+      <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: 18 }}>
+        Zion Tech Group delivers Insights Cognitive - Hospitality with measurable outcomes.
+      </p>
+      <ul style={{ color: '#cbd5e1', lineHeight: 1.9 }}>
+        <li>Production implementation with monitoring and handover</li>
+        <li>Integrations across CRM, billing, and operations tools</li>
+        <li>Clear success criteria and a 30-day action plan</li>
+      </ul>
+      <p style={{ marginTop: 24 }}>
+        <a href="/book/" style={{ display: 'inline-block', padding: '12px 18px', borderRadius: 12, background: '#7c3aed', color: '#fff', textDecoration: 'none', fontWeight: 700, marginRight: 8 }}>
+          Book Discovery
+        </a>
+        <a href="/pricing/">Pricing</a>
+      </p>
     </main>
   );
 }

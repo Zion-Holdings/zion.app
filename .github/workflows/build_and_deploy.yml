@@ -24,9 +24,11 @@ jobs:
           set -euo pipefail
           mkdir -p out
           cp -Rf public/. out/
-          cp -Rf docs/. out/docs/
+          cp -Rf docs/. out/docs/ 2>/dev/null || true
+          [ -f CNAME ] && cp -f CNAME out/CNAME || true
+          [ -f public/CNAME ] && cp -f public/CNAME out/CNAME || true
+          [ -f public/404.html ] && cp -f public/404.html out/404.html || true
           [ -f _headers ] && cp -f _headers out/_headers || true
-          [ -f out/_headers ] || true
 
       - uses: actions/upload-pages-artifact@v3
         with:

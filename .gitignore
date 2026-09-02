@@ -1,4 +1,7 @@
 .next/
+out/
+dist/
+.turbo/
 node_modules/
 core
 
@@ -6,3 +9,8 @@ MEMORY.md
 logs/
 sitemap.xml
 tmp/
+*.log
+.env
+.env.local
+.gh_token
+
