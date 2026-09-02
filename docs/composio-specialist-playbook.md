@@ -34,7 +34,7 @@ Terminology (never use the old words in new code):
 ## Maximum-value playbooks per live toolkit
 
 ### Revenue
-- **Calendly** → list event types with the user URI (`Exactly one of user or organization`). Discovery event: 30 min, Google Meet, [book](https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1).
+- **Calendly** → list event types with the user URI (`Exactly one of user or organization`). Only `.../zion-tech-group-ai-it-discovery-1` is **active**. `CALENDLY_LIST_EVENTS` “active” includes past uncanceled June 2026 30-min leftovers. **0 webhook subscriptions** — Composio also has no Calendly trigger type. Use cron + `min_start_time`.
 - **Stripe** → list products/prices/payment links; create missing Growth/Starter prices; do not invent HubSpot deals when HubSpot is expired.
 - **Resend** → verified domain `ziontechgroup.com`. Send only to Zion inboxes from automations unless a human approved outreach.
 - **WhatsApp** → repair WABA permissions before sending. Current Graph id `780439071624836` is unauthorized.

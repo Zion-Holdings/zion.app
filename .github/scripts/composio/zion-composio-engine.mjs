@@ -10,6 +10,8 @@ import { discoverZionConnections, executeTool } from './discover-connections.mjs
 const PLAYBOOK = [
   { toolkit: 'github', tool: 'GITHUB_GET_THE_AUTHENTICATED_USER', args: {} },
   { toolkit: 'calendly', tool: 'CALENDLY_GET_CURRENT_USER', args: {} },
+  { toolkit: 'resend', tool: 'RESEND_LIST_WEBHOOKS', args: {} },
+  { toolkit: 'resend', tool: 'RESEND_LIST_AUDIENCES', args: {} },
   { toolkit: 'stripe', tool: 'STRIPE_LIST_PRODUCTS', args: { limit: 20 } },
   { toolkit: 'stripe', tool: 'STRIPE_LIST_CHARGES', args: { limit: 10 } },
   { toolkit: 'stripe', tool: 'STRIPE_LIST_CUSTOMERS', args: { limit: 10 } },
