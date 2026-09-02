@@ -830,6 +830,7 @@
 /tools/password-strength /tools/password-strength/ 200
 /tools/percentage-calculator /tools/percentage-calculator/ 200
 /tools/phishing-analyzer /tools/phishing-analyzer/ 200
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 /tools/qr-code-generator /tools/qr-code-generator/ 200
 /tools/qr-scanner /tools/qr-scanner/ 200
 /tools/readability-score /tools/readability-score/ 200
