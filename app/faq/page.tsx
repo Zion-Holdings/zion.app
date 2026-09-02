@@ -7,9 +7,9 @@ export const metadata = {
 
 const QA = [
   ['Who is Zion Tech Group?', 'A 26-year IT company at ziontechgroup.com. CEO Kleber Alcatrao. Not ziontech.biz or ziontechnologies.org.'],
-  ['How do I book Discovery?', 'Only https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1 is active (30 min, Google Meet). Or pay $99 on Stripe.'],
+  ['How do I book Discovery?', 'Use /book/ — only the discovery-1 Calendly event is active (30 min, Google Meet). Or pay $99 on Stripe. /paid-consultation/ is the same offer.'],
   ['What are the prices?', 'Discovery $99 · Starter $2,500 · Growth $8,000/month · Enterprise custom.'],
-  ['How is this different from n8n or Make?', 'Those are canvases. Composio lets the agent choose authenticated tools at runtime. See /composio-vs-n8n-make/.'],
+  ['How is this different from n8n, Make, or Zapier?', 'Those are canvases. Zapier MCP bills two tasks per tool call. Composio lets the agent choose authenticated tools at runtime. See /composio-vs-n8n-make/ and /composio-vs-zapier/.'],
   ['What is ZionAI Marketplace?', 'Talent, AI solutions, and 24/7 onsite IT. Canonical page: /marketplace/.'],
 ];
 
@@ -24,7 +24,7 @@ export default function Page() {
         </div>
       ))}
       <p style={{ marginTop: 24 }}>
-        <a href="https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1" style={{ color: '#a78bfa' }}>Book Discovery</a>
+        <a href="/book/" style={{ color: '#a78bfa' }}>Book Discovery</a>
         {' · '}
         <a href="/plans/" style={{ color: '#a78bfa' }}>Plans</a>
       </p>

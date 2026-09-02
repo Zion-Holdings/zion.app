@@ -12,7 +12,7 @@
 - **Primary Services Referenced:** AI Agents & Autonomous Workflows, AI Multi-Agent Orchestration Platform, Autonomous Code Review Agent, Autonomous Code Deployment Agent, AI Agent Orchestrator
 - **Primary Blog Posts Referenced:** AI for DevOps Automation and IT Services, Managed AI Ops Platform for IT Service Providers, AI Low-Code Workflow Automation Guide for Brazilian Enterprises
 - **Sender:** Kleber, Zion Tech Group (kleber@ziontechgroup.com)
-- **Calendar CTA:** https://calendly.com/kleber-ziontechgroup/consultation
+- **Calendar CTA:** https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1
 - **Website CTA:** https://ziontechgroup.com/services
 - **Lead Magnet:** 5 Ways Autonomous AI Agents Reduce Operational Costs (PDF)
 - **Follow-Up Cadence:** 3 emails, Day 0 / Day 3 / Day 7
@@ -71,7 +71,7 @@ This isn't another dashboard or observability tool you'll log into twice. These 
 
 If any of the four problems above sound familiar, I'd welcome 15 minutes to walk through which agents map to your stack. No deck, no generic pitch — just a concrete look at where the leverage is.
 
-**Book a 15-minute alignment call:** https://calendly.com/kleber-ziontechgroup/consultation
+**Book a 15-minute alignment call:** https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1
 
 **Or browse the platform first:** https://ziontechgroup.com/services
 
@@ -91,7 +91,7 @@ P.S. The lead magnet (5 Ways Autonomous AI Agents Reduce Operational Costs) is a
 
 **Primary CTA:**
 > **Book a 15-minute alignment call**
-> https://calendly.com/kleber-ziontechgroup/consultation
+> https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1
 
 **Secondary CTA:**
 > **Explore the Hermes Agent Platform**

@@ -19,7 +19,7 @@ GitHub, Gmail, Notion, Slack, Linear, Stripe, Calendly, Resend, Tavily, SerpAPI,
 - Novo job `composio-zion-maximize.yml` + engine `zion-composio-engine.mjs`.
 - Inventário e playbook especialista em `docs/composio-live-inventory.md` e `docs/composio-specialist-playbook.md`.
 - Página pública `/integrations/composio/` e stack `/composio-automation-stack/` alinhadas aos 31 apps reais.
-- Calendly de discovery apontando para o event type real.
+- Calendly de discovery apontando para o event type real. Páginas `/book/` (embed) e `/paid-consultation/` (alias).
 - `/about/` (legitimidade 26 anos + sameAs) e `/composio-vs-n8n-make/` (camada de tools vs canvas).
 - Planilha Zion Leads populada; oportunidade real no Airtable Sales CRM (ignorar demo 2017).
 - Telegram Zion Agents (`@ziontechgroup_agents`) identificado e bot commands definidos.

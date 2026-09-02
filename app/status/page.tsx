@@ -10,8 +10,11 @@ export default function Page() {
     <main style={{ maxWidth: 880, margin: '0 auto', padding: '2rem 1rem' }}>
       <h1 style={{ color: '#fff' }}>Live stack status</h1>
       <p style={{ color: '#cbd5e1' }}>
-        31 Composio toolkits ACTIVE. kleber@ connections are expired. Stripe charges $0. See{' '}
-        <a href="/plans/" style={{ color: '#a78bfa' }}>/plans/</a> and{' '}
+        31 Composio toolkits ACTIVE. kleber@ connections are expired. Stripe charges $0. Book at{' '}
+        <a href="/book/" style={{ color: '#a78bfa' }}>/book/</a>
+        {' · '}
+        <a href="/plans/" style={{ color: '#a78bfa' }}>/plans/</a>
+        {' · '}
         <a href="/faq/" style={{ color: '#a78bfa' }}>/faq/</a>.
       </p>
     </main>
