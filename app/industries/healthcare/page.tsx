@@ -132,7 +132,7 @@ export default function HealthcareAI() {
                   </p>
                   <div className="flex items-center justify-between pt-3 border-t border-slate-700/50">
                     <span className="text-xs text-purple-300 font-medium">
-                      ${service.pricing?.basic || 'Custom'}
+                      ${String(service.pricing?.basic ?? 'Custom')}
                     </span>
                     <span className="text-xs text-slate-500">
                       {service.features?.slice(0, 2).join(', ') || 'AI Solution'}
