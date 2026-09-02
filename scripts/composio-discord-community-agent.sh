@@ -192,7 +192,7 @@ on_bug() {
 create_linear_issue() {
   local title="$1" description="$2" team="$3" label="$4"
   local body
-  body=$(jq -nc --arg t "$title" --arg d "$(echo "$description" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo "$description") \
+  body=$(jq -nc --arg t "$title" --arg d "$(echo "$description" | python -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo "$description") \
     '{
       title: $t,
       description: { raw: $d },
@@ -210,7 +210,7 @@ create_linear_issue() {
 hubspot_upsert_lead() {
   local name="$1" email="${2:-}" note="$3" source="$4"
   local props
-  props=$(jq -nc --arg n "$name" --arg s "$source" --arg note "$(echo "$note" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo "$note") \
+  props=$(jq -nc --arg n "$name" --arg s "$source" --arg note "$(echo "$note" | python -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo "$note") \
     '{
       properties: {
         firstname: $n,

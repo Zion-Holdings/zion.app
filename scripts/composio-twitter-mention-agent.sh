@@ -35,7 +35,7 @@ fatal() { error "$*"; exit 1; }
 # -----------------------------------------------------------------------------
 
 json_escape() {
-  python3 -c 'import json, sys; print(json.dumps(sys.stdin.read().strip()))'
+  python -c 'import json, sys; print(json.dumps(sys.stdin.read().strip()))'
 }
 
 composio_req() {
@@ -154,7 +154,7 @@ gmail_draft_reply() {
   local subject="Re: Menção do Twitter → Zion Tech Group"
   local body="Olá ${handle},\n\nVimos sua menção sobre Zion Tech Group e gostaríamos de entender seu contexto.\n\nNosso time de AI/IT automation está pronto para ajudar.\n\nAtt,\nEquipe Zion Tech Group"
   local encoded
-  encoded=$(echo "$body" | python3 -c 'import sys, urllib.parse; print(urllib.parse.quote(sys.stdin.read()))')
+  encoded=$(echo "$body" | python -c 'import sys, urllib.parse; print(urllib.parse.quote(sys.stdin.read()))')
   curl -s -X POST "https://www.googleapis.com/gmail/v1/users/me/drafts" \
        -H "Authorization: Bearer ${GMAIL_ACCESS_TOKEN:-**REDACTED**}" \
        -H "Content-Type: application/json" \

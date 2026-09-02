@@ -101,7 +101,7 @@ validate_prerequisites() {
     require_env "COMPOSIO_API_KEY"
 
     # Verifica se o SDK Python está disponível
-    if ! python3 -c "import composio" 2>/dev/null; then
+    if ! python -c "import composio" 2>/dev/null; then
         log_warn "SDK Composio não encontrado. Tentando instalar..."
         if pip install composio 2>/dev/null; then
             log_info "SDK Composio instalado com sucesso."
@@ -113,7 +113,7 @@ validate_prerequisites() {
     # Verifica conexões disponíveis
     log_info "Verificando conexões Composio..."
     local connections
-    connections=$(python3 - <<'PYEOF'
+    connections=$(python - <<'PYEOF'
 import os, sys, json, subprocess
 
 api_key = os.environ.get("COMPOSIO_API_KEY", "")
@@ -168,7 +168,7 @@ run_scheduling_agent() {
     log_info "Janela de busca: últimos $EMAIL_MAX_AGE_HOURS horas"
     log_info "Horário de trabalho: $WORK_START_HOUR:$WORK_END_HOUR (UTC)"
 
-    python3 - <<'PYEOF'
+    python - <<'PYEOF'
 import os
 import sys
 import json

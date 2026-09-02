@@ -85,7 +85,7 @@ validate_prerequisites() {
     log_info "Validando pré-requisitos..."
     require_env "COMPOSIO_API_KEY"
 
-    if ! python3 -c "import composio" 2>/dev/null; then
+    if ! python -c "import composio" 2>/dev/null; then
         log_warn "SDK Composio não encontrado. Tentando instalar..."
         pip install composio 2>/dev/null || die "Falha ao instalar composio SDK."
     fi
@@ -100,7 +100,7 @@ run_dashboard_agent() {
     log_info "Iniciando agente de dashboard financeiro..."
     log_info "Período de análise: últimos $ANALYSIS_DAYS dias"
 
-    python3 - <<'PYEOF'
+    python - <<'PYEOF'
 import os, sys, json, datetime
 from typing import Dict, List, Any
 

@@ -38,7 +38,7 @@ check_env() {
 # ─── Buscar leads recentes não processados ───────────────────────────────────
 fetch_new_leads() {
     local since_hours="${1:-24}"
-    python3 <<PYEOF
+    python <<PYEOF
 import os, sys, json
 from datetime import datetime, timedelta
 from composio import Composio
@@ -86,7 +86,7 @@ create_notion_page() {
     
     if [[ "$dry_run" == "true" ]]; then
         log_info "[DRY RUN] Notion page que seria criada:"
-        python3 -c "
+        python -c "
 import sys, json
 lead = json.load(sys.stdin)
 print(f'Título: {lead.get(\"firstname\",\"?\")} {lead.get(\"lastname\",\"?\")} - {lead.get(\"company\",\"?\")}')
@@ -98,7 +98,7 @@ print(f'Notion DB: Leads Zion Tech Group')
         return 0
     fi
     
-    python3 <<PYEOF
+    python <<PYEOF
 import os, sys, json
 from composio import Composio
 
@@ -138,9 +138,9 @@ send_welcome_email() {
     local dry_run="$2"
     
     local email firstname company
-    email=$(echo "$lead_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('email',''))")
-    firstname=$(echo "$lead_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('firstname',''))")
-    company=$(echo "$lead_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('company',''))")
+    email=$(echo "$lead_json" | python -c "import sys,json; print(json.load(sys.stdin).get('email',''))")
+    firstname=$(echo "$lead_json" | python -c "import sys,json; print(json.load(sys.stdin).get('firstname',''))")
+    company=$(echo "$lead_json" | python -c "import sys,json; print(json.load(sys.stdin).get('company',''))")
     
     [[ -z "$email" ]] && { log_warn "Lead sem e-mail, pulando..."; return 0; }
     
@@ -165,7 +165,7 @@ EOF
         return 0
     fi
     
-    python3 <<PYEOF
+    python <<PYEOF
 import os, sys, json
 from composio import Composio
 
@@ -215,9 +215,9 @@ alert_slack() {
     local dry_run="$2"
     
     local firstname company email
-    firstname=$(echo "$lead_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('firstname','?'))")
-    company=$(echo "$lead_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('company','?'))")
-    email=$(echo "$lead_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('email','?'))")
+    firstname=$(echo "$lead_json" | python -c "import sys,json; print(json.load(sys.stdin).get('firstname','?'))")
+    company=$(echo "$lead_json" | python -c "import sys,json; print(json.load(sys.stdin).get('company','?'))")
+    email=$(echo "$lead_json" | python -c "import sys,json; print(json.load(sys.stdin).get('email','?'))")
     
     local message="*🚀 Novo Lead Zion Tech Group*\n*Name:* ${firstname}\n*Empresa:* ${company}\n*Email:* ${email}\n*Status:* Processando..."
     
@@ -227,7 +227,7 @@ alert_slack() {
         return 0
     fi
     
-    python3 <<PYEOF
+    python <<PYEOF
 import os, sys, json
 from composio import Composio
 
@@ -266,7 +266,7 @@ update_hubspot_status() {
         return 0
     fi
     
-    python3 <<PYEOF
+    python <<PYEOF
 import os, sys, json
 from composio import Composio
 
@@ -301,8 +301,8 @@ process_lead() {
     local dry_run="$2"
     
     local lead_id email
-    lead_id=$(echo "$lead_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('id','?'))")
-    email=$(echo "$lead_json" | python3 -c "import sys,json; print(json.load(sys.stdin).get('email','?'))")
+    lead_id=$(echo "$lead_json" | python -c "import sys,json; print(json.load(sys.stdin).get('id','?'))")
+    email=$(echo "$lead_json" | python -c "import sys,json; print(json.load(sys.stdin).get('email','?'))")
     
     log_info "Processando lead #$lead_id ($email)..."
     
@@ -325,7 +325,7 @@ main() {
     leads_json=$(fetch_new_leads 48)  # últimos 48 horas
     
     local count
-    count=$(echo "$leads_json" | python3 -c "import sys,json; print(len(json.load(sys.stdin)))")
+    count=$(echo "$leads_json" | python -c "import sys,json; print(len(json.load(sys.stdin)))")
     log_info "Encontrados $count leads novos"
     
     if [[ "$count" -eq 0 ]]; then
@@ -334,7 +334,7 @@ main() {
     fi
     
     # Processar cada lead
-    echo "$leads_json" | python3 -c "
+    echo "$leads_json" | python -c "
 import sys, json
 leads = json.load(sys.stdin)
 for i, lead in enumerate(leads):

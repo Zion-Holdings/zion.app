@@ -94,7 +94,7 @@ EOF
             {\"role\": \"system\", \"content\": \"You are an email triage assistant. Respond with ONLY one of: LEAD, SUPPORT, PARTNERSHIP, SPAM, OTHER. Nothing else.\"},
             {\"role\": \"user\", \"content\": \"$context\"}
         ]
-    }" 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('choices',[{}])[0].get('message',{}).get('content','').strip().upper() or 'OTHER')" 2>/dev/null) || classification="OTHER"
+    }" 2>/dev/null | python -c "import sys,json; d=json.load(sys.stdin); print(d.get('choices',[{}])[0].get('message',{}).get('content','').strip().upper() or 'OTHER')" 2>/dev/null) || classification="OTHER"
 
     # Validação
     if [[ ! "$classification" =~ ^(LEAD|SUPPORT|PARTNERSHIP|SPAM|OTHER)$ ]]; then
@@ -161,7 +161,7 @@ create_linear_issue() {
     local result
     result=$(composio execute LINEAR_CREATE_LINEAR_ISSUE -d "{
         \"title\": \"$title\",
-        \"body\": \"$(echo "$body" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\",
+        \"body\": \"$(echo "$body" | python -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\",
         \"priority\": \"$priority\"
     }" 2>/dev/null) || {
         log "AVISO: Falha ao criar Linear issue."
@@ -220,7 +220,7 @@ Zion Tech Group"
     composio execute GMAIL_CREATE_DRAFT -d "{
         \"to\": \"$to_email\",
         \"subject\": \"Re: $subject\",
-        \"body\": \"$(echo "$reply_body" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\"
+        \"body\": \"$(echo "$reply_body" | python -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\"
     }" 2>/dev/null || {
         log "AVISO: Falha ao criar draft Gmail."
         return 1
@@ -260,7 +260,7 @@ $( [[ -n "$hubspot_url" ]] && echo "*HubSpot:* $hubspot_url" )
     log "Notificando Slack ($SLACK_CHANNEL)..."
     composio execute SLACK_SEND_MESSAGE -d "{
         \"channel\": \"$SLACK_CHANNEL\",
-        \"text\": \"$(echo "$message" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\"
+        \"text\": \"$(echo "$message" | python -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\"
     }" 2>/dev/null || {
         log "AVISO: Slack notification falhou."
         return 1
@@ -341,7 +341,7 @@ main() {
     local spam=0
     local other=0
     
-    echo "$threads_json" | python3 -c "
+    echo "$threads_json" | python -c "
 import sys, json
 data = json.load(sys.stdin)
 threads = data.get('threads', data.get('data', []))
@@ -351,11 +351,11 @@ for t in threads:
         [[ -z "$thread_line" ]] && continue
         
         local thread_id subject snippet from_email from_name
-        thread_id=$(echo "$thread_line" | python3 -c "import sys,json; print(json.loads(sys.stdin.read()).get('id',''))" 2>/dev/null || echo "")
-        subject=$(echo "$thread_line" | python3 -c "import sys,json; print(json.loads(sys.stdin.read()).get('subject',''))" 2>/dev/null || echo "")
-        snippet=$(echo "$thread_line" | python3 -c "import sys,json; print((json.loads(sys.stdin.read()).get('snippet','') or '')[:500])" 2>/dev/null || echo "")
-        from_email=$(echo "$thread_line" | python3 -c "import sys,json; d=json.loads(sys.stdin.read()).get('from',{}); print(d.get('email','') or d.get('address','') or '')" 2>/dev/null || echo "")
-        from_name=$(echo "$thread_line" | python3 -c "import sys,json; d=json.loads(sys.stdin.read()).get('from',{}); print(d.get('name','') or '')" 2>/dev/null || echo "")
+        thread_id=$(echo "$thread_line" | python -c "import sys,json; print(json.loads(sys.stdin.read()).get('id',''))" 2>/dev/null || echo "")
+        subject=$(echo "$thread_line" | python -c "import sys,json; print(json.loads(sys.stdin.read()).get('subject',''))" 2>/dev/null || echo "")
+        snippet=$(echo "$thread_line" | python -c "import sys,json; print((json.loads(sys.stdin.read()).get('snippet','') or '')[:500])" 2>/dev/null || echo "")
+        from_email=$(echo "$thread_line" | python -c "import sys,json; d=json.loads(sys.stdin.read()).get('from',{}); print(d.get('email','') or d.get('address','') or '')" 2>/dev/null || echo "")
+        from_name=$(echo "$thread_line" | python -c "import sys,json; d=json.loads(sys.stdin.read()).get('from',{}); print(d.get('name','') or '')" 2>/dev/null || echo "")
         
         [[ -z "$thread_id" || -z "$subject" ]] && continue
         
@@ -375,8 +375,8 @@ for t in threads:
                 local enrichment
                 enrichment=$(enrich_lead "$from_email")
                 local company industry
-                company=$(echo "$enrichment" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('company_name','') or '')" 2>/dev/null || echo "")
-                industry=$(echo "$enrichment" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('industry','') or '')" 2>/dev/null || echo "")
+                company=$(echo "$enrichment" | python -c "import sys,json; d=json.load(sys.stdin); print(d.get('company_name','') or '')" 2>/dev/null || echo "")
+                industry=$(echo "$enrichment" | python -c "import sys,json; d=json.load(sys.stdin); print(d.get('industry','') or '')" 2>/dev/null || echo "")
                 
                 # HubSpot contact
                 local hubspot_result

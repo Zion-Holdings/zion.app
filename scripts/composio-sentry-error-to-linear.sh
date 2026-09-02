@@ -44,7 +44,7 @@ fetch_sentry_errors() {
     local since_hours="${1:-1}"
     local severity="$2"
     
-    python3 <<PYEOF
+    python <<PYEOF
 import os, sys, json
 from datetime import datetime, timedelta
 from composio import Composio
@@ -87,12 +87,12 @@ create_linear_issue() {
     local dry_run="$2"
     
     local title message
-    title=$(echo "$error_json" | python3 -c "
+    title=$(echo "$error_json" | python -c "
 import sys, json
 e = json.load(sys.stdin)
 print(f\"[{e.get('level','ERROR')}] {e.get('title','Erro desconhecido')[:80]}\")
 ")
-    message=$(echo "$error_json" | python3 -c "
+    message=$(echo "$error_json" | python -c "
 import sys, json
 e = json.load(sys.stdin)
 print(f\"*Status:* {e.get('status','unknown')}\n*Level:* {e.get('level','?')}\n*Project:* {e.get('project','?')}\n*Message:* {e.get('message','?')}\n*Stack Trace:*\n\`\`\`\n{e.get('stacktrace','N/A')}\n\`\`\`\n*URL:* {e.get('url','?')}\n*First Seen:* {e.get('firstSeen','?')}\n*Last Seen:* {e.get('lastSeen','?')}\")
@@ -106,7 +106,7 @@ print(f\"*Status:* {e.get('status','unknown')}\n*Level:* {e.get('level','?')}\n*
         return 0
     fi
     
-    python3 <<PYEOF
+    python <<PYEOF
 import os, sys, json
 from composio import Composio
 
@@ -146,7 +146,7 @@ log_to_supabase() {
     local error_json="$1"
     local linear_issue_id="$2"
     
-    python3 <<PYEOF
+    python <<PYEOF
 import os, sys, json
 from composio import Composio
 
@@ -187,7 +187,7 @@ main() {
     errors_json=$(fetch_sentry_errors 24 "$SEVERITY_THRESHOLD")
     
     local count
-    count=$(echo "$errors_json" | python3 -c "import sys,json; print(len(json.load(sys.stdin)))")
+    count=$(echo "$errors_json" | python -c "import sys,json; print(len(json.load(sys.stdin)))")
     log_info "Encontrados $count erros recentes (severity ≥ $SEVERITY_THRESHOLD)"
     
     if [[ "$count" -eq 0 ]]; then
@@ -196,7 +196,7 @@ main() {
     fi
     
     # Processar cada erro
-    echo "$errors_json" | python3 -c "
+    echo "$errors_json" | python -c "
 import sys, json
 errors = json.load(sys.stdin)
 for i, error in enumerate(errors):
