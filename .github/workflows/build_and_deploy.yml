@@ -24,7 +24,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build site
-        run: npm run build:check || npm run build
+        run: |
+          set -euo pipefail
+          npm run build:check || npm run build
+          mkdir -p out/docs out/public
+          cp -Rf docs/. out/docs/
+          cp -Rf public/. out/public/
         env:
           NODE_OPTIONS: --max-old-space-size=6144
       - uses: actions/upload-pages-artifact@v3
