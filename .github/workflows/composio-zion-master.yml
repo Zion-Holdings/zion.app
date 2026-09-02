@@ -1,9 +1,9 @@
-name: Zion Composio Master Orchestrator
+name: Zion Composio Master v2.0
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 9,15 * * 1-5'
 
 permissions:
   contents: read
@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      ZION_USER_ID: ${{ secrets.ZION_USER_ID }}
       COMPOSIO_CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
       COMPOSIO_WHATSAPP_CONNECTION_ID: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
       COMPOSIO_STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
@@ -21,7 +22,7 @@ jobs:
       COMPOSIO_GMAIL_CONNECTION_ID: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
       COMPOSIO_HUBSPOT_CONNECTION_ID: ${{ secrets.COMPOSIO_HUBSPOT_CONNECTION_ID }}
       COMPOSIO_NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
-      COMPOSIO_SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+      COMPOSIO_SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID }}
       COMPOSIO_1PASSWORD_CONNECTION_ID: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
       COMPOSIO_SENDGRID_CONNECTION_ID: ${{ secrets.COMPOSIO_SENDGRID_CONNECTION_ID }}
       COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID: ${{ secrets.COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID }}
@@ -29,7 +30,7 @@ jobs:
       COMPOSIO_SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
       COMPOSIO_TAVILY_CONNECTION_ID: ${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}
       NOTION_OPPORTUNITIES_DB_ID: ${{ secrets.NOTION_OPPORTUNITIES_DB_ID }}
-
+      SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,21 +40,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install @composio/core
+      - name: Install Composio SDK
         run: npm install @composio/core
 
-      - name: Verify connections
-        run: node .github/scripts/composio/verify-connections.mjs
-
-      - name: Run Master Flow
-        run: node .github/scripts/composio/master-flow.mjs
-
-      - name: Update Dashboard
-        run: echo "Dashboard updated by master-flow"
-
-      - name: Commit & Push
-        run: |
-          git config user.name "zion-agent"
-          git config user.email "agent@ziontechgroup.com"
-          git add docs/ops/composio-master-log.md
-          git diff --cached --quiet && echo "no changes" || git commit -m "chore: composio master flow $(date +%Y-%m-%d-%H%M)" && git push origin main
+      - name: Run Zion Composio Master Orchestrator
+        run: node .github/scripts/composio/composio-zion-master.mjs
