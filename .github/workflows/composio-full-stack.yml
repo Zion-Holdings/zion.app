@@ -1,0 +1,211 @@
+name: Zion Composio Full Stack - Daily Health & Revenue
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8,13,18 * * 1-5'
+
+permissions:
+  contents: read
+
+jobs:
+  full-stack:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      COMPOSIO_CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
+      COMPOSIO_WHATSAPP_CONNECTION_ID: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
+      COMPOSIO_STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+      COMPOSIO_RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+      COMPOSIO_GMAIL_CONNECTION_ID: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
+      COMPOSIO_HUBSPOT_CONNECTION_ID: ${{ secrets.COMPOSIO_HUBSPOT_CONNECTION_ID }}
+      COMPOSIO_NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+      COMPOSIO_SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+      COMPOSIO_1PASSWORD_CONNECTION_ID: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+      COMPOSIO_BREVO_CONNECTION_ID: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
+      COMPOSIO_SENDGRID_CONNECTION_ID: ${{ secrets.COMPOSIO_SENDGRID_CONNECTION_ID }}
+      COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID: ${{ secrets.COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID }}
+      COMPOSIO_FIRECRAWL_CONNECTION_ID: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
+      COMPOSIO_SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
+      COMPOSIO_TAVILY_CONNECTION_ID: ${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Run full-stack integration check
+        run: |
+          cat > .github/scripts/composio/full-stack-check.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const userId = 'zion-full-stack';
+          const summary = {
+            timestamp: new Date().toISOString(),
+            connections_checked: [],
+            tools_by_connection: {},
+            errors: [],
+            revenue_events: [],
+            lead_events: [],
+            notification_events: [],
+            search_events: [],
+          };
+
+          const connections = {
+            calendly: process.env.COMPOSIO_CALENDLY_CONNECTION_ID,
+            whatsapp: process.env.COMPOSIO_WHATSAPP_CONNECTION_ID,
+            stripe: process.env.COMPOSIO_STRIPE_CONNECTION_ID,
+            resend: process.env.COMPOSIO_RESEND_CONNECTION_ID,
+            gmail: process.env.COMPOSIO_GMAIL_CONNECTION_ID,
+            hubspot: process.env.COMPOSIO_HUBSPOT_CONNECTION_ID,
+            notion: process.env.COMPOSIO_NOTION_CONNECTION_ID,
+            slack: process.env.COMPOSIO_SLACK_CONNECTION_ID,
+            onepassword: process.env.COMPOSIO_1PASSWORD_CONNECTION_ID,
+            brevo: process.env.COMPOSIO_BREVO_CONNECTION_ID,
+            sendgrid: process.env.COMPOSIO_SENDGRID_CONNECTION_ID,
+            activecampaign: process.env.COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID,
+            firecrawl: process.env.COMPOSIO_FIRECRAWL_CONNECTION_ID,
+            serpapi: process.env.COMPOSIO_SERPAPI_CONNECTION_ID,
+            tavily: process.env.COMPOSIO_TAVILY_CONNECTION_ID,
+          };
+
+          async function getTools(name, connectionId) {
+            if (!connectionId) {
+              summary.errors.push({ name, status: 'skipped', reason: 'no connection id' });
+              return [];
+            }
+            try {
+              const tools = await composio.getTools({ connectionIds: [connectionId], userId });
+              summary.connections_checked.push({ name, status: 'ok', tool_count: tools.length });
+              summary.tools_by_connection[name] = tools.map(t => t.slug || t.name || 'unknown');
+              return tools;
+            } catch (e) {
+              summary.errors.push({ name, status: 'error', message: e.message });
+              return [];
+            }
+          }
+
+          async function executeIfAvailable(name, tools, slugSubstring, args = {}) {
+            const tool = tools.find(t => (t.slug || t.name || '').includes(slugSubstring));
+            if (!tool) return null;
+            try {
+              const result = await composio.tools.execute(tool.slug || tool.name, { ...args, connection_id: connections[name], entity_id: userId });
+              return result;
+            } catch (e) {
+              summary.errors.push({ name, status: 'execute_error', tool: slugSubstring, message: e.message });
+              return null;
+            }
+          }
+
+          async function main() {
+            // 1. Connection health check
+            for (const [name, connectionId] of Object.entries(connections)) {
+              await getTools(name, connectionId);
+            }
+
+            // 2. Revenue: Stripe listing
+            const stripeTools = await getTools('stripe', connections.stripe);
+            if (stripeTools.length) {
+              const charges = await executeIfAvailable('stripe', stripeTools, 'STRIPE_LIST_CHARGES', { limit: 10 });
+              if (charges?.data) {
+                const total = charges.data.reduce((sum, c) => sum + (c.amount || 0), 0);
+                summary.revenue_events.push({ type: 'stripe_charges', count: charges.data.length, total_cents: total });
+              }
+            }
+
+            // 3. Bookings: Calendly listing
+            const calendlyTools = await getTools('calendly', connections.calendly);
+            if (calendlyTools.length) {
+              const events = await executeIfAvailable('calendly', calendlyTools, 'CALENDLY_LIST_EVENTS', { count: 10 });
+              const count = events?.data?.length || events?.events?.length || 0;
+              summary.revenue_events.push({ type: 'calendly_events', count });
+            }
+
+            // 4. Notifications: Resend/Gmail/SendGrid/Brevo/ActiveCampaign/WhatsApp
+            const emailProviders = [
+              { name: 'resend', toolsKey: 'resendTools', slug: 'RESEND_SEND_EMAIL' },
+              { name: 'gmail', toolsKey: 'gmailTools', slug: 'GMAIL_SEND_EMAIL' },
+              { name: 'sendgrid', toolsKey: 'sendgridTools', slug: 'SENDGRID_SEND_EMAIL' },
+              { name: 'brevo', toolsKey: 'brevoTools', slug: 'BREVO_SEND_EMAIL' },
+              { name: 'activecampaign', toolsKey: 'activecampaignTools', slug: 'ACTIVECAMPAIGN_SEND_EMAIL' },
+            ];
+            for (const provider of emailProviders) {
+              const tools = await getTools(provider.name, connections[provider.name]);
+              if (tools.length) {
+                summary.notification_events.push({ provider: provider.name, status: 'tools_available', count: tools.length });
+              }
+            }
+
+            // WhatsApp message capability check
+            const whatsappTools = await getTools('whatsapp', connections.whatsapp);
+            if (whatsappTools.length) {
+              summary.notification_events.push({ provider: 'whatsapp', status: 'tools_available', count: whatsappTools.length });
+            }
+
+            // 5. CRM: HubSpot listing
+            const hubspotTools = await getTools('hubspot', connections.hubspot);
+            if (hubspotTools.length) {
+              const deals = await executeIfAvailable('hubspot', hubspotTools, 'HUBSPOT_LIST_DEALS');
+              const count = deals?.data?.length || deals?.deals?.length || 0;
+              summary.lead_events.push({ type: 'hubspot_deals', count });
+            }
+
+            // 6. Knowledge: 1Password listing
+            const onepasswordTools = await getTools('onepassword', connections.onepassword);
+            if (onepasswordTools.length) {
+              summary.lead_events.push({ type: 'onepassword_items', status: 'tools_available', count: onepasswordTools.length });
+            }
+
+            // 7. Search intelligence: Firecrawl/SerpApi/Tavily
+            const searchProviders = [
+              { name: 'firecrawl', slug: 'FIRECRAWL_CRAWL_V2' },
+              { name: 'serpapi', slug: 'SERPAPI_GET_SEARCH_ARCHIVE' },
+              { name: 'tavily', slug: 'TAVILY_SEARCH' },
+            ];
+            for (const provider of searchProviders) {
+              const tools = await getTools(provider.name, connections[provider.name]);
+              if (tools.length) {
+                summary.search_events.push({ provider: provider.name, status: 'tools_available', count: tools.length });
+              }
+            }
+
+            console.log(JSON.stringify(summary, null, 2));
+          }
+
+          main().catch((err) => {
+            console.error('FATAL:', err);
+            process.exit(1);
+          });
+          EOF
+          node .github/scripts/composio/full-stack-check.mjs
+
+      - name: Update ops log
+        run: |
+          node -e "
+          const fs=require('fs');
+          const timestamp=new Date().toISOString().split('T')[0];
+          const path='docs/ops/full-stack-log.md';
+          let text='# Full Stack Ops Log\n\n';
+          if(fs.existsSync(path)) text=fs.readFileSync(path,'utf8');
+          text += `\n## ${timestamp}\n- Workflow: composio-full-stack.yml\n- Triggered: schedule/manual\n- Status: executed\n`;
+          fs.mkdirSync('docs/ops',{recursive:true});
+          fs.writeFileSync(path,text);
+          console.log('log updated');
+          "
+
+      - name: Commit ops log
+        run: |
+          git config user.name "zion-agent"
+          git config user.email "agent@ziontechgroup.com"
+          git add docs/ops/full-stack-log.md
+          git diff --cached --quiet && echo "no changes" || git commit -m "chore: update full-stack log $(date +%Y-%m-%d)" && git push origin main
