@@ -2,12 +2,19 @@
 
 ## Research Summary (2026)
 
-### Key Platform Insights
-- **Composio MCP Gateway**: Remote HTTP endpoint `https://connect.composio.dev/mcp` works without local tunnels. Supported by Claude Desktop, Cursor, OpenClaw, Codex.
+### Platform Capabilities
 - **Triggers**: Event-driven workflows beyond user-prompted actions. Subscribe to Slack messages, GitHub issues, Calendly bookings, Stripe payments.
-- **Multi-tenant auth**: Per-user OAuth with token refresh managed automatically. Critical for partner/reseller models.
-- **Migration deadline**: OAuth `initiate()` retires 2026-05-08 for new orgs, 2026-07-03 for all orgs. Use `connected_accounts.link()` / Connect Link.
+- **Recipes**: Convert executed workflows into reusable notebooks/recipes.
+- **Tool Router**: Dynamically surfaces only relevant tools, cutting token usage and improving accuracy.
+- **MCP Gateway**: Remote HTTP endpoint `https://connect.composio.dev/mcp` — no local tunnel needed. Works with Claude Desktop, Cursor, OpenClaw, Codex.
+- **Per-user OAuth**: Critical for multi-tenant production. Each user/partner gets isolated connections.
 - **Free tier**: 100,000 tool calls/month, no credit card required.
+
+### Security & Compliance Considerations
+- **Composio incident (May 2026)**: Compromised employee Gmail OAuth token led to exposure of ~5,001 GitHub OAuth tokens and 5,241 API keys.
+- **Best practice**: Use per-user/entity isolation, never log raw credentials, encrypt tokens at rest, scope permissions minimally.
+- **Alternatives to monitor**: Nango (HIPAA/BAA available), StackOne, Truto, Arcade.
+- **Current assessment**: Strong for internal/personal automation; for customer-facing multi-tenant, evaluate isolation requirements carefully.
 
 ### Best Practices for AI Agencies (2026)
 1. **Orchestration over point solutions**: Multi-agent coordination sees 40% better task completion and 60% fewer coordination errors.
@@ -107,29 +114,28 @@
                           └─────────────┘
 ```
 
-## Immediate Improvements
+## Composio Production Checklist
 
-### 1. Event-Driven Triggers
-Add Composio triggers to workflows:
-- Calendly booking created → auto-create Stripe payment link
-- Stripe payment succeeded → auto-send Resend confirmation + Slack alert
-- HubSpot deal stage changed → auto-update Notion playbook
+### Authentication & Security
+- [ ] Use `connected_accounts.link()` / Connect Link for all new OAuth connections
+- [ ] Migrate any legacy `initiate()` flows before 2026-07-03
+- [ ] Use per-entity/user isolation for multi-tenant scenarios
+- [ ] Never log raw credentials or tokens
+- [ ] Verify scopes are minimal for each integration
+- [ ] Review Composio security incident response and token rotation
 
-### 2. Multi-Tenant Auth
-For partner/reseller program:
-- Each partner gets unique `entity_id`
-- Composio manages separate OAuth sessions per partner
-- Revenue attribution tracked per entity
+### Workflow Design
+- [ ] Add event-driven triggers for: Calendly bookings, Stripe payments, HubSpot deal stage changes
+- [ ] Use Tool Router to reduce token usage in multi-step workflows
+- [ ] Create recipes from successful workflows for reuse
+- [ ] Enable execution logging and monitoring
+- [ ] Set up alerts for workflow failures
 
-### 3. MCP Gateway Integration
-- Add Composio MCP endpoint to Claude Desktop config
-- Enable just-in-time connection management
-- Reduce manual workflow execution
-
-### 4. Search Intelligence
-- Firecrawl: monitor competitor pricing/pages
-- SerpApi: track Zion SEO rankings
-- Tavily: research new monetization opportunities
+### Monitoring
+- [ ] Daily: `composio-full-stack.yml` connection health
+- [ ] Daily: `zion-daily-health-check.yml` site/email/CI
+- [ ] Weekly: Revenue metrics from Stripe, Calendly, HubSpot
+- [ ] Monthly: MRR/ARR, CAC, LTV, churn
 
 ## Revenue Projection (Composio-Automated)
 
@@ -179,27 +185,10 @@ For partner/reseller program:
 - Test payment flow: /pricing/ → Stripe → /payment-success/
 - Test Calendly booking flow
 
-## Monitoring & Alerts
-
-### Daily
-- `composio-full-stack.yml`: connection health, tool counts, errors
-- `zion-daily-health-check.yml`: site routes, email deliverability, CI status
-
-### Weekly
-- Revenue metrics: Stripe charges, Calendly events, HubSpot deals
-- Partner metrics: referrals, commissions, payouts
-- Content metrics: SEO rankings, organic traffic, conversion rate
-
-### Monthly
-- MRR/ARR review
-- Customer acquisition cost (CAC)
-- Lifetime value (LTV)
-- Churn rate
-
 ## Next Steps
 
 1. Create accounts on all platforms
-2. Connect apps in Composio dashboard
+2. Connect apps in Composio dashboard using Connect Link
 3. Add GitHub Secrets
 4. Run initial workflows
 5. Update site with real links
