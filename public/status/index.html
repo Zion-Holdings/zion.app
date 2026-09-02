@@ -33,7 +33,8 @@
       <tr><td>WhatsApp / Brevo / Cloudflare API</td><td class="bad">Permission / IP / token</td></tr>
       <tr><td>Supabase Zion App</td><td class="bad">INACTIVE</td></tr>
       <tr><td>Composio triggers + project webhook</td><td class="warn">0 instances, 0 subscriptions. Calendly has no trigger type</td></tr>
-      <tr><td>Workers Builds: ziontechgroup</td><td class="bad">Orphan check on this Pages repo (also red on main). Real worker is telegram-ai-reply-worker</td></tr>
+      <tr><td>Workers Builds: ziontechgroup</td><td class="bad">Orphan Cloudflare GitHub-app check. Same-second fail, also red on main. Real worker is telegram-ai-reply-worker. Do not add wrangler.toml here.</td></tr>
+      <tr><td>ziontechgroup.com custom domain</td><td class="bad">Apex/www return GitHub “Site not found” 404. DNS is on 185.199.x. Pages cname is null. Site is 200 at zion-support.github.io. Hotfix: CNAME PR #71126</td></tr>
     </table>
     <p>Buy or book: <a href="/book/">/book/</a> · <a href="/plans/">/plans/</a> · <a href="/faq/">/faq/</a> · <a href="/marketplace/">/marketplace/</a></p>
   </main>
