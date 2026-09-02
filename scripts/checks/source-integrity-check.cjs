@@ -54,10 +54,14 @@ const requiredFiles = [
   'app/layout.tsx',
   'app/page.tsx',
   'app/globals.css',
+  'app/error.tsx',
+  'app/loading.tsx',
   'app/components/Navigation.tsx',
   'app/components/Footer.tsx',
   'app/components/PageTemplate.tsx',
   'app/components/StandardPage.tsx',
+  'app/tools/json-formatter/page.tsx',
+  'app/industries/healthcare/page.tsx',
   'wrangler.toml',
   'workers/static.js',
   'scripts/workers-static-prepare.cjs',
@@ -99,13 +103,27 @@ const appTsx = walkCount('app', (_full, name) => name.endsWith('.tsx'));
 const componentTsx = walkCount('app/components', (_full, name) => name.endsWith('.tsx'));
 const rootComponentTsx = walkCount('components', (_full, name) => name.endsWith('.tsx'));
 const scriptFiles = walkCount('scripts', () => true);
+const toolsPages = walkCount('app/tools', (_full, name) => name === 'page.tsx');
+const industryPages = walkCount('app/industries', (_full, name) => name === 'page.tsx');
+const solutionPages = walkCount('app/solutions', (_full, name) => name === 'page.tsx');
+const caseStudyPages = walkCount('app/case-studies', (_full, name) => name === 'page.tsx');
 
-const MIN_APP_TSX = 5000;
-const MIN_APP_COMPONENTS = 10;
-const MIN_SCRIPTS = 20;
+// Floors sit well below the recovered tree (~20k app tsx) so legitimate
+// cleanup can land, but a static-export orphan (~0-200 files) fails hard.
+const MIN_APP_TSX = 12000;
+const MIN_APP_COMPONENTS = 150;
+const MIN_SCRIPTS = 30;
+const MIN_TOOLS_PAGES = 80;
+const MIN_INDUSTRY_PAGES = 15;
+const MIN_SOLUTION_PAGES = 30;
+const MIN_CASE_STUDY_PAGES = 50;
 
 console.log(`  • app/**/*.tsx count: ${appTsx} (min ${MIN_APP_TSX})`);
 console.log(`  • app/components/**/*.tsx count: ${componentTsx} (min ${MIN_APP_COMPONENTS})`);
+console.log(`  • app/tools/**/page.tsx count: ${toolsPages} (min ${MIN_TOOLS_PAGES})`);
+console.log(`  • app/industries/**/page.tsx count: ${industryPages} (min ${MIN_INDUSTRY_PAGES})`);
+console.log(`  • app/solutions/**/page.tsx count: ${solutionPages} (min ${MIN_SOLUTION_PAGES})`);
+console.log(`  • app/case-studies/**/page.tsx count: ${caseStudyPages} (min ${MIN_CASE_STUDY_PAGES})`);
 console.log(`  • components/**/*.tsx count: ${rootComponentTsx}`);
 console.log(`  • scripts file count: ${scriptFiles} (min ${MIN_SCRIPTS})`);
 
@@ -118,6 +136,24 @@ if (appTsx < MIN_APP_TSX) {
 if (componentTsx < MIN_APP_COMPONENTS) {
   errors.push(
     `app/components collapsed: found ${componentTsx} .tsx files, expected at least ${MIN_APP_COMPONENTS}`
+  );
+}
+if (toolsPages < MIN_TOOLS_PAGES) {
+  errors.push(`app/tools collapsed: found ${toolsPages} pages, expected at least ${MIN_TOOLS_PAGES}`);
+}
+if (industryPages < MIN_INDUSTRY_PAGES) {
+  errors.push(
+    `app/industries collapsed: found ${industryPages} pages, expected at least ${MIN_INDUSTRY_PAGES}`
+  );
+}
+if (solutionPages < MIN_SOLUTION_PAGES) {
+  errors.push(
+    `app/solutions collapsed: found ${solutionPages} pages, expected at least ${MIN_SOLUTION_PAGES}`
+  );
+}
+if (caseStudyPages < MIN_CASE_STUDY_PAGES) {
+  errors.push(
+    `app/case-studies collapsed: found ${caseStudyPages} pages, expected at least ${MIN_CASE_STUDY_PAGES}`
   );
 }
 if (scriptFiles < MIN_SCRIPTS) {

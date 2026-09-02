@@ -27,7 +27,15 @@ jobs:
         run: |
           set -euo pipefail
           git fetch origin "${{ github.base_ref }}" --depth=1
-          if git diff --name-status "origin/${{ github.base_ref }}...HEAD" | grep -E '^[DR]\s+(package\.json|next\.config\.js|app/layout\.tsx|app/page\.tsx)$'; then
+          DIFF="$(git diff --name-status "origin/${{ github.base_ref }}...HEAD")"
+          PROTECTED='^(package\.json|package-lock\.json|next\.config\.js|tsconfig\.json|app/layout\.tsx|app/page\.tsx|app/globals\.css|app/error\.tsx|app/components/Navigation\.tsx|app/components/Footer\.tsx|app/components/PageTemplate\.tsx|app/components/StandardPage\.tsx|wrangler\.toml|workers/static\.js)$'
+          if printf '%s\n' "$DIFF" | awk '{print $1" "$2}' | grep -E '^[DR] ' | awk '{print $2}' | grep -E "$PROTECTED"; then
             echo "::error::This PR deletes protected source files. Restore them before merge."
             exit 1
           fi
+          deleted_tsx="$(printf '%s\n' "$DIFF" | grep -cE '^[DR][[:space:]]+app/.*\.tsx$' || true)"
+          if [ "$deleted_tsx" -gt 200 ]; then
+            echo "::error::This PR deletes ${deleted_tsx} app TypeScript pages. The Sept 2026 regression replaced main with a static-export orphan. Split large deletions or restore the source tree."
+            exit 1
+          fi
+          echo "Protected-file and mass-deletion checks passed (${deleted_tsx} app tsx deletions)."
