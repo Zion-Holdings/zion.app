@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"/>
+<link rel="stylesheet" href="/styles.css"/>
+<title>Pricing — Zion Tech Group</title>
+<meta name="description" content="Transparent pricing for AI, IT, cloud, security, and automation services. From free tools to enterprise managed services. Book a consultation to get a custom quote."/>
+<meta name="keywords" content="pricing, AI services, IT services, cloud, security, automation, consulting, managed services, micro-SaaS"/>
+<link rel="canonical" href="https://ziontechgroup.com/pricing/"/>
+<meta property="og:title" content="Pricing — Zion Tech Group"/>
+<meta property="og:description" content="Transparent pricing for AI, IT, cloud, security, and automation services. From free tools to enterprise managed services."/>
+<meta property="og:url" content="https://ziontechgroup.com/pricing/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Pricing — Zion Tech Group"/>
+<meta name="twitter:description" content="Transparent pricing for AI, IT, cloud, security, and automation services."/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/icon.svg"/>
+<style>
+:root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --slate-300: #cbd5e1; --white: #f8fafc; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav-links { display: flex; align-items: center; gap: 16px; }
+.nav-links a { color: var(--slate-300); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; text-decoration: none; }
+.nav-cta:hover { opacity: 0.9; }
+.header { text-align: center; padding: 80px 24px 40px; }
+.header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, var(--white), var(--slate-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header p { color: var(--slate-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto 32px; }
+.header-stats { display: flex; justify-content: center; gap: 48px; margin-top: 40px; }
+.header-stat { text-align: center; }
+.header-stat .number { font-size: 2rem; font-weight: 700; color: var(--purple); }
+.header-stat .label { color: var(--slate-400); font-size: 0.875rem; }
+.price-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; padding: 40px 0; }
+.price-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 16px; padding: 32px; transition: all 0.3s; position: relative; }
+.price-card:hover { border-color: var(--purple); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.price-card.featured { border-color: var(--purple); background: linear-gradient(180deg, rgba(168, 85, 247, 0.1), rgba(30, 41, 59, 0.5)); }
+.price-card.featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 4px 16px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+.price-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+.price-card .price { font-size: 2.5rem; font-weight: 700; color: var(--white); margin: 16px 0; }
+.price-card .price span { font-size: 1rem; color: var(--slate-400); font-weight: 400; }
+.price-card .description { color: var(--slate-400); font-size: 0.875rem; margin-bottom: 24px; }
+.price-features { list-style: none; margin-bottom: 24px; }
+.price-features li { padding: 8px 0; color: var(--slate-300); font-size: 0.875rem; display: flex; align-items: center; gap: 8px; }
+.price-features li::before { content: '✓'; color: var(--blue); font-weight: 700; }
+.price-card .btn { display: block; width: 100%; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-align: center; text-decoration: none; transition: all 0.2s; font-size: 0.875rem; cursor: pointer; border: none; }
+.price-card .btn-primary { background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; }
+.price-card .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.price-card .btn-outline { background: transparent; border: 1px solid var(--slate-700); color: var(--slate-300); }
+.price-card .btn-outline:hover { border-color: var(--purple); color: var(--white); }
+.section { padding: 60px 0; }
+.section h2 { text-align: center; font-size: 2rem; margin-bottom: 16px; }
+.section p { text-align: center; color: var(--slate-400); max-width: 600px; margin: 0 auto 40px; }
+.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.testimonial { background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(148, 163, 184, 0.08); border-radius: 12px; padding: 24px; }
+.testimonial .quote { color: var(--slate-300); font-style: italic; margin-bottom: 16px; }
+.testimonial .author { font-weight: 600; color: var(--white); }
+.testimonial .role { color: var(--slate-400); font-size: 0.875rem; }
+.faq { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding: 20px 0; }
+.faq-item h3 { font-size: 1rem; margin-bottom: 8px; cursor: pointer; color: var(--white); }
+.faq-item p { color: var(--slate-400); font-size: 0.875rem; }
+.cta-section { text-align: center; padding: 80px 24px; background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.05)); }
+.cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+.cta-section p { color: var(--slate-400); margin-bottom: 32px; }
+.footer { border-top: 1px solid rgba(148, 163, 184, 0.1); padding: 40px 24px; text-align: center; color: var(--slate-400); font-size: 0.875rem; }
+.footer a { color: var(--slate-300); text-decoration: none; }
+.footer a:hover { color: var(--white); }
+.mobile-menu-btn { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+@media (max-width: 768px) {
+  .header h1 { font-size: 2rem; }
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: block; }
+  .header-stats { flex-direction: column; gap: 24px; }
+  .price-cards { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="nav-brand">Zion Tech Group</a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/ai-services/">AI Services</a>
+    <a href="/micro-saas/">Micro-SaaS</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+    <a href="https://calendly.com/kleber-ziontechgroup" class="nav-cta">Book Consultation</a>
+  </div>
+  <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</button>
+</nav>
+
+<header class="header">
+  <h1>Transparent Pricing for<br/>AI & IT Services</h1>
+  <p>From free AI tools to enterprise managed services — choose what fits your needs. All plans include access to our AI agent ecosystem.</p>
+  <div class="header-stats">
+    <div class="header-stat">
+      <div class="number">1,400+</div>
+      <div class="label">Tools & Integrations</div>
+    </div>
+    <div class="header-stat">
+      <div class="number">3,100+</div>
+      <div class="label">Services Available</div>
+    </div>
+    <div class="header-stat">
+      <div class="number">6</div>
+      <div class="label">Live AI Agents</div>
+    </div>
+    <div class="header-stat">
+      <div class="number">4.8★</div>
+      <div class="label">Customer Rating</div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:16px;">Service Plans</h2>
+    <p style="text-align:center; color:var(--slate-400); max-width:600px; margin:0 auto 40px;">Start free, scale as you grow. All paid plans include a 14-day trial.</p>
+    <div class="price-cards">
+      <div class="price-card">
+        <h3>Free Tools</h3>
+        <div class="price">$0 <span>/ forever</span></div>
+        <p class="description">Essential AI & IT tools for individuals and small teams</p>
+        <ul class="price-features">
+          <li>AI Service Router — find your perfect service</li>
+          <li>ROI Calculator for AI & Automation projects</li>
+          <li>Service Comparison (pick 3 side-by-side)</li>
+          <li>Service Recommender (4 questions)</li>
+          <li>Port Scanner & SSL Checker</li>
+          <li>Community support</li>
+        </ul>
+        <a href="/tools/" class="btn btn-outline">Browse Free Tools →</a>
+      </div>
+      <div class="price-card featured">
+        <h3>Starter</h3>
+        <div class="price">$499 <span>/ month</span></div>
+        <p class="description">For growing teams adopting AI and automation</p>
+        <ul class="price-features">
+          <li>Everything in Free Tools</li>
+          <li>Up to 5 AI service implementations/year</li>
+          <li>Priority support (48h response)</li>
+          <li>Access to 50+ Micro-SaaS products</li>
+          <li>Monthly strategy call (30 min)</li>
+          <li>Basic dashboard access</li>
+        </ul>
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-primary">Start Free Trial →</a>
+      </div>
+      <div class="price-card">
+        <h3>Professional</h3>
+        <div class="price">$1,999 <span>/ month</span></div>
+        <p class="description">For established businesses scaling AI operations</p>
+        <ul class="price-features">
+          <li>Everything in Starter</li>
+          <li>Unlimited AI service implementations</li>
+          <li>Dedicated account manager</li>
+          <li>24/7 priority support</li>
+          <li>Weekly strategy calls</li>
+          <li>Full dashboard + agent monitoring</li>
+          <li>Custom AI agent deployments</li>
+          <li>SLA guarantee (99.5% uptime)</li>
+        </ul>
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-outline">Contact for Quote →</a>
+      </div>
+      <div class="price-card">
+        <h3>Enterprise</h3>
+        <div class="price">Custom</div>
+        <p class="description">For organizations with complex AI & IT needs</p>
+        <ul class="price-features">
+          <li>Everything in Professional</li>
+          <li>Custom AI/IT solution architecture</li>
+          <li>Multi-team deployment support</li>
+          <li>On-site consulting available</li>
+          <li>Custom SLA (up to 99.99%)</li>
+          <li>Dedicated engineering team</li>
+          <li>Compliance & security audit support</li>
+          <li>Volume-based pricing available</li>
+        </ul>
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-outline">Talk to Sales →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: rgba(30, 41, 59, 0.3);">
+  <div class="container">
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:16px;">Micro-SaaS Products</h2>
+    <p style="text-align:center; color:var(--slate-400); max-width:600px; margin:0 auto 40px;">Standalone AI products you can subscribe to independently. Pay only for what you need.</p>
+    <div class="price-cards">
+      <div class="price-card">
+        <h3>AI Lead Scoring</h3>
+        <div class="price">$49 <span>/ month</span></div>
+        <p class="description">AI-powered lead scoring for sales teams</p>
+        <ul class="price-features">
+          <li>AI lead scoring engine</li>
+          <li>CRM integration</li>
+          <li>500 leads/month</li>
+        </ul>
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-outline">Get Access →</a>
+      </div>
+      <div class="price-card">
+        <h3>AI Meeting Notes</h3>
+        <div class="price">$29 <span>/ month</span></div>
+        <p class="description">Automated meeting transcription & summaries</p>
+        <ul class="price-features">
+          <li>AI transcription & notes</li>
+          <li>Action item extraction</li>
+          <li>Calendar integration</li>
+          <li>10 meetings/month</li>
+        </ul>
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-outline">Get Access →</a>
+      </div>
+      <div class="price-card">
+        <h3>AI Invoice Processor</h3>
+        <div class="price">$79 <span>/ month</span></div>
+        <p class="description">Automated invoice processing with 95% reduction in manual work</p>
+        <ul class="price-features">
+          <li>OCR + AI extraction</li>
+          <li>PO matching</li>
+          <li>ERP integration</li>
+          <li>200 invoices/month</li>
+        </ul>
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-outline">Get Access →</a>
+      </div>
+      <div class="price-card">
+        <h3>AI Code Reviewer</h3>
+        <div class="price">$39 <span>/ month</span></div>
+        <p class="description">Catch bugs before production with AI review</p>
+        <ul class="price-features">
+          <li>AI pull request reviews</li>
+          <li>Security vulnerability detection</li>
+          <li>Code quality scoring</li>
+          <li>GitHub/GitLab integration</li>
+        </ul>
+        <a href="https://calendly.com/kleber-ziontechgroup" class="btn btn-outline">Get Access →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="container">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p class="quote">"Zion's AI observability implementation reduced our incident response time by 73%. The team understood our infrastructure from day one."</p>
+        <p class="author">Marcus Chen</p>
+        <p class="role">CTO, FinTech Scale-up</p>
+      </div>
+      <div class="testimonial">
+        <p class="quote">"The cloud cost optimization engagement saved us $280K annually in the first quarter alone. ROI was clear within 30 days."</p>
+        <p class="author">Sarah Okonkwo</p>
+        <p class="role">VP Engineering, HealthTech</p>
+      </div>
+      <div class="testimonial">
+        <p class="quote">"Their managed SOC service gave us enterprise-grade security at a fraction of the cost of building in-house. The AI-driven threat detection is exceptional."</p>
+        <p class="author">David Lindström</p>
+        <p class="role">CISO, Logistics Platform</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container faq">
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:32px;">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How does billing work?</h3>
+      <p>We offer monthly and annual billing. Annual plans save 20%. All plans include a 14-day free trial. We accept credit cards, bank transfer, and for enterprise clients, net-30 invoicing.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I switch plans mid-month?</h3>
+      <p>Yes. Upgrades take effect immediately with pro-rated billing. Downgrades apply at the next billing cycle. Contact your account manager for custom plan adjustments.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What's included in the free tools?</h3>
+      <p>Our free tools include the AI Service Router, ROI Calculator, Service Comparison, Service Recommender, Port Scanner, and SSL Certificate Checker. No credit card required.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you offer custom enterprise pricing?</h3>
+      <p>Yes. Enterprise plans are tailored to your specific needs, including custom AI implementations, multi-team deployments, and volume-based pricing. Book a consultation to discuss your requirements.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How does the 14-day trial work?</h3>
+      <p>Start any paid plan and get full access for 14 days at no cost. No credit card required to start. If you choose to continue, billing starts on day 15. Cancel anytime.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What payment methods do you accept?</h3>
+      <p>We accept all major credit cards (Visa, Mastercard, Amex), bank transfers, and for enterprise clients, net-30 invoicing. We use Stripe for secure payment processing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Get Started?</h2>
+    <p>Book a free 30-minute consultation. We'll assess your needs and recommend the best plan for your team.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://calendly.com/kleber-ziontechgroup" class="nav-cta" style="padding:14px 32px; font-size:1rem;">📅 Book Free Consultation</a>
+      <a href="/contact/" style="padding:14px 32px; border:1px solid var(--slate-700); border-radius:8px; color:var(--slate-300); text-decoration:none; font-weight:600;">📧 Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; margin-bottom:20px;">
+      <a href="/" style="font-size:1.25rem; font-weight:700; background:linear-gradient(135deg,var(--purple),var(--pink)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Zion Tech Group</a>
+      <div>
+        <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · 
+        <a href="tel:+13024640950">+1 302 464 0950</a> · 
+        <span style="color:var(--slate-500);">364 E Main St STE 1008, Middletown, DE 19709</span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom:20px;">
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Service</a>
+      <a href="/cookies/">Cookie Policy</a>
+      <a href="/sla/">SLA</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://calendly.com/kleber-ziontechgroup">Book Consultation</a>
+    </div>
+    <p>© 2026 Zion Tech Group. All rights reserved. | Powered by AI Agents</p>
+  </div>
+</footer>
+</body>
+</html>
