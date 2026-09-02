@@ -1,0 +1,9 @@
+{
+  "sent": [],
+  "errors": [
+    {
+      "to": "kleber@ziontechgroup.com",
+      "error": "Error code: 400 - {'error': {'message': 'User ID is required with connected account. Please provide a user ID to identify the connected account.', 'code': 1811, 'slug': 'ActionExecute_ConnectedAccountEntityIdRequired', 'status': 400, 'request_id': 'bcbab20d675d49be99e7d56aa0dcb3a8', 'suggested_fix': 'Pass entity_id (your user identifier) in the request body along with connected_account_id.'}}"
+    }
+  ]
+}
