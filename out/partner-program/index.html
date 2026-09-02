@@ -1,33 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Partner Program - Zion Tech Group</title>
-  <meta name="description" content="Programa de parceiros da Zion Tech Group com comissões, suporte e integração.">
+  <title>Partner Program | Zion Tech Group</title>
+  <meta name="description" content="Join the Zion Tech Group partner program: recurring revenue, co-selling, implementation support, and enablement for MSPs, VARs, and agencies.">
+  <style>
+    :root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --white: #f8fafc; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+    .nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-links a { color: var(--slate-300); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .header { text-align: center; padding: 80px 24px 40px; }
+    .header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; }
+    .header p { color: var(--slate-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+    .card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 16px; padding: 20px; }
+    .card h3 { color: var(--white); margin: 0 0 8px; font-size: 18px; }
+    .card p { color: var(--slate-400); font-size: 14px; line-height: 1.6; margin: 0; }
+    .price { font-size: 22px; font-weight: 700; color: var(--purple); margin-top: 12px; }
+    .note { color: #94a3b8; font-size: 13px; margin-top: 24px; text-align: center; }
+    .cta-section { text-align: center; padding: 60px 24px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), transparent); }
+    .cta-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+    .cta-section p { color: var(--slate-400); margin-bottom: 32px; }
+    .footer { border-top: 1px solid rgba(148, 163, 184, 0.1); padding: 40px 24px; text-align: center; color: var(--slate-400); font-size: 0.875rem; }
+    .footer a { color: var(--purple); text-decoration: none; }
+    .btn { display: inline-block; padding: 14px 32px; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; border-radius: 9999px; font-weight: 600; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.9; }
+    .btn-outline { background: transparent; border: 1px solid var(--slate-700); color: var(--slate-300); margin-left: 8px; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Partner Program</h1>
-    <nav>
-      <a href="/partnerships/">Parcerias</a> |
-      <a href="/services/">Serviços</a> |
-      <a href="https://ziontechgroup.com">Home</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Programa de parceiros</h2>
-    <p>Junte-se ao programa oficial de parceiros da Zion Tech Group.</p>
-    <ul>
-      <li>Comissão recorrente</li>
-      <li>Suporte e enablement</li>
-      <li>Integração com stack</li>
-      <li>Co-selling</li>
-    </ul>
-    <p><a href="/free-consultation/">Quero ser parceiro</a></p>
-  </main>
-  <footer>
-    <p> Zion Tech Group. Todos os direitos reservados.</p>
+  <nav class="nav">
+    <a href="/" class="nav-brand">Zion Tech Group</a>
+    <div class="nav-links">
+      <a href="/pricing/">Pricing</a>
+      <a href="/stripe/">Pay</a>
+      <a href="/affiliate/">Affiliate</a>
+      <a href="/monetization/">Catalog</a>
+      <a href="https://calendly.com/kleber-garcia-alcatrao/zion-tech-group-discovery-call" class="nav-cta">Book a Call</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="header">
+      <h1>Partner Program</h1>
+      <p>Scale your revenue with Zion Tech Group. We enable agencies, MSPs, and VARs to sell AI, automation, cybersecurity, and cloud services with proven offers and operational support.</p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Revenue Share</h3>
+        <p>Recurring commissions on managed services and subscription platforms.</p>
+        <p class="price">Up to 25%</p>
+      </div>
+      <div class="card">
+        <h3>Co-Selling</h3>
+        <p>Joint pipeline generation, proposals, and deal strategy with our sales team.</p>
+        <p class="price">Included</p>
+      </div>
+      <div class="card">
+        <h3>Implementation</h3>
+        <p>Delivery support, playbooks, and SLAs so you can onboard clients faster.</p>
+        <p class="price">From $2,500/mo</p>
+      </div>
+      <div class="card">
+        <h3>Enablement</h3>
+        <p>Certification, marketing assets, and partner portal access.</p>
+        <p class="price">Free onboarding</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center;">
+      <a href="/paid-consultation/" class="btn">Apply to Partner Program</a>
+      <a href="/pricing/" class="btn" style="background:transparent; border:1px solid var(--slate-700); color:var(--slate-300); margin-left: 8px;">View Partner Pricing</a>
+    </div>
+
+    <p class="note">Stack: HubSpot + Stripe + Resend + Composio + Notion + Slack.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Zion Tech Group. All rights reserved. | <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a> | <a href="/contact/">Contact</a></p>
+    </div>
   </footer>
 </body>
 </html>

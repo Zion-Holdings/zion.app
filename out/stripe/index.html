@@ -1,33 +1,173 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stripe Integration - Zion Tech Group</title>
-  <meta name="description" content="Integração Stripe para pagamentos automatizados, assinaturas e faturamento recorrente da Zion Tech Group.">
+  <title>Buy with Stripe | Zion Tech Group</title>
+  <meta name="description" content="Pay instantly for AI services, IT solutions, cloud migration, security audits, and micro-SaaS subscriptions using Stripe.">
+  <style>
+    :root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --white: #f8fafc; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+    .nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-links a { color: var(--slate-300); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; text-decoration: none; }
+    .nav-cta:hover { opacity: 0.9; }
+    .header { text-align: center; padding: 80px 24px 40px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), transparent); }
+    .header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; }
+    .header p { color: var(--slate-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; padding: 40px 0; }
+    .card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 16px; padding: 32px; transition: all 0.3s; }
+    .card:hover { border-color: var(--purple); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .card h3 { font-size: 1.5rem; margin-bottom: 8px; color: var(--white); }
+    .card .price { font-size: 2rem; font-weight: 700; color: var(--purple); margin: 16px 0; }
+    .card .desc { color: var(--slate-400); font-size: 0.9375rem; margin-bottom: 16px; }
+    .card ul { list-style: none; margin-bottom: 16px; padding: 0; }
+    .card ul li { padding: 6px 0; color: var(--slate-300); font-size: 0.875rem; display: flex; align-items: flex-start; gap: 8px; }
+    .card ul li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+    .card .btn { display: inline-block; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s; font-size: 0.875rem; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-outline { background: transparent; border: 1px solid var(--slate-700); color: var(--slate-300); }
+    .btn-outline:hover { border-color: var(--purple); color: var(--white); }
+    .section { padding: 60px 0; }
+    .section h2 { text-align: center; font-size: 2rem; margin-bottom: 16px; }
+    .footer { border-top: 1px solid rgba(148, 163, 184, 0.1); padding: 40px 24px; text-align: center; color: var(--slate-400); font-size: 0.875rem; }
+    .footer a { color: var(--purple); text-decoration: none; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Stripe Integration</h1>
-    <nav>
-      <a href="/services/">Serviços</a> |
-      <a href="/pricing/">Preços</a> |
-      <a href="https://ziontechgroup.com">Home</a>
-    </nav>
+  <nav class="nav">
+    <a href="/" class="nav-brand">Zion Tech Group</a>
+    <div class="nav-links">
+      <a href="/pricing/">Pricing</a>
+      <a href="/monetization/">Catalog</a>
+      <a href="/affiliate/">Affiliate</a>
+      <a href="/partner-program/">Partner</a>
+      <a href="/tools/">Tools</a>
+      <a href="https://calendly.com/kleber-garcia-alcatrao/zion-tech-group-discovery-call" class="nav-cta">Book a Call</a>
+    </div>
+  </nav>
+
+  <header class="header">
+    <h1>Buy with Stripe</h1>
+    <p>Instant checkout for AI services, IT solutions, and micro-SaaS subscriptions.</p>
   </header>
-  <main>
-    <h2>Pagamentos automatizados com Stripe</h2>
-    <p>A Zion Tech Group utiliza Stripe para processar pagamentos, assinaturas e faturamento recorrente de forma segura e escalável.</p>
-    <ul>
-      <li>Checkout automatizado</li>
-      <li>Assinaturas recorrentes</li>
-      <li>Faturamento por uso</li>
-      <li>Reconciliação financeira</li>
-    </ul>
-    <p><a href="/free-consultation/">Agende uma consultoria gratuita</a></p>
-  </main>
-  <footer>
-    <p> Zion Tech Group. Todos os direitos reservados.</p>
+
+  <section class="section">
+    <div class="container">
+      <h2>Service Packages</h2>
+      <p class="subtitle" style="text-align:center; color:var(--slate-400); max-width:600px; margin:0 auto 40px;">Pay instantly online. Professional services, one-time deliverables, and managed subscriptions available.</p>
+
+      <div class="grid-2">
+        <!-- AI Readiness Audit -->
+        <div class="card">
+          <h3>AI Readiness Audit</h3>
+          <div class="price">$299</div>
+          <p class="desc">Full assessment of your AI maturity, infrastructure gaps, and a prioritized 12-month roadmap.</p>
+          <ul>
+            <li>12-dimensional maturity scoring</li>
+            <li>Infrastructure & data readiness report</li>
+            <li>30-page PDF with prioritized actions</li>
+            <li>30-minute debrief call</li>
+          </ul>
+          <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="btn btn-primary" target="_blank">Pay $299 — Get Started</a>
+          <a href="/free-ai-readiness-audit/" class="btn btn-outline" style="margin-top: 8px;">Free Mini Audit</a>
+        </div>
+
+        <!-- AI Strategy Plan -->
+        <div class="card">
+          <h3>AI Strategy & Implementation Plan</h3>
+          <div class="price">$1,999</div>
+          <p class="desc">End-to-end AI strategy with use case prioritization, vendor selection, pilot design, ROI model, and implementation roadmap.</p>
+          <ul>
+            <li>Starter audit included</li>
+            <li>3-5 high-impact use cases</li>
+            <li>Vendor comparison matrix</li>
+            <li>Executive presentation</li>
+            <li>60-minute strategy session</li>
+          </ul>
+          <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="btn btn-primary" target="_blank">Pay $1,999 — Start Now</a>
+        </div>
+
+        <!-- Managed AI Automation -->
+        <div class="card">
+          <h3>AI Workflow Automation</h3>
+          <div class="price">$499<span style="font-size:1rem; color:var(--slate-400); font-weight:400;">/month</span></div>
+          <p class="desc">Fully managed AI automation for your business processes. We build, deploy, and maintain your automations.</p>
+          <ul>
+            <li>Up to 5 automated workflows</li>
+            <li>Monthly performance reports</li>
+            <li>24/7 monitoring & incident response</li>
+            <li>Integration with Slack, Gmail, Notion</li>
+            <li>Cancel anytime, no contracts</li>
+          </ul>
+          <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="btn btn-primary" target="_blank">Start Free Trial — $499/mo</a>
+        </div>
+
+        <!-- Cybersecurity Audit -->
+        <div class="card">
+          <h3>Cybersecurity Audit</h3>
+          <div class="price">$1,499</div>
+          <p class="desc">Penetration testing, vulnerability assessment, and compliance gap analysis for your infrastructure.</p>
+          <ul>
+            <li>External & internal vulnerability scan</li>
+            <li>Penetration test (web, APIs, network)</li>
+            <li>LGPD, GDPR, ISO 27001 readiness</li>
+            <li>Prioritized remediation report</li>
+            <li>90-minute security team review</li>
+          </ul>
+          <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="btn btn-primary" target="_blank">Pay $1,499 — Start Now</a>
+        </div>
+
+        <!-- Cloud Cost Optimization -->
+        <div class="card">
+          <h3>Cloud Cost Optimization</h3>
+          <div class="price">$999</div>
+          <p class="desc">Analyze your AWS/GCP/Azure spend, identify waste, and recommend right-sizing with projected savings.</p>
+          <ul>
+            <li>Full cloud spend analysis (6 months)</li>
+            <li>Waste identification & savings estimates</li>
+            <li>Right-sizing recommendations</li>
+            <li>Reserved instance strategy</li>
+            <li>Architecture optimization suggestions</li>
+          </ul>
+          <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="btn btn-primary" target="_blank">Pay $999 — Start Now</a>
+        </div>
+
+        <!-- Micro-SaaS Tool -->
+        <div class="card">
+          <h3>Micro-SaaS Tool Subscription</h3>
+          <div class="price">$29<span style="font-size:1rem; color:var(--slate-400); font-weight:400;">/month</span></div>
+          <p class="desc">Access to over 100 AI-powered micro tools. Choose from: Lead Scoring, Meeting Notes, Invoice Processor, Code Reviewer, and more.</p>
+          <ul>
+            <li>Single tool license</li>
+            <li>Full feature access & updates</li>
+            <li>Priority email support</li>
+            <li>Cancel anytime</li>
+          </ul>
+          <a href="/tools/" class="btn btn-primary" target="_blank">Browse Tools — From $29/mo</a>
+        </div>
+      </div>
+
+      <div class="note" style="margin-top: 32px; padding: 20px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 12px; display: flex; gap: 12px; align-items: flex-start;">
+        <div style="font-size:1.5rem;">🔒</div>
+        <div>
+          <p><strong>Secure payments via Stripe.</strong> All payments are processed by Stripe — Zion Tech Group does not store your card details. You'll receive an email receipt immediately after payment.</p>
+          <p style="margin-top: 8px; color: var(--slate-500); font-size: 0.875rem;">Need an invoice? Contact us after payment for accounting purposes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Zion Tech Group. All rights reserved. | <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a> | <a href="/contact/">Contact</a></p>
+    </div>
   </footer>
 </body>
 </html>
