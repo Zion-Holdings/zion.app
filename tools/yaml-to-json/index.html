@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YAML to JSON Converter | Zion Tech Group</title>
+  <meta name="description" content="Convert YAML to JSON instantly with this free online tool. Paste your YAML and get formatted JSON output with copy and download options.">
+  <meta property="og:title" content="YAML to JSON Converter | Zion Tech Group">
+  <meta property="og:description" content="Free online YAML to JSON converter with syntax highlighting, copy, and download.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/yaml-to-json/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/yaml-to-json/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; resize: vertical; min-height: 200px; font-size: 0.875rem; line-height: 1.5; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; transition: background 0.15s; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .success { background: #064e3b; border: 1px solid #065f46; border-radius: 0.5rem; padding: 0.75rem; color: #a7f3d0; margin-bottom: 1rem; display: none; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; max-height: 400px; overflow-y: auto; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .stats { display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.75rem; color: #94a3b8; flex-wrap: wrap; }
+    .stats span { background: #1e293b; padding: 0.25rem 0.5rem; border-radius: 0.25rem; border: 1px solid #334155; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>YAML to JSON Converter</h1>
+    <p class="subtitle">Convert YAML to formatted JSON instantly.</p>
+    
+    <div class="field">
+      <label>YAML Input</label>
+      <textarea id="yamlInput" placeholder="Paste your YAML here...">name: Zion Tech Group
+services:
+  - AI
+  - IT
+  - Cloud
+  - Security
+founded: 2024
+active: true
+metadata:
+  location: San Francisco
+  employees: 50</textarea>
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="convert()">Convert to JSON</button>
+      <button class="btn success" onclick="copy()">Copy</button>
+      <button class="btn secondary" onclick="download()">Download</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="error" id="error"></div>
+    <div class="success" id="success"></div>
+    
+    <div class="section">
+      <h3>JSON Output</h3>
+      <pre id="output">—</pre>
+    </div>
+    
+    <div class="stats" id="stats"></div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script>
+    function convert() {
+      const input = document.getElementById('yamlInput').value;
+      const errorEl = document.getElementById('error');
+      const successEl = document.getElementById('success');
+      const outputEl = document.getElementById('output');
+      const statsEl = document.getElementById('stats');
+      
+      try {
+        const parsed = jsyaml.load(input);
+        const jsonStr = JSON.stringify(parsed, null, 2);
+        outputEl.textContent = jsonStr;
+        errorEl.style.display = 'none';
+        successEl.textContent = '✓ Conversion successful';
+        successEl.style.display = 'block';
+        
+        // Stats
+        const lines = input.split('\n').length;
+        const chars = jsonStr.length;
+        const keys = countKeys(parsed);
+        statsEl.innerHTML = `
+          <span>YAML Lines: ${lines}</span>
+          <span>JSON Keys: ${keys}</span>
+          <span>JSON Size: ${chars.toLocaleString()} chars</span>
+        `;
+      } catch(e) {
+        errorEl.textContent = '✗ ' + e.message;
+        errorEl.style.display = 'block';
+        successEl.style.display = 'none';
+        statsEl.innerHTML = '';
+      }
+    }
+    
+    function countKeys(obj) {
+      if (typeof obj !== 'object' || obj === null) return 0;
+      let count = 0;
+      for (const key in obj) {
+        count++;
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+          count += countKeys(obj[key]);
+        }
+      }
+      return count;
+    }
+    
+    function copy() {
+      const output = document.getElementById('output').textContent;
+      if (output === '—') return;
+      navigator.clipboard.writeText(output).then(() => {
+        const btn = document.querySelector('.btn.success');
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    }
+    
+    function download() {
+      const output = document.getElementById('output').textContent;
+      if (output === '—') return;
+      const blob = new Blob([output], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'output.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+    
+    function clearAll() {
+      document.getElementById('yamlInput').value = '';
+      document.getElementById('output').textContent = '—';
+      document.getElementById('error').style.display = 'none';
+      document.getElementById('success').style.display = 'none';
+      document.getElementById('stats').innerHTML = '';
+    }
+    
+    // Auto-convert on load with sample data
+    convert();
+  </script>
+</body>
+</html>

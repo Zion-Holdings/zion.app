@@ -1,0 +1,16 @@
+{
+  "phase": "docs-fallback",
+  "buildExitCode": 1,
+  "durationMs": 732,
+  "artifacts": {
+    "out_exists": true,
+    "out_index_html_exists": false,
+    "out_404_html_exists": false,
+    "out_service_index_exists": false,
+    "out_services_data_exists": false,
+    "docs_index_html_exists": true
+  },
+  "lastLines": "bash: line 1: ulimit: open files: cannot modify limit: Operation not permitted\n",
+  "nextLog": "missing",
+  "wroteAt": "2026-08-26T23:16:11.247Z"
+}

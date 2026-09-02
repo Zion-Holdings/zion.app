@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta Tag Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate SEO and social media meta tags for your website.">
+  <meta property="og:title" content="Meta Tag Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online meta tag generator for SEO and social.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/meta-tag-generator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/meta-tag-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input, .field textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; }
+    .field input:focus, .field textarea:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Meta Tag Generator</h1>
+    <p class="subtitle">Generate SEO and social media meta tags.</p>
+    
+    <div class="field">
+      <label>Title</label>
+      <input type="text" id="title" placeholder="Page title" value="Zion Tech Group | AI & IT Services">
+    </div>
+    
+    <div class="field">
+      <label>Description</label>
+      <textarea id="description" placeholder="Page description">AI-native IT services for autonomous operations and enterprise-ready delivery.</textarea>
+    </div>
+    
+    <div class="field">
+      <label>URL</label>
+      <input type="text" id="url" placeholder="https://example.com" value="https://ziontechgroup.com">
+    </div>
+    
+    <div class="field">
+      <label>OG Image URL</label>
+      <input type="text" id="ogImage" placeholder="https://example.com/image.png" value="">
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="generate()">Generate</button>
+      <button class="btn success" onclick="copy()">Copy</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="section">
+      <h3>Generated Meta Tags</h3>
+      <pre id="output">—</pre>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function generate() {
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const url = document.getElementById('url').value;
+      const ogImage = document.getElementById('ogImage').value;
+      
+      let tags = '';
+      tags += `<title>${title}</title>\n`;
+      tags += `<meta name="description" content="${description}">\n`;
+      tags += `<meta property="og:title" content="${title}">\n`;
+      tags += `<meta property="og:description" content="${description}">\n`;
+      if (url) tags += `<meta property="og:url" content="${url}">\n`;
+      if (ogImage) tags += `<meta property="og:image" content="${ogImage}">\n`;
+      tags += `<meta name="twitter:card" content="summary_large_image">\n`;
+      tags += `<meta name="twitter:title" content="${title}">\n`;
+      tags += `<meta name="twitter:description" content="${description}">\n`;
+      if (ogImage) tags += `<meta name="twitter:image" content="${ogImage}">\n`;
+      tags += `<link rel="canonical" href="${url}">`;
+      
+      document.getElementById('output').textContent = tags;
+    }
+    
+    function copy() {
+      const output = document.getElementById('output').textContent;
+      if (output === '—') return;
+      navigator.clipboard.writeText(output).then(() => {
+        const btn = document.querySelector('.btn.success');
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    }
+    
+    function clearAll() {
+      document.getElementById('title').value = '';
+      document.getElementById('description').value = '';
+      document.getElementById('url').value = '';
+      document.getElementById('ogImage').value = '';
+      document.getElementById('output').textContent = '—';
+    }
+    
+    generate();
+  </script>
+</body>
+</html>

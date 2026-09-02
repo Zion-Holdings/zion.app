@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate blog post outlines and introductions instantly. Free online content planning tool.">
+  <meta property="og:title" content="Blog Post Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online blog post generator with outline and introduction writing.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/blog-post-generator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/blog-post-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input[type="text"],
+    .field input[type="number"],
+    .field textarea,
+    .field select { width: 100%; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-size: 0.875rem; }
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus { outline: none; border-color: #6366f1; }
+    .field textarea { resize: vertical; min-height: 80px; font-family: inherit; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section .content { background: #0f172a; padding: 1rem; border-radius: 0.5rem; font-size: 0.875rem; line-height: 1.6; white-space: pre-wrap; }
+    .section .content h2 { color: #c7d2fe; font-size: 1rem; margin: 1rem 0 0.5rem; }
+    .section .content h3 { color: #a5b4fc; font-size: 0.9rem; margin: 0.75rem 0 0.25rem; }
+    .section .content p { margin-bottom: 0.75rem; color: #d1d5db; }
+    .section .content ul, .section .content ol { margin: 0.5rem 0 0.75rem 1.25rem; color: #d1d5db; }
+    .section .content li { margin-bottom: 0.25rem; }
+    .output-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 640px) { .output-grid { grid-template-columns: 1fr; } }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .empty { color: #64748b; font-style: italic; }
+    .char-count { font-size: 0.75rem; color: #64748b; margin-top: 0.25rem; text-align: right; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Blog Post Generator</h1>
+    <p class="subtitle">Generate blog post outlines and introductions instantly.</p>
+
+    <div class="field">
+      <label for="topic">Blog Topic *</label>
+      <input type="text" id="topic" placeholder="e.g., How to Build a REST API with Node.js">
+    </div>
+
+    <div class="field">
+      <label for="keywords">Keywords (comma-separated)</label>
+      <input type="text" id="keywords" placeholder="e.g., REST API, Node.js, Express, backend">
+    </div>
+
+    <div class="field">
+      <label for="tone">Tone</label>
+      <select id="tone">
+        <option value="professional">Professional</option>
+        <option value="casual">Casual</option>
+        <option value="informative">Informative</option>
+        <option value="persuasive">Persuasive</option>
+        <option value="conversational">Conversational</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="description">Brief Description / Notes (optional)</label>
+      <textarea id="description" placeholder="What's the main goal or angle of this post? Any specific points to cover?"></textarea>
+    </div>
+
+    <div class="buttons">
+      <button class="btn" onclick="generateAll()">Generate Post</button>
+      <button class="btn success" onclick="copyAll()">Copy All</button>
+      <button class="btn secondary" onclick="copyOutline()">Copy Outline</button>
+      <button class="btn secondary" onclick="copyIntro()">Copy Intro</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+
+    <div class="output-grid">
+      <div class="section">
+        <h3>Outline</h3>
+        <div class="content" id="outlineOutput"><span class="empty">Your outline will appear here...</span></div>
+      </div>
+      <div class="section">
+        <h3>Introduction</h3>
+        <div class="content" id="introOutput"><span class="empty">Your introduction will appear here...</span></div>
+      </div>
+    </div>
+
+    <div class="char-count" id="charCount"></div>
+
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    const toneStyles = {
+      professional: {
+        intro: {
+          opening: 'In today\'s competitive landscape,',
+          closing: 'This guide provides actionable insights to help you achieve your goals.',
+          transition: 'Let\'s explore the key considerations and best practices.'
+        },
+        sectionPrefix: 'Overview of',
+        bulletStyle: 'formal'
+      },
+      casual: {
+        intro: {
+          opening: 'So you\'re thinking about',
+          closing: 'Don\'t worry — I\'ll walk you through everything you need to know.',
+          transition: 'Here\'s what we\'ll cover.'
+        },
+        sectionPrefix: 'Getting into',
+        bulletStyle: 'casual'
+      },
+      informative: {
+        intro: {
+          opening: 'Understanding the fundamentals of',
+          closing: 'By the end, you\'ll have a clear and comprehensive understanding.',
+          transition: 'Here\'s a detailed breakdown.'
+        },
+        sectionPrefix: 'Understanding',
+        bulletStyle: 'detailed'
+      },
+      persuasive: {
+        intro: {
+          opening: 'If you\'re ready to take your skills to the next level with',
+          closing: 'The evidence is clear — this approach delivers real results.',
+          transition: 'Here\'s why this matters and how to get started.'
+        },
+        sectionPrefix: 'Why',
+        bulletStyle: 'persuasive'
+      },
+      conversational: {
+        intro: {
+          opening: 'Let\'s talk about',
+          closing: 'Sound good? Let\'s dive in!',
+          transition: 'Here\'s what you can expect to learn.'
+        },
+        sectionPrefix: 'Exploring',
+        bulletStyle: 'friendly'
+      }
+    };
+
+    function parseKeywords(str) {
+      return str.split(',').map(k => k.trim()).filter(k => k.length > 0);
+    }
+
+    function generateSections(topic, keywords, description, tone) {
+      const style = toneStyles[tone];
+      const sections = [];
+
+      // Introduction section
+      sections.push({
+        title: 'Introduction',
+        items: [
+          `Hook the reader with a compelling opening about ${topic.toLowerCase()}`,
+          'Establish relevance and context for the target audience',
+          'Preview what the post will cover and the value it provides'
+        ]
+      });
+
+      // Background/Context section
+      if (keywords.length > 0) {
+        sections.push({
+          title: `${style.sectionPrefix} ${keywords[0] || topic}`,
+          items: [
+            `Define what ${keywords[0] || topic} means in today's context`,
+            'Highlight why this topic matters now',
+            'Address common misconceptions or challenges'
+          ]
+        });
+      }
+
+      // Main content sections based on keywords
+      const mainKeywords = keywords.slice(0, 3);
+      if (mainKeywords.length === 0) {
+        mainKeywords.push(topic);
+      }
+
+      mainKeywords.forEach((kw, idx) => {
+        sections.push({
+          title: getSectionTitle(kw, idx, tone),
+          items: [
+            `Explain the core concept of ${kw}`,
+            `Provide practical examples and use cases`,
+            `Share best practices and pro tips`,
+            idx === mainKeywords.length - 1 ? 'Highlight common pitfalls to avoid' : `Connect ${kw} to the bigger picture`
+          ]
+        });
+      });
+
+      // Practical application section
+      sections.push({
+        title: `How to Apply This: ${topic}`,
+        items: [
+          'Step-by-step action plan',
+          'Tools and resources you\'ll need',
+          'Measuring success and next steps'
+        ]
+      });
+
+      // Description-based section if provided
+      if (description && description.trim().length > 0) {
+        sections.push({
+          title: 'Key Focus Area',
+          items: [
+            `Address: ${description.trim()}`,
+            'Deep dive into the specific angle',
+            'Expert insights and recommendations'
+          ]
+        });
+      }
+
+      // Conclusion section
+      sections.push({
+        title: 'Conclusion',
+        items: [
+          'Recap the main takeaways',
+          'Reinforce the value proposition',
+          'Include a clear call-to-action'
+        ]
+      });
+
+      return sections;
+    }
+
+    function getSectionTitle(keyword, index, tone) {
+      const titles = {
+        professional: [`Understanding ${keyword}`, `Implementing ${keyword}`, `Leveraging ${keyword}`, `Mastering ${keyword}`],
+        casual: [`Getting Started with ${keyword}`, `Making ${keyword} Work`, `${keyword} in Practice`, `Your ${keyword} Toolkit`],
+        informative: [`The Basics of ${keyword}`, `How ${keyword} Works`, `${keyword} Best Practices`, `Advanced ${keyword} Concepts`],
+        persuasive: [`Why ${keyword} Matters`, `The Power of `${keyword}`, `${keyword} That Delivers`, `Unlocking ${keyword}`],
+        conversational: [`Let's Talk About ${keyword}`, `${keyword} Made Simple`, `Getting the Most from ${keyword}`, `${keyword} Tips & Tricks`]
+      };
+      const toneTitles = titles[tone] || titles.professional;
+      return toneTitles[index % toneTitles.length];
+    }
+
+    function generateOutline(topic, keywords, description, tone) {
+      const sections = generateSections(topic, keywords, description, tone);
+      let outline = `# Blog Post Outline: ${topic}\n`;
+      outline += `> Tone: ${tone.charAt(0).toUpperCase() + tone.slice(1)} | Keywords: ${keywords.join(', ') || 'None specified'}\n\n`;
+
+      sections.forEach((section, idx) => {
+        outline += `${idx + 1}. **${section.title}**\n`;
+        section.items.forEach(item => {
+          outline += `   - ${item}\n`;
+        });
+        outline += '\n';
+      });
+
+      return outline.trim();
+    }
+
+    function generateIntro(topic, keywords, description, tone) {
+      const style = toneStyles[tone];
+      const mainKeyword = keywords[0] || topic.toLowerCase();
+
+      let intro = '';
+
+      // Opening hook
+      intro += `${style.intro.opening} ${topic.toLowerCase()} is essential for anyone looking to stay ahead.\n\n`;
+
+      // Context paragraph
+      intro += `${capitalizeFirst(mainKeyword)} has become a critical skill in today's fast-paced environment. `;
+      if (keywords.length > 1) {
+        intro += `Whether you're working with ${keywords.slice(1, 3).join(' or ')}, getting the fundamentals right makes all the difference. `;
+      }
+      intro += `${style.intro.closing}\n\n`;
+
+      // Problem statement
+      intro += `Many people struggle with ${topic.toLowerCase()} because they lack a clear, structured approach. `;
+      intro += `This post solves that by giving you a proven framework you can apply immediately.\n\n`;
+
+      // What you'll learn
+      intro += `## What You'll Learn\n`;
+      intro += `By the end of this post, you'll know how to:\n`;
+      intro += `- Understand the core principles of ${topic.toLowerCase()}\n`;
+      intro += `- Apply best practices used by industry professionals\n`;
+      intro += `- Avoid common mistakes that waste time and resources\n`;
+      intro += `- Build a solid foundation for long-term success\n\n`;
+
+      // Transition
+      intro += `**${style.intro.transition}**`;
+
+      return intro.trim();
+    }
+
+    function capitalizeFirst(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    function generateAll() {
+      const topic = document.getElementById('topic').value.trim();
+      if (!topic) {
+        document.getElementById('topic').focus();
+        document.getElementById('topic').style.borderColor = '#ef4444';
+        setTimeout(() => { document.getElementById('topic').style.borderColor = '#334155'; }, 2000);
+        return;
+      }
+
+      const keywords = parseKeywords(document.getElementById('keywords').value);
+      const tone = document.getElementById('tone').value;
+      const description = document.getElementById('description').value;
+
+      const outline = generateOutline(topic, keywords, description, tone);
+      const intro = generateIntro(topic, keywords, description, tone);
+
+      document.getElementById('outlineOutput').textContent = outline;
+      document.getElementById('introOutput').textContent = intro;
+
+      const totalChars = outline.length + intro.length;
+      document.getElementById('charCount').textContent = `Total: ${totalChars.toLocaleString()} characters`;
+    }
+
+    function copyText(text, btn) {
+      if (!text || text.includes('will appear here')) return;
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    }
+
+    function copyAll() {
+      const outline = document.getElementById('outlineOutput').textContent;
+      const intro = document.getElementById('introOutput').textContent;
+      const combined = `${outline}\n\n---\n\n${intro}`;
+      copyText(combined, document.querySelector('.btn.success'));
+    }
+
+    function copyOutline() {
+      const outline = document.getElementById('outlineOutput').textContent;
+      const btn = document.querySelectorAll('.btn.secondary')[0];
+      copyText(outline, btn);
+    }
+
+    function copyIntro() {
+      const intro = document.getElementById('introOutput').textContent;
+      const btn = document.querySelectorAll('.btn.secondary')[1];
+      copyText(intro, btn);
+    }
+
+    function clearAll() {
+      document.getElementById('outlineOutput').innerHTML = '<span class="empty">Your outline will appear here...</span>';
+      document.getElementById('introOutput').innerHTML = '<span class="empty">Your introduction will appear here...</span>';
+      document.getElementById('charCount').textContent = '';
+      document.getElementById('topic').value = '';
+      document.getElementById('keywords').value = '';
+      document.getElementById('description').value = '';
+      document.getElementById('tone').value = 'professional';
+    }
+
+    // Allow Enter key in topic to trigger generation
+    document.getElementById('topic').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') generateAll();
+    });
+  </script>
+</body>
+</html>

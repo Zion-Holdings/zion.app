@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWT Decoder Pro | Zion Tech Group</title>
+  <meta name="description" content="Decode JWT tokens with signature verification — view header, payload, and verify HMAC signatures.">
+  <meta property="og:title" content="JWT Decoder Pro | Zion Tech Group">
+  <meta property="og:description" content="Free online JWT decoder with signature verification.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/jwt-decoder-pro/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/jwt-decoder-pro/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea, .field input { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 80px; }
+    textarea:focus, .field input:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; }
+    .verify-result { padding: 0.75rem; border-radius: 0.5rem; margin-top: 0.75rem; font-weight: 600; }
+    .verify-result.valid { background: #065f46; color: #a7f3d0; }
+    .verify-result.invalid { background: #7f1d1d; color: #fecaca; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JWT Decoder Pro</h1>
+    <p class="subtitle">Decode JWT tokens with signature verification.</p>
+    <div class="field">
+      <label>JWT Token</label>
+      <textarea id="jwtInput" placeholder="Paste your JWT here...">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</textarea>
+    </div>
+    <div class="field">
+      <label>Secret (for verification)</label>
+      <input type="text" id="secret" value="your-256-bit-secret">
+    </div>
+    <div class="buttons">
+      <button class="btn" onclick="decode()">Decode</button>
+      <button class="btn success" onclick="verify()">Verify Signature</button>
+    </div>
+    <div class="section">
+      <h3>Header</h3>
+      <pre id="headerOutput">—</pre>
+    </div>
+    <div class="section">
+      <h3>Payload</h3>
+      <pre id="payloadOutput">—</pre>
+    </div>
+    <div class="section">
+      <h3>Signature Verification</h3>
+      <pre id="sigOutput">—</pre>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    async function hmacSha256(message, secret) {
+      const enc = new TextEncoder();
+      const key = await crypto.subtle.importKey('raw', enc.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+      const sig = await crypto.subtle.sign('HMAC', key, enc.encode(message));
+      return btoa(String.fromCharCode(...new Uint8Array(sig))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    }
+    function base64url(str) {
+      return decodeURIComponent(escape(atob(str.replace(/-/g, '+').replace(/_/g, '/'))));
+    }
+    function decode() {
+      const jwt = document.getElementById('jwtInput').value.trim();
+      const parts = jwt.split('.');
+      if (parts.length !== 3) {
+        document.getElementById('headerOutput').textContent = 'Invalid JWT format';
+        document.getElementById('payloadOutput').textContent = '—';
+        return;
+      }
+      try {
+        const header = JSON.parse(base64url(parts[0]));
+        const payload = JSON.parse(base64url(parts[1]));
+        document.getElementById('headerOutput').textContent = JSON.stringify(header, null, 2);
+        document.getElementById('payloadOutput').textContent = JSON.stringify(payload, null, 2);
+      } catch(e) {
+        document.getElementById('headerOutput').textContent = 'Error: ' + e.message;
+      }
+    }
+    async function verify() {
+      const jwt = document.getElementById('jwtInput').value.trim();
+      const secret = document.getElementById('secret').value;
+      const parts = jwt.split('.');
+      if (parts.length !== 3) {
+        document.getElementById('sigOutput').textContent = 'Invalid JWT format';
+        return;
+      }
+      const expectedSig = await hmacSha256(`${parts[0]}.${parts[1]}`, secret);
+      const isValid = expectedSig === parts[2];
+      const result = document.getElementById('sigOutput');
+      result.textContent = isValid ? '✓ Signature VALID' : '✗ Signature INVALID';
+      result.className = isValid ? 'verify-result valid' : 'verify-result invalid';
+    }
+    decode();
+  </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Schema Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate JSON Schema from any JSON object. Free online tool to infer and create JSON Schema definitions.">
+  <meta property="og:title" content="JSON Schema Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online JSON Schema generator. Paste JSON and get the schema instantly.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/json-schema-generator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/json-schema-generator/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 150px; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .success { background: #064e3b; border: 1px solid #065f46; border-radius: 0.5rem; padding: 0.75rem; color: #a7f3d0; margin-bottom: 1rem; display: none; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JSON Schema Generator</h1>
+    <p class="subtitle">Generate JSON Schema from any JSON object.</p>
+    
+    <div class="field">
+      <label>JSON Input</label>
+      <textarea id="jsonInput" placeholder="Paste your JSON here...">{
+  "name": "Zion Tech Group",
+  "services": ["AI", "IT", "Cloud", "Security"],
+  "founded": 2024,
+  "active": true,
+  "address": {
+    "street": "123 Main St",
+    "city": "San Francisco"
+  }
+}</textarea>
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="generate()">Generate Schema</button>
+      <button class="btn success" onclick="copy()">Copy</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="error" id="error"></div>
+    <div class="success" id="success"></div>
+    
+    <div class="section">
+      <h3>Output</h3>
+      <pre id="output">—</pre>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function inferSchema(obj) {
+      const schema = {};
+      const type = getType(obj);
+      schema.type = type;
+      
+      if (type === 'object') {
+        schema.properties = {};
+        schema.required = [];
+        for (const [key, value] of Object.entries(obj)) {
+          schema.properties[key] = inferSchema(value);
+          schema.required.push(key);
+        }
+      } else if (type === 'array') {
+        if (obj.length > 0) {
+          schema.items = inferSchema(obj[0]);
+        } else {
+          schema.items = {};
+        }
+      } else if (type === 'string') {
+        if (/^\d{4}-\d{2}-\d{2}$/.test(obj)) schema.format = 'date';
+        else if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/.test(obj)) schema.format = 'date-time';
+        else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(obj)) schema.format = 'email';
+        else if (/^https?:\/\//.test(obj)) schema.format = 'uri';
+      }
+      
+      return schema;
+    }
+    
+    function getType(value) {
+      if (value === null) return 'null';
+      if (Array.isArray(value)) return 'array';
+      return typeof value;
+    }
+    
+    function generate() {
+      const input = document.getElementById('jsonInput').value;
+      const errorEl = document.getElementById('error');
+      const successEl = document.getElementById('success');
+      const outputEl = document.getElementById('output');
+      
+      try {
+        const parsed = JSON.parse(input);
+        const schema = {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          ...inferSchema(parsed)
+        };
+        outputEl.textContent = JSON.stringify(schema, null, 2);
+        errorEl.style.display = 'none';
+        successEl.textContent = '✓ Schema generated';
+        successEl.style.display = 'block';
+      } catch(e) {
+        errorEl.textContent = '✗ ' + e.message;
+        errorEl.style.display = 'block';
+        successEl.style.display = 'none';
+      }
+    }
+    
+    function copy() {
+      const output = document.getElementById('output').textContent;
+      if (output === '—') return;
+      navigator.clipboard.writeText(output).then(() => {
+        const btn = document.querySelector('.btn.success');
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    }
+    
+    function clearAll() {
+      document.getElementById('jsonInput').value = '';
+      document.getElementById('output').textContent = '—';
+      document.getElementById('error').style.display = 'none';
+      document.getElementById('success').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lorem Ipsum Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate placeholder text instantly.">
+  <meta property="og:title" content="Lorem Ipsum Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online lorem ipsum generator.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/lorem-ipsum/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/lorem-ipsum/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input[type="number"] { width: 100%; padding: 0.5rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; }
+    .field input[type="number"]:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none, border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lorem Ipsum Generator</h1>
+    <p class="subtitle">Generate placeholder text instantly.</p>
+    
+    <div class="field">
+      <label>Amount</label>
+      <input type="number" id="amount" value="5" min="1" max="100">
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="generateParagraphs()">Paragraphs</button>
+      <button class="btn secondary" onclick="generateSentences()">Sentences</button>
+      <button class="btn secondary" onclick="generateWords()">Words</button>
+      <button class="btn success" onclick="copy()">Copy</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="section">
+      <h3>Output</h3>
+      <pre id="output">—</pre>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    const loremWords = "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum".split(' ');
+    
+    function generateParagraphs() {
+      const count = parseInt(document.getElementById('amount').value) || 5;
+      let result = '';
+      for (let i = 0; i < count; i++) {
+        result += generateSentence() + ' ' + generateSentence() + ' ' + generateSentence() + ' ' + generateSentence() + ' ' + generateSentence() + ' ' + generateSentence() + ' ' + generateSentence() + ' ' + generateSentence() + '\n\n';
+      }
+      document.getElementById('output').textContent = result.trim();
+    }
+    
+    function generateSentences() {
+      const count = parseInt(document.getElementById('amount').value) || 5;
+      let result = '';
+      for (let i = 0; i < count; i++) {
+        result += generateSentence() + ' ';
+      }
+      document.getElementById('output').textContent = result.trim();
+    }
+    
+    function generateWords() {
+      const count = parseInt(document.getElementById('amount').value) || 5;
+      let result = '';
+      for (let i = 0; i < count; i++) {
+        result += loremWords[Math.floor(Math.random() * loremWords.length)] + ' ';
+      }
+      document.getElementById('output').textContent = result.trim();
+    }
+    
+    function generateSentence() {
+      const length = 8 + Math.floor(Math.random() * 12);
+      let sentence = '';
+      for (let i = 0; i < length; i++) {
+        sentence += loremWords[Math.floor(Math.random() * loremWords.length)] + ' ';
+      }
+      sentence = sentence.trim();
+      return sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.';
+    }
+    
+    function copy() {
+      const output = document.getElementById('output').textContent;
+      if (output === '—') return;
+      navigator.clipboard.writeText(output).then(() => {
+        const btn = document.querySelector('.btn.success');
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    }
+    
+    function clearAll() {
+      document.getElementById('output').textContent = '—';
+    }
+  </script>
+</body>
+</html>

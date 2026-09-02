@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timestamp to Cron Converter | Zion Tech Group</title>
+  <meta name="description" content="Convert Unix timestamps to cron expressions for that specific time.">
+  <meta property="og:title" content="Timestamp to Cron Converter | Zion Tech Group">
+  <meta property="og:description" content="Free online timestamp to cron converter.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/timestamp-to-cron/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/timestamp-to-cron/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+body>
+  <div class="container">
+    <h1>Timestamp to Cron Converter</h1>
+    <p class="subtitle">Convert Unix timestamps to cron expressions.</p>
+    <div class="field">
+      <label>Unix Timestamp</label>
+      <input type="text" id="timestamp" placeholder="e.g., 1704067200" value="1704067200">
+    </div>
+    <div class="buttons">
+      <button class="btn" onclick="convert()">Convert</button>
+      <button class="btn success" onclick="copy()">Copy Cron</button>
+      <button class="btn" onclick="useNow()">Use Current Time</button>
+    </div>
+    <div class="section">
+      <h3>Cron Expression</h3>
+      <pre id="cronOutput">—</pre>
+    </div>
+    <div class="section">
+      <h3>Next Occurrences</h3>
+      <pre id="nextOutput">—</pre>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    function convert() {
+      const ts = parseInt(document.getElementById('timestamp').value);
+      if (isNaN(ts)) { document.getElementById('cronOutput').textContent = 'Invalid timestamp'; return; }
+      const date = new Date(ts * 1000);
+      const min = date.getMinutes();
+      const hour = date.getHours();
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const dow = date.getDay();
+      const cron = `${min} ${hour} ${day} ${month} ${dow}`;
+      document.getElementById('cronOutput').textContent = cron;
+      // Next occurrences
+      let next = '';
+      for (let i = 1; i <= 5; i++) {
+        const d = new Date((ts + i * 86400) * 1000);
+        next += `${d.toISOString().split('T')[0]} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}\n`;
+      }
+      document.getElementById('nextOutput').textContent = next;
+    }
+    function copy() {
+      const cron = document.getElementById('cronOutput').textContent;
+      if (cron === '—') return;
+      navigator.clipboard.writeText(cron).then(() => {
+        const btn = document.querySelector('.btn.success');
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+      });
+    }
+    function useNow() {
+      document.getElementById('timestamp').value = Math.floor(Date.now() / 1000);
+      convert();
+    }
+    convert();
+  </script>
+</body>
+</html>

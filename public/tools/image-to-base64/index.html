@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image to Base64 Converter | Zion Tech Group</title>
+  <meta name="description" content="Convert images to Base64 data URIs online. Preview your image, copy the encoded string, or download as a text file.">
+  <meta property="og:title" content="Image to Base64 Converter | Zion Tech Group">
+  <meta property="og:description" content="Free online image to Base64 converter with preview, copy, and download.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/image-to-base64/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/image-to-base64/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 768px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .upload-area { border: 2px dashed #4b5563; border-radius: 0.75rem; padding: 2rem; text-align: center; margin-bottom: 1.5rem; transition: border-color 0.2s; cursor: pointer; }
+    .upload-area:hover, .upload-area.drag-over { border-color: #6366f1; background: rgba(99, 102, 241, 0.05); }
+    .upload-area input[type="file"] { display: none; }
+    .upload-area p { color: #94a3b8; margin-bottom: 0.5rem; }
+    .upload-area .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .preview { display: none; margin-bottom: 1.5rem; text-align: center; }
+    .preview img { max-width: 100%; max-height: 300px; border-radius: 0.5rem; border: 1px solid #334155; }
+    .preview .file-info { color: #94a3b8; font-size: 0.875rem; margin-top: 0.5rem; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.danger { background: #dc2626; }
+    .btn.danger:hover { background: #b91c1c; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .error { background: #7f1d1d; border: solid 1px #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .success { background: #14532d; border: solid 1px #166534; border-radius: 0.5rem; padding: 0.75rem; color: #bbf7d0; margin-bottom: 1rem; display: none; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 120px; font-size: 0.8rem; word-break: break-all; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .info { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-top: 1.5rem; }
+    .info h2 { font-size: 1.125rem; margin-bottom: 0.75rem; }
+    .info ul { list-style: none; padding: 0; }
+    .info li { padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+    .info li:last-child { border-bottom: none; }
+    .info .label { color: #818cf8; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Image to Base64 Converter</h1>
+    <p class="subtitle">Convert images to Base64 data URIs for embedding in HTML, CSS, or APIs.</p>
+    
+    <div class="upload-area" id="dropZone">
+      <div class="icon">📁</div>
+      <p><strong>Click to upload</strong> or drag and drop an image</p>
+      <p style="font-size: 0.75rem;">Supports PNG, JPG, GIF, SVG, WebP, BMP, ICO</p>
+      <input type="file" id="fileInput" accept="image/*">
+    </div>
+    
+    <div class="preview" id="previewContainer">
+      <img id="previewImg" src="" alt="Preview">
+      <div class="file-info" id="fileInfo"></div>
+    </div>
+    
+    <div class="error" id="error"></div>
+    <div class="success" id="success"></div>
+    
+    <div class="buttons">
+      <button class="btn" id="convertBtn" onclick="convertImage()" disabled>Convert to Base64</button>
+      <button class="btn secondary" id="copyBtn" onclick="copyToClipboard()" disabled>Copy to Clipboard</button>
+      <button class="btn secondary" id="downloadBtn" onclick="downloadAsText()" disabled>Download .txt</button>
+      <button class="btn danger" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="field">
+      <label>Base64 Output</label>
+      <textarea id="output" placeholder="Base64 encoded string will appear here..." readonly></textarea>
+    </div>
+    
+    <div class="info">
+      <h2>About Image to Base64</h2>
+      <ul>
+        <li><span class="label">What it does</span> — Encodes an image file into a Base64 string that can be used as a data URI.</li>
+        <li><span class="label">Common uses</span> — Inline images in HTML/CSS, embedding in JSON APIs, email signatures, reducing HTTP requests.</li>
+        <li><span class="label">Data URI format</span> — data:image/png;base64,iVBORw0KGgo...</li>
+        <li><span class="label">Size note</span> — Base64 encoding increases file size by ~33%. Best for small icons and thumbnails.</li>
+      </ul>
+      <p style="margin-top: 1rem; color: #94a3b8; font-size: 0.875rem;">All processing happens locally in your browser. No files are uploaded to any server.</p>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    let selectedFile = null;
+    let base64Result = '';
+    
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const previewContainer = document.getElementById('previewContainer');
+    const previewImg = document.getElementById('previewImg');
+    const fileInfo = document.getElementById('fileInfo');
+    const output = document.getElementById('output');
+    const convertBtn = document.getElementById('convertBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    
+    // Click to upload
+    dropZone.addEventListener('click', () => fileInput.click());
+    
+    // File input change
+    fileInput.addEventListener('change', handleFileSelect);
+    
+    // Drag and drop
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('drag-over');
+    });
+    
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('drag-over');
+    });
+    
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('drag-over');
+      if (e.dataTransfer.files.length > 0) {
+        fileInput.files = e.dataTransfer.files;
+        handleFileSelect({ target: fileInput });
+      }
+    });
+    
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      
+      if (!file.type.startsWith('image/')) {
+        showError('Please select a valid image file.');
+        return;
+      }
+      
+      selectedFile = file;
+      hideError();
+      hideSuccess();
+      
+      // Show preview
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        previewImg.src = event.target.result;
+        previewContainer.style.display = 'block';
+        fileInfo.textContent = `${file.name} • ${formatBytes(file.size)} • ${file.type}`;
+      };
+      reader.readAsDataURL(file);
+      
+      convertBtn.disabled = false;
+      copyBtn.disabled = true;
+      downloadBtn.disabled = true;
+      output.value = '';
+      base64Result = '';
+    }
+    
+    function convertImage() {
+      if (!selectedFile) {
+        showError('Please select an image first.');
+        return;
+      }
+      
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        base64Result = event.target.result;
+        output.value = base64Result;
+        copyBtn.disabled = false;
+        downloadBtn.disabled = false;
+        hideError();
+        showSuccess('Image converted successfully!');
+      };
+      reader.onerror = () => {
+        showError('Error reading file. Please try again.');
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+    
+    function copyToClipboard() {
+      if (!base64Result) return;
+      
+      navigator.clipboard.writeText(base64Result).then(() => {
+        showSuccess('Copied to clipboard!');
+      }).catch(() => {
+        // Fallback for older browsers
+        output.select();
+        document.execCommand('copy');
+        showSuccess('Copied to clipboard!');
+      });
+    }
+    
+    function downloadAsText() {
+      if (!base64Result) return;
+      
+      const blob = new Blob([base64Result], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = selectedFile ? selectedFile.name + '.base64.txt' : 'image-base64.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showSuccess('Download started!');
+    }
+    
+    function clearAll() {
+      selectedFile = null;
+      base64Result = '';
+      fileInput.value = '';
+      output.value = '';
+      previewContainer.style.display = 'none';
+      previewImg.src = '';
+      convertBtn.disabled = true;
+      copyBtn.disabled = true;
+      downloadBtn.disabled = true;
+      hideError();
+      hideSuccess();
+    }
+    
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+    
+    function showError(msg) {
+      const el = document.getElementById('error');
+      el.textContent = msg;
+      el.style.display = 'block';
+    }
+    
+    function hideError() {
+      document.getElementById('error').style.display = 'none';
+    }
+    
+    function showSuccess(msg) {
+      const el = document.getElementById('success');
+      el.textContent = msg;
+      el.style.display = 'block';
+      setTimeout(hideSuccess, 3000);
+    }
+    
+    function hideSuccess() {
+      document.getElementById('success').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

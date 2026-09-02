@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hash Checker | Zion Tech Group</title>
+  <meta name="description" content="Generate and compare hashes online with SHA-1, SHA-256, SHA-512.">
+  <meta property="og:title" content="Hash Checker | Zion Tech Group">
+  <meta property="og:description" content="Free online hash generator and checker.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/hash-checker/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/hash-checker/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea, .field input { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 100px; }
+    textarea:focus, .field input:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .hash-item { margin-bottom: 0.75rem; }
+    .hash-item label { font-size: 0.75rem; color: #94a3b8; display: block; margin-bottom: 0.25rem; }
+    .hash-item .hash-value { font-family: monospace; font-size: 0.875rem; background: #0f172a; padding: 0.5rem; border-radius: 0.25rem; word-break: break-all; }
+    .match { color: #10b981; font-weight: 600; }
+    .no-match { color: #ef4444; font-weight: 600; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hash Checker</h1>
+    <p class="subtitle">Generate and compare hashes online.</p>
+    <div class="field">
+      <label>Input Text</label>
+      <textarea id="inputText" placeholder="Enter text to hash...">Hello, World!</textarea>
+    </div>
+    <div class="field">
+      <label>Expected Hash (optional)</label>
+      <input type="text" id="expectedHash" placeholder="Paste expected hash to compare...">
+    </div>
+    <div class="buttons">
+      <button class="btn" onclick="generate()">Generate Hashes</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    <div class="section">
+      <h3>Generated Hashes</h3>
+      <div id="hashes">—</div>
+    </div>
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+  <script>
+    async function sha1(text) {
+      const data = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest('SHA-1', data);
+      return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    async function sha256(text) {
+      const data = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    async function sha512(text) {
+      const data = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest('SHA-512', data);
+      return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    async function generate() {
+      const text = document.getElementById('inputText').value;
+      const expected = document.getElementById('expectedHash').value.trim().toLowerCase();
+      const container = document.getElementById('hashes');
+      if (!text) { container.textContent = '—'; return; }
+      const hashes = {
+        'SHA-1': await sha1(text),
+        'SHA-256': await sha256(text),
+        'SHA-512': await sha512(text)
+      };
+      let html = '';
+      for (const [algo, hash] of Object.entries(hashes)) {
+        const isMatch = expected && hash === expected;
+        const matchClass = isMatch ? 'match' : (expected ? 'no-match' : '');
+        const matchText = isMatch ? ' ✓ MATCH' : (expected ? ' ✗ NO MATCH' : '');
+        html += `<div class="hash-item"><label>${algo}${matchText}</label><div class="hash-value ${matchClass}">${hash}</div></div>`;
+      }
+      container.innerHTML = html;
+    }
+    function clearAll() {
+      document.getElementById('inputText').value = '';
+      document.getElementById('expectedHash').value = '';
+      document.getElementById('hashes').textContent = '—';
+    }
+  </script>
+</body>
+</html>

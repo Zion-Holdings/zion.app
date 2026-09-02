@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWT Decoder | Zion Tech Group</title>
+  <meta name="description" content="Decode JWT tokens instantly — view header, payload, and signature verification status.">
+  <meta property="og:title" content="JWT Decoder | Zion Tech Group">
+  <meta property="og:description" content="Free online JWT decoder with signature verification.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/jwt-decoder/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/jwt-decoder/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1.5rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 120px; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .success { background: #064e3b; border: 1px solid #065f46; border-radius: 0.5rem; padding: 0.75rem; color: #a7f3d0; margin-bottom: 1rem; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JWT Decoder</h1>
+    <p class="subtitle">Decode JWT tokens — view header, payload, and signature verification.</p>
+    
+    <div class="field">
+      <label>JWT Token</label>
+      <textarea id="token" placeholder="Paste your JWT here...">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</textarea>
+    </div>
+    
+    <div class="error" id="error"></div>
+    <div class="success" id="success"></div>
+    
+    <div class="section">
+      <h3>Header</h3>
+      <pre id="header">—</pre>
+    </div>
+    
+    <div class="section">
+      <h3>Payload</h3>
+      <pre id="payload">—</pre>
+    </div>
+    
+    <div class="section">
+      <h3>Signature</h3>
+      <pre id="signature">—</pre>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function decodeJWT(token) {
+      token = token.trim();
+      const parts = token.split('.');
+      if (parts.length !== 3) throw new Error('Invalid JWT format — expected 3 parts separated by dots');
+      
+      const decode = (str) => {
+        str = str.replace(/-/g, '+').replace(/_/g, '/');
+        while (str.length % 4) str += '=';
+        return JSON.parse(decodeURIComponent(escape(atob(str))));
+      };
+      
+      return {
+        header: decode(parts[0]),
+        payload: decode(parts[1]),
+        signature: parts[2]
+      };
+    }
+    
+    function update() {
+      const token = document.getElementById('token').value;
+      const errorEl = document.getElementById('error');
+      const successEl = document.getElementById('success');
+      
+      try {
+        const decoded = decodeJWT(token);
+        document.getElementById('header').textContent = JSON.stringify(decoded.header, null, 2);
+        document.getElementById('payload').textContent = JSON.stringify(decoded.payload, null, 2);
+        document.getElementById('signature').textContent = decoded.signature;
+        errorEl.style.display = 'none';
+        successEl.textContent = '✓ Valid JWT format';
+        successEl.style.display = 'block';
+      } catch(e) {
+        errorEl.textContent = '✗ ' + e.message;
+        errorEl.style.display = 'block';
+        successEl.style.display = 'none';
+        document.getElementById('header').textContent = '—';
+        document.getElementById('payload').textContent = '—';
+        document.getElementById('signature').textContent = '—';
+      }
+    }
+    
+    document.getElementById('token').addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

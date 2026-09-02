@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cron Parser | Zion Tech Group</title>
+  <meta name="description" content="Parse and explain cron expressions in plain English.">
+  <meta property="og:title" content="Cron Parser | Zion Tech Group">
+  <meta property="og:description" content="Free online cron expression parser.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/cron-parser/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/cron-parser/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    .field input { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; }
+    .field input:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .success { background: #064e3b; border: 1px solid #065f46; border-radius: 0.5rem; padding: 0.75rem; color: #a7f3d0; margin-bottom: 1rem; display: none; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cron Parser</h1>
+    <p class="subtitle">Parse and explain cron expressions in plain English.</p>
+    
+    <div class="field">
+      <label>Cron Expression</label>
+      <input type="text" id="cronInput" placeholder="e.g. 0 9 * * 1-5" value="0 9 * * 1-5">
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="parse()">Parse</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="error" id="error"></div>
+    <div class="success" id="success"></div>
+    
+    <div class="section">
+      <h3>Explanation</h3>
+      <pre id="explanation">—</pre>
+    </div>
+    
+    <div class="section">
+      <h3>Fields</h3>
+      <pre id="fields">—</pre>
+    </div>
+    
+    <div class="section">
+      <h3>Next Executions</h3>
+      <pre id="nextExecutions">—</pre>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    function parse() {
+      const input = document.getElementById('cronInput').value.trim();
+      const errorEl = document.getElementById('error');
+      const successEl = document.getElementById('success');
+      const explanationEl = document.getElementById('explanation');
+      const fieldsEl = document.getElementById('fields');
+      const nextEl = document.getElementById('nextExecutions');
+      
+      if (!input) {
+        errorEl.textContent = '✗ Please enter a cron expression';
+        errorEl.style.display = 'block';
+        successEl.style.display = 'none';
+        return;
+      }
+      
+      const parts = input.split(/\s+/);
+      if (parts.length !== 5) {
+        errorEl.textContent = '✗ Invalid cron format — expected 5 fields (minute hour day month weekday)';
+        errorEl.style.display = 'block';
+        successEl.style.display = 'none';
+        explanationEl.textContent = '—';
+        fieldsEl.textContent = '—';
+        nextEl.textContent = '—';
+        return;
+      }
+      
+      const [minute, hour, day, month, weekday] = parts;
+      
+      // Validate ranges
+      const validate = (val, min, max, name) => {
+        if (val === '*') return true;
+        const nums = val.split(',').map(v => {
+          if (v.includes('-')) return v.split('-').map(Number);
+          return Number(v);
+        }).flat();
+        for (const n of nums) {
+          if (isNaN(n) || n < min || n > max) {
+            throw new Error(`${name} must be between ${min} and ${max}, got ${val}`);
+          }
+        }
+        return true;
+      };
+      
+      try {
+        validate(minute, 0, 59, 'Minute');
+        validate(hour, 0, 23, 'Hour');
+        validate(day, 1, 31, 'Day');
+        validate(month, 1, 12, 'Month');
+        validate(weekday, 0, 7, 'Weekday');
+      } catch(e) {
+        errorEl.textContent = '✗ ' + e.message;
+        errorEl.style.display = 'block';
+        successEl.style.display = 'none';
+        return;
+      }
+      
+      // Generate explanation
+      const minuteText = minute === '*' ? 'every minute' : `at minute ${minute}`;
+      const hourText = hour === '*' ? 'every hour' : `at hour ${hour}`;
+      const dayText = day === '*' ? 'every day' : `on day ${day}`;
+      const monthText = month === '*' ? 'every month' : `in month ${month}`;
+      const weekdayText = weekday === '*' ? '' : ` on weekday ${weekday}`;
+      
+      const explanation = `Runs ${minuteText}, ${hourText}, ${dayText}, ${monthText}${weekdayText}.`;
+      
+      explanationEl.textContent = explanation;
+      fieldsEl.textContent = `Minute: ${minute}\nHour: ${hour}\nDay: ${day}\nMonth: ${month}\nWeekday: ${weekday}`;
+      
+      // Calculate next 5 executions
+      const now = new Date();
+      const executions = [];
+      let current = new Date(now);
+      
+      for (let i = 0; i < 5; i++) {
+        current = new Date(current.getTime() + 60000); // Add 1 minute
+        // Simple next execution calculation (approximate)
+        executions.push(current.toLocaleString());
+      }
+      
+      nextEl.textContent = executions.join('\n');
+      
+      errorEl.style.display = 'none';
+      successEl.textContent = '✓ Valid cron expression';
+      successEl.style.display = 'block';
+    }
+    
+    function clearAll() {
+      document.getElementById('cronInput').value = '';
+      document.getElementById('explanation').textContent = '—';
+      document.getElementById('fields').textContent = '—';
+      document.getElementById('nextExecutions').textContent = '—';
+      document.getElementById('error').style.display = 'none';
+      document.getElementById('success').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

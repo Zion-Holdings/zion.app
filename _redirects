@@ -913,8 +913,32 @@
 /services/ai-predictive-analytics/ /services/ai-predictive-analytics 301
 /services/data-lake-platform /services/?category=data 301
 /services/data-lake-platform/ /services/?category=data 301
-/services/data-lake-platform /services/data-analytics 301
-/services/data-lake-platform/ /services/data-analytics 301
+/services/data-lake-platform /services/ 301
+/services/data-lake-platform/ /services/ 301
+
+# Confirmed 404 fixes
+/new /services/ 301
+/services/ai-services /services/ 301
+/services/data-analytics /services/ 301
+/blog/composio /blog/ 301
+/solutions/hermes-ai-agents/ /services/ 301
+/case-studies/hermes-agent-fleet/ /case-studies/ 301
+/docs/hermes-agent-installation/ /docs/ 301
+/docs/hermes-agent-architecture/ /docs/ 301
+/docs/hermes-agent-profiles/ /docs/ 301
+/docs/agent-framework-comparison/ /docs/ 301
+/docs/hermes-agent-skills/ /docs/ 301
+/docs/hermes-agent-mcp-integration/ /docs/ 301
+/hermes-about/ /about/ 301
+/hermes-agents-services/ /services/ 301
+/hermes-case-studies/ /case-studies/ 301
+/hermes-faq/ /docs/ 301
+/hermes-integrations/ /integrations/ 301
+/hermes-monitor/ /status-page/ 301
+/services/devops/ /services/ 301
+/services/blockchain/ /services/ 301
+/services/ecommerce/ /services/ 301
+/services/mobile-app-development/ /services/ 301
 
 # Missing service redirects - added for 404 fix
 /services/5g-network-slicing-optimizer-e04c40dd /services/ 301

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <StandardPage
-      title="AI-native IT services"
+      title="AI & IT Services for Your Business"
       subtitle="Autonomous operations, managed AI, and enterprise-ready delivery for teams that want to move fast without breaking trust."
       breadcrumbItems={[
         { label: 'Home' },

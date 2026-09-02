@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel to JSON Converter | Zion Tech Group</title>
+  <meta name="description" content="Convert Excel, CSV, or TSV data to JSON instantly. Paste tabular data and get a formatted JSON array.">
+  <meta property="og:title" content="Excel to JSON Converter | Zion Tech Group">
+  <meta property="og:description" content="Free online Excel/CSV/TSV to JSON converter. Paste and convert instantly.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/excel-to-json/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/excel-to-json/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b0f1a; color: #e5e7eb; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .subtitle { color: #94a3b8; margin-bottom: 2rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.875rem; color: #94a3b8; margin-bottom: 0.5rem; }
+    textarea { width: 100%; padding: 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-family: monospace; resize: vertical; min-height: 180px; font-size: 0.875rem; }
+    textarea:focus { outline: none; border-color: #6366f1; }
+    .options { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+    .options label { font-size: 0.875rem; color: #94a3b8; }
+    .options select { padding: 0.4rem 0.75rem; background: #1e293b; border: 1px solid #334155; border-radius: 0.5rem; color: #fff; font-size: 0.875rem; }
+    .options select:focus { outline: none; border-color: #6366f1; }
+    .buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.5rem 1rem; background: #6366f1; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; }
+    .btn:hover { background: #4f46e5; }
+    .btn.secondary { background: #374151; }
+    .btn.secondary:hover { background: #4b5563; }
+    .btn.success { background: #059669; }
+    .btn.success:hover { background: #047857; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .error { background: #7f1d1d; border: 1px solid #991b1b; border-radius: 0.5rem; padding: 0.75rem; color: #fecaca; margin-bottom: 1rem; display: none; }
+    .success { background: #064e3b; border: 1px solid #065f46; border-radius: 0.5rem; padding: 0.75rem; color: #a7f3d0; margin-bottom: 1rem; display: none; }
+    .section { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1.5rem; }
+    .section h3 { font-size: 1rem; margin-bottom: 0.75rem; color: #818cf8; }
+    .section pre { background: #0f172a; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; word-break: break-all; max-height: 400px; overflow-y: auto; }
+    .stats { display: flex; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .stat { font-size: 0.875rem; color: #94a3b8; }
+    .stat strong { color: #e5e7eb; }
+    .back { display: inline-block; margin-top: 1.5rem; color: #818cf8; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Excel to JSON Converter</h1>
+    <p class="subtitle">Paste CSV, TSV, or tabular data from Excel and convert it to a JSON array.</p>
+    
+    <div class="field">
+      <label>Tabular Data Input</label>
+      <textarea id="dataInput" placeholder="Paste your CSV or TSV data here...
+
+Example:
+name,age,city
+John,30,New York
+Jane,25,London
+Bob,35,Paris"></textarea>
+    </div>
+    
+    <div class="options">
+      <label>Delimiter:</label>
+      <select id="delimiter">
+        <option value="auto">Auto-detect</option>
+        <option value=",">Comma (,)</option>
+        <option value="\t">Tab (TSV)</option>
+        <option value=";">Semicolon (;)</option>
+        <option value="|">Pipe (|)</option>
+      </select>
+      
+      <label>
+        <input type="checkbox" id="hasHeaders" checked> First row is headers
+      </label>
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="convert()">Convert to JSON</button>
+      <button class="btn success" id="copyBtn" onclick="copy()" disabled>Copy</button>
+      <button class="btn secondary" id="downloadBtn" onclick="download()" disabled>Download .json</button>
+      <button class="btn secondary" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <div class="error" id="error"></div>
+    <div class="success" id="success"></div>
+    
+    <div class="stats" id="stats" style="display:none;">
+      <span class="stat">Rows: <strong id="rowCount">0</strong></span>
+      <span class="stat">Columns: <strong id="colCount">0</strong></span>
+    </div>
+    
+    <div class="section">
+      <h3>JSON Output</h3>
+      <pre id="output">—</pre>
+    </div>
+    
+    <a href="/tools/" class="back">← Back to Tools</a>
+  </div>
+
+  <script>
+    let jsonResult = '';
+    
+    function detectDelimiter(text) {
+      const firstLine = text.split('\n')[0];
+      const delimiters = [
+        { char: '\t', name: 'tab' },
+        { char: ',', name: 'comma' },
+        { char: ';', name: 'semicolon' },
+        { char: '|', name: 'pipe' }
+      ];
+      
+      let maxCount = 0;
+      let detected = ',';
+      
+      for (const d of delimiters) {
+        const count = (firstLine.match(new RegExp('\\' + d.char, 'g')) || []).length;
+        if (count > maxCount) {
+          maxCount = count;
+          detected = d.char;
+        }
+      }
+      
+      return detected;
+    }
+    
+    function parseCSV(text, delimiter) {
+      const rows = [];
+      let currentRow = [];
+      let currentCell = '';
+      let inQuotes = false;
+      
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const nextChar = text[i + 1];
+        
+        if (inQuotes) {
+          if (char === '"') {
+            if (nextChar === '"') {
+              currentCell += '"';
+              i++;
+            } else {
+              inQuotes = false;
+            }
+          } else {
+            currentCell += char;
+          }
+        } else {
+          if (char === '"') {
+            inQuotes = true;
+          } else if (char === delimiter) {
+            currentRow.push(currentCell.trim());
+            currentCell = '';
+          } else if (char === '\n') {
+            currentRow.push(currentCell.trim());
+            if (currentRow.some(cell => cell !== '')) {
+              rows.push(currentRow);
+            }
+            currentRow = [];
+            currentCell = '';
+          } else if (char === '\r') {
+            // skip
+          } else {
+            currentCell += char;
+          }
+        }
+      }
+      
+      // Don't forget the last cell/row
+      if (currentCell || currentRow.length > 0) {
+        currentRow.push(currentCell.trim());
+        if (currentRow.some(cell => cell !== '')) {
+          rows.push(currentRow);
+        }
+      }
+      
+      return rows;
+    }
+    
+    function convert() {
+      const input = document.getElementById('dataInput').value;
+      const errorEl = document.getElementById('error');
+      const successEl = document.getElementById('success');
+      const outputEl = document.getElementById('output');
+      const statsEl = document.getElementById('stats');
+      
+      if (!input.trim()) {
+        showError('Please paste some tabular data first.');
+        return;
+      }
+      
+      try {
+        let delimiter = document.getElementById('delimiter').value;
+        if (delimiter === 'auto') {
+          delimiter = detectDelimiter(input);
+        }
+        
+        const hasHeaders = document.getElementById('hasHeaders').checked;
+        const rows = parseCSV(input, delimiter);
+        
+        if (rows.length === 0) {
+          showError('No data rows found.');
+          return;
+        }
+        
+        // Normalize column count
+        const maxCols = Math.max(...rows.map(r => r.length));
+        const normalizedRows = rows.map(r => {
+          while (r.length < maxCols) r.push('');
+          return r;
+        });
+        
+        let result;
+        
+        if (hasHeaders) {
+          const headers = normalizedRows[0];
+          const dataRows = normalizedRows.slice(1);
+          result = dataRows.map(row => {
+            const obj = {};
+            headers.forEach((header, i) => {
+              obj[header || `col${i}`] = autoType(row[i]);
+            });
+            return obj;
+          });
+        } else {
+          result = normalizedRows.map(row => 
+            row.map(cell => autoType(cell))
+          );
+        }
+        
+        jsonResult = JSON.stringify(result, null, 2);
+        outputEl.textContent = jsonResult;
+        
+        document.getElementById('rowCount').textContent = hasHeaders ? rows.length - 1 : rows.length;
+        document.getElementById('colCount').textContent = maxCols;
+        statsEl.style.display = 'flex';
+        
+        document.getElementById('copyBtn').disabled = false;
+        document.getElementById('downloadBtn').disabled = false;
+        
+        errorEl.style.display = 'none';
+        successEl.textContent = '✓ Converted successfully!';
+        successEl.style.display = 'block';
+        setTimeout(() => { successEl.style.display = 'none'; }, 3000);
+        
+      } catch(e) {
+        showError('Error: ' + e.message);
+      }
+    }
+    
+    function autoType(value) {
+      if (value === '' || value === null || value === undefined) return null;
+      
+      // Try number
+      if (/^-?\d+$/.test(value)) return parseInt(value, 10);
+      if (/^-?\d+\.\d+$/.test(value)) return parseFloat(value);
+      
+      // Try boolean
+      if (value.toLowerCase() === 'true') return true;
+      if (value.toLowerCase() === 'false') return false;
+      
+      return value;
+    }
+    
+    function copy() {
+      if (!jsonResult) return;
+      navigator.clipboard.writeText(jsonResult).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    }
+    
+    function download() {
+      if (!jsonResult) return;
+      const blob = new Blob([jsonResult], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'data.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      const successEl = document.getElementById('success');
+      successEl.textContent = '✓ Download started!';
+      successEl.style.display = 'block';
+      setTimeout(() => { successEl.style.display = 'none'; }, 3000);
+    }
+    
+    function clearAll() {
+      document.getElementById('dataInput').value = '';
+      document.getElementById('output').textContent = '—';
+      document.getElementById('error').style.display = 'none';
+      document.getElementById('success').style.display = 'none';
+      document.getElementById('stats').style.display = 'none';
+      document.getElementById('copyBtn').disabled = true;
+      document.getElementById('downloadBtn').disabled = true;
+      jsonResult = '';
+    }
+    
+    function showError(msg) {
+      const el = document.getElementById('error');
+      el.textContent = '✗ ' + msg;
+      el.style.display = 'block';
+      document.getElementById('success').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
