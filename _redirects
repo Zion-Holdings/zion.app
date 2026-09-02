@@ -1075,12 +1075,12 @@
 /partners/technology-alliances/*  /out/partners/technology-alliances/  200
 /free-ai-readiness-assessment/*  /out/free-ai-readiness-assessment/  200
 
-/ai-revenue-automation/  /ai-revenue-automation/index.html  200
-/managed-ai-support/  /managed-ai-support/index.html  200
-/cybersecurity-compliance-latam/  /cybersecurity-compliance-latam/index.html  200
-/partners/channel-program/  /partners/channel-program/index.html  200
-/ai-services-latam/  /ai-services-latam/index.html  200
-/managed-it-services-pricing/  /managed-it-services-pricing/index.html  200
-/cybersecurity-compliance-brazil/  /cybersecurity-compliance-brazil/index.html  200
-/partners/technology-alliances/  /partners/technology-alliances/index.html  200
-/free-ai-readiness-assessment/  /free-ai-readiness-assessment/index.html  200
+/ai-revenue-automation/  /out/ai-revenue-automation/index.html  200
+/managed-ai-support/  /out/managed-ai-support/index.html  200
+/cybersecurity-compliance-latam/  /out/cybersecurity-compliance-latam/index.html  200
+/partners/channel-program/  /out/partners/channel-program/index.html  200
+/ai-services-latam/  /out/ai-services-latam/index.html  200
+/managed-it-services-pricing/  /out/managed-it-services-pricing/index.html  200
+/cybersecurity-compliance-brazil/  /out/cybersecurity-compliance-brazil/index.html  200
+/partners/technology-alliances/  /out/partners/technology-alliances/index.html  200
+/free-ai-readiness-assessment/  /out/free-ai-readiness-assessment/index.html  200
