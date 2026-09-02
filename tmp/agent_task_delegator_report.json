@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-09-02T03:07:10.464886Z",
+  "repo": "/data/data/com.termux/files/home/ztg/repo",
+  "scripts_found": 19,
+  "gaps": [
+    {
+      "type": "git_uncommitted",
+      "count": 1,
+      "items": [
+        " M outreach_monitor/processed/monitor_report.jsonl"
+      ]
+    }
+  ],
+  "bottlenecks": [],
+  "findings": []
+}

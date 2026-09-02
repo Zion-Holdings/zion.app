@@ -18,15 +18,11 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-        env:
-          NEXT_PUBLIC_SITE_URL: https://ziontechgroup.com
       - uses: actions/upload-pages-artifact@v3
         with:
+<<<<<<< HEAD
           path: out
+=======
+          path: .
+>>>>>>> f451aaf598b74135840d8a76790dd2e87fe7e00e
       - uses: actions/deploy-pages@v4
