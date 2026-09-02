@@ -20,8 +20,8 @@ jobs:
       - name: Sync HubSpot deals to Notion
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-          HUBSPOT_CONNECTION_ID: ${{ secrets.HUBSPOT_CONNECTION_ID }}
-          NOTION_CONNECTION_ID: ${{ secrets.NOTION_CONNECTION_ID }}
+          HUBSPOT_CONNECTION_ID: ${{ secrets.COMPOSIO_HUBSPOT_CONNECTION_ID }}
+          NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
         run: |
           cat > scripts/composio/hubspot-deals-to-notion-sync.js << 'EOF'
           const { Composio } = require('composio');

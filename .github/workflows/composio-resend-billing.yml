@@ -21,7 +21,7 @@ jobs:
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
           RESEND_CONNECTION_ID: ${{ secrets.RESEND_CONNECTION_ID }}
-          GMAIL_CONNECTION_ID: ${{ secrets.GMAIL_CONNECTION_ID }}
+          GMAIL_CONNECTION_ID: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
         run: |
           cat > scripts/composio/resend-billing-email.js << 'EOF'
           const { Composio } = require('composio');

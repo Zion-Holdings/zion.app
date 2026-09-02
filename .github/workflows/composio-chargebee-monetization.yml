@@ -21,7 +21,7 @@ jobs:
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
           CHARGEBEE_CONNECTION_ID: ${{ secrets.CHARGEBEE_CONNECTION_ID }}
-          NOTION_CONNECTION_ID: ${{ secrets.NOTION_CONNECTION_ID }}
+          NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
         run: |
           cat > scripts/composio/chargebee-to-notion-sync.js << 'EOF'
           const { Composio } = require('composio');

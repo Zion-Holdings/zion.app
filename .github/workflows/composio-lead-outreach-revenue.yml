@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-      GMAIL_CONNECTION_ID: ${{ secrets.GMAIL_CONNECTION_ID }}
-      NOTION_CONNECTION_ID: ${{ secrets.NOTION_CONNECTION_ID }}
-      SLACK_CONNECTION_ID: ${{ secrets.SLACK_CONNECTION_ID }}
+      GMAIL_CONNECTION_ID: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
+      NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+      SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID }}
     steps:
       - uses: actions/checkout@v4
         with:
