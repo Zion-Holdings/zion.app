@@ -44,8 +44,8 @@ jobs:
           NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
         run: |
           cat > revenue-flow.mjs <<'EOF'
-          import { Composio } from '@composio/core';
-          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          import { ComposioToolSet } from '@composio/core';
+          const toolset = new ComposioToolSet({ apiKey: process.env.COMPOSIO_API_KEY });
           const userId = 'pg-test-b311dcc6-03f6-4077-8774-c90cfd6fcf29';
           const summary = { checked: [], skipped: [], errors: [] };
           const connectionIds = {
@@ -62,7 +62,7 @@ jobs:
               continue;
             }
             try {
-              const tools = await composio.getTools({ connectionIds: [id], userId });
+              const tools = await toolset.getTools({ connectionIds: [id], userId });
               summary.checked.push({ name, tools: tools.length });
             } catch (e) {
               summary.errors.push({ name, message: e.message });
