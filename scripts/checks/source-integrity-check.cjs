@@ -128,6 +128,51 @@ if (exists('app/page.tsx')) {
   }
 }
 
+function inspectPageTsx(relRoot) {
+  const root = path.join(repo, relRoot);
+  if (!fs.existsSync(root)) return;
+  const stack = [root];
+  while (stack.length) {
+    const dir = stack.pop();
+    let entries;
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch {
+      continue;
+    }
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (entry.name === 'node_modules' || entry.name === '.next' || entry.name === 'out') continue;
+        stack.push(full);
+        continue;
+      }
+      if (entry.name !== 'page.tsx') continue;
+      const rel = path.relative(repo, full);
+      let text = '';
+      try {
+        text = fs.readFileSync(full, 'utf8');
+      } catch {
+        errors.push(`${rel} cannot be read`);
+        continue;
+      }
+      const trimmed = text.trim();
+      if (!trimmed) {
+        errors.push(`${rel} is empty — empty App Router stubs caused live 404s`);
+        continue;
+      }
+      if (trimmed.startsWith('<!DOCTYPE') || trimmed.startsWith('<html')) {
+        errors.push(`${rel} contains raw HTML instead of a Next.js page module`);
+      }
+      if (!/export default/.test(text)) {
+        errors.push(`${rel} is missing an export default page component`);
+      }
+    }
+  }
+}
+
+inspectPageTsx('app');
+
 for (const warning of warnings) {
   console.warn(`  ! ${warning}`);
 }
