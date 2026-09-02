@@ -5,7 +5,7 @@ name: Simple Static Deploy
 # (ziontechgroup.com then 404s with "There isn't a GitHub Pages site here").
 on:
   push:
-    branches: [ main ]
+    branches: [ main, cursor/fix-pages-cname-8234 ]
   workflow_dispatch:
 
 permissions:
