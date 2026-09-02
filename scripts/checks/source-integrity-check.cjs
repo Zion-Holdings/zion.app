@@ -59,6 +59,7 @@ const requiredFiles = [
   'app/components/PageTemplate.tsx',
   'app/components/StandardPage.tsx',
   'wrangler.toml',
+  'workers/static.js',
   'scripts/workers-static-prepare.cjs',
 ];
 
