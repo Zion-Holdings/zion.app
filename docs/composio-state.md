@@ -31,3 +31,4 @@ GitHub, Gmail, Notion, Slack, Linear, Stripe, Calendly, Resend, Tavily, SerpAPI,
 3. Ligar triggers (Calendly booking, Stripe payment, Gmail) em vez de só cron.
 4. Trocar o website do Instagram de `.com.br` para `ziontechgroup.com`.
 5. Reativar o projeto Supabase `Zion App`.
+6. Criar webhook HTTPS + trigger instances (`STRIPE_CHECKOUT_SESSION_COMPLETED`, `GMAIL_NEW_GMAIL_MESSAGE`). Calendly não tem trigger no catálogo Composio.

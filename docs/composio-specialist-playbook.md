@@ -74,9 +74,30 @@ Composio v3.1
  └─ connection-monitor-v2.mjs  (health score from live accounts)
 ```
 
-Event-driven next step (after HubSpot + WhatsApp reconnect):
+## Triggers (verified 2026-09-02)
 
-`Calendly booking trigger → Stripe payment link → Resend confirmation → Airtable/Sheets lead row → Slack #support`
+Catalog: `GET /api/v3.1/triggers_types` (396 types). Active instances: `GET /api/v3.1/trigger_instances/active` — **empty**. Project webhooks: `GET /api/v3.1/webhook_subscriptions` — **empty**. Event types: `composio.trigger.message`, `composio.connected_account.expired`, `composio.trigger.disabled`.
+
+**Calendly has no Composio trigger types.** Booking detection stays cron (`CALENDLY_LIST_EVENTS`) or a native Calendly webhook until Composio adds a type.
+
+Do **not** `POST /webhook_subscriptions` until Zion has a public HTTPS receiver (e.g. `telegram-agent-listener`). Creating a subscription without a live URL drops the one-per-project slot and returns a signing secret that must go in 1Password, never git.
+
+First instances to upsert after the webhook exists:
+
+| Slug | Why |
+|---|---|
+| `STRIPE_CHECKOUT_SESSION_COMPLETED` | Discovery $99 / Starter / Growth paid |
+| `STRIPE_CHARGE_SUCCEEDED` | Confirm cash |
+| `GMAIL_NEW_GMAIL_MESSAGE` | Inbound lead (poll ~15 min) |
+| `GITHUB_ISSUE_CREATED_TRIGGER` | Delivery intake |
+| `SLACK_RECEIVE_MESSAGE` | `#support` |
+| `AIRTABLE_BASE_SCHEMA_CHANGED_TRIGGER` | Guard against more demo-schema drift |
+
+Upsert: `POST /api/v3.1/trigger_instances/{slug}/upsert` with `connected_account_id` from auto-discover (playground user until kleber@ is re-linked).
+
+Event-driven revenue path once webhook + Stripe/Gmail triggers exist:
+
+`Stripe checkout completed → Resend confirmation → Airtable/Sheets lead row → Slack #support` (Calendly remains polled).
 
 ## Security note
 

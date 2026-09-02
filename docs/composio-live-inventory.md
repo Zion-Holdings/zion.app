@@ -58,6 +58,14 @@ Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were mi
 
 Cloudflare’s GitHub app posts this check on **every push**, including `main`. It fails in ~0s with no annotations because this repo has no `wrangler.toml` / worker entrypoint and no root `package.json`. The check targets the **production** worker `ziontechgroup`. Do **not** add a stub worker — that would deploy over production. Fix is in the Cloudflare dashboard: disconnect Workers Builds from this Pages repo, or point it at a real worker project.
 
+## Triggers and webhooks
+
+`GET /trigger_instances/active` = 0. `GET /webhook_subscriptions` = 0. 396 trigger types exist in the catalog. Calendly has **none**. First paid-event slugs: `STRIPE_CHECKOUT_SESSION_COMPLETED`, `STRIPE_CHARGE_SUCCEEDED`, `GMAIL_NEW_GMAIL_MESSAGE`. Blocked on a public HTTPS receiver.
+
+Discovery payment link `plink_1UBJGaJRA2AketBhDU8zycYb` now redirects to `/success-stories/` after pay (same as Starter/Growth).
+
+Gmail last 21 days (excluding GitHub): only our own Resend briefs, promotions, and delivery-delay DSNs. **No inbound sales threads.**
+
 ## Credit / quota blockers
 
 - Hunter: 0 searches remaining until 2026-09-23

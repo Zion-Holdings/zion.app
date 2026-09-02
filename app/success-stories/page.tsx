@@ -6,6 +6,10 @@ export default function Page() {
   return (
     <main style={{maxWidth: 960, margin: '0 auto', padding: '2rem 1rem'}}>
       <h1>Success Stories</h1>
+      <p style={{fontSize: 16, lineHeight: 1.6, color: '#cbd5e1', background: '#0f172a', border: '1px solid #7c3aed', borderRadius: 16, padding: 16}}>
+        If you just paid via Stripe, thank you — Discovery, Starter, and Growth links redirect here.
+        {' '}<a href="https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1" style={{color:'#a78bfa'}}>Book the 30-min Discovery</a> if you have not already.
+      </p>
       <p style={{fontSize: 18, lineHeight: 1.6, color: '#cbd5e1'}}>Real outcomes from our clients: faster deployments, lower cost, stronger security, and new revenue streams.</p>
       <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, marginTop: 24}}>
         <div style={{background: '#0f172a', border: '1px solid #334155', borderRadius: 16, padding: 20}}>
@@ -33,7 +37,7 @@ export default function Page() {
         <a href="/case-studies/" style={{display: 'inline-block', padding: '12px 18px', borderRadius: 12, background: '#7c3aed', color: '#fff', textDecoration: 'none', fontWeight: 600, marginRight: 8}}>View Case Studies</a>
         <a href="/paid-consultation/" style={{display: 'inline-block', padding: '12px 18px', borderRadius: 12, background: '#0f172a', border: '1px solid #334155', color: '#e5e7eb', textDecoration: 'none', fontWeight: 600}}>Book Consultation</a>
       </div>
-      <p style={{color: '#94a3b8', fontSize: 13, marginTop: 24, textAlign: 'center'}}>Stack: Composio + HubSpot + Stripe + Resend + AWS/Azure/GCP.</p>
+      <p style={{color: '#94a3b8', fontSize: 13, marginTop: 24, textAlign: 'center'}}>Stack: Composio + Stripe + Calendly + Resend + Airtable/Sheets (HubSpot reconnect pending).</p>
     </main>
   );
 }
