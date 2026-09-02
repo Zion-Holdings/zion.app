@@ -44,3 +44,8 @@
 /services/cloud-migration/  /services/cloud-migration-services-2026-6572/  301
 
 # trigger
+/ai-readiness-assessment/ /ai-readiness-assessment/index.html 200
+/ai-partnership-playbook/ /ai-partnership-playbook/index.html 200
+/managed-soc-pricing/ /managed-soc-pricing/index.html 200
+/privacy-policy/ /privacy-policy/index.html 200
+/terms-of-service/ /terms-of-service/index.html 200
