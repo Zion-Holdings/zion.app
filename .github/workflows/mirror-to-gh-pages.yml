@@ -39,7 +39,8 @@ jobs:
           set -euo pipefail
           git config --global user.email "ci@ziontechgroup.com"
           git config --global user.name "Zion CI"
-          git clone --depth=1 --branch gh-pages https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git gh-pages-mirror
+          rm -rf gh-pages-mirror
+          git clone --depth=1 --branch gh-pages https://github.com/${{ github.repository }}.git gh-pages-mirror
           cd gh-pages-mirror
           git rm -rf . || true
           cp -Rf ../out/. .
@@ -47,4 +48,4 @@ jobs:
           git add -A
           git status --short || true
           git commit -m "chore(mirror): promote main build to gh-pages" || true
-          git push origin gh-pages
+          GIT_ASKPASS=/bin/echo GIT_TERMINAL_PROMPT=0 git push --force origin gh-pages
