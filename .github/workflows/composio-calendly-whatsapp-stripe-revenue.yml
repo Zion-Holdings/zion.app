@@ -1,0 +1,33 @@
+name: Composio Calendly → WhatsApp → Stripe → Notion Revenue Flow
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  revenue-flow:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      CALENDLY_CONNECTION_ID: ${{ secrets.CALENDLY_CONNECTION_ID }}
+      WHATSAPP_CONNECTION_ID: ${{ secrets.WHATSAPP_CONNECTION_ID }}
+      STRIPE_CONNECTION_ID: ${{ secrets.STRIPE_CONNECTION_ID }}
+      NOTION_CONNECTION_ID: ${{ secrets.NOTION_CONNECTION_ID }}
+      SLACK_CONNECTION_ID: ${{ secrets.SLACK_CONNECTION_ID }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install composio dotenv
+
+      - name: Run revenue flow
+        run: node .github/scripts/composio/calendly-whatsapp-stripe-revenue.js
