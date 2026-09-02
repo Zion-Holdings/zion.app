@@ -19,28 +19,23 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build site
+      - name: Mirror static fallbacks to gh-pages
         run: |
           set -euo pipefail
-          npm run build:check || npm run build
-          mkdir -p out/docs out/public
-          cp -Rf docs/. out/docs/
-          cp -Rf public/. out/public/
-          find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \;
+          mkdir -p out
+          if [ -d public ]; then cp -Rf public/. out/; fi
+          if [ -d docs ]; then mkdir -p out/docs && cp -Rf docs/. out/docs/; fi
+          find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \; || true
+          printf 'ziontechgroup.com\n' > out/CNAME
+          test -s out/CNAME
+          test -f out/index.html
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          keep_files: false
+          keep_files: true
           user_name: Zion CI
           user_email: ci@ziontechgroup.com
+          cname: ziontechgroup.com
