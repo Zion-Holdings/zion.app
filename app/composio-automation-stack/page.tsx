@@ -38,6 +38,16 @@ export default function Page() {
       description: 'Health-checks all 15 connections, executes revenue + content cycles, updates ops dashboard',
       cadence: 'Every 30 minutes',
     },
+    {
+      title: 'WhatsApp Support Loop',
+      description: 'Support messages → routing → response templates → CSAT logging',
+      cadence: 'Continuous',
+    },
+    {
+      title: 'Growth Research Loop',
+      description: 'Tavily/SerpApi/Firecrawl market research → Brevo nurture → HubSpot deals',
+      cadence: 'Daily',
+    },
   ];
 
   return (
@@ -75,6 +85,9 @@ export default function Page() {
 
       <p style={{ color: '#94a3b8', fontSize: 13, marginTop: 24, textAlign: 'center' }}>
         Stack: Composio + Calendly + Stripe + WhatsApp + Resend + HubSpot + Notion + Slack + 1Password + Firecrawl + SerpApi + Tavily + Brevo + SendGrid + ActiveCampaign
+      </p>
+      <p style={{ color: '#7c3aed', fontSize: 13, marginTop: 12, textAlign: 'center' }}>
+        Revenue Engine: revenue-automation · Content Engine: content-engine
       </p>
     </main>
   );
