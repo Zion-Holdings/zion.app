@@ -1,0 +1,14 @@
+# Cloudflare Workers static publish.
+# Do not point this at a Next.js build of ~19k pages — that OOMs/timeouts
+# and previously left this check with no entry-point (no wrangler file).
+# GitHub Pages already deploys public/ + docs/. Workers must do the same.
+name = "ziontechgroup"
+compatibility_date = "2026-09-02"
+
+[assets]
+directory = "./public"
+html_handling = "force-trailing-slash"
+not_found_handling = "404-page"
+
+[build]
+command = "node scripts/workers-static-prepare.cjs"

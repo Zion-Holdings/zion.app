@@ -58,6 +58,8 @@ const requiredFiles = [
   'app/components/Footer.tsx',
   'app/components/PageTemplate.tsx',
   'app/components/StandardPage.tsx',
+  'wrangler.toml',
+  'scripts/workers-static-prepare.cjs',
 ];
 
 for (const rel of requiredFiles) {

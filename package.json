@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/cf-or-next-build.cjs",
+    "build:next": "next build",
     "start": "next start",
     "lint": "next lint",
     "build:check": "next build || true",
