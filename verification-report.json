@@ -1,0 +1,122 @@
+[
+  {
+    "route": "/",
+    "code": 200,
+    "cta": false,
+    "words": 71
+  },
+  {
+    "route": "/services/",
+    "code": 200,
+    "cta": false,
+    "words": 87
+  },
+  {
+    "route": "/ai-services/",
+    "code": 200,
+    "cta": true,
+    "words": 107008
+  },
+  {
+    "route": "/blockchain-services/",
+    "code": 200,
+    "cta": true,
+    "words": 1518
+  },
+  {
+    "route": "/micro-saas-services/",
+    "code": 200,
+    "cta": true,
+    "words": 2148
+  },
+  {
+    "route": "/cloud-migration-services/",
+    "code": 200,
+    "cta": false,
+    "words": 75
+  },
+  {
+    "route": "/managed-it-services/",
+    "code": 200,
+    "cta": false,
+    "words": 71
+  },
+  {
+    "route": "/managed-soc-pricing/",
+    "code": 200,
+    "cta": false,
+    "words": 256
+  },
+  {
+    "route": "/free-consultation/",
+    "code": 200,
+    "cta": false,
+    "words": 338
+  },
+  {
+    "route": "/ai-revenue-automation-services/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/ai-customer-support-automation/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/partnerships/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/ai-agent-platform/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/api-monetization-services/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/ai-consulting/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/cybersecurity-services/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/ai-saas-monetization/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/ai-automation-services/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/it-consulting-services/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  },
+  {
+    "route": "/partner-program/",
+    "code": 404,
+    "cta": true,
+    "words": 1807
+  }
+]

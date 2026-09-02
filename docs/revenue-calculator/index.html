@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Revenue Calculator | Zion Tech Group</title>
+<meta name="description" content="Estimate your revenue potential with Zion's services: managed SOC, AI automation, staff augmentation, and partner programs."/>
+<link rel="canonical" href="https://ziontechgroup.com/revenue-calculator/"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Zion Revenue Calculator","url":"https://ziontechgroup.com/revenue-calculator/","description":"Estimate revenue potential for Zion services."}
+</script>
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0b1221;color:#e5e7eb}
+.container{max-width:900px;margin:0 auto;padding:48px 24px}
+h1{font-size:34px;font-weight:800;color:#fff;margin:0 0 16px}
+.lead{color:#cbd5e1;font-size:18px;line-height:1.6;margin-bottom:24px}
+.card{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:20px;margin-top:16px}
+.card h3{color:#fff;margin:0 0 12px;font-size:18px}
+label{color:#cbd5e1;font-size:14px;display:block;margin-bottom:6px}
+input,select{background:#0b1221;border:1px solid #334155;color:#e5e7eb;padding:10px 12px;border-radius:10px;width:100%;margin-bottom:12px;font-size:14px}
+.result{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:20px;margin-top:16px;text-align:center}
+.result .number{font-size:40px;font-weight:800;color:#fff}
+.result .label{color:#94a3b8;font-size:13px;margin-top:8px}
+.cta{display:inline-block;padding:12px 18px;border-radius:12px;background:#7c3aed;color:#fff;text-decoration:none;font-weight:600;margin-top:24px;margin-right:8px}
+.note{color:#94a3b8;font-size:13px;margin-top:24px;text-align:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Revenue Calculator</h1>
+  <p class="lead">Estimate your monthly revenue potential with Zion's services.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Service</h3>
+      <label>Service type</label>
+      <select id="service">
+        <option value="soc">Managed SOC — $3,000/mo base</option>
+        <option value="ai">AI Automation — $2,500 setup + $1,500/mo</option>
+        <option value="staff">Staff Augmentation — $150/hr avg</option>
+        <option value="api">API Monetization — $2,000 setup + $500/mo</option>
+        <option value="partner">Partner Program — 25% margin</option>
+      </select>
+      <label>Volume / Hours per month</label>
+      <input id="volume" type="number" value="160" min="0"/>
+      <label>Deal size multiplier</label>
+      <select id="multiplier">
+        <option value="1">1x — Small deals</option>
+        <option value="1.5">1.5x — Medium deals</option>
+        <option value="2">2x — Enterprise deals</option>
+      </select>
+    </div>
+    <div class="card">
+      <h3>Assumptions</h3>
+      <p style="color:#cbd5e1;font-size:14px;line-height:1.7;margin:0">
+        Managed SOC: base retainer + per-device add-ons.<br/>
+        AI Automation: setup fee amortized over 12 months + monthly support.<br/>
+        Staff Augmentation: billable hours × blended rate.<br/>
+        API Monetization: setup + platform fee + usage overage.<br/>
+        Partner: margin on referred revenue.
+      </p>
+    </div>
+  </div>
+  <div class="result">
+    <div class="number" id="revenue">$0</div>
+    <div class="label">Estimated monthly revenue</div>
+  </div>
+  <div>
+    <a class="cta" href="/pricing/">View Pricing</a>
+    <a class="cta" style="background:#0f172a;border:1px solid #334155;color:#e5e7eb" href="/paid-consultation/">Book Consultation</a>
+  </div>
+  <p class="note">Estimates only. Final pricing depends on scope and contract terms.</p>
+</div>
+<script>
+const serviceEl = document.getElementById('service');
+const volumeEl = document.getElementById('volume');
+const multEl = document.getElementById('multiplier');
+const out = document.getElementById('revenue');
+function calc(){
+  const v = Math.max(0, Number(volumeEl.value) || 0);
+  const m = Number(multEl.value) || 1;
+  const s = serviceEl.value;
+  let base = 0;
+  if(s === 'soc') base = 3000 + v * 25;
+  else if(s === 'ai') base = (2500/12) + 1500 + v * 50;
+  else if(s === 'staff') base = v * 150;
+  else if(s === 'api') base = (2000/12) + 500 + v * 20;
+  else if(s === 'partner') base = v * 80 * 0.25;
+  out.textContent = '$' + Math.round(base * m).toLocaleString();
+}
+calc();
+[serviceEl, volumeEl, multEl].forEach(el => el.addEventListener('input', calc));
+</script>
+</body>
+</html>
