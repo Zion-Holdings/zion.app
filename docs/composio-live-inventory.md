@@ -60,6 +60,12 @@ Cloudflare’s GitHub app posts this check on **every push**, including `main` (
 
 This **Pages** repo is the wrong source. The live Telegram worker lives in private `Zion-support/telegram-ai-reply-worker` (`wrangler.toml` name `telegram-ai-reply-worker`, updated 2026-09-02). `telegram-agent-listener` is a separate Python webhook service (Render/Railway/Fly), not a Worker.
 
+Confirmed on commit `631158f4`: check `Workers Builds: ziontechgroup` started and finished at **the same second** (`2026-09-02T23:30:40Z`), app `cloudflare-workers-and-pages`. That is not a build of this site.
+
+## Production: custom domain 404 (2026-09-02)
+
+`https://ziontechgroup.com/` and `www` return GitHub’s **Site not found** 404. cPanel monitoring emailed the same. DNS is already on GitHub Pages IPs (`185.199.x` / `2606:50c0:800x`). `GET /pages` has **`cname: null`**. `https://zion-support.github.io/` is **200**. Hotfix PR: add `CNAME` + `public/CNAME` (`ziontechgroup.com`) so the Pages artifact rebinds the apex.
+
 Do **not** add a stub `wrangler.toml` here — that would deploy over production worker `ziontechgroup`. Fix: Cloudflare dashboard → disconnect Workers Builds from `zion-support.github.io`, or retarget it at `telegram-ai-reply-worker`.
 
 ## Brand / social (2026-09-02)
