@@ -100,7 +100,7 @@
 /providers/ /providers/index.html 200
 /public-roadmap /public-roadmap/ 301
 /public-roadmap/ /public-roadmap/index.html 200
-/resources/ resources/index.html 200
+/resources/ /docs/resources/index.html 200
 /roicalculator /roicalculator/ 301
 /roicalculator/ /roicalculator/index.html 200
 /search /search/index.html 200
@@ -629,7 +629,7 @@
 /tools/service-recommender /tools/service-recommender/ 301
 /tools/ssl-checker /tools/ssl-checker/ 301
 /use-cases /use-cases/ 301
-/use-cases/ /use-cases/index.html 200
+/use-cases/ /docs/use-cases/index.html 200
 /tools/ai-agents-autonomous/ /tools/ai-agents-autonomous.html 200
 /tools/base64-image/ /tools/base64-image.html 200
 /tools/case-converter/ /tools/case-converter.html 200
@@ -872,7 +872,7 @@
 /ai-speed-to-lead/ /ai-speed-to-lead-system/ 301
 /ai-whatsapp-billing/ /ai-whatsapp-lead-nurturing/ 301
 /ai-appointment-automation/ /ai-appointment-setting-agent/ 301
-/subscribe/ /contact/ 301
+/subscribe/ /docs/contact/index.html 301
 /ai-lead-capture/ /lead-generation-outreach-automation/ 301
 /ai-client-onboarding/ /services/ 301
 /ai-contract-automation/ /services/ 301
