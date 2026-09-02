@@ -1,0 +1,49 @@
+name: Mirror main build to gh-pages branch
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: |
+          set -euo pipefail
+          npm run build:check || npm run build
+          mkdir -p out/docs out/public
+          cp -Rf docs/. out/docs/
+          cp -Rf public/. out/public/
+
+      - name: Mirror artifact to gh-pages
+        run: |
+          set -euo pipefail
+          git config --global user.email "ci@ziontechgroup.com"
+          git config --global user.name "Zion CI"
+          git clone --depth=1 --branch gh-pages https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git gh-pages-mirror
+          cd gh-pages-mirror
+          git rm -rf . || true
+          cp -Rf ../out/. .
+          touch .nojekyll
+          git add -A
+          git status --short || true
+          git commit -m "chore(mirror): promote main build to gh-pages" || true
+          git push origin gh-pages
