@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="robots" content="index, follow">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>AI Partner Portal & Revenue Calculator | Zion Tech Group</title>
@@ -30,6 +31,7 @@ h1{font-size:34px;font-weight:800;color:#fff;margin:0 0 16px}
 </style>
 </head>
 <body>
+<nav style="background:#0f172a;padding:16px 0;border-bottom:1px solid #1f2937"><div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center"><a href="/" style="color:#f5f5f5;text-decoration:none;font-weight:700">Zion</a><div><a href="/services/" style="color:#cbd5e1;text-decoration:none;margin-left:16px">Services</a><a href="/contact/" style="color:#cbd5e1;text-decoration:none;margin-left:16px">Contact</a></div></div></nav>
 <div class="container">
   <h1>AI Partner Portal & Revenue Calculator</h1>
   <p class="lead">Join the Zion partner ecosystem and estimate your AI revenue potential with our reseller tools and enablement platform.</p>
@@ -85,5 +87,6 @@ h1{font-size:34px;font-weight:800;color:#fff;margin:0 0 16px}
 function calc(){const c=+document.getElementById('clients').value||0;const d=+document.getElementById('deal').value||0;const m=+document.getElementById('margin').value||0;const monthly=c*d*(m/100);document.getElementById('result').textContent='Estimated MRR: $'+monthly.toLocaleString()}
 document.getElementById('clients').addEventListener('input',calc);document.getElementById('deal').addEventListener('input',calc);document.getElementById('margin').addEventListener('input',calc);
 </script>
+<footer style="padding:24px 0;text-align:center;color:#6b7280;border-top:1px solid #1f2937"><div style="max-width:1200px;margin:0 auto;padding:0 24px"><p>© Zion Tech Group</p></div></footer>
 </body>
 </html>
