@@ -1,0 +1,61 @@
+name: Zion Leads → Calendly → Stripe → WhatsApp → Resend → Notion → Slack
+run-name: Revenue/lead flow ${{ github.run_id }}
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  revenue-flow:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      ZION_USER_ID: ${{ secrets.ZION_USER_ID }}
+      CALENDLY_CONNECTION_ID: ${{ secrets.CALENDLY_CONNECTION_ID }}
+      WHATSAPP_CONNECTION_ID: ${{ secrets.WHATSAPP_CONNECTION_ID }}
+      STRIPE_CONNECTION_ID: ${{ secrets.STRIPE_CONNECTION_ID }}
+      RESEND_CONNECTION_ID: ${{ secrets.RESEND_CONNECTION_ID }}
+      NOTION_CONNECTION_ID: ${{ secrets.NOTION_CONNECTION_ID }}
+      SLACK_CONNECTION_ID: ${{ secrets.SLACK_CONNECTION_ID }}
+      GMAIL_CONNECTION_ID: ${{ secrets.GMAIL_CONNECTION_ID }}
+      HUBSPOT_CONNECTION_ID: ${{ secrets.HUBSPOT_CONNECTION_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install @composio/core dotenv 2>&1 | tail -5
+
+      - name: Run revenue/lead flow
+        run: node .github/scripts/composio/revenue-flow.mjs
+
+      - name: Update site metrics docs
+        run: |
+          node -e "
+          const fs=require('fs');
+          const ts=new Date().toISOString();
+          const path='docs/ops/revenue-flow-log.md';
+          let text='# Revenue/Lead Flow Log\n\n';
+          if(fs.existsSync(path)) text=fs.readFileSync(path,'utf8');
+          text += `\n## ${ts}\n- Workflow: composio-leads-calendly-stripe.yml\n- Triggered: schedule/manual\n- Status: executed\n`;
+          fs.mkdirSync('docs/ops',{recursive:true});
+          fs.writeFileSync(path,text);
+          console.log('log updated');
+          "
+      - name: Commit metrics update
+        run: |
+          git config user.name "zion-agent"
+          git config user.email "agent@ziontechgroup.com"
+          git add docs/ops/revenue-flow-log.md
+          git diff --cached --quiet && echo "no changes" || git commit -m "chore: update revenue-flow log" && git push origin main
