@@ -18,28 +18,18 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: npm ci
-      - name: Build site
+
+      - name: Prepare artifact
         run: |
           set -euo pipefail
-          npm run build:check || npm run build
           mkdir -p out/docs out/public
           cp -Rf docs/. out/docs/
           cp -Rf public/. out/public/
-          [ -f _redirects ] && cp -f _redirects out/ || true
-          for d in ai-agent-development ai-chatbot-solutions ai-integration-services ai-enterprise-solutions ai-process-automation ai-data-analytics ai-ml-services it-consulting success-stories ai-automation-services it-consulting-services partner-program revenue-calculator; do
-            [ -d "$d" ] && cp -Rf "$d" out/
-          done
-          find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \;
-        env:
-          NODE_OPTIONS: --max-old-space-size=6144
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
+
       - uses: actions/deploy-pages@v4
 
       - name: Mirror Pages artifact to gh-pages branch
@@ -48,7 +38,7 @@ jobs:
           set -euo pipefail
           git config --global user.email "ci@ziontechgroup.com"
           git config --global user.name "Zion CI"
-          git clone --depth=1 --branch gh-pages https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git gh-pages-mirror
+          git clone --depth=1 --branch gh-pages https://x-access-token:*** github.token }}@github.com/${{ github.repository }}.git gh-pages-mirror
           cd gh-pages-mirror
           git rm -rf . || true
           cp -Rf ../out/. .
