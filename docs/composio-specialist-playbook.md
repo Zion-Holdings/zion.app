@@ -54,7 +54,10 @@ Terminology (never use the old words in new code):
 - **Cursor** `CURSOR_LIST_AGENTS` to de-dupe parallel cloud agents rewriting the same repo.
 
 ### Brand
-- **Instagram** `@zion.tech.group` (2.9k) — change website from `.com.br` to `https://ziontechgroup.com`.
+- **Instagram** `@zion.tech.group` (2.9k) — change website from `.com.br` to `https://ziontechgroup.com`. Last media 2025-06-07 (marketplace reels). Canonical page `/marketplace/`. `INSTAGRAM_GET_IG_USER_MEDIA` + insights.
+- **LinkedIn** personal works. Org ACL (`LINKEDIN_GET_COMPANY_INFO`, `LINKEDIN_GET_ORG_PAGE_STATS`) needs `r_organization_admin`. Headline locales currently disagree (Holdings / Technologies / Tech Group) — fix in LinkedIn UI, do not auto-post.
+- **Discord** `DISCORD_LIST_MY_GUILDS` is personal DeFi rooms. Do not market a Zion Discord.
+- **GitHub** authenticated user has 3 repos: public `zion-support.github.io`, private `telegram-ai-reply-worker` (real Wrangler worker), private `telegram-agent-listener` (Python webhook). Workers Builds on the Pages repo is the wrong hook.
 - **YouTube** `UCKrJNz3OqQ6Im9bQbJko7Ug` — do not publish from the unrelated "Surf Family" OAuth channel.
 - **LinkedIn** personal + company page `ziontechgroup`.
 - **Telegram** bot `@Composio_Kleber_bot` is in **Zion Agents** (`@ziontechgroup_agents`, chat `-1003886112318`). Keep replies in-originating-chat via `telegram-agent-listener`. Set bot commands (`discovery`, `plans`, `about`, `status`). Do not put the ops group on public marketing pages.
