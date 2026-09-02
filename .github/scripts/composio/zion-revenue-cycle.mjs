@@ -1,90 +1,125 @@
 import { Composio } from '@composio/core';
 
-const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
-const userId = 'zion-revenue-cycle';
+const composio = new Composio({ apiKey: proces..._KEY });
+const userId = 'zion-master';
 
-const summary = {
-  timestamp: new Date().toISOString(),
-  steps: [],
-  errors: [],
-  result: {}
+const connections = {
+  calendly: process.env.COMPOSIO_CALENDLY_CONNECTION_ID,
+  whatsapp: process.env.COMPOSIO_WHATSAPP_CONNECTION_ID,
+  stripe: process.env.COMPOSIO_STRIPE_CONNECTION_ID,
+  resend: process.env.COMPOSIO_RESEND_CONNECTION_ID,
+  gmail: process.env.COMPOSIO_GMAIL_CONNECTION_ID,
+  hubspot: process.env.COMPOSIO_HUBSPOT_CONNECTION_ID,
+  notion: process.env.COMPOSIO_NOTION_CONNECTION_ID,
+  slack: process.env.COMPOSIO_SLACK_CONNECTION_ID,
+  brevo: process.env.COMPOSIO_BREVO_CONNECTION_ID,
+  sendgrid: process.env.COMPOSIO_SENDGRID_CONNECTION_ID,
+  activecampaign: process.env.COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID,
+  onepassword: process.env.COMPOSIO_1PASSWORD_CONNECTION_ID,
+  firecrawl: process.env.COMPOSIO_FIRECRAWL_CONNECTION_ID,
+  serpapi: process.env.COMPOSIO_SERPAPI_CONNECTION_ID,
+  tavily: process.env.COMPOSIO_TAVILY_CONNECTION_ID,
 };
 
-async function run(toolSlug, args = {}) {
+async function getTools(name, connectionId) {
+  if (!connectionId) {
+    return [];
+  }
   try {
-    const tools = await composio.tools.get(userId, [toolSlug]);
-    const tool = tools[0];
-    if (!tool) {
-      summary.steps.push({ name: toolSlug, status: 'skipped', reason: 'tool not found' });
-      return null;
-    }
-    const res = await composio.tools.execute(toolSlug, { userId, ...args });
-    summary.steps.push({ name: toolSlug, status: 'ok' });
-    return res;
+    const tools = await composio.tools.get(userId, {
+      toolkits: [name],
+      connectionIds: [connectionId],
+    });
+    return tools || [];
   } catch (e) {
-    summary.steps.push({ name: toolSlug, status: 'error', message: e.message });
-    summary.errors.push({ name: toolSlug, message: e.message });
+    console.log(`[warn] ${name}: ${e.message}`);
+    return [];
+  }
+}
+
+async function execute(name, tools, slugSubstring, args = {}) {
+  const tool = tools.find((t) => (t.slug || t.name || '').includes(slugSubstring));
+  if (!tool) {
+    return null;
+  }
+  try {
+    return await composio.tools.execute(tool.slug || tool.name, {
+      userId,
+      connectionId: connections[name],
+      arguments: args,
+    });
+  } catch (e) {
+    console.log(`[error] ${name}.${slugSubstring}: ${e.message}`);
     return null;
   }
 }
 
 async function main() {
-  // 1. Stripe recent charges
-  const charges = await run('STRIPE_LIST_CHARGES', { arguments: { limit: 5 } });
-  summary.result.stripe_recent = charges?.data?.length || 0;
+  console.log('=== Zion Revenue Cycle ===');
+  const summary = {
+    timestamp: new Date().toISOString(),
+    connections_checked: [],
+    tools_executed: [],
+    revenue_events: [],
+    errors: [],
+  };
 
-  // 2. Calendly events
-  const events = await run('CALENDLY_LIST_EVENTS', { arguments: { count: 5 } });
-  summary.result.calendly_bookings = events?.data?.length || events?.events?.length || 0;
-
-  // 3. Resend email
-  if (summary.result.stripe_recent > 0 || summary.result.calendly_bookings > 0) {
-    await run('RESEND_SEND_EMAIL', {
-      arguments: {
-        from: 'Zion Tech Group <noreply@ziontechgroup.com>',
-        to: ['kleber@ziontechgroup.com'],
-        subject: '[Zion] Revenue cycle update',
-        html: '<p>Stripe charges: ' + summary.result.stripe_recent + '</p><p>Calendly bookings: ' + summary.result.calendly_bookings + '</p>'
+  for (const [name, connectionId] of Object.entries(connections)) {
+    if (!connectionId) {
+      summary.connections_checked.push({ name, status: 'skipped', reason: 'no connection id' });
+      continue;
+    }
+    try {
+      const tools = await getTools(name, connectionId);
+      summary.connections_checked.push({ name, status: 'ok', tool_count: tools.length });
+      if (tools.length > 0) {
+        summary.tools_executed.push({ connection: name, sample: tools.slice(0, 5).map((t) => t.slug || t.name || 'unknown') });
       }
-    });
-    summary.steps.push({ name: 'resend_send_email', status: 'ok' });
+    } catch (e) {
+      summary.connections_checked.push({ name, status: 'error', message: e.message });
+      summary.errors.push({ name, message: e.message });
+    }
   }
 
-  // 4. Tavily search
-  const tavily = await run('TAVILY_SEARCH', { arguments: { query: 'AI automation trends LATAM 2026', count: 5 } });
-  summary.result.topic = tavily?.results?.[0]?.title || 'AI automation trends LATAM 2026';
-
-  // 5. Firecrawl scrape
-  await run('FIRECRAWL_SCRAPE', { arguments: { url: tavily?.results?.[0]?.url || 'https://example.com' } });
-  summary.steps.push({ name: 'firecrawl_scrape', status: 'ok' });
-
-  // 6. SerpAPI keywords
-  const serp = await run('SERPAPI_SEARCH', { arguments: { q: summary.result.topic, num: 5 } });
-  summary.result.serp_keywords = serp?.organic_results?.length || 0;
-
-  // 7. Brevo contact
-  await run('BREVO_ADD_CONTACT', {
-    arguments: {
-      email: 'lead@ziontechgroup.com',
-      listIds: [1],
-      updateEnabled: true
+  // Revenue signals
+  const stripeTools = await getTools('stripe', connections.stripe);
+  if (stripeTools.length) {
+    const listCharges = stripeTools.find((t) => (t.slug || t.name || '').includes('STRIPE_LIST_CHARGES'));
+    if (listCharges) {
+      const charges = await execute('stripe', stripeTools, 'STRIPE_LIST_CHARGES', { limit: 10 });
+      const count = charges?.data?.length || 0;
+      const total = (charges?.data || []).reduce((sum, c) => sum + (c.amount || 0), 0);
+      summary.revenue_events.push({ type: 'stripe_charges', count, total_cents: total });
     }
-  });
-  summary.steps.push({ name: 'brevo_add_contact', status: 'ok' });
+  }
 
-  // 8. WhatsApp notify
-  await run('WHATSAPP_SEND_MESSAGE', {
-    arguments: {
-      to: 'kleber@ziontechgroup.com',
-      body: '[Zion] ' + summary.result.stripe_recent + ' charges, ' + summary.result.calendly_bookings + ' bookings, topic: ' + summary.result.topic
-    }
-  });
-  summary.steps.push({ name: 'whatsapp_send_message', status: 'ok' });
+  const calendlyTools = await getTools('calendly', connections.calendly);
+  if (calendlyTools.length) {
+    const events = await execute('calendly', calendlyTools, 'CALENDLY_LIST_EVENTS', { count: 10 });
+    const count = events?.data?.length || events?.events?.length || 0;
+    summary.revenue_events.push({ type: 'calendly_events', count });
+  }
+
+  const hubspotTools = await getTools('hubspot', connections.hubspot);
+  if (hubspotTools.length) {
+    const deals = await execute('hubspot', hubspotTools, 'HUBSPOT_LIST_DEALS', { limit: 10 });
+    const count = deals?.data?.length || deals?.deals?.length || 0;
+    summary.revenue_events.push({ type: 'hubspot_deals', count });
+  }
+
+  // Notifications
+  const slackTools = await getTools('slack', connections.slack);
+  if (slackTools.length && summary.revenue_events.length) {
+    await execute('slack', slackTools, 'SLACK_SEND_MESSAGE', {
+      channel: process.env.SLACK_CHANNEL || '#sales',
+      text: `Zion revenue update: ${JSON.stringify(summary.revenue_events)}`,
+    });
+  }
 
   console.log(JSON.stringify(summary, null, 2));
 }
 
-main().catch(err => {
-  console.error('ORCHESTRATOR_ERROR', err);
+main().catch((e) => {
+  console.error('FATAL:', e);
   process.exit(1);
 });
