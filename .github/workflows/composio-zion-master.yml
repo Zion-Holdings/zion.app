@@ -61,24 +61,19 @@ jobs:
 
       - name: Revenue pipeline
         run: |
-          if [ -f .github/scripts/composio/revenue-pipeline.js ]; then
-            node .github/scripts/composio/revenue-pipeline.js || echo "REVENUE_PIPELINE_FAILED"
-          fi
-          if [ -f .github/scripts/composio/sales-alert.js ]; then
-            node .github/scripts/composio/sales-alert.js || echo "SALES_ALERT_FAILED"
-          fi
+          node .github/scripts/composio/revenue-pipeline.mjs || echo "REVENUE_PIPELINE_FAILED"
+
+      - name: Sales alerts
+        run: |
+          node .github/scripts/composio/sales-alert.mjs || echo "SALES_ALERT_FAILED"
 
       - name: Update revenue log
         run: |
-          if [ -f .github/scripts/composio/update-revenue-log.mjs ]; then
-            node .github/scripts/composio/update-revenue-log.mjs || echo "REVENUE_LOG_FAILED"
-          fi
+          node .github/scripts/composio/update-revenue-log.mjs || echo "REVENUE_LOG_FAILED"
 
       - name: Firecrawl sync
         run: |
-          if [ -f .github/scripts/composio/firecrawl-sync.mjs ]; then
-            node .github/scripts/composio/firecrawl-sync.mjs || echo "FIRECRAWL_SYNC_FAILED"
-          fi
+          node .github/scripts/composio/firecrawl-sync.mjs || echo "FIRECRAWL_SYNC_FAILED"
 
       - name: Master status
         run: |
