@@ -18,11 +18,16 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci
+      - name: Build site
+        run: npm run build:check || npm run build
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144
       - uses: actions/upload-pages-artifact@v3
         with:
-<<<<<<< HEAD
           path: out
-=======
-          path: .
->>>>>>> f451aaf598b74135840d8a76790dd2e87fe7e00e
       - uses: actions/deploy-pages@v4
