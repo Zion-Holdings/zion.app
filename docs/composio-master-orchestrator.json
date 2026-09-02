@@ -1,0 +1,64 @@
+{
+  "name": "Zion Composio Master Orchestrator",
+  "version": "1.0.0",
+  "connections": {
+    "active": [
+      "brevo",
+      "calendly",
+      "firecrawl",
+      "resend",
+      "serpapi",
+      "tavily",
+      "stripe",
+      "whatsapp",
+      "1password"
+    ],
+    "missing": [
+      "hubspot",
+      "gmail",
+      "notion",
+      "slack",
+      "sendgrid",
+      "activecampaign"
+    ]
+  },
+  "workflows": [
+    {
+      "id": "zion-lead-to-booking",
+      "trigger": "firecrawl_new_lead",
+      "actions": [
+        "serpapi_enrich_company",
+        "firecrawl_research",
+        "calendly_create_event",
+        "resend_send_confirmation",
+        "whatsapp_notify_kleber"
+      ]
+    },
+    {
+      "id": "zion-revenue-sync",
+      "trigger": "stripe_payment_success",
+      "actions": [
+        "brevo_add_contact",
+        "resend_send_receipt",
+        "calendly_create_booking",
+        "whatsapp_send_thanks"
+      ]
+    },
+    {
+      "id": "zion-seo-content-loop",
+      "trigger": "tavily_trending_topic",
+      "actions": [
+        "firecrawl_research_topic",
+        "serpapi_keyword_analysis",
+        "generate_seo_page",
+        "deploy_to_pages"
+      ]
+    }
+  ],
+  "optimization_rules": [
+    "Use Tool Router for multi-app routing",
+    "Batch API calls when possible",
+    "Cache Firecrawl results for 24h",
+    "Prioritize Stripe and Calendly for revenue"
+  ]
+}
