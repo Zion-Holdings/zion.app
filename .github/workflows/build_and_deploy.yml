@@ -22,9 +22,9 @@ jobs:
       - name: Prepare artifact
         run: |
           set -euo pipefail
-          mkdir -p out/docs out/public
+          mkdir -p out
+          cp -Rf public/. out/
           cp -Rf docs/. out/docs/
-          cp -Rf public/. out/public/
 
       - uses: actions/upload-pages-artifact@v3
         with:
