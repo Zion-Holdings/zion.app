@@ -28,6 +28,20 @@
 
 # Dashboard fallback
 /dashboard /dashboard/ 301
+
+# SEO monetization pages fallback
+/services/calendly-revenue-automation /services/ 301
+/services/calendly-revenue-automation/ /services/ 301
+/services/whatsapp-monetization /services/ 301
+/services/whatsapp-monetization/ /services/ 301
+/services/stripe-billing-intelligence /services/ 301
+/services/stripe-billing-intelligence/ /services/ 301
+/services/api-monetization /services/ 301
+/services/api-monetization/ /services/ 301
+/solutions/manufacturing /solutions/ 301
+/solutions/manufacturing/ /solutions/ 301
+/tools/ai-roi-calculator /tools/ 301
+/tools/ai-roi-calculator/ /tools/ 301
 /dashboard/ /dashboard/ 301
 
 # Blog post fallback
