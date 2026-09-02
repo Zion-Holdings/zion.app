@@ -1,4 +1,4 @@
-name: Zion Revenue Engine - Production
+name: Zion Revenue Engine - Unified Production
 
 on:
   workflow_dispatch:
@@ -18,6 +18,9 @@ jobs:
       COMPOSIO_STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
       COMPOSIO_RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
       COMPOSIO_GMAIL_CONNECTION_ID: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
+      COMPOSIO_HUBSPOT_CONNECTION_ID: ${{ secrets.COMPOSIO_HUBSPOT_CONNECTION_ID }}
+      COMPOSIO_NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+      COMPOSIO_SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -33,7 +36,7 @@ jobs:
       - name: Install Composio SDK
         run: npm install @composio/core
 
-      - name: Run revenue engine health check
+      - name: Run revenue engine
         run: |
           cat > .github/scripts/composio/revenue-engine.mjs <<'EOF'
           import { Composio } from '@composio/core';
@@ -46,6 +49,7 @@ jobs:
             tools_executed: [],
             errors: [],
             revenue_events: [],
+            metrics: { leads: 0, bookings: 0, revenue: 0, messages: 0 },
           };
 
           const connections = {
@@ -54,6 +58,9 @@ jobs:
             stripe: process.env.COMPOSIO_STRIPE_CONNECTION_ID,
             resend: process.env.COMPOSIO_RESEND_CONNECTION_ID,
             gmail: process.env.COMPOSIO_GMAIL_CONNECTION_ID,
+            hubspot: process.env.COMPOSIO_HUBSPOT_CONNECTION_ID,
+            notion: process.env.COMPOSIO_NOTION_CONNECTION_ID,
+            slack: process.env.COMPOSIO_SLACK_CONNECTION_ID,
           };
 
           async function getTools(name, connectionId) {
@@ -72,6 +79,7 @@ jobs:
           }
 
           async function main() {
+            // Check all connections
             for (const [name, connectionId] of Object.entries(connections)) {
               const tools = await getTools(name, connectionId);
               if (tools.length > 0) {
@@ -79,18 +87,39 @@ jobs:
               }
             }
 
-            // Try known Stripe payment link creation if Stripe connection exists
+            // If Stripe is connected, try to list recent customers/charges
             if (connections.stripe) {
               try {
-                const starterLink = await composio.tools.execute('STRIPE_PAYMENT_LINK_CREATE', {
-                  line_items: [{ price: 'price_STARTER_ID', quantity: 1 }],
-                  after_completion: { type: 'hosted_confirmation' },
-                  success_url: 'https://ziontechgroup.com/payment-success/',
-                  cancel_url: 'https://ziontechgroup.com/payment-cancelled/',
-                }, { userId, connectionId: connections.stripe });
-                summary.revenue_events.push({ type: 'starter_payment_link_created', link: starterLink?.url || 'unknown' });
+                const stripeTools = await getTools('stripe', connections.stripe);
+                const listCustomers = stripeTools.find(t => (t.slug || t.name || '').includes('STRIPE_LIST_CUSTOMERS'));
+                const listCharges = stripeTools.find(t => (t.slug || t.name || '').includes('STRIPE_LIST_CHARGES'));
+                if (listCustomers) {
+                  const customers = await composio.tools.execute(listCustomers.slug || listCustomers.name, {}, { userId, connectionId: connections.stripe });
+                  summary.metrics.leads = customers?.data?.length || 0;
+                }
+                if (listCharges) {
+                  const charges = await composio.tools.execute(listCharges.slug || listCharges.name, { limit: 10 }, { userId, connectionId: connections.stripe });
+                  const total = (charges?.data || []).reduce((sum, c) => sum + (c.amount || 0), 0);
+                  summary.metrics.revenue = total;
+                }
+                summary.revenue_events.push({ type: 'stripe_sync', status: 'ok' });
               } catch (e) {
-                summary.errors.push({ name: 'stripe', status: 'payment_link_error', message: e.message });
+                summary.errors.push({ name: 'stripe', status: 'sync_error', message: e.message });
+              }
+            }
+
+            // If Calendly is connected, try to list events
+            if (connections.calendly) {
+              try {
+                const calendlyTools = await getTools('calendly', connections.calendly);
+                const listEvents = calendlyTools.find(t => (t.slug || t.name || '').includes('CALENDLY_LIST_EVENTS') || (t.slug || t.name || '').includes('CALENDLY_GET_EVENTS'));
+                if (listEvents) {
+                  const events = await composio.tools.execute(listEvents.slug || listEvents.name, { count: 10 }, { userId, connectionId: connections.calendly });
+                  summary.metrics.bookings = events?.data?.length || events?.events?.length || 0;
+                }
+                summary.revenue_events.push({ type: 'calendly_sync', status: 'ok' });
+              } catch (e) {
+                summary.errors.push({ name: 'calendly', status: 'sync_error', message: e.message });
               }
             }
 
