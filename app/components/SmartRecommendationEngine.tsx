@@ -3,7 +3,6 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
-import { CATEGORIES } from '@/constants/navigation';
 
 interface Recommendation {
   id: string;

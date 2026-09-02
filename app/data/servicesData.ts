@@ -10,8 +10,8 @@ export interface Service {
   benefits: string[];
   pricing: Record<string, unknown>;
   popular?: boolean;
-  url: string;
-  image: string;
+  url?: string;
+  image?: string;
 }
 
 import servicesData from './servicesData_trimmed.json';

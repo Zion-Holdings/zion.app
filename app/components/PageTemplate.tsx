@@ -110,8 +110,7 @@ export default function PageTemplate({
         </div>
       )}
 
-        <div className="w-full">{children}</div>
-      </div>
+      <div className="w-full">{children}</div>
     </div>
   );
 }
