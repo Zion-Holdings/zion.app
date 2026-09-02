@@ -8,7 +8,7 @@ export const metadata = {
 const FACTS = [
   { stat: '26+', title: 'Years in IT', body: 'Hardware, storage, green IT, and enterprise support on YouTube since 2009 — UPS, Dell servers, information security — before the AI practice.' },
   { stat: '4,929', title: 'LinkedIn followers', body: 'Company page ziontechgroup. CEO Kleber Alcatrao (Zion Holdings).' },
-  { stat: '2,946', title: 'Instagram followers', body: '@zion.tech.group · 791 posts · BUSINESS account. Historic site still listed as .com.br.' },
+  { stat: '2,946', title: 'Instagram followers', body: '@zion.tech.group · 791 posts · last reel 2025-06-07 (marketplace). Website still .com.br. Canonical page: /marketplace/.' },
   { stat: '5,888', title: 'YouTube views', body: '@ziontechgroup · 11 videos (2009–2019). Heritage proof, not the current AI CTA.' },
 ];
 

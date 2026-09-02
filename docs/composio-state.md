@@ -32,3 +32,5 @@ GitHub, Gmail, Notion, Slack, Linear, Stripe, Calendly, Resend, Tavily, SerpAPI,
 4. Trocar o website do Instagram de `.com.br` para `ziontechgroup.com`.
 5. Reativar o projeto Supabase `Zion App`.
 6. Criar webhook HTTPS + trigger instances (`STRIPE_CHECKOUT_SESSION_COMPLETED`, `GMAIL_NEW_GMAIL_MESSAGE`). Calendly não tem trigger no catálogo Composio.
+7. Desconectar Workers Builds deste repo Pages (worker `ziontechgroup`). O worker real é `telegram-ai-reply-worker`.
+8. Religar LinkedIn com `r_organization_admin` e alinhar headlines. Postar de novo no Instagram (último reel 2025-06-07) apontando para `/marketplace/`.

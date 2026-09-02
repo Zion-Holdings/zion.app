@@ -56,7 +56,19 @@ Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were mi
 
 ## CI: `Workers Builds: ziontechgroup`
 
-Cloudflare’s GitHub app posts this check on **every push**, including `main`. It fails in ~0s with no annotations because this repo has no `wrangler.toml` / worker entrypoint and no root `package.json`. The check targets the **production** worker `ziontechgroup`. Do **not** add a stub worker — that would deploy over production. Fix is in the Cloudflare dashboard: disconnect Workers Builds from this Pages repo, or point it at a real worker project.
+Cloudflare’s GitHub app posts this check on **every push**, including `main` (still red there). It fails in ~0s with no annotations. Dashboard: account `f634328cf2b380daee7d928c1c4acad2`, production worker **`ziontechgroup`**.
+
+This **Pages** repo is the wrong source. The live Telegram worker lives in private `Zion-support/telegram-ai-reply-worker` (`wrangler.toml` name `telegram-ai-reply-worker`, updated 2026-09-02). `telegram-agent-listener` is a separate Python webhook service (Render/Railway/Fly), not a Worker.
+
+Do **not** add a stub `wrangler.toml` here — that would deploy over production worker `ziontechgroup`. Fix: Cloudflare dashboard → disconnect Workers Builds from `zion-support.github.io`, or retarget it at `telegram-ai-reply-worker`.
+
+## Brand / social (2026-09-02)
+
+- Instagram last media **2025-06-07** (marketplace reels, 1–5 likes). Reach last week ≈ 0. Website still `.com.br`. New canonical page: `/marketplace/`.
+- LinkedIn personal headline is split by locale: en “CEO at Zion Holdings”, es “President at Zion Technologies”, pt “President at Zion Tech Group”. Company ACL tools need `r_organization_admin` (current token is Forbidden).
+- Discord guilds are personal DeFi/crypto rooms. There is **no Zion Discord server**.
+- Hugging Face `kleberalcatrao` has no `zion` model repo.
+- Calendar from now: internal Growth Loop / SEO / CI meets only — **no client Discovery bookings**.
 
 ## Triggers and webhooks
 

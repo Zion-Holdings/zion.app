@@ -28,7 +28,7 @@ const LIVE = [
   { name: 'Cursor', role: 'Cloud-agent fleet' },
   { name: 'OpenRouter', role: 'LLM routing' },
   { name: 'Hugging Face', role: 'Model identity' },
-  { name: 'Discord', role: 'Community identity' },
+  { name: 'Discord', role: 'Personal guilds only — no Zion server' },
   { name: 'Ninox', role: 'Structured ops data' },
   { name: 'Supabase', role: 'Zion App (inactive — restore)' },
   { name: '1Password', role: 'Secret vaults' },
