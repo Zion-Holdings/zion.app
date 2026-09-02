@@ -27,7 +27,13 @@ jobs:
         run: |
           set -euo pipefail
           git fetch origin "${{ github.base_ref }}" --depth=1
-          DIFF="$(git diff --name-status "origin/${{ github.base_ref }}...HEAD")"
+          # Two-dot tree compare. Three-dot (A...B) needs a merge-base, which
+          # fails on shallow clones after the Sept 1 orphan rewrite of main.
+          BASE="origin/${{ github.base_ref }}"
+          if ! DIFF="$(git diff --name-status "$BASE" HEAD)"; then
+            echo "::error::Could not diff ${BASE} against HEAD"
+            exit 1
+          fi
           PROTECTED='^(package\.json|package-lock\.json|next\.config\.js|tsconfig\.json|app/layout\.tsx|app/page\.tsx|app/globals\.css|app/error\.tsx|app/components/Navigation\.tsx|app/components/Footer\.tsx|app/components/PageTemplate\.tsx|app/components/StandardPage\.tsx|wrangler\.toml|workers/static\.js)$'
           if printf '%s\n' "$DIFF" | awk '{print $1" "$2}' | grep -E '^[DR] ' | awk '{print $2}' | grep -E "$PROTECTED"; then
             echo "::error::This PR deletes protected source files. Restore them before merge."
