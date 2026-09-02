@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI Partner Portal & Revenue Calculator | Zion Tech Group</title>
+<meta name="description" content="Join the Zion partner portal, estimate AI revenue potential, and access reseller tools, pricing models, and enablement resources."/>
+<link rel="canonical" href="https://ziontechgroup.com/partner-portal/"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"AI Partner Portal & Revenue Calculator","url":"https://ziontechgroup.com/partner-portal/","applicationCategory":"BusinessApplication","description":"Partner portal with revenue calculator and reseller enablement for AI services."}
+</script>
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0b1221;color:#e5e7eb}
+.container{max-width:1020px;margin:0 auto;padding:48px 24px}
+h1{font-size:34px;font-weight:800;color:#fff;margin:0 0 16px}
+.lead{color:#cbd5e1;font-size:18px;line-height:1.6;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
+.card{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:20px}
+.card h3{color:#fff;margin:0 0 8px;font-size:18px}
+.card p{color:#cbd5e1;font-size:14px;line-height:1.6;margin:0}
+.card ul{color:#cbd5e1;font-size:14px;line-height:1.7;padding-left:18px;margin-top:8px}
+.cta{display:inline-block;padding:12px 18px;border-radius:12px;background:#7c3aed;color:#fff;text-decoration:none;font-weight:600;margin-top:24px;margin-right:8px}
+.note{color:#94a3b8;font-size:13px;margin-top:24px;text-align:center}
+.calculator{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:24px;margin-top:24px}
+.calculator h2{color:#fff;margin:0 0 12px;font-size:22px}
+.input{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px}
+.input label{color:#cbd5e1;font-size:14px;display:flex;flex-direction:column;gap:4px}
+.input input{background:#0b1221;border:1px solid #334155;border-radius:8px;padding:8px 12px;color:#e5e7eb;font-size:14px}
+.result{color:#a78bfa;font-size:20px;font-weight:700;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AI Partner Portal & Revenue Calculator</h1>
+  <p class="lead">Join the Zion partner ecosystem and estimate your AI revenue potential with our reseller tools and enablement platform.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Partner Enrollment</h3>
+      <p>Apply for AI reseller, agency, MSP, or technology partner tiers.</p>
+      <ul>
+        <li>Fast onboarding</li>
+        <li>Partner pricing tiers</li>
+        <li>Co-branded proposals</li>
+      </ul>
+      <a class="cta" href="/contact/?subject=Partner%20Enrollment">Apply Now</a>
+    </div>
+    <div class="card">
+      <h3>Reseller Tools</h3>
+      <p>Access proposals, pricing calculators, and playbooks.</p>
+      <ul>
+        <li>Quote templates</li>
+        <li>ROI calculators</li>
+        <li>SOW templates</li>
+      </ul>
+      <a class="cta" href="/contact/?subject=Reseller%20Tools">Request Access</a>
+    </div>
+    <div class="card">
+      <h3>Revenue Automation</h3>
+      <p>Connect Stripe, Calendly, WhatsApp, and Resend for automated revenue workflows.</p>
+      <ul>
+        <li>Stripe Payment Links</li>
+        <li>Calendly booking automation</li>
+        <li>WhatsApp lead nurturing</li>
+      </ul>
+      <a class="cta" href="/contact/?subject=Revenue%20Automation">Get Started</a>
+    </div>
+  </div>
+  <div class="calculator">
+    <h2>Revenue Potential Calculator</h2>
+    <p style="color:#cbd5e1;margin:8px 0 16px">Estimate monthly recurring revenue from AI services with Zion's partner margins.</p>
+    <div class="input">
+      <label>Clients per month<input id="clients" type="number" value="5" min="1"/></label>
+      <label>Avg. deal size ($)<input id="deal" type="number" value="1500" min="1"/></label>
+      <label>Partner margin (%)<input id="margin" type="number" value="30" min="1" max="100"/></label>
+    </div>
+    <div class="result" id="result">Estimated MRR: $2,250</div>
+    <p class="note">This is a simplified estimate. Actual margins vary by plan and volume.</p>
+  </div>
+  <div>
+    <a class="cta" href="/contact/">Talk to Partner Team</a>
+    <a class="cta" style="background:#0f172a;border:1px solid #334155;color:#e5e7eb" href="/pricing/">View Pricing</a>
+  </div>
+</div>
+<script>
+function calc(){const c=+document.getElementById('clients').value||0;const d=+document.getElementById('deal').value||0;const m=+document.getElementById('margin').value||0;const monthly=c*d*(m/100);document.getElementById('result').textContent='Estimated MRR: $'+monthly.toLocaleString()}
+document.getElementById('clients').addEventListener('input',calc);document.getElementById('deal').addEventListener('input',calc);document.getElementById('margin').addEventListener('input',calc);
+</script>
+</body>
+</html>
