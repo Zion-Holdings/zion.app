@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '*/30 * * * *'
 
+permissions:
+  contents: read
+
 jobs:
   master:
     runs-on: ubuntu-latest
@@ -15,10 +18,16 @@ jobs:
       COMPOSIO_STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
       COMPOSIO_RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
       COMPOSIO_BREVO_CONNECTION_ID: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
+      COMPOSIO_GMAIL_CONNECTION_ID: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
+      COMPOSIO_HUBSPOT_CONNECTION_ID: ${{ secrets.COMPOSIO_HUBSPOT_CONNECTION_ID }}
+      COMPOSIO_NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+      COMPOSIO_SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+      COMPOSIO_1PASSWORD_CONNECTION_ID: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+      COMPOSIO_SENDGRID_CONNECTION_ID: ${{ secrets.COMPOSIO_SENDGRID_CONNECTION_ID }}
+      COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID: ${{ secrets.COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID }}
       COMPOSIO_FIRECRAWL_CONNECTION_ID: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
       COMPOSIO_SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
       COMPOSIO_TAVILY_CONNECTION_ID: ${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}
-      COMPOSIO_1PASSWORD_CONNECTION_ID: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -37,11 +46,11 @@ jobs:
 
       - name: Revenue pipeline
         run: |
-          if [ -f .github/scripts/composio/revenue-pipeline.js ]; then
-            node .github/scripts/composio/revenue-pipeline.js || echo "REVENUE_PIPELINE_FAILED"
+          if [ -f .github/scripts/composio/revenue-pipeline.mjs ]; then
+            node .github/scripts/composio/revenue-pipeline.mjs || echo "REVENUE_PIPELINE_FAILED"
           fi
-          if [ -f .github/scripts/composio/sales-alert.js ]; then
-            node .github/scripts/composio/sales-alert.js || echo "SALES_ALERT_FAILED"
+          if [ -f .github/scripts/composio/sales-alert.mjs ]; then
+            node .github/scripts/composio/sales-alert.mjs || echo "SALES_ALERT_FAILED"
           fi
 
       - name: Update revenue log
@@ -63,8 +72,17 @@ jobs:
           const summary = {
             orchestrator: 'zion-master',
             timestamp: new Date().toISOString(),
-            connections: ['calendly', 'whatsapp', 'stripe', 'resend', 'brevo', 'firecrawl', 'serpapi', 'tavily', '1password'],
-            scripts: fs.existsSync('.github/scripts/composio/revenue-pipeline.js') ? 'present' : 'missing',
+            connections: [
+              'calendly','whatsapp','stripe','resend','brevo','gmail',
+              'hubspot','notion','slack','1password','sendgrid','activecampaign',
+              'firecrawl','serpapi','tavily'
+            ],
+            scripts: {
+              revenue_pipeline: fs.existsSync('.github/scripts/composio/revenue-pipeline.mjs') ? 'present' : 'missing',
+              sales_alert: fs.existsSync('.github/scripts/composio/sales-alert.mjs') ? 'present' : 'missing',
+              revenue_log: fs.existsSync('.github/scripts/composio/update-revenue-log.mjs') ? 'present' : 'missing',
+              firecrawl_sync: fs.existsSync('.github/scripts/composio/firecrawl-sync.mjs') ? 'present' : 'missing',
+            }
           };
           console.log(JSON.stringify(summary, null, 2));
           EOF
