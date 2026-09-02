@@ -30,12 +30,28 @@ async function run() {
     console.log(`${toolkit} ${status} ${url || JSON.stringify(data).slice(0, 200)} expires ${data.expires_at || '?'}`);
     if (ok && url) links.push({ toolkit, url, expires_at: data.expires_at });
   }
-  if (process.argv.includes('--slack') && links.length) {
+  const notify = process.argv.includes('--slack') || process.argv.includes('--notify');
+  if (notify && links.length) {
     const { executeTool, newestActiveByToolkit, listAllConnectedAccounts } = await import('./discover-connections.mjs');
     const active = newestActiveByToolkit(await listAllConnectedAccounts());
-    const md = ['*Composio Connect Links* (expire in ~10 min)', ...links.map((l) => `• ${l.toolkit}: ${l.url}`)].join('\n');
+    const md = [
+      '*Composio Connect Links* (~10 min TTL) — open as kleber@ziontechgroup.com',
+      ...links.map((l) => `• ${l.toolkit}: ${l.url}`),
+      'After authorize, ACTIVE must land on kleber@ — not a playground row.',
+    ].join('\n');
     const slack = await executeTool('slack', 'SLACK_SEND_MESSAGE', { channel: 'C9375BEBA', markdown_text: md }, active);
-    console.log('slack', slack.ok);
+    const telegram = await executeTool('telegram', 'TELEGRAM_SEND_MESSAGE', {
+      chat_id: '-1003886112318',
+      text: md.replace(/\*/g, ''),
+      disable_web_page_preview: false,
+    }, active);
+    const resend = await executeTool('resend', 'RESEND_SEND_EMAIL', {
+      from: 'Zion Tech Group <noreply@ziontechgroup.com>',
+      to: ['kleber@ziontechgroup.com'],
+      subject: '[Zion] Fresh Composio Connect Links (~10 min)',
+      text: md.replace(/\*/g, ''),
+    }, active);
+    console.log('notify', { slack: slack.ok, telegram: telegram.ok, resend: resend.ok });
   }
   return links;
 }
