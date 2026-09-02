@@ -25,52 +25,35 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install @composio/core dotenv 2>&1 | tail -5
-
-      - name: Run revenue flow
+      - name: Check Composio connections via REST API
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-          CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
-          WHATSAPP_CONNECTION_ID: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
-          STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
-          RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
-          SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
-          NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
         run: |
-          cat > revenue-flow.mjs <<'EOF'
-          import { Composio } from '@composio/core';
-          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
-          const userId = 'pg-test-b311dcc6-03f6-4077-8774-c90cfd6fcf29';
-          const summary = { checked: [], skipped: [], errors: [] };
-          const connectionIds = {
-            calendly: process.env.CALENDLY_CONNECTION_ID,
-            whatsapp: process.env.WHATSAPP_CONNECTION_ID,
-            stripe: process.env.STRIPE_CONNECTION_ID,
-            resend: process.env.RESEND_CONNECTION_ID,
-            slack: process.env.SLACK_CONNECTION_ID,
-            notion: process.env.NOTION_CONNECTION_ID,
-          };
-          for (const [name, id] of Object.entries(connectionIds)) {
-            if (!id) {
-              summary.skipped.push(name);
-              continue;
-            }
-            try {
-              const tools = await composio.getTools({ connectionIds: [id], userId });
-              summary.checked.push({ name, tools: tools.length });
-            } catch (e) {
-              summary.errors.push({ name, message: e.message });
-            }
-          }
-          console.log(JSON.stringify(summary, null, 2));
+          cat > revenue-check.sh <<'EOF'
+          #!/bin/bash
+          set -e
+          API_KEY="${COMPOSIO_API_KEY}"
+          BASE="https://backend.composio.dev/api/v3"
+          AUTH="x-api-key: ${API_KEY}"
+          
+          echo "# Composio Revenue Automation Check"
+          echo "_generated_at: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          
+          # List connected accounts
+          echo "\n## Connected Accounts"
+          curl -s -H "$AUTH" "$BASE/connected_accounts" | python3 -m json.tool 2>/dev/null || echo "Failed to list accounts"
+          
+          # Check specific connection IDs if present
+          for var in CALENDLY_CONNECTION_ID WHATSAPP_CONNECTION_ID STRIPE_CONNECTION_ID RESEND_CONNECTION_ID SLACK_CONNECTION_ID NOTION_CONNECTION_ID; do
+            id="${!var}"
+            if [ -n "$id" ]; then
+              echo "\n## $var: $id"
+              curl -s -H "$AUTH" "$BASE/connected_accounts/$id" | python3 -m json.tool 2>/dev/null || echo "Failed to get $var"
+            fi
+          done
           EOF
-          node revenue-flow.mjs
+          chmod +x revenue-check.sh
+          ./revenue-check.sh
 
       - name: Comment summary
         run: |
