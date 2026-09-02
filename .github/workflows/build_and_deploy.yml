@@ -31,19 +31,3 @@ jobs:
           path: out
 
       - uses: actions/deploy-pages@v4
-
-      - name: Mirror Pages artifact to gh-pages branch
-        if: always()
-        run: |
-          set -euo pipefail
-          git config --global user.email "ci@ziontechgroup.com"
-          git config --global user.name "Zion CI"
-          git clone --depth=1 --branch gh-pages https://x-access-token:*** github.token }}@github.com/${{ github.repository }}.git gh-pages-mirror
-          cd gh-pages-mirror
-          git rm -rf . || true
-          cp -Rf ../out/. .
-          touch .nojekyll
-          git add -A
-          git status --short || true
-          git commit -m "chore(ci): mirror Pages artifact to gh-pages" || true
-          git push origin gh-pages
