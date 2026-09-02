@@ -1,80 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="robots" content="index, follow">
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AI Services Pricing | Zion Tech Group</title>
-<meta name="description" content="Simple pricing for AI services: Starter, Growth, and Enterprise plans. Contact us for custom AI solutions."/>
-<link rel="canonical" href="https://ziontechgroup.com/pricing/"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"AI Services Pricing","provider":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"areaServed":"Worldwide","description":"Simple pricing for AI services: Starter, Growth, and Enterprise plans."}
-</script>
-<style>
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0b1221;color:#e5e7eb}
-.container{max-width:1100px;margin:0 auto;padding:48px 24px}
-.header{text-align:center;padding:48px 0 32px}
-.header h1{font-size:36px;font-weight:800;color:#fff;margin:0 0 12px}
-.header p{color:#94a3b8;max-width:640px;margin:0 auto;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px}
-.card{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:24px;display:flex;flex-direction:column}
-.card h2{color:#fff;margin:0 0 8px;font-size:20px}
-.price{color:#e5e7eb;font-size:32px;font-weight:800;margin:8px 0}
-.price span{font-size:14px;color:#94a3b8;font-weight:400}
-.card ul{color:#cbd5e1;line-height:1.8;padding-left:18px;flex:1}
-.card li{margin:4px 0}
-.btn{display:inline-block;padding:12px 18px;border-radius:12px;background:#7c3aed;color:#fff;text-decoration:none;font-weight:600;margin-top:16px;text-align:center}
-.btn-secondary{background:#0f172a;border:1px solid #334155;color:#e5e7eb}
-.note{color:#94a3b8;font-size:13px;margin-top:32px;text-align:center}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing | Zion Tech Group — AI & IT Services</title>
+  <meta name="description" content="Transparent pricing for AI, automation, cybersecurity, cloud, and managed IT services. Starter $2,500/project, Growth $8,000/month, Enterprise custom." />
+  <link rel="canonical" href="https://ziontechgroup.com/pricing/" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(135deg, #0b1220 0%, #1a1a2e 50%, #0f3460 100%); color: #e6f0ff; min-height: 100vh; }
+    .hero { max-width: 1100px; margin: 0 auto; padding: 80px 24px; text-align: center; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; background: linear-gradient(135deg, #a78bfa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; }
+    .subheadline { font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; padding: 40px 24px 60px; }
+    .card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(124,58,237,0.2); border-radius: 16px; padding: 32px; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+    .card:hover { border-color: rgba(167, 139, 250, 0.5); transform: translateY(-4px); }
+    h2 { color: #fff; font-size: 1.5rem; margin-bottom: 8px; }
+    .price { font-size: 2.5rem; font-weight: 800; color: #a78bfa; margin: 16px 0; }
+    .price span { font-size: 1rem; color: #94a3b8; font-weight: 400; }
+    ul { color: #cbd5e1; line-height: 2; padding-left: 0; list-style: none; margin: 16px 0; flex: 1; }
+    li::before { content: "✓ "; color: #34d399; font-weight: bold; }
+    .cta { display: inline-block; padding: 14px 28px; border-radius: 12px; font-weight: 600; text-decoration: none; margin-top: 24px; transition: transform 0.2s, box-shadow 0.2s; }
+    .cta-primary { background: linear-gradient(135deg, #7c3aed, #db2777); color: white; }
+    .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.4); }
+    .cta-secondary { background: rgba(15, 23, 42, 0.8); border: 2px solid rgba(167, 139, 250, 0.4); color: #a78bfa; }
+    .cta-secondary:hover { background: rgba(124,58,237,0.1); }
+    .popular { border: 2px solid rgba(167, 139, 250, 0.5); position: relative; }
+    .popular::before { content: "Most Popular"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #7c3aed, #db2777); color: white; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 600; }
+    .addons { max-width: 1100px; margin: 0 auto; padding: 40px 24px 60px; text-align: center; }
+    .addons h2 { color: #fff; font-size: 1.5rem; margin-bottom: 24px; }
+    .addon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .addon { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(124,58,237,0.2); border-radius: 12px; padding: 16px; }
+    .addon a { color: #a78bfa; text-decoration: none; font-weight: 600; }
+    footer { text-align: center; padding: 40px 24px; border-top: 1px solid rgba(124,58,237,0.15); }
+    footer a { color: #a78bfa; text-decoration: none; margin: 0 12px; }
+  </style>
 </head>
 <body>
-<nav style="background:#0f172a;padding:16px 0;border-bottom:1px solid #1f2937"><div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center"><a href="/" style="color:#f5f5f5;text-decoration:none;font-weight:700">Zion</a><div><a href="/services/" style="color:#cbd5e1;text-decoration:none;margin-left:16px">Services</a><a href="/contact/" style="color:#cbd5e1;text-decoration:none;margin-left:16px">Contact</a></div></div></nav>
-<div class="container">
-  <div class="header">
-    <h1>AI Services Pricing</h1>
-    <p>Choose a plan or contact us for a custom AI solution. All plans include implementation support.</p>
+  <div class="hero">
+    <h1>Transparent Pricing</h1>
+    <p class="subheadline">Choose a plan or contact us for a custom solution. All plans include implementation support and documentation.</p>
   </div>
+
   <div class="grid">
     <div class="card">
       <h2>Starter</h2>
-      <div class="price">$499<span>/project</span></div>
+      <div class="price">$2,500<span>/project</span></div>
       <ul>
-        <li>Single AI use case</li>
-        <li>Data assessment</li>
-        <li>Proof of concept</li>
-        <li>Documentation</li>
-        <li>Email support</li>
+        <li>Single AI/automation deliverable</li>
+        <li>Up to 20 user seats</li>
+        <li>2-week implementation sprint</li>
+        <li>Basic integration with 1 platform</li>
+        <li>Documentation and handover</li>
       </ul>
-      <a class="btn" href="/contact/?subject=Starter%20AI%20Project">Get Started</a>
+      <a href="https://calendly.com/kleber-ziontechgroup" class="cta cta-primary">Start Free Trial</a>
     </div>
-    <div class="card">
+
+    <div class="card popular">
       <h2>Growth</h2>
-      <div class="price">$1,499<span>/month</span></div>
+      <div class="price">$8,000<span>/month</span></div>
       <ul>
-        <li>Up to 3 AI workflows</li>
-        <li>Integration with existing tools</li>
-        <li>Monitoring and alerts</li>
-        <li>Weekly optimization</li>
-        <li>Priority support</li>
+        <li>Up to 5 concurrent AI agents</li>
+        <li>Unlimited user seats</li>
+        <li>Multi-platform deployment</li>
+        <li>Custom plugin and skill development</li>
+        <li>24/7 monitoring and incident response</li>
+        <li>Weekly optimization reviews</li>
+        <li>Priority support with 4-hour SLA</li>
       </ul>
-      <a class="btn" href="/contact/?subject=Growth%20AI%20Plan">Start Growth Plan</a>
+      <a href="https://calendly.com/kleber-ziontechgroup" class="cta cta-primary">Book Demo</a>
     </div>
+
     <div class="card">
       <h2>Enterprise</h2>
       <div class="price">Custom</div>
       <ul>
-        <li>Custom AI roadmap</li>
-        <li>Multi-cloud deployment</li>
-        <li>Advanced security and compliance</li>
-        <li>Dedicated engineer</li>
-        <li>SLA and training</li>
+        <li>Unlimited AI agents and swarm coordination</li>
+        <li>On-premise or private cloud deployment</li>
+        <li>Custom model integration</li>
+        <li>Full A2A protocol</li>
+        <li>Dedicated account team</li>
+        <li>Compliance automation</li>
+        <li>1-hour SLA</li>
       </ul>
-      <a class="btn btn-secondary" href="/contact/?subject=Enterprise%20AI">Contact Sales</a>
+      <a href="/contact/?subject=Enterprise%20AI" class="cta cta-secondary">Talk to Sales</a>
     </div>
   </div>
-  <p class="note">Need a payment link or subscription? Contact us and we’ll send a Stripe checkout link.</p>
-</div>
-<footer style="padding:24px 0;text-align:center;color:#6b7280;border-top:1px solid #1f2937"><div style="max-width:1200px;margin:0 auto;padding:0 24px"><p>© Zion Tech Group</p></div></footer>
+
+  <div class="addons">
+    <h2>Popular Add-Ons</h2>
+    <div class="addon-grid">
+      <div class="addon"><a href="/services/hermes-agent-bot-mode/">Bot Mode</a> — from $2,500</div>
+      <div class="addon"><a href="/services/hermes-agent-plugin-development/">Plugin Dev</a> — from $3,000/plugin</div>
+      <div class="addon"><a href="/services/hermes-agent-a2a-protocol/">A2A Protocol</a> — from $5,000 setup</div>
+      <div class="addon"><a href="/services/hermes-agent-complete-guide/">Complete Deploy</a> — from $10,000</div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/ai-services/">AI Services</a>
+    <a href="/contact/">Contact</a>
+    <a href="https://wa.me/13024640950">WhatsApp</a>
+  </footer>
 </body>
 </html>
