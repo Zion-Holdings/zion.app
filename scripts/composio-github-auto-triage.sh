@@ -63,7 +63,7 @@ EOF
             {\"role\": \"system\", \"content\": \"You are a technical issue triage assistant for Zion Tech Group. Respond with ONLY one of: P0, P1, P2, P3. Nothing else.\"},
             {\"role\": \"user\", \"content\": \"$context\"}
         ]
-    }" 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('choices',[{}])[0].get('message',{}).get('content','').strip().upper() or 'P3')" 2>/dev/null) || classification="P3"
+    }" 2>/dev/null | python -c "import sys,json; d=json.load(sys.stdin); print(d.get('choices',[{}])[0].get('message',{}).get('content','').strip().upper() or 'P3')" 2>/dev/null) || classification="P3"
 
     # Validação
     if [[ ! "$classification" =~ ^P[0-3]$ ]]; then
@@ -78,7 +78,7 @@ add_github_label() {
     local classification="$2"
     
     # Remove labels existentes de severidade para evitar duplicação
-    composio execute GITHUB_ADD_LABELES_TO_AN_ISSUE -d "{
+    composio execute GITHUB_ADD_LABELS_TO_AN_ISSUE -d "{
         \"owner\": \"$OWNER\",
         \"repo\": \"$REPO\",
         \"issue_number\": $issue_number,
@@ -118,10 +118,10 @@ EOF
         return 0
     fi
     
-    composio execute LINEAR_CREATE_LINEAR_ISSUE -d "{
+    composio execute LINEAR_CREATE_ISSUE -d "{
         \"team_id\": \"$LINEAR_TEAM\",
         \"title\": \"$linear_title\",
-        \"body\": \"$(echo "$linear_body" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\",
+        \"body\": \"$(echo "$linear_body" | python -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\",
         \"priority\": $(echo "$classification" | sed 's/P//')
     }" 2>/dev/null || {
         log "AVISO: Falha ao criar issue no Linear."
@@ -147,17 +147,17 @@ notify_slack() {
     esac
     
     local message
-    message="$emoji *GitHub Issue Triage — Zion*\n\n
+    message="$emoji *GitHub Issue Triage — Zion*\\n\\n
 * Severidade:* $classification
 * Issue:* $title (#$issue_number)
 * Link:* $github_url
 $( [[ -n "$linear_url" ]] && echo "*Linear:* $linear_url" )
-"
+\"
     
     log "Notificando Slack ($SLACK_CHANNEL)..."
     composio execute SLACK_SEND_MESSAGE -d "{
         \"channel\": \"$SLACK_CHANNEL\",
-        \"text\": \"$(echo "$message" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\"
+        \"text\": \"$(echo "$message" | python -c 'import sys,json; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '{}')\"
     }" 2>/dev/null || {
         log "AVISO: Slack notification falhou."
         return 1
@@ -179,7 +179,7 @@ register_notion() {
     fi
     
     log "Registrando no Notion (DB: $NOTION_DB)..."
-    composio execute NOTION_CREATE_NOTION_PAGE -d "{
+    composio execute NOTION_CREATE_PAGE -d "{
         \"parent_database_id\": \"$NOTION_DB\",
         \"title\": \"GitHub Triage: $title\",
         \"properties\": {
@@ -220,7 +220,7 @@ main() {
     }
     
     local issue_count
-    issue_count=$(echo "$issues_json" | python3 -c "import sys,json; d=json.load(sys.stdin); print(len(d.get('issues',d.get('data',[]))))" 2>/dev/null || echo "0")
+    issue_count=$(echo "$issues_json" | python -c "import sys,json; d=json.load(sys.stdin); print(len(d.get('issues',d.get('data',[]))))" 2>/dev/null || echo "0")
     
     log "Found $issue_count open issues."
     
@@ -233,7 +233,7 @@ main() {
     local processed=0
     local failed=0
     
-    echo "$issues_json" | python3 -c "
+    echo "$issues_json" | python -c "
 import sys, json
 data = json.load(sys.stdin)
 issues = data.get('issues', data.get('data', []))
@@ -243,11 +243,11 @@ for issue in issues:
         [[ -z "$issue_line" ]] && continue
         
         local title body issue_number labels html_url
-        title=$(echo "$issue_line" | python3 -c "import sys,json; print(json.loads(sys.stdin.read()).get('title',''))" 2>/dev/null || echo "")
-        body=$(echo "$issue_line" | python3 -c "import sys,json; print(json.loads(sys.stdin.read()).get('body','') or '')" 2>/dev/null || echo "")
-        issue_number=$(echo "$issue_line" | python3 -c "import sys,json; print(json.loads(sys.stdin.read()).get('number',0))" 2>/dev/null || echo "0")
-        labels=$(echo "$issue_line" | python3 -c "import sys,json; labels=json.loads(sys.stdin.read()).get('labels',[]); print(','.join(l.get('name','') for l in labels) if labels else '')" 2>/dev/null || echo "")
-        html_url=$(echo "$issue_line" | python3 -c "import sys,json; print(json.loads(sys.stdin.read()).get('html_url',''))" 2>/dev/null || echo "")
+        title=$(echo "$issue_line" | python -c "import sys,json; print(json.loads(sys.stdin.read()).get('title',''))" 2>/dev/null || echo "")
+        body=$(echo "$issue_line" | python -c "import sys,json; print(json.loads(sys.stdin.read()).get('body','') or '')" 2>/dev/null || echo "")
+        issue_number=$(echo "$issue_line" | python -c "import sys,json; print(json.loads(sys.stdin.read()).get('number',0))" 2>/dev/null || echo "0")
+        labels=$(echo "$issue_line" | python -c "import sys,json; labels=json.loads(sys.stdin.read()).get('labels',[]); print(','.join(l.get('name','') for l in labels) if labels else '')" 2>/dev/null || echo "")
+        html_url=$(echo "$issue_line" | python -c "import sys,json; print(json.loads(sys.stdin.read()).get('html_url',''))" 2>/dev/null || echo "")
         
         log "Processando issue #$issue_number: $title"
         

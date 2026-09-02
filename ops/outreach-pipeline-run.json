@@ -1,0 +1,17 @@
+{
+  "pipeline": "cold-outreach-2026-09-01",
+  "created_at": "2026-09-01T08:27:00Z",
+  "status": "in_progress",
+  "focos_servicos": ["Cloud Cost Optimization", "AI Process Automation", "Cybersecurity Assessment"],
+  "subagentes": {
+    "sa-0-a70eba65": {"goal": "8 novos serviços -> new-services-expanded.md", "status": "running"},
+    "sa-1-f845bce4": {"goal": "15-20 novos leads -> new-leads-batch.json", "status": "running"},
+    "sa-2-3c0891c3": {"goal": "enviar e-mails + log -> outreach-send-log.jsonl", "status": "running"}
+  },
+  "checkpoint": {
+    "leads_existentes": "/Users/miami2/zion.app/automation/data/zion_leads_free.json (53 leads)",
+    "gog_auth": "OK - kleber@ziontechgroup.com",
+    "suppression_list": []
+  },
+  "next_step": "aguardar subagentes; ao final, validar arquivos criados e enviar relatório consolidado"
+}

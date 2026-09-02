@@ -34,4 +34,13 @@
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
 /services/cybersecurity/ /services/cybersecurity-platform-msp-2026-6558/ 301
 /services/email-intelligence/ /services/ai-email-intelligence/ 301
+
+# 404 redirects - old service pages → current
+/services/data-analytics/   /services/data-analytics-service/  301
+/services/devops/           /services/devops-consulting/  301
+/services/blockchain/       /services/blockchain-development/  301
+/services/ecommerce/        /services/ecommerce-solutions/  301
+/services/mobile-app-development/ /services/mobile-app-dev/  301
+/services/cloud-migration/  /services/cloud-migration-services-2026-6572/  301
+
 # trigger

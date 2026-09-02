@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-30T03:51:16.107645+00:00",
+  "generated_at": "2026-09-01T16:53:32.364637+00:00",
   "source": "github-org-search",
-  "total": 23,
-  "with_email": 5,
+  "total": 25,
+  "with_email": 6,
   "leads": [
     {
       "company": "ANother Managed IT Services",
@@ -32,6 +32,16 @@
       "website": "https://manageditservices.ai",
       "domain": "manageditservices.ai",
       "location": null,
+      "source": "github"
+    },
+    {
+      "company": "AI Managed IT Services",
+      "contact_name": "AI Managed IT Services",
+      "github_handle": "aimanageditservice",
+      "email": "darren@aimanageditservices.com",
+      "website": "https://www.aimanageditservices.com/",
+      "domain": "aimanageditservices.com",
+      "location": "2029 Century Pk E Suite 400, Los Angeles, CA 90067, United States",
       "source": "github"
     },
     {
@@ -75,22 +85,12 @@
       "source": "github"
     },
     {
-      "company": "Haak Cybersecurity Consulting",
-      "contact_name": "Haak Cybersecurity Consulting",
-      "github_handle": "Haak-Cybersecurity-Consulting",
-      "email": "contacto@haak.com.mx",
-      "website": "haak.com.mx",
-      "domain": "",
-      "location": null,
-      "source": "github"
-    },
-    {
-      "company": "Cybersecurity consulting services",
-      "contact_name": "Cybersecurity consulting services",
-      "github_handle": "cisoeynucom",
+      "company": "Rhino Cybersecurity Consulting",
+      "contact_name": "Rhino Cybersecurity Consulting",
+      "github_handle": "Rhino-Cybersecurity-Consulting",
       "email": "",
-      "website": "https://www.cisoeynu.com",
-      "domain": "cisoeynu.com",
+      "website": "https://github.com/Rhino-Cybersecurity-Consulting",
+      "domain": "",
       "location": null,
       "source": "github"
     },
@@ -105,13 +105,23 @@
       "source": "github"
     },
     {
-      "company": "AMKIO Software & Cybersecurity Consulting",
-      "contact_name": "AMKIO Software & Cybersecurity Consulting",
-      "github_handle": "AMKIO",
-      "email": "a@amk.io",
-      "website": "https://amk.io",
-      "domain": "amk.io",
-      "location": "Copenhagen",
+      "company": "Cybersecurity consulting services",
+      "contact_name": "Cybersecurity consulting services",
+      "github_handle": "cisoeynucom",
+      "email": "",
+      "website": "https://www.cisoeynu.com",
+      "domain": "cisoeynu.com",
+      "location": null,
+      "source": "github"
+    },
+    {
+      "company": "Haak Cybersecurity Consulting",
+      "contact_name": "Haak Cybersecurity Consulting",
+      "github_handle": "Haak-Cybersecurity-Consulting",
+      "email": "contacto@haak.com.mx",
+      "website": "haak.com.mx",
+      "domain": "",
+      "location": null,
       "source": "github"
     },
     {
@@ -132,6 +142,16 @@
       "website": "https://github.com/lvlsec",
       "domain": "",
       "location": null,
+      "source": "github"
+    },
+    {
+      "company": "AMKIO Software & Cybersecurity Consulting",
+      "contact_name": "AMKIO Software & Cybersecurity Consulting",
+      "github_handle": "AMKIO",
+      "email": "a@amk.io",
+      "website": "https://amk.io",
+      "domain": "amk.io",
+      "location": "Copenhagen",
       "source": "github"
     },
     {
@@ -195,21 +215,21 @@
       "source": "github"
     },
     {
+      "company": "OP.GG | Oracle Cloud Migration Project",
+      "contact_name": "OP.GG | Oracle Cloud Migration Project",
+      "github_handle": "opgg-oci-migration",
+      "email": "",
+      "website": "https://github.com/opgg-oci-migration",
+      "domain": "",
+      "location": "Korea, South",
+      "source": "github"
+    },
+    {
       "company": "프로젝트 - AWS Cloud Migration - Security & Network",
       "contact_name": "프로젝트 - AWS Cloud Migration - Security & Network",
       "github_handle": "AWS-Cloud-Security-Ops",
       "email": "",
       "website": "https://github.com/AWS-Cloud-Security-Ops",
-      "domain": "",
-      "location": null,
-      "source": "github"
-    },
-    {
-      "company": "Sachin Pathak - Symphony-Cloud-Migration - FE Developer",
-      "contact_name": "Sachin Pathak - Symphony-Cloud-Migration - FE Developer",
-      "github_handle": "x-spathak101",
-      "email": "",
-      "website": "https://github.com/x-spathak101",
       "domain": "",
       "location": null,
       "source": "github"
