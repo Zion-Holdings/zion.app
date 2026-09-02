@@ -23,6 +23,23 @@ async function run() {
   const hunter = await executeTool('hunter', 'HUNTER_ACCOUNT_INFORMATION', {}, active);
   summary.leads.push({ type: 'hunter', remaining: hunter.data?.searches?.remaining ?? null, ok: hunter.ok });
 
+  console.log('→ Sheets: Zion Leads');
+  const sheets = await executeTool('googlesheets', 'GOOGLESHEETS_VALUES_GET', {
+    spreadsheet_id: '1RE4UUTu9AOTvH_gZPECjIhT3ye561Z01NF2QEzgd_cY',
+    range: 'Sheet1!A1:J20',
+  }, active);
+  const sheetRows = sheets.data?.values || sheets.data?.row_data || [];
+  summary.leads.push({ type: 'sheets_zion_leads', rows: Array.isArray(sheetRows) ? sheetRows.length : 0, ok: sheets.ok });
+
+  console.log('→ Airtable: Opportunities (live CRM while HubSpot is dark)');
+  const airtable = await executeTool('airtable', 'AIRTABLE_LIST_RECORDS', {
+    baseId: 'appsO95N9PqNEuwUX',
+    tableIdOrName: 'Opportunities',
+    maxRecords: 20,
+  }, active);
+  const airRecords = airtable.data?.records || [];
+  summary.leads.push({ type: 'airtable_opportunities', count: airRecords.length, ok: airtable.ok });
+
   if (active.hubspot) {
     console.log('→ HubSpot: contacts');
     const contacts = await executeTool('hubspot', 'HUBSPOT_FETCH_CONTACTS', { limit: 20 }, active);
@@ -35,6 +52,8 @@ async function run() {
 Gmail: ${summary.leads.find((l) => l.type === 'gmail')?.count ?? 'n/a'}
 Notion: ${summary.leads.find((l) => l.type === 'notion')?.count ?? 'n/a'}
 Linear: ${summary.leads.find((l) => l.type === 'linear')?.count ?? 'n/a'}
+Sheets Zion Leads: ${summary.leads.find((l) => l.type === 'sheets_zion_leads')?.rows ?? 'n/a'} rows
+Airtable opps: ${summary.leads.find((l) => l.type === 'airtable_opportunities')?.count ?? 'n/a'}
 HubSpot: ${active.hubspot ? 'ACTIVE' : 'EXPIRED — reconnect required'}`;
 
   if (active.slack) {

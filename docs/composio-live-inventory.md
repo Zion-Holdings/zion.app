@@ -23,15 +23,15 @@ Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were mi
 | Instagram | `@zion.tech.group` · 2,946 followers · website still `ziontechgroup.com.br` | Social proof |
 | YouTube | `@ziontechgroup` · 13 subs · 11 videos · 5,888 views | Video SEO |
 | Discord | `kleberalcatrao` | Community (personal guilds, no Zion server yet) |
-| Telegram | Bot `@Composio_Kleber_bot` | Agent replies |
+| Telegram | Bot `@Composio_Kleber_bot` in **Zion Agents** `@ziontechgroup_agents` | Ops + agent replies |
 | Cursor | `kleber@ziontechgroup.com` | Cloud agents |
 | Hugging Face | `kleberalcatrao` | Models / Spaces |
 | OpenRouter | Credits **exhausted** (45.20 / 45.00) | LLM routing |
 | Sentry | Project `javascript-nextjs` | Error monitoring |
 | Supabase | Project `Zion App` is **INACTIVE** | App backend |
-| Airtable | Sales CRM + Product Planning bases | Lightweight CRM |
-| Google Calendar | Owner calendars for Zion domain | Scheduling |
-| Google Sheets | `Zion Leads` spreadsheet | Lead ops |
+| Airtable | Sales CRM (`appsO95N9PqNEuwUX`) is a **2017 demo** (Payless Cashways). A real Zion account + Discovery $99 opportunity was added 2026-09-02. Do not sync demo rows. | Lightweight CRM while HubSpot is dark |
+| Google Calendar | Owner calendars for Zion domain — no upcoming **client** bookings; events are internal CI/deploy meets | Scheduling |
+| Google Sheets | `Zion Leads` (`1RE4UUTu9AOTvH_gZPECjIhT3ye561Z01NF2QEzgd_cY`) was empty; seeded 2026-09-02 with funnel URLs | Lead ops |
 | Ninox | Team present | Structured ops DB |
 | Cloudflare | Auth header format invalid / 0 zones | DNS — needs API token repair |
 | Firecrawl | **402 insufficient credits** | Site crawl |
@@ -69,3 +69,11 @@ Cloudflare’s GitHub app posts this check on **every push**, including `main`. 
 ## SEO evidence (SerpAPI)
 
 For `Zion Tech Group`, Google currently surfaces LinkedIn, Facebook, a 2019 Reddit MSP thread, ConnectAmericas, and Crunchbase **before or beside** ziontechgroup.com. Name-collision sites (`ziontech.biz`, `ziontechnologies.org`) also appear for adjacent queries. The site must keep a clear legal-entity + 26-year-history + .com canonical story on every money page.
+
+Query `"Zion Tech Group" AI automation` ranks **ziontechgroup.com #1** (verified 2026-09-02 via SerpAPI). Keep `/about/` and the Discovery CTA on the homepage so the branded AI query stays owned.
+
+YouTube `@ziontechgroup` videos are 2009–2019 hardware (UPS / Dell / green IT) pointing at `.com.br`. Use them as legitimacy, not as the AI CTA. Instagram `@zion.tech.group` website field is still `https://ziontechgroup.com.br/`. Daily **reach** 2026-08-26→09-01 was 0,0,0,0,0,0,2 — 2.9k followers, almost no recent distribution.
+
+Ninox team `wxqWQrgFhMysSM99M` (“My Team 1”) has **zero databases**. Toolkit is authenticated but empty until a human creates a base in Ninox.
+
+Notion deeper-intel page: https://app.notion.com/p/Composio-Maximize-deeper-intel-2026-09-02-3cfb94b0eaf781798bc2f78a5b7a1706

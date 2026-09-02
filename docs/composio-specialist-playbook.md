@@ -57,7 +57,11 @@ Terminology (never use the old words in new code):
 - **Instagram** `@zion.tech.group` (2.9k) — change website from `.com.br` to `https://ziontechgroup.com`.
 - **YouTube** `UCKrJNz3OqQ6Im9bQbJko7Ug` — do not publish from the unrelated "Surf Family" OAuth channel.
 - **LinkedIn** personal + company page `ziontechgroup`.
-- **Telegram** keep replies in-originating-chat via `telegram-agent-listener`.
+- **Telegram** bot `@Composio_Kleber_bot` is in **Zion Agents** (`@ziontechgroup_agents`, chat `-1003886112318`). Keep replies in-originating-chat via `telegram-agent-listener`. Set bot commands (`discovery`, `plans`, `about`, `status`). Do not put the ops group on public marketing pages.
+- **YouTube** list with `channelId=UCKrJNz3OqQ6Im9bQbJko7Ug`, never `mine` (that OAuth is the unrelated Surf Family channel).
+- **Instagram insights** allowed metrics include `reach`, `profile_views`, `website_clicks` — not `impressions`. `ig_user_id` `27786273507741648`. Graph **silently omits** metrics with no data for the window (2026-08-26→09-02 returned `reach` only).
+- **Google Sheets** write with `GOOGLESHEETS_VALUES_UPDATE` (`spreadsheet_id`, `range`, `value_input_option=USER_ENTERED`, `values`).
+- **Airtable** `AIRTABLE_CREATE_RECORD` needs `baseId` + `tableIdOrName`. Typecast select fields. Never import the 2017 template contacts.
 
 ## Recommended architecture
 
