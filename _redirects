@@ -1073,3 +1073,8 @@
 /managed-ai-support/*  /out/managed-ai-support/  200
 /cybersecurity-compliance-latam/*  /out/cybersecurity-compliance-latam/  200
 /partners/channel-program/*  /out/partners/channel-program/  200
+/ai-services-latam/*  /out//ai-services-latam/  200
+/managed-it-services-pricing/*  /out//managed-it-services-pricing/  200
+/cybersecurity-compliance-brazil/*  /out//cybersecurity-compliance-brazil/  200
+/partners/technology-alliances/*  /out//partners/technology-alliances/  200
+/free-ai-readiness-assessment/*  /out//free-ai-readiness-assessment/  200
