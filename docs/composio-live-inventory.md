@@ -54,6 +54,10 @@ Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were mi
 
 `kleber@ziontechgroup.com` user_id has **29 connected accounts and every one is EXPIRED**. Live work is running on the playground user. Re-link production apps onto `kleber@ziontechgroup.com` (or set `ZION_USER_ID` to the working user) so CI and MCP share the same identity.
 
+## CI: `Workers Builds: ziontechgroup`
+
+Cloudflare’s GitHub app posts this check on **every push**, including `main`. It fails in ~0s with no annotations because this repo has no `wrangler.toml` / worker entrypoint and no root `package.json`. The check targets the **production** worker `ziontechgroup`. Do **not** add a stub worker — that would deploy over production. Fix is in the Cloudflare dashboard: disconnect Workers Builds from this Pages repo, or point it at a real worker project.
+
 ## Credit / quota blockers
 
 - Hunter: 0 searches remaining until 2026-09-23
