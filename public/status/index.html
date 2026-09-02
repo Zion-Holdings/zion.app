@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live stack status — Zion Tech Group</title>
+  <meta name="description" content="Honest Composio stack status for Zion Tech Group: 31 live apps, expired HubSpot, credits, and reconnect list. Verified 2026-09-02." />
+  <link rel="canonical" href="https://ziontechgroup.com/status/" />
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:system-ui,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh}
+    main{max-width:880px;margin:0 auto;padding:56px 24px}
+    h1{font-size:2rem;margin-bottom:12px}
+    p{color:#94a3b8;line-height:1.6;margin-bottom:16px}
+    .ok{color:#34d399} .warn{color:#fbbf24} .bad{color:#f87171}
+    table{width:100%;border-collapse:collapse;margin:20px 0}
+    td,th{border:1px solid #334155;padding:10px;text-align:left;color:#cbd5e1;font-size:.95rem}
+    a{color:#a78bfa}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Live stack status</h1>
+    <p>Verified 2026-09-02 against Composio REST v3.1. 107 connected accounts. <strong class="ok">31 toolkits ACTIVE</strong>. Production identity kleber@ziontechgroup.com still has 29 expired rows — live work uses the playground user.</p>
+    <table>
+      <tr><th>Surface</th><th>State</th></tr>
+      <tr><td>Stripe charges</td><td class="warn">$0 — links live, no customer payments yet</td></tr>
+      <tr><td>Calendly</td><td class="ok">One active event: AI/IT Discovery-1. 0 webhooks. No upcoming client bookings</td></tr>
+      <tr><td>HubSpot</td><td class="bad">7/7 expired — reconnect via Composio Connect Link</td></tr>
+      <tr><td>Instagram</td><td class="warn">2,946 followers; last reel 2025-06-07; website still .com.br</td></tr>
+      <tr><td>Linear</td><td class="warn">Create blocked (USAGE_LIMIT). Duplicate Outreach: Kleber tickets</td></tr>
+      <tr><td>Firecrawl / Hunter / OpenRouter</td><td class="bad">Credits exhausted</td></tr>
+      <tr><td>WhatsApp / Brevo / Cloudflare API</td><td class="bad">Permission / IP / token</td></tr>
+      <tr><td>Supabase Zion App</td><td class="bad">INACTIVE</td></tr>
+      <tr><td>Composio triggers + project webhook</td><td class="warn">0 instances, 0 subscriptions. Calendly has no trigger type</td></tr>
+      <tr><td>Workers Builds: ziontechgroup</td><td class="bad">Orphan check on this Pages repo (also red on main). Real worker is telegram-ai-reply-worker</td></tr>
+    </table>
+    <p>Buy or book: <a href="/plans/">/plans/</a> · <a href="/faq/">/faq/</a> · <a href="/marketplace/">/marketplace/</a></p>
+  </main>
+</body>
+</html>

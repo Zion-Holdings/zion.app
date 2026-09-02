@@ -13,7 +13,7 @@ Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were mi
 | Notion | Search returns Growth Loop pages | Internal wiki / status |
 | Slack | `#support` (C9375BEBA) + `#commercial` | Ops alerts |
 | Linear | Team `Ziontechgroup` (`ZIO-*`) | Delivery backlog |
-| Stripe | Live products + customers, **$0 charges** | Billing |
+| Stripe | Live products + customers (incl. kleber@), **$0 charges** as of 2026-09-02. Payment links live. | Billing |
 | Calendly | Only **one active** event type: [AI/IT Discovery `-1`](https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1). Older `30min` and non-`-1` Discovery are inactive. Scheduled collection is June 2026 “30 Minute Meeting” leftovers (status=active means not canceled). **0 Calendly webhooks.** | Paid consult funnel |
 | Resend | Domain `ziontechgroup.com` **verified** | Transactional email |
 | Tavily | Researcher plan, 29/1000 searches | Competitive research |

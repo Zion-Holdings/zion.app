@@ -27,7 +27,7 @@ Terminology (never use the old words in new code):
 3. **Read-only first.** Mutation tools (create price, send Slack, create Linear issue) only after a verified schema.
 4. **Pin versions in scheduled jobs** when you parse structured fields (`charges.data[].amount`). Use `latest` only when an LLM consumes the payload.
 5. **Triggers beat cron** for Calendly bookings, Stripe payments, Gmail, and GitHub. Register one project webhook; Composio signs and retries. Gmail/Calendar are polling (~15 min); Slack/Notion are realtime.
-6. **Per-user isolation.** Do not mix `kleber@ziontechgroup.com` (all expired) with the playground user. Production identity should own the ACTIVE accounts.
+6. **Per-user isolation.** Do not mix `kleber@ziontechgroup.com` (all expired) with the playground user. Production identity should own the ACTIVE accounts. Reconnect HubSpot (and kleber@) with a new Connect Link (`POST /connected_accounts/link` or MCP MANAGE_CONNECTIONS add), authorize in the browser, then confirm ACTIVE — Tavily 2026 guidance matches this. Do not keep calling expired connection IDs.
 7. **Never log tokens.** Connection IDs can live in internal reports; API keys cannot.
 8. **Quota-aware playbooks.** Skip Firecrawl/Hunter/OpenRouter when the previous call returned 402/429 instead of looping.
 
