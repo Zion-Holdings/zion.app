@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-      CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
-      WHATSAPP_CONNECTION_ID: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
-      STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
-      RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
-      BREVO_CONNECTION_ID: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
-      FIRECRAWL_CONNECTION_ID: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
-      SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
-      TAVILY_CONNECTION_ID: ${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}
-      1PASSWORD_CONNECTION_ID: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+      COMPOSIO_CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
+      COMPOSIO_WHATSAPP_CONNECTION_ID: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
+      COMPOSIO_STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+      COMPOSIO_RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+      COMPOSIO_BREVO_CONNECTION_ID: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
+      COMPOSIO_FIRECRAWL_CONNECTION_ID: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
+      COMPOSIO_SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
+      COMPOSIO_TAVILY_CONNECTION_ID: ${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}
+      COMPOSIO_1PASSWORD_CONNECTION_ID: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -29,51 +29,32 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install dependencies
+        run: npm install @composio/core
+
       - name: Verify connections
-        run: |
-          node - <<'EOF'
-          const { Composio } = require('@composio/core');
-          const client = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
-          const ids = {
-            calendly: process.env.CALENDLY_CONNECTION_ID,
-            whatsapp: process.env.WHATSAPP_CONNECTION_ID,
-            stripe: process.env.STRIPE_CONNECTION_ID,
-            resend: process.env.RESEND_CONNECTION_ID,
-            brevo: process.env.BREVO_CONNECTION_ID,
-            firecrawl: process.env.FIRECRAWL_CONNECTION_ID,
-            serpapi: process.env.SERPAPI_CONNECTION_ID,
-            tavily: process.env.TAVILY_CONNECTION_ID,
-            onepassword: process.env._1PASSWORD_CONNECTION_ID,
-          };
-          (async () => {
-            const results = {};
-            for (const [app, id] of Object.entries(ids)) {
-              try {
-                const tools = await client.tools.get(app, { userId: id });
-                results[app] = `${tools.tools.length} tools OK`;
-              } catch (e) {
-                results[app] = `ERROR: ${e.message}`;
-              }
-            }
-            console.log(JSON.stringify(results, null, 2));
-          })();
-          EOF
+        run: node .github/scripts/composio/verify-connections.mjs
 
       - name: Revenue pipeline
         run: |
-          node .github/scripts/composio/revenue-pipeline.mjs || echo "REVENUE_PIPELINE_FAILED"
-
-      - name: Sales alerts
-        run: |
-          node .github/scripts/composio/sales-alert.mjs || echo "SALES_ALERT_FAILED"
+          if [ -f .github/scripts/composio/revenue-pipeline.js ]; then
+            node .github/scripts/composio/revenue-pipeline.js || echo "REVENUE_PIPELINE_FAILED"
+          fi
+          if [ -f .github/scripts/composio/sales-alert.js ]; then
+            node .github/scripts/composio/sales-alert.js || echo "SALES_ALERT_FAILED"
+          fi
 
       - name: Update revenue log
         run: |
-          node .github/scripts/composio/update-revenue-log.mjs || echo "REVENUE_LOG_FAILED"
+          if [ -f .github/scripts/composio/update-revenue-log.mjs ]; then
+            node .github/scripts/composio/update-revenue-log.mjs || echo "REVENUE_LOG_FAILED"
+          fi
 
       - name: Firecrawl sync
         run: |
-          node .github/scripts/composio/firecrawl-sync.mjs || echo "FIRECRAWL_SYNC_FAILED"
+          if [ -f .github/scripts/composio/firecrawl-sync.mjs ]; then
+            node .github/scripts/composio/firecrawl-sync.mjs || echo "FIRECRAWL_SYNC_FAILED"
+          fi
 
       - name: Master status
         run: |
