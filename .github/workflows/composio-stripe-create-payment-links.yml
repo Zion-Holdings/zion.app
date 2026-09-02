@@ -1,0 +1,77 @@
+name: Create Stripe Payment Links
+
+on:
+  workflow_dispatch:
+    inputs:
+      starter_price_id:
+        description: 'Stripe Price ID for Starter one-time plan'
+        required: true
+        default: 'price_STARTER_ID'
+      growth_price_id:
+        description: 'Stripe Price ID for Growth subscription'
+        required: true
+        default: 'price_GROWTH_ID'
+      success_url:
+        description: 'Success URL'
+        required: false
+        default: 'https://ziontechgroup.com/payment-success/'
+      cancel_url:
+        description: 'Cancel URL'
+        required: false
+        default: 'https://ziontechgroup.com/payment-cancelled/'
+
+jobs:
+  create-payment-links:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      COMPOSIO_STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Composio SDK
+        run: npm install @composio/core
+      - name: Create Stripe Payment Links
+        run: |
+          cat > .github/scripts/stripe-create-payment-links.js << 'EOF'
+          import { Composio } from '@composio/core';
+          const client = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const userId = process.env.COMPOSIO_STRIPE_CONNECTION_ID;
+          const starterPrice = process.env.STARTER_PRICE_ID;
+          const growthPrice = process.env.GROWTH_PRICE_ID;
+          const successUrl = process.env.SUCCESS_URL;
+          const cancelUrl = process.env.CANCEL_URL;
+
+          async function run() {
+            const starter = await client.tools.execute('STRIPE_PAYMENT_LINK_CREATE', {
+              line_items: [{ price: starterPrice, quantity: 1 }],
+              after_completion: { type: 'hosted_confirmation' },
+              success_url: successUrl,
+              cancel_url: cancelUrl,
+            }, { userId });
+            console.log('STARTER_LINK=' + JSON.stringify(starter));
+
+            const growth = await client.tools.execute('STRIPE_PAYMENT_LINK_CREATE', {
+              line_items: [{ price: growthPrice, quantity: 1 }],
+              subscription_data: { trial_period_days: 14 },
+              after_completion: { type: 'hosted_confirmation' },
+              success_url: successUrl,
+              cancel_url: cancelUrl,
+            }, { userId });
+            console.log('GROWTH_LINK=' + JSON.stringify(growth));
+          }
+
+          run().catch((err) => {
+            console.error(err);
+            process.exit(1);
+          });
+          EOF
+          STARTER_PRICE_ID="${{ github.event.inputs.starter_price_id }}" \
+          GROWTH_PRICE_ID="${{ github.event.inputs.growth_price_id }}" \
+          SUCCESS_URL="${{ github.event.inputs.success_url }}" \
+          CANCEL_URL="${{ github.event.inputs.cancel_url }}" \
+          node .github/scripts/stripe-create-payment-links.js

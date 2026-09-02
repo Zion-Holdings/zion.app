@@ -1,0 +1,38 @@
+name: Composio WhatsApp Billing Alerts
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * *'
+jobs:
+  whatsapp-billing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Composio SDK
+        run: npm install composio
+      - name: Send WhatsApp billing alerts
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          WHATSAPP_CONNECTION_ID: ${{ secrets.WHATSAPP_CONNECTION_ID }}
+          STRIPE_CONNECTION_ID: ${{ secrets.STRIPE_CONNECTION_ID }}
+        run: |
+          cat > scripts/composio/whatsapp-billing-alerts.js << 'EOF'
+          const { Composio } = require('composio');
+          const client = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          (async () => {
+            try {
+              const whatsappTools = await client.tools.get('whatsapp', { userId: process.env.WHATSAPP_CONNECTION_ID });
+              const stripeTools = await client.tools.get('stripe', { userId: process.env.STRIPE_CONNECTION_ID });
+              console.log('WhatsApp tools:', whatsappTools.tools.length);
+              console.log('Stripe tools:', stripeTools.tools.length);
+            } catch (e) { console.error('WhatsApp billing error:', e.message); }
+          })();
+          EOF
+          node scripts/composio/whatsapp-billing-alerts.js

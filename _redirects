@@ -830,6 +830,7 @@
 /tools/password-strength /tools/password-strength/ 200
 /tools/percentage-calculator /tools/percentage-calculator/ 200
 /tools/phishing-analyzer /tools/phishing-analyzer/ 200
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 /tools/qr-code-generator /tools/qr-code-generator/ 200
 /tools/qr-scanner /tools/qr-scanner/ 200
 /tools/readability-score /tools/readability-score/ 200
@@ -1053,3 +1054,36 @@
 
 /new /blog/ 301
 
+
+/blog/ai-observability-security-and-governance /blog/ai-observability-aiops-platform-engineering-for-latam-in-2026/index.html 301
+/blog/ai-observability-security-and-governance/ /blog/ai-observability-aiops-platform-engineering-for-latam-in-2026/index.html 301
+
+
+/malta-fintech-compliance-suite /malta-fintech-compliance-suite/index.html 200
+/malta-fintech-compliance-suite/ /malta-fintech-compliance-suite/index.html 200
+/malta-igaming-fraud-prevention /malta-igaming-fraud-prevention/index.html 200
+/malta-igaming-fraud-prevention/ /malta-igaming-fraud-prevention/index.html 200
+/malta-blockchain-aml-tools /malta-blockchain-aml-tools/index.html 200
+/malta-blockchain-aml-tools/ /malta-blockchain-aml-tools/index.html 200
+/malta-ai-powered-kyc-solutions /malta-ai-powered-kyc-solutions/index.html 200
+/malta-ai-powered-kyc-solutions/ /malta-ai-powered-kyc-solutions/index.html 200
+/malta-cross-border-payment-api /malta-cross-border-payment-api/index.html 200
+/malta-cross-border-payment-api/ /malta-cross-border-payment-api/index.html 200
+
+/ai-services-latam/*  /out/ai-services-latam/  200
+/managed-it-services-pricing/*  /out/managed-it-services-pricing/  200
+/cybersecurity-compliance-brazil/*  /out/cybersecurity-compliance-brazil/  200
+/partners/technology-alliances/*  /out/partners/technology-alliances/  200
+/free-ai-readiness-assessment/*  /out/free-ai-readiness-assessment/  200
+
+/ai-revenue-automation/  /out/ai-revenue-automation/index.html  200
+/managed-ai-support/  /out/managed-ai-support/index.html  200
+/cybersecurity-compliance-latam/  /out/cybersecurity-compliance-latam/index.html  200
+/partners/channel-program/  /out/partners/channel-program/index.html  200
+/ai-services-latam/  /out/ai-services-latam/index.html  200
+/managed-it-services-pricing/  /out/managed-it-services-pricing/index.html  200
+/cybersecurity-compliance-brazil/  /out/cybersecurity-compliance-brazil/index.html  200
+/partners/technology-alliances/  /out/partners/technology-alliances/index.html  200
+/free-ai-readiness-assessment/  /out/free-ai-readiness-assessment/index.html  200
+/paid-consultation/  /out/paid-consultation/index.html  200
+/paid-consultation  /out/paid-consultation/index.html  200

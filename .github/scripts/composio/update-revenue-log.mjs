@@ -1,0 +1,10 @@
+import fs from 'fs';
+import path from 'path';
+const logPath = path.join(process.cwd(), 'docs/ops/revenue-flow-log.md');
+const ts = new Date().toISOString();
+let text = '# Revenue/Lead Flow Log\n\n';
+if (fs.existsSync(logPath)) text = fs.readFileSync(logPath, 'utf8');
+text += `\n## ${ts}\n- Workflow: composio-leads-calendly-stripe.yml\n- Triggered: schedule/manual\n- Status: executed\n`;
+fs.mkdirSync(path.dirname(logPath), { recursive: true });
+fs.writeFileSync(logPath, text);
+console.log('log updated');

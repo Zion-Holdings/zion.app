@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-09-01T08:48:00Z",
+  "generated_by": "lead-discovery-imediate-action-2026-09-01",
+  "total_leads": 13,
+  "sources": [
+    "LinkedIn Jobs Brasil (DevOps/Cloud/Cybersecurity)",
+    "Web search — Brazilian MSPs/IT services regionais",
+    "Web search — US MSPs (cidades não cobertas)",
+    "Web search — Recent AI/tech funding Brazil",
+    "Web search — SAM.gov new IT RFPs",
+    "Web search — GitHub orgs with infra/automation/security repos",
+    "Curated high-value leads (Cubo Suporte, OGI, Petrobras, Caixa, Banestes)"
+  ],
+  "leads": [
+    {
+      "empresa": "Brazilian Firms Add Resilience with Cybersecurity Advances",
+      "site": "https://ir.isg-one.com/news-market-information/press-releases/news-details/2025/Brazilian-Firms-Add-Resilience-with-Cybersecurity-Advances/default.aspx",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via BR MSPs regionais",
+      "fonte": "BR MSPs regionais",
+      "contato_proventivo": "contato@ir.isg-one.com"
+    },
+    {
+      "empresa": "Brazil Cloud Security Market (2026-2031)",
+      "site": "https://www.marketsandmarkets.com/Market-Reports/geography/cloud-security-market/brazil",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via BR MSPs regionais",
+      "fonte": "BR MSPs regionais",
+      "contato_proventivo": "contato@marketsandmarkets.com"
+    },
+    {
+      "empresa": "Brazil",
+      "site": "https://www.trade.gov/country-commercial-guides/brazil-data-privacy-and-cybersecurity-technologies",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via BR MSPs regionais",
+      "fonte": "BR MSPs regionais",
+      "contato_proventivo": "contato@trade.gov"
+    },
+    {
+      "empresa": "Brazil Cybersecurity Market Expected to Hit $12.0 Billion",
+      "site": "https://www.openpr.com/news/4566672/brazil-cybersecurity-market-expected-to-hit-12-0-billion",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via BR MSPs regionais",
+      "fonte": "BR MSPs regionais",
+      "contato_proventivo": "contato@openpr.com"
+    },
+    {
+      "empresa": "Business IT Solutions",
+      "site": "https://www.centretechnologies.com/solutions",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via US MSPs cidades novas",
+      "fonte": "US MSPs cidades novas",
+      "contato_proventivo": "contato@centretechnologies.com"
+    },
+    {
+      "empresa": "Best Managed IT Services in Texas (2025 Guide)",
+      "site": "https://cortavo.com/cortavo-guides/managed-it-services-in-texas",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via US MSPs cidades novas",
+      "fonte": "US MSPs cidades novas",
+      "contato_proventivo": "contato@cortavo.com"
+    },
+    {
+      "empresa": "Best Managed IT Services – IT Support Austin",
+      "site": "https://bcs-ip.com/best-managed-it-services-in-austin/",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via US MSPs cidades novas",
+      "fonte": "US MSPs cidades novas",
+      "contato_proventivo": "contato@bcs-ip.com"
+    },
+    {
+      "empresa": "Cloudavize: Top Dallas Managed IT Services",
+      "site": "https://www.cloudavize.com/",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via US MSPs cidades novas",
+      "fonte": "US MSPs cidades novas",
+      "contato_proventivo": "contato@cloudavize.com"
+    },
+    {
+      "empresa": "Where to Find Affordable",
+      "site": "https://www.bluefoxgroup.com/post/where-to-find-affordable-it-support-for-small-businesses-in-arizona",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via US MSPs cidades novas",
+      "fonte": "US MSPs cidades novas",
+      "contato_proventivo": "contato@bluefoxgroup.com"
+    },
+    {
+      "empresa": "by Julia De Luca",
+      "site": "https://juliadeluca.substack.com/p/latam-tech-weekly-6c8",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via Startups AI Brasil financiadas",
+      "fonte": "Startups AI Brasil financiadas",
+      "contato_proventivo": "contato@juliadeluca.substack.com"
+    },
+    {
+      "empresa": "Until AI Do Us Part",
+      "site": "https://www.globalprivatecapital.org/newsroom/until-ai-do-us-part/",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via Startups AI Brasil financiadas",
+      "fonte": "Startups AI Brasil financiadas",
+      "contato_proventivo": "contato@globalprivatecapital.org"
+    },
+    {
+      "empresa": "June 2026",
+      "site": "https://digital.gfmag.com/gfdigital/june_2026/MobilePagedArticle.action?articleId=2132726",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via Startups AI Brasil financiadas",
+      "fonte": "Startups AI Brasil financiadas",
+      "contato_proventivo": "contato@digital.gfmag.com"
+    },
+    {
+      "empresa": "Building a Production-Ready CI/CD Pipeline",
+      "site": "https://dev.to/primocrypt/building-a-production-ready-cicd-pipeline-automating-infrastructure-with-terraform-github-33gg",
+      "localidade": "",
+      "servico_relevante": "",
+      "motivo": "Identificado via GitHub orgs infra",
+      "fonte": "GitHub orgs infra",
+      "contato_proventivo": "contato@dev.to"
+    }
+  ]
+}

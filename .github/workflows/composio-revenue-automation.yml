@@ -1,0 +1,60 @@
+name: Composio Revenue Automation - Direct Flow
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  revenue-flow:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
+      WHATSAPP_CONNECTION_ID: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
+      STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+      RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+      SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+      NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID || secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Check Composio connections via REST API
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          cat > revenue-check.sh <<'EOF'
+          #!/bin/bash
+          set -e
+          API_KEY="${COMPOSIO_API_KEY}"
+          BASE="https://backend.composio.dev/api/v3"
+          AUTH="x-api-key: ${API_KEY}"
+          
+          echo "# Composio Revenue Automation Check"
+          echo "_generated_at: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          
+          # List connected accounts
+          echo "\n## Connected Accounts"
+          curl -s -H "$AUTH" "$BASE/connected_accounts" | python3 -m json.tool 2>/dev/null || echo "Failed to list accounts"
+          
+          # Check specific connection IDs if present
+          for var in CALENDLY_CONNECTION_ID WHATSAPP_CONNECTION_ID STRIPE_CONNECTION_ID RESEND_CONNECTION_ID SLACK_CONNECTION_ID NOTION_CONNECTION_ID; do
+            id="${!var}"
+            if [ -n "$id" ]; then
+              echo "\n## $var: $id"
+              curl -s -H "$AUTH" "$BASE/connected_accounts/$id" | python3 -m json.tool 2>/dev/null || echo "Failed to get $var"
+            fi
+          done
+          EOF
+          chmod +x revenue-check.sh
+          ./revenue-check.sh
+
+      - name: Comment summary
+        run: |
+          echo "Revenue flow check complete." >> "$GITHUB_STEP_SUMMARY"

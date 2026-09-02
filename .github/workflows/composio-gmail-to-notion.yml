@@ -1,0 +1,19 @@
+name: Composio Gmail to Notion Lead Logger
+
+on:
+  schedule:
+    - cron: '0 9,15,21 * * *'
+  workflow_dispatch:
+
+jobs:
+  gmail-to-notion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install @composio/core 2>/dev/null || true
+      - run: node scripts/composio/gmail-to-notion-check.js
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}

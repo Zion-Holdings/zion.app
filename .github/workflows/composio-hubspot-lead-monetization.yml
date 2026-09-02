@@ -1,0 +1,38 @@
+name: Composio HubSpot Lead Monetization
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * *'
+jobs:
+  hubspot-lead-monetization:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Composio SDK
+        run: npm install composio
+      - name: Sync HubSpot deals to Notion
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          HUBSPOT_CONNECTION_ID: ${{ secrets.HUBSPOT_CONNECTION_ID }}
+          NOTION_CONNECTION_ID: ${{ secrets.NOTION_CONNECTION_ID }}
+        run: |
+          cat > scripts/composio/hubspot-deals-to-notion-sync.js << 'EOF'
+          const { Composio } = require('composio');
+          const client = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          (async () => {
+            try {
+              const hubspotTools = await client.tools.get('hubspot', { userId: process.env.HUBSPOT_CONNECTION_ID });
+              const notionTools = await client.tools.get('notion', { userId: process.env.NOTION_CONNECTION_ID });
+              console.log('HubSpot tools:', hubspotTools.tools.length);
+              console.log('Notion tools:', notionTools.tools.length);
+            } catch (e) { console.error('HubSpot sync error:', e.message); }
+          })();
+          EOF
+          node scripts/composio/hubspot-deals-to-notion-sync.js

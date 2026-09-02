@@ -1052,4 +1052,5 @@
 /services/data-analytics/ /services/data-analytics-platform/index.html 301
 
 /new /blog/ 301
-
+/newsletter //newsletter/ 200
+/free-tools-hub //free-tools-hub/ 200

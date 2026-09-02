@@ -1,0 +1,249 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"/>
+<link rel="stylesheet" href="/styles.css"/>
+<title>Stripe Payment Links — Zion Tech Group</title>
+<meta name="description" content="Pay for Zion Tech Group services instantly with Stripe. One-click checkout for AI consulting, IT services, cloud migration, security audits, and custom development packages."/>
+<meta name="keywords" content="Stripe payment, pay for IT services, AI consulting payment, cloud migration cost, security audit price, custom development package"/>
+<link rel="canonical" href="https://ziontechgroup.com/stripe/"/>
+<meta property="og:title" content="Stripe Payment Links — Zion Tech Group"/>
+<meta property="og:description" content="Pay for Zion Tech Group services instantly. One-click checkout for AI, IT, cloud, security, and automation services."/>
+<meta property="og:url" content="https://ziontechgroup.com/stripe/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://ziontechgroup.com/og-home.svg"/>
+<meta twitter:card="summary_large_image"/>
+<meta twitter:title="Stripe Payment Links — Zion Tech Group"/>
+<meta twitter:description="Pay for Zion Tech Group services instantly. One-click checkout for AI, IT, cloud, security, and automation services."/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/icon.svg"/>
+<style>
+:root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --slate-300: #cbd5e1; --white: #f8fafc; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 16px; }
+.nav-links a { color: var(--slate-300); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; text-decoration: none; }
+.nav-cta:hover { opacity: 0.9; }
+.header { text-align: center; padding: 80px 24px 40px; }
+.header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, var(--white), var(--slate-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header p { color: var(--slate-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
+.section { padding: 60px 0; }
+.section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+.section .subtitle { color: var(--slate-400); font-size: 1.0625rem; max-width: 700px; margin-bottom: 40px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+.package-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 16px; padding: 32px; transition: all 0.3s; position: relative; overflow: hidden; }
+.package-card:hover { border-color: var(--purple); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.package-card.featured { border-color: var(--purple); background: linear-gradient(180deg, rgba(168, 85, 247, 0.08), rgba(30, 41, 59, 0.5)); }
+.package-card.featured::before { content: 'Most Popular'; position: absolute; top: 16px; right: -28px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 4px 40px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.package-tier { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--purple); font-weight: 600; margin-bottom: 8px; }
+.package-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+.package-price { font-size: 2.5rem; font-weight: 700; color: var(--white); margin: 16px 0; }
+.package-price .period { font-size: 1rem; color: var(--slate-400); font-weight: 400; }
+.package-desc { color: var(--slate-400); font-size: 0.9375rem; margin-bottom: 24px; min-height: 60px; }
+.package-features { list-style: none; margin-bottom: 24px; }
+.package-features li { padding: 8px 0; color: var(--slate-300); font-size: 0.9375rem; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+.package-features li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.package-btn { display: block; width: 100%; text-align: center; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 14px 24px; border-radius: 9999px; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: opacity 0.2s; }
+.package-btn:hover { opacity: 0.9; }
+.package-btn-outline { display: block; width: 100%; text-align: center; border: 1px solid var(--slate-700); color: var(--slate-300); padding: 12px 24px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; margin-top: 8px; }
+.package-btn-outline:hover { border-color: var(--purple); color: var(--white); }
+.note { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 12px; padding: 20px 24px; margin-top: 32px; display: flex; gap: 12px; align-items: flex-start; }
+.note-icon { flex-shrink: 0; font-size: 1.25rem; }
+.note p { color: var(--slate-400); font-size: 0.9375rem; }
+.faq { background: rgba(30, 41, 59, 0.3); border-radius: 12px; padding: 24px; margin-bottom: 12px; }
+.faq h4 { font-size: 1rem; margin-bottom: 4px; }
+.faq p { color: var(--slate-400); font-size: 0.875rem; }
+.cta-section { text-align: center; padding: 60px 24px; background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.1), transparent 70%); }
+.cta-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+.cta-section p { color: var(--slate-400); font-size: 1.0625rem; max-width: 500px; margin: 0 auto 32px; }
+.footer { text-align: center; padding: 40px 24px; border-top: 1px solid rgba(148, 163, 184, 0.1); color: var(--slate-400); font-size: 0.875rem; }
+.footer a { color: var(--purple); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">Zion Tech Group</a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/monetization/">Monetize</a>
+    <a href="/stripe/">Pay</a>
+    <a href="https://calendly.com/kleber-garcia-alcatrao/zion-tech-group-discovery-call" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<header class="header">
+  <h1>Pay with Stripe</h1>
+  <p>One-click checkout for Zion Tech Group services. No forms, no quotes needed for standard packages — just click, pay, and get started.</p>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Service Packages</h2>
+    <p class="subtitle">Standard packages with fixed scope and instant delivery. Need something custom? Book a call — we'll scope it together.</p>
+
+    <div class="grid-2">
+
+      <div class="package-card">
+        <div class="package-tier">Starter</div>
+        <h3>AI Readiness Audit</h3>
+        <div class="package-price">$299 <span class="period">one-time</span></div>
+        <p class="package-desc">Full assessment of your current AI maturity, infrastructure gaps, and a prioritized roadmap for the next 12 months.</p>
+        <ul class="package-features">
+          <li>Comprehensive AI maturity scoring (12 dimensions)</li>
+          <li>Infrastructure &amp; data readiness report</li>
+          <li>30-page PDF report with prioritized actions</li>
+          <li>30-minute debrief call with recommendations</li>
+          <li>Delivered within 5 business days</li>
+        </ul>
+        <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="package-btn" target="_blank">Pay $299 — Start Now</a>
+        <a href="/free-ai-readiness-audit/" class="package-btn-outline">Free Mini Audit</a>
+      </div>
+
+      <div class="package-card featured">
+        <div class="package-tier">Professional</div>
+        <h3>AI Strategy &amp; Implementation Plan</h3>
+        <div class="package-price">$1,999 <span class="period">one-time</span></div>
+        <p class="package-desc">End-to-end AI strategy: use case prioritization, vendor selection, pilot design, ROI model, and implementation roadmap with milestones.</p>
+        <ul class="package-features">
+          <li>Starter audit included (AI maturity assessment)</li>
+          <li>3-5 high-impact use case deep dives with ROI estimates</li>
+          <li>Vendor/platform comparison matrix (5 vendors per use case)</li>
+          <li>Pilot project design with success metrics</li>
+          <li>12-month implementation roadmap with quarterly milestones</li>
+          <li>Executive presentation (slide deck)</li>
+          <li>60-minute strategy session with CTO/CIO</li>
+          <li>Delivered within 10 business days</li>
+        </ul>
+        <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="package-btn" target="_blank">Pay $1,999 — Start Now</a>
+      </div>
+
+      <div class="package-card">
+        <div class="package-tier">Managed Service</div>
+        <h3>AI Workflow Automation</h3>
+        <div class="package-price">$499 <span class="period">/month</span></div>
+        <p class="package-desc">Fully managed AI automation for your business processes. We build, deploy, and maintain your automations — you just use them.</p>
+        <ul class="package-features">
+          <li>Up to 5 automated workflows (RPA + AI)</li>
+          <li>Monthly performance reports &amp; optimization</li>
+          <li>24/7 monitoring &amp; incident response</li>
+          <li>Integration with your existing tools (Slack, Gmail, Notion, etc.)</li>
+          <li>Unlimited tweaks &amp; improvements</li>
+          <li>Cancel anytime, no long-term contract</li>
+        </ul>
+        <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="package-btn" target="_blank">Start Free Trial — $499/mo</a>
+      </div>
+
+      <div class="package-card">
+        <div class="package-tier">Security</div>
+        <h3>Cybersecurity Audit</h3>
+        <div class="package-price">$1,499 <span class="period">one-time</span></div>
+        <p class="package-desc">Penetration testing, vulnerability assessment, and compliance gap analysis for your infrastructure.</p>
+        <ul class="package-features">
+          <li>External &amp; internal vulnerability scan</li>
+          <li>Penetration test (web apps, APIs, network)</li>
+          <li>Compliance gap analysis (LGPD, GDPR, ISO 27001 readiness)</li>
+          <li>Prioritized remediation report</li>
+          <li>90-minute review call with security team</li>
+          <li>Delivered within 7 business days</li>
+        </ul>
+        <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="package-btn" target="_blank">Pay $1,499 — Start Now</a>
+      </div>
+
+      <div class="package-card">
+        <div class="package-tier">Cloud</div>
+        <h3>Cloud Cost Optimization</h3>
+        <div class="package-price">$999 <span class="period">one-time</span></div>
+        <p class="package-desc">Analyze your AWS/GCP/Azure spend, identify waste, recommend right-sizing, reserved instances, and architectural changes.</p>
+        <ul class="package-features">
+          <li>Full cloud spend analysis (last 6 months)</li>
+          <li>Waste identification &amp; savings estimates</li>
+          <li>Right-sizing recommendations for compute, storage, network</li>
+          <li>Reserved instance / savings plan strategy</li>
+          <li>Architecture optimization suggestions</li>
+          <li>Expected monthly savings report</li>
+          <li>Delivered within 5 business days</li>
+        </ul>
+        <a href="https://buy.stripe.com/test_3dsFE0m9sKK09viOZMMO8MQ8Wx8w3A895" class="package-btn" target="_blank">Pay $999 — Start Now</a>
+      </div>
+
+      <div class="package-card">
+        <div class="package-tier">Micro-SaaS</div>
+        <h3>AI Tool License (Annual)</h3>
+        <div class="package-price">$29 <span class="period">/month</span></div>
+        <p class="package-desc">Subscribe to any Zion Micro-SaaS product: AI Quick Audit, Phishing Analyzer, Lead Magnet Generator, and more.</p>
+        <ul class="package-features">
+          <li>Single tool license (choose at checkout)</li>
+          <li>Full feature access &amp; updates</li>
+          <li>Usage limits based on plan</li>
+          <li>Priority email support</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="/tools/" class="package-btn" target="_blank">Browse Tools — From $29/mo</a>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <div class="note-icon">🔒</div>
+      <p><strong>Secure payments via Stripe.</strong> All payments are processed by Stripe — Zion Tech Group does not store your card details. You'll receive an email receipt immediately after payment. Need an invoice for accounting? Contact us after payment.</p>
+    </div>
+
+    <div style="margin-top: 40px;">
+      <h3 style="font-size: 1.25rem; margin-bottom: 16px;">Frequently Asked Questions</h3>
+
+      <div class="faq">
+        <h4>What payment methods do you accept?</h4>
+        <p>Stripe accepts all major credit cards (Visa, Mastercard, Amex, Discover), Pix (Brazil), and local payment methods depending on your region.</p>
+      </div>
+
+      <div class="faq">
+        <h4>What if the package doesn't fit my needs?</h4>
+        <p>No problem. Book a discovery call and we'll scope a custom package together. You'll get a tailored quote — no commitment required.</p>
+      </div>
+
+      <div class="faq">
+        <h4>Do you offer refunds?</h4>
+        <p>All payments are non-refundable once the work has started. For audits and strategy plans, if you're not satisfied with the deliverable, we'll revise it once at no extra cost.</p>
+      </div>
+
+      <div class="faq">
+        <h4>Can I pay in Brazilian Reais (BRL)?</h4>
+        <p>Yes. Stripe automatically converts to your local currency at the current exchange rate. Pix payments are available for Brazilian clients — contact us for Pix details.</p>
+      </div>
+
+      <div class="faq">
+        <h4>How do I get my deliverable?</h4>
+        <p>After payment, you'll receive a confirmation email with next steps. For audits and reports, we'll send a secure download link within the delivery timeframe. For managed services, we'll schedule an onboarding call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Need Something Custom?</h2>
+    <p>Every business is unique. Book a 30-minute discovery call and we'll design a package that fits your exact needs — with a clear price before any work starts.</p>
+    <a href="https://calendly.com/kleber-garcia-alcatrao/zion-tech-group-discovery-call" class="btn" style="padding: 14px 32px; font-size: 1rem; display: inline-block; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: opacity 0.2s;">Book a Discovery Call</a>
+    <p style="margin-top: 20px; color: var(--slate-500); font-size: 0.875rem;">Or email kleber@ziontechgroup.com for enterprise quotes and volume discounts.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Zion Tech Group. All rights reserved. | <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a> | <a href="/contact/">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+name: composio-full-status
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Report Composio connection status
+        id: status
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: |
+          cat > status.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const client = composio.getClient();
+          const accounts = await client.connectedAccounts.list({});
+          const items = accounts.items || [];
+          const active = items.filter(a => a.status === 'ACTIVE');
+          const inactive = items.filter(a => a.status !== 'ACTIVE');
+          console.log(JSON.stringify({
+            total: items.length,
+            active: active.length,
+            inactive: inactive.length,
+            accounts: items.map(a => ({ id: a.id, toolkit: a.toolkit?.slug, status: a.status, user_id: a.user_id }))
+          }, null, 2));
+          EOF
+          node status.mjs
+
+      - name: Update status file
+        run: |
+          node status.mjs > composio-status.json || true
+          cat composio-status.json
+
+      - name: Comment summary
+        run: |
+          echo "Composio status report generated." >> "$GITHUB_STEP_SUMMARY"
+          if [ -f composio-status.json ]; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat composio-status.json >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
