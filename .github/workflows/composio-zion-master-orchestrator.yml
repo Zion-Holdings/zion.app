@@ -1,0 +1,131 @@
+name: composio-zion-master-orchestrator
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8,11,14,17,20 * * 1-5'
+
+permissions:
+  contents: read
+
+jobs:
+  orchestrator:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      COMPOSIO_BREVO_CONNECTION_ID: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
+      COMPOSIO_CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
+      COMPOSIO_RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+      COMPOSIO_STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+      COMPOSIO_WHATSAPP_CONNECTION_ID: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
+      COMPOSIO_FIRECRAWL_CONNECTION_ID: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
+      COMPOSIO_SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
+      COMPOSIO_TAVILY_CONNECTION_ID: ${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Run Zion master orchestrator
+        run: |
+          cat > .github/scripts/composio/zion-master-orchestrator.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const userId = 'zion-master-orchestrator';
+
+          const connections = {
+            brevo: process.env.COMPOSIO_BREVO_CONNECTION_ID,
+            calendly: process.env.COMPOSIO_CALENDLY_CONNECTION_ID,
+            resend: process.env.COMPOSIO_RESEND_CONNECTION_ID,
+            stripe: process.env.COMPOSIO_STRIPE_CONNECTION_ID,
+            whatsapp: process.env.COMPOSIO_WHATSAPP_CONNECTION_ID,
+            firecrawl: process.env.COMPOSIO_FIRECRAWL_CONNECTION_ID,
+            serpapi: process.env.COMPOSIO_SERPAPI_CONNECTION_ID,
+            tavily: process.env.COMPOSIO_TAVILY_CONNECTION_ID,
+          };
+
+          const summary = {
+            timestamp: new Date().toISOString(),
+            connections_checked: [],
+            tools_executed: [],
+            errors: [],
+            revenue_events: [],
+            metrics: { leads: 0, bookings: 0, revenue: 0, messages: 0 }
+          };
+
+          async function getTools(name, connectionId) {
+            if (!connectionId) {
+              summary.errors.push({ name, status: 'skipped', reason: 'no connection id' });
+              return [];
+            }
+            try {
+              const tools = await composio.getTools({ connectionIds: [connectionId], userId });
+              summary.connections_checked.push({ name, status: 'ok', tool_count: tools.length });
+              return tools;
+            } catch (e) {
+              summary.errors.push({ name, status: 'error', message: e.message });
+              return [];
+            }
+          }
+
+          async function main() {
+            for (const [name, connectionId] of Object.entries(connections)) {
+              const tools = await getTools(name, connectionId);
+              if (tools.length > 0) {
+                summary.tools_executed.push({ connection: name, sample: tools.slice(0, 5).map(t => t.slug || t.name || 'unknown') });
+              }
+            }
+
+            if (connections.stripe) {
+              try {
+                const stripeTools = await getTools('stripe', connections.stripe);
+                const listCustomers = stripeTools.find(t => (t.slug || t.name || '').includes('STRIPE_LIST_CUSTOMERS'));
+                const listCharges = stripeTools.find(t => (t.slug || t.name || '').includes('STRIPE_LIST_CHARGES'));
+                if (listCustomers) {
+                  const customers = await composio.tools.execute(listCustomers.slug || listCustomers.name, {}, { userId, connectionId: connections.stripe });
+                  summary.metrics.leads = customers?.data?.length || 0;
+                }
+                if (listCharges) {
+                  const charges = await composio.tools.execute(listCharges.slug || listCharges.name, { limit: 10 }, { userId, connectionId: connections.stripe });
+                  summary.metrics.revenue = (charges?.data || []).reduce((sum, c) => sum + (c.amount || 0), 0);
+                }
+                summary.revenue_events.push({ type: 'stripe_sync', status: 'ok' });
+              } catch (e) {
+                summary.errors.push({ name: 'stripe', status: 'sync_error', message: e.message });
+              }
+            }
+
+            if (connections.calendly) {
+              try {
+                const calendlyTools = await getTools('calendly', connections.calendly);
+                const listEvents = calendlyTools.find(t => (t.slug || t.name || '').includes('CALENDLY_LIST_EVENTS') || (t.slug || t.name || '').includes('CALENDLY_GET_EVENTS'));
+                if (listEvents) {
+                  const events = await composio.tools.execute(listEvents.slug || listEvents.name, { count: 10 }, { userId, connectionId: connections.calendly });
+                  summary.metrics.bookings = events?.data?.length || events?.events?.length || 0;
+                }
+                summary.revenue_events.push({ type: 'calendly_sync', status: 'ok' });
+              } catch (e) {
+                summary.errors.push({ name: 'calendly', status: 'sync_error', message: e.message });
+              }
+            }
+
+            console.log(JSON.stringify(summary, null, 2));
+          }
+
+          main().catch(err => {
+            console.error('ORCHESTRATOR_ERROR', err);
+            process.exit(1);
+          });
+          EOF
+
+          node .github/scripts/composio/zion-master-orchestrator.mjs
