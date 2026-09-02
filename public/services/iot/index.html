@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IoT & Edge Services | Zion Tech Group</title>
-<meta name="description" content="IoT and edge computing services: device management, edge inference, telemetry, and industrial automation."/>
-<link rel="canonical" href="https://ziontechgroup.com/services/iot/"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IoT & Edge Computing Services | Zion Tech Group</title>
+  <meta name="description" content="Connect, monitor, and automate physical devices with intelligent edge computing and IoT platforms." />
+  <link rel="canonical" href="https://ziontechgroup.com/services/iot/" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: #0b1220; color: #e6f0ff; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 80px 24px; text-align: center; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; background: linear-gradient(135deg, #a78bfa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px; }
+    .subheadline { font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto 32px; }
+    .cta { display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #7c3aed, #db2777); color: white; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.4); }
+    main { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 48px; }
+    .feature { background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(219,39,119,0.08)); border: 1px solid rgba(124,58,237,0.2); border-radius: 16px; padding: 24px; transition: border-color 0.2s, transform 0.2s; }
+    .feature:hover { border-color: rgba(167,139,250,0.4); transform: translateY(-4px); }
+    .feature h3 { color: #a78bfa; font-size: 1.2rem; margin-bottom: 8px; }
+    .feature p { color: #94a3b8; font-size: 0.95rem; }
+    footer { text-align: center; padding: 40px 24px; border-top: 1px solid rgba(124,58,237,0.15); }
+    footer a { color: #a78bfa; text-decoration: none; margin: 0 12px; }
+    footer a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <main style="max-width:960px;margin:0 auto;padding:2rem 1rem">
-    <h1>IoT & Edge Services</h1>
-    <p>IoT and edge computing services: device management, edge inference, telemetry, and industrial automation.</p>
-    <ul>
-      <li>Edge AI inference</li>
-      <li>Device management</li>
-      <li>Telemetry pipelines</li>
-      <li>Industrial automation</li>
-    </ul>
-    <p><a href="/pricing/">View Pricing</a> · <a href="/contact/">Discuss Use Case</a></p>
+  <header>
+    <h1>IoT & Edge</h1>
+    <p class="subheadline">Connect, monitor, and automate physical devices with intelligent edge computing and IoT platforms.</p>
+    <a href="/contact/" class="cta">Get IoT Roadmap</a>
+  </header>
+  <main>
+    <div class="features">
+      <div class="feature"><h3>IoT Platform Architecture</h3><p>Device management, MQTT/CoAP protocols, digital twin modeling</p></div>
+      <div class="feature"><h3>Edge Computing</h3><p>AWS IoT Greengrass, Azure Edge — real-time processing at the edge</p></div>
+      <div class="feature"><h3>Predictive Maintenance</h3><p>Sensor data + ML — predict equipment failure before it happens</p></div>
+      <div class="feature"><h3>Fleet Management</h3><p>GPS tracking, geofencing, route optimization for vehicle fleets</p></div>
+      <div class="feature"><h3>Smart Building Automation</h3><p>HVAC, lighting, access control — integrated building management</p></div>
+      <div class="feature"><h3>Industrial IoT (IIoT)</h3><p>Manufacturing sensors, SCADA integration, OEE optimization</p></div>
+    </div>
   </main>
+  <footer>
+    <a href="/">Home</a>
+    <a href="/services/">All Services</a>
+    <a href="/ai-services/">AI Services</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/contact/">Contact</a>
+  </footer>
 </body>
 </html>
