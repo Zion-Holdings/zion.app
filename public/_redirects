@@ -818,6 +818,13 @@
 /blog/enterprise-backup-dr-2026-6545 /blog/ 301
 /blog/event-driven-architecture-2026-6547 /blog/ 301
 /services /services/index.html 200
+/blog/ai-agent-orchestration-platform/ /blog/ 301
+/blog/physical-ai-revolution-2026/ /blog/ 301
+/blog/sovereign-ai-infrastructure/ /blog/ 301
+/services/devsecops-automation/ /services/ 301
+/services/data-engineering-pipelines/ /services/ 301
+/services/ai-agent-support/ /services/ 301
+/services/ai-operations/ /services/ 301
 /blog /blog/index.html 200
 /tools /tools/index.html 200
 /services/ /services/index.html 200
