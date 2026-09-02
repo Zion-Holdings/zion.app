@@ -30,6 +30,9 @@ jobs:
           mkdir -p out/docs out/public
           cp -Rf docs/. out/docs/
           cp -Rf public/. out/public/
+          for d in ai-agent-development ai-chatbot-solutions ai-integration-services ai-enterprise-solutions ai-process-automation ai-data-analytics ai-ml-services it-consulting success-stories ai-automation-services it-consulting-services partner-program revenue-calculator; do
+            [ -d "$d" ] && cp -Rf "$d" out/
+          done
           find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \;
         env:
           NODE_OPTIONS: --max-old-space-size=6144
