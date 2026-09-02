@@ -3,13 +3,13 @@ name: Zion Composio Master Orchestrator
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */4 * * *'
 
 permissions:
   contents: read
 
 jobs:
-  master:
+  composio-master:
     runs-on: ubuntu-latest
     env:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
@@ -28,6 +28,7 @@ jobs:
       COMPOSIO_FIRECRAWL_CONNECTION_ID: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
       COMPOSIO_SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
       COMPOSIO_TAVILY_CONNECTION_ID: ${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}
+      NOTION_OPPORTUNITIES_DB_ID: ${{ secrets.NOTION_OPPORTUNITIES_DB_ID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -38,51 +39,21 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install @composio/core
         run: npm install @composio/core
 
       - name: Verify connections
         run: node .github/scripts/composio/verify-connections.mjs
 
-      - name: Revenue pipeline
-        run: |
-          if [ -f .github/scripts/composio/revenue-pipeline.mjs ]; then
-            node .github/scripts/composio/revenue-pipeline.mjs || echo "REVENUE_PIPELINE_FAILED"
-          fi
-          if [ -f .github/scripts/composio/sales-alert.mjs ]; then
-            node .github/scripts/composio/sales-alert.mjs || echo "SALES_ALERT_FAILED"
-          fi
+      - name: Run Master Flow
+        run: node .github/scripts/composio/master-flow.mjs
 
-      - name: Update revenue log
-        run: |
-          if [ -f .github/scripts/composio/update-revenue-log.mjs ]; then
-            node .github/scripts/composio/update-revenue-log.mjs || echo "REVENUE_LOG_FAILED"
-          fi
+      - name: Update Dashboard
+        run: echo "Dashboard updated by master-flow"
 
-      - name: Firecrawl sync
+      - name: Commit & Push
         run: |
-          if [ -f .github/scripts/composio/firecrawl-sync.mjs ]; then
-            node .github/scripts/composio/firecrawl-sync.mjs || echo "FIRECRAWL_SYNC_FAILED"
-          fi
-
-      - name: Master status
-        run: |
-          node - <<'EOF'
-          const fs = require('fs');
-          const summary = {
-            orchestrator: 'zion-master',
-            timestamp: new Date().toISOString(),
-            connections: [
-              'calendly','whatsapp','stripe','resend','brevo','gmail',
-              'hubspot','notion','slack','1password','sendgrid','activecampaign',
-              'firecrawl','serpapi','tavily'
-            ],
-            scripts: {
-              revenue_pipeline: fs.existsSync('.github/scripts/composio/revenue-pipeline.mjs') ? 'present' : 'missing',
-              sales_alert: fs.existsSync('.github/scripts/composio/sales-alert.mjs') ? 'present' : 'missing',
-              revenue_log: fs.existsSync('.github/scripts/composio/update-revenue-log.mjs') ? 'present' : 'missing',
-              firecrawl_sync: fs.existsSync('.github/scripts/composio/firecrawl-sync.mjs') ? 'present' : 'missing',
-            }
-          };
-          console.log(JSON.stringify(summary, null, 2));
-          EOF
+          git config user.name "zion-agent"
+          git config user.email "agent@ziontechgroup.com"
+          git add docs/ops/composio-master-log.md
+          git diff --cached --quiet && echo "no changes" || git commit -m "chore: composio master flow $(date +%Y-%m-%d-%H%M)" && git push origin main
