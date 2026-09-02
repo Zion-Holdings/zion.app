@@ -1,8 +1,14 @@
 .next/
 node_modules/
+out/
+dist/
+.turbo/
 core
 
 MEMORY.md
 logs/
 sitemap.xml
 tmp/
+*.log
+.gh_token_env
+

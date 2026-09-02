@@ -1,5 +1,8 @@
 name: Simple Static Deploy
 
+# Fallback Pages publish from committed public/ + docs/.
+# This must NEVER replace the Next.js source tree on main.
+# Source integrity is enforced by source-integrity.yml.
 on:
   push:
     branches: [ main ]
@@ -15,8 +18,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p out && cp -Rf public/. out/ && cp -Rf docs/. out/docs/ 2>/dev/null || true
+
+      - name: Guard against source-less trees
+        run: node scripts/checks/source-integrity-check.cjs
+
+      - run: |
+          set -euo pipefail
+          mkdir -p out
+          if [ -d public ]; then cp -Rf public/. out/; fi
+          if [ -d docs ]; then mkdir -p out/docs && cp -Rf docs/. out/docs/; fi
+          [ -f _headers ] && cp -f _headers out/_headers || true
+          [ -f _redirects ] && cp -f _redirects out/_redirects || true
+          [ -f CNAME ] && cp -f CNAME out/CNAME || true
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
+
       - uses: actions/deploy-pages@v4

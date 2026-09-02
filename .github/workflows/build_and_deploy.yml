@@ -19,14 +19,42 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Guard against source-less trees
+        run: node scripts/checks/source-integrity-check.cjs
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
       - name: Prepare artifact
         run: |
           set -euo pipefail
-          mkdir -p out
-          cp -Rf public/. out/
-          cp -Rf docs/. out/docs/
-          [ -f _headers ] && cp -f _headers out/_headers || true
-          [ -f out/_headers ] || true
+          FALLBACK=$(mktemp -d)
+          mkdir -p "$FALLBACK"
+          if [ -d public ]; then cp -Rf public/. "$FALLBACK"/; fi
+          if [ -d docs ]; then mkdir -p "$FALLBACK"/docs && cp -Rf docs/. "$FALLBACK"/docs/; fi
+          [ -f _headers ] && cp -f _headers "$FALLBACK"/_headers || true
+          [ -f _redirects ] && cp -f _redirects "$FALLBACK"/_redirects || true
+          [ -f CNAME ] && cp -f CNAME "$FALLBACK"/CNAME || true
+
+          built=0
+          if [ -f package.json ] && [ -f package-lock.json ]; then
+            echo "Installing dependencies for optional Next export..."
+            npm ci --ignore-scripts || npm install --ignore-scripts || true
+            if npm run build && [ -f out/index.html ]; then
+              echo "Next static export produced out/"
+              built=1
+            else
+              echo "::warning::Next build failed; publishing committed public/ fallbacks"
+            fi
+          fi
+
+          if [ "$built" != "1" ]; then
+            mkdir -p out
+            cp -Rf "$FALLBACK"/. out/
+          fi
+
 
       - uses: actions/upload-pages-artifact@v3
         with:
