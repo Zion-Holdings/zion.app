@@ -32,6 +32,7 @@ jobs:
           mkdir -p out/docs out/public
           cp -Rf docs/. out/docs/
           cp -Rf public/. out/public/
+          find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \;
 
       - name: Mirror artifact to gh-pages
         run: |

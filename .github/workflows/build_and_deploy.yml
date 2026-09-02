@@ -30,6 +30,7 @@ jobs:
           mkdir -p out/docs out/public
           cp -Rf docs/. out/docs/
           cp -Rf public/. out/public/
+          find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \;
         env:
           NODE_OPTIONS: --max-old-space-size=6144
       - uses: actions/upload-pages-artifact@v3
