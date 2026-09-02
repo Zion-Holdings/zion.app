@@ -30,6 +30,10 @@ jobs:
           [ -f _headers ] && cp -f _headers out/_headers || true
           [ -f _redirects ] && cp -f _redirects out/_redirects || true
           [ -f CNAME ] && cp -f CNAME out/CNAME || true
+          [ -f public/CNAME ] && cp -f public/CNAME out/CNAME || true
+          printf 'ziontechgroup.com\n' > out/CNAME
+          test -s out/CNAME
+          test -f out/index.html
 
       - uses: actions/upload-pages-artifact@v3
         with:

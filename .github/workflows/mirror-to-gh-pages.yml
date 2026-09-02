@@ -35,19 +35,24 @@ jobs:
           set -euo pipefail
           mkdir -p out/docs out/public
           if [ -d docs ]; then cp -Rf docs/. out/docs/; fi
-          if [ -d public ]; then cp -Rf public/. out/public/; fi
+          if [ -d public ]; then cp -Rf public/. out/; fi
           find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \; || true
+          printf 'ziontechgroup.com\n' > out/CNAME
           if npm run build:check || npm run build; then
             echo "Next build succeeded"
           else
             echo "::warning::Next build failed; mirroring committed static fallbacks"
           fi
+          printf 'ziontechgroup.com\n' > out/CNAME
+          test -s out/CNAME
+          test -f out/index.html
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          keep_files: false
+          keep_files: true
           user_name: Zion CI
           user_email: ci@ziontechgroup.com
+          cname: ziontechgroup.com

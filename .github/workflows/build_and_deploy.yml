@@ -37,6 +37,8 @@ jobs:
           [ -f _headers ] && cp -f _headers "$FALLBACK"/_headers || true
           [ -f _redirects ] && cp -f _redirects "$FALLBACK"/_redirects || true
           [ -f CNAME ] && cp -f CNAME "$FALLBACK"/CNAME || true
+          [ -f public/CNAME ] && cp -f public/CNAME "$FALLBACK"/CNAME || true
+          printf 'ziontechgroup.com\n' > "$FALLBACK"/CNAME
 
           built=0
           if [ -f package.json ] && [ -f package-lock.json ]; then
@@ -54,6 +56,9 @@ jobs:
             mkdir -p out
             cp -Rf "$FALLBACK"/. out/
           fi
+          printf 'ziontechgroup.com\n' > out/CNAME
+          test -s out/CNAME
+          test -f out/index.html
 
 
       - uses: actions/upload-pages-artifact@v3

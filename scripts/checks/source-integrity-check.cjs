@@ -65,6 +65,8 @@ const requiredFiles = [
   'wrangler.toml',
   'workers/static.js',
   'scripts/workers-static-prepare.cjs',
+  'CNAME',
+  'public/CNAME',
 ];
 
 for (const rel of requiredFiles) {
@@ -89,6 +91,16 @@ if (exists('package.json')) {
     }
   } catch (err) {
     errors.push(`package.json is not valid JSON: ${err.message}`);
+  }
+}
+
+for (const rel of ['CNAME', 'public/CNAME']) {
+  if (!exists(rel)) continue;
+  const cname = fs.readFileSync(path.join(repo, rel), 'utf8').trim();
+  if (cname !== 'ziontechgroup.com') {
+    errors.push(`${rel} must be exactly "ziontechgroup.com" (found "${cname}")`);
+  } else {
+    console.log(`  ✓ ${rel} is ziontechgroup.com`);
   }
 }
 
