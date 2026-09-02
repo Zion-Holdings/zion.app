@@ -1,7 +1,7 @@
 import { Composio } from '@composio/core';
 
 const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
-const userId = 'zion-revenue-cycle';
+const userId = 'zion-revenue-cycle-v2';
 
 const summary = {
   timestamp: new Date().toISOString(),
@@ -48,26 +48,43 @@ async function main() {
   const events = await run('calendly_list_events', c.calendly, 'CALENDLY_LIST_EVENTS', { count: 5 });
   summary.result.calendly_bookings = events?.data?.length || events?.events?.length || 0;
 
-  // Step 3: Resend send revenue summary email
-  if (summary.result.stripe_recent > 0 || summary.result.calendly_bookings > 0) {
-    await run('resend_send_email', c.resend, 'RESEND_SEND_EMAIL', {
-      from: 'Zion Tech Group <noreply@ziontechgroup.com>',
-      to: ['kleber@ziontechgroup.com'],
-      subject: `[Zion] Revenue cycle: ${summary.result.stripe_recent} charges, ${summary.result.calendly_bookings} bookings`,
-      html: `<p>Stripe charges: ${summary.result.stripe_recent}</p><p>Calendly bookings: ${summary.result.calendly_bookings}</p>`
-    });
-    summary.steps.push({ name: 'resend_send_email', status: 'ok' });
-  }
+  // Step 3: Resend revenue summary email
+  const subject = `[Zion] Revenue cycle: ${summary.result.stripe_recent} charges, ${summary.result.calendly_bookings} bookings`;
+  await run('resend_send_email', c.resend, 'RESEND_SEND_EMAIL', {
+    from: 'Zion Tech Group <noreply@ziontechgroup.com>',
+    to: ['kleber@ziontechgroup.com'],
+    subject,
+    html: `<p>Stripe charges: ${summary.result.stripe_recent}</p><p>Calendly bookings: ${summary.result.calendly_bookings}</p>`
+  });
+  summary.steps.push({ name: 'resend_send_email', status: 'ok' });
 
-  // Step 4: Tavily + Firecrawl trending topic
+  // Step 4: Tavily trending topic
   const tavilyRes = await run('tavily_search', c.tavily, 'TAVILY_SEARCH', { query: 'AI automation trends LATAM 2026' });
   const topic = tavilyRes?.results?.[0]?.title || 'AI automation trends LATAM 2026';
-  const firecrawlRes = await run('firecrawl_scrape', c.firecrawl, 'FIRECRAWL_SCRAPE', { url: tavilyRes?.results?.[0]?.url || 'https://example.com' });
   summary.result.topic = topic;
 
-  // Step 5: SerpAPI keywords
+  // Step 5: Firecrawl scrape topic
+  const firecrawlRes = await run('firecrawl_scrape', c.firecrawl, 'FIRECRAWL_SCRAPE', { url: tavilyRes?.results?.[0]?.url || 'https://example.com' });
+  summary.result.firecrawl_status = firecrawlRes ? 'ok' : 'skipped';
+
+  // Step 6: SerpAPI keywords
   const serp = await run('serpapi_search', c.serpapi, 'SERPAPI_SEARCH', { q: topic, num: 5 });
   summary.result.serp_keywords = serp?.organic_results?.length || 0;
+
+  // Step 7: Brevo add lead
+  await run('brevo_add_contact', c.brevo, 'BREVO_ADD_CONTACT', {
+    email: 'lead@ziontechgroup.com',
+    listIds: [1],
+    updateEnabled: true
+  });
+  summary.steps.push({ name: 'brevo_add_contact', status: 'ok' });
+
+  // Step 8: WhatsApp notify Kleber
+  await run('whatsapp_send_message', c.whatsapp, 'WHATSAPP_SEND_MESSAGE', {
+    to: 'kleber@ziontechgroup.com',
+    body: `[Zion] ${summary.result.stripe_recent} charges, ${summary.result.calendly_bookings} bookings, topic: ${topic}`
+  });
+  summary.steps.push({ name: 'whatsapp_send_message', status: 'ok' });
 
   console.log(JSON.stringify(summary, null, 2));
 }
