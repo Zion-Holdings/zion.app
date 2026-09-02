@@ -875,4 +875,12 @@
 /subscribe/ /docs/contact/index.html 301
 /ai-lead-capture/ /lead-generation-outreach-automation/ 301
 /ai-client-onboarding/ /services/ 301
-/ai-contract-automation/ /services/ 301
+|/ai-contract-automation/ /services/ 301
+|/monetization /monetization/index.html 200
+|/monetization/ /monetization/index.html 200
+|/stripe /stripe/index.html 200
+|/stripe/ /stripe/index.html 200
+|/affiliate /affiliate/index.html 200
+|/affiliate/ /affiliate/index.html 200
+|/partner-program /partner-program/index.html 200
+|/partner-program/ /partner-program/index.html 200
