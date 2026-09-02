@@ -1,25 +1,38 @@
 name: Build and Deploy Zion Site
+
 on:
   push:
-    branches: [ main, gh-pages ]
+    branches: [ main ]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: gh-pages
-          fetch-depth: 0
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci
+      - name: Build site and promote fallbacks
+        run: |
+          set -euo pipefail
+          npm run build:check || npm run build
+          mkdir -p out/docs out/public
+          cp -Rf docs/. out/docs/
+          cp -Rf public/. out/public/
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/deploy-pages@v4
