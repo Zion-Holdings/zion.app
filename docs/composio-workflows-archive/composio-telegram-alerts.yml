@@ -1,0 +1,57 @@
+name: composio-telegram-alerts
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  telegram-alerts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Check connections and send Telegram alert if needed
+        id: check
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          cat > alert.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const client = composio.getClient();
+          const accounts = await client.connectedAccounts.list({});
+          const items = accounts.items || [];
+          const inactive = items.filter(a => a.status !== 'ACTIVE');
+          const summary = items.map(a => `${a.toolkit?.slug || 'unknown'}: ${a.status}`);
+          console.log('Accounts:', summary.join(', '));
+          if (inactive.length > 0) {
+            const text = encodeURIComponent('⚠️ Composio inactive connections: ' + inactive.map(a => a.toolkit?.slug).join(', '));
+            await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ chat_id: process.env.TELEGRAM_CHAT_ID, text: '⚠️ Composio inactive connections: ' + inactive.map(a => a.toolkit?.slug).join(', ') })
+            });
+            console.log('Alert sent for', inactive.length, 'inactive connections');
+          } else {
+            console.log('All connections active, no alert needed');
+          }
+          EOF
+          node alert.mjs
+
+      - name: Comment summary
+        run: |
+          echo "Telegram alert check completed." >> "$GITHUB_STEP_SUMMARY"

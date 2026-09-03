@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[8500,["98500","static/chunks/98500-7929f77cc3bf2fc2.js","99307","static/chunks/app/services/%5Bid%5D/page-2625ea32c7537604.js"],""]
-3:I[484,[],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen bg-slate-950 py-20","children":["$","div",null,{"className":"container-page","children":[["$","h1",null,{"className":"text-3xl font-bold text-white mb-4","children":"Service Not Found"}],["$","$L2",null,{"href":"/services","className":"text-purple-400 hover:underline","children":"← Back to Services"}]]}]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
-5:null

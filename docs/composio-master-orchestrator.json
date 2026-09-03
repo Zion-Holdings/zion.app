@@ -1,0 +1,39 @@
+{
+  "userId": "zion-master",
+  "connections": {
+    "brevo": "${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}",
+    "calendly": "${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}",
+    "resend": "${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}",
+    "stripe": "${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}",
+    "whatsapp": "${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}",
+    "firecrawl": "${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}",
+    "serpapi": "${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}",
+    "tavily": "${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}"
+  },
+  "workflows": {
+    "revenue-cycle": {
+      "schedule": "0 8,11,14,17,20 * * 1-5",
+      "actions": [
+        "STRIPE_LIST_CHARGES",
+        "CALENDLY_LIST_EVENTS",
+        "RESEND_SEND_EMAIL",
+        "TAVILY_SEARCH",
+        "FIRECRAWL_SCRAPE",
+        "SERPAPI_SEARCH",
+        "BREVO_ADD_CONTACT",
+        "WHATSAPP_SEND_MESSAGE"
+      ]
+    },
+    "content-cycle": {
+      "schedule": "0 8,13,18 * * 1-5",
+      "actions": [
+        "TAVILY_SEARCH",
+        "FIRECRAWL_SCRAPE",
+        "SERPAPI_SEARCH",
+        "RESEND_SEND_EMAIL",
+        "WHATSAPP_SEND_MESSAGE",
+        "BREVO_ADD_CONTACT"
+      ]
+    }
+  }
+}

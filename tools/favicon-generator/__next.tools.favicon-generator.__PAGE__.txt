@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[484,[],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-slate-950 text-white flex items-center justify-center px-4","children":["$","div",null,{"className":"max-w-xl text-center","children":[["$","h1",null,{"className":"text-3xl font-bold gradient-text mb-3","children":"Favicon Generator"}],["$","p",null,{"className":"mt-4 text-lg text-slate-300","children":["This tool is being updated. For now, you can use any online favicon generator and place the result in your site root as ",["$","code",null,{"className":"text-purple-300","children":"/icon.svg"}],"."]}]]}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
-4:null

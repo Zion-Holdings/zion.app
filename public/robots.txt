@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /_redirects
-
-Sitemap: https://ziontechgroup.com/sitemap.xml
-

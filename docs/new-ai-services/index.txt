@@ -37,7 +37,7 @@ f:["$","$L1e",null,{}]
 25:[]
 1b:"$W25"
 1c:["$","$2","h",{"children":[null,["$","$L26",null,{"children":"$L27"}],["$","div",null,{"hidden":true,"children":["$","$L28",null,{"children":["$","$23",null,{"name":"Next.Metadata","children":"$L29"}]}]}],null]}]
-21:E{"digest":"NEXT_REDIRECT;replace;/new-ai-services/;307;"}
+21:{"digest":"__NEXT_DATA__","data":{"page":"placeholder"}}
 27:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"}],["$","meta","2",{"name":"theme-color","content":"#3b82f6","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0b1221","media":"(prefers-color-scheme: dark)"}],["$","meta","4",{"name":"color-scheme","content":"dark light"}]]
 2a:I[6869,[],"IconMark"]
 24:null
