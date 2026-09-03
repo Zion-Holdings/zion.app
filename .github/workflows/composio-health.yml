@@ -29,17 +29,24 @@ jobs:
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Composio Whoami
-        run: composio whoami 2>&1 || echo "WHOAMI_FAILED"
+        run: |
+          echo "=== Whoami ==="
+          composio whoami 2>&1
 
       - name: List All Connections
         run: |
           echo "=== All Connected Accounts ==="
-          composio connections list 2>&1 || echo "LIST_FAILED"
+          composio connections list 2>&1
+
+      - name: List All Toolkits
+        run: |
+          echo "=== Available Toolkits ==="
+          composio toolkits list 2>&1
 
       - name: 1Password Tools Check
         run: |
           echo "=== 1Password Tools ==="
-          composio tools list --toolkits _1password 2>&1 || echo "1P_TOOLS_FAILED"
+          composio tools list --toolkit _1password 2>&1 || echo "1P_TOOLS_FAILED"
 
       - name: Summary
         run: |
