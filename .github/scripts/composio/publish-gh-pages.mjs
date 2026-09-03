@@ -134,6 +134,7 @@ export const PIN_PATHS = [
   'composio/index.html',
   'privacy/index.html',
   'services/index.html',
+  'ai-services/index.html',
   'paid-consultation/index.html',
   'success-stories/index.html',
   'sitemap.xml',
