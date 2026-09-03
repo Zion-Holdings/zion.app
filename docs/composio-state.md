@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T07:07Z. Live `/` Discovery $99. Catalogued + published **175 root leftover closers** (catalog **614**). Latest gh-pages `4fcf6df1`. Connect Links reminted 07:06Z expire ~07:17Z — remint only if EXPIRED. Workers Builds CI is the Cloudflare hook — do not add wrangler.toml. Keep Zion CI mirror disabled.
+
 Atualizado 2026-09-03T06:52Z. Live `/` Discovery $99. Full SERP catalog **439/439 live 200**. Latest gh-pages `85550d81`. Connect Links reminted 06:43Z expire ~06:53Z — remint only if EXPIRED. Keep Zion CI mirror disabled. Do not add wrangler.toml.
 
 Atualizado 2026-09-03T06:44Z. Live `/` Discovery $99. Leftover closer batches 19–27 live (latest `15af95f5` FinOps/stage). SERP catalog 439. Connect Links reminted 06:43Z expire ~06:53Z — remint only if EXPIRED. First-250 SERP hunt still has ~104 live 404s. Keep Zion CI mirror disabled. Do not add wrangler.toml.
