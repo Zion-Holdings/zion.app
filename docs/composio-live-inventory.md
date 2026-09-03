@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T04:38Z:** Twelfth leftover batch: workspace analytics, knowledge base, low-code, seven micro-SaaS SKUs, energy management, IAM (SERP catalog = 353). Homepage still Discovery $99.
+
 **2026-09-03T04:36Z:** Eleventh leftover batch: healthcare trial/telehealth, Hermes A2A/bot/guide/plugin, IoT, IT API/capacity/infra/ITSM (SERP catalog = 341). Homepage still Discovery $99.
 
 **2026-09-03T04:34Z:** Tenth leftover batch: cloud cost/DB/native, edge computing, employee engagement, EDR, enterprise automation, IT DR/endpoint/MDR, n8n alternative (SERP catalog = 329). Homepage pinned Discovery $99 in the same gh-pages upsert.
