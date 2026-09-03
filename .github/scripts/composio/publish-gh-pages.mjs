@@ -136,6 +136,9 @@ export const PIN_PATHS = [
   'services/index.html',
   'paid-consultation/index.html',
   'success-stories/index.html',
+  'sitemap.xml',
+  'robots.txt',
+  'llms.txt',
 ];
 
 export const PUBLISH_PATHS = [...new Set([...FILES, ...SERP_CLOSER_PATHS])];

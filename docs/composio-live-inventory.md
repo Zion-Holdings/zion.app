@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T07:57Z:** Hermes Agent committed leftover hash SKU `app/services/*/page.tsx` plus 30 SKU URLs into `public/sitemap.xml` on `gh-pages`. Restored the honest **35-URL** sitemap (pinned in `PIN_PATHS` with robots/llms). Catalogued **84** hash SKU closers (SERP catalog **1063**); first **30** sitemap extras live 200 “No packaged SKU”. Disabled **34** leftover `agent-agent-*` + `ultra-fast-agent-creation` workflows (deployment-* already disabled). Connect Links reminted 07:52Z expire ~08:02Z. kleber@ still 0 ACTIVE. Tavily still snippets stale “Get Free Consultation” titles for Looking Glass / Locus / Optomec — live pages are already honest closers. Workers Builds CI is the Cloudflare hook — ignore; do not add wrangler.toml.
+
 **2026-09-03T07:29Z:** Catalogued and dual-wrote **359 nested leftover closers** (blog / ai-services / seo / solutions / tools). SERP catalog **973**. Spot-checked live 200. Connect Links reminted 07:29Z expire ~07:39Z. Workers Builds CI is the Cloudflare hook — ignore; do not add wrangler.toml.
 
 **2026-09-03T07:07Z:** Catalogued and dual-wrote **175 root leftover Next.js routes** (ai-chatbot-builder, cloud-services, zion-ai-*, etc.) — live 200 “No packaged SKU”. SERP catalog **614**. Homepage still Discovery $99. Connect Links reminted 07:06Z expire ~07:17Z. Workers Builds CI is the Cloudflare hook — ignore; do not add wrangler.toml.
