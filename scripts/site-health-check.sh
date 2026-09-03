@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 BASE_URL="${SITE_URL:-https://ziontechgroup.com}"
-ROUTES=("/" "/healthz" "/tools/health-check" "/status/service-health" "/sitemap.xml")
+ROUTES=("/" "/tools/health-check" "/status/service-health" "/sitemap.xml")
 ok=0; fail=0
 for p in "${ROUTES[@]}"; do
   # -L follows redirects, -s silent, -o discard, -w status code

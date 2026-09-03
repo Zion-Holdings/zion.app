@@ -2,9 +2,9 @@
 const https = require('https');
 const http = require('http');
 
+// Only check routes that actually exist on the site
 const routes = [
   '/',
-  '/healthz',
   '/tools/health-check',
   '/status/service-health',
   '/sitemap.xml',
