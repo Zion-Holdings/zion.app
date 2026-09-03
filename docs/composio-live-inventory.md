@@ -2,6 +2,10 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T04:08Z:** Third leftover batch this turn: AI curriculum/drug/emotion/financial/image/supply-chain/voice studios + API docs, Changelogify, Credrisk, customer-success AI, ERP automation (SERP catalog = 245). All verified live 200.
+
+**2026-09-03T04:06Z:** Second leftover batch this turn: SRE platform, cloud data sovereignty, MSP, Envault, accessibility, knowledge mgmt, LLM eval, green cloud, collaboration, finance automation (SERP catalog = 233). Browser-verified homepage Discovery $99, identity/zero-trust closers, honest 404, `/plans/` $99. Connect Links reminted 04:03Z.
+
 **2026-09-03T04:02Z:** Pages still `legacy` / `gh-pages` / `/`. Live `/` is Discovery $99. IAM leftover closers (compliance/on-call/data-mesh) verified 200. Next 12 leftover 404s (identity governance, MFA, DLP, zero-trust, WAF, SD-WAN, ransomware, endpoint, audit, observability) dual-written to `gh-pages` + `public/` (SERP catalog = 221). Stripe $0; Calendly 0 upcoming; Gmail 12h sales 0. SerpAPI still 429. Kleber HubSpot/Jira/noCRM/Perplexity not yet ACTIVE.
 
 **2026-09-03T03:06Z:** Pages still `legacy` / `gh-pages` / `/`. Live `/` is Discovery $99. SerpAPI leftover hunt found 20 more ranking 404s (invoice/bookkeeping/IAM/Keycloak/Zscaler/micro-SaaS tools + three “free consultation” blogs). Those are now honest closers in both `/` and `public/` (SERP catalog = 94). Google still snippets stale titles until recrawl. Kleber HubSpot/Jira/noCRM/Perplexity reminted 03:05Z; human must finish OAuth.
