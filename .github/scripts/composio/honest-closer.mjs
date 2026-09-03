@@ -1102,4 +1102,5 @@ export const SERP_CLOSER_PATHS = [
   'from-start-up-to-global-player-the-success-story-of-zion-tech-group/index.html',
   'exploring-the-innovative-world-of-zion-tech-a-closer-look-at-the-latest-technological-advancements/index.html',
   'from-start-up-to-global-player-the-story-of-zion-tech-groups-it-services-empire/index.html',
+  'tools/2026-ma-due-diligence-checklist/index.html',
 ];
