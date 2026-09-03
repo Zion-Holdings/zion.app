@@ -140,6 +140,9 @@ export const PIN_PATHS = [
   'sitemap.xml',
   'robots.txt',
   'llms.txt',
+  'monetization-hub/index.html',
+  'new-ai-services/index.html',
+  'tools/2026-ma-due-diligence-checklist/index.html',
 ];
 
 export const PUBLISH_PATHS = [...new Set([...FILES, ...SERP_CLOSER_PATHS])];
