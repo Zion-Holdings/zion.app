@@ -8,7 +8,8 @@ export const metadata = {
 const QA = [
   ['Who is Zion Tech Group?', 'A 26-year IT company at ziontechgroup.com. CEO Kleber Alcatrao. Not ziontech.biz or ziontechnologies.org.'],
   ['How do I book Discovery?', 'Use /book/ — only the discovery-1 Calendly event is active (30 min, Google Meet). Or pay $99 on Stripe. /paid-consultation/ is the same offer.'],
-  ['What are the prices?', 'Discovery $99 · Starter $2,500 · Growth $8,000/month · Enterprise custom.'],
+  ['What are the prices?', 'Discovery $99 · Consulting $499 · Starter $2,500 · Growth $8,000/month · Enterprise custom.'],
+  ['What is the YouTube channel?', '@ziontechgroup has 11 videos (2009–2019). Canonical list: /heritage/.'],
   ['How is this different from n8n, Make, or Zapier?', 'Those are canvases. Zapier MCP bills two tasks per tool call. Composio lets the agent choose authenticated tools at runtime. See /composio-vs-n8n-make/ and /composio-vs-zapier/.'],
   ['What is ZionAI Marketplace?', 'Talent, AI solutions, and 24/7 onsite IT. Canonical page: /marketplace/.'],
 ];
