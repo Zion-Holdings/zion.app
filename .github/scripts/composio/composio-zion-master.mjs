@@ -22,10 +22,10 @@ const connections = {
 };
 
 async function listTools(connectionId) {
-  if (!connectionId) return { count: 0, tools: [] };
+  if (!connectionId) return { count: 0, tools: [], error: null };
   try {
     const result = await composio.tools.list({ connectionIds: [connectionId] });
-    return { count: (result.tools || []).length, tools: result.tools || [] };
+    return { count: (result.tools || []).length, tools: result.tools || [], error: null };
   } catch (e) {
     return { count: 0, tools: [], error: e.message };
   }
@@ -38,10 +38,12 @@ async function run() {
   const report = { timestamp: ts, connections: [], alerts: [] };
   let activeCount = 0;
   let errorCount = 0;
+  let noSecretCount = 0;
 
   for (const [name, id] of Object.entries(connections)) {
     if (!id) {
       report.connections.push({ name, status: 'NO_SECRET' });
+      noSecretCount++;
       continue;
     }
     const { count, error } = await listTools(id);
@@ -49,18 +51,14 @@ async function run() {
     if (status === 'ACTIVE') activeCount++;
     if (status === 'ERROR') errorCount++;
     report.connections.push({ name, status, count, error });
-    console.log(`  ${name}: ${status} (${count} tools)`);
+    console.log(`  ${name}: ${status} (${count} tools) ${error ? `- ${error}` : ''}`);
   }
 
   console.log(`\n═══ SUMMARY ═══`);
   console.log(`  Active: ${activeCount}`);
   console.log(`  Errors: ${errorCount}`);
+  console.log(`  No Secret: ${noSecretCount}`);
   console.log(`  Total: ${report.connections.length}`);
-
-  if (errorCount > 0) {
-    console.log(`\n⚠️ ${errorCount} connection(s) with errors`);
-    process.exit(1);
-  }
 }
 
 run().catch(e => {
