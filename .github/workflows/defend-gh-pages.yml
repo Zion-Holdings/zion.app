@@ -1,0 +1,31 @@
+name: Defend gh-pages Discovery
+
+# Live Pages source is legacy / gh-pages. A competing agent used to
+# force-push the August leftover Next.js export onto that branch.
+# Ruleset 22178533 now blocks force-push; this job still restores
+# Discovery if leftover HTML is committed on top.
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  defend:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Restore Discovery if leftover Next.js is live
+        run: node .github/scripts/composio/restore-discovery-on-gh-pages.mjs --if-leftover

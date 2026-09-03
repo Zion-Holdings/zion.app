@@ -49,8 +49,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: gh-pages
+          # Ruleset 22178533 blocks force-push on gh-pages. Additive
+          # publish only — leftover _next must be deleted separately.
+          force: false
           force_orphan: false
-          keep_files: false
+          keep_files: true
           cname: ziontechgroup.com
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com

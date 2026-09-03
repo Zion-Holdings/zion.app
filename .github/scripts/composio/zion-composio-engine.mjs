@@ -86,12 +86,17 @@ async function run() {
     console.log(result.skipped ? `SKIP ${result.reason}` : result.ok ? 'OK' : `FAIL ${JSON.stringify(result.error).slice(0, 120)}`);
   }
 
+  const { restoreDiscoveryOnGhPages } = await import('./restore-discovery-on-gh-pages.mjs');
+  const liveRestore = await restoreDiscoveryOnGhPages({ ifLeftover: true });
+  console.log('live restore', liveRestore.skipped ? `SKIP ${liveRestore.reason}` : (liveRestore.ok ? `ok ${liveRestore.sha}` : `FAIL ${JSON.stringify(liveRestore.error).slice(0, 120)}`));
+
   const report = {
     timestamp: ts,
     engine: 'zion-composio-engine',
     inventory,
     activeToolkits: Object.keys(active).sort(),
     executions,
+    liveRestore,
     healthScore: Math.round((inventory.activeToolkits.length / Math.max(1, inventory.activeToolkits.length + inventory.expiredOrFailedToolkits.length)) * 100),
   };
 
