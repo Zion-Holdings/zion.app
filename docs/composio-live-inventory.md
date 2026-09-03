@@ -2,7 +2,7 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
-**2026-09-03 apex + money pages (live):** Pages API `cname=ziontechgroup.com` (cert approved, domain verified). Switched `build_type` from `workflow` (which ignored `gh-pages` pushes) to **legacy / gh-pages**. `www` **301 → apex 200**. `.nojekyll` is on `gh-pages` so Jekyll does not eat `_next` or new folders. `llms.txt` + focused `sitemap.xml` replace the 7k-URL ghost export.
+**2026-09-03 apex + money pages (live):** Pages API `cname=ziontechgroup.com` (cert approved, domain verified). **Source must stay `legacy` / `gh-pages` / `/`.** A publish this run flipped source to `main` and the apex immediately 404’d (File not found) while `gh-pages` still had `index.html`. `publish-gh-pages.mjs` now re-asserts the source after every commit. `www` **301 → apex**. `.nojekyll` is on `gh-pages`. `llms.txt` + focused `sitemap.xml` replace the 7k-URL ghost export. Do not send `https_enforced: true` as the only update — GitHub already enforces HTTPS.
 
 Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were missing. Live data contradicts that. Orchestrators that read `COMPOSIO_*_CONNECTION_ID` GitHub secrets were skipping healthy accounts.
 

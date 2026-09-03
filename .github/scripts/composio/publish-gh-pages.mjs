@@ -61,6 +61,16 @@ async function main() {
   }, active);
   console.log('commit', commit.ok ? 'ok' : commit.error);
 
+  const pages = await executeTool('github', 'GITHUB_CREATE_OR_UPDATE_GITHUB_PAGES_SITE', {
+    owner: OWNER,
+    repo: REPO,
+    cname: 'ziontechgroup.com',
+    build_type: 'legacy',
+    source_branch: 'gh-pages',
+    source_path: '/',
+  }, active);
+  console.log('pages source', pages.ok ? (pages.data?.source || 'ok') : pages.error);
+
   const build = await executeTool('github', 'GITHUB_REQUEST_A_GITHUB_PAGES_BUILD', {
     owner: OWNER,
     repo: REPO,
