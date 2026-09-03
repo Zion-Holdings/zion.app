@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T04:22Z:** Sixth leftover batch: supplier risk, asset lifecycle, ad copy, autonomous agents, claims, code reviewer, computer vision, content moderation, CX/CLV/segmentation/churn (SERP catalog = 281).
+
 **2026-09-03T04:21Z:** Fifth leftover batch: endpoint/patch, asset discovery, fraud, FinOps, code review, document understanding, edge CDN, email deliverability, BCDR, capacity/chargeback, change mgmt, SaaS license (SERP catalog = 269).
 
 **2026-09-03T04:19Z:** Fourth leftover batch: Fileforge, HR/legal/marketing/property/sales automation, Schedflow, Taxflow, Teampulse, Translatix, warehouse, DevSecOps pipeline (SERP catalog = 257). Connect Links reminted 04:19Z (expire ~04:29Z).
