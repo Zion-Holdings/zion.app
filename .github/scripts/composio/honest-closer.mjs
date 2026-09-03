@@ -1103,4 +1103,7 @@ export const SERP_CLOSER_PATHS = [
   'exploring-the-innovative-world-of-zion-tech-a-closer-look-at-the-latest-technological-advancements/index.html',
   'from-start-up-to-global-player-the-story-of-zion-tech-groups-it-services-empire/index.html',
   'tools/2026-ma-due-diligence-checklist/index.html',
+  'monetization-hub/index.html',
+  'new-ai-services/index.html',
+  'stripe/index.html',
 ];
