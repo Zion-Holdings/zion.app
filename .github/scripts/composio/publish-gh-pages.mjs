@@ -51,6 +51,13 @@ const FILES = [
   'help/index.html',
   'company/index.html',
   'sla/index.html',
+  'automation/index.html',
+  'industries/index.html',
+  'cloud/index.html',
+  'resources/index.html',
+  'configurator/index.html',
+  'agents-monitoring/index.html',
+  'micro-saas/index.html',
 ];
 
 async function main() {
@@ -65,11 +72,15 @@ async function main() {
   const props = schema.data?.input_parameters?.properties || schema.data?.parameters?.properties || {};
   console.log('commit schema keys', Object.keys(props));
 
-  const upserts = FILES.map((path) => ({
-    path,
-    content: readFileSync(new URL(`../../../${path}`, import.meta.url), 'utf8'),
-    encoding: 'utf-8',
-  }));
+  // GitHub Pages is serving public/ when that folder exists. Write both roots.
+  const upserts = [];
+  for (const path of FILES) {
+    const content = readFileSync(new URL(`../../../${path}`, import.meta.url), 'utf8');
+    upserts.push({ path, content, encoding: 'utf-8' });
+    upserts.push({ path: `public/${path}`, content, encoding: 'utf-8' });
+  }
+  upserts.push({ path: 'public/.nojekyll', content: '', encoding: 'utf-8' });
+  upserts.push({ path: 'public/CNAME', content: 'ziontechgroup.com\n', encoding: 'utf-8' });
 
   const commit = await executeTool('github', 'GITHUB_COMMIT_MULTIPLE_FILES', {
     owner: OWNER,

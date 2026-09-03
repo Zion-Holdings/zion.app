@@ -2,7 +2,7 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
-**2026-09-03 apex + money pages (live):** Pages API `cname=ziontechgroup.com` (cert approved, domain verified). **Source must stay `legacy` / `gh-pages` / `/`.** A publish this run flipped source to `main` and the apex immediately 404’d (File not found) while `gh-pages` still had `index.html`. `publish-gh-pages.mjs` now re-asserts the source after every commit. `www` **301 → apex**. `.nojekyll` is on `gh-pages`. `llms.txt` + focused `sitemap.xml` replace the 7k-URL ghost export. Do not send `https_enforced: true` as the only update — GitHub already enforces HTTPS.
+**2026-09-03 apex + money pages (live):** Pages API `cname=ziontechgroup.com` (cert approved, domain verified). **Source must stay `legacy` / `gh-pages` / `/`.** Also: GitHub Pages is serving the **`public/`** subtree when it exists. A stale `public/index.html` (“Measurable Growth”) overrode the root Discovery homepage even though root `index.html` was correct. Always upsert honest pages into **both** `/` and `public/`. `.nojekyll` + `CNAME` belong in both places.
 
 Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were missing. Live data contradicts that. Orchestrators that read `COMPOSIO_*_CONNECTION_ID` GitHub secrets were skipping healthy accounts.
 
