@@ -1,11 +1,119 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Roi Calculator · Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/services/">
-<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery.">
-<meta http-equiv="refresh" content="0; url=/services/">
-<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora ROI · Zion Tech Group</title>
+<meta name="description" content="Calcule o retorno sobre investimento em automação e IA. Descubra quanto sua empresa pode economizar com Zion Tech Group.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:800px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+label{display:block;margin:16px 0 4px;color:#94a3b8;font-size:.875rem}
+input,select{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-size:1rem}
+input:focus{outline:none;border-color:#a78bfa}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.result{background:#1e293b;border:1px solid #a78bfa;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+.result .big{font-size:2.5rem;font-weight:700;color:#a78bfa}
+.result .label{color:#94a3b8;margin-top:4px}
+.savings{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px}
+.savings .box{text-align:center;padding:16px;background:#0f172a;border-radius:8px}
+.savings .num{font-size:1.5rem;font-weight:700;color:#34d399}
+.savings .desc{font-size:.75rem;color:#94a3b8;margin-top:4px}
+a{color:#a78bfa;text-decoration:none}
+a:hover{text-decoration:underline}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
 <body>
-<h1>Roi Calculator</h1>
-<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
-<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
-</body></html>
+<div class="max">
+<h1>Calculadora de ROI</h1>
+<p class="sub">Descubra quanto sua empresa pode economizar com automação e IA</p>
+
+<div class="card">
+<div class="row">
+<div>
+<label>Funcionários na equipe de TI</label>
+<input type="number" id="staff" value="5" min="1" max="1000">
+</div>
+<div>
+<label>Custo médio por hora (R$)</label>
+<input type="number" id="hourly" value="80" min="10" max="500">
+</div>
+</div>
+<div class="row">
+<div>
+<label>Horas manuais/semana</label>
+<input type="number" id="hours" value="20" min="1" max="168">
+</div>
+<div>
+<label>Erros/mês (retrabalho)</label>
+<input type="number" id="errors" value="8" min="0" max="100">
+</div>
+</div>
+<div class="row">
+<div>
+<label>Custo médio por erro (R$)</label>
+<input type="number" id="errorCost" value="500" min="0" max="50000">
+</div>
+<div>
+<label>Tempo de inatividade (h/ano)</label>
+<input type="number" id="downtime" value="40" min="0" max="500">
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="big" id="annualSavings">R$ 0</div>
+<div class="label">Economia anual estimada</div>
+</div>
+
+<div class="savings">
+<div class="box">
+<div class="num" id="hoursSaved">0h</div>
+<div class="desc">Horas economizadas/ano</div>
+</div>
+<div class="box">
+<div class="num" id="errorsReduced">0%</div>
+<div class="desc">Redução de erros</div>
+</div>
+<div class="box">
+<div class="num" id="roi">0x</div>
+<div class="desc">ROI estimado</div>
+</div>
+</div>
+
+<div class="links">
+<p><a href="/book/">Agendar Discovery $99</a> · <a href="/plans/">Ver Planos</a> · <a href="/services/">Serviços</a></p>
+</div>
+</div>
+
+<script>
+function calc(){
+const staff=parseInt(document.getElementById('staff').value)||0;
+const hourly=parseInt(document.getElementById('hourly').value)||0;
+const hours=parseInt(document.getElementById('hours').value)||0;
+const errors=parseInt(document.getElementById('errors').value)||0;
+const errorCost=parseInt(document.getElementById('errorCost').value)||0;
+const downtime=parseInt(document.getElementById('downtime').value)||0;
+
+const hoursSaved = hours * 52 * 0.7;
+const errorReduction = errors * 12 * 0.6 * errorCost;
+const downtimeSavings = downtime * hourly * 2;
+const annualSavings = hoursSaved * hourly + errorReduction + downtimeSavings;
+const investment = 2500 * 12;
+const roi = annualSavings / investment;
+
+document.getElementById('annualSavings').textContent = 'R$ ' + Math.round(annualSavings).toLocaleString('pt-BR');
+document.getElementById('hoursSaved').textContent = Math.round(hoursSaved) + 'h';
+document.getElementById('errorsReduced').textContent = '60%';
+document.getElementById('roi').textContent = roi.toFixed(1) + 'x';
+}
+document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
+calc();
+</script>
+</body>
+</html>
