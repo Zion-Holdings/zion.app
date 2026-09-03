@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T04:36Z. Apex still Discovery $99. This turn closed 132 leftover 404s. SERP catalog 341. Connect Links reminted 04:31Z still INITIALIZING/INITIATED (expire ~04:41Z). Workers Builds CI is the Cloudflare hook — not a site build.
+
 Atualizado 2026-09-03T04:34Z. Apex still Discovery $99 after pinning homepage on the edge/EDR leftover batch. This turn closed 120 leftover 404s. SERP catalog 329. Connect Links reminted 04:31Z still INITIALIZING/INITIATED (expire ~04:41Z). Workers Builds CI is the Cloudflare hook — not a site build.
 
 Atualizado 2026-09-03T04:31Z. Apex drifted to leftover Next.js (`_next/static`) around 04:29Z; restored Discovery $99 + `/plans/` + honest 404 via targeted gh-pages dual-write of money pages. This turn closed 108 leftover 404s. SERP catalog 317.
