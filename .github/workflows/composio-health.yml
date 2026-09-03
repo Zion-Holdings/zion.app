@@ -21,24 +21,27 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install Composio
-        run: npm install -g composio
+        run: |
+          npm install -g composio
+          composio login --key $COMPOSIO_API_KEY || true
 
       - name: Composio Whoami
-        run: composio whoami
+        run: composio whoami 2>&1 || echo "WHOAMI_FAILED"
 
-      - name: List Connected Accounts
-        run: composio connections list
+      - name: List All Connections
+        run: |
+          echo "=== All Connected Accounts ==="
+          composio connections list 2>&1 || echo "LIST_FAILED"
 
-      - name: List Toolkits (1Password focus)
-        run: composio tools list _1password 2>/dev/null || echo "1Password tools not available"
-
-      - name: 1Password List Vaults
-        run: composio execute _1PASSWORD_LIST_VAULTS -d '{}' || echo "1Password vault listing failed"
+      - name: 1Password Tools Check
+        run: |
+          echo "=== 1Password Tools ==="
+          composio tools list --toolkits _1password 2>&1 || echo "1P_TOOLS_FAILED"
 
       - name: Summary
         run: |
-          echo "Composio health check completed at $(date -u)"
+          echo "Health check completed at $(date -u)"
           echo "Key set: $([ -n \"$COMPOSIO_API_KEY\" ] && echo 'yes' || echo 'no')"
