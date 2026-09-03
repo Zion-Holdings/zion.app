@@ -26,20 +26,25 @@ jobs:
       - name: Install Composio
         run: |
           npm install -g composio
-          composio login --key $COMPOSIO_API_KEY || true
+          export PATH="$PATH:$(npm root -g)/.bin:$HOME/.npm-global/bin"
+          which composio || echo "NOT_IN_PATH"
 
       - name: Composio Whoami
-        run: composio whoami 2>&1 || echo "WHOAMI_FAILED"
+        run: |
+          export PATH="$PATH:$(npm root -g)/.bin:$HOME/.npm-global/bin"
+          npx composio whoami 2>&1 || echo "WHOAMI_FAILED"
 
       - name: List All Connections
         run: |
+          export PATH="$PATH:$(npm root -g)/.bin:$HOME/.npm-global/bin"
           echo "=== All Connected Accounts ==="
-          composio connections list 2>&1 || echo "LIST_FAILED"
+          npx composio connections list 2>&1 || echo "LIST_FAILED"
 
       - name: 1Password Tools Check
         run: |
+          export PATH="$PATH:$(npm root -g)/.bin:$HOME/.npm-global/bin"
           echo "=== 1Password Tools ==="
-          composio tools list --toolkits _1password 2>&1 || echo "1P_TOOLS_FAILED"
+          npx composio tools list --toolkits _1password 2>&1 || echo "1P_TOOLS_FAILED"
 
       - name: Summary
         run: |
