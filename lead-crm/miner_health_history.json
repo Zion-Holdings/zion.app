@@ -1,92 +1,5 @@
 [
   {
-    "ts": "2026-09-03T14:02:33.766239+00:00",
-    "queries_run": 11,
-    "contacts_found": 2,
-    "new_leads_added": 2,
-    "elapsed_s": 117.958,
-    "queries_per_second": 0.0933,
-    "avg_query_s": 10.7218,
-    "max_query_s": 18.4338,
-    "status": "ok",
-    "high_signal_leads": 1.2,
-    "lead_quality_ratio": 0.1053,
-    "rolling": {
-      "last_5_queries": [
-        10.012087839000742,
-        10.130133646001923,
-        4.952752573000907,
-        10.167195069996524,
-        10.14460407000297
-      ],
-      "last_5_qps": [
-        0.0999,
-        0.0987,
-        0.2019,
-        0.0984,
-        0.0986
-      ]
-    }
-  },
-  {
-    "ts": "2026-09-03T14:12:32.295452+00:00",
-    "queries_run": 11,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 114.045,
-    "queries_per_second": 0.0965,
-    "avg_query_s": 10.3676,
-    "max_query_s": 12.4708,
-    "status": "ok",
-    "high_signal_leads": 1.2,
-    "lead_quality_ratio": 0.1048,
-    "rolling": {
-      "last_5_queries": [
-        11.7632884919949,
-        10.696309491999273,
-        5.118622073001461,
-        10.157115222995344,
-        10.540312261997315
-      ],
-      "last_5_qps": [
-        0.085,
-        0.0935,
-        0.1954,
-        0.0985,
-        0.0949
-      ]
-    }
-  },
-  {
-    "ts": "2026-09-03T14:22:25.328375+00:00",
-    "queries_run": 11,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 111.295,
-    "queries_per_second": 0.0988,
-    "avg_query_s": 10.1176,
-    "max_query_s": 11.6887,
-    "status": "ok",
-    "high_signal_leads": 1.2,
-    "lead_quality_ratio": 0.1045,
-    "rolling": {
-      "last_5_queries": [
-        10.194406877999427,
-        9.928805686002306,
-        5.791509804002999,
-        10.492656954003905,
-        10.724047569005052
-      ],
-      "last_5_qps": [
-        0.0981,
-        0.1007,
-        0.1727,
-        0.0953,
-        0.0932
-      ]
-    }
-  },
-  {
     "ts": "2026-09-03T14:25:14.508913+00:00",
     "queries_run": 11,
     "contacts_found": 2,
@@ -576,6 +489,93 @@
         0.1017,
         0.0967,
         0.1179
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T17:03:04.539806+00:00",
+    "queries_run": 12,
+    "contacts_found": 5,
+    "new_leads_added": 5,
+    "elapsed_s": 115.677,
+    "queries_per_second": 0.1037,
+    "avg_query_s": 9.6396,
+    "max_query_s": 10.3947,
+    "status": "ok",
+    "high_signal_leads": 1.55,
+    "lead_quality_ratio": 0.1017,
+    "rolling": {
+      "last_5_queries": [
+        9.787362876988482,
+        4.8045288040011656,
+        10.0486504540022,
+        10.032012299998314,
+        10.133255838998593
+      ],
+      "last_5_qps": [
+        0.1022,
+        0.2081,
+        0.0995,
+        0.0997,
+        0.0987
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T17:13:00.096144+00:00",
+    "queries_run": 12,
+    "contacts_found": 1,
+    "new_leads_added": 1,
+    "elapsed_s": 113.24,
+    "queries_per_second": 0.106,
+    "avg_query_s": 9.4365,
+    "max_query_s": 10.6671,
+    "status": "ok",
+    "high_signal_leads": 1.6,
+    "lead_quality_ratio": 0.1022,
+    "rolling": {
+      "last_5_queries": [
+        9.63946183900407,
+        4.585774957988178,
+        9.645909262995701,
+        10.294830262006144,
+        9.007425994001096
+      ],
+      "last_5_qps": [
+        0.1037,
+        0.2181,
+        0.1037,
+        0.0971,
+        0.111
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T17:23:01.151425+00:00",
+    "queries_run": 12,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 114.001,
+    "queries_per_second": 0.1053,
+    "avg_query_s": 9.4998,
+    "max_query_s": 10.8538,
+    "status": "ok",
+    "high_signal_leads": 1.6,
+    "lead_quality_ratio": 0.1025,
+    "rolling": {
+      "last_5_queries": [
+        9.911603108994314,
+        4.862618151004426,
+        10.03133360799984,
+        9.335585415989044,
+        9.098802570006228
+      ],
+      "last_5_qps": [
+        0.1009,
+        0.2057,
+        0.0997,
+        0.1071,
+        0.1099
       ]
     }
   }

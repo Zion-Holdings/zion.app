@@ -154,5 +154,23 @@
     "event": "miner_timeout",
     "query": "subject:\"platform engineering\"",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-03T17:03:04.527240+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-03T17:13:00.084258+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-03T17:23:01.149008+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
