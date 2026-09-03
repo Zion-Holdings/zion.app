@@ -90,6 +90,8 @@ export const SERP_CLOSER_PATHS = [
   'services/data-warehouse-modernization/index.html',
   'services/data-lake-platform/index.html',
   'services/sec-pentest-service/index.html',
+  'services/financial-data-warehouse/index.html',
+  'services/data-lakehouse/index.html',
   'tools/port-scanner/index.html',
   'tools/support-automation-roi-calculator/index.html',
   'blog/ai-observability-security-and-governance/index.html',
