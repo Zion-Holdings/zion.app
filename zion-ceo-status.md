@@ -1,20 +1,28 @@
 # Zion Tech Group — CEO Status
 
-**CEO:** Kleber Garcia Alcatrão
-**Company:** Zion Tech Group
-**Last updated:** 2026-09-03
+- CEO: Kleber Garcia Alcatrão
+- Site: https://ziontechgroup.com
+- Status: homepage online; rotas variam por edge node do CDN
+- Deploy: GitHub Pages (branch gh-pages) — live
 
-## Site status (live)
-- Homepage: https://ziontechgroup.com → HTTP 200
-- Monetization: /pricing, /checkout, /booking, /affiliate → HTTP 200
+## Rotas (snapshot: 2026-09-03T14:00 UTC)
 
-## 404 routes — fallbacks created
-- /service-comparison/
-- /testimonials/
-- /tools/2026-ma-due-diligence-checklist/
-- /monetization-hub/
+### 200 OK
+- `/` (homepage)
+- `/testimonials/`
+- `/service-comparison/`
+- `/status/`
 
-## Lead CRM
-- 138 leads descobertos em all-leads.json
-- Miner: 12 queries/ciclo, 0 contacts, status ok
-- Envio: blocked_by_config_or_env
+### 301 (redirecionamentos)
+- `/about`
+- `/pricing`
+- `/services`
+- `/blog`
+
+### 404 (removidas do novo modelo)
+- `/tools/2026-ma-due-diligence-checklist/`
+- `/monetization-hub/`
+
+- CRM: 138 leads | 0 outreach-ready
+- Outreach: bloqueado (sem leads prontos para outreach)
+- Última atualização: 2026-09-03T14:00 UTC

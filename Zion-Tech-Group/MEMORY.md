@@ -1,39 +1,56 @@
 # Zion Tech Group — Memory & Status
 
-## Última atualização: 2026-09-03T04:55 UTC
+## Última atualização: 2026-09-03T14:00 UTC
 
-### Repositório
-- **main:** 647f5e8e591 (trigger: force Pages rebuild)
-- **gh-pages:** sincronizado via Actions (build_and_deploy.yml)
-- **Branches ativas:** content-loop-exponential, content-wave-20260824003707, hero-carousel, malta-pages-restore, site-audit-fixes
-- **Não commitado:** lead-crm/miner_health.json, miner_health_history.json, miner_log.json, outreach_monitor/
-- **Deletado:** .build-trigger
+- **CEO**: Kleber Garcia Alcatrão
+- **Empresa**: Zion Tech Group
+- **Site**: https://ziontechgroup.com (GitHub Pages, branch gh-pages)
+- **Deploy**: Live, sem blockers ativos
 
-### Site Live
-- Homepage, services, tools, blog, contact, about, ai, health — todos 200
-- ziontechgroup.com → HTTP 200 ✓
-- Rotas monetização LIVE: /pricing, /checkout, /booking, /affiliate
-- 404s (fallback criado, Pages rebuild em curso):
-  - /service-comparison/, /testimonials/, /tools/2026-ma-due-diligence-checklist/, /monetization-hub/
+## Rotas (snapshot: 2026-09-03T14:00 UTC)
 
-### Lead CRM & Outreach
-- 1933 leads em all-leads.json
-- 693 contatos outreach-ready
-- Minerador: último run 2026-09-03T04:52 UTC, status ok, 0 contacts, 0 new
-- Envio bloqueado: blocked_by_config_or_env
-- Monitor: 52 inbox_interest (3 ticks), 0 hot_followup sent
+### 200 OK
+- `/` (homepage)
+- `/testimonials/`
+- `/service-comparison/`
+- `/status/`
 
-### Composio
-- Workflows em .github/workflows/composio-zion-master.yml
-- CLI falha no Android — usar GitHub Actions
+### 301 (redirecionamentos — provavelmente para /book/ ou /plans/)
+- `/about`
+- `/pricing`
+- `/services`
+- `/blog`
 
-### Próximos passos
-1. Verificar se 404 fallbacks foram deployados
-2. Investigar 0 contatos no minerador
-3. Desbloquear envio no lead-crm
-4. Mesclar branches com conteúdo pronto
+### 404 (removidas do novo modelo de negócio)
+- `/tools/2026-ma-due-diligence-checklist/`
+- `/monetization-hub/`
 
-### Notas
-- Preferência: trio concreto (arquivo + ação + parâmetros)
-- Browser indisponível em Android/Termux
-- Sem status loops ou silence patterns
+**Nota**: O site opera com cache/edge nodes que podem servir versões diferentes. O status acima é um snapshot momentâneo.
+
+## Monetização (modelo 2026)
+
+- Discovery $99 → `/book/`
+- Consulting $499 → `/book/`
+- Starter $2,500 → `/plans/`
+- Growth $8,000/mo → `/plans/`
+
+## CRM & Outreach
+
+- Total leads: 138
+- Outreach-ready: 0
+- Monitor inbox interest: 52
+- Hot followup sent: 0
+- Status: bloqueado (sem leads prontos para outreach)
+
+## Repositório
+
+- **CWD Termux**: `/data/data/com.termux/files/home/ztg/repo`
+- **Branch**: `main`
+- **gh-pages worktree**: `/data/data/com.termux/files/home/ztg/gh-pages`
+- **macOS**: `/Users/klebergarciaalcatrao/zion-support.github.io` (symlink, indisponível no Android)
+
+## Composio
+
+- CLI não disponível no Android/Termux
+- Usar GitHub Actions ou REST API
+- Secrets sem prefixo COMPOSIO_ causam falha silenciosa

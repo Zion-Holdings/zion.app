@@ -1,0 +1,115 @@
+# DISABLED. This factory mints Connect Links for already-ACTIVE
+# toolkits (Stripe, GitHub, Notion, Calendly, Gmail, Slack, Resend,
+# SerpAPI, Brevo) onto kleber@. Reminting while INITIATED/ACTIVE
+# races the human OAuth and playground rows. Use
+# .github/scripts/composio/create-reconnect-links.mjs --notify
+# for EXPIRED HubSpot/Jira/noCRM/Perplexity only.
+name: Composio Account Factory
+on:
+  workflow_dispatch:
+
+jobs:
+  factory:
+    if: false
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      USER_EMAIL: kleber@ziontechgroup.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio
+        run: npm install -g composio
+
+      - name: Verify Access
+        run: |
+          echo "COMPOSIO_API_KEY set: $([ -n \"$COMPOSIO_API_KEY\" ] && echo 'yes' || echo 'no')"
+          composio whoami
+
+      - name: List Current Connections
+        run: composio connections list --json
+
+      - name: 1Password Status Check
+        run: |
+          echo "=== 1Password Vaults ==="
+          composio execute _1PASSWORD_LIST_VAULTS -d '{}' 2>/dev/null || echo "1Password empty or unavailable"
+
+      - name: Create Auth Configs for Missing Toolkits
+        run: |
+          for toolkit in _serpapi _firecrawl _tavily _supabase _hunter _linear _hubspot _jira _calendly _notion _slack _gmail _resend _brevo; do
+            echo "=== $toolkit ==="
+            result=$(curl -sS -X POST -H "x-api-key: $COMPOSIO_API_KEY" \
+              -H "Content-Type: application/json" \
+              "https://backend.composio.dev/api/v3.1/auth_configs" \
+              -d "{\"toolkit\": {\"slug\": \"$toolkit\"}, \"name\": \"zion-$toolkit\", \"auth_mode\": \"OAUTH2\", \"use_composio_managed_auth\": true}" 2>/dev/null)
+            echo "$result" | python3 -c "import sys,json; d=json.load(sys.stdin); print(f'  auth_config_id: {d.get(\"auth_config\",{}).get(\"id\",\"FAILED\")}')" 2>/dev/null || echo "  FAILED (no managed auth or exists)"
+          done
+
+      - name: Generate OAuth2 Connect Links
+        run: |
+          AUTH_CONFIGS=(
+            "ac_QhhzsZ9n6cFu:stripe"
+            "ac_qsOraBA-Pf4P:github"
+            "ac_-eWVVvT2L46V:notion"
+            "ac_jUOaY9YqeDI6:calendly"
+            "ac_6Sw_P9Mfbhbe:gmail"
+            "ac_kryrCBIYuY8e:slack"
+            "ac_b-NbAjEvBDpi:resend"
+            "ac_Ir4bPIPK7mSq:serpapi"
+            "ac_FmiFk-nPZMut:serpapi-alt"
+            "ac_xkXEiIO314CL:brevo"
+            "ac_hSWgGZ12cVgw:resend-alt"
+          )
+          for entry in "${AUTH_CONFIGS[@]}"; do
+            IFS=':' read -r ac_id toolkit <<< "$entry"
+            echo "=== $toolkit (auth_config: $ac_id) ==="
+            result=$(curl -sS -X POST -H "x-api-key: $COMPOSIO_API_KEY" \
+              -H "Content-Type: application/json" \
+              "https://backend.composio.dev/api/v3.1/connected_accounts/link" \
+              -d "{\"auth_config_id\": \"$ac_id\", \"user_id\": \"$USER_EMAIL\"}" 2>/dev/null)
+            echo "$result" | python3 -c "
+          import sys, json
+          d=json.load(sys.stdin)
+          print(f\"  link_token: {d.get('link_token','N/A')[:20]}...\")
+          print(f\"  redirect_url: {d.get('redirect_url','N/A')}\")
+          print(f\"  expires_at: {d.get('expires_at','N/A')}\")
+          " 2>/dev/null || echo "  FAILED"
+            sleep 1
+          done
+
+      - name: Check Connection Status
+        run: |
+          echo "=== Connection Status ==="
+          curl -sS -H "x-api-key: $COMPOSIO_API_KEY" \
+            "https://backend.composio.dev/api/v3/connected_accounts?limit=50" | \
+            python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          for item in data:
+            print(f\"{item.get('toolkit',{}).get('slug','?')}: {item.get('status','?')} (user: {item.get('user_id','?')})\")
+          " 2>/dev/null || echo "Failed to list"
+
+      - name: Save Connection Summary
+        run: |
+          curl -sS -H "x-api-key: $COMPOSIO_API_KEY" \
+            "https://backend.composio.dev/api/v3/connected_accounts?limit=50" > connections.json
+          cat connections.json | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          summary = []
+          for item in data:
+            summary.append({
+              'toolkit': item.get('toolkit',{}).get('slug','?'),
+              'status': item.get('status','?'),
+              'user_id': item.get('user_id','?'),
+              'connection_id': item.get('id','?')
+            })
+          print(json.dumps(summary, indent=2))
+          " > connections_summary.json
+          cat connections_summary.json
