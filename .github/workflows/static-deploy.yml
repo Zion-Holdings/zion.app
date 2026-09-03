@@ -17,7 +17,24 @@ jobs:
       name: github-pages
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p out && cp -Rf public/. out/ && cp -Rf docs/. out/docs/ 2>/dev/null || true
+      - run: |
+          mkdir -p out
+          # Copy public/ and docs/ first
+          cp -Rf public/. out/ 2>/dev/null || true
+          cp -Rf docs/. out/docs/ 2>/dev/null || true
+          # Copy root-level HTML pages (about, monetization, services, etc.)
+          for d in */; do
+            if [ -f "$d/index.html" ]; then
+              rm -rf "out/$d"
+              cp -Rf "$d" "out/$d"
+            fi
+          done
+          # Copy root-level HTML files
+          for f in *.html; do
+            [ -f "$f" ] && cp -f "$f" "out/$f"
+          done
+          # Copy _redirects
+          [ -f docs/_redirects ] && cp -f docs/_redirects out/_redirects
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
