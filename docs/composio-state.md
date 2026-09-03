@@ -1,6 +1,6 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
-Atualizado 2026-09-03T02:16Z. Apex is Discovery $99 (5944 bytes). `_redirects` is the 3-line note (not 56KB). SerpAPI still shows stale Google title “AI & IT Services” and ghost `/services/*` SKUs that 404 live. This branch now has `public/` (honest dual-write) and `pages.yml` publishes **only** `public/` so a merge cannot resurrect leftover Next.js. 743 leftover Next.js HTML files in the working tree were replaced with honest closers. Kleber reconnect still HubSpot INITIALIZING + Jira/noCRM/Perplexity INITIATED (`2026-09-03T02:09Z`, ~10 min TTL); do not remint until those rows are EXPIRED. Identity `kleber@` is 0 ACTIVE. 31 playground toolkits remain ACTIVE.
+Atualizado 2026-09-03T03:06Z. Apex is Discovery $99 (`data-built=2026-09-03T02:55Z`, ~6026 bytes). Pages source is `legacy` / `gh-pages` / `/`, `custom_404: true`, `https_enforced: true`. Stripe charges still $0; Gmail 12h sales query 0; Sentry unresolved none. SerpAPI still ranks leftover SKUs with stale titles (invoice generator, bookkeeping, Keycloak, Zscaler, box-shadow tools, free-consult blogs). This turn dual-writes 20 more ranking 404 closers (SERP catalog now 94). Kleber reconnect reminted 2026-09-03T03:05Z (~10 min TTL); do not remint while INITIALIZING/INITIATED. Identity `kleber@` is 0 ACTIVE. 31 playground toolkits remain ACTIVE.
 
 Atualizado 2026-09-02 a partir de `GET /api/v3.1/connected_accounts` (107 contas).
 

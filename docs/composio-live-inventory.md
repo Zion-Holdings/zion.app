@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T03:06Z:** Pages still `legacy` / `gh-pages` / `/`. Live `/` is Discovery $99. SerpAPI leftover hunt found 20 more ranking 404s (invoice/bookkeeping/IAM/Keycloak/Zscaler/micro-SaaS tools + three “free consultation” blogs). Those are now honest closers in both `/` and `public/` (SERP catalog = 94). Google still snippets stale titles until recrawl. Kleber HubSpot/Jira/noCRM/Perplexity reminted 03:05Z; human must finish OAuth.
+
 **2026-09-03T02:16Z:** Pages API still `legacy` / `gh-pages` / `/`, cert approved, `https_enforced: true`. Live `/` is Discovery $99. Google Light still snippets the old “measurable outcomes” title. `site:ziontechgroup.com` still lists ghost SKUs (`/services/postgresql/`, `/services/prometheus/`, 2026-hash catalogs) that **404** on Pages. This PR: (1) `public/` in git so Pages and `pages.yml` share the honest tree, (2) `pages.yml` rsyncs **only** `public/` (refuses leftover Next.js homepage), (3) honest closers for those ranking 404s plus `/solutions/` and `404.html`, (4) 743 leftover Next.js HTML files in the working tree replaced so an accidental full rsync cannot republish fiction. Dual-write `/` + `public/` remains mandatory until `public/` is removed from `gh-pages`.
 
 Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were missing. Live data contradicts that. Orchestrators that read `COMPOSIO_*_CONNECTION_ID` GitHub secrets were skipping healthy accounts.
@@ -35,7 +37,7 @@ Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were mi
 | Google Calendar | Owner calendars for Zion domain — no upcoming **client** bookings; events are internal CI/deploy meets | Scheduling |
 | Google Sheets | `Zion Leads` (`1RE4UUTu9AOTvH_gZPECjIhT3ye561Z01NF2QEzgd_cY`) was empty; seeded 2026-09-02 with funnel URLs | Lead ops |
 | Ninox | Team present | Structured ops DB |
-| Cloudflare | Auth header format invalid / 0 zones | DNS — needs API token repair |
+| Cloudflare | Token authenticates; **0 zones** | DNS — token has no zone access |
 | Firecrawl | **402 insufficient credits** | Site crawl |
 | Browserless | Invalid API key | Headless browse |
 | Brevo | IP allowlist block | Marketing email |

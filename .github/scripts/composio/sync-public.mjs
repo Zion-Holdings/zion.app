@@ -25,11 +25,19 @@ for (const rel of FILES) {
   write(rel, fs.readFileSync(src, 'utf8'));
 }
 
+function closerCanonical(rel) {
+  if (rel.startsWith('blog/')) return '/blog/';
+  if (rel.startsWith('tools/')) return '/tools/';
+  if (rel.startsWith('solutions/')) return '/solutions/';
+  if (rel.startsWith('community/')) return '/';
+  return '/services/';
+}
+
 for (const rel of SERP_CLOSER_PATHS) {
   const src = path.join(ROOT, rel);
   const content = fs.existsSync(src)
     ? fs.readFileSync(src, 'utf8')
-    : honestCloser({ title: titleFromSlug(rel), canonical: '/services/' });
+    : honestCloser({ title: titleFromSlug(rel), canonical: closerCanonical(rel) });
   if (!fs.existsSync(src)) {
     fs.mkdirSync(path.dirname(src), { recursive: true });
     fs.writeFileSync(src, content);
