@@ -190,4 +190,11 @@ export const SERP_CLOSER_PATHS = [
   'services/ai-email-intelligence/index.html',
   'services/stripe-financial-infrastructure/index.html',
   'services/micro-saas-usage-based-billing/index.html',
+  'services/ai-email-triage/index.html',
+  'services/ai-personalized-learning/index.html',
+  'services/ai-powered-personalized-learning-edtech-platform/index.html',
+  'services/vanna-ai-natural-language-sql/index.html',
+  'services/ai-predictive-analytics/index.html',
+  'services/edtech-platform/index.html',
+  'services/data-supply-chain-analytics/index.html',
 ];
