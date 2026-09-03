@@ -1,1 +1,29 @@
-{"status": "ok", "last_run": "success", "queries_run": 12, "contacts_found": 0, "new_leads_added": 0, "error": null}
+{
+  "ts": "2026-09-03T08:32:15.103064+00:00",
+  "queries_run": 11,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 111.405,
+  "queries_per_second": 0.0987,
+  "avg_query_s": 10.1275,
+  "max_query_s": 11.632,
+  "status": "ok",
+  "high_signal_leads": 0,
+  "lead_quality_ratio": null,
+  "rolling": {
+    "last_5_queries": [
+      10.291975646003266,
+      9.591820686000574,
+      5.0500837650033645,
+      9.885720184996899,
+      9.983285953996528
+    ],
+    "last_5_qps": [
+      0.0972,
+      0.1043,
+      0.198,
+      0.1012,
+      0.1002
+    ]
+  }
+}
