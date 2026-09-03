@@ -2,7 +2,7 @@
 
 Verified 2026-09-02 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` on 2026-09-03 (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`.
 
-**2026-09-03 apex fix (live):** `GITHUB_CREATE_OR_UPDATE_GITHUB_PAGES_SITE` set `cname=ziontechgroup.com`. Cert approved, domain verified. `CNAME` file committed on `gh-pages` (`7582d492`). `https://ziontechgroup.com/` returned **200** (title: Zion Tech Group) at 00:17 UTC. `https://zion-support.github.io/` now **301**s to the apex. `/book/` is 404 on the live artifact until PR #71127 merges. `www` may still show a cached GitHub 404 until Fastly expires.
+**2026-09-03 apex + money pages (live):** Pages API `cname=ziontechgroup.com` (cert approved, domain verified). Switched `build_type` from `workflow` (which ignored `gh-pages` pushes) to **legacy / gh-pages**. Build `fc079fdd` **built** at 00:28 UTC. Live **200**: `/`, `/book/`, `/plans/`, `/heritage/`, `/composio/`, `/paid-consultation/`, `/success-stories/`. `www` may still show a Fastly-cached GitHub 404. `.nojekyll` is on `gh-pages` so Jekyll does not eat `_next` or new folders.
 
 Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were missing. Live data contradicts that. Orchestrators that read `COMPOSIO_*_CONNECTION_ID` GitHub secrets were skipping healthy accounts.
 
