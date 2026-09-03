@@ -1,11 +1,116 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Analytics · Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/services/">
-<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery.">
-<meta http-equiv="refresh" content="0; url=/services/">
-<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analytics · Zion Tech Group</title>
+<meta name="description" content="Calcule métricas de web analytics. Page views, bounce rate, conversão e sessões.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:800px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+label{display:block;margin:16px 0 4px;color:#94a3b8;font-size:.875rem}
+input{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-size:1rem}
+input:focus{outline:none;border-color:#a78bfa}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.result{background:#1e293b;border:1px solid #a78bfa;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+.result .big{font-size:2.5rem;font-weight:700;color:#a78bfa}
+.result .label{color:#94a3b8;margin-top:4px}
+.metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px}
+.metrics .box{text-align:center;padding:16px;background:#0f172a;border-radius:8px}
+.metrics .num{font-size:1.5rem;font-weight:700;color:#34d399}
+.metrics .desc{font-size:.75rem;color:#94a3b8;margin-top:4px}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
 <body>
-<h1>Analytics</h1>
-<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
-<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
-</body></html>
+<div class="max">
+<h1>Analytics Calculator</h1>
+<p class="sub">Calcule métricas essenciais de web analytics</p>
+
+<div class="card">
+<div class="row">
+<div>
+<label>Page Views (mês)</label>
+<input type="number" id="pageViews" value="10000" min="0">
+</div>
+<div>
+<label>Unique Visitors (mês)</label>
+<input type="number" id="visitors" value="3000" min="0">
+</div>
+</div>
+<div class="row">
+<div">
+<label>Conversões (mês)</label>
+<input type="number" id="conversions" value="150" min="0">
+</div>
+<div">
+label>Taxa de Rejeição (%)</label>
+<input type="number" id="bounceRate" value="45" min="0" max="100">
+</div>
+</div>
+<div class="row">
+<div">
+<label>Tempo Médio no Site (seg)</label>
+<input type="number" id="avgTime" value="120" min="0">
+</div>
+<div">
+<label>Páginas/Sessão</label>
+<input type="number" id="pagesPerSession" value="2.5" min="0" step="0.1">
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="big" id="conversionRate">0%</div>
+<div class="label">Taxa de Conversão</div>
+</div>
+
+<div class="metrics">
+<div class="box">
+<div class="num" id="cpa">R$ 0</div>
+<div class="desc">Custo por Aquisição</div>
+</div>
+<div class="box">
+<div class="num" id="rpm">R$ 0</div>
+<div class="desc">Receita por Mil</div>
+</div>
+<div class="box">
+<div class="num" id="engagement">0%</div>
+<div class="desc">Engajamento</div>
+</div>
+</div>
+
+<div class="links">
+<p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a> · <a href="/tools/roi-calculator/">ROI Calculator</a></p>
+</div>
+</div>
+
+<script>
+function calc(){
+const pageViews=parseInt(document.getElementById('pageViews').value)||0;
+const visitors=parseInt(document.getElementById('visitors').value)||0;
+const conversions=parseInt(document.getElementById('conversions').value)||0;
+const bounceRate=parseInt(document.getElementById('bounceRate').value)||0;
+const avgTime=parseInt(document.getElementById('avgTime').value)||0;
+const pagesPerSession=parseFloat(document.getElementById('pagesPerSession').value)||0;
+
+const conversionRate = visitors > 0 ? (conversions/visitors*100).toFixed(2) : 0;
+const cpa = conversions > 0 ? (100/conversions).toFixed(2) : 0;
+const rpm = pageViews > 0 ? (conversions*100/pageViews*1000).toFixed(2) : 0;
+const engagement = Math.max(0, 100 - bounceRate).toFixed(0);
+
+document.getElementById('conversionRate').textContent = conversionRate + '%';
+document.getElementById('cpa').textContent = 'R$ ' + cpa;
+document.getElementById('rpm').textContent = 'R$ ' + rpm;
+document.getElementById('engagement').textContent = engagement + '%';
+}
+document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
+calc();
+</script>
+</body>
+</html>
