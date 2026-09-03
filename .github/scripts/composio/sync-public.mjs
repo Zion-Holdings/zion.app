@@ -30,6 +30,8 @@ function closerCanonical(rel) {
   if (rel.startsWith('tools/')) return '/tools/';
   if (rel.startsWith('solutions/')) return '/solutions/';
   if (rel.startsWith('community/')) return '/';
+  if (rel === 'hp-support.html' || rel === 'outsourcing-it.html') return '/';
+  if (!rel.startsWith('services/') && !rel.startsWith('blog/') && !rel.startsWith('tools/')) return '/heritage/';
   return '/services/';
 }
 

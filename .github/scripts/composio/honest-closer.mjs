@@ -1,6 +1,6 @@
 /** Tiny honest closer for leftover Next.js / ghost SKU routes. */
 export function titleFromSlug(slug) {
-  const last = String(slug).replace(/\/index\.html$/, '').split('/').filter(Boolean).pop() || 'Page';
+  const last = String(slug).replace(/\/index\.html$/, '').replace(/\.html$/, '').split('/').filter(Boolean).pop() || 'Page';
   return last
     .replace(/[-_]+/g, ' ')
     .replace(/\b\w/g, (c) => c.toUpperCase())
@@ -197,4 +197,10 @@ export const SERP_CLOSER_PATHS = [
   'services/ai-predictive-analytics/index.html',
   'services/edtech-platform/index.html',
   'services/data-supply-chain-analytics/index.html',
+  'sandisk-256gb-m-2-sata-2280-ssd-sd8sn8u-256g-1012-grade-a-sku-12020/index.html',
+  'varjo-xr-4-mixed-reality-headset-with-controllers-sku1787381/index.html',
+  'primochill-vue-pre-mix-32oz-computer-watercooling-fluid-toxic-candy/index.html',
+  'creality-official-nebula-camera-remote-monitoring-wifi-connection-auto-generate-time-lapse-video-compatible-sonic-pad-nebula-pad-ender-3-v3-ke-cr-10-se-halot-mage/index.html',
+  'outsourcing-it.html',
+  'hp-support.html',
 ];
