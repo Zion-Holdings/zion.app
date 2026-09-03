@@ -22,8 +22,12 @@ jobs:
           # Copy public/ and docs/ first
           cp -Rf public/. out/ 2>/dev/null || true
           cp -Rf docs/. out/docs/ 2>/dev/null || true
-          # Copy root-level HTML pages (about, monetization, services, etc.)
+          # Copy root-level HTML pages (about, monetization, services, etc.) — skip out/
           for d in */; do
+            d="${d%/}"
+            [ "$d" = "out" ] && continue
+            [ "$d" = ".git" ] && continue
+            [ "$d" = ".github" ] && continue
             if [ -f "$d/index.html" ]; then
               rm -rf "out/$d"
               cp -Rf "$d" "out/$d"
