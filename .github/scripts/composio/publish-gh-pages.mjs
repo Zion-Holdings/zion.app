@@ -120,6 +120,24 @@ export const FILES = [
   '_redirects',
 ];
 
+/** Always dual-write these with closer batches. Subset upserts do not
+ *  delete other files, but Pages serves public/ — if a money page was
+ *  never on gh-pages after a wipe, closer-only batches leave it 404. */
+export const PIN_PATHS = [
+  'index.html',
+  '404.html',
+  'plans/index.html',
+  'book/index.html',
+  'affiliate/index.html',
+  'about/index.html',
+  'heritage/index.html',
+  'composio/index.html',
+  'privacy/index.html',
+  'services/index.html',
+  'paid-consultation/index.html',
+  'success-stories/index.html',
+];
+
 export const PUBLISH_PATHS = [...new Set([...FILES, ...SERP_CLOSER_PATHS])];
 
 async function main() {

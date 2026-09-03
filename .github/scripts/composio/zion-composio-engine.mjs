@@ -21,9 +21,8 @@ const PLAYBOOK = [
   { toolkit: 'slack', tool: 'SLACK_LIST_ALL_CHANNELS', args: { limit: 30, exclude_archived: true } },
   { toolkit: 'linear', tool: 'LINEAR_LIST_LINEAR_ISSUES', args: { first: 10 } },
   { toolkit: 'tavily', tool: 'TAVILY_SEARCH', args: { query: 'AI automation agency competitors Europe 2026', max_results: 5, include_answer: true } },
-  { toolkit: 'serpapi', tool: 'SERPAPI_GOOGLE_LIGHT_SEARCH', args: { q: 'Zion Tech Group', num: 8 } },
-  { toolkit: 'hunter', tool: 'HUNTER_ACCOUNT_INFORMATION', args: {} },
-  { toolkit: 'openrouter', tool: 'OPENROUTER_GET_CREDITS', args: {} },
+  // SerpAPI / Hunter / OpenRouter quotas are exhausted — skip so scheduled
+  // maximize does not keep 429/402ing. Re-enable after credits are topped up.
   { toolkit: 'telegram', tool: 'TELEGRAM_GET_ME', args: {} },
   { toolkit: 'telegram', tool: 'TELEGRAM_GET_UPDATES', args: { limit: 5 } },
   { toolkit: 'googlesheets', tool: 'GOOGLESHEETS_GET_SHEET_NAMES', args: { spreadsheet_id: '1RE4UUTu9AOTvH_gZPECjIhT3ye561Z01NF2QEzgd_cY' } },
@@ -42,8 +41,8 @@ const PLAYBOOK = [
   { toolkit: 'sentry', tool: 'SENTRY_GET_PROJECT_LIST', args: {} },
   { toolkit: 'sentry', tool: 'SENTRY_LIST_AN_ORGANIZATIONS_ISSUES', args: { organization_id_or_slug: 'zion-holdings', query: 'is:unresolved', limit: 5 } },
   { toolkit: 'github', tool: 'GITHUB_GET_PAGES_SITE', args: { owner: 'Zion-support', repo: 'zion-support.github.io' } },
+  { toolkit: 'github', tool: 'GITHUB_GET_LATEST_PAGES_BUILD', args: { owner: 'Zion-support', repo: 'zion-support.github.io' } },
   { toolkit: 'cloudflare', tool: 'CLOUDFLARE_LIST_ZONES', args: { per_page: 5 } },
-  { toolkit: 'serpapi', tool: 'SERPAPI_GOOGLE_LIGHT_SEARCH', args: { q: 'site:ziontechgroup.com "Get Free Consultation"', num: 8 } },
   { toolkit: 'supabase', tool: 'SUPABASE_LIST_ALL_PROJECTS', args: {} },
   { toolkit: 'airtable', tool: 'AIRTABLE_LIST_BASES', args: {} },
   { toolkit: 'googlecalendar', tool: 'GOOGLECALENDAR_LIST_CALENDARS', args: {} },
