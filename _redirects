@@ -1,3 +1,8 @@
 # GitHub Pages ignores Netlify _redirects.
 # Canonical money paths: /book/  /plans/  /composio/
 # Do not restore the 7k-URL ghost catalog.
+  //industry// /.redirects//industry/ 301
+  //solutions/government// /.redirects//solutions/government/ 301
+  //trust// /.redirects//trust/ 301
+  //zion-composio-automation-stack// /.redirects//zion-composio-automation-stack/ 301
+  //privacy-policy// /.redirects//privacy-policy/ 301
