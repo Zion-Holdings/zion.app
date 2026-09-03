@@ -1106,4 +1106,7 @@ export const SERP_CLOSER_PATHS = [
   'monetization-hub/index.html',
   'new-ai-services/index.html',
   'stripe/index.html',
+  'blog/ai-automation-roi-calculator-guide-2026/index.html',
+  'blog/how-to-choose-ai-automation-partner-enterprise/index.html',
+  'blog/it-services-partner-program-recurring-revenue-2026/index.html',
 ];
