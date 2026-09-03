@@ -1,0 +1,44 @@
+name: Composio Health & Credentials Sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+    paths:
+      - '.github/workflows/composio-health.yml'
+    branches:
+      - main
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio
+        run: npm install -g composio
+
+      - name: Composio Whoami
+        run: composio whoami
+
+      - name: List Connected Accounts
+        run: composio connections list
+
+      - name: List Toolkits (1Password focus)
+        run: composio tools list _1password 2>/dev/null || echo "1Password tools not available"
+
+      - name: 1Password List Vaults
+        run: composio execute _1PASSWORD_LIST_VAULTS -d '{}' || echo "1Password vault listing failed"
+
+      - name: Summary
+        run: |
+          echo "Composio health check completed at $(date -u)"
+          echo "Key set: $([ -n "$COMPOSIO_API_KEY" ] && echo 'yes' || echo 'no')"

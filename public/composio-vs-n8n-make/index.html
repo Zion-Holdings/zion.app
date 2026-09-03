@@ -1,73 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Composio vs n8n vs Make — Zion Tech Group</title>
-  <meta name="description" content="Composio is the agent/MCP tool layer. n8n is an open-source canvas. Make is a visual scenario builder. Zion runs 31 live Composio toolkits so agents choose tools at runtime." />
-  <link rel="canonical" href="https://ziontechgroup.com/composio-vs-n8n-make/" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Composio vs n8n vs Make | Zion Tech Group" />
-  <meta property="og:description" content="Why Zion uses Composio for AI agents instead of (or alongside) n8n and Make canvases." />
-  <meta property="og:url" content="https://ziontechgroup.com/composio-vs-n8n-make/" />
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Composio vs n8n vs Make for AI agents","author":{"@type":"Organization","name":"Zion Tech Group"},"url":"https://ziontechgroup.com/composio-vs-n8n-make/","dateModified":"2026-09-02"}
-  </script>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,sans-serif;background:linear-gradient(135deg,#0b1220 0%,#1a1a2e 50%,#0f3460 100%);color:#e6f0ff;min-height:100vh}
-    .hero{max-width:920px;margin:0 auto;padding:72px 24px 24px;text-align:center}
-    h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;background:linear-gradient(135deg,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
-    p{color:#94a3b8;font-size:1.08rem;line-height:1.7;max-width:780px;margin:0 auto 16px}
-    .cta{display:inline-block;padding:14px 28px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;font-weight:600;text-decoration:none;margin:8px}
-    table{width:100%;max-width:1000px;margin:24px auto;border-collapse:collapse;background:rgba(15,23,42,.6)}
-    th,td{border:1px solid rgba(124,58,237,.25);padding:14px 12px;text-align:left;color:#cbd5e1;font-size:.95rem;vertical-align:top}
-    th{color:#e6f0ff;background:rgba(124,58,237,.15)}
-    .wrap{max-width:920px;margin:0 auto;padding:8px 24px 40px}
-    h2{color:#e6f0ff;margin:28px 0 12px;font-size:1.4rem}
-    ul{color:#cbd5e1;line-height:1.8;margin:0 0 16px 20px}
-    footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(124,58,237,.15)}
-    footer a{color:#a78bfa;text-decoration:none;margin:0 10px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Composio Vs N8N Make | Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com/composio-vs-n8n-make/">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Zion Tech Group — Composio Vs N8N Make. Explore AI &amp; IT services, automation, and growth tools.">
+<style>
+body{font-family:Inter,system-ui,sans-serif;background:#0b0f17;color:#e7ecf1;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding:48px 24px}
+h1{font-size:28px;margin-bottom:12px}
+a{color:#7dd3fc}
+.btn{display:inline-block;margin-top:18px;padding:10px 14px;background:#0ea5e9;color:#fff;border-radius:10px;text-decoration:none}
+</style>
 </head>
 <body>
-  <div class="hero">
-    <h1>Composio vs n8n vs Make</h1>
-    <p>They are not substitutes. n8n and Make are canvases: a human draws the path. Composio is the <strong>tool layer for agents</strong> — authenticated actions the model chooses at runtime through MCP or function calling.</p>
-    <a class="cta" href="/book/">Book a Discovery on this stack</a>
-    <a class="cta" href="/composio/" style="background:#0f172a;border:1px solid #334155">See Zion’s live Composio stack</a>
-  </div>
-  <table>
-    <thead>
-      <tr><th></th><th>Composio</th><th>n8n</th><th>Make</th></tr>
-    </thead>
-    <tbody>
-      <tr><th>Job</th><td>Give an agent 1,000+ authenticated tools</td><td>Draw and run a workflow</td><td>Draw and run a visual scenario</td></tr>
-      <tr><th>Who picks the next step</th><td>The model, from a tool catalog + schema</td><td>The canvas (plus optional AI nodes)</td><td>The scenario graph</td></tr>
-      <tr><th>Auth</th><td>Managed OAuth / API keys per user</td><td>Per-node credentials on the instance</td><td>Per-module connections</td></tr>
-      <tr><th>Best when</th><td>You already have an agent (Cursor, Claude, custom)</td><td>You want self-hosted, inspectable flows</td><td>Ops teams want a visual builder</td></tr>
-      <tr><th>Wrong abstraction</th><td>Replacing a finance approval canvas</td><td>Expecting the agent to invent new tools mid-run</td><td>Same — the graph is the program</td></tr>
-    </tbody>
-  </table>
-  <div class="wrap">
-    <h2>How Zion uses this</h2>
-    <ul>
-      <li>Cloud agents discover the newest <strong>ACTIVE</strong> Composio account per toolkit instead of hardcoded connection IDs.</li>
-      <li>Revenue path: Calendly Discovery → Stripe payment links → Resend on a verified domain.</li>
-      <li>Ops path: Gmail + Notion + Slack + Telegram <em>Zion Agents</em>. Airtable / Sheets while HubSpot is expired.</li>
-      <li>n8n or Make still belong on deterministic, human-approved sequences (invoice after paid, weekly digest). We do not force those onto the agent.</li>
-    </ul>
-    <h2>Research snapshot (2026)</h2>
-    <p>Independent write-ups treat Composio as a tool-calling SDK / MCP gateway (usage-based tool calls), n8n as open-source workflow automation with AI nodes (billed per execution), and Make as a visual scenario builder (billed per operation). Zion’s production question is “can the agent act in Gmail, Stripe, Linear, and Notion with live auth?” — that is Composio’s job.</p>
-    <p><a class="cta" href="/plans/">Discovery $99 · Starter $2,500 · Growth $8,000/mo</a></p>
-  </div>
-  <footer>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/composio/">Stack</a>
-    <a href="/composio/">Hub</a>
-    <a href="/book/">Book Discovery</a>
-    <a href="/composio-vs-zapier/">vs Zapier</a>
-  </footer>
+<div class="wrap">
+<h1>Composio Vs N8N Make</h1>
+<p>This page is temporarily unavailable. Explore our AI &amp; IT services and free tools.</p>
+<a class="btn" href="/services/">Browse Services</a>
+</div>
 </body>
 </html>

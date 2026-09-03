@@ -1,0 +1,35 @@
+name: Composio Account Setup
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/composio-setup.yml'
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio
+        run: npm install -g composio
+
+      - name: Composio Whoami
+        run: composio whoami
+
+      - name: List Connected Accounts
+        run: composio connections list
+
+      - name: Summary
+        run: |
+          echo "Composio setup workflow completed at $(date -u)"
