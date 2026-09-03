@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T04:34Z:** Tenth leftover batch: cloud cost/DB/native, edge computing, employee engagement, EDR, enterprise automation, IT DR/endpoint/MDR, n8n alternative (SERP catalog = 329). Homepage pinned Discovery $99 in the same gh-pages upsert.
+
 **2026-09-03T04:31Z:** Apex briefly served leftover Next.js (`_next/static`) around 04:29Z. Restored Discovery $99 homepage, `/plans/`, and honest 404 via targeted gh-pages dual-write. Connect Links reminted 04:31Z (expire ~04:41Z). Workers Builds CI is the Cloudflare hook — not a site build.
 
 **2026-09-03T04:29Z:** Ninth leftover batch: supply-chain optimizer, video/voice, workflow, DPA/RPA/orchestration, container platform, cloud cost/DR/FinOps/multi-cloud (SERP catalog = 317). Connect Links still INITIATED past 04:29Z TTL — do not remint until EXPIRED.
