@@ -15,9 +15,10 @@ export function honestCloser({ title, canonical = '/services/' }) {
   const safeTitle = String(title).replace(/[<>]/g, '');
   const href = canonical.startsWith('/') ? canonical : `/${canonical}`;
   return `<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>${safeTitle} · Zion Tech Group</title>
+<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — ${safeTitle} · Zion Tech Group</title>
 <link rel="canonical" href="https://ziontechgroup.com${href}">
-<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery.">
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
 <meta http-equiv="refresh" content="0; url=${href}">
 <style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
 <body>

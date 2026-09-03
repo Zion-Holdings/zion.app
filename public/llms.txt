@@ -21,6 +21,8 @@
 
 There is no free consultation. Older `/consultation` and `calendly.com/ziontechgroup/30min` links are inactive. Public 2026 AI-consulting writeups price discovery in the thousands; Zion's live Discovery is $99.
 
+Leftover `/services/*` URLs (for example `/services/ai-legal-discovery-platform/`) are honest closers, not products. They are not a $99 SKU. The only $99 offer is the AI/IT Discovery at `/book/`.
+
 ## Honest facts
 
 - Stripe livemode links exist; charges are $0 until a customer pays.

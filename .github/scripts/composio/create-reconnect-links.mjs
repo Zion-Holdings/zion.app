@@ -14,6 +14,8 @@ const AUTH = {
   jira: 'ac_L3C6yoVWQNOI',
   nocrm_io: 'ac_KxL62U7nPZ-0',
   perplexityai: 'ac_Qzqbke9J1o0r',
+  googledrive: 'ac_dsyDw5Tz4gkN',
+  cloudflare_mcp: 'ac__yX8b9lZ3td0',
 };
 const IN_FLIGHT = new Set(['INITIALIZING', 'INITIATED']);
 
