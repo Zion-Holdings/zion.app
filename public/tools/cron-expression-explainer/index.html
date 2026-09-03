@@ -1,91 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cron Expression Explainer · Zion Tech Group</title>
-<meta name="description" content="Entenda expressões cron. Digite uma expressão e veja quando ela será executada.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
-.max{max-width:800px;margin:0 auto}
-h1{font-size:2rem;margin:24px 0 8px}
-.sub{color:#94a3b8;margin-bottom:32px}
-.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
-input{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-family:monospace;font-size:1rem;margin:8px 0}
-input:focus{outline:none;border-color:#a78bfa}
-.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none}
-.btn:hover{background:#c4b5fd}
-.result{background:#1e293b;border-radius:12px;padding:24px;margin:24px 0}
-.result h2{margin-bottom:16px}
-.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #334155}
-.item:last-child{border-bottom:none}
-.label{color:#94a3b8}
-.value{font-weight:600}
-.ok{color:#34d399}
-.warn{color:#fbbf24}
-a{color:#a78bfa;text-decoration:none}
-.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
-</style>
-</head>
+<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — Cron Expression Explainer · Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com/services/">
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
+<meta http-equiv="refresh" content="0; url=/services/">
+<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
 <body>
-<div class="max">
 <h1>Cron Expression Explainer</h1>
-<p class="sub">Entenda quando sua tarefa será executada</p>
-
-<div class="card">
-<label>Expressão Cron</label>
-<input type="text" id="cron" placeholder="0 9 * * 1-5" value="0 9 * * 1-5">
-<button class="btn" onclick="explain()">Explicar</button>
-</div>
-
-<div class="result hidden" id="result">
-<h2 id="expression"></h2>
-<div class="item"><span class="label">Minuto</span><span class="value" id="minute"></span></div>
-<div class="item"><span class="label">Hora</span><span class="value" id="hour"></span></div>
-<div class="item"><span class="label">Dia do Mês</span><span class="value" id="dayMonth"></span></div>
-<div class="item"><span class="label">Mês</span><span class="value" id="month"></span></div>
-<div class="item"><span class="label">Dia da Semana</span><span class="value" id="dayWeek"></span></div>
-<div class="item"><span class="label">Resumo</span><span class="value" id="summary"></span></div>
-</div>
-
-<div class="links">
-<p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a> · <a href="/tools/analytics/">Analytics</a></p>
-</div>
-</div>
-
-<script>
-function explain(){
-const cron = document.getElementById('cron').value.trim();
-if(!cron) return;
-
-const parts = cron.split(' ');
-if(parts.length < 5) return;
-
-const result = document.getElementById('result');
-result.classList.remove('hidden');
-document.getElementById('expression').textContent = cron;
-
-document.getElementById('minute').textContent = parts[0];
-document.getElementById('hour').textContent = parts[1];
-document.getElementById('dayMonth').textContent = parts[2];
-document.getElementById('month').textContent = parts[3];
-document.getElementById('dayWeek').textContent = parts[4];
-
-let summary = '';
-if(parts[4] === '1-5') summary = 'Segunda às sexta';
-else if(parts[4] === '*') summary = 'Todos os dias';
-else if(parts[4] === '0' || parts[4] === '7') summary = 'Domingo';
-else summary = 'Dias específicos';
-
-if(parts[1] === '0') summary += ', meia-noite';
-else if(parts[1] === '9') summary += ', 9h da manhã';
-else if(parts[1] === '12') summary += ', meio-dia';
-else if(parts[1] === '18') summary += ', 18h';
-else summary += ', ' + parts[1] + 'h';
-
-document.getElementById('summary').textContent = summary;
-}
-</script>
-</body>
-</html>
+<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
+<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
+</body></html>
