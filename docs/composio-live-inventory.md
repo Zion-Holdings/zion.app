@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T04:29Z:** Ninth leftover batch: supply-chain optimizer, video/voice, workflow, DPA/RPA/orchestration, container platform, cloud cost/DR/FinOps/multi-cloud (SERP catalog = 317). Connect Links still INITIATED past 04:29Z TTL — do not remint until EXPIRED.
+
 **2026-09-03T04:27Z:** Eighth leftover batch: legal summarizer/research, meeting assistant/minutes, multimodal search, predictive maintenance, prompt eng, RAG, ransomware BCDR, SOC, speech analytics, supply-chain (SERP catalog = 305). Workers Builds CI remains the Cloudflare hook — ignore.
 
 **2026-09-03T04:24Z:** Seventh leftover batch: chronic disease, LATAM consulting, crop yield, support pro, employee engagement, energy grid, feedback, digital twin, insurance claims, enterprise hub, inventory (SERP catalog = 293).
