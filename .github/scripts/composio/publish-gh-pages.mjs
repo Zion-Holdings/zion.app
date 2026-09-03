@@ -112,6 +112,7 @@ const FILES = [
   'roi-calculator/index.html',
   'booking/index.html',
   'checkout/index.html',
+  '_redirects',
 ];
 
 async function main() {
