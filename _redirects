@@ -18,8 +18,6 @@
 /free-ai-itools/ /free-ai-it-tools/ 302
 /free-ai-itools /free-ai-it-tools/ 302
 /careers/  /contact/  301
-/free-consultation /free-consultation/index.html 200
-/free-consultation/ /free-consultation/index.html 200
 /free-audit /free-audit/index.html 200
 /free-audit/ /free-audit/index.html 200
 /proposal /proposal/index.html 200
@@ -29,8 +27,6 @@
 /industries/legal/ /industries/legal/index.html 200
 /tools/ai-quick-audit /tools/ai-quick-audit/index.html 200
 /tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
-/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
-/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
 
 # Fix stale service references
@@ -38,3 +34,16 @@
 /services/ai-knowledge-base-rag-platform/  /services/  301
 /services/cyber-incident-response-retainer/  /services/  301
 /services/managed-observability-247/  /services/  301
+
+/use-cases /use-cases/ 301
+/use-cases/ /use-cases/index.html 200
+/public-roadmap /public-roadmap/ 301
+/public-roadmap/ /public-roadmap/index.html 200
+/status-page /status-page/ 301
+/status-page/ /status-page/index.html 200
+/industries/financial-services /docs/industries/financial-services/index.html 301
+/industries/financial-services/ /docs/industries/financial-services/index.html 200
+/free-consultation /free-consultation/ 301
+/free-consultation/ /free-consultation/index.html 200
+/tools/phishing-analyzer /tools/phishing-analyzer/ 200
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
