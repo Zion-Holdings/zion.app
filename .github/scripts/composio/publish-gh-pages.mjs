@@ -110,6 +110,8 @@ const FILES = [
   'payment-cancelled/index.html',
   'payment-success/index.html',
   'roi-calculator/index.html',
+  'booking/index.html',
+  'checkout/index.html',
 ];
 
 async function main() {
