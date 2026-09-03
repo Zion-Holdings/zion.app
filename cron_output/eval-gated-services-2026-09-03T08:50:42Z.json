@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-09-03T08:50:42Z",
+  "total_concepts": 15,
+  "deployed": [
+    {
+      "service": "Explainable AI Governance Platform",
+      "id": "explainable-ai-governance-platform-9c21dfc7",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/explainable-ai-governance-platform-9c21dfc7/page.tsx",
+      "score": 1.0,
+      "word_count": 598
+    },
+    {
+      "service": "Semantic Code Review Engine",
+      "id": "semantic-code-review-engine-032025dc",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/semantic-code-review-engine-032025dc/page.tsx",
+      "score": 1.0,
+      "word_count": 607
+    },
+    {
+      "service": "Neuro-Symbolic Reasoning Engine",
+      "id": "neuro-symbolic-reasoning-engine-81a013c9",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/neuro-symbolic-reasoning-engine-81a013c9/page.tsx",
+      "score": 1.0,
+      "word_count": 592
+    },
+    {
+      "service": "Quantum-Inspired Optimization Platform",
+      "id": "quantum-inspired-optimization-platform-2755988b",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/quantum-inspired-optimization-platform-2755988b/page.tsx",
+      "score": 1.0,
+      "word_count": 590
+    },
+    {
+      "service": "MLOps Feature Store Automation",
+      "id": "mlops-feature-store-automation-5c1a2240",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/mlops-feature-store-automation-5c1a2240/page.tsx",
+      "score": 1.0,
+      "word_count": 602
+    },
+    {
+      "service": "LLM-Powered Knowledge Base Synthesis",
+      "id": "llm-powered-knowledge-base-synthesis-ac44d4d7",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-knowledge-base-synthesis-ac44d4d7/page.tsx",
+      "score": 1.0,
+      "word_count": 604
+    },
+    {
+      "service": "Observability Intelligence Platform",
+      "id": "observability-intelligence-platform-0c777911",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/observability-intelligence-platform-0c777911/page.tsx",
+      "score": 1.0,
+      "word_count": 593
+    },
+    {
+      "service": "Autonomous Penetration Testing Platform",
+      "id": "autonomous-penetration-testing-platform-16d27121",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/autonomous-penetration-testing-platform-16d27121/page.tsx",
+      "score": 1.0,
+      "word_count": 592
+    },
+    {
+      "service": "Automated Model Registry & Governance",
+      "id": "automated-model-registry-governance-d7cbbdc9",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/automated-model-registry-governance-d7cbbdc9/page.tsx",
+      "score": 1.0,
+      "word_count": 612
+    },
+    {
+      "service": "Data Lineage Intelligence Platform",
+      "id": "data-lineage-intelligence-platform-16ffee1d",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/data-lineage-intelligence-platform-16ffee1d/page.tsx",
+      "score": 1.0,
+      "word_count": 602
+    },
+    {
+      "service": "AI-Enabled Privacy Compliance Suite",
+      "id": "ai-enabled-privacy-compliance-suite-4938cdea",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-enabled-privacy-compliance-suite-4938cdea/page.tsx",
+      "score": 1.0,
+      "word_count": 600
+    },
+    {
+      "service": "LLM-Augmented Decision Support System",
+      "id": "llm-augmented-decision-support-system-df1ee5a7",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-augmented-decision-support-system-df1ee5a7/page.tsx",
+      "score": 1.0,
+      "word_count": 603
+    },
+    {
+      "service": "AI-Powered Autonomous Data Center Cooling Optimization",
+      "id": "ai-powered-autonomous-data-center-cooling-optimization-a71462a6",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/ai-powered-autonomous-data-center-cooling-optimization-a71462a6/page.tsx",
+      "score": 1.0,
+      "word_count": 630
+    },
+    {
+      "service": "LLM-Powered Business Intelligence and Analytics Assistant",
+      "id": "llm-powered-business-intelligence-and-analytics-assistant-e73da292",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/llm-powered-business-intelligence-and-analytics-assistant-e73da292/page.tsx",
+      "score": 1.0,
+      "word_count": 615
+    },
+    {
+      "service": "Vector Database Optimization and Intelligent Indexing Service",
+      "id": "vector-database-optimization-and-intelligent-indexing-service-3a4b3f64",
+      "file": "/Users/klebergarciaalcatrao/zion-support.github.io/app/services/vector-database-optimization-and-intelligent-indexing-service-3a4b3f64/page.tsx",
+      "score": 1.0,
+      "word_count": 631
+    }
+  ],
+  "blocked": [],
+  "skipped_duplicates": 0,
+  "skipped_existing_disk": 0,
+  "skipped_timeout": []
+}
