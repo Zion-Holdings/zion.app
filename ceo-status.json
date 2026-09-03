@@ -1,53 +1,35 @@
 {
   "ceo": "Kleber Garcia Alcatrão",
   "company": "Zion Tech Group",
-  "last_updated": "2026-09-03T07:30 UTC",
+  "last_updated": "2026-09-03T07:35 UTC",
   "site_status": {
     "url": "https://ziontechgroup.com",
     "online": true,
     "homepage_http": 200,
-    "live_routes": ["/", "/sitemap.xml"],
-    "redirect_routes": ["/pricing (301)", "/services (301)"],
-    "broken_routes_count": 14,
-    "broken_routes": [
-      "/about",
-      "/contact",
-      "/blog",
-      "/testimonials/",
-      "/service-comparison/",
-      "/tools/2026-ma-due-diligence-checklist/",
-      "/monetization-hub/",
-      "/cookie-policy",
-      "/privacy",
-      "/terms",
-      "/assessments",
-      "/help",
-      "/integrations/composio/",
-      "/services/whatsapp-monetizacao/"
-    ],
-    "pages_in_repo": 329,
-    "page_count_public": 115,
-    "note": "GitHub Pages build complete (built) but content not served. Files likely in public/ instead of root, or source misconfigured."
+    "sitemap_http": 200,
+    "broken_routes": ["/testimonials/", "/service-comparison/", "/tools/2026-ma-due-diligence-checklist/", "/monetization-hub/"],
+    "broken_count": 4,
+    "page_count_in_repo": 329
   },
-  "deploy_blocker": {
-    "type": "GitHub Pages not serving content",
-    "pages_build_status": "built",
-    "pages_source_branch": "gh-pages",
-    "likely_cause": "public/ directory in gh-pages instead of root, or source=gh-pages but files misaligned",
-    "fix_required": "Deploy via GitHub Actions (peaceiris/actions-gh-pages@4) with public/ flatten to root",
-    "mirror_workflow_broken": true,
-    "last_verified_http": "2026-09-03"
+  "deploy": {
+    "source": "gh-pages branch",
+    "status": "live",
+    "blocker": "404s persistem — fallbacks em public/ não são achatados para root. Requer peaceiris/actions-gh-pages@v4 flatten public/→root."
   },
   "lead_crm": {
-    "total_leads": 1933,
-    "outreach_ready": 693,
+    "total_leads": 138,
+    "outreach_ready": 0,
+    "status_breakdown": {"discovered": 138},
     "source": "lead-crm/all-leads.json",
     "miner_status": "ok",
     "miner_queries_per_cycle": 12,
-    "miner_new_leads": 0
+    "miner_contacts_found": 0,
+    "miner_new_leads": 0,
+    "miner_avg_query_s": 9.75,
+    "note": "Todos os 138 leads em status 'discovered'. Minerador descobre mas não qualifica."
   },
   "outreach": {
-    "status": "blocked_by_config_or_env",
+    "status": "blocked_no_outreach_ready_leads",
     "monitor_inbox_interest": 52,
     "hot_followup_sent": 0
   }
