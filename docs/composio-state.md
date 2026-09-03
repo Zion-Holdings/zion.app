@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T06:29Z. Live `/` Discovery $99. Leftover closer batches 19–20 live; batch 21 (claims/chatbots extras) on `d25f50f5`. SERP catalog 439 (49 extra honest `services/*` now in `public/`). Disabled leftover `agent-agent-*` + `ci-deploy.yml` + `deploy-health.yml`. Keep Zion CI mirror disabled. Connect Links still INITIATED (expire ~06:31Z) — remint only if EXPIRED. Do not add wrangler.toml.
+
 Atualizado 2026-09-03T05:45Z. Pages **built** on `7b5c1c6c` (22s). Live `/` Discovery $99; `/plans/` paid intro; leftover closers 200; unknown slug honest 404. Disabled Zion CI `mirror-to-gh-pages.yml` (`keep_files: false`) plus 6 leftover deploy workflows. Replaced 10 Hermes Agent leftover SKU landings with honest closers and restored sitemap. Connect Links reminted 05:31Z — remint only if EXPIRED. Do not add wrangler.toml.
 
 Atualizado 2026-09-03T05:32Z. Disabled the leftover wipe: `mirror-to-gh-pages.yml` (Zion CI, `keep_files: false`) plus static-deploy / deploy-pages / build_and_deploy / ci-cd. Cancelled in-flight mirror `33717423493`. Restored Discovery (`38527243ac`, 24s). Live `/` is Discovery $99; `/plans/` paid intro. Republished identity/Hermes leftover closers after the disable. Connect Links reminted 05:31Z expire ~05:41Z. Do not remint while INITIALIZING/INITIATED. Do not add wrangler.toml.
