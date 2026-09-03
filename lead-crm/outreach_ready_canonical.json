@@ -2,19 +2,39 @@
   "ready": [
     {
       "domain": "prudentialdigital.com.br",
-      "email": "",
+      "email": "comunicacaodigital@prudentialdigital.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — prudentialdigital.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a prudentialdigital.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "prudential.com",
-      "email": "",
+      "email": "assistente.cliente@prudential.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — prudential.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a prudential.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "saopaulo.sp.leg.br",
@@ -26,35 +46,75 @@
     },
     {
       "domain": "wyntech.inf.br",
-      "email": "",
+      "email": "celi.vasconcelos@wyntech.inf.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — wyntech.inf.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a wyntech.inf.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "vspsolution.com.br",
-      "email": "",
+      "email": "fabio.mesquita@vspsolution.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — vspsolution.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a vspsolution.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "logicnet.com.br",
-      "email": "",
+      "email": "wagner.dias@logicnet.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — logicnet.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a logicnet.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "la.logicalis.com",
-      "email": "",
+      "email": "herbert.azevedo@la.logicalis.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — la.logicalis.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a la.logicalis.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "innovationglobalexperience.org",
@@ -66,51 +126,111 @@
     },
     {
       "domain": "h.kajabimail.net",
-      "email": "",
+      "email": "globalaiexperience@h.kajabimail.net",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — h.kajabimail.net",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a h.kajabimail.net a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "dealwise.com.br",
-      "email": "",
+      "email": "natalia.diniz@dealwise.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — dealwise.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a dealwise.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "ingaia.com.br",
-      "email": "",
+      "email": "infra@ingaia.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — ingaia.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a ingaia.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "i-value.com.br",
-      "email": "",
+      "email": "zilda.caires@i-value.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — i-value.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a i-value.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "i-value.com.br",
-      "email": "",
+      "email": "zilda.caires@i-value.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — i-value.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a i-value.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "dealwise.com.br",
-      "email": "",
+      "email": "natalia.diniz@dealwise.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — dealwise.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a dealwise.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "mkt.placehub.io",
@@ -122,59 +242,129 @@
     },
     {
       "domain": "vbr2.com.br",
-      "email": "",
+      "email": "rogerio.rocha@vbr2.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — vbr2.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a vbr2.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "addee.com.br",
-      "email": "",
+      "email": "marketing@addee.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — addee.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a addee.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "go.coface.com",
-      "email": "",
+      "email": "coface.latinamerica@go.coface.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — go.coface.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a go.coface.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "coface.com",
-      "email": "",
+      "email": "coface.latinamerica@coface.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — coface.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a coface.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "outmarketing.com.br",
-      "email": "",
+      "email": "alexandre.souza@outmarketing.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — outmarketing.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a outmarketing.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "bcrcx.com",
-      "email": "",
+      "email": "tatiana.sciencio@bcrcx.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — bcrcx.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a bcrcx.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "vetorzero.com.br",
-      "email": "",
+      "email": "paulo.volpis@vetorzero.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — vetorzero.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a vetorzero.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "assespropr.org.br",
@@ -186,43 +376,93 @@
     },
     {
       "domain": "granatum.com.br",
-      "email": "",
+      "email": "contato@granatum.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — granatum.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a granatum.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "getdarwin.ai",
-      "email": "",
+      "email": "gerencia@getdarwin.ai",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — getdarwin.ai",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a getdarwin.ai a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "kahunalabs.com",
-      "email": "",
+      "email": "contato@kahunalabs.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — kahunalabs.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a kahunalabs.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "getenter.ai",
-      "email": "",
+      "email": "founders@getenter.ai",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — getenter.ai",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a getenter.ai a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "blisshs.com",
-      "email": "",
+      "email": "flast@blisshs.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — blisshs.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a blisshs.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "ziontechgroup.com",
@@ -234,67 +474,147 @@
     },
     {
       "domain": "t.brevo.com",
-      "email": "",
+      "email": "account-alerts@t.brevo.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — t.brevo.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a t.brevo.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "monetizemore.com",
-      "email": "",
+      "email": "tools@monetizemore.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — monetizemore.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a monetizemore.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "tavily.com",
-      "email": "",
+      "email": "rotem@tavily.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — tavily.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a tavily.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "tavily.com",
-      "email": "",
+      "email": "rotem@tavily.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — tavily.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a tavily.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "wordfence.com",
-      "email": "",
+      "email": "list@wordfence.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — wordfence.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a wordfence.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "cwresources.computerworld.com",
-      "email": "",
+      "email": "computerworld_resources@cwresources.computerworld.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — cwresources.computerworld.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a cwresources.computerworld.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "connect.arubanetworks.com",
-      "email": "",
+      "email": "info@connect.arubanetworks.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — connect.arubanetworks.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a connect.arubanetworks.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "arubanetworks.com",
-      "email": "",
+      "email": "info.latam@arubanetworks.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — arubanetworks.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a arubanetworks.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "redsquid.co.uk",
@@ -354,43 +674,93 @@
     },
     {
       "domain": "fifosys.com",
-      "email": "",
+      "email": "contact@fifosys.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — fifosys.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a fifosys.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "npbrasil.com",
-      "email": "",
+      "email": "neil@npbrasil.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — npbrasil.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a npbrasil.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "npbrasil.com",
-      "email": "",
+      "email": "neil@npbrasil.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — npbrasil.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a npbrasil.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "pncalifornia.com",
-      "email": "",
+      "email": "p.jain@pncalifornia.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — pncalifornia.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a pncalifornia.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "alugartemporada.com.br",
-      "email": "",
+      "email": "contato@alugartemporada.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — alugartemporada.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a alugartemporada.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "linkedin.com",
@@ -402,19 +772,39 @@
     },
     {
       "domain": "mail.beehiiv.com",
-      "email": "",
+      "email": "e-e@mail.beehiiv.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — mail.beehiiv.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a mail.beehiiv.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "experts-exchange.com",
-      "email": "",
+      "email": "reply_to@experts-exchange.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — experts-exchange.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a experts-exchange.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "gsdcouncil.org",
@@ -426,35 +816,75 @@
     },
     {
       "domain": "news.kilocode.ai",
-      "email": "",
+      "email": "hi@news.kilocode.ai",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — news.kilocode.ai",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a news.kilocode.ai a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "kilocode.ai",
-      "email": "",
+      "email": "hi@kilocode.ai",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — kilocode.ai",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a kilocode.ai a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "sg.booking.com",
-      "email": "",
+      "email": "email.campaign@sg.booking.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — sg.booking.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a sg.booking.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "contaazul.com",
-      "email": "",
+      "email": "contato@contaazul.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — contaazul.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a contaazul.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "bliss.health",
@@ -466,19 +896,39 @@
     },
     {
       "domain": "beep.saude.com.br",
-      "email": "",
+      "email": "contato@beep.saude.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — beep.saude.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a beep.saude.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "allusivedigital.com",
-      "email": "",
+      "email": "contato@allusivedigital.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — allusivedigital.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a allusivedigital.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "goodfirms.co",
@@ -490,115 +940,255 @@
     },
     {
       "domain": "elenta.tech",
-      "email": "",
+      "email": "contato@elenta.tech",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — elenta.tech",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a elenta.tech a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "kahunalabs.com",
-      "email": "",
+      "email": "contato@kahunalabs.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — kahunalabs.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a kahunalabs.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "frontlinemsp.com",
-      "email": "",
+      "email": "contato@frontlinemsp.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — frontlinemsp.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a frontlinemsp.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "wheelhouseit.com",
-      "email": "",
+      "email": "contato@wheelhouseit.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — wheelhouseit.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a wheelhouseit.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "github.com",
-      "email": "",
+      "email": "contato@github.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — github.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a github.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "sub.cobasi.com.br",
-      "email": "",
+      "email": "reply-srobh3zxpi2uvpmzwdytzik254.60265@sub.cobasi.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — sub.cobasi.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a sub.cobasi.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "sub.cobasi.com.br",
-      "email": "",
+      "email": "reply-srobh3zxpi2uvpmzwdytzik254.60265@sub.cobasi.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — sub.cobasi.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a sub.cobasi.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "github.com",
-      "email": "",
+      "email": "contato@github.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — github.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a github.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "getdarwin.ai",
-      "email": "",
+      "email": "gerencia@getdarwin.ai",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — getdarwin.ai",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a getdarwin.ai a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "github.com",
-      "email": "",
+      "email": "contato@github.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — github.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a github.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "xovakstudio.com",
-      "email": "",
+      "email": "contato@xovakstudio.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — xovakstudio.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a xovakstudio.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "krishangtechnolab.com",
-      "email": "",
+      "email": "contato@krishangtechnolab.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — krishangtechnolab.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a krishangtechnolab.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "allusivedigital.com",
-      "email": "",
+      "email": "contato@allusivedigital.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — allusivedigital.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a allusivedigital.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "everkerr.com",
-      "email": "",
+      "email": "admin1@everkerr.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — everkerr.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a everkerr.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "airbnb.com",
@@ -610,43 +1200,93 @@
     },
     {
       "domain": "e.hostingmessages.com",
-      "email": "",
+      "email": "reply-5recchys3bnurbf64e6ehmlnp4.60267@e.hostingmessages.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — e.hostingmessages.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a e.hostingmessages.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "br.email.samsung.com",
-      "email": "",
+      "email": "samsunglatam@br.email.samsung.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — br.email.samsung.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a br.email.samsung.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "reply.comunicacao.serasaexperian.com.br",
-      "email": "",
+      "email": "reply-dyaxj4nza2mu5n5oc6prsoiyoe.100225@reply.comunicacao.serasaexperian.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — reply.comunicacao.serasaexperian.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a reply.comunicacao.serasaexperian.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "comunicacao.serasaexperian.com.br",
-      "email": "",
+      "email": "contato@comunicacao.serasaexperian.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — comunicacao.serasaexperian.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a comunicacao.serasaexperian.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "hubspot.com",
-      "email": "",
+      "email": "snazar@hubspot.com",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — hubspot.com",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a hubspot.com a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "amazon.com",
@@ -674,19 +1314,39 @@
     },
     {
       "domain": "newsletter.shopee.com.br",
-      "email": "",
+      "email": "affiliate@newsletter.shopee.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — newsletter.shopee.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a newsletter.shopee.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     },
     {
       "domain": "mail.shopee.com.br",
-      "email": "",
+      "email": "affiliate@mail.shopee.com.br",
       "source": "historical_email_miner",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
+      "followup_1": {
+        "subject": "Re: Parceria Zion Tech Group — mail.shopee.com.br",
+        "body": "Olá! Só para não perder o contato.\n\nSomos a Zion Tech Group e ajudamos empresas como a mail.shopee.com.br a reduzir custos operacionais com IA e automação.\n\nAgende 15min: https://calendly.com/kleber-ziontechgroup",
+        "days_after": 3
+      },
+      "followup_2": {
+        "subject": "Última tentativa — Zion Tech Group",
+        "body": "Olá!\n\nDuas mensagens sem resposta. Entendo que está ocupado.\n\nSe quiser conhecer nossas ferramentas gratuitas e cases: https://ziontechgroup.com\n\nAbraço,\nKleber",
+        "days_after": 7
+      }
     }
   ],
   "state": "send_ready",
