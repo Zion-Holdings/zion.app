@@ -1,29 +1,31 @@
 # Zion Tech Group — Memory & Status
 
-## Última atualização: 2026-09-03T12:00 UTC
+## Última atualização: 2026-09-03T14:00 UTC
 
 - **CEO**: Kleber Garcia Alcatrão
 - **Empresa**: Zion Tech Group
 - **Site**: https://ziontechgroup.com (GitHub Pages, branch gh-pages)
 - **Deploy**: Live, sem blockers ativos
 
-## Rotas (status variável por edge node)
+## Rotas (snapshot: 2026-09-03T14:00 UTC)
 
-### 200 OK (confirmadas)
+### 200 OK
 - `/` (homepage)
-- `/testimonials/` (algumas edge nodes)
-- `/service-comparison/` (algumas edge nodes)
+- `/testimonials/`
+- `/service-comparison/`
+- `/status/`
 
-### 404 (rotas removidas do novo modelo)
+### 301 (redirecionamentos — provavelmente para /book/ ou /plans/)
+- `/about`
+- `/pricing`
+- `/services`
+- `/blog`
+
+### 404 (removidas do novo modelo de negócio)
 - `/tools/2026-ma-due-diligence-checklist/`
 - `/monetization-hub/`
-- `/about`
-- `/contact`
 
-### 301 (redirecionamentos)
-- `/pricing` → `/plans/`
-- `/services` → `/book/`
-- `/blog` → `/plans/`
+**Nota**: O site opera com cache/edge nodes que podem servir versões diferentes. O status acima é um snapshot momentâneo.
 
 ## Monetização (modelo 2026)
 
