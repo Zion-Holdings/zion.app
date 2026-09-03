@@ -1097,4 +1097,9 @@ export const SERP_CLOSER_PATHS = [
   'industries/financial-services/index.html',
   'public-roadmap/index.html',
   'status-page/index.html',
+  'from-start-up-to-success-the-journey-of-zion-tech-group-in-it-services/index.html',
+  'zion-tech-group-empowering-businesses-with-top-notch-it-services-worldwide/index.html',
+  'from-start-up-to-global-player-the-success-story-of-zion-tech-group/index.html',
+  'exploring-the-innovative-world-of-zion-tech-a-closer-look-at-the-latest-technological-advancements/index.html',
+  'from-start-up-to-global-player-the-story-of-zion-tech-groups-it-services-empire/index.html',
 ];
