@@ -92,6 +92,8 @@ export const SERP_CLOSER_PATHS = [
   'services/sec-pentest-service/index.html',
   'services/financial-data-warehouse/index.html',
   'services/data-lakehouse/index.html',
+  'blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/index.html',
+  'services/ai-quantum-optimizer/index.html',
   'tools/port-scanner/index.html',
   'tools/support-automation-roi-calculator/index.html',
   'blog/ai-observability-security-and-governance/index.html',
