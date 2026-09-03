@@ -1,0 +1,64 @@
+name: GitHub Pages
+
+# Live Pages source must stay legacy / gh-pages / /. Pointing source at main
+# 404s the apex (File not found) even when gh-pages has index.html.
+# GitHub Pages serves public/ when that folder exists.
+# Publish ONLY honest pins — never rsync leftover Next.js / PT SEO / blog dumps.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Stage honest pins only
+        run: |
+          set -euo pipefail
+          test -f public/index.html
+          if grep -qE '_next/static|Get Free Consultation|Automação e IA para Empresas' public/index.html; then
+            echo "Refusing to publish leftover homepage"
+            exit 1
+          fi
+          mkdir -p out out/public
+          PINS="index.html sitemap.xml robots.txt llms.txt"
+          for f in $PINS; do
+            src="public/$f"
+            if [ ! -f "$src" ]; then src="$f"; fi
+            test -f "$src"
+            cp "$src" "out/$f"
+            cp "$src" "out/public/$f"
+          done
+          printf 'ziontechgroup.com\n' > out/CNAME
+          printf 'ziontechgroup.com\n' > out/public/CNAME
+          : > out/.nojekyll
+          : > out/public/.nojekyll
+          echo "Publishing $(find out -type f | wc -l) honest pin files; CNAME=$(tr -d '\n' < out/CNAME)"
+
+      - name: Mirror to gh-pages with CNAME
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
+          # Ruleset 22178533 blocks force-push on gh-pages. Additive
+          # publish only — leftover _next must be deleted separately.
+          force: false
+          force_orphan: false
+          keep_files: true
+          cname: ziontechgroup.com
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com

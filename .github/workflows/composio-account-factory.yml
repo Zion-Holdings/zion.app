@@ -1,9 +1,16 @@
+# DISABLED. This factory mints Connect Links for already-ACTIVE
+# toolkits (Stripe, GitHub, Notion, Calendly, Gmail, Slack, Resend,
+# SerpAPI, Brevo) onto kleber@. Reminting while INITIATED/ACTIVE
+# races the human OAuth and playground rows. Use
+# .github/scripts/composio/create-reconnect-links.mjs --notify
+# for EXPIRED HubSpot/Jira/noCRM/Perplexity only.
 name: Composio Account Factory
 on:
   workflow_dispatch:
 
 jobs:
   factory:
+    if: false
     runs-on: ubuntu-latest
     env:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}

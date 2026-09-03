@@ -4,6 +4,7 @@ core
 
 logs/
 sitemap.xml
+!public/sitemap.xml
 tmp/
 
 # Debug/temp artifacts
