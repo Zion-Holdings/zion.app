@@ -58,7 +58,7 @@ Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were mi
 
 Cloudflare’s GitHub app posts this check on **every push**, including `main` (still red there). It fails in ~0s with no annotations. Dashboard: account `f634328cf2b380daee7d928c1c4acad2`, production worker **`ziontechgroup`**.
 
-This **Pages** repo is the wrong source. The live Telegram worker lives in private `Zion-support/telegram-ai-reply-worker` (`wrangler.toml` name `telegram-ai-reply-worker`, updated 2026-09-02). `telegram-agent-listener` is a separate Python webhook service (Render/Railway/Fly), not a Worker.
+This **Pages** repo is the wrong source. The live Telegram worker lives in private `Zion-support/telegram-ai-reply-worker` (`wrangler.toml` name `telegram-ai-reply-worker`, `src/index.ts`, Durable Object `STATE`, model `openai/gpt-4o-mini` via OpenRouter). OpenRouter credits are **exhausted**, so generated replies will fail until topped up. `ALLOWED_CHAT_IDS` is empty (every accessible chat). The worker is Telegram-webhook-only — do not point Calendly or Composio project webhooks at it. Issue: `Zion-support/telegram-ai-reply-worker#1`. `telegram-agent-listener` is a separate Python webhook service, not a Worker.
 
 Confirmed again on `238e16f1` (`23:57:13Z`) and CNAME hotfix `ea0ac09f` (`23:56:14Z`): check `Workers Builds: ziontechgroup` started and finished in the **same second**, app `cloudflare-workers-and-pages`. Same-second fails also on `main`. That is not a build of this site.
 
