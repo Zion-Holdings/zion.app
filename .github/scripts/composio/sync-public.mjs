@@ -31,7 +31,11 @@ function closerCanonical(rel) {
   if (rel.startsWith('solutions/')) return '/solutions/';
   if (rel.startsWith('community/')) return '/';
   if (rel === 'hp-support.html' || rel === 'outsourcing-it.html') return '/';
-  if (!rel.startsWith('services/') && !rel.startsWith('blog/') && !rel.startsWith('tools/')) return '/heritage/';
+  if (!rel.startsWith('services/') && !rel.startsWith('blog/') && !rel.startsWith('tools/')) {
+    // leftover hash SKUs dumped at repo root are not heritage hardware
+    if (/-[0-9a-f]{8}\/index\.html$/.test(rel)) return '/';
+    return '/heritage/';
+  }
   return '/services/';
 }
 
