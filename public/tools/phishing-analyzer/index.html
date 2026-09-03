@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phishing Analyzer · Zion Tech Group</title>
+<meta name="description" content="Analise URLs suspeitas e detecte tentativas de phishing antes de clicar. Proteja sua empresa.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:800px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+input{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-size:1rem;margin:8px 0}
+input:focus{outline:none;border-color:#a78bfa}
+.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none}
+.btn:hover{background:#c4b5fd}
+.result{background:#1e293b;border-radius:12px;padding:24px;margin:24px 0}
+.result h2{margin-bottom:16px}
+.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #334155}
+.item:last-child{border-bottom:none}
+.label{color:#94a3b8}
+.value{font-weight:600}
+.ok{color:#34d399}
+.warn{color:#fbbf24}
+.err{color:#f87171}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
+<body>
+<div class="max">
+<h1>Phishing Analyzer</h1>
+<p class="sub">Analise URLs suspeitas antes de clicar</p>
+
+<div class="card">
+<label>URL ou domínio suspeito</label>
+<input type="text" id="url" placeholder="https://exemplo-suspeito.com/login">
+<button class="btn" onclick="analyze()">Analisar</button>
+</div>
+
+<div class="result hidden" id="result">
+<h2 id="urlDisplay"></h2>
+<div class="item"><span class="label">Status</span><span class="value" id="status"></span></div>
+<div class="item"><span class="label">Domínio</span><span class="value" id="domain"></span></div>
+<div class="item"><span class="label">Risco</span><span class="value" id="risk"></span></div>
+<div class="item"><span class="label">Recomendação</span><span class="value" id="rec"></span></div>
+</div>
+
+<div class="links">
+<p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a> · <a href="/tools/ssl-checker/">SSL Checker</a></p>
+</div>
+</div>
+
+<script>
+function analyze(){
+const url = document.getElementById('url').value.trim();
+if(!url) return;
+
+const result = document.getElementById('result');
+result.classList.remove('hidden');
+document.getElementById('urlDisplay').textContent = url;
+
+// Simple heuristic analysis
+const suspicious = ['login','verify','secure','account','update','confirm','bank','paypal','google','microsoft'];
+const verySuspicious = ['bit.ly','tinyurl','t.co','goo.gl','ow.ly','is.gd'];
+const domain = url.replace(/^https?:\/\//,'').split('/')[0];
+let risk = 'low';
+let status = 'Seguro';
+let rec = 'URL parece segura. Continue com cautela normal.';
+
+if (verySuspicious.some(s => domain.includes(s))) {
+  risk = 'high';
+  status = 'Suspeito';
+  rec = 'Encurtador de URL detectado. Use com extrema cautela.';
+}
+
+suspicious.forEach(s => {
+  if (domain.includes(s) && !domain.includes('google.com') && !domain.includes('microsoft.com')) {
+    risk = 'medium';
+    status = 'Atenção';
+    rec = 'Palavra-chave suspeita detectada. Verifique o domínio oficial.';
+  }
+});
+
+if (domain.includes('-') || domain.split('.').length > 3) {
+  risk = 'high';
+  status = 'Suspeito';
+  rec = 'Domínio com estrutura suspeita. Provavelmente phishing.';
+}
+
+const riskColors = {low: 'ok', medium: 'warn', high: 'err'};
+document.getElementById('status').innerHTML = `<span class="${riskColors[risk]}">${status}</span>`;
+document.getElementById('domain').textContent = domain;
+document.getElementById('risk').innerHTML = `<span class="${riskColors[risk]}">${risk === 'low' ? 'Baixo' : risk === 'medium' ? 'Médio' : 'Alto'}</span>`;
+document.getElementById('rec').textContent = rec;
+}
+</script>
+</body>
+</html>

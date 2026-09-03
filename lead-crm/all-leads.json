@@ -2682,5 +2682,47 @@
     "is_invalid_domain": false,
     "is_placeholder_domain": false,
     "confidence": 2
+  },
+  {
+    "to": "tibo@tmaker.io",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "tmaker.io",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "confidence": 2
+  },
+  {
+    "to": "reply-2aytzsyjyddurcsbxskvqdrlm4.120049@mkt.sieg.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "mkt.sieg.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "confidence": 2
+  },
+  {
+    "to": "comunica@mkt.sieg.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "mkt.sieg.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "confidence": 2
   }
 ]
