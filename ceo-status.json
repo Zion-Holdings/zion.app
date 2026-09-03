@@ -1,7 +1,7 @@
 {
   "ceo": "Kleber Garcia Alcatrão",
   "company": "Zion Tech Group",
-  "last_updated": "2026-09-03T09:30 UTC",
+  "last_updated": "2026-09-03T12:00 UTC",
   "site_status": {
     "url": "https://ziontechgroup.com",
     "online": true,
@@ -12,13 +12,14 @@
       "message": "Old catalog slugs, fake free consultations, and leftover Next.js routes are gone. The live offers are Discovery $99, Consulting $499, Starter $2,500, and Growth $8,000/mo.",
       "links_to": ["/", "/book/", "/plans/", "/services/"]
     },
-    "note": "Rotas antigas (/testimonials, /service-comparison, /tools/2026-..., /monetization-hub, /about, /contact, /blog, /pricing, /cookie-policy, /privacy, /terms, /assessments, /help) foram REMOVIDAS intencionalmente. O site agora opera com oferta simplificada via /book/, /plans/, /services/."
+    "note": "Rotas /testimonials/ e /service-comparison/ voltaram a retornar 200 em algumas edge nodes. Rotas restantes (/tools/2026-ma-due-diligence-checklist, /monetization-hub, /about, /contact) continuam 404.",
+    "page_count_in_repo": 329
   },
   "deploy": {
     "source": "gh-pages branch",
     "status": "live",
     "blocker_resolved": true,
-    "note": "404s antigos eram de rotas que não existem mais no novo modelo de negócio"
+    "note": "Rotas antigas podem variar entre 200/404 dependendo do edge node. Novo modelo usa /book/, /plans/, /services/."
   },
   "lead_crm": {
     "total_leads": 138,
