@@ -13,6 +13,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - uses: actions/checkout@v4
       - run: mkdir -p out && cp -Rf public/. out/ && cp -Rf docs/. out/docs/ 2>/dev/null || true
