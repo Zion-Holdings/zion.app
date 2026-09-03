@@ -44,6 +44,8 @@ export const SERP_CLOSER_PATHS = [
   'services/looking-glass-holographic-displays/index.html',
   'services/ai-recruitment-resume-screener/index.html',
   'services/ai-legal-discovery-platform/index.html',
+  'services/optomec-aerosol-jet-3d-printing/index.html',
+  'services/locus-autonomous-mobile-robots/index.html',
   'tools/port-scanner/index.html',
   'tools/support-automation-roi-calculator/index.html',
   'blog/ai-observability-security-and-governance/index.html',
