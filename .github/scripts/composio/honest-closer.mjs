@@ -1093,4 +1093,7 @@ export const SERP_CLOSER_PATHS = [
   'services/smart-logistics-quality-control-c4c94cb5/index.html',
   'services/smart-marketing-workflow-automation-76c8b5ef/index.html',
   'services/smart-telecommunications-workflow-automation-6081d4a0/index.html',
+  'industries/financial-services/index.html',
+  'public-roadmap/index.html',
+  'status-page/index.html',
 ];
