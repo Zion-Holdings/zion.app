@@ -1,0 +1,46 @@
+name: Zion Composio Maximize Engine
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 8,16 * * 1-5'
+
+permissions:
+  contents: read
+
+jobs:
+  maximize:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Discover connections and run live playbook
+        run: node .github/scripts/composio/zion-composio-engine.mjs
+
+      - name: Publish report to job summary
+        if: always()
+        run: |
+          if [ -f automation/reports/composio-live-report.json ]; then
+            python3 - <<'PY'
+          import json
+          r=json.load(open("automation/reports/composio-live-report.json"))
+          print("## Zion Composio Maximize")
+          print(f"- Health score: **{r.get('healthScore')}%**")
+          print(f"- Active toolkits: {', '.join(r.get('activeToolkits') or [])}")
+          print(f"- Expired/failed: {', '.join((r.get('inventory') or {}).get('expiredOrFailedToolkits') or [])}")
+          print("")
+          print("| Toolkit | Tool | Result |")
+          print("|---|---|---|")
+          for e in r.get("executions") or []:
+              status = "SKIP" if e.get("skipped") else ("OK" if e.get("ok") else "FAIL")
+              print(f"| {e.get('toolkit')} | `{e.get('tool')}` | {status} |")
+          PY
+          fi
