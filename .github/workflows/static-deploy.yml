@@ -30,8 +30,19 @@ jobs:
           [ -f CNAME ] && cp -f CNAME out/CNAME || true
           [ -f public/CNAME ] && cp -f public/CNAME out/CNAME || true
           printf 'ziontechgroup.com\n' > out/CNAME
+          touch out/.nojekyll
+          # Promote root static routes if public/ is missing them (live /pricing 404).
+          for route in pricing contact about faq services tools blog ai-services; do
+            if [ ! -f "out/${route}/index.html" ] && [ -f "${route}/index.html" ]; then
+              mkdir -p "out/${route}"
+              cp -f "${route}/index.html" "out/${route}/index.html"
+              echo "promoted /${route}/ from repo root"
+            fi
+          done
           test -s out/CNAME
           test -f out/index.html
+          test -f out/pricing/index.html
+          test -f out/contact/index.html
           echo "Publishing $(find out -type f | wc -l) files; CNAME=$(tr -d '\n' < out/CNAME)"
 
       - uses: actions/upload-pages-artifact@v3
