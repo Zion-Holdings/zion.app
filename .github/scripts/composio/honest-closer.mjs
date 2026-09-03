@@ -1109,4 +1109,5 @@ export const SERP_CLOSER_PATHS = [
   'blog/ai-automation-roi-calculator-guide-2026/index.html',
   'blog/how-to-choose-ai-automation-partner-enterprise/index.html',
   'blog/it-services-partner-program-recurring-revenue-2026/index.html',
+  'blog/ai-automation-brazilian-enterprises-2026/index.html',
 ];

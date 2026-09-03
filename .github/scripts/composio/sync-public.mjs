@@ -10,10 +10,29 @@ import { SERP_CLOSER_PATHS, honestCloser, titleFromSlug } from './honest-closer.
 const ROOT = path.resolve(import.meta.dirname, '../../..');
 const PUBLIC = path.join(ROOT, 'public');
 
+function mkdirp(dir) {
+  if (fs.existsSync(dir) && fs.statSync(dir).isFile()) fs.unlinkSync(dir);
+  fs.mkdirSync(dir, { recursive: true });
+}
+
 function write(rel, content) {
   const dest = path.join(PUBLIC, rel);
-  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  mkdirp(path.dirname(dest));
   fs.writeFileSync(dest, content);
+}
+
+function looksLikeHonestCloser(html) {
+  return html.includes('Not a packaged SKU') && html.includes('noindex');
+}
+
+function looksLikeLeftover(html) {
+  return (
+    html.includes('_next/static') ||
+    html.includes('Get Free Consultation') ||
+    html.includes('Agende sua') ||
+    html.startsWith('---\n') ||
+    html.startsWith('---\r\n')
+  );
 }
 
 for (const rel of FILES) {
@@ -41,12 +60,18 @@ function closerCanonical(rel) {
 
 for (const rel of SERP_CLOSER_PATHS) {
   const src = path.join(ROOT, rel);
-  const content = fs.existsSync(src)
-    ? fs.readFileSync(src, 'utf8')
-    : honestCloser({ title: titleFromSlug(rel), canonical: closerCanonical(rel) });
-  if (!fs.existsSync(src)) {
-    fs.mkdirSync(path.dirname(src), { recursive: true });
+  const closer = honestCloser({ title: titleFromSlug(rel), canonical: closerCanonical(rel) });
+  let content = closer;
+  if (fs.existsSync(src) && fs.statSync(src).isFile()) {
+    const existing = fs.readFileSync(src, 'utf8');
+    if (looksLikeHonestCloser(existing) && !looksLikeLeftover(existing)) content = existing;
+  } else {
+    mkdirp(path.dirname(src));
     fs.writeFileSync(src, content);
+  }
+  if (fs.existsSync(src) && fs.statSync(src).isFile() && looksLikeLeftover(fs.readFileSync(src, 'utf8'))) {
+    fs.writeFileSync(src, closer);
+    content = closer;
   }
   write(rel, content);
 }

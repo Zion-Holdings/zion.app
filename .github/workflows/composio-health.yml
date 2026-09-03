@@ -3,11 +3,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '*/30 * * * *'
-  push:
-    paths:
-      - '.github/workflows/composio-health.yml'
-    branches:
-      - main
 
 jobs:
   health-check:
@@ -17,27 +12,25 @@ jobs:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
 
       - name: Install Composio CLI
         run: |
           curl -fsSL https://composio.dev/install | bash
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: Whoami
-        run: composio whoami 2>&1
+      - run: composio whoami 2>&1 || echo "WHOAMI_FAILED"
 
       - name: List Connections
         run: |
-          echo "=== Connected Accounts ==="
-          composio connections list 2>&1 || echo "LIST_FAILED"
+          echo "=== Connections ==="
+          composio connections list 2>&1
 
-      - name: 1Password Tools
-        run: |
-          echo "=== 1Password Tools ==="
-          composio tools list 2>&1 | grep -i "1password\|_1P" | head -10 || echo "1P_NOT_FOUND"
+      - run: |
+          echo "=== 1P Tools ==="
+          composio tools list _1password 2>&1 | head -10
 
-      - name: Summary
-        run: echo "Done at $(date -u)"
+      - run: |
+          echo "=== Gmail Tools ==="
+          composio tools list gmail 2>&1 | head -5
+
+      - run: echo "Done $(date -u)"
