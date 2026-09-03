@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T04:27Z:** Eighth leftover batch: legal summarizer/research, meeting assistant/minutes, multimodal search, predictive maintenance, prompt eng, RAG, ransomware BCDR, SOC, speech analytics, supply-chain (SERP catalog = 305). Workers Builds CI remains the Cloudflare hook — ignore.
+
 **2026-09-03T04:24Z:** Seventh leftover batch: chronic disease, LATAM consulting, crop yield, support pro, employee engagement, energy grid, feedback, digital twin, insurance claims, enterprise hub, inventory (SERP catalog = 293).
 
 **2026-09-03T04:22Z:** Sixth leftover batch: supplier risk, asset lifecycle, ad copy, autonomous agents, claims, code reviewer, computer vision, content moderation, CX/CLV/segmentation/churn (SERP catalog = 281).
