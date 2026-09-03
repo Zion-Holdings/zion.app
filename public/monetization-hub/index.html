@@ -1,12 +1,272 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — Monetization Hub · Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/plans/">
-<meta name="robots" content="noindex, follow">
-<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
-<meta http-equiv="refresh" content="0; url=/plans/">
-<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monetization Hub — Zion Tech Group</title>
+  <meta name="description" content="Complete monetization dashboard: Stripe billing, Calendly booking, affiliate program, and revenue automation for Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/monetization-hub/" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%); color: #e2e8f0; min-height: 100vh; }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; background:rgba(15,23,42,0.8); backdrop-filter:blur(12px); position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(148,163,184,0.1); }
+    .nav-brand { font-size:1.5rem; font-weight:700; background:linear-gradient(135deg,#a855f7,#ec4899); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-decoration:none; }
+    .nav-links a { color:#94a3b8; text-decoration:none; margin-left:20px; font-size:0.9rem; transition:color 0.2s; }
+    .nav-links a:hover { color:#a78bfa; }
+    .hero { max-width:1100px; margin:0 auto; padding:80px 24px 40px; text-align:center; }
+    h1 { font-size:clamp(2.5rem,6vw,4rem); font-weight:800; background:linear-gradient(135deg,#a78bfa,#f472b6,#34d399); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:20px; }
+    .subtitle { font-size:1.2rem; color:#94a3b8; max-width:700px; margin:0 auto 40px; line-height:1.7; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; max-width:1200px; margin:0 auto; padding:20px 24px 60px; }
+    .card { background:rgba(15,23,42,0.7); border:1px solid rgba(124,58,237,0.2); border-radius:16px; padding:32px; transition:border-color 0.3s, transform 0.3s; }
+    .card:hover { border-color:rgba(167,139,250,0.5); transform:translateY(-4px); }
+    .card-icon { font-size:2.5rem; margin-bottom:16px; }
+    .card h2 { color:#f1f5f9; font-size:1.4rem; margin-bottom:12px; }
+    .card p { color:#94a3b8; line-height:1.7; margin-bottom:20px; font-size:0.95rem; }
+    .features { list-style:none; padding:0; margin:0 0 24px; }
+    .features li { padding:6px 0; color:#cbd5e1; font-size:0.9rem; }
+    .features li::before { content:"✓ "; color:#34d399; font-weight:bold; }
+    .btn { display:inline-block; padding:14px 28px; border-radius:12px; font-weight:600; text-decoration:none; transition:all 0.2s; border:none; cursor:pointer; font-size:1rem; }
+    .btn-primary { background:linear-gradient(135deg,#7c3aed,#db2777); color:white; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(124,58,237,0.4); }
+    .btn-stripe { background:linear-gradient(135deg,#635bff,#9050ec); color:white; }
+    .btn-stripe:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(99,91,255,0.4); }
+    .btn-calendly { background:linear-gradient(135deg,#0069ff,#00d4ff); color:white; }
+    .btn-calendly:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,105,255,0.4); }
+    .btn-affiliate { background:linear-gradient(135deg,#f59e0b,#ef4444); color:white; }
+    .btn-affiliate:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,158,11,0.4); }
+    .status { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:20px; font-size:0.8rem; font-weight:600; }
+    .status-live { background:rgba(52,211,153,0.1); color:#34d399; border:1px solid rgba(52,211,153,0.3); }
+    .status-ready { background:rgba(167,139,250,0.1); color:#a78bfa; border:1px solid rgba(167,139,250,0.3); }
+    .tier-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; max-width:1000px; margin:0 auto; padding:20px 24px 40px; }
+    .tier-card { background:rgba(15,23,42,0.6); border:1px solid rgba(124,58,237,0.2); border-radius:16px; padding:28px; text-align:center; }
+    .tier-card.featured { border:2px solid rgba(167,139,250,0.5); position:relative; }
+    .tier-card.featured::before { content:"MOST POPULAR"; position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#7c3aed,#db2777); color:white; padding:4px 12px; border-radius:8px; font-size:0.7rem; font-weight:600; }
+    .tier-name { color:#a78bfa; font-size:0.9rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+    .tier-price { font-size:2.5rem; font-weight:800; color:#f1f5f9; margin:12px 0; }
+    .tier-price span { font-size:1rem; color:#94a3b8; font-weight:400; }
+    .code-block { background:rgba(2,6,23,0.8); border:1px solid rgba(124,58,237,0.2); border-radius:12px; padding:20px; margin:20px 0; overflow-x:auto; }
+    .code-block code { color:#a78bfa; font-family:'Fira Code',monospace; font-size:0.85rem; line-height:1.6; }
+    .footer { text-align:center; padding:40px 24px; border-top:1px solid rgba(124,58,237,0.15); margin-top:40px; }
+    .footer a { color:#a78bfa; text-decoration:none; margin:0 12px; }
+  </style>
+</head>
 <body>
-<h1>Monetization Hub</h1>
-<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
-<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
-</body></html>
+  <nav class="nav">
+    <a href="/" class="nav-brand">Zion Tech Group</a>
+    <div class="nav-links">
+      <a href="/pricing/">Pricing</a>
+      <a href="/booking/">Booking</a>
+      <a href="/checkout/">Checkout</a>
+      <a href="/affiliate/">Affiliate</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Monetization Hub</h1>
+    <p class="subtitle">Complete revenue infrastructure: Stripe payments, Calendly booking, affiliate tracking, and automated billing — all connected via Composio.</p>
+    <a href="#get-started" class="btn btn-primary">Get Started →</a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">💳</div>
+      <h2>Stripe Payments</h2>
+      <p>Accept payments globally with Stripe. One-time projects, monthly subscriptions, and usage-based billing — all through secure hosted checkout.</p>
+      <ul class="features">
+        <li>One-time & recurring payments</li>
+        <li>130+ currencies supported</li>
+        <li>Automatic invoicing & receipts</li>
+        <li>Subscription management</li>
+        <li>Tax calculation (Stripe Tax)</li>
+      </ul>
+      <a href="/pricing/" class="btn btn-stripe">View Plans →</a>
+      <span class="status status-live" style="margin-left:12px;">● Live</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <h2>Calendly Booking</h2>
+      <p>Schedule strategy sessions, demos, and paid consultations. Collect payment at booking time with Stripe integration.</p>
+      <ul class="features">
+        <li>Free 30-min strategy sessions</li>
+        <li>Product demos (45 min)</li>
+        <li>Deep-dive consulting ($199)</li>
+        <li>Automatic calendar sync</li>
+        <li>Email reminders & follow-ups</li>
+      </ul>
+      <a href="/booking/" class="btn btn-calendly">Book Now →</a>
+      <span class="status status-live" style="margin-left:12px;">● Live</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h2>Affiliate Program</h2>
+      <p>Earn 30% recurring commissions referring customers to Zion Tech Group. Track referrals, manage payouts, and grow revenue.</p>
+      <ul class="features">
+        <li>30% recurring commission</li>
+        <li>90-day cookie duration</li>
+        <li>Real-time referral tracking</li>
+        <li>Automated PayPal/Wise payouts</li>
+        <li>Marketing materials provided</li>
+      </ul>
+      <a href="/affiliate/" class="btn btn-affiliate">Join Program →</a>
+      <span class="status status-ready" style="margin-left:12px;">Ready</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📧</div>
+      <h2>Email Automation</h2>
+      <p>Resend & Brevo for transactional emails, newsletters, and automated outreach sequences that convert leads to customers.</p>
+      <ul class="features">
+        <li>Transactional emails (Resend)</li>
+        <li>Marketing automation (Brevo)</li>
+        <li>Drip campaigns & sequences</li>
+        <li>Lead scoring & segmentation</li>
+        <li>Open/click analytics</li>
+      </ul>
+      <a href="/newsletter/" class="btn btn-primary">Subscribe →</a>
+      <span class="status status-live" style="margin-left:12px;">● Live</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💬</div>
+      <h2>WhatsApp Business</h2>
+      <p>Send quotes, invoices, and support messages via WhatsApp. AI-powered lead nurturing and customer communication.</p>
+      <ul class="features">
+        <li>Automated WhatsApp messaging</li>
+        <li>Quote & invoice delivery</li>
+        <li>AI lead nurturing sequences</li>
+        <li>24/7 auto-responder</li>
+        <li>Multi-agent coordination</li>
+      </ul>
+      <a href="https://wa.me/13024640950" class="btn btn-primary">WhatsApp →</a>
+      <span class="status status-live" style="margin-left:12px;">● Live</span>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔐</div>
+      <h2>1Password Vault</h2>
+      <p>Secure credential storage for team access to Stripe, Composio, GitHub, and all connected tools. Enterprise-grade security.</p>
+      <ul class="features">
+        <li>Shared team vaults</li>
+        <li>API key management</li>
+        <li>Access control & audit logs</li>
+        <li>Auto-fill for team members</li>
+        <li>SSH key management</li>
+      </ul>
+      <a href="/contact/" class="btn btn-primary">Learn More →</a>
+      <span class="status status-live" style="margin-left:12px;">● Live</span>
+    </div>
+  </div>
+
+  <div id="get-started" style="max-width:1000px; margin:0 auto; padding:40px 24px;">
+    <h2 style="text-align:center; font-size:2rem; color:#f1f5f9; margin-bottom:32px;">Revenue Tiers</h2>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">Starter</div>
+        <div class="tier-price">$2,500<span>/project</span></div>
+        <ul class="features">
+          <li>Single AI/automation deliverable</li>
+          <li>Up to 20 user seats</li>
+          <li>2-week implementation sprint</li>
+          <li>1 platform integration</li>
+          <li>Documentation & handover</li>
+        </ul>
+        <a href="/checkout/?plan=starter" class="btn btn-stripe" style="width:100%;">Buy Now</a>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-name">Growth</div>
+        <div class="tier-price">$8,000<span>/month</span></div>
+        <ul class="features">
+          <li>Up to 5 concurrent AI agents</li>
+          <li>Unlimited user seats</li>
+          <li>Multi-platform deployment</li>
+          <li>Custom plugin development</li>
+          <li>24/7 monitoring & response</li>
+          <li>Priority 4-hour SLA</li>
+        </ul>
+        <a href="/checkout/?plan=growth" class="btn btn-stripe" style="width:100%;">Subscribe</a>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Enterprise</div>
+        <div class="tier-price">$15,000<span>/mo+</span></div>
+        <ul class="features">
+          <li>Unlimited AI agents & swarms</li>
+          <li>On-premise / private cloud</li>
+          <li>Custom model integration</li>
+          <li>Full A2A protocol</li>
+          <li>Dedicated account team</li>
+          <li>1-hour SLA</li>
+        </ul>
+        <a href="/contact/?subject=Enterprise%20AI" class="btn btn-primary" style="width:100%;">Talk to Sales</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:40px 24px;">
+    <h2 style="text-align:center; font-size:2rem; color:#f1f5f9; margin-bottom:32px;">Integrated Stack</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200,1fr));">
+      <div class="card" style="padding:20px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:8px;">🟣</div>
+        <strong>Stripe</strong>
+        <p style="font-size:0.8rem; color:#64748b; margin-top:4px;">Payments & Billing</p>
+      </div>
+      <div class="card" style="padding:20px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:8px;">🔵</div>
+        <strong>Calendly</strong>
+        <p style="font-size:0.8rem; color:#64748b; margin-top:4px;">Scheduling</p>
+      </div>
+      <div class="card" style="padding:20px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:8px;">🟡</div>
+        <strong>Resend</strong>
+        <p style="font-size:0.8rem; color:#64748b; margin-top:4px;">Email Delivery</p>
+      </div>
+      <div class="card" style="padding:20px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:8px;">🟢</div>
+        <strong>WhatsApp</strong>
+        <p style="font-size:0.8rem; color:#64748b; margin-top:4px;">Messaging</p>
+      </div>
+      <div class="card" style="padding:20px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:8px;">🟠</div>
+        <strong>Brevo</strong>
+        <p style="font-size:0.8rem; color:#64748b; margin-top:4px;">CRM & Marketing</p>
+      </div>
+      <div class="card" style="padding:20px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:8px;">🔴</div>
+        <strong>HubSpot</strong>
+        <p style="font-size:0.8rem; color:#64748b; margin-top:4px;">CRM & Deals</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:20px 24px 60px;">
+    <h2 style="text-align:center; font-size:1.5rem; color:#f1f5f9; margin-bottom:24px;">Quick Setup</h2>
+    <div class="code-block">
+      <code>
+# Connect all tools via Composio (one-time setup)<br>
+composio login<br>
+composio add stripe<br>
+composio add calendly<br>
+composio add resend<br>
+composio add whatsapp<br>
+composio add brevo<br>
+composio add hubspot<br>
+composio add 1password<br>
+<br>
+# Verify all connections<br>
+composio connections list
+      </code>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="/">Home</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/services/">Services</a>
+    <a href="/contact/">Contact</a>
+    <a href="https://wa.me/13024640950">WhatsApp</a>
+    <a href="https://calendly.com/kleber-ziontechgroup">Book a Call</a>
+  </div>
+</body>
+</html>
