@@ -1,7 +1,7 @@
 name: GitHub Pages
 
-# New main is already a static export. Pages currently serves origin/gh-pages,
-# which has no CNAME — that is why ziontechgroup.com returns GitHub's 404.
+# Live Pages source must stay legacy / gh-pages / /. Pointing source at main
+# 404s the apex (File not found) even when gh-pages has index.html.
 # This job restages the tree, forces the apex CNAME, and mirrors to gh-pages.
 
 on:
