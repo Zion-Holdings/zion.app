@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T06:52Z. Live `/` Discovery $99. Full SERP catalog **439/439 live 200**. Latest gh-pages `85550d81`. Connect Links reminted 06:43Z expire ~06:53Z — remint only if EXPIRED. Keep Zion CI mirror disabled. Do not add wrangler.toml.
+
 Atualizado 2026-09-03T06:44Z. Live `/` Discovery $99. Leftover closer batches 19–27 live (latest `15af95f5` FinOps/stage). SERP catalog 439. Connect Links reminted 06:43Z expire ~06:53Z — remint only if EXPIRED. First-250 SERP hunt still has ~104 live 404s. Keep Zion CI mirror disabled. Do not add wrangler.toml.
 
 Atualizado 2026-09-03T06:29Z. Live `/` Discovery $99. Leftover closer batches 19–20 live; batch 21 (claims/chatbots extras) on `d25f50f5`. SERP catalog 439 (49 extra honest `services/*` now in `public/`). Disabled leftover `agent-agent-*` + `ci-deploy.yml` + `deploy-health.yml`. Keep Zion CI mirror disabled. Connect Links still INITIATED (expire ~06:31Z) — remint only if EXPIRED. Do not add wrangler.toml.
