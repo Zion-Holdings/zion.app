@@ -170,4 +170,13 @@ export const SERP_CLOSER_PATHS = [
   'services/threat-intelligence/index.html',
   'services/fermyon-spin-wasm-runtime/index.html',
   'services/ai-synthetic-data-platform/index.html',
+  'services/cloudflare-workers-edge-computing/index.html',
+  'services/cloudflare-workers/index.html',
+  'services/cloud-edge-computing/index.html',
+  'services/it-edge-computing-deployment/index.html',
+  'services/data-streaming-kafka-platform/index.html',
+  'services/w174-realtime-analytics/index.html',
+  'services/appwrite/index.html',
+  'services/search-meilisearch-engine/index.html',
+  'services/data-lineage-tracker/index.html',
 ];
