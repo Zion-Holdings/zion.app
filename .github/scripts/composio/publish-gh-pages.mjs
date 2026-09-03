@@ -58,6 +58,14 @@ const FILES = [
   'configurator/index.html',
   'agents-monitoring/index.html',
   'micro-saas/index.html',
+  'lead-crm/index.html',
+  'products/index.html',
+  'roicalculator/index.html',
+  'proposal/index.html',
+  'integrations/index.html',
+  'roadmap/index.html',
+  'subscribe/index.html',
+  'use-cases/index.html',
 ];
 
 async function main() {
