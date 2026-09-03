@@ -2,18 +2,18 @@
 """Update sitemap.xml with the 10 new service pages."""
 import re
 
-SITEMAP = '/Users/klebergarciaalcatrao/zion-support.github.io/public/sitemap.xml'
+SITEMAP = '/Users/klebergarciaalcatrao/zion-support.github.io/sitemap.xml'
 NEW_PAGES = [
-    'intelligent-customer-service-for-healthcare-d0f9c7ca',
-    'ai-devops-tech-edition-74429d99',
-    'predictive-engine-engine-agriculture-4d4dace5',
-    'predictive-processor-engine-tech-6dca9f98',
-    'cognitive-generator-solution-healthcare-6e7cd9fc',
-    'intelligent-orchestrator-for-insurance-f0b354d6',
-    'ai-intelligent-automotive-edition-43b4cdb3',
-    'ai-coordinator-real-estate-edition-5b2d7979',
-    'cognitive-monitoring-solution-sports-f71ad03e',
-    'ai-business-intelligence-transportation-edition-e01e1b32',
+    'ai-powered-next-generation-data-processing-81d13c40',
+    'ai-powered-adaptive-threat-detection-7f2efd46',
+    'ai-driven-marketing-optimization-suite-499099b2',
+    'smart-customer-workflow-automation-25cc4017',
+    'ai-powered-data-driven-iot-intelligence-264d41e4',
+    'ai-powered-proactive-real-estate-analytics-59d54834',
+    'intelligent-legal-forecasting-engine-1b3cb9cc',
+    'ai-powered-advanced-customer-experience-suite-99082c37',
+    'conversational-ai-for-gaming-7af9d21f',
+    'ai-powered-real-time-data-processing-1a964317',
 ]
 
 with open(SITEMAP) as f:
