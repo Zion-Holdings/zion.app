@@ -15,7 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p out && cp -Rf public/. out/ && cp -Rf docs/. out/docs/ 2>/dev/null || true
+      - name: Prepare Pages artifact with custom domain
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          if [ -d public ]; then cp -Rf public/. out/; fi
+          if [ -d docs ]; then mkdir -p out/docs && cp -Rf docs/. out/docs/; fi
+          [ -f _headers ] && cp -f _headers out/_headers || true
+          [ -f _redirects ] && cp -f _redirects out/_redirects || true
+          [ -f CNAME ] && cp -f CNAME out/CNAME || true
+          [ -f public/CNAME ] && cp -f public/CNAME out/CNAME || true
+          printf 'ziontechgroup.com\n' > out/CNAME
+          test -s out/CNAME
+          test -f out/index.html
+          echo "Publishing $(find out -type f | wc -l) files; CNAME=$(tr -d '\n' < out/CNAME)"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

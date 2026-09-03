@@ -60,7 +60,7 @@ Cloudflare’s GitHub app posts this check on **every push**, including `main` (
 
 This **Pages** repo is the wrong source. The live Telegram worker lives in private `Zion-support/telegram-ai-reply-worker` (`wrangler.toml` name `telegram-ai-reply-worker`, updated 2026-09-02). `telegram-agent-listener` is a separate Python webhook service (Render/Railway/Fly), not a Worker.
 
-Confirmed on commit `631158f4`: check `Workers Builds: ziontechgroup` started and finished at **the same second** (`2026-09-02T23:30:40Z`), app `cloudflare-workers-and-pages`. That is not a build of this site.
+Confirmed again on `238e16f1` (`23:57:13Z`) and CNAME hotfix `ea0ac09f` (`23:56:14Z`): check `Workers Builds: ziontechgroup` started and finished in the **same second**, app `cloudflare-workers-and-pages`. Same-second fails also on `main`. That is not a build of this site.
 
 ## Production: custom domain 404 (2026-09-02)
 
