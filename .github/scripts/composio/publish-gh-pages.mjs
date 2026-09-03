@@ -40,6 +40,17 @@ const FILES = [
   'docs/index.html',
   'legal/index.html',
   'about/index.html',
+  'case-studies/index.html',
+  'enterprise/index.html',
+  'newsletter/index.html',
+  'consulting/index.html',
+  'discovery/index.html',
+  'start/index.html',
+  'get-started/index.html',
+  'support/index.html',
+  'help/index.html',
+  'company/index.html',
+  'sla/index.html',
 ];
 
 async function main() {

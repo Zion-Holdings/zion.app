@@ -28,4 +28,8 @@
   <url><loc>https://ziontechgroup.com/legal/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://ziontechgroup.com/security/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ziontechgroup.com/careers/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://ziontechgroup.com/case-studies/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ziontechgroup.com/enterprise/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/consulting/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/discovery/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
