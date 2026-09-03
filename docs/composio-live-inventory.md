@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T07:29Z:** Catalogued and dual-wrote **359 nested leftover closers** (blog / ai-services / seo / solutions / tools). SERP catalog **973**. Spot-checked live 200. Connect Links reminted 07:29Z expire ~07:39Z. Workers Builds CI is the Cloudflare hook — ignore; do not add wrangler.toml.
+
 **2026-09-03T07:07Z:** Catalogued and dual-wrote **175 root leftover Next.js routes** (ai-chatbot-builder, cloud-services, zion-ai-*, etc.) — live 200 “No packaged SKU”. SERP catalog **614**. Homepage still Discovery $99. Connect Links reminted 07:06Z expire ~07:17Z. Workers Builds CI is the Cloudflare hook — ignore; do not add wrangler.toml.
 
 **2026-09-03T06:52Z:** Full live hunt: **0 of 439** catalogued leftover closer URLs 404. Homepage Discovery $99. Connect Links reminted 06:43Z expire ~06:53Z.
