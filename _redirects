@@ -1,3 +1,11 @@
 # GitHub Pages ignores Netlify _redirects.
 # Canonical money paths: /book/  /plans/  /composio/
 # Do not restore the 7k-URL ghost catalog.
+
+# Fix: restore 3 broken doc routes (integrity check 2026-09-03)
+/public-roadmap /public-roadmap/ 301
+/public-roadmap/ /public-roadmap/index.html 200
+/status-page /status-page/ 301
+/status-page/ /status-page/index.html 200
+/industries/financial-services /industries/financial-services/index.html 301
+/industries/financial-services/ /industries/financial-services/index.html 200
