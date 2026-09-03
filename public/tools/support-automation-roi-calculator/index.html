@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support Automation ROI · Zion Tech Group</title>
+<meta name="description" content="Calcule o ROI de automação de suporte ao cliente. Chatbots, help desks e redução de tickets.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:800px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+label{display:block;margin:16px 0 4px;color:#94a3b8;font-size:.875rem}
+input{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-size:1rem}
+input:focus{outline:none;border-color:#a78bfa}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.result{background:#1e293b;border:1px solid #a78bfa;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+.result .big{font-size:2.5rem;font-weight:700;color:#a78bfa}
+.result .label{color:#94a3b8;margin-top:4px}
+.metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px}
+.metrics .box{text-align:center;padding:16px;background:#0f172a;border-radius:8px}
+.metrics .num{font-size:1.5rem;font-weight:700;color:#34d399}
+.metrics .desc{font-size:.75rem;color:#94a3b8;margin-top:4px}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
+<body>
+<div class="max">
+<h1>Support Automation ROI</h1>
+<p class="sub">Calcule o retorno de automação de suporte</p>
+
+<div class="card">
+<div class="row">
+<div>
+<label>Agentes de suporte</label>
+<input type="number" id="agents" value="5" min="1">
+</div>
+<div>
+<label>Custo/hora por agente (R$)</label>
+<input type="number" id="hourly" value="25" min="5">
+</div>
+</div>
+<div class="row">
+<div>
+<label>Tickets/mês</label>
+<input type="number" id="tickets" value="500" min="0">
+</div>
+<div>
+<label>Tempo médio/ticket (min)</label>
+<input type="number" id="avgTime" value="15" min="1">
+</div>
+</div>
+<div class="row">
+<div>
+<label>% tickets repetitivos</label>
+<input type="number" id="repetitive" value="60" min="0" max="100">
+</div>
+<div>
+<label>Custo da ferramenta/mês (R$)</label>
+<input type="number" id="toolCost" value="2000" min="0">
+</div>
+</div>
+</div>
+
+<div class="result">
+<div class="big" id="savings">R$ 0</div>
+<div class="label">Economia mensal estimada</div>
+</div>
+
+<div class="metrics">
+<div class="box">
+<div class="num" id="hoursSaved">0h</div>
+<div class="desc">Horas economizadas/mês</div>
+</div>
+<div class="box">
+<div class="num" id="ticketsAuto">0</div>
+<div class="desc">Tickets automatizados</div>
+</div>
+<div class="box">
+<div class="num" id="roi">0x</div>
+<div class="desc">ROI em 6 meses</div>
+</div>
+</div>
+
+<div class="links">
+<p><a href="/book/">Agendar Discovery $99</a> · <a href="/tools/roi-calculator/">ROI Calculator</a></p>
+</div>
+</div>
+
+<script>
+function calc(){
+const agents=parseInt(document.getElementById('agents').value)||0;
+const hourly=parseInt(document.getElementById('hourly').value)||0;
+const tickets=parseInt(document.getElementById('tickets').value)||0;
+const avgTime=parseInt(document.getElementById('avgTime').value)||0;
+const repetitive=parseInt(document.getElementById('repetitive').value)||0;
+const toolCost=parseInt(document.getElementById('toolCost').value)||0;
+
+const monthlyHours = tickets * avgTime / 60;
+const hoursSaved = monthlyHours * (repetitive / 100) * 0.8;
+const ticketsAuto = Math.round(tickets * repetitive / 100 * 0.8);
+const savings = hoursSaved * hourly;
+const netSavings = savings - toolCost;
+const roi = toolCost > 0 ? (netSavings * 6) / toolCost : 0;
+
+document.getElementById('savings').textContent = 'R$ ' + Math.round(netSavings).toLocaleString('pt-BR');
+document.getElementById('hoursSaved').textContent = Math.round(hoursSaved) + 'h';
+document.getElementById('ticketsAuto').textContent = ticketsAuto;
+document.getElementById('roi').textContent = roi.toFixed(1) + 'x';
+}
+document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
+calc();
+</script>
+</body>
+</html>
