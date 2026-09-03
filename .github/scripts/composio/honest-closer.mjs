@@ -1003,6 +1003,7 @@ export const SERP_CLOSER_PATHS = [
   'tools/service-comparison/index.html',
   'tools/service-recommender/index.html',
   'tools/ssl-checker/index.html',
+  'tools/ai-readiness-assessment/index.html',
   'tools/track-engineer-fit/index.html',
   'cloud-migration-services-2026-6572/index.html',
   'cloud-cost-ai-optimizer-2026-6534/index.html',

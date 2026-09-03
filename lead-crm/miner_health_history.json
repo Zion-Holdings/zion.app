@@ -1,92 +1,5 @@
 [
   {
-    "ts": "2026-09-03T10:02:28.148111+00:00",
-    "queries_run": 12,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 117.51,
-    "queries_per_second": 0.1021,
-    "avg_query_s": 9.7924,
-    "max_query_s": 11.4104,
-    "status": "ok",
-    "high_signal_leads": 0.0,
-    "lead_quality_ratio": 0.1013,
-    "rolling": {
-      "last_5_queries": [
-        10.61831360799988,
-        5.429355995998776,
-        9.70142330100498,
-        10.144078607998381,
-        9.230926917000033
-      ],
-      "last_5_qps": [
-        0.0942,
-        0.1842,
-        0.1031,
-        0.0986,
-        0.1083
-      ]
-    }
-  },
-  {
-    "ts": "2026-09-03T10:12:20.892834+00:00",
-    "queries_run": 10,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 110.181,
-    "queries_per_second": 0.0908,
-    "avg_query_s": 11.0179,
-    "max_query_s": 14.3078,
-    "status": "ok",
-    "high_signal_leads": 0.0,
-    "lead_quality_ratio": 0.1008,
-    "rolling": {
-      "last_5_queries": [
-        11.466423376004968,
-        13.920511721000366,
-        10.443643300000986,
-        5.1813124580003205,
-        10.5927003389952
-      ],
-      "last_5_qps": [
-        0.0872,
-        0.0718,
-        0.0958,
-        0.193,
-        0.0944
-      ]
-    }
-  },
-  {
-    "ts": "2026-09-03T10:22:25.156743+00:00",
-    "queries_run": 12,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 113.707,
-    "queries_per_second": 0.1055,
-    "avg_query_s": 9.4754,
-    "max_query_s": 11.3004,
-    "status": "ok",
-    "high_signal_leads": 0.0,
-    "lead_quality_ratio": 0.1012,
-    "rolling": {
-      "last_5_queries": [
-        9.727057224001328,
-        4.405461151000054,
-        10.24005422299524,
-        9.270723108995298,
-        8.808059686001798
-      ],
-      "last_5_qps": [
-        0.1028,
-        0.227,
-        0.0977,
-        0.1079,
-        0.1135
-      ]
-    }
-  },
-  {
     "ts": "2026-09-03T10:32:30.273990+00:00",
     "queries_run": 12,
     "contacts_found": 0,
@@ -576,6 +489,93 @@
         0.0976,
         0.0982,
         0.1097
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T13:52:25.959353+00:00",
+    "queries_run": 12,
+    "contacts_found": 1,
+    "new_leads_added": 1,
+    "elapsed_s": 110.338,
+    "queries_per_second": 0.1088,
+    "avg_query_s": 9.9818,
+    "max_query_s": 15.1044,
+    "status": "ok",
+    "high_signal_leads": 1.1,
+    "lead_quality_ratio": 0.1051,
+    "rolling": {
+      "last_5_queries": [
+        9.911452069994994,
+        10.051112378001562,
+        4.452348649996566,
+        9.854138453993073,
+        9.689675876994443
+      ],
+      "last_5_qps": [
+        0.1009,
+        0.0995,
+        0.2246,
+        0.1015,
+        0.1032
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T14:02:33.766239+00:00",
+    "queries_run": 11,
+    "contacts_found": 2,
+    "new_leads_added": 2,
+    "elapsed_s": 117.958,
+    "queries_per_second": 0.0933,
+    "avg_query_s": 10.7218,
+    "max_query_s": 18.4338,
+    "status": "ok",
+    "high_signal_leads": 1.2,
+    "lead_quality_ratio": 0.1053,
+    "rolling": {
+      "last_5_queries": [
+        10.012087839000742,
+        10.130133646001923,
+        4.952752573000907,
+        10.167195069996524,
+        10.14460407000297
+      ],
+      "last_5_qps": [
+        0.0999,
+        0.0987,
+        0.2019,
+        0.0984,
+        0.0986
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T14:12:32.295452+00:00",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 114.045,
+    "queries_per_second": 0.0965,
+    "avg_query_s": 10.3676,
+    "max_query_s": 12.4708,
+    "status": "ok",
+    "high_signal_leads": 1.2,
+    "lead_quality_ratio": 0.1048,
+    "rolling": {
+      "last_5_queries": [
+        11.7632884919949,
+        10.696309491999273,
+        5.118622073001461,
+        10.157115222995344,
+        10.540312261997315
+      ],
+      "last_5_qps": [
+        0.085,
+        0.0935,
+        0.1954,
+        0.0985,
+        0.0949
       ]
     }
   }
