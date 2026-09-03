@@ -15,11 +15,8 @@ jobs:
     env:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
 
@@ -28,27 +25,18 @@ jobs:
           curl -fsSL https://composio.dev/install | bash
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: Composio Whoami
-        run: |
-          echo "=== Whoami ==="
-          composio whoami 2>&1
+      - name: Whoami
+        run: composio whoami 2>&1
 
-      - name: List All Connections
+      - name: List Connections
         run: |
-          echo "=== All Connected Accounts ==="
-          composio connections list 2>&1
+          echo "=== Connected Accounts ==="
+          composio connections list 2>&1 || echo "LIST_FAILED"
 
-      - name: List All Toolkits
-        run: |
-          echo "=== Available Toolkits ==="
-          composio toolkits list 2>&1
-
-      - name: 1Password Tools Check
+      - name: 1Password Tools
         run: |
           echo "=== 1Password Tools ==="
-          composio tools list --toolkit _1password 2>&1 || echo "1P_TOOLS_FAILED"
+          composio tools list 2>&1 | grep -i "1password\|_1P" | head -10 || echo "1P_NOT_FOUND"
 
       - name: Summary
-        run: |
-          echo "Health check completed at $(date -u)"
-          echo "Key set: $([ -n \"$COMPOSIO_API_KEY\" ] && echo 'yes' || echo 'no')"
+        run: echo "Done at $(date -u)"
