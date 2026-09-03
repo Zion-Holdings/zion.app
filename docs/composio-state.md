@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T08:18Z. Competing agent force-pushed `gh-pages` onto the August leftover Next.js tree (`cdf3efaa`, then `656f1058` “restore canonical doc routes”). Live `/` stayed Discovery only because the leftover build **errored**. Restored Discovery + `PIN_PATHS` onto current HEAD (`3d8fa256`). `create-reconnect-links.mjs` now skips INITIALIZING/INITIATED. Connect Links 08:07Z still INITIATED past TTL — remint only if EXPIRED. Do not add wrangler.toml. Keep Zion CI mirror disabled.
+
 Atualizado 2026-09-03T07:57Z. Live `/` Discovery $99. Hermes bloated `public/sitemap.xml` with 30 hash SKUs — restored honest **35-URL** sitemap and dual-wrote **84** leftover hash closers (catalog **1063**). `PIN_PATHS` now includes sitemap/robots/llms. Disabled **34** leftover `agent-agent-*` + `ultra-fast-agent-creation` workflows. Connect Links reminted 07:52Z expire ~08:02Z — remint only if EXPIRED. Workers Builds CI is the Cloudflare hook — do not add wrangler.toml. Keep Zion CI mirror disabled.
 
 Atualizado 2026-09-03T07:29Z. Live `/` Discovery $99. Catalogued + published **359 nested leftover closers** (catalog **973**). Latest gh-pages `cae7f618`. Connect Links reminted 07:29Z expire ~07:39Z — remint only if EXPIRED. Workers Builds CI is the Cloudflare hook — do not add wrangler.toml. Keep Zion CI mirror disabled.

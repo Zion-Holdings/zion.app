@@ -34,7 +34,7 @@ POST /api/v3.1/connected_accounts/link
 { "auth_config_id": "ac_…", "user_id": "kleber@ziontechgroup.com" }
 ```
 
-201 → `redirect_url` on `connect.composio.dev/link/lk_…` plus `expires_at` (about **10 minutes**). Open immediately; do not commit the URL to git. HubSpot auth config `ac_RfR0aCEDSDbE`. After authorize, `GET /connected_accounts` must show ACTIVE on kleber@ — not another playground row. `POST /connected_accounts/{id}/refresh` on an EXPIRED HubSpot row returns INITIATED + a short redirect; prefer `link()` for a new kleber@ account.
+201 → `redirect_url` on `connect.composio.dev/link/lk_…` plus `expires_at` (about **10 minutes**). Open immediately; do not commit the URL to git. HubSpot auth config `ac_RfR0aCEDSDbE`. After authorize, `GET /connected_accounts` must show ACTIVE on kleber@ — not another playground row. `POST /connected_accounts/{id}/refresh` on an EXPIRED HubSpot row returns INITIATED + a short redirect; prefer `link()` for a new kleber@ account. **Do not remint while the newest kleber@ row is INITIALIZING or INITIATED** — Composio often keeps those statuses 30–90s past `expires_at`. `create-reconnect-links.mjs` skips in-flight rows.
 7. **Never log tokens.** Connection IDs can live in internal reports; API keys cannot.
 8. **Quota-aware playbooks.** Skip Firecrawl/Hunter/OpenRouter when the previous call returned 402/429 instead of looping.
 

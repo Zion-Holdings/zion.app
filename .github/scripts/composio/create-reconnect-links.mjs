@@ -2,8 +2,11 @@
  * Mint short-lived Composio Connect Links for expired-only toolkits
  * onto kleber@ziontechgroup.com. Prints redirect URLs (≈10 min TTL).
  * Does not write URLs to git. Optional Slack notify if --slack.
+ *
+ * Never remint while the newest kleber@ row is INITIALIZING or INITIATED
+ * (Composio often keeps those statuses 30–90s past expires_at).
  */
-import { composioFetch, discoverZionConnections } from './discover-connections.mjs';
+import { composioFetch, listAllConnectedAccounts, newestByToolkit } from './discover-connections.mjs';
 
 const USER = process.env.ZION_USER_ID || 'kleber@ziontechgroup.com';
 const AUTH = {
@@ -12,14 +15,20 @@ const AUTH = {
   nocrm_io: 'ac_KxL62U7nPZ-0',
   perplexityai: 'ac_Qzqbke9J1o0r',
 };
+const IN_FLIGHT = new Set(['INITIALIZING', 'INITIATED']);
 
 async function run() {
-  const { inventory } = await discoverZionConnections();
+  const accounts = await listAllConnectedAccounts();
+  const newest = newestByToolkit(accounts, { userId: USER });
   const links = [];
   for (const [toolkit, auth_config_id] of Object.entries(AUTH)) {
-    const hasActive = inventory.activeToolkits.includes(toolkit);
-    if (hasActive) {
+    const row = newest[toolkit];
+    if (row?.status === 'ACTIVE') {
       console.log(`skip ${toolkit}: already ACTIVE`);
+      continue;
+    }
+    if (row && IN_FLIGHT.has(row.status)) {
+      console.log(`skip ${toolkit}: ${row.status} since ${row.created_at} — do not remint`);
       continue;
     }
     const { ok, status, data } = await composioFetch('/connected_accounts/link', {
@@ -32,8 +41,8 @@ async function run() {
   }
   const notify = process.argv.includes('--slack') || process.argv.includes('--notify');
   if (notify && links.length) {
-    const { executeTool, newestActiveByToolkit, listAllConnectedAccounts } = await import('./discover-connections.mjs');
-    const active = newestActiveByToolkit(await listAllConnectedAccounts());
+    const { executeTool, newestActiveByToolkit } = await import('./discover-connections.mjs');
+    const active = newestActiveByToolkit(accounts);
     const md = [
       '*Composio Connect Links* (~10 min TTL) — open as kleber@ziontechgroup.com',
       ...links.map((l) => `• ${l.toolkit}: ${l.url}`),

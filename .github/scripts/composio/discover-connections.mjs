@@ -42,12 +42,13 @@ export async function listAllConnectedAccounts() {
   return items;
 }
 
-export function newestActiveByToolkit(accounts) {
+export function newestByToolkit(accounts, { userId, activeOnly = false } = {}) {
   const map = {};
   for (const account of accounts) {
-    const toolkit = account.toolkit?.slug || account.toolkit || 'unknown';
+    if (userId && account.user_id !== userId) continue;
     const status = account.status;
-    if (status !== 'ACTIVE') continue;
+    if (activeOnly && status !== 'ACTIVE') continue;
+    const toolkit = account.toolkit?.slug || account.toolkit || 'unknown';
     const prev = map[toolkit];
     if (!prev || (account.created_at || '') > (prev.created_at || '')) {
       map[toolkit] = {
@@ -60,6 +61,10 @@ export function newestActiveByToolkit(accounts) {
     }
   }
   return map;
+}
+
+export function newestActiveByToolkit(accounts) {
+  return newestByToolkit(accounts, { activeOnly: true });
 }
 
 export function inventorySummary(accounts) {
