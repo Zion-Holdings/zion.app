@@ -161,4 +161,13 @@ export const SERP_CLOSER_PATHS = [
   'services/ai-code-security-scanner/index.html',
   'services/ai-smart-contract-auditor/index.html',
   'services/w174-ml-ops-platform/index.html',
+  'services/cloud-serverless-application-platform/index.html',
+  'services/mostly-ai-synthetic-data-platform/index.html',
+  'services/weights-and-biases-mlops/index.html',
+  'services/ai-smart-contract-lifecycle/index.html',
+  'services/snyk-ai-code-security/index.html',
+  'services/it-data-center-relocation/index.html',
+  'services/threat-intelligence/index.html',
+  'services/fermyon-spin-wasm-runtime/index.html',
+  'services/ai-synthetic-data-platform/index.html',
 ];
