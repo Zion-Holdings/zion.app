@@ -1,32 +1,18 @@
 [
   {
-    "timestamp": "2026-09-03T00:00:00-03:00",
-    "script": "historical_email_miner.py",
-    "exit_code": 0,
-    "error": null,
+    "ts": "2026-09-03T00:00:00Z",
+    "action": "run",
     "result": {
-      "queries_run": 11,
+      "queries_run": 12,
       "contacts_found": 0,
-      "new_leads_added": 0
-    },
-    "note": "High-frequency run completed without emails sent."
+      "new_leads_added": 0,
+      "error": null
+    }
   },
   {
-    "ts": "2026-09-03T03:42:39.128156+00:00",
+    "ts": "2026-09-03T04:32:51.485261+00:00",
     "event": "miner_timeout",
     "query": "subject:\"platform engineering\"",
-    "note": "soft timeout reached; stopping query loop early"
-  },
-  {
-    "ts": "2026-09-03T03:52:46.266955+00:00",
-    "event": "miner_timeout",
-    "query": "subject:\"platform engineering\"",
-    "note": "soft timeout reached; stopping query loop early"
-  },
-  {
-    "ts": "2026-09-03T04:02:42.307231+00:00",
-    "event": "miner_timeout",
-    "query": "subject:sase",
     "note": "soft timeout reached; stopping query loop early"
   }
 ]

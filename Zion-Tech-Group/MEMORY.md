@@ -1,6 +1,6 @@
 # Zion Tech Group — Memory & Status
 
-## Última atualização: 2026-09-03T04:10 UTC
+## Última atualização: 2026-09-03T04:15 UTC
 
 ### Repositório
 - **main:** c18862ce570 (fix: add 404 fallbacks for testimonials, service-comparison, due-diligence, monetization-hub)
@@ -12,17 +12,15 @@
 - Homepage, services, tools, blog, contact, about, ai, health — todos 200
 - ziontechgroup.com → HTTP 200 ✓
 - Rotas monetização LIVE: /pricing, /checkout, /booking, /affiliate
-- 404s (com fallback criado no repo, aguardando Pages redeploy):
-  - /service-comparison/
-  - /testimonials/
-  - /tools/2026-ma-due-diligence-checklist/
-  - /monetization-hub/
+- 404s (com fallback criado, aguardando Pages rebuild):
+  - /service-comparison/, /testimonials/, /tools/2026-ma-due-diligence-checklist/, /monetization-hub/
 - 329 páginas no repo
 
 ### Lead CRM & Outreach
 - 1933 leads em all-leads.json
 - 693 contatos outreach-ready
-- Minerador: último run 2026-09-03T04:02 UTC, status ok, 11 queries, 0 contacts, 0 new
+- Minerador: último run 2026-09-03T04:12 UTC, status ok, 11 queries, 0 contacts, 0 new
+- Log: 5 eventos (1 historical + 4 timeouts)
 - Envio bloqueado: send_verification_result.json indica blocked_by_config_or_env
 - Monitor: 52 inbox_interest (3 ticks), 0 hot_followup sent
 
@@ -33,9 +31,9 @@
 
 ### Próximos passos críticos
 1. Investigar 0 contatos no minerador (rate-limit/mudança API)
-2. Verificar se 404 fallbacks foram deployados (aguardando Pages rebuild)
-3. Desbloquear envio no lead-crm (blocked_by_config_or_env)
-4. Mesclar branches com conteúdo pronto (content-loop-exponential)
+2. Verificar se 404 fallbacks foram deployados
+3. Desbloquear envio no lead-crm
+4. Mesclar branches com conteúdo pronto
 5. Ativar monetização: Stripe, Calendly, WhatsApp Business
 
 ### Notas operacionais
