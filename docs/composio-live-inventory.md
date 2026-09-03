@@ -1,6 +1,8 @@
 # Zion Composio Live Inventory
 
-Verified 2026-09-02 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` on 2026-09-03 (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`. `origin/gh-pages` still has **no CNAME**; `https://ziontechgroup.com/` remains GitHub “Site not found” until `.github/workflows/pages.yml` merges and republishes.
+Verified 2026-09-02 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` on 2026-09-03 (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`.
+
+**2026-09-03 apex fix (live):** `GITHUB_CREATE_OR_UPDATE_GITHUB_PAGES_SITE` set `cname=ziontechgroup.com`. Cert approved, domain verified. `CNAME` file committed on `gh-pages` (`7582d492`). `https://ziontechgroup.com/` returned **200** (title: Zion Tech Group) at 00:17 UTC. `https://zion-support.github.io/` now **301**s to the apex. `/book/` is 404 on the live artifact until PR #71127 merges. `www` may still show a cached GitHub 404 until Fastly expires.
 
 Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were missing. Live data contradicts that. Orchestrators that read `COMPOSIO_*_CONNECTION_ID` GitHub secrets were skipping healthy accounts.
 

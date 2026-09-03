@@ -1,6 +1,6 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
-Atualizado 2026-09-03. `origin/main` was force-rewritten to a root-exported static site (no `public/`, no workflows). Unique maximize pages now live at `/book/`, `/heritage/`, `/plans/`, `/composio/`. Pages still serve `gh-pages` **without CNAME** — apex 404 until the Pages workflow merges.
+Atualizado 2026-09-03. `origin/main` was force-rewritten to a root-exported static site (no `public/`, no workflows). Unique maximize pages now live at `/book/`, `/heritage/`, `/plans/`, `/composio/`. Pages API `cname` was rebound to `ziontechgroup.com` via Composio GitHub — apex homepage is **200**. `/book/` waits on PR #71127.
 
 Atualizado 2026-09-02 a partir de `GET /api/v3.1/connected_accounts` (107 contas).
 
