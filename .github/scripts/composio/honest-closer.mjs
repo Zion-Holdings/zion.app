@@ -407,4 +407,7 @@ export const SERP_CLOSER_PATHS = [
   'services/smart-marketing-platform-healthcare-394223e8/index.html',
   'services/smart-optimizer-platform-retail-148e109b/index.html',
   'services/smart-platform-platform-real-estate-6a84d662/index.html',
+  'services/software-development/index.html',
+  'services/testing-qa-automation/index.html',
+  'services/predictive-security-for-education-dff571c6/index.html',
 ];
