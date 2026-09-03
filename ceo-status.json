@@ -1,36 +1,46 @@
 {
   "ceo": "Kleber Garcia Alcatrão",
   "company": "Zion Tech Group",
-  "last_updated": "2026-09-03T07:35 UTC",
+  "last_updated": "2026-09-03T09:30 UTC",
   "site_status": {
     "url": "https://ziontechgroup.com",
     "online": true,
-    "homepage_http": 200,
-    "sitemap_http": 200,
-    "broken_routes": ["/testimonials/", "/service-comparison/", "/tools/2026-ma-due-diligence-checklist/", "/monetization-hub/"],
-    "broken_count": 4,
-    "page_count_in_repo": 329
+    "homepage": "200 OK",
+    "http_behavior": "Inconsistent across CDN edge nodes — same path returns 200, 404, or 301 depending on edge node and timing",
+    "custom_404_page": {
+      "exists": true,
+      "message": "Old catalog slugs, fake free consultations, and leftover Next.js routes are gone. The live offers are Discovery $99, Consulting $499, Starter $2,500, and Growth $8,000/mo.",
+      "links_to": ["/", "/book/", "/plans/", "/services/"]
+    },
+    "note": "Rotas antigas (/testimonials, /service-comparison, /tools/2026-..., /monetization-hub, /about, /contact, /blog, /pricing, /cookie-policy, /privacy, /terms, /assessments, /help) foram REMOVIDAS intencionalmente. O site agora opera com oferta simplificada via /book/, /plans/, /services/."
   },
   "deploy": {
     "source": "gh-pages branch",
     "status": "live",
-    "blocker": "404s persistem — fallbacks em public/ não são achatados para root. Requer peaceiris/actions-gh-pages@v4 flatten public/→root."
+    "blocker_resolved": true,
+    "note": "404s antigos eram de rotas que não existem mais no novo modelo de negócio"
   },
   "lead_crm": {
     "total_leads": 138,
     "outreach_ready": 0,
-    "status_breakdown": {"discovered": 138},
     "source": "lead-crm/all-leads.json",
     "miner_status": "ok",
     "miner_queries_per_cycle": 12,
     "miner_contacts_found": 0,
     "miner_new_leads": 0,
-    "miner_avg_query_s": 9.75,
-    "note": "Todos os 138 leads em status 'discovered'. Minerador descobre mas não qualifica."
+    "avg_query_time": "9.75s"
   },
   "outreach": {
     "status": "blocked_no_outreach_ready_leads",
     "monitor_inbox_interest": 52,
     "hot_followup_sent": 0
+  },
+  "monetization": {
+    "offers": [
+      {"name": "Discovery", "price": "$99", "url": "/book/"},
+      {"name": "Consulting", "price": "$499", "url": "/book/"},
+      {"name": "Starter", "price": "$2,500", "url": "/plans/"},
+      {"name": "Growth", "price": "$8,000/mo", "url": "/plans/"}
+    ]
   }
 }
