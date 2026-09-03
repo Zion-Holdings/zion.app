@@ -1,0 +1,29 @@
+{
+  "ts": "2026-09-03T00:52:19.664466+00:00",
+  "queries_run": 12,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 113.509,
+  "queries_per_second": 0.1057,
+  "avg_query_s": 9.4589,
+  "max_query_s": 10.7465,
+  "status": "ok",
+  "high_signal_leads": 0,
+  "lead_quality_ratio": null,
+  "rolling": {
+    "last_5_queries": [
+      10.34008964700115,
+      4.918618880999929,
+      9.631008300000758,
+      10.556425799999488,
+      8.506015339999067
+    ],
+    "last_5_qps": [
+      0.0967,
+      0.2033,
+      0.1038,
+      0.0947,
+      0.1176
+    ]
+  }
+}

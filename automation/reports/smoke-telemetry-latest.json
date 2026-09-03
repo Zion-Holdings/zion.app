@@ -1,0 +1,11 @@
+{
+  "ts": "2026-09-02T14:54:01.547553Z",
+  "status": "degraded",
+  "details": {
+    "routeProbe": {
+      "stdout": "checked 23 routes, broken=23",
+      "stderr": null,
+      "exit_code": 1
+    }
+  }
+}

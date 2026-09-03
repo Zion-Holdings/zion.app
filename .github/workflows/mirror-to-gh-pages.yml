@@ -1,0 +1,46 @@
+name: Mirror main build to gh-pages branch
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: |
+          set -euo pipefail
+          npm run build:check || npm run build
+          mkdir -p out/docs out/public
+          cp -Rf docs/. out/docs/
+          cp -Rf public/. out/public/
+          find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \;
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          keep_files: false
+          user_name: Zion CI
+          user_email: ci@ziontechgroup.com

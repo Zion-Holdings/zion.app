@@ -1,0 +1,50 @@
+name: composio-serpapi-sync
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+jobs:
+  serpapi-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Composio SDK
+        run: npm install @composio/core
+
+      - name: Test SerpApi connection
+        id: serpapi
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          COMPOSIO_SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
+        run: |
+          cat > sync.mjs <<'EOF'
+          import { Composio } from '@composio/core';
+          const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
+          const client = composio.getClient();
+          const connectionId = process.env.COMPOSIO_SERPAPI_CONNECTION_ID;
+          const result = await client.tools.execute('SERPAPI_GET_SEARCH_ARCHIVE', {
+            connection_id: connectionId,
+            entity_id: 'pg-test-b311dcc6-03f6-4077-8774-c90cfd6fcf29',
+            arguments: {
+              q: 'Zion Tech Group IT services',
+              num: 3
+            }
+          });
+          console.log(JSON.stringify(result, null, 2));
+          EOF
+          node sync.mjs
+
+      - name: Comment summary
+        run: |
+          echo "SerpApi connection tested successfully." >> "$GITHUB_STEP_SUMMARY"

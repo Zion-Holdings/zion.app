@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI Readiness Assessment for IT Companies — Free Tool | Zion Tech Group</title>
+<meta name="description" content="Assess your company's AI readiness in 5 minutes. Get a personalized score, roadmap, and cost estimate for implementing AI agents, automation, and LLM solutions. Free tool from Zion Tech Group."/>
+<meta name="keywords" content="AI readiness assessment, AI maturity model, IT company AI audit, AI implementation roadmap, AI cost calculator, LLM readiness, automation readiness"/>
+<link rel="canonical" href="https://ziontechgroup.com/tools/ai-readiness-assessment/"/>
+<meta property="og:title" content="AI Readiness Assessment for IT Companies — Free Tool"/>
+<meta property="og:description" content="Assess your company's AI readiness in 5 minutes. Get a personalized score, roadmap, and cost estimate."/>
+<meta property="og:url" content="https://ziontechgroup.com/tools/ai-readiness-assessment/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://ziontechgroup.com/og-home.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/icon.svg"/>
+<style>
+:root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --slate-300: #cbd5e1; --white: #f8fafc; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 16px; }
+.nav-links a { color: var(--slate-300); text-decoration: none; font-size: 0.875rem; }
+.nav-links a:hover { color: var(--white); }
+.header { text-align: center; padding: 60px 24px 30px; }
+.header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, var(--white), var(--slate-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header p { color: var(--slate-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
+.assessment { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 16px; padding: 40px; margin: 30px 0; }
+.question { margin-bottom: 30px; }
+.question label { display: block; font-weight: 600; margin-bottom: 10px; font-size: 1rem; }
+.question select { width: 100%; padding: 12px 16px; background: var(--slate-900); border: 1px solid var(--slate-700); border-radius: 8px; color: var(--white); font-size: 0.9375rem; }
+.btn { display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; border: none; border-radius: 9999px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; }
+.btn:hover { opacity: 0.9; }
+.result { display: none; margin-top: 30px; padding: 30px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 16px; text-align: center; }
+.result h3 { font-size: 1.5rem; margin-bottom: 12px; }
+.score { font-size: 4rem; font-weight: 800; color: var(--purple); }
+.score-label { color: var(--slate-400); margin-bottom: 20px; }
+.roadmap { text-align: left; margin-top: 20px; }
+.roadmap h4 { color: var(--purple); margin-bottom: 10px; }
+.roadmap ul { list-style: none; }
+.roadmap ul li { padding: 8px 0; color: var(--slate-300); display: flex; align-items: flex-start; gap: 8px; }
+.roadmap ul li::before { content: '→'; color: var(--blue); font-weight: 700; }
+.cta-section { text-align: center; padding: 60px 24px; background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.05)); }
+.cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+.cta-section p { color: var(--slate-400); margin-bottom: 32px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px 0; }
+.feature { background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(148, 163, 184, 0.08); border-radius: 12px; padding: 24px; }
+.feature h3 { color: var(--purple); margin-bottom: 8px; }
+.feature p { color: var(--slate-400); font-size: 0.875rem; }
+.footer { border-top: 1px solid rgba(148, 163, 184, 0.1); padding: 40px 24px; text-align: center; color: var(--slate-400); font-size: 0.875rem; }
+.footer a { color: var(--slate-300); text-decoration: none; }
+@media (max-width: 768px) { .header h1 { font-size: 1.75rem; } .assessment { padding: 24px; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+<a href="/" class="nav-brand">Zion Tech Group</a>
+<div class="nav-links">
+<a href="/services/">Services</a>
+<a href="/tools/">Tools</a>
+<a href="/pricing/">Pricing</a>
+<a href="/contact/">Contact</a>
+</div>
+</div>
+</nav>
+<div class="header">
+<h1>AI Readiness Assessment</h1>
+<p>Find out how ready your IT company is for AI implementation. Get your personalized score, roadmap, and cost estimate — in under 5 minutes.</p>
+</div>
+<div class="container">
+<div class="features">
+<div class="feature">
+<h3>Instant Score</h3>
+<p>Get an immediate AI maturity score across 6 dimensions: data, talent, infrastructure, strategy, processes, and budget.</p>
+</div>
+<div class="feature">
+<h3>Custom Roadmap</h3>
+<p>Receive a phased implementation roadmap tailored to your company's size and readiness level.</p>
+</div>
+<div class="feature">
+<h3>Cost Estimates</h3>
+<p>See realistic cost ranges for AI agents, LLM integration, and automation based on your profile.</p>
+</div>
+</div>
+<div class="assessment" id="assessment">
+<div class="question">
+<label>1. How many employees does your company have?</label>
+<select id="q1">
+<option value="">Select...</option>
+<option value="1">1-10</option>
+<option value="2">11-50</option>
+<option value="3">51-200</option>
+<option value="4">201-1000</option>
+<option value="5">1000+</option>
+</select>
+</div>
+<div class="question">
+<label>2. What's your current AI usage level?</label>
+<select id="q2">
+<option value="">Select...</option>
+<option value="1">None yet — exploring</option>
+<option value="2">Experimenting with ChatGPT/Claude</option>
+<option value="3">Using AI tools in some teams</option>
+<option value="4">AI integrated in workflows</option>
+<option value="5">Full AI-native operations</option>
+</select>
+</div>
+<div class="question">
+<label>3. Do you have a centralized data infrastructure?</label>
+<select id="q3">
+<option value="">Select...</option>
+<option value="1">No structured data</option>
+<option value="2">Some databases, not connected</option>
+<option value="3">Data warehouse or data lake</option>
+<option value="4">Modern data stack with pipelines</option>
+<option value="5">Real-time unified data platform</option>
+</select>
+</div>
+<div class="question">
+<label>4. What's your biggest pain point?</label>
+<select id="q4">
+<option value="">Select...</option>
+<option value="a">Manual repetitive tasks</option>
+<option value="b">Customer support overload</option>
+<option value="c">Lead generation & sales</option>
+<option value="d">Software development speed</option>
+<option value="e">Data analysis & reporting</option>
+</select>
+</div>
+<div class="question">
+<label>5. What's your annual IT budget?</label>
+<select id="q5">
+<option value="">Select...</option>
+<option value="1">Under $50K</option>
+<option value="2">$50K - $200K</option>
+<option value="3">$200K - $1M</option>
+<option value="4">$1M - $5M</option>
+<option value="5">$5M+</option>
+</select>
+</div>
+<div class="question">
+<label>6. Do you have a dedicated AI/ML team?</label>
+<select id="q6">
+<option value="">Select...</option>
+<option value="1">No AI talent</option>
+<option value="2">1-2 data people</option>
+<option value="3">Small AI team (3-5)</option>
+<option value="4">Dedicated AI department</option>
+<option value="5">Multiple AI teams</option>
+</select>
+</div>
+<div style="text-align:center;margin-top:20px;">
+<button class="btn" onclick="calculateScore()">Get My AI Readiness Score →</button>
+</div>
+<div class="result" id="result">
+<h3>Your AI Readiness Score</h3>
+<div class="score" id="scoreValue">0/100</div>
+<div class="score-label" id="scoreLabel">Getting started</div>
+<div class="roadmap" id="roadmap"></div>
+<div style="margin-top:24px;">
+<a href="/contact/" class="btn">Book Free AI Strategy Call</a>
+</div>
+</div>
+</div>
+<div class="cta-section">
+<h2>Ready to accelerate your AI journey?</h2>
+<p>Our team has helped 200+ companies implement AI agents, automation, and LLM solutions. Let's build your roadmap together.</p>
+<a href="/contact/" class="btn">Get Your Free Consultation</a>
+</div>
+</div>
+<div class="footer">
+<p>© 2026 Zion Tech Group. All rights reserved. | <a href="/tools/">Free AI Tools</a> | <a href="/blog/">Blog</a> | <a href="/pricing/">Pricing</a> | <a href="https://calendly.com/kleber-ziontechgroup">Book a Call</a></p>
+</div>
+<script>
+function calculateScore() {
+  let score = 0;
+  const q1 = parseInt(document.getElementById('q1').value) || 0;
+  const q2 = parseInt(document.getElementById('q2').value) || 0;
+  const q3 = parseInt(document.getElementById('q3').value) || 0;
+  const q5 = parseInt(document.getElementById('q5').value) || 0;
+  const q6 = parseInt(document.getElementById('q6').value) || 0;
+  score = (q1 * 4) + (q2 * 10) + (q3 * 6) + (q5 * 4) + (q6 * 8);
+  if (score > 100) score = 100;
+  const scoreEl = document.getElementById('scoreValue');
+  const labelEl = document.getElementById('scoreLabel');
+  const roadmapEl = document.getElementById('roadmap');
+  let label, roadmap;
+  if (score < 25) {
+    label = 'Explorer — Just getting started';
+    roadmap = '<h4>Your 90-Day Roadmap</h4><ul><li>→ Audit your manual processes and identify quick wins</li><li>→ Start with AI-powered email triage or chatbot (saves 10+ hrs/week)</li><li>→ Train your team on ChatGPT/Claude for daily tasks</li><li>→ Budget: $2,000 - $5,000/month for initial automation</li></ul>';
+  } else if (score < 50) {
+    label = 'Experimenter — Building momentum';
+    roadmap = '<h4>Your 90-Day Roadmap</h4><ul><li>→ Deploy AI agents for lead scoring and qualification</li><li>→ Integrate LLM into customer support (50% ticket reduction)</li><li>→ Build internal knowledge base with RAG</li><li>→ Budget: $5,000 - $15,000/month for scaling</li></ul>';
+  } else if (score < 75) {
+    label = 'Accelerator — Scaling AI across teams';
+    roadmap = '<h4>Your 90-Day Roadmap</h4><ul><li>→ Deploy multi-agent workflow orchestration</li><li>→ Build custom AI micro-SaaS products</li><li>→ Implement real-time AI analytics dashboards</li><li>→ Budget: $15,000 - $50,000/month for enterprise AI</li></ul>';
+  } else {
+    label = 'Leader — AI-native operations';
+    roadmap = '<h4>Your 90-Day Roadmap</h4><ul><li>→ Deploy autonomous agent fleets with human-in-the-loop</li><li>→ Build proprietary LLM fine-tuning pipeline</li><li>→ Launch AI-powered products for your clients</li><li>→ Budget: $50,000+/month for market leadership</li></ul>';
+  }
+  scoreEl.textContent = score + '/100';
+  labelEl.textContent = label;
+  roadmapEl.innerHTML = roadmap;
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({behavior: 'smooth'});
+}
+</script>
+</body>
+</html>

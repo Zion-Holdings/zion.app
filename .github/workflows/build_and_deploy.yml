@@ -1,0 +1,35 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Prepare artifact
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          cp -Rf public/. out/
+          cp -Rf docs/. out/docs/
+          [ -f _headers ] && cp -f _headers out/_headers || true
+          [ -f out/_headers ] || true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+      - uses: actions/deploy-pages@v4
