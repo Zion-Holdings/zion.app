@@ -1,7 +1,8 @@
 import { Composio } from '@composio/core';
 
-const composio = new Composio({ apiKey: process.env.COMPOSIO_API_KEY });
-const userId = process.env.ZION_USER_ID || 'zion-master';
+const apiKey = 'ak_EbwU3_9eFhvnlpQHN7Ny';
+const composio = new Composio({ apiKey });
+const userId = 'kleber@ziontechgroup.com';
 
 const connections = {
   calendly: process.env.COMPOSIO_CALENDLY_CONNECTION_ID,
@@ -21,11 +22,11 @@ const connections = {
   tavily: process.env.COMPOSIO_TAVILY_CONNECTION_ID,
 };
 
-async function listTools(connectionId) {
+async function getTools(connectionId) {
   if (!connectionId) return { count: 0, tools: [], error: null };
   try {
-    const result = await composio.tools.list({ connectionIds: [connectionId] });
-    return { count: (result.tools || []).length, tools: result.tools || [], error: null };
+    const result = await composio.tools.get({ connectionIds: [connectionId] });
+    return { count: (result.tools || result || []).length, tools: result.tools || result || [], error: null };
   } catch (e) {
     return { count: 0, tools: [], error: e.message };
   }
@@ -46,7 +47,7 @@ async function run() {
       noSecretCount++;
       continue;
     }
-    const { count, error } = await listTools(id);
+    const { count, error } = await getTools(id);
     const status = error ? 'ERROR' : count > 0 ? 'ACTIVE' : 'NO_TOOLS';
     if (status === 'ACTIVE') activeCount++;
     if (status === 'ERROR') errorCount++;
