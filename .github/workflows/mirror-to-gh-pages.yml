@@ -19,22 +19,20 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build site
+      - name: Build static artifact
         run: |
           set -euo pipefail
-          npm run build:check || npm run build
+          rm -rf out
           mkdir -p out/docs out/public
-          cp -Rf docs/. out/docs/
-          cp -Rf public/. out/public/
-          find . -maxdepth 1 -name '*.html' -type f -exec cp -f {} out/ \;
+          [ -d docs ] && cp -Rf docs/. out/docs/ || true
+          [ -d public ] && cp -Rf public/. out/public/ || true
+          find . -maxdepth 1 \( -name '*.html' -o -name '*.xml' -o -name '*.txt' -o -name '*.json' -o -name '*.svg' -o -name '*.ico' -o -name '*.png' \) -type f -exec cp -f {} out/ \;
+          [ -f _headers ] && cp -f _headers out/_headers || true
+          [ -f CNAME ] && cp -f CNAME out/CNAME || true
+          echo "=== Artifact contents ==="
+          ls -la out/ | head -20
+          echo "=== Total files ==="
+          find out -type f | wc -l
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
