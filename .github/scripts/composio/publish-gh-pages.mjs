@@ -96,6 +96,10 @@ const FILES = [
   'services/ai-automation/index.html',
   'composio-automation-stack/index.html',
   'integrations/composio/index.html',
+  'tools/index.html',
+  'tools/json-formatter/index.html',
+  'tools/qr-code-generator/index.html',
+  'tools/phishing-analyzer/index.html',
 ];
 
 async function main() {
