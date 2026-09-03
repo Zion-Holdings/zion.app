@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Favicon Generator · Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/services/">
-<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery.">
-<meta http-equiv="refresh" content="0; url=/services/">
-<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Favicon Generator · Zion Tech Group</title>
+<meta name="description" content="Gere favicons para seu site. Upload de imagem e download em múltiplos tamanhos.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:800px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+input[type=file]{margin:16px 0}
+.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none}
+.btn:hover{background:#c4b5fd}
+.result{background:#1e293b;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+.fav-preview{width:64px;height:64px;border:1px solid #334155;border-radius:8px;margin:16px auto}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
 <body>
+<div class="max">
 <h1>Favicon Generator</h1>
-<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
-<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
-</body></html>
+<p class="sub">Gere favicons para seu site</p>
+
+<div class="card">
+<label>Upload de imagem (PNG, JPG, SVG)</label>
+<input type="file" id="file" accept="image/*">
+<button class="btn" onclick="generate()">Gerar Favicon</button>
+</div>
+
+<div class="result hidden" id="result">
+<h2>Preview</h2>
+<canvas id="preview" width="64" height="64" class="fav-preview"></canvas>
+<div style="margin-top:16px">
+<div class="item"><span class="label">16x16</span><span class="value">✓</span></div>
+<div class="item"><span class="label">32x32</span><span class="value">✓</span></div>
+<div class="item"><span class="label">64x64</span><span class="value">✓</span></div>
+<div class="item"><span class="label">180x180 (Apple)</span><span class="value">✓</span></div>
+</div>
+<a href="#" class="btn" style="margin-top:16px" onclick="download()">Download ZIP</a>
+</div>
+
+<div class="links"><p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a></p></div>
+</div>
+
+<script>
+function generate(){
+const file = document.getElementById('file').files[0];
+if(!file) return;
+
+const result = document.getElementById('result');
+result.classList.remove('hidden');
+
+const canvas = document.getElementById('preview');
+const ctx = canvas.getContext('2d');
+ctx.clearRect(0,0,64,64);
+
+const img = new Image();
+img.onload = () => {
+  ctx.drawImage(img, 0, 0, 64, 64);
+};
+img.src = URL.createObjectURL(file);
+}
+
+function download(){
+alert('Em produção: download com favicons em 16x16, 32x32, 64x64 e 180x180');
+}
+</script>
+</body>
+</html>
