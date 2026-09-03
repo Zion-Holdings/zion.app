@@ -1,0 +1,12 @@
+# DISABLED. Competed with legacy gh-pages / Discovery $99.
+name: Simple Static Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "disabled — do not publish leftover Next.js"

@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T05:32Z:** Root cause of the gh-pages wipe is `.github/workflows/mirror-to-gh-pages.yml` on `main` (actor **Zion CI**, `keep_files: false`, copies leftover `public/` + root HTML). Disabled that workflow plus `static-deploy.yml`, `deploy-to-github-pages.yml`, `deploy-static.yml`, `minimal-pages.yml`, `build_and_deploy.yml`, `ci-cd.yml`. Cancelled in-flight mirror run 33717423493. Restored Discovery (`38527243ac`). This PR replaces those workflow files with `workflow_dispatch` + `if: false` no-ops so a merge cannot turn the wipe back on. Connect Links reminted 05:31Z (expire ~05:41Z).
+
 **2026-09-03T05:19Z:** kleber/ziggy mirror had wiped leftover closers after the 05:15Z Discovery restore. Pages **built** on `3b6e3175` (18s). Live `/` is Discovery $99. Republished 12 wiped leftover closers (identity governance/IAM, zero-trust, Hermes, RPA, edge, n8n, EDR) — all live 200 “No packaged SKU”. Unknown slug honest 404. Connect Links reminted 05:18Z (expire ~05:28Z). Stripe/Calendly/Gmail still $0 / 0 bookings / 0 inbound sales. SerpAPI still 429.
 
 **2026-09-03T04:40Z:** Thirteenth leftover batch: leftover industry-hash SKUs (hospitality/media/auto/transport), construction/insurance predictive engines, rack-and-stack, review platform, RPA, serverless (SERP catalog = 365). Homepage still Discovery $99.

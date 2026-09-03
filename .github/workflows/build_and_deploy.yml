@@ -1,0 +1,13 @@
+# DISABLED. Used actions/deploy-pages against leftover public/ and
+# raced the honest legacy / gh-pages Discovery homepage.
+name: CI/CD Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "disabled — live Pages source must stay legacy / gh-pages"

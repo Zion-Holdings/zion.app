@@ -1,0 +1,15 @@
+# DISABLED. This workflow used keep_files: false as Zion CI and
+# replaced live Discovery $99 with leftover Next.js from main.
+# Do not re-enable. Honest Pages source is legacy / gh-pages via
+# .github/workflows/pages.yml (public/ only, refuses _next/static).
+name: Mirror main build to gh-pages branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "disabled — leftover Next.js must not overwrite gh-pages"
