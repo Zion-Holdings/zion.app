@@ -1,53 +1,20 @@
 [
   {
-    "timestamp": "2026-09-02",
+    "timestamp": "2026-09-03T00:00:00-03:00",
+    "script": "historical_email_miner.py",
+    "exit_code": 0,
+    "error": null,
     "result": {
-      "queries_run": 13,
+      "queries_run": 11,
       "contacts_found": 0,
       "new_leads_added": 0
     },
-    "error": null
+    "note": "High-frequency run completed without emails sent."
   },
   {
-    "ts": "2026-09-02T23:22:56.821181+00:00",
-    "event": "miner_timeout",
-    "query": "subject:\"AI services\"",
-    "note": "soft timeout reached; stopping query loop early"
-  },
-  {
-    "ts": "2026-09-02T23:32:57.474589+00:00",
-    "event": "miner_timeout",
-    "query": "subject:\"AI services\"",
-    "note": "soft timeout reached; stopping query loop early"
-  },
-  {
-    "ts": "2026-09-03T00:26:33.888027+00:00",
-    "event": "miner_timeout",
-    "query": "subject:sase",
-    "note": "soft timeout reached after search; breaking before metadata extraction"
-  },
-  {
-    "ts": "2026-09-03T00:32:20.637579+00:00",
+    "ts": "2026-09-03T03:42:39.128156+00:00",
     "event": "miner_timeout",
     "query": "subject:\"platform engineering\"",
-    "note": "soft timeout reached; stopping query loop early"
-  },
-  {
-    "ts": "2026-09-03T00:42:30.055204+00:00",
-    "event": "miner_timeout",
-    "query": "subject:\"platform engineering\"",
-    "note": "soft timeout reached; stopping query loop early"
-  },
-  {
-    "ts": "2026-09-03T00:52:19.662939+00:00",
-    "event": "miner_timeout",
-    "query": "subject:\"platform engineering\"",
-    "note": "soft timeout reached; stopping query loop early"
-  },
-  {
-    "ts": "2026-09-03T01:02:21.009667+00:00",
-    "event": "miner_timeout",
-    "query": "subject:devops",
     "note": "soft timeout reached; stopping query loop early"
   }
 ]
