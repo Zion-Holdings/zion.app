@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /private/
 
 Sitemap: https://ziontechgroup.com/sitemap.xml

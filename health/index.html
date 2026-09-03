@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/favicon.ico">
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Health | Zion Tech Group</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health · Zion Tech Group</title>
+  <link rel="canonical" href="https://ziontechgroup.com/health/">
+  <style>
+    :root { color-scheme: dark; --bg:#0a0e14; --fg:#e6edf3; --muted:#8b949e; --ok:#3fb950; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--fg); line-height:1.6; }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
+    a { color: #58a6ff; }
+    pre { background:#161b22; padding:16px; border-radius:10px; overflow:auto; }
+  </style>
 </head>
-<body style="background:#0b1221;color:#e5e7eb;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0">
-  <main style="text-align:center">
-    <h1 style="font-size:3rem;font-weight:700;background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent">OK</h1>
-    <p style="color:#94a3b8;margin-top:0.5rem">Zion Tech Group — site is healthy.</p>
+<body>
+  <main>
+    <p><a href="/">← Zion Tech Group</a></p>
+    <h1>Health</h1>
+    <p style="color:var(--ok)">Public site is up. Custom domain <code>ziontechgroup.com</code> is served from GitHub Pages.</p>
+    <pre>{
+  "ok": true,
+  "site": "https://ziontechgroup.com",
+  "pages": "legacy / gh-pages",
+  "cname": "ziontechgroup.com"
+}</pre>
+    <p>Ops status with live Composio inventory: <a href="/status/">/status/</a></p>
   </main>
 </body>
 </html>

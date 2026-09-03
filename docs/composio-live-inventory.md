@@ -1,8 +1,8 @@
 # Zion Composio Live Inventory
 
-Verified 2026-09-02 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` on 2026-09-03 (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`.
+Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
-**2026-09-03 apex + money pages (live):** Pages API `cname=ziontechgroup.com` (cert approved, domain verified). Switched `build_type` from `workflow` (which ignored `gh-pages` pushes) to **legacy / gh-pages**. Build `fc079fdd` **built** at 00:28 UTC. Live **200**: `/`, `/book/`, `/plans/`, `/heritage/`, `/composio/`, `/paid-consultation/`, `/success-stories/`. `www` may still show a Fastly-cached GitHub 404. `.nojekyll` is on `gh-pages` so Jekyll does not eat `_next` or new folders.
+**2026-09-03 apex + money pages (live):** Pages API `cname=ziontechgroup.com` (cert approved, domain verified). Switched `build_type` from `workflow` (which ignored `gh-pages` pushes) to **legacy / gh-pages**. `www` **301 → apex 200**. `.nojekyll` is on `gh-pages` so Jekyll does not eat `_next` or new folders. `llms.txt` + focused `sitemap.xml` replace the 7k-URL ghost export.
 
 Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were missing. Live data contradicts that. Orchestrators that read `COMPOSIO_*_CONNECTION_ID` GitHub secrets were skipping healthy accounts.
 
@@ -64,11 +64,13 @@ This **Pages** repo is the wrong source. The live Telegram worker lives in priva
 
 Confirmed again on `238e16f1` (`23:57:13Z`) and CNAME hotfix `ea0ac09f` (`23:56:14Z`): check `Workers Builds: ziontechgroup` started and finished in the **same second**, app `cloudflare-workers-and-pages`. Same-second fails also on `main`. That is not a build of this site.
 
-## Production: custom domain 404 (2026-09-02)
+## Production: custom domain (2026-09-03)
 
-`https://ziontechgroup.com/` and `www` return GitHub’s **Site not found** 404. cPanel monitoring emailed the same. DNS is already on GitHub Pages IPs (`185.199.x` / `2606:50c0:800x`). `GET /pages` has **`cname: null`**. `https://zion-support.github.io/` is **200**. Hotfix PR: add `CNAME` + `public/CNAME` (`ziontechgroup.com`) so the Pages artifact rebinds the apex.
+`https://ziontechgroup.com/` is **200** (Discovery $99 homepage). `https://www.ziontechgroup.com/` **301 → apex**. Pages API `cname=ziontechgroup.com`, cert approved (includes www), `build_type=legacy` / `gh-pages`. Do **not** send `https_enforced: true` before the cert exists.
 
 Do **not** add a stub `wrangler.toml` here — that would deploy over production worker `ziontechgroup`. Fix: Cloudflare dashboard → disconnect Workers Builds from `zion-support.github.io`, or retarget it at `telegram-ai-reply-worker`.
+
+Sitemap is now the money/ops set only. The previous 7,000-URL export listed ghost Next.js routes. Legal pages: `/privacy/`, `/terms/`, `/cookies/`. Honest partner/affiliate copy (no 20% commission).
 
 ## Brand / social (2026-09-02)
 
