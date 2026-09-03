@@ -50,3 +50,10 @@
 /use-cases/ /use-cases/index.html 200
 /solutions/healthcare /solutions/healthcare/index.html 200
 /solutions/healthcare/ /solutions/healthcare/index.html 200
+
+/cpa-growth-partner /cpa/ 301
+/cpa-growth-partner/ /cpa/ 301
+/whatsapp /contact/ 302
+/whatsapp/ https://wa.me/13024640950 302
+/consultation /book/ 301
+/consultation/ /book/ 301
