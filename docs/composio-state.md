@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T05:19Z. Pages **built** (`3b6e3175`, 18s). Live apex is Discovery $99. Republished 12 wiped leftover closers (identity/Hermes/RPA/edge/n8n/EDR) — live 200 “No packaged SKU”. Unknown slug honest 404. Connect Links reminted 05:18Z expire ~05:28Z. Do not remint while INITIALIZING/INITIATED. Do not add wrangler.toml.
+
 Atualizado 2026-09-03T05:12Z. Live apex still Discovery $99. Pages **errored** again after leftover-closer republish (`307e194e` building). Stripe $0; Calendly 0 upcoming; Gmail 6h sales 0; Sentry unresolved none. Connect Links 05:06Z still INITIATED (expire ~05:16Z). Do not remint. Do not add wrangler.toml.
 
 Atualizado 2026-09-03T05:06Z. Pages **built**. Live apex is Discovery $99 again. A kleber/ziggy mirror (`restore all public pages with _redirects`, `mirror workflow`) overwrote gh-pages with leftover Next.js and broke Pages; we restored money pages. Connect Links reminted 05:06Z expire ~05:16Z. Do not add wrangler.toml.
