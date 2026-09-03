@@ -1,0 +1,24 @@
+.next/
+node_modules/
+core
+
+logs/
+sitemap.xml
+tmp/
+
+# Debug/temp artifacts
+__next.*.txt
+*.__PAGE__.txt
+.tmp_scratch/
+_tmp_route_probe.sh
+_redirects.bak
+5g-solutions/
+API_REGISTRY/
+OPENROUTER-SETUP/
+_not-found/
+
+# Local secrets
+.composio/secrets.env
+
+# Build output (GitHub Pages)
+_next/

@@ -1,0 +1,55 @@
+name: Zion Connection Monitor v2.0
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  connection-monitor:
+    if: false
+    runs-on: ubuntu-latest
+    env:
+      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+      ZION_USER_ID: ${{ secrets.ZION_USER_ID }}
+      COMPOSIO_CALENDLY_CONNECTION_ID: ${{ secrets.COMPOSIO_CALENDLY_CONNECTION_ID }}
+      COMPOSIO_WHATSAPP_CONNECTION_ID: ${{ secrets.COMPOSIO_WHATSAPP_CONNECTION_ID }}
+      COMPOSIO_STRIPE_CONNECTION_ID: ${{ secrets.COMPOSIO_STRIPE_CONNECTION_ID }}
+      COMPOSIO_RESEND_CONNECTION_ID: ${{ secrets.COMPOSIO_RESEND_CONNECTION_ID }}
+      COMPOSIO_BREVO_CONNECTION_ID: ${{ secrets.COMPOSIO_BREVO_CONNECTION_ID }}
+      COMPOSIO_GMAIL_CONNECTION_ID: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
+      COMPOSIO_HUBSPOT_CONNECTION_ID: ${{ secrets.COMPOSIO_HUBSPOT_CONNECTION_ID }}
+      COMPOSIO_NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
+      COMPOSIO_SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID }}
+      COMPOSIO_1PASSWORD_CONNECTION_ID: ${{ secrets.COMPOSIO_1PASSWORD_CONNECTION_ID }}
+      COMPOSIO_SENDGRID_CONNECTION_ID: ${{ secrets.COMPOSIO_SENDGRID_CONNECTION_ID }}
+      COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID: ${{ secrets.COMPOSIO_ACTIVECAMPAIGN_CONNECTION_ID }}
+      COMPOSIO_FIRECRAWL_CONNECTION_ID: ${{ secrets.COMPOSIO_FIRECRAWL_CONNECTION_ID }}
+      COMPOSIO_SERPAPI_CONNECTION_ID: ${{ secrets.COMPOSIO_SERPAPI_CONNECTION_ID }}
+      COMPOSIO_TAVILY_CONNECTION_ID: ${{ secrets.COMPOSIO_TAVILY_CONNECTION_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Composio SDK
+        run: npm install @composio/core
+      - name: Run Connection Monitor
+        run: node .github/scripts/composio/connection-monitor-v2.mjs
+      - name: Check for degraded connections
+        id: health
+        run: |
+          SCORE=$(python3 -c "import json; r=json.load(open('composio-connection-report.json')); print(r.get('healthScore', 0))")
+          echo "health_score=$SCORE" >> $GITHUB_OUTPUT
+          echo "Health Score: $SCORE%"
+      - name: Notify Slack on degradation
+        if: steps.health.outputs.health_score < 80
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data "{\"text\":\"⚠️ Zion Composio Health: ${{ steps.health.outputs.health_score }}% — connections degraded\"}" \
+            "${{ secrets.SLACK_WEBHOOK_URL }}"

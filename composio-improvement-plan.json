@@ -1,0 +1,43 @@
+{
+  "plan": "Composio full-potential execution for Zion Tech Group",
+  "current_state": {
+    "cli_available": false,
+    "active_connections": [
+      "Calendly",
+      "WhatsApp",
+      "Stripe",
+      "Resend",
+      "Brevo",
+      "Firecrawl",
+      "SERPAPI",
+      "Tavily",
+      "1Password"
+    ],
+    "missing_connections": [
+      "HubSpot",
+      "Gmail",
+      "Notion",
+      "Slack",
+      "SendGrid",
+      "ActiveCampaign",
+      "Linear",
+      "Asana",
+      "Airtable",
+      "Salesforce",
+      "Pipedrive"
+    ],
+    "root_cause": "Composio API key invalid/expired; Termux CLI unavailable"
+  },
+  "immediate_actions": [
+    "Audit existing scripts for correctness and portability",
+    "Create missing high-priority scripts without relying on live API",
+    "Build master orchestrator to run only verified connections",
+    "Add Telegram broadcast, Firecrawl research, Browser automation, Sheets reporting",
+    "Document exact human steps to renew key and connect missing apps"
+  ],
+  "human_only": [
+    "Renew/regenerate Composio API key",
+    "Connect missing integrations in Composio dashboard",
+    "Confirm Composio plan/tier"
+  ]
+}

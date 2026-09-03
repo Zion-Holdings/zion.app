@@ -1,0 +1,30 @@
+[
+  {
+    "ts": "2026-09-03T00:00:00Z",
+    "action": "run",
+    "result": {
+      "queries_run": 12,
+      "contacts_found": 0,
+      "new_leads_added": 0,
+      "error": null
+    }
+  },
+  {
+    "ts": "2026-09-03T04:32:51.485261+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-03T04:42:48.980052+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-03T04:52:51.817515+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  }
+]
