@@ -88,7 +88,11 @@ Composio v3.1
 
 Catalog: `GET /api/v3.1/triggers_types` (396 types). Active instances: `GET /api/v3.1/trigger_instances/active` — **empty**. Project webhooks: `GET /api/v3.1/webhook_subscriptions` — **empty**. Event types: `composio.trigger.message`, `composio.connected_account.expired`, `composio.trigger.disabled`.
 
+**Triggers do not work inside Sessions yet** (2026 docs). Keep using `composio.triggers.create()` / REST upsert + a project webhook. Sessions handle tool discovery and versioning; triggers stay on the direct path.
+
 **Calendly has no Composio trigger types.** Booking detection stays cron (`CALENDLY_LIST_EVENTS`) or a native Calendly webhook until Composio adds a type.
+
+SDK `tools.execute()` (Python ≥0.9 / TS ≥0.2) requires a pinned toolkit version; `"latest"` alone needs `dangerously_skip_version_check`. Zion CI uses **REST v3.1** with `version: "latest"` — that REST default is still valid. Pin a dated version when a script destructures Stripe/Gmail fields.
 
 Do **not** `POST /webhook_subscriptions` until Zion has a public HTTPS receiver (e.g. `telegram-agent-listener`). Creating a subscription without a live URL drops the one-per-project slot and returns a signing secret that must go in 1Password, never git.
 

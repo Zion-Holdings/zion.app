@@ -100,7 +100,7 @@ Gmail last 21 days (excluding GitHub): only our own Resend briefs, promotions, a
 
 For `Zion Tech Group`, Google currently surfaces LinkedIn, Facebook, a 2019 Reddit MSP thread, ConnectAmericas, and Crunchbase **before or beside** ziontechgroup.com. Name-collision sites (`ziontech.biz`, `ziontechnologies.org`) also appear for adjacent queries. The site must keep a clear legal-entity + 26-year-history + .com canonical story on every money page.
 
-Query `"Zion Tech Group" AI automation` ranks **ziontechgroup.com #1** (verified 2026-09-02 via SerpAPI). Keep `/about/` and the Discovery CTA on the homepage so the branded AI query stays owned.
+Query `"Zion Tech Group" AI automation` ranks **ziontechgroup.com #1**. Generic brand query `Zion Tech Group` still ranks LinkedIn, Facebook `ziontechgroupbr`, a 2019 Reddit MSP thread, and ConnectAmericas **above** the apex (re-checked 2026-09-03). Homepage JSON-LD now includes the Delaware PostalAddress. Instagram website field is still `https://ziontechgroup.com.br/` (no Graph tool to change it).
 
 YouTube `@ziontechgroup` videos are 2009–2019 hardware (UPS / Dell / green IT) pointing at `.com.br`. Use them as legitimacy, not as the AI CTA. Instagram `@zion.tech.group` website field is still `https://ziontechgroup.com.br/`. Daily **reach** 2026-08-26→09-01 was 0,0,0,0,0,0,2 — 2.9k followers, almost no recent distribution.
 

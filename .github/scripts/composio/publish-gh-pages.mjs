@@ -32,6 +32,14 @@ const FILES = [
   'academy/index.html',
   'admin-dashboard/index.html',
   'pricing-calculator/index.html',
+  'security/index.html',
+  'ai/index.html',
+  'ai-agents/index.html',
+  'careers/index.html',
+  'jobs/index.html',
+  'docs/index.html',
+  'legal/index.html',
+  'about/index.html',
 ];
 
 async function main() {
