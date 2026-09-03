@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T04:31Z. Apex drifted to leftover Next.js (`_next/static`) around 04:29Z; restored Discovery $99 + `/plans/` + honest 404 via targeted gh-pages dual-write of money pages. This turn closed 108 leftover 404s. SERP catalog 317.
+
 Atualizado 2026-09-03T04:29Z. Apex is Discovery $99. This turn closed 108 leftover 404s. SERP catalog 317. Connect Links reminted 04:19Z still INITIALIZING/INITIATED past TTL — do not remint until EXPIRED. Workers Builds CI is the Cloudflare hook — not a site build; do not add wrangler.toml.
 
 Atualizado 2026-09-03T04:27Z. Apex is Discovery $99. This turn closed 96 leftover 404s. SERP catalog 305. Connect Links reminted 04:19Z still INITIALIZING/INITIATED (expire ~04:29Z). Workers Builds CI is the Cloudflare hook on this Pages repo — not a site build; do not add wrangler.toml.
