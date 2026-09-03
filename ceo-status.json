@@ -1,34 +1,34 @@
 {
   "ceo": "Kleber Garcia Alcatrão",
   "company": "Zion Tech Group",
-  "last_updated": "2026-09-03T04:10 UTC",
+  "last_updated": "2026-09-03T05:15 UTC",
   "site_status": {
     "url": "https://ziontechgroup.com",
-    "http_status": "200 OK (homepage)",
-    "live_routes": ["/pricing/", "/checkout/", "/booking/", "/affiliate/"],
-    "broken_routes": [
-      "/service-comparison/",
-      "/testimonials/",
-      "/tools/2026-ma-due-diligence-checklist/",
-      "/monetization-hub/"
-    ],
+    "online": true,
+    "homepage_http": 200,
+    "live_routes": ["/", "/pricing/", "/checkout/", "/booking/", "/affiliate/", "/new-ai-services/", "/tools/", "/sitemap.xml/"],
+    "broken_routes": ["/testimonials/", "/service-comparison/", "/tools/2026-ma-due-diligence-checklist/", "/monetization-hub/"],
     "broken_count": 4,
-    "note": "404 fallbacks created in repo; awaiting Pages redeploy",
+    "note": "404 fallbacks exist in public/ but GitHub Pages build is stuck/errored; routes remain 404 live.",
     "page_count_in_repo": 329
   },
-  "monetization": {
-    "live_pages": ["/pricing/", "/checkout/", "/booking/", "/affiliate/"],
-    "broken_pages": ["/monetization-hub/"]
+  "deploy_blocker": {
+    "type": "GitHub Pages build stuck/errored",
+    "pages_build_status": "building (since 04:46 UTC)",
+    "pages_source": "gh-pages branch",
+    "fallbacks_present_in_public": true,
+    "fallbacks_confirmed_in_ghpages": false,
+    "last_verified": "2026-09-03T05:15 UTC"
   },
   "lead_crm": {
     "total_leads": 1933,
     "outreach_ready": 693,
     "source": "lead-crm/all-leads.json",
-    "last_miner_run": "2026-09-03T04:02 UTC",
-    "miner_queries": 11,
+    "miner_status": "ok",
+    "miner_queries_per_cycle": 12,
     "miner_contacts_found": 0,
-    "miner_new_leads_added": 0,
-    "miner_status": "ok"
+    "miner_new_leads": 0,
+    "miner_avg_query_s": 10.3
   },
   "outreach": {
     "status": "blocked_by_config_or_env",
