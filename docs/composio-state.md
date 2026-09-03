@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T04:58Z. Pages still **errored**; latest build `4894b1d7` stuck **building** since 04:56Z (`duration: 0`). Apex still leftover Next.js. Do not enqueue more Pages builds until this one finishes. Connect Links reminted 04:54Z still INITIATED (expire ~05:04Z). Workers Builds CI is the Cloudflare hook — not a site build.
+
 Atualizado 2026-09-03T04:54Z. Pages still **errored/building** (`duration: 0`). Fastly age ~9m serving leftover Next.js. gh-pages source is Discovery $99. Removed leftover `_next` blobs + `sw.js` from gh-pages; rebuild queued. Connect Links reminted 04:54Z expire ~05:04Z. Workers Builds CI is the Cloudflare hook — not a site build.
 
 Atualizado 2026-09-03T04:45Z. GitHub Pages status **errored/building** — live apex fell back to leftover Next.js (`_next/static`) even though gh-pages `index.html` and `public/index.html` are Discovery $99 (6026 bytes). Reaffirmed legacy / gh-pages / / and requested a rebuild. Connect Links reminted 04:43Z expire ~04:53Z. Do not add wrangler.toml.
