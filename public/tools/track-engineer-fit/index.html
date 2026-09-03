@@ -1,11 +1,94 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Track Engineer Fit · Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/services/">
-<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery.">
-<meta http-equiv="refresh" content="0; url=/services/">
-<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Track Engineer Fit · Zion Tech Group</title>
+<meta name="description" content="Descubra se um candidato ou profissional combina com sua vaga de tecnologia.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:800px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+label{display:block;margin:16px 0 4px;color:#94a3b8;font-size:.875rem}
+select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-size:1rem}
+select:focus,textarea:focus{outline:none;border-color:#a78bfa}
+.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none}
+.btn:hover{background:#c4b5fd}
+.result{background:#1e293b;border:1px solid #a78bfa;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+.result .score{font-size:3rem;font-weight:700;color:#a78bfa}
+.result .level{font-size:1.25rem;margin-top:8px}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
 <body>
+<div class="max">
 <h1>Track Engineer Fit</h1>
-<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
-<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
-</body></html>
+<p class="sub">Descubra se um profissional combina com sua vaga</p>
+
+<div class="card">
+<label>Tipo de vaga</label>
+<select id="role">
+<option value="backend">Backend Engineer</option>
+<option value="frontend">Frontend Engineer</option>
+<option value="fullstack">Fullstack Engineer</option>
+<option value="devops">DevOps Engineer</option>
+<option value="data">Data Engineer</option>
+<option value="mobile">Mobile Engineer</option>
+</select>
+<label>Anos de experiência</label>
+<select id="experience">
+<option value="junior">Junior (0-2 anos)</option>
+<option value="mid">Mid (2-5 anos)</option>
+<option value="senior">Senior (5+ anos)</option>
+</select>
+<label>Stack principal do candidato</label>
+<textarea id="stack" rows="3" placeholder="Ex: Python, Django, PostgreSQL, Docker..."></textarea>
+<button class="btn" onclick="check()">Verificar Fit</button>
+</div>
+
+<div class="result hidden" id="result">
+<div class="score" id="score">0%</div>
+<div class="level" id="level">Nível</div>
+<a href="/book/" class="btn">Contratar com Zion</a>
+</div>
+
+<div class="links">
+<p><a href="/services/">Serviços</a> · <a href="/plans/">Planos</a></p>
+</div>
+</div>
+
+<script>
+function check(){
+const role = document.getElementById('role').value;
+const experience = document.getElementById('experience').value;
+const stack = document.getElementById('stack').value.toLowerCase();
+
+const stacks = {
+  backend: ['python','django','node','java','go','c#','php','ruby'],
+  frontend: ['react','vue','angular','javascript','typescript','css','html'],
+  fullstack: ['react','node','python','django','vue','angular','typescript'],
+  devops: ['docker','kubernetes','terraform','aws','azure','gcp','linux'],
+  data: ['python','sql','spark','pandas','etl','airflow','dbt'],
+  mobile: ['swift','kotlin','flutter','react native','ios','android']
+};
+
+const expected = stacks[role] || [];
+let matchCount = expected.filter(s => stack.includes(s)).length;
+let matchPct = Math.min(100, Math.round((matchCount / expected.length) * 100 + 30));
+
+if (experience === 'senior') matchPct = Math.min(100, matchPct + 15);
+if (experience === 'mid') matchPct = Math.min(100, matchPct + 5);
+
+let level = matchPct >= 80 ? 'Alto' : matchPct >= 50 ? 'Médio' : 'Baixo';
+
+document.getElementById('result').classList.remove('hidden');
+document.getElementById('score').textContent = matchPct + '%';
+document.getElementById('level').textContent = 'Fit: ' + level;
+}
+</script>
+</body>
+</html>
