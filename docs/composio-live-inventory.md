@@ -2,6 +2,10 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-03T04:21Z:** Fifth leftover batch: endpoint/patch, asset discovery, fraud, FinOps, code review, document understanding, edge CDN, email deliverability, BCDR, capacity/chargeback, change mgmt, SaaS license (SERP catalog = 269).
+
+**2026-09-03T04:19Z:** Fourth leftover batch: Fileforge, HR/legal/marketing/property/sales automation, Schedflow, Taxflow, Teampulse, Translatix, warehouse, DevSecOps pipeline (SERP catalog = 257). Connect Links reminted 04:19Z (expire ~04:29Z).
+
 **2026-09-03T04:08Z:** Third leftover batch this turn: AI curriculum/drug/emotion/financial/image/supply-chain/voice studios + API docs, Changelogify, Credrisk, customer-success AI, ERP automation (SERP catalog = 245). All verified live 200.
 
 **2026-09-03T04:06Z:** Second leftover batch this turn: SRE platform, cloud data sovereignty, MSP, Envault, accessibility, knowledge mgmt, LLM eval, green cloud, collaboration, finance automation (SERP catalog = 233). Browser-verified homepage Discovery $99, identity/zero-trust closers, honest 404, `/plans/` $99. Connect Links reminted 04:03Z.
