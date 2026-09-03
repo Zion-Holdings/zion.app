@@ -42,6 +42,7 @@ const PLAYBOOK = [
   { toolkit: 'sentry', tool: 'SENTRY_GET_PROJECT_LIST', args: {} },
   { toolkit: 'sentry', tool: 'SENTRY_LIST_AN_ORGANIZATIONS_ISSUES', args: { organization_id_or_slug: 'zion-holdings', query: 'is:unresolved', limit: 5 } },
   { toolkit: 'github', tool: 'GITHUB_GET_PAGES_SITE', args: { owner: 'Zion-support', repo: 'zion-support.github.io' } },
+  { toolkit: 'cloudflare', tool: 'CLOUDFLARE_LIST_ZONES', args: { per_page: 5 } },
   { toolkit: 'serpapi', tool: 'SERPAPI_GOOGLE_LIGHT_SEARCH', args: { q: 'site:ziontechgroup.com "Get Free Consultation"', num: 8 } },
   { toolkit: 'supabase', tool: 'SUPABASE_LIST_ALL_PROJECTS', args: {} },
   { toolkit: 'airtable', tool: 'AIRTABLE_LIST_BASES', args: {} },
