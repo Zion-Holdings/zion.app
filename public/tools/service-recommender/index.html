@@ -1,11 +1,128 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Service Recommender · Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/services/">
-<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery.">
-<meta http-equiv="refresh" content="0; url=/services/">
-<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Serviço Recomendador · Zion Tech Group</title>
+<meta name="description" content="Descubra qual serviço Zion Tech Group é ideal para sua empresa. Responda 3 perguntas e receba uma recomendação personalizada.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:800px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+.q{margin:24px 0}
+.q-text{font-size:1.1rem;margin-bottom:12px}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:12px 16px;background:#0f172a;border:1px solid #334155;border-radius:8px;cursor:pointer;transition:all .2s}
+.opt:hover{border-color:#a78bfa;background:#1e293b}
+.opt.selected{border-color:#a78bfa;background:#2d1b69}
+.result{background:#1e293b;border:1px solid #a78bfa;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+.result h2{margin-bottom:8px}
+.result .desc{color:#94d398;margin:12px 0}
+.result .price{font-size:1.5rem;font-weight:700;color:#a78bfa}
+.hidden{display:none}
+.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px}
+.btn:hover{background:#c4b5fd}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
 <body>
-<h1>Service Recommender</h1>
-<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
-<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
-</body></html>
+<div class="max">
+<h1>Serviço Recomendador</h1>
+<p class="sub">Descubra qual serviço Zion é ideal para sua empresa</p>
+
+<div id="quiz">
+<div class="card">
+<div class="q" data-q="1">
+<div class="q-text">1. Qual é o maior desafio da sua empresa hoje?</div>
+<div class="opts">
+<div class="opt" data-v="automation"><input type="radio">Processos manuais que consomem tempo</div>
+<div class="opt" data-v="security"><input type="radio">Segurança e proteção de dados</div>
+<div class="opt" data-v="infrastructure"><input type="radio">Infraestrutura de TI defasada</div>
+<div class="opt" data-v="ai"><input type="radio">Queremos usar IA mas não sabemos por onde começar</div>
+</div>
+</div>
+
+<div class="q" data-q="2">
+<div class="q-text">2. Qual o tamanho da sua empresa?</div>
+<div class="opts">
+<div class="opt" data-v="startup"><input type="radio">Startup (1-10 funcionários)</div>
+<div class="opt" data-v="sme"><input type="radio">PME (11-100 funcionários)</div>
+<div class="opt" data-v="enterprise"><input type="radio">Grande empresa (100+ funcionários)</div>
+</div>
+</div>
+
+<div class="q" data-q="3">
+<div class="q-text">3. Qual seu orçamento mensal para tecnologia?</div>
+<div class="opts">
+<div class="opt" data-v="low"><input type="radio">Até R$ 5.000</div>
+<div class="opt" data-v="medium"><input type="radio">R$ 5.000 - R$ 20.000</div>
+<div class="opt" data-v="high"><input type="radio">Acima de R$ 20.000</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="result hidden" id="result">
+<h2 id="service">Serviço</h2>
+<div class="desc" id="description">Descrição</div>
+<div class="price" id="price">Preço</div>
+<a href="/book/" class="btn">Agendar Discovery $99</a>
+</div>
+
+<div class="links">
+<p><a href="/services/">Serviços</a> · <a href="/plans/">Planos</a> · <a href="/tools/roi-calculator/">ROI Calculator</a></p>
+</div>
+</div>
+
+<script>
+let choices = {};
+document.querySelectorAll('.opt').forEach(opt => {
+  opt.addEventListener('click', () => {
+    const q = opt.closest('.q');
+    q.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    choices[q.dataset.q] = opt.dataset.v;
+    if (Object.keys(choices).length === 3) showResult();
+  });
+});
+
+function showResult() {
+  const c1 = choices['1'];
+  const c2 = choices['2'];
+  const c3 = choices['3'];
+  
+  let service, desc, price;
+  
+  if (c1 === 'ai') {
+    service = 'AI Discovery + Implementação';
+    desc = 'Mapeamento de oportunidades IA + implementação de soluções práticas';
+    price = 'A partir de R$ 2.500/mês';
+  } else if (c1 === 'automation') {
+    service = 'Automação de Processos';
+    desc = 'Automatize tarefas repetitivas e libere sua equipe para o que importa';
+    price = 'A partir de R$ 2.500/mês';
+  } else if (c1 === 'security') {
+    service = 'Segurança & Compliance';
+    desc = 'Proteção de dados, LGPD e segurança cibernética para sua empresa';
+    price = 'A partir de R$ 4.000/mês';
+  } else if (c1 === 'infrastructure') {
+    service = 'Infraestrutura de TI';
+    desc = 'Modernize sua infraestrutura com cloud, servidores e redes';
+    price = 'A partir de R$ 2.500/mês';
+  }
+  
+  if (c3 === 'low') price = 'Discovery $99 + ' + price.replace('A partir de ', '').replace('/mês', '/mês');
+  
+  document.getElementById('quiz').classList.add('hidden');
+  document.getElementById('result').classList.remove('hidden');
+  document.getElementById('service').textContent = service;
+  document.getElementById('description').textContent = desc;
+  document.getElementById('price').textContent = price;
+}
+</script>
+</body>
+</html>
