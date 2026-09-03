@@ -104,6 +104,12 @@ const FILES = [
   'data-analytics/index.html',
   'devops-automation/index.html',
   'micro-saas-services/index.html',
+  'blockchain-services/index.html',
+  'computer-vision/index.html',
+  'digital-transformation/index.html',
+  'payment-cancelled/index.html',
+  'payment-success/index.html',
+  'roi-calculator/index.html',
 ];
 
 async function main() {
