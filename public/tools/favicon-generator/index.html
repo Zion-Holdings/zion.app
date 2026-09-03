@@ -67,7 +67,12 @@ img.src = URL.createObjectURL(file);
 }
 
 function download(){
-alert('Em produção: download com favicons em 16x16, 32x32, 64x64 e 180x180');
+  const canvas = document.getElementById('preview') || document.querySelector('canvas');
+  if (!canvas) return;
+  const a = document.createElement('a');
+  a.download = 'favicon-64.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
 }
 </script>
 </body>
