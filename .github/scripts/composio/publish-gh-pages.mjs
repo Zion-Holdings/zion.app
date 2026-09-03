@@ -100,6 +100,10 @@ const FILES = [
   'tools/json-formatter/index.html',
   'tools/qr-code-generator/index.html',
   'tools/phishing-analyzer/index.html',
+  'free-ai-readiness-audit/index.html',
+  'data-analytics/index.html',
+  'devops-automation/index.html',
+  'micro-saas-services/index.html',
 ];
 
 async function main() {
