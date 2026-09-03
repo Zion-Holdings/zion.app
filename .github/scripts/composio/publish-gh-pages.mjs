@@ -143,6 +143,8 @@ export const PIN_PATHS = [
   'monetization-hub/index.html',
   'new-ai-services/index.html',
   'tools/2026-ma-due-diligence-checklist/index.html',
+  'service-comparison/index.html',
+  'testimonials/index.html',
 ];
 
 export const PUBLISH_PATHS = [...new Set([...FILES, ...SERP_CLOSER_PATHS])];

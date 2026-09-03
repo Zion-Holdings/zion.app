@@ -49,6 +49,8 @@ function closerCanonical(rel) {
   if (rel.startsWith('tools/')) return '/tools/';
   if (rel.startsWith('solutions/')) return '/solutions/';
   if (rel.startsWith('community/')) return '/';
+  if (rel.startsWith('privacy-policy')) return '/privacy/';
+  if (/^(industry|trust|government|composio-stack|whatsapp-automation)\//.test(rel)) return '/';
   if (rel === 'hp-support.html' || rel === 'outsourcing-it.html') return '/';
   if (!rel.startsWith('services/') && !rel.startsWith('blog/') && !rel.startsWith('tools/')) {
     // leftover hash SKUs dumped at repo root are not heritage hardware
