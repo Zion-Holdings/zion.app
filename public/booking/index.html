@@ -1,91 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Book a Consultation — Zion Tech Group</title>
-  <meta name="description" content="Schedule a free 30-minute strategy session, product demo, or deep-dive consulting call with our AI experts." />
-  <link rel="canonical" href="https://ziontechgroup.com/booking/" />
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%); color: #e2e8f0; min-height: 100vh; }
-    .container { max-width:900px; margin:0 auto; padding:60px 24px; }
-    h1 { font-size:2.5rem; font-weight:800; background:linear-gradient(135deg,#00d4ff,#7b2ff7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:16px; text-align:center; }
-    .subtitle { text-align:center; color:#94a3b8; margin-bottom:40px; font-size:1.1rem; }
-    .calendly-wrap { background:rgba(15,23,42,0.7); border:1px solid rgba(124,58,237,0.2); border-radius:16px; padding:24px; margin-bottom:40px; min-height:700px; }
-    .events-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; max-width:900px; margin:0 auto 40px; }
-    .event-card { background:rgba(15,23,42,0.6); border:1px solid rgba(124,58,237,0.2); border-radius:16px; padding:24px; cursor:pointer; transition:all 0.3s; }
-    .event-card:hover { border-color:rgba(0,212,255,0.5); transform:translateY(-4px); }
-    .event-icon { font-size:2.5rem; margin-bottom:12px; }
-    .event-name { color:#f1f5f9; font-size:1.2rem; font-weight:600; margin-bottom:8px; }
-    .event-desc { color:#94a3b8; font-size:0.9rem; margin-bottom:16px; }
-    .event-price { font-size:1.5rem; font-weight:700; color:#00d4ff; }
-    .cta { display:inline-block; padding:14px 28px; border-radius:12px; font-weight:600; text-decoration:none; background:linear-gradient(135deg,#0069ff,#00d4ff); color:white; transition:all 0.2s; }
-    .cta:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,105,255,0.4); }
-    .back { display:block; text-align:center; margin-top:32px; color:#a78bfa; text-decoration:none; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agende sua Consultoria · Zion Tech Group</title>
+<meta name="description" content="Agende uma sessão de estratégia gratuita, demo de produto ou consultoria aprofundada com nossos especialistas em IA.">
+<link rel="canonical" href="https://ziontechgroup.com/booking/">
+<meta name="robots" content="index,follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:linear-gradient(135deg,#020617 0%,#0f172a 50%,#1e1b4b 100%);color:#e2e8f0;min-height:100vh;line-height:1.65}
+.container{max-width:900px;margin:0 auto;padding:60px 24px}
+h1{font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#00d4ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px;text-align:center}
+.subtitle{text-align:center;color:#94a3b8;margin-bottom:40px;font-size:1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:32px 0}
+.card{background:rgba(15,23,42,0.6);border:1px solid rgba(124,58,237,0.2);border-radius:16px;padding:24px;text-align:center;transition:all 0.3s}
+.card:hover{border-color:rgba(0,212,255,0.5);transform:translateY(-4px)}
+.icon{font-size:2.5rem;margin-bottom:12px}
+.card h3{font-size:1.2rem;color:#f1f5f9;margin-bottom:8px}
+.desc{color:#94a3b8;font-size:0.9rem;margin-bottom:16px;min-height:60px}
+.price{font-size:1.5rem;font-weight:700;color:#00d4ff}
+.cta{display:inline-block;margin-top:24px;padding:14px 28px;border-radius:12px;font-weight:600;text-decoration:none;background:linear-gradient(135deg,#0069ff,#00d4ff);color:white;transition:all 0.2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,105,255,0.4)}
+.section{margin:40px 0;padding:24px;background:rgba(15,23,42,0.4);border-radius:12px;border:1px solid rgba(124,58,237,0.15)}
+.section h2{font-size:1.3rem;color:#a78bfa;margin-bottom:12px}
+.section ul{list-style:none;padding:0}
+.section li{padding:8px 0;color:#cbd5e1;font-size:0.95rem}
+.section li::before{content:"✓ ";color:#4ade80}
+.back{display:block;text-align:center;margin-top:32px;color:#a78bfa;text-decoration:none}
+.contact{margin-top:40px;text-align:center;padding:24px;background:rgba(15,23,42,0.4);border-radius:12px;border:1px solid rgba(124,58,237,0.15)}
+.contact h2{font-size:1.3rem;color:#a78bfa;margin-bottom:16px}
+.contact a{color:#00d4ff;text-decoration:none}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Book Your Strategy Session</h1>
-    <p class="subtitle">Pick a session type below, then choose your time. No commitment required.</p>
+<div class="container">
+<h1>Agende sua Sessão de Estratégia</h1>
+<p class="subtitle">Escolha o tipo de sessão abaixo. Sem compromisso.</p>
 
-    <div class="events-grid">
-      <div class="event-card" onclick="loadCalendly('strategy')">
-        <div class="event-icon">🚀</div>
-        <div class="event-name">AI Strategy Session</div>
-        <div class="event-desc">30 min · Free · Discover AI opportunities for your business</div>
-        <div class="event-price">FREE</div>
-      </div>
-      <div class="event-card" onclick="loadCalendly('demo')">
-        <div class="event-icon">💻</div>
-        <div class="event-name">Product Demo</div>
-        <div class="event-desc">45 min · Free · See our automation tools in action</div>
-        <div class="event-price">FREE</div>
-      </div>
-      <div class="event-card" onclick="loadCalendly('deepdive')">
-        <div class="event-icon">💎</div>
-        <div class="event-name">Deep Dive Consulting</div>
-        <div class="event-desc">60 min · $199 · Technical architecture & roadmap</div>
-        <div class="event-price">$199</div>
-      </div>
-    </div>
+<div class="grid">
+<div class="card">
+<div class="icon">🚀</div>
+<h3>Sessão de Estratégia IA</h3>
+<p class="desc">30 min · Gratuito · Descubra oportunidades de IA para seu negócio</p>
+<div class="price">GRATUITO</div>
+</div>
+<div class="card">
+<div class="icon">💻</div>
+<h3>Demo de Produto</h3>
+<p class="desc">45 min · Gratuito · Veja nossas ferramentas de automação em ação</p>
+<div class="price">GRATUITO</div>
+</div>
+<div class="card">
+<div class="icon">💎</div>
+<h3>Consultoria Aprofundada</h3>
+<p class="desc">60 min · R$ 199 · Arquitetura técnica e roadmap</p>
+<div class="price">R$ 199</div>
+</div>
+</div>
 
-    <div class="calendly-wrap">
-      <!-- Calendly Inline Widget -->
-      <div id="calendly-inline-widget" style="min-height:700px;"></div>
-    </div>
+<div class="section">
+<h2>O que você vai receber</h2>
+<ul>
+<li>Diagnóstico personalizado da maturidade de IA na sua empresa</li>
+<li>Identificação de 3-5 oportunidades de automação com ROI estimado</li>
+<li>Recomendações práticas de implementação (quick wins e longo prazo)</li>
+<li>Acesso ao relatório executivo pós-sessão</li>
+<li>Sem compromisso — sem pressão de vendas</li>
+</ul>
+</div>
 
-    <p style="text-align:center; color:#64748b; font-size:0.9rem;">
-      Powered by Calendly · Time zone auto-detected · Calendar sync included
-    </p>
+<div class="section">
+<h2>Como funciona</h2>
+<ul>
+<li><strong>1.</strong> Escolha o tipo de sessão acima</li>
+<li><strong>2.</strong> Selecione o melhor horário no calendário</li>
+<li><strong>3.</strong> Receba a confirmação por e-mail</li>
+<li><strong>4.</strong> Participe da sessão por videochamada</li>
+<li><strong>5.</strong> Receba seu relatório personalizado</li>
+</ul>
+</div>
 
-    <a href="/pricing/" class="back">← View Pricing Plans</a>
-  </div>
+<div class="contact">
+<h2>Prefere agendar por e-mail?</h2>
+<p>Envie para <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a></p>
+</div>
 
-  <!-- Calendly Embed Script -->
-  <script type="text/javascript" src="https://calendly.com/widget/calendly-widget.js"></script>
-  <script>
-    let currentEvent = 'strategy';
-    const calendlyUrls = {
-      strategy: 'https://calendly.com/kleber-ziontechgroup/strategy-session',
-      demo: 'https://calendly.com/kleber-ziontechgroup/product-demo',
-      deepdive: 'https://calendly.com/kleber-ziontechgroup/deep-dive'
-    };
-
-    function loadCalendly(type) {
-      currentEvent = type;
-      const url = calendlyUrls[type];
-      Calendly.initInlineWidget({
-        url: url,
-        parentElement: document.getElementById('calendly-inline-widget'),
-        prefill: {},
-        utm: {}
-      });
-    }
-
-    // Load default
-    loadCalendly('strategy');
-  </script>
+<a href="/pricing/" class="back">← Ver Planos e Preços</a>
+</div>
 </body>
 </html>
