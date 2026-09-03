@@ -1,92 +1,5 @@
 [
   {
-    "ts": "2026-09-03T01:32:23.025317+00:00",
-    "queries_run": 12,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 112.108,
-    "queries_per_second": 0.107,
-    "avg_query_s": 9.3421,
-    "max_query_s": 10.8022,
-    "status": "ok",
-    "high_signal_leads": 0.05,
-    "lead_quality_ratio": 0.1032,
-    "rolling": {
-      "last_5_queries": [
-        9.32092610899781,
-        4.909054919000482,
-        9.420813839002221,
-        9.320869416002097,
-        9.018318723999982
-      ],
-      "last_5_qps": [
-        0.1073,
-        0.2037,
-        0.1061,
-        0.1073,
-        0.1109
-      ]
-    }
-  },
-  {
-    "ts": "2026-09-03T01:42:25.388919+00:00",
-    "queries_run": 12,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 112.604,
-    "queries_per_second": 0.1066,
-    "avg_query_s": 9.3835,
-    "max_query_s": 10.1615,
-    "status": "ok",
-    "high_signal_leads": 0.05,
-    "lead_quality_ratio": 0.1038,
-    "rolling": {
-      "last_5_queries": [
-        10.036898608002957,
-        4.861988573000417,
-        9.729372915997374,
-        9.723582416001591,
-        8.501843071000621
-      ],
-      "last_5_qps": [
-        0.0996,
-        0.2057,
-        0.1028,
-        0.1028,
-        0.1176
-      ]
-    }
-  },
-  {
-    "ts": "2026-09-03T01:52:32.510821+00:00",
-    "queries_run": 12,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 113.751,
-    "queries_per_second": 0.1055,
-    "avg_query_s": 9.4776,
-    "max_query_s": 11.1251,
-    "status": "ok",
-    "high_signal_leads": 0.05,
-    "lead_quality_ratio": 0.1037,
-    "rolling": {
-      "last_5_queries": [
-        9.72982295499969,
-        4.811219534996781,
-        10.187293838996993,
-        10.246639954002603,
-        9.006249531998037
-      ],
-      "last_5_qps": [
-        0.1028,
-        0.2078,
-        0.0982,
-        0.0976,
-        0.111
-      ]
-    }
-  },
-  {
     "ts": "2026-09-03T02:12:30.727792+00:00",
     "queries_run": 12,
     "contacts_found": 0,
@@ -576,6 +489,93 @@
         0.0895,
         0.091,
         0.119
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T05:12:47.353785+00:00",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 111.236,
+    "queries_per_second": 0.0989,
+    "avg_query_s": 10.1122,
+    "max_query_s": 11.8752,
+    "status": "ok",
+    "high_signal_leads": 0.0,
+    "lead_quality_ratio": 0.1032,
+    "rolling": {
+      "last_5_queries": [
+        11.041365607001353,
+        9.31948057000045,
+        5.384118264999415,
+        10.388604261999717,
+        10.304328068999894
+      ],
+      "last_5_qps": [
+        0.0906,
+        0.1073,
+        0.1857,
+        0.0963,
+        0.097
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T05:23:02.938983+00:00",
+    "queries_run": 12,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 119.971,
+    "queries_per_second": 0.1,
+    "avg_query_s": 9.996,
+    "max_query_s": 12.2,
+    "status": "ok",
+    "high_signal_leads": 0.0,
+    "lead_quality_ratio": 0.1029,
+    "rolling": {
+      "last_5_queries": [
+        11.512396183999954,
+        4.405145496999467,
+        10.795957222999277,
+        12.20002518399997,
+        11.431163376000768
+      ],
+      "last_5_qps": [
+        0.0869,
+        0.227,
+        0.0926,
+        0.082,
+        0.0875
+      ]
+    }
+  },
+  {
+    "ts": "2026-09-03T05:32:59.246644+00:00",
+    "queries_run": 12,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 117.819,
+    "queries_per_second": 0.1019,
+    "avg_query_s": 9.8181,
+    "max_query_s": 10.9828,
+    "status": "ok",
+    "high_signal_leads": 0.0,
+    "lead_quality_ratio": 0.1027,
+    "rolling": {
+      "last_5_queries": [
+        9.932638030997623,
+        4.762337688000116,
+        9.58070053100164,
+        10.452221300001838,
+        9.989564723000512
+      ],
+      "last_5_qps": [
+        0.1007,
+        0.21,
+        0.1044,
+        0.0957,
+        0.1001
       ]
     }
   }

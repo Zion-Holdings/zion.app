@@ -1,24 +1,42 @@
 {
   "ceo": "Kleber Garcia Alcatrão",
   "company": "Zion Tech Group",
-  "last_updated": "2026-09-03T05:15 UTC",
+  "last_updated": "2026-09-03T07:30 UTC",
   "site_status": {
     "url": "https://ziontechgroup.com",
     "online": true,
     "homepage_http": 200,
-    "live_routes": ["/", "/pricing/", "/checkout/", "/booking/", "/affiliate/", "/new-ai-services/", "/tools/", "/sitemap.xml/"],
-    "broken_routes": ["/testimonials/", "/service-comparison/", "/tools/2026-ma-due-diligence-checklist/", "/monetization-hub/"],
-    "broken_count": 4,
-    "note": "404 fallbacks exist in public/ but GitHub Pages build is stuck/errored; routes remain 404 live.",
-    "page_count_in_repo": 329
+    "live_routes": ["/", "/sitemap.xml"],
+    "redirect_routes": ["/pricing (301)", "/services (301)"],
+    "broken_routes_count": 14,
+    "broken_routes": [
+      "/about",
+      "/contact",
+      "/blog",
+      "/testimonials/",
+      "/service-comparison/",
+      "/tools/2026-ma-due-diligence-checklist/",
+      "/monetization-hub/",
+      "/cookie-policy",
+      "/privacy",
+      "/terms",
+      "/assessments",
+      "/help",
+      "/integrations/composio/",
+      "/services/whatsapp-monetizacao/"
+    ],
+    "pages_in_repo": 329,
+    "page_count_public": 115,
+    "note": "GitHub Pages build complete (built) but content not served. Files likely in public/ instead of root, or source misconfigured."
   },
   "deploy_blocker": {
-    "type": "GitHub Pages build stuck/errored",
-    "pages_build_status": "building (since 04:46 UTC)",
-    "pages_source": "gh-pages branch",
-    "fallbacks_present_in_public": true,
-    "fallbacks_confirmed_in_ghpages": false,
-    "last_verified": "2026-09-03T05:15 UTC"
+    "type": "GitHub Pages not serving content",
+    "pages_build_status": "built",
+    "pages_source_branch": "gh-pages",
+    "likely_cause": "public/ directory in gh-pages instead of root, or source=gh-pages but files misaligned",
+    "fix_required": "Deploy via GitHub Actions (peaceiris/actions-gh-pages@4) with public/ flatten to root",
+    "mirror_workflow_broken": true,
+    "last_verified_http": "2026-09-03"
   },
   "lead_crm": {
     "total_leads": 1933,
@@ -26,9 +44,7 @@
     "source": "lead-crm/all-leads.json",
     "miner_status": "ok",
     "miner_queries_per_cycle": 12,
-    "miner_contacts_found": 0,
-    "miner_new_leads": 0,
-    "miner_avg_query_s": 10.3
+    "miner_new_leads": 0
   },
   "outreach": {
     "status": "blocked_by_config_or_env",
