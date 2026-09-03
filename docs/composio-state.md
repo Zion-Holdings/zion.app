@@ -1,5 +1,7 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
+Atualizado 2026-09-03T05:12Z. Live apex still Discovery $99. Pages **errored** again after leftover-closer republish (`307e194e` building). Stripe $0; Calendly 0 upcoming; Gmail 6h sales 0; Sentry unresolved none. Connect Links 05:06Z still INITIATED (expire ~05:16Z). Do not remint. Do not add wrangler.toml.
+
 Atualizado 2026-09-03T05:06Z. Pages **built**. Live apex is Discovery $99 again. A kleber/ziggy mirror (`restore all public pages with _redirects`, `mirror workflow`) overwrote gh-pages with leftover Next.js and broke Pages; we restored money pages. Connect Links reminted 05:06Z expire ~05:16Z. Do not add wrangler.toml.
 
 Atualizado 2026-09-03T04:58Z. Pages still **errored**; latest build `4894b1d7` stuck **building** since 04:56Z (`duration: 0`). Apex still leftover Next.js. Do not enqueue more Pages builds until this one finishes. Connect Links reminted 04:54Z still INITIATED (expire ~05:04Z). Workers Builds CI is the Cloudflare hook — not a site build.
