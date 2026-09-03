@@ -26,6 +26,12 @@ const FILES = [
   'press/index.html',
   'portal/index.html',
   'status/index.html',
+  'faq/index.html',
+  'composio-vs-zapier/index.html',
+  'login/index.html',
+  'academy/index.html',
+  'admin-dashboard/index.html',
+  'pricing-calculator/index.html',
 ];
 
 async function main() {

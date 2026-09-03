@@ -7,8 +7,8 @@ Research-backed operating manual for extracting maximum value from Composio on Z
 Composio is not a pile of per-app MCP tools. Production use has three layers:
 
 1. **Connect MCP** (`https://connect.composio.dev/mcp`) — 7 meta-tools: search, schemas, multi-execute (up to 50), manage/wait connections, remote workbench, remote bash.
-2. **Sessions** (`composio.create(user_id)`) — agent-time discovery + managed OAuth. Execute through the session, never through a raw user_id helper, or meta-tools fail with `can only be called inside a tool-router session`.
-3. **Direct REST v3.1** (`https://backend.composio.dev/api/v3.1`) — deterministic scripts. `POST /tools/execute/{slug}` with `connected_account_id` + `user_id` + `arguments`. On v3.1, omitting `version` selects **latest**. On v3 it selects the frozen `00000000_00` pin and looks "empty."
+2. **Sessions** (formerly Tool Router) — `composio.create(user_id)` then `session.execute(slug, arguments)`. `user_id` goes only to `create()`. Meta-tools fail with `can only be called inside a tool-router session` if you use `tools.execute()` or a provider helper bound to a user_id. Resume with `composio.use(session_id)`. Direct execution (`tools.execute`) is for deterministic scripts; sessions are for agents that discover tools at runtime. Docs: [how Composio works](https://docs.composio.dev/docs/how-composio-works), [sessions vs direct](https://docs.composio.dev/docs/sessions-vs-direct-execution).
+3. **Direct REST v3.1** (`https://backend.composio.dev/api/v3.1`) — deterministic scripts. `POST /tools/execute/{slug}` with `connected_account_id` + `user_id` + `arguments`. On v3.1, omitting `version` selects **latest**. On v3 it selects the frozen `00000000_00` pin and looks "empty." Zion CI uses this path.
 
 Terminology (never use the old words in new code):
 
