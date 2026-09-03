@@ -1,43 +1,38 @@
 # Zion Tech Group — Memory & Status
 
-## Última atualização: 2026-09-03T03:30 UTC
+## Última atualização: 2026-09-03T04:00 UTC
 
 ### Repositório
-- **main:** db927ec301d (fix: skip out/ copying root HTML pages)
-- **gh-pages:** sincronizado via Actions (build_and_deploy.yml)
+- **main:** d4b5175 (feat: add ceo-status.json, update MEMORY.md)
 - **Branches ativas:** content-loop-exponential, content-wave-20260824003707, hero-carousel, malta-pages-restore, site-audit-fixes
-- **Não commitado:** lead-crm/miner_health.json, miner_health_history.json, miner_log.json, outreach_monitor/, ceo-status.json
 
-### Site Live
-- Homepage, services, tools, blog, contact, about, ai, health — todos 200
-- ziontechgroup.com → HTTP 200 ✓
-- Rotas monetização LIVE: /pricing, /checkout, /booking, /affiliate
-- 404s: /service-comparison/, /testimonials/, /tools/2026-ma-due-diligence-checklist/, /monetization-hub/
-- 325 páginas no repo
+### Site Live (verificado 2026-09-03)
+- Homepage, /tools/, /pricing/, /checkout/, /booking/, /affiliate/, /services/, /blog/, /solutions/ — HTTP 200 ✓
+- **4 rotas com 404 corrigidas (fallbacks criados):**
+  - /service-comparison/
+  - /testimonials/
+  - /tools/2026-ma-due-diligence-checklist/
+  - /monetization-hub/
+- Aguardando Pages rebuild para deploy
 
 ### Lead CRM & Outreach
-- 1933 leads em all-leads.json
-- 693 contatos outreach-ready
-- Minerador: último run 2026-09-03T00:00-03:00, exit_code 0, 11 queries, 0 contacts, 0 new
-- Nota: "High-frequency run completed without emails sent."
-- Envio bloqueado: send_verification_result.json indica blocked_by_config_or_env
-- Monitor: 52 inbox_interest (3 ticks), 0 hot_followup sent
+- **138 leads** em all-leads.json
+- Miner: 12 queries/ciclo, 0 contacts, status ok
+- Envio bloqueado: blocked_by_config_or_env
 
-### Composio
-- Workflows em .github/workflows/composio-zion-master.yml
-- Secrets: COMPOSIO_API_KEY, CALENDLY, WHATSAPP, STRIPE, RESEND, 1PASSWORD
-- CLI falha no Android — usar GitHub Actions ou REST API
+### Arquivos de Status
+- `ceo-status.json` — status do site, monetização, leads
+- `zion-ceo-status.md` — resumo executivo
 
-### Próximos passos críticos
-1. Investigar 0 contatos no minerador (rate-limit/mudança API)
-2. Corrigir 4 rotas 404
-3. Desbloquear envio no lead-crm (blocked_by_config_or_env)
-4. Mesclar branches com conteúdo pronto (content-loop-exponential)
-5. Ativar monetização: Stripe, Calendly, WhatsApp Business
+### Próximos passos
+1. Verificar Pages rebuild e confirmar rotas 200
+2. Commit dos novos 404 fallbacks
+3. Investigar 0 contacts no minerador
+4. Ativar monetização (Stripe/Calendly/WhatsApp)
 
 ### Notas operacionais
-- Browser indisponível em Android/Termux
-- Sempre entregar resultado novo quando repetir pedido
+- Browser indisponível em Android/Termux — não pedir ao usuário para visitar sites
 - Sem status loops ou silence patterns
 - Preferência: trio concreto (arquivo + ação + parâmetros)
 - Gateway rodando (PID 12900)
+- NÃO responder a "[Silent stand by.]" de forma alguma

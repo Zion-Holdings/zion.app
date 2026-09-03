@@ -1,45 +1,35 @@
 {
   "ceo": "Kleber Garcia Alcatrão",
   "company": "Zion Tech Group",
-  "last_updated": "2026-09-03T03:30 UTC",
+  "last_updated": "2026-09-03",
   "site_status": {
     "url": "https://ziontechgroup.com",
-    "http_status": "200 OK",
-    "live_routes": ["/pricing/", "/checkout/", "/booking/", "/affiliate/"],
-    "broken_routes": [
+    "http_status": "404 fallbacks created for 4 routes; awaiting Pages redeploy",
+    "last_checked": "2026-09-03",
+    "routes_with_404": [
       "/service-comparison/",
       "/testimonials/",
       "/tools/2026-ma-due-diligence-checklist/",
       "/monetization-hub/"
     ],
-    "broken_count": 4,
-    "page_count_in_repo": 325
+    "page_count_in_repo": 329
   },
   "monetization": {
     "live_pages": ["/pricing/", "/checkout/", "/booking/", "/affiliate/"],
-    "broken_pages": ["/monetization-hub/"]
+    "404_with_fallback_created": ["/monetization-hub/", "/testimonials/", "/service-comparison/", "/tools/2026-ma-due-diligence-checklist/"]
   },
   "lead_crm": {
-    "total_leads": 1933,
-    "outreach_ready": 693,
-    "source": "lead-crm/all-leads.json",
-    "last_miner_run": "2026-09-03T00:00-03:00",
-    "miner_status": "1 evento, 11 queries, 0 contacts, 0 new, exit_code 0",
-    "note": "High-frequency run completed without emails sent."
+    "all_leads_actual_count": 138,
+    "miner_last_run": "2026-09-03T03:52:46Z",
+    "miner_queries": 12,
+    "miner_contacts_found": 0,
+    "miner_new_leads_added": 0,
+    "miner_status": "ok",
+    "source": "lead-crm/all-leads.json"
   },
-  "monitor": {
-    "inbox_interest_24h": 52,
+  "outreach": {
+    "status": "blocked_by_config_or_env",
+    "monitor_inbox_interest": 52,
     "hot_followup_sent": 0
-  },
-  "git": {
-    "main": "db927ec301d",
-    "uncommitted": [
-      "Zion-Tech-Group/MEMORY.md",
-      "lead-crm/miner_health.json",
-      "lead-crm/miner_health_history.json",
-      "lead-crm/miner_log.json",
-      "ceo-status.json",
-      "outreach_monitor/"
-    ]
   }
 }
