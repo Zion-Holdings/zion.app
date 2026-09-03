@@ -1,6 +1,6 @@
 # Zion Composio Master — Estado Real e Próximos Passos
 
-Atualizado 2026-09-03T01:42Z. Apex drifted again to stale `public/index.html` (“Measurable Growth”, 5318 bytes) while workspace root is Discovery $99 (5944 bytes). Dual-write `/` + `public/` is mandatory until `public/` is removed from `gh-pages`. Kleber reconnect still HubSpot INITIALIZING + Jira/noCRM/Perplexity INITIATED (`2026-09-03T01:32Z`); do not remint until those rows are EXPIRED. Identity `kleber@` is 81 rows, 0 ACTIVE. 31 playground toolkits remain ACTIVE.
+Atualizado 2026-09-03T02:16Z. Apex is Discovery $99 (5944 bytes). `_redirects` is the 3-line note (not 56KB). SerpAPI still shows stale Google title “AI & IT Services” and ghost `/services/*` SKUs that 404 live. This branch now has `public/` (honest dual-write) and `pages.yml` publishes **only** `public/` so a merge cannot resurrect leftover Next.js. 743 leftover Next.js HTML files in the working tree were replaced with honest closers. Kleber reconnect still HubSpot INITIALIZING + Jira/noCRM/Perplexity INITIATED (`2026-09-03T02:09Z`, ~10 min TTL); do not remint until those rows are EXPIRED. Identity `kleber@` is 0 ACTIVE. 31 playground toolkits remain ACTIVE.
 
 Atualizado 2026-09-02 a partir de `GET /api/v3.1/connected_accounts` (107 contas).
 

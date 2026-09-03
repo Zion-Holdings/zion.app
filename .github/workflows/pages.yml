@@ -2,12 +2,13 @@ name: GitHub Pages
 
 # Live Pages source must stay legacy / gh-pages / /. Pointing source at main
 # 404s the apex (File not found) even when gh-pages has index.html.
-# This job restages the tree, forces the apex CNAME, and mirrors to gh-pages.
+# GitHub Pages serves public/ when that folder exists. Never rsync leftover
+# Next.js export dirs onto gh-pages — that would make ghost SKUs live.
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+    10:  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,22 +25,23 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Stage static site with apex CNAME
+      - name: Stage honest public/ only
         run: |
           set -euo pipefail
-          mkdir -p out
-          rsync -a \
-            --exclude '.git/' \
-            --exclude '.github/' \
-            --exclude 'out/' \
-            --exclude 'node_modules/' \
-            --exclude '.next/' \
-            --exclude 'automation/reports/' \
-            --exclude '.composio/' \
-            ./ out/
+          test -d public
+          test -f public/index.html
+          if grep -q '_next/static' public/index.html; then
+            echo "Refusing to publish leftover Next.js as the homepage"
+            exit 1
+          fi
+          mkdir -p out out/public
+          rsync -a public/ out/
+          rsync -a public/ out/public/
           printf 'ziontechgroup.com\n' > out/CNAME
-          test -s out/CNAME
-          echo "Publishing $(find out -type f | wc -l) files; CNAME=$(tr -d '\n' < out/CNAME)"
+          printf 'ziontechgroup.com\n' > out/public/CNAME
+          : > out/.nojekyll
+          : > out/public/.nojekyll
+          echo "Publishing $(find out -type f | wc -l) files from public/; CNAME=$(tr -d '\n' < out/CNAME)"
 
       - name: Mirror to gh-pages with CNAME
         uses: peaceiris/actions-gh-pages@v4

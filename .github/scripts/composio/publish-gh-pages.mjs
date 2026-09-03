@@ -3,13 +3,15 @@
  * Live Pages source is legacy / gh-pages — PR merge is not enough.
  */
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { discoverZionConnections, executeTool, composioFetch } from './discover-connections.mjs';
+import { SERP_CLOSER_PATHS } from './honest-closer.mjs';
 
 const OWNER = 'Zion-support';
 const REPO = 'zion-support.github.io';
 const BRANCH = 'gh-pages';
 
-const FILES = [
+export const FILES = [
   'index.html',
   'robots.txt',
   'sitemap.xml',
@@ -112,8 +114,13 @@ const FILES = [
   'roi-calculator/index.html',
   'booking/index.html',
   'checkout/index.html',
+  '404.html',
+  'solutions/index.html',
+  'community/index.html',
   '_redirects',
 ];
+
+export const PUBLISH_PATHS = [...new Set([...FILES, ...SERP_CLOSER_PATHS])];
 
 async function main() {
   const { active, inventory } = await discoverZionConnections();
@@ -129,10 +136,10 @@ async function main() {
 
   // GitHub Pages is serving public/ when that folder exists. Write both roots.
   const upserts = [];
-  for (const path of FILES) {
-    const content = readFileSync(new URL(`../../../${path}`, import.meta.url), 'utf8');
-    upserts.push({ path, content, encoding: 'utf-8' });
-    upserts.push({ path: `public/${path}`, content, encoding: 'utf-8' });
+  for (const rel of PUBLISH_PATHS) {
+    const content = readFileSync(new URL(`../../../${rel}`, import.meta.url), 'utf8');
+    upserts.push({ path: rel, content, encoding: 'utf-8' });
+    upserts.push({ path: `public/${rel}`, content, encoding: 'utf-8' });
   }
   upserts.push({ path: 'public/.nojekyll', content: '', encoding: 'utf-8' });
   upserts.push({ path: 'public/CNAME', content: 'ziontechgroup.com\n', encoding: 'utf-8' });
@@ -141,7 +148,7 @@ async function main() {
     owner: OWNER,
     repo: REPO,
     branch: BRANCH,
-    message: 'fix(pages): restore Discovery homepage and kill stale service aliases',
+    message: process.env.PAGES_COMMIT_MESSAGE || 'fix(pages): dual-write honest public/ pages',
     upserts,
   }, active);
   console.log('commit', commit.ok ? 'ok' : commit.error);
@@ -163,7 +170,9 @@ async function main() {
   console.log('pages build', build.ok ? 'requested' : build.error);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (fileURLToPath(import.meta.url) === process.argv[1]) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}
