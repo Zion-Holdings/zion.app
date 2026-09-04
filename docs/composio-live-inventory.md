@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T10:59Z:** All six 10:48Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~11:09:28Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_2g8NPUgFRyep`. Workers Builds on `5f9bd82` is Cloudflare hook only. Required GitHub statuses = **0**. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T10:48Z:** All six 10:36Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~10:58:32Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_DnczbzLgYKfw`. Workers Builds on `71b1f8c` is Cloudflare hook only. Required GitHub statuses = **0**. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T10:41Z:** Workers Builds failed on `bb8f578` — Cloudflare hook only. Required GitHub statuses = **0**. kleber@ 10:36Z rows still **INITIALIZING/INITIATED** (HubSpot `ca_-kBBRyIEoXiQ` / `lk_lwqxfZUezwga`, expire **~10:46:43Z**). Do **not** remint. Pinned leftover leftover `/new-ai-services/` closer on the feature branch so merge cannot drop the live noindex alias. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
