@@ -26,7 +26,8 @@ Leftover `/services/*` and `/ai-services/*` URLs (for example `/services/ai-lega
 ## Honest facts
 
 - Stripe livemode links exist; charges are $0 until a customer pays.
-- HubSpot, Jira, noCRM, and Perplexity connections are expired. Do not invent CRM pipeline numbers.
+- HubSpot, Jira, noCRM, Perplexity, Google Drive, and Cloudflare MCP connections are expired on kleber@ziontechgroup.com. Do not invent CRM pipeline numbers.
+- Hunter searches/verifications are exhausted (Free plan). Firecrawl has no credits. OpenRouter usage exceeds remaining credits. SerpAPI needs a `query` field and is often 429.
 - There is no public affiliate commission program.
 - Heritage videos (2009–2019 hardware / green IT): https://ziontechgroup.com/heritage/
 - Status: https://ziontechgroup.com/status/
