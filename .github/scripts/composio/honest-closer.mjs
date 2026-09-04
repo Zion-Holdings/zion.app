@@ -21,10 +21,15 @@ export function titleFromSlug(slug) {
     .replace(/\bLlama3\b/g, 'Llama 3')
     .replace(/\bGpt4o\b/g, 'GPT-4o')
     .replace(/\bGpt4\b/g, 'GPT-4')
+    .replace(/\bGpt35\b/g, 'GPT-3.5')
     .replace(/\bLlama31\b/g, 'Llama 3.1')
+    .replace(/\bSonnet35\b/g, 'Sonnet 3.5')
     .replace(/\bHttp\b/g, 'HTTP')
+    .replace(/\bJson\b/g, 'JSON')
+    .replace(/\bO1\b/g, 'o1')
     .replace(/\bCi\b/g, 'CI')
     .replace(/\bRest API\b/g, 'REST API')
+    .replace(/\bRest\b/g, 'REST')
     .replace(/\bCdn\b/g, 'CDN')
     .replace(/\bSase\b/g, 'SASE')
     .replace(/\bSaas\b/g, 'SaaS')
@@ -5799,4 +5804,29 @@ export const SERP_CLOSER_PATHS = [
   'github-projects-api/index.html',
   'gitlab-runners-api/index.html',
   'slack-usergroups-api/index.html',
+  'el-dorado/index.html',
+  'newton/index.html',
+  'derby/index.html',
+  'n8n-credentials-store-api/index.html',
+  'make-functions-api/index.html',
+  'make-json-api/index.html',
+  'n8n-chat-api/index.html',
+  'stripe-quotes-api/index.html',
+  'paddle-webhooks-api/index.html',
+  'clerk-users-api/index.html',
+  'auth0-organizations-members-api/index.html',
+  'neon-compute-api/index.html',
+  'cloudflare-bot-api/index.html',
+  'neon-connection-api/index.html',
+  'cloudflare-rules-api/index.html',
+  'netlify-build-hooks-api/index.html',
+  'openai-o1-api/index.html',
+  'anthropic-sonnet35-api/index.html',
+  'figma-rest-variables-api/index.html',
+  'openai-gpt35-api/index.html',
+  'figma-dev-mode-rest-api/index.html',
+  'notion-pages-api/index.html',
+  'github-dependabot-api/index.html',
+  'gitlab-issues-api/index.html',
+  'slack-reminders-api/index.html',
 ];
