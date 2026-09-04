@@ -26,7 +26,19 @@ export function titleFromSlug(slug) {
     .replace(/\bFaq\b/g, 'FAQ')
     .replace(/\bBi\b/g, 'BI')
     .replace(/\bLgpd\b/g, 'LGPD')
-    .replace(/\bGdpr\b/g, 'GDPR');
+    .replace(/\bGdpr\b/g, 'GDPR')
+    .replace(/\bIso27001\b/g, 'ISO 27001')
+    .replace(/\bSoc2\b/g, 'SOC 2')
+    .replace(/\bPci Dss\b/g, 'PCI DSS')
+    .replace(/\bHipaa\b/g, 'HIPAA')
+    .replace(/\bRpa\b/g, 'RPA')
+    .replace(/\bErp\b/g, 'ERP')
+    .replace(/\bSiem\b/g, 'SIEM')
+    .replace(/\bLlm\b/g, 'LLM')
+    .replace(/\bNlp\b/g, 'NLP')
+    .replace(/\bIot\b/g, 'IoT')
+    .replace(/\bCiso\b/g, 'CISO')
+    .replace(/\bVapt\b/g, 'VAPT');
 }
 
 /** Honest $99 Discovery alias for leftover “free consult / booking / use-cases” URLs. */
@@ -3877,4 +3889,96 @@ export const SERP_CLOSER_PATHS = [
   'workshop/index.html',
   'referrals/index.html',
   'referral/index.html',
+  'book99/index.html',
+  'book-99/index.html',
+  'discovery99/index.html',
+  'devops/index.html',
+  'cicd/index.html',
+  'ci-cd/index.html',
+  'gitops/index.html',
+  'postgres/index.html',
+  'postgresql/index.html',
+  'mysql/index.html',
+  'redis/index.html',
+  'kafka/index.html',
+  'elasticsearch/index.html',
+  'grafana/index.html',
+  'prometheus/index.html',
+  'pentesting/index.html',
+  'red-team/index.html',
+  'blue-team/index.html',
+  'iso27001/index.html',
+  'soc2/index.html',
+  'hipaa/index.html',
+  'rpa/index.html',
+  'low-code/index.html',
+  'no-code/index.html',
+  'plugin/index.html',
+  'agencia-ia/index.html',
+  'empresa-de-ti/index.html',
+  'terceirizacao/index.html',
+  'outsourcing/index.html',
+  'marketplace-app/index.html',
+  'whatsapp-api/index.html',
+  'telegram-api/index.html',
+  'help-me/index.html',
+  'support-us/index.html',
+  'mongodb/index.html',
+  'nginx/index.html',
+  'salesforce/index.html',
+  'pipedrive/index.html',
+  'wordpress/index.html',
+  'shopify/index.html',
+  'machine-learning/index.html',
+  'deep-learning/index.html',
+  'pci-dss/index.html',
+  'voice-ai/index.html',
+  'sap/index.html',
+  'vpn/index.html',
+  'firewall/index.html',
+  'office365/index.html',
+  'microsoft365/index.html',
+  'microsoft-365/index.html',
+  'helm/index.html',
+  'argocd/index.html',
+  'ciso/index.html',
+  'vapt/index.html',
+  'react/index.html',
+  'nextjs/index.html',
+  'python/index.html',
+  'golang/index.html',
+  'data-science/index.html',
+  'web-design/index.html',
+  'seo-agency/index.html',
+  'app-development/index.html',
+  'digital-marketing/index.html',
+  'ecommerce/index.html',
+  'iot/index.html',
+  'web3/index.html',
+  'chatgpt/index.html',
+  'langchain/index.html',
+  'pinecone/index.html',
+  'kubernetes-consulting/index.html',
+  'docker-consulting/index.html',
+  'nlp/index.html',
+  'vector-db/index.html',
+  'azure-ad/index.html',
+  'power-bi/index.html',
+  'tableau/index.html',
+  'looker/index.html',
+  'snowflake/index.html',
+  'databricks/index.html',
+  'graphql/index.html',
+  'rest-api/index.html',
+  'microservices/index.html',
+  'serverless/index.html',
+  'lambda/index.html',
+  'jenkins/index.html',
+  'github-actions/index.html',
+  'gitlab-ci/index.html',
+  'datadog/index.html',
+  'splunk/index.html',
+  'servicenow/index.html',
+  'zendesk/index.html',
+  'intercom/index.html',
 ];
