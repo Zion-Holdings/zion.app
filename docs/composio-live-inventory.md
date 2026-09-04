@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T06:10Z:** Dual-wrote leftover leftover zion-ai analytics/pricing SKUs — gh-pages `81f0ab2b`, feature `c6b6f0e0`. Slack/Telegram/Sheets **A153**/Airtable/Notion/Linear notified. kleber@ still INITIALIZING/INITIATED since **06:02Z remint** (expire ~06:12:41Z). Do **not** remint. Dual-writing leftover leftover zion-ai vendor/workflow SKUs. Apex Discovery `$99`. Required GitHub statuses = **0**.
+
 **2026-09-04T06:08Z:** Workers Builds failed on `f6f6b9e8` — Cloudflare hook only. Required GitHub statuses = **0**. kleber@ still INITIALIZING/INITIATED since **06:02Z remint** (expire ~06:12:41Z). Do **not** remint. HubSpot `lk_XzQYtF0Ue8je`. Dual-writing leftover leftover zion-ai analytics/pricing SKUs (live were honest closers missing noindex). Next leftover leftover zion-ai vendor/workflow + leftover leftover `zion-*` SKUs. Apex Discovery `$99`.
 
 **2026-09-04T06:04Z:** Workers Builds failed on `97bea7b9` — Cloudflare hook only. Required GitHub statuses = **0**. Leftover leftover zion-ai code/customer SKUs live noindex (`68576feb`). Dual-writing leftover leftover zion-ai ops/knowledge SKUs. kleber@ INITIALIZING since **06:02Z remint** (expire ~06:12:41Z). Do **not** remint. HubSpot `lk_XzQYtF0Ue8je`. Apex Discovery `$99`.
