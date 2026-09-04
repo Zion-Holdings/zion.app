@@ -65,6 +65,8 @@ export function titleFromSlug(slug) {
     .replace(/\bJwks\b/g, 'JWKS')
     .replace(/\bHmac\b/g, 'HMAC')
     .replace(/\bLsn\b/g, 'LSN')
+    .replace(/\bCidr\b/g, 'CIDR')
+    .replace(/\bOtp\b/g, 'OTP')
     .replace(/\bCss\b/g, 'CSS')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
@@ -6766,4 +6768,29 @@ export const SERP_CLOSER_PATHS = [
   'notion-data-sources-get-api/index.html',
   'slack-lists-items-remove-api/index.html',
   'slack-lists-records-add-api/index.html',
+  'university-city/index.html',
+  'maryland-heights/index.html',
+  'creve-coeur/index.html',
+  'n8n-item-lists-merge-api/index.html',
+  'make-array-aggregator-module-api/index.html',
+  'n8n-combine-items-api/index.html',
+  'n8n-split-in-batches-node-api/index.html',
+  'make-repeater-iterator-api/index.html',
+  'paddle-address-get-api/index.html',
+  'paddle-business-get-api/index.html',
+  'auth0-mfa-duo-api/index.html',
+  'clerk-session-revoke-api/index.html',
+  'cloudflare-api-shield-jwt-key-get-api/index.html',
+  'vercel-firewall-ip-cidr-api/index.html',
+  'neon-branch-restore-snapshot-api/index.html',
+  'supabase-pg-prewarm-cache-api/index.html',
+  'cloudflare-api-shield-schema-status-api/index.html',
+  'groq-files-metadata-api/index.html',
+  'huggingface-jobs-rerun-api/index.html',
+  'openai-files-wait-complete-api/index.html',
+  'github-copilot-usage-summary-api/index.html',
+  'gitlab-duo-self-hosted-models-show-api/index.html',
+  'notion-data-sources-find-api/index.html',
+  'slack-lists-items-archive-api/index.html',
+  'slack-lists-records-remove-api/index.html',
 ];
