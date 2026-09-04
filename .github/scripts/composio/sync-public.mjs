@@ -61,19 +61,25 @@ const BOOK_ALIASES = new Set([
   'schedule-demo', 'schedule-consultation', 'book-consultation', 'agende',
   'agende-consulta', 'consulta-gratis', 'trial', 'orcamento',
   'get-a-free-proposal', 'free-proposal', 'agendar', 'consulta-gratuita',
-  'start-free', 'preco-gratis',
+  'start-free', 'preco-gratis', 'orcamento-gratis', 'agende-agora',
 ]);
 const HUB_ALIASES = {
   servicos: '/services/',
   contato: '/contact/',
   'fale-conosco': '/contact/',
   faleconosco: '/contact/',
+  'fale-conosco-hoje': '/contact/',
   sobre: '/about/',
   'quem-somos': '/about/',
+  quemsomos: '/about/',
   'nossa-historia': '/about/',
+  'nossa-equipe': '/about/',
   preco: '/plans/',
   precos: '/plans/',
   orcamentos: '/plans/',
+  'preco-planos': '/plans/',
+  'precos-zion': '/plans/',
+  proposta: '/proposal/',
 };
 
 function closerCanonical(rel) {

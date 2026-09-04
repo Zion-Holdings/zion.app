@@ -3637,4 +3637,12 @@ export const SERP_CLOSER_PATHS = [
   'faleconosco/index.html',
   'quem-somos/index.html',
   'nossa-historia/index.html',
+  'proposta/index.html',
+  'orcamento-gratis/index.html',
+  'fale-conosco-hoje/index.html',
+  'agende-agora/index.html',
+  'preco-planos/index.html',
+  'precos-zion/index.html',
+  'quemsomos/index.html',
+  'nossa-equipe/index.html',
 ];
