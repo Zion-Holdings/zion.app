@@ -1176,4 +1176,6 @@ export const SERP_CLOSER_PATHS = [
   'services/advisor-smart---finance-9fe2d6eb/index.html',
   'services/advisor-smart---media-043cda66/index.html',
   'services/advisor-smart---real-estate-1b110e8b/index.html',
+  'services/logging/index.html',
+  'logging/index.html',
 ];
