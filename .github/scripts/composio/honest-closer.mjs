@@ -14,6 +14,7 @@ export function titleFromSlug(slug) {
     .replace(/\bFinops\b/g, 'FinOps')
     .replace(/\bLatam\b/g, 'LATAM')
     .replace(/\bApi\b/g, 'API')
+    .replace(/\bKv\b/g, 'KV')
     .replace(/\bRest API\b/g, 'REST API')
     .replace(/\bCdn\b/g, 'CDN')
     .replace(/\bSase\b/g, 'SASE')
@@ -5614,4 +5615,29 @@ export const SERP_CLOSER_PATHS = [
   'linear-roadmap-api/index.html',
   'github-copilot-sdk/index.html',
   'gitlab-duo-code-api/index.html',
+  'hutchinson/index.html',
+  'ponca-city/index.html',
+  'ardmore/index.html',
+  'n8n-workflow-history-api/index.html',
+  'make-modules-api/index.html',
+  'n8n-environments-api/index.html',
+  'make-organizations-api/index.html',
+  'stripe-radar-api/index.html',
+  'paddle-classic-api/index.html',
+  'clerk-user-api/index.html',
+  'auth0-roles-api/index.html',
+  'cloudflare-kv-api/index.html',
+  'cloudflare-d1-api/index.html',
+  'vercel-kv-api/index.html',
+  'neon-serverless-api/index.html',
+  'netlify-blobs-api/index.html',
+  'supabase-edge-functions-api/index.html',
+  'openai-images-api/index.html',
+  'anthropic-tools-api/index.html',
+  'figma-comments-api/index.html',
+  'groq-gemma-api/index.html',
+  'huggingface-transformers-api/index.html',
+  'notion-comments-api/index.html',
+  'linear-projects-api/index.html',
+  'github-actions-api/index.html',
 ];
