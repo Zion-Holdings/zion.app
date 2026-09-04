@@ -44,6 +44,9 @@ export function titleFromSlug(slug) {
     .replace(/\bJa3\b/g, 'JA3')
     .replace(/\bSsh\b/g, 'SSH')
     .replace(/\bUv\b/g, 'UV')
+    .replace(/\bFtp\b/g, 'FTP')
+    .replace(/\bMqtt\b/g, 'MQTT')
+    .replace(/\bWhoami\b/g, 'whoami')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6369,4 +6372,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-disable-api/index.html',
   'slack-lists-items-delete-api/index.html',
   'notion-database-rollups-api/index.html',
+  'fulton/index.html',
+  'moberly/index.html',
+  'boonville/index.html',
+  'n8n-ftp-node-api/index.html',
+  'make-break-router-api/index.html',
+  'n8n-mqtt-node-api/index.html',
+  'make-set-variable-multiple-keys-api/index.html',
+  'n8n-item-lists-split-api/index.html',
+  'stripe-tax-registrations-api/index.html',
+  'paddle-price-preview-api/index.html',
+  'clerk-saml-connection-api/index.html',
+  'auth0-suspicious-ip-api/index.html',
+  'cloudflare-api-shield-schema-validation-settings-api/index.html',
+  'neon-project-quota-api/index.html',
+  'supabase-pg-squeeze-jobs-api/index.html',
+  'vercel-security-ip-allowlist-api/index.html',
+  'netlify-edge-functions-cache-tags-api/index.html',
+  'openai-videos-remix-status-api/index.html',
+  'groq-chat-completions-api/index.html',
+  'huggingface-jobs-logs-stream-api/index.html',
+  'figma-mcp-whoami-api/index.html',
+  'github-copilot-seat-details-api/index.html',
+  'gitlab-duo-self-hosted-status-api/index.html',
+  'slack-lists-records-update-api/index.html',
+  'notion-database-formulas-api/index.html',
 ];
