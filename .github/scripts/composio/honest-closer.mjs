@@ -34,6 +34,8 @@ export function titleFromSlug(slug) {
     .replace(/\bEventbridge\b/g, 'EventBridge')
     .replace(/\bPG Partman\b/g, 'pg_partman')
     .replace(/\bKcache\b/g, 'kcache')
+    .replace(/\bCname\b/g, 'CNAME')
+    .replace(/\bDevtools\b/g, 'DevTools')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6209,4 +6211,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-code-suggestions-api/index.html',
   'slack-lists-records-views-create-api/index.html',
   'notion-comments-mentions-api/index.html',
+  'potosi/index.html',
+  'ironton/index.html',
+  'fredericktown/index.html',
+  'n8n-split-in-batches-api/index.html',
+  'make-json-parse-api/index.html',
+  'n8n-date-time-format-api/index.html',
+  'n8n-html-node-api/index.html',
+  'make-text-aggregator-api/index.html',
+  'n8n-convert-to-file-api/index.html',
+  'stripe-terminal-readers-config-api/index.html',
+  'clerk-jwt-templates-claims-api/index.html',
+  'auth0-custom-domain-cname-api/index.html',
+  'neon-project-settings-api/index.html',
+  'cloudflare-api-shield-schema-validation-rules-api/index.html',
+  'supabase-pg-stat-statements-reset-api/index.html',
+  'vercel-security-firewall-bypass-api/index.html',
+  'netlify-edge-functions-cache-api/index.html',
+  'openai-videos-delete-api/index.html',
+  'groq-compound-mini-check-api/index.html',
+  'huggingface-jobs-status-api/index.html',
+  'figma-mcp-devtools-api/index.html',
+  'github-copilot-cli-install-api/index.html',
+  'gitlab-duo-workflow-catalog-items-api/index.html',
+  'slack-lists-records-views-update-api/index.html',
+  'notion-verification-api/index.html',
 ];
