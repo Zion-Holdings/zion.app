@@ -54,7 +54,24 @@ for (const rel of FILES) {
   write(rel, fs.readFileSync(src, 'utf8'));
 }
 
+const BOOK_ALIASES = new Set([
+  'demo', 'free-audit', 'free-contact', 'start-free-trial', 'free-trial',
+  'get-free-consultation', 'book-free-consultation', 'book-a-free-consultation',
+  'free-consult', 'start-trial', 'get-started-free', 'free-demo', 'request-demo',
+  'schedule-demo', 'schedule-consultation', 'book-consultation', 'agende',
+  'agende-consulta', 'consulta-gratis', 'trial', 'orcamento',
+]);
+const HUB_ALIASES = {
+  servicos: '/services/',
+  contato: '/contact/',
+  'fale-conosco': '/contact/',
+  sobre: '/about/',
+};
+
 function closerCanonical(rel) {
+  const top = rel.split('/')[0].replace(/\.html$/, '');
+  if (BOOK_ALIASES.has(top)) return '/book/';
+  if (HUB_ALIASES[top]) return HUB_ALIASES[top];
   if (rel.startsWith('blog/')) return '/blog/';
   if (rel.startsWith('tools/')) return '/tools/';
   if (rel.startsWith('solutions/')) return '/solutions/';

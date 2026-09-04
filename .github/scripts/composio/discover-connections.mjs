@@ -27,19 +27,51 @@ export async function composioFetch(path, { method = 'GET', body } = {}) {
   return { ok: res.ok, status: res.status, data };
 }
 
+/** Toolkits Zion actually uses. Unfiltered GET /connected_accounts is capped
+ *  at the newest ~1000 rows; kleber@ remint floods hide older playground ACTIVE
+ *  accounts (telegram, stripe, googlesheets, hunter, …). Merge these. */
+export const ZION_TOOLKITS = [
+  '_1password', 'airtable', 'brevo', 'browserless', 'calendly', 'cloudflare',
+  'cursor', 'discord', 'firecrawl', 'github', 'gmail', 'googlecalendar',
+  'googlesheets', 'hugging_face', 'hunter', 'instagram', 'linear', 'linkedin',
+  'ninox', 'notion', 'openrouter', 'resend', 'sentry', 'serpapi', 'slack',
+  'stripe', 'supabase', 'tavily', 'telegram', 'whatsapp', 'youtube',
+  'hubspot', 'jira', 'nocrm_io', 'perplexityai', 'googledrive', 'cloudflare_mcp',
+];
+
 export async function listAllConnectedAccounts() {
-  const items = [];
+  const byId = new Map();
+  const ingest = (rows) => {
+    for (const account of rows || []) {
+      if (account?.id && !byId.has(account.id)) byId.set(account.id, account);
+    }
+  };
+
   let cursor;
   for (let page = 0; page < 20; page++) {
     const qs = new URLSearchParams({ limit: '100' });
     if (cursor) qs.set('cursor', cursor);
     const { ok, data, status } = await composioFetch(`/connected_accounts?${qs}`);
     if (!ok) throw new Error(`connected_accounts ${status}: ${JSON.stringify(data).slice(0, 300)}`);
-    items.push(...(data.items || []));
+    ingest(data.items);
     cursor = data.next_cursor;
     if (!cursor) break;
   }
-  return items;
+
+  await Promise.all(ZION_TOOLKITS.map(async (toolkit) => {
+    let toolkitCursor;
+    for (let page = 0; page < 20; page++) {
+      const qs = new URLSearchParams({ limit: '100', toolkit_slugs: toolkit });
+      if (toolkitCursor) qs.set('cursor', toolkitCursor);
+      const { ok, data } = await composioFetch(`/connected_accounts?${qs}`);
+      if (!ok) break;
+      ingest(data.items);
+      toolkitCursor = data.next_cursor;
+      if (!toolkitCursor) break;
+    }
+  }));
+
+  return [...byId.values()];
 }
 
 export function newestByToolkit(accounts, { userId, activeOnly = false } = {}) {
