@@ -30,6 +30,8 @@ export function titleFromSlug(slug) {
     .replace(/\bSonnet35\b/g, 'Sonnet 3.5')
     .replace(/\bHttp\b/g, 'HTTP')
     .replace(/\bJson\b/g, 'JSON')
+    .replace(/\bCsv\b/g, 'CSV')
+    .replace(/\bIp\b/g, 'IP')
     .replace(/\bO1\b/g, 'o1')
     .replace(/\bCi\b/g, 'CI')
     .replace(/\bRest API\b/g, 'REST API')
@@ -5883,4 +5885,29 @@ export const SERP_CLOSER_PATHS = [
   'slack-canvas-blocks-api/index.html',
   'slack-workflows-api/index.html',
   'openai-structured-outputs-api/index.html',
+  'jefferson-city/index.html',
+  'branson/index.html',
+  'n8n-worker-processes-api/index.html',
+  'n8n-binary-data-store-api/index.html',
+  'make-increment-api/index.html',
+  'n8n-log-streaming-api/index.html',
+  'make-sleep-api/index.html',
+  'stripe-setup-intents-api/index.html',
+  'paddle-report-csv-api/index.html',
+  'clerk-organization-roles-api/index.html',
+  'auth0-brute-force-api/index.html',
+  'neon-ip-allowlist-api/index.html',
+  'supabase-graphile-api/index.html',
+  'cloudflare-waiting-room-rules-api/index.html',
+  'vercel-web-analytics-api/index.html',
+  'netlify-forms-hooks-api/index.html',
+  'anthropic-citations-api/index.html',
+  'figma-dev-resources-rest-api/index.html',
+  'groq-whisper-v3-api/index.html',
+  'huggingface-inference-providers-api/index.html',
+  'openai-computer-use-api/index.html',
+  'gitlab-container-registry-api/index.html',
+  'github-secret-scanning-api/index.html',
+  'linear-sla-api/index.html',
+  'github-copilot-metrics-api/index.html',
 ];
