@@ -885,6 +885,7 @@ export const SERP_CLOSER_PATHS = [
   'blog/nebius-partnership-latam-expansion-guide/index.html',
   'blog/platform-engineering-and-ai-observability-in-2026/index.html',
   'blog/win-ai-clients-without-paid-ads-free-guide-2026/index.html',
+  'business-solutions/index.html',
   'business-solutions/ai-solutions/index.html',
   'business-solutions/cloud-devops/index.html',
   'business-solutions/data-analytics/index.html',
