@@ -61,6 +61,7 @@ export function titleFromSlug(slug) {
     .replace(/\bPG Prewarm\b/g, 'pg_prewarm')
     .replace(/\bJwks\b/g, 'JWKS')
     .replace(/\bHmac\b/g, 'HMAC')
+    .replace(/\bLsn\b/g, 'LSN')
     .replace(/\bCss\b/g, 'CSS')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
@@ -6662,4 +6663,29 @@ export const SERP_CLOSER_PATHS = [
   'github-copilot-usage-reports-org-api/index.html',
   'figma-mcp-code-connect-get-api/index.html',
   'slack-lists-access-api/index.html',
+  'o-fallon/index.html',
+  'st-peters/index.html',
+  'ballwin/index.html',
+  'make-router-fallback-api/index.html',
+  'n8n-crypto-verify-api/index.html',
+  'n8n-item-lists-remove-api/index.html',
+  'n8n-item-lists-concatenate-api/index.html',
+  'make-json-aggregator-api/index.html',
+  'paddle-price-get-api/index.html',
+  'paddle-product-get-api/index.html',
+  'auth0-mfa-authenticators-api/index.html',
+  'clerk-sign-in-attempts-api/index.html',
+  'cloudflare-api-shield-jwt-key-api/index.html',
+  'vercel-firewall-ip-allow-api/index.html',
+  'neon-branch-restore-timestamp-api/index.html',
+  'supabase-pg-prewarm-index-api/index.html',
+  'cloudflare-api-shield-schema-lint-api/index.html',
+  'neon-branch-restore-lsn-api/index.html',
+  'cloudflare-api-shield-jwt-token-api/index.html',
+  'openai-files-delete-api/index.html',
+  'groq-files-retrieve-file-api/index.html',
+  'anthropic-files-list-api/index.html',
+  'github-copilot-usage-reports-team-api/index.html',
+  'slack-lists-download-api/index.html',
+  'slack-lists-items-list-api/index.html',
 ];
