@@ -29,6 +29,10 @@ export function titleFromSlug(slug) {
     .replace(/\bDb\b/g, 'DB')
     .replace(/\bV3\b/g, 'v3')
     .replace(/\bSelf Hosted\b/g, 'Self-Hosted')
+    .replace(/\bPgbouncer\b/g, 'PgBouncer')
+    .replace(/\bXml\b/g, 'XML')
+    .replace(/\bHtml\b/g, 'HTML')
+    .replace(/\bSms\b/g, 'SMS')
     .replace(/\bLlama4\b/g, 'Llama 4')
     .replace(/\bLlama33\b/g, 'Llama 3.3')
     .replace(/\bLlama32\b/g, 'Llama 3.2')
@@ -6073,4 +6077,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-api/index.html',
   'slack-lists-views-api/index.html',
   'notion-file-uploads-api/index.html',
+  'clinton/index.html',
+  'festus/index.html',
+  'perryville/index.html',
+  'n8n-html-extract-api/index.html',
+  'make-set-multiple-api/index.html',
+  'n8n-crypto-node-api/index.html',
+  'make-ignore-api/index.html',
+  'n8n-xml-node-api/index.html',
+  'stripe-issuing-cardholders-api/index.html',
+  'paddle-notification-settings-api/index.html',
+  'clerk-allowlist-api/index.html',
+  'auth0-custom-sms-api/index.html',
+  'neon-pgbouncer-api/index.html',
+  'cloudflare-api-shield-validation-api/index.html',
+  'supabase-pg-stat-statements-api/index.html',
+  'vercel-security-challenge-api/index.html',
+  'netlify-edge-functions-env-api/index.html',
+  'openai-videos-api/index.html',
+  'groq-compound-system-api/index.html',
+  'huggingface-jobs-runner-api/index.html',
+  'figma-mcp-prompts-api/index.html',
+  'github-copilot-coding-agent-api/index.html',
+  'gitlab-duo-agent-platform-api/index.html',
+  'slack-lists-records-filter-api/index.html',
+  'notion-data-sources-api/index.html',
 ];
