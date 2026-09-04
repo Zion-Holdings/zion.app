@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROI Calculator | Zion Tech Group</title>
+  <meta name="description" content="Calculate your AI implementation ROI with our free interactive calculator. Discover cost savings, revenue growth, and payback period for your AI investment.">
+</head>
+<body>
+<nav style="background:#0f172a;padding:16px 0;border-bottom:1px solid #1f2937"><div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center"><a href="/" style="color:#f5f5f5;text-decoration:none;font-weight:700">Zion</a><div><a href="/services/" style="color:#cbd5e1;text-decoration:none;margin-left:16px">Services</a><a href="/contact/" style="color:#cbd5e1;text-decoration:none;margin-left:16px">Contact</a></div></div></nav>
+  <header><h1>AI ROI Calculator</h1><p>Estimate the return on your AI investment</p></header>
+  <main>
+    <section class="hero"><h2>See How Much AI Can Save Your Business</h2><p>Input your current operational costs and time spent on manual tasks. Our calculator shows realistic ROI projections for AI automation.</p></section>
+    <section class="calculator">
+      <h2>Calculate Your AI ROI</h2>
+      <form id="roi-calculator">
+        <label>Monthly operational cost ($)<input type="number" id="cost" value="50000"></label>
+        <label>Hours spent on manual tasks/week<input type="number" id="hours" value="40"></label>
+        <label>Average hourly rate ($)<input type="number" id="rate" value="50"></label>
+        <label>AI automation potential (%)<input type="range" id="automation" min="10" max="90" value="60"><span id="automation-val">60%</span></label>
+        <button type="button" onclick="calculateROI()">Calculate ROI</button>
+      </form>
+      <div id="results"></div>
+    </section>
+    <section class="cta"><h2>Get a Custom AI Implementation Plan</h2><p>Our ROI calculator gives you an estimate. For a detailed analysis tailored to your business, book a free consultation.</p><a href="https://calendly.com/kleber-ziontechgroup" class="cta-button">Book Free Consultation</a></section>
+  </main>
+  <script>
+    function calculateROI() {
+      const cost = parseFloat(document.getElementById('cost').value);
+      const hours = parseFloat(document.getElementById('hours').value);
+      const rate = parseFloat(document.getElementById('rate').value);
+      const automation = parseFloat(document.getElementById('automation').value);
+      const monthlySavings = (hours * rate * 4.33 * automation/100);
+      const yearlySavings = monthlySavings * 12;
+      const implementationCost = cost * 0.15;
+      const paybackMonths = implementationCost / monthlySavings;
+      const roi3yr = ((yearlySavings * 3 - implementationCost) / implementationCost * 100).toFixed(0);
+      document.getElementById('results').innerHTML = `
+        <div class="result-card"><h3>Monthly Savings</h3><p>$${monthlySavings.toFixed(0)}</p></div>
+        <div class="result-card"><h3>Yearly Savings</h3><p>$${yearlySavings.toFixed(0)}</p></div>
+        <div class="result-card"><h3>3-Year ROI</h3><p>${roi3yr}%</p></div>
+        <div class="result-card"><h3>Payback Period</h3><p>${paybackMonths.toFixed(1)} months</p></div>
+      `;
+    }
+    document.getElementById('automation').oninput = function() { document.getElementById('automation-val').textContent = this.value + '%'; };
+  </script>
+<footer style="padding:24px 0;text-align:center;color:#6b7280;border-top:1px solid #1f2937"><div style="max-width:1200px;margin:0 auto;padding:0 24px"><p>© Zion Tech Group</p></div></footer>
+</body>
+</html>

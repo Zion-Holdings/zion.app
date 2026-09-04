@@ -1,0 +1,35 @@
+import type { Metadata } from 'next';
+import StandardPage from '@/components/StandardPage';
+
+export const metadata: Metadata = {
+  title: "ai services for latam businesses | Zion Tech Group",
+  description: "ai services for latam businesses — Zion Tech Group.",
+  openGraph: {
+    title: "ai services for latam businesses | Zion Tech Group",
+    description: "ai services for latam businesses — Zion Tech Group.",
+    url: "https://ziontechgroup.com/blog/ai-services-for-latam-businesses/",
+    type: 'website',
+  },
+  alternates: { canonical: "/blog/ai-services-for-latam-businesses/" },
+};
+
+export default function BlogAiServicesForLatamBusinessesPage() {
+  return (
+    <StandardPage
+      title="ai services for latam businesses"
+      subtitle="ai services for latam businesses — Zion Tech Group."
+      breadcrumbItems={[
+        { label: "Home", href: "/" },
+        { label: "Blog", href: "/blog/" },
+        { label: "Ai Services For Latam Businesses" }
+      ]}
+      actions={[
+        { label: 'Talk to us', href: '/contact/', style: 'primary' },
+        { label: 'Browse services', href: '/services/', style: 'secondary' },
+      ]}
+    >
+      <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-5xl mx-auto">ai services for latam businesses — Zion Tech Group.</p>
+      <p className="text-slate-500 text-sm max-w-5xl mx-auto">Restored from current main / live Pages HTML so this route is not lost in the source recovery merge.</p>
+    </StandardPage>
+  );
+}

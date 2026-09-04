@@ -1,0 +1,12 @@
+name = "ziontechgroup"
+account_id = "f634328cf2b380daee7d928c1c4acad2"
+compatibility_date = "2026-09-02"
+main = "./workers/static.js"
+preview_urls = true
+workers_dev = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"

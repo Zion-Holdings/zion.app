@@ -1,0 +1,76 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import ArticleStructuredData from '@/components/ArticleStructuredData';
+import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+
+export const metadata = {
+  title: 'Free AI Readiness Audit for IT Services Companies 2026',
+  description: 'Free AI readiness audit for IT services companies in 2026: assessment checklist, roadmap template, and how to use the audit to win more clients.',
+
+  openGraph: {
+    title: 'Free AI Readiness Audit for IT Services Companies',
+    description: 'Assessment checklist and roadmap for IT services companies preparing for AI delivery.',
+    type: 'article',
+    url: 'https://ziontechgroup.com/blog/free-ai-readiness-audit-for-it-services-companies',
+  },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/free-ai-readiness-audit-for-it-services-companies',
+  },
+};
+
+export default function Page() {
+  return (
+    <div className="relative min-h-screen bg-slate-950">
+      <ArticleStructuredData
+        headline="Free AI Readiness Audit for IT Services Companies"
+        description="Assessment checklist and roadmap for IT services companies preparing for AI delivery."
+        datePublished="2026-07-07"
+        slug="free-ai-readiness-audit-for-it-services-companies"
+      />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-16 left-[-9rem] h-[26rem] w-[26rem] rounded-full bg-violet-500/20 blur-3xl" />
+        <div className="absolute right-[-10rem] top-24 h-[28rem] w-[28rem] rounded-full bg-indigo-500/15 blur-3xl" />
+      </div>
+
+      <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Free AI Readiness Audit for IT Services Companies' }]} className="mb-8" />
+        <header className="mb-12">
+          <div className="mb-4 flex-wrap items-center gap-3 text-sm flex">
+            <time dateTime="2026-07-07" className="text-slate-400">2026-07-07</time>
+            <span className="rounded-full border border-violet-400/40 bg-violet-500/15 px-3 py-1 text-xs font-medium text-violet-200">Growth</span>
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Free AI Readiness Audit for IT Services Companies</h1>
+        </header>
+
+        <div className="prose-invert max-w-none">
+          <section className="mb-10">
+            <h2 className="mb-4 text-2xl font-bold text-white">Use an audit to close deals faster</h2>
+            <p className="mb-4 leading-relaxed text-slate-300">A free AI readiness audit turns open-ended prospect conversations into qualified opportunities with shared context, clear next steps, and faster Calendly conversion.</p>
+          </section>
+          <section className="mb-10">
+            <h2 className="mb-4 text-2xl font-bold text-white">Assessment checklist</h2>
+            <p className="mb-4 leading-relaxed text-slate-300"><strong>1.</strong> Data availability and quality.<br/><strong>2.</strong> Workflow automation readiness.<br/><strong>3.</strong> Existing toolchain and APIs.<br/><strong>4.</strong> SLA and incident response maturity.<br/><strong>5.</strong> Executive sponsorship and budget cycle.</p>
+          </section>
+          <section className="mb-10">
+            <h2 className="mb-4 text-2xl font-bold text-white">Roadmap template</h2>
+            <p className="mb-4 leading-relaxed text-slate-300">Deliver a 1-page roadmap with three tranches: pilot, package, and platform. Use the audit to define success metrics and show ROI in 30 days.</p>
+            <p className="mb-4 leading-relaxed text-slate-300">Request our free audit and see more AI services at <Link href="https://ziontechgroup.com" className="text-violet-300 underline">https://ziontechgroup.com</Link>. Book a strategy call at <Link href="https://calendly.com/kleber-ziontechgroup" className="text-violet-300 underline">https://calendly.com/kleber-ziontechgroup</Link>.</p>
+          </section>
+        </div>
+
+        <div className="mt-16 rounded-3xl border border-violet-500/30 bg-gradient-to-r from-violet-900/40 via-indigo-900/30 to-blue-900/40 p-8 text-center shadow-2xl sm:p-12">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">Want a ready-to-use AI readiness audit template?</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-slate-200">We can share a turnkey assessment and pitch deck for IT services companies.</p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link href="https://calendly.com/kleber-ziontechgroup" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Book Strategy Call</Link>
+            <Link href="https://ziontechgroup.com" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Explore Free Tools</Link>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-slate-800 pt-8">
+          <Link href="/blog/" className="text-sm font-medium text-violet-300 transition hover:text-violet-200">&larr; Back to all articles</Link>
+        </div>
+      </article>
+    </div>
+  );
+}

@@ -1,88 +1,190 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Comparador de Serviços · Zion Tech Group</title>
-<meta name="description" content="Compare serviços de TI e IA. Descubra qual solução combina com seu negócio.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
-.max{max-width:1000px;margin:0 auto}
-h1{font-size:2rem;margin:24px 0 8px}
-.sub{color:#94a3b8;margin-bottom:32px}
-.table{width:100%;border-collapse:collapse;background:#1e293b;border-radius:12px;overflow:hidden}
-.table th,td{padding:16px;text-align:left;border-bottom:1px solid #334155}
-.table th{background:#0f172a;color:#a78bfa;font-weight:600}
-.table tr:hover{background:#1e293b}
-.check{color:#34d399}
-.cross{color:#f87171}
-.price{font-weight:700;color:#a78bfa}
-.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px}
-a{color:#a78bfa;text-decoration:none}
-.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Comparison Tool — Zion Tech Group</title>
+    <meta name="description" content="Compare IT and AI services side by side. Find the right solution for your business needs with our comprehensive comparison tool.">
+    <meta name="keywords" content="service comparison, IT services comparison, AI services, compare services, find best solution, Zion Tech Group">
+    <link rel="canonical" href="https://ziontechgroup.com/tools/service-comparison/">
+    <meta property="og:title" content="Service Comparison Tool — Zion Tech Group">
+    <meta property="og:description" content="Compare IT and AI services side by side to find the perfect solution for your business.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ziontechgroup.com/tools/service-comparison/">
+    <style>
+        :root { --primary: #1e3a5f; --accent: #0a66c2; --bg: #f8f9fa; --text: #212529; --light-bg: #ffffff; --border: #dee2e6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        header { background: var(--primary); color: white; padding: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.5rem; font-weight: 600; }
+        header a { color: white; text-decoration: none; opacity: 0.9; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 3rem 0; text-align: center; }
+        .hero h2 { font-size: 2.2rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .hero p { font-size: 1.1rem; opacity: 0.95; max-width: 600px; margin: 0 auto; }
+        .section { padding: 2.5rem 0; }
+        .section h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 1rem; }
+        .search-box { display: flex; gap: 0.75rem; margin: 1.5rem 0; }
+        .search-box input { flex: 1; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 6px; font-size: 1rem; transition: border-color 0.2s; }
+        .search-box input:focus { outline: none; border-color: var(--accent); }
+        .search-box button { background: var(--accent); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; font-size: 1rem; cursor: pointer; font-weight: 600; }
+        .search-box button:hover { background: #084a8f; }
+        .category-tabs { display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+        .category-tab { background: var(--light-bg); border: 1px solid var(--border); padding: 0.5rem 1.25rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+        .category-tab:hover { border-color: var(--accent); color: var(--accent); }
+        .category-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .comparison-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .comp-card { background: var(--light-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+        .comp-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .comp-card h4 { color: var(--primary); margin-bottom: 0.5rem; }
+        .comp-card .tag { display: inline-block; background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem; margin-bottom: 0.5rem; }
+        .comp-card p { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+        .comp-card .action-btn { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.85rem; }
+        .comp-card .action-btn:hover { background: #162d4a; }
+        .cta-section { background: var(--primary); color: white; padding: 2rem; border-radius: 8px; text-align: center; margin-top: 2rem; }
+        .cta-section h3 { color: white; margin-bottom: 0.5rem; }
+        .cta-section a { display: inline-block; background: var(--accent); color: white; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 1rem; }
+        footer { background: var(--primary); color: rgba(255,255,255,0.8); padding: 2rem 0; margin-top: 2rem; text-align: center; }
+        footer a { color: white; }
+    </style>
 </head>
 <body>
-<div class="max">
-<h1>Comparador de Serviços</h1>
-<p class="sub">Descubra qual solução combina com seu negócio</p>
+    <header>
+        <div class="container">
+            <h1><a href="/">Zion Tech Group</a></h1>
+            <nav>
+                <a href="/services/">Services</a> | 
+                <a href="/tools/">Tools</a> | 
+                <a href="/blog/">Blog</a> | 
+                <a href="/contact/">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<table class="table">
-<tr>
-<th>Serviço</th>
-<th>Discovery</th>
-<th>Consulting</th>
-<th>Starter</th>
-<th>Growth</th>
-</tr>
-<tr>
-<td><strong>Discovery</strong></td>
-<td class="check">✓ Incluído</td>
-<td class="cross">—</td>
-<td class="cross">—</td>
-<td class="cross">—</td>
-</tr>
-<tr>
-<td><strong>Consulting</strong></td>
-<td class="check">✓ Incluído</td>
-<td class="check">✓ 4h/mês</td>
-<td class="check">✓ 8h/mês</td>
-<td class="check">✓ 16h/mês</td>
-</tr>
-<tr>
-<td><strong>Automação</strong></td>
-<td class="cross">—</td>
-<td class="check">✓ Básica</td>
-<td class="check">✓ Intermediária</td>
-<td class="check">✓ Avançada</td>
-</tr>
-<tr>
-<td><strong>IA/ML</strong></td>
-<td class="cross">—</td>
-<td class="cross">—</td>
-<td class="check">✓ Incluído</td>
-<td class="check">✓ +Treinamento</td>
-</tr>
-<tr>
-<td><strong>Suporte</strong></td>
-<td class="cross">—</td>
-<td class="cross">—</td>
-<td class="check">✓ Email</td>
-<td class="check">✓ 24/7</td>
-</tr>
-<tr>
-<td><strong>Preço</strong></td>
-<td class="price">$99</td>
-<td class="price">$499</td>
-<td class="price">$2,500</td>
-<td class="price">$8,000/mo</td>
-</tr>
-</table>
+    <section class="hero">
+        <div class="container">
+            <h2>Service Comparison Tool</h2>
+            <p>Compare IT and AI services side by side to find the perfect solution for your business needs.</p>
+        </div>
+    </section>
 
-<div class="links">
-<p><a href="/plans/">Ver Planos</a> · <a href="/book/">Agendar</a> · <a href="/services/">Serviços</a></p>
-</div>
-</div>
+    <main class="container section">
+        <div class="search-box">
+            <input type="text" placeholder="Search services..." id="searchInput" onkeyup="filterServices()">
+            <button onclick="filterServices()">Search</button>
+        </div>
+
+        <div class="category-tabs" id="categoryTabs">
+            <button class="category-tab active" onclick="filterByCategory('all')">All Services</button>
+            <button class="category-tab" onclick="filterByCategory('ai')">AI Services</button>
+            <button class="category-tab" onclick="filterByCategory('cloud')">Cloud Services</button>
+            <button class="category-tab" onclick="filterByCategory('security')">Security Services</button>
+            <button class="category-tab" onclick="filterByCategory('data')">Data & Analytics</button>
+            <button class="category-tab" onclick="filterByCategory('devops')">DevOps & Automation</button>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Available Services</h3>
+        <div class="comparison-grid" id="servicesGrid">
+            <div class="comp-card" data-category="ai">
+                <h4>🤖 AI Agents Platform</h4>
+                <span class="tag">AI</span><span class="tag">Automation</span>
+                <p>Build, deploy, and manage AI agents for your business processes. Customizable, scalable, and secure.</p>
+                <a href="/services/ai-agents-autonomous/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="security">
+                <h4>🔒 AI Security Operations</h4>
+                <span class="tag">Security</span><span class="tag">AI</span>
+                <p>AI-powered security operations with automated threat detection and incident response for enterprise protection.</p>
+                <a href="/services/ai-security-operations/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="data">
+                <h4>📊 AI Data Pipeline</h4>
+                <span class="tag">Data</span><span class="tag">AI</span>
+                <p>Intelligent data pipeline solutions that automate data ingestion, transformation, and analytics at scale.</p>
+                <a href="/services/ai-data-pipeline/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="cloud">
+                <h4>☁️ Cloud Cost Optimizer</h4>
+                <span class="tag">Cloud</span><span class="tag">Cost</span>
+                <p>Reduce cloud spending by up to 40% with AI-driven cost optimization and resource right-sizing recommendations.</p>
+                <a href="/services/cloud-cost-ai-optimizer-2026-6534/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="security">
+                <h4>🛡️ AI Malware Protection</h4>
+                <span class="tag">Security</span><span class="tag">AI</span>
+                <p>Next-generation malware protection using behavioral AI to catch threats that traditional antivirus misses.</p>
+                <a href="/services/ai-malware-protection/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="ai">
+                <h4>📧 AI Email Intelligence</h4>
+                <span class="tag">AI</span><span class="tag">Communication</span>
+                <p>Smart email automation and intelligence that understands context, prioritizes important messages, and drafts responses.</p>
+                <a href="/services/ai-email-intelligence/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="data">
+                <h4>📈 AI Observability</h4>
+                <span class="tag">Data</span><span class="tag">Monitoring</span>
+                <p>Comprehensive observability platform that uses AI to detect anomalies, predict issues, and optimize system performance.</p>
+                <a href="/services/ai-observability-2026-6565/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="devops">
+                <h4>⚙️ DevOps with AI</h4>
+                <span class="tag">DevOps</span><span class="tag">AI</span>
+                <p>Accelerate your CI/CD pipelines with AI-powered testing, deployment optimization, and intelligent rollbacks.</p>
+                <a href="/services/ai-workflow-automation/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="cloud">
+                <h4>🔄 Cloud Migration</h4>
+                <span class="tag">Cloud</span><span class="tag">Migration</span>
+                <p>Seamless cloud migration services with automated assessment, planning, and execution for minimal downtime.</p>
+                <a href="/services/cloud-migration-services-2026-6572/" class="action-btn">Learn More →</a>
+            </div>
+            <div class="comp-card" data-category="ai">
+                <h4>💬 Customer Support AI</h4>
+                <span class="tag">AI</span><span class="tag">Support</span>
+                <p>AI-powered customer support that handles inquiries 24/7, escalates complex issues, and continuously improves.</p>
+                <a href="/services/ai-customer-support-pro/" class="action-btn">Learn More →</a>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Help Choosing?</h3>
+            <p>Our experts can help you compare services and find the best solution for your specific needs.</p>
+            <a href="/contact/">Talk to an Expert →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024–2026 Zion Tech Group. All rights reserved.</p>
+            <p><a href="/privacy/">Privacy Policy</a> · <a href="/terms/">Terms of Service</a> · <a href="/contact/">Contact</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function filterServices() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.comp-card');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+
+        function filterByCategory(category) {
+            document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const cards = document.querySelectorAll('.comp-card');
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = '';
+                } else {
+                    card.style.display = card.dataset.category === category ? '' : 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

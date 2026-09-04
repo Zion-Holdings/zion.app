@@ -1,0 +1,47 @@
+name: Source Integrity Guard
+
+# Blocks the Sept 2026 regression: main must remain a Next.js source tree,
+# not a static-export orphan that drops package.json / app / components.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  source-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Verify Next.js source tree is intact
+        run: node scripts/checks/source-integrity-check.cjs
+
+      - name: Verify homepage and AI sync
+        run: node scripts/checks/homepage-ai-sync-check.cjs
+
+      - name: Block accidental source deletion in the diff
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          # Two-dot tree compare. Three-dot (A...B) needs a merge-base, which
+          # fails on shallow clones after the Sept 1 orphan rewrite of main.
+          BASE="origin/${{ github.base_ref }}"
+          if ! DIFF="$(git diff --name-status "$BASE" HEAD)"; then
+            echo "::error::Could not diff ${BASE} against HEAD"
+            exit 1
+          fi
+          PROTECTED='^(package\.json|package-lock\.json|next\.config\.js|tsconfig\.json|CNAME|public/CNAME|app/layout\.tsx|app/page\.tsx|app/globals\.css|app/error\.tsx|app/components/Navigation\.tsx|app/components/Footer\.tsx|app/components/PageTemplate\.tsx|app/components/StandardPage\.tsx|wrangler\.toml|workers/static\.js)$'
+          if printf '%s\n' "$DIFF" | awk '{print $1" "$2}' | grep -E '^[DR] ' | awk '{print $2}' | grep -E "$PROTECTED"; then
+            echo "::error::This PR deletes protected source files. Restore them before merge."
+            exit 1
+          fi
+          deleted_tsx="$(printf '%s\n' "$DIFF" | grep -cE '^[DR][[:space:]]+app/.*\.tsx$' || true)"
+          if [ "$deleted_tsx" -gt 200 ]; then
+            echo "::error::This PR deletes ${deleted_tsx} app TypeScript pages. The Sept 2026 regression replaced main with a static-export orphan. Split large deletions or restore the source tree."
+            exit 1
+          fi
+          echo "Protected-file and mass-deletion checks passed (${deleted_tsx} app tsx deletions)."

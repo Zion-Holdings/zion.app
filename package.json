@@ -1,0 +1,38 @@
+{
+  "name": "zion-support-github-io",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/cf-or-next-build.cjs",
+    "build:next": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:check": "next build || true",
+    "build:export": "next build",
+    "type-check": "tsc --noEmit",
+    "sitemap": "next-sitemap --config next-sitemap.config.js",
+    "integrity": "node scripts/checks/source-integrity-check.cjs",
+    "homepage:ai-sync:check": "node scripts/checks/homepage-ai-sync-check.cjs",
+    "sitemap:validate": "node scripts/checks/sitemap-validate-check.cjs",
+    "smoke:routes:check": "node scripts/checks/smoke-routes-check.cjs",
+    "generate-sitemap": "node scripts/generate-sitemap-feed.cjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.544.0",
+    "next": "^16.3.2",
+    "next-sitemap": "4.2.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9.3"
+  }
+}
