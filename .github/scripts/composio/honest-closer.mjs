@@ -52,6 +52,7 @@ export function titleFromSlug(slug) {
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
+    .replace(/\bPG Buffercache\b/g, 'pg_buffercache')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6502,4 +6503,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-models-get-api/index.html',
   'notion-data-sources-retrieve-api/index.html',
   'slack-lists-items-get-api/index.html',
+  'bolivar/index.html',
+  'wentzville/index.html',
+  'palmyra/index.html',
+  'n8n-error-trigger-api/index.html',
+  'n8n-workflow-trigger-api/index.html',
+  'make-webhook-response-api/index.html',
+  'n8n-read-pdf-node-api/index.html',
+  'make-csv-parse-api/index.html',
+  'stripe-radar-value-list-items-api/index.html',
+  'paddle-transaction-revise-api/index.html',
+  'auth0-ip-throttling-settings-api/index.html',
+  'clerk-waitlist-entries-api/index.html',
+  'cloudflare-api-shield-jwt-issuers-api/index.html',
+  'cloudflare-api-shield-operation-schema-api/index.html',
+  'netlify-edge-functions-geo-city-api/index.html',
+  'vercel-security-ip-bypass-api/index.html',
+  'supabase-pg-buffercache-api/index.html',
+  'huggingface-jobs-fetch-logs-api/index.html',
+  'openai-videos-retrieve-job-api/index.html',
+  'groq-files-list-api/index.html',
+  'github-copilot-billing-seats-api/index.html',
+  'gitlab-duo-self-hosted-models-create-api/index.html',
+  'notion-data-sources-list-api/index.html',
+  'figma-mcp-code-connect-commands-api/index.html',
+  'slack-lists-items-create-api/index.html',
 ];
