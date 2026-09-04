@@ -36,6 +36,8 @@ export function titleFromSlug(slug) {
     .replace(/\bKcache\b/g, 'kcache')
     .replace(/\bCname\b/g, 'CNAME')
     .replace(/\bDevtools\b/g, 'DevTools')
+    .replace(/\bSte Genevieve\b/g, 'Ste. Genevieve')
+    .replace(/\bCodegen\b/g, 'Codegen')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6236,4 +6238,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-workflow-catalog-items-api/index.html',
   'slack-lists-records-views-update-api/index.html',
   'notion-verification-api/index.html',
+  'ste-genevieve/index.html',
+  'desloge/index.html',
+  'bonner-springs/index.html',
+  'n8n-rename-keys-api/index.html',
+  'make-iterator-array-api/index.html',
+  'n8n-sort-items-api/index.html',
+  'make-repeater-module-api/index.html',
+  'n8n-limit-items-api/index.html',
+  'stripe-issuing-cardholders-cards-api/index.html',
+  'paddle-transaction-invoice-api/index.html',
+  'clerk-organization-invitations-api/index.html',
+  'auth0-breached-password-detection-api/index.html',
+  'neon-role-passwords-api/index.html',
+  'cloudflare-api-shield-endpoint-management-api/index.html',
+  'supabase-pg-repack-jobs-api/index.html',
+  'vercel-security-rate-limit-api/index.html',
+  'netlify-edge-functions-geo-api/index.html',
+  'openai-videos-content-api/index.html',
+  'groq-whisper-large-v3-turbo-api/index.html',
+  'huggingface-jobs-list-api/index.html',
+  'figma-mcp-codegen-api/index.html',
+  'github-copilot-metrics-export-api/index.html',
+  'gitlab-duo-self-hosted-models-config-api/index.html',
+  'slack-lists-records-views-delete-api/index.html',
+  'notion-database-properties-api/index.html',
 ];
