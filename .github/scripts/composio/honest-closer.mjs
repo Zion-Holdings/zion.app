@@ -54,6 +54,21 @@ export function titleFromSlug(slug) {
     .replace(/\bNodejs\b/g, 'Node.js')
     .replace(/\bSqlserver\b/g, 'SQL Server')
     .replace(/\bOpenai API\b/g, 'OpenAI API')
+    .replace(/\bChatgpt\b/g, 'ChatGPT')
+    .replace(/\bOpenai\b/g, 'OpenAI')
+    .replace(/\bLangchain\b/g, 'LangChain')
+    .replace(/\bLanggraph\b/g, 'LangGraph')
+    .replace(/\bCrewai\b/g, 'CrewAI')
+    .replace(/\bAutogen\b/g, 'AutoGen')
+    .replace(/\bHuggingface\b/g, 'Hugging Face')
+    .replace(/\bLemonsqueezy\b/g, 'Lemon Squeezy')
+    .replace(/\bOnesignal\b/g, 'OneSignal')
+    .replace(/\bPosthog\b/g, 'PostHog')
+    .replace(/\bFullstory\b/g, 'FullStory')
+    .replace(/\bRudderstack\b/g, 'RudderStack')
+    .replace(/\bCustomer Io\b/g, 'Customer.io')
+    .replace(/\bWoocommerce\b/g, 'WooCommerce')
+    .replace(/\bSagemaker\b/g, 'SageMaker')
     .replace(/\bNfe\b/g, 'NF-e')
     .replace(/\bIso9001\b/g, 'ISO 9001')
     .replace(/\bIso20000\b/g, 'ISO 20000')
@@ -4716,4 +4731,98 @@ export const SERP_CLOSER_PATHS = [
   'bigquery-ui/index.html',
   'redshift-ui/index.html',
   'athena-ui/index.html',
+  'belo-horizonte/index.html',
+  'brasilia/index.html',
+  'salvador/index.html',
+  'recife/index.html',
+  'fortaleza/index.html',
+  'porto-alegre/index.html',
+  'campinas/index.html',
+  'manaus/index.html',
+  'goiania/index.html',
+  'belem/index.html',
+  'vitoria/index.html',
+  'santos/index.html',
+  'buenos-aires/index.html',
+  'bogota/index.html',
+  'santiago/index.html',
+  'lima/index.html',
+  'montevideo/index.html',
+  'asuncion/index.html',
+  'toronto/index.html',
+  'austin/index.html',
+  'seattle/index.html',
+  'san-francisco/index.html',
+  'los-angeles/index.html',
+  'chicago/index.html',
+  'dublin/index.html',
+  'berlin/index.html',
+  'paris/index.html',
+  'amsterdam/index.html',
+  'madrid/index.html',
+  'barcelona/index.html',
+  'tokyo/index.html',
+  'singapore/index.html',
+  'sydney/index.html',
+  'dubai/index.html',
+  'tel-aviv/index.html',
+  'chatgpt-consulting/index.html',
+  'copilot-studio/index.html',
+  'gemini-consulting/index.html',
+  'claude-consulting/index.html',
+  'langchain-ops/index.html',
+  'langgraph-ops/index.html',
+  'crewai/index.html',
+  'autogen/index.html',
+  'semantic-kernel/index.html',
+  'pinecone-ops/index.html',
+  'weaviate-ops/index.html',
+  'qdrant-ops/index.html',
+  'chroma-ops/index.html',
+  'milvus-ops/index.html',
+  'openai-assistants/index.html',
+  'anthropic-api/index.html',
+  'groq-api/index.html',
+  'mistral-api/index.html',
+  'together-ai/index.html',
+  'replicate-api/index.html',
+  'huggingface-inference/index.html',
+  'bedrock-agents/index.html',
+  'vertex-ai-studio/index.html',
+  'azure-openai/index.html',
+  'sagemaker-studio/index.html',
+  'databricks-mosaic/index.html',
+  'n8n-cloud/index.html',
+  'make-scenarios/index.html',
+  'zapier-tables/index.html',
+  'composio-tools/index.html',
+  'posthog/index.html',
+  'mixpanel/index.html',
+  'amplitude/index.html',
+  'segment-cdp/index.html',
+  'rudderstack/index.html',
+  'customer-io/index.html',
+  'braze/index.html',
+  'onesignal/index.html',
+  'iterable/index.html',
+  'plausible/index.html',
+  'umami/index.html',
+  'matomo/index.html',
+  'hotjar/index.html',
+  'fullstory/index.html',
+  'calendly-embed/index.html',
+  'stripe-checkout/index.html',
+  'paddle-billing/index.html',
+  'lemonsqueezy/index.html',
+  'shopify-app/index.html',
+  'woocommerce-plugin/index.html',
+  'webflow-cms/index.html',
+  'framer-site/index.html',
+  'notion-api/index.html',
+  'airtable-interface/index.html',
+  'linear-webhooks/index.html',
+  'slack-commands/index.html',
+  'github-app/index.html',
+  'gitlab-app/index.html',
+  'bitbucket-app/index.html',
 ];
