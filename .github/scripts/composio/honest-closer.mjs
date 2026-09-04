@@ -22,7 +22,9 @@ export function titleFromSlug(slug) {
     .replace(/\bGpt4o\b/g, 'GPT-4o')
     .replace(/\bGpt4\b/g, 'GPT-4')
     .replace(/\bGpt35\b/g, 'GPT-3.5')
+    .replace(/\bLlama32\b/g, 'Llama 3.2')
     .replace(/\bLlama31\b/g, 'Llama 3.1')
+    .replace(/\bMcpherson\b/g, 'McPherson')
     .replace(/\bSonnet35\b/g, 'Sonnet 3.5')
     .replace(/\bHttp\b/g, 'HTTP')
     .replace(/\bJson\b/g, 'JSON')
@@ -5829,4 +5831,29 @@ export const SERP_CLOSER_PATHS = [
   'github-dependabot-api/index.html',
   'gitlab-issues-api/index.html',
   'slack-reminders-api/index.html',
+  'pratt/index.html',
+  'colby/index.html',
+  'mcpherson/index.html',
+  'n8n-ai-api/index.html',
+  'make-ai-api/index.html',
+  'n8n-queue-api/index.html',
+  'make-tools-sdk-api/index.html',
+  'stripe-payment-intents-api/index.html',
+  'paddle-adjustments-api/index.html',
+  'clerk-organizations-memberships-api/index.html',
+  'auth0-organizations-invitations-api/index.html',
+  'neon-api-keys-api/index.html',
+  'supabase-logs-hooks-api/index.html',
+  'cloudflare-workers-observability-api/index.html',
+  'vercel-firewall-rules-api/index.html',
+  'netlify-background-functions-api/index.html',
+  'openai-gpt4-turbo-api/index.html',
+  'anthropic-messages-batches-api/index.html',
+  'figma-webhooks-rest-api/index.html',
+  'groq-llama32-api/index.html',
+  'make-data-structures-api/index.html',
+  'linear-workflow-api/index.html',
+  'github-actions-cache-api/index.html',
+  'gitlab-pages-api/index.html',
+  'n8n-mcp-api/index.html',
 ];
