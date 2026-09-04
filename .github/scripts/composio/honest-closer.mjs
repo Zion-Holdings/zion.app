@@ -56,6 +56,7 @@ export function titleFromSlug(slug) {
     .replace(/\bPG Buffercache\b/g, 'pg_buffercache')
     .replace(/\bPG Prewarm\b/g, 'pg_prewarm')
     .replace(/\bJwks\b/g, 'JWKS')
+    .replace(/\bHmac\b/g, 'HMAC')
     .replace(/\bCss\b/g, 'CSS')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
@@ -6607,4 +6608,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-features-status-api/index.html',
   'notion-data-sources-restore-api/index.html',
   'slack-lists-records-get-api/index.html',
+  'bonneterre/index.html',
+  'n8n-crypto-node-hash-api/index.html',
+  'n8n-function-item-node-api/index.html',
+  'make-basic-router-api/index.html',
+  'n8n-crypto-node-sign-api/index.html',
+  'n8n-crypto-hmac-api/index.html',
+  'n8n-crypto-node-verify-api/index.html',
+  'stripe-radar-early-fraud-api/index.html',
+  'paddle-discount-get-api/index.html',
+  'auth0-mfa-settings-api/index.html',
+  'clerk-sign-up-tokens-api/index.html',
+  'cloudflare-api-shield-jwt-audience-api/index.html',
+  'supabase-pg-prewarm-relation-api/index.html',
+  'vercel-firewall-ip-rules-api/index.html',
+  'netlify-edge-functions-geo-latitude-api/index.html',
+  'neon-branch-restore-window-api/index.html',
+  'cloudflare-api-shield-schema-warnings-api/index.html',
+  'groq-files-retrieve-content-api/index.html',
+  'huggingface-jobs-pause-api/index.html',
+  'openai-files-retrieve-content-api/index.html',
+  'figma-mcp-code-connect-fetch-api/index.html',
+  'github-copilot-usage-reports-api/index.html',
+  'gitlab-duo-self-hosted-models-test-api/index.html',
+  'notion-data-sources-move-api/index.html',
+  'slack-lists-items-complete-api/index.html',
 ];
