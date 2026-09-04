@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Due Diligence TI 2026 · Zion Tech Group</title>
+<meta name="description" content="Checklist completa de due diligence em TI para M&A 2026. Avalie sistemas, segurança e infraestrutura.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:900px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+.check{margin:16px 0}
+.check input{width:auto;margin:0 8px 0 0}
+.check label{display:inline;color:#e6f0ff;cursor:pointer}
+.section{font-size:1.1rem;font-weight:600;color:#a78bfa;margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid #334155}
+.progress{background:#1e293b;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
+.progress .big{font-size:2rem;font-weight:700;color:#a78bfa}
+.progress .label{color:#94a3b8;margin-top:4px}
+.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
+<body>
+<div class="max">
+<h1>Due Diligence TI 2026</h1>
+<p class="sub">Checklist completa para avaliação de TI em M&A</p>
+
+<div class="progress">
+<div class="big" id="pct">0%</div>
+<div class="label">Progresso da checklist</div>
+</div>
+
+<div class="card">
+<div class="section">Infraestrutura</div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Servidores cloud/hybrid documentados</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Backup automático testado nos últimos 30 dias</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>DR (Disaster Recovery) testado</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Documentação de rede atualizada</label></div>
+
+<div class="section">Segurança</div>
+<div class="check"><input type="checkbox" onchange="update()"><label>SSL válido em todos os domínios</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Firewall configurado e atualizado</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>LGPD compliance verificado</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Pentest realizado nos últimos 12 meses</label></div>
+
+<div class="section">Aplicações</div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Stack tecnológico documentado</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Cobertura de testes > 70%</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>CI/CD pipeline funcionando</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Monitoramento e alertas ativos</label></div>
+
+<div class="section">Dados</div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Banco de dados com replicação</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>ETL e pipelines de dados documentados</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Política de retenção definida</label></div>
+<div class="check"><input type="checkbox" onchange="update()"><label>Anonimização/LGPD implementada</label></div>
+</div>
+
+<div class="links">
+<p><a href="/services/">Serviços</a> · <a href="/book/">Agendar Discovery $99</a></p>
+</div>
+</div>
+
+<script>
+function update(){
+const checks = document.querySelectorAll('input[type=checkbox]');
+const checked = Array.from(checks).filter(c => c.checked).length;
+const pct = Math.round((checked / checks.length) * 100);
+document.getElementById('pct').textContent = pct + '%';
+}
+</script>
+</body>
+</html>

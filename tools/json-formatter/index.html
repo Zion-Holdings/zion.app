@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JSON Formatter · Zion Tech Group</title>
+<meta name="description" content="Formate e valide JSON online. Cole seu JSON e obtenha formatado, validado e bonito.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:900px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+textarea{width:100%;min-height:200px;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-family:monospace;font-size:.875rem;resize:vertical}
+textarea:focus{outline:none;border-color:#a78bfa}
+.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none;margin-right:8px}
+.btn:hover{background:#c4b5fd}
+.btn-secondary{background:#334155;color:#e6f0ff}
+.btn-secondary:hover{background:#475569}
+.result{background:#1e293b;border-radius:12px;padding:24px;margin:24px 0}
+.result h2{margin-bottom:16px}
+.error{color:#f87171}
+.success{color:#34d399}
+pre{background:#0f172a;padding:16px;border-radius:8px;overflow-x:auto;font-size:.875rem}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
+<body>
+<div class="max">
+<h1>JSON Formatter</h1>
+<p class="sub">Formate, valide e embeleze JSON online</p>
+
+<div class="card">
+<label>Cole seu JSON aqui</label>
+<textarea id="input" placeholder='{"nome": "Zion", "servico": "TI"}'></textarea>
+<div>
+<button class="btn" onclick="format()">Formatar</button>
+<button class="btn btn-secondary" onclick="minify()">Minificar</button>
+<button class="btn btn-secondary" onclick="clearAll()">Limpar</button>
+</div>
+</div>
+
+<div class="result hidden" id="result">
+<h2 id="status"></h2>
+<pre id="output"></pre>
+</div>
+
+<div class="links">
+<p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a> · <a href="/tools/phishing-analyzer/">Phishing Analyzer</a></p>
+</div>
+</div>
+
+<script>
+function format(){
+const input = document.getElementById('input').value.trim();
+if(!input) return;
+const result = document.getElementById('result');
+result.classList.remove('hidden');
+try {
+  const obj = JSON.parse(input);
+  document.getElementById('status').innerHTML = '<span class="success">✓ JSON válido</span>';
+  document.getElementById('output').textContent = JSON.stringify(obj, null, 2);
+} catch(e) {
+  document.getElementById('status').innerHTML = '<span class="error">✗ JSON inválido</span>';
+  document.getElementById('output').textContent = e.message;
+}
+}
+
+function minify(){
+const input = document.getElementById('input').value.trim();
+if(!input) return;
+const result = document.getElementById('result');
+result.classList.remove('hidden');
+try {
+  const obj = JSON.parse(input);
+  document.getElementById('status').innerHTML = '<span class="success">✓ JSON minificado</span>';
+  document.getElementById('output').textContent = JSON.stringify(obj);
+} catch(e) {
+  document.getElementById('status').innerHTML = '<span class="error">✗ JSON inválido</span>';
+  document.getElementById('output').textContent = e.message;
+}
+}
+
+function clearAll(){
+document.getElementById('input').value = '';
+document.getElementById('result').classList.add('hidden');
+}
+</script>
+</body>
+</html>
