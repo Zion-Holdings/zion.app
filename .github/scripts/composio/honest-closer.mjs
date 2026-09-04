@@ -8,7 +8,25 @@ export function titleFromSlug(slug) {
     .replace(/\bIt\b/g, 'IT')
     .replace(/\bMsp\b/g, 'MSP')
     .replace(/\bSoc\b/g, 'SOC')
-    .replace(/\bN8n\b/g, 'n8n');
+    .replace(/\bN8n\b/g, 'n8n')
+    .replace(/\bCrm\b/g, 'CRM')
+    .replace(/\bFinops\b/g, 'FinOps')
+    .replace(/\bLatam\b/g, 'LATAM')
+    .replace(/\bApi\b/g, 'API')
+    .replace(/\bCdn\b/g, 'CDN')
+    .replace(/\bSase\b/g, 'SASE')
+    .replace(/\bSaas\b/g, 'SaaS')
+    .replace(/\bMicrosaas\b/g, 'Micro-SaaS')
+    .replace(/\bDevsecops\b/g, 'DevSecOps')
+    .replace(/\bAiops\b/g, 'AIOps')
+    .replace(/\bRag\b/g, 'RAG')
+    .replace(/\bWhatsapp\b/g, 'WhatsApp')
+    .replace(/\bRoi\b/g, 'ROI')
+    .replace(/\bB2b\b/g, 'B2B')
+    .replace(/\bFaq\b/g, 'FAQ')
+    .replace(/\bBi\b/g, 'BI')
+    .replace(/\bLgpd\b/g, 'LGPD')
+    .replace(/\bGdpr\b/g, 'GDPR');
 }
 
 /** Honest $99 Discovery alias for leftover “free consult / booking / use-cases” URLs. */

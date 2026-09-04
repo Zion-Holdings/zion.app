@@ -1,100 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Zion Operations Runbook | Composio Automation</title>
-<meta name="description" content="Complete operations runbook for Zion Tech Group: workflows, tools, revenue models, and verification checklist."/>
-<link rel="canonical" href="https://ziontechgroup.com/ops-runbook/"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TechArticle","name":"Zion Operations Runbook","url":"https://ziontechgroup.com/ops-runbook/","description":"Complete operations runbook for Zion Tech Group."}
-</script>
-<style>
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0b1221;color:#e5e7eb}
-.container{max-width:1100px;margin:0 auto;padding:48px 24px}
-h1{font-size:34px;font-weight:800;color:#fff;margin:0 0 16px}
-.lead{color:#cbd5e1;font-size:18px;line-height:1.6;margin-bottom:24px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
-.card{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:20px}
-.card h3{color:#fff;margin:0 0 8px;font-size:18px}
-.card p{color:#cbd5e1;font-size:14px;line-height:1.6;margin:0}
-.card ul{color:#cbd5e1;font-size:14px;line-height:1.7;padding-left:18px;margin-top:8px}
-.cta{display:inline-block;padding:12px 18px;border-radius:12px;background:#7c3aed;color:#fff;text-decoration:none;font-weight:600;margin-top:24px;margin-right:8px}
-.note{color:#94a3b8;font-size:13px;margin-top:24px;text-align:center}
-.section{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:24px;margin-top:24px}
-.section h2{color:#fff;margin:0 0 12px;font-size:22px}
-table{width:100%;border-collapse:collapse;color:#cbd5e1;font-size:14px;margin-top:12px}
-th,td{text-align:left;padding:8px;border-bottom:1px solid #334155}
-th{color:#fff;font-weight:600}
-</style>
-</head>
+<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — Ops Runbook · Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com/docs/ops-runbook/">
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
+<meta http-equiv="refresh" content="0; url=/docs/ops-runbook/">
+<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
 <body>
-<div class="container">
-  <h1>Zion Operations Runbook</h1>
-  <p class="lead">Complete guide to Zion's automation stack, Composio workflows, revenue models, and verification checklist.</p>
-  <div class="grid">
-    <div class="card">
-      <h3>Revenue Workflows</h3>
-      <p>Automated billing, bookings, and payment flows.</p>
-      <ul>
-        <li>Stripe Payment Links</li>
-        <li>Calendly onboarding</li>
-        <li>WhatsApp follow-up</li>
-        <li>Resend invoices</li>
-      </ul>
-      <a class="cta" href="/composio-integrations/">View Stack</a>
-    </div>
-    <div class="card">
-      <h3>Lead Automation</h3>
-      <p>CRM sync, deal tracking, and notifications.</p>
-      <ul>
-        <li>HubSpot deals</li>
-        <li>Notion playbooks</li>
-        <li>Slack alerts</li>
-        <li>1Password secrets</li>
-      </ul>
-      <a class="cta" href="/automation-stack/">Learn More</a>
-    </div>
-    <div class="card">
-      <h3>SEO Content</h3>
-      <p>Monetization-focused pages for clients and partners.</p>
-      <ul>
-        <li>AI consulting</li>
-        <li>Managed SOC</li>
-        <li>Partner portal</li>
-        <li>API monetization</li>
-      </ul>
-      <a class="cta" href="/monetization/">See Pages</a>
-    </div>
-  </div>
-  <div class="section">
-    <h2>Workflow Reference</h2>
-    <table>
-      <tr><th>Workflow</th><th>Schedule</th><th>Apps</th><th>Purpose</th></tr>
-      <tr><td>composio-calendly-whatsapp-stripe-revenue.yml</td><td>Mon-Fri 9am/2pm</td><td>Calendly, WhatsApp, Stripe, Resend</td><td>Revenue engine</td></tr>
-      <tr><td>composio-hubspot-lead-monetization.yml</td><td>Daily 9am</td><td>HubSpot, Notion, Slack</td><td>Lead sync</td></tr>
-      <tr><td>composio-resend-billing.yml</td><td>Mon/Thu 9am</td><td>Stripe, Resend</td><td>Billing emails</td></tr>
-      <tr><td>composio-full-stack.yml</td><td>Mon-Fri 8am/1pm/6pm</td><td>All 15 apps</td><td>Health check</td></tr>
-      <tr><td>composio-stripe-create-payment-links.yml</td><td>Manual</td><td>Stripe</td><td>Payment links</td></tr>
-      <tr><td>zion-daily-health-check.yml</td><td>Daily</td><td>Site, Email, CI</td><td>Uptime monitoring</td></tr>
-    </table>
-  </div>
-  <div class="section">
-    <h2>Verification Checklist</h2>
-    <ul style="color:#cbd5e1;font-size:14px;line-height:1.8;padding-left:18px">
-      <li>Pages source set to <code>main</code> in GitHub Settings</li>
-      <li>All 15 Composio connections active in dashboard</li>
-      <li>Stripe products created with Price IDs</li>
-      <li>GitHub secrets added for all connection IDs and Price IDs</li>
-      <li>Payment link workflow ran successfully</li>
-      <li>All revenue workflows show green in GitHub Actions</li>
-      <li>Site routes return 200 for all monetization pages</li>
-      <li>Calendly booking links embedded in site pages</li>
-      <li>WhatsApp number verified and tested</li>
-      <li>Resend domain verified and test email sent</li>
-    </ul>
-  </div>
-  <p class="note">Last updated: 2026-09-02. Run <code>composio-full-stack.yml</code> to verify all connections.</p>
-</div>
-</body>
-</html>
+<h1>Ops Runbook</h1>
+<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
+<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
+</body></html>
