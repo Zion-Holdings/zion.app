@@ -1,278 +1,37 @@
----
-layout: none
----
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-<meta charSet="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"/>
-<link rel="stylesheet" href="/styles.css"/>
-<title>Affiliate Program — Zion Tech Group</title>
-<meta name="description" content="Earn 20% recurring commission by referring clients to Zion Tech Group. AI services, IT consulting, cloud migration, and automation — pay only when your referral pays."/>
-<meta name="keywords" content="affiliate program, referral program, earn commission, B2B affiliate, IT services affiliate, AI consulting affiliate, recurring commission"/>
-<link rel="canonical" href="https://ziontechgroup.com/affiliate/"/>
-<meta property="og:title" content="Affiliate Program — Zion Tech Group"/>
-<meta property="og:description" content="Earn 20% recurring commission for every client you refer to Zion Tech Group. No caps, no expiry, paid monthly."/>
-<meta property="og:url" content="https://ziontechgroup.com/affiliate/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:image" content="https://ziontechgroup.com/og-home.svg"/>
-<meta twitter:card="summary_large_image"/>
-<meta twitter:title="Affiliate Program — Zion Tech Group"/>
-<meta twitter:description="Earn 20% recurring commission for every client you refer to Zion Tech Group."/>
-<link rel="icon" href="/favicon.ico"/>
-<link rel="apple-touch-icon" href="/icon.svg"/>
-<style>
-:root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --slate-300: #cbd5e1; --white: #f8fafc; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.6; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
-.nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
-.nav-links { display: flex; align-items: center; gap: 16px; }
-.nav-links a { color: var(--slate-300); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
-.nav-links a:hover { color: var(--white); }
-.nav-cta { background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; text-decoration: none; }
-.nav-cta:hover { opacity: 0.9; }
-.header { text-align: center; padding: 80px 24px 40px; }
-.header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, var(--white), var(--slate-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.header p { color: var(--slate-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
-.section { padding: 60px 0; }
-.section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
-.section .subtitle { color: var(--slate-400); font-size: 1.0625rem; max-width: 700px; margin-bottom: 40px; }
- factbox { background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 16px; padding: 32px; margin-bottom: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; text-align: center; }
- factbox .fact { }
- factbox .number { font-size: 2rem; font-weight: 700; color: var(--purple); }
- factbox .label { color: var(--slate-400); font-size: 0.875rem; }
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
-.card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 16px; padding: 32px; transition: all 0.3s; }
-.card:hover { border-color: var(--purple); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-.card h3 { font-size: 1.25rem; margin-bottom: 8px; }
-.card p { color: var(--slate-400); font-size: 0.9375rem; margin-bottom: 12px; }
-.card ul { list-style: none; margin-bottom: 16px; }
-.card ul li { padding: 6px 0; color: var(--slate-300); font-size: 0.875rem; display: flex; align-items: flex-start; gap: 8px; }
-.card ul li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
-.steps { counter-reset: step; }
-.step { display: flex; gap: 20px; margin-bottom: 28px; align-items: flex-start; }
-.step-counter { counter-increment: step; flex-shrink: 0; width: 44px; height: 44px; background: linear-gradient(135deg, var(--purple), var(--pink)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; font-weight: 700; color: white; }
-.step-content { flex: 1; }
-.step-content h3 { font-size: 1.0625rem; margin-bottom: 4px; }
-.step-content p { color: var(--slate-400); font-size: 0.875rem; }
-.payout-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-.payout-table th { text-align: left; padding: 12px 16px; background: rgba(30, 41, 59, 0.5); color: var(--slate-400); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; }
-.payout-table td { padding: 12px 16px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); font-size: 0.9375rem; }
-.payout-table tr:last-child td { border-bottom: none; }
-.payout-table .highlight { color: var(--purple); font-weight: 600; }
-.cta-section { text-align: center; padding: 60px 24px; background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.1), transparent 70%); }
-.cta-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
-.cta-section p { color: var(--slate-400); font-size: 1.0625rem; max-width: 500px; margin: 0 auto 32px; }
-.footer { text-align: center; padding: 40px 24px; border-top: 1px solid rgba(148, 163, 184, 0.1); color: var(--slate-400); font-size: 0.875rem; }
-.footer a { color: var(--purple); text-decoration: none; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Affiliate · Zion Tech Group</title>
+  <link rel="canonical" href="https://ziontechgroup.com/affiliate/">
+  <style>
+    :root { color-scheme: dark; --bg:#0a0e14; --fg:#e6edf3; --muted:#8b949e; --accent:#58a6ff; --ok:#3fb950; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--fg); line-height:1.6; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+    a { color: var(--accent); }
+    .ok { color: var(--ok); }
+    .btn { display:inline-block; margin: 6px 10px 6px 0; padding: 12px 18px; border-radius: 10px; background: var(--accent); color: #0a0e14; font-weight: 700; text-decoration: none; }
+    .btn.ghost { background: transparent; color: var(--fg); border: 1px solid #30363d; }
+    .foot { margin-top: 48px; font-size: 14px; color: var(--muted); }
+  </style>
 </head>
 <body>
-
-<nav class="nav">
-  <a href="/" class="nav-brand">Zion Tech Group</a>
-  <div class="nav-links">
-    <a href="/services/">Services</a>
-    <a href="/pricing/">Pricing</a>
-    <a href="/monetization/">Monetize</a>
-    <a href="/affiliate/">Affiliate</a>
-    <a href="https://calendly.com/kleber-garcia-alcatrao/zion-tech-group-discovery-call" class="nav-cta">Book a Call</a>
-  </div>
-</nav>
-
-<header class="header">
-  <h1>Earn While You Refer</h1>
-  <p>Join the Zion Tech Group affiliate program and earn 20% recurring commission on every client you send our way. No sales targets, no expiry, no tricks.</p>
-</header>
-
-<section class="section">
-  <div class="container">
-    <div class="factbox">
-      <div class="fact">
-        <div class="number">20%</div>
-        <div class="label">Recurring commission on every deal</div>
-      </div>
-      <div class="fact">
-        <div class="number">$0</div>
-        <div class="label">Free to join — no setup fees</div>
-      </div>
-      <div class="fact">
-        <div class="number">No cap</div>
-        <div class="label">Unlimited earning potential</div>
-      </div>
-      <div class="fact">
-        <div class="number">Monthly</div>
-        <div class="label">Payouts via Stripe/PayPal</div>
-      </div>
-      <div class="fact">
-        <div class="number">90 days</div>
-        <div class="label">Cookie window — credit all referrals</div>
-      </div>
-    </div>
-
-    <h2>How It Works</h2>
-    <p class="subtitle">Three simple steps to start earning. You don't need a website — social media, email, word of mouth, all count.</p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-counter">1</div>
-        <div class="step-content">
-          <h3>Sign Up (Free)</h3>
-          <p>Create your affiliate account in under 2 minutes. Connect your Stripe or PayPal for payouts. No approval wait — you're in immediately.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-counter">2</div>
-        <div class="step-content">
-          <h3>Share Your Link</h3>
-          <p>Get your unique referral link and share it anywhere — LinkedIn, Twitter, email, your blog, Slack communities, or word of mouth. We track every click and conversion.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-counter">3</div>
-        <div class="step-content">
-          <h3>Get Paid Monthly</h3>
-          <p>When someone signs up and pays through your link, you earn 20% of their first payment — and 20% of every renewal. Payouts hit your Stripe or PayPal on the 1st of each month.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid-2" style="margin-top: 40px;">
-      <div class="card">
-        <h3>What You Earn</h3>
-        <p>For every referred client, you earn 20% of their lifetime value with Zion Tech Group — not just the first payment.</p>
-        <ul>
-          <li><strong>Starter packages ($299):</strong> Earn $60 per referral</li>
-          <li><strong>Professional packages ($1,999):</strong> Earn $400 per referral</li>
-          <li><strong>Managed services ($499/mo):</strong> Earn $100/month for as long as they stay</li>
-          <li><strong>Enterprise deals:</strong> Custom commission — talk to us</li>
-        </ul>
-        <p style="margin-top: 12px; color: var(--slate-500); font-size: 0.8125rem;">Example: Refer one $1,999 strategy package → earn $400. Refer three clients on managed services → earn $300/month recurring.</p>
-      </div>
-
-      <div class="card">
-        <h3>Who Should Join</h3>
-        <p>Anyone who talks to businesses that need IT, AI, or automation services.</p>
-        <ul>
-          <li>IT consultants and MSPs looking for overflow partners</li>
-          <li>Business coaches and advisors serving SMEs</li>
-          <li>LinkedIn influencers in the tech/enterprise space</li>
-          <li>Bloggers and podcasters covering AI, cloud, or cybersecurity</li>
-          <li>Freelancers who want a reliable services partner for clients</li>
-          <li>Former clients who love working with us</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2 style="margin-top: 60px;">Commission Structure</h2>
-    <p class="subtitle">Straightforward rates. No tiers to unlock, no minimum quotas, no hidden rules.</p>
-
-    <table class="payout-table">
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Package Price</th>
-          <th>Your Commission (20%)</th>
-          <th>Payout Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>AI Readiness Audit</td>
-          <td>$299 one-time</td>
-          <td class="highlight">$60</td>
-          <td>One-time</td>
-        </tr>
-        <tr>
-          <td>AI Strategy &amp; Implementation Plan</td>
-          <td>$1,999 one-time</td>
-          <td class="highlight">$400</td>
-          <td>One-time</td>
-        </tr>
-        <tr>
-          <td>AI Workflow Automation (Managed)</td>
-          <td>$499/month</td>
-          <td class="highlight">$100/month</td>
-          <td>Recurring</td>
-        </tr>
-        <tr>
-          <td>Cybersecurity Audit</td>
-          <td>$1,499 one-time</td>
-          <td class="highlight">$300</td>
-          <td>One-time</td>
-        </tr>
-        <tr>
-          <td>Cloud Cost Optimization</td>
-          <td>$999 one-time</td>
-          <td class="highlight">$200</td>
-          <td>One-time</td>
-        </tr>
-        <tr>
-          <td>Enterprise / Custom Projects</td>
-          <td>Custom</td>
-          <td class="highlight">Negotiated</td>
-          <td>Negotiated</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="section" style="background: rgba(30, 41, 59, 0.3);">
-  <div class="container">
-    <h2>Frequently Asked Questions</h2>
-
-    <div style="margin-bottom: 20px;">
-      <h3 style="font-size: 1.0625rem; margin-bottom: 4px;">How long does my referral link stay active?</h3>
-      <p style="color: var(--slate-400); font-size: 0.9375rem;">Your referral link has a 90-day cookie window. If someone clicks your link and signs up within 90 days, you get credited — even if they don't buy immediately.</p>
-    </div>
-
-    <div style="margin-bottom: 20px;">
-      <h3 style="font-size: 1.0625rem; margin-bottom: 4px;">Can I refer clients from anywhere in the world?</h3>
-      <p style="color: var(--slate-400); font-size: 0.9375rem;">Yes. Zion Tech Group serves clients globally. We handle the language and time zone — you just make the introduction.</p>
-    </div>
-
-    <div style="margin-bottom: 20px;">
-      <h3 style="font-size: 1.0625rem; margin-bottom: 4px;">When and how do I get paid?</h3>
-      <p style="color: var(--slate-400); font-size: 0.9375rem;">Payouts are processed on the 1st of each month for the previous month's earnings. You can receive payouts via Stripe (direct to your bank) or PayPal. Minimum payout: $50.</p>
-    </div>
-
-    <div style="margin-bottom: 20px;">
-      <h3 style="font-size: 1.0625rem; margin-bottom: 4px;">Do I need a website to join?</h3>
-      <p style="color: var(--slate-400); font-size: 0.9375rem;">No. You can share your link on social media, in email signatures, in client meetings, on Slack/Discord communities, or anywhere you talk to potential clients. We track conversions from your unique link regardless of where you share it.</p>
-    </div>
-
-    <div style="margin-bottom: 20px;">
-      <h3 style="font-size: 1.0625rem; margin-bottom: 4px;">What if I refer someone who's already a Zion client?</h3>
-      <p style="color: var(--slate-400); font-size: 0.9375rem;">If they're already a paying client, you don't earn a commission on their existing contracts — but you do earn on any new services or upgrades they purchase through your link.</p>
-    </div>
-
-    <div>
-      <h3 style="font-size: 1.0625rem; margin-bottom: 4px;">Is there a minimum number of referrals I need to make?</h3>
-      <p style="color: var(--slate-400); font-size: 0.9375rem;">No minimum. One referral = one commission. There are no quotas, no tiers, and no risk of losing your affiliate status for low activity.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="container">
-    <h2>Start Earning Today</h2>
-    <p>Join for free. Set up takes 2 minutes. Your unique referral link is ready immediately.</p>
-    <a href="https://app.getrewardful.com/signup" class="btn" style="padding: 14px 32px; font-size: 1rem; display: inline-block; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: opacity 0.2s;" target="_blank">Sign Up — Free</a>
-    <p style="margin-top: 16px; color: var(--slate-500); font-size: 0.875rem;">Powered by Rewardful · Stripe-integrated · 14-day free trial</p>
-    <p style="margin-top: 8px; color: var(--slate-500); font-size: 0.875rem;">Questions? Email kleber@ziontechgroup.com</p>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <p>© 2026 Zion Tech Group. All rights reserved. | <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a> | <a href="/contact/">Contact</a></p>
-  </div>
-</footer>
-
+  <main>
+    <p><a href="/">← Zion Tech Group</a></p>
+    <h1>Affiliate</h1>
+    <p class="ok">No public affiliate program is live. Updated 2026-09-03. We do not pay commissions on self-serve Stripe links.</p>
+    <p>Partnerships are booked as paid work:</p>
+    <ol>
+      <li>Book a 30-minute discovery — <strong>$99</strong>.</li>
+      <li>If there is a reseller or referral motion, it is written into a consulting or retainer agreement.</li>
+    </ol>
+    <p>
+      <a class="btn" href="/book/">Book $99</a>
+      <a class="btn ghost" href="https://buy.stripe.com/3cIdRa6FO5dt0D53hm4ZG05">Pay $99</a>
+    </p>
+    <p class="foot"><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a></p>
+  </main>
 </body>
 </html>

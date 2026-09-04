@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T00:27Z:** kleber@ still INITIALIZING/INITIATED since 00:24Z — do **not** remint. Triggers 0 / webhooks 0. HF `kleberalcatrao` (no Pro / no write). LinkedIn is Kleber personal (no `r_organization_admin`). Supabase project `Zion App`. Tavily leftover Looking Glass / observability already noindex closers; Jupiter climate-risk was 404 — closer + WhatsApp monetização closer (`70f4d410`). PR 71133 now pins partners/affiliate/growth/press/services/ai-services/marketplace. origin/main has leftover PT WhatsApp monetização — do not merge that HTML.
+
 **2026-09-04T00:24Z:** 00:21 timer (delivered 00:23): all six 00:11Z kleber@ rows now **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~00:34:31Z**. Live `/` Discovery `$99` 6067. Do **not** remint while INITIALIZING/INITIATED. PR **71133**.
 
 **2026-09-04T00:22Z:** 00:21 poll: all six kleber@ rows still INITIALIZING/INITIATED (past TTL) — do **not** remint. Live Discovery `$99`. Pulled honest `/cookies/` `/faq/` `/legal/` `/composio-vs-zapier/` `/composio-vs-n8n-make/` `/success-stories/` `/paid-consultation/` into PR 71133; `pages.yml` pins them. Browserless screenshot = invalid API key; PDF of `/plans/` works. Instagram website still `.com.br`. Brevo still 401 IP allowlist. Notion status updated.

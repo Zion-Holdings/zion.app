@@ -1112,6 +1112,8 @@ export const SERP_CLOSER_PATHS = [
   'drive-results-and-roi-with-zions-ai-powered-marketing-solutions/index.html',
   'exploring-the-cutting-edge-technology-of-nvidias-ar/index.html',
   'amds-strategic-partnerships-and-collaborations-a-key-to-their-growth/index.html',
+  'services/jupiter-intelligence-climate-risk/index.html',
+  'services/whatsapp-monetizacao/index.html',
   'zion-tech-group-empowering-businesses-with-top-notch-it-services-worldwide/index.html',
   'from-start-up-to-global-player-the-success-story-of-zion-tech-group/index.html',
   'exploring-the-innovative-world-of-zion-tech-a-closer-look-at-the-latest-technological-advancements/index.html',
