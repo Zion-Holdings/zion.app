@@ -64,9 +64,13 @@ export async function restoreDiscoveryOnGhPages({ ifLeftover = false } = {}) {
   for (const rel of [...PIN_PATHS, ...EXTRA]) {
     if (seen.has(rel)) continue;
     seen.add(rel);
-    const src = existsSync(new URL(`../../../${rel}`, import.meta.url))
-      ? new URL(`../../../${rel}`, import.meta.url)
-      : new URL(`../../../public/${rel}`, import.meta.url);
+    const rootSrc = new URL(`../../../${rel}`, import.meta.url);
+    const publicSrc = new URL(`../../../public/${rel}`, import.meta.url);
+    const src = existsSync(rootSrc) ? rootSrc : publicSrc;
+    if (!existsSync(src)) {
+      console.log(`skip missing pin ${rel}`);
+      continue;
+    }
     const content = readFileSync(src, 'utf8');
     if (isLeftoverHtml(content)) {
       throw new Error(`refusing leftover Next.js: ${rel}`);
