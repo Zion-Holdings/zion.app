@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T05:03Z:** Workers Builds failed on `8e4e5ca` / `4c99748` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **05:00Z remint** (expire ~05:10:57Z). Do **not** remint. Dual-writing noindex for leftover observability/outsourcing/partnership/platform-engineering blog SEO stubs. Apex Discovery `$99`.
+
 **2026-09-04T05:01Z:** All six 04:49Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~05:10:57Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_X_knv_mI15uJ`. Dual-wrote noindex leftover IT-ops/ITSM/MSP/LATAM observability blog SEO stubs — gh-pages `9c2fff92` (live verified). Workers Builds on `950a6a4`–`36354a4` is Cloudflare hook only. Required GitHub statuses = **0**. Sheets **A137**. Linear **ZIO-225** commented. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T04:59Z:** Workers Builds failed on `950a6a4` / `3f1e4de` / `76c14f5` / `a933749` / `36354a4` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:49Z remint** (expire ~04:59:35Z) at poll 04:59:01Z. Do **not** remint. Dual-writing noindex for leftover IT-ops/ITSM/MSP/LATAM observability blog SEO stubs. Apex Discovery `$99`.
