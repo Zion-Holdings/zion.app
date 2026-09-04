@@ -55,6 +55,7 @@ export function titleFromSlug(slug) {
     .replace(/\bPG Buffercache\b/g, 'pg_buffercache')
     .replace(/\bPG Prewarm\b/g, 'pg_prewarm')
     .replace(/\bJwks\b/g, 'JWKS')
+    .replace(/\bCss\b/g, 'CSS')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6555,4 +6556,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-models-update-api/index.html',
   'notion-data-sources-append-api/index.html',
   'slack-lists-views-update-api/index.html',
+  'camdenton/index.html',
+  'nevada/index.html',
+  'osage-beach/index.html',
+  'n8n-crypto-hash-api/index.html',
+  'n8n-item-lists-summarize-api/index.html',
+  'n8n-html-extract-css-api/index.html',
+  'n8n-spreadsheet-sheet-api/index.html',
+  'make-google-sheets-add-row-api/index.html',
+  'stripe-radar-value-lists-api/index.html',
+  'paddle-report-list-api/index.html',
+  'auth0-shields-api/index.html',
+  'auth0-anomaly-detection-api/index.html',
+  'cloudflare-api-shield-jwt-claims-api/index.html',
+  'cloudflare-api-shield-schema-validation-messages-api/index.html',
+  'netlify-edge-functions-geo-timezone-api/index.html',
+  'neon-branch-expires-api/index.html',
+  'vercel-firewall-managed-rules-api/index.html',
+  'openai-videos-retrieve-metadata-api/index.html',
+  'groq-files-delete-api/index.html',
+  'huggingface-jobs-retrieve-api/index.html',
+  'figma-mcp-code-connect-unmap-all-api/index.html',
+  'github-copilot-seat-assignments-list-api/index.html',
+  'gitlab-duo-self-hosted-models-delete-api/index.html',
+  'notion-data-sources-archive-api/index.html',
+  'slack-lists-views-get-api/index.html',
 ];
