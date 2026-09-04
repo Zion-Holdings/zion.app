@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T00:20Z:** Pulled live honest `/book/` `/plans/` `/heritage/` `/about/` `/contact/` `/privacy/` `/terms/` into PR 71133 (replaced leftover Next.js `about/`). `pages.yml` pins those money/ops pages so a merge cannot rsync leftover blogs. Telegram bot commands set (`start`/`discovery`/`plans`/`about`/`status`). Brevo 401 — unrecognised IP, needs authorised_ips. Tavily leftover SmartNet/CISSP/XRP/Truex already noindex closers (search titles still stale). kleber@ still INITIALIZING/INITIATED since 00:11Z — do **not** remint.
+
 **2026-09-04T00:16Z:** Live `/composio/` + `/status/` updated with Drive + Cloudflare MCP expired, Hunter/SerpAPI/Firecrawl exhausted, Airtable demo-not-leads (`68e37361`, Pages **built**). Six more Tavily leftover story 404s (XRP/Truex/AMD/NVIDIA/AI-startup/ROI) are noindex closers. SerpAPI out of searches. Resend domain verified, 0 webhooks. Stripe products live / $0 charges. kleber@ still INITIALIZING/INITIATED since 00:11Z — do **not** remint. PR **71133**.
 
 **2026-09-04T00:11Z:** 00:09 remint timer: all six 23:59Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~00:21:08Z**. Live `/` still Discovery `$99` 6067. Do **not** remint while INITIALIZING/INITIATED. PR **71133**.
