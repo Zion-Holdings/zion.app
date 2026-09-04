@@ -580,6 +580,21 @@ const HUB_ALIASES = {
   draas: '/services/',
   'sase-security': '/services/',
   'wan-optimization': '/services/',
+  webhooks: '/docs/',
+  'webhooks-api': '/docs/',
+  'graphql-api': '/docs/',
+  'rest-api-docs': '/docs/',
+  openapi: '/docs/',
+  swagger: '/docs/',
+  'postman-collection': '/docs/',
+  'python-sdk': '/docs/',
+  'node-sdk': '/docs/',
+  'go-sdk': '/docs/',
+  'rust-sdk': '/docs/',
+  'typescript-sdk': '/docs/',
+  'php-sdk': '/docs/',
+  'java-sdk': '/docs/',
+  'ruby-sdk': '/docs/',
 };
 
 function closerCanonical(rel) {

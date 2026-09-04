@@ -63,7 +63,9 @@ export function titleFromSlug(slug) {
     .replace(/\bCmmc\b/g, 'CMMC')
     .replace(/\bFedramp\b/g, 'FedRAMP')
     .replace(/\bDraas\b/g, 'DRaaS')
-    .replace(/\bN8n\b/g, 'n8n');
+    .replace(/\bN8n\b/g, 'n8n')
+    .replace(/\bSdk\b/g, 'SDK')
+    .replace(/\bOpenapi\b/g, 'OpenAPI');
 }
 
 /** Honest $99 Discovery alias for leftover “free consult / booking / use-cases” URLs. */
@@ -4234,4 +4236,19 @@ export const SERP_CLOSER_PATHS = [
   'draas/index.html',
   'sase-security/index.html',
   'wan-optimization/index.html',
+  'webhooks/index.html',
+  'webhooks-api/index.html',
+  'graphql-api/index.html',
+  'rest-api-docs/index.html',
+  'openapi/index.html',
+  'swagger/index.html',
+  'postman-collection/index.html',
+  'python-sdk/index.html',
+  'node-sdk/index.html',
+  'go-sdk/index.html',
+  'rust-sdk/index.html',
+  'typescript-sdk/index.html',
+  'php-sdk/index.html',
+  'java-sdk/index.html',
+  'ruby-sdk/index.html',
 ];
