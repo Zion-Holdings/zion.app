@@ -65,7 +65,20 @@ export function titleFromSlug(slug) {
     .replace(/\bDraas\b/g, 'DRaaS')
     .replace(/\bN8n\b/g, 'n8n')
     .replace(/\bSdk\b/g, 'SDK')
-    .replace(/\bOpenapi\b/g, 'OpenAPI');
+    .replace(/\bOpenapi\b/g, 'OpenAPI')
+    .replace(/\bSso\b/g, 'SSO')
+    .replace(/\bSaml\b/g, 'SAML')
+    .replace(/\bOidc\b/g, 'OIDC')
+    .replace(/\bScim\b/g, 'SCIM')
+    .replace(/\bMfa\b/g, 'MFA')
+    .replace(/\bRbac\b/g, 'RBAC')
+    .replace(/\bAbac\b/g, 'ABAC')
+    .replace(/\bByok\b/g, 'BYOK')
+    .replace(/\bWaf\b/g, 'WAF')
+    .replace(/\bDdos\b/g, 'DDoS')
+    .replace(/\bGrpc\b/g, 'gRPC')
+    .replace(/\bCqrs\b/g, 'CQRS')
+    .replace(/\bSse\b/g, 'SSE');
 }
 
 /** Honest $99 Discovery alias for leftover “free consult / booking / use-cases” URLs. */
@@ -4251,4 +4264,81 @@ export const SERP_CLOSER_PATHS = [
   'php-sdk/index.html',
   'java-sdk/index.html',
   'ruby-sdk/index.html',
+  'vendas/index.html',
+  'parcerias/index.html',
+  'imprensa/index.html',
+  'newsletter-pt/index.html',
+  'rate-limit/index.html',
+  'sla-credits/index.html',
+  'on-call/index.html',
+  'war-room/index.html',
+  'release-notes/index.html',
+  'versions/index.html',
+  'uptime-monitor/index.html',
+  'developer-portal/index.html',
+  'api-reference/index.html',
+  'api-playground/index.html',
+  'sandbox/index.html',
+  'staging/index.html',
+  'staging-env/index.html',
+  'white-label/index.html',
+  'white-labeling/index.html',
+  'multi-tenant/index.html',
+  'multi-tenancy/index.html',
+  'sso/index.html',
+  'saml/index.html',
+  'oidc/index.html',
+  'scim/index.html',
+  'mfa/index.html',
+  '2fa/index.html',
+  'totp/index.html',
+  'passkeys/index.html',
+  'rbac/index.html',
+  'abac/index.html',
+  'audit-log/index.html',
+  'audit-logs/index.html',
+  'data-residency/index.html',
+  'data-sovereignty/index.html',
+  'byok/index.html',
+  'cmk/index.html',
+  'hsm/index.html',
+  'waf/index.html',
+  'ddos/index.html',
+  'bot-management/index.html',
+  'cdn-cache/index.html',
+  'edge-functions/index.html',
+  'websocket/index.html',
+  'sse/index.html',
+  'grpc/index.html',
+  'event-driven/index.html',
+  'cqrs/index.html',
+  'event-sourcing/index.html',
+  'feature-flags/index.html',
+  'a-b-testing/index.html',
+  'observability-platform/index.html',
+  'tracing-backend/index.html',
+  'cost-explorer/index.html',
+  'billing-alerts/index.html',
+  'reserved-instances/index.html',
+  'spot-instances/index.html',
+  'kubernetes-operator/index.html',
+  'helm-charts/index.html',
+  'gitops-pipeline/index.html',
+  'platform-as-a-product/index.html',
+  'ai-gateway/index.html',
+  'llm-proxy/index.html',
+  'prompt-management/index.html',
+  'eval-harness/index.html',
+  'guardrails/index.html',
+  'vector-index/index.html',
+  'hybrid-search/index.html',
+  'document-ai/index.html',
+  'invoice-ocr/index.html',
+  'rpa-uipath/index.html',
+  'rpa-automation-anywhere/index.html',
+  'salesforce-integration/index.html',
+  'hubspot-integration/index.html',
+  'slack-bot/index.html',
+  'teams-bot/index.html',
+  'whatsapp-business-api/index.html',
 ];
