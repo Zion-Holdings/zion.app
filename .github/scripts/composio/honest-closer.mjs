@@ -19,6 +19,8 @@ export function titleFromSlug(slug) {
     .replace(/\bSsl\b/g, 'SSL')
     .replace(/\bLdap\b/g, 'LDAP')
     .replace(/\bLlama3\b/g, 'Llama 3')
+    .replace(/\bGpt4\b/g, 'GPT-4')
+    .replace(/\bCi\b/g, 'CI')
     .replace(/\bRest API\b/g, 'REST API')
     .replace(/\bCdn\b/g, 'CDN')
     .replace(/\bSase\b/g, 'SASE')
@@ -5744,4 +5746,29 @@ export const SERP_CLOSER_PATHS = [
   'slack-reactions-api/index.html',
   'gitlab-pipelines-api/index.html',
   'figma-variables-rest-api/index.html',
+  'atchison/index.html',
+  'leavenworth/index.html',
+  'chanute/index.html',
+  'n8n-oidc-api/index.html',
+  'n8n-workers-api/index.html',
+  'n8n-scaling-api/index.html',
+  'make-webhooks-api/index.html',
+  'stripe-billing-portal-api/index.html',
+  'paddle-products-api/index.html',
+  'clerk-oauth-api/index.html',
+  'auth0-guardian-api/index.html',
+  'neon-projects-api/index.html',
+  'supabase-management-api/index.html',
+  'cloudflare-rulesets-api/index.html',
+  'vercel-webhooks-api/index.html',
+  'netlify-webhooks-api/index.html',
+  'anthropic-opus-api/index.html',
+  'figma-dev-resources-api/index.html',
+  'openai-gpt4-api/index.html',
+  'anthropic-console-api/index.html',
+  'huggingface-inference-endpoints-api/index.html',
+  'linear-initiatives-api/index.html',
+  'github-codespaces-api/index.html',
+  'gitlab-ci-api/index.html',
+  'slack-bookmarks-api/index.html',
 ];
