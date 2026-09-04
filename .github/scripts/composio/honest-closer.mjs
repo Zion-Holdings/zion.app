@@ -41,6 +41,9 @@ export function titleFromSlug(slug) {
     .replace(/\bRespond To\b/g, 'Respond to')
     .replace(/\bNo Op\b/g, 'No-Op')
     .replace(/\bStop And Error\b/g, 'Stop and Error')
+    .replace(/\bJa3\b/g, 'JA3')
+    .replace(/\bSsh\b/g, 'SSH')
+    .replace(/\bUv\b/g, 'UV')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6341,4 +6344,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-enabled-api/index.html',
   'slack-lists-records-views-get-api/index.html',
   'notion-data-sources-query-api/index.html',
+  'merriam/index.html',
+  'olathe/index.html',
+  'lenexa/index.html',
+  'n8n-rss-feed-read-api/index.html',
+  'make-resume-error-api/index.html',
+  'n8n-email-send-node-api/index.html',
+  'make-json-parse-text-api/index.html',
+  'n8n-ssh-node-api/index.html',
+  'stripe-issuing-physical-bundles-api/index.html',
+  'paddle-report-create-api/index.html',
+  'clerk-organization-invitations-bulk-api/index.html',
+  'auth0-bot-detection-api/index.html',
+  'cloudflare-api-shield-jwt-validation-config-api/index.html',
+  'neon-branch-reset-api/index.html',
+  'supabase-pg-repack-status-api/index.html',
+  'vercel-security-ja3-api/index.html',
+  'netlify-edge-functions-geo-headers-api/index.html',
+  'openai-videos-extend-api/index.html',
+  'groq-whisper-large-v3-turbo-translate-api/index.html',
+  'huggingface-jobs-uv-api/index.html',
+  'figma-mcp-screenshot-api/index.html',
+  'github-copilot-knowledge-bases-api/index.html',
+  'gitlab-duo-self-hosted-disable-api/index.html',
+  'slack-lists-items-delete-api/index.html',
+  'notion-database-rollups-api/index.html',
 ];
