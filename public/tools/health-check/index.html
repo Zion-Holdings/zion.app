@@ -1,80 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Health Check · Zion Tech Group</title>
-<meta name="description" content="Verifique a saúde do seu site. Tempo de resposta, status HTTP e monitoramento básico.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
-.max{max-width:800px;margin:0 auto}
-h1{font-size:2rem;margin:24px 0 8px}
-.sub{color:#94a3b8;margin-bottom:32px}
-.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
-input{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-size:1rem;margin:8px 0}
-input:focus{outline:none;border-color:#a78bfa}
-.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none}
-.btn:hover{background:#c4b5fd}
-.result{background:#1e293b;border-radius:12px;padding:24px;margin:24px 0}
-.result h2{margin-bottom:16px}
-.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #334155}
-.item:last-child{border-bottom:none}
-.label{color:#94a3b8}
-.value{font-weight:600}
-.ok{color:#34d399}
-.warn{color:#fbbf24}
-.err{color:#f87171}
-a{color:#a78bfa;text-decoration:none}
-.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
-</style>
-</head>
+<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — Health Check · Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com/tools/health-check/">
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
+<meta http-equiv="refresh" content="0; url=/tools/health-check/">
+<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
 <body>
-<div class="max">
 <h1>Health Check</h1>
-<p class="sub">Verifique a saúde do seu site</p>
-
-<div class="card">
-<label>URL do site (ex: exemplo.com.br)</label>
-<input type="text" id="url" placeholder="https://exemplo.com.br">
-<button class="btn" onclick="checkHealth()">Verificar</button>
-</div>
-
-<div class="result hidden" id="result">
-<h2 id="urlDisplay"></h2>
-<div class="item"><span class="label">Status HTTP</span><span class="value" id="httpStatus"></span></div>
-<div class="item"><span class="label">Tempo de resposta</span><span class="value" id="responseTime"></span></div>
-<div class="item"><span class="label">Título da página</span><span class="value" id="title"></span></div>
-<div class="item"><span class="label">Servidor</span><span class="value" id="server"></span></div>
-<div class="item"><span class="label">SSL</span><span class="value" id="ssl"></span></div>
-</div>
-
-<div class="links">
-<p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a> · <a href="/tools/ssl-checker/">SSL Checker</a></p>
-</div>
-</div>
-
-<script>
-function checkHealth(){
-const url = document.getElementById('url').value.trim();
-if(!url) return;
-
-const result = document.getElementById('result');
-result.classList.remove('hidden');
-document.getElementById('urlDisplay').textContent = url;
-
-// Simulated health check (real check requires backend)
-const start = Date.now();
-const responseTime = Math.floor(Math.random() * 800) + 100;
-const httpStatus = Math.random() > 0.1 ? 200 : (Math.random() > 0.5 ? 404 : 500);
-const isSSL = url.startsWith('https');
-
-document.getElementById('httpStatus').innerHTML = httpStatus === 200 ? '<span class="ok">200 OK</span>' : httpStatus === 404 ? '<span class="warn">404 Not Found</span>' : '<span class="err">500 Error</span>';
-document.getElementById('responseTime').textContent = responseTime + 'ms';
-document.getElementById('title').textContent = 'Página encontrada';
-document.getElementById('server').textContent = ['nginx','Apache','cloudflare','Vercel','Netlify'][Math.floor(Math.random()*5)];
-document.getElementById('ssl').innerHTML = isSSL ? '<span class="ok">✓ Ativo</span>' : '<span class="err">✗ Inativo</span>';
-}
-</script>
-</body>
-</html>
+<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
+<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
+</body></html>
