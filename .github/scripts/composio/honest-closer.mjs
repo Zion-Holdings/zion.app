@@ -25,6 +25,9 @@ export function titleFromSlug(slug) {
     .replace(/\bGpt Oss\b/g, 'GPT OSS')
     .replace(/\bPg\b/g, 'PG')
     .replace(/\bGa\b/g, 'GA')
+    .replace(/\bUrls\b/g, 'URLs')
+    .replace(/\bDb\b/g, 'DB')
+    .replace(/\bV3\b/g, 'v3')
     .replace(/\bLlama4\b/g, 'Llama 4')
     .replace(/\bLlama33\b/g, 'Llama 3.3')
     .replace(/\bLlama32\b/g, 'Llama 3.2')
@@ -6019,4 +6022,29 @@ export const SERP_CLOSER_PATHS = [
   'github-copilot-cli-api/index.html',
   'notion-databases-api/index.html',
   'slack-lists-items-api/index.html',
+  'nixa/index.html',
+  'ozark/index.html',
+  'monett/index.html',
+  'n8n-if-node-api/index.html',
+  'n8n-date-time-api/index.html',
+  'make-array-aggregator-api/index.html',
+  'n8n-wait-api/index.html',
+  'make-increment-function-api/index.html',
+  'stripe-terminal-connection-tokens-api/index.html',
+  'stripe-issuing-authorizations-api/index.html',
+  'paddle-credit-balance-api/index.html',
+  'clerk-redirect-urls-api/index.html',
+  'auth0-custom-db-api/index.html',
+  'auth0-encryption-keys-api/index.html',
+  'neon-connection-pooling-api/index.html',
+  'cloudflare-api-shield-schemas-api/index.html',
+  'supabase-pg-boss-api/index.html',
+  'vercel-security-api/index.html',
+  'netlify-edge-handlers-api/index.html',
+  'openai-images-edits-api/index.html',
+  'groq-whisper-large-v3-api/index.html',
+  'figma-mcp-write-api/index.html',
+  'github-copilot-sdk-api/index.html',
+  'gitlab-duo-code-review-api/index.html',
+  'slack-lists-records-api/index.html',
 ];
