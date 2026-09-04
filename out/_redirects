@@ -1,0 +1,60 @@
+# GitHub Pages ignores this file. Do not 301 honest hubs.
+# Neutralized leftover leftover Netlify rules that smashed /status/ /docs/ /faq/.
+
+/tools/favicon-generator/  /tools/favicon-generator/index.html  200
+
+# leftover leftover Next.js sitemap rewrite removed — live sitemap is /sitemap.xml
+
+/case-studies/    /contact/    301
+/industries/    /services/    301
+/free-tools-hub/    /tools/    301
+/products/    /services/    301
+# /consultation/ leftover leftover — live product is /book/
+# /site-map/ leftover leftover — live sitemap is /sitemap.xml
+# /faq/ leftover leftover smash removed — live /faq/ is an honest pin
+# /status/ leftover leftover smash removed — live /status/ is ops
+# /configurator/ leftover leftover — not a free proposal
+# /dashboard/ leftover leftover smash removed
+# /docs/ leftover leftover smash removed — live /docs/ is an honest hub
+/automation/  /services/  301
+/free-ai-itools/ /tools/ 302
+/free-ai-itools /tools/ 302
+/free-consultation /free-consultation/index.html 200
+/free-consultation/ /free-consultation/index.html 200
+/free-audit /free-audit/index.html 200
+/free-audit/ /free-audit/index.html 200
+/proposal /proposal/index.html 200
+/proposal/ /proposal/index.html 200
+/industries/insurance/ /industries/insurance/index.html 200
+/industries/healthcare/ /industries/healthcare/index.html 200
+/industries/legal/ /industries/legal/index.html 200
+/tools/ai-quick-audit /tools/ai-quick-audit/index.html 200
+/tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
+/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
+/assets/js/conversion-events.js /assets/js/conversion-events.js 200
+/pricing/ /pricing/index.html 200
+/stripe/ /stripe/index.html 200
+/affiliate/ /affiliate/index.html 200
+/monetization/ /monetization/index.html 200
+/monetization-hub/ /monetization-hub/index.html 200
+/composio/ /composio/index.html 200
+/growth/ /growth/index.html 200
+/blog/how-to-win-ai-services-clients-in-latam/ /blog/how-to-win-ai-services-clients-in-latam/index.html 200
+/blog/strategy-to-close-ai-projects-in-latam/ /blog/strategy-to-close-ai-projects-in-latam/index.html 200
+/blog/ai-services-for-latam-businesses/ /blog/ai-services-for-latam-businesses/index.html 200
+/ /index.html  200
+/public-roadmap /public-roadmap/index.html 200
+/public-roadmap/ /public-roadmap/index.html 200
+/status-page /status-page/index.html 200
+/status-page/ /status-page/index.html 200
+/use-cases /use-cases/index.html 200
+/use-cases/ /use-cases/index.html 200
+/solutions/healthcare /solutions/healthcare/index.html 200
+/solutions/healthcare/ /solutions/healthcare/index.html 200
+/industry/ /industry/index.html 200
+/solutions/government/ /solutions/government/index.html 200
+/trust/ /trust/index.html 200
+/zion-composio-automation-stack/ /zion-composio-automation-stack/index.html 200
+/whatsapp-business-automation/ /whatsapp-business-automation/index.html 200
+/privacy-policy/ /privacy-policy/index.html 200

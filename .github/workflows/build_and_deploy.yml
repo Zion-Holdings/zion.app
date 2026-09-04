@@ -13,9 +13,14 @@ permissions:
 # Stay disabled. This job copies leftover main public/ (Portuguese
 # "Automação e IA" homepage) onto GitHub Pages via deploy-pages@v4 and
 # overwrites the honest Discovery $99 site from legacy gh-pages.
+# origin/main added environment: github-pages so deploy-pages@v4 can
+# authenticate — keep that so a future enable does not 403, but if: false
+# must stay so leftover Next.js cannot publish.
 jobs:
   build-and-deploy:
     if: false
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

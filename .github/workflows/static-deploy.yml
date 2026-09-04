@@ -10,8 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# Stay disabled. Same leftover overwrite as CI/CD Pipeline: copies
+# leftover public/ + root Next.js onto GitHub Pages via deploy-pages@v4.
 jobs:
   deploy:
+    if: false
     runs-on: ubuntu-latest
     environment:
       name: github-pages
