@@ -3,6 +3,9 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T08:23Z:** All six 08:12Z kleber@ rows **EXPIRED** (stale 08-09 timer fired late at TTL). Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~08:33:26Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_HdKkF0JZ754b`. Leftover leftover `/ai-agents/` hub restored. **CI/CD Pipeline `180259272` is `disabled_manually`.** Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
+
 **2026-09-04T08:19Z:** Workers Builds failed on `22b9fd2`/`54f4e291` — Cloudflare hook only. Required GitHub statuses = **0**. kleber@ still **INITIALIZING/INITIATED** since **08:12Z remint** (expire **~08:22:01Z**, HubSpot `lk__i1K5YernjU3`). Do **not** remint. Restored leftover leftover `/ai-agents/` dump from live honest hub (`/composio/`). Converted leftover leftover `/ai-financial-services/` `/free-ai-it-tools/` `/ai-chat-companion/` SKU redirects. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 
