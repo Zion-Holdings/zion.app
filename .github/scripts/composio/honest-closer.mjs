@@ -53,6 +53,8 @@ export function titleFromSlug(slug) {
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
     .replace(/\bPG Buffercache\b/g, 'pg_buffercache')
+    .replace(/\bPG Prewarm\b/g, 'pg_prewarm')
+    .replace(/\bJwks\b/g, 'JWKS')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6528,4 +6530,29 @@ export const SERP_CLOSER_PATHS = [
   'notion-data-sources-list-api/index.html',
   'figma-mcp-code-connect-commands-api/index.html',
   'slack-lists-items-create-api/index.html',
+  'troy/index.html',
+  'gardner/index.html',
+  'willard/index.html',
+  'n8n-sticky-note-api/index.html',
+  'n8n-xml-to-json-api/index.html',
+  'n8n-interval-node-api/index.html',
+  'n8n-write-pdf-node-api/index.html',
+  'make-iterator-bundle-api/index.html',
+  'stripe-radar-early-fraud-warnings-api/index.html',
+  'paddle-report-get-api/index.html',
+  'auth0-bot-detection-settings-api/index.html',
+  'clerk-actor-tokens-api/index.html',
+  'cloudflare-api-shield-schema-operations-api/index.html',
+  'cloudflare-api-shield-jwt-jwks-api/index.html',
+  'netlify-edge-functions-geo-region-api/index.html',
+  'supabase-pg-prewarm-api/index.html',
+  'vercel-firewall-ip-bypass-api/index.html',
+  'openai-videos-content-retrieve-api/index.html',
+  'groq-files-retrieve-api/index.html',
+  'huggingface-jobs-cancel-job-api/index.html',
+  'figma-mcp-code-connect-resources-api/index.html',
+  'github-copilot-usage-metrics-breakdown-api/index.html',
+  'gitlab-duo-self-hosted-models-update-api/index.html',
+  'notion-data-sources-append-api/index.html',
+  'slack-lists-views-update-api/index.html',
 ];
