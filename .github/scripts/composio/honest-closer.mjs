@@ -22,9 +22,12 @@ export function titleFromSlug(slug) {
     .replace(/\bGpt4o\b/g, 'GPT-4o')
     .replace(/\bGpt4\b/g, 'GPT-4')
     .replace(/\bGpt35\b/g, 'GPT-3.5')
+    .replace(/\bLlama4\b/g, 'Llama 4')
     .replace(/\bLlama33\b/g, 'Llama 3.3')
     .replace(/\bLlama32\b/g, 'Llama 3.2')
     .replace(/\bLlama31\b/g, 'Llama 3.1')
+    .replace(/\bProfitwell\b/g, 'ProfitWell')
+    .replace(/\bScale To Zero\b/g, 'Scale to Zero')
     .replace(/\bMcpherson\b/g, 'McPherson')
     .replace(/\bSt Joseph\b/g, 'St. Joseph')
     .replace(/\bSonnet35\b/g, 'Sonnet 3.5')
@@ -5938,4 +5941,29 @@ export const SERP_CLOSER_PATHS = [
   'github-dependabot-alerts-api/index.html',
   'github-rulesets-api/index.html',
   'slack-ai-search-api/index.html',
+  'poplar-bluff/index.html',
+  'west-plains/index.html',
+  'sikeston/index.html',
+  'n8n-filter-node-api/index.html',
+  'make-search-api/index.html',
+  'n8n-switch-node-api/index.html',
+  'make-aggregator-api/index.html',
+  'n8n-merge-node-api/index.html',
+  'paddle-profitwell-api/index.html',
+  'stripe-climate-orders-api/index.html',
+  'clerk-billing-webhooks-api/index.html',
+  'auth0-adaptive-mfa-api/index.html',
+  'neon-scale-to-zero-api/index.html',
+  'supabase-etl-api/index.html',
+  'cloudflare-health-checks-api/index.html',
+  'vercel-observability-api/index.html',
+  'netlify-analytics-api/index.html',
+  'openai-image-edits-api/index.html',
+  'groq-llama4-api/index.html',
+  'openai-audio-transcriptions-api/index.html',
+  'figma-mcp-dev-api/index.html',
+  'gitlab-security-dashboard-api/index.html',
+  'github-security-advisories-api/index.html',
+  'linear-customer-requests-api/index.html',
+  'slack-canvas-tabs-api/index.html',
 ];
