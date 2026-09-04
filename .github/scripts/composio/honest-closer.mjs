@@ -22,6 +22,9 @@ export function titleFromSlug(slug) {
     .replace(/\bGpt4o\b/g, 'GPT-4o')
     .replace(/\bGpt4\b/g, 'GPT-4')
     .replace(/\bGpt35\b/g, 'GPT-3.5')
+    .replace(/\bGpt Oss\b/g, 'GPT OSS')
+    .replace(/\bPg\b/g, 'PG')
+    .replace(/\bGa\b/g, 'GA')
     .replace(/\bLlama4\b/g, 'Llama 4')
     .replace(/\bLlama33\b/g, 'Llama 3.3')
     .replace(/\bLlama32\b/g, 'Llama 3.2')
@@ -5966,4 +5969,29 @@ export const SERP_CLOSER_PATHS = [
   'github-security-advisories-api/index.html',
   'linear-customer-requests-api/index.html',
   'slack-canvas-tabs-api/index.html',
+  'kennett/index.html',
+  'farmington/index.html',
+  'carthage/index.html',
+  'n8n-code-node-api/index.html',
+  'make-iterator-api/index.html',
+  'n8n-http-request-api/index.html',
+  'make-set-variable-api/index.html',
+  'stripe-issuing-cards-api/index.html',
+  'paddle-retention-api/index.html',
+  'clerk-instance-api/index.html',
+  'auth0-custom-domains-api/index.html',
+  'neon-read-replicas-api/index.html',
+  'supabase-pg-cron-api/index.html',
+  'cloudflare-smart-shield-api/index.html',
+  'vercel-firewall-observability-api/index.html',
+  'netlify-image-cdn-api/index.html',
+  'openai-realtime-ga-api/index.html',
+  'anthropic-context-editing-api/index.html',
+  'groq-gpt-oss-api/index.html',
+  'huggingface-spaces-hardware-api/index.html',
+  'openai-evals-graders-api/index.html',
+  'github-copilot-chat-api/index.html',
+  'gitlab-duo-api/index.html',
+  'github-models-playground-api/index.html',
+  'slack-ai-notes-api/index.html',
 ];
