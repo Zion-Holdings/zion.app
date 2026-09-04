@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T12:57Z:** All six 12:44Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~13:07:26Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_rFoNkjjSp0bH`. Stale `remint-composio-12-54` may fire late — skip if 12:57Z rows are still INITIALIZING. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T12:44Z:** All six 12:32Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~12:54:34Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_nym1HGK9SZq6`. Stale `remint-composio-12-42` may fire late — skip if 12:44Z rows are still INITIALIZING. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T12:32Z:** Stale `remint-composio-12-20` fired late. All six 12:21Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~12:42:38Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_yEVi106Z2Pmx`. Stale `remint-composio-12-31` may fire late — skip if 12:32Z rows are still INITIALIZING. Leftover leftover `/out/` Next.js HTML (incl. `out/404.html`) is already closer. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
