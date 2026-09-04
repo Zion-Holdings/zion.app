@@ -3589,4 +3589,7 @@ export const SERP_CLOSER_PATHS = [
   'tools/onboarding-checklist/index.html',
   'tools/release-notes-generator/index.html',
   'tools/resume-screener/index.html',
+  'ai/it-support-florianopolis/index.html',
+  'ai/it-support-curitiba/index.html',
+  'ai/it-support-balneario-camboriu/index.html',
 ];
