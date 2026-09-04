@@ -31,7 +31,8 @@ GitHub check `Workers Builds: ziontechgroup` is a Cloudflare hook on this repo, 
 - HubSpot, Jira, noCRM, Perplexity, Google Drive, and Cloudflare MCP connections are expired on kleber@ziontechgroup.com. Do not invent CRM pipeline numbers.
 - Hunter searches/verifications are exhausted (Free plan). Firecrawl has no credits. OpenRouter usage exceeds remaining credits. SerpAPI needs a `query` field and is often 429.
 - There is no public affiliate commission program.
-- Heritage videos (2009–2019 hardware / green IT): https://ziontechgroup.com/heritage/. Descriptions that still cite `.com.br` now have a pinned-style comment pointing at `/book/` (`BQdat3RgpfM`, `ZOQ9q_qcisY`, `GGUXiUG9HLM`). `YOUTUBE_UPDATE_VIDEO` remains 403.
+- Heritage videos (2009–2019 hardware / green IT): https://ziontechgroup.com/heritage/. Leftover `.com.br` / `ztg.com.br` descriptions remain on `BQdat3RgpfM`, `ZOQ9q_qcisY`, `GGUXiUG9HLM`. Composio YouTube OAuth is leftover Surf Family `@surffamily-y6l`, not `@ziontechgroup` — `YOUTUBE_UPDATE_VIDEO` stays 403 until kleber@ reconnects the Zion channel.
+- Resend template `zion-discovery-99` (id `a64cc246-2dc5-4acd-b084-a7cfd9e4f496`) is published from `noreply@ziontechgroup.com`. Audience `Zion Discovery $99 buyers`. Do not email leftover Zion Outreach contacts. Webhooks still 0.
 - Status: https://ziontechgroup.com/status/
 - Privacy: https://ziontechgroup.com/privacy/
 - Terms: https://ziontechgroup.com/terms/
