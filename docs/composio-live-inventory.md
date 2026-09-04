@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T04:43Z:** Workers Builds failed on `1e15c5d` / `bdf386f` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:38Z remint** (expire ~04:48:35Z). Do **not** remint. Dual-wrote noindex for leftover Next.js ai-first 2026 blog SEO stubs (FinOps, 5G/SASE, digital twins) — gh-pages `6da1ba41`. Apex Discovery `$99`.
+
 **2026-09-04T04:38Z:** All six 04:27Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~04:48:35Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Leftover MSP/LATAM/DevOps blog SEO closers live (`9a8072f3`). Workers Builds on `9642561` / `efe32dc` is Cloudflare hook only. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T04:37Z:** Workers Builds failed on `9642561` / `efe32dc` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:27Z remint** (expire ~04:37:56Z) at last poll 04:36Z. Dual-wrote noindex for leftover Next.js MSP/LATAM/DevOps blog SEO stubs — gh-pages `9a8072f3`. Apex Discovery `$99`.
