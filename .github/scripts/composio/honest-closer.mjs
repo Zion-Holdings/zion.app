@@ -14,6 +14,7 @@ export function titleFromSlug(slug) {
     .replace(/\bFinops\b/g, 'FinOps')
     .replace(/\bLatam\b/g, 'LATAM')
     .replace(/\bApi\b/g, 'API')
+    .replace(/\bRest API\b/g, 'REST API')
     .replace(/\bCdn\b/g, 'CDN')
     .replace(/\bSase\b/g, 'SASE')
     .replace(/\bSaas\b/g, 'SaaS')
@@ -5588,4 +5589,29 @@ export const SERP_CLOSER_PATHS = [
   'github-models-api/index.html',
   'notion-workspace-api/index.html',
   'linear-cycles-api/index.html',
+  'bartlesville/index.html',
+  'muskogee/index.html',
+  'salina/index.html',
+  'n8n-task-runners-api/index.html',
+  'make-scenario-inputs-api/index.html',
+  'n8n-error-workflow-api/index.html',
+  'make-onprem-api/index.html',
+  'stripe-financial-connections-api/index.html',
+  'paddle-billing-api/index.html',
+  'auth0-organizations-invites-api/index.html',
+  'clerk-jwt-api/index.html',
+  'supabase-queues-api/index.html',
+  'neon-drizzle-api/index.html',
+  'cloudflare-workers-ai-api/index.html',
+  'cloudflare-durable-api/index.html',
+  'vercel-flags-api/index.html',
+  'supabase-branching-api/index.html',
+  'openai-chat-api/index.html',
+  'anthropic-studio-api/index.html',
+  'figma-rest-api/index.html',
+  'groq-console-api/index.html',
+  'notion-database-api/index.html',
+  'linear-roadmap-api/index.html',
+  'github-copilot-sdk/index.html',
+  'gitlab-duo-code-api/index.html',
 ];
