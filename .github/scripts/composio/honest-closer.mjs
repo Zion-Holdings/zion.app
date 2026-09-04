@@ -82,6 +82,18 @@ export function titleFromSlug(slug) {
     .replace(/\bPolar Sh\b/g, 'Polar.sh')
     .replace(/\bTawk To\b/g, 'Tawk.to')
     .replace(/\bGithub\b/g, 'GitHub')
+    .replace(/\bNewrelic\b/g, 'New Relic')
+    .replace(/\bLastpass\b/g, 'LastPass')
+    .replace(/\bBitwarden\b/g, 'Bitwarden')
+    .replace(/\bMailchimp\b/g, 'Mailchimp')
+    .replace(/\b1password\b/g, '1Password')
+    .replace(/\bNextjs\b/g, 'Next.js')
+    .replace(/\bWordpress\b/g, 'WordPress')
+    .replace(/\bBigquery\b/g, 'BigQuery')
+    .replace(/\bClickup\b/g, 'ClickUp')
+    .replace(/\bSendgrid\b/g, 'SendGrid')
+    .replace(/\bHubspot\b/g, 'HubSpot')
+    .replace(/\bSonarqube\b/g, 'SonarQube')
     .replace(/\bNfe\b/g, 'NF-e')
     .replace(/\bIso9001\b/g, 'ISO 9001')
     .replace(/\bIso20000\b/g, 'ISO 20000')
@@ -4943,4 +4955,86 @@ export const SERP_CLOSER_PATHS = [
   'airtable-forms/index.html',
   'typeform-embed/index.html',
   'github-codespaces/index.html',
+  'columbus/index.html',
+  'indianapolis/index.html',
+  'nashville/index.html',
+  'kansas-city/index.html',
+  'st-louis/index.html',
+  'salt-lake-city/index.html',
+  'sacramento/index.html',
+  'orlando/index.html',
+  'tampa/index.html',
+  'jacksonville/index.html',
+  'charlotte/index.html',
+  'raleigh/index.html',
+  'richmond/index.html',
+  'milwaukee/index.html',
+  'cincinnati/index.html',
+  'brussels/index.html',
+  'vienna/index.html',
+  'zurich/index.html',
+  'geneva/index.html',
+  'prague/index.html',
+  'budapest/index.html',
+  'warsaw/index.html',
+  'stockholm/index.html',
+  'oslo/index.html',
+  'helsinki/index.html',
+  'copenhagen/index.html',
+  'lisboa/index.html',
+  'porto/index.html',
+  'medellin/index.html',
+  'quito/index.html',
+  'caracas/index.html',
+  'panama-city/index.html',
+  'san-jose/index.html',
+  'manila/index.html',
+  'ho-chi-minh/index.html',
+  'kuala-lumpur/index.html',
+  'postman-workspace/index.html',
+  'insomnia-app/index.html',
+  'hoppscotch/index.html',
+  'swagger-editor/index.html',
+  'redocly-hub/index.html',
+  'stoplight-studio/index.html',
+  'newrelic-one/index.html',
+  'grafana-cloud/index.html',
+  'sentry-dash/index.html',
+  'twilio-studio/index.html',
+  'sendgrid-mktg/index.html',
+  'mailchimp-dash/index.html',
+  'hubspot-forms/index.html',
+  'salesforce-lightning/index.html',
+  'asana-app/index.html',
+  'monday-app/index.html',
+  'clickup-app/index.html',
+  'jira-service/index.html',
+  'confluence-cloud/index.html',
+  'notion-calendar/index.html',
+  'linear-asks/index.html',
+  'figma-dev/index.html',
+  'mode-analytics/index.html',
+  'looker-dash/index.html',
+  'snowflake-cortex/index.html',
+  'bigquery-studio/index.html',
+  'ansible-awx-ui/index.html',
+  'rundeck-ui/index.html',
+  'sonarqube-cloud/index.html',
+  'snyk-app/index.html',
+  '1password-admin/index.html',
+  'lastpass-admin/index.html',
+  'bitwarden-vault/index.html',
+  'stripe-connect/index.html',
+  'paddle-classic/index.html',
+  'woocommerce-store/index.html',
+  'webflow-logic/index.html',
+  'framer-cms/index.html',
+  'nextjs-app/index.html',
+  'remix-app/index.html',
+  'nuxt-app/index.html',
+  'wordpress-rest/index.html',
+  'ghost-admin/index.html',
+  'strapi-admin/index.html',
+  'contentful-app/index.html',
+  'sanity-studio/index.html',
 ];
