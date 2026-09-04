@@ -77,5 +77,41 @@
     "event": "miner_timeout",
     "query": "subject:reunião",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-04T16:36:08.712108+00:00",
+    "event": "miner_timeout",
+    "query": "subject:diagnóstico",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-04T16:42:58.676054+00:00",
+    "event": "miner_timeout",
+    "query": "subject:reunião",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-04T16:52:26.446122+00:00",
+    "event": "miner_timeout",
+    "query": "\"ziontechgroup.com\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-04T17:02:32.600780+00:00",
+    "event": "miner_timeout",
+    "query": "\"ziontechgroup.com\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-04T17:22:34.408639+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"incident response\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-09-04T17:32:31.081105+00:00",
+    "event": "miner_timeout",
+    "query": "\"Zion Tech Group\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]

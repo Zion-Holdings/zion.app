@@ -62,17 +62,18 @@ zion-support.github.io/
 
 ---
 
-## 4. Current Pipeline State (2026-09-04 ~16:00 UTC)
+## 4. Current Pipeline State (2026-09-04 ~19:00 UTC)
 
 | Metric | Value |
 |--------|-------|
 | **Site** | ✅ Live, all primary routes return 200 |
-| **Outreach sent this turn** | 28 emails (verified in Gmail Sent) |
-| **Remaining with email** | ~35 in canonical queue |
+| **Outreach sent today** | 46 emails (10+8+28) across 3 waves |
+| **Queue** | ✅ **DRAINED — 0 remaining** (all 86 canonical sent) |
 | **Send block** | False |
-| **State** | send_ready |
+| **Hot lead** | **Kenlo** — Nicolas Andrade pediu proposta via portal (follow-up sent) |
 | **Miner** | Timing out (expected — 5s/query too short for Termux) |
-| **Rate limits** | None (no 429s this turn) |
+| **Rate limits** | None |
+| **Total outreach sent (history)** | 56 |
 
 ---
 
