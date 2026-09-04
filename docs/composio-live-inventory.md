@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T01:56Z:** Workers Builds failed on `fd6fe848` + `a793e3ed` — Cloudflare hook only. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since 01:53Z — do **not** remint. Gmail has HubSpot login mail (human may be finishing OAuth) plus our Connect Link mail; no inbound sales. Remaining leftover IG reels commented (`18107294719511575`, `18029865749667021`, `18011806205719093`, `18088851823623224`). Pages **built** `85bc5c7`. Apex Discovery `$99`.
+
 **2026-09-04T01:53Z:** Workers Builds failed on `5029b075` — Cloudflare hook only. Do **not** add `wrangler.toml`. 01:51 skip was correct then; by 01:53 all six 01:41Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~02:03:32Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Apex Discovery `$99`.
 
 **2026-09-04T01:51Z:** 01:51 timer: all six 01:41Z kleber@ rows still INITIALIZING/INITIATED (past ~01:51:15 TTL) — do **not** remint. Apex Discovery `$99`. Next remint poll ~02:01Z.
