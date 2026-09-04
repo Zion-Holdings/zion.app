@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T03:54Z:** Workers Builds failed on `e74efdf` + `eae1774` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **03:49Z remint**. Do **not** remint. Dual-wrote noindex for leftover 2026 SERP catalog SKUs (`cloud-cost-ai-optimizer-2026-6534`, `cybersecurity-platform-msp-2026-6558`, `managed-it-services-small-business-2026-6559`, langchain/rpa/data-warehouse stubs) — gh-pages `86fd1fb3`. Apex Discovery `$99`.
+
 **2026-09-04T03:51Z:** Stale 03:35 timer: kleber@ still INITIALIZING/INITIATED since **03:49Z remint** (expire ~03:59:00Z). Do **not** remint. Telegram Zion Agents is now public <code>@ziontechgroup_agents</code>. Dual-writing noindex for leftover <code>/services/ai-sentiment-monitor/</code> <code>/services/penetration-testing/</code> <code>/tools/support-automation-roi-calculator/</code> and related SERP stubs. Apex Discovery `$99`.
 
 **2026-09-04T03:49Z:** All six 03:38Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~03:59:00Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Live leftover `/community/` is noindex (`6b23dc67`). Workers Builds on `3a0103b` + `48af5c0` is Cloudflare hook only. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
