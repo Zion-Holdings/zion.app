@@ -15,6 +15,7 @@ export function titleFromSlug(slug) {
     .replace(/\bLatam\b/g, 'LATAM')
     .replace(/\bApi\b/g, 'API')
     .replace(/\bKv\b/g, 'KV')
+    .replace(/\bDns\b/g, 'DNS')
     .replace(/\bLlama3\b/g, 'Llama 3')
     .replace(/\bRest API\b/g, 'REST API')
     .replace(/\bCdn\b/g, 'CDN')
@@ -5666,4 +5667,29 @@ export const SERP_CLOSER_PATHS = [
   'linear-teams-api/index.html',
   'github-packages-api/index.html',
   'slack-emoji-api/index.html',
+  'garden-city/index.html',
+  'liberal/index.html',
+  'hays/index.html',
+  'n8n-projects-api/index.html',
+  'make-folders-api/index.html',
+  'n8n-tag-api/index.html',
+  'make-apps-api/index.html',
+  'stripe-identity-verification-api/index.html',
+  'paddle-subscriptions-api/index.html',
+  'clerk-domains-api/index.html',
+  'auth0-logs-api/index.html',
+  'neon-proxy-api/index.html',
+  'supabase-cli-api/index.html',
+  'cloudflare-dns-api/index.html',
+  'cloudflare-cache-api/index.html',
+  'vercel-blob-api/index.html',
+  'openai-embeddings-api/index.html',
+  'anthropic-claude-api/index.html',
+  'figma-plugins-api/index.html',
+  'openai-files-api/index.html',
+  'notion-blocks-api/index.html',
+  'linear-issues-api/index.html',
+  'github-gist-api/index.html',
+  'slack-files-api/index.html',
+  'gitlab-merge-api/index.html',
 ];
