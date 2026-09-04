@@ -1,61 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Image Color Extractor · Zion Tech Group</title>
-<meta name="description" content="Extraia a paleta de cores de imagens. Descubra cores hex, RGB e HSL.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
-.max{max-width:800px;margin:0 auto}
-h1{font-size:2rem;margin:24px 0 8px}
-.sub{color:#94a3b8;margin-bottom:32px}
-.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
-input[type=file]{margin:16px 0}
-.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none}
-.btn:hover{background:#c4b5fd}
-.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:24px 0}
-.color{aspect-ratio:1;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,0.5)}
-a{color:#a78bfa;text-decoration:none}
-.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
-</style>
-</head>
+<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — Image Color Extractor · Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com/tools/image-color-extractor/">
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
+<meta http-equiv="refresh" content="0; url=/tools/image-color-extractor/">
+<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
 <body>
-<div class="max">
 <h1>Image Color Extractor</h1>
-<p class="sub">Extraia a paleta de cores de imagens</p>
-
-<div class="card">
-<label>Upload de imagem (PNG, JPG, WebP)</label>
-<input type="file" id="file" accept="image/*">
-<button class="btn" onclick="extract()">Extrair Cores</button>
-</div>
-
-<div class="palette hidden" id="palette"></div>
-
-<div class="links"><p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a></p></div>
-</div>
-
-<script>
-function extract(){
-const file = document.getElementById('file').files[0];
-if(!file) return;
-
-const palette = document.getElementById('palette');
-palette.classList.remove('hidden');
-
-// Generate random color palette for demo
-const colors = ['#FF6B6B','#4ECDC4','#45B7D1','#96CEB4','#FECA57','#FF9FF3','#54A0FF','#5F27CD'];
-palette.innerHTML = '';
-colors.forEach(color => {
-  const div = document.createElement('div');
-  div.className = 'color';
-  div.style.backgroundColor = color;
-  div.textContent = color;
-  palette.appendChild(div);
-});
-}
-</script>
-</body>
-</html>
+<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
+<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
+</body></html>
