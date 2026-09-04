@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Status | Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/status/">
-<meta name="robots" content="index,follow">
-<meta name="description" content="Zion Tech Group — Status. Explore AI &amp; IT services, automation, and growth tools.">
-<style>
-body{font-family:Inter,system-ui,sans-serif;background:#0b0f17;color:#e7ecf1;margin:0}
-.wrap{max-width:960px;margin:0 auto;padding:48px 24px}
-h1{font-size:28px;margin-bottom:12px}
-a{color:#7dd3fc}
-.btn{display:inline-block;margin-top:18px;padding:10px 14px;background:#0ea5e9;color:#fff;border-radius:10px;text-decoration:none}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Status — Zion Tech Group</title>
+  <meta name="description" content="Honest Zion operating status: site, Stripe, Calendly, Composio toolkits. No fake uptime." />
+  <link rel="canonical" href="https://ziontechgroup.com/status/" />
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,sans-serif;background:linear-gradient(135deg,#0b1220,#1a1a2e 50%,#0f3460);color:#e6f0ff;min-height:100vh}
+    .wrap{max-width:800px;margin:0 auto;padding:64px 24px}
+    h1{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;background:linear-gradient(135deg,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+    p,li{color:#94a3b8;line-height:1.7}
+    table{width:100%;border-collapse:collapse;margin:20px 0;background:rgba(15,23,42,.6)}
+    th,td{border:1px solid #334155;padding:10px;text-align:left;color:#cbd5e1}
+    .ok{color:#34d399}.warn{color:#fbbf24}.bad{color:#f87171}
+    a{color:#a78bfa}
+    footer{text-align:center;padding:28px;border-top:1px solid rgba(124,58,237,.15)}
+    footer a{margin:0 10px;text-decoration:none}
+  </style>
 </head>
 <body>
-<div class="wrap">
-<h1>Status</h1>
-<p>This page is temporarily unavailable. Explore our AI &amp; IT services and free tools.</p>
-<a class="btn" href="/services/">Browse Services</a>
-</div>
+  <div class="wrap">
+    <h1>Status (verified, not decorative)</h1>
+    <p>Last checked 2026-09-04T00:13Z via Composio, Stripe, Calendly, Tavily, and <code>curl</code>. This is not a 99.99% marketing badge.</p>
+    <table>
+      <tr><th>Surface</th><th>State</th></tr>
+      <tr><td>https://ziontechgroup.com/</td><td class="ok">200 — Discovery $99 homepage</td></tr>
+      <tr><td>/book/</td><td class="ok">200 — Calendly Discovery-1 embed</td></tr>
+      <tr><td>/plans/</td><td class="ok">200 — four livemode Stripe links</td></tr>
+      <tr><td>www.ziontechgroup.com</td><td class="ok">301 → apex 200 (cert includes www)</td></tr>
+      <tr><td>Calendly upcoming client bookings</td><td class="warn">0 from now</td></tr>
+      <tr><td>Stripe charges</td><td class="warn">$0 BRL livemode — links live, no customers yet</td></tr>
+      <tr><td>Composio ACTIVE toolkits</td><td class="ok">31 (playground user)</td></tr>
+      <tr><td>kleber@ziontechgroup.com connections</td><td class="bad">0 ACTIVE — reconnect HubSpot / Jira / noCRM / Perplexity / Google Drive / Cloudflare MCP</td></tr>
+      <tr><td>Hunter / SerpAPI / Firecrawl</td><td class="bad">Credits exhausted</td></tr>
+      <tr><td>OpenRouter (Telegram worker)</td><td class="bad">Credits exhausted (45/45 used)</td></tr>
+      <tr><td>Workers Builds: ziontechgroup</td><td class="bad">False fail on every push — Cloudflare hook, not Pages. Do not add wrangler.toml</td></tr>
+      <tr><td>Inbound Gmail sales</td><td class="warn">None (GitHub bots + our own Connect Link mail)</td></tr>
+      <tr><td>Instagram website field</td><td class="warn">Still ziontechgroup.com.br — no Graph tool to change it</td></tr>
+      <tr><td>site:ziontechgroup.com leftovers</td><td class="warn">Tavily still titles leftover story 404s; honest noindex closers shipping</td></tr>
+      <tr><td>GitHub Pages source</td><td class="ok">legacy / gh-pages — do not point at main</td></tr>
+    </table>
+    <p><a href="/book/">Book Discovery</a> · <a href="/composio/">Composio stack</a></p>
+  </div>
+  <footer>
+    <a href="/">Home</a>
+    <a href="/plans/">Plans</a>
+    <a href="/heritage/">Heritage</a>
+  </footer>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Composio stack — 31 live toolkits | Zion Tech Group</title>
-  <meta name="description" content="Zion runs 31 ACTIVE Composio toolkits discovered at runtime. HubSpot, Jira, noCRM, and Perplexity are expired. Book Discovery to see the stack." />
+  <meta name="description" content="Zion runs 31 ACTIVE Composio toolkits discovered at runtime. HubSpot, Jira, noCRM, Perplexity, Google Drive, and Cloudflare MCP are expired on kleber@. Book Discovery to see the stack." />
   <link rel="canonical" href="https://ziontechgroup.com/composio/" />
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
@@ -25,24 +25,27 @@
 <body>
   <div class="wrap">
     <h1>Composio is the tool layer, not a Zap canvas</h1>
-    <p>Verified 2026-09-03 against Composio REST v3.1. Zion has <strong>31 ACTIVE toolkits</strong> on the playground user. <code>kleber@ziontechgroup.com</code> still has 0 ACTIVE accounts — reconnect is the production blocker.</p>
+    <p>Verified 2026-09-04 against Composio REST v3.1. Zion has <strong>31 ACTIVE toolkits</strong> on the playground user. <code>kleber@ziontechgroup.com</code> still has 0 ACTIVE accounts — reconnect is the production blocker.</p>
     <a class="cta" href="/book/">Book Discovery on this stack</a>
     <a class="cta ghost" href="/composio-vs-zapier/">vs Zapier</a>
     <a class="cta ghost" href="/composio-vs-n8n-make/">vs n8n / Make</a>
     <h2 style="margin:28px 0 12px;color:#e6f0ff">What is live</h2>
-    <p>GitHub, Gmail, Notion, Slack, Linear, Stripe, Calendly, Resend, Tavily, SerpAPI, Hunter, LinkedIn, Instagram, YouTube, Discord, Telegram, Cursor, Hugging Face, OpenRouter, Sentry, Supabase, Airtable, Google Calendar, Google Sheets, Ninox, plus several authenticated-but-broken keys (Cloudflare, Firecrawl, Browserless, Brevo, WhatsApp, 1Password).</p>
+    <p>GitHub, Gmail, Notion, Slack, Linear, Stripe, Calendly, Resend (verified ziontechgroup.com, 0 webhooks), Tavily, Instagram, YouTube, Discord, Telegram, Cursor, Hugging Face, OpenRouter (credits exhausted), Sentry, Supabase, Google Calendar, Google Sheets. Airtable is demo 2017 sample data — not Zion leads. Hunter, SerpAPI, and Firecrawl are out of credits.</p>
     <table>
-      <tr><th>Expired — reconnect</th><th>Why it matters</th></tr>
-      <tr><td>HubSpot</td><td>CRM pipeline is dark. Airtable / Sheets are the fallback.</td></tr>
+      <tr><th>Expired on kleber@ — reconnect</th><th>Why it matters</th></tr>
+      <tr><td>HubSpot</td><td>CRM pipeline is dark. Do not treat Airtable demo rows as Zion leads.</td></tr>
       <tr><td>Jira</td><td>Delivery tickets stay in Linear only.</td></tr>
       <tr><td>noCRM.io</td><td>Sales board unused.</td></tr>
-      <tr><td>Perplexity</td><td>Researcher fallback is Tavily + SerpAPI.</td></tr>
+      <tr><td>Perplexity</td><td>Researcher fallback is Tavily (SerpAPI is out of searches).</td></tr>
+      <tr><td>Google Drive</td><td>No production file store until kleber@ finishes OAuth.</td></tr>
+      <tr><td>Cloudflare MCP</td><td>Separate from the Cloudflare zone key (0 zones). Needed for Workers/DNS ops.</td></tr>
     </table>
     <h2 style="margin:28px 0 12px;color:#e6f0ff">How agents use it</h2>
     <ul>
       <li>Orchestrators call <code>GET /connected_accounts</code> and pick the newest ACTIVE id per toolkit. No hardcoded <code>COMPOSIO_*_CONNECTION_ID</code> secrets.</li>
       <li>Revenue path: Calendly Discovery-1 → four live Stripe payment links → Resend on verified <code>ziontechgroup.com</code>.</li>
       <li>Do not point Calendly or Composio project webhooks at <code>telegram-ai-reply-worker</code>.</li>
+      <li>Do not email <code>lead-crm/outreach-ready.json</code>. Linear ZIO-270–279 is leftover outreach backlog.</li>
     </ul>
   </div>
   <footer>
