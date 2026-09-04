@@ -1,69 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Port Scanner · Zion Tech Group</title>
-<meta name="description" content="Simulação educacional de port scanning. Aprenda como funcionam scanners de porta.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
-.max{max-width:800px;margin:0 auto}
-h1{font-size:2rem;margin:24px 0 8px}
-.sub{color:#94a3b8;margin-bottom:32px}
-.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
-input{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-size:1rem;margin:8px 0}
-input:focus{outline:none;border-color:#a78bfa}
-.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none}
-.btn:hover{background:#c4b5fd}
-.result{background:#1e293b;border-radius:12px;padding:24px;margin:24px 0;font-family:monospace;font-size:.875rem;white-space:pre-wrap}
-.ok{color:#34d399}
-.warn{color:#fbbf24}
-.err{color:#f87171}
-a{color:#a78bfa;text-decoration:none}
-.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
-</style>
-</head>
+<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — Port Scanner · Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com/services/">
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
+<meta http-equiv="refresh" content="0; url=/services/">
+<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
 <body>
-<div class="max">
 <h1>Port Scanner</h1>
-<p class="sub">Simulação educacional de port scanning</p>
-
-<div class="card">
-<label>Alvo (ex: exemplo.com.br)</label>
-<input type="text" id="host" placeholder="exemplo.com.br">
-<button class="btn" onclick="scan()">Iniciar Scan</button>
-</div>
-
-<div class="result hidden" id="result"></div>
-
-<div class="links"><p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a></p></div>
-</div>
-
-<script>
-function scan(){
-const host = document.getElementById('host').value.trim();
-if(!host) return;
-
-const result = document.getElementById('result');
-result.classList.remove('hidden');
-
-const ports = [21,22,25,53,80,110,143,443,465,587,993,995,3306,5432,6379,27017];
-const services = {21:'FTP',22:'SSH',25:'SMTP',53:'DNS',80:'HTTP',110:'POP3',143:'IMAP',443:'HTTPS',465:'SMTPS',587:'Submission',993:'IMAPS',995:'POP3S',3306:'MySQL',5432:'PostgreSQL',6379:'Redis',27017:'MongoDB'};
-
-let output = `Scanning ${host}...\n\n`;
-output += `PORT     STATE    SERVICE\n`;
-output += `-------  -------  -------\n`;
-
-ports.forEach(port => {
-  const state = Math.random() > 0.3 ? 'open' : (Math.random() > 0.5 ? 'filtered' : 'closed');
-  const stateClass = state === 'open' ? 'ok' : (state === 'filtered' ? 'warn' : '');
-  output += `${String(port).padEnd(9)}<span class="${stateClass}">${state.padEnd(9)}</span>${services[port] || 'unknown'}\n`;
-});
-
-output += `\nScan completed in 2.3s`;
-result.innerHTML = output;
-}
-</script>
-</body>
-</html>
+<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
+<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
+</body></html>
