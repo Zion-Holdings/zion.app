@@ -28,6 +28,7 @@ export function titleFromSlug(slug) {
     .replace(/\bUrls\b/g, 'URLs')
     .replace(/\bDb\b/g, 'DB')
     .replace(/\bV3\b/g, 'v3')
+    .replace(/\bSelf Hosted\b/g, 'Self-Hosted')
     .replace(/\bLlama4\b/g, 'Llama 4')
     .replace(/\bLlama33\b/g, 'Llama 3.3')
     .replace(/\bLlama32\b/g, 'Llama 3.2')
@@ -6047,4 +6048,29 @@ export const SERP_CLOSER_PATHS = [
   'github-copilot-sdk-api/index.html',
   'gitlab-duo-code-review-api/index.html',
   'slack-lists-records-api/index.html',
+  'neosho/index.html',
+  'maryville/index.html',
+  'macon/index.html',
+  'n8n-move-binary-data-api/index.html',
+  'make-set-multiple-variables-api/index.html',
+  'n8n-item-lists-api/index.html',
+  'make-get-variable-api/index.html',
+  'n8n-spreadsheet-file-api/index.html',
+  'stripe-terminal-configurations-api/index.html',
+  'paddle-adjustment-totals-api/index.html',
+  'clerk-blocklist-api/index.html',
+  'auth0-custom-email-api/index.html',
+  'neon-logical-replication-slots-api/index.html',
+  'cloudflare-api-shield-discovery-api/index.html',
+  'supabase-pg-repack-api/index.html',
+  'vercel-security-firewall-api/index.html',
+  'netlify-edge-functions-logs-api/index.html',
+  'openai-images-generations-api/index.html',
+  'groq-whisper-turbo-api/index.html',
+  'huggingface-inference-providers-router-api/index.html',
+  'figma-mcp-resources-api/index.html',
+  'github-copilot-extensions-api/index.html',
+  'gitlab-duo-self-hosted-api/index.html',
+  'slack-lists-views-api/index.html',
+  'notion-file-uploads-api/index.html',
 ];
