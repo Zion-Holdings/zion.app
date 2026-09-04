@@ -3,6 +3,10 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T06:15Z:** Dual-wrote leftover leftover AI-first 2026 blog SEO stubs — gh-pages `8f075844`, feature `c2b0788e`. Leave `/blog/` hub. Next leftover leftover remaining blogs + `/search/` + nested leftover leftover `docs/blog/` closer. kleber@ INITIALIZING since **06:13Z remint** (expire ~06:23:45Z). Do **not** remint. HubSpot `lk_OxGYWcmm2vfv`. Apex Discovery `$99`. Required GitHub statuses = **0**.
+
+**2026-09-04T06:13Z:** All six 06:02Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~06:23:45Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_OxGYWcmm2vfv`. Dual-writing leftover leftover blog SEO stubs (leave `/blog/` hub). Leftover leftover `zion*` Next.js on the feature branch is **0** (`290c46b9`). Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T06:12Z:** Dual-wrote leftover leftover zion-ai vendor/workflow SKUs — gh-pages `6c0b47a9`, feature `1ad786f8`. kleber@ still INITIALIZING/INITIATED since **06:02Z remint** (expire ~06:12:41Z). Do **not** remint. Dual-writing remaining leftover leftover `zion-*` SKUs. Leftover leftover `zion*` Next.js on the feature branch is now **0** after this batch. Apex Discovery `$99`. Sheets **A153**. Required GitHub statuses = **0**.
 
 **2026-09-04T06:10Z:** Dual-wrote leftover leftover zion-ai analytics/pricing SKUs — gh-pages `81f0ab2b`, feature `c6b6f0e0`. Slack/Telegram/Sheets **A153**/Airtable/Notion/Linear notified. kleber@ still INITIALIZING/INITIATED since **06:02Z remint** (expire ~06:12:41Z). Do **not** remint. Dual-writing leftover leftover zion-ai vendor/workflow SKUs. Apex Discovery `$99`. Required GitHub statuses = **0**.
