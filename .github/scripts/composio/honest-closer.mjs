@@ -30,6 +30,9 @@ export function titleFromSlug(slug) {
     .replace(/\bV3\b/g, 'v3')
     .replace(/\bSelf Hosted\b/g, 'Self-Hosted')
     .replace(/\bClient Side\b/g, 'Client-Side')
+    .replace(/\bMtls\b/g, 'mTLS')
+    .replace(/\bEventbridge\b/g, 'EventBridge')
+    .replace(/\bPG Partman\b/g, 'pg_partman')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6155,4 +6158,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-models-api/index.html',
   'slack-lists-records-group-api/index.html',
   'notion-teamspaces-api/index.html',
+  'hayti/index.html',
+  'portageville/index.html',
+  'new-madrid/index.html',
+  'n8n-move-binary-data-file-api/index.html',
+  'make-to-number-api/index.html',
+  'make-increment-variable-api/index.html',
+  'n8n-sort-node-api/index.html',
+  'n8n-aggregate-node-api/index.html',
+  'make-numeric-aggregator-api/index.html',
+  'stripe-terminal-onboarding-api/index.html',
+  'clerk-saml-connections-domains-api/index.html',
+  'auth0-log-streams-eventbridge-api/index.html',
+  'neon-endpoint-settings-api/index.html',
+  'cloudflare-api-shield-mtls-api/index.html',
+  'supabase-pg-partman-api/index.html',
+  'vercel-security-managed-rules-api/index.html',
+  'netlify-edge-functions-headers-api/index.html',
+  'openai-videos-list-api/index.html',
+  'huggingface-jobs-logs-api/index.html',
+  'figma-mcp-variables-api/index.html',
+  'github-copilot-editor-api/index.html',
+  'gitlab-duo-self-hosted-features-api/index.html',
+  'slack-lists-records-filter-views-api/index.html',
+  'notion-custom-emojis-api/index.html',
+  'n8n-summarize-node-api/index.html',
 ];
