@@ -82,6 +82,8 @@ export function titleFromSlug(slug) {
     .replace(/\bPolar Sh\b/g, 'Polar.sh')
     .replace(/\bTawk To\b/g, 'Tawk.to')
     .replace(/\bGithub\b/g, 'GitHub')
+    .replace(/\bGitlab\b/g, 'GitLab')
+    .replace(/\bFine Tune\b/g, 'Fine-Tune')
     .replace(/\bNewrelic\b/g, 'New Relic')
     .replace(/\bLastpass\b/g, 'LastPass')
     .replace(/\bBitwarden\b/g, 'Bitwarden')
@@ -5221,4 +5223,28 @@ export const SERP_CLOSER_PATHS = [
   'slack-lists/index.html',
   'github-spark/index.html',
   'gitlab-wiki/index.html',
+  'rochester/index.html',
+  'syracuse/index.html',
+  'albany/index.html',
+  'hartford/index.html',
+  'worcester/index.html',
+  'make-onprem/index.html',
+  'stripe-issuing/index.html',
+  'paddle-sandbox/index.html',
+  'clerk-organizations/index.html',
+  'supabase-functions/index.html',
+  'neon-branching/index.html',
+  'openai-fine-tune/index.html',
+  'anthropic-files/index.html',
+  'vercel-firewall/index.html',
+  'netlify-forms/index.html',
+  'cloudflare-tunnel/index.html',
+  'cloudflare-access/index.html',
+  'groq-compound/index.html',
+  'figma-sites/index.html',
+  'notion-sites/index.html',
+  'linear-pulse/index.html',
+  'slack-huddles/index.html',
+  'github-models/index.html',
+  'gitlab-duo-chat/index.html',
 ];
