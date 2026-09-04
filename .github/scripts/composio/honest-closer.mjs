@@ -39,6 +39,8 @@ export function titleFromSlug(slug) {
     .replace(/\bSte Genevieve\b/g, 'Ste. Genevieve')
     .replace(/\bCodegen\b/g, 'Codegen')
     .replace(/\bRespond To\b/g, 'Respond to')
+    .replace(/\bNo Op\b/g, 'No-Op')
+    .replace(/\bStop And Error\b/g, 'Stop and Error')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6289,4 +6291,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-config-api/index.html',
   'slack-lists-records-delete-api/index.html',
   'notion-database-schema-api/index.html',
+  'herculaneum/index.html',
+  'pevely/index.html',
+  'de-soto/index.html',
+  'n8n-no-op-node-api/index.html',
+  'make-break-module-api/index.html',
+  'n8n-function-item-api/index.html',
+  'make-sleep-module-api/index.html',
+  'n8n-stop-and-error-api/index.html',
+  'stripe-issuing-transactions-api/index.html',
+  'paddle-adjustment-create-api/index.html',
+  'clerk-organization-permissions-api/index.html',
+  'auth0-brute-force-protection-api/index.html',
+  'neon-compute-settings-api/index.html',
+  'cloudflare-api-shield-jwt-config-api/index.html',
+  'supabase-pg-cron-unschedule-api/index.html',
+  'vercel-security-managed-ips-api/index.html',
+  'netlify-edge-functions-cookies-set-api/index.html',
+  'openai-videos-cancel-api/index.html',
+  'groq-audio-translations-api/index.html',
+  'huggingface-jobs-metrics-api/index.html',
+  'figma-mcp-design-context-api/index.html',
+  'github-copilot-seat-management-api/index.html',
+  'gitlab-duo-self-hosted-models-list-api/index.html',
+  'slack-lists-views-delete-api/index.html',
+  'notion-database-relations-api/index.html',
 ];
