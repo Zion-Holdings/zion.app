@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T00:24Z:** 00:21 timer (delivered 00:23): all six 00:11Z kleber@ rows now **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~00:34:31Z**. Live `/` Discovery `$99` 6067. Do **not** remint while INITIALIZING/INITIATED. PR **71133**.
+
 **2026-09-04T00:22Z:** 00:21 poll: all six kleber@ rows still INITIALIZING/INITIATED (past TTL) — do **not** remint. Live Discovery `$99`. Pulled honest `/cookies/` `/faq/` `/legal/` `/composio-vs-zapier/` `/composio-vs-n8n-make/` `/success-stories/` `/paid-consultation/` into PR 71133; `pages.yml` pins them. Browserless screenshot = invalid API key; PDF of `/plans/` works. Instagram website still `.com.br`. Brevo still 401 IP allowlist. Notion status updated.
 
 **2026-09-04T00:20Z:** Pulled live honest `/book/` `/plans/` `/heritage/` `/about/` `/contact/` `/privacy/` `/terms/` into PR 71133 (replaced leftover Next.js `about/`). `pages.yml` pins those money/ops pages so a merge cannot rsync leftover blogs. Telegram bot commands set (`start`/`discovery`/`plans`/`about`/`status`). Brevo 401 — unrecognised IP, needs authorised_ips. Tavily leftover SmartNet/CISSP/XRP/Truex already noindex closers (search titles still stale). kleber@ still INITIALIZING/INITIATED since 00:11Z — do **not** remint.
