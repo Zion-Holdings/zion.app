@@ -149,6 +149,9 @@ export const PIN_PATHS = [
   'booking/index.html',
   'free-consultation/index.html',
   'use-cases/index.html',
+  'pricing/index.html',
+  'monetization-hub/index.html',
+  'checkout/index.html',
 ];
 
 export const PUBLISH_PATHS = [...new Set([...FILES, ...SERP_CLOSER_PATHS])];

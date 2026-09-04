@@ -17,6 +17,9 @@ const EXTRA = [
   'use-cases/index.html',
   'cpa/index.html',
   'booking/index.html',
+  'pricing/index.html',
+  'monetization-hub/index.html',
+  'checkout/index.html',
   'tools/phishing-analyzer/index.html',
   'solutions/index.html',
 ];
