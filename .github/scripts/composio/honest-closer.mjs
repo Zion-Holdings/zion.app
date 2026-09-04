@@ -26,6 +26,7 @@ export function titleFromSlug(slug) {
     .replace(/\bPg\b/g, 'PG')
     .replace(/\bGa\b/g, 'GA')
     .replace(/\bUrls\b/g, 'URLs')
+    .replace(/\bUri\b/g, 'URI')
     .replace(/\bDb\b/g, 'DB')
     .replace(/\bV3\b/g, 'v3')
     .replace(/\bSelf Hosted\b/g, 'Self-Hosted')
@@ -50,6 +51,9 @@ export function titleFromSlug(slug) {
     .replace(/\bWhoami\b/g, 'whoami')
     .replace(/\bLees Summit\b/g, "Lee's Summit")
     .replace(/\bDesoto\b/g, 'De Soto')
+    .replace(/\bSt Charles\b/g, 'St. Charles')
+    .replace(/\bSt Peters\b/g, 'St. Peters')
+    .replace(/\bO Fallon\b/g, "O'Fallon")
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -6633,4 +6637,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-models-test-api/index.html',
   'notion-data-sources-move-api/index.html',
   'slack-lists-items-complete-api/index.html',
+  'pacific/index.html',
+  'sullivan/index.html',
+  'st-charles/index.html',
+  'make-basic-router-fallback-api/index.html',
+  'make-basic-router-route-api/index.html',
+  'n8n-crypto-sign-api/index.html',
+  'n8n-item-lists-sort-api/index.html',
+  'n8n-item-lists-limit-api/index.html',
+  'make-json-parser-api/index.html',
+  'stripe-radar-value-list-api/index.html',
+  'paddle-discount-list-api/index.html',
+  'auth0-mfa-enrollments-api/index.html',
+  'clerk-sign-up-attempts-api/index.html',
+  'cloudflare-api-shield-jwt-jwks-uri-api/index.html',
+  'supabase-pg-prewarm-database-api/index.html',
+  'netlify-edge-functions-geo-longitude-api/index.html',
+  'neon-branch-restore-time-api/index.html',
+  'cloudflare-api-shield-schema-warning-api/index.html',
+  'openai-files-list-api/index.html',
+  'groq-files-retrieve-metadata-api/index.html',
+  'huggingface-jobs-resume-api/index.html',
+  'figma-mcp-code-connect-list-api/index.html',
+  'github-copilot-usage-reports-org-api/index.html',
+  'figma-mcp-code-connect-get-api/index.html',
+  'slack-lists-access-api/index.html',
 ];
