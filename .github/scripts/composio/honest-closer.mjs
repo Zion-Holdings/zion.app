@@ -57,6 +57,8 @@ export function titleFromSlug(slug) {
     .replace(/\bWebster Groves\b/g, 'Webster Groves')
     .replace(/\bUniversity City\b/g, 'University City')
     .replace(/\bMaryland Heights\b/g, 'Maryland Heights')
+    .replace(/\bTown And Country\b/g, 'Town and Country')
+    .replace(/\bDes Peres\b/g, 'Des Peres')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -6793,4 +6795,28 @@ export const SERP_CLOSER_PATHS = [
   'notion-data-sources-find-api/index.html',
   'slack-lists-items-archive-api/index.html',
   'slack-lists-records-remove-api/index.html',
+  'town-and-country/index.html',
+  'ladue/index.html',
+  'des-peres/index.html',
+  'n8n-item-lists-join-api/index.html',
+  'make-array-parser-api/index.html',
+  'n8n-combine-node-api/index.html',
+  'n8n-split-out-module-api/index.html',
+  'make-iterator-array-module-api/index.html',
+  'stripe-radar-list-item-api/index.html',
+  'paddle-discount-update-api/index.html',
+  'auth0-mfa-otp-api/index.html',
+  'clerk-sign-up-tokens-create-api/index.html',
+  'auth0-guardian-sms-api/index.html',
+  'cloudflare-api-shield-jwt-key-delete-api/index.html',
+  'vercel-firewall-cidr-api/index.html',
+  'neon-branch-restore-latest-api/index.html',
+  'supabase-pg-prewarm-buffers-api/index.html',
+  'huggingface-jobs-run-api/index.html',
+  'figma-mcp-code-connect-check-api/index.html',
+  'github-copilot-usage-export-api/index.html',
+  'gitlab-duo-self-hosted-models-info-api/index.html',
+  'notion-data-sources-lookup-api/index.html',
+  'slack-lists-access-set-api/index.html',
+  'slack-lists-items-unarchive-api/index.html',
 ];
