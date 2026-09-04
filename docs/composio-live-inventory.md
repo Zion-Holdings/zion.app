@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T04:25Z:** Workers Builds failed on `c5eb1b7` / `cee536a` / `3f5904e` / `b5359a2` / `534df27` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:15Z remint** (expire ~04:25:15Z) at last poll 04:24Z. Dual-wrote noindex for leftover hashed Advisor + category SERP SKUs (cloud-native, IoT, RPA, predictive/cognitive hashed URLs) — gh-pages `b14f2420`. Apex Discovery `$99`.
+
 **2026-09-04T04:23Z:** kleber@ still INITIALIZING/INITIATED since **04:15Z remint**. Do **not** remint. Dual-wrote noindex for leftover Hermes-agent + hashed hospitality/Intelligent Director SERP SKUs — gh-pages `df372d0c`. Apex Discovery `$99`.
 
 **2026-09-04T04:21Z:** Workers Builds failed on `c44cba6` / `54c9d7d` / `56ebbd9` / `a5b259e` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:15Z remint** (expire ~04:25:15Z). Do **not** remint. Dual-wrote noindex for remaining leftover w174 MSP/advisor/ops SERP SKUs (`w174-msp-platform`, `w174-ai-financial-advisor`, `w174-hr-automation`, warehouse/tax/ERP stubs) — gh-pages `8b2a473c` + `7451604b`. Apex Discovery `$99`.
