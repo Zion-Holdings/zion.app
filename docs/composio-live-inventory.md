@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T07:59Z:** All six 07:48Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~08:09:48Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_7uyIrvfDpGI_`. Leftover leftover SKU + category noindex live. **CI/CD Pipeline `180259272` is `disabled_manually`.** Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T07:48Z:** All six 07:37Z kleber@ rows **EXPIRED** (stale 07:21 timer fired late at TTL). Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~07:58:37Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_3ueL25prMZVH`. Leftover leftover SKU + category noindex live. **CI/CD Pipeline `180259272` is `disabled_manually`.** Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T07:40Z:** Stale Workers Builds on `89907bc`/`62578b24` is Cloudflare hook only. Required GitHub statuses = **0**. kleber@ still **INITIALIZING/INITIATED** since **07:37Z remint** (expire **~07:47:30Z**, HubSpot `lk_g9ufAmEsDS8f`). Do **not** remint. Converted leftover leftover empty `/services/it-services/` `/services/security-services/` `/services/devops-services/` `/services/data-analytics/` category redirects to `noindex` closers. Leave money `/services/ai-services/` `/services/cloud-services/`. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
