@@ -3,7 +3,7 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
-**2026-09-04T05:32Z:** Workers Builds failed on `0ad5f4ea` / `61251f85` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **05:27Z remint** (expire ~05:38:06Z). Do **not** remint. Leftover leftover `/seo/` edge/email/free-trial closers live (`d2f5f6ba`). Dual-writing leftover leftover `/seo/` government/healthcare/legal stubs. Apex Discovery `$99`.
+**2026-09-04T05:34Z:** Workers Builds failed on `61251f85` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **05:27Z remint** (expire ~05:38:06Z). Do **not** remint. Leftover leftover `/seo/` government/healthcare/legal/memory/observability/poc closers live with noindex (`3529acb1` / `9858d088`). Dual-writing leftover leftover `/seo/` process/retail/revenue/security/supply-chain stubs. Apex Discovery `$99`.
 
 **2026-09-04T05:30Z:** Stale 04:11 timer: kleber@ still INITIALIZING/INITIATED since **05:27Z remint** (expire ~05:38:06Z). Do **not** remint. Leftover leftover `/seo/` contact-center/copilot/document closers live (`a9e2c3cb`). Dual-writing leftover leftover `/seo/` edge/email/free-trial stubs. Apex Discovery `$99`.
 
