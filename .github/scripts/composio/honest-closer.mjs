@@ -59,6 +59,7 @@ export function titleFromSlug(slug) {
     .replace(/\bMaryland Heights\b/g, 'Maryland Heights')
     .replace(/\bTown And Country\b/g, 'Town and Country')
     .replace(/\bDes Peres\b/g, 'Des Peres')
+    .replace(/\bRichmond Heights\b/g, 'Richmond Heights')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -6819,4 +6820,29 @@ export const SERP_CLOSER_PATHS = [
   'notion-data-sources-lookup-api/index.html',
   'slack-lists-access-set-api/index.html',
   'slack-lists-items-unarchive-api/index.html',
+  'frontenac/index.html',
+  'olivette/index.html',
+  'richmond-heights/index.html',
+  'fenton/index.html',
+  'n8n-merge-items-api/index.html',
+  'make-array-sort-api/index.html',
+  'n8n-item-lists-concat-api/index.html',
+  'n8n-item-lists-flatten-api/index.html',
+  'make-array-join-api/index.html',
+  'n8n-item-lists-unique-api/index.html',
+  'stripe-radar-list-items-api/index.html',
+  'paddle-discount-create-api/index.html',
+  'paddle-price-update-api/index.html',
+  'auth0-mfa-email-api/index.html',
+  'clerk-sign-in-tokens-revoke-api/index.html',
+  'auth0-guardian-otp-api/index.html',
+  'clerk-sign-up-tokens-revoke-api/index.html',
+  'cloudflare-api-shield-jwt-key-create-api/index.html',
+  'vercel-firewall-ip-api/index.html',
+  'cloudflare-api-shield-schema-get-api/index.html',
+  'huggingface-jobs-get-api/index.html',
+  'github-copilot-usage-api/index.html',
+  'figma-mcp-code-connect-parse-api/index.html',
+  'slack-lists-access-get-api/index.html',
+  'slack-lists-access-list-api/index.html',
 ];
