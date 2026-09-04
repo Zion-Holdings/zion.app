@@ -1,31 +1,40 @@
 # Zion Tech Group — Memory & Status
 
-## Última atualização: 2026-09-03T14:00 UTC
+## Última atualização: 2026-09-03T23:30 UTC
 
 - **CEO**: Kleber Garcia Alcatrão
 - **Empresa**: Zion Tech Group
 - **Site**: https://ziontechgroup.com (GitHub Pages, branch gh-pages)
 - **Deploy**: Live, sem blockers ativos
 
-## Rotas (snapshot: 2026-09-03T14:00 UTC)
+## Issues
+
+- **2.000 issues fechadas** via close_v2.py (background proc_77c9d2a7d4d1, exit 0)
+- ~62.205 issues restantes (números 62000+, mais recentes)
+- Tarefa de fechamento em massa: PAUSADA, aguardando ordem concreta
+
+## Rotas (snapshot: 2026-09-03T23:30 UTC)
 
 ### 200 OK
 - `/` (homepage)
-- `/testimonials/`
-- `/service-comparison/`
-- `/status/`
+- `/tools/health-check`
+- `/status/service-health`
+- `/sitemap.xml`
+- `/services/whatsapp-monetizacao/` ← corrigido (gh-pages direto)
 
-### 301 (redirecionamentos — provavelmente para /book/ ou /plans/)
-- `/about`
-- `/pricing`
-- `/services`
-- `/blog`
+### Rotas testadas pelo smoke test
+- `/` → 200
+- `/tools/health-check` → 200 (301→200 com -L)
+- `/status/service-health` → 200 (301→200 com -L)
+- `/sitemap.xml` → 200
 
-### 404 (removidas do novo modelo de negócio)
-- `/tools/2026-ma-due-diligence-checklist/`
-- `/monetization-hub/`
+## Correção da 404 — WhatsApp Monetização
 
-**Nota**: O site opera com cache/edge nodes que podem servir versões diferentes. O status acima é um snapshot momentâneo.
+- **Rota**: `/services/whatsapp-monetizacao/`
+- **Problema**: gh-pages tinha placeholder "Not a packaged SKU" com noindex + redirect para `/`
+- **Causa raiz**: `static-deploy.yml` workflow falhando; `mirror-to-gh-pages.yml` desabilitado
+- **Fix**: push direto para `origin/gh-pages` com conteúdo real (29 linhas)
+- **Status**: HTTP 200 confirmado
 
 ## Monetização (modelo 2026)
 
@@ -36,8 +45,8 @@
 
 ## CRM & Outreach
 
-- Total leads: 138
-- Outreach-ready: 0
+- Total leads: 1933
+- Outreach-ready: 693
 - Monitor inbox interest: 52
 - Hot followup sent: 0
 - Status: bloqueado (sem leads prontos para outreach)
@@ -48,6 +57,13 @@
 - **Branch**: `main`
 - **gh-pages worktree**: `/data/data/com.termux/files/home/ztg/gh-pages`
 - **macOS**: `/Users/klebergarciaalcatrao/zion-support.github.io` (symlink, indisponível no Android)
+
+## Cron Jobs
+
+- Zion Site Smoke Test (39fc379ffa4f): 90m, última execução OK
+- site-health-check (72ce632d762c): 4h, última execução OK
+- 13 jobs em erro (modelo indisponível: poolside/laguna-xs-2.1:free 429, meta-llama/llama-3.1-8b-instruct:free 404)
+- 3 jobs com scripts inexistentes: agent-task-delegator.py, cron-swarm-coordinator.sh
 
 ## Composio
 
