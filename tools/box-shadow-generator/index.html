@@ -1,12 +1,74 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — Box Shadow Generator · Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/services/">
-<meta name="robots" content="noindex, follow">
-<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
-<meta http-equiv="refresh" content="0; url=/services/">
-<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Box Shadow Generator · Zion Tech Group</title>
+<meta name="description" content="Gere box shadows CSS personalizados para seus elementos.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
+.max{max-width:800px;margin:0 auto}
+h1{font-size:2rem;margin:24px 0 8px}
+.sub{color:#94a3b8;margin-bottom:32px}
+.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
+label{display:block;margin:16px 0 4px;color:#94a3b8;font-size:.875rem}
+input[type=range]{width:100%}
+input[type=color]{width:60px;height:40px;border:none;background:none;cursor:pointer}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.preview{background:#0f172a;border-radius:12px;padding:48px;margin:24px 0;text-align:center}
+.box{width:200px;height:100px;background:#a78bfa;border-radius:8px;margin:0 auto}
+.code{background:#0f172a;padding:16px;border-radius:8px;font-family:monospace;font-size:.875rem;margin-top:16px;word-break:break-all}
+a{color:#a78bfa;text-decoration:none}
+.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
+</style>
+</head>
 <body>
+<div class="max">
 <h1>Box Shadow Generator</h1>
-<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
-<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
-</body></html>
+<p class="sub">Crie box shadows CSS personalizados</p>
+
+<div class="card">
+<div class="row">
+<div><label>Offset X: <span id="xVal">10</span>px</label><input type="range" id="x" min="-50" max="50" value="10"></div>
+<div><label>Offset Y: <span id="yVal">10</span>px</label><input type="range" id="y" min="-50" max="50" value="10"></div>
+</div>
+<div class="row">
+<div><label>Blur: <span id="blurVal">20</span>px</label><input type="range" id="blur" min="0" max="100" value="20"></div>
+<div><label>Spread: <span id="spreadVal">0</span>px</label><input type="range" id="spread" min="-50" max="50" value="0"></div>
+</div>
+<div class="row">
+<div><label>Cor</label><input type="color" id="color" value="#000000"></div>
+<div><label>Opacidade: <span id="opacityVal">30</span>%</label><input type="range" id="opacity" min="0" max="100" value="30"></div>
+</div>
+</div>
+
+<div class="preview"><div class="box" id="box"></div></div>
+
+<div class="code" id="code">box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.3);</div>
+
+<div class="links"><p><a href="/services/">Serviços</a> · <a href="/book/">Agendar $99</a></p></div>
+</div>
+
+<script>
+function update(){
+const x=document.getElementById('x').value;
+const y=document.getElementById('y').value;
+const blur=document.getElementById('blur').value;
+const spread=document.getElementById('spread').value;
+const color=document.getElementById('color').value;
+const opacity=document.getElementById('opacity').value;
+document.getElementById('xVal').textContent=x;
+document.getElementById('yVal').textContent=y;
+document.getElementById('blurVal').textContent=blur;
+document.getElementById('spreadVal').textContent=spread;
+document.getElementById('opacityVal').textContent=opacity;
+const rgba=color+Math.round(opacity*2.55).toString(16).padStart(2,'0');
+document.getElementById('box').style.boxShadow=`${x}px ${y}px ${blur}px ${spread}px ${rgba}`;
+document.getElementById('code').textContent=`box-shadow: ${x}px ${y}px ${blur}px ${spread}px ${rgba};`;
+}
+document.querySelectorAll('input').forEach(el=>el.addEventListener('input',update));
+update();
+</script>
+</body>
+</html>
