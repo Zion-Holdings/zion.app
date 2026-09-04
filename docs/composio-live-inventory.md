@@ -3,6 +3,12 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T04:51Z:** Workers Builds failed on `1545b12` / `950a6a4` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:49Z remint** (expire ~04:59:35Z). Do **not** remint. Dual-wrote noindex for leftover Next.js servicedesk/ITSM/MSP blog SEO stubs — gh-pages `f7a09d04`. Apex Discovery `$99`. Sheets **A136**. Linear **ZIO-225** commented.
+
+**2026-09-04T04:50Z:** Dual-wrote noindex for leftover Next.js AI-for-IT blog SEO stubs (AIOps, clinical trial, data-center, DevOps, FinOps, incident/compliance) — gh-pages `cea20d95`. Live verified noindex. Apex Discovery `$99`.
+
+**2026-09-04T04:49Z:** All six 04:38Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~04:59:35Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_8205f3pUAQP8`. Workers Builds on `1545b12` is Cloudflare hook only. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T04:43Z:** Workers Builds failed on `1e15c5d` / `bdf386f` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:38Z remint** (expire ~04:48:35Z). Do **not** remint. Dual-wrote noindex for leftover Next.js ai-first 2026 blog SEO stubs (FinOps, 5G/SASE, digital twins) — gh-pages `6da1ba41`. Apex Discovery `$99`.
 
 **2026-09-04T04:38Z:** All six 04:27Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~04:48:35Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Leftover MSP/LATAM/DevOps blog SEO closers live (`9a8072f3`). Workers Builds on `9642561` / `efe32dc` is Cloudflare hook only. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
