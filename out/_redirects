@@ -1,22 +1,24 @@
+# GitHub Pages ignores this file. Do not 301 honest hubs.
+# Neutralized leftover leftover Netlify rules that smashed /status/ /docs/ /faq/.
+
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
 
-# Canonical sitemap
-/sitemap.xml  /sitemap-0.xml  301
+# leftover leftover Next.js sitemap rewrite removed — live sitemap is /sitemap.xml
 
 /case-studies/    /contact/    301
 /industries/    /services/    301
 /free-tools-hub/    /tools/    301
 /products/    /services/    301
-/consultation/    /contact/    301
-/site-map/    /    301
-/faq/    /about/    301
-/status/    /    301
-/configurator/    /contact/    301
-/dashboard/    /contact/    301
-/docs/    /    301
-/automation/  /services/ai-workflow-automation/  301
-/free-ai-itools/ /free-ai-it-tools/ 302
-/free-ai-itools /free-ai-it-tools/ 302
+# /consultation/ leftover leftover — live product is /book/
+# /site-map/ leftover leftover — live sitemap is /sitemap.xml
+# /faq/ leftover leftover smash removed — live /faq/ is an honest pin
+# /status/ leftover leftover smash removed — live /status/ is ops
+# /configurator/ leftover leftover — not a free proposal
+# /dashboard/ leftover leftover smash removed
+# /docs/ leftover leftover smash removed — live /docs/ is an honest hub
+/automation/  /services/  301
+/free-ai-itools/ /tools/ 302
+/free-ai-itools /tools/ 302
 /free-consultation /free-consultation/index.html 200
 /free-consultation/ /free-consultation/index.html 200
 /free-audit /free-audit/index.html 200
@@ -50,11 +52,9 @@
 /use-cases/ /use-cases/index.html 200
 /solutions/healthcare /solutions/healthcare/index.html 200
 /solutions/healthcare/ /solutions/healthcare/index.html 200
-/roteiros/industrias/ /roteiros/industrias/ 200
-/roteiros/direitos-humanos/ /roteiros/direitos-humanos/ 200
-/roteiros/direitos-sociais/ /roteiros/direitos-sociais/ 200
-/roteiros/direitos-trabalhistas/ /roteiros/direitos-trabalhistas/ 200
-/roteiros/direitos-ambientais/ /roteiros/direitos-ambientais/ 200
-/direitos-globais/ /direitos-globais/ 200
-/industries/financial-services /docs/industries/financial-services/index.html 301
-/industries/financial-services/ /docs/industries/financial-services/index.html 200
+/industry/ /industry/index.html 200
+/solutions/government/ /solutions/government/index.html 200
+/trust/ /trust/index.html 200
+/zion-composio-automation-stack/ /zion-composio-automation-stack/index.html 200
+/whatsapp-business-automation/ /whatsapp-business-automation/index.html 200
+/privacy-policy/ /privacy-policy/index.html 200
