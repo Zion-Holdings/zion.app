@@ -42,6 +42,7 @@ export function titleFromSlug(slug) {
     .replace(/\bNo Op\b/g, 'No-Op')
     .replace(/\bStop And Error\b/g, 'Stop and Error')
     .replace(/\bJa3\b/g, 'JA3')
+    .replace(/\bJa4\b/g, 'JA4')
     .replace(/\bSsh\b/g, 'SSH')
     .replace(/\bUv\b/g, 'UV')
     .replace(/\bFtp\b/g, 'FTP')
@@ -6397,4 +6398,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-status-api/index.html',
   'slack-lists-records-update-api/index.html',
   'notion-database-formulas-api/index.html',
+  'excelsior-springs/index.html',
+  'liberty/index.html',
+  'blue-springs/index.html',
+  'n8n-html-extract-node-api/index.html',
+  'make-sleep-delay-api/index.html',
+  'n8n-edit-image-api/index.html',
+  'n8n-compression-node-api/index.html',
+  'n8n-wait-webhook-api/index.html',
+  'stripe-treasury-financial-accounts-api/index.html',
+  'paddle-subscription-resume-api/index.html',
+  'clerk-user-lockout-api/index.html',
+  'auth0-bot-detection-captcha-api/index.html',
+  'cloudflare-api-shield-jwt-validation-settings-api/index.html',
+  'neon-branch-restore-api/index.html',
+  'supabase-pg-cron-alter-api/index.html',
+  'vercel-security-ja4-api/index.html',
+  'netlify-edge-functions-rewrite-headers-api/index.html',
+  'openai-videos-delete-content-api/index.html',
+  'groq-models-list-api/index.html',
+  'huggingface-jobs-inspect-logs-api/index.html',
+  'figma-mcp-get-design-context-api/index.html',
+  'github-copilot-usage-metrics-export-api/index.html',
+  'gitlab-duo-self-hosted-models-enable-api/index.html',
+  'slack-lists-views-create-api/index.html',
+  'notion-data-sources-create-api/index.html',
 ];
