@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T08:31Z:** Stale `remint-composio-08-22` fired late. kleber@ 08:23Z rows still **INITIALIZING/INITIATED** (HubSpot `ca_JsFm36_mB6yQ` / `lk_HdKkF0JZ754b`, expire **~08:33:26Z**). Do **not** remint. Workers Builds on `bec3fd28` is Cloudflare hook only. Required GitHub statuses = **0**. Restored leftover leftover `/agents-monitoring/` `/configurator/` `/careers/` `/sla/` `/jobs/` `/newsletter/` `/consulting/` `/help/` `/automation/` `/industries/` `/case-studies/` from live honest hubs so merge cannot dump SKU closers onto them. Added leftover leftover origin/main homepage SKU 404 closers (`ai-computer-vision-quality-inspection`, `ai-knowledge-base-rag-platform`, `cyber-incident-response-retainer`, `cloud-cost-optimization-platform`, `managed-observability-247`). **CI/CD Pipeline `180259272` is `disabled_manually`.** Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T08:26Z:** Workers Builds failed on `4db4d30`/`b65e321`/`69e2bfc` — Cloudflare hook only. Required GitHub statuses = **0**. kleber@ still **INITIALIZING/INITIATED** since **08:23Z remint** (expire **~08:33:26Z**, HubSpot `lk_HdKkF0JZ754b`). Do **not** remint. Converted leftover leftover SKU-to-SKU `Redirecting…` hops (`/services/ai-endpoint-management-…` `/services/ai-network-performance-…`) to `noindex` `/services/` closers. Leave `services/it-outsourcing`. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 

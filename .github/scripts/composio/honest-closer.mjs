@@ -69,6 +69,11 @@ export function honestCloser({ title, canonical = '/services/' }) {
 
 /** Ghost URLs Google still ranks (SerpAPI 2026-09-03) that currently 404 on Pages. */
 export const SERP_CLOSER_PATHS = [
+  'services/ai-computer-vision-quality-inspection/index.html',
+  'services/ai-knowledge-base-rag-platform/index.html',
+  'services/cyber-incident-response-retainer/index.html',
+  'services/cloud-cost-optimization-platform/index.html',
+  'services/managed-observability-247/index.html',
   'services/postgresql/index.html',
   'services/managed-it-services-small-business-2026-6559/index.html',
   'services/ai-observability-2026-6565/index.html',
