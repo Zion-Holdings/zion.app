@@ -148,6 +148,8 @@ export const PIN_PATHS = [
   'testimonials/index.html',
   'cpa/index.html',
   'status/service-health/index.html',
+  '404/index.html',
+  '_not-found/index.html',
   'booking/index.html',
   'free-consultation/index.html',
   'use-cases/index.html',
