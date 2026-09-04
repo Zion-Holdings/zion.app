@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T02:14Z:** 02:14 timer: all six 02:04Z kleber@ rows still INITIALIZING/INITIATED (past ~02:14:25 TTL) — do **not** remint. Apex Discovery `$99`. Next remint poll ~02:24Z.
+
 **2026-09-04T02:04Z:** All six 01:53Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~02:14:25Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Apex Discovery `$99`.
 
 **2026-09-04T02:00Z:** Workers Builds failed on `7de25553` — Cloudflare hook only. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since 01:53Z — do **not** remint. Deactivated 5 leftover livemode Stripe payment links that were **not** on `/plans/` (hosted_confirmation, no `/success-stories/` redirect): `plink_1UBIMt` / `1UBHpP` / `1UBHP2` / `1UBDcY` / `1UB5C1`. The four `/plans/` links stay active and still redirect `/success-stories/`. Charges still **$0**.
