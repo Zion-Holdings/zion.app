@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T01:16Z:** Workers Builds failed on `6855f9` + `33dc3fe` — Cloudflare hook only. Do **not** add `wrangler.toml`. Pages **built**. Apex Discovery `$99`. 01:13 skip was correct then; by 01:16 all six 01:03Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~01:26:37Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED.
+
 **2026-09-04T01:13Z:** 01:12 timer: kleber@ still INITIALIZING/INITIATED since 01:03Z (past ~01:13:20 TTL) — do **not** remint. Apex Discovery `$99`. `/cpa/` + WhatsApp closers live. Tavily still titles leftover `?p=` WordPress URLs; those serve Discovery. GCal leftover primesecured/tsia follow-ups — do not retry. No remaining `Get a Free Proposal` in `public/`. Next remint poll ~01:23Z.
 
 **2026-09-04T01:10Z:** Workers Builds failed on `3889f3a` — Cloudflare hook only (HEAD `ece97bd` required GitHub checks = **0**). Do **not** add `wrangler.toml`. Pages **built**. Apex Discovery `$99`. kleber@ still INITIALIZING/INITIATED since 01:03Z — do **not** remint. `publish-gh-pages.mjs` FILES leftover Next.js = **0**. Live leftover SKU URLs (`/5g-solutions/`, `/ai-chatbot-builder/`, …) are already honest stubs. Calendly organization webhooks = **0**. Discord is Kleber personal (`kleberalcatrao`). Resend API key `Hermes` last used for Connect Link mail.
