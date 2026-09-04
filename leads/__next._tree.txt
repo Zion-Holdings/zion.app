@@ -1,3 +1,0 @@
-:HL["/_next/static/css/832841d5ec7b44aa.css","style"]
-:HL["/_next/static/css/f863ad17f38e48a5.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"leads","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"zion-tech-group-v1"}
