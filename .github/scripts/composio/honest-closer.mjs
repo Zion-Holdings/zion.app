@@ -6,6 +6,7 @@ export function titleFromSlug(slug) {
     .replace(/\b\w/g, (c) => c.toUpperCase())
     .replace(/\bAi\b/g, 'AI')
     .replace(/\bIt\b/g, 'IT')
+    .replace(/\bTi\b/g, 'TI')
     .replace(/\bMsp\b/g, 'MSP')
     .replace(/\bSoc\b/g, 'SOC')
     .replace(/\bN8n\b/g, 'n8n')
@@ -38,7 +39,21 @@ export function titleFromSlug(slug) {
     .replace(/\bNlp\b/g, 'NLP')
     .replace(/\bIot\b/g, 'IoT')
     .replace(/\bCiso\b/g, 'CISO')
-    .replace(/\bVapt\b/g, 'VAPT');
+    .replace(/\bVapt\b/g, 'VAPT')
+    .replace(/\bAws\b/g, 'AWS')
+    .replace(/\bGcp\b/g, 'GCP')
+    .replace(/\bEtl\b/g, 'ETL')
+    .replace(/\bSre\b/g, 'SRE')
+    .replace(/\bMdr\b/g, 'MDR')
+    .replace(/\bXdr\b/g, 'XDR')
+    .replace(/\bItil\b/g, 'ITIL')
+    .replace(/\bCobit\b/g, 'COBIT')
+    .replace(/\bCmmi\b/g, 'CMMI')
+    .replace(/\bUi Ux\b/g, 'UI/UX')
+    .replace(/\bUx Ui\b/g, 'UX/UI')
+    .replace(/\bNodejs\b/g, 'Node.js')
+    .replace(/\bSqlserver\b/g, 'SQL Server')
+    .replace(/\bOpenai API\b/g, 'OpenAI API');
 }
 
 /** Honest $99 Discovery alias for leftover “free consult / booking / use-cases” URLs. */
@@ -3981,4 +3996,133 @@ export const SERP_CLOSER_PATHS = [
   'servicenow/index.html',
   'zendesk/index.html',
   'intercom/index.html',
+  'consultoria-ti/index.html',
+  'desenvolvimento-web/index.html',
+  'aplicativos-mobile/index.html',
+  'marketing-digital/index.html',
+  'loja-virtual/index.html',
+  'comercio-eletronico/index.html',
+  'seguranca-da-informacao/index.html',
+  'protecao-de-dados/index.html',
+  'conformidade/index.html',
+  'auditoria/index.html',
+  'teste-de-intrusao/index.html',
+  'nuvem-aws/index.html',
+  'nuvem-azure/index.html',
+  'google-cloud/index.html',
+  'migracao-nuvem/index.html',
+  'mesa-de-servico/index.html',
+  'governanca-ti/index.html',
+  'itil/index.html',
+  'cobit/index.html',
+  'cmmi/index.html',
+  'aprendizado-de-maquina/index.html',
+  'visao-computacional/index.html',
+  'ciencia-de-dados/index.html',
+  'analise-de-dados/index.html',
+  'big-data/index.html',
+  'data-lake/index.html',
+  'data-warehouse/index.html',
+  'etl/index.html',
+  'kafka-streaming/index.html',
+  'redis-cache/index.html',
+  'kubernetes-ops/index.html',
+  'opentelemetry/index.html',
+  'jaeger/index.html',
+  'loki/index.html',
+  'thanos/index.html',
+  'vault/index.html',
+  'consul/index.html',
+  'nomad/index.html',
+  'packer/index.html',
+  'vagrant/index.html',
+  'circleci/index.html',
+  'travis-ci/index.html',
+  'bitbucket/index.html',
+  'terraform-cloud/index.html',
+  'pulumi/index.html',
+  'ansible-tower/index.html',
+  'awx/index.html',
+  'chef/index.html',
+  'puppet/index.html',
+  'saltstack/index.html',
+  'nagios/index.html',
+  'zabbix/index.html',
+  'newrelic/index.html',
+  'dynatrace/index.html',
+  'appdynamics/index.html',
+  'pagerduty/index.html',
+  'opsgenie/index.html',
+  'jira-service-desk/index.html',
+  'crisp/index.html',
+  'tawk/index.html',
+  'freshdesk/index.html',
+  'helpscout/index.html',
+  'confluence/index.html',
+  'bitbucket-pipelines/index.html',
+  'aws/index.html',
+  'azure/index.html',
+  'gcp/index.html',
+  'oracle-cloud/index.html',
+  'ibm-cloud/index.html',
+  'digitalocean/index.html',
+  'linode/index.html',
+  'vultr/index.html',
+  'hetzner/index.html',
+  'figma-design/index.html',
+  'ui-ux/index.html',
+  'ux-ui/index.html',
+  'product-design/index.html',
+  'branding/index.html',
+  'identity/index.html',
+  'salesforce-crm/index.html',
+  'hubspot-crm/index.html',
+  'zoho-crm/index.html',
+  'pipedrive-crm/index.html',
+  'woocommerce/index.html',
+  'magento/index.html',
+  'prestashop/index.html',
+  'vtex/index.html',
+  'flutter/index.html',
+  'react-native/index.html',
+  'ionic/index.html',
+  'xamarin/index.html',
+  'nodejs/index.html',
+  'django/index.html',
+  'flask/index.html',
+  'laravel/index.html',
+  'spring-boot/index.html',
+  'postgres-dba/index.html',
+  'mysql-dba/index.html',
+  'sqlserver/index.html',
+  'oracle-db/index.html',
+  'elasticsearch-consulting/index.html',
+  'kafka-consulting/index.html',
+  'redis-consulting/index.html',
+  'soc-as-a-service/index.html',
+  'mdr/index.html',
+  'eedr/index.html',
+  'xdr/index.html',
+  'iso27001-certification/index.html',
+  'soc2-type2/index.html',
+  'hipaa-compliance/index.html',
+  'pci-dss-compliance/index.html',
+  'bot-telegram/index.html',
+  'openai-api/index.html',
+  'claude-api/index.html',
+  'gemini-api/index.html',
+  'vector-search/index.html',
+  'embeddings/index.html',
+  'finops-aws/index.html',
+  'finops-azure/index.html',
+  'cloud-cost/index.html',
+  'sre/index.html',
+  'platform-engineering/index.html',
+  'msp-services-br/index.html',
+  'fala-conosco/index.html',
+  'vagas-de-emprego/index.html',
+  'agendar-reuniao/index.html',
+  'agendar-call/index.html',
+  'marcar-horario/index.html',
+  'cotacao-gratis/index.html',
 ];
