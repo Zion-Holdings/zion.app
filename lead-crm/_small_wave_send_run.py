@@ -129,10 +129,11 @@ def main():
     sent_addresses = load_sent_dedup()
     print(f"Already sent: {len(sent_addresses)} addresses")
 
-    # Filter unsent leads
+    # Filter unsent leads with valid email
     unsent_leads = [
         lead for lead in ready_leads
         if (lead.get('email') or lead.get('to') or '').lower().strip() not in sent_addresses
+        and (lead.get('email') or lead.get('to') or '').strip()
     ]
     print(f"Unsent leads: {len(unsent_leads)}")
 

@@ -133,6 +133,26 @@ def gmail_create_draft(thread_id: str, subject: str, body: str, to_addr: str) ->
     resp = json.loads(urllib.request.urlopen(req).read())
     return resp.get('id', 'unknown')
 
+def gmail_send_new(subject: str, body: str, to_addr: str) -> str:
+    """Send a new email via Gmail API. Returns message ID."""
+    raw_lines = [
+        f"Subject: {subject}",
+        f"To: {to_addr}",
+        "",
+        body,
+    ]
+    raw = "\r\n".join(raw_lines)
+    encoded = base64.urlsafe_b64encode(raw.encode()).decode()
+
+    url = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send'
+    payload = json.dumps({'raw': encoded}).encode()
+    headers = gog_headers()
+    headers['Content-Type'] = 'application/json'
+    req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
+    resp = json.loads(urllib.request.urlopen(req).read())
+    return resp.get('id', 'unknown')
+
+
 def gmail_create_draft_new(subject: str, body: str, to_addr: str) -> str:
     """Create a Gmail draft for a new thread (no threadId).
 

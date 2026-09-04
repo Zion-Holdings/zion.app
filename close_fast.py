@@ -1,49 +1,70 @@
 #!/usr/bin/env python3
-import subprocess, json, time, sys, os
-from concurrent.futures import ThreadPoolExecutor, as_completed
+"""Close all open issues using gh CLI - simple and reliable"""
+import subprocess, sys, time
 
-TOKEN = subprocess.run(['gh','auth','token'],capture_output=True,text=True).stdout.strip()
-HEADERS = [
-    '-H', f'Authorization: Bearer {TOKEN}',
-    '-H', 'Accept: application/vnd.github+json',
-    '-H', 'X-GitHub-Api-Version: 2022-11-28'
-]
+REPO = "Zion-support/zion-support.github.io"
 
 def close_issue(n):
-    r = subprocess.run(['curl','-s','-X','PATCH',
-        f'https://api.github.com/repos/Zion-support/zion-support.github.io/issues/{n}',
-        *HEADERS, '-d','{"state":"closed"}'],
-        capture_output=True, text=True)
-    if '"state":"closed"' in r.stdout or '"state": "closed"' in r.stdout:
+    r = subprocess.run(["gh", "issue", "close", str(n), "--repo", REPO],
+                       capture_output=True, text=True)
+    if r.returncode == 0:
         return True
+    if "rate limit" in r.stderr.lower():
+        return "rate_limit"
     return False
 
-closed = 0
 page = 1
-with ThreadPoolExecutor(max_workers=3) as executor:
-    while True:
-        r = subprocess.run(['curl','-s'] + HEADERS + [
-            f'https://api.github.com/repos/Zion-support/zion-support.github.io/issues?state=open&per_page=100&page={page}'
-        ], capture_output=True, text=True)
+closed = 0
+errors = 0
+
+while True:
+    # List open issues page by page
+    r = subprocess.run(["gh", "api", f"repos/{REPO}/issues?state=open&per_page=100&page={page}",
+                         "--jq", "[.[] | select(.pull_request == null) | .number]"],
+                        capture_output=True, text=True)
+    
+    if r.returncode != 0:
+        if "rate limit" in r.stderr.lower():
+            print(f"Rate limit on list, sleeping 60s...", flush=True)
+            time.sleep(60)
+            continue
+        print(f"Error listing page {page}: {r.stderr[:200]}", flush=True)
+        break
+    
+    try:
+        issues = eval(r.stdout.strip()) if r.stdout.strip() else []
+    except:
         try:
-            data = json.loads(r.stdout)
+            import json
+            issues = json.loads(r.stdout) if r.stdout.strip() else []
         except:
             break
-        if not data:
-            break
-        print(f'Page {page}: {len(data)} issues', flush=True)
-        futures = {}
-        for i in data:
-            if 'pull_request' in i:
-                continue
-            n = i['number']
-            f = executor.submit(close_issue, n)
-            futures[f] = n
-        for f in as_completed(futures):
-            if f.result():
-                closed += 1
-        page += 1
-        if page % 5 == 0:
-            print(f'Progress: {closed} closed so far', flush=True)
+    
+    if not issues:
+        print(f"Page {page}: no more issues - DONE", flush=True)
+        break
+    
+    print(f"Page {page}: {len(issues)} issues", flush=True)
+    
+    for n in issues:
+        result = close_issue(n)
+        if result == "rate_limit":
+            print("Rate limit, sleeping 120s...", flush=True)
+            time.sleep(120)
+            result = close_issue(n)
+        
+        if result:
+            closed += 1
+        else:
+            errors += 1
+        
+        if closed % 50 == 0 and closed > 0:
+            print(f"Progress: {closed} closed, {errors} errors", flush=True)
+        
+        # Small delay every 10 issues
+        if closed % 10 == 0:
+            time.sleep(1)
+    
+    page += 1
 
-print(f'DONE: {closed} issues closed')
+print(f"COMPLETE: {closed} closed, {errors} errors")
