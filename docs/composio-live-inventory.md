@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T00:38Z:** 00:34 TTL expired — all six kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~00:48:28Z**. Slack/Telegram/Resend notified. Live leftover **`/cpa/`** (PT “Pague por Resultado”, indexable) replaced with noindex closer; `/booking/` `/free-consultation/` `/use-cases/` are $99 aliases (local leftover would have overwritten live). Samsung ViewFinity leftover 404 → closer. Replaced leftover Next.js files that `publish-gh-pages.mjs` FILES would have republished (portal/academy/careers/docs/…). Stripe still $0 charges. Calendly 0 upcoming. Composio MCP in this cloud agent is `needsAuth` (desktop-only) — REST via `COMPOSIO_API_KEY` still works. kleber@ 0 ACTIVE. Do **not** remint while INITIALIZING/INITIATED.
+
 **2026-09-04T00:34Z:** 00:34 poll: kleber@ still INITIALIZING/INITIATED (past ~00:34:31 TTL) — do **not** remint. WhatsApp closer still live. PR 71133 pins dashboard/login/blog/tools. Stripe 0 charges. Gmail = PR mail + personal Airbnb (not sales). Calendly “active” events are June leftovers.
 
 **2026-09-04T00:32Z:** Competing `gh-pages` `ddaa91c1` (Kleber) overwrote `/services/whatsapp-monetizacao/` with leftover PT “WhatsApp Monetização” (indexable). Restored noindex closer dual-write `7532c8c9` (Pages **built**). Apex still Discovery `$99`. kleber@ still INITIALIZING/INITIATED since 00:24Z — do **not** remint.

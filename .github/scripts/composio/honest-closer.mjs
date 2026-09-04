@@ -11,6 +11,26 @@ export function titleFromSlug(slug) {
     .replace(/\bN8n\b/g, 'n8n');
 }
 
+/** Honest $99 Discovery alias for leftover “free consult / booking / use-cases” URLs. */
+export function honestDiscoveryAlias({ title, path, blurb }) {
+  const safeTitle = String(title).replace(/[<>]/g, '');
+  const href = path.startsWith('/') ? path : `/${path}`;
+  return `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${safeTitle} — $99 Discovery · Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com${href}">
+<meta name="description" content="Not a free consultation. Zion scopes work after the $99 AI/IT Discovery.">
+<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}.cta{display:inline-block;margin:10px 8px 0 0;padding:12px 20px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;font-weight:600;text-decoration:none}</style>
+</head><body>
+<h1>${safeTitle}</h1>
+<p>${blurb}</p>
+<p>There is no free consultation and no leftover service catalog. The live product is the $99 AI/IT Discovery.</p>
+<p><a class="cta" href="/book/">Book $99 Discovery</a> <a class="cta" href="/plans/" style="background:#0f172a;border:1px solid #334155">Prices</a></p>
+</body></html>
+`;
+}
+
 export function honestCloser({ title, canonical = '/services/' }) {
   const safeTitle = String(title).replace(/[<>]/g, '');
   const href = canonical.startsWith('/') ? canonical : `/${canonical}`;
@@ -1143,4 +1163,7 @@ export const SERP_CLOSER_PATHS = [
   'services/astera-labs-0f8fee80/index.html',
   'services/automation-anywhere-8a42ef60/index.html',
   'services/babyx-709d4b17/index.html',
+  'cpa/index.html',
+  'samsung-s80ua-27-inch-viewfinity-4k-uhd-3840x2160-computer-monitor-hdmi-usb-hub-with-usb-c-hdr10-1-billion-colors-built-in-speakers-height-adjustable-stand-ls27a80dunnxza/index.html',
+  'top-funding-opportunities-from-the-bill-melinda-gates-foundation/index.html',
 ];

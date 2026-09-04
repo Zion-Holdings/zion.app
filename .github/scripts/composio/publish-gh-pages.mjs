@@ -145,6 +145,10 @@ export const PIN_PATHS = [
   'tools/2026-ma-due-diligence-checklist/index.html',
   'service-comparison/index.html',
   'testimonials/index.html',
+  'cpa/index.html',
+  'booking/index.html',
+  'free-consultation/index.html',
+  'use-cases/index.html',
 ];
 
 export const PUBLISH_PATHS = [...new Set([...FILES, ...SERP_CLOSER_PATHS])];

@@ -15,12 +15,18 @@ import { PIN_PATHS } from './publish-gh-pages.mjs';
 const EXTRA = [
   'free-consultation/index.html',
   'use-cases/index.html',
+  'cpa/index.html',
+  'booking/index.html',
   'tools/phishing-analyzer/index.html',
   'solutions/index.html',
 ];
 
 function isLeftoverHtml(html) {
-  return html.includes('_next/static') || html.includes('Get Free Consultation');
+  return html.includes('_next/static')
+    || html.includes('Get Free Consultation')
+    || html.includes('Automação e IA para Empresas')
+    || html.includes('Pague por Resultado')
+    || html.includes('>Free Consultation<');
 }
 
 export async function liveHomepageLooksLeftover() {
