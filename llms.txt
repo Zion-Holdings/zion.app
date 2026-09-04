@@ -37,4 +37,7 @@ GitHub check `Workers Builds: ziontechgroup` is a Cloudflare hook on this repo, 
 - Privacy: https://ziontechgroup.com/privacy/
 - Terms: https://ziontechgroup.com/terms/
 - Legal hub: https://ziontechgroup.com/legal/
+- Instagram messenger ice breakers now point at Book $99 / live prices (website field still ziontechgroup.com.br — no Graph tool to change it).
+- Sentry project `ziontechgroup-com` exists on org zion-holdings. Leftover `javascript-nextjs` is unused.
+- Linear leftover outreach and Gmail-deploy noise ZIO-198–279 is archived except ZIO-225 (Composio Optimization Sprint). Do not email leftover Zion Outreach contacts.
 - Not ziontech.biz, not ziontechnologies.org, not the Instagram website field (still ziontechgroup.com.br).
