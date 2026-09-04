@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T10:22Z:** All six 10:11Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~10:32:53Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_QfNjX4E66FIK`. Workers Builds on `116e1966` is Cloudflare hook only. Required GitHub statuses = **0**. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T10:11Z:** All six 09:58Z kleber@ rows **EXPIRED** (stale `remint-composio-09-56` fired late). Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~10:21:08Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_inS1tB6Fz9P-`. Closed leftover leftover `/out/` SKU 404s. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T09:58Z:** All six 09:46Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~10:08:10Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_FJyR7_rO_8vo`. Workers Builds on `a3c29046`/`4151306`/`a5a70407`/`604e105` is Cloudflare hook only. Required GitHub statuses = **0**. Leftover leftover origin/main sitemap `/services/` 404s are **0** remaining on the feature branch. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
