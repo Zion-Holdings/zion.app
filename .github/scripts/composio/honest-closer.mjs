@@ -48,6 +48,10 @@ export function titleFromSlug(slug) {
     .replace(/\bFtp\b/g, 'FTP')
     .replace(/\bMqtt\b/g, 'MQTT')
     .replace(/\bWhoami\b/g, 'whoami')
+    .replace(/\bLees Summit\b/g, "Lee's Summit")
+    .replace(/\bIf Else\b/g, 'If/Else')
+    .replace(/\bTo Xml\b/g, 'to XML')
+    .replace(/\bTo Json\b/g, 'to JSON')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6473,4 +6477,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-models-status-api/index.html',
   'notion-data-sources-update-api/index.html',
   'slack-lists-items-update-api/index.html',
+  'lees-summit/index.html',
+  'belton/index.html',
+  'grain-valley/index.html',
+  'n8n-if-else-node-api/index.html',
+  'make-json-to-xml-api/index.html',
+  'n8n-manual-trigger-api/index.html',
+  'n8n-schedule-trigger-api/index.html',
+  'n8n-respond-to-webhook-node-api/index.html',
+  'stripe-treasury-outbound-payments-api/index.html',
+  'paddle-transaction-invoice-pdf-api/index.html',
+  'clerk-blocklist-identifiers-api/index.html',
+  'auth0-breached-password-settings-api/index.html',
+  'cloudflare-api-shield-jwt-validation-rules-api/index.html',
+  'supabase-pg-stat-reset-api/index.html',
+  'vercel-security-challenge-config-api/index.html',
+  'netlify-edge-functions-geo-country-api/index.html',
+  'vercel-firewall-bypass-api/index.html',
+  'openai-videos-content-download-api/index.html',
+  'groq-models-get-api/index.html',
+  'huggingface-jobs-list-logs-api/index.html',
+  'figma-mcp-code-connect-status-api/index.html',
+  'github-copilot-usage-metrics-get-api/index.html',
+  'gitlab-duo-self-hosted-models-get-api/index.html',
+  'notion-data-sources-retrieve-api/index.html',
+  'slack-lists-items-get-api/index.html',
 ];
