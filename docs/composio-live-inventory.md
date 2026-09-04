@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T02:21Z:** YouTube write is not fully dead: `YOUTUBE_POST_COMMENT` works even though `UPDATE_VIDEO` is 403. Posted honest `$99` Discovery comments on leftover `.com.br` videos `BQdat3RgpfM`, `ZOQ9q_qcisY`, `GGUXiUG9HLM`. kleber@ still INITIALIZING/INITIATED since 02:16Z — do **not** remint. Pages pins leftover = **0**. Apex Discovery `$99`.
+
 **2026-09-04T02:16Z:** 02:14 skip was correct then; by 02:16 all six 02:04Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~02:26:44Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Apex Discovery `$99`.
 
 **2026-09-04T02:14Z:** 02:14 timer: all six 02:04Z kleber@ rows still INITIALIZING/INITIATED (past ~02:14:25 TTL) — do **not** remint. Apex Discovery `$99`. Next remint poll ~02:24Z.
