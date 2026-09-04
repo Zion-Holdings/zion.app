@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T03:16Z:** Workers Builds failed on `85270ab` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **03:15Z remint** (expire ~03:24:55Z). Do **not** remint. Dual-wrote noindex closer for leftover `/ai/` (indexable redirect stub). Apex Discovery `$99`.
+
 **2026-09-04T03:15Z:** Workers Builds failed on `c6dab8` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. 03:13 skip was correct then; by 03:14 all six 03:02Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~03:24:55Z**. Slack/Telegram/Resend notified. Live leftover `/services/{security,data,blockchain,iot}/` are noindex closers. Apex Discovery `$99`. Do **not** remint while INITIALIZING/INITIATED.
 
 **2026-09-04T03:13Z:** Workers Builds failed on `3354249` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. 03:12 TTL: kleber@ still INITIALIZING/INITIATED since 03:02Z — do **not** remint. Dual-wrote noindex closers for leftover `/services/security/` `/services/data/` `/services/blockchain/` `/services/iot/` (same indexable-stub pattern as `/services/cloud/`). Apex Discovery `$99`.
