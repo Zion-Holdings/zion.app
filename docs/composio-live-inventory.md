@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T05:59Z:** Stale 04:26 timer: kleber@ still INITIALIZING/INITIATED since **05:51Z remint** (expire ~06:01:44Z). Do **not** remint. Leftover leftover marketing/mobile/RPA hubs live noindex (`2dac029a`). Dual-writing leftover leftover security/training/zion-ai SKU hubs. Leave `/docs/` `/blog/` `/services/` `/academy/`. Apex Discovery `$99`. Required GitHub statuses = **0**.
+
 **2026-09-04T05:56Z:** Workers Builds failed on `6ba312af` — Cloudflare hook only. Required GitHub statuses = **0**. Leftover leftover free/iot/it hubs live noindex (`b487550c`). Dual-writing leftover leftover marketing/mobile/RPA hubs. Leave `/docs/` `/blog/` `/services/` `/proposal/`. kleber@ INITIALIZING since **05:51Z remint** (expire ~06:01:44Z). Do **not** remint. Apex Discovery `$99`.
 
 **2026-09-04T05:53Z:** Workers Builds failed on `844f5d51` — Cloudflare hook only. Required GitHub statuses = **0**. Leftover leftover category hubs live noindex (`a9314f71`). Dual-writing leftover leftover free/iot/it category hubs. Leave `/docs/` `/blog/` `/services/`. kleber@ INITIALIZING since **05:51Z remint** (expire ~06:01:44Z). Do **not** remint. HubSpot `lk_q4jrz0ypLR8r`. Apex Discovery `$99`.
