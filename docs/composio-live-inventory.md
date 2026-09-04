@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T02:16Z:** 02:14 skip was correct then; by 02:16 all six 02:04Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~02:26:44Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Apex Discovery `$99`.
+
 **2026-09-04T02:14Z:** 02:14 timer: all six 02:04Z kleber@ rows still INITIALIZING/INITIATED (past ~02:14:25 TTL) — do **not** remint. Apex Discovery `$99`. Next remint poll ~02:24Z.
 
 **2026-09-04T02:04Z:** All six 01:53Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~02:14:25Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Apex Discovery `$99`.
