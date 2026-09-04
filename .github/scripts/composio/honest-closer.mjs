@@ -83,6 +83,7 @@ export function titleFromSlug(slug) {
     .replace(/\bTawk To\b/g, 'Tawk.to')
     .replace(/\bGithub\b/g, 'GitHub')
     .replace(/\bGitlab\b/g, 'GitLab')
+    .replace(/\bMckinney\b/g, 'McKinney')
     .replace(/\bFine Tune\b/g, 'Fine-Tune')
     .replace(/\bNewrelic\b/g, 'New Relic')
     .replace(/\bLastpass\b/g, 'LastPass')
@@ -5562,4 +5563,29 @@ export const SERP_CLOSER_PATHS = [
   'linear-mcp-api/index.html',
   'github-spark-api/index.html',
   'gitlab-duo-chat-api/index.html',
+  'mckinney/index.html',
+  'round-rock/index.html',
+  'enid/index.html',
+  'n8n-queue-mode-api/index.html',
+  'make-custom-apps-api/index.html',
+  'n8n-execution-data-api/index.html',
+  'make-custom-functions-api/index.html',
+  'stripe-capital-api/index.html',
+  'stripe-sigma-api/index.html',
+  'auth0-actions-api/index.html',
+  'clerk-billing-portal-api/index.html',
+  'supabase-vault-api/index.html',
+  'neon-extension-api/index.html',
+  'cloudflare-constellation-api/index.html',
+  'cloudflare-r2-api/index.html',
+  'vercel-storage-api/index.html',
+  'supabase-logs-api/index.html',
+  'openai-assistants-api/index.html',
+  'anthropic-completions-api/index.html',
+  'figma-variables-api/index.html',
+  'groq-mixtral-api/index.html',
+  'huggingface-spaces-api/index.html',
+  'github-models-api/index.html',
+  'notion-workspace-api/index.html',
+  'linear-cycles-api/index.html',
 ];
