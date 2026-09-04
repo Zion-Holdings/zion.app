@@ -33,6 +33,8 @@ export function titleFromSlug(slug) {
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
     .replace(/\bSms\b/g, 'SMS')
+    .replace(/\bIps\b/g, 'IPs')
+    .replace(/\bPG Trgm\b/g, 'pg_trgm')
     .replace(/\bLlama4\b/g, 'Llama 4')
     .replace(/\bLlama33\b/g, 'Llama 3.3')
     .replace(/\bLlama32\b/g, 'Llama 3.2')
@@ -6102,4 +6104,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-agent-platform-api/index.html',
   'slack-lists-records-filter-api/index.html',
   'notion-data-sources-api/index.html',
+  'caruthersville/index.html',
+  'webb-city/index.html',
+  'republic/index.html',
+  'n8n-read-binary-file-api/index.html',
+  'make-to-collection-api/index.html',
+  'n8n-write-binary-file-api/index.html',
+  'make-to-array-api/index.html',
+  'n8n-compress-node-api/index.html',
+  'stripe-issuing-tokens-api/index.html',
+  'paddle-notification-destinations-api/index.html',
+  'clerk-instance-restrictions-api/index.html',
+  'auth0-custom-phone-api/index.html',
+  'neon-connection-string-api/index.html',
+  'cloudflare-api-shield-schema-validation-api/index.html',
+  'supabase-pg-trgm-api/index.html',
+  'vercel-security-trusted-ips-api/index.html',
+  'netlify-edge-functions-config-api/index.html',
+  'openai-videos-create-api/index.html',
+  'groq-compound-mini-system-api/index.html',
+  'huggingface-jobs-compute-api/index.html',
+  'figma-mcp-tools-api/index.html',
+  'github-copilot-workspaces-api/index.html',
+  'gitlab-duo-workflow-catalog-api/index.html',
+  'slack-lists-records-sort-api/index.html',
+  'notion-wiki-api/index.html',
 ];
