@@ -2,7 +2,10 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T02:46Z:** Workers Builds failed on `d2a67e8` + `9c4a09d` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since 02:39Z — do **not** remint. Archived **32** leftover Linear `Outreach: Kleber` issues (ZIO-248–279) so they are not treated as new leads. Resend `zion-discovery-99` reply-to is now `kleber@ziontechgroup.com`. 1Password sync workflows are **dispatch-only** (0 vaults; leftover playground cron removed). Apex Discovery `$99`.
+
 **2026-09-04T02:42Z:** Stale 02:37 timer delivered at 02:41 — kleber@ still INITIALIZING/INITIATED since **02:39Z remint** (expire ~02:49:39Z). Do **not** remint. HubSpot sent a PT welcome at 02:10Z but ACTIVE never landed on kleber@. Calendly Discovery-1 description now states paid `$99` / not a free consult. Linear comment on leftover **ZIO-279** (do not email outreach-ready). Supabase `Zion App` still **INACTIVE** after DISABLE_PROJECT_READONLY. Apex Discovery `$99`. Local leftover Next.js `/404/` + `/_not-found/` replaced with honest closer (live already honest). Stripe 4 `/plans/` links live, 5 hosted_confirmation still deactivated.
+
 
 **2026-09-04T02:39Z:** 02:37 skip was correct then; by 02:39 all six 02:27Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~02:49:39Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Dual-write `b137c129` (heritage Surf Family note + status/composio/llms + `/status/service-health/` noindex closer). Apex Discovery `$99`.
 
