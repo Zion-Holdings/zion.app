@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T03:05Z:** Stale 03:00 timer: kleber@ still INITIALIZING/INITIATED since **03:02Z remint** (expire ~03:12:37Z). Do **not** remint. Archived leftover Linear ZIO-149–197 (site 404s, Next.js CI, Composio test issues, leftover outreach follow-ups). Kept ZIO-225, ZIO-186, ZIO-172 (Nibo fiscal). Dual-wrote noindex closer for leftover `/services/cloud/` (was indexable closer without robots). Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T03:02Z:** All six 02:50Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~03:12:37Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Instagram messenger ice breakers now Book `$99` / live prices. Sentry project **ziontechgroup-com** created (leftover `javascript-nextjs` unused). Archived leftover Linear ZIO-198–247 except ZIO-225. Apex Discovery `$99`. Advisor SKU closers still live. kleber@ **0 ACTIVE**.
 
 **2026-09-04T02:53Z:** Stale 02:49 timer: kleber@ still INITIALIZING/INITIATED since **02:50Z remint** (expire ~03:00:58Z). Do **not** remint. Competing `gh-pages` `8308559a` dumped 10 leftover **Advisor Smart / Self-optimizing** SKUs under `public/services/` (`index, follow`, fake catalog). Dual-wrote noindex closers `9affc43b` (Pages **built**). Apex still Discovery `$99`. Workers Builds remains the Cloudflare hook.
