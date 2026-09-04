@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T14:14Z:** All six 13:59Z kleber@ rows **EXPIRED** (Workers Builds on `c17a8b7` ignored; required statuses 0). Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~14:24:53Z**. Slack/Telegram/Resend/Airtable/Notion/Linear/Sheets notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_XYJdkWVgAyxQ`. Stale `remint-composio-14-20` may fire late — skip if 14:14Z rows are still INITIALIZING. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T14:09Z:** kleber@ 13:59Z rows still **INITIALIZING/INITIATED** 8s past TTL (HubSpot `ca_yEDFAKt0GG1R` / `lk_sgqCuvhMbfeu`, expire **~14:09:10Z**). Do **not** remint. Slack/Telegram notified in-flight. Timer `remint-composio-14-20`. Closed leftover leftover Portuguese/trial **404** ghosts (`/get-a-free-proposal/` `/quem-somos/` `/precos/` …). Tavily leftover leftover titles are stale — live pages are closers. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T13:59Z:** All six 13:46Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~14:09:10Z**. Slack/Telegram/Resend/Airtable/Notion/Linear/Sheets notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_sgqCuvhMbfeu`. Stale `remint-composio-13-56` may fire late — skip if 13:59Z rows are still INITIALIZING. Closed leftover leftover trial/consult 404 ghosts. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
