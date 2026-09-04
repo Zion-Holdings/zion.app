@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T04:57Z:** kleber@ still INITIALIZING/INITIATED since **04:49Z remint** (expire ~04:59:35Z). Do **not** remint. Dual-wrote noindex for leftover Next.js Brazil/LATAM + insurance/IT-ops blog SEO stubs — gh-pages `2d089d21`. Workers Builds on `950a6a4` / `3f1e4de` / `76c14f5` is Cloudflare hook only. Required GitHub statuses = **0**. Apex Discovery `$99`.
+
 **2026-09-04T04:51Z:** Workers Builds failed on `1545b12` / `950a6a4` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:49Z remint** (expire ~04:59:35Z). Do **not** remint. Dual-wrote noindex for leftover Next.js servicedesk/ITSM/MSP blog SEO stubs — gh-pages `f7a09d04`. Apex Discovery `$99`. Sheets **A136**. Linear **ZIO-225** commented.
 
 **2026-09-04T04:50Z:** Dual-wrote noindex for leftover Next.js AI-for-IT blog SEO stubs (AIOps, clinical trial, data-center, DevOps, FinOps, incident/compliance) — gh-pages `cea20d95`. Live verified noindex. Apex Discovery `$99`.
