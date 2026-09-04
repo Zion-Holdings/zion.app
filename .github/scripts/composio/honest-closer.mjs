@@ -33,6 +33,7 @@ export function titleFromSlug(slug) {
     .replace(/\bMtls\b/g, 'mTLS')
     .replace(/\bEventbridge\b/g, 'EventBridge')
     .replace(/\bPG Partman\b/g, 'pg_partman')
+    .replace(/\bKcache\b/g, 'kcache')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6183,4 +6184,29 @@ export const SERP_CLOSER_PATHS = [
   'slack-lists-records-filter-views-api/index.html',
   'notion-custom-emojis-api/index.html',
   'n8n-summarize-node-api/index.html',
+  'marshfield/index.html',
+  'lebanon/index.html',
+  'bonne-terre/index.html',
+  'n8n-split-out-node-api/index.html',
+  'make-basic-feeder-api/index.html',
+  'n8n-compare-datasets-api/index.html',
+  'make-get-variable-multiple-api/index.html',
+  'n8n-remove-duplicates-node-api/index.html',
+  'stripe-issuing-ephemeral-keys-api/index.html',
+  'paddle-notification-replay-api/index.html',
+  'clerk-organization-memberships-roles-api/index.html',
+  'auth0-attack-protection-breached-api/index.html',
+  'neon-branch-endpoints-api/index.html',
+  'cloudflare-api-shield-operation-api/index.html',
+  'supabase-pg-stat-kcache-api/index.html',
+  'vercel-security-ip-blocking-api/index.html',
+  'netlify-edge-functions-rewrite-api/index.html',
+  'openai-videos-retrieve-api/index.html',
+  'groq-compound-check-api/index.html',
+  'huggingface-jobs-cancel-api/index.html',
+  'figma-mcp-code-connect-map-api/index.html',
+  'github-copilot-pull-request-api/index.html',
+  'gitlab-duo-code-suggestions-api/index.html',
+  'slack-lists-records-views-create-api/index.html',
+  'notion-comments-mentions-api/index.html',
 ];
