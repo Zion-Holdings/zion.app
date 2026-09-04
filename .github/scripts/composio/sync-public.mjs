@@ -10,6 +10,16 @@ import { SERP_CLOSER_PATHS, honestCloser, titleFromSlug } from './honest-closer.
 const ROOT = path.resolve(import.meta.dirname, '../../..');
 const PUBLIC = path.join(ROOT, 'public');
 
+/** Working Portuguese tools — never overwrite with English leftover leftover closers. */
+const WORKING_PT_TOOLS = new Set([
+  'tools/json-formatter/index.html',
+  'tools/qr-code-generator/index.html',
+  'tools/box-shadow-generator/index.html',
+  'tools/phishing-analyzer/index.html',
+  'tools/cron-expression-explainer/index.html',
+  'tools/2026-ma-due-diligence-checklist/index.html',
+]);
+
 function mkdirp(dir) {
   if (fs.existsSync(dir) && fs.statSync(dir).isFile()) fs.unlinkSync(dir);
   fs.mkdirSync(dir, { recursive: true });
@@ -63,6 +73,10 @@ function closerCanonical(rel) {
 }
 
 for (const rel of SERP_CLOSER_PATHS) {
+  if (WORKING_PT_TOOLS.has(rel)) {
+    console.log('skip working Portuguese tool', rel);
+    continue;
+  }
   const src = path.join(ROOT, rel);
   const closer = honestCloser({ title: titleFromSlug(rel), canonical: closerCanonical(rel) });
   let content = closer;
