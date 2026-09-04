@@ -1,99 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Service Router · Zion Tech Group</title>
-<meta name="description" content="Descubra qual serviço de IA combina com seu negócio. Recomendação personalizada em 3 passos.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
-.max{max-width:800px;margin:0 auto}
-h1{font-size:2rem;margin:24px 0 8px}
-.sub{color:#94a3b8;margin-bottom:32px}
-.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
-.q{margin:24px 0}
-.q-text{font-size:1.1rem;margin-bottom:12px}
-.opts{display:flex;flex-direction:column;gap:8px}
-.opt{padding:12px 16px;background:#0f172a;border:1px solid #334155;border-radius:8px;cursor:pointer;transition:all .2s}
-.opt:hover{border-color:#a78bfa;background:#1e293b}
-.opt.selected{border-color:#a78bfa;background:#2d1b69}
-.result{background:#1e293b;border:1px solid #a78bfa;border-radius:12px;padding:24px;margin:24px 0;text-align:center}
-.result h2{margin-bottom:8px}
-.result .desc{color:#94d398;margin:12px 0}
-.hidden{display:none}
-.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px}
-a{color:#a78bfa;text-decoration:none}
-.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
-</style>
-</head>
+<html lang="en"><head><meta charset="utf-8"><title>Not a packaged SKU — AI Service Router · Zion Tech Group</title>
+<link rel="canonical" href="https://ziontechgroup.com/services/">
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Not a packaged SKU. Zion scopes work after the $99 AI/IT Discovery at /book/.">
+<meta http-equiv="refresh" content="0; url=/services/">
+<style>body{font-family:system-ui;background:#0b1220;color:#e6f0ff;max-width:720px;margin:0 auto;padding:48px 24px;line-height:1.65}a{color:#a78bfa}</style></head>
 <body>
-<div class="max">
 <h1>AI Service Router</h1>
-<p class="sub">Descubra qual serviço de IA é ideal para você</p>
-
-<div id="quiz">
-<div class="card">
-<div class="q" data-q="1">
-<div class="q-text">1. Qual área você quer automatizar?</div>
-<div class="opts">
-<div class="opt" data-v="support"><input type="radio">Atendimento ao cliente</div>
-<div class="opt" data-v="data"><input type="radio">Dados e analytics</div>
-<div class="opt" data-v="ops"><input type="radio">Operações</div>
-<div class="opt" data-v="dev"><input type="radio">Desenvolvimento</div>
-</div>
-</div>
-<div class="q" data-q="2">
-<div class="q-text">2. Qual seu orçamento mensal?</div>
-<div class="opts">
-<div class="opt" data-v="low"><input type="radio">Até R$ 3.000</div>
-<div class="opt" data-v="mid"><input type="radio">R$ 3.000 - R$ 10.000</div>
-<div class="opt" data-v="high"><input type="radio">Acima de R$ 10.000</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="result hidden" id="result">
-<h2 id="service">Serviço</h2>
-<div class="desc" id="description">Descrição</div>
-<a href="/book/" class="btn">Agendar Discovery $99</a>
-</div>
-
-<div class="links">
-<p><a href="/services/">Serviços</a> · <a href="/plans/">Planos</a></p>
-</div>
-</div>
-
-<script>
-let choices = {};
-document.querySelectorAll('.opt').forEach(opt => {
-  opt.addEventListener('click', () => {
-    const q = opt.closest('.q');
-    q.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
-    choices[q.dataset.q] = opt.dataset.v;
-    if (Object.keys(choices).length === 2) showResult();
-  });
-});
-
-function showResult() {
-  const c1 = choices['1'];
-  const c2 = choices['2'];
-  
-  let service, desc;
-  if (c1 === 'support') { service = 'AI Customer Support'; desc = 'Chatbots inteligentes e atendimento automatizado 24/7.'; }
-  else if (c1 === 'data') { service = 'AI Analytics'; desc = 'Insights preditivos e dashboards inteligentes.'; }
-  else if (c1 === 'ops') { service = 'AI Operations'; desc = 'Automação de processos e otimização de fluxos.'; }
-  else { service = 'AI Development'; desc = 'Integração de IA em produtos e APIs.'; }
-  
-  if (c2 === 'low') desc += ' Começamos pelo Discovery $99.';
-  
-  document.getElementById('quiz').classList.add('hidden');
-  document.getElementById('result').classList.remove('hidden');
-  document.getElementById('service').textContent = service;
-  document.getElementById('description').textContent = desc;
-}
-</script>
-</body>
-</html>
+<p>No packaged SKU, no free consultation, and no leftover service catalog. Work is scoped after the $99 Discovery.</p>
+<p><a href="/services/">Services</a> · <a href="/book/">Book $99</a> · <a href="/plans/">Prices</a></p>
+</body></html>
