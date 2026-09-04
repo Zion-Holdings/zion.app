@@ -69,6 +69,9 @@ export function titleFromSlug(slug) {
     .replace(/\bCustomer Io\b/g, 'Customer.io')
     .replace(/\bWoocommerce\b/g, 'WooCommerce')
     .replace(/\bSagemaker\b/g, 'SageMaker')
+    .replace(/\bLangsmith\b/g, 'LangSmith')
+    .replace(/\bPlanetscale\b/g, 'PlanetScale')
+    .replace(/\bOnprem\b/g, 'On-prem')
     .replace(/\bNfe\b/g, 'NF-e')
     .replace(/\bIso9001\b/g, 'ISO 9001')
     .replace(/\bIso20000\b/g, 'ISO 20000')
@@ -4825,4 +4828,51 @@ export const SERP_CLOSER_PATHS = [
   'github-app/index.html',
   'gitlab-app/index.html',
   'bitbucket-app/index.html',
+  'natal/index.html',
+  'joao-pessoa/index.html',
+  'maceio/index.html',
+  'teresina/index.html',
+  'campo-grande/index.html',
+  'cuiaba/index.html',
+  'joinville/index.html',
+  'londrina/index.html',
+  'ribeirao-preto/index.html',
+  'sorocaba/index.html',
+  'uberlandia/index.html',
+  'aracaju/index.html',
+  'sao-luis/index.html',
+  'niteroi/index.html',
+  'osasco/index.html',
+  'guarulhos/index.html',
+  'contagem/index.html',
+  'serra/index.html',
+  'juiz-de-fora/index.html',
+  'campina-grande/index.html',
+  'sao-bernardo/index.html',
+  'santo-andre/index.html',
+  'macapa/index.html',
+  'rio-branco/index.html',
+  'porto-velho/index.html',
+  'palmas/index.html',
+  'boa-vista/index.html',
+  'mexico-city/index.html',
+  'houston/index.html',
+  'dallas/index.html',
+  'boston/index.html',
+  'atlanta/index.html',
+  'denver/index.html',
+  'vancouver/index.html',
+  'montreal/index.html',
+  'n8n-self-hosted/index.html',
+  'n8n-onprem/index.html',
+  'zapier-interfaces/index.html',
+  'zapier-central/index.html',
+  'make-webhooks/index.html',
+  'clerk-auth/index.html',
+  'planetscale-console/index.html',
+  'neon-console/index.html',
+  'vercel-ai-sdk/index.html',
+  'langchain-hub/index.html',
+  'langsmith/index.html',
+  'openai-realtime/index.html',
 ];
