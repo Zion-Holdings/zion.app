@@ -49,6 +49,7 @@ export function titleFromSlug(slug) {
     .replace(/\bMqtt\b/g, 'MQTT')
     .replace(/\bWhoami\b/g, 'whoami')
     .replace(/\bLees Summit\b/g, "Lee's Summit")
+    .replace(/\bDesoto\b/g, 'De Soto')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -6581,4 +6582,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-models-delete-api/index.html',
   'notion-data-sources-archive-api/index.html',
   'slack-lists-views-get-api/index.html',
+  'desoto/index.html',
+  'greenwood/index.html',
+  'peculiar/index.html',
+  'n8n-read-binary-files-api/index.html',
+  'make-text-aggregator-module-api/index.html',
+  'n8n-aggregate-items-api/index.html',
+  'make-json-to-xml-node-api/index.html',
+  'n8n-item-lists-remove-duplicates-api/index.html',
+  'stripe-radar-lists-api/index.html',
+  'paddle-adjustment-get-api/index.html',
+  'clerk-sign-in-tokens-api/index.html',
+  'auth0-captcha-settings-api/index.html',
+  'cloudflare-api-shield-jwt-issuer-api/index.html',
+  'cloudflare-api-shield-schema-errors-api/index.html',
+  'netlify-edge-functions-geo-subdivision-api/index.html',
+  'neon-branch-expiration-api/index.html',
+  'vercel-firewall-custom-rules-api/index.html',
+  'openai-videos-retrieve-file-api/index.html',
+  'groq-files-content-api/index.html',
+  'huggingface-jobs-stop-api/index.html',
+  'figma-mcp-code-connect-publish-api/index.html',
+  'github-copilot-billing-usage-api/index.html',
+  'gitlab-duo-self-hosted-features-status-api/index.html',
+  'notion-data-sources-restore-api/index.html',
+  'slack-lists-records-get-api/index.html',
 ];
