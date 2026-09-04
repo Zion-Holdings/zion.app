@@ -147,6 +147,8 @@ export const PIN_PATHS = [
   'ai/it-support-florianopolis/index.html',
   'ai/it-support-curitiba/index.html',
   'ai/it-support-balneario-camboriu/index.html',
+  'direitos-globais/index.html',
+  'roteiros/industrias/index.html',
   'tools/2026-ma-due-diligence-checklist/index.html',
   'service-comparison/index.html',
   'testimonials/index.html',

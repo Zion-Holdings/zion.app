@@ -3592,4 +3592,10 @@ export const SERP_CLOSER_PATHS = [
   'ai/it-support-florianopolis/index.html',
   'ai/it-support-curitiba/index.html',
   'ai/it-support-balneario-camboriu/index.html',
+  'direitos-globais/index.html',
+  'roteiros/direitos-ambientais/index.html',
+  'roteiros/direitos-humanos/index.html',
+  'roteiros/direitos-sociais/index.html',
+  'roteiros/direitos-trabalhistas/index.html',
+  'roteiros/industrias/index.html',
 ];

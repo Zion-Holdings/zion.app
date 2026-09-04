@@ -49,6 +49,7 @@ function closerCanonical(rel) {
   if (rel.startsWith('tools/')) return '/tools/';
   if (rel.startsWith('solutions/')) return '/solutions/';
   if (/^ai\/it-support-/.test(rel)) return '/it-support/';
+  if (rel.startsWith('direitos-globais') || rel.startsWith('roteiros/')) return '/services/';
   if (rel.startsWith('community/')) return '/';
   if (rel.startsWith('privacy-policy')) return '/privacy/';
   if (/^(industry|trust|government|composio-stack|whatsapp-automation)\//.test(rel)) return '/';
