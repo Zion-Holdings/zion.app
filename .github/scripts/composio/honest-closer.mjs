@@ -38,6 +38,7 @@ export function titleFromSlug(slug) {
     .replace(/\bDevtools\b/g, 'DevTools')
     .replace(/\bSte Genevieve\b/g, 'Ste. Genevieve')
     .replace(/\bCodegen\b/g, 'Codegen')
+    .replace(/\bRespond To\b/g, 'Respond to')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6263,4 +6264,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-self-hosted-models-config-api/index.html',
   'slack-lists-records-views-delete-api/index.html',
   'notion-database-properties-api/index.html',
+  'park-hills/index.html',
+  'leadington/index.html',
+  'crystal-city/index.html',
+  'n8n-edit-fields-api/index.html',
+  'make-table-aggregator-api/index.html',
+  'n8n-respond-to-webhook-api/index.html',
+  'make-json-stringify-api/index.html',
+  'n8n-execute-workflow-api/index.html',
+  'stripe-issuing-disputes-api/index.html',
+  'paddle-subscription-pause-api/index.html',
+  'clerk-organization-settings-api/index.html',
+  'auth0-suspicious-ip-throttling-api/index.html',
+  'neon-role-grants-api/index.html',
+  'cloudflare-api-shield-expression-api/index.html',
+  'supabase-pg-squeeze-api/index.html',
+  'vercel-security-waf-api/index.html',
+  'netlify-edge-functions-cookies-api/index.html',
+  'huggingface-jobs-inspect-api/index.html',
+  'openai-videos-download-api/index.html',
+  'huggingface-jobs-fetch-api/index.html',
+  'figma-mcp-codegen-write-api/index.html',
+  'github-copilot-usage-metrics-api/index.html',
+  'gitlab-duo-self-hosted-config-api/index.html',
+  'slack-lists-records-delete-api/index.html',
+  'notion-database-schema-api/index.html',
 ];
