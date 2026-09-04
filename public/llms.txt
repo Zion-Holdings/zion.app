@@ -21,7 +21,7 @@
 
 There is no free consultation. Older `/consultation` and `calendly.com/ziontechgroup/30min` links are inactive. Public 2026 AI-consulting writeups price discovery in the thousands; Zion's live Discovery is $99.
 
-Leftover `/services/*`, `/ai-services/*`, and `/solutions/*` industry URLs (for example `/services/ai-legal-discovery-platform/`, `/solutions/construction-engineering/`, or `/ai-services/process-automation/`) are honest closers, not products. Leftover story URLs such as `/from-start-up-to-success-the-journey-of-zion-tech-group-in-it-services/` are not the homepage and do not mean Discovery was cancelled. They are not a $99 SKU and not a packaged RPA or cloud-migration catalog. The only $99 offer is the AI/IT Discovery at `/book/`.
+Leftover `/services/*`, `/ai-services/*`, and `/solutions/*` industry URLs (for example `/services/ai-legal-discovery-platform/`, `/solutions/construction-engineering/`, or `/ai-services/process-automation/`) are honest closers, not products. Leftover top-level SKU stubs such as `/5g-solutions/`, `/ai-chatbot-builder/`, `/ai-claims-automation/` are noindex closers (not a catalog). Leftover story URLs such as `/from-start-up-to-success-the-journey-of-zion-tech-group-in-it-services/` are not the homepage and do not mean Discovery was cancelled. They are not a $99 SKU and not a packaged RPA or cloud-migration catalog. The only $99 offer is the AI/IT Discovery at `/book/`.
 
 GitHub check `Workers Builds: ziontechgroup` is a Cloudflare hook on this repo, not the site build. Live Pages source is `legacy` / `gh-pages` / `/`. Do not treat that check as a site outage.
 
