@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T02:04Z:** All six 01:53Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~02:14:25Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Apex Discovery `$99`.
+
 **2026-09-04T02:00Z:** Workers Builds failed on `7de25553` — Cloudflare hook only. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since 01:53Z — do **not** remint. Deactivated 5 leftover livemode Stripe payment links that were **not** on `/plans/` (hosted_confirmation, no `/success-stories/` redirect): `plink_1UBIMt` / `1UBHpP` / `1UBHP2` / `1UBDcY` / `1UB5C1`. The four `/plans/` links stay active and still redirect `/success-stories/`. Charges still **$0**.
 
 **2026-09-04T01:56Z:** Workers Builds failed on `fd6fe848` + `a793e3ed` — Cloudflare hook only. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since 01:53Z — do **not** remint. Gmail has HubSpot login mail (human may be finishing OAuth) plus our Connect Link mail; no inbound sales. Remaining leftover IG reels commented (`18107294719511575`, `18029865749667021`, `18011806205719093`, `18088851823623224`). Pages **built** `85bc5c7`. Apex Discovery `$99`.
