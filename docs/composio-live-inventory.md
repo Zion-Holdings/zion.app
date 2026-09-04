@@ -3,6 +3,12 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T04:15Z:** All six 04:01Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~04:25:15Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Dual-wrote noindex for leftover w174 identity/security/ecommerce SERP SKUs (`w174-ecommerce-automation`, `data-lineage-tracker`, `stripe-financial-infrastructure`, `zero-trust-network-access`, DLP/WAF/MFA stubs) — gh-pages `6844286c`. Pages **built**. Apex Discovery `$99`. Stripe **$0**. Gmail = GH bots + Connect Link mail. Sheets **A128**. Notion appended. Linear **ZIO-225** commented. Workers Builds on `bd95ef2` / `c44cba6` is Cloudflare hook only. kleber@ **0 ACTIVE**.
+
+**2026-09-04T04:09Z:** Workers Builds failed on `bd95ef2` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:01Z remint** (expire ~04:11:32Z). Do **not** remint. Live leftover appwrite/dbt/SIEM `/services/` closers already noindex (`fe20a7ed`). Apex Discovery `$99`.
+
+**2026-09-04T04:04Z:** Stale 03:59 timer: kleber@ still INITIALIZING/INITIATED since **04:01Z remint** (expire ~04:11:32Z). Do **not** remint. Dual-wrote noindex for leftover observability/IaC SERP SKUs (keycloak, grafana, terraform, trivy, pulumi, cloudflare-workers, managed-soc) — gh-pages `54f76063`. Apex Discovery `$99`.
+
 **2026-09-04T04:01Z:** All six 03:49Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~04:11:32Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Leftover w174/w177 pipeline SKUs noindex (`2d0b8b24`). Workers Builds on `a8c4da9` + `e526707` is Cloudflare hook only. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T03:56Z:** Stale 03:48 timer: kleber@ still INITIALIZING/INITIATED since **03:49Z remint** (expire ~03:59:00Z). Do **not** remint. Dual-wrote noindex for leftover w174/w176 hybrid-cloud SERP SKUs (`w174-data-contracts`, `w176-ai-voice-assistant-factory`, `cloud-hybrid-orchestration`, `data-lake-platform`) — gh-pages `3bba829d`. Apex Discovery `$99`.
