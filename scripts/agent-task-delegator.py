@@ -11,8 +11,8 @@ import sys
 import json
 from datetime import datetime, timezone
 
-REPO = os.environ.get("REPO", "/data/data/com.termux/files/home/ztg/repo")
-OUT = os.environ.get("AGENT_TASK_DELEGATOR_OUT", "/data/data/com.termux/files/home/ztg/repo/tmp/agent_task_delegator_report.json")
+REPO = os.environ.get("REPO", "/Users/klebergarciaalcatrao/zion-support.github.io")
+OUT = os.environ.get("AGENT_TASK_DELEGATOR_OUT", "/Users/klebergarciaalcatrao/zion-support.github.io/tmp/agent_task_delegator_report.json")
 
 
 def main():
