@@ -10,8 +10,12 @@ permissions:
   pages: write
   id-token: write
 
+# Stay disabled. This job copies leftover main public/ (Portuguese
+# "Automação e IA" homepage) onto GitHub Pages via deploy-pages@v4 and
+# overwrites the honest Discovery $99 site from legacy gh-pages.
 jobs:
   build-and-deploy:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
