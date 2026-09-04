@@ -32,6 +32,9 @@ export function titleFromSlug(slug) {
     .replace(/\bJson\b/g, 'JSON')
     .replace(/\bCsv\b/g, 'CSV')
     .replace(/\bIp\b/g, 'IP')
+    .replace(/\bPdf\b/g, 'PDF')
+    .replace(/\bFdw\b/g, 'FDW')
+    .replace(/\bAutotrain\b/g, 'AutoTrain')
     .replace(/\bO1\b/g, 'o1')
     .replace(/\bCi\b/g, 'CI')
     .replace(/\bRest API\b/g, 'REST API')
@@ -5910,4 +5913,29 @@ export const SERP_CLOSER_PATHS = [
   'github-secret-scanning-api/index.html',
   'linear-sla-api/index.html',
   'github-copilot-metrics-api/index.html',
+  'kirksville/index.html',
+  'sedalia/index.html',
+  'rolla/index.html',
+  'n8n-execution-timeout-api/index.html',
+  'make-repeater-api/index.html',
+  'n8n-wait-node-api/index.html',
+  'make-router-api/index.html',
+  'n8n-sticky-notes-api/index.html',
+  'stripe-radar-reviews-api/index.html',
+  'stripe-tax-transactions-api/index.html',
+  'auth0-breached-password-api/index.html',
+  'neon-private-link-api/index.html',
+  'supabase-wrappers-fdw-api/index.html',
+  'cloudflare-load-balancer-pools-api/index.html',
+  'vercel-speed-insights-api/index.html',
+  'netlify-large-media-api/index.html',
+  'openai-batch-vision-api/index.html',
+  'anthropic-pdf-api/index.html',
+  'groq-compound-mini-api/index.html',
+  'huggingface-autotrain-api/index.html',
+  'openai-web-search-api/index.html',
+  'gitlab-package-registry-api/index.html',
+  'github-dependabot-alerts-api/index.html',
+  'github-rulesets-api/index.html',
+  'slack-ai-search-api/index.html',
 ];
