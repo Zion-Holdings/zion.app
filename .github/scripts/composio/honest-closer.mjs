@@ -15,6 +15,7 @@ export function titleFromSlug(slug) {
     .replace(/\bLatam\b/g, 'LATAM')
     .replace(/\bApi\b/g, 'API')
     .replace(/\bKv\b/g, 'KV')
+    .replace(/\bLlama3\b/g, 'Llama 3')
     .replace(/\bRest API\b/g, 'REST API')
     .replace(/\bCdn\b/g, 'CDN')
     .replace(/\bSase\b/g, 'SASE')
@@ -5640,4 +5641,29 @@ export const SERP_CLOSER_PATHS = [
   'notion-comments-api/index.html',
   'linear-projects-api/index.html',
   'github-actions-api/index.html',
+  'manhattan/index.html',
+  'emporia/index.html',
+  'dodge-city/index.html',
+  'n8n-folders-api/index.html',
+  'make-templates-api/index.html',
+  'n8n-audit-logs-api/index.html',
+  'make-keys-api/index.html',
+  'stripe-connect-api/index.html',
+  'paddle-payouts-api/index.html',
+  'clerk-invitations-api/index.html',
+  'auth0-connections-api/index.html',
+  'neon-auth-api/index.html',
+  'supabase-auth-api/index.html',
+  'cloudflare-pages-api/index.html',
+  'cloudflare-analytics-api/index.html',
+  'vercel-postgres-api/index.html',
+  'openai-audio-api/index.html',
+  'anthropic-token-api/index.html',
+  'figma-webhooks-api/index.html',
+  'groq-llama3-api/index.html',
+  'openai-moderations-api/index.html',
+  'notion-search-api/index.html',
+  'linear-teams-api/index.html',
+  'github-packages-api/index.html',
+  'slack-emoji-api/index.html',
 ];
