@@ -54,6 +54,9 @@ export function titleFromSlug(slug) {
     .replace(/\bSt Charles\b/g, 'St. Charles')
     .replace(/\bSt Peters\b/g, 'St. Peters')
     .replace(/\bO Fallon\b/g, "O'Fallon")
+    .replace(/\bWebster Groves\b/g, 'Webster Groves')
+    .replace(/\bUniversity City\b/g, 'University City')
+    .replace(/\bMaryland Heights\b/g, 'Maryland Heights')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -6738,4 +6741,29 @@ export const SERP_CLOSER_PATHS = [
   'slack-lists-items-add-api/index.html',
   'slack-lists-records-list-api/index.html',
   'imperial/index.html',
+  'brentwood/index.html',
+  'clayton/index.html',
+  'webster-groves/index.html',
+  'n8n-item-lists-combine-api/index.html',
+  'make-array-iterator-api/index.html',
+  'n8n-split-out-items-api/index.html',
+  'make-text-parser-module-api/index.html',
+  'stripe-radar-value-list-item-api/index.html',
+  'paddle-customer-get-api/index.html',
+  'auth0-mfa-reset-api/index.html',
+  'clerk-sign-in-tokens-create-api/index.html',
+  'auth0-guardian-enrollments-api/index.html',
+  'cloudflare-api-shield-jwt-key-list-api/index.html',
+  'vercel-firewall-ip-range-api/index.html',
+  'neon-branch-restore-history-api/index.html',
+  'supabase-pg-prewarm-buffer-api/index.html',
+  'cloudflare-api-shield-schema-check-api/index.html',
+  'openai-files-wait-api/index.html',
+  'groq-files-get-api/index.html',
+  'huggingface-jobs-retry-api/index.html',
+  'figma-mcp-code-connect-validate-api/index.html',
+  'github-copilot-usage-stats-api/index.html',
+  'notion-data-sources-get-api/index.html',
+  'slack-lists-items-remove-api/index.html',
+  'slack-lists-records-add-api/index.html',
 ];
