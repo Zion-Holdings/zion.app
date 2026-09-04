@@ -29,6 +29,7 @@ export function titleFromSlug(slug) {
     .replace(/\bDb\b/g, 'DB')
     .replace(/\bV3\b/g, 'v3')
     .replace(/\bSelf Hosted\b/g, 'Self-Hosted')
+    .replace(/\bClient Side\b/g, 'Client-Side')
     .replace(/\bPgbouncer\b/g, 'PgBouncer')
     .replace(/\bXml\b/g, 'XML')
     .replace(/\bHtml\b/g, 'HTML')
@@ -6129,4 +6130,29 @@ export const SERP_CLOSER_PATHS = [
   'gitlab-duo-workflow-catalog-api/index.html',
   'slack-lists-records-sort-api/index.html',
   'notion-wiki-api/index.html',
+  'union/index.html',
+  'dexter/index.html',
+  'malden/index.html',
+  'n8n-decompress-node-api/index.html',
+  'make-parse-xml-api/index.html',
+  'make-to-string-api/index.html',
+  'n8n-rename-keys-node-api/index.html',
+  'n8n-limit-node-api/index.html',
+  'n8n-remove-duplicates-api/index.html',
+  'stripe-issuing-personalization-api/index.html',
+  'paddle-client-side-tokens-api/index.html',
+  'clerk-organization-domains-api/index.html',
+  'auth0-custom-domain-verification-api/index.html',
+  'cloudflare-api-shield-jwt-validation-api/index.html',
+  'supabase-pg-cron-jobs-api/index.html',
+  'vercel-security-headers-api/index.html',
+  'netlify-edge-functions-secrets-api/index.html',
+  'openai-videos-remix-api/index.html',
+  'groq-compound-max-api/index.html',
+  'huggingface-jobs-hardware-api/index.html',
+  'figma-mcp-code-connect-api/index.html',
+  'github-copilot-chat-completions-api/index.html',
+  'gitlab-duo-self-hosted-models-api/index.html',
+  'slack-lists-records-group-api/index.html',
+  'notion-teamspaces-api/index.html',
 ];
