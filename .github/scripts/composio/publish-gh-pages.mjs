@@ -132,6 +132,7 @@ export const PIN_PATHS = [
   'about/index.html',
   'heritage/index.html',
   'composio/index.html',
+  'status/index.html',
   'privacy/index.html',
   'services/index.html',
   'ai-services/index.html',
@@ -168,13 +169,30 @@ async function main() {
   const props = schema.data?.input_parameters?.properties || schema.data?.parameters?.properties || {};
   console.log('commit schema keys', Object.keys(props));
 
+  const leftover = (html) =>
+    html.includes('_next/static')
+    || html.includes('Get Free Consultation')
+    || html.includes('Automação e IA para Empresas')
+    || html.includes('Pague por Resultado')
+    || html.includes('Comparação de Serviços')
+    || html.includes('Resultados dos Clientes')
+    || html.includes('Get a Free Proposal')
+    || html.includes('>Free Consultation<');
+
   // GitHub Pages is serving public/ when that folder exists. Write both roots.
+  // Never dual-write leftover Next.js / PT SEO — that would overwrite live closers.
   const upserts = [];
+  let skipped = 0;
   for (const rel of PUBLISH_PATHS) {
     const content = readFileSync(new URL(`../../../${rel}`, import.meta.url), 'utf8');
+    if (leftover(content)) {
+      skipped += 1;
+      continue;
+    }
     upserts.push({ path: rel, content, encoding: 'utf-8' });
     upserts.push({ path: `public/${rel}`, content, encoding: 'utf-8' });
   }
+  console.log('publish upserts', upserts.length, 'skipped leftover', skipped);
   upserts.push({ path: 'public/.nojekyll', content: '', encoding: 'utf-8' });
   upserts.push({ path: 'public/CNAME', content: 'ziontechgroup.com\n', encoding: 'utf-8' });
 

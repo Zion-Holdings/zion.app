@@ -29,6 +29,9 @@ function isLeftoverHtml(html) {
     || html.includes('Get Free Consultation')
     || html.includes('Automação e IA para Empresas')
     || html.includes('Pague por Resultado')
+    || html.includes('Comparação de Serviços')
+    || html.includes('Resultados dos Clientes')
+    || html.includes('Get a Free Proposal')
     || html.includes('>Free Consultation<');
 }
 

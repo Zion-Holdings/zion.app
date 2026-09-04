@@ -2,6 +2,10 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T01:30Z:** 01:26 TTL: HubSpot still **INITIATED** since 01:16Z — do **not** remint. Jira/noCRM/Perplexity/Drive/Cloudflare MCP were **EXPIRED** — reminted, expire **~01:40:42Z**. Slack/Telegram/Resend notified. LinkedIn personal post published (`urn:li:share:7501451581482057728`) pointing at `/book/` + `/plans/`. Instagram leftover marketplace reels now have honest `$99` comments: `18281173033250250` / `18092303218613125` / `18095750605588308` / `18000775103412746`. Hugging Face `CREATE_REPO` **denied** (no write on `kleberalcatrao`). Local leftover PT `service-comparison` + `testimonials` replaced with noindex closers (live already honest). `publish-gh-pages.mjs` now **skips** leftover Next.js / PT SEO instead of dual-writing it over live closers. Sheets **A39**. Stripe still **$0** charges. Pages **built**. Apex Discovery `$99`.
+
+**2026-09-04T01:20Z:** kleber@ still INITIALIZING/INITIATED since 01:16Z — do **not** remint. Instagram leftover marketplace reel (`18281173033250250`) now has an honest Discovery `$99` comment (`18094987124084256`). Telegram bot commands refreshed (`start`/`discovery`/`plans`/`about`/`status`). Linear `issueCreate` **USAGE_LIMIT_EXCEEDED** (free workspace) — leftover ZIO-270–279 stay; do not email them. OpenRouter **45.20 / 45** used. Brevo still 401 unrecognized IP. WhatsApp Graph `780439071624836` missing permissions. Slack/Sheets **A101**/Notion updated. Live Discovery `$99`.
+
 **2026-09-04T01:16Z:** Workers Builds failed on `6855f9` + `33dc3fe` — Cloudflare hook only. Do **not** add `wrangler.toml`. Pages **built**. Apex Discovery `$99`. 01:13 skip was correct then; by 01:16 all six 01:03Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~01:26:37Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED.
 
 **2026-09-04T01:13Z:** 01:12 timer: kleber@ still INITIALIZING/INITIATED since 01:03Z (past ~01:13:20 TTL) — do **not** remint. Apex Discovery `$99`. `/cpa/` + WhatsApp closers live. Tavily still titles leftover `?p=` WordPress URLs; those serve Discovery. GCal leftover primesecured/tsia follow-ups — do not retry. No remaining `Get a Free Proposal` in `public/`. Next remint poll ~01:23Z.
@@ -137,8 +141,8 @@ Previous docs claimed Gmail, Notion, Slack, Linear, Airtable, and GitHub were mi
 | Tavily | Researcher plan, 29/1000 searches | Competitive research |
 | SerpAPI | Google Light + Search | SEO / SERP monitoring |
 | Hunter | Free plan **quota exhausted** (0/50 searches) | Lead enrichment |
-| LinkedIn | Kleber Alcatrao, CEO Zion Holdings | Thought leadership |
-| Instagram | `@zion.tech.group` · 2,946 followers · website still `ziontechgroup.com.br` | Social proof |
+| LinkedIn | Kleber Alcatrao, CEO Zion Holdings — Discovery `$99` post `urn:li:share:7501451581482057728` (2026-09-04). No `r_organization_admin`. | Thought leadership |
+| Instagram | `@zion.tech.group` · 2,946 followers · website still `ziontechgroup.com.br`. Honest `$99` comments on leftover marketplace reels `18281173033250250`, `18092303218613125`, `18095750605588308`, `18000775103412746`. | Social proof |
 | YouTube | `@ziontechgroup` · 13 subs · 11 videos · 5,888 views | Video SEO |
 | Discord | `kleberalcatrao` | Community (personal guilds, no Zion server yet) |
 | Telegram | Bot `@Composio_Kleber_bot` in **Zion Agents** `@ziontechgroup_agents` | Ops + agent replies |
