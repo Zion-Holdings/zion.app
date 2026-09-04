@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T10:27Z:** Stale `remint-composio-10-20` fired at remint time. kleber@ 10:22Z rows still **INITIALIZING/INITIATED** (HubSpot `ca_9fKCuRF7wraZ` / `lk_QfNjX4E66FIK`, expire **~10:32:53Z**). Do **not** remint. Timer `remint-composio-10-32` already set. Restored honest `/solutions/` hub (was leftover leftover noindex closer while listed in the 35-URL sitemap) and pinned remaining honest sitemap hubs in `pages.yml`. Leftover leftover origin/main sitemap coverage on feature + gh-pages is **0** remaining. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
+
 **2026-09-04T10:22Z:** All six 10:11Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~10:32:53Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_QfNjX4E66FIK`. Workers Builds on `116e1966` is Cloudflare hook only. Required GitHub statuses = **0**. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
 
 **2026-09-04T10:11Z:** All six 09:58Z kleber@ rows **EXPIRED** (stale `remint-composio-09-56` fired late). Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~10:21:08Z**. Slack/Telegram/Resend/Airtable/Sheets/Notion/Linear notified. Do **not** remint while INITIALIZING/INITIATED. HubSpot `lk_inS1tB6Fz9P-`. Closed leftover leftover `/out/` SKU 404s. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
