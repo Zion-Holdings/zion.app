@@ -22,9 +22,11 @@ export function titleFromSlug(slug) {
     .replace(/\bGpt4o\b/g, 'GPT-4o')
     .replace(/\bGpt4\b/g, 'GPT-4')
     .replace(/\bGpt35\b/g, 'GPT-3.5')
+    .replace(/\bLlama33\b/g, 'Llama 3.3')
     .replace(/\bLlama32\b/g, 'Llama 3.2')
     .replace(/\bLlama31\b/g, 'Llama 3.1')
     .replace(/\bMcpherson\b/g, 'McPherson')
+    .replace(/\bSt Joseph\b/g, 'St. Joseph')
     .replace(/\bSonnet35\b/g, 'Sonnet 3.5')
     .replace(/\bHttp\b/g, 'HTTP')
     .replace(/\bJson\b/g, 'JSON')
@@ -5856,4 +5858,29 @@ export const SERP_CLOSER_PATHS = [
   'github-actions-cache-api/index.html',
   'gitlab-pages-api/index.html',
   'n8n-mcp-api/index.html',
+  'joplin/index.html',
+  'cape-girardeau/index.html',
+  'st-joseph/index.html',
+  'n8n-community-packages-api/index.html',
+  'n8n-custom-nodes-api/index.html',
+  'make-error-handling-api/index.html',
+  'stripe-customers-api/index.html',
+  'paddle-report-api/index.html',
+  'clerk-saml-connections-api/index.html',
+  'auth0-attack-protection-api/index.html',
+  'neon-regions-api/index.html',
+  'supabase-wrappers-api/index.html',
+  'cloudflare-spectrum-load-api/index.html',
+  'vercel-microfrontends-api/index.html',
+  'netlify-split-testing-api/index.html',
+  'openai-gpt4-vision-api/index.html',
+  'anthropic-prompt-caching-api/index.html',
+  'figma-variables-graphql-api/index.html',
+  'groq-llama33-api/index.html',
+  'huggingface-endpoints-billing-api/index.html',
+  'github-codespaces-billing-api/index.html',
+  'gitlab-terraform-api/index.html',
+  'slack-canvas-blocks-api/index.html',
+  'slack-workflows-api/index.html',
+  'openai-structured-outputs-api/index.html',
 ];
