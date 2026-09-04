@@ -2,6 +2,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T02:53Z:** Stale 02:49 timer: kleber@ still INITIALIZING/INITIATED since **02:50Z remint** (expire ~03:00:58Z). Do **not** remint. Competing `gh-pages` `8308559a` dumped 10 leftover **Advisor Smart / Self-optimizing** SKUs under `public/services/` (`index, follow`, fake catalog). Dual-wrote noindex closers `9affc43b` (Pages **built**). Apex still Discovery `$99`. Workers Builds remains the Cloudflare hook.
+
 **2026-09-04T02:50Z:** Workers Builds failed on `03d7a27c` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. 02:49 skip was correct then; by 02:50 all six 02:39Z kleber@ rows were **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~03:00:58Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Apex Discovery `$99`.
 
 **2026-09-04T02:49Z:** Workers Builds failed on `e77e87e` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since 02:39Z (TTL ~02:49:39Z) — do **not** remint. `pages.yml` pins now include honest `/404/`, `/status/service-health/`, `/service-comparison/`, `/testimonials/`. Gmail: HubSpot welcome from 02:10Z but no ACTIVE on kleber@; no inbound sales. Apex Discovery `$99`.
