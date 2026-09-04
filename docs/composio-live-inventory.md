@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T04:34Z:** Workers Builds failed on `e7583ce` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:27Z remint** (expire ~04:37:56Z). Do **not** remint. Dual-wrote noindex for leftover Next.js AI blog SEO stubs (FinOps, AIops, LATAM consulting) — gh-pages `199f0068`. Apex Discovery `$99`.
+
 **2026-09-04T04:31Z:** Workers Builds failed on `05c030f` / `b6ae9d0` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. kleber@ still INITIALIZING/INITIATED since **04:27Z remint** (expire ~04:37:56Z). Do **not** remint. Dual-wrote noindex for leftover consulting/ops + hashed autonomous + PT `consultoria-de-clientes` SERP SKUs — gh-pages `f5935a22`. Left money pages `/services/ai-services/` `/services/cloud-services/` untouched. Apex Discovery `$99`.
 
 **2026-09-04T04:27Z:** All six 04:15Z kleber@ rows **EXPIRED**. Reminted HubSpot/Jira/noCRM/Perplexity/Drive/Cloudflare MCP expire **~04:37:56Z**. Slack/Telegram/Resend notified. Do **not** remint while INITIALIZING/INITIATED. Workers Builds on `5d7ad5f` is Cloudflare hook only. Required GitHub statuses = **0**. Apex Discovery `$99`. kleber@ **0 ACTIVE**.
