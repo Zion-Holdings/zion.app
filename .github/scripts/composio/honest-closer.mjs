@@ -72,6 +72,16 @@ export function titleFromSlug(slug) {
     .replace(/\bLangsmith\b/g, 'LangSmith')
     .replace(/\bPlanetscale\b/g, 'PlanetScale')
     .replace(/\bOnprem\b/g, 'On-prem')
+    .replace(/\bWorkos\b/g, 'WorkOS')
+    .replace(/\bOkta\b/g, 'Okta')
+    .replace(/\bLangfuse\b/g, 'Langfuse')
+    .replace(/\bHelicone\b/g, 'Helicone')
+    .replace(/\bTypeform\b/g, 'Typeform')
+    .replace(/\bGumroad\b/g, 'Gumroad')
+    .replace(/\bFly Io\b/g, 'Fly.io')
+    .replace(/\bPolar Sh\b/g, 'Polar.sh')
+    .replace(/\bTawk To\b/g, 'Tawk.to')
+    .replace(/\bGithub\b/g, 'GitHub')
     .replace(/\bNfe\b/g, 'NF-e')
     .replace(/\bIso9001\b/g, 'ISO 9001')
     .replace(/\bIso20000\b/g, 'ISO 20000')
@@ -4875,4 +4885,62 @@ export const SERP_CLOSER_PATHS = [
   'langchain-hub/index.html',
   'langsmith/index.html',
   'openai-realtime/index.html',
+  'phoenix/index.html',
+  'minneapolis/index.html',
+  'portland/index.html',
+  'philadelphia/index.html',
+  'baltimore/index.html',
+  'detroit/index.html',
+  'cleveland/index.html',
+  'pittsburgh/index.html',
+  'calgary/index.html',
+  'edmonton/index.html',
+  'ottawa/index.html',
+  'quebec-city/index.html',
+  'melbourne/index.html',
+  'auckland/index.html',
+  'cape-town/index.html',
+  'johannesburg/index.html',
+  'lagos/index.html',
+  'nairobi/index.html',
+  'cairo/index.html',
+  'riyadh/index.html',
+  'doha/index.html',
+  'kuwait-city/index.html',
+  'mumbai/index.html',
+  'bangalore/index.html',
+  'delhi/index.html',
+  'jakarta/index.html',
+  'bangkok/index.html',
+  'seoul/index.html',
+  'taipei/index.html',
+  'hong-kong/index.html',
+  'shanghai/index.html',
+  'beijing/index.html',
+  'cognito-hosted/index.html',
+  'okta-login/index.html',
+  'workos-sso/index.html',
+  'clerk-orgs/index.html',
+  'railway-console/index.html',
+  'render-dash/index.html',
+  'fly-io-dash/index.html',
+  'pinecone-console/index.html',
+  'weaviate-cloud/index.html',
+  'qdrant-cloud/index.html',
+  'langfuse/index.html',
+  'helicone/index.html',
+  'braintrust/index.html',
+  'n8n-enterprise/index.html',
+  'zapier-functions/index.html',
+  'make-modules/index.html',
+  'stripe-billing/index.html',
+  'polar-sh/index.html',
+  'gumroad-pay/index.html',
+  'intercom-messenger/index.html',
+  'crisp-chat/index.html',
+  'tawk-to/index.html',
+  'notion-forms/index.html',
+  'airtable-forms/index.html',
+  'typeform-embed/index.html',
+  'github-codespaces/index.html',
 ];
