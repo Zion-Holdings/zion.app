@@ -3,6 +3,8 @@
 
 Verified 2026-09-03 against Composio REST API v3.1 (`GET /connected_accounts`). Re-applied onto rewritten `origin/main` (root static export). Public pages: `/book/`, `/heritage/`, `/paid-consultation/`, `/plans/`, `/composio/`, `/composio-vs-zapier/`, `/privacy/`, `/terms/`, `/cookies/`, `/partners/`, `/affiliate/`, `/growth/`, `/press/`.
 
+**2026-09-04T05:50Z:** Workers Builds failed on `6df1a4e3` / `9fbb7673` — Cloudflare hook only. Required GitHub statuses = **0**. Leftover leftover `ai-services` ops live noindex (`ff99b520`). Dual-writing leftover leftover category hubs (cookie-policy/custom-dev/cyber/data/devops/email). Leave live `/docs/` `/blog/` `/services/` `/cookies/` hubs. kleber@ INITIALIZING since **05:40Z remint** (expire ~05:50:57Z). Do **not** remint unless EXPIRED. Apex Discovery `$99`.
+
 **2026-09-04T05:48Z:** Dual-wrote leftover leftover `ai-services` children — gh-pages `90f0ca95`, feature `6df1a4e3`. Hub `/ai-services/` and money `/services/ai-services/` left untouched. Finishing remaining leftover leftover `ai-services` children (responsible-AI / strategy / BI / ops). kleber@ INITIALIZING since **05:40Z remint** (expire ~05:50:57Z). Do **not** remint. Apex Discovery `$99`. Sheets **A144**. Required GitHub statuses = **0**.
 
 **2026-09-04T05:46Z:** Workers Builds failed on `9858d088` / `9f49ec25` / `742dbd91` / `352108ab` / `bd87ec98` / `4a371851` — Cloudflare hook only. Required GitHub statuses = **0**. Do **not** add `wrangler.toml`. Leftover leftover cloud/cms/ai-lab closers live (`9559f068`). Dual-writing leftover leftover `ai-services` children (hub `/ai-services/` and money `/services/ai-services/` left untouched). kleber@ INITIALIZING since **05:40Z remint** (expire ~05:50:57Z). Do **not** remint. Apex Discovery `$99`.
