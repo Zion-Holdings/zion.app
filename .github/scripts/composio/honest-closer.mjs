@@ -16,6 +16,8 @@ export function titleFromSlug(slug) {
     .replace(/\bApi\b/g, 'API')
     .replace(/\bKv\b/g, 'KV')
     .replace(/\bDns\b/g, 'DNS')
+    .replace(/\bSsl\b/g, 'SSL')
+    .replace(/\bLdap\b/g, 'LDAP')
     .replace(/\bLlama3\b/g, 'Llama 3')
     .replace(/\bRest API\b/g, 'REST API')
     .replace(/\bCdn\b/g, 'CDN')
@@ -5692,4 +5694,29 @@ export const SERP_CLOSER_PATHS = [
   'github-gist-api/index.html',
   'slack-files-api/index.html',
   'gitlab-merge-api/index.html',
+  'junction-city/index.html',
+  'pittsburg/index.html',
+  'coffeyville/index.html',
+  'n8n-sharing-api/index.html',
+  'make-devices-api/index.html',
+  'n8n-ldap-api/index.html',
+  'make-hooks-api/index.html',
+  'stripe-checkout-api/index.html',
+  'paddle-discounts-api/index.html',
+  'clerk-organizations-roles-api/index.html',
+  'auth0-permissions-api/index.html',
+  'neon-console-api/index.html',
+  'supabase-storage-cdn-api/index.html',
+  'cloudflare-ssl-api/index.html',
+  'cloudflare-waf-api/index.html',
+  'vercel-edge-api/index.html',
+  'openai-completions-api/index.html',
+  'anthropic-usage-api/index.html',
+  'figma-components-api/index.html',
+  'groq-guard-api/index.html',
+  'openai-threads-api/index.html',
+  'notion-users-api/index.html',
+  'linear-comments-api/index.html',
+  'github-releases-api/index.html',
+  'slack-pins-api/index.html',
 ];
