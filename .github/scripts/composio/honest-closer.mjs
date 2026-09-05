@@ -249,6 +249,12 @@ export function titleFromSlug(slug) {
     .replace(/\bGalt\b/g, 'Galt')
     .replace(/\bBosworth\b/g, 'Bosworth')
     .replace(/\bTriplett\b/g, 'Triplett')
+    .replace(/\bKeytesville\b/g, 'Keytesville')
+    .replace(/\bSlater\b/g, 'Slater')
+    .replace(/\bArrow Rock\b/g, 'Arrow Rock')
+    .replace(/\bSweet Springs\b/g, 'Sweet Springs')
+    .replace(/\bCorder\b/g, 'Corder')
+    .replace(/\bMalta Bend\b/g, 'Malta Bend')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8309,4 +8315,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-board-api/index.html',
   'slack-lists-access-stalk-api/index.html',
   'notion-data-sources-solid-api/index.html',
+  'keytesville/index.html',
+  'slater/index.html',
+  'arrow-rock/index.html',
+  'sweet-springs/index.html',
+  'corder/index.html',
+  'malta-bend/index.html',
+  'n8n-merge-by-unthread-api/index.html',
+  'make-array-window-lace-api/index.html',
+  'n8n-item-lists-window-lace-api/index.html',
+  'make-array-window-unlace-api/index.html',
+  'n8n-item-lists-window-unlace-api/index.html',
+  'n8n-merge-by-thread-api/index.html',
+  'paddle-catalog-urn-api/index.html',
+  'stripe-radar-value-list-restrike-api/index.html',
+  'clerk-session-end-vine-api/index.html',
+  'auth0-mfa-recovery-walk-api/index.html',
+  'auth0-guardian-recovery-walk-api/index.html',
+  'cloudflare-api-shield-schema-complete-all-api/index.html',
+  'vercel-firewall-ip-blacklist-complete-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-complete-all-keys-api/index.html',
+  'huggingface-jobs-inspect-trail-api/index.html',
+  'github-copilot-seat-assignment-trail-api/index.html',
+  'figma-mcp-code-connect-frame-api/index.html',
+  'slack-lists-access-vine-api/index.html',
+  'notion-data-sources-firm-api/index.html',
 ];
