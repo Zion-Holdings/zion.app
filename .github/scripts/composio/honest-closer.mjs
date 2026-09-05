@@ -671,6 +671,12 @@ export function titleFromSlug(slug) {
     .replace(/\bWhitakerville\b/g, 'Whitakerville')
     .replace(/\bMount Moriah\b/g, 'Mount Moriah')
     .replace(/\bLake Viking\b/g, 'Lake Viking')
+    .replace(/\bEvona\b/g, 'Evona')
+    .replace(/\bPlatte City\b/g, 'Platte City')
+    .replace(/\bNorth Kansas City\b/g, 'North Kansas City')
+    .replace(/\bCrystal Lakes\b/g, 'Crystal Lakes')
+    .replace(/\bRidgely\b/g, 'Ridgely')
+    .replace(/\bDawn\b/g, 'Dawn')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10481,4 +10487,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-pongee-api/index.html',
   'slack-lists-access-rhytidome-api/index.html',
   'notion-data-sources-dazed-api/index.html',
+  'evona/index.html',
+  'platte-city/index.html',
+  'north-kansas-city/index.html',
+  'crystal-lakes/index.html',
+  'ridgely/index.html',
+  'dawn/index.html',
+  'n8n-merge-by-unyarn-api/index.html',
+  'make-array-window-splice-api/index.html',
+  'n8n-item-lists-window-splice-api/index.html',
+  'make-array-window-unsplice-api/index.html',
+  'n8n-item-lists-window-unsplice-api/index.html',
+  'n8n-merge-by-yarn-api/index.html',
+  'paddle-catalog-fenrir-api/index.html',
+  'stripe-radar-value-list-retuft-api/index.html',
+  'clerk-session-end-lenticel-api/index.html',
+  'auth0-mfa-recovery-zimarra-api/index.html',
+  'auth0-guardian-recovery-zimarra-api/index.html',
+  'cloudflare-api-shield-schema-rontoscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-rontoscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-rontoscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-tataki-api/index.html',
+  'github-copilot-seat-assignment-tataki-api/index.html',
+  'figma-mcp-code-connect-tussah-api/index.html',
+  'slack-lists-access-lenticel-api/index.html',
+  'notion-data-sources-hazy-api/index.html',
 ];
