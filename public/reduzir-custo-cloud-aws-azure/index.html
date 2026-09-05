@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reduzir custo de cloud AWS e Azure | Zion Tech Group</title>
+<meta name="description" content="Reduzir custo de cloud na AWS e Azure começando pelo desperdício: idle compute, volumes órfãos, contas sem dono e gasto GenAI sem envelope. Zion não inventa percentual de economia.">
+<link rel="canonical" href="https://ziontechgroup.com/reduzir-custo-cloud-aws-azure/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Reduzir custo de cloud AWS e Azure — comece pelo desperdício | Zion Tech Group">
+<meta property="og:description" content="Mapear donos na fatura, desligar o que não tem dono, rightsize, agendar non-prod — só depois RI/Savings Plans. Sem percentual inventado.">
+<meta property="og:url" content="https://ziontechgroup.com/reduzir-custo-cloud-aws-azure/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#070b16;color:#f4f7ff;line-height:1.65;min-height:100vh}
+a{color:#22d3ee;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:920px;margin:0 auto;padding:28px 20px 64px}
+nav.top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:24px;font-size:.92rem}
+nav.top .brand{font-weight:800;font-size:1.1rem;color:#22d3ee}
+h1{font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.22;margin:10px 0 14px;color:#f4f7ff}
+h2{color:#e2e8f0;font-size:1.3rem;margin:28px 0 12px}
+h3{color:#c4b5fd;font-size:1.05rem;margin:0 0 8px}
+.lead{color:#9aa8c7;font-size:1.06rem;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0}
+.card{background:#0e1628;border:1px solid #2a3654;border-radius:14px;padding:18px}
+.card p,.card li{color:#cbd5e1;font-size:.95rem}
+.btn{display:inline-block;margin:8px 8px 0 0;padding:12px 18px;border-radius:12px;font-weight:700;background:linear-gradient(100deg,#0069ff,#22d3ee);color:#fff;text-decoration:none}
+.btn.alt{background:transparent;border:1px solid #8b5cf6;color:#fff}
+.price{color:#22d3ee;font-weight:800}
+.muted{color:#9aa8c7}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.chip{background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.3);color:#67e8f9;border-radius:999px;padding:4px 12px;font-size:.8rem;font-weight:600}
+ol.steps{padding-left:20px}ol.steps li{margin:10px 0;color:#cbd5e1}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #2a3654;color:#8793ac;font-size:.9rem}
+.note{background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.35);border-radius:12px;padding:14px 16px;margin:18px 0;color:#e9d5ff}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Reduzir custo de cloud AWS e Azure",
+  "provider": {
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "364 E Main St STE 1008",
+      "addressLocality": "Middletown",
+      "addressRegion": "DE",
+      "postalCode": "19709",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-302-464-0950"
+  },
+  "url": "https://ziontechgroup.com/reduzir-custo-cloud-aws-azure/",
+  "description": "FinOps prático para AWS e Azure: mapear desperdício, donos e direitosizing antes de compromisso de longo prazo. Sem percentual de economia inventado.",
+  "areaServed": ["BR", "US"],
+  "offers": [
+    {"@type": "Offer", "name": "Discovery", "price": "99", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Consulting", "price": "499", "priceCurrency": "USD"}
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="top">
+  <a class="brand" href="/">Zion Tech Group</a>
+  <a href="/finops-estimator/">Estimador grátis</a>
+  <a href="/finops-consulting/">FinOps Consulting</a>
+  <a href="/discovery/">Discovery $99</a>
+  <a href="/plans/">Planos</a>
+</nav>
+
+<p class="muted">FinOps · AWS · Azure · GenAI spend</p>
+<h1>Reduzir custo de cloud na AWS e Azure — comece pelo desperdício</h1>
+<p class="lead">A fatura sobe. Alguém pede “corte 30%”. A Zion não inventa percentual de economia. Começamos pelo que está ligado sem dono, pelo volume órfão e pelo token GenAI sem envelope — depois rightsize e só então compromisso (RI / Savings Plans).</p>
+
+<div class="note">
+  <strong>Compromisso transparente:</strong> não prometemos X% de savings antes de ver a fatura e os owners. O número sai do mapa de desperdício, não de um slide genérico.
+</div>
+
+<div class="chips">
+  <span class="chip">Estimador grátis</span>
+  <span class="chip">Discovery $99</span>
+  <span class="chip">Consulting $499</span>
+  <span class="chip">Sem % inventado</span>
+</div>
+
+<p>
+  <a class="btn" href="/finops-estimator/">Estimador FinOps (grátis)</a>
+  <a class="btn alt" href="/discovery/">Discovery $99</a>
+  <a class="btn alt" href="https://wa.me/13024640950?text=quero%20reduzir%20custo%20de%20cloud">WhatsApp</a>
+</p>
+
+<section>
+  <h2>Onde o dinheiro vaza de verdade</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Idle compute</h3>
+      <p>Instâncias sempre ligadas, VMs sobredimensionadas, autoscaling que nunca reduz. Horas e donos primeiro — não um percentual mágico.</p>
+    </div>
+    <div class="card">
+      <h3>Volumes e IPs órfãos</h3>
+      <p>Discos desanexados, IPs elásticos esquecidos, load balancers sem tráfego, snapshots sem nome. Corte barato porque ninguém usa.</p>
+    </div>
+    <div class="card">
+      <h3>Contas e ambientes sem dono</h3>
+      <p>Dev, staging e “temporário” que viraram permanentes. Se não há owner na fatura, ninguém desliga.</p>
+    </div>
+    <div class="card">
+      <h3>Recursos sem tag</h3>
+      <p>Sem tag não há alocação por time ou produto. FinOps de verdade começa quando a contabilidade consegue ler a conta.</p>
+    </div>
+    <div class="card">
+      <h3>GenAI sem envelope</h3>
+      <p>Tokens, retries, embeddings e agentes sem teto de gasto. A linha de modelo precisa do mesmo board que compute.</p>
+    </div>
+    <div class="card">
+      <h3>Compromisso no momento errado</h3>
+      <p>RI ou Savings Plans antes de estabilizar uso. Ou on-demand onde o padrão já é previsível. Ordem importa.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Método que usamos (nessa ordem)</h2>
+  <ol class="steps">
+    <li><strong>Mapear donos a partir da fatura</strong> — quem é responsável por cada linha relevante? Conta, projeto, tag, centro de custo.</li>
+    <li><strong>Desligar o que não tem dono</strong> — idle e órfãos primeiro. Rápido, reversível, visível na próxima invoice.</li>
+    <li><strong>Rightsize</strong> — ajustar CPU/RAM/disco ao uso real depois que o lixo saiu.</li>
+    <li><strong>Agendar non-prod</strong> — desligar ou reduzir fora do horário de trabalho o que não precisa 24×7.</li>
+    <li><strong>Só então RI / Savings Plans</strong> — compromisso quando o padrão de uso já é estável o suficiente para justificar o prazo.</li>
+  </ol>
+  <p>Pular etapas e “comprar desconto” cedo costuma travar economia real e gera culpa de compromisso que não cabe mais.</p>
+</section>
+
+<section>
+  <h2>O que a Zion entrega</h2>
+  <div class="card">
+    <ul>
+      <li>Mapa de desperdício legível para engenharia e finanças.</li>
+      <li>Lista priorizada de ações (ligar/desligar, rightsize, schedule, tag).</li>
+      <li>Critério claro para quando (e se) fazer compromisso de longo prazo.</li>
+      <li>Quando fizer sentido, envelope de gasto para GenAI e agentes.</li>
+    </ul>
+    <p class="muted">Não vendemos “plataforma FinOps” genérica. O trabalho é diagnóstico + decisões + implementação do que o cliente priorizar.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Caminho comercial</h2>
+  <p><a href="/finops-estimator/">Estimador FinOps</a> é gratuito e ajuda a dimensionar o problema antes de qualquer pagamento.</p>
+  <p><span class="price">$99</span> Discovery — recorte de um ambiente ou fatura, relatório e sessão de 30 min em até 7 dias.</p>
+  <p><span class="price">$499</span> Consulting — aprofundamento e roadmap de cortes.</p>
+  <p>Implementação e operação contínua seguem os planos Starter / Growth descritos em <a href="/plans/">/plans/</a> e em <a href="/finops-consulting/">FinOps Consulting</a>.</p>
+</section>
+
+<section>
+  <h2>Para MSPs e times de plataforma</h2>
+  <p>MSPs que gerem várias contas de clientes precisam de visão por tenant e de playbook repetível — não de um relatório único e engavetado. Se esse é o seu caso, combine esta página com <a href="/para-msps/">para MSPs</a> e com a <a href="/consultoria-ia-empresas/">consultoria de IA</a> quando o gasto GenAI já faz parte da fatura.</p>
+</section>
+
+<section>
+  <h2>Perguntas frequentes</h2>
+  <div class="card">
+    <p><strong>Vocês garantem X% de redução?</strong><br>Não. Percentual só depois do mapa. Inventar número antes da fatura é marketing, não FinOps.</p>
+    <p><strong>Serve só para AWS?</strong><br>Não. AWS e Azure. O método (owner → idle → rightsize → schedule → compromisso) é o mesmo.</p>
+    <p><strong>E gasto de GenAI / tokens?</strong><br>Entra no mesmo board. Envelope e observabilidade de token são parte do diagnóstico quando a linha existe.</p>
+    <p><strong>Preciso de acesso root?</strong><br>No Discovery costuma bastar export de cost e billing + leitura de inventário. Acesso de mudança vem depois, com escopo combinado.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Próximo passo</h2>
+  <p>
+    <a class="btn" href="/finops-estimator/">Rodar estimador grátis</a>
+    <a class="btn alt" href="/discovery/">Discovery $99</a>
+    <a class="btn alt" href="https://wa.me/13024640950?text=quero%20reduzir%20custo%20de%20cloud">WhatsApp — quero reduzir custo de cloud</a>
+    <a class="btn alt" href="/finops-consulting/">FinOps Consulting</a>
+  </p>
+  <p class="muted">Relacionados: <a href="/consultoria-ia-empresas/">consultoria IA</a> · <a href="/para-msps/">para MSPs</a> · <a href="/plans/">planos</a> · <a href="/automacao-whatsapp-empresas/">automação WhatsApp</a></p>
+</section>
+
+<footer>
+  <p><strong>Zion Tech Group</strong><br>
+  364 E Main St STE 1008, Middletown DE 19709<br>
+  +1 302 464 0950 · <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a><br>
+  <a href="/privacidade/">Privacidade</a> · <a href="/">Home</a></p>
+</footer>
+</div>
+</body>
+</html>
