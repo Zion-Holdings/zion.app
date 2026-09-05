@@ -104,6 +104,8 @@ export function titleFromSlug(slug) {
     .replace(/\bCrystal Lake Park\b/g, 'Crystal Lake Park')
     .replace(/\bWilbur Park\b/g, 'Wilbur Park')
     .replace(/\bCastle Point\b/g, 'Castle Point')
+    .replace(/\bGlasgow Village\b/g, 'Glasgow Village')
+    .replace(/\bOld Jamestown\b/g, 'Old Jamestown')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7214,4 +7216,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-detach-api/index.html',
   'slack-lists-access-resume-api/index.html',
   'notion-data-sources-lock-api/index.html',
+  'glasgow-village/index.html',
+  'bellerive/index.html',
+  'mackenzie/index.html',
+  'sappington/index.html',
+  'lemay/index.html',
+  'old-jamestown/index.html',
+  'n8n-merge-by-id-api/index.html',
+  'make-array-pad-api/index.html',
+  'n8n-item-lists-pad-api/index.html',
+  'make-array-fill-api/index.html',
+  'n8n-item-lists-fill-api/index.html',
+  'n8n-merge-by-hash-api/index.html',
+  'stripe-radar-lists-item-delete-api/index.html',
+  'paddle-price-archive-api/index.html',
+  'clerk-session-revoke-all-api/index.html',
+  'auth0-mfa-email-disable-api/index.html',
+  'auth0-guardian-voice-enroll-api/index.html',
+  'vercel-firewall-ip-allowlist-replace-api/index.html',
+  'cloudflare-api-shield-schema-attach-api/index.html',
+  'vercel-firewall-ip-blacklist-replace-api/index.html',
+  'huggingface-jobs-inspect-profile-api/index.html',
+  'github-copilot-seat-assignment-resume-api/index.html',
+  'figma-mcp-code-connect-attach-api/index.html',
+  'slack-lists-access-freeze-api/index.html',
+  'notion-data-sources-unlock-api/index.html',
 ];
