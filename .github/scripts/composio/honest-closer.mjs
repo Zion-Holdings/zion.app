@@ -713,6 +713,12 @@ export function titleFromSlug(slug) {
     .replace(/\bOkete\b/g, 'Okete')
     .replace(/\bNew Truxton\b/g, 'New Truxton')
     .replace(/\bCappeln\b/g, 'Cappeln')
+    .replace(/\bPrices Branch\b/g, "Price's Branch")
+    .replace(/\bHarvester\b/g, 'Harvester')
+    .replace(/\bFamous\b/g, 'Famous')
+    .replace(/\bLippstadt\b/g, 'Lippstadt')
+    .replace(/\bGasconade\b/g, 'Gasconade')
+    .replace(/\bStolpe\b/g, 'Stolpe')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10698,4 +10704,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-scrim-api/index.html',
   'slack-lists-access-tracheid-api/index.html',
   'notion-data-sources-muzzy-api/index.html',
+  'prices-branch/index.html',
+  'harvester/index.html',
+  'famous/index.html',
+  'lippstadt/index.html',
+  'gasconade/index.html',
+  'stolpe/index.html',
+  'n8n-merge-by-unchain-api/index.html',
+  'make-array-window-shackle-api/index.html',
+  'n8n-item-lists-window-shackle-api/index.html',
+  'make-array-window-unshackle-api/index.html',
+  'n8n-item-lists-window-unshackle-api/index.html',
+  'n8n-merge-by-chain-api/index.html',
+  'paddle-catalog-amphiptere-api/index.html',
+  'stripe-radar-value-list-resole-api/index.html',
+  'clerk-session-end-parenchyma-api/index.html',
+  'auth0-mfa-recovery-crozier-api/index.html',
+  'auth0-guardian-recovery-crozier-api/index.html',
+  'cloudflare-api-shield-schema-nucleonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-nucleonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-nucleonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-jamon-api/index.html',
+  'github-copilot-seat-assignment-jamon-api/index.html',
+  'figma-mcp-code-connect-gabardine-api/index.html',
+  'slack-lists-access-parenchyma-api/index.html',
+  'notion-data-sources-woolly-api/index.html',
 ];
