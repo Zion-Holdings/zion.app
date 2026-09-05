@@ -557,6 +557,12 @@ export function titleFromSlug(slug) {
     .replace(/\bBoss\b/g, 'Boss')
     .replace(/\bThornfield\b/g, 'Thornfield')
     .replace(/\bHardenville\b/g, 'Hardenville')
+    .replace(/\bDugginsville\b/g, 'Dugginsville')
+    .replace(/\bElijah\b/g, 'Elijah')
+    .replace(/\bGentryville\b/g, 'Gentryville')
+    .replace(/\bZanoni\b/g, 'Zanoni')
+    .replace(/\bUdall\b/g, 'Udall')
+    .replace(/\bHowards Ridge\b/g, "Howard's Ridge")
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9892,4 +9898,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-linen-api/index.html',
   'slack-lists-access-pulvinus-api/index.html',
   'notion-data-sources-torpid-api/index.html',
+  'dugginsville/index.html',
+  'elijah/index.html',
+  'gentryville/index.html',
+  'zanoni/index.html',
+  'udall/index.html',
+  'howards-ridge/index.html',
+  'n8n-merge-by-ungusset-api/index.html',
+  'make-array-window-interline-api/index.html',
+  'n8n-item-lists-window-interline-api/index.html',
+  'make-array-window-uninterline-api/index.html',
+  'n8n-item-lists-window-uninterline-api/index.html',
+  'n8n-merge-by-gusset-api/index.html',
+  'paddle-catalog-troll-api/index.html',
+  'stripe-radar-value-list-rehem-api/index.html',
+  'clerk-session-end-lamina-api/index.html',
+  'auth0-mfa-recovery-fanon-api/index.html',
+  'auth0-guardian-recovery-fanon-api/index.html',
+  'cloudflare-api-shield-schema-teensy-all-api/index.html',
+  'vercel-firewall-ip-blacklist-teensy-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-teensy-all-keys-api/index.html',
+  'huggingface-jobs-inspect-quenelle-api/index.html',
+  'github-copilot-seat-assignment-quenelle-api/index.html',
+  'figma-mcp-code-connect-canvas-api/index.html',
+  'slack-lists-access-lamina-api/index.html',
+  'notion-data-sources-dormant-api/index.html',
 ];
