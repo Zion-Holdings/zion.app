@@ -502,6 +502,12 @@ export function titleFromSlug(slug) {
     .replace(/\bPapinville\b/g, 'Papinville')
     .replace(/\bUrich\b/g, 'Urich')
     .replace(/\bKnob Noster\b/g, 'Knob Noster')
+    .replace(/\bLa Tour\b/g, 'La Tour')
+    .replace(/\bRich Hill\b/g, 'Rich Hill')
+    .replace(/\bRaymore\b/g, 'Raymore')
+    .replace(/\bRiverview Estates\b/g, 'Riverview Estates')
+    .replace(/\bMonegaw Springs\b/g, 'Monegaw Springs')
+    .replace(/\bQuarles\b/g, 'Quarles')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9612,4 +9618,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-organza-api/index.html',
   'slack-lists-access-ligule-api/index.html',
   'notion-data-sources-calm-api/index.html',
+  'la-tour/index.html',
+  'rich-hill/index.html',
+  'raymore/index.html',
+  'riverview-estates/index.html',
+  'monegaw-springs/index.html',
+  'quarles/index.html',
+  'n8n-merge-by-unplacket-api/index.html',
+  'make-array-window-welt-api/index.html',
+  'n8n-item-lists-window-welt-api/index.html',
+  'make-array-window-unwelt-api/index.html',
+  'n8n-item-lists-window-unwelt-api/index.html',
+  'n8n-merge-by-placket-api/index.html',
+  'paddle-catalog-basilisk-api/index.html',
+  'stripe-radar-value-list-rethread-api/index.html',
+  'clerk-session-end-ramentum-api/index.html',
+  'auth0-mfa-recovery-dalmatic-api/index.html',
+  'auth0-guardian-recovery-dalmatic-api/index.html',
+  'cloudflare-api-shield-schema-puny-all-api/index.html',
+  'vercel-firewall-ip-blacklist-puny-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-puny-all-keys-api/index.html',
+  'huggingface-jobs-inspect-parisienne-api/index.html',
+  'github-copilot-seat-assignment-parisienne-api/index.html',
+  'figma-mcp-code-connect-chiffon-api/index.html',
+  'slack-lists-access-ramentum-api/index.html',
+  'notion-data-sources-rest-api/index.html',
 ];
