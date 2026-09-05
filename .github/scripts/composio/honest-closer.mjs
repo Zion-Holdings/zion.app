@@ -72,6 +72,11 @@ export function titleFromSlug(slug) {
     .replace(/\bSpanish Lake\b/g, 'Spanish Lake')
     .replace(/\bVelda City\b/g, 'Velda City')
     .replace(/\bHanley Hills\b/g, 'Hanley Hills')
+    .replace(/\bBellefontaine Neighbors\b/g, 'Bellefontaine Neighbors')
+    .replace(/\bFlordell Hills\b/g, 'Flordell Hills')
+    .replace(/\bBel Ridge\b/g, 'Bel-Ridge')
+    .replace(/\bBel Nor\b/g, 'Bel-Nor')
+    .replace(/\bCountry Club Hills\b/g, 'Country Club Hills')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7007,4 +7012,29 @@ export const SERP_CLOSER_PATHS = [
   'notion-data-sources-reorder-api/index.html',
   'slack-lists-access-describe-api/index.html',
   'slack-lists-access-inspect-api/index.html',
+  'bellefontaine-neighbors/index.html',
+  'flordell-hills/index.html',
+  'bel-ridge/index.html',
+  'bel-nor/index.html',
+  'country-club-hills/index.html',
+  'n8n-item-lists-reverse-api/index.html',
+  'make-array-first-api/index.html',
+  'n8n-merge-by-field-api/index.html',
+  'make-array-last-api/index.html',
+  'n8n-item-lists-first-api/index.html',
+  'make-array-compact-api/index.html',
+  'paddle-price-list-api/index.html',
+  'stripe-radar-rule-delete-api/index.html',
+  'paddle-discount-group-create-api/index.html',
+  'auth0-mfa-otp-verify-api/index.html',
+  'clerk-session-get-token-api/index.html',
+  'auth0-guardian-enroll-api/index.html',
+  'cloudflare-api-shield-jwt-key-import-api/index.html',
+  'vercel-firewall-ip-blacklist-api/index.html',
+  'cloudflare-api-shield-schema-import-api/index.html',
+  'huggingface-jobs-inspect-events-api/index.html',
+  'github-copilot-seat-assignment-create-api/index.html',
+  'figma-mcp-code-connect-export-api/index.html',
+  'notion-data-sources-duplicate-api/index.html',
+  'slack-lists-access-audit-api/index.html',
 ];
