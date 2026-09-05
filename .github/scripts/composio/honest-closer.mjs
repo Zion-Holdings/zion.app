@@ -453,6 +453,12 @@ export function titleFromSlug(slug) {
     .replace(/\bStotts City\b/g, 'Stotts City')
     .replace(/\bSouthwest City\b/g, 'Southwest City')
     .replace(/\bGinger Blue\b/g, 'Ginger Blue')
+    .replace(/\bLa Russell\b/g, 'La Russell')
+    .replace(/\bRedings Mill\b/g, 'Redings Mill')
+    .replace(/\bGrand Falls Plaza\b/g, 'Grand Falls Plaza')
+    .replace(/\bCliff Village\b/g, 'Cliff Village')
+    .replace(/\bShoal Creek Estates\b/g, 'Shoal Creek Estates')
+    .replace(/\bBowers Mill\b/g, 'Bowers Mill')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9363,4 +9369,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-glaze-api/index.html',
   'slack-lists-access-trichome-api/index.html',
   'notion-data-sources-lean-api/index.html',
+  'la-russell/index.html',
+  'redings-mill/index.html',
+  'grand-falls-plaza/index.html',
+  'cliff-village/index.html',
+  'shoal-creek-estates/index.html',
+  'bowers-mill/index.html',
+  'n8n-merge-by-undart-api/index.html',
+  'make-array-window-tuck-api/index.html',
+  'n8n-item-lists-window-tuck-api/index.html',
+  'make-array-window-untuck-api/index.html',
+  'n8n-item-lists-window-untuck-api/index.html',
+  'n8n-merge-by-dart-api/index.html',
+  'paddle-catalog-kraken-api/index.html',
+  'stripe-radar-value-list-recast-api/index.html',
+  'clerk-session-end-pilus-api/index.html',
+  'auth0-mfa-recovery-riddle-api/index.html',
+  'auth0-guardian-recovery-riddle-api/index.html',
+  'cloudflare-api-shield-schema-slight-all-api/index.html',
+  'vercel-firewall-ip-blacklist-slight-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-slight-all-keys-api/index.html',
+  'huggingface-jobs-inspect-macedoine-api/index.html',
+  'github-copilot-seat-assignment-macedoine-api/index.html',
+  'figma-mcp-code-connect-satin-api/index.html',
+  'slack-lists-access-pilus-api/index.html',
+  'notion-data-sources-brief-api/index.html',
 ];
