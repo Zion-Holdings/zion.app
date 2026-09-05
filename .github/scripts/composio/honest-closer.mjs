@@ -157,6 +157,9 @@ export function titleFromSlug(slug) {
     .replace(/\bHighlandville\b/g, 'Highlandville')
     .replace(/\bShell Knob\b/g, 'Shell Knob')
     .replace(/\bReed Spring\b/g, 'Reed Spring')
+    .replace(/\bWillow Springs\b/g, 'Willow Springs')
+    .replace(/\bMountain Grove\b/g, 'Mountain Grove')
+    .replace(/\bEdgar Springs\b/g, 'Edgar Springs')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7692,4 +7695,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-discard-api/index.html',
   'slack-lists-access-unstar-api/index.html',
   'notion-data-sources-pack-api/index.html',
+  'theodosia/index.html',
+  'cabool/index.html',
+  'licking/index.html',
+  'willow-springs/index.html',
+  'mountain-grove/index.html',
+  'edgar-springs/index.html',
+  'n8n-merge-by-intersect-api/index.html',
+  'make-array-window-intersect-api/index.html',
+  'n8n-item-lists-window-intersect-api/index.html',
+  'n8n-merge-by-except-api/index.html',
+  'make-array-window-except-api/index.html',
+  'n8n-item-lists-window-except-api/index.html',
+  'paddle-catalog-reveal-api/index.html',
+  'stripe-radar-value-list-seed-api/index.html',
+  'clerk-session-end-wear-api/index.html',
+  'auth0-mfa-recovery-pause-api/index.html',
+  'auth0-guardian-recovery-pause-api/index.html',
+  'cloudflare-api-shield-schema-void-all-api/index.html',
+  'vercel-firewall-ip-blacklist-void-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-void-all-keys-api/index.html',
+  'huggingface-jobs-inspect-undo-api/index.html',
+  'github-copilot-seat-assignment-bind-api/index.html',
+  'figma-mcp-code-connect-keep-api/index.html',
+  'slack-lists-access-hide-api/index.html',
+  'notion-data-sources-unpack-api/index.html',
 ];
