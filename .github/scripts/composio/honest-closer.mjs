@@ -91,6 +91,10 @@ export function titleFromSlug(slug) {
     .replace(/\bUplands Park\b/g, 'Uplands Park')
     .replace(/\bVelda Village\b/g, 'Velda Village')
     .replace(/\bMoline Acres\b/g, 'Moline Acres')
+    .replace(/\bBellerive Acres\b/g, 'Bellerive Acres')
+    .replace(/\bVinita Terrace\b/g, 'Vinita Terrace')
+    .replace(/\bGrantwood Village\b/g, 'Grantwood Village')
+    .replace(/\bTwin Oaks\b/g, 'Twin Oaks')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7126,4 +7130,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-link-api/index.html',
   'slack-lists-access-deny-api/index.html',
   'jennings/index.html',
+  'normandy/index.html',
+  'bellerive-acres/index.html',
+  'vinita-terrace/index.html',
+  'lakeshire/index.html',
+  'grantwood-village/index.html',
+  'twin-oaks/index.html',
+  'make-array-window-api/index.html',
+  'n8n-item-lists-window-api/index.html',
+  'make-array-unzip-api/index.html',
+  'n8n-item-lists-unzip-api/index.html',
+  'make-array-shuffle-api/index.html',
+  'n8n-item-lists-shuffle-api/index.html',
+  'stripe-radar-value-list-create-api/index.html',
+  'paddle-discount-group-delete-api/index.html',
+  'auth0-mfa-otp-enable-api/index.html',
+  'clerk-session-create-api/index.html',
+  'auth0-guardian-push-unenroll-api/index.html',
+  'vercel-firewall-ip-blacklist-list-api/index.html',
+  'cloudflare-api-shield-schema-compile-api/index.html',
+  'vercel-firewall-ip-allowlist-update-api/index.html',
+  'huggingface-jobs-inspect-spans-api/index.html',
+  'github-copilot-seat-assignment-disable-api/index.html',
+  'figma-mcp-code-connect-unlink-api/index.html',
+  'slack-lists-access-reject-api/index.html',
+  'notion-data-sources-unshare-api/index.html',
 ];
