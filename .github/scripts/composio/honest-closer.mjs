@@ -842,6 +842,13 @@ export function titleFromSlug(slug) {
     .replace(/\bBlomeyer\b/g, 'Blomeyer')
     .replace(/\bNeelys Landing\b/g, "Neely's Landing")
     .replace(/\bCompanion Cell\b/g, 'Companion-Cell')
+    .replace(/\bNew Hamburg\b/g, 'New Hamburg')
+    .replace(/\bEgypt Mills\b/g, 'Egypt Mills')
+    .replace(/\bMiddle Brook\b/g, 'Middle Brook')
+    .replace(/\bCourtois\b/g, 'Courtois')
+    .replace(/\bCherokee Pass\b/g, 'Cherokee Pass')
+    .replace(/\bRiver Aux Vaux\b/g, 'River aux Vaux')
+    .replace(/\bVessel Element\b/g, 'Vessel-Element')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11352,4 +11359,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-fustian-api/index.html',
   'slack-lists-access-companion-cell-api/index.html',
   'notion-data-sources-narcoleptic-api/index.html',
+  'new-hamburg/index.html',
+  'egypt-mills/index.html',
+  'middle-brook/index.html',
+  'courtois/index.html',
+  'cherokee-pass/index.html',
+  'river-aux-vaux/index.html',
+  'n8n-merge-by-unstrap-api/index.html',
+  'make-array-window-harness-api/index.html',
+  'n8n-item-lists-window-harness-api/index.html',
+  'make-array-window-unharness-api/index.html',
+  'n8n-item-lists-window-unharness-api/index.html',
+  'n8n-merge-by-strap-api/index.html',
+  'paddle-catalog-nereid-api/index.html',
+  'stripe-radar-value-list-resheen-api/index.html',
+  'clerk-session-end-vessel-element-api/index.html',
+  'auth0-mfa-recovery-phelonion-api/index.html',
+  'auth0-guardian-recovery-phelonion-api/index.html',
+  'cloudflare-api-shield-schema-pionic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-pionic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-pionic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-cacciatore-api/index.html',
+  'github-copilot-seat-assignment-cacciatore-api/index.html',
+  'figma-mcp-code-connect-linsey-api/index.html',
+  'slack-lists-access-vessel-element-api/index.html',
+  'notion-data-sources-languorous-api/index.html',
 ];
