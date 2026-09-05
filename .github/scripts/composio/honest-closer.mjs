@@ -677,6 +677,12 @@ export function titleFromSlug(slug) {
     .replace(/\bCrystal Lakes\b/g, 'Crystal Lakes')
     .replace(/\bRidgely\b/g, 'Ridgely')
     .replace(/\bDawn\b/g, 'Dawn')
+    .replace(/\bGlenaire\b/g, 'Glenaire')
+    .replace(/\bCherry Box\b/g, 'Cherry Box')
+    .replace(/\bSpeed\b/g, 'Speed')
+    .replace(/\bTarrants\b/g, 'Tarrants')
+    .replace(/\bFarber\b/g, 'Farber')
+    .replace(/\bLaddonia\b/g, 'Laddonia')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10512,4 +10518,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-tussah-api/index.html',
   'slack-lists-access-lenticel-api/index.html',
   'notion-data-sources-hazy-api/index.html',
+  'glenaire/index.html',
+  'cherry-box/index.html',
+  'speed/index.html',
+  'tarrants/index.html',
+  'farber/index.html',
+  'laddonia/index.html',
+  'n8n-merge-by-uncable-api/index.html',
+  'make-array-window-yarn-api/index.html',
+  'n8n-item-lists-window-yarn-api/index.html',
+  'make-array-window-unyarn-api/index.html',
+  'n8n-item-lists-window-unyarn-api/index.html',
+  'n8n-merge-by-cable-api/index.html',
+  'paddle-catalog-kirin-api/index.html',
+  'stripe-radar-value-list-reweft-api/index.html',
+  'clerk-session-end-suberin-api/index.html',
+  'auth0-mfa-recovery-pellegrina-api/index.html',
+  'auth0-guardian-recovery-pellegrina-api/index.html',
+  'cloudflare-api-shield-schema-quectoscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-quectoscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-quectoscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-gravlax-api/index.html',
+  'github-copilot-seat-assignment-gravlax-api/index.html',
+  'figma-mcp-code-connect-dupioni-api/index.html',
+  'slack-lists-access-suberin-api/index.html',
+  'notion-data-sources-foggy-api/index.html',
 ];
