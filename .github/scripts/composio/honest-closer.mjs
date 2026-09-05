@@ -647,6 +647,12 @@ export function titleFromSlug(slug) {
     .replace(/\bMount Leonard\b/g, 'Mount Leonard')
     .replace(/\bStoutsville\b/g, 'Stoutsville')
     .replace(/\bHolliday\b/g, 'Holliday')
+    .replace(/\bNovelty\b/g, 'Novelty')
+    .replace(/\bWorth\b/g, 'Worth')
+    .replace(/\bGilliam\b/g, 'Gilliam')
+    .replace(/\bConception\b/g, 'Conception')
+    .replace(/\bNodaway\b/g, 'Nodaway')
+    .replace(/\bIconium\b/g, 'Iconium')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10357,4 +10363,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-georgette-api/index.html',
   'slack-lists-access-periderm-api/index.html',
   'notion-data-sources-groggy-api/index.html',
+  'novelty/index.html',
+  'worth/index.html',
+  'gilliam/index.html',
+  'conception/index.html',
+  'nodaway/index.html',
+  'iconium/index.html',
+  'n8n-merge-by-unknot-api/index.html',
+  'make-array-window-loop-api/index.html',
+  'n8n-item-lists-window-loop-api/index.html',
+  'make-array-window-unloop-api/index.html',
+  'n8n-item-lists-window-unloop-api/index.html',
+  'n8n-merge-by-knot-api/index.html',
+  'paddle-catalog-simurgh-api/index.html',
+  'stripe-radar-value-list-reline-api/index.html',
+  'clerk-session-end-phellem-api/index.html',
+  'auth0-mfa-recovery-mantelletta-api/index.html',
+  'auth0-guardian-recovery-mantelletta-api/index.html',
+  'cloudflare-api-shield-schema-attoscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-attoscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-attoscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-confit-api/index.html',
+  'github-copilot-seat-assignment-confit-api/index.html',
+  'figma-mcp-code-connect-charmeuse-api/index.html',
+  'slack-lists-access-phellem-api/index.html',
+  'notion-data-sources-dozy-api/index.html',
 ];
