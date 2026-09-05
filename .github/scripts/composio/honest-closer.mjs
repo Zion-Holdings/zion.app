@@ -291,6 +291,12 @@ export function titleFromSlug(slug) {
     .replace(/\bRosendale\b/g, 'Rosendale')
     .replace(/\bElmo\b/g, 'Elmo')
     .replace(/\bWatson\b/g, 'Watson')
+    .replace(/\bHopkins\b/g, 'Hopkins')
+    .replace(/\bParnell\b/g, 'Parnell')
+    .replace(/\bConception Junction\b/g, 'Conception Junction')
+    .replace(/\bRavenwood\b/g, 'Ravenwood')
+    .replace(/\bArkoe\b/g, 'Arkoe')
+    .replace(/\bGrant City\b/g, 'Grant City')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8526,4 +8532,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-wafer-api/index.html',
   'slack-lists-access-sepal-api/index.html',
   'notion-data-sources-snug-api/index.html',
+  'hopkins/index.html',
+  'parnell/index.html',
+  'conception-junction/index.html',
+  'ravenwood/index.html',
+  'arkoe/index.html',
+  'grant-city/index.html',
+  'n8n-merge-by-unhook-api/index.html',
+  'make-array-window-bind-api/index.html',
+  'n8n-item-lists-window-bind-api/index.html',
+  'make-array-window-unbind-api/index.html',
+  'n8n-item-lists-window-unbind-api/index.html',
+  'n8n-merge-by-hook-api/index.html',
+  'paddle-catalog-beaker-api/index.html',
+  'stripe-radar-value-list-rebolt-api/index.html',
+  'clerk-session-end-calyx-api/index.html',
+  'auth0-mfa-recovery-transept-api/index.html',
+  'auth0-guardian-recovery-transept-api/index.html',
+  'cloudflare-api-shield-schema-near-all-api/index.html',
+  'vercel-firewall-ip-blacklist-near-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-near-all-keys-api/index.html',
+  'huggingface-jobs-inspect-strain-api/index.html',
+  'github-copilot-seat-assignment-strain-api/index.html',
+  'figma-mcp-code-connect-pad-api/index.html',
+  'slack-lists-access-calyx-api/index.html',
+  'notion-data-sources-brisk-api/index.html',
 ];
