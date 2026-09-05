@@ -798,6 +798,12 @@ export function titleFromSlug(slug) {
     .replace(/\bKaiser\b/g, 'Kaiser')
     .replace(/\bDaugherty\b/g, 'Daugherty')
     .replace(/\bHeavy Eyed\b/g, 'Heavy-Eyed')
+    .replace(/\bHahatonka\b/g, 'Ha Ha Tonka')
+    .replace(/\bTunas\b/g, 'Tunas')
+    .replace(/\bRoach\b/g, 'Roach')
+    .replace(/\bWet Glaize\b/g, 'Wet Glaize')
+    .replace(/\bWindyville\b/g, 'Windyville')
+    .replace(/\bLake Niangua\b/g, 'Lake Niangua')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11133,4 +11139,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-hessian-api/index.html',
   'slack-lists-access-vascular-cambium-api/index.html',
   'notion-data-sources-heavy-eyed-api/index.html',
+  'hahatonka/index.html',
+  'tunas/index.html',
+  'roach/index.html',
+  'wet-glaize/index.html',
+  'windyville/index.html',
+  'lake-niangua/index.html',
+  'n8n-merge-by-unsaddle-api/index.html',
+  'make-array-window-bridle-api/index.html',
+  'n8n-item-lists-window-bridle-api/index.html',
+  'make-array-window-unbridle-api/index.html',
+  'n8n-item-lists-window-unbridle-api/index.html',
+  'n8n-merge-by-saddle-api/index.html',
+  'paddle-catalog-grindylow-api/index.html',
+  'stripe-radar-value-list-recolor-api/index.html',
+  'clerk-session-end-cork-cambium-api/index.html',
+  'auth0-mfa-recovery-amictus-api/index.html',
+  'auth0-guardian-recovery-amictus-api/index.html',
+  'cloudflare-api-shield-schema-particulate-all-api/index.html',
+  'vercel-firewall-ip-blacklist-particulate-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-particulate-all-keys-api/index.html',
+  'huggingface-jobs-inspect-lonzino-api/index.html',
+  'github-copilot-seat-assignment-lonzino-api/index.html',
+  'figma-mcp-code-connect-cheesecloth-api/index.html',
+  'slack-lists-access-cork-cambium-api/index.html',
+  'notion-data-sources-somniferous-api/index.html',
 ];
