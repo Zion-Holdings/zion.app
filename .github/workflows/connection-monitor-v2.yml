@@ -8,9 +8,14 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: composio-connection-monitor
+  cancel-in-progress: true
+
 jobs:
   connection-monitor:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
       ZION_USER_ID: ${{ secrets.ZION_USER_ID }}
@@ -43,12 +48,17 @@ jobs:
       - name: Check for degraded connections
         id: health
         run: |
-          SCORE=$(python3 -c "import json; r=json.load(open('composio-connection-report.json')); print(r.get('healthScore', 0))")
-          echo "health_score=$SCORE" >> $GITHUB_OUTPUT
+          if [ ! -f composio-connection-report.json ]; then
+            echo "health_score=0" >> "$GITHUB_OUTPUT"
+            echo "::warning::composio-connection-report.json missing"
+            exit 0
+          fi
+          SCORE=$(python3 -c "import json; r=json.load(open('composio-connection-report.json')); print(int(r.get('healthScore', 0) or 0))")
+          echo "health_score=$SCORE" >> "$GITHUB_OUTPUT"
           echo "Health Score: $SCORE%"
       - name: Notify Slack on degradation
-        if: steps.health.outputs.health_score < 80
+        if: ${{ fromJSON(steps.health.outputs.health_score || '0') < 80 && secrets.SLACK_WEBHOOK_URL != '' }}
         run: |
-          curl -X POST -H 'Content-type: application/json' \
-            --data "{\"text\":\"⚠️ Zion Composio Health: ${{ steps.health.outputs.health_score }}% — connections degraded\"}" \
+          curl -fsS -X POST -H 'Content-type: application/json' \
+            --data "{\"text\":\"Warning: Zion Composio Health: ${{ steps.health.outputs.health_score }}% — connections degraded\"}" \
             "${{ secrets.SLACK_WEBHOOK_URL }}"
