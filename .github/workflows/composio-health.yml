@@ -2,11 +2,16 @@ name: Composio Health & Credentials Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 11 * * *'
+
+concurrency:
+  group: composio-health
+  cancel-in-progress: true
 
 jobs:
   health-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
       COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
     steps:
@@ -23,13 +28,5 @@ jobs:
         run: |
           echo "=== Connections ==="
           composio connections list 2>&1
-
-      - run: |
-          echo "=== 1P Tools ==="
-          composio tools list _1password 2>&1 | head -10
-
-      - run: |
-          echo "=== Gmail Tools ==="
-          composio tools list gmail 2>&1 | head -5
 
       - run: echo "Done $(date -u)"

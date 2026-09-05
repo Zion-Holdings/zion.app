@@ -2,17 +2,42 @@ name: zion-daily-health-check
 
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "0 11 * * *"
   workflow_dispatch:
 
 jobs:
   health:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
+      - name: Check money-page uptime
+        run: |
+          set -euo pipefail
+          fail=0
+          for url in \
+            https://ziontechgroup.com/ \
+            https://ziontechgroup.com/book/ \
+            https://ziontechgroup.com/plans/ \
+            https://ziontechgroup.com/discovery/ \
+            https://ziontechgroup.com/contact/; do
+            code=$(curl -sS -o /dev/null -w "%{http_code}" -L --max-time 20 "$url" || echo 000)
+            echo "$url: $code"
+            echo "- $url — $code" >> "$GITHUB_STEP_SUMMARY"
+            case "$code" in
+              200|301|302) ;;
+              *)
+                echo "::error::Site down: $url returned $code"
+                fail=1
+                ;;
+            esac
+          done
+          echo "## Zion money-page health" >> "$GITHUB_STEP_SUMMARY"
+          exit "$fail"
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -21,16 +46,6 @@ jobs:
 
       - name: Install Composio SDK
         run: npm install @composio/core
-
-      - name: Check site uptime
-        run: |
-          for url in https://ziontechgroup.com https://ziontechgroup.com/about https://ziontechgroup.com/services; do
-            code=$(curl -sS -o /dev/null -w "%{http_code}" "$url")
-            echo "$url: $code"
-            if [ "$code" != "200" ]; then
-              echo "::error::Site down: $url returned $code"
-            fi
-          done
 
       - name: Check Composio connections
         id: composio
@@ -57,11 +72,12 @@ jobs:
           node health.mjs
 
       - name: Comment summary
+        if: always()
         run: |
-          echo "## 🏥 Zion Daily Health Check" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "### Site Uptime" >> "$GITHUB_STEP_SUMMARY"
-          echo "- ziontechgroup.com: checked" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "### Composio Status" >> "$GITHUB_STEP_SUMMARY"
-          cat composio-status.json >> "$GITHUB_STEP_SUMMARY"
+          if [ -f composio-status.json ]; then
+            cat composio-status.json >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "composio-status.json missing" >> "$GITHUB_STEP_SUMMARY"
+          fi
