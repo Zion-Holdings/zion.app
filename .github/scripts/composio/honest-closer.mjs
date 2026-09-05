@@ -163,6 +163,8 @@ export function titleFromSlug(slug) {
     .replace(/\bSt Robert\b/g, 'St. Robert')
     .replace(/\bBirchtree\b/g, 'Birch Tree')
     .replace(/\bSummersville\b/g, 'Summersville')
+    .replace(/\bEllsinore\b/g, 'Ellsinore')
+    .replace(/\bNeelyville\b/g, 'Neelyville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7748,4 +7750,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-drop-api/index.html',
   'slack-lists-access-show-api/index.html',
   'notion-data-sources-widen-api/index.html',
+  'ellsinore/index.html',
+  'grandin/index.html',
+  'marquand/index.html',
+  'patton/index.html',
+  'qulin/index.html',
+  'neelyville/index.html',
+  'n8n-merge-by-xor-api/index.html',
+  'make-array-window-xor-api/index.html',
+  'n8n-item-lists-window-xor-api/index.html',
+  'n8n-merge-by-nand-api/index.html',
+  'make-array-window-nand-api/index.html',
+  'n8n-item-lists-window-nand-api/index.html',
+  'paddle-catalog-unhide-api/index.html',
+  'stripe-radar-value-list-unprime-api/index.html',
+  'clerk-session-end-radio-api/index.html',
+  'auth0-mfa-recovery-hold-api/index.html',
+  'auth0-guardian-recovery-hold-api/index.html',
+  'cloudflare-api-shield-schema-blank-all-api/index.html',
+  'vercel-firewall-ip-blacklist-blank-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-blank-all-keys-api/index.html',
+  'huggingface-jobs-inspect-replay-api/index.html',
+  'github-copilot-seat-assignment-link-api/index.html',
+  'figma-mcp-code-connect-omit-api/index.html',
+  'slack-lists-access-archive-api/index.html',
+  'notion-data-sources-narrow-api/index.html',
 ];
