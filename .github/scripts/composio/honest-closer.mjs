@@ -255,6 +255,12 @@ export function titleFromSlug(slug) {
     .replace(/\bSweet Springs\b/g, 'Sweet Springs')
     .replace(/\bCorder\b/g, 'Corder')
     .replace(/\bMalta Bend\b/g, 'Malta Bend')
+    .replace(/\bGrand Pass\b/g, 'Grand Pass')
+    .replace(/\bHigginsville\b/g, 'Higginsville')
+    .replace(/\bMayview\b/g, 'Mayview')
+    .replace(/\bAullville\b/g, 'Aullville')
+    .replace(/\bNorborne\b/g, 'Norborne')
+    .replace(/\bBogard\b/g, 'Bogard')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8340,4 +8346,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-frame-api/index.html',
   'slack-lists-access-vine-api/index.html',
   'notion-data-sources-firm-api/index.html',
+  'grand-pass/index.html',
+  'higginsville/index.html',
+  'mayview/index.html',
+  'aullville/index.html',
+  'norborne/index.html',
+  'bogard/index.html',
+  'n8n-merge-by-unspin-api/index.html',
+  'make-array-window-thread-api/index.html',
+  'n8n-item-lists-window-thread-api/index.html',
+  'make-array-window-unthread-api/index.html',
+  'n8n-item-lists-window-unthread-api/index.html',
+  'n8n-merge-by-spin-api/index.html',
+  'paddle-catalog-jug-api/index.html',
+  'stripe-radar-value-list-rewind-api/index.html',
+  'clerk-session-end-briar-api/index.html',
+  'auth0-mfa-recovery-row-api/index.html',
+  'auth0-guardian-recovery-row-api/index.html',
+  'cloudflare-api-shield-schema-total-all-api/index.html',
+  'vercel-firewall-ip-blacklist-total-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-total-all-keys-api/index.html',
+  'huggingface-jobs-inspect-sift-api/index.html',
+  'github-copilot-seat-assignment-sift-api/index.html',
+  'figma-mcp-code-connect-panel-api/index.html',
+  'slack-lists-access-briar-api/index.html',
+  'notion-data-sources-rigid-api/index.html',
 ];
