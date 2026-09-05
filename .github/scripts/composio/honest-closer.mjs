@@ -894,6 +894,14 @@ export function titleFromSlug(slug) {
     .replace(/\bBrushy Knob\b/g, 'Brushy Knob')
     .replace(/\bDenlow\b/g, 'Denlow')
     .replace(/\bMiddle Lamella\b/g, 'Middle-Lamella')
+    .replace(/\bBlooming Rose\b/g, 'Blooming Rose')
+    .replace(/\bElk Prairie\b/g, 'Elk Prairie')
+    .replace(/\bCliquot\b/g, 'Cliquot')
+    .replace(/\bRimby\b/g, 'Rimby')
+    .replace(/\bRippee\b/g, 'Rippee')
+    .replace(/\bBarnumton\b/g, 'Barnumton')
+    .replace(/\bEach Uisge\b/g, 'Each-Uisge')
+    .replace(/\bBordered Pit\b/g, 'Bordered-Pit')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11604,4 +11612,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-jacquard-api/index.html',
   'slack-lists-access-middle-lamella-api/index.html',
   'notion-data-sources-nodding-api/index.html',
+  'blooming-rose/index.html',
+  'elk-prairie/index.html',
+  'cliquot/index.html',
+  'rimby/index.html',
+  'rippee/index.html',
+  'barnumton/index.html',
+  'n8n-merge-by-untangle-api/index.html',
+  'make-array-window-douse-api/index.html',
+  'n8n-item-lists-window-douse-api/index.html',
+  'make-array-window-undouse-api/index.html',
+  'n8n-item-lists-window-undouse-api/index.html',
+  'n8n-merge-by-tangle-api/index.html',
+  'paddle-catalog-each-uisge-api/index.html',
+  'stripe-radar-value-list-rebrush-api/index.html',
+  'clerk-session-end-bordered-pit-api/index.html',
+  'auth0-mfa-recovery-klobuk-api/index.html',
+  'auth0-guardian-recovery-klobuk-api/index.html',
+  'cloudflare-api-shield-schema-hyperonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-hyperonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-hyperonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-fuet-api/index.html',
+  'github-copilot-seat-assignment-fuet-api/index.html',
+  'figma-mcp-code-connect-sateen-api/index.html',
+  'slack-lists-access-bordered-pit-api/index.html',
+  'notion-data-sources-snoozing-api/index.html',
 ];
