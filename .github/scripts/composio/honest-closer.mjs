@@ -85,6 +85,12 @@ export function titleFromSlug(slug) {
     .replace(/\bWoodson Terrace\b/g, 'Woodson Terrace')
     .replace(/\bSt John\b/g, 'St. John')
     .replace(/\bVinita Park\b/g, 'Vinita Park')
+    .replace(/\bPasadena Hills\b/g, 'Pasadena Hills')
+    .replace(/\bPasadena Park\b/g, 'Pasadena Park')
+    .replace(/\bGlen Echo Park\b/g, 'Glen Echo Park')
+    .replace(/\bUplands Park\b/g, 'Uplands Park')
+    .replace(/\bVelda Village\b/g, 'Velda Village')
+    .replace(/\bMoline Acres\b/g, 'Moline Acres')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7095,4 +7101,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-merge-api/index.html',
   'notion-data-sources-unarchive-api/index.html',
   'slack-lists-access-approve-api/index.html',
+  'pasadena-hills/index.html',
+  'pasadena-park/index.html',
+  'glen-echo-park/index.html',
+  'uplands-park/index.html',
+  'velda-village/index.html',
+  'moline-acres/index.html',
+  'make-array-head-api/index.html',
+  'n8n-item-lists-head-api/index.html',
+  'make-array-tail-api/index.html',
+  'n8n-item-lists-tail-api/index.html',
+  'n8n-item-lists-pick-keys-api/index.html',
+  'make-array-omit-api/index.html',
+  'stripe-radar-lists-update-api/index.html',
+  'paddle-discount-group-update-api/index.html',
+  'auth0-mfa-otp-reset-api/index.html',
+  'auth0-mfa-recovery-code-regenerate-api/index.html',
+  'auth0-guardian-push-enroll-api/index.html',
+  'vercel-firewall-ip-allowlist-list-api/index.html',
+  'cloudflare-api-shield-jwt-key-status-api/index.html',
+  'vercel-firewall-ip-allowlist-get-api/index.html',
+  'huggingface-jobs-inspect-timeline-api/index.html',
+  'github-copilot-seat-assignment-restore-api/index.html',
+  'figma-mcp-code-connect-link-api/index.html',
+  'slack-lists-access-deny-api/index.html',
+  'jennings/index.html',
 ];
