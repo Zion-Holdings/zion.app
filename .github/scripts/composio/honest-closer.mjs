@@ -761,6 +761,12 @@ export function titleFromSlug(slug) {
     .replace(/\bHuntsdale\b/g, 'Huntsdale')
     .replace(/\bSteinmetz\b/g, 'Steinmetz')
     .replace(/\bMccredie\b/g, 'McCredie')
+    .replace(/\bLoutre Island\b/g, 'Loutre Island')
+    .replace(/\bLoutre\b/g, 'Loutre')
+    .replace(/\bCote Sans Dessein\b/g, 'Cote Sans Dessein')
+    .replace(/\bLittleby\b/g, 'Littleby')
+    .replace(/\bSaling\b/g, 'Saling')
+    .replace(/\bClapper\b/g, 'Clapper')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10946,4 +10952,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-burlap-api/index.html',
   'slack-lists-access-pericycle-api/index.html',
   'notion-data-sources-slumberous-api/index.html',
+  'loutre/index.html',
+  'loutre-island/index.html',
+  'cote-sans-dessein/index.html',
+  'littleby/index.html',
+  'saling/index.html',
+  'clapper/index.html',
+  'n8n-merge-by-unglue-api/index.html',
+  'make-array-window-staple-api/index.html',
+  'n8n-item-lists-window-staple-api/index.html',
+  'make-array-window-unstaple-api/index.html',
+  'n8n-item-lists-window-unstaple-api/index.html',
+  'n8n-merge-by-glue-api/index.html',
+  'paddle-catalog-undine-api/index.html',
+  'stripe-radar-value-list-reblock-api/index.html',
+  'clerk-session-end-phellogen-api/index.html',
+  'auth0-mfa-recovery-lavabo-api/index.html',
+  'auth0-guardian-recovery-lavabo-api/index.html',
+  'cloudflare-api-shield-schema-protonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-protonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-protonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-mortadella-api/index.html',
+  'github-copilot-seat-assignment-mortadella-api/index.html',
+  'figma-mcp-code-connect-homespun-api/index.html',
+  'slack-lists-access-phellogen-api/index.html',
+  'notion-data-sources-somnific-api/index.html',
 ];
