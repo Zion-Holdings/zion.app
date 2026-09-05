@@ -57,3 +57,6 @@
 /use-cases/ /use-cases/index.html 200
 /solutions/healthcare /solutions/healthcare/index.html 200
 /solutions/healthcare/ /solutions/healthcare/index.html 200
+# GitHub Pages ignores these; public/book/index.html is the real alias.
+/book /booking/ 301
+/book/ /booking/ 301
