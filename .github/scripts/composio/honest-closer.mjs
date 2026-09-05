@@ -791,6 +791,13 @@ export function titleFromSlug(slug) {
     .replace(/\bOsage Bluff\b/g, 'Osage Bluff')
     .replace(/\bWashington Center\b/g, 'Washington Center')
     .replace(/\bBagnell\b/g, 'Bagnell')
+    .replace(/\bClimax Springs\b/g, 'Climax Springs')
+    .replace(/\bMacks Creek\b/g, "Mack's Creek")
+    .replace(/\bSaint Elizabeth\b/g, 'Saint Elizabeth')
+    .replace(/\bGlensted\b/g, 'Glensted')
+    .replace(/\bKaiser\b/g, 'Kaiser')
+    .replace(/\bDaugherty\b/g, 'Daugherty')
+    .replace(/\bHeavy Eyed\b/g, 'Heavy-Eyed')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11101,4 +11108,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-sacking-api/index.html',
   'slack-lists-access-ground-meristem-api/index.html',
   'notion-data-sources-yawning-api/index.html',
+  'climax-springs/index.html',
+  'macks-creek/index.html',
+  'saint-elizabeth/index.html',
+  'glensted/index.html',
+  'kaiser/index.html',
+  'daugherty/index.html',
+  'n8n-merge-by-unbridle-api/index.html',
+  'make-array-window-hasp-api/index.html',
+  'n8n-item-lists-window-hasp-api/index.html',
+  'make-array-window-unhasp-api/index.html',
+  'n8n-item-lists-window-unhasp-api/index.html',
+  'n8n-merge-by-bridle-api/index.html',
+  'paddle-catalog-lorelei-api/index.html',
+  'stripe-radar-value-list-reglaze-api/index.html',
+  'clerk-session-end-vascular-cambium-api/index.html',
+  'auth0-mfa-recovery-cingulum-api/index.html',
+  'auth0-guardian-recovery-cingulum-api/index.html',
+  'cloudflare-api-shield-schema-molecular-all-api/index.html',
+  'vercel-firewall-ip-blacklist-molecular-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-molecular-all-keys-api/index.html',
+  'huggingface-jobs-inspect-lonza-api/index.html',
+  'github-copilot-seat-assignment-lonza-api/index.html',
+  'figma-mcp-code-connect-hessian-api/index.html',
+  'slack-lists-access-vascular-cambium-api/index.html',
+  'notion-data-sources-heavy-eyed-api/index.html',
 ];
