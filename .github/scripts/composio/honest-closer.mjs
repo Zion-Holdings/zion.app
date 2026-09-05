@@ -659,6 +659,12 @@ export function titleFromSlug(slug) {
     .replace(/\bDowning\b/g, 'Downing')
     .replace(/\bSouth Gifford\b/g, 'South Gifford')
     .replace(/\bFaucett\b/g, 'Faucett')
+    .replace(/\bWindsor Place\b/g, 'Windsor Place')
+    .replace(/\bAmazonia\b/g, 'Amazonia')
+    .replace(/\bLewis And Clark Village\b/g, 'Lewis and Clark Village')
+    .replace(/\bClifton City\b/g, 'Clifton City')
+    .replace(/\bHoustonia\b/g, 'Houstonia')
+    .replace(/\bLake Mykee Town\b/g, 'Lake Mykee Town')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10419,4 +10425,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-habotai-api/index.html',
   'slack-lists-access-phelloderm-api/index.html',
   'notion-data-sources-bleary-api/index.html',
+  'windsor-place/index.html',
+  'amazonia/index.html',
+  'lewis-and-clark-village/index.html',
+  'clifton-city/index.html',
+  'houstonia/index.html',
+  'lake-mykee-town/index.html',
+  'n8n-merge-by-untwine-api/index.html',
+  'make-array-window-ply-api/index.html',
+  'n8n-item-lists-window-ply-api/index.html',
+  'make-array-window-unply-api/index.html',
+  'n8n-item-lists-window-unply-api/index.html',
+  'n8n-merge-by-twine-api/index.html',
+  'paddle-catalog-thunderbird-api/index.html',
+  'stripe-radar-value-list-recanvas-api/index.html',
+  'clerk-session-end-cork-api/index.html',
+  'auth0-mfa-recovery-wimple-api/index.html',
+  'auth0-guardian-recovery-wimple-api/index.html',
+  'cloudflare-api-shield-schema-zeptoscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-zeptoscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-zeptoscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-ceviche-api/index.html',
+  'github-copilot-seat-assignment-ceviche-api/index.html',
+  'figma-mcp-code-connect-shantung-api/index.html',
+  'slack-lists-access-cork-api/index.html',
+  'notion-data-sources-woozy-api/index.html',
 ];
