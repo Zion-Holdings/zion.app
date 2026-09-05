@@ -835,6 +835,13 @@ export function titleFromSlug(slug) {
     .replace(/\bBell City\b/g, 'Bell City')
     .replace(/\bNorth Lilbourn\b/g, 'North Lilbourn')
     .replace(/\bSieve Tube\b/g, 'Sieve-Tube')
+    .replace(/\bBurfordville\b/g, 'Burfordville')
+    .replace(/\bLutesville\b/g, 'Lutesville')
+    .replace(/\bRandles\b/g, 'Randles')
+    .replace(/\bFornfelt\b/g, 'Fornfelt')
+    .replace(/\bBlomeyer\b/g, 'Blomeyer')
+    .replace(/\bNeelys Landing\b/g, "Neely's Landing")
+    .replace(/\bCompanion Cell\b/g, 'Companion-Cell')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11320,4 +11327,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-dowlas-api/index.html',
   'slack-lists-access-sieve-tube-api/index.html',
   'notion-data-sources-hypnopompic-api/index.html',
+  'burfordville/index.html',
+  'lutesville/index.html',
+  'randles/index.html',
+  'fornfelt/index.html',
+  'blomeyer/index.html',
+  'neelys-landing/index.html',
+  'n8n-merge-by-unharness-api/index.html',
+  'make-array-window-leash-api/index.html',
+  'n8n-item-lists-window-leash-api/index.html',
+  'make-array-window-unleash-api/index.html',
+  'n8n-item-lists-window-unleash-api/index.html',
+  'n8n-merge-by-harness-api/index.html',
+  'paddle-catalog-merfolk-api/index.html',
+  'stripe-radar-value-list-recoat-api/index.html',
+  'clerk-session-end-companion-cell-api/index.html',
+  'auth0-mfa-recovery-epigonation-api/index.html',
+  'auth0-guardian-recovery-epigonation-api/index.html',
+  'cloudflare-api-shield-schema-gravitonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-gravitonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-gravitonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-salame-api/index.html',
+  'github-copilot-seat-assignment-salame-api/index.html',
+  'figma-mcp-code-connect-fustian-api/index.html',
+  'slack-lists-access-companion-cell-api/index.html',
+  'notion-data-sources-narcoleptic-api/index.html',
 ];
