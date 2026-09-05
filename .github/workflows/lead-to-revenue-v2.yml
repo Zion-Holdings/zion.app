@@ -1,33 +1,20 @@
 name: Zion Lead-to-Revenue v2.0
 
+# Disabled: .github/scripts/composio/lead-to-revenue-v2.mjs is missing.
+# Growth loop lives in Grok Automations (ZIO-282), not this cron.
+# Do not remint Composio Connect Links from CI.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 9 * * *'
 
 permissions:
   contents: read
 
 jobs:
   lead-to-revenue:
+    if: false
     runs-on: ubuntu-latest
-    env:
-      COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-      ZION_USER_ID: ${{ secrets.ZION_USER_ID }}
-      COMPOSIO_GMAIL_CONNECTION_ID: ${{ secrets.COMPOSIO_GMAIL_CONNECTION_ID }}
-      COMPOSIO_HUBSPOT_CONNECTION_ID: ${{ secrets.COMPOSIO_HUBSPOT_CONNECTION_ID }}
-      COMPOSIO_NOTION_CONNECTION_ID: ${{ secrets.COMPOSIO_NOTION_CONNECTION_ID }}
-      COMPOSIO_SLACK_CONNECTION_ID: ${{ secrets.COMPOSIO_SLACK_CONNECTION_ID }}
-      NOTION_OPPORTUNITIES_DB_ID: ${{ secrets.NOTION_OPPORTUNITIES_DB_ID }}
-      SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install Composio SDK
-        run: npm install @composio/core
-      - name: Run Lead-to-Revenue Pipeline
-        run: node .github/scripts/composio/lead-to-revenue-v2.mjs
+      - name: Guard
+        run: |
+          echo "Lead-to-Revenue v2 is disabled. Script lead-to-revenue-v2.mjs is not in the repo."
+          exit 1
