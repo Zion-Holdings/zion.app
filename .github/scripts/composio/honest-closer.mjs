@@ -441,6 +441,12 @@ export function titleFromSlug(slug) {
     .replace(/\bButterfield\b/g, 'Butterfield')
     .replace(/\bPurdy\b/g, 'Purdy')
     .replace(/\bPierce City\b/g, 'Pierce City')
+    .replace(/\bStella\b/g, 'Stella')
+    .replace(/\bGranby\b/g, 'Granby')
+    .replace(/\bRitchey\b/g, 'Ritchey')
+    .replace(/\bWentworth\b/g, 'Wentworth')
+    .replace(/\bSarcoxie\b/g, 'Sarcoxie')
+    .replace(/\bRocky Comfort\b/g, 'Rocky Comfort')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9301,4 +9307,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-sheen-api/index.html',
   'slack-lists-access-seta-api/index.html',
   'notion-data-sources-spare-api/index.html',
+  'stella/index.html',
+  'granby/index.html',
+  'ritchey/index.html',
+  'wentworth/index.html',
+  'sarcoxie/index.html',
+  'rocky-comfort/index.html',
+  'n8n-merge-by-unshirr-api/index.html',
+  'make-array-window-ruche-api/index.html',
+  'n8n-item-lists-window-ruche-api/index.html',
+  'make-array-window-unruche-api/index.html',
+  'n8n-item-lists-window-unruche-api/index.html',
+  'n8n-merge-by-shirr-api/index.html',
+  'paddle-catalog-leviathan-api/index.html',
+  'stripe-radar-value-list-recable-api/index.html',
+  'clerk-session-end-cilium-api/index.html',
+  'auth0-mfa-recovery-baldachino-api/index.html',
+  'auth0-guardian-recovery-baldachino-api/index.html',
+  'cloudflare-api-shield-schema-tiny-all-api/index.html',
+  'vercel-firewall-ip-blacklist-tiny-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-tiny-all-keys-api/index.html',
+  'huggingface-jobs-inspect-chiffonade-api/index.html',
+  'github-copilot-seat-assignment-chiffonade-api/index.html',
+  'figma-mcp-code-connect-gloss-api/index.html',
+  'slack-lists-access-cilium-api/index.html',
+  'notion-data-sources-succinct-api/index.html',
 ];
