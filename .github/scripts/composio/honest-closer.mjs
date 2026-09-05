@@ -70,6 +70,8 @@ export function titleFromSlug(slug) {
     .replace(/\bPine Lawn\b/g, 'Pine Lawn')
     .replace(/\bBlack Jack\b/g, 'Black Jack')
     .replace(/\bSpanish Lake\b/g, 'Spanish Lake')
+    .replace(/\bVelda City\b/g, 'Velda City')
+    .replace(/\bHanley Hills\b/g, 'Hanley Hills')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -6980,4 +6982,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-delete-api/index.html',
   'notion-data-sources-ungroup-api/index.html',
   'slack-lists-access-query-api/index.html',
+  'northwoods/index.html',
+  'velda-city/index.html',
+  'hillsdale/index.html',
+  'hanley-hills/index.html',
+  'n8n-item-lists-pick-api/index.html',
+  'make-array-pick-api/index.html',
+  'n8n-merge-by-position-api/index.html',
+  'make-array-chunk-api/index.html',
+  'n8n-item-lists-chunk-api/index.html',
+  'make-array-reverse-api/index.html',
+  'paddle-product-list-api/index.html',
+  'stripe-radar-rule-update-api/index.html',
+  'paddle-customer-list-api/index.html',
+  'auth0-mfa-otp-enroll-api/index.html',
+  'clerk-session-end-api/index.html',
+  'auth0-guardian-recovery-api/index.html',
+  'cloudflare-api-shield-jwt-key-purge-api/index.html',
+  'vercel-firewall-ip-whitelist-api/index.html',
+  'cloudflare-api-shield-schema-unpublish-api/index.html',
+  'huggingface-jobs-inspect-artifacts-api/index.html',
+  'github-copilot-seat-assignment-delete-api/index.html',
+  'figma-mcp-code-connect-rename-api/index.html',
+  'notion-data-sources-reorder-api/index.html',
+  'slack-lists-access-describe-api/index.html',
+  'slack-lists-access-inspect-api/index.html',
 ];
