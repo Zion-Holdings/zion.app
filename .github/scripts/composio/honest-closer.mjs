@@ -767,6 +767,12 @@ export function titleFromSlug(slug) {
     .replace(/\bLittleby\b/g, 'Littleby')
     .replace(/\bSaling\b/g, 'Saling')
     .replace(/\bClapper\b/g, 'Clapper')
+    .replace(/\bStrother\b/g, 'Strother')
+    .replace(/\bCyrene\b/g, 'Cyrene')
+    .replace(/\bWithers Mill\b/g, 'Withers Mill')
+    .replace(/\bHydesburg\b/g, 'Hydesburg')
+    .replace(/\bWest Quincy\b/g, 'West Quincy')
+    .replace(/\bTolona\b/g, 'Tolona')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10977,4 +10983,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-homespun-api/index.html',
   'slack-lists-access-phellogen-api/index.html',
   'notion-data-sources-somnific-api/index.html',
+  'strother/index.html',
+  'cyrene/index.html',
+  'withers-mill/index.html',
+  'hydesburg/index.html',
+  'west-quincy/index.html',
+  'tolona/index.html',
+  'n8n-merge-by-unhinge-api/index.html',
+  'make-array-window-glue-api/index.html',
+  'n8n-item-lists-window-glue-api/index.html',
+  'make-array-window-unglue-api/index.html',
+  'n8n-item-lists-window-unglue-api/index.html',
+  'n8n-merge-by-hinge-api/index.html',
+  'paddle-catalog-rusalka-api/index.html',
+  'stripe-radar-value-list-reshape-api/index.html',
+  'clerk-session-end-protoderm-api/index.html',
+  'auth0-mfa-recovery-aspersorium-api/index.html',
+  'auth0-guardian-recovery-aspersorium-api/index.html',
+  'cloudflare-api-shield-schema-neutronic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-neutronic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-neutronic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-lardo-api/index.html',
+  'github-copilot-seat-assignment-lardo-api/index.html',
+  'figma-mcp-code-connect-duck-api/index.html',
+  'slack-lists-access-protoderm-api/index.html',
+  'notion-data-sources-soporose-api/index.html',
 ];
