@@ -551,6 +551,12 @@ export function titleFromSlug(slug) {
     .replace(/\bAirport Drive\b/g, 'Airport Drive')
     .replace(/\bBrixey\b/g, 'Brixey')
     .replace(/\bDora\b/g, 'Dora')
+    .replace(/\bCaulfield\b/g, 'Caulfield')
+    .replace(/\bLeasburg\b/g, 'Leasburg')
+    .replace(/\bViburnum\b/g, 'Viburnum')
+    .replace(/\bBoss\b/g, 'Boss')
+    .replace(/\bThornfield\b/g, 'Thornfield')
+    .replace(/\bHardenville\b/g, 'Hardenville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9861,4 +9867,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-denim-api/index.html',
   'slack-lists-access-axil-api/index.html',
   'notion-data-sources-limp-api/index.html',
+  'caulfield/index.html',
+  'leasburg/index.html',
+  'viburnum/index.html',
+  'boss/index.html',
+  'thornfield/index.html',
+  'hardenville/index.html',
+  'n8n-merge-by-uninterline-api/index.html',
+  'make-array-window-face-api/index.html',
+  'n8n-item-lists-window-face-api/index.html',
+  'make-array-window-unface-api/index.html',
+  'n8n-item-lists-window-unface-api/index.html',
+  'n8n-merge-by-interline-api/index.html',
+  'paddle-catalog-ogre-api/index.html',
+  'stripe-radar-value-list-relinen-api/index.html',
+  'clerk-session-end-pulvinus-api/index.html',
+  'auth0-mfa-recovery-humeral-api/index.html',
+  'auth0-guardian-recovery-humeral-api/index.html',
+  'cloudflare-api-shield-schema-weeny-all-api/index.html',
+  'vercel-firewall-ip-blacklist-weeny-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-weeny-all-keys-api/index.html',
+  'huggingface-jobs-inspect-goujon-api/index.html',
+  'github-copilot-seat-assignment-goujon-api/index.html',
+  'figma-mcp-code-connect-linen-api/index.html',
+  'slack-lists-access-pulvinus-api/index.html',
+  'notion-data-sources-torpid-api/index.html',
 ];
