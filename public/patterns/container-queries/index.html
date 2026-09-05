@@ -4,63 +4,75 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Container queries | Zion Tech Group</title>
-<meta name="description" content="Container queries aninhados: page, module e card.">
+<meta name="description" content="Size queries aninhados e style queries (tone, density, emphasis).">
 <link rel="canonical" href="https://ziontechgroup.com/patterns/container-queries/">
 <link rel="stylesheet" href="/assets/css/site-shell.css">
 </head>
 <body>
 <div id="ztg-header-mount"></div>
 <main class="ztg-wrap" id="main-content">
-  <h1>Container queries aninhados</h1>
-  <p class="ztg-cq-lead">Tres niveis: <code>page</code> (wrap), <code>module</code> (secao) e <code>card</code> (cada peca). O split so vira 2 colunas quando a pagina e larga; o card so mostra meta e CTAs em linha quando ele mesmo passa de 280px.</p>
+  <h1>Container queries</h1>
+  <p class="ztg-cq-lead">Size queries no <code>page</code> / <code>module</code> / <code>card</code>. Style queries leem custom properties: <code>--tone</code>, <code>--density</code>, <code>--emphasis</code>.</p>
 
+  <h2>Style queries</h2>
+  <p>O mesmo markup. So muda o token no container.</p>
+  <div class="ztg-cq-grid">
+    <section class="ztg-cq" data-tone="offer">
+      <article class="ztg-cq-card" data-emphasis="high">
+        <p class="ztg-cq-kicker">Oferta</p>
+        <span class="ztg-cq-flag">style(--tone: offer)</span>
+        <h2>Discovery $99</h2>
+        <p class="ztg-cq-meta">Modulo offer + card high</p>
+        <div class="ztg-cq-actions"><a href="/discovery/">Comecar</a><a href="/how-it-works/">Como</a></div>
+      </article>
+    </section>
+    <section class="ztg-cq" data-tone="muted" data-density="compact">
+      <article class="ztg-cq-card">
+        <p class="ztg-cq-kicker">Arquivo</p>
+        <h2>Heritage</h2>
+        <p class="ztg-cq-meta">tone muted + density compact</p>
+        <div class="ztg-cq-actions"><a href="/heritage/">Ver</a></div>
+      </article>
+    </section>
+    <section class="ztg-cq">
+      <article class="ztg-cq-card" data-tone="offer">
+        <p class="ztg-cq-kicker">Card</p>
+        <span class="ztg-cq-flag">query no card</span>
+        <h2>Token no filho</h2>
+        <p class="ztg-cq-meta">--tone no proprio card, nao no modulo</p>
+        <div class="ztg-cq-actions"><a href="/patterns/container-style-queries/">Detalhe</a></div>
+      </article>
+    </section>
+  </div>
+
+  <h2 style="margin-top:32px">Size queries aninhados</h2>
   <div class="ztg-cq-split">
     <section class="ztg-cq">
       <div class="ztg-cq-grid">
         <article class="ztg-cq-card">
           <p class="ztg-cq-kicker">Oferta</p>
-          <h2>Discovery $99</h2>
-          <p class="ztg-cq-meta">7 dias · 1 processo · relatorio</p>
-          <p>Mapa + sessao. Meta some se o card for estreito.</p>
-          <div class="ztg-cq-actions">
-            <a href="/discovery/">Comecar</a>
-            <a href="/how-it-works/">Como funciona</a>
-          </div>
+          <h2>Starter</h2>
+          <p class="ztg-cq-meta">Meta some se o card &lt; 280px</p>
+          <div class="ztg-cq-actions"><a href="/pricing/">Precos</a></div>
         </article>
         <article class="ztg-cq-card">
           <p class="ztg-cq-kicker">Retainer</p>
           <h2>Growth</h2>
-          <p class="ztg-cq-meta">$8.000/mes · SLA</p>
-          <p>Operacao continua. CTAs empilham no card estreito.</p>
-          <div class="ztg-cq-actions">
-            <a href="/pricing/">Precos</a>
-            <a href="/contact/">Contato</a>
-          </div>
+          <p class="ztg-cq-meta">$8.000/mes</p>
+          <div class="ztg-cq-actions"><a href="/contact/">Contato</a></div>
         </article>
       </div>
     </section>
     <aside class="ztg-cq">
       <article class="ztg-cq-card">
-        <p class="ztg-cq-kicker">Coluna estreita</p>
-        <h2>Sidebar</h2>
-        <p class="ztg-cq-meta">So aparece se esta coluna > 280px</p>
-        <p>Este aside e outro container <code>module</code>. Cards aqui nao herdam a largura da coluna principal.</p>
+        <p class="ztg-cq-kicker">Sidebar</p>
+        <h2>Outro module</h2>
+        <p class="ztg-cq-meta">Largura desta coluna</p>
         <div class="ztg-cq-actions"><a href="/explore/">Mapa</a></div>
       </article>
     </aside>
   </div>
-
-  <h2 style="margin-top:32px">Media object</h2>
-  <section class="ztg-cq" style="max-width:640px">
-    <div class="ztg-cq-media ztg-cq-card">
-      <div class="visual" aria-hidden="true"></div>
-      <div>
-        <h3>Estreito: empilha</h3>
-        <p>Query do <code>module</code> (420px). Independente da query do <code>card</code>.</p>
-      </div>
-    </div>
-  </section>
-  <p style="margin-top:24px"><a href="/explore/">Voltar ao mapa</a></p>
+  <p style="margin-top:24px"><a href="/patterns/container-style-queries/">So style queries</a> · <a href="/explore/">Mapa</a></p>
 </main>
 <div id="ztg-footer-mount"></div>
 <script src="/assets/js/site-nav.js" defer></script>
