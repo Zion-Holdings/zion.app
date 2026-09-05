@@ -520,6 +520,12 @@ export function titleFromSlug(slug) {
     .replace(/\bClaycomo\b/g, 'Claycomo')
     .replace(/\bPrathersville\b/g, 'Prathersville')
     .replace(/\bExcelsior Estates\b/g, 'Excelsior Estates')
+    .replace(/\bOakview\b/g, 'Oakview')
+    .replace(/\bOakwood Park\b/g, 'Oakwood Park')
+    .replace(/\bElmira\b/g, 'Elmira')
+    .replace(/\bRayville\b/g, 'Rayville')
+    .replace(/\bWakenda\b/g, 'Wakenda')
+    .replace(/\bNew Melle\b/g, 'New Melle')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9705,4 +9711,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-muslin-api/index.html',
   'slack-lists-access-rachis-api/index.html',
   'notion-data-sources-lull-api/index.html',
+  'oakview/index.html',
+  'oakwood-park/index.html',
+  'elmira/index.html',
+  'rayville/index.html',
+  'wakenda/index.html',
+  'new-melle/index.html',
+  'n8n-merge-by-unline-api/index.html',
+  'make-array-window-stay-api/index.html',
+  'n8n-item-lists-window-stay-api/index.html',
+  'make-array-window-unstay-api/index.html',
+  'n8n-item-lists-window-unstay-api/index.html',
+  'n8n-merge-by-line-api/index.html',
+  'paddle-catalog-cerberus-api/index.html',
+  'stripe-radar-value-list-recombed-api/index.html',
+  'clerk-session-end-culm-api/index.html',
+  'auth0-mfa-recovery-cincture-api/index.html',
+  'auth0-guardian-recovery-cincture-api/index.html',
+  'cloudflare-api-shield-schema-spare-all-api/index.html',
+  'vercel-firewall-ip-blacklist-spare-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-spare-all-keys-api/index.html',
+  'huggingface-jobs-inspect-tournedos-api/index.html',
+  'github-copilot-seat-assignment-tournedos-api/index.html',
+  'figma-mcp-code-connect-calico-api/index.html',
+  'slack-lists-access-culm-api/index.html',
+  'notion-data-sources-pause-api/index.html',
 ];
