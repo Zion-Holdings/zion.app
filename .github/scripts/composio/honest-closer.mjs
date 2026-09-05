@@ -653,6 +653,12 @@ export function titleFromSlug(slug) {
     .replace(/\bConception\b/g, 'Conception')
     .replace(/\bNodaway\b/g, 'Nodaway')
     .replace(/\bIconium\b/g, 'Iconium')
+    .replace(/\bHurdland\b/g, 'Hurdland')
+    .replace(/\bBaring\b/g, 'Baring')
+    .replace(/\bPlevna\b/g, 'Plevna')
+    .replace(/\bDowning\b/g, 'Downing')
+    .replace(/\bSouth Gifford\b/g, 'South Gifford')
+    .replace(/\bFaucett\b/g, 'Faucett')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10388,4 +10394,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-charmeuse-api/index.html',
   'slack-lists-access-phellem-api/index.html',
   'notion-data-sources-dozy-api/index.html',
+  'hurdland/index.html',
+  'baring/index.html',
+  'plevna/index.html',
+  'downing/index.html',
+  'south-gifford/index.html',
+  'faucett/index.html',
+  'n8n-merge-by-unply-api/index.html',
+  'make-array-window-knot-api/index.html',
+  'n8n-item-lists-window-knot-api/index.html',
+  'make-array-window-unknot-api/index.html',
+  'n8n-item-lists-window-unknot-api/index.html',
+  'n8n-merge-by-ply-api/index.html',
+  'paddle-catalog-roc-api/index.html',
+  'stripe-radar-value-list-requilt-api/index.html',
+  'clerk-session-end-phelloderm-api/index.html',
+  'auth0-mfa-recovery-cotta-api/index.html',
+  'auth0-guardian-recovery-cotta-api/index.html',
+  'cloudflare-api-shield-schema-femtoscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-femtoscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-femtoscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-tartare-api/index.html',
+  'github-copilot-seat-assignment-tartare-api/index.html',
+  'figma-mcp-code-connect-habotai-api/index.html',
+  'slack-lists-access-phelloderm-api/index.html',
+  'notion-data-sources-bleary-api/index.html',
 ];
