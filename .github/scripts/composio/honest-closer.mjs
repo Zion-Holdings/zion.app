@@ -816,6 +816,12 @@ export function titleFromSlug(slug) {
     .replace(/\bSouthwye\b/g, 'Southwye')
     .replace(/\bDiggins\b/g, 'Diggins')
     .replace(/\bFanchon\b/g, 'Fanchon')
+    .replace(/\bInk\b/g, 'Ink')
+    .replace(/\bLeeper\b/g, 'Leeper')
+    .replace(/\bCorridon\b/g, 'Corridon')
+    .replace(/\bHowes Mill\b/g, "Howe's Mill")
+    .replace(/\bShort Bend\b/g, 'Short Bend')
+    .replace(/\bCook Station\b/g, 'Cook Station')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11226,4 +11232,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-mull-api/index.html',
   'slack-lists-access-interfascicular-api/index.html',
   'notion-data-sources-somnolence-api/index.html',
+  'ink/index.html',
+  'leeper/index.html',
+  'corridon/index.html',
+  'howes-mill/index.html',
+  'short-bend/index.html',
+  'cook-station/index.html',
+  'n8n-merge-by-unhobble-api/index.html',
+  'make-array-window-halter-api/index.html',
+  'n8n-item-lists-window-halter-api/index.html',
+  'make-array-window-unhalter-api/index.html',
+  'n8n-item-lists-window-unhalter-api/index.html',
+  'n8n-merge-by-hobble-api/index.html',
+  'paddle-catalog-tengu-api/index.html',
+  'stripe-radar-value-list-resand-api/index.html',
+  'clerk-session-end-protophloem-api/index.html',
+  'auth0-mfa-recovery-epitrachelion-api/index.html',
+  'auth0-guardian-recovery-epitrachelion-api/index.html',
+  'cloudflare-api-shield-schema-bosonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-bosonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-bosonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-sopressa-api/index.html',
+  'github-copilot-seat-assignment-sopressa-api/index.html',
+  'figma-mcp-code-connect-longcloth-api/index.html',
+  'slack-lists-access-protophloem-api/index.html',
+  'notion-data-sources-stuporous-api/index.html',
 ];
