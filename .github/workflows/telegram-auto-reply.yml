@@ -1,0 +1,63 @@
+name: Telegram Auto-Reply
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Process updates without sending Telegram replies"
+        type: boolean
+        default: false
+      skip_backlog:
+        description: "Ignore queued updates on a cold start"
+        type: boolean
+        default: true
+  repository_dispatch:
+    types: [telegram-update]
+
+concurrency:
+  group: telegram-auto-reply
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAM_CEO_USER_IDS: ${{ secrets.TELEGRAM_CEO_USER_IDS }}
+      TELEGRAM_ALLOWED_CHAT_IDS: ${{ secrets.TELEGRAM_ALLOWED_CHAT_IDS }}
+      CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+      CURSOR_REPO_URL: https://github.com/Zion-support/zion-support.github.io
+      TELEGRAM_STATE_FILE: .telegram-state.json
+      TELEGRAM_SKIP_BACKLOG: ${{ github.event.inputs.skip_backlog || 'true' }}
+      TELEGRAM_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Restore poll offset
+        uses: actions/cache@v4
+        with:
+          path: .telegram-state.json
+          key: telegram-auto-reply-state-v1
+          restore-keys: |
+            telegram-auto-reply-state-v1
+
+      - name: Run unit tests
+        run: python3 scripts/telegram/test_auto_reply.py
+
+      - name: Reply to Telegram messages
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
+            echo "TELEGRAM_BOT_TOKEN is not set. Add the bot token secret to enable live replies."
+            echo "Unit tests already passed. Skipping live poll."
+            exit 0
+          fi
+          python3 scripts/telegram/auto_reply.py --state-file "$TELEGRAM_STATE_FILE"
