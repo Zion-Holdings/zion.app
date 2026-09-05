@@ -773,6 +773,12 @@ export function titleFromSlug(slug) {
     .replace(/\bHydesburg\b/g, 'Hydesburg')
     .replace(/\bWest Quincy\b/g, 'West Quincy')
     .replace(/\bTolona\b/g, 'Tolona')
+    .replace(/\bCoatsville\b/g, 'Coatsville')
+    .replace(/\bSublett\b/g, 'Sublett')
+    .replace(/\bConnelsville\b/g, 'Connelsville')
+    .replace(/\bDeer Ridge\b/g, 'Deer Ridge')
+    .replace(/\bCora\b/g, 'Cora')
+    .replace(/\bLocust Hill\b/g, 'Locust Hill')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11008,4 +11014,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-duck-api/index.html',
   'slack-lists-access-protoderm-api/index.html',
   'notion-data-sources-soporose-api/index.html',
+  'coatsville/index.html',
+  'sublett/index.html',
+  'connelsville/index.html',
+  'deer-ridge/index.html',
+  'cora/index.html',
+  'locust-hill/index.html',
+  'n8n-merge-by-unlink-api/index.html',
+  'make-array-window-hinge-api/index.html',
+  'n8n-item-lists-window-hinge-api/index.html',
+  'make-array-window-unhinge-api/index.html',
+  'n8n-item-lists-window-unhinge-api/index.html',
+  'n8n-merge-by-link-api/index.html',
+  'paddle-catalog-merrow-api/index.html',
+  'stripe-radar-value-list-restretch-api/index.html',
+  'clerk-session-end-procambium-api/index.html',
+  'auth0-mfa-recovery-monstrance-api/index.html',
+  'auth0-guardian-recovery-monstrance-api/index.html',
+  'cloudflare-api-shield-schema-electronic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-electronic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-electronic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-capicola-api/index.html',
+  'github-copilot-seat-assignment-capicola-api/index.html',
+  'figma-mcp-code-connect-drilling-api/index.html',
+  'slack-lists-access-procambium-api/index.html',
+  'notion-data-sources-oscitancy-api/index.html',
 ];
