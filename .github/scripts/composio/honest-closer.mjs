@@ -333,6 +333,12 @@ export function titleFromSlug(slug) {
     .replace(/\bGibbs\b/g, 'Gibbs')
     .replace(/\bGlenwood\b/g, 'Glenwood')
     .replace(/\bQueen City\b/g, 'Queen City')
+    .replace(/\bUnionville\b/g, 'Unionville')
+    .replace(/\bPowersville\b/g, 'Powersville')
+    .replace(/\bGreencastle\b/g, 'Greencastle')
+    .replace(/\bWinigan\b/g, 'Winigan')
+    .replace(/\bSouth Lineville\b/g, 'South Lineville')
+    .replace(/\bRavanna\b/g, 'Ravanna')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8743,4 +8749,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-etch-api/index.html',
   'slack-lists-access-filament-api/index.html',
   'notion-data-sources-spry-api/index.html',
+  'unionville/index.html',
+  'powersville/index.html',
+  'greencastle/index.html',
+  'winigan/index.html',
+  'south-lineville/index.html',
+  'ravanna/index.html',
+  'n8n-merge-by-unsnap-api/index.html',
+  'make-array-window-clasp-api/index.html',
+  'n8n-item-lists-window-clasp-api/index.html',
+  'make-array-window-unclasp-api/index.html',
+  'n8n-item-lists-window-unclasp-api/index.html',
+  'n8n-merge-by-snap-api/index.html',
+  'paddle-catalog-stein-api/index.html',
+  'stripe-radar-value-list-rezip-api/index.html',
+  'clerk-session-end-stigma-api/index.html',
+  'auth0-mfa-recovery-presbytery-api/index.html',
+  'auth0-guardian-recovery-presbytery-api/index.html',
+  'cloudflare-api-shield-schema-ultra-all-api/index.html',
+  'vercel-firewall-ip-blacklist-ultra-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-ultra-all-keys-api/index.html',
+  'huggingface-jobs-inspect-crush-api/index.html',
+  'github-copilot-seat-assignment-crush-api/index.html',
+  'figma-mcp-code-connect-score-api/index.html',
+  'slack-lists-access-stigma-api/index.html',
+  'notion-data-sources-nifty-api/index.html',
 ];
