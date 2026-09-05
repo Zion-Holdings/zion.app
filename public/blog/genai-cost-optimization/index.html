@@ -1,0 +1,244 @@
+<!--
+Blog: GenAI Cost Optimization — Zion Tech Group
+SEO: commercial-intent FinOps guide for model and API spend.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"/>
+<link rel="stylesheet" href="/styles.css"/>
+<title>GenAI Cost Optimization: FinOps for Model and API Spend | Zion Tech Group</title>
+<meta name="description" content="FinOps for GenAI: why model and API spend spikes, usage vs the managed layer, controls that work, and how to pair token spend with cloud FinOps. Start with Discovery $99."/>
+<meta name="keywords" content="GenAI cost optimization, AI API spend, FinOps for AI, model token cost, cloud FinOps GenAI"/>
+<link rel="canonical" href="https://ziontechgroup.com/blog/genai-cost-optimization/"/>
+<meta property="og:title" content="GenAI Cost Optimization: FinOps for Model and API Spend | Zion Tech Group"/>
+<meta property="og:description" content="Why GenAI bills spike, how usage differs from the managed layer, and how Discovery $99 maps a cloud spend diagnostic."/>
+<meta property="og:url" content="https://ziontechgroup.com/blog/genai-cost-optimization/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="https://ziontechgroup.com/og-blog-pricing.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="GenAI Cost Optimization: FinOps for Model and API Spend"/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/icon.svg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GenAI Cost Optimization: FinOps for Model and API Spend",
+  "description": "FinOps for GenAI: why model and API spend spikes, usage vs the managed layer, controls that work, and how to pair token spend with cloud FinOps. Start with Discovery $99.",
+  "image": "https://ziontechgroup.com/og-blog-pricing.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com"
+  },
+  "datePublished": "2026-09-05",
+  "dateModified": "2026-09-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ziontechgroup.com/blog/genai-cost-optimization/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is GenAI spend part of FinOps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Token, embedding, and API usage is another billable line. It belongs on the same board as compute, storage, and egress: tagged, owned, and alerted. Treat it as a special case only if you want it to stay unowned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should we measure first?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A baseline: which keys and projects spend, which workflows call models, whether calls are batch or chatty loops, and who can pause a runaway job. Measurement comes before a commitment or a platform purchase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you guarantee savings on model spend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We do not invent a savings percentage. Discovery at $99 is a cloud spend diagnostic: visibility, owners, and which controls are missing. Any later number is your baseline versus closed items."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --slate-300: #cbd5e1; --white: #f8fafc; --green: #22c55e; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.7; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+.nav-links a { color: var(--slate-400); text-decoration: none; font-size: 0.875rem; margin-left: 16px; }
+.header { padding: 60px 24px 40px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.header .meta { color: var(--slate-400); font-size: 0.875rem; margin-bottom: 12px; display: flex; gap: 16px; flex-wrap: wrap; }
+.header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+.header .excerpt { color: var(--slate-400); font-size: 1.125rem; line-height: 1.6; }
+.section { padding: 48px 0; }
+.section h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.section h3 { font-size: 1.25rem; font-weight: 600; margin: 24px 0 8px; color: var(--purple); }
+.section p { color: var(--slate-300); margin-bottom: 16px; }
+.section ul { color: var(--slate-300); margin: 12px 0 20px 24px; }
+.section ul li { margin-bottom: 6px; }
+.section a { color: var(--purple); }
+.faq-item { border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding: 20px 0; }
+.faq-question { font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; cursor: pointer; }
+.faq-answer { color: var(--slate-300); font-size: 0.9375rem; line-height: 1.6; }
+.cta { background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.1), transparent 70%); padding: 48px 24px; text-align: center; }
+.cta h2 { font-size: 1.75rem; margin-bottom: 12px; }
+.cta p { color: var(--slate-400); margin-bottom: 24px; }
+.cta .btn { display: inline-block; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 1rem; text-decoration: none; }
+.cta .btn:hover { opacity: 0.9; }
+.cta .btn-outline { display: inline-block; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); color: var(--slate-300); padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 1rem; text-decoration: none; }
+.cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.footer { padding: 32px 24px; border-top: 1px solid rgba(148, 163, 184, 0.1); color: var(--slate-400); font-size: 0.8125rem; text-align: center; }
+.footer a { color: var(--slate-300); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">Zion Tech Group</a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/solutions/">Solutions</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="container">
+    <div class="meta">
+      <span>📅 September 5, 2026</span>
+      <span>⏱️ 8 min read</span>
+      <span>🏷️ GenAI, FinOps, Commercial</span>
+    </div>
+    <h1>GenAI Cost Optimization: FinOps for Model and API Spend</h1>
+    <p class="excerpt">Token and API bills spike for the same reason cloud bills do: no owner, no tag, and no stop rule. FinOps for models is visibility first — not a promised savings percentage.</p>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="section">
+  <p>GenAI spend is a usage line that behaves like egress: it is quiet until a loop, a shared key, or a new workflow hits production. Treating it as “just the vendor invoice” is how finance finds out in arrears. The operating practice is the same as the rest of cloud: see it, own it, control it, then decide what to keep.</p>
+  <p>This sits next to <a href="/finops-consulting/">FinOps consulting</a>. If you are still choosing workflows, start with <a href="/ai-consulting-services/">AI consulting services</a>. If agents are already in design, keep spend on the same board as <a href="/autonomous-ai-agents/">autonomous AI agents</a>.</p>
+</section>
+
+<section class="section">
+  <h2>Why GenAI spend spikes</h2>
+  <p>Spikes are usually design and ownership problems, not “the model got more expensive overnight.”</p>
+  <ul>
+    <li><strong>Shared or untagged keys:</strong> one API key for several teams, so nobody can charge back a runaway job.</li>
+    <li><strong>Chatty loops:</strong> an agent or script retries, re-embeds, or re-summarizes on every tick instead of a batch or a cache.</li>
+    <li><strong>Wrong default model:</strong> a large model on a classification or extraction job that a smaller model (or no model) can do.</li>
+    <li><strong>Unscoped tools:</strong> every request pulls a full context window, a web search, or a document set “just in case.”</li>
+    <li><strong>Shadow usage:</strong> a team adds a consumer plugin or a second vendor that never hits the budget review.</li>
+  </ul>
+  <p>You do not need a named case study to recognize those patterns. The first deliverable is a spend register: which keys, which workflows, who owns the pause button. We do not attach a savings percentage to that list.</p>
+</section>
+
+<section class="section">
+  <h2>Usage vs managed layer</h2>
+  <p>Two bills move independently. Mixing them is how teams buy a platform to fix a key that should have been rotated.</p>
+  <h3>Usage (the vendor invoice)</h3>
+  <p>Tokens, embeddings, image or audio units, and tool traffic. This scales with volume and with how talkative the workflow is. It is the line you watch the way you watch compute hours.</p>
+  <h3>Managed layer (the operating cost)</h3>
+  <p>Workflow design, integration, prompt and tool policy, monitoring, and the people who handle exceptions. That does not appear on the model vendor’s invoice. It is the work that keeps usage from becoming an unsupervised intern with a credit card.</p>
+  <p>A cheap usage month with no managed layer is not a win if you cannot say which workflow spent, or stop it. A managed layer with no usage visibility is just another retainer. You need both maps. Product and consulting context: <a href="/ai-consulting-services/">AI consulting</a> and <a href="/autonomous-ai-agents/">agents</a>.</p>
+</section>
+
+<section class="section">
+  <h2>Controls that work</h2>
+  <p>Controls are boring on purpose. They are the ones you can inspect.</p>
+  <ul>
+    <li><strong>Per-workflow keys and tags</strong> so a spike has an owner, not a shared secret.</li>
+    <li><strong>Budgets and anomaly alerts</strong> on the accounts and projects that actually call models — with a documented who-pauses-what.</li>
+    <li><strong>Model routing:</strong> small or cached path for classification and lookup; larger models only where the job needs them.</li>
+    <li><strong>Context and tool budgets:</strong> max steps, max retrieval, and a stop when the job is “needs a human.”</li>
+    <li><strong>Human gates</strong> on irreversible or expensive actions (send, write to a system of record, provision, refund).</li>
+  </ul>
+  <p>If a vendor’s “optimization” is only a cheaper model swap with no tags or alerts, you will be back next quarter. Controls are an operating rhythm, not a one-time prompt edit.</p>
+</section>
+
+<section class="section">
+  <h2>Pairing with cloud FinOps</h2>
+  <p>GenAI should sit on the same review as the rest of the bill. The method on <a href="/finops-consulting/">FinOps consulting</a> does not change: visibility, waste, rightsizing, commitments, alerts. Token spend is another service-level spike with an owner on the ticket.</p>
+  <ul>
+    <li>Put model and API lines on the same waste register as idle compute and orphan storage.</li>
+    <li>Do not buy reserved capacity or a new AI platform to cover a workflow you have not tagged yet.</li>
+    <li>Keep delivery unblocked. A freeze that stops shipping gets reverted and ignored — same rule as cloud rightsizing.</li>
+  </ul>
+  <p>When agents are in scope, usage and the managed layer belong in the same design conversation. See <a href="/autonomous-ai-agents/">autonomous AI agents</a>. We will not invent a combined ROI figure. You measure against the baseline you take at the start of the evaluation window.</p>
+</section>
+
+<section class="section">
+  <h2>Discovery path</h2>
+  <p>The commercial path is a cloud spend diagnostic, not a promised cut.</p>
+  <ol style="color: var(--slate-300); margin: 12px 0 20px 24px;">
+    <li><strong>Discovery ($99):</strong> 30 minutes on how you bill today — cloud accounts, model keys, and whether anyone owns a spike. Book via <a href="/discovery/">Discovery</a>.</li>
+    <li><strong>Written follow-up:</strong> spend register outline, missing controls, and whether the next track is FinOps, AI consulting, or stop.</li>
+    <li><strong>Evaluation window:</strong> baseline, first safe stops and alerts, then a decision to continue or hand back to your team. No invented savings percentage.</li>
+  </ol>
+  <p>Landings: <a href="/finops-consulting/">FinOps consulting</a>, <a href="/ai-consulting-services/">AI consulting services</a>, <a href="/autonomous-ai-agents/">autonomous AI agents</a>.</p>
+</section>
+
+<section class="section">
+  <h2>FAQs</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">Is GenAI spend part of FinOps?</div>
+    <div class="faq-answer">Yes. Token, embedding, and API usage is another billable line. It belongs on the same board as compute, storage, and egress: tagged, owned, and alerted. Treat it as a special case only if you want it to stay unowned.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">What should we measure first?</div>
+    <div class="faq-answer">A baseline: which keys and projects spend, which workflows call models, whether calls are batch or chatty loops, and who can pause a runaway job. Measurement comes before a commitment or a platform purchase.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Do you guarantee savings on model spend?</div>
+    <div class="faq-answer">No. We do not invent a savings percentage. Discovery at $99 is a cloud spend diagnostic: visibility, owners, and which controls are missing. Any later number is your baseline versus closed items.</div>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="container">
+    <h2>Cloud spend diagnostic — $99</h2>
+    <p>Map keys, workflows, and who owns a spike before you buy another model commitment or platform.</p>
+    <div class="cta-row">
+      <a href="/discovery/" class="btn">Cloud spend diagnostic — $99</a>
+      <a href="/plans/" class="btn-outline">View plans</a>
+      <a href="/contact/" class="btn-outline">Contact</a>
+    </div>
+    <p style="margin-top: 16px; font-size: 0.875rem;">Also see <a href="/finops-consulting/" style="color: var(--purple);">FinOps</a> · <a href="/ai-consulting-services/" style="color: var(--purple);">AI consulting</a> · <a href="/autonomous-ai-agents/" style="color: var(--purple);">agents</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Zion Tech Group. All rights reserved. | <a href="/">Home</a> | <a href="/services/">Services</a> | <a href="/blog/">Blog</a> | <a href="/contact/">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

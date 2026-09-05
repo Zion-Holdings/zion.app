@@ -1,0 +1,249 @@
+<!--
+Blog: AI and Managed IT for Fintech — Zion Tech Group
+SEO: commercial-intent guide to controls before autonomy.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"/>
+<link rel="stylesheet" href="/styles.css"/>
+<title>AI and Managed IT for Fintech: Controls Before Autonomy | Zion Tech Group</title>
+<meta name="description" content="Fintech IT and AI with controls first: SOC 2 / vendor posture language, safe automation patterns, and FinOps for regulated stacks. Start with Discovery $99 — no fake certifications."/>
+<meta name="keywords" content="AI managed IT fintech, SOC 2 vendor posture, fintech automation controls, FinOps regulated cloud"/>
+<link rel="canonical" href="https://ziontechgroup.com/blog/ai-managed-it-for-fintech/"/>
+<meta property="og:title" content="AI and Managed IT for Fintech: Controls Before Autonomy | Zion Tech Group"/>
+<meta property="og:description" content="Controls before agents: vendor posture, safe automation, and FinOps for regulated stacks. Discovery $99 — no fake SOC 2 claims."/>
+<meta property="og:url" content="https://ziontechgroup.com/blog/ai-managed-it-for-fintech/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="https://ziontechgroup.com/og-blog-pricing.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI and Managed IT for Fintech: Controls Before Autonomy"/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/icon.svg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI and Managed IT for Fintech: Controls Before Autonomy",
+  "description": "Fintech IT and AI with controls first: SOC 2 / vendor posture language, safe automation patterns, and FinOps for regulated stacks. Start with Discovery $99 — no fake certifications.",
+  "image": "https://ziontechgroup.com/og-blog-pricing.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com"
+  },
+  "datePublished": "2026-09-05",
+  "dateModified": "2026-09-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ziontechgroup.com/blog/ai-managed-it-for-fintech/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are you SOC 2 certified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This page uses process and vendor-posture language only. We do not claim a SOC 2 certification here. What we will do is work from your control list: access, logging, change, vendors, and evidence you already owe your auditors and customers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can agents touch production payment systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not as a default. Safe patterns are read, classify, draft, and escalate. Writes to ledgers, payment rails, or customer balances stay behind a human gate until your control owners say otherwise. Autonomy is a later decision, not the starting design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from healthcare IT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Healthcare work follows BAA and HIPAA-oriented process language on the healthcare IT landing. Fintech work follows your vendor questionnaires, access model, and change process. Both sequences put controls before agents. They are not interchangeable compliance programs."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --slate-300: #cbd5e1; --white: #f8fafc; --green: #22c55e; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.7; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+.nav-links a { color: var(--slate-400); text-decoration: none; font-size: 0.875rem; margin-left: 16px; }
+.header { padding: 60px 24px 40px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.header .meta { color: var(--slate-400); font-size: 0.875rem; margin-bottom: 12px; display: flex; gap: 16px; flex-wrap: wrap; }
+.header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+.header .excerpt { color: var(--slate-400); font-size: 1.125rem; line-height: 1.6; }
+.section { padding: 48px 0; }
+.section h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.section h3 { font-size: 1.25rem; font-weight: 600; margin: 24px 0 8px; color: var(--purple); }
+.section p { color: var(--slate-300); margin-bottom: 16px; }
+.section ul { color: var(--slate-300); margin: 12px 0 20px 24px; }
+.section ul li { margin-bottom: 6px; }
+.section a { color: var(--purple); }
+.faq-item { border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding: 20px 0; }
+.faq-question { font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; cursor: pointer; }
+.faq-answer { color: var(--slate-300); font-size: 0.9375rem; line-height: 1.6; }
+.cta { background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.1), transparent 70%); padding: 48px 24px; text-align: center; }
+.cta h2 { font-size: 1.75rem; margin-bottom: 12px; }
+.cta p { color: var(--slate-400); margin-bottom: 24px; }
+.cta .btn { display: inline-block; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 1rem; text-decoration: none; }
+.cta .btn:hover { opacity: 0.9; }
+.cta .btn-outline { display: inline-block; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); color: var(--slate-300); padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 1rem; text-decoration: none; }
+.cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.footer { padding: 32px 24px; border-top: 1px solid rgba(148, 163, 184, 0.1); color: var(--slate-400); font-size: 0.8125rem; text-align: center; }
+.footer a { color: var(--slate-300); }
+.note { color: var(--slate-400); font-size: 0.9375rem; border-left: 3px solid var(--purple); padding-left: 16px; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">Zion Tech Group</a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/solutions/">Solutions</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="container">
+    <div class="meta">
+      <span>📅 September 5, 2026</span>
+      <span>⏱️ 8 min read</span>
+      <span>🏷️ Fintech, Managed IT, Commercial + compliance</span>
+    </div>
+    <h1>AI and Managed IT for Fintech: Controls Before Autonomy</h1>
+    <p class="excerpt">Fintech stacks fail audits on missing evidence, not missing agents. Put identity, logging, and vendor posture in place — then decide what automation is allowed to do.</p>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="section">
+  <p class="note">This page describes process and vendor-posture language for regulated IT operations. It is not a certification claim, not legal advice, and not a determination of which frameworks your organization must meet.</p>
+  <p>Payments, lending, and banking-adjacent teams usually need two things in order: an IT operating layer you can show to a customer or auditor, and automation that cannot move money or change production without a gate. Those are different projects. We keep them sequenced.</p>
+  <p>Landings: <a href="/managed-it-services/">managed IT services</a>, <a href="/finops-consulting/">FinOps consulting</a>, <a href="/autonomous-ai-agents/">autonomous AI agents</a>. If your environment is clinical rather than financial, start with <a href="/healthcare-it-hipaa/">healthcare IT / HIPAA</a> instead of this page.</p>
+</section>
+
+<section class="section">
+  <h2>Controls before agents</h2>
+  <p>Autonomy on an undocumented stack is just an unsupervised intern with API keys to the ledger-adjacent systems. The operating layer comes first.</p>
+  <ul>
+    <li><strong>Identity:</strong> MFA, joiner/mover/leaver, and a named owner for privileged roles.</li>
+    <li><strong>Inventory:</strong> what runs, where it lives, and who can change it — including the SaaS you forgot was in the payment path.</li>
+    <li><strong>Logging and change:</strong> a ticket and change trail for systems that touch customer funds, identities, or regulated data.</li>
+    <li><strong>Backup and restore evidence:</strong> a tested restore, not only a successful job.</li>
+    <li><strong>Vendor list:</strong> who has access, what they can see, and how you offboard them.</li>
+  </ul>
+  <p>That is <a href="/managed-it-services/">managed IT</a> work. An agent does not replace it. If the first request is “we need an AI ops copilot,” the first answer is still access, logging, and a change path — then a narrow workflow with a stop rule. Agent design, when it is in scope, follows <a href="/autonomous-ai-agents/">autonomous AI agents</a>: job, tools, HITL, audit log.</p>
+</section>
+
+<section class="section">
+  <h2>SOC 2 / vendor posture</h2>
+  <p>SOC 2 is your program and your auditor’s report — not a badge we will invent on this page. What mid-market fintech buyers actually ask vendors for is <em>posture</em>: can you work inside our control list and produce evidence we already owe customers?</p>
+  <p>Process language we will use in scoping:</p>
+  <ul>
+    <li>Discovery can start on a non-production description of systems, owners, and pain (no live credentials, no customer dumps).</li>
+    <li>Access is minimum necessary and time-bound. Production writes are out until the SOW and your change process say otherwise.</li>
+    <li>We will map to the control families you name (access, change, logging, vendors, availability) rather than claiming a report we do not publish here.</li>
+    <li>Your counsel and your auditor decide what is “enough.” We operate the IT and automation pieces you put under contract.</li>
+  </ul>
+  <p>If you need healthcare-oriented BAA process language, that is a different track: <a href="/healthcare-it-hipaa/">healthcare IT / HIPAA</a>. Do not copy a BAA conversation onto a fintech stack or the reverse. The shared idea is sequencing: paperwork and access model before data and agents.</p>
+</section>
+
+<section class="section">
+  <h2>Safe automation patterns</h2>
+  <p>Practical AI in fintech, as we scope it, is operations and evidence — not credit decisions, fraud scores you would treat as authoritative, or anything that posts to a payment rail without a human.</p>
+  <p>Patterns that can be designed with a human in the loop:</p>
+  <ul>
+    <li>Ticket and inbox triage for the ops or IT queue: classify, enrich, draft, escalate.</li>
+    <li>Internal knowledge lookup against approved runbooks (access requests, vendor onboarding steps) with citations staff can check.</li>
+    <li>Change-pack assembly: pull status from approved systems; a human publishes and executes.</li>
+    <li>Vendor questionnaire drafts from your existing control descriptions — a person signs them.</li>
+  </ul>
+  <p>What stays out until control owners say otherwise: agents with write access to core banking, wallets, or ledgers; dumping customer financial data into a consumer model; unsanctioned browser plugins on the production path. If an agent is in scope at all, it uses the same gates as <a href="/autonomous-ai-agents/">managed agents</a>.</p>
+</section>
+
+<section class="section">
+  <h2>FinOps for regulated stacks</h2>
+  <p>Regulated does not mean “never turn anything off.” It means you can show who approved a change and that availability controls still hold. <a href="/finops-consulting/">FinOps consulting</a> on this stack is the same method as elsewhere — visibility, waste, rightsizing, commitments, alerts — with two extra constraints:</p>
+  <ul>
+    <li><strong>Change windows:</strong> idle environments and oversized classes still get a waste register. Stops go through the same change process as any other production-adjacent edit.</li>
+    <li><strong>Tagged spend:</strong> payment, KYC, and logging systems should be identifiable on the bill. Untagged lines are both a cost problem and an evidence problem.</li>
+    <li><strong>GenAI on the same board:</strong> token and API usage is another line that can spike without an owner. Do not buy a model commitment to cover an untagged key.</li>
+  </ul>
+  <p>We will not invent a savings percentage or a named client result. You measure against the baseline you capture at the start of an evaluation window. Delivery stays unblocked: FinOps that breaks a release path gets reverted and ignored.</p>
+</section>
+
+<section class="section">
+  <h2>Discovery path</h2>
+  <p>The commercial path is the same as the rest of the site, with one extra constraint: no live production credentials or customer financial data in the first meeting.</p>
+  <ol style="color: var(--slate-300); margin: 12px 0 20px 24px;">
+    <li><strong>Discovery ($99):</strong> 30 minutes on the environment, owners, and whether the need is IT ops, vendor posture, FinOps, or a later agent design. Book via <a href="/discovery/">Discovery</a>.</li>
+    <li><strong>Written follow-up:</strong> recommended track (managed IT, FinOps, agent, or stop) and what evidence or access would be required next.</li>
+    <li><strong>Contracting, then build:</strong> SOW and your change process before production access. Autonomy is a later decision.</li>
+  </ol>
+  <p>Landings: <a href="/healthcare-it-hipaa/">healthcare IT / HIPAA</a> (if the stack is clinical), <a href="/managed-it-services/">managed IT services</a>, <a href="/finops-consulting/">FinOps consulting</a>, <a href="/autonomous-ai-agents/">autonomous AI agents</a>.</p>
+</section>
+
+<section class="section">
+  <h2>FAQs</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">Are you SOC 2 certified?</div>
+    <div class="faq-answer">This page uses process and vendor-posture language only. We do not claim a SOC 2 certification here. What we will do is work from your control list: access, logging, change, vendors, and evidence you already owe your auditors and customers.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can agents touch production payment systems?</div>
+    <div class="faq-answer">Not as a default. Safe patterns are read, classify, draft, and escalate. Writes to ledgers, payment rails, or customer balances stay behind a human gate until your control owners say otherwise. Autonomy is a later decision, not the starting design.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">How is this different from healthcare IT?</div>
+    <div class="faq-answer">Healthcare work follows BAA and HIPAA-oriented process language on the healthcare IT landing. Fintech work follows your vendor questionnaires, access model, and change process. Both sequences put controls before agents. They are not interchangeable compliance programs.</div>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="container">
+    <h2>Discovery $99</h2>
+    <p>Map IT ops, vendor posture, and whether any agent is even in scope. Bring a system list — not production credentials.</p>
+    <div class="cta-row">
+      <a href="/discovery/" class="btn">Discovery $99</a>
+      <a href="/plans/" class="btn-outline">View plans</a>
+      <a href="/contact/" class="btn-outline">Contact</a>
+    </div>
+    <p style="margin-top: 16px; font-size: 0.875rem;">Also see <a href="/managed-it-services/" style="color: var(--purple);">managed IT</a> · <a href="/finops-consulting/" style="color: var(--purple);">FinOps</a> · <a href="/autonomous-ai-agents/" style="color: var(--purple);">agents</a> · <a href="/healthcare-it-hipaa/" style="color: var(--purple);">healthcare IT</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Zion Tech Group. All rights reserved. | <a href="/">Home</a> | <a href="/services/">Services</a> | <a href="/blog/">Blog</a> | <a href="/contact/">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
