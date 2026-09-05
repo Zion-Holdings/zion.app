@@ -731,6 +731,12 @@ export function titleFromSlug(slug) {
     .replace(/\bBachelor\b/g, 'Bachelor')
     .replace(/\bThird Creek\b/g, 'Third Creek')
     .replace(/\bRiggs\b/g, 'Riggs')
+    .replace(/\bDarksville\b/g, 'Darksville')
+    .replace(/\bThomas Hill\b/g, 'Thomas Hill')
+    .replace(/\bLevick Mill\b/g, 'Levick Mill')
+    .replace(/\bIndian Grove\b/g, 'Indian Grove')
+    .replace(/\bForest Green\b/g, 'Forest Green')
+    .replace(/\bMusselfork\b/g, 'Musselfork')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10791,4 +10797,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-oxford-api/index.html',
   'slack-lists-access-vessel-api/index.html',
   'notion-data-sources-stupefied-api/index.html',
+  'darksville/index.html',
+  'thomas-hill/index.html',
+  'levick-mill/index.html',
+  'indian-grove/index.html',
+  'forest-green/index.html',
+  'musselfork/index.html',
+  'n8n-merge-by-unwedge-api/index.html',
+  'make-array-window-peg-api/index.html',
+  'n8n-item-lists-window-peg-api/index.html',
+  'make-array-window-unpeg-api/index.html',
+  'n8n-item-lists-window-unpeg-api/index.html',
+  'n8n-merge-by-wedge-api/index.html',
+  'paddle-catalog-zaratan-api/index.html',
+  'stripe-radar-value-list-recork-api/index.html',
+  'clerk-session-end-collenchyma-api/index.html',
+  'auth0-mfa-recovery-vimpa-api/index.html',
+  'auth0-guardian-recovery-vimpa-api/index.html',
+  'cloudflare-api-shield-schema-leptonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-leptonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-leptonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-coppa-api/index.html',
+  'github-copilot-seat-assignment-coppa-api/index.html',
+  'figma-mcp-code-connect-ottoman-api/index.html',
+  'slack-lists-access-collenchyma-api/index.html',
+  'notion-data-sources-soporific-api/index.html',
 ];
