@@ -755,6 +755,12 @@ export function titleFromSlug(slug) {
     .replace(/\bGoochs Mill\b/g, "Gooch's Mill")
     .replace(/\bPrairie Lick\b/g, 'Prairie Lick')
     .replace(/\bTullvania\b/g, 'Tullvania')
+    .replace(/\bPage City\b/g, 'Page City')
+    .replace(/\bRidge Prairie\b/g, 'Ridge Prairie')
+    .replace(/\bWest Glasgow\b/g, 'West Glasgow')
+    .replace(/\bHuntsdale\b/g, 'Huntsdale')
+    .replace(/\bSteinmetz\b/g, 'Steinmetz')
+    .replace(/\bMccredie\b/g, 'McCredie')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10915,4 +10921,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-buckram-api/index.html',
   'slack-lists-access-stele-api/index.html',
   'notion-data-sources-hebetudinous-api/index.html',
+  'page-city/index.html',
+  'ridge-prairie/index.html',
+  'west-glasgow/index.html',
+  'huntsdale/index.html',
+  'steinmetz/index.html',
+  'mccredie/index.html',
+  'n8n-merge-by-unstaple-api/index.html',
+  'make-array-window-nail-api/index.html',
+  'n8n-item-lists-window-nail-api/index.html',
+  'make-array-window-unnail-api/index.html',
+  'n8n-item-lists-window-unnail-api/index.html',
+  'n8n-merge-by-staple-api/index.html',
+  'paddle-catalog-nixie-api/index.html',
+  'stripe-radar-value-list-recap-api/index.html',
+  'clerk-session-end-pericycle-api/index.html',
+  'auth0-mfa-recovery-rationale-api/index.html',
+  'auth0-guardian-recovery-rationale-api/index.html',
+  'cloudflare-api-shield-schema-muonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-muonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-muonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-pancetta-api/index.html',
+  'github-copilot-seat-assignment-pancetta-api/index.html',
+  'figma-mcp-code-connect-burlap-api/index.html',
+  'slack-lists-access-pericycle-api/index.html',
+  'notion-data-sources-slumberous-api/index.html',
 ];
