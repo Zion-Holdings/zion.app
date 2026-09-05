@@ -273,6 +273,12 @@ export function titleFromSlug(slug) {
     .replace(/\bGower\b/g, 'Gower')
     .replace(/\bCamden Point\b/g, 'Camden Point')
     .replace(/\bFerrelview\b/g, 'Ferrelview')
+    .replace(/\bWeatherby\b/g, 'Weatherby')
+    .replace(/\bAmity\b/g, 'Amity')
+    .replace(/\bUnion Star\b/g, 'Union Star')
+    .replace(/\bBolckow\b/g, 'Bolckow')
+    .replace(/\bBarnard\b/g, 'Barnard')
+    .replace(/\bSkidmore\b/g, 'Skidmore')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8433,4 +8439,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-pane-api/index.html',
   'slack-lists-access-frond-api/index.html',
   'notion-data-sources-taut-api/index.html',
+  'weatherby/index.html',
+  'amity/index.html',
+  'union-star/index.html',
+  'bolckow/index.html',
+  'barnard/index.html',
+  'skidmore/index.html',
+  'n8n-merge-by-unreel-api/index.html',
+  'make-array-window-coil-api/index.html',
+  'n8n-item-lists-window-coil-api/index.html',
+  'make-array-window-uncoil-api/index.html',
+  'n8n-item-lists-window-uncoil-api/index.html',
+  'n8n-merge-by-reel-api/index.html',
+  'paddle-catalog-phial-api/index.html',
+  'stripe-radar-value-list-rebind-api/index.html',
+  'clerk-session-end-leaflet-api/index.html',
+  'auth0-mfa-recovery-apse-api/index.html',
+  'auth0-guardian-recovery-apse-api/index.html',
+  'cloudflare-api-shield-schema-broad-all-api/index.html',
+  'vercel-firewall-ip-blacklist-broad-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-broad-all-keys-api/index.html',
+  'huggingface-jobs-inspect-cull-api/index.html',
+  'github-copilot-seat-assignment-cull-api/index.html',
+  'figma-mcp-code-connect-card-api/index.html',
+  'slack-lists-access-leaflet-api/index.html',
+  'notion-data-sources-tense-api/index.html',
 ];
