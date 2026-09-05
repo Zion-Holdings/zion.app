@@ -21,14 +21,8 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Prepare artifact
-        run: |
-          set -euo pipefail
-          mkdir -p out
-          cp -Rf public/. out/
-          cp -Rf docs/. out/docs/
-          [ -f _headers ] && cp -f _headers out/_headers || true
-          [ -f out/_headers ] || true
+      - name: Prepare Pages artifact
+        run: bash scripts/prepare-pages-out.sh
 
       - uses: actions/upload-pages-artifact@v3
         with:

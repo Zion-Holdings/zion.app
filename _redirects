@@ -15,8 +15,11 @@
 /dashboard/    /contact/    301
 /docs/    /    301
 /automation/  /services/ai-workflow-automation/  301
+# GitHub Pages ignores Netlify _redirects. Use the public/ HTML aliases instead.
 /free-ai-itools/ /free-ai-it-tools/ 302
 /free-ai-itools /free-ai-it-tools/ 302
+/direitos/ /direitos-globais/ 302
+/direitos /direitos-globais/ 302
 /free-consultation /free-consultation/index.html 200
 /free-consultation/ /free-consultation/index.html 200
 /free-audit /free-audit/index.html 200
