@@ -611,6 +611,12 @@ export function titleFromSlug(slug) {
     .replace(/\bIdalia\b/g, 'Idalia')
     .replace(/\bPenermon\b/g, 'Penermon')
     .replace(/\bCardwell\b/g, 'Cardwell')
+    .replace(/\bArbyrd\b/g, 'Arbyrd')
+    .replace(/\bHayti Heights\b/g, 'Hayti Heights')
+    .replace(/\bCottonwood Point\b/g, 'Cottonwood Point')
+    .replace(/\bLanton\b/g, 'Lanton')
+    .replace(/\bHartshorn\b/g, 'Hartshorn')
+    .replace(/\bBendavis\b/g, 'Bendavis')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10171,4 +10177,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-percale-api/index.html',
   'slack-lists-access-cuticle-api/index.html',
   'notion-data-sources-languid-api/index.html',
+  'arbyrd/index.html',
+  'hayti-heights/index.html',
+  'cottonwood-point/index.html',
+  'lanton/index.html',
+  'hartshorn/index.html',
+  'bendavis/index.html',
+  'n8n-merge-by-unpicot-api/index.html',
+  'make-array-window-embellish-api/index.html',
+  'n8n-item-lists-window-embellish-api/index.html',
+  'make-array-window-unembellish-api/index.html',
+  'n8n-item-lists-window-unembellish-api/index.html',
+  'n8n-merge-by-picot-api/index.html',
+  'paddle-catalog-hippogriff-api/index.html',
+  'stripe-radar-value-list-repatch-api/index.html',
+  'clerk-session-end-pith-api/index.html',
+  'auth0-mfa-recovery-rochet-api/index.html',
+  'auth0-guardian-recovery-rochet-api/index.html',
+  'cloudflare-api-shield-schema-dwarfish-all-api/index.html',
+  'vercel-firewall-ip-blacklist-dwarfish-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-dwarfish-all-keys-api/index.html',
+  'huggingface-jobs-inspect-grenadin-api/index.html',
+  'github-copilot-seat-assignment-grenadin-api/index.html',
+  'figma-mcp-code-connect-dimity-api/index.html',
+  'slack-lists-access-pith-api/index.html',
+  'notion-data-sources-listless-api/index.html',
 ];
