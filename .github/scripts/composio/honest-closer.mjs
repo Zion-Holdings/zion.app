@@ -309,6 +309,12 @@ export function titleFromSlug(slug) {
     .replace(/\bCoffey\b/g, 'Coffey')
     .replace(/\bStewartsville\b/g, 'Stewartsville')
     .replace(/\bOsborn\b/g, 'Osborn')
+    .replace(/\bLock Springs\b/g, 'Lock Springs')
+    .replace(/\bKidder\b/g, 'Kidder')
+    .replace(/\bBraymer\b/g, 'Braymer')
+    .replace(/\bCowgill\b/g, 'Cowgill')
+    .replace(/\bChula\b/g, 'Chula')
+    .replace(/\bLudlow\b/g, 'Ludlow')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8619,4 +8625,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-pin-api/index.html',
   'slack-lists-access-stamen-api/index.html',
   'notion-data-sources-swift-api/index.html',
+  'lock-springs/index.html',
+  'kidder/index.html',
+  'braymer/index.html',
+  'cowgill/index.html',
+  'chula/index.html',
+  'ludlow/index.html',
+  'n8n-merge-by-unfasten-api/index.html',
+  'make-array-window-yoke-api/index.html',
+  'n8n-item-lists-window-yoke-api/index.html',
+  'make-array-window-unyoke-api/index.html',
+  'n8n-item-lists-window-unyoke-api/index.html',
+  'n8n-merge-by-fasten-api/index.html',
+  'paddle-catalog-carafe-api/index.html',
+  'stripe-radar-value-list-reclip-api/index.html',
+  'clerk-session-end-corolla-api/index.html',
+  'auth0-mfa-recovery-vestry-api/index.html',
+  'auth0-guardian-recovery-vestry-api/index.html',
+  'cloudflare-api-shield-schema-long-all-api/index.html',
+  'vercel-firewall-ip-blacklist-long-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-long-all-keys-api/index.html',
+  'huggingface-jobs-inspect-grit-api/index.html',
+  'github-copilot-seat-assignment-grit-api/index.html',
+  'figma-mcp-code-connect-bump-api/index.html',
+  'slack-lists-access-corolla-api/index.html',
+  'notion-data-sources-zippy-api/index.html',
 ];
