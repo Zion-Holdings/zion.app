@@ -779,6 +779,12 @@ export function titleFromSlug(slug) {
     .replace(/\bDeer Ridge\b/g, 'Deer Ridge')
     .replace(/\bCora\b/g, 'Cora')
     .replace(/\bLocust Hill\b/g, 'Locust Hill')
+    .replace(/\bHalf Rock\b/g, 'Half Rock')
+    .replace(/\bMill Grove\b/g, 'Mill Grove')
+    .replace(/\bModena\b/g, 'Modena')
+    .replace(/\bEversonville\b/g, 'Eversonville')
+    .replace(/\bTopsy\b/g, 'Topsy')
+    .replace(/\bLeisure Lake\b/g, 'Leisure Lake')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11039,4 +11045,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-drilling-api/index.html',
   'slack-lists-access-procambium-api/index.html',
   'notion-data-sources-oscitancy-api/index.html',
+  'half-rock/index.html',
+  'mill-grove/index.html',
+  'modena/index.html',
+  'eversonville/index.html',
+  'topsy/index.html',
+  'leisure-lake/index.html',
+  'n8n-merge-by-unclamp-api/index.html',
+  'make-array-window-link-api/index.html',
+  'n8n-item-lists-window-link-api/index.html',
+  'make-array-window-unlink-api/index.html',
+  'n8n-item-lists-window-unlink-api/index.html',
+  'n8n-merge-by-clamp-api/index.html',
+  'paddle-catalog-asrai-api/index.html',
+  'stripe-radar-value-list-rebuff-api/index.html',
+  'clerk-session-end-casparian-api/index.html',
+  'auth0-mfa-recovery-humeral-veil-api/index.html',
+  'auth0-guardian-recovery-humeral-veil-api/index.html',
+  'cloudflare-api-shield-schema-ionic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-ionic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-ionic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-salami-api/index.html',
+  'github-copilot-seat-assignment-salami-api/index.html',
+  'figma-mcp-code-connect-hopsack-api/index.html',
+  'slack-lists-access-casparian-api/index.html',
+  'notion-data-sources-hebetate-api/index.html',
 ];
