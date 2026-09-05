@@ -804,6 +804,12 @@ export function titleFromSlug(slug) {
     .replace(/\bWet Glaize\b/g, 'Wet Glaize')
     .replace(/\bWindyville\b/g, 'Windyville')
     .replace(/\bLake Niangua\b/g, 'Lake Niangua')
+    .replace(/\bOld Lin Creek\b/g, 'Old Linn Creek')
+    .replace(/\bCelt\b/g, 'Celt')
+    .replace(/\bLeadmine\b/g, 'Leadmine')
+    .replace(/\bDevil Elbow\b/g, "Devil's Elbow")
+    .replace(/\bBennett Spring\b/g, 'Bennett Spring')
+    .replace(/\bFort Leonard Wood\b/g, 'Fort Leonard Wood')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11164,4 +11170,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-cheesecloth-api/index.html',
   'slack-lists-access-cork-cambium-api/index.html',
   'notion-data-sources-somniferous-api/index.html',
+  'old-lin-creek/index.html',
+  'celt/index.html',
+  'leadmine/index.html',
+  'devil-elbow/index.html',
+  'bennett-spring/index.html',
+  'fort-leonard-wood/index.html',
+  'n8n-merge-by-ungirth-api/index.html',
+  'make-array-window-saddle-api/index.html',
+  'n8n-item-lists-window-saddle-api/index.html',
+  'make-array-window-unsaddle-api/index.html',
+  'n8n-item-lists-window-unsaddle-api/index.html',
+  'n8n-merge-by-girth-api/index.html',
+  'paddle-catalog-nix-api/index.html',
+  'stripe-radar-value-list-repaint-api/index.html',
+  'clerk-session-end-fascicular-api/index.html',
+  'auth0-mfa-recovery-superhumerale-api/index.html',
+  'auth0-guardian-recovery-superhumerale-api/index.html',
+  'cloudflare-api-shield-schema-mesonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-mesonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-mesonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-culatello-api/index.html',
+  'github-copilot-seat-assignment-culatello-api/index.html',
+  'figma-mcp-code-connect-jaconet-api/index.html',
+  'slack-lists-access-fascicular-api/index.html',
+  'notion-data-sources-hypnagogic-api/index.html',
 ];
