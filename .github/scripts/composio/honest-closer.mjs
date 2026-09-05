@@ -563,6 +563,12 @@ export function titleFromSlug(slug) {
     .replace(/\bZanoni\b/g, 'Zanoni')
     .replace(/\bUdall\b/g, 'Udall')
     .replace(/\bHowards Ridge\b/g, "Howard's Ridge")
+    .replace(/\bSquires\b/g, 'Squires')
+    .replace(/\bPottersville\b/g, 'Pottersville')
+    .replace(/\bPeace Valley\b/g, 'Peace Valley')
+    .replace(/\bBrandsville\b/g, 'Brandsville')
+    .replace(/\bKoshkonong\b/g, 'Koshkonong')
+    .replace(/\bCouch\b/g, 'Couch')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9923,4 +9929,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-canvas-api/index.html',
   'slack-lists-access-lamina-api/index.html',
   'notion-data-sources-dormant-api/index.html',
+  'squires/index.html',
+  'pottersville/index.html',
+  'peace-valley/index.html',
+  'brandsville/index.html',
+  'koshkonong/index.html',
+  'couch/index.html',
+  'n8n-merge-by-unfacing-api/index.html',
+  'make-array-window-gusset-api/index.html',
+  'n8n-item-lists-window-gusset-api/index.html',
+  'make-array-window-ungusset-api/index.html',
+  'n8n-item-lists-window-ungusset-api/index.html',
+  'n8n-merge-by-facing-api/index.html',
+  'paddle-catalog-dragon-api/index.html',
+  'stripe-radar-value-list-remesh-api/index.html',
+  'clerk-session-end-midrib-api/index.html',
+  'auth0-mfa-recovery-pallium-api/index.html',
+  'auth0-guardian-recovery-pallium-api/index.html',
+  'cloudflare-api-shield-schema-itty-all-api/index.html',
+  'vercel-firewall-ip-blacklist-itty-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-itty-all-keys-api/index.html',
+  'huggingface-jobs-inspect-filet-api/index.html',
+  'github-copilot-seat-assignment-filet-api/index.html',
+  'figma-mcp-code-connect-flannel-api/index.html',
+  'slack-lists-access-midrib-api/index.html',
+  'notion-data-sources-latent-api/index.html',
 ];
