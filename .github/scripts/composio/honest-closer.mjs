@@ -351,6 +351,12 @@ export function titleFromSlug(slug) {
     .replace(/\bMartinstown\b/g, 'Martinstown')
     .replace(/\bRutledge\b/g, 'Rutledge')
     .replace(/\bNew Boston\b/g, 'New Boston')
+    .replace(/\bHigbee\b/g, 'Higbee')
+    .replace(/\bRenick\b/g, 'Renick')
+    .replace(/\bClifton Hill\b/g, 'Clifton Hill')
+    .replace(/\bCollege Mound\b/g, 'College Mound')
+    .replace(/\bPrairie Hill\b/g, 'Prairie Hill')
+    .replace(/\bStet\b/g, 'Stet')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8836,4 +8842,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-notch-api/index.html',
   'slack-lists-access-peduncle-api/index.html',
   'notion-data-sources-deft-api/index.html',
+  'higbee/index.html',
+  'renick/index.html',
+  'clifton-hill/index.html',
+  'college-mound/index.html',
+  'prairie-hill/index.html',
+  'stet/index.html',
+  'n8n-merge-by-unbutton-api/index.html',
+  'make-array-window-clip-api/index.html',
+  'n8n-item-lists-window-clip-api/index.html',
+  'make-array-window-unclip-api/index.html',
+  'n8n-item-lists-window-unclip-api/index.html',
+  'n8n-merge-by-button-api/index.html',
+  'paddle-catalog-amphora-api/index.html',
+  'stripe-radar-value-list-rebutton-api/index.html',
+  'clerk-session-end-receptacle-api/index.html',
+  'auth0-mfa-recovery-reredos-api/index.html',
+  'auth0-guardian-recovery-reredos-api/index.html',
+  'cloudflare-api-shield-schema-tera-all-api/index.html',
+  'vercel-firewall-ip-blacklist-tera-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-tera-all-keys-api/index.html',
+  'huggingface-jobs-inspect-smash-api/index.html',
+  'github-copilot-seat-assignment-smash-api/index.html',
+  'figma-mcp-code-connect-groove-api/index.html',
+  'slack-lists-access-receptacle-api/index.html',
+  'notion-data-sources-acute-api/index.html',
 ];
