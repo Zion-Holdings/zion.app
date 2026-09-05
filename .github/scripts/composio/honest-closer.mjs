@@ -193,6 +193,11 @@ export function titleFromSlug(slug) {
     .replace(/\bUniontown\b/g, 'Uniontown')
     .replace(/\bWittenberg\b/g, 'Wittenberg')
     .replace(/\bBrazeau\b/g, 'Brazeau')
+    .replace(/\bSt Mary\b/g, 'St. Mary')
+    .replace(/\bNew Wells\b/g, 'New Wells')
+    .replace(/\bMenfro\b/g, 'Menfro')
+    .replace(/\bCrosstown\b/g, 'Crosstown')
+    .replace(/\bFarrar\b/g, 'Farrar')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8003,4 +8008,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-carve-api/index.html',
   'slack-lists-access-clone-api/index.html',
   'notion-data-sources-stretch-api/index.html',
+  'rives/index.html',
+  'farrar/index.html',
+  'st-mary/index.html',
+  'menfro/index.html',
+  'crosstown/index.html',
+  'new-wells/index.html',
+  'n8n-merge-by-unnest-api/index.html',
+  'make-array-window-nest-api/index.html',
+  'n8n-item-lists-window-nest-api/index.html',
+  'make-array-window-unnest-api/index.html',
+  'n8n-item-lists-window-unnest-api/index.html',
+  'n8n-merge-by-cluster-api/index.html',
+  'paddle-catalog-bundle-api/index.html',
+  'stripe-radar-value-list-reawaken-api/index.html',
+  'clerk-session-end-root-api/index.html',
+  'auth0-mfa-recovery-refuse-api/index.html',
+  'auth0-guardian-recovery-refuse-api/index.html',
+  'cloudflare-api-shield-schema-many-all-api/index.html',
+  'vercel-firewall-ip-blacklist-many-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-many-all-keys-api/index.html',
+  'huggingface-jobs-inspect-pitch-api/index.html',
+  'github-copilot-seat-assignment-shift-api/index.html',
+  'figma-mcp-code-connect-trim-api/index.html',
+  'slack-lists-access-fork-api/index.html',
+  'notion-data-sources-deepen-api/index.html',
 ];
