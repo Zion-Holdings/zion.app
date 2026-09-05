@@ -629,6 +629,12 @@ export function titleFromSlug(slug) {
     .replace(/\bCurrent View\b/g, 'Current View')
     .replace(/\bJack Fork\b/g, 'Jack Fork')
     .replace(/\bNew Bourbon\b/g, 'New Bourbon')
+    .replace(/\bFrench Village\b/g, 'French Village')
+    .replace(/\bValles Mines\b/g, 'Valles Mines')
+    .replace(/\bTiff\b/g, 'Tiff')
+    .replace(/\bDoolittle\b/g, 'Doolittle')
+    .replace(/\bAgency\b/g, 'Agency')
+    .replace(/\bChilhowee\b/g, 'Chilhowee')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10264,4 +10270,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-faille-api/index.html',
   'slack-lists-access-mesophyll-api/index.html',
   'notion-data-sources-drowsy-api/index.html',
+  'french-village/index.html',
+  'valles-mines/index.html',
+  'tiff/index.html',
+  'doolittle/index.html',
+  'agency/index.html',
+  'chilhowee/index.html',
+  'n8n-merge-by-unbead-api/index.html',
+  'make-array-window-rickrack-api/index.html',
+  'n8n-item-lists-window-rickrack-api/index.html',
+  'make-array-window-unrickrack-api/index.html',
+  'n8n-item-lists-window-unrickrack-api/index.html',
+  'n8n-merge-by-bead-api/index.html',
+  'paddle-catalog-satyr-api/index.html',
+  'stripe-radar-value-list-refell-api/index.html',
+  'clerk-session-end-epidermis-api/index.html',
+  'auth0-mfa-recovery-zucchetto-api/index.html',
+  'auth0-guardian-recovery-zucchetto-api/index.html',
+  'cloudflare-api-shield-schema-lilliput-all-api/index.html',
+  'vercel-firewall-ip-blacklist-lilliput-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-lilliput-all-keys-api/index.html',
+  'huggingface-jobs-inspect-saltimbocca-api/index.html',
+  'github-copilot-seat-assignment-saltimbocca-api/index.html',
+  'figma-mcp-code-connect-taffeta-api/index.html',
+  'slack-lists-access-epidermis-api/index.html',
+  'notion-data-sources-sleepy-api/index.html',
 ];
