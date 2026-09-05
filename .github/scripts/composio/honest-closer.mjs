@@ -539,6 +539,12 @@ export function titleFromSlug(slug) {
     .replace(/\bRockaway Beach\b/g, 'Rockaway Beach')
     .replace(/\bMcgirk\b/g, 'McGirk')
     .replace(/\bMc Girk\b/g, 'McGirk')
+    .replace(/\bChadwick\b/g, 'Chadwick')
+    .replace(/\bSeligman\b/g, 'Seligman')
+    .replace(/\bCentertown\b/g, 'Centertown')
+    .replace(/\bFair Grove\b/g, 'Fair Grove')
+    .replace(/\bHalltown\b/g, 'Halltown')
+    .replace(/\bParis Springs\b/g, 'Paris Springs')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9799,4 +9805,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-damask-api/index.html',
   'slack-lists-access-petiole-api/index.html',
   'notion-data-sources-idle-api/index.html',
+  'chadwick/index.html',
+  'seligman/index.html',
+  'centertown/index.html',
+  'fair-grove/index.html',
+  'halltown/index.html',
+  'paris-springs/index.html',
+  'n8n-merge-by-uncasing-api/index.html',
+  'make-array-window-cord-api/index.html',
+  'n8n-item-lists-window-cord-api/index.html',
+  'make-array-window-uncord-api/index.html',
+  'n8n-item-lists-window-uncord-api/index.html',
+  'n8n-merge-by-casing-api/index.html',
+  'paddle-catalog-manticore-api/index.html',
+  'stripe-radar-value-list-recotton-api/index.html',
+  'clerk-session-end-stipule-api/index.html',
+  'auth0-mfa-recovery-alb-api/index.html',
+  'auth0-guardian-recovery-alb-api/index.html',
+  'cloudflare-api-shield-schema-teeny-all-api/index.html',
+  'vercel-firewall-ip-blacklist-teeny-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-teeny-all-keys-api/index.html',
+  'huggingface-jobs-inspect-escalope-api/index.html',
+  'github-copilot-seat-assignment-escalope-api/index.html',
+  'figma-mcp-code-connect-twill-api/index.html',
+  'slack-lists-access-stipule-api/index.html',
+  'notion-data-sources-inert-api/index.html',
 ];
