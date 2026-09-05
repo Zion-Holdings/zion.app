@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estimador FinOps grátis | Zion Tech Group</title>
+<meta name="description" content="Estime o desperdício anual de cloud no navegador. Sem cadastro. Discovery $99 mapeia onde cortar primeiro.">
+<link rel="canonical" href="https://ziontechgroup.com/finops-estimator/">
+<meta name="robots" content="index,follow">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#070b16,#0f172a 50%,#15103a);color:#f4f7ff;font:16px/1.65 system-ui,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:28px 24px}a{color:#22d3ee;text-decoration:none}
+.brand{font-weight:800;background:linear-gradient(90deg,#22d3ee,#8b5cf6);-webkit-background-clip:text;color:transparent}
+.eyebrow{color:#c4b5fd;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;font-weight:800}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:10px 0 16px}
+.lead{color:#9aa8c7;max-width:720px}
+.diag{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+.diag label{display:flex;flex-direction:column;gap:6px;color:#c5d0e8;font-size:.92rem}
+.diag input,.diag select{background:#0e1628;border:1px solid #2a3654;color:#f4f7ff;border-radius:10px;padding:10px 12px;font:inherit}
+.out{margin-top:8px;padding:18px;border:1px solid #2a3654;border-radius:14px;background:#0e1628}
+.score{font-size:2rem;font-weight:800;color:#22d3ee}
+.btn{background:linear-gradient(100deg,#0069ff,#22d3ee);color:#fff;font-weight:700;border-radius:11px;padding:10px 16px;display:inline-block;margin:8px 8px 0 0}
+.btn.alt{background:transparent;border:1px solid rgba(139,92,246,.5);color:#fff}
+footer{margin-top:40px;color:#8793ac;font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="nav"><a class="brand" href="/">Zion Tech Group</a> · <a href="/discovery/">Discovery $99</a></p>
+<p class="eyebrow">Ferramenta gratuita</p>
+<h1>Estimador FinOps — desperdício anual de cloud.</h1>
+<p class="lead">Gasto mensal × % ocioso × 12 + horas de revisão. Sem backend. Sem fila. Sem cadastro.</p>
+<form class="diag" id="finops-form">
+<label>Gasto mensal de cloud (USD)<input name="spend" type="number" min="0" step="100" value="4000"></label>
+<label>Percentual ocioso / sem dono<select name="idle"><option value="10">10%</option><option value="20" selected>20%</option><option value="35">35%</option><option value="50">50%</option></select></label>
+<label>Horas/mês revisando fatura<input name="hours" type="number" min="0" max="80" value="8"></label>
+<label>Custo da hora (USD)<input name="rate" type="number" min="20" max="400" value="80"></label>
+</form>
+<div class="out" id="finops-out"></div>
+<p><a class="btn" href="/discovery/">Pagar Discovery $99</a> <a class="btn alt" href="/booking/">Agendar</a> <a class="btn alt" href="/whatsapp/">WhatsApp</a></p>
+<p>Kleber Garcia Alcatrao · kleber@ziontechgroup.com · +1 302 464 0950</p>
+</div>
+<script>
+(function(){
+  var ff=document.getElementById("finops-form");
+  var fo=document.getElementById("finops-out");
+  if(!ff||!fo) return;
+  function run(){
+    var d=Object.fromEntries(new FormData(ff));
+    var spend=+d.spend||0, idle=(+d.idle||0)/100, hours=+d.hours||0, rate=+d.rate||80;
+    var waste=Math.round(spend*idle*12+hours*rate*12);
+    var plan, href, why;
+    if(waste>=80000){plan="Consulting · $499";href="/booking/";why="O vazamento paga o roadmap neste trimestre.";}
+    else if(waste>=15000){plan="Discovery · $99";href="/discovery/";why="Um recorte de 7 dias mostra onde cortar primeiro.";}
+    else {plan="Ferramentas grátis + sessão";href="/free-ai-it-tools/";why="Comece medindo. Se o número crescer, subimos para Discovery.";}
+    var mail="mailto:kleber@ziontechgroup.com?subject="+encodeURIComponent("FinOps estimator "+waste)+"&body="+encodeURIComponent("Desperdicio estimado US$ "+waste+"/ano. Quero um Discovery $99.");
+    fo.innerHTML="<div class=\"score\">US$ "+waste.toLocaleString("en-US")+"/ano</div><p>Desperdício estimado (idle cloud + horas de revisão).</p><p>Recomendação: <strong>"+plan+"</strong>. "+why+"</p><p><a class=\"btn\" href=\""+href+"\">Seguir recomendação</a> <a class=\"btn alt\" href=\""+mail+"\">Enviar número ao Kleber</a></p>";
+  }
+  ff.addEventListener("input",run); run();
+})();
+</script>
+</body>
+</html>
