@@ -321,6 +321,12 @@ export function titleFromSlug(slug) {
     .replace(/\bBucklin\b/g, 'Bucklin')
     .replace(/\bPurdin\b/g, 'Purdin')
     .replace(/\bRothville\b/g, 'Rothville')
+    .replace(/\bMarceline\b/g, 'Marceline')
+    .replace(/\bBevier\b/g, 'Bevier')
+    .replace(/\bEthel\b/g, 'Ethel')
+    .replace(/\bNew Cambria\b/g, 'New Cambria')
+    .replace(/\bElmer\b/g, 'Elmer')
+    .replace(/\bLa Plata\b/g, 'La Plata')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8681,4 +8687,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-lead-api/index.html',
   'slack-lists-access-pistil-api/index.html',
   'notion-data-sources-peppy-api/index.html',
+  'marceline/index.html',
+  'bevier/index.html',
+  'ethel/index.html',
+  'new-cambria/index.html',
+  'elmer/index.html',
+  'la-plata/index.html',
+  'n8n-merge-by-unbuckle-api/index.html',
+  'make-array-window-latch-api/index.html',
+  'n8n-item-lists-window-latch-api/index.html',
+  'make-array-window-unlatch-api/index.html',
+  'n8n-item-lists-window-unlatch-api/index.html',
+  'n8n-merge-by-buckle-api/index.html',
+  'paddle-catalog-ewer-api/index.html',
+  'stripe-radar-value-list-reclasp-api/index.html',
+  'clerk-session-end-anther-api/index.html',
+  'auth0-mfa-recovery-chancel-api/index.html',
+  'auth0-guardian-recovery-chancel-api/index.html',
+  'cloudflare-api-shield-schema-huge-all-api/index.html',
+  'vercel-firewall-ip-blacklist-huge-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-huge-all-keys-api/index.html',
+  'huggingface-jobs-inspect-mill-api/index.html',
+  'github-copilot-seat-assignment-mill-api/index.html',
+  'figma-mcp-code-connect-trace-api/index.html',
+  'slack-lists-access-anther-api/index.html',
+  'notion-data-sources-jaunty-api/index.html',
 ];
