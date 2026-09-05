@@ -635,6 +635,12 @@ export function titleFromSlug(slug) {
     .replace(/\bDoolittle\b/g, 'Doolittle')
     .replace(/\bAgency\b/g, 'Agency')
     .replace(/\bChilhowee\b/g, 'Chilhowee')
+    .replace(/\bLa Monte\b/g, 'La Monte')
+    .replace(/\bGreen Ridge\b/g, 'Green Ridge')
+    .replace(/\bWeatherby Lake\b/g, 'Weatherby Lake')
+    .replace(/\bDrexel\b/g, 'Drexel')
+    .replace(/\bLevasy\b/g, 'Levasy')
+    .replace(/\bBates City\b/g, 'Bates City')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10295,4 +10301,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-taffeta-api/index.html',
   'slack-lists-access-epidermis-api/index.html',
   'notion-data-sources-sleepy-api/index.html',
+  'la-monte/index.html',
+  'green-ridge/index.html',
+  'weatherby-lake/index.html',
+  'drexel/index.html',
+  'levasy/index.html',
+  'bates-city/index.html',
+  'n8n-merge-by-unseam-api/index.html',
+  'make-array-window-bead-api/index.html',
+  'n8n-item-lists-window-bead-api/index.html',
+  'make-array-window-unbead-api/index.html',
+  'n8n-item-lists-window-unbead-api/index.html',
+  'n8n-merge-by-seam-api/index.html',
+  'paddle-catalog-medusa-api/index.html',
+  'stripe-radar-value-list-reserge-api/index.html',
+  'clerk-session-end-hypodermis-api/index.html',
+  'auth0-mfa-recovery-biretta-api/index.html',
+  'auth0-guardian-recovery-biretta-api/index.html',
+  'cloudflare-api-shield-schema-nanoscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-nanoscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-nanoscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-carpaccio-api/index.html',
+  'github-copilot-seat-assignment-carpaccio-api/index.html',
+  'figma-mcp-code-connect-crepe-api/index.html',
+  'slack-lists-access-hypodermis-api/index.html',
+  'notion-data-sources-weary-api/index.html',
 ];
