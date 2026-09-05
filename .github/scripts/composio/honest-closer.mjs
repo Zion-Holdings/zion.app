@@ -599,6 +599,12 @@ export function titleFromSlug(slug) {
     .replace(/\bOxly\b/g, 'Oxly')
     .replace(/\bBriar\b/g, 'Briar')
     .replace(/\bFairdealing\b/g, 'Fairdealing')
+    .replace(/\bMarble Hill\b/g, 'Marble Hill')
+    .replace(/\bScopus\b/g, 'Scopus')
+    .replace(/\bGrassy\b/g, 'Grassy')
+    .replace(/\bWappapello\b/g, 'Wappapello')
+    .replace(/\bMill Spring\b/g, 'Mill Spring')
+    .replace(/\bClubb\b/g, 'Clubb')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10109,4 +10115,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-lawn-api/index.html',
   'slack-lists-access-stomata-api/index.html',
   'notion-data-sources-somnolent-api/index.html',
+  'marble-hill/index.html',
+  'scopus/index.html',
+  'grassy/index.html',
+  'wappapello/index.html',
+  'mill-spring/index.html',
+  'clubb/index.html',
+  'n8n-merge-by-unapplique-api/index.html',
+  'make-array-window-quilting-api/index.html',
+  'n8n-item-lists-window-quilting-api/index.html',
+  'make-array-window-unquilting-api/index.html',
+  'n8n-item-lists-window-unquilting-api/index.html',
+  'n8n-merge-by-applique-api/index.html',
+  'paddle-catalog-wivern-api/index.html',
+  'stripe-radar-value-list-reapplique-api/index.html',
+  'clerk-session-end-cambium-api/index.html',
+  'auth0-mfa-recovery-chalice-api/index.html',
+  'auth0-guardian-recovery-chalice-api/index.html',
+  'cloudflare-api-shield-schema-lilliputian-all-api/index.html',
+  'vercel-firewall-ip-blacklist-lilliputian-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-lilliputian-all-keys-api/index.html',
+  'huggingface-jobs-inspect-ballotine-api/index.html',
+  'github-copilot-seat-assignment-ballotine-api/index.html',
+  'figma-mcp-code-connect-batiste-api/index.html',
+  'slack-lists-access-cambium-api/index.html',
+  'notion-data-sources-lethargic-api/index.html',
 ];
