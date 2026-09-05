@@ -810,6 +810,12 @@ export function titleFromSlug(slug) {
     .replace(/\bDevil Elbow\b/g, "Devil's Elbow")
     .replace(/\bBennett Spring\b/g, 'Bennett Spring')
     .replace(/\bFort Leonard Wood\b/g, 'Fort Leonard Wood')
+    .replace(/\bYancy Mills\b/g, 'Yancy Mills')
+    .replace(/\bKaintuck\b/g, 'Kaintuck')
+    .replace(/\bNorthwye\b/g, 'Northwye')
+    .replace(/\bSouthwye\b/g, 'Southwye')
+    .replace(/\bDiggins\b/g, 'Diggins')
+    .replace(/\bFanchon\b/g, 'Fanchon')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11195,4 +11201,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-jaconet-api/index.html',
   'slack-lists-access-fascicular-api/index.html',
   'notion-data-sources-hypnagogic-api/index.html',
+  'yancy-mills/index.html',
+  'kaintuck/index.html',
+  'northwye/index.html',
+  'southwye/index.html',
+  'diggins/index.html',
+  'fanchon/index.html',
+  'n8n-merge-by-unhalter-api/index.html',
+  'make-array-window-girth-api/index.html',
+  'n8n-item-lists-window-girth-api/index.html',
+  'make-array-window-ungirth-api/index.html',
+  'n8n-item-lists-window-ungirth-api/index.html',
+  'n8n-merge-by-halter-api/index.html',
+  'paddle-catalog-kappa-api/index.html',
+  'stripe-radar-value-list-refinish-api/index.html',
+  'clerk-session-end-interfascicular-api/index.html',
+  'auth0-mfa-recovery-omophorion-api/index.html',
+  'auth0-guardian-recovery-omophorion-api/index.html',
+  'cloudflare-api-shield-schema-fermionic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-fermionic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-fermionic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-finocchiona-api/index.html',
+  'github-copilot-seat-assignment-finocchiona-api/index.html',
+  'figma-mcp-code-connect-mull-api/index.html',
+  'slack-lists-access-interfascicular-api/index.html',
+  'notion-data-sources-somnolence-api/index.html',
 ];
