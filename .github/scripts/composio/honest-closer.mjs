@@ -124,6 +124,9 @@ export function titleFromSlug(slug) {
     .replace(/\bMontgomery City\b/g, 'Montgomery City')
     .replace(/\bSteelville\b/g, 'Steelville')
     .replace(/\bJonesburg\b/g, 'Jonesburg')
+    .replace(/\bMineral Point\b/g, 'Mineral Point')
+    .replace(/\bWellsville\b/g, 'Wellsville')
+    .replace(/\bWestphalia\b/g, 'Westphalia')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7409,4 +7412,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-hide-api/index.html',
   'slack-lists-access-unshare-api/index.html',
   'notion-data-sources-freeze-api/index.html',
+  'wellsville/index.html',
+  'freeburg/index.html',
+  'westphalia/index.html',
+  'richwoods/index.html',
+  'mineral-point/index.html',
+  'caledonia/index.html',
+  'make-array-swap-api/index.html',
+  'n8n-item-lists-swap-api/index.html',
+  'make-array-rotate-api/index.html',
+  'n8n-item-lists-rotate-api/index.html',
+  'n8n-merge-by-group-api/index.html',
+  'make-array-partition-api/index.html',
+  'paddle-discount-archive-api/index.html',
+  'stripe-radar-list-item-delete-api/index.html',
+  'clerk-session-revoke-one-api/index.html',
+  'clerk-session-end-device-api/index.html',
+  'auth0-mfa-email-enable-api/index.html',
+  'vercel-firewall-ip-blacklist-wipe-api/index.html',
+  'cloudflare-api-shield-jwt-key-reset-api/index.html',
+  'vercel-firewall-ip-allowlist-drop-api/index.html',
+  'huggingface-jobs-inspect-history-api/index.html',
+  'github-copilot-seat-assignment-return-api/index.html',
+  'figma-mcp-code-connect-show-api/index.html',
+  'slack-lists-access-invite-api/index.html',
+  'notion-data-sources-thaw-api/index.html',
 ];
