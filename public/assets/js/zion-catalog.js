@@ -81,9 +81,29 @@
     render();
   }
 
-  var ff=document.getElementById("finops-form");
-  var fo=document.getElementById("finops-out");
+  function ensureFinops(){
+    if(document.getElementById("finops-form") && document.getElementById("finops-out")) return;
+    var host=document.getElementById("finops-estimator");
+    if(!host){
+      host=document.createElement("section");
+      host.id="finops-estimator";
+      host.className="section band";
+      var anchor=document.getElementById("diagnostico")||document.getElementById("faq")||document.querySelector("main");
+      if(anchor && anchor.parentNode){
+        if(anchor.id==="diagnostico") anchor.parentNode.insertBefore(host, anchor.nextSibling);
+        else anchor.parentNode.insertBefore(host, anchor);
+      } else if(document.body){
+        document.body.appendChild(host);
+      }
+    }
+    if(!host.querySelector("#finops-form")){
+      host.innerHTML='<div class="wrap"><p class="eyebrow">Ferramenta gratuita</p><h2>Estimador FinOps no navegador.</h2><p class="lead">Calcule o desperdicio anual de cloud + horas de revisao. Sem backend, sem fila, sempre no ar.</p><form class="diag" id="finops-form"><label>Gasto mensal de cloud (USD)<input name="spend" type="number" min="0" step="100" value="4000"></label><label>Percentual ocioso / sem dono<select name="idle"><option value="10">10%</option><option value="20" selected>20%</option><option value="35">35%</option><option value="50">50%</option></select></label><label>Horas/mes revisando fatura<input name="hours" type="number" min="0" max="80" value="8"></label><label>Custo da hora (USD)<input name="rate" type="number" min="20" max="400" value="80"></label></form><div class="diag-out" id="finops-out"></div><div class="actions"><a class="btn" href="/finops-consulting/">Ver FinOps consulting</a><a class="btn alt" href="/discovery/">Discovery $99</a></div></div>';
+    }
+  }
+
   function finops(){
+    var ff=document.getElementById("finops-form");
+    var fo=document.getElementById("finops-out");
     if(!ff||!fo) return;
     var d=Object.fromEntries(new FormData(ff));
     var spend=+d.spend||0, idle=(+d.idle||0)/100, hours=+d.hours||0, rate=+d.rate||80;
@@ -94,5 +114,9 @@
     else { plan="Ferramentas gratis + sessao"; href="/free-ai-it-tools/"; why="Comece medindo. Se o numero crescer, subimos para Discovery."; }
     fo.innerHTML="<div class=\"score\">US$ "+waste.toLocaleString("en-US")+"/ano</div><p>Desperdicio estimado (idle cloud + horas de revisao).</p><p>Recomendacao: <strong>"+plan+"</strong>. "+why+"</p><p><a class=\"btn\" href=\""+href+"\">Seguir recomendacao</a> <a class=\"btn alt\" href=\"/finops-consulting/\">Ver FinOps</a></p>";
   }
+
+  ensureFinops();
+  var ff=document.getElementById("finops-form");
+  var fo=document.getElementById("finops-out");
   if(ff&&fo){ ff.addEventListener("input",finops); finops(); }
 })();
