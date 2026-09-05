@@ -303,6 +303,12 @@ export function titleFromSlug(slug) {
     .replace(/\bStanberry\b/g, 'Stanberry')
     .replace(/\bMcfall\b/g, 'McFall')
     .replace(/\bCainsville\b/g, 'Cainsville')
+    .replace(/\bBlythedale\b/g, 'Blythedale')
+    .replace(/\bEagleville\b/g, 'Eagleville')
+    .replace(/\bPattonsburg\b/g, 'Pattonsburg')
+    .replace(/\bCoffey\b/g, 'Coffey')
+    .replace(/\bStewartsville\b/g, 'Stewartsville')
+    .replace(/\bOsborn\b/g, 'Osborn')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8588,4 +8594,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-via-api/index.html',
   'slack-lists-access-petal-api/index.html',
   'notion-data-sources-crisp-api/index.html',
+  'blythedale/index.html',
+  'eagleville/index.html',
+  'pattonsburg/index.html',
+  'coffey/index.html',
+  'stewartsville/index.html',
+  'osborn/index.html',
+  'n8n-merge-by-unyoke-api/index.html',
+  'make-array-window-hitch-api/index.html',
+  'n8n-item-lists-window-hitch-api/index.html',
+  'make-array-window-unhitch-api/index.html',
+  'n8n-item-lists-window-unhitch-api/index.html',
+  'n8n-merge-by-yoke-api/index.html',
+  'paddle-catalog-decanter-api/index.html',
+  'stripe-radar-value-list-reclamp-api/index.html',
+  'clerk-session-end-stamen-api/index.html',
+  'auth0-mfa-recovery-cloister-api/index.html',
+  'auth0-guardian-recovery-cloister-api/index.html',
+  'cloudflare-api-shield-schema-low-all-api/index.html',
+  'vercel-firewall-ip-blacklist-low-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-low-all-keys-api/index.html',
+  'huggingface-jobs-inspect-mesh-api/index.html',
+  'github-copilot-seat-assignment-mesh-api/index.html',
+  'figma-mcp-code-connect-pin-api/index.html',
+  'slack-lists-access-stamen-api/index.html',
+  'notion-data-sources-swift-api/index.html',
 ];
