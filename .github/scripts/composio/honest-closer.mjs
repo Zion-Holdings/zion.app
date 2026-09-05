@@ -927,6 +927,15 @@ export function titleFromSlug(slug) {
     .replace(/\bGuard Cell\b/g, 'Guard-Cell')
     .replace(/\bVodyanoy\b/g, 'Vodyanoy')
     .replace(/\bApostolnik\b/g, 'Apostolnik')
+    .replace(/\bKenoma\b/g, 'Kenoma')
+    .replace(/\bNigh\b/g, 'Nigh')
+    .replace(/\bSeybert\b/g, 'Seybert')
+    .replace(/\bOlinger\b/g, 'Olinger')
+    .replace(/\bHarold\b/g, 'Harold')
+    .replace(/\bPieron\b/g, 'Pieron')
+    .replace(/\bUmibozu\b/g, 'Umibozu')
+    .replace(/\bRiassa\b/g, 'Riassa')
+    .replace(/\bWeisswurst\b/g, 'Weisswurst')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11737,4 +11746,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-moleskin-api/index.html',
   'slack-lists-access-guard-cell-api/index.html',
   'notion-data-sources-hibernating-api/index.html',
+  'kenoma/index.html',
+  'nigh/index.html',
+  'seybert/index.html',
+  'olinger/index.html',
+  'harold/index.html',
+  'pieron/index.html',
+  'n8n-merge-by-unreeve-api/index.html',
+  'make-array-window-peak-api/index.html',
+  'n8n-item-lists-window-peak-api/index.html',
+  'make-array-window-unpeak-api/index.html',
+  'n8n-item-lists-window-unpeak-api/index.html',
+  'n8n-merge-by-reeve-api/index.html',
+  'paddle-catalog-umibozu-api/index.html',
+  'stripe-radar-value-list-retint-api/index.html',
+  'clerk-session-end-palisade-api/index.html',
+  'auth0-mfa-recovery-riassa-api/index.html',
+  'auth0-guardian-recovery-riassa-api/index.html',
+  'cloudflare-api-shield-schema-planckian-all-api/index.html',
+  'vercel-firewall-ip-blacklist-planckian-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-planckian-all-keys-api/index.html',
+  'huggingface-jobs-inspect-weisswurst-api/index.html',
+  'github-copilot-seat-assignment-weisswurst-api/index.html',
+  'figma-mcp-code-connect-pique-api/index.html',
+  'slack-lists-access-palisade-api/index.html',
+  'notion-data-sources-reclining-api/index.html',
 ];
