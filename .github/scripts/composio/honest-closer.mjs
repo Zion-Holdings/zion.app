@@ -946,6 +946,19 @@ export function titleFromSlug(slug) {
     .replace(/\bSpongy Mesophyll\b/g, 'Spongy-Mesophyll')
     .replace(/\bKnackwurst\b/g, 'Knackwurst')
     .replace(/\bPanagia\b/g, 'Panagia')
+    .replace(/\bWillhoit\b/g, 'Willhoit')
+    .replace(/\bAbesville\b/g, 'Abesville')
+    .replace(/\bElsey\b/g, 'Elsey')
+    .replace(/\bWheelerville\b/g, 'Wheelerville')
+    .replace(/\bRidgley\b/g, 'Ridgley')
+    .replace(/\bKeltner\b/g, 'Keltner')
+    .replace(/\bNuckelavee\b/g, 'Nuckelavee')
+    .replace(/\bExodermis\b/g, 'Exodermis')
+    .replace(/\bEngolpion\b/g, 'Engolpion')
+    .replace(/\bChromodynamic\b/g, 'Chromodynamic')
+    .replace(/\bBratwurst\b/g, 'Bratwurst')
+    .replace(/\bChintz\b/g, 'Chintz')
+    .replace(/\bKipping\b/g, 'Kipping')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11806,4 +11819,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-tweed-api/index.html',
   'slack-lists-access-spongy-mesophyll-api/index.html',
   'notion-data-sources-lounging-api/index.html',
+  'willhoit/index.html',
+  'abesville/index.html',
+  'elsey/index.html',
+  'wheelerville/index.html',
+  'ridgley/index.html',
+  'keltner/index.html',
+  'n8n-merge-by-unsling-api/index.html',
+  'make-array-window-tack-api/index.html',
+  'n8n-item-lists-window-tack-api/index.html',
+  'make-array-window-untack-api/index.html',
+  'n8n-item-lists-window-untack-api/index.html',
+  'n8n-merge-by-sling-api/index.html',
+  'paddle-catalog-nuckelavee-api/index.html',
+  'stripe-radar-value-list-regild-api/index.html',
+  'clerk-session-end-exodermis-api/index.html',
+  'auth0-mfa-recovery-engolpion-api/index.html',
+  'auth0-guardian-recovery-engolpion-api/index.html',
+  'cloudflare-api-shield-schema-chromodynamic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-chromodynamic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-chromodynamic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-bratwurst-api/index.html',
+  'github-copilot-seat-assignment-bratwurst-api/index.html',
+  'figma-mcp-code-connect-chintz-api/index.html',
+  'slack-lists-access-exodermis-api/index.html',
+  'notion-data-sources-kipping-api/index.html',
 ];
