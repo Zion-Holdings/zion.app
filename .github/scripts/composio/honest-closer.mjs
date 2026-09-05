@@ -417,6 +417,12 @@ export function titleFromSlug(slug) {
     .replace(/\bReeds Spring\b/g, 'Reeds Spring')
     .replace(/\bVanzant\b/g, 'Vanzant')
     .replace(/\bOldfield\b/g, 'Oldfield')
+    .replace(/\bCape Fair\b/g, 'Cape Fair')
+    .replace(/\bBlue Eye\b/g, 'Blue Eye')
+    .replace(/\bLampe\b/g, 'Lampe')
+    .replace(/\bWalnut Shade\b/g, 'Walnut Shade')
+    .replace(/\bBranson West\b/g, 'Branson West')
+    .replace(/\bPonce De Leon\b/g, 'Ponce de Leon')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9177,4 +9183,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-buff-api/index.html',
   'slack-lists-access-lemma-api/index.html',
   'notion-data-sources-terse-api/index.html',
+  'cape-fair/index.html',
+  'blue-eye/index.html',
+  'lampe/index.html',
+  'walnut-shade/index.html',
+  'branson-west/index.html',
+  'ponce-de-leon/index.html',
+  'n8n-merge-by-ungather-api/index.html',
+  'make-array-window-overlock-api/index.html',
+  'n8n-item-lists-window-overlock-api/index.html',
+  'make-array-window-unoverlock-api/index.html',
+  'n8n-item-lists-window-unoverlock-api/index.html',
+  'n8n-merge-by-gather-api/index.html',
+  'paddle-catalog-primat-api/index.html',
+  'stripe-radar-value-list-reloop-api/index.html',
+  'clerk-session-end-palea-api/index.html',
+  'auth0-mfa-recovery-rood-api/index.html',
+  'auth0-guardian-recovery-rood-api/index.html',
+  'cloudflare-api-shield-schema-zepto-all-api/index.html',
+  'vercel-firewall-ip-blacklist-zepto-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-zepto-all-keys-api/index.html',
+  'huggingface-jobs-inspect-paysanne-api/index.html',
+  'github-copilot-seat-assignment-paysanne-api/index.html',
+  'figma-mcp-code-connect-polish-api/index.html',
+  'slack-lists-access-palea-api/index.html',
+  'notion-data-sources-pithy-api/index.html',
 ];
