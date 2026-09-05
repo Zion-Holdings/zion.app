@@ -743,6 +743,12 @@ export function titleFromSlug(slug) {
     .replace(/\bBlosser\b/g, 'Blosser')
     .replace(/\bOrearville\b/g, 'Orearville')
     .replace(/\bShackleford\b/g, 'Shackleford')
+    .replace(/\bBynumville\b/g, 'Bynumville')
+    .replace(/\bKaseyville\b/g, 'Kaseyville')
+    .replace(/\bSue City\b/g, 'Sue City')
+    .replace(/\bLamine\b/g, 'Lamine')
+    .replace(/\bGreenton\b/g, 'Greenton')
+    .replace(/\bHail Ridge\b/g, 'Hail Ridge')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10853,4 +10859,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-ticking-api/index.html',
   'slack-lists-access-aerenchyma-api/index.html',
   'notion-data-sources-oscitant-api/index.html',
+  'bynumville/index.html',
+  'kaseyville/index.html',
+  'sue-city/index.html',
+  'lamine/index.html',
+  'greenton/index.html',
+  'hail-ridge/index.html',
+  'n8n-merge-by-unscrew-api/index.html',
+  'make-array-window-rivet-api/index.html',
+  'n8n-item-lists-window-rivet-api/index.html',
+  'make-array-window-unrivet-api/index.html',
+  'n8n-item-lists-window-unrivet-api/index.html',
+  'n8n-merge-by-screw-api/index.html',
+  'paddle-catalog-kelpie-api/index.html',
+  'stripe-radar-value-list-recement-api/index.html',
+  'clerk-session-end-endodermis-api/index.html',
+  'auth0-mfa-recovery-thurible-api/index.html',
+  'auth0-guardian-recovery-thurible-api/index.html',
+  'cloudflare-api-shield-schema-baryonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-baryonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-baryonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-nduja-api/index.html',
+  'github-copilot-seat-assignment-nduja-api/index.html',
+  'figma-mcp-code-connect-osnaburg-api/index.html',
+  'slack-lists-access-endodermis-api/index.html',
+  'notion-data-sources-somnolescent-api/index.html',
 ];
