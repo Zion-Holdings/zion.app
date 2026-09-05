@@ -215,6 +215,10 @@ export function titleFromSlug(slug) {
     .replace(/\bTreloar\b/g, 'Treloar')
     .replace(/\bMckittrick\b/g, 'McKittrick')
     .replace(/\bHigh Hill\b/g, 'High Hill')
+    .replace(/\bPortage Des Sioux\b/g, 'Portage des Sioux')
+    .replace(/\bOld Monroe\b/g, 'Old Monroe')
+    .replace(/\bTruesdale\b/g, 'Truesdale')
+    .replace(/\bAnnada\b/g, 'Annada')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8125,4 +8129,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-shave-api/index.html',
   'slack-lists-access-bough-api/index.html',
   'notion-data-sources-dilute-api/index.html',
+  'truesdale/index.html',
+  'old-monroe/index.html',
+  'portage-des-sioux/index.html',
+  'foley/index.html',
+  'annada/index.html',
+  'morrison/index.html',
+  'n8n-merge-by-ungrid-api/index.html',
+  'make-array-window-grid-api/index.html',
+  'n8n-item-lists-window-grid-api/index.html',
+  'make-array-window-ungrid-api/index.html',
+  'n8n-item-lists-window-ungrid-api/index.html',
+  'n8n-merge-by-mesh-api/index.html',
+  'paddle-catalog-tote-api/index.html',
+  'stripe-radar-value-list-reignite-api/index.html',
+  'clerk-session-end-bough-api/index.html',
+  'auth0-mfa-recovery-fence-api/index.html',
+  'auth0-guardian-recovery-fence-api/index.html',
+  'cloudflare-api-shield-schema-part-all-api/index.html',
+  'vercel-firewall-ip-blacklist-part-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-part-all-keys-api/index.html',
+  'huggingface-jobs-inspect-glide-api/index.html',
+  'github-copilot-seat-assignment-glide-api/index.html',
+  'figma-mcp-code-connect-sand-api/index.html',
+  'slack-lists-access-limb-api/index.html',
+  'notion-data-sources-rarefy-api/index.html',
 ];
