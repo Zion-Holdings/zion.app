@@ -3,7 +3,7 @@
 # Canonical sitemap
 /sitemap.xml  /sitemap-0.xml  301
 
-/case-studies/    /contact/    301
+/case-studies/    /success-stories/    301
 /industries/    /services/    301
 /free-tools-hub/    /tools/    301
 /products/    /services/    301
@@ -21,6 +21,8 @@
 /free-ai-itools /free-ai-it-tools/ 302
 /direitos/ /direitos-globais/ 302
 /direitos /direitos-globais/ 302
+/book /discovery/ 301
+/book/ /discovery/ 301
 /free-consultation /free-consultation/index.html 200
 /free-consultation/ /free-consultation/index.html 200
 /free-audit /free-audit/index.html 200
@@ -58,7 +60,19 @@
 /explore/ /explore/index.html 200
 /how-it-works /how-it-works/index.html 200
 /how-it-works/ /how-it-works/index.html 200
+/playbooks /playbooks/index.html 200
+/playbooks/ /playbooks/index.html 200
 /playbooks/msp-ai-ops /playbooks/msp-ai-ops/index.html 200
 /playbooks/msp-ai-ops/ /playbooks/msp-ai-ops/index.html 200
 /blog/how-zion-ships-ai-agents-in-30-days /blog/how-zion-ships-ai-agents-in-30-days/index.html 200
 /blog/how-zion-ships-ai-agents-in-30-days/ /blog/how-zion-ships-ai-agents-in-30-days/index.html 200
+/heritage /heritage/index.html 200
+/heritage/ /heritage/index.html 200
+/success-stories /success-stories/index.html 200
+/success-stories/ /success-stories/index.html 200
+/patterns/container-queries /patterns/container-queries/index.html 200
+/patterns/container-queries/ /patterns/container-queries/index.html 200
+/patterns/container-style-queries /patterns/container-style-queries/index.html 200
+/patterns/container-style-queries/ /patterns/container-style-queries/index.html 200
+/patterns/containment /patterns/containment/index.html 200
+/patterns/containment/ /patterns/containment/index.html 200
