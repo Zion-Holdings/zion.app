@@ -587,6 +587,12 @@ export function titleFromSlug(slug) {
     .replace(/\bKnob Lick\b/g, 'Knob Lick')
     .replace(/\bGlenallen\b/g, 'Glenallen')
     .replace(/\bChloride\b/g, 'Chloride')
+    .replace(/\bPilot Knob\b/g, 'Pilot Knob')
+    .replace(/\bMine La Motte\b/g, 'Mine La Motte')
+    .replace(/\bGlover\b/g, 'Glover')
+    .replace(/\bEdgehill\b/g, 'Edgehill')
+    .replace(/\bOld Mines\b/g, 'Old Mines')
+    .replace(/\bCadet\b/g, 'Cadet')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10047,4 +10053,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-serge-api/index.html',
   'slack-lists-access-xylem-api/index.html',
   'notion-data-sources-mute-api/index.html',
+  'pilot-knob/index.html',
+  'mine-la-motte/index.html',
+  'glover/index.html',
+  'edgehill/index.html',
+  'old-mines/index.html',
+  'cadet/index.html',
+  'n8n-merge-by-unpiping-api/index.html',
+  'make-array-window-binding-api/index.html',
+  'n8n-item-lists-window-binding-api/index.html',
+  'make-array-window-unbinding-api/index.html',
+  'n8n-item-lists-window-unbinding-api/index.html',
+  'n8n-merge-by-piping-api/index.html',
+  'paddle-catalog-drake-api/index.html',
+  'stripe-radar-value-list-reoverlock-api/index.html',
+  'clerk-session-end-phloem-api/index.html',
+  'auth0-mfa-recovery-purificator-api/index.html',
+  'auth0-guardian-recovery-purificator-api/index.html',
+  'cloudflare-api-shield-schema-microscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-microscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-microscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-darne-api/index.html',
+  'github-copilot-seat-assignment-darne-api/index.html',
+  'figma-mcp-code-connect-seersucker-api/index.html',
+  'slack-lists-access-phloem-api/index.html',
+  'notion-data-sources-quiescent-api/index.html',
 ];
