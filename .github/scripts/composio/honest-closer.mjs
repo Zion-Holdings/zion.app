@@ -465,6 +465,12 @@ export function titleFromSlug(slug) {
     .replace(/\bNeck City\b/g, 'Neck City')
     .replace(/\bOronogo\b/g, 'Oronogo')
     .replace(/\bDuenweg\b/g, 'Duenweg')
+    .replace(/\bCarl Junction\b/g, 'Carl Junction')
+    .replace(/\bCarterville\b/g, 'Carterville')
+    .replace(/\bCarytown\b/g, 'Carytown')
+    .replace(/\bAvilla\b/g, 'Avilla')
+    .replace(/\bPulaskifield\b/g, 'Pulaskifield')
+    .replace(/\bMc Dowell\b/g, 'McDowell')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9425,4 +9431,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-gleam-api/index.html',
   'slack-lists-access-setula-api/index.html',
   'notion-data-sources-short-api/index.html',
+  'carl-junction/index.html',
+  'carterville/index.html',
+  'carytown/index.html',
+  'avilla/index.html',
+  'pulaskifield/index.html',
+  'mcdowell/index.html',
+  'n8n-merge-by-unpink-api/index.html',
+  'make-array-window-grade-api/index.html',
+  'n8n-item-lists-window-grade-api/index.html',
+  'make-array-window-ungrade-api/index.html',
+  'n8n-item-lists-window-ungrade-api/index.html',
+  'n8n-merge-by-pink-api/index.html',
+  'paddle-catalog-hydra-api/index.html',
+  'stripe-radar-value-list-respin-api/index.html',
+  'clerk-session-end-villus-api/index.html',
+  'auth0-mfa-recovery-orphrey-api/index.html',
+  'auth0-guardian-recovery-orphrey-api/index.html',
+  'cloudflare-api-shield-schema-faint-all-api/index.html',
+  'vercel-firewall-ip-blacklist-faint-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-faint-all-keys-api/index.html',
+  'huggingface-jobs-inspect-duxelles-api/index.html',
+  'github-copilot-seat-assignment-duxelles-api/index.html',
+  'figma-mcp-code-connect-bloom-api/index.html',
+  'slack-lists-access-villus-api/index.html',
+  'notion-data-sources-clipped-api/index.html',
 ];
