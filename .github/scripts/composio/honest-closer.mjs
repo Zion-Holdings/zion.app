@@ -209,6 +209,12 @@ export function titleFromSlug(slug) {
     .replace(/\bKinsey\b/g, 'Kinsey')
     .replace(/\bWomack\b/g, 'Womack')
     .replace(/\bLiguori\b/g, 'Liguori')
+    .replace(/\bSt Albans\b/g, 'St. Albans')
+    .replace(/\bRhineland\b/g, 'Rhineland')
+    .replace(/\bDutzow\b/g, 'Dutzow')
+    .replace(/\bTreloar\b/g, 'Treloar')
+    .replace(/\bMckittrick\b/g, 'McKittrick')
+    .replace(/\bHigh Hill\b/g, 'High Hill')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8094,4 +8100,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-clip-api/index.html',
   'slack-lists-access-twig-api/index.html',
   'notion-data-sources-thin-api/index.html',
+  'st-albans/index.html',
+  'rhineland/index.html',
+  'dutzow/index.html',
+  'treloar/index.html',
+  'mckittrick/index.html',
+  'high-hill/index.html',
+  'n8n-merge-by-untile-api/index.html',
+  'make-array-window-tile-api/index.html',
+  'n8n-item-lists-window-tile-api/index.html',
+  'make-array-window-untile-api/index.html',
+  'n8n-item-lists-window-untile-api/index.html',
+  'n8n-merge-by-grid-api/index.html',
+  'paddle-catalog-crate-api/index.html',
+  'stripe-radar-value-list-reanimate-api/index.html',
+  'clerk-session-end-limb-api/index.html',
+  'auth0-mfa-recovery-gate-api/index.html',
+  'auth0-guardian-recovery-gate-api/index.html',
+  'cloudflare-api-shield-schema-half-all-api/index.html',
+  'vercel-firewall-ip-blacklist-half-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-half-all-keys-api/index.html',
+  'huggingface-jobs-inspect-slide-api/index.html',
+  'github-copilot-seat-assignment-slide-api/index.html',
+  'figma-mcp-code-connect-shave-api/index.html',
+  'slack-lists-access-bough-api/index.html',
+  'notion-data-sources-dilute-api/index.html',
 ];
