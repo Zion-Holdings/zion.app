@@ -902,6 +902,14 @@ export function titleFromSlug(slug) {
     .replace(/\bBarnumton\b/g, 'Barnumton')
     .replace(/\bEach Uisge\b/g, 'Each-Uisge')
     .replace(/\bBordered Pit\b/g, 'Bordered-Pit')
+    .replace(/\bSleeper\b/g, 'Sleeper')
+    .replace(/\bSouder\b/g, 'Souder')
+    .replace(/\bAlmartha\b/g, 'Almartha')
+    .replace(/\bLongrun\b/g, 'Longrun')
+    .replace(/\bGraydon Springs\b/g, 'Graydon Springs')
+    .replace(/\bMeramec Springs\b/g, 'Meramec Springs')
+    .replace(/\bShellycoat\b/g, 'Shellycoat')
+    .replace(/\bSkufia\b/g, 'Skufia')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11637,4 +11645,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-sateen-api/index.html',
   'slack-lists-access-bordered-pit-api/index.html',
   'notion-data-sources-snoozing-api/index.html',
+  'sleeper/index.html',
+  'souder/index.html',
+  'almartha/index.html',
+  'longrun/index.html',
+  'graydon-springs/index.html',
+  'meramec-springs/index.html',
+  'n8n-merge-by-unlock-api/index.html',
+  'make-array-window-bunt-api/index.html',
+  'n8n-item-lists-window-bunt-api/index.html',
+  'make-array-window-unbunt-api/index.html',
+  'n8n-item-lists-window-unbunt-api/index.html',
+  'n8n-merge-by-lock-api/index.html',
+  'paddle-catalog-shellycoat-api/index.html',
+  'stripe-radar-value-list-replate-api/index.html',
+  'clerk-session-end-margo-api/index.html',
+  'auth0-mfa-recovery-skufia-api/index.html',
+  'auth0-guardian-recovery-skufia-api/index.html',
+  'cloudflare-api-shield-schema-strangelet-all-api/index.html',
+  'vercel-firewall-ip-blacklist-strangelet-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-strangelet-all-keys-api/index.html',
+  'huggingface-jobs-inspect-chistorra-api/index.html',
+  'github-copilot-seat-assignment-chistorra-api/index.html',
+  'figma-mcp-code-connect-velour-api/index.html',
+  'slack-lists-access-margo-api/index.html',
+  'notion-data-sources-resting-api/index.html',
 ];
