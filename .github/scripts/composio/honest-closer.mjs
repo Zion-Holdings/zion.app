@@ -471,6 +471,7 @@ export function titleFromSlug(slug) {
     .replace(/\bAvilla\b/g, 'Avilla')
     .replace(/\bPulaskifield\b/g, 'Pulaskifield')
     .replace(/\bMc Dowell\b/g, 'McDowell')
+    .replace(/\bMcdowell\b/g, 'McDowell')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
