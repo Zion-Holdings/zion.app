@@ -569,6 +569,12 @@ export function titleFromSlug(slug) {
     .replace(/\bBrandsville\b/g, 'Brandsville')
     .replace(/\bKoshkonong\b/g, 'Koshkonong')
     .replace(/\bCouch\b/g, 'Couch')
+    .replace(/\bMyrtle\b/g, 'Myrtle')
+    .replace(/\bWesco\b/g, 'Wesco')
+    .replace(/\bDavisville\b/g, 'Davisville')
+    .replace(/\bBerryman\b/g, 'Berryman')
+    .replace(/\bMontier\b/g, 'Montier')
+    .replace(/\bBirch Tree\b/g, 'Birch Tree')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9954,4 +9960,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-flannel-api/index.html',
   'slack-lists-access-midrib-api/index.html',
   'notion-data-sources-latent-api/index.html',
+  'myrtle/index.html',
+  'wesco/index.html',
+  'davisville/index.html',
+  'berryman/index.html',
+  'montier/index.html',
+  'birch-tree/index.html',
+  'n8n-merge-by-unlining-api/index.html',
+  'make-array-window-facing-api/index.html',
+  'n8n-item-lists-window-facing-api/index.html',
+  'make-array-window-unfacing-api/index.html',
+  'n8n-item-lists-window-unfacing-api/index.html',
+  'n8n-merge-by-lining-api/index.html',
+  'paddle-catalog-unicorn-api/index.html',
+  'stripe-radar-value-list-rebuckle-api/index.html',
+  'clerk-session-end-sheath-api/index.html',
+  'auth0-mfa-recovery-mitre-api/index.html',
+  'auth0-guardian-recovery-mitre-api/index.html',
+  'cloudflare-api-shield-schema-bitsy-all-api/index.html',
+  'vercel-firewall-ip-blacklist-bitsy-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-bitsy-all-keys-api/index.html',
+  'huggingface-jobs-inspect-paupiette-api/index.html',
+  'github-copilot-seat-assignment-paupiette-api/index.html',
+  'figma-mcp-code-connect-poplin-api/index.html',
+  'slack-lists-access-sheath-api/index.html',
+  'notion-data-sources-stagnant-api/index.html',
 ];
