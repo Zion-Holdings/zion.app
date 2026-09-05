@@ -127,6 +127,10 @@ export function titleFromSlug(slug) {
     .replace(/\bMineral Point\b/g, 'Mineral Point')
     .replace(/\bWellsville\b/g, 'Wellsville')
     .replace(/\bWestphalia\b/g, 'Westphalia')
+    .replace(/\bHolts Summit\b/g, 'Holts Summit')
+    .replace(/\bNew Bloomfield\b/g, 'New Bloomfield')
+    .replace(/\bAuxvasse\b/g, 'Auxvasse')
+    .replace(/\bHallsville\b/g, 'Hallsville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7437,4 +7441,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-show-api/index.html',
   'slack-lists-access-invite-api/index.html',
   'notion-data-sources-thaw-api/index.html',
+  'chamois/index.html',
+  'holts-summit/index.html',
+  'new-bloomfield/index.html',
+  'auxvasse/index.html',
+  'centralia/index.html',
+  'hallsville/index.html',
+  'n8n-item-lists-partition-api/index.html',
+  'n8n-merge-by-window-api/index.html',
+  'n8n-merge-by-range-api/index.html',
+  'make-array-dedupe-api/index.html',
+  'n8n-item-lists-dedupe-api/index.html',
+  'n8n-merge-by-slice-api/index.html',
+  'paddle-customer-unarchive-api/index.html',
+  'paddle-subscription-unarchive-api/index.html',
+  'clerk-session-end-browser-api/index.html',
+  'auth0-mfa-webauthn-disable-api/index.html',
+  'auth0-guardian-webauthn-unenroll-api/index.html',
+  'cloudflare-api-shield-schema-reset-api/index.html',
+  'vercel-firewall-ip-blacklist-drop-api/index.html',
+  'cloudflare-api-shield-jwt-key-drop-api/index.html',
+  'huggingface-jobs-inspect-audit-api/index.html',
+  'github-copilot-seat-assignment-requeue-api/index.html',
+  'figma-mcp-code-connect-preview-api/index.html',
+  'slack-lists-access-kick-api/index.html',
+  'notion-data-sources-compact-api/index.html',
 ];
