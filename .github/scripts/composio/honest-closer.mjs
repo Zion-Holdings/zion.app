@@ -429,6 +429,12 @@ export function titleFromSlug(slug) {
     .replace(/\bTaneyville\b/g, 'Taneyville')
     .replace(/\bPowersite\b/g, 'Powersite')
     .replace(/\bForsyth\b/g, 'Forsyth')
+    .replace(/\bKirbyville\b/g, 'Kirbyville')
+    .replace(/\bMerriam Woods\b/g, 'Merriam Woods')
+    .replace(/\bBull Creek\b/g, 'Bull Creek')
+    .replace(/\bTable Rock\b/g, 'Table Rock')
+    .replace(/\bRidgedale\b/g, 'Ridgedale')
+    .replace(/\bPoint Lookout\b/g, 'Point Lookout')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9239,4 +9245,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-luster-api/index.html',
   'slack-lists-access-awn-api/index.html',
   'notion-data-sources-curt-api/index.html',
+  'kirbyville/index.html',
+  'merriam-woods/index.html',
+  'bull-creek/index.html',
+  'table-rock/index.html',
+  'ridgedale/index.html',
+  'point-lookout/index.html',
+  'n8n-merge-by-unsmock-api/index.html',
+  'make-array-window-pleat-api/index.html',
+  'n8n-item-lists-window-pleat-api/index.html',
+  'make-array-window-unpleat-api/index.html',
+  'n8n-item-lists-window-unpleat-api/index.html',
+  'n8n-merge-by-smock-api/index.html',
+  'paddle-catalog-goliath-api/index.html',
+  'stripe-radar-value-list-retwist-api/index.html',
+  'clerk-session-end-arista-api/index.html',
+  'auth0-mfa-recovery-aedicule-api/index.html',
+  'auth0-guardian-recovery-aedicule-api/index.html',
+  'cloudflare-api-shield-schema-ronto-all-api/index.html',
+  'vercel-firewall-ip-blacklist-ronto-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-ronto-all-keys-api/index.html',
+  'huggingface-jobs-inspect-concasse-api/index.html',
+  'github-copilot-seat-assignment-concasse-api/index.html',
+  'figma-mcp-code-connect-patina-api/index.html',
+  'slack-lists-access-arista-api/index.html',
+  'notion-data-sources-blunt-api/index.html',
 ];
