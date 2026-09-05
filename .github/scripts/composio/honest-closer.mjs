@@ -145,6 +145,10 @@ export function titleFromSlug(slug) {
     .replace(/\bHermitage\b/g, 'Hermitage')
     .replace(/\bWeaubleau\b/g, 'Weaubleau')
     .replace(/\bWheatland\b/g, 'Wheatland')
+    .replace(/\bLowry City\b/g, 'Lowry City')
+    .replace(/\bAppleton City\b/g, 'Appleton City')
+    .replace(/\bFair Play\b/g, 'Fair Play')
+    .replace(/\bPleasant Hope\b/g, 'Pleasant Hope')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7580,4 +7584,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-demote-api/index.html',
   'slack-lists-access-unmute-api/index.html',
   'notion-data-sources-nest-api/index.html',
+  'humansville/index.html',
+  'lowry-city/index.html',
+  'appleton-city/index.html',
+  'fair-play/index.html',
+  'pleasant-hope/index.html',
+  'lockwood/index.html',
+  'n8n-merge-by-left-api/index.html',
+  'make-array-window-left-api/index.html',
+  'n8n-item-lists-window-left-api/index.html',
+  'n8n-merge-by-right-api/index.html',
+  'make-array-window-right-api/index.html',
+  'n8n-item-lists-window-right-api/index.html',
+  'paddle-catalog-retire-api/index.html',
+  'stripe-radar-value-list-clear-api/index.html',
+  'clerk-session-end-phone-api/index.html',
+  'auth0-mfa-recovery-confirm-api/index.html',
+  'auth0-guardian-recovery-confirm-api/index.html',
+  'cloudflare-api-shield-schema-clear-all-api/index.html',
+  'vercel-firewall-ip-blacklist-clear-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-clear-all-keys-api/index.html',
+  'huggingface-jobs-inspect-apply-api/index.html',
+  'github-copilot-seat-assignment-repark-api/index.html',
+  'figma-mcp-code-connect-archive-api/index.html',
+  'slack-lists-access-pin-api/index.html',
+  'notion-data-sources-unnest-api/index.html',
 ];
