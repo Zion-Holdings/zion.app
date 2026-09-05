@@ -1,23 +1,19 @@
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
 
-# Canonical sitemap
 /sitemap.xml  /sitemap-0.xml  301
 
-/case-studies/    /contact/    301
+/case-studies/    /success-stories/    301
 /industries/    /services/    301
 /free-tools-hub/    /tools/    301
 /products/    /services/    301
 /consultation/    /contact/    301
-/site-map/    /    301
+/site-map/    /explore/    301
 /faq/    /about/    301
 /status/    /    301
 /configurator/    /contact/    301
 /dashboard/    /contact/    301
 /docs/    /    301
 /automation/  /services/ai-workflow-automation/  301
-# GitHub Pages does not apply Netlify _redirects. Real HTML aliases live in public/:
-# /direitos/ → /direitos-globais/, /free-ai-itools/ → /free-ai-it-tools/,
-# /finops/ → /finops-consulting/, /roteiros/, /agents/, /ai/demo/ are real index.html pages.
 /finops/ /finops-consulting/ 301
 /finops /finops-consulting/ 301
 /free-ai-itools/ /free-ai-it-tools/ 302
@@ -57,7 +53,6 @@
 /use-cases/ /use-cases/index.html 200
 /solutions/healthcare /solutions/healthcare/index.html 200
 /solutions/healthcare/ /solutions/healthcare/index.html 200
-# QA pass 2 — durable aliases (Cloudflare / Netlify). GitHub Pages uses the HTML files.
 /book /booking/ 301
 /book/ /booking/ 301
 /success-stories /success-stories/index.html 200
@@ -70,3 +65,13 @@
 /contact/ /contact/index.html 200
 /plans /plans/index.html 200
 /plans/ /plans/index.html 200
+/heritage /heritage/index.html 200
+/heritage/ /heritage/index.html 200
+/explore /explore/index.html 200
+/explore/ /explore/index.html 200
+/how-it-works /how-it-works/index.html 200
+/how-it-works/ /how-it-works/index.html 200
+/playbooks /playbooks/index.html 200
+/playbooks/ /playbooks/index.html 200
+/playbooks/msp-ai-ops /playbooks/msp-ai-ops/index.html 200
+/playbooks/msp-ai-ops/ /playbooks/msp-ai-ops/index.html 200
