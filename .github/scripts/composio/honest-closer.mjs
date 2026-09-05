@@ -936,6 +936,16 @@ export function titleFromSlug(slug) {
     .replace(/\bUmibozu\b/g, 'Umibozu')
     .replace(/\bRiassa\b/g, 'Riassa')
     .replace(/\bWeisswurst\b/g, 'Weisswurst')
+    .replace(/\bBrown Branch\b/g, 'Brown Branch')
+    .replace(/\bTurnback\b/g, 'Turnback')
+    .replace(/\bCapps Creek\b/g, 'Capps Creek')
+    .replace(/\bMincy\b/g, 'Mincy')
+    .replace(/\bMelva\b/g, 'Melva')
+    .replace(/\bHest\b/g, 'Hest')
+    .replace(/\bJenny Greenteeth\b/g, 'Jenny-Greenteeth')
+    .replace(/\bSpongy Mesophyll\b/g, 'Spongy-Mesophyll')
+    .replace(/\bKnackwurst\b/g, 'Knackwurst')
+    .replace(/\bPanagia\b/g, 'Panagia')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11771,4 +11781,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-pique-api/index.html',
   'slack-lists-access-palisade-api/index.html',
   'notion-data-sources-reclining-api/index.html',
+  'brown-branch/index.html',
+  'turnback/index.html',
+  'capps-creek/index.html',
+  'mincy/index.html',
+  'melva/index.html',
+  'hest/index.html',
+  'n8n-merge-by-unbend-api/index.html',
+  'make-array-window-sheet-api/index.html',
+  'n8n-item-lists-window-sheet-api/index.html',
+  'make-array-window-unsheet-api/index.html',
+  'n8n-item-lists-window-unsheet-api/index.html',
+  'n8n-merge-by-bend-api/index.html',
+  'paddle-catalog-jenny-greenteeth-api/index.html',
+  'stripe-radar-value-list-reshine-api/index.html',
+  'clerk-session-end-spongy-mesophyll-api/index.html',
+  'auth0-mfa-recovery-panagia-api/index.html',
+  'auth0-guardian-recovery-panagia-api/index.html',
+  'cloudflare-api-shield-schema-electroweak-all-api/index.html',
+  'vercel-firewall-ip-blacklist-electroweak-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-electroweak-all-keys-api/index.html',
+  'huggingface-jobs-inspect-knackwurst-api/index.html',
+  'github-copilot-seat-assignment-knackwurst-api/index.html',
+  'figma-mcp-code-connect-tweed-api/index.html',
+  'slack-lists-access-spongy-mesophyll-api/index.html',
+  'notion-data-sources-lounging-api/index.html',
 ];
