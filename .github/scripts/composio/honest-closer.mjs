@@ -47,6 +47,10 @@ export function titleFromSlug(slug) {
     .replace(/\bSsh\b/g, 'SSH')
     .replace(/\bUv\b/g, 'UV')
     .replace(/\bTv\b/g, 'TV')
+    .replace(/\bXor\b/g, 'XOR')
+    .replace(/\bXnor\b/g, 'XNOR')
+    .replace(/\bNand\b/g, 'NAND')
+    .replace(/\bNor\b/g, 'NOR')
     .replace(/\bFtp\b/g, 'FTP')
     .replace(/\bMqtt\b/g, 'MQTT')
     .replace(/\bWhoami\b/g, 'whoami')
@@ -165,6 +169,7 @@ export function titleFromSlug(slug) {
     .replace(/\bSummersville\b/g, 'Summersville')
     .replace(/\bEllsinore\b/g, 'Ellsinore')
     .replace(/\bNeelyville\b/g, 'Neelyville')
+    .replace(/\bWilliamsville\b/g, 'Williamsville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7775,4 +7780,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-omit-api/index.html',
   'slack-lists-access-archive-api/index.html',
   'notion-data-sources-narrow-api/index.html',
+  'naylor/index.html',
+  'doniphan/index.html',
+  'eminence/index.html',
+  'williamsville/index.html',
+  'broseley/index.html',
+  'gatewood/index.html',
+  'n8n-merge-by-nor-api/index.html',
+  'make-array-window-nor-api/index.html',
+  'n8n-item-lists-window-nor-api/index.html',
+  'n8n-merge-by-xnor-api/index.html',
+  'make-array-window-xnor-api/index.html',
+  'n8n-item-lists-window-xnor-api/index.html',
+  'paddle-catalog-mask-api/index.html',
+  'stripe-radar-value-list-unseed-api/index.html',
+  'clerk-session-end-pager-api/index.html',
+  'auth0-mfa-recovery-release-api/index.html',
+  'auth0-guardian-recovery-release-api/index.html',
+  'cloudflare-api-shield-schema-zero-all-api/index.html',
+  'vercel-firewall-ip-blacklist-zero-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-zero-all-keys-api/index.html',
+  'huggingface-jobs-inspect-repeat-api/index.html',
+  'github-copilot-seat-assignment-unlink-api/index.html',
+  'figma-mcp-code-connect-include-api/index.html',
+  'slack-lists-access-unarchive-api/index.html',
+  'notion-data-sources-shift-api/index.html',
 ];
