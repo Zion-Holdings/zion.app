@@ -985,6 +985,19 @@ export function titleFromSlug(slug) {
     .replace(/\bThuringer\b/g, 'Thuringer')
     .replace(/\bHoundstooth\b/g, 'Houndstooth')
     .replace(/\bLolling\b/g, 'Lolling')
+    .replace(/\bCedar Gap\b/g, 'Cedar Gap')
+    .replace(/\bKirkpatrick\b/g, 'Kirkpatrick')
+    .replace(/\bOsie\b/g, 'Osie')
+    .replace(/\bGrove Springs\b/g, 'Grove Springs')
+    .replace(/\bJeremys\b/g, 'Jeremys')
+    .replace(/\bTinkers\b/g, 'Tinkers')
+    .replace(/\bTaniwha\b/g, 'Taniwha')
+    .replace(/\bProtoxylem\b/g, 'Protoxylem')
+    .replace(/\bMandyas\b/g, 'Mandyas')
+    .replace(/\bNeutrinic\b/g, 'Neutrinic')
+    .replace(/\bMerguez\b/g, 'Merguez')
+    .replace(/\bTartan\b/g, 'Tartan')
+    .replace(/\bSprawling\b/g, 'Sprawling')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11920,4 +11933,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-houndstooth-api/index.html',
   'slack-lists-access-hydathode-api/index.html',
   'notion-data-sources-lolling-api/index.html',
+  'cedar-gap/index.html',
+  'kirkpatrick/index.html',
+  'osie/index.html',
+  'grove-springs/index.html',
+  'jeremys/index.html',
+  'tinkers/index.html',
+  'n8n-merge-by-unreef-api/index.html',
+  'make-array-window-heave-api/index.html',
+  'n8n-item-lists-window-heave-api/index.html',
+  'make-array-window-unheave-api/index.html',
+  'n8n-item-lists-window-unheave-api/index.html',
+  'n8n-merge-by-reef-api/index.html',
+  'paddle-catalog-taniwha-api/index.html',
+  'stripe-radar-value-list-relacquer-api/index.html',
+  'clerk-session-end-protoxylem-api/index.html',
+  'auth0-mfa-recovery-mandyas-api/index.html',
+  'auth0-guardian-recovery-mandyas-api/index.html',
+  'cloudflare-api-shield-schema-neutrinic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-neutrinic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-neutrinic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-merguez-api/index.html',
+  'github-copilot-seat-assignment-merguez-api/index.html',
+  'figma-mcp-code-connect-tartan-api/index.html',
+  'slack-lists-access-protoxylem-api/index.html',
+  'notion-data-sources-sprawling-api/index.html',
 ];
