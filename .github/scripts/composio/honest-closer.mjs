@@ -683,6 +683,12 @@ export function titleFromSlug(slug) {
     .replace(/\bTarrants\b/g, 'Tarrants')
     .replace(/\bFarber\b/g, 'Farber')
     .replace(/\bLaddonia\b/g, 'Laddonia')
+    .replace(/\bSt Catharine\b/g, 'St. Catharine')
+    .replace(/\bLaclede\b/g, 'Laclede')
+    .replace(/\bRush Hill\b/g, 'Rush Hill')
+    .replace(/\bBenton City\b/g, 'Benton City')
+    .replace(/\bHassard\b/g, 'Hassard')
+    .replace(/\bMiddle Grove\b/g, 'Middle Grove')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10543,4 +10549,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-dupioni-api/index.html',
   'slack-lists-access-suberin-api/index.html',
   'notion-data-sources-foggy-api/index.html',
+  'st-catharine/index.html',
+  'laclede/index.html',
+  'rush-hill/index.html',
+  'benton-city/index.html',
+  'hassard/index.html',
+  'middle-grove/index.html',
+  'n8n-merge-by-unlash-api/index.html',
+  'make-array-window-cable-api/index.html',
+  'n8n-item-lists-window-cable-api/index.html',
+  'make-array-window-uncable-api/index.html',
+  'n8n-item-lists-window-uncable-api/index.html',
+  'n8n-merge-by-lash-api/index.html',
+  'paddle-catalog-qilin-api/index.html',
+  'stripe-radar-value-list-rewarp-api/index.html',
+  'clerk-session-end-bark-api/index.html',
+  'auth0-mfa-recovery-fascia-api/index.html',
+  'auth0-guardian-recovery-fascia-api/index.html',
+  'cloudflare-api-shield-schema-planckscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-planckscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-planckscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-pastrami-api/index.html',
+  'github-copilot-seat-assignment-pastrami-api/index.html',
+  'figma-mcp-code-connect-gazar-api/index.html',
+  'slack-lists-access-bark-api/index.html',
+  'notion-data-sources-muddled-api/index.html',
 ];
