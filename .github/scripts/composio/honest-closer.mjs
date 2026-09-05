@@ -545,6 +545,12 @@ export function titleFromSlug(slug) {
     .replace(/\bFair Grove\b/g, 'Fair Grove')
     .replace(/\bHalltown\b/g, 'Halltown')
     .replace(/\bParis Springs\b/g, 'Paris Springs')
+    .replace(/\bNoel\b/g, 'Noel')
+    .replace(/\bGoodman\b/g, 'Goodman')
+    .replace(/\bJane\b/g, 'Jane')
+    .replace(/\bAirport Drive\b/g, 'Airport Drive')
+    .replace(/\bBrixey\b/g, 'Brixey')
+    .replace(/\bDora\b/g, 'Dora')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9830,4 +9836,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-twill-api/index.html',
   'slack-lists-access-stipule-api/index.html',
   'notion-data-sources-inert-api/index.html',
+  'noel/index.html',
+  'goodman/index.html',
+  'jane/index.html',
+  'airport-drive/index.html',
+  'brixey/index.html',
+  'dora/index.html',
+  'n8n-merge-by-unface-api/index.html',
+  'make-array-window-casing-api/index.html',
+  'n8n-item-lists-window-casing-api/index.html',
+  'make-array-window-uncasing-api/index.html',
+  'n8n-item-lists-window-uncasing-api/index.html',
+  'n8n-merge-by-face-api/index.html',
+  'paddle-catalog-sphinx-api/index.html',
+  'stripe-radar-value-list-resilk-api/index.html',
+  'clerk-session-end-axil-api/index.html',
+  'auth0-mfa-recovery-maniple-api/index.html',
+  'auth0-guardian-recovery-maniple-api/index.html',
+  'cloudflare-api-shield-schema-itsy-all-api/index.html',
+  'vercel-firewall-ip-blacklist-itsy-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-itsy-all-keys-api/index.html',
+  'huggingface-jobs-inspect-supreme-api/index.html',
+  'github-copilot-seat-assignment-supreme-api/index.html',
+  'figma-mcp-code-connect-denim-api/index.html',
+  'slack-lists-access-axil-api/index.html',
+  'notion-data-sources-limp-api/index.html',
 ];
