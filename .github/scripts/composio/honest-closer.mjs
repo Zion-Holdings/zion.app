@@ -237,6 +237,12 @@ export function titleFromSlug(slug) {
     .replace(/\bKnox City\b/g, 'Knox City')
     .replace(/\bLentner\b/g, 'Lentner')
     .replace(/\bKahoka\b/g, 'Kahoka')
+    .replace(/\bGreentop\b/g, 'Greentop')
+    .replace(/\bGorin\b/g, 'Gorin')
+    .replace(/\bWyaconda\b/g, 'Wyaconda')
+    .replace(/\bArbela\b/g, 'Arbela')
+    .replace(/\bSouth Gorin\b/g, 'South Gorin')
+    .replace(/\bGreen City\b/g, 'Green City')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8247,4 +8253,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-layer-api/index.html',
   'slack-lists-access-reed-api/index.html',
   'notion-data-sources-thick-api/index.html',
+  'greentop/index.html',
+  'gorin/index.html',
+  'wyaconda/index.html',
+  'arbela/index.html',
+  'south-gorin/index.html',
+  'green-city/index.html',
+  'n8n-merge-by-unknit-api/index.html',
+  'make-array-window-braid-api/index.html',
+  'n8n-item-lists-window-braid-api/index.html',
+  'make-array-window-unbraid-api/index.html',
+  'n8n-item-lists-window-unbraid-api/index.html',
+  'n8n-merge-by-knit-api/index.html',
+  'paddle-catalog-keg-api/index.html',
+  'stripe-radar-value-list-retry-api/index.html',
+  'clerk-session-end-cane-api/index.html',
+  'auth0-mfa-recovery-trail-api/index.html',
+  'auth0-guardian-recovery-trail-api/index.html',
+  'cloudflare-api-shield-schema-entire-all-api/index.html',
+  'vercel-firewall-ip-blacklist-entire-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-entire-all-keys-api/index.html',
+  'huggingface-jobs-inspect-sweep-api/index.html',
+  'github-copilot-seat-assignment-sweep-api/index.html',
+  'figma-mcp-code-connect-sheet-api/index.html',
+  'slack-lists-access-cane-api/index.html',
+  'notion-data-sources-packed-api/index.html',
 ];
