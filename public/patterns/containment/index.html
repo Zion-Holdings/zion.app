@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CSS containment | Zion Tech Group</title>
+<meta name="description" content="contain, content-visibility e contain-intrinsic-size no shell Zion.">
+<link rel="canonical" href="https://ziontechgroup.com/patterns/containment/">
+<link rel="stylesheet" href="/assets/css/site-shell.css">
+<style>
+code,pre{font-family:ui-monospace,monospace;font-size:.85rem}
+pre{overflow:auto;background:#020617;padding:14px;border-radius:12px;border:1px solid rgba(124,58,237,.28)}
+.swatch{min-height:120px}
+</style>
+</head>
+<body>
+<div id="ztg-header-mount"></div>
+<main class="ztg-wrap" id="main-content">
+  <h1>CSS containment</h1>
+  <p class="ztg-cq-lead"><code>container-type</code> ja aplica size containment para queries. <code>contain</code> e <code>content-visibility</code> isolam layout/paint para o browser nao recalcular a pagina inteira.</p>
+
+  <h2>Propriedades</h2>
+  <div class="ztg-table-wrap">
+    <table>
+      <thead><tr><th>Valor</th><th>O que isola</th><th>Uso no Zion</th></tr></thead>
+      <tbody>
+        <tr><td><code>contain: layout</code></td><td>Filhos nao empurram o layout de fora</td><td>card</td></tr>
+        <tr><td><code>contain: paint</code></td><td>Clip + stacking; overflow nao vaza</td><td>card</td></tr>
+        <tr><td><code>contain: style</code></td><td>counters / quotes nao vazam</td><td>card</td></tr>
+        <tr><td><code>contain: inline-size</code></td><td>Largura independente do conteudo</td><td>via <code>container-type</code></td></tr>
+        <tr><td><code>contain: size</code> / <code>strict</code></td><td>Tambem a altura; precisa de altura conhecida</td><td>so demo <code>.ztg-contain-strict</code></td></tr>
+        <tr><td><code>contain: content</code></td><td>layout + paint + style</td><td><code>.ztg-contain-content</code></td></tr>
+        <tr><td><code>content-visibility: auto</code></td><td>Pula render offscreen</td><td><code>.ztg-cq-defer</code></td></tr>
+        <tr><td><code>contain-intrinsic-size</code></td><td>Placeholder de altura para o scroll nao pular</td><td><code>auto 220px</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Nao usar em</h2>
+  <ul>
+    <li>Header sticky — <code>paint</code>/<code>strict</code> quebra <code>position: sticky</code></li>
+    <li>Dropdown do menu — <code>paint</code> clipa o painel</li>
+    <li>Box sem altura se usar <code>size</code> — colapsa para 0</li>
+  </ul>
+
+  <h2>Cards com layout+paint+style</h2>
+  <section class="ztg-cq">
+    <div class="ztg-cq-grid">
+      <article class="ztg-cq-card swatch"><h3>contain no card</h3><p>Ja no shell. Mudanca interna nao suja o grid vizinho.</p></article>
+      <article class="ztg-cq-card ztg-contain-content swatch"><h3>contain: content</h3><p>Atalho layout paint style, sem size.</p></article>
+      <article class="ztg-cq-card ztg-contain-strict swatch"><h3>contain: strict</h3><p>Size incluso. Altura via intrinsic 160px.</p></article>
+    </div>
+  </section>
+
+  <h2>Offscreen</h2>
+  <p>Os blocos abaixo usam <code>content-visibility: auto</code>. Fora da tela o browser pode pular paint.</p>
+  <article class="ztg-cq-card ztg-cq-defer"><h3>Defer 1</h3><p>Playbook, blog e listas longas sao o alvo real.</p></article>
+  <article class="ztg-cq-card ztg-cq-defer" style="margin-top:12px"><h3>Defer 2</h3><p>contain-intrinsic-size evita jump no scrollbar.</p></article>
+
+  <pre><code>.ztg-cq-card { contain: layout paint style; }
+.ztg-cq-defer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
+}</code></pre>
+  <p><a href="/patterns/container-queries/">Container queries</a> · <a href="/explore/">Mapa</a></p>
+</main>
+<div id="ztg-footer-mount"></div>
+<script src="/assets/js/site-nav.js" defer></script>
+</body>
+</html>
