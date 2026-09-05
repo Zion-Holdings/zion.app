@@ -828,6 +828,13 @@ export function titleFromSlug(slug) {
     .replace(/\bBlodgett\b/g, 'Blodgett')
     .replace(/\bWilson City\b/g, 'Wilson City')
     .replace(/\bHowardville\b/g, 'Howardville')
+    .replace(/\bHarviell\b/g, 'Harviell')
+    .replace(/\bIllmo\b/g, 'Illmo')
+    .replace(/\bRombauer\b/g, 'Rombauer')
+    .replace(/\bFagus\b/g, 'Fagus')
+    .replace(/\bBell City\b/g, 'Bell City')
+    .replace(/\bNorth Lilbourn\b/g, 'North Lilbourn')
+    .replace(/\bSieve Tube\b/g, 'Sieve-Tube')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11288,4 +11295,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-silesia-api/index.html',
   'slack-lists-access-metaxylem-api/index.html',
   'notion-data-sources-comatose-api/index.html',
+  'harviell/index.html',
+  'illmo/index.html',
+  'rombauer/index.html',
+  'fagus/index.html',
+  'bell-city/index.html',
+  'north-lilbourn/index.html',
+  'n8n-merge-by-unleash-api/index.html',
+  'make-array-window-fetter-api/index.html',
+  'n8n-item-lists-window-fetter-api/index.html',
+  'make-array-window-unfetter-api/index.html',
+  'n8n-item-lists-window-unfetter-api/index.html',
+  'n8n-merge-by-leash-api/index.html',
+  'paddle-catalog-naiad-api/index.html',
+  'stripe-radar-value-list-revarnish-api/index.html',
+  'clerk-session-end-sieve-tube-api/index.html',
+  'auth0-mfa-recovery-epimanikia-api/index.html',
+  'auth0-guardian-recovery-epimanikia-api/index.html',
+  'cloudflare-api-shield-schema-tachyonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-tachyonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-tachyonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-capocollo-api/index.html',
+  'github-copilot-seat-assignment-capocollo-api/index.html',
+  'figma-mcp-code-connect-dowlas-api/index.html',
+  'slack-lists-access-sieve-tube-api/index.html',
+  'notion-data-sources-hypnopompic-api/index.html',
 ];
