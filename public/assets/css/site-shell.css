@@ -50,7 +50,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .ztg-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .ztg-table-wrap table { min-width: 520px; width: 100%; border-collapse: collapse; }
 
-/* Container queries: layout follows the parent, not the viewport */
+/* Named containers: page > module > card */
 .ztg-cq {
   container-type: inline-size;
   container-name: module;
@@ -62,6 +62,8 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   grid-template-columns: 1fr;
 }
 .ztg-cq-card {
+  container-type: inline-size;
+  container-name: card;
   background: rgba(15,23,42,.62);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -78,6 +80,35 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   border-radius: 10px;
   background: linear-gradient(135deg, rgba(0,212,255,.2), rgba(123,47,247,.35));
 }
+.ztg-cq-split {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+.ztg-cq-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+.ztg-cq-actions a {
+  min-height: var(--tap);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  padding: 0 12px;
+}
+.ztg-cq-meta { color: var(--muted); font-size: 0.82rem; display: none; }
+.ztg-cq-kicker { font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: #a78bfa; }
+
+@container page (min-width: 720px) {
+  .ztg-cq-lead { font-size: 1.15rem; max-width: 40rem; }
+  .ztg-cq-split { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
+}
 @container module (min-width: 420px) {
   .ztg-cq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ztg-cq-media { grid-template-columns: 140px 1fr; }
@@ -87,8 +118,14 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .ztg-cq-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .ztg-cq-grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-@container page (min-width: 720px) {
-  .ztg-cq-lead { font-size: 1.15rem; max-width: 40rem; }
+/* Nested: each card is its own container */
+@container card (min-width: 280px) {
+  .ztg-cq-meta { display: block; }
+  .ztg-cq-actions { flex-direction: row; flex-wrap: wrap; }
+}
+@container card (max-width: 219px) {
+  .ztg-cq-kicker { display: none; }
+  h2, h3 { font-size: 1rem; }
 }
 
 @media (min-width: 640px) {
