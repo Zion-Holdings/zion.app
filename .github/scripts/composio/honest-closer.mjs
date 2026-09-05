@@ -178,6 +178,9 @@ export function titleFromSlug(slug) {
     .replace(/\bBraggadocio\b/g, 'Braggadocio')
     .replace(/\bLilbourn\b/g, 'Lilbourn')
     .replace(/\bEast Prairie\b/g, 'East Prairie')
+    .replace(/\bScott City\b/g, 'Scott City')
+    .replace(/\bVanduser\b/g, 'Vanduser')
+    .replace(/\bChaffee\b/g, 'Chaffee')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7913,4 +7916,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-prepend-api/index.html',
   'slack-lists-access-sync-api/index.html',
   'notion-data-sources-melt-api/index.html',
+  'bertrand/index.html',
+  'morley/index.html',
+  'chaffee/index.html',
+  'scott-city/index.html',
+  'vanduser/index.html',
+  'kelso/index.html',
+  'n8n-item-lists-window-flatten-api/index.html',
+  'make-array-window-flatten-api/index.html',
+  'n8n-merge-by-unflatten-api/index.html',
+  'make-array-window-unflatten-api/index.html',
+  'n8n-item-lists-window-unflatten-api/index.html',
+  'n8n-merge-by-stack-api/index.html',
+  'paddle-catalog-drape-api/index.html',
+  'stripe-radar-value-list-rewarm-api/index.html',
+  'clerk-session-end-core-api/index.html',
+  'auth0-mfa-recovery-deny-api/index.html',
+  'auth0-guardian-recovery-deny-api/index.html',
+  'cloudflare-api-shield-schema-any-all-api/index.html',
+  'vercel-firewall-ip-blacklist-any-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-any-all-keys-api/index.html',
+  'huggingface-jobs-inspect-turn-api/index.html',
+  'github-copilot-seat-assignment-clone-api/index.html',
+  'figma-mcp-code-connect-splice-api/index.html',
+  'slack-lists-access-mirror-api/index.html',
+  'notion-data-sources-cast-api/index.html',
 ];
