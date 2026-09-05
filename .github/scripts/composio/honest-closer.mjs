@@ -496,6 +496,12 @@ export function titleFromSlug(slug) {
     .replace(/\bQuick City\b/g, 'Quick City')
     .replace(/\bArchie\b/g, 'Archie')
     .replace(/\bGunn City\b/g, 'Gunn City')
+    .replace(/\bWest Line\b/g, 'West Line')
+    .replace(/\bLake Annette\b/g, 'Lake Annette')
+    .replace(/\bEast Lynne\b/g, 'East Lynne')
+    .replace(/\bPapinville\b/g, 'Papinville')
+    .replace(/\bUrich\b/g, 'Urich')
+    .replace(/\bKnob Noster\b/g, 'Knob Noster')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9581,4 +9587,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-gauze-api/index.html',
   'slack-lists-access-setule-api/index.html',
   'notion-data-sources-still-api/index.html',
+  'west-line/index.html',
+  'lake-annette/index.html',
+  'east-lynne/index.html',
+  'papinville/index.html',
+  'urich/index.html',
+  'knob-noster/index.html',
+  'n8n-merge-by-unwelt-api/index.html',
+  'make-array-window-bias-api/index.html',
+  'n8n-item-lists-window-bias-api/index.html',
+  'make-array-window-unbias-api/index.html',
+  'n8n-item-lists-window-unbias-api/index.html',
+  'n8n-merge-by-welt-api/index.html',
+  'paddle-catalog-griffin-api/index.html',
+  'stripe-radar-value-list-reskein-api/index.html',
+  'clerk-session-end-ligule-api/index.html',
+  'auth0-mfa-recovery-chasuble-api/index.html',
+  'auth0-guardian-recovery-chasuble-api/index.html',
+  'cloudflare-api-shield-schema-petite-all-api/index.html',
+  'vercel-firewall-ip-blacklist-petite-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-petite-all-keys-api/index.html',
+  'huggingface-jobs-inspect-gaufrette-api/index.html',
+  'github-copilot-seat-assignment-gaufrette-api/index.html',
+  'figma-mcp-code-connect-organza-api/index.html',
+  'slack-lists-access-ligule-api/index.html',
+  'notion-data-sources-calm-api/index.html',
 ];
