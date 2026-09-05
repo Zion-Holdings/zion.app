@@ -225,6 +225,12 @@ export function titleFromSlug(slug) {
     .replace(/\bFountain N Lakes\b/g, "Fountain N' Lakes")
     .replace(/\bEolia\b/g, 'Eolia')
     .replace(/\bSilex\b/g, 'Silex')
+    .replace(/\bFrankford\b/g, 'Frankford')
+    .replace(/\bCurryville\b/g, 'Curryville')
+    .replace(/\bRensselaer\b/g, 'Rensselaer')
+    .replace(/\bMonroe City\b/g, 'Monroe City')
+    .replace(/\bSaverton\b/g, 'Saverton')
+    .replace(/\bHunnewell\b/g, 'Hunnewell')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8185,4 +8191,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-file-api/index.html',
   'slack-lists-access-trunk-api/index.html',
   'notion-data-sources-sparse-api/index.html',
+  'frankford/index.html',
+  'curryville/index.html',
+  'rensselaer/index.html',
+  'monroe-city/index.html',
+  'saverton/index.html',
+  'hunnewell/index.html',
+  'n8n-merge-by-unweave-api/index.html',
+  'make-array-window-weave-api/index.html',
+  'n8n-item-lists-window-weave-api/index.html',
+  'make-array-window-unweave-api/index.html',
+  'n8n-item-lists-window-unweave-api/index.html',
+  'n8n-merge-by-plait-api/index.html',
+  'paddle-catalog-basket-api/index.html',
+  'stripe-radar-value-list-reboot-api/index.html',
+  'clerk-session-end-sprig-api/index.html',
+  'auth0-mfa-recovery-rail-api/index.html',
+  'auth0-guardian-recovery-rail-api/index.html',
+  'cloudflare-api-shield-schema-full-all-api/index.html',
+  'vercel-firewall-ip-blacklist-full-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-full-all-keys-api/index.html',
+  'huggingface-jobs-inspect-scan-api/index.html',
+  'github-copilot-seat-assignment-scan-api/index.html',
+  'figma-mcp-code-connect-plane-api/index.html',
+  'slack-lists-access-sprig-api/index.html',
+  'notion-data-sources-dense-api/index.html',
 ];
