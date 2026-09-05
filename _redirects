@@ -16,6 +16,9 @@
 /docs/    /    301
 /automation/  /services/ai-workflow-automation/  301
 # GitHub Pages ignores Netlify _redirects. Use the public/ HTML aliases instead.
+# /finops/ → /finops-consulting/ is a real public/finops/index.html alias.
+/finops/ /finops-consulting/ 302
+/finops /finops-consulting/ 302
 /free-ai-itools/ /free-ai-it-tools/ 302
 /free-ai-itools /free-ai-it-tools/ 302
 /direitos/ /direitos-globais/ 302
