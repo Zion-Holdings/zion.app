@@ -154,6 +154,9 @@ export function titleFromSlug(slug) {
     .replace(/\bAsh Grove\b/g, 'Ash Grove')
     .replace(/\bStrafford\b/g, 'Strafford')
     .replace(/\bMarionville\b/g, 'Marionville')
+    .replace(/\bHighlandville\b/g, 'Highlandville')
+    .replace(/\bShell Knob\b/g, 'Shell Knob')
+    .replace(/\bReed Spring\b/g, 'Reed Spring')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7664,4 +7667,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-restore-api/index.html',
   'slack-lists-access-star-api/index.html',
   'notion-data-sources-unfold-api/index.html',
+  'crane/index.html',
+  'hurley/index.html',
+  'highlandville/index.html',
+  'shell-knob/index.html',
+  'reed-spring/index.html',
+  'wasola/index.html',
+  'n8n-merge-by-concat-api/index.html',
+  'make-array-window-concat-api/index.html',
+  'n8n-item-lists-window-concat-api/index.html',
+  'n8n-merge-by-union-api/index.html',
+  'make-array-window-union-api/index.html',
+  'n8n-item-lists-window-union-api/index.html',
+  'paddle-catalog-conceal-api/index.html',
+  'stripe-radar-value-list-empty-api/index.html',
+  'clerk-session-end-console-api/index.html',
+  'auth0-mfa-recovery-cancel-api/index.html',
+  'auth0-guardian-recovery-cancel-api/index.html',
+  'cloudflare-api-shield-schema-empty-all-api/index.html',
+  'vercel-firewall-ip-blacklist-empty-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-empty-all-keys-api/index.html',
+  'huggingface-jobs-inspect-rollback-api/index.html',
+  'github-copilot-seat-assignment-attach-api/index.html',
+  'figma-mcp-code-connect-discard-api/index.html',
+  'slack-lists-access-unstar-api/index.html',
+  'notion-data-sources-pack-api/index.html',
 ];
