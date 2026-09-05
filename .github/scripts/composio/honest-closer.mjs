@@ -593,6 +593,12 @@ export function titleFromSlug(slug) {
     .replace(/\bEdgehill\b/g, 'Edgehill')
     .replace(/\bOld Mines\b/g, 'Old Mines')
     .replace(/\bCadet\b/g, 'Cadet')
+    .replace(/\bSilva\b/g, 'Silva')
+    .replace(/\bZalma\b/g, 'Zalma')
+    .replace(/\bLeopold\b/g, 'Leopold')
+    .replace(/\bOxly\b/g, 'Oxly')
+    .replace(/\bBriar\b/g, 'Briar')
+    .replace(/\bFairdealing\b/g, 'Fairdealing')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10078,4 +10084,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-seersucker-api/index.html',
   'slack-lists-access-phloem-api/index.html',
   'notion-data-sources-quiescent-api/index.html',
+  'silva/index.html',
+  'zalma/index.html',
+  'leopold/index.html',
+  'oxly/index.html',
+  'briar/index.html',
+  'fairdealing/index.html',
+  'n8n-merge-by-unquilting-api/index.html',
+  'make-array-window-piping-api/index.html',
+  'n8n-item-lists-window-piping-api/index.html',
+  'make-array-window-unpiping-api/index.html',
+  'n8n-item-lists-window-unpiping-api/index.html',
+  'n8n-merge-by-quilting-api/index.html',
+  'paddle-catalog-lindworm-api/index.html',
+  'stripe-radar-value-list-reovercast-api/index.html',
+  'clerk-session-end-stomata-api/index.html',
+  'auth0-mfa-recovery-paten-api/index.html',
+  'auth0-guardian-recovery-paten-api/index.html',
+  'cloudflare-api-shield-schema-infinitesimal-all-api/index.html',
+  'vercel-firewall-ip-blacklist-infinitesimal-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-infinitesimal-all-keys-api/index.html',
+  'huggingface-jobs-inspect-troncon-api/index.html',
+  'github-copilot-seat-assignment-troncon-api/index.html',
+  'figma-mcp-code-connect-lawn-api/index.html',
+  'slack-lists-access-stomata-api/index.html',
+  'notion-data-sources-somnolent-api/index.html',
 ];
