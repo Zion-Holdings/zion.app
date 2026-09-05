@@ -701,6 +701,12 @@ export function titleFromSlug(slug) {
     .replace(/\bWeldon Spring\b/g, 'Weldon Spring')
     .replace(/\bJosephville\b/g, 'Josephville')
     .replace(/\bDardenne Prairie\b/g, 'Dardenne Prairie')
+    .replace(/\bLake St Louis\b/g, 'Lake St. Louis')
+    .replace(/\bWeldon Spring Heights\b/g, 'Weldon Spring Heights')
+    .replace(/\bCap Au Gris\b/g, 'Cap au Gris')
+    .replace(/\bStarkenburg\b/g, 'Starkenburg')
+    .replace(/\bFemme Osage\b/g, 'Femme Osage')
+    .replace(/\bEthlyn\b/g, 'Ethlyn')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10636,4 +10642,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-cambric-api/index.html',
   'slack-lists-access-heartwood-api/index.html',
   'notion-data-sources-befogged-api/index.html',
+  'lake-st-louis/index.html',
+  'weldon-spring-heights/index.html',
+  'cap-au-gris/index.html',
+  'starkenburg/index.html',
+  'femme-osage/index.html',
+  'ethlyn/index.html',
+  'n8n-merge-by-untether-api/index.html',
+  'make-array-window-moor-api/index.html',
+  'n8n-item-lists-window-moor-api/index.html',
+  'make-array-window-unmoor-api/index.html',
+  'n8n-item-lists-window-unmoor-api/index.html',
+  'n8n-merge-by-tether-api/index.html',
+  'paddle-catalog-tarasque-api/index.html',
+  'stripe-radar-value-list-reloft-api/index.html',
+  'clerk-session-end-medulla-api/index.html',
+  'auth0-mfa-recovery-saturno-api/index.html',
+  'auth0-guardian-recovery-saturno-api/index.html',
+  'cloudflare-api-shield-schema-bohrscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-bohrscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-bohrscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-bresaola-api/index.html',
+  'github-copilot-seat-assignment-bresaola-api/index.html',
+  'figma-mcp-code-connect-nainsook-api/index.html',
+  'slack-lists-access-medulla-api/index.html',
+  'notion-data-sources-fuddled-api/index.html',
 ];
