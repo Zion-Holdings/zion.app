@@ -46,6 +46,7 @@ export function titleFromSlug(slug) {
     .replace(/\bJa4\b/g, 'JA4')
     .replace(/\bSsh\b/g, 'SSH')
     .replace(/\bUv\b/g, 'UV')
+    .replace(/\bTv\b/g, 'TV')
     .replace(/\bFtp\b/g, 'FTP')
     .replace(/\bMqtt\b/g, 'MQTT')
     .replace(/\bWhoami\b/g, 'whoami')
@@ -151,6 +152,8 @@ export function titleFromSlug(slug) {
     .replace(/\bPleasant Hope\b/g, 'Pleasant Hope')
     .replace(/\bWalnut Grove\b/g, 'Walnut Grove')
     .replace(/\bAsh Grove\b/g, 'Ash Grove')
+    .replace(/\bStrafford\b/g, 'Strafford')
+    .replace(/\bMarionville\b/g, 'Marionville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7636,4 +7639,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-unarchive-api/index.html',
   'slack-lists-access-unpin-api/index.html',
   'notion-data-sources-fold-api/index.html',
+  'strafford/index.html',
+  'battlefield/index.html',
+  'clever/index.html',
+  'marionville/index.html',
+  'cassville/index.html',
+  'galena/index.html',
+  'n8n-merge-by-cross-api/index.html',
+  'make-array-window-pair-api/index.html',
+  'n8n-item-lists-window-pair-api/index.html',
+  'n8n-merge-by-zip-api/index.html',
+  'make-array-window-span-api/index.html',
+  'n8n-item-lists-window-span-api/index.html',
+  'paddle-catalog-show-api/index.html',
+  'stripe-radar-value-list-drain-api/index.html',
+  'clerk-session-end-tv-api/index.html',
+  'auth0-mfa-recovery-revoke-api/index.html',
+  'auth0-guardian-recovery-revoke-api/index.html',
+  'cloudflare-api-shield-schema-drain-all-api/index.html',
+  'vercel-firewall-ip-blacklist-drain-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-drain-all-keys-api/index.html',
+  'huggingface-jobs-inspect-revert-api/index.html',
+  'github-copilot-seat-assignment-detach-api/index.html',
+  'figma-mcp-code-connect-restore-api/index.html',
+  'slack-lists-access-star-api/index.html',
+  'notion-data-sources-unfold-api/index.html',
 ];
