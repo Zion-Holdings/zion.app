@@ -315,6 +315,12 @@ export function titleFromSlug(slug) {
     .replace(/\bCowgill\b/g, 'Cowgill')
     .replace(/\bChula\b/g, 'Chula')
     .replace(/\bLudlow\b/g, 'Ludlow')
+    .replace(/\bHale\b/g, 'Hale')
+    .replace(/\bTina\b/g, 'Tina')
+    .replace(/\bLinneus\b/g, 'Linneus')
+    .replace(/\bBucklin\b/g, 'Bucklin')
+    .replace(/\bPurdin\b/g, 'Purdin')
+    .replace(/\bRothville\b/g, 'Rothville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8650,4 +8656,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-bump-api/index.html',
   'slack-lists-access-corolla-api/index.html',
   'notion-data-sources-zippy-api/index.html',
+  'hale/index.html',
+  'tina/index.html',
+  'linneus/index.html',
+  'bucklin/index.html',
+  'purdin/index.html',
+  'rothville/index.html',
+  'n8n-merge-by-unlatch-api/index.html',
+  'make-array-window-fasten-api/index.html',
+  'n8n-item-lists-window-fasten-api/index.html',
+  'make-array-window-unfasten-api/index.html',
+  'n8n-item-lists-window-unfasten-api/index.html',
+  'n8n-merge-by-latch-api/index.html',
+  'paddle-catalog-flagon-api/index.html',
+  'stripe-radar-value-list-resnap-api/index.html',
+  'clerk-session-end-pistil-api/index.html',
+  'auth0-mfa-recovery-sacristy-api/index.html',
+  'auth0-guardian-recovery-sacristy-api/index.html',
+  'cloudflare-api-shield-schema-tall-all-api/index.html',
+  'vercel-firewall-ip-blacklist-tall-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-tall-all-keys-api/index.html',
+  'huggingface-jobs-inspect-grind-api/index.html',
+  'github-copilot-seat-assignment-grind-api/index.html',
+  'figma-mcp-code-connect-lead-api/index.html',
+  'slack-lists-access-pistil-api/index.html',
+  'notion-data-sources-peppy-api/index.html',
 ];
