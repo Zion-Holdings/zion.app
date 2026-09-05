@@ -81,6 +81,10 @@ export function titleFromSlug(slug) {
     .replace(/\bSycamore Hills\b/g, 'Sycamore Hills')
     .replace(/\bNorwood Court\b/g, 'Norwood Court')
     .replace(/\bVelda Village Hills\b/g, 'Velda Village Hills')
+    .replace(/\bBreckenridge Hills\b/g, 'Breckenridge Hills')
+    .replace(/\bWoodson Terrace\b/g, 'Woodson Terrace')
+    .replace(/\bSt John\b/g, 'St. John')
+    .replace(/\bVinita Park\b/g, 'Vinita Park')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7066,4 +7070,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-import-api/index.html',
   'notion-data-sources-clone-api/index.html',
   'slack-lists-access-review-api/index.html',
+  'breckenridge-hills/index.html',
+  'edmundson/index.html',
+  'woodson-terrace/index.html',
+  'st-john/index.html',
+  'vinita-park/index.html',
+  'greendale/index.html',
+  'n8n-item-lists-skip-api/index.html',
+  'make-array-skip-api/index.html',
+  'n8n-item-lists-drop-api/index.html',
+  'make-array-nth-last-api/index.html',
+  'make-array-rest-api/index.html',
+  'n8n-item-lists-rest-api/index.html',
+  'stripe-radar-lists-delete-api/index.html',
+  'paddle-discount-group-get-api/index.html',
+  'auth0-mfa-otp-disable-api/index.html',
+  'clerk-session-create-token-api/index.html',
+  'auth0-guardian-sms-unenroll-api/index.html',
+  'vercel-firewall-ip-allowlist-remove-api/index.html',
+  'cloudflare-api-shield-schema-validate-api/index.html',
+  'vercel-firewall-ip-blacklist-remove-api/index.html',
+  'huggingface-jobs-inspect-span-api/index.html',
+  'github-copilot-seat-assignment-revoke-api/index.html',
+  'figma-mcp-code-connect-merge-api/index.html',
+  'notion-data-sources-unarchive-api/index.html',
+  'slack-lists-access-approve-api/index.html',
 ];
