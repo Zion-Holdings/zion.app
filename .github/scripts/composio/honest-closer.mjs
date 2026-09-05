@@ -131,6 +131,9 @@ export function titleFromSlug(slug) {
     .replace(/\bNew Bloomfield\b/g, 'New Bloomfield')
     .replace(/\bAuxvasse\b/g, 'Auxvasse')
     .replace(/\bHallsville\b/g, 'Hallsville')
+    .replace(/\bNew Franklin\b/g, 'New Franklin')
+    .replace(/\bPilot Grove\b/g, 'Pilot Grove')
+    .replace(/\bWooldridge\b/g, 'Wooldridge')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7466,4 +7469,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-preview-api/index.html',
   'slack-lists-access-kick-api/index.html',
   'notion-data-sources-compact-api/index.html',
+  'sturgeon/index.html',
+  'linn/index.html',
+  'fayette/index.html',
+  'new-franklin/index.html',
+  'pilot-grove/index.html',
+  'wooldridge/index.html',
+  'make-array-window-last-api/index.html',
+  'n8n-item-lists-window-last-api/index.html',
+  'n8n-merge-by-cursor-api/index.html',
+  'n8n-merge-by-limit-api/index.html',
+  'make-array-window-first-api/index.html',
+  'n8n-item-lists-window-first-api/index.html',
+  'stripe-radar-value-list-get-api/index.html',
+  'paddle-product-unarchive-api/index.html',
+  'clerk-session-end-mobile-api/index.html',
+  'auth0-mfa-webauthn-enable-api/index.html',
+  'auth0-guardian-webauthn-enroll-api/index.html',
+  'cloudflare-api-shield-schema-drop-api/index.html',
+  'vercel-firewall-ip-allowlist-drop-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-drop-all-api/index.html',
+  'huggingface-jobs-inspect-diff-api/index.html',
+  'github-copilot-seat-assignment-park-api/index.html',
+  'figma-mcp-code-connect-draft-api/index.html',
+  'slack-lists-access-ban-api/index.html',
+  'notion-data-sources-expand-api/index.html',
 ];
