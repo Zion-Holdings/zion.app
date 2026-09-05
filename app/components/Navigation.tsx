@@ -139,9 +139,14 @@ export default function Navigation() {
   return (
     <header id="site-navigation" className={`sticky top-0 z-50 w-full border-b transition-all ${scrolled ? 'border-slate-800 bg-slate-950/95 backdrop-blur-2xl shadow-lg shadow-black/20' : 'border-slate-800/60 bg-slate-950/80 backdrop-blur-xl'}`}>
       <nav className="container-page flex h-16 items-center justify-between gap-4" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="Zion Tech Group home">
-          <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            {SITE_TITLE}
+        <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Zion Tech Group home">
+          <span className="flex flex-col leading-tight">
+            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              {SITE_TITLE}
+            </span>
+            <span className="hidden sm:block text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
+              AI Delivery Studio
+            </span>
           </span>
         </Link>
 
@@ -221,6 +226,15 @@ export default function Navigation() {
             <NavLink key={i} link={link} />
           ))}
 
+          <Link
+            href="/search/"
+            className="ml-2 inline-flex items-center gap-2 rounded-xl border border-slate-700/80 bg-slate-900/70 px-3 py-2 text-xs font-medium text-slate-300 hover:border-purple-400/40 hover:text-white"
+            aria-label="Open quick navigation search"
+          >
+            <span>Quick Find</span>
+            <span className="hidden xl:inline rounded border border-slate-700 px-1.5 py-0.5 text-[10px] text-slate-400">Ctrl/⌘ K</span>
+          </Link>
+
           <Link href="/agents-monitoring/" className="relative ml-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-xs font-semibold text-white hover:from-violet-500 hover:to-purple-500 transition-all flex items-center gap-1.5">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
@@ -229,8 +243,8 @@ export default function Navigation() {
             AI Agents
           </Link>
 
-          <Link href="/contact/" className="ml-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white hover:from-purple-500 hover:to-pink-600 transition-all shadow-lg shadow-purple-500/25">
-            Get Free Consultation
+          <Link href="/start-project/" className="ml-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white hover:from-purple-500 hover:to-pink-600 transition-all shadow-lg shadow-purple-500/25">
+            Start Project
           </Link>
         </div>
 

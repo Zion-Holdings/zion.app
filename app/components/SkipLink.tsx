@@ -1,40 +1,22 @@
-'use client';
+import React from 'react';
 
-import { useRef } from 'react';
+const baseSkipLinkClass =
+  'sr-only focus:not-sr-only focus:fixed focus:left-4 focus:z-[1000] focus:rounded-md focus:bg-slate-950 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg focus:ring-2 focus:ring-purple-400';
 
-export default function SkipLink() {
-  const ref = useRef<HTMLAnchorElement>(null);
+const SkipLink: React.FC = () => {
   return (
-    <a
-      ref={ref}
-      href="#main-content"
-      className="skip-to-content"
-      onFocus={(event) => {
-        const target = event.currentTarget;
-        target.style.left = '0';
-        target.style.top = '0';
-        target.style.width = 'auto';
-        target.style.height = 'auto';
-        target.style.overflow = 'visible';
-        target.style.zIndex = '9999';
-        target.style.padding = '0.5rem 1rem';
-        target.style.background = '#7c3aed';
-        target.style.color = '#fff';
-        target.style.borderRadius = '0 0 0.5rem 0';
-        target.style.textDecoration = 'none';
-        target.style.fontWeight = '600';
-      }}
-      onBlur={(event) => {
-        const target = event.currentTarget;
-        target.style.left = '-9999px';
-        target.style.top = 'auto';
-        target.style.width = '1px';
-        target.style.height = '1px';
-        target.style.overflow = 'hidden';
-        target.style.zIndex = '';
-      }}
-    >
-      Skip to content
-    </a>
+    <>
+      <a href="#main-content" className={`${baseSkipLinkClass} focus:top-4`}>
+        Skip to main content
+      </a>
+      <a href="#site-navigation" className={`${baseSkipLinkClass} focus:top-16`}>
+        Skip to navigation
+      </a>
+      <a href="#site-footer" className={`${baseSkipLinkClass} focus:top-28`}>
+        Skip to footer
+      </a>
+    </>
   );
-}
+};
+
+export default SkipLink;
