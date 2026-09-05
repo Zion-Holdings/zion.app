@@ -959,6 +959,19 @@ export function titleFromSlug(slug) {
     .replace(/\bBratwurst\b/g, 'Bratwurst')
     .replace(/\bChintz\b/g, 'Chintz')
     .replace(/\bKipping\b/g, 'Kipping')
+    .replace(/\bNottinghill\b/g, 'Nottinghill')
+    .replace(/\bLohmer\b/g, 'Lohmer')
+    .replace(/\bBado\b/g, 'Bado')
+    .replace(/\bMidco\b/g, 'Midco')
+    .replace(/\bLow Wassie\b/g, 'Low Wassie')
+    .replace(/\bWhite Church\b/g, 'White Church')
+    .replace(/\bNingyo\b/g, 'Ningyo')
+    .replace(/\bChlorenchyma\b/g, 'Chlorenchyma')
+    .replace(/\bSkoufos\b/g, 'Skoufos')
+    .replace(/\bInflatonic\b/g, 'Inflatonic')
+    .replace(/\bBockwurst\b/g, 'Bockwurst')
+    .replace(/\bHerringbone\b/g, 'Herringbone')
+    .replace(/\bCatnapping\b/g, 'Catnapping')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11844,4 +11857,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-chintz-api/index.html',
   'slack-lists-access-exodermis-api/index.html',
   'notion-data-sources-kipping-api/index.html',
+  'nottinghill/index.html',
+  'lohmer/index.html',
+  'bado/index.html',
+  'midco/index.html',
+  'low-wassie/index.html',
+  'white-church/index.html',
+  'n8n-merge-by-unship-api/index.html',
+  'make-array-window-gybe-api/index.html',
+  'n8n-item-lists-window-gybe-api/index.html',
+  'make-array-window-ungybe-api/index.html',
+  'n8n-item-lists-window-ungybe-api/index.html',
+  'n8n-merge-by-ship-api/index.html',
+  'paddle-catalog-ningyo-api/index.html',
+  'stripe-radar-value-list-restain-api/index.html',
+  'clerk-session-end-chlorenchyma-api/index.html',
+  'auth0-mfa-recovery-skoufos-api/index.html',
+  'auth0-guardian-recovery-skoufos-api/index.html',
+  'cloudflare-api-shield-schema-inflatonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-inflatonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-inflatonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-bockwurst-api/index.html',
+  'github-copilot-seat-assignment-bockwurst-api/index.html',
+  'figma-mcp-code-connect-herringbone-api/index.html',
+  'slack-lists-access-chlorenchyma-api/index.html',
+  'notion-data-sources-catnapping-api/index.html',
 ];
