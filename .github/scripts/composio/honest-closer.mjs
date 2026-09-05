@@ -267,6 +267,12 @@ export function titleFromSlug(slug) {
     .replace(/\bWood Heights\b/g, 'Wood Heights')
     .replace(/\bVibbard\b/g, 'Vibbard')
     .replace(/\bFleming\b/g, 'Fleming')
+    .replace(/\bIatan\b/g, 'Iatan')
+    .replace(/\bEdgerton\b/g, 'Edgerton')
+    .replace(/\bTrimble\b/g, 'Trimble')
+    .replace(/\bGower\b/g, 'Gower')
+    .replace(/\bCamden Point\b/g, 'Camden Point')
+    .replace(/\bFerrelview\b/g, 'Ferrelview')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8402,4 +8408,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-tile-api/index.html',
   'slack-lists-access-tendril-api/index.html',
   'notion-data-sources-stiff-api/index.html',
+  'iatan/index.html',
+  'edgerton/index.html',
+  'trimble/index.html',
+  'gower/index.html',
+  'camden-point/index.html',
+  'ferrelview/index.html',
+  'n8n-merge-by-uncoil-api/index.html',
+  'make-array-window-wind-api/index.html',
+  'n8n-item-lists-window-wind-api/index.html',
+  'make-array-window-unwind-api/index.html',
+  'n8n-item-lists-window-unwind-api/index.html',
+  'n8n-merge-by-coil-api/index.html',
+  'paddle-catalog-flask-api/index.html',
+  'stripe-radar-value-list-rekey-api/index.html',
+  'clerk-session-end-frond-api/index.html',
+  'auth0-mfa-recovery-nave-api/index.html',
+  'auth0-guardian-recovery-nave-api/index.html',
+  'cloudflare-api-shield-schema-wide-all-api/index.html',
+  'vercel-firewall-ip-blacklist-wide-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-wide-all-keys-api/index.html',
+  'huggingface-jobs-inspect-glean-api/index.html',
+  'github-copilot-seat-assignment-glean-api/index.html',
+  'figma-mcp-code-connect-pane-api/index.html',
+  'slack-lists-access-frond-api/index.html',
+  'notion-data-sources-taut-api/index.html',
 ];
