@@ -141,6 +141,10 @@ export function titleFromSlug(slug) {
     .replace(/\bSunrise Beach\b/g, 'Sunrise Beach')
     .replace(/\bGravois Mills\b/g, 'Gravois Mills')
     .replace(/\bCole Camp\b/g, 'Cole Camp')
+    .replace(/\bCross Timbers\b/g, 'Cross Timbers')
+    .replace(/\bHermitage\b/g, 'Hermitage')
+    .replace(/\bWeaubleau\b/g, 'Weaubleau')
+    .replace(/\bWheatland\b/g, 'Wheatland')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7551,4 +7555,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-promote-api/index.html',
   'slack-lists-access-mute-api/index.html',
   'notion-data-sources-flatten-api/index.html',
+  'edwards/index.html',
+  'cross-timbers/index.html',
+  'preston/index.html',
+  'hermitage/index.html',
+  'weaubleau/index.html',
+  'wheatland/index.html',
+  'n8n-merge-by-head-api/index.html',
+  'make-array-window-outer-api/index.html',
+  'n8n-item-lists-window-outer-api/index.html',
+  'n8n-merge-by-inner-api/index.html',
+  'make-array-window-inner-api/index.html',
+  'n8n-item-lists-window-inner-api/index.html',
+  'paddle-catalog-archive-api/index.html',
+  'stripe-radar-value-list-purge-api/index.html',
+  'clerk-session-end-watch-api/index.html',
+  'auth0-mfa-recovery-enroll-api/index.html',
+  'auth0-guardian-recovery-enable-api/index.html',
+  'cloudflare-api-shield-schema-drop-all-api/index.html',
+  'vercel-firewall-ip-blacklist-purge-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-drop-all-keys-api/index.html',
+  'huggingface-jobs-inspect-patch-api/index.html',
+  'github-copilot-seat-assignment-unpark-api/index.html',
+  'figma-mcp-code-connect-demote-api/index.html',
+  'slack-lists-access-unmute-api/index.html',
+  'notion-data-sources-nest-api/index.html',
 ];
