@@ -363,6 +363,12 @@ export function titleFromSlug(slug) {
     .replace(/\bRocheport\b/g, 'Rocheport')
     .replace(/\bMc Baine\b/g, 'McBaine')
     .replace(/\bLupus\b/g, 'Lupus')
+    .replace(/\bKingdom City\b/g, 'Kingdom City')
+    .replace(/\bMokane\b/g, 'Mokane')
+    .replace(/\bSteedman\b/g, 'Steedman')
+    .replace(/\bTebbetts\b/g, 'Tebbetts')
+    .replace(/\bBunceton\b/g, 'Bunceton')
+    .replace(/\bOtterville\b/g, 'Otterville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8898,4 +8904,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-gouge-api/index.html',
   'slack-lists-access-ovary-api/index.html',
   'notion-data-sources-apt-api/index.html',
+  'kingdom-city/index.html',
+  'mokane/index.html',
+  'steedman/index.html',
+  'tebbetts/index.html',
+  'bunceton/index.html',
+  'otterville/index.html',
+  'n8n-merge-by-unstitch-api/index.html',
+  'make-array-window-tie-api/index.html',
+  'n8n-item-lists-window-tie-api/index.html',
+  'make-array-window-untie-api/index.html',
+  'n8n-item-lists-window-untie-api/index.html',
+  'n8n-merge-by-stitch-api/index.html',
+  'paddle-catalog-jeroboam-api/index.html',
+  'stripe-radar-value-list-resew-api/index.html',
+  'clerk-session-end-torus-api/index.html',
+  'auth0-mfa-recovery-triforium-api/index.html',
+  'auth0-guardian-recovery-triforium-api/index.html',
+  'cloudflare-api-shield-schema-exa-all-api/index.html',
+  'vercel-firewall-ip-blacklist-exa-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-exa-all-keys-api/index.html',
+  'huggingface-jobs-inspect-mince-api/index.html',
+  'github-copilot-seat-assignment-mince-api/index.html',
+  'figma-mcp-code-connect-scribe-api/index.html',
+  'slack-lists-access-torus-api/index.html',
+  'notion-data-sources-witty-api/index.html',
 ];
