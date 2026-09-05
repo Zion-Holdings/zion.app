@@ -369,6 +369,12 @@ export function titleFromSlug(slug) {
     .replace(/\bTebbetts\b/g, 'Tebbetts')
     .replace(/\bBunceton\b/g, 'Bunceton')
     .replace(/\bOtterville\b/g, 'Otterville')
+    .replace(/\bPrairie Home\b/g, 'Prairie Home')
+    .replace(/\bHatton\b/g, 'Hatton')
+    .replace(/\bCalwood\b/g, 'Calwood')
+    .replace(/\bReadsville\b/g, 'Readsville')
+    .replace(/\bWardsville\b/g, 'Wardsville')
+    .replace(/\bSt Thomas\b/g, 'St. Thomas')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8929,4 +8935,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-scribe-api/index.html',
   'slack-lists-access-torus-api/index.html',
   'notion-data-sources-witty-api/index.html',
+  'prairie-home/index.html',
+  'hatton/index.html',
+  'calwood/index.html',
+  'readsville/index.html',
+  'wardsville/index.html',
+  'st-thomas/index.html',
+  'n8n-merge-by-uncinch-api/index.html',
+  'make-array-window-stitch-api/index.html',
+  'n8n-item-lists-window-stitch-api/index.html',
+  'make-array-window-unstitch-api/index.html',
+  'n8n-item-lists-window-unstitch-api/index.html',
+  'n8n-merge-by-cinch-api/index.html',
+  'paddle-catalog-methuselah-api/index.html',
+  'stripe-radar-value-list-restitch-api/index.html',
+  'clerk-session-end-gynoecium-api/index.html',
+  'auth0-mfa-recovery-clerestory-api/index.html',
+  'auth0-guardian-recovery-clerestory-api/index.html',
+  'cloudflare-api-shield-schema-zetta-all-api/index.html',
+  'vercel-firewall-ip-blacklist-zetta-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-zetta-all-keys-api/index.html',
+  'huggingface-jobs-inspect-grate-api/index.html',
+  'github-copilot-seat-assignment-grate-api/index.html',
+  'figma-mcp-code-connect-hatch-api/index.html',
+  'slack-lists-access-gynoecium-api/index.html',
+  'notion-data-sources-sage-api/index.html',
 ];
