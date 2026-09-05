@@ -203,6 +203,12 @@ export function titleFromSlug(slug) {
     .replace(/\bLawrenceton\b/g, 'Lawrenceton')
     .replace(/\bFriedheim\b/g, 'Friedheim')
     .replace(/\bBloomsdale\b/g, 'Bloomsdale')
+    .replace(/\bWeingarten\b/g, 'Weingarten')
+    .replace(/\bCoffman\b/g, 'Coffman')
+    .replace(/\bSprott\b/g, 'Sprott')
+    .replace(/\bKinsey\b/g, 'Kinsey')
+    .replace(/\bWomack\b/g, 'Womack')
+    .replace(/\bLiguori\b/g, 'Liguori')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8063,4 +8069,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-crop-api/index.html',
   'slack-lists-access-branch-api/index.html',
   'notion-data-sources-thicken-api/index.html',
+  'weingarten/index.html',
+  'coffman/index.html',
+  'sprott/index.html',
+  'kinsey/index.html',
+  'womack/index.html',
+  'liguori/index.html',
+  'n8n-merge-by-bin-api/index.html',
+  'make-array-window-bucket-api/index.html',
+  'n8n-item-lists-window-bucket-api/index.html',
+  'make-array-window-bin-api/index.html',
+  'n8n-item-lists-window-bin-api/index.html',
+  'n8n-merge-by-tile-api/index.html',
+  'paddle-catalog-pack-api/index.html',
+  'stripe-radar-value-list-resurrect-api/index.html',
+  'clerk-session-end-trunk-api/index.html',
+  'auth0-mfa-recovery-bar-api/index.html',
+  'auth0-guardian-recovery-bar-api/index.html',
+  'cloudflare-api-shield-schema-least-all-api/index.html',
+  'vercel-firewall-ip-blacklist-least-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-least-all-keys-api/index.html',
+  'huggingface-jobs-inspect-drift-api/index.html',
+  'github-copilot-seat-assignment-swap-api/index.html',
+  'figma-mcp-code-connect-clip-api/index.html',
+  'slack-lists-access-twig-api/index.html',
+  'notion-data-sources-thin-api/index.html',
 ];
