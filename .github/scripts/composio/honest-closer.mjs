@@ -881,6 +881,12 @@ export function titleFromSlug(slug) {
     .replace(/\bShawnee Mound\b/g, 'Shawnee Mound')
     .replace(/\bMaurine\b/g, 'Maurine')
     .replace(/\bTurners\b/g, 'Turners')
+    .replace(/\bAldrich\b/g, 'Aldrich')
+    .replace(/\bHuntingdale\b/g, 'Huntingdale')
+    .replace(/\bKnobby\b/g, 'Knobby')
+    .replace(/\bFoose\b/g, 'Foose')
+    .replace(/\bPlad\b/g, 'Plad')
+    .replace(/\bBrazito\b/g, 'Brazito')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11541,4 +11547,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-surah-api/index.html',
   'slack-lists-access-tylosis-api/index.html',
   'notion-data-sources-slumbering-api/index.html',
+  'aldrich/index.html',
+  'huntingdale/index.html',
+  'knobby/index.html',
+  'foose/index.html',
+  'plad/index.html',
+  'brazito/index.html',
+  'n8n-merge-by-uncouple-api/index.html',
+  'make-array-window-clew-api/index.html',
+  'n8n-item-lists-window-clew-api/index.html',
+  'make-array-window-unclew-api/index.html',
+  'n8n-item-lists-window-unclew-api/index.html',
+  'n8n-merge-by-couple-api/index.html',
+  'paddle-catalog-iara-api/index.html',
+  'stripe-radar-value-list-rehone-api/index.html',
+  'clerk-session-end-plasmodesma-api/index.html',
+  'auth0-mfa-recovery-analavos-api/index.html',
+  'auth0-guardian-recovery-analavos-api/index.html',
+  'cloudflare-api-shield-schema-ultramicroscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-ultramicroscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-ultramicroscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-linguica-api/index.html',
+  'github-copilot-seat-assignment-linguica-api/index.html',
+  'figma-mcp-code-connect-moire-api/index.html',
+  'slack-lists-access-plasmodesma-api/index.html',
+  'notion-data-sources-napping-api/index.html',
 ];
