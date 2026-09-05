@@ -381,6 +381,12 @@ export function titleFromSlug(slug) {
     .replace(/\bLoose Creek\b/g, 'Loose Creek')
     .replace(/\bKoeltztown\b/g, 'Koeltztown')
     .replace(/\bBonnots Mill\b/g, 'Bonnots Mill')
+    .replace(/\bRich Fountain\b/g, 'Rich Fountain')
+    .replace(/\bMarys Home\b/g, "Mary's Home")
+    .replace(/\bSt Elizabeth\b/g, 'St. Elizabeth')
+    .replace(/\bBrumley\b/g, 'Brumley')
+    .replace(/\bUlman\b/g, 'Ulman')
+    .replace(/\bFrankenstein\b/g, 'Frankenstein')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8991,4 +8997,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-incise-api/index.html',
   'slack-lists-access-androecium-api/index.html',
   'notion-data-sources-wry-api/index.html',
+  'rich-fountain/index.html',
+  'marys-home/index.html',
+  'st-elizabeth/index.html',
+  'brumley/index.html',
+  'ulman/index.html',
+  'frankenstein/index.html',
+  'n8n-merge-by-unhem-api/index.html',
+  'make-array-window-sew-api/index.html',
+  'n8n-item-lists-window-sew-api/index.html',
+  'make-array-window-unsew-api/index.html',
+  'n8n-item-lists-window-unsew-api/index.html',
+  'n8n-merge-by-hem-api/index.html',
+  'paddle-catalog-salmanazar-api/index.html',
+  'stripe-radar-value-list-reknit-api/index.html',
+  'clerk-session-end-perianth-api/index.html',
+  'auth0-mfa-recovery-aumbry-api/index.html',
+  'auth0-guardian-recovery-aumbry-api/index.html',
+  'cloudflare-api-shield-schema-ronna-all-api/index.html',
+  'vercel-firewall-ip-blacklist-ronna-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-ronna-all-keys-api/index.html',
+  'huggingface-jobs-inspect-dice-api/index.html',
+  'github-copilot-seat-assignment-dice-api/index.html',
+  'figma-mcp-code-connect-rasp-api/index.html',
+  'slack-lists-access-perianth-api/index.html',
+  'notion-data-sources-droll-api/index.html',
 ];
