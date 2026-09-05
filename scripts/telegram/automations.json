@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "company": "Zion Tech Group",
+    "ceo": "Kleber Garcia Alcatrão",
+    "email": "kleber@ziontechgroup.com",
+    "site": "https://ziontechgroup.com",
+    "services": "https://ziontechgroup.com/services/",
+    "pricing": "https://ziontechgroup.com/pricing/",
+    "contact": "https://ziontechgroup.com/contact/",
+    "calendly": "https://calendly.com/kleber-ziontechgroup",
+    "home_channel_id": "-1003886112318"
+  },
+  "automations": [
+    {
+      "id": "stop",
+      "priority": 0,
+      "commands": ["/stop", "/parar", "/mute", "/quieto"],
+      "keywords": [],
+      "ceo_only": false,
+      "templates": {
+        "pt": "Ok — parei as respostas automáticas neste chat.\n\nEnvie /start para religar.",
+        "en": "Got it — automatic replies are off in this chat.\n\nSend /start to turn them back on."
+      }
+    },
+    {
+      "id": "start",
+      "priority": 1,
+      "commands": ["/start", "/help", "/ajuda", "/menu"],
+      "keywords": [],
+      "ceo_only": false,
+      "templates": {
+        "pt": "Zion Tech Group — IA e serviços de TI.\n\nPosso responder sobre:\n- Proposta / serviços\n- Preço e orçamento\n- Agendar reunião\n- Parceria / revenda\n- Suporte\n\nSite: {site}\nReunião: {calendly}\nEmail: {email}\n\nComandos: /help /stop",
+        "en": "Zion Tech Group — AI and IT services.\n\nI can help with:\n- Proposal / services\n- Pricing\n- Booking a call\n- Partnership / reseller\n- Support\n\nSite: {site}\nCall: {calendly}\nEmail: {email}\n\nCommands: /help /stop"
+      }
+    },
+    {
+      "id": "status",
+      "priority": 2,
+      "commands": ["/status"],
+      "keywords": [],
+      "ceo_only": true,
+      "templates": {
+        "pt": "Automação Telegram ativa.\n\n- Bot: {bot_username}\n- Offset: {offset}\n- Opt-out chats: {opt_out_count}\n- Cursor API: {cursor_status}\n\nComandos CEO: /status /agent /help /stop",
+        "en": "Telegram automation is live.\n\n- Bot: {bot_username}\n- Offset: {offset}\n- Opt-out chats: {opt_out_count}\n- Cursor API: {cursor_status}\n\nCEO commands: /status /agent /help /stop"
+      }
+    },
+    {
+      "id": "agent",
+      "priority": 3,
+      "commands": ["/agent", "/cursor", "/run"],
+      "keywords": [],
+      "ceo_only": true,
+      "templates": {
+        "pt": "Para lançar um Cloud Agent, envie:\n/agent &lt;tarefa&gt;\n\nExemplo:\n/agent corrigir 404 em /industries/legal/",
+        "en": "To launch a Cloud Agent, send:\n/agent &lt;task&gt;\n\nExample:\n/agent fix 404 on /industries/legal/"
+      }
+    },
+    {
+      "id": "booking",
+      "priority": 10,
+      "commands": ["/reuniao", "/reunião", "/book", "/call"],
+      "keywords": [
+        "calendly", "agendar", "agenda", "reunião", "reuniao", "meeting",
+        "book a call", "book call", "marcar", "horário", "horario",
+        "disponível", "disponivel", "schedule", "consulta"
+      ],
+      "ceo_only": false,
+      "templates": {
+        "pt": "{hello}Segue o link para agendar com a Zion Tech Group:\n{calendly}\n\nSe preferir, escreva o horário e o objetivo da reunião que eu encaixo.",
+        "en": "{hello}Book a call with Zion Tech Group:\n{calendly}\n\nOr tell me the time window and goal and I will route it."
+      }
+    },
+    {
+      "id": "pricing",
+      "priority": 11,
+      "commands": ["/preco", "/preço", "/pricing"],
+      "keywords": [
+        "preço", "preco", "pricing", "orçamento", "orcamento", "proposta comercial",
+        "valor", "custa", "custo", "how much", "quote", "investment", "investimento",
+        "mensalidade", "retainer"
+      ],
+      "ceo_only": false,
+      "templates": {
+        "pt": "{hello}Preços e modelos:\n{pricing}\n\nPara um orçamento fechado, envie:\n- Empresa e segmento\n- O que precisa automatizar\n- Prazo\n\nOu agende: {calendly}",
+        "en": "{hello}Pricing and models:\n{pricing}\n\nFor a scoped quote, send:\n- Company and industry\n- What you want automated\n- Timeline\n\nOr book: {calendly}"
+      }
+    },
+    {
+      "id": "partnership",
+      "priority": 12,
+      "commands": ["/parceria", "/partner"],
+      "keywords": [
+        "parceria", "parceiro", "partner", "reseller", "revenda", "afiliado",
+        "affiliate", "white label", "whitelabel", "indicação", "indicacao"
+      ],
+      "ceo_only": false,
+      "templates": {
+        "pt": "{hello}Abrimos parceria e revenda.\n\n- Portal: {site}/partner-portal/\n- Email: {email}\n- Call: {calendly}\n\nEnvie empresa, país e modelo (indicação, revenda ou white-label).",
+        "en": "{hello}We run partner and reseller programs.\n\n- Portal: {site}/partner-portal/\n- Email: {email}\n- Call: {calendly}\n\nSend company, country, and model (referral, reseller, or white-label)."
+      }
+    },
+    {
+      "id": "support",
+      "priority": 13,
+      "commands": ["/suporte", "/support"],
+      "keywords": [
+        "erro", "bug", "down", "não funciona", "nao funciona", "quebrado",
+        "suporte", "support", "incidente", "fora do ar", "timeout", "500",
+        "404", "login", "acesso"
+      ],
+      "ceo_only": false,
+      "templates": {
+        "pt": "{hello}Recebi o pedido de suporte.\n\nEnvie, se tiver:\n- URL ou serviço afetado\n- O que aconteceu\n- Horário e print\n\nEmail direto: {email}",
+        "en": "{hello}Support request received.\n\nPlease send, if you have it:\n- Affected URL or service\n- What happened\n- Time and a screenshot\n\nDirect email: {email}"
+      }
+    },
+    {
+      "id": "lead",
+      "priority": 14,
+      "commands": ["/proposta", "/servicos", "/serviços"],
+      "keywords": [
+        "proposta", "serviço", "servico", "services", "automação", "automacao",
+        "automation", "inteligência artificial", "inteligencia artificial",
+        "ai agent", "agente de ia", "devops", "cloud", "cyber", "soc",
+        "contratar", "preciso de", "quero automatizar", "lead"
+      ],
+      "ceo_only": false,
+      "templates": {
+        "pt": "{hello}Zion Tech Group entrega automação, agentes de IA e serviços de TI.\n\n- Serviços: {services}\n- Site: {site}\n- Reunião: {calendly}\n- Email: {email}\n\nEscreva o problema e o prazo que eu retorno com o próximo passo.",
+        "en": "{hello}Zion Tech Group delivers AI agents, automation, and IT services.\n\n- Services: {services}\n- Site: {site}\n- Call: {calendly}\n- Email: {email}\n\nTell me the problem and timeline and I will send the next step."
+      }
+    },
+    {
+      "id": "greeting",
+      "priority": 20,
+      "commands": [],
+      "keywords": [
+        "olá", "ola", "oi", "hello", "hi", "hey", "bom dia", "boa tarde",
+        "boa noite", "good morning", "good afternoon", "e aí", "e ai"
+      ],
+      "ceo_only": false,
+      "templates": {
+        "pt": "{hello}Aqui é a automação da Zion Tech Group.\n\nPosso ajudar com proposta, preço, reunião, parceria ou suporte.\n\nSite: {site}\nReunião: {calendly}",
+        "en": "{hello}This is the Zion Tech Group automation.\n\nI can help with a proposal, pricing, a call, partnership, or support.\n\nSite: {site}\nCall: {calendly}"
+      }
+    },
+    {
+      "id": "ceo_ops",
+      "priority": 30,
+      "commands": [],
+      "keywords": [],
+      "ceo_only": true,
+      "templates": {
+        "pt": "Recebido.\n\n- Texto: {snippet}\n- Próximo: use /agent para executar no repo, ou descreva o comando.\n\n/status /agent /help",
+        "en": "Received.\n\n- Text: {snippet}\n- Next: use /agent to run it on the repo, or send the command.\n\n/status /agent /help"
+      }
+    },
+    {
+      "id": "empty",
+      "priority": 90,
+      "commands": [],
+      "keywords": [],
+      "ceo_only": false,
+      "templates": {
+        "pt": "Recebi a mídia. Envie em texto o que precisa (proposta, preço, reunião, suporte) ou /help.",
+        "en": "Got the media. Please send text for what you need (proposal, pricing, call, support) or /help."
+      }
+    },
+    {
+      "id": "fallback",
+      "priority": 100,
+      "commands": [],
+      "keywords": [],
+      "ceo_only": false,
+      "templates": {
+        "pt": "{hello}Recebi sua mensagem.\n\nZion Tech Group — IA e TI.\n- Serviços: {services}\n- Preços: {pricing}\n- Reunião: {calendly}\n- Email: {email}\n\nSe for proposta, preço ou suporte, escreva em uma linha que eu encaminho.",
+        "en": "{hello}Message received.\n\nZion Tech Group — AI and IT.\n- Services: {services}\n- Pricing: {pricing}\n- Call: {calendly}\n- Email: {email}\n\nIf this is a proposal, pricing, or support request, send it in one line and I will route it."
+      }
+    }
+  ]
+}
