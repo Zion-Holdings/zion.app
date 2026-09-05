@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Container queries | Zion Tech Group</title>
+<meta name="description" content="Padroes de CSS container queries no shell Zion.">
+<link rel="canonical" href="https://ziontechgroup.com/patterns/container-queries/">
+<link rel="stylesheet" href="/assets/css/site-shell.css">
+</head>
+<body>
+<div id="ztg-header-mount"></div>
+<main class="ztg-wrap" id="main-content">
+  <h1>Container queries</h1>
+  <p class="ztg-cq-lead">O grid muda com a largura do modulo, nao so da viewport. Arraste a janela ou coloque o bloco numa coluna estreita.</p>
+  <section class="ztg-cq" style="max-width:100%">
+    <div class="ztg-cq-grid cols-4">
+      <article class="ztg-cq-card"><h2>Inbox</h2><p>Resposta automatica com handoff.</p></article>
+      <article class="ztg-cq-card"><h2>MSP</h2><p>Triagem N1 e runbook.</p></article>
+      <article class="ztg-cq-card"><h2>FinOps</h2><p>Idle resource vira tarefa.</p></article>
+      <article class="ztg-cq-card"><h2>WhatsApp</h2><p>FAQ + historico.</p></article>
+    </div>
+  </section>
+  <h2 style="margin-top:32px">Media object</h2>
+  <section class="ztg-cq" style="max-width:640px">
+    <div class="ztg-cq-media ztg-cq-card">
+      <div class="visual" aria-hidden="true"></div>
+      <div>
+        <h3>Estreito: empilha</h3>
+        <p>Em containers &gt; 420px o visual vai para a esquerda.</p>
+      </div>
+    </div>
+  </section>
+  <p style="margin-top:24px"><a href="/explore/">Voltar ao mapa</a></p>
+</main>
+<div id="ztg-footer-mount"></div>
+<script src="/assets/js/site-nav.js" defer></script>
+</body>
+</html>
