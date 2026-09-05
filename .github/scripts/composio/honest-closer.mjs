@@ -62,6 +62,8 @@ export function titleFromSlug(slug) {
     .replace(/\bRichmond Heights\b/g, 'Richmond Heights')
     .replace(/\bValley Park\b/g, 'Valley Park')
     .replace(/\bSunset Hills\b/g, 'Sunset Hills')
+    .replace(/\bSt Ann\b/g, 'St. Ann')
+    .replace(/\bWebauthn\b/g, 'WebAuthn')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -6897,4 +6899,29 @@ export const SERP_CLOSER_PATHS = [
   'notion-data-sources-filter-api/index.html',
   'slack-lists-access-remove-api/index.html',
   'slack-lists-access-add-api/index.html',
+  'florissant/index.html',
+  'ferguson/index.html',
+  'berkeley/index.html',
+  'st-ann/index.html',
+  'n8n-item-lists-union-api/index.html',
+  'make-array-union-api/index.html',
+  'n8n-merge-lists-api/index.html',
+  'make-array-unique-api/index.html',
+  'n8n-item-lists-intersect-api/index.html',
+  'make-array-intersect-api/index.html',
+  'paddle-transaction-update-api/index.html',
+  'stripe-radar-rule-get-api/index.html',
+  'paddle-price-create-api/index.html',
+  'auth0-mfa-webauthn-api/index.html',
+  'clerk-session-list-api/index.html',
+  'auth0-guardian-push-api/index.html',
+  'cloudflare-api-shield-jwt-key-enable-api/index.html',
+  'vercel-firewall-ip-block-api/index.html',
+  'cloudflare-api-shield-schema-update-api/index.html',
+  'huggingface-jobs-inspect-metrics-api/index.html',
+  'github-copilot-seat-assignment-get-api/index.html',
+  'figma-mcp-code-connect-remove-api/index.html',
+  'notion-data-sources-sort-api/index.html',
+  'slack-lists-access-update-api/index.html',
+  'slack-lists-access-info-api/index.html',
 ];
