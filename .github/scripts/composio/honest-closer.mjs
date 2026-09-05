@@ -149,6 +149,8 @@ export function titleFromSlug(slug) {
     .replace(/\bAppleton City\b/g, 'Appleton City')
     .replace(/\bFair Play\b/g, 'Fair Play')
     .replace(/\bPleasant Hope\b/g, 'Pleasant Hope')
+    .replace(/\bWalnut Grove\b/g, 'Walnut Grove')
+    .replace(/\bAsh Grove\b/g, 'Ash Grove')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7609,4 +7611,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-archive-api/index.html',
   'slack-lists-access-pin-api/index.html',
   'notion-data-sources-unnest-api/index.html',
+  'deepwater/index.html',
+  'halfway/index.html',
+  'walnut-grove/index.html',
+  'ash-grove/index.html',
+  'seymour/index.html',
+  'fordland/index.html',
+  'n8n-merge-by-outer-api/index.html',
+  'make-array-window-index-api/index.html',
+  'n8n-item-lists-window-index-api/index.html',
+  'n8n-merge-by-full-api/index.html',
+  'make-array-window-offset-api/index.html',
+  'n8n-item-lists-window-offset-api/index.html',
+  'paddle-catalog-hide-api/index.html',
+  'stripe-radar-value-list-flush-api/index.html',
+  'clerk-session-end-kiosk-api/index.html',
+  'auth0-mfa-recovery-reset-api/index.html',
+  'auth0-guardian-recovery-reset-api/index.html',
+  'cloudflare-api-shield-schema-flush-all-api/index.html',
+  'vercel-firewall-ip-blacklist-flush-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-flush-all-keys-api/index.html',
+  'huggingface-jobs-inspect-commit-api/index.html',
+  'github-copilot-seat-assignment-reassign-api/index.html',
+  'figma-mcp-code-connect-unarchive-api/index.html',
+  'slack-lists-access-unpin-api/index.html',
+  'notion-data-sources-fold-api/index.html',
 ];
