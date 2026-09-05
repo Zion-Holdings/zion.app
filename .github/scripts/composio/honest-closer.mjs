@@ -447,6 +447,12 @@ export function titleFromSlug(slug) {
     .replace(/\bWentworth\b/g, 'Wentworth')
     .replace(/\bSarcoxie\b/g, 'Sarcoxie')
     .replace(/\bRocky Comfort\b/g, 'Rocky Comfort')
+    .replace(/\bLanagan\b/g, 'Lanagan')
+    .replace(/\bFreistatt\b/g, 'Freistatt')
+    .replace(/\bHoberg\b/g, 'Hoberg')
+    .replace(/\bStotts City\b/g, 'Stotts City')
+    .replace(/\bSouthwest City\b/g, 'Southwest City')
+    .replace(/\bGinger Blue\b/g, 'Ginger Blue')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9332,4 +9338,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-gloss-api/index.html',
   'slack-lists-access-cilium-api/index.html',
   'notion-data-sources-succinct-api/index.html',
+  'lanagan/index.html',
+  'freistatt/index.html',
+  'hoberg/index.html',
+  'stotts-city/index.html',
+  'southwest-city/index.html',
+  'ginger-blue/index.html',
+  'n8n-merge-by-untuck-api/index.html',
+  'make-array-window-shirr-api/index.html',
+  'n8n-item-lists-window-shirr-api/index.html',
+  'make-array-window-unshirr-api/index.html',
+  'n8n-item-lists-window-unshirr-api/index.html',
+  'n8n-merge-by-tuck-api/index.html',
+  'paddle-catalog-colossus-api/index.html',
+  'stripe-radar-value-list-retwine-api/index.html',
+  'clerk-session-end-trichome-api/index.html',
+  'auth0-mfa-recovery-dossal-api/index.html',
+  'auth0-guardian-recovery-dossal-api/index.html',
+  'cloudflare-api-shield-schema-wee-all-api/index.html',
+  'vercel-firewall-ip-blacklist-wee-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-wee-all-keys-api/index.html',
+  'huggingface-jobs-inspect-allumette-api/index.html',
+  'github-copilot-seat-assignment-allumette-api/index.html',
+  'figma-mcp-code-connect-glaze-api/index.html',
+  'slack-lists-access-trichome-api/index.html',
+  'notion-data-sources-lean-api/index.html',
 ];
