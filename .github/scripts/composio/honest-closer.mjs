@@ -875,6 +875,12 @@ export function titleFromSlug(slug) {
     .replace(/\bLebeck\b/g, 'Lebeck')
     .replace(/\bMeinert\b/g, 'Meinert')
     .replace(/\bMano\b/g, 'Mano')
+    .replace(/\bLatour\b/g, 'Latour')
+    .replace(/\bPost Oak\b/g, 'Post Oak')
+    .replace(/\bWhiteman\b/g, 'Whiteman')
+    .replace(/\bShawnee Mound\b/g, 'Shawnee Mound')
+    .replace(/\bMaurine\b/g, 'Maurine')
+    .replace(/\bTurners\b/g, 'Turners')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11510,4 +11516,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-challis-api/index.html',
   'slack-lists-access-sclereid-api/index.html',
   'notion-data-sources-dozing-api/index.html',
+  'latour/index.html',
+  'post-oak/index.html',
+  'whiteman/index.html',
+  'shawnee-mound/index.html',
+  'maurine/index.html',
+  'turners/index.html',
+  'n8n-merge-by-unpick-api/index.html',
+  'make-array-window-reef-api/index.html',
+  'n8n-item-lists-window-reef-api/index.html',
+  'make-array-window-unreef-api/index.html',
+  'n8n-item-lists-window-unreef-api/index.html',
+  'n8n-merge-by-pick-api/index.html',
+  'paddle-catalog-encantado-api/index.html',
+  'stripe-radar-value-list-regrind-api/index.html',
+  'clerk-session-end-tylosis-api/index.html',
+  'auth0-mfa-recovery-palitza-api/index.html',
+  'auth0-guardian-recovery-palitza-api/index.html',
+  'cloudflare-api-shield-schema-macroscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-macroscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-macroscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-landjaeger-api/index.html',
+  'github-copilot-seat-assignment-landjaeger-api/index.html',
+  'figma-mcp-code-connect-surah-api/index.html',
+  'slack-lists-access-tylosis-api/index.html',
+  'notion-data-sources-slumbering-api/index.html',
 ];
