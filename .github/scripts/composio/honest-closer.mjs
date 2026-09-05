@@ -857,6 +857,12 @@ export function titleFromSlug(slug) {
     .replace(/\bOak Grove Village\b/g, 'Oak Grove Village')
     .replace(/\bPith Ray\b/g, 'Pith-Ray')
     .replace(/\bHeavy Lidded\b/g, 'Heavy-Lidded')
+    .replace(/\bEverton\b/g, 'Everton')
+    .replace(/\bGoodson\b/g, 'Goodson')
+    .replace(/\bDunnegan\b/g, 'Dunnegan')
+    .replace(/\bWishart\b/g, 'Wishart')
+    .replace(/\bTin Town\b/g, 'Tin Town')
+    .replace(/\bRedtop\b/g, 'Redtop')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11417,4 +11423,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-crash-api/index.html',
   'slack-lists-access-pith-ray-api/index.html',
   'notion-data-sources-heavy-lidded-api/index.html',
+  'everton/index.html',
+  'goodson/index.html',
+  'dunnegan/index.html',
+  'wishart/index.html',
+  'tin-town/index.html',
+  'redtop/index.html',
+  'n8n-merge-by-unfurl-api/index.html',
+  'make-array-window-snarl-api/index.html',
+  'n8n-item-lists-window-snarl-api/index.html',
+  'make-array-window-unsnarl-api/index.html',
+  'n8n-item-lists-window-unsnarl-api/index.html',
+  'n8n-merge-by-furl-api/index.html',
+  'paddle-catalog-triton-api/index.html',
+  'stripe-radar-value-list-reoil-api/index.html',
+  'clerk-session-end-cambial-api/index.html',
+  'auth0-mfa-recovery-sticharion-api/index.html',
+  'auth0-guardian-recovery-sticharion-api/index.html',
+  'cloudflare-api-shield-schema-axionic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-axionic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-axionic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-andouille-api/index.html',
+  'github-copilot-seat-assignment-andouille-api/index.html',
+  'figma-mcp-code-connect-gingham-api/index.html',
+  'slack-lists-access-cambial-api/index.html',
+  'notion-data-sources-woolgathering-api/index.html',
 ];
