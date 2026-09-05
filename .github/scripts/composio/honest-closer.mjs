@@ -737,6 +737,12 @@ export function titleFromSlug(slug) {
     .replace(/\bIndian Grove\b/g, 'Indian Grove')
     .replace(/\bForest Green\b/g, 'Forest Green')
     .replace(/\bMusselfork\b/g, 'Musselfork')
+    .replace(/\bPennytown\b/g, 'Pennytown')
+    .replace(/\bBowyer\b/g, 'Bowyer')
+    .replace(/\bNapton\b/g, 'Napton')
+    .replace(/\bBlosser\b/g, 'Blosser')
+    .replace(/\bOrearville\b/g, 'Orearville')
+    .replace(/\bShackleford\b/g, 'Shackleford')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10822,4 +10828,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-ottoman-api/index.html',
   'slack-lists-access-collenchyma-api/index.html',
   'notion-data-sources-soporific-api/index.html',
+  'pennytown/index.html',
+  'bowyer/index.html',
+  'napton/index.html',
+  'blosser/index.html',
+  'orearville/index.html',
+  'shackleford/index.html',
+  'n8n-merge-by-unrivet-api/index.html',
+  'make-array-window-wedge-api/index.html',
+  'n8n-item-lists-window-wedge-api/index.html',
+  'make-array-window-unwedge-api/index.html',
+  'n8n-item-lists-window-unwedge-api/index.html',
+  'n8n-merge-by-rivet-api/index.html',
+  'paddle-catalog-dropbear-api/index.html',
+  'stripe-radar-value-list-resoling-api/index.html',
+  'clerk-session-end-aerenchyma-api/index.html',
+  'auth0-mfa-recovery-lappet-api/index.html',
+  'auth0-guardian-recovery-lappet-api/index.html',
+  'cloudflare-api-shield-schema-quarky-all-api/index.html',
+  'vercel-firewall-ip-blacklist-quarky-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-quarky-all-keys-api/index.html',
+  'huggingface-jobs-inspect-guanciale-api/index.html',
+  'github-copilot-seat-assignment-guanciale-api/index.html',
+  'figma-mcp-code-connect-ticking-api/index.html',
+  'slack-lists-access-aerenchyma-api/index.html',
+  'notion-data-sources-oscitant-api/index.html',
 ];
