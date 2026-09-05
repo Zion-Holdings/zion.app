@@ -4,30 +4,53 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Container style queries | Zion Tech Group</title>
-<meta name="description" content="Style queries: --tone, --density e --emphasis no shell Zion.">
+<meta name="description" content="Style queries: tokens, booleanos e combinacao com size queries.">
 <link rel="canonical" href="https://ziontechgroup.com/patterns/container-style-queries/">
 <link rel="stylesheet" href="/assets/css/site-shell.css">
+<style>
+.ztg-cq-ribbon{display:none;margin:0 0 8px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#0b1220;background:#67e8f9;border-radius:999px;padding:3px 10px;width:max-content}
+.ztg-cq-card[data-featured]{--featured:true;box-shadow:0 0 0 1px rgba(103,232,249,.35)}
+.ztg-cq-card[data-featured] .ztg-cq-ribbon{display:inline-block}
+</style>
 </head>
 <body>
 <div id="ztg-header-mount"></div>
 <main class="ztg-wrap" id="main-content">
   <h1>Container style queries</h1>
-  <p class="ztg-cq-lead">Nao e largura. O filho pergunta o valor de uma custom property no container: <code>@container card style(--emphasis: high)</code>.</p>
+  <p class="ztg-cq-lead">O filho le custom properties do container. Nao e media query: dois cards na mesma viewport podem divergir so pelo token.</p>
+
+  <h2>Sintaxe</h2>
+  <pre style="overflow:auto;background:#020617;padding:14px;border-radius:12px;border:1px solid rgba(124,58,237,.28)"><code>@container card style(--tone: offer) { ... }
+@container card style(--featured: true) { ... }
+@container card (min-width: 280px) and style(--emphasis: high) { ... }</code></pre>
+
   <ul>
-    <li><code>data-tone="offer|muted"</code> define <code>--tone</code></li>
-    <li><code>data-density="compact"</code> define <code>--density</code></li>
-    <li><code>data-emphasis="high"</code> define <code>--emphasis</code></li>
+    <li><code>style(--prop: value)</code> compara o valor computado (identificador, nao string entre aspas)</li>
+    <li>Booleano: <code>--featured: true</code> + <code>style(--featured: true)</code></li>
+    <li>Pode misturar size e style no mesmo <code>@container</code> com <code>and</code></li>
+    <li>A regra estiliza descendentes, nao o proprio container</li>
   </ul>
-  <p>Browsers sem style query ainda veem o visual via os mesmos <code>data-*</code> (fallback no CSS).</p>
+
   <section class="ztg-cq" data-tone="offer" data-density="compact">
-    <article class="ztg-cq-card" data-emphasis="high">
+    <article class="ztg-cq-card" data-emphasis="high" data-featured>
+      <p class="ztg-cq-ribbon">featured</p>
       <p class="ztg-cq-kicker">Combo</p>
-      <span class="ztg-cq-flag">offer + compact + high</span>
-      <h2>Um card, tres tokens</h2>
-      <p class="ztg-cq-meta">Kicker ciano vem do style(--tone: offer). CTA pintado vem do style(--emphasis: high).</p>
+      <span class="ztg-cq-flag">offer + high + featured</span>
+      <h2>Tres tokens no mesmo card</h2>
+      <p class="ztg-cq-meta">Largo + emphasis high = CTA mais largo (query combinada).</p>
       <div class="ztg-cq-actions"><a href="/discovery/">Primario</a><a href="/contact/">Secundario</a></div>
     </article>
   </section>
+
+  <section class="ztg-cq" data-tone="muted" style="margin-top:16px">
+    <article class="ztg-cq-card">
+      <p class="ztg-cq-kicker">Controle</p>
+      <h2>Sem tokens extras</h2>
+      <p class="ztg-cq-meta">Mesmo componente, --tone muted. Ribbon some.</p>
+      <div class="ztg-cq-actions"><a href="/heritage/">Heritage</a></div>
+    </article>
+  </section>
+
   <p style="margin-top:24px"><a href="/patterns/container-queries/">Size + nested</a> · <a href="/explore/">Mapa</a></p>
 </main>
 <div id="ztg-footer-mount"></div>
