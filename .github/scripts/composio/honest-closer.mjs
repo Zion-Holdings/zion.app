@@ -689,6 +689,12 @@ export function titleFromSlug(slug) {
     .replace(/\bBenton City\b/g, 'Benton City')
     .replace(/\bHassard\b/g, 'Hassard')
     .replace(/\bMiddle Grove\b/g, 'Middle Grove')
+    .replace(/\bMoscow Mills\b/g, 'Moscow Mills')
+    .replace(/\bElsberry\b/g, 'Elsberry')
+    .replace(/\bWhiteside\b/g, 'Whiteside')
+    .replace(/\bMarthasville\b/g, 'Marthasville')
+    .replace(/\bInnsbrook\b/g, 'Innsbrook')
+    .replace(/\bForistell\b/g, 'Foristell')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10574,4 +10580,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-gazar-api/index.html',
   'slack-lists-access-bark-api/index.html',
   'notion-data-sources-muddled-api/index.html',
+  'moscow-mills/index.html',
+  'elsberry/index.html',
+  'whiteside/index.html',
+  'marthasville/index.html',
+  'innsbrook/index.html',
+  'foristell/index.html',
+  'n8n-merge-by-unrope-api/index.html',
+  'make-array-window-lash-api/index.html',
+  'n8n-item-lists-window-lash-api/index.html',
+  'make-array-window-unlash-api/index.html',
+  'n8n-item-lists-window-unlash-api/index.html',
+  'n8n-merge-by-rope-api/index.html',
+  'paddle-catalog-naga-api/index.html',
+  'stripe-radar-value-list-restuff-api/index.html',
+  'clerk-session-end-sapwood-api/index.html',
+  'auth0-mfa-recovery-cappa-api/index.html',
+  'auth0-guardian-recovery-cappa-api/index.html',
+  'cloudflare-api-shield-schema-fermiscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-fermiscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-fermiscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-poke-api/index.html',
+  'github-copilot-seat-assignment-poke-api/index.html',
+  'figma-mcp-code-connect-voile-api/index.html',
+  'slack-lists-access-sapwood-api/index.html',
+  'notion-data-sources-addled-api/index.html',
 ];
