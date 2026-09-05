@@ -459,6 +459,12 @@ export function titleFromSlug(slug) {
     .replace(/\bCliff Village\b/g, 'Cliff Village')
     .replace(/\bShoal Creek Estates\b/g, 'Shoal Creek Estates')
     .replace(/\bBowers Mill\b/g, 'Bowers Mill')
+    .replace(/\bTiff City\b/g, 'Tiff City')
+    .replace(/\bDennis Acres\b/g, 'Dennis Acres')
+    .replace(/\bShoal Creek Drive\b/g, 'Shoal Creek Drive')
+    .replace(/\bNeck City\b/g, 'Neck City')
+    .replace(/\bOronogo\b/g, 'Oronogo')
+    .replace(/\bDuenweg\b/g, 'Duenweg')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9394,4 +9400,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-satin-api/index.html',
   'slack-lists-access-pilus-api/index.html',
   'notion-data-sources-brief-api/index.html',
+  'tiff-city/index.html',
+  'dennis-acres/index.html',
+  'shoal-creek-drive/index.html',
+  'neck-city/index.html',
+  'oronogo/index.html',
+  'duenweg/index.html',
+  'n8n-merge-by-ungrade-api/index.html',
+  'make-array-window-dart-api/index.html',
+  'n8n-item-lists-window-dart-api/index.html',
+  'make-array-window-undart-api/index.html',
+  'n8n-item-lists-window-undart-api/index.html',
+  'n8n-merge-by-grade-api/index.html',
+  'paddle-catalog-titan-api/index.html',
+  'stripe-radar-value-list-relace-api/index.html',
+  'clerk-session-end-setula-api/index.html',
+  'auth0-mfa-recovery-veil-api/index.html',
+  'auth0-guardian-recovery-veil-api/index.html',
+  'cloudflare-api-shield-schema-slim-all-api/index.html',
+  'vercel-firewall-ip-blacklist-slim-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-slim-all-keys-api/index.html',
+  'huggingface-jobs-inspect-printaniere-api/index.html',
+  'github-copilot-seat-assignment-printaniere-api/index.html',
+  'figma-mcp-code-connect-gleam-api/index.html',
+  'slack-lists-access-setula-api/index.html',
+  'notion-data-sources-short-api/index.html',
 ];
