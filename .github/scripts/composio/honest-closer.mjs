@@ -181,6 +181,12 @@ export function titleFromSlug(slug) {
     .replace(/\bScott City\b/g, 'Scott City')
     .replace(/\bVanduser\b/g, 'Vanduser')
     .replace(/\bChaffee\b/g, 'Chaffee')
+    .replace(/\bDiehlstadt\b/g, 'Diehlstadt')
+    .replace(/\bDutchtown\b/g, 'Dutchtown')
+    .replace(/\bAllenville\b/g, 'Allenville')
+    .replace(/\bGordonville\b/g, 'Gordonville')
+    .replace(/\bOld Appleton\b/g, 'Old Appleton')
+    .replace(/\bFrohna\b/g, 'Frohna')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7941,4 +7947,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-splice-api/index.html',
   'slack-lists-access-mirror-api/index.html',
   'notion-data-sources-cast-api/index.html',
+  'diehlstadt/index.html',
+  'dutchtown/index.html',
+  'allenville/index.html',
+  'gordonville/index.html',
+  'old-appleton/index.html',
+  'frohna/index.html',
+  'n8n-merge-by-unstack-api/index.html',
+  'make-array-window-stack-api/index.html',
+  'n8n-item-lists-window-stack-api/index.html',
+  'make-array-window-unstack-api/index.html',
+  'n8n-item-lists-window-unstack-api/index.html',
+  'n8n-merge-by-fold-api/index.html',
+  'paddle-catalog-wrap-api/index.html',
+  'stripe-radar-value-list-reheat-api/index.html',
+  'clerk-session-end-node-api/index.html',
+  'auth0-mfa-recovery-allow-api/index.html',
+  'auth0-guardian-recovery-allow-api/index.html',
+  'cloudflare-api-shield-schema-some-all-api/index.html',
+  'vercel-firewall-ip-blacklist-some-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-some-all-keys-api/index.html',
+  'huggingface-jobs-inspect-tilt-api/index.html',
+  'github-copilot-seat-assignment-copy-api/index.html',
+  'figma-mcp-code-connect-slice-api/index.html',
+  'slack-lists-access-shadow-api/index.html',
+  'notion-data-sources-coerce-api/index.html',
 ];
