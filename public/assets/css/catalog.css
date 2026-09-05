@@ -1,0 +1,8 @@
+.catalog-bar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px}
+.catalog-bar input,.catalog-bar select,.diag label select,.diag label input,.finops label input,.finops label select{background:#0e1628;border:1px solid #2a3654;color:#f4f7ff;border-radius:10px;padding:10px 12px;font:inherit}
+.catalog-bar input{flex:1;min-width:220px}
+.chip{border:1px solid #2a3654;background:#0e1628;color:#c5d0e8;border-radius:999px;padding:6px 12px;cursor:pointer}
+.chip.on{border-color:#22d3ee;color:#22d3ee}
+.diag,.finops{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.diag-out{margin-top:18px;padding:18px;border:1px solid #2a3654;border-radius:14px;background:#0e1628}
+.score{font-size:2rem;font-weight:800;color:#22d3ee}
