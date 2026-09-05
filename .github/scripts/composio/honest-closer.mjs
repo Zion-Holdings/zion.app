@@ -297,6 +297,12 @@ export function titleFromSlug(slug) {
     .replace(/\bRavenwood\b/g, 'Ravenwood')
     .replace(/\bArkoe\b/g, 'Arkoe')
     .replace(/\bGrant City\b/g, 'Grant City')
+    .replace(/\bPickering\b/g, 'Pickering')
+    .replace(/\bRea\b/g, 'Rea')
+    .replace(/\bKing City\b/g, 'King City')
+    .replace(/\bStanberry\b/g, 'Stanberry')
+    .replace(/\bMcfall\b/g, 'McFall')
+    .replace(/\bCainsville\b/g, 'Cainsville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8557,4 +8563,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-pad-api/index.html',
   'slack-lists-access-calyx-api/index.html',
   'notion-data-sources-brisk-api/index.html',
+  'pickering/index.html',
+  'rea/index.html',
+  'king-city/index.html',
+  'stanberry/index.html',
+  'mcfall/index.html',
+  'cainsville/index.html',
+  'n8n-merge-by-unhitch-api/index.html',
+  'make-array-window-hook-api/index.html',
+  'n8n-item-lists-window-hook-api/index.html',
+  'make-array-window-unhook-api/index.html',
+  'n8n-item-lists-window-unhook-api/index.html',
+  'n8n-merge-by-hitch-api/index.html',
+  'paddle-catalog-ampule-api/index.html',
+  'stripe-radar-value-list-recinch-api/index.html',
+  'clerk-session-end-petal-api/index.html',
+  'auth0-mfa-recovery-narthex-api/index.html',
+  'auth0-guardian-recovery-narthex-api/index.html',
+  'cloudflare-api-shield-schema-high-all-api/index.html',
+  'vercel-firewall-ip-blacklist-high-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-high-all-keys-api/index.html',
+  'huggingface-jobs-inspect-screen-api/index.html',
+  'github-copilot-seat-assignment-screen-api/index.html',
+  'figma-mcp-code-connect-via-api/index.html',
+  'slack-lists-access-petal-api/index.html',
+  'notion-data-sources-crisp-api/index.html',
 ];
