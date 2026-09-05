@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agentes Telegram — Zion Tech Group</title>
+<meta name="description" content="Agentes Zion no Telegram: listener persistente e worker de respostas com OpenRouter. Responde só no chat de origem.">
+<link rel="canonical" href="https://ziontechgroup.com/telegram/">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+:root{color-scheme:dark}body{margin:0;background:#070b16;color:#f4f7ff;font:16px/1.65 system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:48px 24px}a{color:#22d3ee}
+.btn{display:inline-block;margin:8px 8px 0 0;padding:10px 16px;border-radius:11px;background:linear-gradient(100deg,#0069ff,#22d3ee);color:#fff;font-weight:700;text-decoration:none}
+.btn.alt{background:transparent;border:1px solid #8b5cf6;color:#fff}
+.card{border:1px solid #2a3654;border-radius:16px;padding:20px;margin:16px 0;background:#0e1628}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p><a href="/">← Zion Tech Group</a></p>
+  <h1>Agentes Telegram</h1>
+  <p>Dois componentes privados operam os agentes Zion no Telegram. Eles não publicam em canais aleatórios: a resposta volta só no chat que originou a mensagem.</p>
+  <article class="card">
+    <h2>telegram-agent-listener</h2>
+    <p>Listener persistente (Python/FastAPI). Recebe o webhook e responde no chat de origem.</p>
+  </article>
+  <article class="card">
+    <h2>telegram-ai-reply-worker</h2>
+    <p>Cloudflare Worker + Durable Objects. Gera a resposta com OpenRouter, com deduplicação, threading e rate-limit.</p>
+  </article>
+  <p>Capacidade operacional, não SKU self-serve. Caminho comercial: Discovery, Consulting, Starter ou Growth.</p>
+  <p>
+    <a class="btn" href="/discovery/">Discovery $99</a>
+    <a class="btn alt" href="/booking/">Agendar</a>
+    <a class="btn alt" href="/agents/">Ver agentes</a>
+  </p>
+</div>
+</body>
+</html>
