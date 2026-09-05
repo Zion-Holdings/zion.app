@@ -77,6 +77,10 @@ export function titleFromSlug(slug) {
     .replace(/\bBel Ridge\b/g, 'Bel-Ridge')
     .replace(/\bBel Nor\b/g, 'Bel-Nor')
     .replace(/\bCountry Club Hills\b/g, 'Country Club Hills')
+    .replace(/\bCalverton Park\b/g, 'Calverton Park')
+    .replace(/\bSycamore Hills\b/g, 'Sycamore Hills')
+    .replace(/\bNorwood Court\b/g, 'Norwood Court')
+    .replace(/\bVelda Village Hills\b/g, 'Velda Village Hills')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7037,4 +7041,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-export-api/index.html',
   'notion-data-sources-duplicate-api/index.html',
   'slack-lists-access-audit-api/index.html',
+  'pagedale/index.html',
+  'calverton-park/index.html',
+  'charlack/index.html',
+  'sycamore-hills/index.html',
+  'norwood-court/index.html',
+  'velda-village-hills/index.html',
+  'n8n-item-lists-last-api/index.html',
+  'make-array-nth-api/index.html',
+  'n8n-merge-by-name-api/index.html',
+  'make-array-take-api/index.html',
+  'n8n-item-lists-take-api/index.html',
+  'make-array-drop-api/index.html',
+  'stripe-radar-lists-create-api/index.html',
+  'paddle-discount-group-list-api/index.html',
+  'auth0-mfa-otp-challenge-api/index.html',
+  'clerk-session-revoke-token-api/index.html',
+  'auth0-guardian-unenroll-api/index.html',
+  'cloudflare-api-shield-jwt-key-export-api/index.html',
+  'vercel-firewall-ip-allowlist-add-api/index.html',
+  'cloudflare-api-shield-schema-export-api/index.html',
+  'huggingface-jobs-inspect-trace-api/index.html',
+  'github-copilot-seat-assignment-cancel-api/index.html',
+  'figma-mcp-code-connect-import-api/index.html',
+  'notion-data-sources-clone-api/index.html',
+  'slack-lists-access-review-api/index.html',
 ];
