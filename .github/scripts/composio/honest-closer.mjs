@@ -617,6 +617,12 @@ export function titleFromSlug(slug) {
     .replace(/\bLanton\b/g, 'Lanton')
     .replace(/\bHartshorn\b/g, 'Hartshorn')
     .replace(/\bBendavis\b/g, 'Bendavis')
+    .replace(/\bHuggins\b/g, 'Huggins')
+    .replace(/\bCaruth\b/g, 'Caruth')
+    .replace(/\bRound Spring\b/g, 'Round Spring')
+    .replace(/\bFremont Hills\b/g, 'Fremont Hills')
+    .replace(/\bPomp\b/g, 'Pomp')
+    .replace(/\bAkers\b/g, 'Akers')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10202,4 +10208,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-dimity-api/index.html',
   'slack-lists-access-pith-api/index.html',
   'notion-data-sources-listless-api/index.html',
+  'huggins/index.html',
+  'caruth/index.html',
+  'round-spring/index.html',
+  'fremont-hills/index.html',
+  'pomp/index.html',
+  'akers/index.html',
+  'n8n-merge-by-unscallop-api/index.html',
+  'make-array-window-picot-api/index.html',
+  'n8n-item-lists-window-picot-api/index.html',
+  'make-array-window-unpicot-api/index.html',
+  'n8n-item-lists-window-unpicot-api/index.html',
+  'n8n-merge-by-scallop-api/index.html',
+  'paddle-catalog-gorgon-api/index.html',
+  'stripe-radar-value-list-recouch-api/index.html',
+  'clerk-session-end-cortex-api/index.html',
+  'auth0-mfa-recovery-surplice-api/index.html',
+  'auth0-guardian-recovery-surplice-api/index.html',
+  'cloudflare-api-shield-schema-pygmy-all-api/index.html',
+  'vercel-firewall-ip-blacklist-pygmy-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-pygmy-all-keys-api/index.html',
+  'huggingface-jobs-inspect-fricandeau-api/index.html',
+  'github-copilot-seat-assignment-fricandeau-api/index.html',
+  'figma-mcp-code-connect-organdy-api/index.html',
+  'slack-lists-access-cortex-api/index.html',
+  'notion-data-sources-sluggish-api/index.html',
 ];
