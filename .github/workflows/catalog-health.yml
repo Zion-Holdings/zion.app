@@ -42,7 +42,7 @@ jobs:
           done
           js=$(curl -fsSL https://ziontechgroup.com/assets/js/zion-catalog.js)
           js_must=(
-            "Discovery $99"
+            'Discovery $99'
             "Agentes Telegram"
             "Estimador FinOps"
             "ensureFinops"
