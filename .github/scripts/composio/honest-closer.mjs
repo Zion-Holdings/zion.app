@@ -785,6 +785,12 @@ export function titleFromSlug(slug) {
     .replace(/\bEversonville\b/g, 'Eversonville')
     .replace(/\bTopsy\b/g, 'Topsy')
     .replace(/\bLeisure Lake\b/g, 'Leisure Lake')
+    .replace(/\bPhelps City\b/g, 'Phelps City')
+    .replace(/\bAvenue City\b/g, 'Avenue City')
+    .replace(/\bWest Ely\b/g, 'West Ely')
+    .replace(/\bOsage Bluff\b/g, 'Osage Bluff')
+    .replace(/\bWashington Center\b/g, 'Washington Center')
+    .replace(/\bBagnell\b/g, 'Bagnell')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11070,4 +11076,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-hopsack-api/index.html',
   'slack-lists-access-casparian-api/index.html',
   'notion-data-sources-hebetate-api/index.html',
+  'phelps-city/index.html',
+  'avenue-city/index.html',
+  'west-ely/index.html',
+  'osage-bluff/index.html',
+  'washington-center/index.html',
+  'bagnell/index.html',
+  'n8n-merge-by-unhasp-api/index.html',
+  'make-array-window-clamp-api/index.html',
+  'n8n-item-lists-window-clamp-api/index.html',
+  'make-array-window-unclamp-api/index.html',
+  'n8n-item-lists-window-unclamp-api/index.html',
+  'n8n-merge-by-hasp-api/index.html',
+  'paddle-catalog-melusine-api/index.html',
+  'stripe-radar-value-list-repolish-api/index.html',
+  'clerk-session-end-ground-meristem-api/index.html',
+  'auth0-mfa-recovery-fanone-api/index.html',
+  'auth0-guardian-recovery-fanone-api/index.html',
+  'cloudflare-api-shield-schema-atomic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-atomic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-atomic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-chorizo-api/index.html',
+  'github-copilot-seat-assignment-chorizo-api/index.html',
+  'figma-mcp-code-connect-sacking-api/index.html',
+  'slack-lists-access-ground-meristem-api/index.html',
+  'notion-data-sources-yawning-api/index.html',
 ];
