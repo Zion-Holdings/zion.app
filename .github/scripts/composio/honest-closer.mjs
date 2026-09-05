@@ -106,6 +106,8 @@ export function titleFromSlug(slug) {
     .replace(/\bCastle Point\b/g, 'Castle Point')
     .replace(/\bGlasgow Village\b/g, 'Glasgow Village')
     .replace(/\bOld Jamestown\b/g, 'Old Jamestown')
+    .replace(/\bHigh Ridge\b/g, 'High Ridge')
+    .replace(/\bByrnes Mill\b/g, 'Byrnes Mill')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7241,4 +7243,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-attach-api/index.html',
   'slack-lists-access-freeze-api/index.html',
   'notion-data-sources-unlock-api/index.html',
+  'kimmswick/index.html',
+  'high-ridge/index.html',
+  'byrnes-mill/index.html',
+  'barnhart/index.html',
+  'scotsdale/index.html',
+  'parkdale/index.html',
+  'make-array-unshift-api/index.html',
+  'n8n-item-lists-unshift-api/index.html',
+  'make-array-push-api/index.html',
+  'n8n-item-lists-push-api/index.html',
+  'make-array-pop-api/index.html',
+  'n8n-item-lists-pop-api/index.html',
+  'stripe-radar-value-list-item-create-api/index.html',
+  'paddle-discount-group-unarchive-api/index.html',
+  'auth0-mfa-voice-disable-api/index.html',
+  'clerk-session-revoke-others-api/index.html',
+  'auth0-guardian-voice-unenroll-api/index.html',
+  'cloudflare-api-shield-jwt-key-attach-api/index.html',
+  'vercel-firewall-ip-allowlist-clear-api/index.html',
+  'cloudflare-api-shield-schema-detach-api/index.html',
+  'huggingface-jobs-inspect-dashboard-api/index.html',
+  'github-copilot-seat-assignment-hold-api/index.html',
+  'figma-mcp-code-connect-detach-all-api/index.html',
+  'slack-lists-access-thaw-api/index.html',
+  'notion-data-sources-relock-api/index.html',
 ];
