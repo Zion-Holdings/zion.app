@@ -1,4 +1,18 @@
 {
-  "comment": "Exclusion list for Zion Tech Group outreach. One email per line as array entries.",
-  "excluded": []
+  "comment": "Exclusion list for Zion Tech Group outreach. Domains/addresses that hard-failed (550, blocked, NXDOMAIN) or opted out. Never send again.",
+  "excluded": [
+    {"domain": "stonepagamentos.com.br", "reason": "nxdomain"},
+    {"domain": "proxyon.com.br", "reason": "mailbox_gone"},
+    {"domain": "mail.shopee.com.br", "reason": "550_newsletter"},
+    {"domain": "newsletter.shopee.com.br", "reason": "550_newsletter"},
+    {"domain": "news.kilocode.ai", "reason": "bounce"},
+    {"domain": "github.com", "reason": "blocked"},
+    {"domain": "radix.com.br", "reason": "nxdomain"}
+  ],
+  "verify_required_not_auto_allow": [
+    "totvs.com.br",
+    "magazineluiza.com.br",
+    "nubank.com.br",
+    "apptunix.com"
+  ]
 }
