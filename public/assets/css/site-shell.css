@@ -67,10 +67,21 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .ztg-cq-card {
   container-type: inline-size;
   container-name: card;
+  contain: layout paint style;
   background: rgba(15,23,42,.62);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 16px;
+}
+.ztg-contain-content { contain: content; }
+.ztg-contain-strict {
+  contain: strict;
+  contain-intrinsic-size: auto 160px;
+  min-height: 160px;
+}
+.ztg-cq-defer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
 }
 .ztg-cq-media {
   display: grid;
@@ -223,4 +234,5 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 @media print {
   .ztg-header, .ztg-menu, .ztg-skip { display: none !important; }
   body { background: #fff; color: #111; }
+  .ztg-cq-defer { content-visibility: visible; }
 }
