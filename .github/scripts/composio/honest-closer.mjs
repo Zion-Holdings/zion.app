@@ -972,6 +972,19 @@ export function titleFromSlug(slug) {
     .replace(/\bBockwurst\b/g, 'Bockwurst')
     .replace(/\bHerringbone\b/g, 'Herringbone')
     .replace(/\bCatnapping\b/g, 'Catnapping')
+    .replace(/\bOwls Bend\b/g, 'Owls Bend')
+    .replace(/\bPowder Mill\b/g, 'Powder Mill')
+    .replace(/\bOlden\b/g, 'Olden')
+    .replace(/\bAgnes\b/g, 'Agnes')
+    .replace(/\bRoark\b/g, 'Roark')
+    .replace(/\bSumpter\b/g, 'Sumpter')
+    .replace(/\bJengu\b/g, 'Jengu')
+    .replace(/\bHydathode\b/g, 'Hydathode')
+    .replace(/\bParaman\b/g, 'Paraman')
+    .replace(/\bHiggsian\b/g, 'Higgsian')
+    .replace(/\bThuringer\b/g, 'Thuringer')
+    .replace(/\bHoundstooth\b/g, 'Houndstooth')
+    .replace(/\bLolling\b/g, 'Lolling')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11882,4 +11895,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-herringbone-api/index.html',
   'slack-lists-access-chlorenchyma-api/index.html',
   'notion-data-sources-catnapping-api/index.html',
+  'owls-bend/index.html',
+  'powder-mill/index.html',
+  'olden/index.html',
+  'agnes/index.html',
+  'roark/index.html',
+  'sumpter/index.html',
+  'n8n-merge-by-unstep-api/index.html',
+  'make-array-window-hoist-api/index.html',
+  'n8n-item-lists-window-hoist-api/index.html',
+  'make-array-window-unhoist-api/index.html',
+  'n8n-item-lists-window-unhoist-api/index.html',
+  'n8n-merge-by-step-api/index.html',
+  'paddle-catalog-jengu-api/index.html',
+  'stripe-radar-value-list-reenamel-api/index.html',
+  'clerk-session-end-hydathode-api/index.html',
+  'auth0-mfa-recovery-paraman-api/index.html',
+  'auth0-guardian-recovery-paraman-api/index.html',
+  'cloudflare-api-shield-schema-higgsian-all-api/index.html',
+  'vercel-firewall-ip-blacklist-higgsian-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-higgsian-all-keys-api/index.html',
+  'huggingface-jobs-inspect-thuringer-api/index.html',
+  'github-copilot-seat-assignment-thuringer-api/index.html',
+  'figma-mcp-code-connect-houndstooth-api/index.html',
+  'slack-lists-access-hydathode-api/index.html',
+  'notion-data-sources-lolling-api/index.html',
 ];
