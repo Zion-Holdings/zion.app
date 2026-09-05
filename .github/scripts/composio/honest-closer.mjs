@@ -707,6 +707,12 @@ export function titleFromSlug(slug) {
     .replace(/\bStarkenburg\b/g, 'Starkenburg')
     .replace(/\bFemme Osage\b/g, 'Femme Osage')
     .replace(/\bEthlyn\b/g, 'Ethlyn')
+    .replace(/\bBuell\b/g, 'Buell')
+    .replace(/\bOrchard Farm\b/g, 'Orchard Farm')
+    .replace(/\bCorso\b/g, 'Corso')
+    .replace(/\bOkete\b/g, 'Okete')
+    .replace(/\bNew Truxton\b/g, 'New Truxton')
+    .replace(/\bCappeln\b/g, 'Cappeln')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10667,4 +10673,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-nainsook-api/index.html',
   'slack-lists-access-medulla-api/index.html',
   'notion-data-sources-fuddled-api/index.html',
+  'buell/index.html',
+  'orchard-farm/index.html',
+  'corso/index.html',
+  'okete/index.html',
+  'new-truxton/index.html',
+  'cappeln/index.html',
+  'n8n-merge-by-unshackle-api/index.html',
+  'make-array-window-tether-api/index.html',
+  'n8n-item-lists-window-tether-api/index.html',
+  'make-array-window-untether-api/index.html',
+  'n8n-item-lists-window-untether-api/index.html',
+  'n8n-merge-by-shackle-api/index.html',
+  'paddle-catalog-bunyip-api/index.html',
+  'stripe-radar-value-list-recut-api/index.html',
+  'clerk-session-end-tracheid-api/index.html',
+  'auth0-mfa-recovery-chimere-api/index.html',
+  'auth0-guardian-recovery-chimere-api/index.html',
+  'cloudflare-api-shield-schema-angstromscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-angstromscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-angstromscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-lox-api/index.html',
+  'github-copilot-seat-assignment-lox-api/index.html',
+  'figma-mcp-code-connect-scrim-api/index.html',
+  'slack-lists-access-tracheid-api/index.html',
+  'notion-data-sources-muzzy-api/index.html',
 ];
