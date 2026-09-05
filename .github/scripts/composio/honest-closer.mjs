@@ -108,6 +108,8 @@ export function titleFromSlug(slug) {
     .replace(/\bOld Jamestown\b/g, 'Old Jamestown')
     .replace(/\bHigh Ridge\b/g, 'High Ridge')
     .replace(/\bByrnes Mill\b/g, 'Byrnes Mill')
+    .replace(/\bCedar Hill\b/g, 'Cedar Hill')
+    .replace(/\bHouse Springs\b/g, 'House Springs')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7268,4 +7270,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-detach-all-api/index.html',
   'slack-lists-access-thaw-api/index.html',
   'notion-data-sources-relock-api/index.html',
+  'cedar-hill/index.html',
+  'house-springs/index.html',
+  'dittmer/index.html',
+  'catawissa/index.html',
+  'robertsville/index.html',
+  'labadie/index.html',
+  'n8n-merge-by-value-api/index.html',
+  'make-array-splice-api/index.html',
+  'n8n-item-lists-splice-api/index.html',
+  'make-array-shift-api/index.html',
+  'n8n-item-lists-shift-api/index.html',
+  'n8n-merge-by-offset-api/index.html',
+  'stripe-radar-value-list-item-delete-api/index.html',
+  'paddle-price-unarchive-api/index.html',
+  'clerk-session-end-all-api/index.html',
+  'auth0-mfa-duo-disable-api/index.html',
+  'auth0-guardian-duo-enroll-api/index.html',
+  'vercel-firewall-ip-blacklist-clear-api/index.html',
+  'cloudflare-api-shield-jwt-key-detach-api/index.html',
+  'vercel-firewall-ip-allowlist-reset-api/index.html',
+  'huggingface-jobs-inspect-summary-api/index.html',
+  'github-copilot-seat-assignment-release-api/index.html',
+  'figma-mcp-code-connect-reattach-api/index.html',
+  'slack-lists-access-lock-api/index.html',
+  'notion-data-sources-pin-api/index.html',
 ];
