@@ -88,7 +88,7 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
     <div class="card"><h3>Orphans</h3><p>Unattached volumes, leftover IPs, unused load balancers, and snapshots nobody can name. Orphans are the cheapest cuts because nobody is using them.</p></div>
     <div class="card"><h3>Unowned environments</h3><p>Dev, staging, and “temporary” accounts with no named operator. If nobody owns the spend, it does not get turned off.</p></div>
     <div class="card"><h3>Tagging gaps</h3><p>Untagged resources cannot be allocated to a team or product. Tagging is the precondition for a report finance will trust.</p></div>
-    <div class="card"><h3>GenAI spend</h3><p>Model calls, retries, and embeddings without a spend envelope. Token lines belong on the same board as compute — see <a href="/autonomous-ai-agents/">autonomous agents</a> when agents are in the design.</p></div>
+    <div class="card"><h3>GenAI spend</h3><p>Model calls, retries, and embeddings without a spend envelope. Token lines belong on the same board as compute — deepened below, and in <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a>. See <a href="/autonomous-ai-agents/">autonomous agents</a> when agents are in the design.</p></div>
     <div class="card"><h3>RI and commitment gaps</h3><p>On-demand where a commitment would fit — or commitments that no longer match the workload. We will not recommend a term until the usage is stable enough to justify it.</p></div>
   </div>
 </section>
@@ -100,8 +100,19 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
     <li><strong>Rightsize what is running</strong> — CPU, memory, and storage against actual use. We write the change, not a dashboard screenshot.</li>
     <li><strong>Schedule non-prod</strong> — nights and weekends off unless someone is on the hook to keep them up.</li>
     <li><strong>Commit only after the map is honest</strong> — reserved instances and savings plans when the baseline is stable.</li>
-    <li><strong>Put GenAI on a budget</strong> — model, region, and retry limits with a named owner.</li>
+    <li><strong>Put GenAI on a budget</strong> — model, region, and retry limits with a named owner. Same board as compute — not a special case that stays unowned.</li>
   </ol>
+</section>
+
+<section>
+  <h2>GenAI spend — FinOps for model and API lines</h2>
+  <p>Token and API bills spike for the same reason cloud bills do: no owner, no tag, and no stop rule. This landing owns that work. There is no separate /genai-cost-optimization/ service URL — the longer write-up is <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a>.</p>
+  <div class="grid">
+    <div class="card"><h3>Why the line spikes</h3><p>Shared or untagged keys, chatty retry loops, a large model on a small job, unscoped retrieval, and shadow plugins. The first deliverable is a spend register — keys, workflows, who can pause — not a savings percentage.</p></div>
+    <div class="card"><h3>Usage vs managed layer</h3><p>Usage is the vendor invoice (tokens, embeddings, tool traffic). The managed layer is design, policy, monitoring, and the people who stop a runaway job. Mixing them is how teams buy a platform to fix a key that should have been rotated.</p></div>
+    <div class="card"><h3>Controls that work</h3><p>Per-workflow keys and tags, budgets and anomaly alerts, model routing, context and tool budgets, and human gates on irreversible actions. A cheaper model swap with no tags is not FinOps.</p></div>
+    <div class="card"><h3>Same review as the rest of the bill</h3><p>Put model and API lines on the waste register next to idle compute and orphan storage. Do not buy reserved capacity or a new AI platform to cover a workflow you have not tagged yet. If the workload is an agent, pair this with <a href="/autonomous-ai-agents/">autonomous AI agents</a>.</p></div>
+  </div>
 </section>
 
 <section>
@@ -146,7 +157,11 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
   </details>
   <details>
     <summary>What if GenAI is the line that spiked?</summary>
-    <p>We treat model spend as a FinOps line: owner, envelope, retries. If the workload is an agent, pair this page with <a href="/autonomous-ai-agents/">autonomous AI agents</a> and <a href="/ai-consulting-services/">AI consulting</a>.</p>
+    <p>We treat model spend as a FinOps line: owner, envelope, retries. Measurement comes before a commitment or a platform purchase. Longer write-up: <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a>. If the workload is an agent, pair this page with <a href="/autonomous-ai-agents/">autonomous AI agents</a> and <a href="/ai-consulting-services/">AI consulting</a>.</p>
+  </details>
+  <details>
+    <summary>Do you guarantee savings on model spend?</summary>
+    <p>No. We do not invent a savings percentage. Discovery $99 is a cloud spend diagnostic: visibility, owners, and which controls are missing. Any later number is your baseline versus closed items.</p>
   </details>
   <details>
     <summary>How do I start if Stripe checkout is not live?</summary>
@@ -159,7 +174,7 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
   <a class="btn" href="/discovery/">Cloud spend diagnostic — $99</a>
   <a class="btn alt" href="/contact/">Or write Zion</a>
 </div>
-<p class="see-also">See also: <a href="/autonomous-ai-agents/">Autonomous AI agents</a> · <a href="/ai-consulting-services/">AI consulting services</a> · <a href="/discovery/">Discovery</a> · <a href="/plans/">Plans</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/finops-consulting-services/">FinOps consulting blog</a> · <a href="/managed-it-services/">Managed IT</a></p>
+<p class="see-also">See also: <a href="/autonomous-ai-agents/">Autonomous AI agents</a> · <a href="/ai-consulting-services/">AI consulting services</a> · <a href="/fintech-it-ai/">Fintech IT / AI</a> · <a href="/discovery/">Discovery</a> · <a href="/plans/">Plans</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a> · <a href="/blog/finops-consulting-services/">FinOps consulting blog</a> · <a href="/managed-it-services/">Managed IT</a></p>
 
 <footer>
   <p>© 2026 Zion Tech Group · 364 E Main St STE 1008, Middletown, DE 19709 · <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · +1 302 464 0950</p>
