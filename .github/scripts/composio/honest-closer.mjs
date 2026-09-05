@@ -478,6 +478,12 @@ export function titleFromSlug(slug) {
     .replace(/\bRoaring River\b/g, 'Roaring River')
     .replace(/\bMadry\b/g, 'Madry')
     .replace(/\bScholten\b/g, 'Scholten')
+    .replace(/\bSchell City\b/g, 'Schell City')
+    .replace(/\bBronaugh\b/g, 'Bronaugh')
+    .replace(/\bStotesbury\b/g, 'Stotesbury')
+    .replace(/\bEl Dorado Springs\b/g, 'El Dorado Springs')
+    .replace(/\bJerico Springs\b/g, 'Jerico Springs')
+    .replace(/\bCaplinger Mills\b/g, 'Caplinger Mills')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9488,4 +9494,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-matte-api/index.html',
   'slack-lists-access-stylet-api/index.html',
   'notion-data-sources-muted-api/index.html',
+  'schell-city/index.html',
+  'bronaugh/index.html',
+  'stotesbury/index.html',
+  'el-dorado-springs/index.html',
+  'jerico-springs/index.html',
+  'caplinger-mills/index.html',
+  'n8n-merge-by-unease-api/index.html',
+  'make-array-window-notch-api/index.html',
+  'n8n-item-lists-window-notch-api/index.html',
+  'make-array-window-unnotch-api/index.html',
+  'n8n-item-lists-window-unnotch-api/index.html',
+  'n8n-merge-by-ease-api/index.html',
+  'paddle-catalog-juggernaut-api/index.html',
+  'stripe-radar-value-list-respool-api/index.html',
+  'clerk-session-end-flagellum-api/index.html',
+  'auth0-mfa-recovery-frontal-api/index.html',
+  'auth0-guardian-recovery-frontal-api/index.html',
+  'cloudflare-api-shield-schema-mini-all-api/index.html',
+  'vercel-firewall-ip-blacklist-mini-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-mini-all-keys-api/index.html',
+  'huggingface-jobs-inspect-tourne-api/index.html',
+  'github-copilot-seat-assignment-tourne-api/index.html',
+  'figma-mcp-code-connect-frost-api/index.html',
+  'slack-lists-access-flagellum-api/index.html',
+  'notion-data-sources-hushed-api/index.html',
 ];
