@@ -719,6 +719,12 @@ export function titleFromSlug(slug) {
     .replace(/\bLippstadt\b/g, 'Lippstadt')
     .replace(/\bGasconade\b/g, 'Gasconade')
     .replace(/\bStolpe\b/g, 'Stolpe')
+    .replace(/\bHams Prairie\b/g, "Ham's Prairie")
+    .replace(/\bSwiss\b/g, 'Swiss')
+    .replace(/\bBem\b/g, 'Bem')
+    .replace(/\bOld Woollam\b/g, 'Old Woollam')
+    .replace(/\bWoollam\b/g, 'Woollam')
+    .replace(/\bPepsin\b/g, 'Pepsin')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10729,4 +10735,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-gabardine-api/index.html',
   'slack-lists-access-parenchyma-api/index.html',
   'notion-data-sources-woolly-api/index.html',
+  'hams-prairie/index.html',
+  'swiss/index.html',
+  'bem/index.html',
+  'woollam/index.html',
+  'old-woollam/index.html',
+  'pepsin/index.html',
+  'n8n-merge-by-unbolt-api/index.html',
+  'make-array-window-chain-api/index.html',
+  'n8n-item-lists-window-chain-api/index.html',
+  'make-array-window-unchain-api/index.html',
+  'n8n-item-lists-window-unchain-api/index.html',
+  'n8n-merge-by-bolt-api/index.html',
+  'paddle-catalog-jormungandr-api/index.html',
+  'stripe-radar-value-list-relast-api/index.html',
+  'clerk-session-end-sclerenchyma-api/index.html',
+  'auth0-mfa-recovery-camauro-api/index.html',
+  'auth0-guardian-recovery-camauro-api/index.html',
+  'cloudflare-api-shield-schema-corpuscular-all-api/index.html',
+  'vercel-firewall-ip-blacklist-corpuscular-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-corpuscular-all-keys-api/index.html',
+  'huggingface-jobs-inspect-prosciutto-api/index.html',
+  'github-copilot-seat-assignment-prosciutto-api/index.html',
+  'figma-mcp-code-connect-worsted-api/index.html',
+  'slack-lists-access-sclerenchyma-api/index.html',
+  'notion-data-sources-logy-api/index.html',
 ];
