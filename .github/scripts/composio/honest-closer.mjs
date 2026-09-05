@@ -231,6 +231,12 @@ export function titleFromSlug(slug) {
     .replace(/\bMonroe City\b/g, 'Monroe City')
     .replace(/\bSaverton\b/g, 'Saverton')
     .replace(/\bHunnewell\b/g, 'Hunnewell')
+    .replace(/\bShelbina\b/g, 'Shelbina')
+    .replace(/\bLa Belle\b/g, 'La Belle')
+    .replace(/\bIlasco\b/g, 'Ilasco')
+    .replace(/\bKnox City\b/g, 'Knox City')
+    .replace(/\bLentner\b/g, 'Lentner')
+    .replace(/\bKahoka\b/g, 'Kahoka')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8216,4 +8222,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-plane-api/index.html',
   'slack-lists-access-sprig-api/index.html',
   'notion-data-sources-dense-api/index.html',
+  'shelbina/index.html',
+  'la-belle/index.html',
+  'ilasco/index.html',
+  'knox-city/index.html',
+  'lentner/index.html',
+  'kahoka/index.html',
+  'n8n-merge-by-unplait-api/index.html',
+  'make-array-window-plait-api/index.html',
+  'n8n-item-lists-window-plait-api/index.html',
+  'make-array-window-unplait-api/index.html',
+  'n8n-item-lists-window-unplait-api/index.html',
+  'n8n-merge-by-unbraid-api/index.html',
+  'paddle-catalog-pail-api/index.html',
+  'stripe-radar-value-list-rearm-api/index.html',
+  'clerk-session-end-reed-api/index.html',
+  'auth0-mfa-recovery-path-api/index.html',
+  'auth0-guardian-recovery-path-api/index.html',
+  'cloudflare-api-shield-schema-max-all-api/index.html',
+  'vercel-firewall-ip-blacklist-max-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-max-all-keys-api/index.html',
+  'huggingface-jobs-inspect-probe-api/index.html',
+  'github-copilot-seat-assignment-probe-api/index.html',
+  'figma-mcp-code-connect-layer-api/index.html',
+  'slack-lists-access-reed-api/index.html',
+  'notion-data-sources-thick-api/index.html',
 ];
