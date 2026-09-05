@@ -581,6 +581,12 @@ export function titleFromSlug(slug) {
     .replace(/\bRoby\b/g, 'Roby')
     .replace(/\bJadwin\b/g, 'Jadwin')
     .replace(/\bOates\b/g, 'Oates')
+    .replace(/\bMiddlebrook\b/g, 'Middlebrook')
+    .replace(/\bBelleview\b/g, 'Belleview')
+    .replace(/\bDoe Run\b/g, 'Doe Run')
+    .replace(/\bKnob Lick\b/g, 'Knob Lick')
+    .replace(/\bGlenallen\b/g, 'Glenallen')
+    .replace(/\bChloride\b/g, 'Chloride')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10016,4 +10022,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-chambray-api/index.html',
   'slack-lists-access-meristem-api/index.html',
   'notion-data-sources-numb-api/index.html',
+  'middlebrook/index.html',
+  'belleview/index.html',
+  'doe-run/index.html',
+  'knob-lick/index.html',
+  'glenallen/index.html',
+  'chloride/index.html',
+  'n8n-merge-by-unbinding-api/index.html',
+  'make-array-window-interfacing-api/index.html',
+  'n8n-item-lists-window-interfacing-api/index.html',
+  'make-array-window-uninterfacing-api/index.html',
+  'n8n-item-lists-window-uninterfacing-api/index.html',
+  'n8n-merge-by-binding-api/index.html',
+  'paddle-catalog-wyrm-api/index.html',
+  'stripe-radar-value-list-regather-api/index.html',
+  'clerk-session-end-xylem-api/index.html',
+  'auth0-mfa-recovery-pall-api/index.html',
+  'auth0-guardian-recovery-pall-api/index.html',
+  'cloudflare-api-shield-schema-minuscule-all-api/index.html',
+  'vercel-firewall-ip-blacklist-minuscule-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-minuscule-all-keys-api/index.html',
+  'huggingface-jobs-inspect-galantine-api/index.html',
+  'github-copilot-seat-assignment-galantine-api/index.html',
+  'figma-mcp-code-connect-serge-api/index.html',
+  'slack-lists-access-xylem-api/index.html',
+  'notion-data-sources-mute-api/index.html',
 ];
