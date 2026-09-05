@@ -1,72 +1,79 @@
 # Zion Tech Group — Memory & Status
 
-## Última atualização: 2026-09-03T23:30 UTC
+## Última atualização: 2026-09-05T21:40 UTC (18:40 BRT)
 
 - **CEO**: Kleber Garcia Alcatrão
 - **Empresa**: Zion Tech Group
-- **Site**: https://ziontechgroup.com (GitHub Pages, branch gh-pages)
-- **Deploy**: Live, sem blockers ativos
+- **E-mail**: kleber@ziontechgroup.com
+- **Telefone**: +1 302 464 0950
+- **Timezone operacional**: America/Sao_Paulo (Calendly account TZ America/New_York)
+- **Site**: https://ziontechgroup.com
+- **Endereço**: 364 E Main St STE 1008, Middletown, DE 19709
+- **GitHub**: Zion-support
+- **Notion memory**: https://app.notion.com/p/3d2b94b0eaf7819daf03e8a7a737a73a
+- **Calendly Discovery**: https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1
 
-## Issues
+## Ofertas
 
-- **2.000 issues fechadas** via close_v2.py (background proc_77c9d2a7d4d1, exit 0)
-- ~62.205 issues restantes (números 62000+, mais recentes)
-- Tarefa de fechamento em massa: PAUSADA, aguardando ordem concreta
+- Discovery $99 → /discovery/ /book/
+- Consulting $499 → /booking/
+- Starter $2,500 → /plans/
+- Growth $8,000/mo → /plans/
+- WhatsApp comercial: https://wa.me/13024640950
+- Indicações: https://ziontechgroup.com/indique/
 
-## Rotas (snapshot: 2026-09-03T23:30 UTC)
+## Conversão agora
 
-### 200 OK
-- `/` (homepage)
-- `/tools/health-check`
-- `/status/service-health`
-- `/sitemap.xml`
-- `/services/whatsapp-monetizacao/` ← corrigido (gh-pages direto)
+- Stripe livemode (3 contas Ziontechgroup): 0 charges recentes
+- Calendly 05–19/09: 0 eventos ativos
+- HubSpot Kenlo deal 64709043508 stage contractsent — NÃO alterar amount, NÃO e-mail Nicolas neste fim de semana
+- Segunda P0: portal https://www.kenlo.com.br/integre-conosco
+- Segunda P1: primeiro Discovery pago / primeiro Calendly booked
+- Encaminhar /indique/ para 3 conhecidos (MSP, imobiliária, clínica)
 
-### Rotas testadas pelo smoke test
-- `/` → 200
-- `/tools/health-check` → 200 (301→200 com -L)
-- `/status/service-health` → 200 (301→200 com -L)
-- `/sitemap.xml` → 200
+## Inbox (sábado 05/09)
 
-## Correção da 404 — WhatsApp Monetização
+- Sem inbound humano comercial novo
+- Follow-ups já enviados hoje: Suzano (bounce Itaqui), PRODEMGE, Forplas, Cooper, CODERP, Zoomtech, DirecTV María Araceli
+- Draft interno: CEO playbook segunda (Kenlo + 3 indicações) — não enviar agora
+- Airbnb Letícia Bertioga 18–21 Dez: late checkout segunda 15:00 confirmado. Não reenviar. express@airbnb.com bounceia.
+- Cold / Hunter / Apollo / LinkedIn: paused. Hunter até 2026-09-23. Apollo HOLD.
+- OpenRouter: recarregar crédito ou worker Telegram fica mudo
 
-- **Rota**: `/services/whatsapp-monetizacao/`
-- **Problema**: gh-pages tinha placeholder "Not a packaged SKU" com noindex + redirect para `/`
-- **Causa raiz**: `static-deploy.yml` workflow falhando; `mirror-to-gh-pages.yml` desabilitado
-- **Fix**: push direto para `origin/gh-pages` com conteúdo real (29 linhas)
-- **Status**: HTTP 200 confirmado
+## Linear vivo
 
-## Monetização (modelo 2026)
+- Done: ZIO-284 /book/
+- In Progress: ZIO-282 Grok automations, ZIO-283 CI hardening + rotate CF token
+- Urgent/High backlog: ZIO-285 /telegram/ (live 200 às 18:39 — confirmar cache), ZIO-280 industries 404s, ZIO-286 pricing/catalog JS, ZIO-287 Monday warm pipeline, ZIO-281 ASSEFAZ+Transportes RJ, ZIO-172 Nibo prazos
 
-- Discovery $99 → `/book/`
-- Consulting $499 → `/book/`
-- Starter $2,500 → `/plans/`
-- Growth $8,000/mo → `/plans/`
+## Site live (curl ~18:39 BRT)
 
-## CRM & Outreach
+- 200: `/` `/discovery/` `/book/` `/booking/` `/pricing/` `/contact/` `/contato/` `/about/` `/ai-agents/` `/diagnostico/` `/telegram/`
+- 404: `/whatsapp/` `/referral/`
+- Catalog health watchdog falhando. telegram-ai-reply-worker deploy falhou.
 
-- Total leads: 1933
-- Outreach-ready: 693
-- Monitor inbox interest: 52
-- Hot followup sent: 0
-- Status: bloqueado (sem leads prontos para outreach)
+## Calendário
+
+- Sáb 05: Nibo Pro Labore + Recibo 10:00 (passou). ASSEFAZ + Transportes RJ 16:30 (passou).
+- Dom 06 13:00: Deploy restore — fix industries 404s.
+- Ter 08 10:00: Nibo Resumo Folha.
+
+## Política
+
+- Sem cold send no fim de semana.
+- Sem segunda onda de follow-up de hardware agora.
+- Agent operacional pode SEND ack/cliente/Airbnb (cap 5/run). Nunca inventar preço/SLA/contrato/dados bancários.
+- Não misturar voz Airbnb com pitch Zion.
+- Não remintar Composio Connect Links.
+- Não reabrir fila outreach-ready.json.
+
+## Família / comercial
+
+- Carlos Alcatrão — carlos@ziontechgroup.com (comercial)
+- Ewerton Alcatrão — account manager
 
 ## Repositório
 
-- **CWD Termux**: `/data/data/com.termux/files/home/ztg/repo`
-- **Branch**: `main`
-- **gh-pages worktree**: `/data/data/com.termux/files/home/ztg/gh-pages`
-- **macOS**: `/Users/klebergarciaalcatrao/zion-support.github.io` (symlink, indisponível no Android)
-
-## Cron Jobs
-
-- Zion Site Smoke Test (39fc379ffa4f): 90m, última execução OK
-- site-health-check (72ce632d762c): 4h, última execução OK
-- 13 jobs em erro (modelo indisponível: poolside/laguna-xs-2.1:free 429, meta-llama/llama-3.1-8b-instruct:free 404)
-- 3 jobs com scripts inexistentes: agent-task-delegator.py, cron-swarm-coordinator.sh
-
-## Composio
-
-- CLI não disponível no Android/Termux
-- Usar GitHub Actions ou REST API
-- Secrets sem prefixo COMPOSIO_ causam falha silenciosa
+- CWD Termux: `/data/data/com.termux/files/home/ztg/repo`
+- Branch: `main`
+- gh-pages worktree: `/data/data/com.termux/files/home/ztg/gh-pages`
