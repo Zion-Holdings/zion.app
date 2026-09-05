@@ -32,6 +32,7 @@ def main() -> None:
         "ai-services/index.html",
         "plans/index.html",
         "css/style.css",
+        "assets/css/site.css",
     ]
     for rel in required:
         path = PUBLIC / rel
@@ -51,13 +52,13 @@ def main() -> None:
         fail("success-stories must link Calendly Discovery")
     if "/contact/" not in thanks:
         fail("success-stories must link contact")
-    if "/css/style.css" not in thanks:
+    if "/css/style.css" not in thanks and "/assets/css/site.css" not in thanks:
         fail("success-stories must use shared CSS")
 
     for rel in ("contact/index.html", "about/index.html", "privacy/index.html", "cookie-policy/index.html", "ai-services/index.html", "plans/index.html"):
         html = (PUBLIC / rel).read_text(encoding="utf-8")
-        if "/css/style.css" not in html:
-            fail(f"{rel} missing /css/style.css")
+        if "/css/style.css" not in html and "/assets/css/site.css" not in html:
+            fail(f"{rel} missing shared CSS")
         if "Zion Tech Group" not in html:
             fail(f"{rel} missing brand/nav")
         if "/_next/static/css/" in html:

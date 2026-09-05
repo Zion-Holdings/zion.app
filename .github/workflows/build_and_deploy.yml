@@ -3,29 +3,44 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [ main ]
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+
+concurrency:
+  group: ci-validate-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
+  validate-pages-artifact:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Prepare Pages artifact
         run: bash scripts/prepare-pages-out.sh
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: out
+      - name: Assert money pages exist in artifact
+        run: |
+          set -euo pipefail
+          missing=0
+          for f in index.html book/index.html plans/index.html discovery/index.html; do
+            if [ ! -f "out/$f" ]; then
+              echo "::error::Missing out/$f"
+              missing=1
+            else
+              echo "ok out/$f"
+            fi
+          done
+          if [ ! -f out/robots.txt ] && [ ! -f out/sitemap-0.xml ]; then
+            echo "::warning::No robots.txt or sitemap-0.xml in artifact"
+          fi
+          exit "$missing"
 
-      - uses: actions/deploy-pages@v4
+      - name: Artifact file count
+        run: echo "Prepared $(find out -type f | wc -l) files"

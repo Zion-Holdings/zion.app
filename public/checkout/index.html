@@ -1,131 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Checkout — Zion Tech Group</title>
-  <meta name="description" content="Secure checkout powered by Stripe. AI services, automation, and IT solutions." />
-  <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://ziontechgroup.com/checkout/" />
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%); color: #e2e8f0; min-height: 100vh; padding:40px 24px; }
-    .container { max-width:700px; margin:0 auto; }
-    h1 { font-size:2.5rem; font-weight:800; background:linear-gradient(135deg,#a78bfa,#f472b6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:16px; text-align:center; }
-    .subtitle { text-align:center; color:#94a3b8; margin-bottom:40px; font-size:1.1rem; }
-    .card { background:rgba(15,23,42,0.7); border:1px solid rgba(124,58,237,0.2); border-radius:16px; padding:32px; margin-bottom:24px; }
-    .card h2 { color:#f1f5f9; font-size:1.3rem; margin-bottom:8px; }
-    .price { font-size:3rem; font-weight:800; color:#a78bfa; margin:16px 0; }
-    .price span { font-size:1rem; color:#94a3b8; font-weight:400; }
-    .features { list-style:none; padding:0; margin:20px 0; }
-    .features li { padding:8px 0; color:#cbd5e1; font-size:0.95rem; border-bottom:1px solid rgba(148,163,184,0.1); }
-    .features li:last-child { border-bottom:none; }
-    .features li::before { content:"✓ "; color:#34d399; font-weight:bold; }
-    .stripe-btn { display:block; width:100%; padding:16px; background:linear-gradient(135deg,#635bff,#9050ec); color:white; text-align:center; border-radius:12px; text-decoration:none; font-weight:700; font-size:1.1rem; transition:all 0.2s; margin-top:24px; }
-    .stripe-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(99,91,255,0.4); }
-    .secure { text-align:center; margin-top:16px; color:#64748b; font-size:0.85rem; }
-    .back { display:block; text-align:center; margin-top:32px; color:#a78bfa; text-decoration:none; }
-    .back:hover { text-decoration:underline; }
-    .divider { text-align:center; margin:32px 0; color:#64748b; font-size:0.9rem; }
-    .calendly-link { display:block; text-align:center; padding:16px; background:rgba(0,105,255,0.1); border:1px solid rgba(0,105,255,0.3); border-radius:12px; color:#00d4ff; text-decoration:none; font-weight:600; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout · Zion Tech Group</title>
+<meta name="description" content="Pague o Discovery $99 (R$99 ou USD) ou fale com o time. Sem link de teste do Stripe.">
+<link rel="canonical" href="https://ziontechgroup.com/checkout/">
+<meta name="robots" content="noindex,follow">
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Secure Checkout</h1>
-    <p class="subtitle">Powered by Stripe. Instant access to AI automation services.</p>
-
-    <div class="card">
-      <div id="plan-starter" style="display:none;">
-        <h2>Starter Plan</h2>
-        <div class="price">$2,500<span> one-time</span></div>
-        <ul class="features">
-          <li>Single AI/automation deliverable</li>
-          <li>Up to 20 user seats</li>
-          <li>2-week implementation sprint</li>
-          <li>1 platform integration</li>
-          <li>Documentation & handover</li>
-        </ul>
-      </div>
-      <div id="plan-growth" style="display:none;">
-        <h2>Growth Plan</h2>
-        <div class="price">$8,000<span>/month</span></div>
-        <ul class="features">
-          <li>Up to 5 concurrent AI agents</li>
-          <li>Unlimited user seats</li>
-          <li>Multi-platform deployment</li>
-          <li>Custom plugin development</li>
-          <li>24/7 monitoring & response</li>
-          <li>Priority 4-hour SLA</li>
-        </ul>
-      </div>
-      <div id="plan-enterprise" style="display:none;">
-        <h2>Enterprise Plan</h2>
-        <div class="price">$15,000<span>/mo+</span></div>
-        <ul class="features">
-          <li>Unlimited AI agents & swarms</li>
-          <li>On-premise / private cloud</li>
-          <li>Custom model integration</li>
-          <li>Full A2A protocol</li>
-          <li>Dedicated account team</li>
-          <li>1-hour SLA</li>
-        </ul>
-      </div>
-      <div id="plan-default">
-        <h2>Select a Plan</h2>
-        <p style="color:#94a3b8;">Choose a plan from our pricing page or book a consultation.</p>
-      </div>
-
-      <!-- Stripe Payment Link Button (replace href with your real Stripe payment link) -->
-      <a id="stripe-checkout-btn" href="https://buy.stripe.com/test_00k9CV6OK1iX6PO5kk" class="stripe-btn">
-        💳 Pay with Stripe
-      </a>
-
-      <p class="secure">🔒 Secured by Stripe. 256-bit SSL encryption.</p>
-    </div>
-
-    <div class="divider">— OR —</div>
-
-    <a href="https://calendly.com/kleber-ziontechgroup" class="calendly-link">
-      📅 Book a Free Strategy Session Instead
-    </a>
-
-    <div class="divider">— OR —</div>
-
-    <div class="card">
-      <h2 style="text-align:center;">Pay via Bank Transfer / Wire</h2>
-      <p style="text-align:center; color:#94a3b8; margin-top:12px;">For Enterprise plans, we accept wire transfers and ACH.</p>
-      <a href="/contact/?subject=Enterprise%20Wire%20Transfer" class="stripe-btn" style="background:linear-gradient(135deg,#7c3aed,#db2777);">
-        Contact for Wire Details
-      </a>
-    </div>
-
-    <a href="/pricing/" class="back">← Back to Pricing</a>
-  </div>
-
-  <script>
-    // Detect plan from URL parameter
-    const params = new URLSearchParams(window.location.search);
-    const plan = params.get('plan');
-    if (plan) {
-      document.getElementById('plan-default').style.display = 'none';
-      const planEl = document.getElementById('plan-' + plan);
-      if (planEl) planEl.style.display = 'block';
-
-      // Update Stripe link based on plan
-      const links = {
-        starter: 'https://buy.stripe.com/test_00k9CV6OK1iX6PO5kk',
-        growth: 'https://buy.stripe.com/test_4gw2ex0m2eSB1zyfZc',
-        enterprise: '/contact/?subject=Enterprise%20AI'
-      };
-      const btn = document.getElementById('stripe-checkout-btn');
-      if (links[plan]) {
-        btn.href = links[plan];
-        if (plan === 'enterprise') {
-          btn.textContent = '💬 Talk to Sales';
-        }
-      }
-    }
-  </script>
-</body>
-</html>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<header class="nav"><div class="wrap navin">
+<a class="brand" href="/">Zion Tech Group</a>
+<button class="menu" aria-label="Abrir menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+<nav class="links" aria-label="Principal">
+<a href="/services/">Serviços</a><a href="/plans/">Planos</a><a href="/agents/">Agentes</a>
+<a href="/resources/">Recursos</a><a href="/blog/">Blog</a><a href="/contact/">Contato</a>
+<a class="cta" href="/discovery/">Discovery $99</a>
+</nav></div></header>
+<main id="conteudo" class="section"><div class="wrap">
+<p class="eyebrow">Checkout</p>
+<h1>Pague o Discovery ou fale com o time.</h1>
+<p class="lead">O único pagamento self-serve é o Discovery. Starter e Growth fecham depois da conversa — sem link de teste do Stripe.</p>
+<div class="grid">
+<article class="card featured">
+<h3>Discovery</h3>
+<p class="price">$99 <small>/ único</small></p>
+<ul class="features"><li>1 processo</li><li>Relatório em até 7 dias</li><li>Sessão de 30 min</li></ul>
+<div class="actions">
+<a class="btn" href="https://buy.stripe.com/9B69AU8NW5dt71t8BG4ZG09">Pagar R$99</a>
+<a class="btn alt" href="https://buy.stripe.com/8x214o8NW35l5Xp3hm4ZG0b">Pay $99 USD</a>
+</div>
+</article>
+<article class="card">
+<h3>Starter / Growth</h3>
+<p class="price">$2.500 · $8.000/mês</p>
+<p>Sem Payment Link público. Escopo fecha no diagnóstico.</p>
+<div class="actions">
+<a class="btn alt" href="/booking/">Agendar</a>
+<a class="btn alt" href="/contact/">Falar com o time</a>
+</div>
+</article>
+<article class="card">
+<h3>Transferência / wire</h3>
+<p>Para retainer e projetos maiores.</p>
+<p><a class="btn alt" href="mailto:kleber@ziontechgroup.com?subject=Wire%20transfer">Pedir dados bancários</a></p>
+</article>
+</div>
+<p class="lead" style="margin-top:28px"><a href="/plans/">Ver planos</a> · <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener">Calendly</a></p>
+</div></main>
+<footer><div class="wrap foot">
+<div><h3>Empresa</h3><a href="/about/">Sobre</a><a href="/contact/">Contato</a></div>
+<div><h3>Oferta</h3><a href="/plans/">Planos</a><a href="/discovery/">Discovery $99</a></div>
+<div><h3>Recursos</h3><a href="/booking/">Agendar</a><a href="/blog/">Blog</a></div>
+<div><h3>Legal</h3><a href="/privacy/">Privacidade</a><a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a></div>
+</div></footer>
+</body></html>
