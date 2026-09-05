@@ -60,6 +60,8 @@ export function titleFromSlug(slug) {
     .replace(/\bTown And Country\b/g, 'Town and Country')
     .replace(/\bDes Peres\b/g, 'Des Peres')
     .replace(/\bRichmond Heights\b/g, 'Richmond Heights')
+    .replace(/\bValley Park\b/g, 'Valley Park')
+    .replace(/\bSunset Hills\b/g, 'Sunset Hills')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -6870,4 +6872,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-diff-api/index.html',
   'slack-lists-access-revoke-api/index.html',
   'slack-lists-access-grant-api/index.html',
+  'valley-park/index.html',
+  'sunset-hills/index.html',
+  'affton/index.html',
+  'mehlville/index.html',
+  'oakville/index.html',
+  'n8n-combine-lists-api/index.html',
+  'make-repeater-array-api/index.html',
+  'n8n-merge-node-items-api/index.html',
+  'make-text-parser-array-api/index.html',
+  'n8n-split-in-batches-items-api/index.html',
+  'paddle-business-update-api/index.html',
+  'paddle-customer-update-api/index.html',
+  'stripe-radar-rules-api/index.html',
+  'auth0-mfa-voice-api/index.html',
+  'clerk-session-get-api/index.html',
+  'auth0-mfa-recovery-api/index.html',
+  'cloudflare-api-shield-jwt-keys-get-api/index.html',
+  'vercel-firewall-cidr-list-api/index.html',
+  'cloudflare-api-shield-schema-delete-api/index.html',
+  'huggingface-jobs-inspect-status-api/index.html',
+  'github-copilot-seat-usage-list-api/index.html',
+  'figma-mcp-code-connect-apply-api/index.html',
+  'notion-data-sources-filter-api/index.html',
+  'slack-lists-access-remove-api/index.html',
+  'slack-lists-access-add-api/index.html',
 ];
