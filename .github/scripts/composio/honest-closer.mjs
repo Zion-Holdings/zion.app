@@ -110,6 +110,11 @@ export function titleFromSlug(slug) {
     .replace(/\bByrnes Mill\b/g, 'Byrnes Mill')
     .replace(/\bCedar Hill\b/g, 'Cedar Hill')
     .replace(/\bHouse Springs\b/g, 'House Springs')
+    .replace(/\bNew Haven\b/g, 'New Haven')
+    .replace(/\bSt Clair\b/g, 'St. Clair')
+    .replace(/\bGray Summit\b/g, 'Gray Summit')
+    .replace(/\bVilla Ridge\b/g, 'Villa Ridge')
+    .replace(/\bMorse Mill\b/g, 'Morse Mill')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7295,4 +7300,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-reattach-api/index.html',
   'slack-lists-access-lock-api/index.html',
   'notion-data-sources-pin-api/index.html',
+  'gerald/index.html',
+  'new-haven/index.html',
+  'st-clair/index.html',
+  'leslie/index.html',
+  'rosebud/index.html',
+  'owensville/index.html',
+  'n8n-item-lists-slice-api/index.html',
+  'n8n-merge-by-equals-api/index.html',
+  'make-array-remove-api/index.html',
+  'n8n-item-lists-insert-api/index.html',
+  'make-array-insert-api/index.html',
+  'n8n-merge-by-prefix-api/index.html',
+  'stripe-radar-value-list-item-update-api/index.html',
+  'paddle-transaction-unarchive-api/index.html',
+  'clerk-session-end-others-api/index.html',
+  'auth0-mfa-duo-enable-api/index.html',
+  'auth0-guardian-duo-unenroll-api/index.html',
+  'vercel-firewall-ip-blacklist-reset-api/index.html',
+  'cloudflare-api-shield-jwt-key-replace-api/index.html',
+  'vercel-firewall-ip-allowlist-purge-api/index.html',
+  'huggingface-jobs-inspect-overview-api/index.html',
+  'github-copilot-seat-assignment-unassign-api/index.html',
+  'figma-mcp-code-connect-unbind-api/index.html',
+  'slack-lists-access-unlock-api/index.html',
+  'notion-data-sources-unpin-api/index.html',
 ];
