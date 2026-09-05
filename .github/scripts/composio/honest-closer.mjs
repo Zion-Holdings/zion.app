@@ -435,6 +435,12 @@ export function titleFromSlug(slug) {
     .replace(/\bTable Rock\b/g, 'Table Rock')
     .replace(/\bRidgedale\b/g, 'Ridgedale')
     .replace(/\bPoint Lookout\b/g, 'Point Lookout')
+    .replace(/\bEmerald Beach\b/g, 'Emerald Beach')
+    .replace(/\bChain O Lakes\b/g, 'Chain-O-Lakes')
+    .replace(/\bArrow Point\b/g, 'Arrow Point')
+    .replace(/\bButterfield\b/g, 'Butterfield')
+    .replace(/\bPurdy\b/g, 'Purdy')
+    .replace(/\bPierce City\b/g, 'Pierce City')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9270,4 +9276,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-patina-api/index.html',
   'slack-lists-access-arista-api/index.html',
   'notion-data-sources-blunt-api/index.html',
+  'emerald-beach/index.html',
+  'chain-o-lakes/index.html',
+  'arrow-point/index.html',
+  'butterfield/index.html',
+  'purdy/index.html',
+  'pierce-city/index.html',
+  'n8n-merge-by-unruche-api/index.html',
+  'make-array-window-smock-api/index.html',
+  'n8n-item-lists-window-smock-api/index.html',
+  'make-array-window-unsmock-api/index.html',
+  'n8n-item-lists-window-unsmock-api/index.html',
+  'n8n-merge-by-ruche-api/index.html',
+  'paddle-catalog-behemoth-api/index.html',
+  'stripe-radar-value-list-resplice-api/index.html',
+  'clerk-session-end-seta-api/index.html',
+  'auth0-mfa-recovery-baldachin-api/index.html',
+  'auth0-guardian-recovery-baldachin-api/index.html',
+  'cloudflare-api-shield-schema-quecto-all-api/index.html',
+  'vercel-firewall-ip-blacklist-quecto-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-quecto-all-keys-api/index.html',
+  'huggingface-jobs-inspect-jardiniere-api/index.html',
+  'github-copilot-seat-assignment-jardiniere-api/index.html',
+  'figma-mcp-code-connect-sheen-api/index.html',
+  'slack-lists-access-seta-api/index.html',
+  'notion-data-sources-spare-api/index.html',
 ];
