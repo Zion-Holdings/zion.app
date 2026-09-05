@@ -484,6 +484,12 @@ export function titleFromSlug(slug) {
     .replace(/\bEl Dorado Springs\b/g, 'El Dorado Springs')
     .replace(/\bJerico Springs\b/g, 'Jerico Springs')
     .replace(/\bCaplinger Mills\b/g, 'Caplinger Mills')
+    .replace(/\bUmber View Heights\b/g, 'Umber View Heights')
+    .replace(/\bTaberville\b/g, 'Taberville')
+    .replace(/\bGerster\b/g, 'Gerster')
+    .replace(/\bTightwad\b/g, 'Tightwad')
+    .replace(/\bBrownington\b/g, 'Brownington')
+    .replace(/\bMerwin\b/g, 'Merwin')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9519,4 +9525,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-frost-api/index.html',
   'slack-lists-access-flagellum-api/index.html',
   'notion-data-sources-hushed-api/index.html',
+  'umber-view-heights/index.html',
+  'taberville/index.html',
+  'gerster/index.html',
+  'tightwad/index.html',
+  'brownington/index.html',
+  'merwin/index.html',
+  'n8n-merge-by-ungore-api/index.html',
+  'make-array-window-ease-api/index.html',
+  'n8n-item-lists-window-ease-api/index.html',
+  'make-array-window-unease-api/index.html',
+  'n8n-item-lists-window-unease-api/index.html',
+  'n8n-merge-by-gore-api/index.html',
+  'paddle-catalog-nephilim-api/index.html',
+  'stripe-radar-value-list-reslice-api/index.html',
+  'clerk-session-end-cilia-api/index.html',
+  'auth0-mfa-recovery-burse-api/index.html',
+  'auth0-guardian-recovery-burse-api/index.html',
+  'cloudflare-api-shield-schema-small-all-api/index.html',
+  'vercel-firewall-ip-blacklist-small-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-small-all-keys-api/index.html',
+  'huggingface-jobs-inspect-macedonia-api/index.html',
+  'github-copilot-seat-assignment-macedonia-api/index.html',
+  'figma-mcp-code-connect-velvet-api/index.html',
+  'slack-lists-access-cilia-api/index.html',
+  'notion-data-sources-quiet-api/index.html',
 ];
