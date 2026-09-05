@@ -112,6 +112,19 @@ DENY: info@, suporte@, support@, infra@, noc@, comunicacao@, imprensa@, financei
 
 Skip HubSpot-already companies: Dock, Pipefy, Conta Azul, Creditas, Celcoin, Simetrik, Recurly, Auxis, Beyond Key, Firstbase, TSIA, Brex, Paysafe.
 
+Hard-deny domains after 550 / NXDOMAIN / admin-block (in `exclusion-list.json`): stonepagamentos.com.br, proxyon.com.br, mail.shopee.com.br, newsletter.shopee.com.br, radix.com.br, github.com.
+
+Verify-required — never auto-queue guessed contato@: totvs.com.br, magazineluiza.com.br, nubank.com.br, apptunix.com, sianet.com.br, d2w.ind.br, fgc.org.br, butantan.gov.br.
+
+Do not domain-deny a living customer for one dead alias (Kenlo, Airbnb guest threads).
+
+## Bounce / opt-out rule
+
+- 550 / 5.1.1 / domain-not-found / blocked by recipient admin → HARD FAIL. Add address + domain to exclusion the same day. Never retry.
+- 4xx / DELAY / “will retry” → SOFT. Do not re-send this wave. Recheck after 48h. If it becomes 550, promote to HARD. `news.kilocode.ai` is SOFT until the retry window ends.
+- Complaint / SAIR / STOP / “não tenho interesse” → HARD suppress that mailbox. Do not email any alias at that company for 90 days unless they write first.
+- Guessed contato@ on enterprise brands that 550’d is not an allow-list exception.
+
 ## Every email must include
 
 - Real From: Kleber Garcia Alcatrao `<kleber@ziontechgroup.com>`
@@ -120,13 +133,13 @@ Skip HubSpot-already companies: Dock, Pipefy, Conta Azul, Creditas, Celcoin, Sim
 - One ask: Discovery $99 or 15-min Calendly
 - Postal address: 364 E Main St STE 1008, Middletown, DE 19709
 - SAIR / STOP
-- Privacy link (homepage until `/privacidade` exists)
+- Privacy link: `https://ziontechgroup.com/privacy/` (live EN 200). Switch BR footer to `/privacidade/` only after that URL returns the PT policy on main, not the homepage chrome.
 
 Legal basis for BR B2B: LGPD art. 7º IX legitimate interest. Do not buy lists. Keep source_url on every row.
 
 ## Open gaps
 
-1. No `/privacidade` page — P0 for LGPD footer.
+1. `/privacidade/` static PT page is on this branch (`public/privacidade/index.html`). Live URL is still chrome 404 until merge + Pages deploy. Confirm HTTP 200 with the PT body before swapping the BR footer.
 2. Hunter paused until 2026-09-23; Apollo HOLD; LinkedIn invites paused.
 3. Do not invent a CNPJ. Site is DE-address only.
-4. Yesterday 46 sends — stay at 8–15/day until bounce/complaint is known.
+4. 2026-09-04 had 46 sends — stay at 8–15/day weekdays until bounce/complaint is known. Saturday/Sunday: no cold.
