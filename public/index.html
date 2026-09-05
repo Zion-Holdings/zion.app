@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Zion Tech Group — Automação e IA para Empresas</title>
-<meta name="description" content="Diagnóstico, automação e agentes de IA para empresas. Discovery $99, Consulting $499, Starter $2.500, Growth $8.000/mês. Resposta em 24h.">
+<meta name="description" content="Catálogo vivo de serviços, agentes, ferramentas e conteúdo Zion. Discovery $99, Consulting $499, Starter $2.500, Growth $8.000/mês. Diagnóstico rápido gratuito.">
 <link rel="canonical" href="https://ziontechgroup.com/">
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/catalog.css">
 <style>
 :root{color-scheme:dark;--bg:#070b16;--panel:#0e1628;--line:#2a3654;--text:#f4f7ff;--muted:#9aa8c7;--accent:#22d3ee;--violet:#8b5cf6;--ok:#4ade80}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#070b16,#0f172a 50%,#15103a);color:#f4f7ff;font:16px/1.65 system-ui,-apple-system,sans-serif}
@@ -32,6 +33,14 @@
 footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92rem}
 .foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}.foot a{display:block;color:#b9a4f7;margin:6px 0}
 .menu{display:none} .eyebrow{color:#c4b5fd;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;font-weight:800}
+.catalog-bar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px}
+.catalog-bar input,.catalog-bar select,.diag label select,.diag label input{background:#0e1628;border:1px solid #2a3654;color:#f4f7ff;border-radius:10px;padding:10px 12px;font:inherit}
+.catalog-bar input{flex:1;min-width:220px}
+.chip{border:1px solid #2a3654;background:#0e1628;color:#c5d0e8;border-radius:999px;padding:6px 12px;cursor:pointer}
+.chip.on{border-color:#22d3ee;color:#22d3ee}
+.diag{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.diag-out{margin-top:18px;padding:18px;border:1px solid #2a3654;border-radius:14px;background:#0e1628}
+.score{font-size:2rem;font-weight:800;color:#22d3ee}
 @media(max-width:800px){.menu{display:block;background:none;border:1px solid #2a3654;color:#fff;border-radius:8px;padding:8px}.links{display:none}.links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:#070b16;padding:16px;border-bottom:1px solid #2a3654}.stats{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -43,10 +52,11 @@ footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92re
     <button class="menu" aria-label="Abrir menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <nav class="links" aria-label="Principal">
       <a href="/services/">Serviços</a>
+      <a href="/#catalogo-vivo">Catálogo</a>
       <a href="/plans/">Planos</a>
       <a href="/agents/">Agentes</a>
-      <a href="/resources/">Recursos</a>
-      <a href="/blog/">Blog</a>
+      <a href="/free-ai-it-tools/">Ferramentas</a>
+      <a href="/#diagnostico">Diagnóstico</a>
       <a href="/contact/">Contato</a>
       <a class="cta" href="/discovery/">Discovery $99</a>
     </nav>
@@ -55,11 +65,12 @@ footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92re
 <main id="conteudo">
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Consultoria · Automação · Agentes de IA</p>
+      <p class="eyebrow">Consultoria · Automação · Agentes de IA · Ferramentas gratuitas</p>
       <h1>Automação inteligente e IA para empresas que querem escalar.</h1>
-      <p class="lead">Diagnosticamos um processo, estimamos o retorno e implementamos o que realmente vale a pena — sem plataforma genérica e sem projeto eterno.</p>
+      <p class="lead">Diagnosticamos um processo, estimamos o retorno e implementamos o que realmente vale a pena — sem plataforma genérica e sem projeto eterno. Todo o catálogo de serviços, agentes, conteúdo e ferramentas está nesta página.</p>
       <div class="actions">
         <a class="btn" href="/discovery/">Começar Discovery — $99</a>
+        <a class="btn alt" href="/#diagnostico">Diagnóstico rápido grátis</a>
         <a class="btn alt" href="/booking/">Agendar sessão</a>
         <a class="btn alt" href="/cpa/">Parceria CPA</a>
       </div>
@@ -89,15 +100,21 @@ footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92re
   <section class="section band" id="servicos">
     <div class="wrap">
       <p class="eyebrow">O que fazemos</p>
-      <h2>Capacidades que entram no escopo depois do diagnóstico.</h2>
-      <p class="lead">O catálogo descreve o que sabemos entregar. O preço vivo está em Planos. Nada aqui é SKU self-serve.</p>
+      <h2>Todos os serviços, produtos e canais — anunciados aqui.</h2>
+      <p class="lead">O preço vivo está em Planos. O catálogo abaixo descreve o que entregamos depois do diagnóstico.</p>
       <div class="grid">
         <article class="card"><h3>Agentes de IA</h3><p>Atendimento, vendas e operações com auditoria e handoff humano.</p><p><a href="/agents/">Ver agentes →</a></p></article>
-        <article class="card"><h3>Automação de processos</h3><p>Do e-mail ao ERP: orquestração com ROI visível no primeiro processo.</p><p><a href="/services/">Ver serviços →</a></p></article>
+        <article class="card"><h3>Agentes Telegram</h3><p>Listener persistente + worker de respostas com OpenRouter. Responde no chat de origem.</p><p><a href="/telegram/">Ver Telegram →</a></p></article>
+        <article class="card"><h3>WhatsApp e voz</h3><p>Nutrição de leads no WhatsApp e agente de voz para telefone.</p><p><a href="/ai-whatsapp-lead-nurturing/">WhatsApp →</a> · <a href="/ai-voice-agent-phone/">Voz →</a></p></article>
+        <article class="card"><h3>Automação de processos</h3><p>Do e-mail ao ERP: orquestração com ROI visível no primeiro processo.</p><p><a href="/services/">Ver serviços →</a> · <a href="/ai-workflow-automation/">Workflow →</a></p></article>
         <article class="card"><h3>Cloud e FinOps</h3><p>Cortar desperdício de cloud sem travar o time de engenharia.</p><p><a href="/finops-consulting/">Ver FinOps →</a></p></article>
-        <article class="card"><h3>Segurança e conformidade</h3><p>Controles práticos, monitoramento e resposta a incidentes.</p><p><a href="/services/">Ver segurança →</a></p></article>
-        <article class="card"><h3>Dados e decisão</h3><p>Dashboards, extração de documentos e base para o próximo passo.</p><p><a href="/services/">Ver dados →</a></p></article>
-        <article class="card"><h3>Micro-SaaS sob medida</h3><p>Um produto focado no problema mais caro da operação.</p><p><a href="/services/">Ver micro-SaaS →</a></p></article>
+        <article class="card"><h3>Segurança e conformidade</h3><p>Controles práticos, monitoramento e resposta a incidentes.</p><p><a href="/enterprise-cybersecurity/">Segurança →</a> · <a href="/ai-cybersecurity-platform/">Plataforma →</a></p></article>
+        <article class="card"><h3>Dados e decisão</h3><p>Dashboards, extração de documentos e base para o próximo passo.</p><p><a href="/ai-data-analytics/">Analytics →</a> · <a href="/business-intelligence/">BI →</a></p></article>
+        <article class="card"><h3>Micro-SaaS sob medida</h3><p>Um produto focado no problema mais caro da operação.</p><p><a href="/micro-saas/">Micro-SaaS →</a></p></article>
+        <article class="card"><h3>MSP e TI gerenciada</h3><p>Operação contínua, billing, onboarding e receita recorrente.</p><p><a href="/managed-it-services/">MSP →</a></p></article>
+        <article class="card"><h3>CPA por resultado</h3><p>Pague por lead qualificado, reunião ou fechamento — sem retainer obrigatório.</p><p><a href="/cpa/">Ver CPA →</a></p></article>
+        <article class="card"><h3>Indústrias</h3><p>Saúde HIPAA, fintech, jurídico, seguros e transformação digital.</p><p><a href="/industries/">Indústrias →</a> · <a href="/healthcare-it-hipaa/">Saúde →</a></p></article>
+        <article class="card"><h3>Parceiros e afiliados</h3><p>Canal de indicação e parceria comercial.</p><p><a href="/partners/">Parceiros →</a> · <a href="/affiliate/">Afiliados →</a></p></article>
       </div>
     </div>
   </section>
@@ -139,9 +156,70 @@ footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92re
       <h2>Material para decidir com número, não com slide.</h2>
       <div class="grid">
         <article class="card"><h3>Blog</h3><p>Notas de entrega: FinOps, agentes, MSP e operação.</p><p><a href="/blog/">Ler o blog →</a></p></article>
-        <article class="card"><h3>Ferramentas</h3><p>Utilitários gratuitos de IA e TI para um primeiro teste.</p><p><a href="/free-ai-it-tools/">Abrir ferramentas →</a></p></article>
+        <article class="card"><h3>Ferramentas grátis</h3><p>ROI, phishing analyzer, auditoria rápida, JSON, JWT, QR e dezenas de utilitários.</p><p><a href="/free-ai-it-tools/">Abrir ferramentas →</a></p></article>
         <article class="card"><h3>Roteiros</h3><p>Playbooks curtos de implementação.</p><p><a href="/roteiros/">Ver roteiros →</a></p></article>
         <article class="card"><h3>Academia</h3><p>Conteúdo de formação para o time interno.</p><p><a href="/academy/">Ver academia →</a></p></article>
+        <article class="card"><h3>Calculadora de ROI</h3><p>Estime o retorno de uma automação antes de pagar o Discovery.</p><p><a href="/tools/roi-calculator/">Abrir calculadora →</a></p></article>
+        <article class="card"><h3>Status e roadmap</h3><p>Saúde pública do catálogo e rumo do produto.</p><p><a href="/status-page/">Status →</a> · <a href="/public-roadmap/">Roadmap →</a></p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="catalogo-vivo">
+    <div class="wrap">
+      <p class="eyebrow">Catálogo vivo</p>
+      <h2>Busque qualquer serviço, ferramenta ou conteúdo.</h2>
+      <p class="lead">Lista oficial anunciada na home. Filtro 100% no navegador — sem backend, sem fila, sempre no ar.</p>
+      <div class="catalog-bar">
+        <input id="catalog-q" type="search" placeholder="Buscar agentes, FinOps, ROI, Telegram, CPA..." aria-label="Buscar no catálogo">
+        <select id="catalog-cat" aria-label="Filtrar categoria">
+          <option value="">Todas as categorias</option>
+        </select>
+      </div>
+      <div id="catalog-chips" class="actions"></div>
+      <div id="catalog-grid" class="grid"></div>
+      <p id="catalog-empty" class="lead" hidden>Nenhum item com esse filtro. Tente outra palavra ou <a href="/services/">abra o diretório completo</a>.</p>
+    </div>
+  </section>
+  <section class="section band" id="diagnostico">
+    <div class="wrap">
+      <p class="eyebrow">Ferramenta gratuita</p>
+      <h2>Diagnóstico rápido do processo.</h2>
+      <p class="lead">Em 30 segundos você vê se o primeiro win é Discovery, Consulting ou Starter. Roda só no seu navegador.</p>
+      <form class="diag" id="diag-form">
+        <label>Área
+          <select name="area">
+            <option value="atendimento">Atendimento / vendas</option>
+            <option value="ops">Operações / backoffice</option>
+            <option value="finops">Cloud / FinOps</option>
+            <option value="sec">Segurança</option>
+            <option value="dados">Dados / documentos</option>
+            <option value="msp">TI gerenciada / MSP</option>
+          </select>
+        </label>
+        <label>Horas manuais por semana
+          <select name="hours">
+            <option value="2">Até 2h</option>
+            <option value="6">3–8h</option>
+            <option value="15" selected>9–20h</option>
+            <option value="30">Mais de 20h</option>
+          </select>
+        </label>
+        <label>Custo da hora (USD)
+          <input name="rate" type="number" min="10" max="400" value="40">
+        </label>
+        <label>Urgência
+          <select name="urgency">
+            <option value="1">Exploratório</option>
+            <option value="2" selected>Quer resultado neste trimestre</option>
+            <option value="3">Já está vazando dinheiro</option>
+          </select>
+        </label>
+      </form>
+      <div class="diag-out" id="diag-out"></div>
+      <div class="actions">
+        <a class="btn" href="/discovery/">Pagar Discovery $99</a>
+        <a class="btn alt" href="/booking/">Agendar 30 min</a>
+        <a class="btn alt" href="/tools/roi-calculator/">Abrir ROI completo</a>
       </div>
     </div>
   </section>
@@ -150,9 +228,10 @@ footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92re
       <p class="eyebrow">FAQ</p>
       <h2>Perguntas que aparecem antes do primeiro pagamento.</h2>
       <details open><summary>O Discovery vale a pena se eu ainda não sei o que automatizar?</summary><p>Sim. O produto é esse recorte: um processo, um mapa e um relatório executivo em até 7 dias.</p></details>
-      <details><summary>Vocês vendem software pronto?</summary><p>Não. Escopamos depois do diagnóstico. Preços vivos estão em <a href="/plans/">/plans/</a>. O catálogo de serviços descreve capacidades, não SKUs self-serve.</p></details>
+      <details><summary>Vocês vendem software pronto?</summary><p>Não. Escopamos depois do diagnóstico. Preços vivos estão em <a href="/plans/">/plans/</a>. O catálogo descreve capacidades, não SKUs self-serve. Ferramentas gratuitas em <a href="/free-ai-it-tools/">/free-ai-it-tools/</a>.</p></details>
       <details><summary>Posso pagar só por resultado?</summary><p>Sim. No modelo CPA você paga por lead qualificado, reunião ou fechamento. Detalhes em <a href="/cpa/">/cpa/</a>.</p></details>
-      <details><summary>Qual o primeiro passo?</summary><p>Pague o Discovery ($99 / R$99) em <a href="/discovery/">/discovery/</a> ou agende uma sessão gratuita de 30 min em <a href="/booking/">/booking/</a>.</p></details>
+      <details><summary>Vocês têm agentes no Telegram?</summary><p>Sim. Operamos um listener persistente e um worker de respostas com OpenRouter. Resumo público em <a href="/telegram/">/telegram/</a>.</p></details>
+      <details><summary>Qual o primeiro passo?</summary><p>Use o <a href="/#diagnostico">diagnóstico rápido</a>, pague o Discovery ($99 / R$99) em <a href="/discovery/">/discovery/</a> ou agende 30 min em <a href="/booking/">/booking/</a>.</p></details>
     </div>
   </section>
   <section class="section band">
@@ -162,6 +241,7 @@ footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92re
       <div class="actions">
         <a class="btn" href="/discovery/">Começar Discovery — $99</a>
         <a class="btn alt" href="mailto:kleber@ziontechgroup.com">Escrever e-mail</a>
+        <a class="btn alt" href="/telegram/">Agentes Telegram</a>
       </div>
     </div>
   </section>
@@ -173,6 +253,7 @@ footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92re
       <a href="/about/">Sobre</a>
       <a href="/contact/">Contato</a>
       <a href="/partners/">Parceiros</a>
+      <a href="/affiliate/">Afiliados</a>
     </div>
     <div>
       <h3>Oferta</h3>
@@ -180,22 +261,55 @@ footer{border-top:1px solid #2a3654;padding:36px 0;color:#8793ac;font-size:.92re
       <a href="/plans/">Planos</a>
       <a href="/discovery/">Discovery $99</a>
       <a href="/cpa/">CPA</a>
+      <a href="/finops-consulting/">FinOps</a>
+      <a href="/managed-it-services/">MSP</a>
     </div>
     <div>
       <h3>Recursos</h3>
       <a href="/blog/">Blog</a>
       <a href="/agents/">Agentes</a>
+      <a href="/telegram/">Telegram</a>
       <a href="/free-ai-it-tools/">Ferramentas</a>
       <a href="/roteiros/">Roteiros</a>
+      <a href="/academy/">Academia</a>
       <a href="/booking/">Agendar</a>
     </div>
     <div>
       <h3>Legal</h3>
       <a href="/privacy/">Privacidade</a>
       <a href="/cookie-policy/">Cookies</a>
+      <a href="/status-page/">Status</a>
       <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a>
     </div>
   </div>
 </footer>
+<script src="/assets/js/zion-catalog.js" defer></script>
+<script>
+(function(){
+  const form=document.getElementById('diag-form');
+  const out=document.getElementById('diag-out');
+  if(!form||!out) return;
+  const map={
+    atendimento:'Agentes de atendimento e vendas',
+    ops:'Automação de processo / workflow',
+    finops:'Cloud e FinOps',
+    sec:'Segurança e conformidade',
+    dados:'Dados, documentos e BI',
+    msp:'MSP e TI gerenciada'
+  };
+  function render(){
+    const d=Object.fromEntries(new FormData(form));
+    const hours=+d.hours, rate=+d.rate||40, urgency=+d.urgency;
+    const year=Math.round(hours*rate*52);
+    const score=Math.min(100, Math.round((hours*2)+(urgency*18)+(year>20000?20:year>8000?10:0)));
+    let plan='Discovery · $99', why='Comece pelo recorte de um processo.', href='/discovery/';
+    if(score>=70){plan='Starter · $2.500'; why='Volume alto o suficiente para implementar já.'; href='/booking/';}
+    else if(score>=45){plan='Consulting · $499'; why='Vale desenhar o roadmap antes de construir.'; href='/booking/';}
+    out.innerHTML='<div class="score">'+score+'/100</div><p><strong>'+map[d.area]+'</strong> · vazamento estimado <strong>US$ '+year.toLocaleString('en-US')+'/ano</strong> nesse processo.</p><p>Recomendação: <strong>'+plan+'</strong>. '+why+'</p>';
+  }
+  form.addEventListener('input', render);
+  render();
+})();
+</script>
 </body>
 </html>
