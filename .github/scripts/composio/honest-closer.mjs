@@ -849,6 +849,14 @@ export function titleFromSlug(slug) {
     .replace(/\bCherokee Pass\b/g, 'Cherokee Pass')
     .replace(/\bRiver Aux Vaux\b/g, 'River aux Vaux')
     .replace(/\bVessel Element\b/g, 'Vessel-Element')
+    .replace(/\bBradleyville\b/g, 'Bradleyville')
+    .replace(/\bRueter\b/g, 'Rueter')
+    .replace(/\bMcclurg\b/g, 'McClurg')
+    .replace(/\bHilda\b/g, 'Hilda')
+    .replace(/\bBruner\b/g, 'Bruner')
+    .replace(/\bOak Grove Village\b/g, 'Oak Grove Village')
+    .replace(/\bPith Ray\b/g, 'Pith-Ray')
+    .replace(/\bHeavy Lidded\b/g, 'Heavy-Lidded')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11384,4 +11392,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-linsey-api/index.html',
   'slack-lists-access-vessel-element-api/index.html',
   'notion-data-sources-languorous-api/index.html',
+  'bradleyville/index.html',
+  'rueter/index.html',
+  'mcclurg/index.html',
+  'hilda/index.html',
+  'bruner/index.html',
+  'oak-grove-village/index.html',
+  'n8n-merge-by-unsnarl-api/index.html',
+  'make-array-window-strap-api/index.html',
+  'n8n-item-lists-window-strap-api/index.html',
+  'make-array-window-unstrap-api/index.html',
+  'n8n-item-lists-window-unstrap-api/index.html',
+  'n8n-merge-by-snarl-api/index.html',
+  'paddle-catalog-oceanid-api/index.html',
+  'stripe-radar-value-list-reclear-api/index.html',
+  'clerk-session-end-pith-ray-api/index.html',
+  'auth0-mfa-recovery-sakkos-api/index.html',
+  'auth0-guardian-recovery-sakkos-api/index.html',
+  'cloudflare-api-shield-schema-kaonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-kaonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-kaonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-pepperoni-api/index.html',
+  'github-copilot-seat-assignment-pepperoni-api/index.html',
+  'figma-mcp-code-connect-crash-api/index.html',
+  'slack-lists-access-pith-ray-api/index.html',
+  'notion-data-sources-heavy-lidded-api/index.html',
 ];
