@@ -100,6 +100,10 @@ export function titleFromSlug(slug) {
     .replace(/\bBella Villa\b/g, 'Bella Villa')
     .replace(/\bSt George\b/g, 'St. George')
     .replace(/\bGlen Echo\b/g, 'Glen Echo')
+    .replace(/\bCountry Life Acres\b/g, 'Country Life Acres')
+    .replace(/\bCrystal Lake Park\b/g, 'Crystal Lake Park')
+    .replace(/\bWilbur Park\b/g, 'Wilbur Park')
+    .replace(/\bCastle Point\b/g, 'Castle Point')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7185,4 +7189,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-relink-api/index.html',
   'slack-lists-access-suspend-api/index.html',
   'notion-data-sources-reshare-api/index.html',
+  'country-life-acres/index.html',
+  'huntleigh/index.html',
+  'crystal-lake-park/index.html',
+  'wilbur-park/index.html',
+  'marlborough/index.html',
+  'castle-point/index.html',
+  'make-array-take-last-api/index.html',
+  'n8n-item-lists-take-last-api/index.html',
+  'make-array-take-first-api/index.html',
+  'n8n-item-lists-take-first-api/index.html',
+  'n8n-item-lists-compact-api/index.html',
+  'make-array-keep-api/index.html',
+  'stripe-radar-value-list-delete-api/index.html',
+  'paddle-discount-group-get-items-api/index.html',
+  'clerk-session-touch-token-api/index.html',
+  'auth0-mfa-push-disable-api/index.html',
+  'auth0-guardian-email-unenroll-api/index.html',
+  'vercel-firewall-ip-allowlist-delete-api/index.html',
+  'vercel-firewall-ip-blacklist-delete-api/index.html',
+  'cloudflare-api-shield-schema-unbundle-api/index.html',
+  'huggingface-jobs-inspect-flamegraph-api/index.html',
+  'github-copilot-seat-assignment-pause-api/index.html',
+  'figma-mcp-code-connect-detach-api/index.html',
+  'slack-lists-access-resume-api/index.html',
+  'notion-data-sources-lock-api/index.html',
 ];
