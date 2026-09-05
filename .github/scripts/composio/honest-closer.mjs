@@ -243,6 +243,12 @@ export function titleFromSlug(slug) {
     .replace(/\bArbela\b/g, 'Arbela')
     .replace(/\bSouth Gorin\b/g, 'South Gorin')
     .replace(/\bGreen City\b/g, 'Green City')
+    .replace(/\bGilman City\b/g, 'Gilman City')
+    .replace(/\bJamesport\b/g, 'Jamesport')
+    .replace(/\bHumphreys\b/g, 'Humphreys')
+    .replace(/\bGalt\b/g, 'Galt')
+    .replace(/\bBosworth\b/g, 'Bosworth')
+    .replace(/\bTriplett\b/g, 'Triplett')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8278,4 +8284,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-sheet-api/index.html',
   'slack-lists-access-cane-api/index.html',
   'notion-data-sources-packed-api/index.html',
+  'gilman-city/index.html',
+  'jamesport/index.html',
+  'humphreys/index.html',
+  'galt/index.html',
+  'bosworth/index.html',
+  'triplett/index.html',
+  'n8n-merge-by-unlace-api/index.html',
+  'make-array-window-knit-api/index.html',
+  'n8n-item-lists-window-knit-api/index.html',
+  'make-array-window-unknit-api/index.html',
+  'n8n-item-lists-window-unknit-api/index.html',
+  'n8n-merge-by-lace-api/index.html',
+  'paddle-catalog-tub-api/index.html',
+  'stripe-radar-value-list-recock-api/index.html',
+  'clerk-session-end-stalk-api/index.html',
+  'auth0-mfa-recovery-lane-api/index.html',
+  'auth0-guardian-recovery-lane-api/index.html',
+  'cloudflare-api-shield-schema-whole-all-api/index.html',
+  'vercel-firewall-ip-blacklist-whole-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-whole-all-keys-api/index.html',
+  'huggingface-jobs-inspect-hunt-api/index.html',
+  'github-copilot-seat-assignment-trace-api/index.html',
+  'figma-mcp-code-connect-board-api/index.html',
+  'slack-lists-access-stalk-api/index.html',
+  'notion-data-sources-solid-api/index.html',
 ];
