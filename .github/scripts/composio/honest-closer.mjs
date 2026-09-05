@@ -357,6 +357,12 @@ export function titleFromSlug(slug) {
     .replace(/\bCollege Mound\b/g, 'College Mound')
     .replace(/\bPrairie Hill\b/g, 'Prairie Hill')
     .replace(/\bStet\b/g, 'Stet')
+    .replace(/\bArmstrong\b/g, 'Armstrong')
+    .replace(/\bSampsel\b/g, 'Sampsel')
+    .replace(/\bHartsburg\b/g, 'Hartsburg')
+    .replace(/\bRocheport\b/g, 'Rocheport')
+    .replace(/\bMc Baine\b/g, 'McBaine')
+    .replace(/\bLupus\b/g, 'Lupus')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8867,4 +8873,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-groove-api/index.html',
   'slack-lists-access-receptacle-api/index.html',
   'notion-data-sources-acute-api/index.html',
+  'armstrong/index.html',
+  'sampsel/index.html',
+  'hartsburg/index.html',
+  'rocheport/index.html',
+  'mc-baine/index.html',
+  'lupus/index.html',
+  'n8n-merge-by-untie-api/index.html',
+  'make-array-window-button-api/index.html',
+  'n8n-item-lists-window-button-api/index.html',
+  'make-array-window-unbutton-api/index.html',
+  'n8n-item-lists-window-unbutton-api/index.html',
+  'n8n-merge-by-tie-api/index.html',
+  'paddle-catalog-magnum-api/index.html',
+  'stripe-radar-value-list-retack-api/index.html',
+  'clerk-session-end-ovary-api/index.html',
+  'auth0-mfa-recovery-lectern-api/index.html',
+  'auth0-guardian-recovery-lectern-api/index.html',
+  'cloudflare-api-shield-schema-peta-all-api/index.html',
+  'vercel-firewall-ip-blacklist-peta-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-peta-all-keys-api/index.html',
+  'huggingface-jobs-inspect-press-api/index.html',
+  'github-copilot-seat-assignment-press-api/index.html',
+  'figma-mcp-code-connect-gouge-api/index.html',
+  'slack-lists-access-ovary-api/index.html',
+  'notion-data-sources-apt-api/index.html',
 ];
