@@ -119,6 +119,11 @@ export function titleFromSlug(slug) {
     .replace(/\bGrubville\b/g, 'Grubville')
     .replace(/\bMapaville\b/g, 'Mapaville')
     .replace(/\bHematite\b/g, 'Hematite')
+    .replace(/\bSt James\b/g, 'St. James')
+    .replace(/\bNew Florence\b/g, 'New Florence')
+    .replace(/\bMontgomery City\b/g, 'Montgomery City')
+    .replace(/\bSteelville\b/g, 'Steelville')
+    .replace(/\bJonesburg\b/g, 'Jonesburg')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7379,4 +7384,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-unshare-api/index.html',
   'slack-lists-access-share-api/index.html',
   'notion-data-sources-repin-api/index.html',
+  'steelville/index.html',
+  'st-james/index.html',
+  'hermann/index.html',
+  'new-florence/index.html',
+  'jonesburg/index.html',
+  'montgomery-city/index.html',
+  'n8n-item-lists-delete-api/index.html',
+  'make-array-prepend-api/index.html',
+  'n8n-merge-by-token-api/index.html',
+  'make-array-except-api/index.html',
+  'n8n-item-lists-except-api/index.html',
+  'n8n-merge-by-pair-api/index.html',
+  'stripe-radar-value-list-item-replace-api/index.html',
+  'paddle-adjustment-unarchive-api/index.html',
+  'auth0-guardian-otp-unenroll-api/index.html',
+  'clerk-session-end-one-api/index.html',
+  'auth0-mfa-sms-enable-api/index.html',
+  'cloudflare-api-shield-jwt-key-wipe-api/index.html',
+  'vercel-firewall-ip-allowlist-wipe-api/index.html',
+  'cloudflare-api-shield-schema-wipe-api/index.html',
+  'huggingface-jobs-inspect-chart-api/index.html',
+  'github-copilot-seat-assignment-recycle-api/index.html',
+  'figma-mcp-code-connect-hide-api/index.html',
+  'slack-lists-access-unshare-api/index.html',
+  'notion-data-sources-freeze-api/index.html',
 ];
