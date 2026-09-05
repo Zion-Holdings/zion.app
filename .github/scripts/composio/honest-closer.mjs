@@ -95,6 +95,11 @@ export function titleFromSlug(slug) {
     .replace(/\bVinita Terrace\b/g, 'Vinita Terrace')
     .replace(/\bGrantwood Village\b/g, 'Grantwood Village')
     .replace(/\bTwin Oaks\b/g, 'Twin Oaks')
+    .replace(/\bClarkson Valley\b/g, 'Clarkson Valley')
+    .replace(/\bRock Hill\b/g, 'Rock Hill')
+    .replace(/\bBella Villa\b/g, 'Bella Villa')
+    .replace(/\bSt George\b/g, 'St. George')
+    .replace(/\bGlen Echo\b/g, 'Glen Echo')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7155,4 +7160,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-unlink-api/index.html',
   'slack-lists-access-reject-api/index.html',
   'notion-data-sources-unshare-api/index.html',
+  'clarkson-valley/index.html',
+  'rock-hill/index.html',
+  'ellisville/index.html',
+  'bella-villa/index.html',
+  'st-george/index.html',
+  'glen-echo/index.html',
+  'n8n-merge-by-label-api/index.html',
+  'make-array-drop-last-api/index.html',
+  'n8n-item-lists-drop-last-api/index.html',
+  'make-array-drop-first-api/index.html',
+  'n8n-item-lists-drop-first-api/index.html',
+  'n8n-merge-by-path-api/index.html',
+  'stripe-radar-lists-item-create-api/index.html',
+  'paddle-discount-group-archive-api/index.html',
+  'clerk-session-refresh-token-api/index.html',
+  'auth0-mfa-sms-disable-api/index.html',
+  'auth0-guardian-email-enroll-api/index.html',
+  'cloudflare-api-shield-jwt-key-verify-api/index.html',
+  'vercel-firewall-ip-blacklist-add-api/index.html',
+  'cloudflare-api-shield-schema-bundle-api/index.html',
+  'huggingface-jobs-inspect-span-list-api/index.html',
+  'github-copilot-seat-assignment-enable-api/index.html',
+  'figma-mcp-code-connect-relink-api/index.html',
+  'slack-lists-access-suspend-api/index.html',
+  'notion-data-sources-reshare-api/index.html',
 ];
