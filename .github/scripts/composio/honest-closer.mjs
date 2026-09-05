@@ -393,6 +393,12 @@ export function titleFromSlug(slug) {
     .replace(/\bHoecker\b/g, 'Hoecker')
     .replace(/\bBrinktown\b/g, 'Brinktown')
     .replace(/\bPaydown\b/g, 'Paydown')
+    .replace(/\bWoolam\b/g, 'Woolam')
+    .replace(/\bLake Spring\b/g, 'Lake Spring')
+    .replace(/\bSwedeborg\b/g, 'Swedeborg')
+    .replace(/\bLaquey\b/g, 'Laquey')
+    .replace(/\bBloodland\b/g, 'Bloodland')
+    .replace(/\bDevils Elbow\b/g, "Devil's Elbow")
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9053,4 +9059,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-hone-api/index.html',
   'slack-lists-access-tepal-api/index.html',
   'notion-data-sources-deadpan-api/index.html',
+  'woolam/index.html',
+  'lake-spring/index.html',
+  'swedeborg/index.html',
+  'laquey/index.html',
+  'bloodland/index.html',
+  'devils-elbow/index.html',
+  'n8n-merge-by-unfell-api/index.html',
+  'make-array-window-baste-api/index.html',
+  'n8n-item-lists-window-baste-api/index.html',
+  'make-array-window-unbaste-api/index.html',
+  'n8n-item-lists-window-unbaste-api/index.html',
+  'n8n-merge-by-fell-api/index.html',
+  'paddle-catalog-nebuchadnezzar-api/index.html',
+  'stripe-radar-value-list-rebraid-api/index.html',
+  'clerk-session-end-spathe-api/index.html',
+  'auth0-mfa-recovery-ambry-api/index.html',
+  'auth0-guardian-recovery-ambry-api/index.html',
+  'cloudflare-api-shield-schema-nano-all-api/index.html',
+  'vercel-firewall-ip-blacklist-nano-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-nano-all-keys-api/index.html',
+  'huggingface-jobs-inspect-cube-api/index.html',
+  'github-copilot-seat-assignment-cube-api/index.html',
+  'figma-mcp-code-connect-whet-api/index.html',
+  'slack-lists-access-spathe-api/index.html',
+  'notion-data-sources-sardonic-api/index.html',
 ];
