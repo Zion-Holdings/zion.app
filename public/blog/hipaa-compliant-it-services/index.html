@@ -1,0 +1,236 @@
+<!--
+Blog: HIPAA-Compliant IT Services — Zion Tech Group
+SEO: commercial + compliance guide to HIPAA IT and practical AI automation.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"/>
+<link rel="stylesheet" href="/styles.css"/>
+<title>HIPAA-Compliant IT Services with Practical AI Automation | Zion Tech Group</title>
+<meta name="description" content="HIPAA-oriented IT services and practical AI for admin workflows: BAA process, audit readiness, and a Discovery path. Not legal advice — standard BAA/HIPAA process language only."/>
+<meta name="keywords" content="HIPAA compliant IT services, BAA, healthcare IT, AI healthcare admin workflows, PHI, HIPAA audit readiness"/>
+<link rel="canonical" href="https://ziontechgroup.com/blog/hipaa-compliant-it-services/"/>
+<meta property="og:title" content="HIPAA-Compliant IT Services with Practical AI Automation | Zion Tech Group"/>
+<meta property="og:description" content="BAA, safe admin AI, and audit-ready ops — practical healthcare IT without legal overclaim."/>
+<meta property="og:url" content="https://ziontechgroup.com/blog/hipaa-compliant-it-services/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="https://ziontechgroup.com/og-blog-pricing.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="HIPAA-Compliant IT Services with Practical AI Automation"/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/icon.svg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "HIPAA-Compliant IT Services with Practical AI Automation",
+  "description": "HIPAA-oriented IT services and practical AI for admin workflows: BAA process, audit readiness, and a Discovery path. Not legal advice — standard BAA/HIPAA process language only.",
+  "image": "https://ziontechgroup.com/og-blog-pricing.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com"
+  },
+  "datePublished": "2026-09-05",
+  "dateModified": "2026-09-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ziontechgroup.com/blog/hipaa-compliant-it-services/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you sign a BAA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Where Zion is a business associate for a covered entity or another business associate, a Business Associate Agreement is part of the contracting process before PHI is in scope. Discovery can proceed on a non-PHI description of the environment. This is process language, not a legal determination of your status."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI touch PHI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only in an approved environment, with a BAA in place where required, minimum necessary access, and a documented workflow. Consumer AI tools and unapproved plugins are out of scope. Clinical decision support is not what we mean by practical admin automation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a typical stack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Identity with MFA, endpoint management, email and collaboration under the covered entity's tenant, backup with a tested restore, logging, and a ticket system. AI, if used, sits on admin workflows with an audit trail — not as an unsanctioned add-on to the EHR."
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --slate-300: #cbd5e1; --white: #f8fafc; --green: #22c55e; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.7; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+.nav-links a { color: var(--slate-400); text-decoration: none; font-size: 0.875rem; margin-left: 16px; }
+.header { padding: 60px 24px 40px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.header .meta { color: var(--slate-400); font-size: 0.875rem; margin-bottom: 12px; display: flex; gap: 16px; flex-wrap: wrap; }
+.header h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+.header .excerpt { color: var(--slate-400); font-size: 1.125rem; line-height: 1.6; }
+.section { padding: 48px 0; }
+.section h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.section h3 { font-size: 1.25rem; font-weight: 600; margin: 24px 0 8px; color: var(--purple); }
+.section p { color: var(--slate-300); margin-bottom: 16px; }
+.section ul { color: var(--slate-300); margin: 12px 0 20px 24px; }
+.section ul li { margin-bottom: 6px; }
+.section a { color: var(--purple); }
+.faq-item { border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding: 20px 0; }
+.faq-question { font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; cursor: pointer; }
+.faq-answer { color: var(--slate-300); font-size: 0.9375rem; line-height: 1.6; }
+.cta { background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.1), transparent 70%); padding: 48px 24px; text-align: center; }
+.cta h2 { font-size: 1.75rem; margin-bottom: 12px; }
+.cta p { color: var(--slate-400); margin-bottom: 24px; }
+.cta .btn { display: inline-block; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 1rem; text-decoration: none; }
+.cta .btn:hover { opacity: 0.9; }
+.cta .btn-outline { display: inline-block; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); color: var(--slate-300); padding: 14px 32px; border-radius: 9999px; font-weight: 600; font-size: 1rem; text-decoration: none; }
+.cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.footer { padding: 32px 24px; border-top: 1px solid rgba(148, 163, 184, 0.1); color: var(--slate-400); font-size: 0.8125rem; text-align: center; }
+.footer a { color: var(--slate-300); }
+.note { color: var(--slate-400); font-size: 0.875rem; border-left: 3px solid var(--purple); padding-left: 16px; margin: 16px 0 24px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">Zion Tech Group</a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/solutions/">Solutions</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="container">
+    <div class="meta">
+      <span>📅 September 5, 2026</span>
+      <span>⏱️ 8 min read</span>
+      <span>🏷️ HIPAA, Healthcare IT, AI</span>
+    </div>
+    <h1>HIPAA-Compliant IT Services with Practical AI Automation</h1>
+    <p class="excerpt">Healthcare IT is a BAA, an access model, and an audit trail — then, if the workflow is safe, limited AI on admin work. Not a chatbot bolted onto the chart.</p>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="section">
+  <p class="note">This page describes Zion’s process language for Business Associate Agreements and HIPAA-oriented operations. It is not legal advice, not a certification claim, and not a determination of whether your organization is a covered entity or business associate.</p>
+  <p>Practices and mid-market healthcare groups usually need two things at once: an IT operating layer that can survive an audit request, and relief on admin work that is not clinical decision-making. Those are different projects. We keep them sequenced.</p>
+  <p>Landings: <a href="/healthcare-it-hipaa/">healthcare IT / HIPAA</a>, <a href="/managed-it-services/">managed IT services</a>, and <a href="/ai-consulting-services/">AI consulting services</a>.</p>
+</section>
+
+<section class="section">
+  <h2>BAA</h2>
+  <p>If Zion will create, receive, maintain, or transmit protected health information (PHI) for a covered entity or another business associate, a Business Associate Agreement is part of contracting <em>before</em> that access is granted. That is standard BAA process language — not a marketing badge.</p>
+  <ul>
+    <li>Discovery can start on a non-PHI description of systems, owners, and pain (no charts, no exports, no production credentials).</li>
+    <li>If the later scope includes PHI, the BAA and the minimum-necessary access model are agreed before go-live.</li>
+    <li>Subcontractors who would touch PHI are in-scope for the same conversation. “We’ll figure out the BAA later” is how projects get paused by counsel.</li>
+  </ul>
+  <p>We do not claim to “make you HIPAA compliant.” Compliance is your program: policies, workforce, vendors, and your counsel. We operate the IT and automation pieces you put under contract, under the BAA when one is required.</p>
+</section>
+
+<section class="section">
+  <h2>Safe AI admin workflows</h2>
+  <p>Practical AI in healthcare, as we scope it, is admin and operations — not diagnosis, treatment recommendations, or anything a clinician would treat as decision support.</p>
+  <p>Examples of workflows that can be designed with a human in the loop:</p>
+  <ul>
+    <li>Appointment and referral coordination drafts, with a person sending the message.</li>
+    <li>Inbox and ticket triage for the practice operations queue (not the clinical inbox as a default).</li>
+    <li>Internal knowledge lookup for approved SOPs — scheduling rules, device requests, facilities — with citations the staff can check.</li>
+    <li>De-identified or non-PHI reporting packs, when the data classification allows it.</li>
+  </ul>
+  <p>What stays out until counsel and compliance say otherwise: dumping PHI into a consumer model, unsanctioned browser plugins, and any agent with write access to the EHR. If an agent is in scope at all, it follows the same governance as <a href="/ai-consulting-services/">AI consulting</a>: job, tools, stop rules, audit log.</p>
+</section>
+
+<section class="section">
+  <h2>Audit readiness</h2>
+  <p>Audit risk in IT is usually missing evidence, not missing slogans. Readiness means you can produce, on request:</p>
+  <ul>
+    <li>Who has access to what (identity, MFA, joiner/mover/leaver).</li>
+    <li>How endpoints and email are managed, and what happens when a device is lost.</li>
+    <li>Backup and restore evidence — a tested restore, not only a successful job.</li>
+    <li>Vendor list and which vendors are under a BAA.</li>
+    <li>A ticket and change trail for the systems that hold ePHI.</li>
+  </ul>
+  <p>That operating layer is <a href="/managed-it-services/">managed IT</a> work. AI does not replace it. If your first request is “we need ChatGPT for the clinic,” the first answer is still access, logging, and the BAA path — then a narrow admin workflow.</p>
+</section>
+
+<section class="section">
+  <h2>Discovery path</h2>
+  <p>The commercial path is the same as the rest of the site, with one extra constraint: no PHI in the first meeting unless a BAA is already in place.</p>
+  <ol style="color: var(--slate-300); margin: 12px 0 20px 24px;">
+    <li><strong>Discovery ($99):</strong> 30 minutes on the environment, owners, and whether the need is IT ops, a BAA-scoped project, or a later admin-AI design. Book via <a href="/pricing/">pricing</a>.</li>
+    <li><strong>Written follow-up:</strong> recommended track (managed IT, consulting, or stop), assumptions, and what would be required for a BAA if PHI will be in scope.</li>
+    <li><strong>Contracting:</strong> SOW plus BAA when Zion would be a business associate. Then implementation — not the other way around.</li>
+  </ol>
+  <p>Vertical context: <a href="/healthcare-it-hipaa/">healthcare IT / HIPAA</a>.</p>
+</section>
+
+<section class="section">
+  <h2>FAQs</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">Do you sign a BAA?</div>
+    <div class="faq-answer">When Zion is a business associate for a covered entity or another business associate, a BAA is part of contracting before PHI is in scope. Discovery can proceed on a non-PHI description of the environment. This is process language, not a legal determination of your status.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can AI use PHI?</div>
+    <div class="faq-answer">Only in an approved environment, with a BAA where required, minimum necessary access, and a documented workflow. Consumer tools and unapproved plugins are out of scope. We do not treat clinical decision support as “practical admin automation.”</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">What is a typical stack?</div>
+    <div class="faq-answer">Identity with MFA, endpoint management, collaboration in the covered entity’s tenant, backup with a tested restore, logging, and a ticket system. AI, if used, sits on admin workflows with an audit trail — not as an unsanctioned add-on to the EHR.</div>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="container">
+    <h2>Start with Discovery — no PHI required</h2>
+    <p>A 30-minute Discovery call ($99). We map IT ops, BAA timing, and whether any admin AI is even in scope. Bring a system list, not records.</p>
+    <div class="cta-row">
+      <a href="https://calendly.com/kleber-garcia-alcatrao/zion-tech-group-discovery-call" class="btn" target="_blank" rel="noopener">Book a Discovery Call — $99</a>
+      <a href="/plans/" class="btn-outline">View plans</a>
+      <a href="/contact/" class="btn-outline">Contact</a>
+    </div>
+    <p style="margin-top: 16px; font-size: 0.875rem;">Also see <a href="/pricing/" style="color: var(--purple);">pricing</a> · <a href="/healthcare-it-hipaa/" style="color: var(--purple);">healthcare IT</a> · <a href="/managed-it-services/" style="color: var(--purple);">managed IT</a> · <a href="/ai-consulting-services/" style="color: var(--purple);">AI consulting</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Zion Tech Group. All rights reserved. | <a href="/">Home</a> | <a href="/services/">Services</a> | <a href="/blog/">Blog</a> | <a href="/contact/">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
