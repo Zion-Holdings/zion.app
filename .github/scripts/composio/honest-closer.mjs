@@ -641,6 +641,12 @@ export function titleFromSlug(slug) {
     .replace(/\bDrexel\b/g, 'Drexel')
     .replace(/\bLevasy\b/g, 'Levasy')
     .replace(/\bBates City\b/g, 'Bates City')
+    .replace(/\bEmma\b/g, 'Emma')
+    .replace(/\bPink Hill\b/g, 'Pink Hill')
+    .replace(/\bLawson\b/g, 'Lawson')
+    .replace(/\bMount Leonard\b/g, 'Mount Leonard')
+    .replace(/\bStoutsville\b/g, 'Stoutsville')
+    .replace(/\bHolliday\b/g, 'Holliday')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10326,4 +10332,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-crepe-api/index.html',
   'slack-lists-access-hypodermis-api/index.html',
   'notion-data-sources-weary-api/index.html',
+  'emma/index.html',
+  'pink-hill/index.html',
+  'lawson/index.html',
+  'mount-leonard/index.html',
+  'stoutsville/index.html',
+  'holliday/index.html',
+  'n8n-merge-by-unloop-api/index.html',
+  'make-array-window-seam-api/index.html',
+  'n8n-item-lists-window-seam-api/index.html',
+  'make-array-window-unseam-api/index.html',
+  'n8n-item-lists-window-unseam-api/index.html',
+  'n8n-merge-by-loop-api/index.html',
+  'paddle-catalog-centaur-api/index.html',
+  'stripe-radar-value-list-reface-api/index.html',
+  'clerk-session-end-periderm-api/index.html',
+  'auth0-mfa-recovery-ferraiolo-api/index.html',
+  'auth0-guardian-recovery-ferraiolo-api/index.html',
+  'cloudflare-api-shield-schema-subatomic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-subatomic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-subatomic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-rillette-api/index.html',
+  'github-copilot-seat-assignment-rillette-api/index.html',
+  'figma-mcp-code-connect-georgette-api/index.html',
+  'slack-lists-access-periderm-api/index.html',
+  'notion-data-sources-groggy-api/index.html',
 ];
