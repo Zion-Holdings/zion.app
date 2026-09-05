@@ -532,6 +532,13 @@ export function titleFromSlug(slug) {
     .replace(/\bSchubert\b/g, 'Schubert')
     .replace(/\bLinn Creek\b/g, 'Linn Creek')
     .replace(/\bElston\b/g, 'Elston')
+    .replace(/\bVillage Of Four Seasons\b/g, 'Village of Four Seasons')
+    .replace(/\bHurricane Deck\b/g, 'Hurricane Deck')
+    .replace(/\bKimberling City\b/g, 'Kimberling City')
+    .replace(/\bIndian Point\b/g, 'Indian Point')
+    .replace(/\bRockaway Beach\b/g, 'Rockaway Beach')
+    .replace(/\bMcgirk\b/g, 'McGirk')
+    .replace(/\bMc Girk\b/g, 'McGirk')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9767,4 +9774,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-brocade-api/index.html',
   'slack-lists-access-internode-api/index.html',
   'notion-data-sources-halt-api/index.html',
+  'village-of-four-seasons/index.html',
+  'hurricane-deck/index.html',
+  'kimberling-city/index.html',
+  'indian-point/index.html',
+  'rockaway-beach/index.html',
+  'mcgirk/index.html',
+  'n8n-merge-by-uncord-api/index.html',
+  'make-array-window-tape-api/index.html',
+  'n8n-item-lists-window-tape-api/index.html',
+  'make-array-window-untape-api/index.html',
+  'n8n-item-lists-window-untape-api/index.html',
+  'n8n-merge-by-cord-api/index.html',
+  'paddle-catalog-phoenix-api/index.html',
+  'stripe-radar-value-list-rewool-api/index.html',
+  'clerk-session-end-petiole-api/index.html',
+  'auth0-mfa-recovery-cope-api/index.html',
+  'auth0-guardian-recovery-cope-api/index.html',
+  'cloudflare-api-shield-schema-bitty-all-api/index.html',
+  'vercel-firewall-ip-blacklist-bitty-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-bitty-all-keys-api/index.html',
+  'huggingface-jobs-inspect-paillard-api/index.html',
+  'github-copilot-seat-assignment-paillard-api/index.html',
+  'figma-mcp-code-connect-damask-api/index.html',
+  'slack-lists-access-petiole-api/index.html',
+  'notion-data-sources-idle-api/index.html',
 ];
