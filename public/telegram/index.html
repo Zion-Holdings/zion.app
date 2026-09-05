@@ -3,9 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Agentes Telegram — Zion Tech Group</title>
-<meta name="description" content="Agentes Zion no Telegram e WhatsApp: listener persistente e worker com OpenRouter. Responde só no chat de origem. Discovery $99.">
+<title>Agentes Telegram para empresas — Zion Tech Group</title>
+<meta name="description" content="Agente de IA no Telegram que responde só no chat de origem. Listener + Cloudflare Worker. Discovery $99 mapeia o primeiro fluxo em 7 dias. Sem bot genérico.">
+<meta name="keywords" content="agente Telegram empresa, bot Telegram atendimento, OpenRouter Telegram, listener Telegram, Zion Tech Group">
 <link rel="canonical" href="https://ziontechgroup.com/telegram/">
+<meta property="og:title" content="Agentes Telegram para empresas — Zion Tech Group">
+<meta property="og:description" content="Resposta no chat de origem. Discovery $99 para mapear o primeiro fluxo. Worker + listener privados.">
+<meta property="og:url" content="https://ziontechgroup.com/telegram/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="robots" content="index,follow">
 <link rel="stylesheet" href="/assets/css/site.css">
 <style>
 :root{color-scheme:dark}body{margin:0;background:#070b16;color:#f4f7ff;font:16px/1.65 system-ui,sans-serif}
@@ -13,34 +20,55 @@
 .btn{display:inline-block;margin:8px 8px 0 0;padding:10px 16px;border-radius:11px;background:linear-gradient(100deg,#0069ff,#22d3ee);color:#fff;font-weight:700;text-decoration:none}
 .btn.alt{background:transparent;border:1px solid #8b5cf6;color:#fff}
 .card{border:1px solid #2a3654;border-radius:16px;padding:20px;margin:16px 0;background:#0e1628}
-.muted{color:#9aa8c7}
+.muted{color:#9aa8c7}h1{line-height:1.15}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"O agente Zion responde em qualquer grupo?","acceptedAnswer":{"@type":"Answer","text":"Não. A regra é origin-chat: a resposta volta só no chat que enviou a mensagem. O worker ignora autores bot e deduplica update IDs."}},
+{"@type":"Question","name":"Isso é um chatbot pronto para vender?","acceptedAnswer":{"@type":"Answer","text":"Não é SKU self-serve. É capacidade operacional. O caminho comercial é Discovery $99, Consulting $499, Starter $2.500 ou Growth $8.000/mês."}},
+{"@type":"Question","name":"Como começar?","acceptedAnswer":{"@type":"Answer","text":"Pague o Discovery $99 em /discovery/, agende 30 min no Calendly ou fale no WhatsApp em /whatsapp/."}}
+]}
+</script>
 </head>
 <body>
 <div class="wrap">
-  <p><a href="/">← Zion Tech Group</a></p>
-  <h1>Agentes Telegram e WhatsApp</h1>
-  <p>Dois componentes privados operam os agentes Zion no Telegram. A resposta volta só no chat que originou a mensagem. No WhatsApp o caminho comercial é o mesmo: Discovery $99.</p>
+  <p><a href="/">← Zion Tech Group</a> · <a href="/agents/">Agentes</a> · <a href="/whatsapp/">WhatsApp</a></p>
+  <h1>Agentes Telegram para empresas que já têm o time no chat.</h1>
+  <p>Dois componentes privados operam os agentes Zion no Telegram. Eles não publicam em canais aleatórios e não fingem que postaram em outro lugar. A resposta volta no chat de origem, com teclado para Discovery $99, Calendly e ferramentas.</p>
+  <article class="card">
+    <h2>O que o agente faz</h2>
+    <ul>
+      <li>Responde texto e legenda no mesmo thread (<code>reply_to_message_id</code>).</li>
+      <li>Ignora mensagens de outros bots.</li>
+      <li>Deduplica updates por cerca de 24h (Durable Object no worker).</li>
+      <li>Encaminha pedido comercial para Discovery $99, Consulting $499, Starter $2.500, Growth $8.000/mês ou CPA.</li>
+    </ul>
+  </article>
   <article class="card">
     <h2>telegram-agent-listener</h2>
-    <p>Listener persistente (Python/FastAPI). Responde no chat de origem com teclado de conversão para Discovery $99.</p>
+    <p>Listener persistente em Python/FastAPI. Recebe o webhook, gera a resposta e devolve no chat que originou a mensagem. Prompt catalogado Zion — não é um assistente genérico.</p>
   </article>
   <article class="card">
     <h2>telegram-ai-reply-worker</h2>
-    <p>Cloudflare Worker + Durable Objects. OpenRouter, deduplicação, threading e rate-limit. Prompt: Discovery $99, Consulting $499, Starter $2.500, Growth $8.000/mês, CPA e FinOps.</p>
+    <p>Cloudflare Worker + Durable Objects + OpenRouter. Processa o update em background, aplica backoff quando o Telegram limita, e anexa botões de conversão. Deploy de produção depende do token Cloudflare da conta (humano).</p>
   </article>
   <article class="card">
-    <h2>Prefere WhatsApp?</h2>
-    <p>Mesmo número comercial, mensagem pré-preenchida para o Discovery.</p>
-    <p><a class="btn" href="/whatsapp/">Abrir WhatsApp →</a></p>
+    <h2>WhatsApp é o mesmo caminho comercial</h2>
+    <p>Se o time vive no WhatsApp, use a landing com mensagem pré-preenchida. Não é disparo em massa. É o Kleber no número comercial, ou o mapa do <em>seu</em> WhatsApp depois do Discovery.</p>
+    <p><a class="btn" href="/whatsapp/">Abrir WhatsApp →</a> <a class="btn alt" href="/ai-whatsapp-lead-nurturing/">Nutrição de leads</a></p>
   </article>
-  <p class="muted">Capacidade operacional, não SKU self-serve.</p>
+  <article class="card">
+    <h2>Perguntas que aparecem antes do primeiro pagamento</h2>
+    <p><strong>Preciso de um grupo novo?</strong> Não. O agente entra no chat que você já usa.</p>
+    <p><strong>Ele inventa que executou uma ação?</strong> Não. A instrução é não reivindicar ação sem evidência.</p>
+    <p><strong>Qual o primeiro passo?</strong> Discovery $99 — um processo, relatório executivo, sessão de 30 min em até 7 dias.</p>
+  </article>
+  <p class="muted">Leia também: <a href="/blog/agentes-telegram-para-empresas/">guia Agentes Telegram para empresas</a> · <a href="/finops-consulting/">FinOps</a> · <a href="/cpa/">CPA</a>.</p>
   <p>
     <a class="btn" href="/discovery/">Discovery $99</a>
     <a class="btn alt" href="https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1" target="_blank" rel="noopener">Agendar 30 min</a>
     <a class="btn alt" href="/whatsapp/">WhatsApp</a>
-    <a class="btn alt" href="/referral/">Indique / referral</a>
-    <a class="btn alt" href="/cpa/">CPA</a>
+    <a class="btn alt" href="/referral/">Indique</a>
   </p>
 </div>
 </body>
