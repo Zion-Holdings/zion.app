@@ -198,6 +198,11 @@ export function titleFromSlug(slug) {
     .replace(/\bMenfro\b/g, 'Menfro')
     .replace(/\bCrosstown\b/g, 'Crosstown')
     .replace(/\bFarrar\b/g, 'Farrar')
+    .replace(/\bNew Offenburg\b/g, 'New Offenburg')
+    .replace(/\bRiver Aux Vases\b/g, 'River aux Vases')
+    .replace(/\bLawrenceton\b/g, 'Lawrenceton')
+    .replace(/\bFriedheim\b/g, 'Friedheim')
+    .replace(/\bBloomsdale\b/g, 'Bloomsdale')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8033,4 +8038,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-trim-api/index.html',
   'slack-lists-access-fork-api/index.html',
   'notion-data-sources-deepen-api/index.html',
+  'friedheim/index.html',
+  'ozora/index.html',
+  'new-offenburg/index.html',
+  'lawrenceton/index.html',
+  'river-aux-vases/index.html',
+  'bloomsdale/index.html',
+  'n8n-merge-by-collect-api/index.html',
+  'make-array-window-cluster-api/index.html',
+  'n8n-item-lists-window-cluster-api/index.html',
+  'make-array-window-collect-api/index.html',
+  'n8n-item-lists-window-collect-api/index.html',
+  'n8n-merge-by-bucket-api/index.html',
+  'paddle-catalog-kit-api/index.html',
+  'stripe-radar-value-list-revive-api/index.html',
+  'clerk-session-end-stem-api/index.html',
+  'auth0-mfa-recovery-block-api/index.html',
+  'auth0-guardian-recovery-block-api/index.html',
+  'cloudflare-api-shield-schema-most-all-api/index.html',
+  'vercel-firewall-ip-blacklist-most-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-most-all-keys-api/index.html',
+  'huggingface-jobs-inspect-rollout-api/index.html',
+  'github-copilot-seat-assignment-rotate-api/index.html',
+  'figma-mcp-code-connect-crop-api/index.html',
+  'slack-lists-access-branch-api/index.html',
+  'notion-data-sources-thicken-api/index.html',
 ];
