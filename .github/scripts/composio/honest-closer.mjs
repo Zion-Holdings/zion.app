@@ -175,6 +175,9 @@ export function titleFromSlug(slug) {
     .replace(/\bBragg City\b/g, 'Bragg City')
     .replace(/\bGrayridge\b/g, 'Grayridge')
     .replace(/\bCanalou\b/g, 'Canalou')
+    .replace(/\bBraggadocio\b/g, 'Braggadocio')
+    .replace(/\bLilbourn\b/g, 'Lilbourn')
+    .replace(/\bEast Prairie\b/g, 'East Prairie')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7885,4 +7888,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-append-api/index.html',
   'slack-lists-access-import-api/index.html',
   'notion-data-sources-unpivot-api/index.html',
+  'braggadocio/index.html',
+  'homestown/index.html',
+  'lilbourn/index.html',
+  'marston/index.html',
+  'east-prairie/index.html',
+  'wyatt/index.html',
+  'n8n-merge-by-unpack-api/index.html',
+  'make-array-window-pack-api/index.html',
+  'n8n-item-lists-window-pack-api/index.html',
+  'make-array-window-unpack-api/index.html',
+  'n8n-item-lists-window-unpack-api/index.html',
+  'n8n-merge-by-flatten-api/index.html',
+  'paddle-catalog-shroud-api/index.html',
+  'stripe-radar-value-list-resync-api/index.html',
+  'clerk-session-end-edge-api/index.html',
+  'auth0-mfa-recovery-grant-api/index.html',
+  'auth0-guardian-recovery-grant-api/index.html',
+  'cloudflare-api-shield-schema-on-all-api/index.html',
+  'vercel-firewall-ip-blacklist-on-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-on-all-keys-api/index.html',
+  'huggingface-jobs-inspect-roll-api/index.html',
+  'github-copilot-seat-assignment-fork-api/index.html',
+  'figma-mcp-code-connect-prepend-api/index.html',
+  'slack-lists-access-sync-api/index.html',
+  'notion-data-sources-melt-api/index.html',
 ];
