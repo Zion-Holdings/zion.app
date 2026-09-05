@@ -219,6 +219,12 @@ export function titleFromSlug(slug) {
     .replace(/\bOld Monroe\b/g, 'Old Monroe')
     .replace(/\bTruesdale\b/g, 'Truesdale')
     .replace(/\bAnnada\b/g, 'Annada')
+    .replace(/\bWest Alton\b/g, 'West Alton')
+    .replace(/\bChain Of Rocks\b/g, 'Chain of Rocks')
+    .replace(/\bHawk Point\b/g, 'Hawk Point')
+    .replace(/\bFountain N Lakes\b/g, "Fountain N' Lakes")
+    .replace(/\bEolia\b/g, 'Eolia')
+    .replace(/\bSilex\b/g, 'Silex')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8154,4 +8160,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-sand-api/index.html',
   'slack-lists-access-limb-api/index.html',
   'notion-data-sources-rarefy-api/index.html',
+  'west-alton/index.html',
+  'chain-of-rocks/index.html',
+  'eolia/index.html',
+  'silex/index.html',
+  'hawk-point/index.html',
+  'fountain-n-lakes/index.html',
+  'n8n-merge-by-unmesh-api/index.html',
+  'make-array-window-mesh-api/index.html',
+  'n8n-item-lists-window-mesh-api/index.html',
+  'make-array-window-unmesh-api/index.html',
+  'n8n-item-lists-window-unmesh-api/index.html',
+  'n8n-merge-by-weave-api/index.html',
+  'paddle-catalog-hamper-api/index.html',
+  'stripe-radar-value-list-rewake-api/index.html',
+  'clerk-session-end-twig-api/index.html',
+  'auth0-mfa-recovery-hedge-api/index.html',
+  'auth0-guardian-recovery-hedge-api/index.html',
+  'cloudflare-api-shield-schema-rest-all-api/index.html',
+  'vercel-firewall-ip-blacklist-rest-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-rest-all-keys-api/index.html',
+  'huggingface-jobs-inspect-skim-api/index.html',
+  'github-copilot-seat-assignment-skim-api/index.html',
+  'figma-mcp-code-connect-file-api/index.html',
+  'slack-lists-access-trunk-api/index.html',
+  'notion-data-sources-sparse-api/index.html',
 ];
