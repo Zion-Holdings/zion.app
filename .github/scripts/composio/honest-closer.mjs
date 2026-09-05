@@ -117,6 +117,8 @@ export function titleFromSlug(slug) {
     .replace(/\bMorse Mill\b/g, 'Morse Mill')
     .replace(/\bLonedell\b/g, 'Lonedell')
     .replace(/\bGrubville\b/g, 'Grubville')
+    .replace(/\bMapaville\b/g, 'Mapaville')
+    .replace(/\bHematite\b/g, 'Hematite')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7352,4 +7354,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-relock-api/index.html',
   'slack-lists-access-restrict-api/index.html',
   'notion-data-sources-unpin-all-api/index.html',
+  'antonia/index.html',
+  'horine/index.html',
+  'mapaville/index.html',
+  'hematite/index.html',
+  'irondale/index.html',
+  'stanton/index.html',
+  'n8n-item-lists-replace-api/index.html',
+  'make-array-replace-api/index.html',
+  'n8n-merge-by-regex-api/index.html',
+  'make-array-filter-empty-api/index.html',
+  'n8n-item-lists-filter-empty-api/index.html',
+  'n8n-merge-by-type-api/index.html',
+  'stripe-radar-value-list-item-list-api/index.html',
+  'paddle-transaction-archive-api/index.html',
+  'clerk-session-revoke-current-api/index.html',
+  'auth0-mfa-recovery-disable-api/index.html',
+  'auth0-mfa-recovery-enable-api/index.html',
+  'cloudflare-api-shield-jwt-key-flush-api/index.html',
+  'vercel-firewall-ip-blacklist-flush-api/index.html',
+  'cloudflare-api-shield-schema-flush-api/index.html',
+  'huggingface-jobs-inspect-usage-api/index.html',
+  'github-copilot-seat-assignment-expire-api/index.html',
+  'figma-mcp-code-connect-unshare-api/index.html',
+  'slack-lists-access-share-api/index.html',
+  'notion-data-sources-repin-api/index.html',
 ];
