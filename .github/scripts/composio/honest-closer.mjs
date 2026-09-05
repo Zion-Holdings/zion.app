@@ -695,6 +695,12 @@ export function titleFromSlug(slug) {
     .replace(/\bMarthasville\b/g, 'Marthasville')
     .replace(/\bInnsbrook\b/g, 'Innsbrook')
     .replace(/\bForistell\b/g, 'Foristell')
+    .replace(/\bFlint Hill\b/g, 'Flint Hill')
+    .replace(/\bWright City\b/g, 'Wright City')
+    .replace(/\bCottleville\b/g, 'Cottleville')
+    .replace(/\bWeldon Spring\b/g, 'Weldon Spring')
+    .replace(/\bJosephville\b/g, 'Josephville')
+    .replace(/\bDardenne Prairie\b/g, 'Dardenne Prairie')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10605,4 +10611,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-voile-api/index.html',
   'slack-lists-access-sapwood-api/index.html',
   'notion-data-sources-addled-api/index.html',
+  'flint-hill/index.html',
+  'wright-city/index.html',
+  'cottleville/index.html',
+  'weldon-spring/index.html',
+  'josephville/index.html',
+  'dardenne-prairie/index.html',
+  'n8n-merge-by-unmoor-api/index.html',
+  'make-array-window-rope-api/index.html',
+  'n8n-item-lists-window-rope-api/index.html',
+  'make-array-window-unrope-api/index.html',
+  'n8n-item-lists-window-unrope-api/index.html',
+  'n8n-merge-by-moor-api/index.html',
+  'paddle-catalog-bakunawa-api/index.html',
+  'stripe-radar-value-list-retuck-api/index.html',
+  'clerk-session-end-heartwood-api/index.html',
+  'auth0-mfa-recovery-mantum-api/index.html',
+  'auth0-guardian-recovery-mantum-api/index.html',
+  'cloudflare-api-shield-schema-rydbergscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-rydbergscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-rydbergscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-kielbasa-api/index.html',
+  'github-copilot-seat-assignment-kielbasa-api/index.html',
+  'figma-mcp-code-connect-cambric-api/index.html',
+  'slack-lists-access-heartwood-api/index.html',
+  'notion-data-sources-befogged-api/index.html',
 ];
