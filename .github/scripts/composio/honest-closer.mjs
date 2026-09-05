@@ -910,6 +910,14 @@ export function titleFromSlug(slug) {
     .replace(/\bMeramec Springs\b/g, 'Meramec Springs')
     .replace(/\bShellycoat\b/g, 'Shellycoat')
     .replace(/\bSkufia\b/g, 'Skufia')
+    .replace(/\bLutie\b/g, 'Lutie')
+    .replace(/\bDawt\b/g, 'Dawt')
+    .replace(/\bLead Mine\b/g, 'Lead Mine')
+    .replace(/\bTedieville\b/g, 'Tedieville')
+    .replace(/\bStokley\b/g, 'Stokley')
+    .replace(/\bPertle Springs\b/g, 'Pertle Springs')
+    .replace(/\bNokken\b/g, 'Nokken')
+    .replace(/\bKoukoulion\b/g, 'Koukoulion')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11670,4 +11678,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-velour-api/index.html',
   'slack-lists-access-margo-api/index.html',
   'notion-data-sources-resting-api/index.html',
+  'lutie/index.html',
+  'dawt/index.html',
+  'lead-mine/index.html',
+  'tedieville/index.html',
+  'stokley/index.html',
+  'pertle-springs/index.html',
+  'n8n-merge-by-ungird-api/index.html',
+  'make-array-window-luff-api/index.html',
+  'n8n-item-lists-window-luff-api/index.html',
+  'make-array-window-unluff-api/index.html',
+  'n8n-item-lists-window-unluff-api/index.html',
+  'n8n-merge-by-gird-api/index.html',
+  'paddle-catalog-nokken-api/index.html',
+  'stripe-radar-value-list-retouch-api/index.html',
+  'clerk-session-end-lumen-api/index.html',
+  'auth0-mfa-recovery-koukoulion-api/index.html',
+  'auth0-guardian-recovery-koukoulion-api/index.html',
+  'cloudflare-api-shield-schema-picometric-all-api/index.html',
+  'vercel-firewall-ip-blacklist-picometric-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-picometric-all-keys-api/index.html',
+  'huggingface-jobs-inspect-longaniza-api/index.html',
+  'github-copilot-seat-assignment-longaniza-api/index.html',
+  'figma-mcp-code-connect-corduroy-api/index.html',
+  'slack-lists-access-lumen-api/index.html',
+  'notion-data-sources-dreaming-api/index.html',
 ];
