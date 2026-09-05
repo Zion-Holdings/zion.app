@@ -115,6 +115,8 @@ export function titleFromSlug(slug) {
     .replace(/\bGray Summit\b/g, 'Gray Summit')
     .replace(/\bVilla Ridge\b/g, 'Villa Ridge')
     .replace(/\bMorse Mill\b/g, 'Morse Mill')
+    .replace(/\bLonedell\b/g, 'Lonedell')
+    .replace(/\bGrubville\b/g, 'Grubville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7325,4 +7327,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-unbind-api/index.html',
   'slack-lists-access-unlock-api/index.html',
   'notion-data-sources-unpin-api/index.html',
+  'berger/index.html',
+  'gray-summit/index.html',
+  'villa-ridge/index.html',
+  'lonedell/index.html',
+  'grubville/index.html',
+  'morse-mill/index.html',
+  'n8n-item-lists-skip-last-api/index.html',
+  'n8n-item-lists-skip-first-api/index.html',
+  'make-array-append-api/index.html',
+  'n8n-merge-by-suffix-api/index.html',
+  'make-array-delete-api/index.html',
+  'n8n-item-lists-prepend-api/index.html',
+  'paddle-discount-unarchive-api/index.html',
+  'stripe-radar-value-list-item-get-api/index.html',
+  'clerk-session-end-current-api/index.html',
+  'auth0-mfa-duo-unenroll-api/index.html',
+  'auth0-guardian-duo-disable-api/index.html',
+  'vercel-firewall-ip-blacklist-purge-api/index.html',
+  'cloudflare-api-shield-schema-rotate-api/index.html',
+  'vercel-firewall-ip-allowlist-flush-api/index.html',
+  'huggingface-jobs-inspect-report-api/index.html',
+  'github-copilot-seat-assignment-reclaim-api/index.html',
+  'figma-mcp-code-connect-relock-api/index.html',
+  'slack-lists-access-restrict-api/index.html',
+  'notion-data-sources-unpin-all-api/index.html',
 ];
