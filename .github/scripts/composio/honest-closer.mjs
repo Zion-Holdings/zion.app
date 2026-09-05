@@ -749,6 +749,12 @@ export function titleFromSlug(slug) {
     .replace(/\bLamine\b/g, 'Lamine')
     .replace(/\bGreenton\b/g, 'Greenton')
     .replace(/\bHail Ridge\b/g, 'Hail Ridge')
+    .replace(/\bNind\b/g, 'Nind')
+    .replace(/\bLexington Junction\b/g, 'Lexington Junction')
+    .replace(/\bTabo\b/g, 'Tabo')
+    .replace(/\bGoochs Mill\b/g, "Gooch's Mill")
+    .replace(/\bPrairie Lick\b/g, 'Prairie Lick')
+    .replace(/\bTullvania\b/g, 'Tullvania')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10884,4 +10890,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-osnaburg-api/index.html',
   'slack-lists-access-endodermis-api/index.html',
   'notion-data-sources-somnolescent-api/index.html',
+  'nind/index.html',
+  'lexington-junction/index.html',
+  'tabo/index.html',
+  'goochs-mill/index.html',
+  'prairie-lick/index.html',
+  'tullvania/index.html',
+  'n8n-merge-by-unnail-api/index.html',
+  'make-array-window-screw-api/index.html',
+  'n8n-item-lists-window-screw-api/index.html',
+  'make-array-window-unscrew-api/index.html',
+  'n8n-item-lists-window-unscrew-api/index.html',
+  'n8n-merge-by-nail-api/index.html',
+  'paddle-catalog-selkie-api/index.html',
+  'stripe-radar-value-list-reheel-api/index.html',
+  'clerk-session-end-stele-api/index.html',
+  'auth0-mfa-recovery-morse-api/index.html',
+  'auth0-guardian-recovery-morse-api/index.html',
+  'cloudflare-api-shield-schema-photonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-photonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-photonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-soppressata-api/index.html',
+  'github-copilot-seat-assignment-soppressata-api/index.html',
+  'figma-mcp-code-connect-buckram-api/index.html',
+  'slack-lists-access-stele-api/index.html',
+  'notion-data-sources-hebetudinous-api/index.html',
 ];
