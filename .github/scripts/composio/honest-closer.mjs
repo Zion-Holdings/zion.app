@@ -508,6 +508,12 @@ export function titleFromSlug(slug) {
     .replace(/\bRiverview Estates\b/g, 'Riverview Estates')
     .replace(/\bMonegaw Springs\b/g, 'Monegaw Springs')
     .replace(/\bQuarles\b/g, 'Quarles')
+    .replace(/\bLake Lotawana\b/g, 'Lake Lotawana')
+    .replace(/\bLake Tapawingo\b/g, 'Lake Tapawingo')
+    .replace(/\bUnity Village\b/g, 'Unity Village')
+    .replace(/\bTurney\b/g, 'Turney')
+    .replace(/\bLone Jack\b/g, 'Lone Jack')
+    .replace(/\bFiney\b/g, 'Finey')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9643,4 +9649,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-chiffon-api/index.html',
   'slack-lists-access-ramentum-api/index.html',
   'notion-data-sources-rest-api/index.html',
+  'lake-lotawana/index.html',
+  'lake-tapawingo/index.html',
+  'unity-village/index.html',
+  'turney/index.html',
+  'lone-jack/index.html',
+  'finey/index.html',
+  'n8n-merge-by-unpipe-api/index.html',
+  'make-array-window-placket-api/index.html',
+  'n8n-item-lists-window-placket-api/index.html',
+  'make-array-window-unplacket-api/index.html',
+  'n8n-item-lists-window-unplacket-api/index.html',
+  'n8n-merge-by-pipe-api/index.html',
+  'paddle-catalog-chimera-api/index.html',
+  'stripe-radar-value-list-rehank-api/index.html',
+  'clerk-session-end-scape-api/index.html',
+  'auth0-mfa-recovery-tunicle-api/index.html',
+  'auth0-guardian-recovery-tunicle-api/index.html',
+  'cloudflare-api-shield-schema-meager-all-api/index.html',
+  'vercel-firewall-ip-blacklist-meager-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-meager-all-keys-api/index.html',
+  'huggingface-jobs-inspect-lozenge-api/index.html',
+  'github-copilot-seat-assignment-lozenge-api/index.html',
+  'figma-mcp-code-connect-tulle-api/index.html',
+  'slack-lists-access-scape-api/index.html',
+  'notion-data-sources-hush-api/index.html',
 ];
