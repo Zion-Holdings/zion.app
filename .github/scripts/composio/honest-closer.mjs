@@ -171,6 +171,7 @@ export function titleFromSlug(slug) {
     .replace(/\bNeelyville\b/g, 'Neelyville')
     .replace(/\bWilliamsville\b/g, 'Williamsville')
     .replace(/\bHornersville\b/g, 'Hornersville')
+    .replace(/\bPuxico\b/g, 'Puxico')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -7831,4 +7832,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-exclude-api/index.html',
   'slack-lists-access-restore-api/index.html',
   'notion-data-sources-rotate-api/index.html',
+  'risco/index.html',
+  'wardell/index.html',
+  'cooter/index.html',
+  'puxico/index.html',
+  'bernie/index.html',
+  'fisk/index.html',
+  'n8n-merge-by-join-api/index.html',
+  'make-array-window-join-api/index.html',
+  'n8n-item-lists-window-join-api/index.html',
+  'n8n-merge-by-split-api/index.html',
+  'make-array-window-split-api/index.html',
+  'n8n-item-lists-window-split-api/index.html',
+  'paddle-catalog-cloak-api/index.html',
+  'stripe-radar-value-list-refresh-api/index.html',
+  'clerk-session-end-iot-api/index.html',
+  'auth0-mfa-recovery-unlock-api/index.html',
+  'auth0-guardian-recovery-unlock-api/index.html',
+  'cloudflare-api-shield-schema-none-all-api/index.html',
+  'vercel-firewall-ip-blacklist-none-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-none-all-keys-api/index.html',
+  'huggingface-jobs-inspect-cycle-api/index.html',
+  'github-copilot-seat-assignment-split-api/index.html',
+  'figma-mcp-code-connect-insert-api/index.html',
+  'slack-lists-access-export-api/index.html',
+  'notion-data-sources-pivot-api/index.html',
 ];
