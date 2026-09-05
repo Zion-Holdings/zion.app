@@ -472,6 +472,12 @@ export function titleFromSlug(slug) {
     .replace(/\bPulaskifield\b/g, 'Pulaskifield')
     .replace(/\bMc Dowell\b/g, 'McDowell')
     .replace(/\bMcdowell\b/g, 'McDowell')
+    .replace(/\bSouth Greenfield\b/g, 'South Greenfield')
+    .replace(/\bGolden City\b/g, 'Golden City')
+    .replace(/\bMindenmines\b/g, 'Mindenmines')
+    .replace(/\bRoaring River\b/g, 'Roaring River')
+    .replace(/\bMadry\b/g, 'Madry')
+    .replace(/\bScholten\b/g, 'Scholten')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9457,4 +9463,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-bloom-api/index.html',
   'slack-lists-access-villus-api/index.html',
   'notion-data-sources-clipped-api/index.html',
+  'south-greenfield/index.html',
+  'golden-city/index.html',
+  'mindenmines/index.html',
+  'roaring-river/index.html',
+  'madry/index.html',
+  'scholten/index.html',
+  'n8n-merge-by-unnotch-api/index.html',
+  'make-array-window-pink-api/index.html',
+  'n8n-item-lists-window-pink-api/index.html',
+  'make-array-window-unpink-api/index.html',
+  'n8n-item-lists-window-unpink-api/index.html',
+  'n8n-merge-by-notch-api/index.html',
+  'paddle-catalog-atlas-api/index.html',
+  'stripe-radar-value-list-rewrap-api/index.html',
+  'clerk-session-end-stylet-api/index.html',
+  'auth0-mfa-recovery-antependium-api/index.html',
+  'auth0-guardian-recovery-antependium-api/index.html',
+  'cloudflare-api-shield-schema-scant-all-api/index.html',
+  'vercel-firewall-ip-blacklist-scant-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-scant-all-keys-api/index.html',
+  'huggingface-jobs-inspect-matignon-api/index.html',
+  'github-copilot-seat-assignment-matignon-api/index.html',
+  'figma-mcp-code-connect-matte-api/index.html',
+  'slack-lists-access-stylet-api/index.html',
+  'notion-data-sources-muted-api/index.html',
 ];
