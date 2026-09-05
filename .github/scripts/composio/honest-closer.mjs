@@ -863,6 +863,12 @@ export function titleFromSlug(slug) {
     .replace(/\bWishart\b/g, 'Wishart')
     .replace(/\bTin Town\b/g, 'Tin Town')
     .replace(/\bRedtop\b/g, 'Redtop')
+    .replace(/\bHastain\b/g, 'Hastain')
+    .replace(/\bClarks Fork\b/g, "Clark's Fork")
+    .replace(/\bOttersville\b/g, 'Ottersville')
+    .replace(/\bPleasant Green\b/g, 'Pleasant Green')
+    .replace(/\bWhite Branch\b/g, 'White Branch')
+    .replace(/\bFristoe\b/g, 'Fristoe')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11448,4 +11454,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-gingham-api/index.html',
   'slack-lists-access-cambial-api/index.html',
   'notion-data-sources-woolgathering-api/index.html',
+  'hastain/index.html',
+  'clarks-fork/index.html',
+  'ottersville/index.html',
+  'pleasant-green/index.html',
+  'white-branch/index.html',
+  'fristoe/index.html',
+  'n8n-merge-by-unroll-api/index.html',
+  'make-array-window-furl-api/index.html',
+  'n8n-item-lists-window-furl-api/index.html',
+  'make-array-window-unfurl-api/index.html',
+  'n8n-item-lists-window-unfurl-api/index.html',
+  'n8n-merge-by-roll-api/index.html',
+  'paddle-catalog-siren-api/index.html',
+  'stripe-radar-value-list-reprime-api/index.html',
+  'clerk-session-end-fusiform-api/index.html',
+  'auth0-mfa-recovery-zone-api/index.html',
+  'auth0-guardian-recovery-zone-api/index.html',
+  'cloudflare-api-shield-schema-tauonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-tauonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-tauonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-boudin-api/index.html',
+  'github-copilot-seat-assignment-boudin-api/index.html',
+  'figma-mcp-code-connect-broadcloth-api/index.html',
+  'slack-lists-access-fusiform-api/index.html',
+  'notion-data-sources-drowsing-api/index.html',
 ];
