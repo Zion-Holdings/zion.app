@@ -623,6 +623,12 @@ export function titleFromSlug(slug) {
     .replace(/\bFremont Hills\b/g, 'Fremont Hills')
     .replace(/\bPomp\b/g, 'Pomp')
     .replace(/\bAkers\b/g, 'Akers')
+    .replace(/\bSedgewickville\b/g, 'Sedgewickville')
+    .replace(/\bLithium\b/g, 'Lithium')
+    .replace(/\bSereno\b/g, 'Sereno')
+    .replace(/\bCurrent View\b/g, 'Current View')
+    .replace(/\bJack Fork\b/g, 'Jack Fork')
+    .replace(/\bNew Bourbon\b/g, 'New Bourbon')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -10233,4 +10239,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-organdy-api/index.html',
   'slack-lists-access-cortex-api/index.html',
   'notion-data-sources-sluggish-api/index.html',
+  'sedgewickville/index.html',
+  'lithium/index.html',
+  'sereno/index.html',
+  'current-view/index.html',
+  'jack-fork/index.html',
+  'new-bourbon/index.html',
+  'n8n-merge-by-unrickrack-api/index.html',
+  'make-array-window-scallop-api/index.html',
+  'n8n-item-lists-window-scallop-api/index.html',
+  'make-array-window-unscallop-api/index.html',
+  'n8n-item-lists-window-unscallop-api/index.html',
+  'n8n-merge-by-rickrack-api/index.html',
+  'paddle-catalog-amphisbaena-api/index.html',
+  'stripe-radar-value-list-rebaste-api/index.html',
+  'clerk-session-end-mesophyll-api/index.html',
+  'auth0-mfa-recovery-mozzetta-api/index.html',
+  'auth0-guardian-recovery-mozzetta-api/index.html',
+  'cloudflare-api-shield-schema-homuncular-all-api/index.html',
+  'vercel-firewall-ip-blacklist-homuncular-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-homuncular-all-keys-api/index.html',
+  'huggingface-jobs-inspect-piccata-api/index.html',
+  'github-copilot-seat-assignment-piccata-api/index.html',
+  'figma-mcp-code-connect-faille-api/index.html',
+  'slack-lists-access-mesophyll-api/index.html',
+  'notion-data-sources-drowsy-api/index.html',
 ];
