@@ -399,6 +399,12 @@ export function titleFromSlug(slug) {
     .replace(/\bLaquey\b/g, 'Laquey')
     .replace(/\bBloodland\b/g, 'Bloodland')
     .replace(/\bDevils Elbow\b/g, "Devil's Elbow")
+    .replace(/\bHazelgreen\b/g, 'Hazelgreen')
+    .replace(/\bGascozark\b/g, 'Gascozark')
+    .replace(/\bDrynob\b/g, 'Drynob')
+    .replace(/\bStoutland\b/g, 'Stoutland')
+    .replace(/\bLong Lane\b/g, 'Long Lane')
+    .replace(/\bEldridge\b/g, 'Eldridge')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9084,4 +9090,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-whet-api/index.html',
   'slack-lists-access-spathe-api/index.html',
   'notion-data-sources-sardonic-api/index.html',
+  'hazelgreen/index.html',
+  'gascozark/index.html',
+  'drynob/index.html',
+  'stoutland/index.html',
+  'long-lane/index.html',
+  'eldridge/index.html',
+  'n8n-merge-by-unserge-api/index.html',
+  'make-array-window-fell-api/index.html',
+  'n8n-item-lists-window-fell-api/index.html',
+  'make-array-window-unfell-api/index.html',
+  'n8n-item-lists-window-unfell-api/index.html',
+  'n8n-merge-by-serge-api/index.html',
+  'paddle-catalog-melchior-api/index.html',
+  'stripe-radar-value-list-replait-api/index.html',
+  'clerk-session-end-involucre-api/index.html',
+  'auth0-mfa-recovery-ciborium-api/index.html',
+  'auth0-guardian-recovery-ciborium-api/index.html',
+  'cloudflare-api-shield-schema-pico-all-api/index.html',
+  'vercel-firewall-ip-blacklist-pico-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-pico-all-keys-api/index.html',
+  'huggingface-jobs-inspect-brunoise-api/index.html',
+  'github-copilot-seat-assignment-brunoise-api/index.html',
+  'figma-mcp-code-connect-strop-api/index.html',
+  'slack-lists-access-involucre-api/index.html',
+  'notion-data-sources-arch-api/index.html',
 ];
