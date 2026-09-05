@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Agentes Telegram — Zion Tech Group</title>
-<meta name="description" content="Agentes Zion no Telegram: listener persistente e worker de respostas com OpenRouter. Responde só no chat de origem.">
+<meta name="description" content="Agentes Zion no Telegram e WhatsApp: listener persistente e worker com OpenRouter. Responde só no chat de origem. Discovery $99.">
 <link rel="canonical" href="https://ziontechgroup.com/telegram/">
 <link rel="stylesheet" href="/assets/css/site.css">
 <style>
@@ -13,26 +13,34 @@
 .btn{display:inline-block;margin:8px 8px 0 0;padding:10px 16px;border-radius:11px;background:linear-gradient(100deg,#0069ff,#22d3ee);color:#fff;font-weight:700;text-decoration:none}
 .btn.alt{background:transparent;border:1px solid #8b5cf6;color:#fff}
 .card{border:1px solid #2a3654;border-radius:16px;padding:20px;margin:16px 0;background:#0e1628}
+.muted{color:#9aa8c7}
 </style>
 </head>
 <body>
 <div class="wrap">
   <p><a href="/">← Zion Tech Group</a></p>
-  <h1>Agentes Telegram</h1>
-  <p>Dois componentes privados operam os agentes Zion no Telegram. Eles não publicam em canais aleatórios: a resposta volta só no chat que originou a mensagem.</p>
+  <h1>Agentes Telegram e WhatsApp</h1>
+  <p>Dois componentes privados operam os agentes Zion no Telegram. A resposta volta só no chat que originou a mensagem. No WhatsApp o caminho comercial é o mesmo: Discovery $99.</p>
   <article class="card">
     <h2>telegram-agent-listener</h2>
-    <p>Listener persistente (Python/FastAPI). Recebe o webhook e responde no chat de origem.</p>
+    <p>Listener persistente (Python/FastAPI). Responde no chat de origem com teclado de conversão para Discovery $99.</p>
   </article>
   <article class="card">
     <h2>telegram-ai-reply-worker</h2>
-    <p>Cloudflare Worker + Durable Objects. Gera a resposta com OpenRouter, com deduplicação, threading e rate-limit.</p>
+    <p>Cloudflare Worker + Durable Objects. OpenRouter, deduplicação, threading e rate-limit. Prompt: Discovery $99, Consulting $499, Starter $2.500, Growth $8.000/mês, CPA e FinOps.</p>
   </article>
-  <p>Capacidade operacional, não SKU self-serve. Caminho comercial: Discovery, Consulting, Starter ou Growth.</p>
+  <article class="card">
+    <h2>Prefere WhatsApp?</h2>
+    <p>Mesmo número comercial, mensagem pré-preenchida para o Discovery.</p>
+    <p><a class="btn" href="/whatsapp/">Abrir WhatsApp →</a></p>
+  </article>
+  <p class="muted">Capacidade operacional, não SKU self-serve.</p>
   <p>
     <a class="btn" href="/discovery/">Discovery $99</a>
-    <a class="btn alt" href="/booking/">Agendar</a>
-    <a class="btn alt" href="/agents/">Ver agentes</a>
+    <a class="btn alt" href="https://calendly.com/kleber-ziontechgroup/zion-tech-group-ai-it-discovery-1" target="_blank" rel="noopener">Agendar 30 min</a>
+    <a class="btn alt" href="/whatsapp/">WhatsApp</a>
+    <a class="btn alt" href="/referral/">Indique / referral</a>
+    <a class="btn alt" href="/cpa/">CPA</a>
   </p>
 </div>
 </body>
