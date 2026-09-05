@@ -514,6 +514,12 @@ export function titleFromSlug(slug) {
     .replace(/\bTurney\b/g, 'Turney')
     .replace(/\bLone Jack\b/g, 'Lone Jack')
     .replace(/\bFiney\b/g, 'Finey')
+    .replace(/\bPiper\b/g, 'Piper')
+    .replace(/\bRiver Bend\b/g, 'River Bend')
+    .replace(/\bLake Lafayette\b/g, 'Lake Lafayette')
+    .replace(/\bClaycomo\b/g, 'Claycomo')
+    .replace(/\bPrathersville\b/g, 'Prathersville')
+    .replace(/\bExcelsior Estates\b/g, 'Excelsior Estates')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9674,4 +9680,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-tulle-api/index.html',
   'slack-lists-access-scape-api/index.html',
   'notion-data-sources-hush-api/index.html',
+  'piper/index.html',
+  'river-bend/index.html',
+  'lake-lafayette/index.html',
+  'claycomo/index.html',
+  'prathersville/index.html',
+  'excelsior-estates/index.html',
+  'n8n-merge-by-unstay-api/index.html',
+  'make-array-window-pipe-api/index.html',
+  'n8n-item-lists-window-pipe-api/index.html',
+  'make-array-window-unpipe-api/index.html',
+  'n8n-item-lists-window-unpipe-api/index.html',
+  'n8n-merge-by-stay-api/index.html',
+  'paddle-catalog-minotaur-api/index.html',
+  'stripe-radar-value-list-recard-api/index.html',
+  'clerk-session-end-rachis-api/index.html',
+  'auth0-mfa-recovery-amice-api/index.html',
+  'auth0-guardian-recovery-amice-api/index.html',
+  'cloudflare-api-shield-schema-skinny-all-api/index.html',
+  'vercel-firewall-ip-blacklist-skinny-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-skinny-all-keys-api/index.html',
+  'huggingface-jobs-inspect-fermiere-api/index.html',
+  'github-copilot-seat-assignment-fermiere-api/index.html',
+  'figma-mcp-code-connect-muslin-api/index.html',
+  'slack-lists-access-rachis-api/index.html',
+  'notion-data-sources-lull-api/index.html',
 ];
