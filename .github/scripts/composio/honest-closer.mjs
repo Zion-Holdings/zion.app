@@ -918,6 +918,15 @@ export function titleFromSlug(slug) {
     .replace(/\bPertle Springs\b/g, 'Pertle Springs')
     .replace(/\bNokken\b/g, 'Nokken')
     .replace(/\bKoukoulion\b/g, 'Koukoulion')
+    .replace(/\bStark City\b/g, 'Stark City')
+    .replace(/\bScrivner\b/g, 'Scrivner')
+    .replace(/\bPipkin\b/g, 'Pipkin')
+    .replace(/\bWood Hill\b/g, 'Wood Hill')
+    .replace(/\bRainy Creek\b/g, 'Rainy Creek')
+    .replace(/\bLittle Glaize\b/g, 'Little Glaize')
+    .replace(/\bGuard Cell\b/g, 'Guard-Cell')
+    .replace(/\bVodyanoy\b/g, 'Vodyanoy')
+    .replace(/\bApostolnik\b/g, 'Apostolnik')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11703,4 +11712,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-corduroy-api/index.html',
   'slack-lists-access-lumen-api/index.html',
   'notion-data-sources-dreaming-api/index.html',
+  'stark-city/index.html',
+  'scrivner/index.html',
+  'pipkin/index.html',
+  'wood-hill/index.html',
+  'rainy-creek/index.html',
+  'little-glaize/index.html',
+  'n8n-merge-by-untruss-api/index.html',
+  'make-array-window-trice-api/index.html',
+  'n8n-item-lists-window-trice-api/index.html',
+  'make-array-window-untrice-api/index.html',
+  'n8n-item-lists-window-untrice-api/index.html',
+  'n8n-merge-by-truss-api/index.html',
+  'paddle-catalog-vodyanoy-api/index.html',
+  'stripe-radar-value-list-refile-api/index.html',
+  'clerk-session-end-guard-cell-api/index.html',
+  'auth0-mfa-recovery-apostolnik-api/index.html',
+  'auth0-guardian-recovery-apostolnik-api/index.html',
+  'cloudflare-api-shield-schema-quarkonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-quarkonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-quarkonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-morcilla-api/index.html',
+  'github-copilot-seat-assignment-morcilla-api/index.html',
+  'figma-mcp-code-connect-moleskin-api/index.html',
+  'slack-lists-access-guard-cell-api/index.html',
+  'notion-data-sources-hibernating-api/index.html',
 ];
