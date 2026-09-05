@@ -279,6 +279,12 @@ export function titleFromSlug(slug) {
     .replace(/\bBolckow\b/g, 'Bolckow')
     .replace(/\bBarnard\b/g, 'Barnard')
     .replace(/\bSkidmore\b/g, 'Skidmore')
+    .replace(/\bTarkio\b/g, 'Tarkio')
+    .replace(/\bRock Port\b/g, 'Rock Port')
+    .replace(/\bFortescue\b/g, 'Fortescue')
+    .replace(/\bBigelow\b/g, 'Bigelow')
+    .replace(/\bBurlington Junction\b/g, 'Burlington Junction')
+    .replace(/\bClearmont\b/g, 'Clearmont')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8464,4 +8470,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-card-api/index.html',
   'slack-lists-access-leaflet-api/index.html',
   'notion-data-sources-tense-api/index.html',
+  'tarkio/index.html',
+  'rock-port/index.html',
+  'fortescue/index.html',
+  'bigelow/index.html',
+  'burlington-junction/index.html',
+  'clearmont/index.html',
+  'n8n-merge-by-unspool-api/index.html',
+  'make-array-window-reel-api/index.html',
+  'n8n-item-lists-window-reel-api/index.html',
+  'make-array-window-unreel-api/index.html',
+  'n8n-item-lists-window-unreel-api/index.html',
+  'n8n-merge-by-spool-api/index.html',
+  'paddle-catalog-ampoule-api/index.html',
+  'stripe-radar-value-list-relock-api/index.html',
+  'clerk-session-end-bract-api/index.html',
+  'auth0-mfa-recovery-choir-api/index.html',
+  'auth0-guardian-recovery-choir-api/index.html',
+  'cloudflare-api-shield-schema-deep-all-api/index.html',
+  'vercel-firewall-ip-blacklist-deep-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-deep-all-keys-api/index.html',
+  'huggingface-jobs-inspect-riddle-api/index.html',
+  'github-copilot-seat-assignment-riddle-api/index.html',
+  'figma-mcp-code-connect-chip-api/index.html',
+  'slack-lists-access-bract-api/index.html',
+  'notion-data-sources-tight-api/index.html',
 ];
