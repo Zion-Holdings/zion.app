@@ -869,6 +869,12 @@ export function titleFromSlug(slug) {
     .replace(/\bPleasant Green\b/g, 'Pleasant Green')
     .replace(/\bWhite Branch\b/g, 'White Branch')
     .replace(/\bFristoe\b/g, 'Fristoe')
+    .replace(/\bZora\b/g, 'Zora')
+    .replace(/\bChalk Level\b/g, 'Chalk Level')
+    .replace(/\bIantha\b/g, 'Iantha')
+    .replace(/\bLebeck\b/g, 'Lebeck')
+    .replace(/\bMeinert\b/g, 'Meinert')
+    .replace(/\bMano\b/g, 'Mano')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11479,4 +11485,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-broadcloth-api/index.html',
   'slack-lists-access-fusiform-api/index.html',
   'notion-data-sources-drowsing-api/index.html',
+  'zora/index.html',
+  'chalk-level/index.html',
+  'iantha/index.html',
+  'lebeck/index.html',
+  'meinert/index.html',
+  'mano/index.html',
+  'n8n-merge-by-unwrap-api/index.html',
+  'make-array-window-roll-api/index.html',
+  'n8n-item-lists-window-roll-api/index.html',
+  'make-array-window-unroll-api/index.html',
+  'n8n-item-lists-window-unroll-api/index.html',
+  'n8n-merge-by-wrap-api/index.html',
+  'paddle-catalog-afanc-api/index.html',
+  'stripe-radar-value-list-reclean-api/index.html',
+  'clerk-session-end-sclereid-api/index.html',
+  'auth0-mfa-recovery-nabedrennik-api/index.html',
+  'auth0-guardian-recovery-nabedrennik-api/index.html',
+  'cloudflare-api-shield-schema-mesoscopic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-mesoscopic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-mesoscopic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-saucisson-api/index.html',
+  'github-copilot-seat-assignment-saucisson-api/index.html',
+  'figma-mcp-code-connect-challis-api/index.html',
+  'slack-lists-access-sclereid-api/index.html',
+  'notion-data-sources-dozing-api/index.html',
 ];
