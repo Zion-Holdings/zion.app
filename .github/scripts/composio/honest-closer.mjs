@@ -490,6 +490,12 @@ export function titleFromSlug(slug) {
     .replace(/\bTightwad\b/g, 'Tightwad')
     .replace(/\bBrownington\b/g, 'Brownington')
     .replace(/\bMerwin\b/g, 'Merwin')
+    .replace(/\bAmoret\b/g, 'Amoret')
+    .replace(/\bLa Due\b/g, 'La Due')
+    .replace(/\bLeeton\b/g, 'Leeton')
+    .replace(/\bQuick City\b/g, 'Quick City')
+    .replace(/\bArchie\b/g, 'Archie')
+    .replace(/\bGunn City\b/g, 'Gunn City')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9550,4 +9556,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-velvet-api/index.html',
   'slack-lists-access-cilia-api/index.html',
   'notion-data-sources-quiet-api/index.html',
+  'amoret/index.html',
+  'la-due/index.html',
+  'leeton/index.html',
+  'quick-city/index.html',
+  'archie/index.html',
+  'gunn-city/index.html',
+  'n8n-merge-by-unbias-api/index.html',
+  'make-array-window-gore-api/index.html',
+  'n8n-item-lists-window-gore-api/index.html',
+  'make-array-window-ungore-api/index.html',
+  'n8n-item-lists-window-ungore-api/index.html',
+  'n8n-merge-by-bias-api/index.html',
+  'paddle-catalog-cyclops-api/index.html',
+  'stripe-radar-value-list-reshirr-api/index.html',
+  'clerk-session-end-setule-api/index.html',
+  'auth0-mfa-recovery-corporal-api/index.html',
+  'auth0-guardian-recovery-corporal-api/index.html',
+  'cloudflare-api-shield-schema-fine-all-api/index.html',
+  'vercel-firewall-ip-blacklist-fine-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-fine-all-keys-api/index.html',
+  'huggingface-jobs-inspect-noisette-api/index.html',
+  'github-copilot-seat-assignment-noisette-api/index.html',
+  'figma-mcp-code-connect-gauze-api/index.html',
+  'slack-lists-access-setule-api/index.html',
+  'notion-data-sources-still-api/index.html',
 ];
