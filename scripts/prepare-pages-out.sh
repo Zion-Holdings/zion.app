@@ -60,5 +60,18 @@ elif [ -f sitemap-0.xml ]; then
   cp -f sitemap-0.xml "$DEST/sitemap-0.xml"
 fi
 
+# Keep root assets in sync with public/ (Family A CSS/JS)
+if [ -d public/assets ]; then
+  mkdir -p "$DEST/assets"
+  cp -Rf public/assets/. "$DEST/assets/"
+fi
+
+# 5) Inject Family A chrome on HTML that still lacks site.css / zion-shell.js
+if command -v python3 >/dev/null 2>&1; then
+  DEST="$DEST" python3 "$ROOT/scripts/inject-zion-shell.py" "$DEST"
+else
+  echo "inject-zion-shell: python3 not found, skipping HTML chrome inject" >&2
+fi
+
 touch "$DEST/.nojekyll"
 echo "Prepared $DEST ($(find "$DEST" -type f | wc -l) files)"
