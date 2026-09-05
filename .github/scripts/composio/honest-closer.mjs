@@ -423,6 +423,12 @@ export function titleFromSlug(slug) {
     .replace(/\bWalnut Shade\b/g, 'Walnut Shade')
     .replace(/\bBranson West\b/g, 'Branson West')
     .replace(/\bPonce De Leon\b/g, 'Ponce de Leon')
+    .replace(/\bBrownbranch\b/g, 'Brownbranch')
+    .replace(/\bProtem\b/g, 'Protem')
+    .replace(/\bKissee Mills\b/g, 'Kissee Mills')
+    .replace(/\bTaneyville\b/g, 'Taneyville')
+    .replace(/\bPowersite\b/g, 'Powersite')
+    .replace(/\bForsyth\b/g, 'Forsyth')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -9208,4 +9214,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-polish-api/index.html',
   'slack-lists-access-palea-api/index.html',
   'notion-data-sources-pithy-api/index.html',
+  'brownbranch/index.html',
+  'protem/index.html',
+  'kissee-mills/index.html',
+  'taneyville/index.html',
+  'powersite/index.html',
+  'forsyth/index.html',
+  'n8n-merge-by-unpleat-api/index.html',
+  'make-array-window-gather-api/index.html',
+  'n8n-item-lists-window-gather-api/index.html',
+  'make-array-window-ungather-api/index.html',
+  'n8n-item-lists-window-ungather-api/index.html',
+  'n8n-merge-by-pleat-api/index.html',
+  'paddle-catalog-sovereign-api/index.html',
+  'stripe-radar-value-list-recurl-api/index.html',
+  'clerk-session-end-awn-api/index.html',
+  'auth0-mfa-recovery-tabernacle-api/index.html',
+  'auth0-guardian-recovery-tabernacle-api/index.html',
+  'cloudflare-api-shield-schema-yocto-all-api/index.html',
+  'vercel-firewall-ip-blacklist-yocto-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-yocto-all-keys-api/index.html',
+  'huggingface-jobs-inspect-mirepoix-api/index.html',
+  'github-copilot-seat-assignment-mirepoix-api/index.html',
+  'figma-mcp-code-connect-luster-api/index.html',
+  'slack-lists-access-awn-api/index.html',
+  'notion-data-sources-curt-api/index.html',
 ];
