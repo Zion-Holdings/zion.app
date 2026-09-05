@@ -887,6 +887,13 @@ export function titleFromSlug(slug) {
     .replace(/\bFoose\b/g, 'Foose')
     .replace(/\bPlad\b/g, 'Plad')
     .replace(/\bBrazito\b/g, 'Brazito')
+    .replace(/\bLanes Prairie\b/g, 'Lanes Prairie')
+    .replace(/\bRosati\b/g, 'Rosati')
+    .replace(/\bGoodnight\b/g, 'Goodnight')
+    .replace(/\bSmallett\b/g, 'Smallett')
+    .replace(/\bBrushy Knob\b/g, 'Brushy Knob')
+    .replace(/\bDenlow\b/g, 'Denlow')
+    .replace(/\bMiddle Lamella\b/g, 'Middle-Lamella')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11572,4 +11579,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-moire-api/index.html',
   'slack-lists-access-plasmodesma-api/index.html',
   'notion-data-sources-napping-api/index.html',
+  'lanes-prairie/index.html',
+  'rosati/index.html',
+  'goodnight/index.html',
+  'smallett/index.html',
+  'brushy-knob/index.html',
+  'denlow/index.html',
+  'n8n-merge-by-unravel-api/index.html',
+  'make-array-window-brail-api/index.html',
+  'n8n-item-lists-window-brail-api/index.html',
+  'make-array-window-unbrail-api/index.html',
+  'n8n-item-lists-window-unbrail-api/index.html',
+  'n8n-merge-by-ravel-api/index.html',
+  'paddle-catalog-mami-wata-api/index.html',
+  'stripe-radar-value-list-restrop-api/index.html',
+  'clerk-session-end-middle-lamella-api/index.html',
+  'auth0-mfa-recovery-kamilavka-api/index.html',
+  'auth0-guardian-recovery-kamilavka-api/index.html',
+  'cloudflare-api-shield-schema-anyonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-anyonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-anyonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-sobrasada-api/index.html',
+  'github-copilot-seat-assignment-sobrasada-api/index.html',
+  'figma-mcp-code-connect-jacquard-api/index.html',
+  'slack-lists-access-middle-lamella-api/index.html',
+  'notion-data-sources-nodding-api/index.html',
 ];
