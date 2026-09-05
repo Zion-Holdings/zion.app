@@ -1,0 +1,380 @@
+<!--
+Revenue Calculator — Zion Tech Group
+Interactive pricing calculator for IT & AI services.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"/>
+<link rel="stylesheet" href="/styles.css"/>
+<title>Pricing Calculator — IT & AI Services | Zion Tech Group</title>
+<meta name="description" content="Estimate the cost and ROI of AI and IT automation services for your business. Use our pricing calculator to find the right package for your needs."/>
+<meta name="keywords" content="AI services pricing, IT automation cost calculator, AI consulting pricing, managed IT services pricing, AI implementation cost, IT services pricing calculator"/>
+<link rel="canonical" href="https://ziontechgroup.com/pricing-calculator/"/>
+<meta property="og:title" content="Pricing Calculator — IT & AI Services | Zion Tech Group"/>
+<meta property="og:description" content="Estimate costs and ROI for AI and IT automation services. Find the right package for your business needs."/>
+<meta property="og:url" content="https://ziontechgroup.com/pricing-calculator/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://ziontechgroup.com/og-pricing.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Pricing Calculator — IT & AI Services | Zion Tech Group"/>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/icon.svg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pricing Calculator — Zion Tech Group",
+  "description": "Estimate costs and ROI for AI and IT automation services with our interactive pricing calculator.",
+  "url": "https://ziontechgroup.com/pricing-calculator/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com"
+  }
+}
+</script>
+<style>
+:root { --purple: #a855f7; --pink: #ec4899; --blue: #3b82f6; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-700: #334155; --slate-400: #94a3b8; --slate-300: #cbd5e1; --white: #f8fafc; --green: #22c55e; --red: #ef4444; --amber: #f59e0b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--slate-950); color: var(--white); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.nav-brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 16px; }
+.nav-links a { color: var(--slate-300); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.header { text-align: center; padding: 80px 24px 40px; }
+.header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, var(--white), var(--slate-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header p { color: var(--slate-400); font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
+.section { padding: 60px 0; }
+.section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+.section .subtitle { color: var(--slate-400); font-size: 1.0625rem; max-width: 700px; margin-bottom: 40px; }
+.cta-section { text-align: center; padding: 60px 24px; background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.1), transparent 70%); }
+.cta-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+.footer { text-align: center; padding: 40px 24px; border-top: 1px solid rgba(148, 163, 184, 0.1); color: var(--slate-400); font-size: 0.875rem; }
+.footer a { color: var(--purple); text-decoration: none; }
+
+/* Calculator styles */
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+@media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+.calc-panel { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 16px; padding: 32px; }
+.calc-panel h3 { font-size: 1.25rem; margin-bottom: 24px; }
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; color: var(--slate-300); font-size: 0.875rem; font-weight: 500; margin-bottom: 6px; }
+.input-group select, .input-group input[type="range"] { width: 100%; }
+.input-group select { background: rgba(15, 23, 42, 0.8); border: 1px solid var(--slate-700); color: var(--white); padding: 10px 14px; border-radius: 8px; font-size: 0.9375rem; appearance: none; cursor: pointer; }
+.input-group select:focus { outline: none; border-color: var(--purple); }
+.range-container { display: flex; align-items: center; gap: 16px; }
+.range-container input[type="range"] { flex: 1; accent-color: var(--purple); height: 6px; }
+.range-value { font-size: 1.25rem; font-weight: 700; color: var(--purple); min-width: 80px; text-align: right; }
+.range-labels { display: flex; justify-content: space-between; color: var(--slate-400); font-size: 0.8125rem; margin-top: 4px; }
+
+/* Results */
+.results-panel { background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(236, 72, 153, 0.05)); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 16px; padding: 32px; position: sticky; top: 100px; }
+.results-panel h3 { font-size: 1.25rem; margin-bottom: 24px; }
+.result-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.result-row:last-child { border-bottom: none; }
+.result-label { color: var(--slate-400); font-size: 0.9375rem; }
+.result-value { color: var(--white); font-weight: 700; font-size: 1.125rem; }
+.result-value.positive { color: var(--green); }
+.result-value.highlight { color: var(--purple); font-size: 1.5rem; }
+.result-value.warning { color: var(--amber); }
+.total-row { margin-top: 24px; padding-top: 24px; border-top: 2px solid rgba(168, 85, 247, 0.3); }
+.total-row .result-label { font-size: 1.125rem; font-weight: 600; color: var(--white); }
+.total-row .result-value { font-size: 2rem; color: var(--purple); }
+
+/* ROI section */
+.roi-section { margin-top: 32px; }
+.roi-bar { height: 12px; border-radius: 6px; background: var(--slate-800); overflow: hidden; margin: 8px 0; position: relative; }
+.roi-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--purple)); border-radius: 6px; transition: width 0.3s; }
+.roi-label { display: flex; justify-content: space-between; color: var(--slate-400); font-size: 0.8125rem; margin-top: 4px; }
+
+.packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px; }
+.package-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.1); border-radius: 16px; padding: 32px; transition: all 0.3s; text-align: center; }
+.package-card:hover { border-color: var(--purple); transform: translateY(-2px); }
+.package-card.featured { border-color: var(--purple); position: relative; }
+.package-card.featured::before { content: "Most Popular"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 4px 16px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+.package-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+.package-price { font-size: 2.5rem; font-weight: 800; color: var(--purple); margin: 16px 0; }
+.package-price span { font-size: 1rem; color: var(--slate-400); font-weight: 400; }
+.package-features { list-style: none; margin: 16px 0; text-align: left; }
+.package-features li { color: var(--slate-400); font-size: 0.9375rem; padding: 6px 0; padding-left: 24px; position: relative; }
+.package-features li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+.package-card .btn { display: inline-block; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 12px 28px; border-radius: 9999px; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: opacity 0.2s; margin-top: 16px; }
+.package-card .btn:hover { opacity: 0.9; }
+.package-card .btn-outline { display: inline-block; border: 1px solid var(--slate-700); color: var(--slate-300); padding: 12px 28px; border-radius: 9999px; font-weight: 600; font-size: 0.9375rem; text-decoration: none; transition: all 0.2s; margin-top: 12px; }
+.package-card .btn-outline:hover { border-color: var(--purple); color: var(--white); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-brand">Zion Tech Group</a>
+  <div class="nav-links">
+    <a href="/services/">Services</a>
+    <a href="/solutions/">Solutions</a>
+    <a href="/tools/">Tools</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/" class="btn" style="background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; padding: 8px 20px; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; text-decoration: none;">Get a Proposal</a>
+  </div>
+</nav>
+
+<header class="header">
+  <h1>Pricing Calculator</h1>
+  <p>Estimate the cost and ROI of AI and IT automation services for your business. Find the right package for your needs.</p>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="calc-grid">
+      <!-- Input panel -->
+      <div class="calc-panel">
+        <h3>Configure Your Needs</h3>
+
+        <div class="input-group">
+          <label for="service-type">Service Type</label>
+          <select id="service-type" onchange="calculate()">
+            <option value="support">AI Customer Support Automation</option>
+            <option value="analytics">AI Data &amp; Analytics Platform</option>
+            <option value="cyber">AI-Powered Cybersecurity</option>
+            <option value="cloud">Cloud Cost Optimization</option>
+            <option value="devops">DevOps / DevSecOps Automation</option>
+            <option value="workflow">AI Workflow Automation</option>
+            <option value="assessment">AI Readiness Assessment</option>
+            <option value="implementation">Implementation Sprint</option>
+            <option value="managed">Managed Service Retainer</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="company-size">Company Size</label>
+          <select id="company-size" onchange="calculate()">
+            <option value="small">Small (1-50 employees)</option>
+            <option value="medium" selected>Medium (51-500 employees)</option>
+            <option value="large">Large (501-5,000 employees)</option>
+            <option value="enterprise">Enterprise (5,000+ employees)</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="complexity">Implementation Complexity</label>
+          <select id="complexity" onchange="calculate()">
+            <option value="basic">Basic — Standard setup, existing tools</option>
+            <option value="moderate" selected>Moderate — Custom configuration, some integrations</option>
+            <option value="advanced">Advanced — Custom development, multiple systems</option>
+            <option value="enterprise">Enterprise — Full-scale deployment, custom AI models</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="timeline">Timeline</label>
+          <select id="timeline" onchange="calculate()">
+            <option value="rush">Rush (1-2 weeks) — 25% expedite fee</option>
+            <option value="standard" selected>Standard (3-4 weeks)</option>
+            <option value="relaxed">Relaxed (6-8 weeks) — 10% discount</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="annual-save">Estimated Annual Savings Target</label>
+          <div class="range-container">
+            <input type="range" id="annual-save" min="10000" max="5000000" step="10000" value="150000" oninput="updateRange(this)" onchange="calculate()"/>
+            <div class="range-value" id="annual-save-display">$150K</div>
+          </div>
+          <div class="range-labels">
+            <span>$10K</span>
+            <span>$5M</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results panel -->
+      <div class="results-panel">
+        <h3>Your Estimate</h3>
+        <div id="results-content">
+          <div class="result-row">
+            <span class="result-label">Estimated Investment</span>
+            <span class="result-value highlight" id="est-investment">—</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Estimated Timeline</span>
+            <span class="result-value" id="est-timeline">—</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Expected Annual Savings</span>
+            <span class="result-value positive" id="est-savings">—</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">ROI (Year 1)</span>
+            <span class="result-value positive" id="est-roi">—</span>
+          </div>
+          <div class="riO-section">
+            <h4 style="color: var(--slate-300); margin-bottom: 12px; font-size: 0.9375rem;">ROI Projection</h4>
+            <div class="roi-bar"><div class="roi-fill" id="roi-fill-1yr" style="width: 0%;"></div></div>
+            <div class="roi-label"><span>Year 1</span><span id="roi-pct-1yr">0%</span></div>
+            <div class="roi-bar"><div class="roi-fill" id="roi-fill-2yr" style="width: 0%;"></div></div>
+            <div class="roi-label"><span>Year 2</span><span id="roi-pct-2yr">0%</span></div>
+            <div class="roi-bar"><div class="roi-fill" id="roi-fill-3yr" style="width: 0%;"></div></div>
+            <div class="roi-label"><span>Year 3</span><span id="roi-pct-3yr">0%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Packages -->
+    <h2 style="margin-top: 60px;">Our Packages</h2>
+    <p class="subtitle">Transparent pricing for every stage of your AI and IT automation journey.</p>
+
+    <div class="packages-grid">
+      <div class="package-card">
+        <div class="package-name">AI Readiness Assessment</div>
+        <div class="package-price">$499 <span>one-time</span></div>
+        <ul class="package-features">
+          <li>Current IT infrastructure evaluation</li>
+          <li>AI readiness scorecard</li>
+          <li>Prioritized automation opportunities</li>
+          <li>Detailed implementation roadmap</li>
+          <li>Executive summary report</li>
+        </ul>
+        <a href="/contact/" class="btn-outline">Get Started</a>
+      </div>
+
+      <div class="package-card featured">
+        <div class="package-name">Implementation Sprint</div>
+        <div class="package-price">$2,999 <span>per sprint</span></div>
+        <ul class="package-features">
+          <li>Hands-on implementation of your chosen solution</li>
+          <li>Setup, configuration &amp; testing</li>
+          <li>Team training &amp; documentation</li>
+          <li>30 days post-launch support</li>
+          <li>Custom proposal within 24 hours</li>
+        </ul>
+        <a href="/contact/" class="btn">Get Started</a>
+        <a href="/stripe/?package=implementation" class="btn-outline">Pay via Stripe</a>
+      </div>
+
+      <div class="package-card">
+        <div class="package-name">Managed Service Retainer</div>
+        <div class="package-price">From $999 <span>/month</span></div>
+        <ul class="package-features">
+          <li>24/7 AI operations monitoring</li>
+          <li>Regular strategy reviews</li>
+          <li>Priority access to new capabilities</li>
+          <li>Dedicated support team</li>
+          <li>Monthly performance reports</li>
+        </ul>
+        <a href="/contact/" class="btn">Get Started</a>
+        <a href="/stripe/?package=managed" class="btn-outline">Subscribe via Stripe</a>
+      </div>
+    </div>
+
+    <p style="color: var(--slate-500); font-size: 0.8125rem; text-align: center; margin-top: 32px;">All prices in USD. Custom enterprise pricing available — contact us for a quote. Payment via Stripe. 100% satisfaction guarantee on first sprint.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Get Started?</h2>
+    <p>Get a custom proposal tailored to your specific needs. Response within 24 hours.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+      <a href="/contact/" class="btn" style="padding: 14px 32px; font-size: 1rem;">Get a Custom Proposal</a>
+      <a href="https://calendly.com/kleber-garcia-alcatrao/zion-tech-group-discovery-call" class="btn-outline" style="padding: 14px 32px; font-size: 1rem;" target="_blank">Book a Paid Discovery Call →</a>
+    </div>
+    <p style="color: var(--slate-500); font-size: 0.875rem;">No commitment required · Response within 24 hours · Payments via Stripe</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2026 Zion Tech Group. All rights reserved. | <a href="/">Home</a> | <a href="/services/">Services</a> | <a href="/contact/">Contact</a> | <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> | +1 302 464 0950</p>
+</footer>
+
+<script>
+function updateRange(el) {
+  const val = parseInt(el.value);
+  const display = document.getElementById('annual-save-display');
+  if (val >= 1000000) {
+    display.textContent = '$' + (val / 1000000).toFixed(1) + 'M';
+  } else if (val >= 1000) {
+    display.textContent = '$' + (val / 1000).toFixed(0) + 'K';
+  } else {
+    display.textContent = '$' + val;
+  }
+  calculate();
+}
+
+function calculate() {
+  const service = document.getElementById('service-type').value;
+  const size = document.getElementById('company-size').value;
+  const complexity = document.getElementById('complexity').value;
+  const timeline = document.getElementById('timeline').value;
+  const savingsTarget = parseInt(document.getElementById('annual-save').value);
+
+  // Base pricing by service
+  const base = {
+    support: 15000,
+    analytics: 25000,
+    cyber: 30000,
+    cloud: 20000,
+    devops: 18000,
+    workflow: 12000,
+    assessment: 499,
+    implementation: 2999,
+    managed: 999
+  };
+
+  // Size multiplier
+  const sizeMult = { small: 0.7, medium: 1.0, large: 1.5, enterprise: 2.5 };
+
+  // Complexity multiplier
+  const compMult = { basic: 0.8, moderate: 1.0, advanced: 1.5, enterprise: 2.2 };
+
+  // Timeline modifier
+  const timeMod = { rush: 1.25, standard: 1.0, relaxed: 0.9 };
+
+  const basePrice = base[service] || 20000;
+  const total = Math.round(basePrice * sizeMult[size] * compMult[complexity] * timeMod[timeline]);
+
+  // Timeline text
+  const timelineText = {
+    rush: '1-2 weeks (expedited)',
+    standard: '3-4 weeks',
+    relaxed: '6-8 weeks'
+  };
+
+  // ROI calculation
+  const monthly = service === 'managed' ? total : 0;
+  const annualCost = service === 'managed' ? monthly * 12 : total;
+  const roi1yr = annualCost > 0 ? Math.round(((savingsTarget - annualCost) / annualCost) * 100) : 0;
+  const roi2yr = annualCost > 0 ? Math.round(((savingsTarget * 2 - annualCost) / annualCost) * 100) : 0;
+  const roi3yr = annualCost > 0 ? Math.round(((savingsTarget * 3 - annualCost) / annualCost) * 100) : 0;
+
+  // Display
+  const formatCurrency = (val) => {
+    if (val >= 1000000) return '$' + (val / 1000000).toFixed(2) + 'M';
+    if (val >= 1000) return '$' + (val / 1000).toFixed(0) + 'K';
+    return '$' + val;
+  };
+
+  document.getElementById('est-investment').textContent = service === 'managed' ? formatCurrency(total) + '/month' : formatCurrency(total) + ' (one-time)';
+  document.getElementById('est-timeline').textContent = timelineText[timeline];
+  document.getElementById('est-savings').textContent = formatCurrency(savingsTarget) + '/year';
+  document.getElementById('est-roi').textContent = roi1yr >= 0 ? '+' + roi1yr + '%' : roi1yr + '%';
+
+  // ROI bars
+  const roiValues = [roi1yr, roi2yr, roi3yr];
+  const maxRoi = Math.max(...roiValues, 100);
+  for (let i = 1; i <= 3; i++) {
+    const pct = Math.min((roiValues[i-1] / maxRoi) * 100, 100);
+    document.getElementById('roi-fill-' + i + 'yr').style.width = pct + '%';
+    document.getElementById('roi-pct-' + i + 'yr').textContent = roiValues[i-1] >= 0 ? '+' + roiValues[i-1] + '%' : roiValues[i-1] + '%';
+  }
+}
+
+// Initial calculation
+window.addEventListener('DOMContentLoaded', calculate);
+</script>
+
+</body>
+</html>

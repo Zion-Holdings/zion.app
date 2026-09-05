@@ -15,8 +15,13 @@
 /dashboard/    /contact/    301
 /docs/    /    301
 /automation/  /services/ai-workflow-automation/  301
+# GitHub Pages does not apply Netlify _redirects. Real HTML aliases live in public/:
+# /direitos/ → /direitos-globais/, /free-ai-itools/ → /free-ai-it-tools/,
+# /roteiros/, /agents/, /ai/demo/ are real index.html pages.
 /free-ai-itools/ /free-ai-it-tools/ 302
 /free-ai-itools /free-ai-it-tools/ 302
+/direitos/ /direitos-globais/ 302
+/direitos /direitos-globais/ 302
 /free-consultation /free-consultation/index.html 200
 /free-consultation/ /free-consultation/index.html 200
 /free-audit /free-audit/index.html 200
