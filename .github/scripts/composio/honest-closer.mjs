@@ -822,6 +822,12 @@ export function titleFromSlug(slug) {
     .replace(/\bHowes Mill\b/g, "Howe's Mill")
     .replace(/\bShort Bend\b/g, 'Short Bend')
     .replace(/\bCook Station\b/g, 'Cook Station')
+    .replace(/\bLake Tishomingo\b/g, 'Lake Tishomingo')
+    .replace(/\bZell\b/g, 'Zell')
+    .replace(/\bGipsy\b/g, 'Gipsy')
+    .replace(/\bBlodgett\b/g, 'Blodgett')
+    .replace(/\bWilson City\b/g, 'Wilson City')
+    .replace(/\bHowardville\b/g, 'Howardville')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -11257,4 +11263,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-longcloth-api/index.html',
   'slack-lists-access-protophloem-api/index.html',
   'notion-data-sources-stuporous-api/index.html',
+  'lake-tishomingo/index.html',
+  'zell/index.html',
+  'gipsy/index.html',
+  'blodgett/index.html',
+  'wilson-city/index.html',
+  'howardville/index.html',
+  'n8n-merge-by-unfetter-api/index.html',
+  'make-array-window-hobble-api/index.html',
+  'n8n-item-lists-window-hobble-api/index.html',
+  'make-array-window-unhobble-api/index.html',
+  'n8n-item-lists-window-unhobble-api/index.html',
+  'n8n-merge-by-fetter-api/index.html',
+  'paddle-catalog-yokai-api/index.html',
+  'stripe-radar-value-list-rewax-api/index.html',
+  'clerk-session-end-metaxylem-api/index.html',
+  'auth0-mfa-recovery-orarion-api/index.html',
+  'auth0-guardian-recovery-orarion-api/index.html',
+  'cloudflare-api-shield-schema-gluonic-all-api/index.html',
+  'vercel-firewall-ip-blacklist-gluonic-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-gluonic-all-keys-api/index.html',
+  'huggingface-jobs-inspect-lomo-api/index.html',
+  'github-copilot-seat-assignment-lomo-api/index.html',
+  'figma-mcp-code-connect-silesia-api/index.html',
+  'slack-lists-access-metaxylem-api/index.html',
+  'notion-data-sources-comatose-api/index.html',
 ];
