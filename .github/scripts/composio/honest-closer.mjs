@@ -375,6 +375,12 @@ export function titleFromSlug(slug) {
     .replace(/\bReadsville\b/g, 'Readsville')
     .replace(/\bWardsville\b/g, 'Wardsville')
     .replace(/\bSt Thomas\b/g, 'St. Thomas')
+    .replace(/\bSt Martins\b/g, 'St. Martins')
+    .replace(/\bHenley\b/g, 'Henley')
+    .replace(/\bOsage Bend\b/g, 'Osage Bend')
+    .replace(/\bLoose Creek\b/g, 'Loose Creek')
+    .replace(/\bKoeltztown\b/g, 'Koeltztown')
+    .replace(/\bBonnots Mill\b/g, 'Bonnots Mill')
     .replace(/\bIf Else\b/g, 'If/Else')
     .replace(/\bTo Xml\b/g, 'to XML')
     .replace(/\bTo Json\b/g, 'to JSON')
@@ -8960,4 +8966,29 @@ export const SERP_CLOSER_PATHS = [
   'figma-mcp-code-connect-hatch-api/index.html',
   'slack-lists-access-gynoecium-api/index.html',
   'notion-data-sources-sage-api/index.html',
+  'st-martins/index.html',
+  'henley/index.html',
+  'osage-bend/index.html',
+  'loose-creek/index.html',
+  'koeltztown/index.html',
+  'bonnots-mill/index.html',
+  'n8n-merge-by-unsew-api/index.html',
+  'make-array-window-cinch-api/index.html',
+  'n8n-item-lists-window-cinch-api/index.html',
+  'make-array-window-uncinch-api/index.html',
+  'n8n-item-lists-window-uncinch-api/index.html',
+  'n8n-merge-by-sew-api/index.html',
+  'paddle-catalog-rehoboam-api/index.html',
+  'stripe-radar-value-list-reweave-api/index.html',
+  'clerk-session-end-androecium-api/index.html',
+  'auth0-mfa-recovery-piscina-api/index.html',
+  'auth0-guardian-recovery-piscina-api/index.html',
+  'cloudflare-api-shield-schema-yotta-all-api/index.html',
+  'vercel-firewall-ip-blacklist-yotta-all-api/index.html',
+  'cloudflare-api-shield-jwt-key-yotta-all-keys-api/index.html',
+  'huggingface-jobs-inspect-shred-api/index.html',
+  'github-copilot-seat-assignment-shred-api/index.html',
+  'figma-mcp-code-connect-incise-api/index.html',
+  'slack-lists-access-androecium-api/index.html',
+  'notion-data-sources-wry-api/index.html',
 ];
