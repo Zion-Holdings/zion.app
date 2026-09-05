@@ -57,3 +57,16 @@
 /use-cases/ /use-cases/index.html 200
 /solutions/healthcare /solutions/healthcare/index.html 200
 /solutions/healthcare/ /solutions/healthcare/index.html 200
+# QA pass 2 — durable aliases (Cloudflare / Netlify). GitHub Pages uses the HTML files.
+/book /booking/ 301
+/book/ /booking/ 301
+/success-stories /success-stories/index.html 200
+/success-stories/ /success-stories/index.html 200
+/privacy /privacy/index.html 200
+/privacy/ /privacy/index.html 200
+/cookie-policy /cookie-policy/index.html 200
+/cookie-policy/ /cookie-policy/index.html 200
+/contact /contact/index.html 200
+/contact/ /contact/index.html 200
+/plans /plans/index.html 200
+/plans/ /plans/index.html 200
