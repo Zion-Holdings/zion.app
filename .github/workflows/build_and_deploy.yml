@@ -25,6 +25,9 @@ jobs:
       - name: Prepare Pages artifact
         run: bash scripts/prepare-pages-out.sh
 
+      - name: Assert /services Family A (no SKU stubs)
+        run: python3 scripts/assert-no-service-stubs.py out
+
       - name: Assert money pages exist in artifact
         run: |
           set -euo pipefail
