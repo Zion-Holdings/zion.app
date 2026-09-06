@@ -4,6 +4,8 @@
 /sitemap.xml  /sitemap-0.xml  301
 
 /case-studies/    /contact/    301
+/industries/financial-services /industries/financial-services/index.html 200
+/industries/financial-services/ /industries/financial-services/index.html 200
 /industries/    /services/    301
 /free-tools-hub/    /tools/    301
 /products/    /services/    301
