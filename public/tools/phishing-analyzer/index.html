@@ -1,102 +1,90 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Phishing Analyzer · Zion Tech Group</title>
-<link rel="canonical" href="https://ziontechgroup.com/tools/phishing-analyzer/" />
-<meta name="description" content="Analise URLs suspeitas e detecte tentativas de phishing antes de clicar. Proteja sua empresa.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#e6f0ff;min-height:100vh;padding:24px}
-.max{max-width:800px;margin:0 auto}
-h1{font-size:2rem;margin:24px 0 8px}
-.sub{color:#94a3b8;margin-bottom:32px}
-.card{background:#1e293b;border-radius:12px;padding:24px;margin:16px 0}
-input{width:100%;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e6f0ff;font-size:1rem;margin:8px 0}
-input:focus{outline:none;border-color:#a78bfa}
-.btn{display:inline-block;padding:12px 24px;background:#a78bfa;color:#0b1220;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px;cursor:pointer;border:none}
-.btn:hover{background:#c4b5fd}
-.result{background:#1e293b;border-radius:12px;padding:24px;margin:24px 0}
-.result h2{margin-bottom:16px}
-.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #334155}
-.item:last-child{border-bottom:none}
-.label{color:#94a3b8}
-.value{font-weight:600}
-.ok{color:#34d399}
-.warn{color:#fbbf24}
-.err{color:#f87171}
-a{color:#a78bfa;text-decoration:none}
-.links{margin-top:32px;padding-top:24px;border-top:1px solid #334155}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phishing Analyzer | Zion Tech Group</title>
+  <meta name="description" content="Review URL and email signals to spot phishing indicators before clicking or forwarding." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/phishing-analyzer/" />
+  <meta property="og:title" content="Phishing Analyzer | Zion Tech Group" />
+  <meta property="og:url" content="https://ziontechgroup.com/tools/phishing-analyzer/" />
+  <style>
+  :root { --bg:#0b0f1a; --card:rgba(255,255,255,0.04); --border:rgba(255,255,255,0.08); --text:#e7eaf0; --muted:#a3a8b8; --accent:#7c3aed; --accent-2:#22d3ee; }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; background: linear-gradient(180deg,#0b0f1a 0%,#0f1626 100%); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  header { border-bottom: 1px solid var(--border); padding: 16px 0; }
+  nav a { margin-right: 16px; color: var(--text); font-weight: 500; }
+  nav a.brand { font-weight: 700; color: #fff; margin-right: 24px; }
+  .card { background: var(--card); border:1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 16px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; margin-top: 16px; }
+  .btn { display:inline-block; padding: 10px 16px; border-radius: 8px; background: var(--accent); color:#fff; font-weight:600; margin-top: 16px; margin-right: 8px; }
+  .btn-secondary { background: transparent; border:1px solid var(--border); color: var(--text); }
+  footer { border-top:1px solid var(--border); padding: 24px 0; margin-top: 40px; color: var(--muted); font-size: 14px; }
+  footer a { color: var(--muted); margin-right: 12px; }
+  </style>
 </head>
 <body>
-<div class="max">
-<h1>Phishing Analyzer</h1>
-<p class="sub">Analise URLs suspeitas antes de clicar</p>
-
-<div class="card">
-<label>URL ou domínio suspeito</label>
-<input type="text" id="url" placeholder="https://exemplo-suspeito.com/login">
-<button class="btn" onclick="analyze()">Analisar</button>
+<div class="container">
+  <header>
+    <nav>
+      <a href="/" class="brand">Zion Tech Group</a>
+      <a href="/services/">Services</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Phishing Analyzer</h1>
+    <p>Lightweight phishing signal checker. Use this checklist to evaluate suspicious URLs and emails before interacting.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>URL Signals</h3>
+        <div style="margin-top:12px;font-size:14px;line-height:1.8;color:var(--muted)">
+          <div>✓ Check the domain — look for misspellings, extra subdomains, or unexpected TLDs</div>
+          <div>✓ Hover over links before clicking — the real destination appears in the status bar</div>
+          <div>✓ Watch for URL shorteners hiding the final destination</div>
+          <div>✓ Be suspicious of urgent or threatening language in the message</div>
+        </div>
+        <a class="btn" href="/contact/">Talk to Security Team</a>
+      </div>
+      <div class="card">
+        <h3>Email Signals</h3>
+        <div style="margin-top:12px;font-size:14px;line-height:1.8;color:var(--muted)">
+          <div>✓ Verify the sender's address matches the claimed organization</div>
+          <div>✓ Watch for generic greetings like "Dear Customer" instead of your name</div>
+          <div>✓ Be cautious with attachments — especially .exe, .zip, or macro-enabled documents</div>
+          <div>✓ Question requests for credentials, payments, or personal data via email</div>
+        </div>
+        <a class="btn" href="/contact/">Get Training</a>
+      </div>
+      <div class="card">
+        <h3>What to Do</h3>
+        <div style="margin-top:12px;font-size:14px;line-height:1.8;color:var(--muted)">
+          <div>→ Don't click suspicious links or download attachments</div>
+          <div>→ Report the message to your IT or security team</div>
+          <div>→ Forward phishing emails to report-phishing@ziontechgroup.com</div>
+          <div>→ Delete the message after reporting</div>
+        </div>
+        <a class="btn" href="/contact/">Contact Security</a>
+      </div>
+    </div>
+    <div style="margin-top:24px;">
+      <a class="btn" href="/contact/">Get a Free Security Review</a>
+      <a class="btn btn-secondary" href="/services/">Explore All Services</a>
+    </div>
+  </main>
+  <footer>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/contact/">Contact</a>
+    <span>© Zion Tech Group</span>
+  </footer>
 </div>
-
-<div class="result hidden" id="result">
-<h2 id="urlDisplay"></h2>
-<div class="item"><span class="label">Status</span><span class="value" id="status"></span></div>
-<div class="item"><span class="label">Domínio</span><span class="value" id="domain"></span></div>
-<div class="item"><span class="label">Risco</span><span class="value" id="risk"></span></div>
-<div class="item"><span class="label">Recomendação</span><span class="value" id="rec"></span></div>
-</div>
-
-<div class="links">
-<p><a href="/services/">Serviços</a> · <a href="/discovery/">Agendar $99</a> · <a href="/tools/ssl-checker/">SSL Checker</a></p>
-</div>
-</div>
-
-<script>
-function analyze(){
-const url = document.getElementById('url').value.trim();
-if(!url) return;
-
-const result = document.getElementById('result');
-result.classList.remove('hidden');
-document.getElementById('urlDisplay').textContent = url;
-
-// Simple heuristic analysis
-const suspicious = ['login','verify','secure','account','update','confirm','bank','paypal','google','microsoft'];
-const verySuspicious = ['bit.ly','tinyurl','t.co','goo.gl','ow.ly','is.gd'];
-const domain = url.replace(/^https?:\/\//,'').split('/')[0];
-let risk = 'low';
-let status = 'Seguro';
-let rec = 'URL parece segura. Continue com cautela normal.';
-
-if (verySuspicious.some(s => domain.includes(s))) {
-  risk = 'high';
-  status = 'Suspeito';
-  rec = 'Encurtador de URL detectado. Use com extrema cautela.';
-}
-
-suspicious.forEach(s => {
-  if (domain.includes(s) && !domain.includes('google.com') && !domain.includes('microsoft.com')) {
-    risk = 'medium';
-    status = 'Atenção';
-    rec = 'Palavra-chave suspeita detectada. Verifique o domínio oficial.';
-  }
-});
-
-if (domain.includes('-') || domain.split('.').length > 3) {
-  risk = 'high';
-  status = 'Suspeito';
-  rec = 'Domínio com estrutura suspeita. Provavelmente phishing.';
-}
-
-const riskColors = {low: 'ok', medium: 'warn', high: 'err'};
-document.getElementById('status').innerHTML = `<span class="${riskColors[risk]}">${status}</span>`;
-document.getElementById('domain').textContent = domain;
-document.getElementById('risk').innerHTML = `<span class="${riskColors[risk]}">${risk === 'low' ? 'Baixo' : risk === 'medium' ? 'Médio' : 'Alto'}</span>`;
-document.getElementById('rec').textContent = rec;
-}
-</script>
 </body>
 </html>
