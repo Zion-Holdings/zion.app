@@ -42,5 +42,23 @@ jobs:
           fi
           exit "$missing"
 
+      - name: Assert Family A chrome tags
+        run: |
+          set -euo pipefail
+          missing=0
+          for f in blog/index.html discovery/index.html services/index.html; do
+            if [ ! -f "out/$f" ]; then
+              echo "::warning::skip missing out/$f"
+              continue
+            fi
+            if ! grep -q 'zion-shell.js' "out/$f"; then
+              echo "::error::Missing zion-shell.js in out/$f"
+              missing=1
+            else
+              echo "ok chrome out/$f"
+            fi
+          done
+          exit "$missing"
+
       - name: Artifact file count
         run: echo "Prepared $(find out -type f | wc -l) files"

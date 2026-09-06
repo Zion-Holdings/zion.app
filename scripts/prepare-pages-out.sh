@@ -60,5 +60,17 @@ elif [ -f sitemap-0.xml ]; then
   cp -f sitemap-0.xml "$DEST/sitemap-0.xml"
 fi
 
+# 5) Family A chrome: force assets + inject tags into assembled HTML
+mkdir -p "$DEST/assets/css" "$DEST/assets/js"
+if [ -f public/assets/css/site.css ]; then
+  cp -f public/assets/css/site.css "$DEST/assets/css/site.css"
+fi
+if [ -f public/assets/js/zion-shell.js ]; then
+  cp -f public/assets/js/zion-shell.js "$DEST/assets/js/zion-shell.js"
+fi
+if command -v python3 >/dev/null 2>&1 && [ -f "$ROOT/scripts/inject-zion-shell.py" ]; then
+  python3 "$ROOT/scripts/inject-zion-shell.py" "$DEST"
+fi
+
 touch "$DEST/.nojekyll"
 echo "Prepared $DEST ($(find "$DEST" -type f | wc -l) files)"

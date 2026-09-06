@@ -31,10 +31,13 @@
     '</div></footer>';
 
   function hideLegacyChrome() {
-    [].forEach.call(document.querySelectorAll('nav.top'), function (n) {
-      n.setAttribute('hidden', '');
-      n.style.display = 'none';
-    });
+    var sels = ['nav.top', 'header#site-navigation', '#site-navigation'];
+    for (var i = 0; i < sels.length; i++) {
+      [].forEach.call(document.querySelectorAll(sels[i]), function (n) {
+        n.setAttribute('hidden', '');
+        n.style.display = 'none';
+      });
+    }
   }
 
   function inject() {

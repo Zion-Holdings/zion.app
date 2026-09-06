@@ -24,7 +24,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Prepare Pages artifact
-        run: bash scripts/prepare-pages-out.sh
+        run: |
+          set -euo pipefail
+          bash scripts/prepare-pages-out.sh
+          python3 scripts/inject-zion-shell.py out
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
