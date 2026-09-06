@@ -1,0 +1,11 @@
+--- a/_redirects
++++ b/_redirects
+@@ -10,8 +10,6 @@
+ /free-tools-hub/       /free-tools-hub/index.html   200
+ /products/             /products/index.html         200
+ /consultation/         /consultation/index.html     200
+-/industries/insurance/          /industries/insurance/index.html   200
+-/industries/legal/              /industries/legal/index.html        200
+ /site-map/             /site-map/index.html         200
+ /faq/                  /faq/index.html              200
+ /status/               /status/index.html           200

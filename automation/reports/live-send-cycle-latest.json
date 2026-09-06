@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-09-05T14:16:09.596376+00:00",
+  "send_attempted": 5,
+  "send_succeeded": 5,
+  "recipient_domains": [
+    "totvs.com.br",
+    "stonepagamentos.com.br",
+    "nubank.com.br",
+    "magazineluiza.com.br",
+    "mercadolivre.com.br"
+  ],
+  "cycle_entries_count": 5,
+  "total_log_entries": 336
+}

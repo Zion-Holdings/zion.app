@@ -1,145 +1,157 @@
-"""
-Live site integrity check for https://ziontechgroup.com
-Crawl: parse sitemap.xml for the page list, HEAD each URL to check status.
-Report: total crawled, HTTP 200 count, broken count, first 10 broken
-URLs with classification: stale redirect, missing page, external reference error.
-"""
+#!/usr/bin/env python3
+"""Zion Tech Group site integrity crawler — no file mutations, read-only."""
+import shlex
 import sys
-import re
-from urllib.parse import urljoin, urlparse
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+import urllib.parse
+from collections import Counter
 
 import requests
+from bs4 import BeautifulSoup
 
-BASE_URL = "https://ziontechgroup.com"
-REQUEST_TIMEOUT = 15
-MAX_WORKERS = 12
+BASE = "https://ziontechgroup.com"
+DELAY = 0.25  # polite delay between requests
 
+session = requests.Session()
+session.headers.update({
+    "User-Agent": "Mozilla/5.0 (compatible; SiteIntegrityChecker/1.0)",
+    "Accept": "text/html,*/*",
+})
 
-def classify(status_code: int, error: str | None) -> str:
-    if 300 <= status_code < 400:
+visited = set()
+to_visit = [BASE]
+broken = []  # dicts: url, status, final_url, error, classification
+
+def normalize(url: str) -> str:
+    """Normalize URL: strip fragment, lowercase, collapse trailing slash on path."""
+    parsed = urllib.parse.urlparse(url)
+    parsed = parsed._replace(fragment="")
+    path = parsed.path
+    if path != "/" and path.endswith("/"):
+        path = path.rstrip("/")
+        parsed = parsed._replace(path=path)
+    return urllib.parse.urlunparse(parsed).lower()
+
+def is_internal(url: str) -> bool:
+    netloc = urllib.parse.urlparse(url).netloc.lower()
+    return netloc in ("ziontechgroup.com", "www.ziontechgroup.com", "")
+
+def classify_broken(url: str, status_code: int, error: str, final_url: str) -> str:
+    if error and any(k in error for k in ("Max retries", "Connection", "Timing out", "ReadTimeout")):
+        return "external reference error"
+    # Stale redirect: got a 3xx that didn't resolve to 200
+    if 300 <= status_code < 400 and status_code != 200:
         return "stale redirect"
-    if status_code in (404, 410, 403):
+    if status_code == 404:
         return "missing page"
-    if 400 <= status_code < 500:
+    if status_code >= 400:
         return "missing page"
-    if error:
+    # If final URL points off-domain, it's an external reference gone wrong
+    if urllib.parse.urlparse(final_url).netloc.lower() != "ziontechgroup.com":
         return "external reference error"
     return "missing page"
 
+total_crawled = 0
+ok_count = 0
+start = time.time()
+MAX_TIME = 120  # seconds
 
-def check_url(url: str) -> tuple[str, int, str, str | None]:
+print(f"Starting crawl of {BASE} ...", flush=True)
+
+while to_visit and (time.time() - start) < MAX_TIME:
+    url = to_visit.pop(0)
+    norm = normalize(url)
+    if norm in visited:
+        continue
+    visited.add(norm)
+    total_crawled += 1
+
     try:
-        r = requests.head(url, timeout=REQUEST_TIMEOUT, allow_redirects=True,
-                          headers={
-                              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                                            "AppleWebKit/537.36 Chrome/120.0 Safari/537.36",
-                              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-                          })
-        return url, r.status_code, r.url, None
-    except requests.exceptions.ConnectionError:
-        return url, 0, url, "ConnectionError"
-    except requests.exceptions.Timeout:
-        return url, 0, url, "Timeout"
-    except requests.exceptions.TooManyRedirects:
-        return url, 0, url, "TooManyRedirects"
-    except requests.exceptions.RequestException as e:
-        return url, 0, url, str(e)[:80]
+        resp = session.get(url, timeout=15, allow_redirects=True)
+        final_url = resp.url
+        status = resp.status_code
 
-
-def parse_sitemap(url: str) -> list[str]:
-    urls = []
-    try:
-        r = requests.get(url, timeout=30, headers={
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                          "AppleWebKit/537.36 Chrome/120.0 Safari/537.36",
+        if status == 200:
+            ok_count += 1
+            content_type = resp.headers.get("Content-Type", "")
+            if "text/html" in content_type:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                for a in soup.find_all("a", href=True):
+                    href = a.get("href", "").strip()
+                    if href.startswith(("mailto:", "tel:", "javascript:", "#")):
+                        continue
+                    full = urllib.parse.urljoin(url, href)
+                    if is_internal(full) and normalize(full) not in visited:
+                        to_visit.append(full)
+        else:
+            err_msg = ""
+            if hasattr(resp, 'reason'):
+                err_msg = str(resp.reason)
+            classification = classify_broken(url, status, err_msg, final_url)
+            broken.append({
+                "url": url,
+                "status": status,
+                "final_url": final_url,
+                "error": err_msg,
+                "classification": classification,
+            })
+    except (requests.exceptions.Timeout, requests.exceptions.ReadTimeout):
+        broken.append({
+            "url": url,
+            "status": 0,
+            "final_url": "",
+            "error": "Timeout",
+            "classification": "external reference error",
         })
-        if r.status_code != 200:
-            return urls
-        text = r.text
-        # sitemap index?
-        if "<sitemap>" in text or "<sitemap " in text:
-            for m in re.finditer(r"<loc>(.*?)</loc>", text, re.DOTALL):
-                sub = m.group(1).strip()
-                if sub:
-                    urls.extend(parse_sitemap(sub))
-            return urls
-        for m in re.finditer(r"<loc>(.*?)</loc>", text, re.DOTALL):
-            loc = m.group(1).strip()
-            if loc:
-                urls.append(loc)
+    except requests.exceptions.ConnectionError:
+        broken.append({
+            "url": url,
+            "status": 0,
+            "final_url": "",
+            "error": "ConnectionError",
+            "classification": "external reference error",
+        })
     except Exception as e:
-        print(f"Warning: sitemap parse failed: {e}", file=sys.stderr)
-    return urls
+        broken.append({
+            "url": url,
+            "status": 0,
+            "final_url": "",
+            "error": str(e)[:120],
+            "classification": "external reference error",
+        })
 
+    if total_crawled % 25 == 0:
+        print(f"  ... crawled {total_crawled} pages, queue: {len(to_visit)}", flush=True)
 
-def main():
-    print("Parsing sitemap.xml ...", flush=True)
-    sitemap_urls = parse_sitemap(urljoin(BASE_URL, "/sitemap.xml"))
-    print(f"Sitemap: {len(sitemap_urls)} URLs", flush=True)
+# ---- REPORT ----
+elapsed = time.time() - start
+print()
+print("=" * 65)
+print("  ZIONTECHOUP.COM — LIVE SITE INTEGRITY CHECK")
+print("=" * 65)
+print(f"  Total crawled:     {total_crawled}")
+print(f"  HTTP 200 count:    {ok_count}")
+print(f"  Broken count:      {len(broken)}")
+print(f"  Runtime:           {elapsed:.1f}s")
+print()
 
-    # Deduplicate
-    seen = set()
-    unique = []
-    for u in sitemap_urls:
-        n = urlparse(u)._replace(fragment="").geturl()
-        if n not in seen:
-            seen.add(n)
-            unique.append(n)
-    print(f"Unique: {len(unique)} URLs", flush=True)
+if broken:
+    print("  BROKEN URLS (first 10 of {}):".format(len(broken)))
+    print("  " + "-" * 62)
+    for i, b in enumerate(broken[:10], 1):
+        print(f"  {i}. {b['url']}")
+        print(f"     Status:  {b['status']}")
+        print(f"     Final:   {b['final_url']}")
+        print(f"     Error:   {b['error']}")
+        print(f"     Class:   {b['classification']}")
+        print()
+else:
+    print("  No broken URLs found. ✓")
 
-    total = 0
-    ok = 0
-    broken = 0
-    results = []
-
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
-        futures = {ex.submit(check_url, u): u for u in unique}
-        for f in as_completed(futures):
-            url, status, final, error = f.result()
-            total += 1
-            if error is None and 200 <= status < 300:
-                ok += 1
-            else:
-                broken += 1
-                cls = classify(status, error)
-                results.append((url, status, final, cls, error))
-            if total % 500 == 0:
-                print(f"  Checked {total}/{len(unique)} ...", flush=True)
-
-    results.sort(key=lambda r: r[0])
-
-    print("\n" + "=" * 70)
-    print("SITE INTEGRITY CHECK — https://ziontechgroup.com")
-    print("=" * 70)
-    print(f"Total crawled:   {total}")
-    print(f"HTTP 200 OK:     {ok}")
-    print(f"Broken:          {broken}")
-    print("-" * 70)
-    if broken == 0:
-        print("No broken URLs found.")
-    else:
-        print(f"FIRST {min(10, len(results))} BROKEN URLS:")
-        print("-" * 70)
-        for i, (url, status, final, cls, error) in enumerate(results[:10], 1):
-            s = str(status) if status else "CONN_ERR"
-            print(f"{i:>2}. [{cls.upper()}] ({s})")
-            print(f"    URL:      {url}")
-            if final and final != url:
-                print(f"    Redirected to: {final}")
-            if error:
-                print(f"    Error:    {error}")
-            print()
-        if len(results) > 10:
-            print(f"... and {len(results) - 10} more broken URLs (omitted).")
-
-        print("-" * 70)
-        print("BREAKDOWN BY CLASSIFICATION:")
-        from collections import Counter
-        counts = Counter(r[3] for r in results)
-        for cls, cnt in counts.most_common():
-            print(f"  {cls:<25} {cnt}")
-
-
-if __name__ == "__main__":
-    main()
+# Classification breakdown
+class_counts = Counter(b["classification"] for b in broken)
+if class_counts:
+    print("  CLASSIFICATION BREAKDOWN:")
+    for klass, cnt in class_counts.most_common():
+        print(f"    {klass}: {cnt}")
+    print()

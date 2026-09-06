@@ -1,0 +1,6002 @@
+[
+  {
+    "url": "https://ziontechgroup.com/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/5g-solutions/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/about/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/academy/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/admin-dashboard/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/agents-monitoring/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-agents/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-chat-companion/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-chatbot-builder/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-claims-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-customer-360/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-customer-support-pro/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-dashboard/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-data-contract-governance-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-financial-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-first-cloud-cost-optimization/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-first-cloud-migration-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-first-devsecops-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-first-education-platforms-and-learning-intelligence-in-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-first-incident-response-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-first-low-code-workflow-automation-for-brazilian-it-in-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-first-occupational-health-and-safety-intelligence-in-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-fraud-detection/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-lab/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-medical-diagnosis-assistant/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-ml-platform/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-partnership-growth-playbook-2026/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-powered-devops/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-powered-email-analyzer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-predictive-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-predictive-maintenance/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-price-optimizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-recommendation-engine/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-route-optimizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-services-pricing/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-smart-inventory/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-smart-invoice/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-stock-portfolio-manager/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-supply-chain/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ai-workflow-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/api-development/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/api-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/architecture-patterns/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/automation-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/blockchain-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/blockchain-solutions/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/blog/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/business-intelligence/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/business-solutions/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/careers/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/case-studies/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ceo-partnership-negotiation-email-templates/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/changelog/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/client-portal/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/cloud-cost-optimization-platform/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/cloud-infrastructure/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/cloud-infrastructure-management/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/cloud-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/cms-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/collaboration-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/community/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/compliance-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/computer-vision/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/configurator/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/consultation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/consulting/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/contact/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/cookie-policy/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/cookies/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/custom-development/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/cybersecurity/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/dashboard/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/data-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/data-analytics-bi/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/data-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/database-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/demo/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/devops-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/devops-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/devsecops-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/digital-transformation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/digital-twin-platform/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/disaster-recovery/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/docs/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/ecommerce-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/edtech-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/email-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/email-intelligence/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/enterprise-security/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/faq/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/fintech-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/free-ai-it-tools/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/free-ai-readiness-audit/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/free-ai-tools/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/free-audit/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/free-consultation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/free-contact/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/free-resources/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/free-tools/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/free-tools-hub/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/health/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/health-dashboard/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/healthcare-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/help/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/iac-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/identity-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/industries/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/industry-solutions/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/innovation-bundles/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/iot-edge/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/iot-platform/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/iot-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/it-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/leads/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/learning-paths/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/low-code-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/marketing-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/media-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/micro-saas/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/micro-saas-qualification-rubric/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/micro-saas-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/mobile-app-development/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/mobile-development/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/monitoring/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/newsletter/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/observability-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/online-learning-platform/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/partner-portal/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/partners/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/monetization/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/affiliate/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/stripe/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/payment-cancelled/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/payment-success/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/portal/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/press/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/pricing/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/pricing-calculator/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/privacy/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/process-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/property-management-ai/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/proposal/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/proposal-generator/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/proposals/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/public-roadmap/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/robotic-process-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/roi-calculator/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/sdk/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/search/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/search-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/security-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/security-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/service-comparison/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/service-discovery/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services-explorer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services-hub/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/site-map/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/sla/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/smart-inventory/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/solutions/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/status/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/status-page/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/streaming-services/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/supply-chain-optimizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/system-integration/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/telemedicine/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/terms/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/testimonials/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/tools/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/training/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/use-cases/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/workflow-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-api-tester/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-approval-workflow/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-brand-monitor/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-capacity-planner/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-chatbot-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-chatbot-builder/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-code-assistant/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-code-reviewer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-compliance-checker/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-contract-lifecycle/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-conversation-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-cost-optimizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-customer-360/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-customer-feedback/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-customer-success/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-customer-support-pro/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-cyber-threat-intel/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-data-governance/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-database-optimizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-demand-forecasting/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-document-classifier/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-email-marketing-pro/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-employee-experience/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-expense-tracker/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-field-service-manager/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-fraud-detection/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-help-desk/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-incident-predictor/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-incident-response/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-inventory-planner/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-knowledge-base/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-knowledge-management/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-lead-enrichment/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-lead-scoring/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-market-intelligence/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-marketing-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-meeting-assistant/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-predictive-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-pricing-intelligence/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-procurement-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-project-portfolio/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-quality-assurance/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-quality-insights/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-report-generator/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-resource-scheduler/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-revenue-forecaster/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-risk-assessor/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-schedule-optimizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-seo-optimizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-social-media-manager/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-spend-intelligence/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-supplier-risk/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-supply-visibility/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-sustainability-tracker/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-talent-acquisition/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-vendor-manager/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-vendor-risk-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-voice-assistant/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-workflow-automator/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-workflow-automator-pro/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-workflow-orchestrator/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-ai-workforce-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-analytics-pro/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-cloud-vault/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-content-studio/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-crm-intelligence/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-data-sync/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-devops-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-email-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-invoice-genius/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-lead-magnet/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-performance-monitor/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-project-master/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-security-shield/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-smart-analytics-dashboard/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/zion-smart-crm-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-code-generation--optimization-cb3ddf63/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-customer-churn-prediction-3f074c6f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-financial-planning--analysis-41f76ffa/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-powered-data-quality-manager-cf42846c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-powered-disaster-recovery-0f33bdf8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-powered-market-intelligence-5f01aacd/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-powered-predictive-analytics-suite-26ad0aab/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-powered-seo-content-engine-10368583/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-sales-lead-scoring-engine-017f37a4/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-ai-supply-chain-optimization-37d6b437/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-autonomous-customer-service-ai-70246828/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-intelligent-document-processing-ai-07307104/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-networks-ai-powered-chatbot-builder-f2aa8e7c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-networks-ai-powered-customer-churn-prevention-24dd7d28/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-networks-ai-powered-impact-analysis-1c0d4871/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-networks-ai-powered-performance-monitoring-45734486/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-networks-ai-powered-seo-content-engine-12d4b7f0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/5g-networks-ai-powered-stream-processing-792045ef/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ab-testing-ai-powered-capacity-planning-db24d3dc/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ab-testing-ai-powered-data-warehouse-optimization-5c4fe894/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ab-testing-ai-powered-inventory-optimization-b12108a3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ab-testing-ai-powered-lead-scoring--routing-532f4950/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ab-testing-ai-powered-market-intelligence-687c8949/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ab-testing-ai-powered-microservices-management-756c3012/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ab-testing-customer-data-platform-ai-16ec4128/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/academic-planning-ai-powered-contract-analysis-c9a41c2f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/academic-planning-ai-powered-data-catalog-7f77e614/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/academic-planning-ai-powered-data-governance-df01fe56/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/academic-planning-ai-powered-data-migration-9a940421/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/academic-planning-ai-powered-predictive-analytics-suite-105cb6ed/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accessibility-compliance/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/account-based-marketing-ai-powered-capacity-planning-a981b7a6/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/account-based-marketing-ai-powered-data-synchronization-a14f7220/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/account-based-marketing-ai-powered-data-visualization-f27c982b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/account-based-marketing-ai-powered-demand-forecasting-59a7bdc8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/account-based-marketing-ai-powered-log-analysis-598ff5aa/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-code-generation--optimization-09304ecb/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-customer-churn-prediction-27c262d9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-financial-planning--analysis-00d28f3a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-powered-business-intelligence-069e02f0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-powered-customer-churn-prevention-0754324d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-powered-demand-forecasting-74dea8a9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-powered-fraud-detection-1b3470c4/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-powered-market-intelligence-29a863b8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-powered-predictive-analytics-suite-02227a90/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-powered-seo-content-engine-074ae103/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-sales-lead-scoring-engine-0fe7745c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-social-media-content-creator-002ba68f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-ai-supply-chain-optimization-06029f9a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-autonomous-customer-service-ai-2684817a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounting-intelligent-document-processing-ai-3babf95d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounts-payable-ai-powered-data-catalog-e7ce8a24/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounts-payable-ai-powered-disaster-recovery-fac8b57f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounts-payable-ai-powered-incident-response-8bb40b73/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounts-receivable-ai-powered-devops-automation-e79c9596/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounts-receivable-ai-powered-incident-response-ff96b664/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounts-receivable-ai-powered-performance-monitoring-8ddc5731/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/accounts-receivable-cloud-native-security-posture-manager-700b12a1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-hoc-analysis-ai-customer-churn-prediction-3e059a26/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-hoc-analysis-ai-powered-capacity-planning-38aa645f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-hoc-analysis-ai-powered-customer-journey-mapping-5ed0881c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-hoc-analysis-ai-powered-data-integration-ff529a15/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-hoc-analysis-ai-powered-data-quality-rules-3b6810f1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-hoc-analysis-ai-powered-infrastructure-as-code-2fdd62a3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-hoc-analysis-ai-powered-network-monitoring-e7d1dd54/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-hoc-analysis-ai-social-media-content-creator-d801be92/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-tech-ai-powered-backup-management-8773a2bb/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ad-tech-ai-powered-master-data-sync-27d7e0ca/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advanced-ai-enterprise-intelligence-hub/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-code-generation--optimization-6bc2a51d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-customer-churn-prediction-132f14f0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-financial-planning--analysis-3086c254/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-powered-data-quality-rules-02e9b317/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-powered-devops-automation-c6620408/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-powered-market-intelligence-909ab151/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-powered-performance-testing-0001572b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-powered-predictive-analytics-suite-133f4087/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-powered-seo-content-engine-0bd9a6de/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-sales-lead-scoring-engine-0d193589/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-ai-supply-chain-optimization-23ca4c3d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-autonomous-customer-service-ai-1ef84aef/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-intelligent-document-processing-ai-f64c33f4/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-kubernetes-cluster-management-platform-66892c72/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/advertising-serverless-application-performance-monitor-e9671da9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-code-generation--optimization-03ea61ac/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-customer-churn-prediction-2fe3eba6/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-financial-planning--analysis-24b4b228/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-powered-market-intelligence-400109de/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-powered-predictive-analytics-suite-3379ce17/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-powered-predictive-analytics-suite-d4629a24/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-powered-seo-content-engine-492c420a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-powered-stream-processing-2f51f560/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-sales-lead-scoring-engine-012a2816/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-ai-supply-chain-optimization-94a2592e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-autonomous-customer-service-ai-69f3452f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-ai-intelligent-document-processing-ai-108c1cc7/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agentic-workflow-orchestrator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agritech-crop-disease-detection/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agritech-greenhouse-automation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agritech-irrigation-optimization/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agritech-livestock-monitoring/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/agritech-precision-farming/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-3d-asset-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-3d-printing-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-accessibility-auditor/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-accessibility-compliance-auditor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-accessibility-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ad-copy-generator/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-agent-orchestration-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-agent-performance-auditor/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-agent-safety-evaluation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-agent-tool-builder/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-agentic-workflows/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-agriculture-crop-advisor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-code-generation--optimization-4e87a355/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-customer-churn-prediction-225539ac/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-financial-planning--analysis-171889d6/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-powered-cloud-migration-008f933e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-powered-dashboard-creation-55413eec/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-powered-data-quality-manager-c1cfcd58/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-powered-devops-automation-84644ee0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-powered-market-intelligence-0cbd1024/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-powered-predictive-analytics-suite-0894bd3a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-powered-predictive-analytics-suite-121c6af4/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-powered-seo-content-engine-4bfc05c8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-sales-lead-scoring-engine-abf35883/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ai-supply-chain-optimization-02dcad00/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-aiops-anomaly-detection/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-analytics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-anomaly-detection-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-api-orchestration-layer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-applied-forecasting-for-cash-position/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-automated-reporting/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-automation-ai-financial-planning--analysis-3f8faaad/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-automation-ai-powered-blockchain-analytics-30609c57/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-automation-ai-powered-cdn-optimization-e73a9e8b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-automation-ai-powered-data-integration-2fe9478e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-automation-ai-powered-incident-response-1df47613/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-autonomous-code-deployment/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-autonomous-customer-service-ai-4b3720c5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-autonomous-qa-engineering/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-autonomous-research-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-autonomous-vehicle-perception/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-autonomous-vehicles/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-bank-fraud-investigator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-bdr-sdr/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-bom-procurement/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-brand-voice-guardian/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-bug-to-issue-router/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-business-process-automation-suite-13aece19/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-business-process-automation-suite-3414e552/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-business-process-automation-suite-ba433ec2/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-business-process-automation-suite-db5c694d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-call-center-voice-analytics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-campaign-predictor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-caption-subtitle-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-carbon-esg-footprint-tracker/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-carbon-footprint-optimizer-15e4ae91/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-carbon-footprint-optimizer-923629de/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-carbon-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cdn-edge-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-chatbot-builder-enterprise/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-chatbot-builder-pro/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-chatbot-omnichannel/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-child-online-safety/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-chronic-disease-tracker/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-citation-generation-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-climate-risk-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-clinical-patient-triage-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-clinical-trial-analytics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-clinical-trial-design-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cloud-cost-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-assistant-enterprise/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-audit-security/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-compliance-auditor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-documentation-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-generation--optimization-00564fa0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-generation--optimization-06f53426/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-generation--optimization-5469e9ba/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-generation--optimization-a461bae2/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-generation--optimization-c8fd3447/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-generation--optimization-f1d52bd1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-generation-and-optimization-45feb663/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-migration/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-migration-assistant/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-migration-modernization/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-quality-review-automation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-review-assistant/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-reviewer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-reviewer-pro/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-code-vulnerability-scanner/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-codebase-doc-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cold-chain-monitor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-competitive-intel-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-competitive-price-tracker/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-competitor-intelligence/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-compliance/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-compliance-document-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-compliance-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-computer-vision/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-computer-vision-inspection/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-computer-vision-manufacturing/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-computer-vision-shelf-monitoring/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-construction-site-safety/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-consulting--proof-of-value-018e761e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-consulting-and-proof-of-value-aa5ef5a3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-content-generation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-content-localization/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-content-moderation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-content-moderation-suite/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-context-engineering-enterprise/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-contract-analyzer-pro/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-contract-lifecycle/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-contract-lifecycle-intelligence/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-contract-manager/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-contract-review/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-contract-risk-analyzer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-contract-risk-scorer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-conversation-intelligence/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-conversational-ai/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-conversational-ai-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-conversational-commerce/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-conversational-hr-onboarding/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-conversational-search/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-copilot-enterprise/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-credit-underwriting/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-crm-automation-suite/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cro-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-crop-yield-predictor/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cross-lingual-bridge/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cross-lingual-bridge-46a0c8d5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cross-lingual-meeting-bridge/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cultural-fit-screener/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-360/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-churn-prediction/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-churn-prediction-01544c72/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-churn-prediction-8010977b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-churn-prediction-9938b919/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-churn-prediction-bdeedd80/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-churn-predictor/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-churn-prevention/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-data-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-feedback-analyzer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-intent-prediction/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-lifetime-value-prediction/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-segmentation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-sentiment-analytics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-sentiment-tracker/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-service-automation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-success-predictor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-support/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-support-agent/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-support-copilot/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-customer-support-routing/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cyber-threat-hunting/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cyber-threat-intelligence/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cybersecurity-operations/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-cybersecurity-threat-hunting/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-dashboard-designer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-data-labeling-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-data-quality-engine/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-data-quality-fabric/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-data-quality-guardian/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ddos-protection-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-deepfake-detection/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-deepfake-detection-enterprise/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-deepfake-detection-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-demand-forecasting/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-devops-chatbot/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-digital-human/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-digital-twin/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-digital-twin-factory/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-digital-twin-manufacturing/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-digital-twin-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-disaster-response-coordinator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-document-classifier/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-document-generation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-document-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-document-intelligence/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-document-qa/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-document-translation-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-document-understanding/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-document-understanding-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-driven-api-design-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-driven-customer-segmentation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-drug-discovery/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-drug-discovery-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-drug-discovery-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-drug-interaction-checker/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-dyslexia-assist/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ecommerce-smart-search/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-edge-realtime-inference/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-education-adaptive-tutor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-education-tutor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-elder-care-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-email-campaign-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-email-marketing/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-email-personalization-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-emotion-detection/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-emotion-recognition-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-employee-engagement/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-employee-engagement-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-employee-experience/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-employee-experience-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-energy-grid-optimizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-energy-optimization/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-energy-optimization-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-esg-reporting-automation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-esg-reporting-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-estate-will-planning-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ethics-audit-1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ethics-governance/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-etl-pipeline-builder/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-exam-proctoring/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-expense-audit/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-expense-auditor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fashion-trend-forecaster/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-feature-store/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-federated-learning/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fedrisk-compliance/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-feedback-analyzer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-financial-forecasting/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-financial-forecasting-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-financial-fraud-analyst/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-financial-planning--analysis-024cc7c3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-financial-planning-and-analysis-5a703338/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fine-tuning-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-finetuning-alignment-pipelines/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fintech-fraud-graph/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-food-safety-inspection/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-for-code-migration/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-forensic-face-recognition/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-form-filler-intelligence/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-foundation-models-custom-training/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fraud-detection/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fraud-detection-finance/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fraud-detection-payments/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fraud-detection-real-time/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fraud-detection-realtime/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fraud-investigation-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fraud-pattern-analyzer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-fullstack-test-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-gaming-npc-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-gen-app-dev-1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-generative-synthetic-patient-data/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-generative-ui-design-studio/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-genomic-analysis/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-genomics-pipeline/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-geospatial-analytics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-glassdoor-review-analyzer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-governance--risk-management-04cb06f9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-governance-and-risk-management-278956f8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-governance-compliance/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-governance-trust/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-government-citizen-services/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-grant-matcher/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-growth-intelligence/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-hiring-pipeline-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-hr-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-hr-talent-analytics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-hurricane-damage-assessor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-identity-verification-kyc/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-immigration-case-predictor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-infra-provisioner/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-insurance-claims/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-insurance-claims-automation/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-insurance-claims-processor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-insurance-pricing/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-integration-apis/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-intellectual-property-management/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-intelligent-document-processing-ai-0f7efdfe/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-intelligent-routing/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-interview-conduct-bot/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-inventory-management/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-invoice-factoring-working-capital/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-it-helpdesk/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-job-description-kit/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-job-matcher/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-journalism-fact-checker/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-judicial-analytics-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-base-agent/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-base-rag/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-graph/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-graph-builder/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-graph-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-graph-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-graph-search-deep/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-graph-search-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-graph-search-engine-761dad20/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-management/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-knowledge-management-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-kubernetes-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-kyc-aml-compliance/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-language-immersion-tutor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-language-tutor-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-lead-enricher/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-lead-generation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-contract-nlp-analyzer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-contract-redaction/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-discovery-platform/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-doc-review/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-document-analysis/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-document-drafter/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-document-review/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-document-summarizer/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-e-discovery/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-redline/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-research/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-legal-research-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-llm-evaluation-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-llm-router-pro/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-load-testing/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-loan-underwriting-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-localization-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-log-analysis/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-low-code-integration/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-machine-translation-quality/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-marine-fisheries-sustainability/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-marketing-copy-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-media-monitoring/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-medical-diagnosis-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-medical-image-diagnosis/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-medical-imaging/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-medical-imaging-analysis/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-medical-imaging-assistant/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-assistant/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-assistant-pro/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-assistant-pro-1c8aaeb5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-assistant-pro-633a0ada/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-assistant-pro-db158145/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-assistant-pro-f1c76ea9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-notes-summary/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-preread/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-room-booking/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-meeting-summarizer-pro/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-memory-agents-long-horizon/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-mental-health-chatbot/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-mental-health-support-chatbot/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-mental-wellness-coach/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-mentor-career-matchmaking-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-metadata-management/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-mining-safety-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-model-orchestration/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-multi-agent-orchestration-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-multimodal-intelligence/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-multimodal-search/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-multimodal-search-engine/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-multimodal-video-understanding/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-music-composition-studio/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-music-generation-platform/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-natural-language-search/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-neuromorphic-computing/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-newsletter-engagement/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-nlp-text-analytics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-noise-pollution-mapper/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-nutrition-meal-planner/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-observability--intelligence-02fae2c1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-observability-and-intelligence-dedcc12e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-observability-mlops/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-observability-turbo/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ocean-health-monitor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-ocean-pollution-tracker/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-office-automation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-oil-gas-predictive-analytics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-omnichannel-chatbot/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-patent-search-analyzer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-pdf-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-performance-monitoring/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-personal-finance-coach/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-personalisation-engine-realtime/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-personalization-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-personalized-learning/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-personalized-medicine-genomics/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-personalized-newsletter-curation-engine/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-pet-health-monitor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-port-congestion-predictor/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-post-purchase-care/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-5g-network-optimization-platform-edbc9e30/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-algorithmic-trading-intelligence-28df5848/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-analytics-platform-for-healthcare-b64ae733/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-analytics-platform-for-legal-82068caf/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-analytics-platform-for-retail-701800f0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-analytics-platform-for-telecommunications-b88b808f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-analytics-platform-healthcare-ai-powered-analytics-platform-for-healthcare/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-analytics-platform-legal-ai-powered-analytics-platform-for-legal/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-analytics-platform-retail-ai-powered-analytics-platform-for-retail/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-analytics-platform-telecommunications-ai-powered-analytics-platform-for-telecommunications/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-api-gateway-5ce281c8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-api-management-04bb1945/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-api-management-3d26a5e9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-api-management-fd6573a2/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-backup-management-13787169/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-backup-management-b6505f8b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-backup-management-d28dab73/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-backup-management-fa03a175/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-batch-processing-1dd2631c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-blockchain-analytics-00b65879/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-blockchain-analytics-20ccea91/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-blockchain-analytics-ab1954e1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-blockchain-analytics-f8aee196/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-business-intelligence-16bfe1ec/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-business-intelligence-87df4536/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-capacity-planning-0f53dd11/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-cdn-optimization-1c410ab9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-cdn-optimization-2f56c6cf/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-cdn-optimization-8fd40889/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-cdn-optimization-c664869c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-chatbot-builder-021951d5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-chatbot-builder-04328b42/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-chatbot-builder-215b8519/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-chatbot-builder-76a9f951/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-chatbot-builder-f8a5a96a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-clinical-decision-support-system-e5822561/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-cloud-governance-2ee53d44/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-cloud-migration-f45ff95d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-cloud-security-posture-7683e560/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-code-review-assistant-08a058bf/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-code-review-assistant-4b71bda0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-code-review-assistant-aaab782b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-code-review-assistant-bd85a6f1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-commercial-real-estate-leasing-9699778c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-container-orchestration-1135275e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-container-orchestration-69e50de1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-container-orchestration-8df07542/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-content-generation-platform-0253481c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-content-generation-platform-fda1e749/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-contract-analysis-02e27906/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-contract-analysis-4d632337/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-contract-lifecycle-management-5e2862a5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-cost-optimization-91940fd8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-credit-risk-assessment-engine-27583907/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-crm-automation-15c0f019/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-crm-automation-23d434ce/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-crm-automation-3791de53/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-crm-automation-c2550dc1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-customer-churn-prediction-for-telecom-106bf654/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-customer-churn-prevention-0a4bf6ae/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-customer-churn-prevention-992d320d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-customer-churn-prevention-d4c8ce34/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-customer-journey-mapping-0207e932/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-customer-journey-mapping-9a802067/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-customer-journey-mapping-a6b52f06/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-dashboard-creation-22695bdb/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-dashboard-creation-6c2adedc/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-catalog-0d7a9585/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-catalog-9518b18b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-catalog-bd6d38ae/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-catalog-fc2e1530/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-governance-0532a310/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-governance-b1347d86/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-integration-01136eea/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-integration-7fcaed4b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-integration-f6542a02/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lake-management-0ccbabaf/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lake-management-11a82dab/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lake-management-30e5ffa0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lake-management-50b8731d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lake-management-98c06748/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lake-management-ee0336e4/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lineage-14775438/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lineage-772f8d0f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lineage-e5721712/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-lineage-fb04ee07/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-migration-19acd327/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-migration-9cb88ee8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-migration-c578f0c1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-migration-faf7bd5b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-privacy-132666c3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-privacy-3ac0651b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-privacy-dc6defd4/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-privacy-f777db14/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-privacy-fe66ef68/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-quality-manager-2435e45b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-quality-manager-818a0bd8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-quality-manager-8724ce37/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-quality-manager-98db71fa/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-quality-rules-0ceef0fd/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-security-155619c0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-security-f7808fdc/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-synchronization-3de38eac/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-synchronization-9ba02206/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-synchronization-cf7d34ac/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-synchronization-dc21a2fb/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-synchronization-e0cba7f2/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-synchronization-e8c84e18/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-visualization-262e3d8a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-visualization-2648e060/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-visualization-d565bb1c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-visualization-f87f023f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-warehouse-optimization-07286aab/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-warehouse-optimization-1988effc/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-warehouse-optimization-29b3ea04/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-warehouse-optimization-57fe3f7b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-data-warehouse-optimization-a954d9e3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-database-optimization-040522ba/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-database-optimization-761b018d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-database-optimization-9d80f0c6/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-database-optimization-b95fa711/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-database-optimization-bc78418a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-database-optimization-d269bb56/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-demand-forecasting-0b9f5550/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-demand-forecasting-4e541a19/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-demand-forecasting-580da439/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-demand-forecasting-bbf63e45/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-demand-forecasting-be583b0c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-demand-forecasting-ffd34c9e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-devops-automation-1e95af76/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-digital-twin-manufacturing-platform-d7016760/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-disaster-recovery-07517ee9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-disaster-recovery-115c69c7/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-disaster-recovery-8f89435a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-drug-discovery-accelerator-441947f8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-dynamic-pricing-optimization-9743aef8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-edge-ai-platform-1beff167/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-edge-ai-platform-4eeae4ce/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-edge-ai-platform-89503a4a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-edge-ai-platform-e1964ced/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-email-marketing-automation-027d7ced/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-email-marketing-automation-4675ae5e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-email-personalization-25930e5a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-email-personalization-925f6191/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-energy-storage-optimization-f8afebeb/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-error-tracking-4af8ba84/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-etl-pipeline-optimization-1db96ec1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-etl-pipeline-optimization-1f4ec2b1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-etl-pipeline-optimization-ed084838/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-extended-detection-and-response-ca28b22a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-form-builder/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-fraud-detection-033812a3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-fraud-detection-34fd6303/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-game-economy-balancing-020507c8/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-hospital-resource-optimization-233586d1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-hr-analytics-01d7c2d9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-hr-analytics-1a805b9c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-hr-analytics-5bedd108/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-hr-analytics-ecc2ca2c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-impact-analysis-266d510f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-impact-analysis-5a6cc5e5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-impact-analysis-c319f6b3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-incident-postmortem/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-incident-response-25902e27/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-infrastructure-as-code-02abfcfb/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-inventory-demand-forecasting-5960c75c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-inventory-optimization-2d28489f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-inventory-optimization-4ffe4050/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-last-mile-delivery-optimization-6c5e9b5c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-lead-scoring--routing-0a5988c0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-lead-scoring--routing-cb95ff0c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-log-analysis-189470a7/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-log-analysis-32b84dcd/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-log-analysis-90f33417/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-log-analysis-d5e4245e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-log-analysis-ea9ce664/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-log-anomaly-detection/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-log-management-33119e17/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-market-intelligence-009fedef/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-market-intelligence-2480d503/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-master-data-management-25bd5c79/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-master-data-management-a6d54028/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-master-data-management-d8ae207a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-master-data-sync-0f8fae4f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-master-data-sync-6bd097b5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-master-data-sync-72b3724a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-master-data-sync-7952d8b2/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-master-data-sync-aa6663e5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-metaverse-experience-engine-0982894c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-microservices-management-1519221b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-microservices-management-4721ba6d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-microservices-management-4ba2e6a5/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-microservices-management-66c5dc80/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-microservices-management-cfb3958b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-microservices-management-dd01e931/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-multi-cloud-management-6271b7f3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-network-monitoring-05aea2dd/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-network-monitoring-58b7b4b9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-network-monitoring-9b861f44/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-network-security-5705c827/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-omnichannel-customer-experience-platform-d9fe1cbd/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-passwordless-auth/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-performance-testing-000f2426/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-performance-testing-793e529b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-performance-testing-93c9c515/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-performance-testing-cf75e652/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-personalized-learning-pathways-1719f7a2/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-pr-drafting/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-predictive-analytics-suite-002b2be1/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-predictive-analytics-suite-0d580d5b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-predictive-analytics-suite-d8083e6b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-predictive-analytics-suite-da09bdd3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-pricing-optimization-1d735086/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-pricing-optimization-229fefa3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-pricing-optimization-419b14f9/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-pricing-optimization-fe46ef84/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-property-valuation-engine-7447297f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-quality-assurance-0c77e2e3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-quality-assurance-42d6ed5c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-quality-assurance-43135e6a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-quality-assurance-6d15a8d0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-quality-assurance-70b55177/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-quantum-computing-simulator-119380d4/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-quantum-computing-simulator-6402a146/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-question-answering/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-recommendation-engine-04b2bc9a/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-recommendation-engine-1a738fa0/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-recommendation-engine-528ab79b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-resource-management-0cedf36b/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-resume-screening-11d10127/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-resume-screening-3c950477/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-resume-screening-4548a18f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-resume-screening-a754bb28/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-security-auditing-06a3943c/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-security-auditing-f38516c3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-security-information--event-management-21907c43/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-security-information--event-management-5b00e097/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-security-information--event-management-626457df/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-security-information--event-management-c54f8c5f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-seo-content-engine-002a1b6e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-seo-content-engine-0dd74e03/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-seo-content-engine-54bee09e/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-seo-content-engine-6c2cc2d3/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-seo-content-engine-a8c5d270/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-seo-optimizer/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-smart-grid-management-system-593de1ac/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-stream-processing-13d434b6/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-stream-processing-69172d57/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-stream-processing-838ccd5f/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-stream-processing-d078c420/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-stream-processing-d5e58d2d/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-stream-processing-f5b58a58/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-supply-chain-resilience-engine-0e4038ae/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-tech-debt-quantifier/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-test-generation/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-threat-detection-system-05bbca56/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-threat-detection-system-1b528457/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-threat-detection-system-43171e06/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-threat-detection-system-466eefcb/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-threat-detection-system-659290ee/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-treasury-cash-flow-optimization-c5cbcb75/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-ui-generator/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-powered-warehouse-automation-intelligence-4d377437/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-prd-story-gen/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-precision-agriculture/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-predictive-analytics/",
+    "status": 200,
+    "location": "",
+    "classification": null
+  },
+  {
+    "url": "https://ziontechgroup.com/services/ai-predictive-analytics-healthcare/",
+    "status": 404,
+    "location": "",
+    "classification": "missing page"
+  }
+]

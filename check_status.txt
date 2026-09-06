@@ -1,0 +1,11 @@
+Checked: 2500/7191
+200: 337
+Broken: 2163
+Errors: 0
+Elapsed: 351.0s
+First 5 broken:
+  [404] https://ziontechgroup.com/admin-dashboard/ -> missing page
+  [404] https://ziontechgroup.com/ai-data-contract-governance-2026/ -> missing page
+  [404] https://ziontechgroup.com/ai-first-cloud-cost-optimization/ -> missing page
+  [404] https://ziontechgroup.com/ai-first-cloud-migration-2026/ -> missing page
+  [404] https://ziontechgroup.com/ai-first-devsecops-2026/ -> missing page

@@ -1,175 +1,172 @@
 #!/usr/bin/env python3
 """
-Site integrity checker for https://ziontechgroup.com
-Crawls internal links only, reports broken URLs with classification.
+Live site integrity check for https://ziontechgroup.com
+Crawls with requests+BeautifulSoup, follows internal links only.
+Reports: total crawled, HTTP 200 count, broken count, first 10 broken URLs.
+Does NOT modify files.
 """
 
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, urldefrag
-import re
-import sys
-import json
 from collections import deque
+import time
+import sys
 
-BASE_URL = "https://ziontechgroup.com"
+START_URL = "https://ziontechgroup.com"
+MAX_PAGES = 200
 TIMEOUT = 15
-MAX_PAGES = 500  # safety cap
-USER_AGENT = "Mozilla/5.0 (compatible; SiteIntegrityChecker/1.0)"
+DELAY = 0.15  # polite delay between requests
 
-def is_internal(url, base):
-    """Check if URL is internal to the base domain."""
+# State
+crawled = set()
+broken = []
+http_200 = 0
+queue = deque()
+session = requests.Session()
+session.headers.update({
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+})
+
+base_domain = urlparse(START_URL).hostname or "ziontechgroup.com"
+
+def is_internal_url(url):
+    """Keep http(s) links on same domain. Relative URLs are handled via urljoin later."""
     parsed = urlparse(url)
-    base_parsed = urlparse(base)
-    # Must have a netloc and match the base domain (with or without www)
-    if not parsed.netloc:
+    if parsed.scheme not in ("http", "https"):
         return False
-    return (parsed.netloc == base_parsed.netloc or 
-            parsed.netloc == f"www.{base_parsed.netloc}" or
-            base_parsed.netloc == f"www.{parsed.netloc}")
+    host = parsed.hostname.lower() if parsed.hostname else ""
+    base = base_domain.lower()
+    if host == base:
+        return True
+    if host in (f"www.{base}", base.replace("www.", "")):
+        return True
+    return False
 
-def classify_broken(url, status_code, final_url):
-    """Classify a broken URL into one of three categories."""
-    if status_code in (404, 410):
-        return "missing page"
-    elif status_code in (301, 302, 307, 308):
+def classify_broken(url, status_code=None, error=None):
+    """Classify a broken URL as stale redirect, missing page, or external reference error."""
+    if status_code and status_code in (301, 302, 303, 307, 308):
         return "stale redirect"
-    elif status_code >= 500:
-        return "server error"
-    elif status_code == 0:
-        # Connection error - check if it's an external reference
+    if status_code and status_code >= 400:
+        return "missing page"
+    if error:
+        if "timeout" in str(error).lower() or "read timed out" in str(error).lower():
+            return "missing page (unreachable)"
+        if "connection" in str(error).lower():
+            return "missing page (connection refused)"
+        # Check if the error is about an external domain
         parsed = urlparse(url)
-        if parsed.scheme in ('http', 'https') and parsed.netloc:
-            # It's an external URL that failed
+        if parsed.hostname and parsed.hostname.lower() != base_domain.lower() and not parsed.hostname.lower().startswith("www." + base_domain.lower()):
             return "external reference error"
-        return "connection error"
-    else:
-        return f"other (HTTP {status_code})"
+        return "missing page"
+    # If we got here, treat as missing page
+    return "missing page"
 
-def extract_links(html, base_url):
-    """Extract all links from HTML content."""
-    soup = BeautifulSoup(html, 'html.parser')
-    links = set()
-    
-    # Find all <a> tags with href
-    for a_tag in soup.find_all('a', href=True):
-        href = a_tag['href'].strip()
-        if not href or href.startswith(('#', 'javascript:', 'mailto:', 'tel:')):
-            continue
-        
-        full_url = urljoin(base_url, href)
-        full_url, _ = urldefrag(full_url)  # remove fragment
-        
-        # Only internal links
-        if is_internal(full_url, BASE_URL):
-            links.add(full_url)
-    
-    # Also check for links in other tags (img src, link href, script src)
-    # but only for completeness - we mainly care about <a> links
-    for tag in soup.find_all(['img', 'link', 'script'], src=True):
-        src = tag['src'].strip()
-        if src and not src.startswith(('data:', 'javascript:')):
-            full_url = urljoin(base_url, src)
-            full_url, _ = urldefrag(full_url)
-            if is_internal(full_url, BASE_URL):
-                links.add(full_url)
-    
-    return links
+def fetch_url(url):
+    """Fetch a URL, return (status_code, html, error)."""
+    try:
+        resp = session.get(url, timeout=TIMEOUT, allow_redirects=True)
+        status = resp.status_code
+        content_type = resp.headers.get("Content-Type", "")
+        if "text/html" not in content_type and "application/xhtml" not in content_type:
+            # Non-HTML resource — still count as crawled but skip link extraction
+            return status, "", None
+        html = resp.text
+        return status, html, None
+    except requests.exceptions.Timeout:
+        return None, None, "timeout"
+    except requests.exceptions.ConnectionError as e:
+        return None, None, f"connection error: {e}"
+    except Exception as e:
+        return None, None, str(e)
 
-def crawl_site():
-    """Crawl the site breadth-first, checking each URL."""
-    session = requests.Session()
-    session.headers.update({'User-Agent': USER_AGENT})
-    session.timeout = TIMEOUT
-    
-    visited = set()
-    to_visit = deque([BASE_URL])
-    broken = []
-    successful = 0
-    total_checks = 0
-    
-    print(f"Starting crawl of {BASE_URL}")
-    print(f"Max pages: {MAX_PAGES}, Timeout: {TIMEOUT}s")
-    print("-" * 60)
-    
-    while to_visit and total_checks < MAX_PAGES:
-        url = to_visit.popleft()
-        
-        # Skip if already visited
-        if url in visited:
-            continue
-        visited.add(url)
-        total_checks += 1
-        
-        if total_checks % 20 == 0:
-            print(f"Progress: {total_checks} URLs checked, {len(broken)} broken found...")
-        
-        try:
-            response = session.get(url, allow_redirects=True, timeout=TIMEOUT)
-            final_url = response.url
-            
-            if response.status_code == 200:
-                successful += 1
-                # Only extract links from successful pages
-                if 'text/html' in response.headers.get('Content-Type', ''):
-                    new_links = extract_links(response.text, url)
-                    for link in new_links:
-                        if link not in visited:
-                            to_visit.append(link)
-            else:
-                # Non-200 status
-                classification = classify_broken(url, response.status_code, final_url)
-                broken.append({
-                    'url': url,
-                    'status_code': response.status_code,
-                    'final_url': final_url,
-                    'classification': classification
-                })
-                
-        except requests.exceptions.RequestException as e:
-            # Connection error (status_code = 0)
-            classification = classify_broken(url, 0, url)
-            broken.append({
-                'url': url,
-                'status_code': 0,
-                'final_url': url,
-                'classification': classification,
-                'error': str(e)[:200]
-            })
-    
-    print("-" * 60)
-    print(f"\n=== CRAWL COMPLETE ===")
-    print(f"Total crawled (unique URLs checked): {total_checks}")
-    print(f"HTTP 200 count: {successful}")
-    print(f"Broken count: {len(broken)}")
-    
+def process_url(url):
+    global http_200
+    normalized = urldefrag(url)[0].rstrip("/") or urldefrag(url)[0]
+    if normalized in crawled:
+        return
+    crawled.add(normalized)
+
+    time.sleep(DELAY)
+    status, html, error = fetch_url(url)
+
+    if status is None:
+        broken.append({
+            "url": url,
+            "status_code": None,
+            "error": error,
+            "classification": classify_broken(url, error=error),
+        })
+        return
+
+    if status != 200:
+        broken.append({
+            "url": url,
+            "status_code": status,
+            "error": None,
+            "classification": classify_broken(url, status_code=status),
+        })
+        return
+
+    # HTTP 200
+    http_200 += 1
+
+    if html:
+        soup = BeautifulSoup(html, "html.parser")
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            # Skip fragments, JS, mailto, tel
+            if href.startswith("#") or href.startswith("javascript:") or href.startswith("mailto:") or href.startswith("tel:"):
+                continue
+            abs_url = urljoin(url, href)
+            abs_url = urldefrag(abs_url)[0]
+            if is_internal_url(abs_url) and abs_url not in crawled and len(crawled) < MAX_PAGES:
+                queue.append(abs_url)
+
+def run():
+    print("=== ZION TECH GROUP SITE INTEGRITY CHECK ===", flush=True)
+    print(f"Site: {START_URL}", flush=True)
+    print(f"Max pages limit: {MAX_PAGES}, Timeout: {TIMEOUT}s, Delay: {DELAY}s", flush=True)
+    print(f"Crawl venv: /Users/miami2/zion.app/automation/.crawl-venv", flush=True)
+    print(f"Base domain: {base_domain}", flush=True)
+    print()
+
+    queue.append(START_URL)
+
+    while queue and len(crawled) < MAX_PAGES:
+        url = queue.popleft()
+        process_url(url)
+        if len(crawled) % 25 == 0 and len(crawled) > 0:
+            print(f"  ... crawled {len(crawled)} pages so far ...", flush=True)
+
+    print()
+    print(f"Total crawled: {len(crawled)}", flush=True)
+    print(f"HTTP 200 count: {http_200}", flush=True)
+    print(f"Broken count: {len(broken)}", flush=True)
+    print()
+
     if broken:
-        print(f"\n=== FIRST 10 BROKEN URLs ===")
+        print("FIRST 10 BROKEN URLS:")
         for i, b in enumerate(broken[:10], 1):
-            print(f"{i}. {b['url']}")
-            print(f"   Status: {b['status_code']} | Classification: {b['classification']}")
-            if 'error' in b:
-                print(f"   Error: {b['error']}")
-            print()
-        
-        # Classification summary
-        print("=== CLASSIFICATION SUMMARY ===")
-        classes = {}
-        for b in broken:
-            cls = b['classification']
-            classes[cls] = classes.get(cls, 0) + 1
-        for cls, count in sorted(classes.items(), key=lambda x: -x[1]):
-            print(f"  {cls}: {count}")
-    
-    return {
-        'total_crawled': total_checks,
-        'http_200_count': successful,
-        'broken_count': len(broken),
-        'broken_urls': broken[:10]
-    }
+            sc = b["status_code"] if b["status_code"] else "ERR"
+            print(f"  {i}. [{sc}] {b['url']}")
+            print(f"     → {b['classification']}" + (f" (error: {b['error']})" if b["error"] else ""))
+        print()
+        if len(broken) > 10:
+            print(f"  ... and {len(broken) - 10} more broken URLs omitted.", flush=True)
+    else:
+        print("No broken URLs found.", flush=True)
 
-if __name__ == '__main__':
-    result = crawl_site()
-    # Print JSON for easy parsing
-    print("\n=== JSON OUTPUT ===")
-    print(json.dumps(result, indent=2, default=str))
+    print()
+    # Summary by classification
+    from collections import Counter
+    cls_counts = Counter(b["classification"] for b in broken)
+    if cls_counts:
+        print("Classification summary:")
+        for cls, cnt in sorted(cls_counts.items(), key=lambda x: -x[1]):
+            print(f"  {cls}: {cnt}")
+    print()
+    print("=== END ===", flush=True)
+
+if __name__ == "__main__":
+    run()
