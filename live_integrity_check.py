@@ -1,139 +1,119 @@
-#!/usr/bin/env python3
 """
 Live site integrity check for https://ziontechgroup.com
-BFS crawl following internal links only. Classify broken URLs.
+Follows internal links only (BFS), reports HTTP status breakdown + broken URLs.
+Uses the zion.app automation venv's requests+BeautifulSoup.
 """
+import sys, re, time
+from urllib.parse import urljoin, urlparse, urlunparse
+from collections import deque
 
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse, urlunparse
-import sys
-import json
-from collections import deque
 
-BASE_URL = "https://ziontechgroup.com"
-TIMEOUT = 20
-MAX_PAGES = 500  # safety cap
+BASE = "https://ziontechgroup.com"
+START = BASE + "/"
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) zion-integrity-check/1.0"
+SESSION = requests.Session()
+SESSION.headers["User-Agent"] = USER_AGENT
+_TIMEOUT = 20
+
+visited = set()
+queue = deque([START])
+broken = []       # (url, reason)
+redirects = []    # (url, final_url, status)
+http200 = 0
+errors = 0
+html_ok = 0       # 200 + parseable HTML
+
+INTERNAL_RE = re.compile(r"^" + re.escape(BASE))
 
 def strip_fragment(url: str) -> str:
     p = urlparse(url)
     return urlunparse(p._replace(fragment=""))
 
 def is_internal(url: str) -> bool:
-    """Check if URL belongs to the same domain."""
-    parsed = urlparse(url)
-    return parsed.netloc == "ziontechgroup.com" or parsed.netloc == ""
+    return bool(INTERNAL_RE.match(urlparse(url).netloc + urlparse(url).path))
 
-def normalize(url: str, base: str) -> str:
-    """Normalize a URL: join with base if relative, strip fragment, enforce https."""
-    url = strip_fragment(url)
-    if urlparse(url).netloc == "":
-        url = urljoin(base, url)
-    # Force https
-    if url.startswith("http://"):
-        url = "https://" + url[7:]
-    return url
-
-def classify_broken(url: str, status_code: int, exception: str = None, final_url: str = None) -> str:
-    """Classify a broken URL."""
-    if exception:
-        # Check if it's an external domain that failed
-        parsed = urlparse(url)
-        if parsed.netloc and parsed.netloc != "ziontechgroup.com":
-            return "external reference error"
-        return "missing page"
-    
-    if status_code == 301 or status_code == 302 or status_code == 307 or status_code == 308:
-        # Check if redirect goes external
-        if final_url and urlparse(final_url).netloc != "ziontechgroup.com":
+def classify(url: str, reason: str) -> str:
+    """Classify a broken URL into stale redirect / missing page / external reference error."""
+    code = reason.split()[0] if reason else ""
+    if url.startswith(BASE):
+        if code.startswith("3"):
             return "stale redirect"
-        # Internal redirect that didn't reach 200
-        return "stale redirect"
-    
-    # Non-2xx, non-3xx
-    parsed = urlparse(url)
-    if parsed.netloc and parsed.netloc != "ziontechgroup.com":
+        return "missing page"
+    else:
         return "external reference error"
-    return "missing page"
 
-def crawl():
-    visited = set()
-    queue = deque([BASE_URL])
-    broken = []
-    redirects = []
-    http_200 = 0
-    total_crawled = 0
-    errors = []
+print(f"Starting crawl of {START}", flush=True)
+t0 = time.time()
+while queue:
+    url = queue.popleft()
+    url = strip_fragment(url)
+    if url in visited:
+        continue
+    visited.add(url)
 
-    session = requests.Session()
-    session.headers.update({
-        "User-Agent": "Mozilla/5.0 (compatible; SiteIntegrityCheck/1.0)"
-    })
+    try:
+        resp = SESSION.get(url, allow_redirects=True, timeout=_TIMEOUT)
+    except requests.RequestException as e:
+        broken.append((url, f"exception: {e}"))
+        errors += 1
+        continue
 
-    while queue and total_crawled < MAX_PAGES:
-        url = queue.popleft()
-        url = normalize(url, BASE_URL)
-        
-        if url in visited:
-            continue
-        visited.add(url)
-        
-        try:
-            resp = session.get(url, timeout=TIMEOUT, allow_redirects=True)
-            total_crawled += 1
-            
-            final_url = resp.url
-            
-            if resp.status_code == 200:
-                http_200 += 1
-                # Extract links
-                try:
-                    soup = BeautifulSoup(resp.text, "html.parser")
-                    for tag in soup.find_all(["a", "link"]):
-                        href = tag.get("href")
-                        if not href:
-                            continue
-                        href = str(href)
-                        full_url = normalize(href, url)
-                        if is_internal(full_url) and full_url not in visited and full_url not in queue:
-                            if full_url.startswith(BASE_URL):
-                                queue.append(full_url)
-                except Exception as parse_err:
-                    errors.append(f"Parse error on {url}: {parse_err}")
-            else:
-                # Non-200 status
-                classification = classify_broken(url, resp.status_code, final_url=final_url)
-                broken.append({
-                    "url": url,
-                    "status": resp.status_code,
-                    "final_url": final_url,
-                    "classification": classification
-                })
-                if resp.status_code in (301, 302, 307, 308):
-                    redirects.append({"from": url, "to": final_url, "status": resp.status_code})
-                    
-        except requests.exceptions.RequestException as e:
-            total_crawled += 1
-            classification = classify_broken(url, 0, exception=str(e))
-            broken.append({
-                "url": url,
-                "status": "error",
-                "error": str(e),
-                "classification": classification
-            })
-        except Exception as e:
-            errors.append(f"Unexpected error on {url}: {e}")
+    status = resp.status_code
 
-    return {
-        "total_crawled": total_crawled,
-        "http_200": http_200,
-        "broken_count": len(broken),
-        "broken_urls": broken[:10],
-        "redirects_count": len(redirects),
-        "errors": errors[:5]
-    }
+    if status == 200:
+        http200 += 1
+        ct = resp.headers.get("Content-Type", "")
+        if "text/html" in ct:
+            html_ok += 1
+            try:
+                soup = BeautifulSoup(resp.text, "html.parser")
+            except Exception:
+                soup = None
+            if soup:
+                for tag in soup.find_all(["a", "link"]):
+                    href = tag.get("href")
+                    if not href:
+                        continue
+                    full = strip_fragment(urljoin(url, str(href)))
+                    if is_internal(full) and full not in visited:
+                        queue.append(full)
+    elif 300 <= status < 400:
+        # record redirect even if it eventually landed 200
+        final = resp.url
+        redirects.append((url, final, status))
+        if final.startswith(BASE) and final not in visited:
+            queue.append(final)
+    else:
+        broken.append((url, f"HTTP {status}"))
+        errors += 1
 
-if __name__ == "__main__":
-    print(f"Starting crawl of {BASE_URL} ...", flush=True)
-    result = crawl()
-    print(json.dumps(result, indent=2))
+elapsed = time.time() - t0
+
+print("\n===== SITE INTEGRITY REPORT =====", flush=True)
+print(f"Base URL: {BASE}", flush=True)
+print(f"Total crawled (unique internal pages fetched): {len(visited)}", flush=True)
+print(f"HTTP 200 count: {http200}", flush=True)
+print(f"Broken count: {len(broken)}", flush=True)
+print(f"Redirects followed: {len(redirects)}", flush=True)
+print(f"Fetch errors/exceptions: {errors}", flush=True)
+print(f"HTML pages parsed: {html_ok}", flush=True)
+print(f"Wall time: {elapsed:.1f}s", flush=True)
+
+print("\n----- BREAKED URLS -----", flush=True)
+if not broken:
+    print("None — site appears healthy on internal links.", flush=True)
+else:
+    for i, (url, reason) in enumerate(broken[:10], 1):
+        cls = classify(url, reason)
+        print(f"{i}. [{cls}] {url}  —  {reason}", flush=True)
+    if len(broken) > 10:
+        print(f"... and {len(broken) - 10} more broken URLs (see full log).", flush=True)
+
+print("\n----- REDIRECTS (3xx) -----", flush=True)
+if not redirects:
+    print("None.", flush=True)
+else:
+    for url, final, code in redirects[:10]:
+        print(f"  {url}  [{code}]  ->  {final}", flush=True)
