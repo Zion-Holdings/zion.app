@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static QA checks for book alias, thank-you, first-paint CSS, Discovery CTAs."""
+"""Static QA checks for book alias, thank-you, first-paint CSS, Discovery CTAs, Next leftovers."""
 from __future__ import annotations
 
 import pathlib
@@ -39,8 +39,11 @@ def main() -> int:
     check("<style" in plans, "plans has inline CSS")
 
     services = read("services/index.html")
-    check('href="/discovery/">Book $99' in services, "services nav Book $99 → /discovery/")
+    check("/assets/css/site.css" in services and "<style" in services, "services has linked + inline site.css")
+    check('class="nav"' in services and "<footer" in services, "services uses shared nav/footer shell")
+    check('href="/discovery/">Discovery $99' in services, "services nav Discovery $99 → /discovery/")
     check('href="/discovery/">Book $99 Discovery' in services, "services CTA Book $99 Discovery → /discovery/")
+    check("/_next/" not in services, "services is not a Next export")
 
     leftover = []
     skip = {
@@ -68,6 +71,51 @@ def main() -> int:
     check((PUBLIC / "privacy/index.html").is_file(), "public/privacy wins over Next leftover")
     check("/_next/static/css" not in read("privacy/index.html"), "privacy is not a Next export")
     check("/_next/static/css" not in read("contact/index.html"), "contact is not a Next export")
+
+    solutions = read("solutions/index.html")
+    check((PUBLIC / "solutions/index.html").is_file(), "public/solutions hub exists")
+    check((PUBLIC / "solutions.html").is_file(), "solutions.html no-slash alias exists")
+    check("/_next/" not in solutions, "solutions is not a Next export")
+    check("/assets/css/site.css" in solutions and "<style" in solutions, "solutions has linked + inline site.css")
+    check("Industry" in solutions and "Healthcare" in solutions, "solutions keeps industry content")
+    check('class="nav"' in solutions and "<footer" in solutions, "solutions uses shared nav/footer shell")
+
+    ai_services = read("ai-services/index.html")
+    check((PUBLIC / "ai-services/index.html").is_file(), "public/ai-services hub exists")
+    check((PUBLIC / "ai-services.html").is_file(), "ai-services.html no-slash alias exists")
+    check("/_next/" not in ai_services, "ai-services is not a Next export")
+    check("/assets/css/site.css" in ai_services and "<style" in ai_services, "ai-services has linked + inline site.css")
+    check('class="nav"' in ai_services and "<footer" in ai_services, "ai-services uses shared nav/footer shell")
+    check("process-automation" in ai_services and "fraud-detection" in ai_services, "ai-services keeps service cards")
+
+    chrome_pages = [
+        "cpa/index.html",
+        "partners/index.html",
+        "services/index.html",
+        "free-ai-it-tools/index.html",
+        "roteiros/index.html",
+        "para/index.html",
+        "referral/index.html",
+        "whatsapp/index.html",
+    ]
+    missing_chrome = []
+    for rel in chrome_pages:
+        text = read(rel)
+        if "/assets/css/site.css" not in text or 'class="nav"' not in text or "<footer" not in text or "/_next/" in text:
+            missing_chrome.append(rel)
+    check(not missing_chrome, "chrome-gap pages use Family A shell" + (": " + ", ".join(missing_chrome) if missing_chrome else ""))
+
+    next_hits = []
+    for path in PUBLIC.rglob("*.html"):
+        rel = path.relative_to(PUBLIC).as_posix()
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if "/_next/" in text:
+            next_hits.append(rel)
+    check(not next_hits, "no /_next/ in public HTML" + (": " + ", ".join(next_hits[:12]) if next_hits else ""))
+
+    discovery = read("discovery/index.html")
+    check("buy.stripe.com/9B69AU8NW5dt71t8BG4ZG09" in discovery, "discovery BRL Stripe link untouched")
+    check("buy.stripe.com/8x214o8NW35l5Xp3hm4ZG0b" in discovery, "discovery USD Stripe link untouched")
 
     if fail:
         print(f"{fail} check(s) failed")
