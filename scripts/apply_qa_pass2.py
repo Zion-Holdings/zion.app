@@ -43,6 +43,16 @@ CHROME_PAGES = [
     "cookie-policy/index.html",
     "solutions/index.html",
     "solutions.html",
+    "ai-services/index.html",
+    "ai-services.html",
+    "cpa/index.html",
+    "partners/index.html",
+    "services/index.html",
+    "free-ai-it-tools/index.html",
+    "roteiros/index.html",
+    "para/index.html",
+    "referral/index.html",
+    "whatsapp/index.html",
 ]
 
 

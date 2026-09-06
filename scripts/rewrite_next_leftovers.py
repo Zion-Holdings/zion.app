@@ -731,6 +731,8 @@ def patch_redirects() -> None:
     extra_lines = [
         "/solutions /solutions/index.html 200",
         "/solutions/ /solutions/index.html 200",
+        "/ai-services /ai-services/index.html 200",
+        "/ai-services/ /ai-services/index.html 200",
     ]
     for path in (PUBLIC / "_redirects", ROOT / "_redirects"):
         if not path.exists():
