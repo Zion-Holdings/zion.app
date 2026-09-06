@@ -106,7 +106,7 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
 
 <section>
   <h2>GenAI spend — FinOps for model and API lines</h2>
-  <p>Token and API bills spike for the same reason cloud bills do: no owner, no tag, and no stop rule. This landing owns that work. There is no separate /genai-cost-optimization/ service URL — the longer write-up is <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a>.</p>
+  <p>Token and API bills spike for the same reason cloud bills do: no owner, no tag, and no stop rule. This landing owns that work. There is no separate /genai-cost-optimization/ or /genai-finops/ service URL. The core write-up is <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a>. Multi-team and multi-agent failure modes are in <a href="#genai-finops-at-scale">GenAI FinOps at scale</a>.</p>
   <div class="grid">
     <div class="card"><h3>Why the line spikes</h3><p>Shared or untagged keys, chatty retry loops, a large model on a small job, unscoped retrieval, and shadow plugins. The first deliverable is a spend register — keys, workflows, who can pause — not a savings percentage.</p></div>
     <div class="card"><h3>Usage vs managed layer</h3><p>Usage is the vendor invoice (tokens, embeddings, tool traffic). The managed layer is design, policy, monitoring, and the people who stop a runaway job. Mixing them is how teams buy a platform to fix a key that should have been rotated.</p></div>
@@ -114,6 +114,22 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
     <div class="card"><h3>Same review as the rest of the bill</h3><p>Put model and API lines on the waste register next to idle compute and orphan storage. Do not buy reserved capacity or a new AI platform to cover a workflow you have not tagged yet. If the workload is an agent, pair this with <a href="/autonomous-ai-agents/">autonomous AI agents</a>.</p></div>
   </div>
 </section>
+
+<section id="genai-finops-at-scale">
+  <h2>GenAI FinOps at scale (multi-team &amp; multi-agent)</h2>
+  <p>One tagged key is a start. Several teams and several agents on shared keys is how the invoice becomes unreadable. This landing owns that work — there is no /genai-finops/ URL. Longer write-ups: <a href="/blog/genai-finops-at-scale/">GenAI FinOps at scale</a> and <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a>.</p>
+  <div class="grid">
+    <div class="card"><h3>Failure modes we map first</h3><p>Shared keys across products. Shadow agents a team stood up without a spend owner. Retry storms on a tool that never returns. A large model on a classification job. Unscoped retrieval that pulls the whole corpus for every call. Duplicate embeddings nobody retired.</p></div>
+    <div class="card"><h3>Unit economics — no fake %</h3><p>Cost per completed workflow, per ticket, or per approved action — using your baseline, not a vendor slide. Usage (tokens, embeddings, tool traffic) and the managed layer (design, policy, people who stop a runaway job) stay two lines. We will not invent a savings percentage or a “typical” token cut.</p></div>
+    <div class="card"><h3>Controls that survive more than one team</h3><p>Per-workflow keys and tags. Budgets and anomaly alerts per team, not one org-wide surprise. Model routing (small model first). Context and tool budgets. Human gates on irreversible actions. A kill switch that does not take the rest of the stack down. Chargeback or showback finance will actually read.</p></div>
+    <div class="card"><h3>Multi-agent is still FinOps</h3><p>Each agent is a workflow with an envelope, an owner, and a step log. Shared memory or a shared key across agents is a cost and a governance incident. Pair this section with <a href="/autonomous-ai-agents/">autonomous AI agents</a> when agents are in the design, and with <a href="/ai-consulting-services/">AI consulting</a> when the first process is still unranked.</p></div>
+  </div>
+</section>
+<div class="cta">
+  <p><strong>Map keys, owners, and envelopes before a second team scales tokens.</strong></p>
+  <a class="btn" href="/discovery/">Cloud spend diagnostic — $99</a>
+  <a class="btn alt" href="/contact/">Contact</a>
+</div>
 
 <section>
   <h2>Reporting</h2>
@@ -132,10 +148,10 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
       <tr><th>Step</th><th>Price</th><th>What you get</th></tr>
     </thead>
     <tbody>
-      <tr><td><a href="/discovery/">Discovery</a></td><td>$99</td><td>Cloud spend diagnostic: waste map sketch, owners, 30-min readout</td></tr>
-      <tr><td><a href="/ai-consulting-services/">Consulting</a></td><td>$499</td><td>Prioritized levers, reporting shape, build / wait / do-not-cut</td></tr>
-      <tr><td><a href="/plans/">Starter</a></td><td>$2,500</td><td>First FinOps implementation for the mapped waste</td></tr>
-      <tr><td><a href="/pricing/">Growth</a></td><td>$8,000/mo</td><td>Managed FinOps cadence, change control, written SLA</td></tr>
+      <tr><td><a href="/discovery/">Discovery</a></td><td>$99</td><td>Cloud spend diagnostic: waste map, GenAI keys/owners, 30-min readout</td></tr>
+      <tr><td><a href="/ai-consulting-services/">Consulting</a></td><td>$499</td><td>Prioritized levers, <a href="#genai-finops-at-scale">at-scale</a> controls, build / wait / do-not-cut</td></tr>
+      <tr><td><a href="/plans/">Starter</a></td><td>$2,500</td><td>First FinOps implementation for the mapped waste (compute or model lines)</td></tr>
+      <tr><td><a href="/pricing/">Growth</a></td><td>$8,000/mo</td><td>Managed FinOps cadence, multi-team envelopes, written SLA</td></tr>
     </tbody>
   </table>
   </div>
@@ -157,11 +173,23 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
   </details>
   <details>
     <summary>What if GenAI is the line that spiked?</summary>
-    <p>We treat model spend as a FinOps line: owner, envelope, retries. Measurement comes before a commitment or a platform purchase. Longer write-up: <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a>. If the workload is an agent, pair this page with <a href="/autonomous-ai-agents/">autonomous AI agents</a> and <a href="/ai-consulting-services/">AI consulting</a>.</p>
+    <p>We treat model spend as a FinOps line: owner, envelope, retries, and the same waste register as idle compute. Measurement comes before a commitment or a platform purchase. Shared or untagged keys, chatty retry loops, and a large model on a small job are the first items we name. Longer write-up: <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a>. If the workload is an agent, pair this page with <a href="/autonomous-ai-agents/">autonomous AI agents</a> and <a href="/ai-consulting-services/">AI consulting</a>.</p>
   </details>
   <details>
     <summary>Do you guarantee savings on model spend?</summary>
-    <p>No. We do not invent a savings percentage. Discovery $99 is a cloud spend diagnostic: visibility, owners, and which controls are missing. Any later number is your baseline versus closed items.</p>
+    <p>No. We do not invent a savings percentage. Discovery $99 is a cloud spend diagnostic: visibility, owners, and which controls are missing. Any later number is your baseline versus closed items — including cost per completed workflow once you have a baseline.</p>
+  </details>
+  <details>
+    <summary>What is GenAI FinOps at scale?</summary>
+    <p>Several teams or agents on shared keys, with no per-workflow tag, budget, or kill switch. The work is unit economics you can defend (cost per workflow, not a fake %), plus controls that survive more than one owner. Detail: <a href="#genai-finops-at-scale">GenAI FinOps at scale</a> and <a href="/blog/genai-finops-at-scale/">the at-scale write-up</a>.</p>
+  </details>
+  <details>
+    <summary>Is there a separate /genai-finops/ service page?</summary>
+    <p>No. At-scale GenAI spend deepens this same FinOps landing. Do not look for a thin SKU. The commercial path stays Discovery $99 → Consulting $499 → Starter $2,500 → Growth $8,000/mo.</p>
+  </details>
+  <details>
+    <summary>How do you handle multi-agent spend?</summary>
+    <p>Each agent is a workflow with an envelope, a named owner, and a step log. Shared keys or shared memory across agents are mapped as both a cost and a governance gap. See <a href="/autonomous-ai-agents/">autonomous AI agents</a> for the HITL and kill-switch rules those agents still need.</p>
   </details>
   <details>
     <summary>How do I start if Stripe checkout is not live?</summary>
@@ -174,7 +202,7 @@ th{color:#c4b5fd;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
   <a class="btn" href="/discovery/">Cloud spend diagnostic — $99</a>
   <a class="btn alt" href="/contact/">Or write Zion</a>
 </div>
-<p class="see-also">See also: <a href="/autonomous-ai-agents/">Autonomous AI agents</a> · <a href="/ai-consulting-services/">AI consulting services</a> · <a href="/fintech-it-ai/">Fintech IT / AI</a> · <a href="/discovery/">Discovery</a> · <a href="/plans/">Plans</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a> · <a href="/blog/finops-consulting-services/">FinOps consulting blog</a> · <a href="/managed-it-services/">Managed IT</a></p>
+<p class="see-also">See also: <a href="/autonomous-ai-agents/">Autonomous AI agents</a> · <a href="/ai-consulting-services/">AI consulting services</a> · <a href="/fintech-it-ai/">Fintech IT / AI</a> · <a href="/discovery/">Discovery</a> · <a href="/plans/">Plans</a> · <a href="/pricing/">Pricing</a> · <a href="#genai-finops-at-scale">GenAI FinOps at scale</a> · <a href="/blog/genai-finops-at-scale/">GenAI FinOps at scale (blog)</a> · <a href="/blog/genai-cost-optimization/">GenAI cost optimization</a> · <a href="/blog/finops-consulting-services/">FinOps consulting blog</a> · <a href="/managed-it-services/">Managed IT</a></p>
 
 <footer>
   <p>© 2026 Zion Tech Group · 364 E Main St STE 1008, Middletown, DE 19709 · <a href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · +1 302 464 0950</p>
