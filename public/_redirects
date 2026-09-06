@@ -3,7 +3,7 @@
 # Canonical sitemap
 /sitemap.xml  /sitemap-0.xml  301
 
-/case-studies/    /contact/    301
+# /case-studies/ is the live proof hub (Wave 4) — do not redirect to /contact/
 /industries/    /services/    301
 /free-tools-hub/    /tools/    301
 /products/    /services/    301
@@ -101,3 +101,9 @@
 /referral/ /referral/index.html 200
 /whatsapp /whatsapp/index.html 200
 /whatsapp/ /whatsapp/index.html 200
+
+# Wave 4 LIGHT — consolidate heritage + cases to canonical hubs
+/heritage/    /about/           301
+/heritage     /about/           301
+/cases/       /case-studies/    301
+/cases        /case-studies/    301
