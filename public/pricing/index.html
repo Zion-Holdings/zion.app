@@ -1,42 +1,301 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pricing — Zion Tech Group</title>
-  <meta name="description" content="Live Stripe prices: Discovery $99, Consulting $499, Starter $2,500, Growth $8,000/mo. Book the only active Calendly event." />
-  <link rel="canonical" href="https://ziontechgroup.com/pricing/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preços e Serviços Premium | Zion Tech Group</title>
+  <meta name="description" content="Planos e serviços premium de IA e TI. Do Starter ao Enterprise, com preços transparentes e pagamento via Stripe.">
+  <link rel="canonical" href="https://ziontechgroup.com/pricing/">
+  <link rel="stylesheet" href="/css/style.css">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,sans-serif;background:linear-gradient(135deg,#0b1220,#1a1a2e 50%,#0f3460);color:#e6f0ff;min-height:100vh}
-    .hero{max-width:900px;margin:0 auto;padding:72px 24px 24px;text-align:center}
-    h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;background:linear-gradient(135deg,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
-    p{color:#94a3b8;line-height:1.65}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:1100px;margin:0 auto;padding:24px}
-    .card{background:rgba(15,23,42,.6);border:1px solid rgba(124,58,237,.25);border-radius:16px;padding:28px}
-    .price{font-size:2rem;font-weight:800;color:#a78bfa;margin:12px 0}
-    .cta{display:inline-block;margin-top:12px;padding:12px 20px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;font-weight:600;text-decoration:none}
-    footer{text-align:center;padding:32px;border-top:1px solid rgba(124,58,237,.15)}
-    footer a{color:#a78bfa;text-decoration:none;margin:0 10px}
+    .service-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px; background: #fff; }
+    .service-card h3 { margin-top: 0; color: #1a1a2e; font-size: 1.2em; }
+    .price { font-size: 1.4em; color: #2d5af0; font-weight: bold; margin: 10px 0; }
+    .btn { display: inline-block; padding: 10px 20px; background: #2d5af0; color: #fff; text-decoration: none; border-radius: 4px; margin-top: 10px; }
+    .btn-outline { background: transparent; border: 2px solid #2d5af0; color: #2d5af0; }
+    .btn-large { padding: 12px 24px; font-size: 1.1em; }
+    .enterprise { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 40px; border-radius: 12px; margin: 30px 0; }
+    .enterprise h2 { color: #fff; margin-top: 0; }
+    .enterprise .service-card { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
+    .enterprise h3 { color: #fff; }
+    .enterprise .price { color: #4ecdc4; }
+    .enterprise .btn { background: #ff6b6b; }
+    .enterprise .btn-outline { border-color: #ff6b6b; color: #ff6b6b; }
+    .category-title { color: #2d5af0; margin-top: 40px; font-size: 1.5em; border-bottom: 2px solid #2d5af0; padding-bottom: 10px; }
+    .enterprise .category-title { color: #4ecdc4; border-color: #4ecdc4; }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>Live checkout — not a free trial</h1>
-    <p>These four Stripe links are livemode. There is no “Start Free Trial.” Book Discovery first if you have not paid.</p>
-    <p><a class="cta" href="/book/">Book $99 Discovery</a> <a class="cta" href="/plans/" style="background:#0f172a;border:1px solid #334155">Same prices on /plans/</a></p>
+  <div id="content">
+    <h1>Planos e Serviços Premium</h1>
+    <p>Soluções de IA e TI para cada etapa da sua empresa — do início da jornada à transformação enterprise.</p>
+    
+    <section class="category-section">
+      <h2 class="category-title">Planos de Assinatura</h2>
+      
+      <div class="service-card">
+        <h3>Starter — IA Project</h3>
+        <p class="price">$2.500</p>
+        <p class="period">Projeto one-time</p>
+        <ul>
+          <li>1 project de implementação de IA</li>
+          <li>Até 5 utilizadores</li>
+          <li>Integração básica</li>
+          <li>30 dias de suporte</li>
+          <li>Documentação e formação básica</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_STARTER_PROJECT" class="btn">Comprar agora</a>
+        <a href="/contact/?subject=Starter — IA Project" class="btn-outline">Falar com especialista</a>
+      </div>
+      
+      <div class="service-card">
+        <h3>Growth — Plano de IA</h3>
+        <p class="price">$8.000/mês</p>
+        <p class="period">Assinatura mensal</p>
+        <ul>
+          <li>Projetos de IA ilimitados</li>
+          <li>Utilizadores ilimitados</li>
+          <li>Automação avançada</li>
+          <li>Suporte prioritário 24/7</li>
+          <li>Otimização mensal e reviews</li>
+          <li>Acesso a novas funções e integrações</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_GROWTH_PLAN" class="btn btn-large">Assinar agora</a>
+        <a href="/contact/?subject=Growth — Plano de IA" class="btn-outline">Falar com especialista</a>
+      </div>
+      
+      <div class="service-card">
+        <h3>Enterprise — Soluções Customizadas</h3>
+        <p class="price">Sob consulta</p>
+        <p class="period">Solução personalizada</p>
+        <ul>
+          <li>Soluções totalmente customizadas</li>
+          <li>Equipa dedicada de especialistas</li>
+          <li>Garantias de SLA</li>
+          <li>Opções on-premise</li>
+          <li>Suporte 24/7 dedicado</li>
+          <li>Co-development de funcionalidades</li>
+        </ul>
+        <a href="/contact/?subject=Enterprise — Soluções Customizadas" class="btn btn-large">Falar com consultor</a>
+      </div>
+    </section>
+    
+    <section class="category-section">
+      <h2 class="category-title">Serviços de IA Avançada</h2>
+      
+      <div class="service-card">
+        <h3><span style="background:#2d5af0;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">PREMIUM</span> IA Agent Swarm — Automação Multi-Agente</h3>
+        <p class="price">$25.000</p>
+        <p>Sistemas multi-agente autónomos com orquestração inteligente.</p>
+        <ul>
+          <li>Arquitetura de 5-20 agentes especializados</li>
+          <li>Orquestração com Firebase/Replit/cloud</li>
+          <li>Integração com API, ERP, CRM, databases</li>
+          <li>Dashboard de monitorização em tempo real</li>
+          <li>30 dias de suporte pós-implementação</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_AGENT_SWARM" class="btn">Comprar — $25.000</a>
+        <a href="/services/ai-agent-swarm/" class="btn-outline">Mais detalhes</a>
+      </div>
+      
+      <div class="service-card">
+        <h3><span style="background:#2d5af0;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">PREMIUM</span> Generative AI Implementation — LLM Customizado</h3>
+        <p class="price">$15.000</p>
+        <p>Implementação de IA generativa (GPT-4, Claude, Llama) para o seu negócio.</p>
+        <ul>
+          <li>Fine-tuning de modelos para o seu domínio</li>
+          <li>RAG com base de dados da empresa</li>
+          <li>Chat interface para web, Slack, WhatsApp</li>
+          <li>API REST para integração</li>
+          <li>10M tokens de crédito incluídos</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_GENERATIVE_AI" class="btn">Comprar — $15.000</a>
+        <a href="/services/generative-ai-implementation/" class="btn-outline">Mais detalhes</a>
+      </div>
+      
+      <div class="service-card">
+        <h3><span style="background:#ff6b6b;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">ENTERPRISE</span> AI Strategy & Roadmap — Consultoria Executiva</h3>
+        <p class="price">$12.000</p>
+        <p>Consultoria executiva para definir a estratégia de IA da sua organização.</p>
+        <ul>
+          <li>Workshop executivo de 2 dias</li>
+          <li>Avaliação de maturidade em 15 dimensões</li>
+          <li>Identificação de 10-15 use cases com ROI</li>
+          <li>Roadmap de 12-18 meses</li>
+          <li>Relatório para conselho de administração</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_AI_STRATEGY" class="btn">Comprar — $12.000</a>
+        <a href="/services/ai-strategy-roadmap/" class="btn-outline">Mais detalhes</a>
+      </div>
+    </section>
+    
+    <section class="category-section">
+      <h2 class="category-title">Serviços de Cybersecurity & Compliance</h2>
+      
+       <div class="service-card">
+        <h3><span style="background:#ff6b6b;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">ENTERPRISE</span> Managed SOC — Security Operations Center</h3>
+        <p class="price">$15.000/mês</p>
+        <p>SOC gestido 24/7 com monitorização, deteção de ameaças, e resposta a incidentes.</p>
+        <ul>
+          <li>Monitorização 24/7 com SIEM + SOAR</li>
+          <li>Detecção de ameaças com machine learning</li>
+          <li>Resposta automatizada com playbooks</li>
+          <li>Conformidade: ISO 27001, NIST, GDPR</li>
+          <li>Equipa dedicada de analistas</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_MANAGED_SECURITY" class="btn">Assinar — $15.000/mês</a>
+        <a href="/services/managed-security-operations/" class="btn-outline">Mais detalhes</a>
+      </div>
+      
+      <div class="service-card">
+        <h3><span style="background:#2d5af0;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">PREMIUM</span> Penetration Testing — Audição de Segurança</h3>
+        <p class="price">$8.000</p>
+        <p>Auditoria completa de segurança com testes de penetração manuais e automatizados.</p>
+        <ul>
+          <li>Teste de penetração externo e interno</li>
+          <li>Análise de aplicações web/mobile (OWASP Top 10)</li>
+          <li>Avaliação de configurações cloud</li>
+          <li>Teste de engenharia social (phishing, vishing)</li>
+          <li>Relatório com CVSS scores e plan de remediação</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_PEN_TEST" class="btn">Comprar — $8.000</a>
+        <a href="/services/penetration-testing/" class="btn-outline">Mais detalhes</a>
+      </div>
+      
+      <div class="service-card">
+        <h3><span style="background:#2d5af0;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">PREMIUM</span> Compliance Automation — ISO 27001 / GDPR</h3>
+        <p class="price">$10.000</p>
+        <p>Automação do processo de compliance para certificações e regulamentações.</p>
+        <ul>
+          <li>Gestão de 50+ controles de segurança</li>
+          <li>Documentação automática de policies</li>
+          <li>Avaliação de riscos em tempo real</li>
+          <li>Preparação para certificação externa</li>
+          <li>Dashboard de compliance em tempo real</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_COMPLIANCE" class="btn">Comprar — $10.000</a>
+        <a href="/services/compliance-automation/" class="btn-outline">Mais detalhes</a>
+      </div>
+    </section>
+    
+    <section class="category-section">
+      <h2 class="category-title">Serviços de Cloud & Infraestrutura</h2>
+      
+      <div class="service-card">
+        <h3><span style="background:#ff6b6b;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">ENTERPRISE</span> Cloud Migration — AWS / Azure / GCP</h3>
+        <p class="price">$30.000</p>
+        <p>Migração completa para cloud com zero downtime e arquitetura cloud-native.</p>
+        <ul>
+          <li>Arquitetura cloud-native (microserviços, containers)</li>
+          <li>Migração com zero downtime (blue-green, canary)</li>
+          <li>Otimização de custos cloud (FinOps)</li>
+          <li>Setup de CI/CD completo</li>
+          <li>Infrastructure as Code (Terraform)</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_CLOUD_MIGRATION" class="btn">Comprar — $30.000</a>
+        <a href="/services/cloud-migration-enterprise/" class="btn-outline">Mais detalhes</a>
+      </div>
+      
+      <div class="service-card">
+        <h3><span style="background:#2d5af0;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">PREMIUM</span> DevOps & MLOps — Pipeline Automatizado</h3>
+        <p class="price">$12.000</p>
+        <p>Pipelines de DevOps e MLOps para equipas de desenvolvimento e data science.</p>
+        <ul>
+          <li>CI/CD pipeline completa</li>
+          <li>MLOps: treinamento, deploy, monitorização</li>
+          <li>Feature store e modelo registry</li>
+          <li>A/B testing e canary deployments para ML</li>
+          <li>Monitorização de drift e performance</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_DEVOPS_MLOPS" class="btn">Comprar — $12.000</a>
+        <a href="/services/devops-mlops-pipeline/" class="btn-outline">Mais detalhes</a>
+      </div>
+      
+      <div class="service-card">
+        <h3><span style="background:#2d5af0;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">PREMIUM</span> Data Engineering & Analytics — Pipeline de Dados</h3>
+        <p class="price">$20.000</p>
+        <p>Arquitetura de dados completa com pipelines, analytics, e dashboards executivos com IA.</p>
+        <ul>
+          <li>Arquitetura completa: data lake, warehouse, marts</li>
+          <li>Pipelines com Airflow, dbt</li>
+          <li>Data quality e governança</li>
+          <li>Dashboards executivos (Power BI, Tableau)</li>
+          <li>Analytics com IA: previsão, segmentação</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_DATA_ENGINEERING" class="btn">Comprar — $20.000</a>
+        <a href="/services/data-engineering-analytics/" class="btn-outline">Mais detalhes</a>
+      </div>
+    </section>
+    
+    <section class="category-section">
+      <h2 class="category-title">Serviços de Digital Transformation</h2>
+      
+      <div class="service-card">
+        <h3><span style="background:#ff6b6b;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">ENTERPRISE</span> AI-Powered Digital Transformation — Programa Completo</h3>
+        <p class="price">$50.000</p>
+        <p>Programa comprehensivo de transformação digital com IA, do diagnóstico à implementação.</p>
+        <ul>
+          <li>Diagnóstico de transformação digital (4-6 semanas)</li>
+          <li>Roadmap estratégico com KPIs</li>
+          <li>Implementação de 5-10 projetos de IA/TI</li>
+          <li>Gestão de mudança e comunicação</li>
+          <li>Formação de 50+ colaboradores</li>
+          <li>Acompanhamento durante 12 meses</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_DIGITAL_TRANSFORMATION" class="btn">Iniciar — $50.000</a>
+        <a href="/services/digital-transformation-program/" class="btn-outline">Mais detalhes</a>
+      </div>
+      
+      <div class="service-card">
+        <h3><span style="background:#2d5af0;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">PREMIUM</span> API & Integration — Conectividade Enterprise</h3>
+        <p class="price">$10.000</p>
+        <p>Desenvolvimento de APIs e integrações para conectar sistemas legados com aplicações modernas.</p>
+        <ul>
+          <li>APIs REST e GraphQL com OpenAPI/Swagger</li>
+          <li>Integração com ERP, CRM, bases de dados</li>
+          <li>Webhooks e event-driven architecture</li>
+          <li>iPaaS setup (Make, Zapier, Composio, n8n)</li>
+          <li>API gateway com gestão de versões</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_API_INTEGRATION" class="btn">Comprar — $10.000</a>
+        <a href="/services/api-integration-enterprise/" class="btn-outline">Mais detalhes</a>
+      </div>
+      
+      <div class="service-card">
+        <h3><span style="background:#2d5af0;color:#fff;padding:4px 8px;border-radius:4px;font-size:0.8em;">PREMIUM</span> AI Customer Support — Suporte Inteligente 24/7</h3>
+        <p class="price">$8.000</p>
+        <p>Sistema de suporte ao cliente com IA: chatbots, triagem automática, análise de sentiment.</p>
+        <ul>
+          <li>Chatbot IA com NLP/ML para múltiplos canais</li>
+          <li>Triagem automática de tickets</li>
+          <li>Análise de sentiment em tempo real</li>
+          <li>Base de conhecimento IA-powered (RAG)</li>
+          <li>Integração com CRM e ticketing</li>
+        </ul>
+        <a href="https://buy.stripe.com/of_demo_PREMIUM_AI_SUPPORT" class="btn">Comprar — $8.000</a>
+        <a href="/services/ai-customer-support/" class="btn-outline">Mais detalhes</a>
+      </div>
+    </section>
+    
+    <section style="margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 8px;">
+      <h2>Como funciona</h2>
+      <ol>
+        <li><strong>Descrição:</strong> Fale connosco sobre as suas necessidades e objetivos</li>
+        <li><strong>Proposta:</strong> Receba uma proposta detalhada com escopo, prazos, e investimento</li>
+        <li><strong>Contrato:</strong> Assine o contrato e faça o pagamento via Stripe</li>
+        <li><strong>Kickoff:</strong> Sessão de kickoff com a nossa equipa para alinhamento</li>
+        <li><strong>Implementação:</strong> Desenvolvimento e implementação com checkpoints quinzenais</li>
+        <li><strong>Entrega:</strong> Receba a solução completa com documentação e formação</li>
+        <li><strong>Suporte:</strong> Suporte pós-entrega conforme o plano seleccionado</li>
+      </ol>
+    </section>
+    
+    <section style="margin-top: 30px; text-align: center; padding: 30px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; border-radius: 8px;">
+      <h2>Pronto para transformar a sua empresa?</h2>
+      <p style="color: #ccc;">Fale connosco para discutir as suas necessidades e receber uma proposta personalizada.</p>
+      <a href="/contact/" class="btn" style="padding: 15px 30px; font-size: 1.1em; margin: 10px;">Falar com especialista</a>
+      <p style="margin-top: 15px; color: #888;">+55 (47) 99999-9999 | kleber@ziontechgroup.com</p>
+    </section>
   </div>
-  <div class="grid">
-    <div class="card"><h2>Discovery</h2><div class="price">$99</div><p>30 min Google Meet. Only active Calendly event.</p><a class="cta" href="https://buy.stripe.com/3cIdRa6FO5dt0D53hm4ZG05">Pay $99</a></div>
-    <div class="card"><h2>Consulting</h2><div class="price">$499</div><p>Zion AI Consulting. After pay → /success-stories/.</p><a class="cta" href="https://buy.stripe.com/4gM14ofck0Xd1H94lq4ZG08">Pay $499</a></div>
-    <div class="card"><h2>Starter</h2><div class="price">$2,500</div><p>One project sprint.</p><a class="cta" href="https://buy.stripe.com/7sY00k7JScFV99Bf044ZG06">Pay $2,500</a></div>
-    <div class="card"><h2>Growth</h2><div class="price">$8,000/mo</div><p>Monthly retainer.</p><a class="cta" href="https://buy.stripe.com/aFa5kEd4c21h3PhdW04ZG07">Subscribe</a></div>
-  </div>
-  <footer>
-    <a href="/">Home</a>
-    <a href="/book/">Book</a>
-    <a href="/plans/">Plans</a>
-    <a href="/status/">Status</a>
-  </footer>
 </body>
 </html>
