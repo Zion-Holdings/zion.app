@@ -41,6 +41,8 @@ CHROME_PAGES = [
     "telegram/index.html",
     "indique/index.html",
     "cookie-policy/index.html",
+    "solutions/index.html",
+    "solutions.html",
 ]
 
 

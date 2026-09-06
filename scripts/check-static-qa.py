@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static QA checks for book alias, thank-you, first-paint CSS, Discovery CTAs."""
+"""Static QA checks for book alias, thank-you, first-paint CSS, Discovery CTAs, Next leftovers."""
 from __future__ import annotations
 
 import pathlib
@@ -68,6 +68,22 @@ def main() -> int:
     check((PUBLIC / "privacy/index.html").is_file(), "public/privacy wins over Next leftover")
     check("/_next/static/css" not in read("privacy/index.html"), "privacy is not a Next export")
     check("/_next/static/css" not in read("contact/index.html"), "contact is not a Next export")
+
+    solutions = read("solutions/index.html")
+    check((PUBLIC / "solutions/index.html").is_file(), "public/solutions hub exists")
+    check((PUBLIC / "solutions.html").is_file(), "solutions.html no-slash alias exists")
+    check("/_next/" not in solutions, "solutions is not a Next export")
+    check("/assets/css/site.css" in solutions and "<style" in solutions, "solutions has linked + inline site.css")
+    check("Industry" in solutions and "Healthcare" in solutions, "solutions keeps industry content")
+    check('class="nav"' in solutions and "<footer" in solutions, "solutions uses shared nav/footer shell")
+
+    next_hits = []
+    for path in PUBLIC.rglob("*.html"):
+        rel = path.relative_to(PUBLIC).as_posix()
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if "/_next/" in text:
+            next_hits.append(rel)
+    check(not next_hits, "no /_next/ in public HTML" + (": " + ", ".join(next_hits[:12]) if next_hits else ""))
 
     if fail:
         print(f"{fail} check(s) failed")
