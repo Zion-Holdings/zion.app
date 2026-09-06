@@ -268,7 +268,7 @@ def solutions_hub() -> str:
     body = f"""    <p class="crumb"><a href="/">Home</a> / Solutions</p>
     <p class="eyebrow">Industry solutions</p>
     <h1>Industry solutions. Scoped after Discovery.</h1>
-    <p class="lead">Tailored AI and IT for the operating loop of a specific industry — healthcare, finance, manufacturing, retail, logistics, public sector, and more. These are capabilities we scope after a $99 Discovery, not leftover Next.js catalog SKUs.</p>
+    <p class="lead">Tailored AI and IT for the operating loop of a specific industry — healthcare, finance, manufacturing, retail, logistics, public sector, and more. These are capabilities we scope after a $99 Discovery, not a boxed catalog SKU.</p>
     <div class="actions">
       <a class="btn" href="/discovery/">Start Discovery $99</a>
       <a class="btn alt" href="/plans/">See plans</a>
